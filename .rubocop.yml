@@ -1,0 +1,28 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'Gemfile'
+    - 'config.ru'
+    - 'Rakefile'
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+inherit_mode:
+  merge:
+    - Exclude
+
+Layout/LineLength:
+  Max: 80

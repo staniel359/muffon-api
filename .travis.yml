@@ -1,0 +1,10 @@
+language: ruby
+rvm: 2.7.1
+services: postgresql
+before_script:
+  - psql -c "create database muffon_api_test;" -U postgres
+  - psql -c "create user muffon_api_test with createdb login password 'muffon_api_test';" -U postgres
+script:
+  - rake db:setup RAILS_ENV=test
+  - bundle exec rubocop
+  - bundle exec rspec
