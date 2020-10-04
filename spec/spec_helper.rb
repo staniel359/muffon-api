@@ -14,6 +14,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'vcr'
+require './spec/helpers/lastfm'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
