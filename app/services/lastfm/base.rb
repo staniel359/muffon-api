@@ -15,10 +15,11 @@ module LastFM
     def base_params(method)
       {
         method: method,
-        artist: @args.artist_name,
         api_key: api_key,
         format: 'json',
         autocorrect: 1,
+        artist: @args.artist_name,
+        album: @args.album_title,
         page: @args.page,
         limit: @args.limit || 50
       }

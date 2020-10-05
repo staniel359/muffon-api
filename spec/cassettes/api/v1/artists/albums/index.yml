@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=artist.getTopAlbums&page
+    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=Wild%20Nothing&autocorrect=1&format=json&limit=50&method=artist.getTopAlbums&page
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Mon, 05 Oct 2020 18:04:36 GMT
+      - Mon, 05 Oct 2020 18:04:25 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -132,5 +132,5 @@ http_interactions:
         Playlist: February (2012)","playcount":1954,"url":"https://www.last.fm/music/Wild+Nothing/Indie%2FRock+Playlist:+February+(2012)","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}]}],"@attr":{"artist":"Wild
         Nothing","page":"1","perPage":"50","totalPages":"111","total":"5543"}}}'
-  recorded_at: Mon, 05 Oct 2020 18:04:36 GMT
+  recorded_at: Mon, 05 Oct 2020 18:04:26 GMT
 recorded_with: VCR 6.0.0

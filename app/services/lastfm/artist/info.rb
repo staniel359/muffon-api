@@ -28,8 +28,10 @@ module LastFM
       end
 
       def description
+        return '' if parsed_response['bio']['content'].blank?
+
         parsed_response['bio']['content'].match(
-          %r{(.+)<a href="http[s?]://www.last.fm}m
+          %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end
 

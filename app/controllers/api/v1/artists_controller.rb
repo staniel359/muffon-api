@@ -13,10 +13,6 @@ module API
         render json: artist_tracks
       end
 
-      def albums
-        render json: artist_albums
-      end
-
       def similar
         render json: artist_similar
       end
@@ -35,12 +31,6 @@ module API
 
       def artist_tracks
         LastFM::Artist::Tracks.call(
-          params.slice(:artist_name, :page)
-        )
-      end
-
-      def artist_albums
-        LastFM::Artist::Albums.call(
           params.slice(:artist_name, :page)
         )
       end
