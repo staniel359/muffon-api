@@ -29,8 +29,8 @@ module LastFM
 
       def description
         parsed_response['bio']['content'].match(
-          %r{(.+)(?!<a href="http[s?]://www.last.fm/music/)}
-        )[0]
+          %r{(.+)<a href="http[s?]://www.last.fm}m
+        )[1].strip
       end
 
       def tags
