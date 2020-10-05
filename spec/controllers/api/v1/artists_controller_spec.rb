@@ -21,15 +21,6 @@ RSpec.describe API::V1::ArtistsController, type: :controller do
     end
   end
 
-  describe 'GET :tracks' do
-    it 'returns 200' do
-      VCR.use_cassette 'api/v1/artists/tracks' do
-        get :tracks, params: params
-        expect(response).to have_http_status(:ok)
-      end
-    end
-  end
-
   describe 'GET :similar' do
     it 'returns 200' do
       VCR.use_cassette 'api/v1/artists/similar' do

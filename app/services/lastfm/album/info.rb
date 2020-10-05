@@ -35,17 +35,17 @@ module LastFM
       def description
         return '' if parsed_response['wiki'].blank?
 
-        parsed_response['wiki']['content'].match(
+        parsed_response.dig('wiki', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end
 
       def tags
-        parsed_response['tags']['tag'].map { |t| t['name'] }
+        parsed_response.dig('tags', 'tag').map { |t| t['name'] }
       end
 
       def tracks
-        parsed_response['tracks']['track'].map do |t|
+        parsed_response.dig('tracks', 'track').map do |t|
           {
             title: t['name'],
             length: t['duration'].to_i

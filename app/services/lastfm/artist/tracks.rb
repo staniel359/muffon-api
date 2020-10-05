@@ -17,9 +17,9 @@ module LastFM
 
       def tracks_data
         {
-          name: parsed_response['@attr']['artist'],
+          name: parsed_response.dig('@attr', 'artist'),
           tracks: tracks,
-          page: parsed_response['@attr']['page'].to_i
+          page: parsed_response.dig('@attr', 'page').to_i
         }
       end
 
@@ -27,7 +27,6 @@ module LastFM
         parsed_response['track'].last(50).map do |t|
           {
             title: t['name'],
-            mbid: t['mbid'] || '',
             plays_count: t['playcount'].to_i,
             listeners_count: t['listeners'].to_i
           }

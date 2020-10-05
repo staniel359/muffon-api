@@ -14,7 +14,7 @@ module API
 
         def albums
           LastFM::Artist::Albums.call(
-            params.slice(:artist_name, :page)
+            params.slice(:artist_name, :page, :limit)
           )
         end
 

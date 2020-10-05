@@ -19,8 +19,8 @@ module LastFM
         {
           name: parsed_response['name'],
           mbid: parsed_response['mbid'] || '',
-          listeners_count: parsed_response['stats']['listeners'].to_i,
-          plays_count: parsed_response['stats']['playcount'].to_i,
+          listeners_count: parsed_response.dig('stats', 'listeners').to_i,
+          plays_count: parsed_response.dig('stats', 'playcount').to_i,
           description: description,
           tags: tags,
           similar_artists: similar_artists
@@ -28,19 +28,19 @@ module LastFM
       end
 
       def description
-        return '' if parsed_response['bio']['content'].blank?
+        return '' if parsed_response.dig('bio', 'content').blank?
 
-        parsed_response['bio']['content'].match(
+        parsed_response.dig('bio', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end
 
       def tags
-        parsed_response['tags']['tag'].map { |t| t['name'] }
+        parsed_response.dig('tags', 'tag').map { |t| t['name'] }
       end
 
       def similar_artists
-        parsed_response['similar']['artist'].map { |a| a['name'] }
+        parsed_response.dig('similar', 'artist').map { |a| a['name'] }
       end
     end
   end

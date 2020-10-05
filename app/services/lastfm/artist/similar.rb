@@ -17,18 +17,13 @@ module LastFM
 
       def similar_data
         {
-          name: parsed_response['@attr']['artist'],
+          name: parsed_response.dig('@attr', 'artist'),
           similar: similar
         }
       end
 
       def similar
-        parsed_response['artist'].map do |a|
-          {
-            name: a['name'],
-            mbid: a['mbid'] || ''
-          }
-        end
+        parsed_response['artist'].map { |a| a['name'] }
       end
     end
   end

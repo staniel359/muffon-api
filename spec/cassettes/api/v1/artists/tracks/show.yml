@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=1&format=json&limit=50&method=track.getInfo&page&track=Hounds%20Of%20Love
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Mon, 05 Oct 2020 21:09:07 GMT
+      Content-Type:
+      - application/json
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2673'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+    body:
+      encoding: UTF-8
+      string: '{"track":{"name":"Hounds of Love","mbid":"984deb15-92f3-4917-9929-c0e930dc8a54","url":"https://www.last.fm/music/Kate+Bush/_/Hounds+of+Love","duration":"182000","streamable":{"#text":"0","fulltrack":"0"},"listeners":"273542","playcount":"1783484","artist":{"name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396","url":"https://www.last.fm/music/Kate+Bush"},"album":{"artist":"Kate
+        Bush","title":"Hounds of Love","mbid":"778c8867-ee94-366a-bcd8-e140cfbf1b67","url":"https://www.last.fm/music/Kate+Bush/Hounds+of+Love","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/391be121643ab50801b7955b0ac5b50c.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/391be121643ab50801b7955b0ac5b50c.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/391be121643ab50801b7955b0ac5b50c.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/391be121643ab50801b7955b0ac5b50c.png","size":"extralarge"}],"@attr":{"position":"1"}},"toptags":{"tag":[{"name":"80s","url":"https://www.last.fm/tag/80s"},{"name":"female
+        vocalists","url":"https://www.last.fm/tag/female+vocalists"},{"name":"pop","url":"https://www.last.fm/tag/pop"},{"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"name":"singer-songwriter","url":"https://www.last.fm/tag/singer-songwriter"}]},"wiki":{"published":"31
+        Aug 2019, 14:38","summary":"\"Hounds of Love\" is a song written, produced
+        and performed by British singer Kate Bush. It is the title track and the third
+        single released from her number one 1985 album Hounds of Love. The single
+        was released on 24 February 1986, and reached number 18 in the UK Singles
+        Chart. \n\nIn October 2004, Q magazine placed this song at No.21 in its list
+        of the 50 greatest British songs of all-time. \n\nBritish band The Futureheads
+        covered the song in 2005, scoring a UK top 10 hit with it. <a href=\"http://www.last.fm/music/Kate+Bush/_/Hounds+of+Love\">Read
+        more on Last.fm</a>.","content":"\"Hounds of Love\" is a song written, produced
+        and performed by British singer Kate Bush. It is the title track and the third
+        single released from her number one 1985 album Hounds of Love. The single
+        was released on 24 February 1986, and reached number 18 in the UK Singles
+        Chart. \n\nIn October 2004, Q magazine placed this song at No.21 in its list
+        of the 50 greatest British songs of all-time. \n\nBritish band The Futureheads
+        covered the song in 2005, scoring a UK top 10 hit with it. <a href=\"http://www.last.fm/music/Kate+Bush/_/Hounds+of+Love\">Read
+        more on Last.fm</a>. User-contributed text is available under the Creative
+        Commons By-SA License; additional terms may apply."}}}'
+  recorded_at: Mon, 05 Oct 2020 21:09:07 GMT
+recorded_with: VCR 6.0.0

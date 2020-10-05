@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       namespace :artists, as: 'artist' do
         scope ':artist_name' do
           resources :albums, only: [:index, :show], param: :album_title
+          resources :tracks, only: [:index, :show], param: :track_title
           get 'images'
-          get 'tracks'
           get 'similar'
         end
       end
