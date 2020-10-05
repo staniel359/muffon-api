@@ -6,6 +6,7 @@ Rails.application.routes.draw do
           get 'images'
           get 'tracks'
           get 'albums'
+          get 'similar'
         end
       end
     end

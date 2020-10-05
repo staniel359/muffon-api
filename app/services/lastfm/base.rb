@@ -19,7 +19,8 @@ module LastFM
         api_key: api_key,
         format: 'json',
         autocorrect: 1,
-        page: @args.page
+        page: @args.page,
+        limit: @args.limit || 50
       }
     end
 
