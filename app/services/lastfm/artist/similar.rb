@@ -26,7 +26,7 @@ module LastFM
         parsed_response['artist'].map do |a|
           {
             name: a['name'],
-            mbid: a['mbid']
+            mbid: a['mbid'] || ''
           }
         end
       end

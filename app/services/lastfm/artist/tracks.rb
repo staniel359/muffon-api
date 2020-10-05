@@ -27,7 +27,7 @@ module LastFM
         parsed_response['track'].last(50).map do |t|
           {
             title: t['name'],
-            mbid: t['mbid'],
+            mbid: t['mbid'] || '',
             plays_count: t['playcount'].to_i,
             listeners_count: t['listeners'].to_i
           }

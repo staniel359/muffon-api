@@ -18,7 +18,7 @@ module LastFM
       def artist_data
         {
           name: parsed_response['name'],
-          mbid: parsed_response['mbid'],
+          mbid: parsed_response['mbid'] || '',
           listeners_count: parsed_response['stats']['listeners'].to_i,
           plays_count: parsed_response['stats']['playcount'].to_i,
           description: description,

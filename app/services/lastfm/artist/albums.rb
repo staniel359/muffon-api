@@ -27,8 +27,8 @@ module LastFM
         parsed_response['album'].map do |a|
           {
             title: a['name'],
-            cover: a['image'][0]['#text'].sub('/300x300', ''),
-            mbid: a['mbid'],
+            cover: a['image'].last['#text'].sub('/300x300', ''),
+            mbid: a['mbid'] || '',
             plays_count: a['playcount'].to_i
           }
         end

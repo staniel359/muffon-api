@@ -20,7 +20,7 @@ module LastFM
           title: parsed_response['name'],
           artist: parsed_response['artist'],
           cover: cover,
-          mbid: parsed_response['mbid'],
+          mbid: parsed_response['mbid'] || '',
           listeners_count: parsed_response['listeners'].to_i,
           plays_count: parsed_response['playcount'].to_i,
           description: description,
@@ -29,7 +29,7 @@ module LastFM
       end
 
       def cover
-        parsed_response['image'][0]['#text'].sub('/34s', '')
+        parsed_response['image'].last['#text'].sub('/300x300', '')
       end
 
       def description
