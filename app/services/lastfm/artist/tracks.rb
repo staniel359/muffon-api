@@ -1,5 +1,5 @@
 module LastFM
-  class Artist
+  module Artist
     class Tracks < LastFM::Base
       def call
         return not_found_data if parsed_response.blank?

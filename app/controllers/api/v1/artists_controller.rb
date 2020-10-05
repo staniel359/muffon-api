@@ -2,7 +2,7 @@ module API
   module V1
     class ArtistsController < ApplicationController
       def show
-        render json: artist
+        render json: artist_info
       end
 
       def images
@@ -23,8 +23,8 @@ module API
 
       private
 
-      def artist
-        LastFM::Artist.call(params.slice(:artist_name))
+      def artist_info
+        LastFM::Artist::Info.call(params.slice(:artist_name))
       end
 
       def artist_images
