@@ -9,5 +9,9 @@ module LastFM
     def lastfm_api_key
       secrets.lastfm[:api_key][Rails.env.to_sym]
     end
+
+    def not_found_data
+      { error: 'Not found.' }
+    end
   end
 end

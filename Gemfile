@@ -23,6 +23,7 @@ gem 'rubocop', '~> 0.91.0', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
 gem 'rest-client'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

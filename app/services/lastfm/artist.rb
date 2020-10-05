@@ -1,7 +1,7 @@
 module LastFM
   class Artist < LastFM::Base
     def call
-      return error_data if parsed_response.blank?
+      return not_found_data if parsed_response.blank?
 
       { artist: artist_data }
     end
@@ -24,10 +24,6 @@ module LastFM
         format: 'json',
         autocorrect: 1
       }
-    end
-
-    def error_data
-      { error: 'Not found.' }
     end
 
     def artist_data
