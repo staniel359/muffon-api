@@ -9,21 +9,9 @@ module LastFM
     private
 
     def parsed_response
-      @parsed_response ||= JSON.parse(response)['artist']
-    end
-
-    def response
-      RestClient.get(lastfm_api_link, params: lastfm_params)
-    end
-
-    def lastfm_params
-      {
-        method: 'artist.getinfo',
-        artist: @args.artist_name,
-        api_key: lastfm_api_key,
-        format: 'json',
-        autocorrect: 1
-      }
+      @parsed_response ||= JSON.parse(
+        api_response('artist.getinfo')
+      )['artist']
     end
 
     def artist_data

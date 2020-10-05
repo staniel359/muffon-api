@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :artists, only: :show, param: :artist_name do
         member do
           get 'images'
+          get 'tracks'
         end
       end
     end

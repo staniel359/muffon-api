@@ -9,6 +9,10 @@ module API
         render json: artist_images
       end
 
+      def tracks
+        render json: artist_tracks
+      end
+
       private
 
       def artist
@@ -17,6 +21,12 @@ module API
 
       def artist_images
         LastFM::Artist::Images.call(
+          params.slice(:artist_name, :page)
+        )
+      end
+
+      def artist_tracks
+        LastFM::Artist::Tracks.call(
           params.slice(:artist_name, :page)
         )
       end
