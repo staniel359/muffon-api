@@ -10,7 +10,7 @@ module LastFM
 
     def parsed_response
       @parsed_response ||= JSON.parse(
-        api_response('artist.getinfo')
+        api_response('artist.getInfo')
       )['artist']
     end
 

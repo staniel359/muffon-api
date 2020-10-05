@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         member do
           get 'images'
           get 'tracks'
+          get 'albums'
         end
       end
     end
