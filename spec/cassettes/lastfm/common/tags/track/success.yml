@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=track.getTopTags&page&track=chinatown
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Tue, 06 Oct 2020 16:01:35 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '5468'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+    body:
+      encoding: UTF-8
+      string: '{"toptags":{"tag":[{"count":100,"name":"dream pop","url":"https://www.last.fm/tag/dream+pop"},{"count":46,"name":"indie","url":"https://www.last.fm/tag/indie"},{"count":46,"name":"chillwave","url":"https://www.last.fm/tag/chillwave"},{"count":42,"name":"shoegaze","url":"https://www.last.fm/tag/shoegaze"},{"count":13,"name":"electronica","url":"https://www.last.fm/tag/electronica"},{"count":13,"name":"indie
+        pop","url":"https://www.last.fm/tag/indie+pop"},{"count":13,"name":"Mellow","url":"https://www.last.fm/tag/Mellow"},{"count":13,"name":"best
+        of 2010","url":"https://www.last.fm/tag/best+of+2010"},{"count":9,"name":"indie
+        rock","url":"https://www.last.fm/tag/indie+rock"},{"count":9,"name":"summer","url":"https://www.last.fm/tag/summer"},{"count":9,"name":"light","url":"https://www.last.fm/tag/light"},{"count":9,"name":"cosmic
+        currents","url":"https://www.last.fm/tag/cosmic+currents"},{"count":5,"name":"pop","url":"https://www.last.fm/tag/pop"},{"count":5,"name":"80s","url":"https://www.last.fm/tag/80s"},{"count":5,"name":"female
+        vocalists","url":"https://www.last.fm/tag/female+vocalists"},{"count":5,"name":"Love","url":"https://www.last.fm/tag/Love"},{"count":5,"name":"Lo-Fi","url":"https://www.last.fm/tag/Lo-Fi"},{"count":5,"name":"new
+        wave","url":"https://www.last.fm/tag/new+wave"},{"count":5,"name":"Awesome","url":"https://www.last.fm/tag/Awesome"},{"count":5,"name":"melodic","url":"https://www.last.fm/tag/melodic"},{"count":5,"name":"psychedelic","url":"https://www.last.fm/tag/psychedelic"},{"count":5,"name":"Dreamy","url":"https://www.last.fm/tag/Dreamy"},{"count":5,"name":"american","url":"https://www.last.fm/tag/american"},{"count":5,"name":"synthpop","url":"https://www.last.fm/tag/synthpop"},{"count":5,"name":"nostalgic","url":"https://www.last.fm/tag/nostalgic"},{"count":5,"name":"I
+        like","url":"https://www.last.fm/tag/I+like"},{"count":5,"name":"modern rock","url":"https://www.last.fm/tag/modern+rock"},{"count":5,"name":"female
+        vocalist","url":"https://www.last.fm/tag/female+vocalist"},{"count":5,"name":"Ballad","url":"https://www.last.fm/tag/Ballad"},{"count":5,"name":"lovely","url":"https://www.last.fm/tag/lovely"},{"count":5,"name":"sunny","url":"https://www.last.fm/tag/sunny"},{"count":5,"name":"sweet","url":"https://www.last.fm/tag/sweet"},{"count":5,"name":"checkout","url":"https://www.last.fm/tag/checkout"},{"count":5,"name":"Neo-Psychedelia","url":"https://www.last.fm/tag/Neo-Psychedelia"},{"count":5,"name":"Dream","url":"https://www.last.fm/tag/Dream"},{"count":5,"name":"sex
+        music","url":"https://www.last.fm/tag/sex+music"},{"count":5,"name":"bright","url":"https://www.last.fm/tag/bright"},{"count":5,"name":"bedroom
+        pop","url":"https://www.last.fm/tag/bedroom+pop"},{"count":5,"name":"lizvelrene2010","url":"https://www.last.fm/tag/lizvelrene2010"},{"count":5,"name":"campfire
+        songs","url":"https://www.last.fm/tag/campfire+songs"},{"count":5,"name":"my
+        10s","url":"https://www.last.fm/tag/my+10s"},{"count":5,"name":"songs that
+        i will still be listening to in a billion years","url":"https://www.last.fm/tag/songs+that+i+will+still+be+listening+to+in+a+billion+years"},{"count":5,"name":"recs
+        I like","url":"https://www.last.fm/tag/recs+I+like"},{"count":5,"name":"austin
+        radar","url":"https://www.last.fm/tag/austin+radar"},{"count":5,"name":"relaaax","url":"https://www.last.fm/tag/relaaax"},{"count":5,"name":"elizabeth
+        marie lester","url":"https://www.last.fm/tag/elizabeth+marie+lester"},{"count":5,"name":"see
+        the world","url":"https://www.last.fm/tag/see+the+world"},{"count":5,"name":"rainy
+        day with black smoke","url":"https://www.last.fm/tag/rainy+day+with+black+smoke"},{"count":5,"name":"flotsam","url":"https://www.last.fm/tag/flotsam"},{"count":5,"name":"Shut
+        Up And Drive","url":"https://www.last.fm/tag/Shut+Up+And+Drive"},{"count":5,"name":"stone
+        roses-like","url":"https://www.last.fm/tag/stone+roses-like"},{"count":5,"name":"local
+        stuff from providence","url":"https://www.last.fm/tag/local+stuff+from+providence"},{"count":5,"name":"Bellezza","url":"https://www.last.fm/tag/Bellezza"},{"count":5,"name":"geografia","url":"https://www.last.fm/tag/geografia"},{"count":5,"name":"ibero909fm","url":"https://www.last.fm/tag/ibero909fm"},{"count":5,"name":"ibero909fm
+        8vo aniversario","url":"https://www.last.fm/tag/ibero909fm+8vo+aniversario"},{"count":5,"name":"La
+        Ultima Estacion de Radio playlist","url":"https://www.last.fm/tag/La+Ultima+Estacion+de+Radio+playlist"},{"count":5,"name":"piuvicini","url":"https://www.last.fm/tag/piuvicini"},{"count":5,"name":"Quenovesquestoycontenta","url":"https://www.last.fm/tag/Quenovesquestoycontenta"},{"count":5,"name":"3-4
+        indie","url":"https://www.last.fm/tag/3-4+indie"},{"count":5,"name":"27oooo","url":"https://www.last.fm/tag/27oooo"},{"count":5,"name":"mvt
+        2011","url":"https://www.last.fm/tag/mvt+2011"},{"count":5,"name":"swirl beat","url":"https://www.last.fm/tag/swirl+beat"},{"count":5,"name":"NO
+        WAY TO NORWAY","url":"https://www.last.fm/tag/NO+WAY+TO+NORWAY"},{"count":5,"name":"dream
+        pop not hypnagogic pop","url":"https://www.last.fm/tag/dream+pop+not+hypnagogic+pop"},{"count":5,"name":"inexplicable
+        nostalgia","url":"https://www.last.fm/tag/inexplicable+nostalgia"},{"count":5,"name":"song
+        of 2015","url":"https://www.last.fm/tag/song+of+2015"},{"count":5,"name":"to
+        all the boys ive loved before","url":"https://www.last.fm/tag/to+all+the+boys+ive+loved+before"}],"@attr":{"artist":"Wild
+        Nothing","track":"Chinatown"}}}'
+  recorded_at: Tue, 06 Oct 2020 16:01:34 GMT
+recorded_with: VCR 6.0.0
