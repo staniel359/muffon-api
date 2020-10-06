@@ -7,11 +7,7 @@ RSpec.describe LastFM::Search::Tracks do
     context 'when track exists' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/tracks/success' do
-          subject.call(
-            track_title: 'chinatown',
-            artist_name: 'wild nothing',
-            limit: 5
-          )
+          subject.call(track: 'chinatown', limit: 5)
         end
       end
 
@@ -26,7 +22,7 @@ RSpec.describe LastFM::Search::Tracks do
     context 'when no track title given' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/tracks/no_title' do
-          subject.call(track_title: nil)
+          subject.call(track: nil)
         end
       end
 
@@ -36,7 +32,7 @@ RSpec.describe LastFM::Search::Tracks do
     context 'when wrong track title' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/tracks/wrong_title' do
-          subject.call(track_title: Helpers::LastFM::RANDOM_STRING)
+          subject.call(track: Helpers::LastFM::RANDOM_STRING)
         end
       end
 

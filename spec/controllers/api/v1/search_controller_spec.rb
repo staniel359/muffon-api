@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe API::V1::SearchController, type: :controller do
   let(:params) do
     {
-      artist_name: 'Wild Nothing',
-      album_title: 'Gemini',
-      track_title: 'Chinatown'
+      artist: 'Wild Nothing',
+      album: 'Gemini',
+      track: 'Chinatown'
     }
   end
 

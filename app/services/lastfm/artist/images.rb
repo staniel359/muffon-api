@@ -24,7 +24,7 @@ module LastFM
       end
 
       def artist_name
-        CGI.escape(@args.artist_name.to_s)
+        CGI.escape(@args.artist.to_s)
       end
 
       def images_data

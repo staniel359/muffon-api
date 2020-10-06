@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
-      resources :artists, only: :show, param: :artist_name
+      resources :artists, only: :show, param: :artist
       namespace :artists, as: 'artist' do
-        scope ':artist_name' do
-          resources :albums, only: [:index, :show], param: :album_title
-          resources :tracks, only: [:index, :show], param: :track_title
+        scope ':artist' do
+          resources :albums, only: [:index, :show], param: :album
+          resources :tracks, only: [:index, :show], param: :track
           get 'images'
           get 'similar'
         end

@@ -17,7 +17,7 @@ module LastFM
 
       def search_data
         {
-          query: { album: @args.album_title },
+          query: { album: @args.album },
           results: albums,
           page: parsed_response.dig(
             'opensearch:Query', 'startPage'

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe API::V1::ArtistsController, type: :controller do
-  let(:params) { { artist_name: 'Wild Nothing' } }
+  let(:params) { { artist: 'Wild Nothing' } }
 
   describe 'GET :show' do
     it 'returns 200' do

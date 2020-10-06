@@ -8,8 +8,7 @@ RSpec.describe LastFM::Album::Info do
       let(:output) do
         VCR.use_cassette 'lastfm/album/info/success' do
           subject.call(
-            artist_name: 'wild nothing',
-            album_title: 'nocturne'
+            artist: 'wild nothing', album: 'nocturne'
           )
         end
       end
@@ -24,7 +23,7 @@ RSpec.describe LastFM::Album::Info do
     context 'when no album title given' do
       let(:output) do
         VCR.use_cassette 'lastfm/album/info/no_album_title' do
-          subject.call(artist_name: 'wild nothing')
+          subject.call(artist: 'wild nothing')
         end
       end
 
@@ -35,8 +34,8 @@ RSpec.describe LastFM::Album::Info do
       let(:output) do
         VCR.use_cassette 'lastfm/album/info/wrong_album_title' do
           subject.call(
-            artist_name: 'wild nothing',
-            album_title: Helpers::LastFM::RANDOM_STRING
+            artist: 'wild nothing',
+            album: Helpers::LastFM::RANDOM_STRING
           )
         end
       end

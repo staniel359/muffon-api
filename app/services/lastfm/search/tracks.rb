@@ -17,7 +17,7 @@ module LastFM
 
       def search_data
         {
-          query: { track: @args.track_title },
+          query: { track: @args.track },
           results: tracks,
           page: parsed_response.dig(
             'opensearch:Query', 'startPage'

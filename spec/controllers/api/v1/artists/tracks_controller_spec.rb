@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe API::V1::Artists::TracksController, type: :controller do
   let(:params) do
     {
-      artist_name: 'Kate Bush',
-      track_title: 'Hounds Of Love'
+      artist: 'Kate Bush',
+      track: 'Hounds Of Love'
     }
   end
 

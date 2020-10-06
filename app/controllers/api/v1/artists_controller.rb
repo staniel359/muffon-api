@@ -16,18 +16,18 @@ module API
       private
 
       def artist_info
-        LastFM::Artist::Info.call(params.slice(:artist_name))
+        LastFM::Artist::Info.call(params.slice(:artist))
       end
 
       def artist_images
         LastFM::Artist::Images.call(
-          params.slice(:artist_name, :page)
+          params.slice(:artist, :page)
         )
       end
 
       def artist_similar
         LastFM::Artist::Similar.call(
-          params.slice(:artist_name, :limit)
+          params.slice(:artist, :limit)
         )
       end
     end

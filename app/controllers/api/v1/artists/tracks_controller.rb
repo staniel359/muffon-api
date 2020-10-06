@@ -14,13 +14,13 @@ module API
 
         def tracks
           LastFM::Artist::Tracks.call(
-            params.slice(:artist_name, :page, :limit)
+            params.slice(:artist, :page, :limit)
           )
         end
 
         def track
           LastFM::Track::Info.call(
-            params.slice(:artist_name, :track_title, :page)
+            params.slice(:artist, :track, :page)
           )
         end
       end

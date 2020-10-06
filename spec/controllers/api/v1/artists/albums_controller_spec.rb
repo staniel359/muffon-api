@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe API::V1::Artists::AlbumsController, type: :controller do
   let(:params) do
     {
-      artist_name: 'Wild Nothing',
-      album_title: 'Nocturne'
+      artist: 'Wild Nothing',
+      album: 'Nocturne'
     }
   end
 

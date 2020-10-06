@@ -7,7 +7,7 @@ RSpec.describe LastFM::Search::Albums do
     context 'when album exists' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/albums/success' do
-          subject.call(album_title: 'nocturne', limit: 5)
+          subject.call(album: 'nocturne', limit: 5)
         end
       end
 
@@ -22,7 +22,7 @@ RSpec.describe LastFM::Search::Albums do
     context 'when no album title given' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/albums/no_title' do
-          subject.call(album_title: nil)
+          subject.call(album: nil)
         end
       end
 
@@ -32,7 +32,7 @@ RSpec.describe LastFM::Search::Albums do
     context 'when wrong album title' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/albums/wrong_title' do
-          subject.call(album_title: Helpers::LastFM::RANDOM_STRING)
+          subject.call(album: Helpers::LastFM::RANDOM_STRING)
         end
       end
 

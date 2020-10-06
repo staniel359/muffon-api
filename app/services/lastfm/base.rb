@@ -27,9 +27,9 @@ module LastFM
 
     def args_params
       {
-        artist: @args.artist_name,
-        album: @args.album_title,
-        track: @args.track_title,
+        artist: @args.artist,
+        album: @args.album,
+        track: @args.track,
         page: @args.page,
         limit: @args.limit || 50
       }

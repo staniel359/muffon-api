@@ -8,8 +8,7 @@ RSpec.describe LastFM::Track::Info do
       let(:output) do
         VCR.use_cassette 'lastfm/track/info/success' do
           subject.call(
-            artist_name: 'kate bush',
-            track_title: 'hounds of love'
+            artist: 'kate bush', track: 'hounds of love'
           )
         end
       end
@@ -24,7 +23,7 @@ RSpec.describe LastFM::Track::Info do
     context 'when no track title given' do
       let(:output) do
         VCR.use_cassette 'lastfm/track/info/no_track_title' do
-          subject.call(artist_name: 'kate bush')
+          subject.call(artist: 'kate bush')
         end
       end
 
@@ -35,8 +34,8 @@ RSpec.describe LastFM::Track::Info do
       let(:output) do
         VCR.use_cassette 'lastfm/track/info/wrong_track_title' do
           subject.call(
-            artist_name: 'kate bush',
-            track_title: Helpers::LastFM::RANDOM_STRING
+            artist: 'kate bush',
+            track: Helpers::LastFM::RANDOM_STRING
           )
         end
       end

@@ -32,7 +32,7 @@ module Helpers
       end
 
       def track_info_data
-        {:track=>{:album=>{:cover=>"https://lastfm.freetls.fastly.net/i/u/391be121643ab50801b7955b0ac5b50c.png", :title=>"Hounds of Love"}, :artist=>"Kate Bush", :description=>"\"Hounds of Love\" is a song written, produced and performed by British singer Kate Bush. It is the title track and the third single released from her number one 1985 album Hounds of Love. The single was released on 24 February 1986, and reached number 18 in the UK Singles Chart. \n\nIn October 2004, Q magazine placed this song at No.21 in its list of the 50 greatest British songs of all-time. \n\nBritish band The Futureheads covered the song in 2005, scoring a UK top 10 hit with it.", :length=>182, :listeners_count=>273542, :mbid=>"984deb15-92f3-4917-9929-c0e930dc8a54", :plays_count=>1783484, :tags=>["80s", "female vocalists", "pop", "alternative", "singer-songwriter"], :title=>"Hounds of Love"}}
+        {:track=>{:album=>{:cover=>"https://lastfm.freetls.fastly.net/i/u/391be121643ab50801b7955b0ac5b50c.png", :title=>"Hounds of Love"}, :artist=>"Kate Bush", :description=>"\"Hounds of Love\" is a song written, produced and performed by British singer Kate Bush. It is the title track and the third single released from her number one 1985 album Hounds of Love. The single was released on 24 February 1986, and reached number 18 in the UK Singles Chart. \n\nIn October 2004, Q magazine placed this song at No.21 in its list of the 50 greatest British songs of all-time. \n\nBritish band The Futureheads covered the song in 2005, scoring a UK top 10 hit with it.", :length=>182, :listeners_count=>273732, :mbid=>"984deb15-92f3-4917-9929-c0e930dc8a54", :plays_count=>1785219, :tags=>["80s", "female vocalists", "pop", "alternative", "singer-songwriter"], :title=>"Hounds of Love"}}
       end
 
       def search_artists_data
@@ -40,7 +40,7 @@ module Helpers
       end
 
       def search_tracks_data
-        {:search=>{:page=>1, :query=>{:track=>"chinatown"}, :results=>[{:artist=>"Wild Nothing", :listeners_count=>206899, :title=>"Chinatown"}, {:artist=>"Wild Nothing", :listeners_count=>1567, :title=>"Chinatown - Live from Brooklyn Steel"}, {:artist=>"Wild Nothing", :listeners_count=>202, :title=>"Chinatown - Wild Nothing"}, {:artist=>"Wild Nothing", :listeners_count=>121, :title=>"Gemini - Chinatown"}, {:artist=>"Wild Nothing", :listeners_count=>106, :title=>"Chinatown (Live from Brooklyn Steel)"}]}}
+        {:search=>{:page=>1, :query=>{:track=>"chinatown"}, :results=>[{:artist=>"Wild Nothing", :listeners_count=>206932, :title=>"Chinatown"}, {:artist=>"Destroyer", :listeners_count=>144132, :title=>"Chinatown"}, {:artist=>"Jets to Brazil", :listeners_count=>67859, :title=>"Chinatown"}, {:artist=>"Liam Gallagher", :listeners_count=>35682, :title=>"Chinatown"}, {:artist=>"Do Make Say Think", :listeners_count=>54999, :title=>"Chinatown"}]}}
       end
 
       def search_albums_data
