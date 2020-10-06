@@ -10,6 +10,11 @@ Rails.application.routes.draw do
           get 'similar'
         end
       end
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
     end
   end
 end

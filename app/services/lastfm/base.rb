@@ -4,6 +4,8 @@ module LastFM
 
     def api_response(method)
       RestClient.get(api_link, params: params(method))
+    rescue RestClient::BadRequest
+      '{}'
     end
 
     def api_link
