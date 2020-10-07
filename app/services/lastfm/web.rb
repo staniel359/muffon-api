@@ -4,6 +4,8 @@ module LastFM
       return not_found_error if parsed_response.text.blank?
 
       data
+    rescue RestClient::NotFound
+      not_found_error
     end
 
     private
@@ -14,8 +16,6 @@ module LastFM
 
     def response
       RestClient.get(link, params: params)
-    rescue RestClient::NotFound
-      nil
     end
 
     def params

@@ -16,10 +16,8 @@ RSpec.describe LastFM::Search::Tracks do
   end
 
   describe 'no processing' do
-    let(:not_found_error) { Helpers::LastFM.not_found_error }
-    let(:empty_data) { Helpers::LastFM.search_tracks_empty_data }
-
     context 'when no track title given' do
+      let(:not_found_error) { Helpers::LastFM.not_found_error }
       let(:output) do
         VCR.use_cassette 'lastfm/search/tracks/no_title' do
           subject.call(track: nil)
@@ -30,6 +28,7 @@ RSpec.describe LastFM::Search::Tracks do
     end
 
     context 'when wrong track title' do
+      let(:empty_data) { Helpers::LastFM.search_tracks_empty_data }
       let(:output) do
         VCR.use_cassette 'lastfm/search/tracks/wrong_title' do
           subject.call(track: Helpers::LastFM::RANDOM_STRING)

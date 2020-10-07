@@ -14,8 +14,12 @@ module Muffon
       Rails.application.credentials
     end
 
+    def bad_request_error
+      { error: { code: 400, text: 'Bad request' } }
+    end
+
     def not_found_error
-      { error: { code: 404, text: 'Not found.' } }
+      { error: { code: 404, text: 'Not found' } }
     end
   end
 end

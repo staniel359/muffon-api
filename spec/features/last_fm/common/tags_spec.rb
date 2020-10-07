@@ -47,6 +47,7 @@ RSpec.describe LastFM::Common::Tags do
 
   describe 'no processing' do
     let(:not_found_error) { Helpers::LastFM.not_found_error }
+    let(:bad_request_error) { Helpers::LastFM.bad_request_error }
 
     context 'when no model name given' do
       let(:output) do
@@ -57,7 +58,7 @@ RSpec.describe LastFM::Common::Tags do
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(bad_request_error) }
     end
 
     context 'when no artist name given' do
@@ -94,7 +95,7 @@ RSpec.describe LastFM::Common::Tags do
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(bad_request_error) }
     end
 
     context 'when wrong album title' do
@@ -120,7 +121,7 @@ RSpec.describe LastFM::Common::Tags do
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(bad_request_error) }
     end
 
     context 'when wrong track title' do

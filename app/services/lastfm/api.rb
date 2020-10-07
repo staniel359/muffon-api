@@ -4,14 +4,14 @@ module LastFM
       return not_found_error if parsed_response.blank?
 
       data
+    rescue RestClient::BadRequest
+      bad_request_error
     end
 
     private
 
     def api_response(method)
       RestClient.get(api_link, params: params(method))
-    rescue RestClient::BadRequest
-      '{}'
     end
 
     def api_link
