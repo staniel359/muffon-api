@@ -35,5 +35,10 @@ module MuffonAPI
     config.api_only = true
 
     config.autoload_paths << Rails.root.join("app/services/")
+
+    config.generators do |g|
+      g.request_specs false
+      g.controller_specs true
+    end
   end
 end

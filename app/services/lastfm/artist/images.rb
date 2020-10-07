@@ -50,7 +50,9 @@ module LastFM
       end
 
       def current_page
-        parsed_response.css('.pagination-page span').text
+        parsed_response.css(
+          '.pagination-page[aria-current="page"] span'
+        ).text
       end
     end
   end
