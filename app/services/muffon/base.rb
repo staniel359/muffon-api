@@ -14,8 +14,8 @@ module Muffon
       Rails.application.credentials
     end
 
-    def not_found_data
-      { error: 'Not found.' }
+    def not_found_error
+      { error: { code: 404, text: 'Not found.' } }
     end
   end
 end

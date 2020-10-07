@@ -18,7 +18,7 @@ RSpec.describe LastFM::Album::Info do
   end
 
   describe 'no processing' do
-    let(:not_found_data) { Helpers::LastFM.not_found_data }
+    let(:not_found_error) { Helpers::LastFM.not_found_error }
 
     context 'when no album title given' do
       let(:output) do
@@ -27,7 +27,7 @@ RSpec.describe LastFM::Album::Info do
         end
       end
 
-      it { expect(output).to eq(not_found_data) }
+      it { expect(output).to eq(not_found_error) }
     end
 
     context 'when wrong album title' do
@@ -40,7 +40,7 @@ RSpec.describe LastFM::Album::Info do
         end
       end
 
-      it { expect(output).to eq(not_found_data) }
+      it { expect(output).to eq(not_found_error) }
     end
   end
 end

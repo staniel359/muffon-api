@@ -16,7 +16,7 @@ RSpec.describe LastFM::Search::Tracks do
   end
 
   describe 'no processing' do
-    let(:not_found_data) { Helpers::LastFM.not_found_data }
+    let(:not_found_error) { Helpers::LastFM.not_found_error }
     let(:empty_data) { Helpers::LastFM.search_tracks_empty_data }
 
     context 'when no track title given' do
@@ -26,7 +26,7 @@ RSpec.describe LastFM::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(not_found_data) }
+      it { expect(output).to eq(not_found_error) }
     end
 
     context 'when wrong track title' do

@@ -16,7 +16,7 @@ RSpec.describe LastFM::Tag::Artists do
   end
 
   describe 'no processing' do
-    let(:not_found_data) { Helpers::LastFM.not_found_data }
+    let(:not_found_error) { Helpers::LastFM.not_found_error }
 
     context 'when no tag name given' do
       let(:output) do
@@ -25,7 +25,7 @@ RSpec.describe LastFM::Tag::Artists do
         end
       end
 
-      it { expect(output).to eq(not_found_data) }
+      it { expect(output).to eq(not_found_error) }
     end
 
     context 'when wrong tag name' do
@@ -35,7 +35,7 @@ RSpec.describe LastFM::Tag::Artists do
         end
       end
 
-      it { expect(output).to eq(not_found_data) }
+      it { expect(output).to eq(not_found_error) }
     end
   end
 end

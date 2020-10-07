@@ -2,11 +2,11 @@ module LastFM
   module Tag
     class Info < LastFM::API
       def call
-        return not_found_data if no_data?
+        return not_found_error if no_data?
 
         { tag: tag_data }
       rescue RestClient::InternalServerError
-        not_found_data if @args.tag.blank?
+        not_found_error if @args.tag.blank?
       end
 
       private

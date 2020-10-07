@@ -3,8 +3,8 @@ module Helpers
     RANDOM_STRING = 'wejlhg239gh23'.freeze
 
     class << self
-      def not_found_data
-        { error: 'Not found.' }
+      def not_found_error
+        { error: { code: 404, text: 'Not found.' } }
       end
 
       def artist_info_data

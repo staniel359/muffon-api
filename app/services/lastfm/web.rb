@@ -1,7 +1,7 @@
 module LastFM
   class Web < Muffon::Base
     def call
-      return not_found_data if parsed_response.text.blank?
+      return not_found_error if parsed_response.text.blank?
 
       data
     end
