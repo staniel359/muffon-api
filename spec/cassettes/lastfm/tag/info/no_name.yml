@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=50&method=artist.getSimilar
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=50&method=tag.getInfo
     body:
       encoding: US-ASCII
       string: ''
@@ -17,19 +17,22 @@ http_interactions:
       - ws.audioscrobbler.com
   response:
     status:
-      code: 200
-      message: OK
+      code: 500
+      message: No type specified
     headers:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 14:49:29 GMT
+      - Wed, 07 Oct 2020 14:51:24 GMT
       Content-Type:
-      - application/json
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2'
       Connection:
       - keep-alive
-      Content-Length:
-      - '77'
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -38,6 +41,6 @@ http_interactions:
       - '86400'
     body:
       encoding: UTF-8
-      string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
-  recorded_at: Wed, 07 Oct 2020 14:49:29 GMT
+      string: "{}"
+  recorded_at: Wed, 07 Oct 2020 14:51:24 GMT
 recorded_with: VCR 6.0.0

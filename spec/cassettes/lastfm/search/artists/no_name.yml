@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist&autocorrect=1&format=json&limit=50&method=artist.search&page&track
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=50&method=artist.search
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 06 Oct 2020 09:40:33 GMT
+      - Wed, 07 Oct 2020 14:49:38 GMT
       Content-Type:
       - application/json
       Connection:
@@ -39,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: "{}"
-  recorded_at: Tue, 06 Oct 2020 09:40:33 GMT
+  recorded_at: Wed, 07 Oct 2020 14:49:38 GMT
 recorded_with: VCR 6.0.0

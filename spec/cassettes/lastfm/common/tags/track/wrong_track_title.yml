@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=track.getTopTags&page&track=wejlhg239gh23
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=track.getTopTags&track=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 06 Oct 2020 16:01:38 GMT
+      - Wed, 07 Oct 2020 14:49:36 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -42,5 +42,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"Track not found","links":[]}'
-  recorded_at: Tue, 06 Oct 2020 16:01:38 GMT
+  recorded_at: Wed, 07 Oct 2020 14:49:35 GMT
 recorded_with: VCR 6.0.0

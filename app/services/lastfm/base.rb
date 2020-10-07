@@ -30,9 +30,10 @@ module LastFM
         artist: @args.artist,
         album: @args.album,
         track: @args.track,
+        tag: @args.tag,
         page: @args.page,
         limit: @args.limit || 50
-      }
+      }.compact
     end
 
     def api_key

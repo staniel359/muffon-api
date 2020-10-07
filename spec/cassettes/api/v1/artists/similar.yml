@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=Wild%20Nothing&autocorrect=1&format=json&limit=50&method=artist.getSimilar&page&track
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=Wild%20Nothing&autocorrect=1&format=json&limit=50&method=artist.getSimilar
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Mon, 05 Oct 2020 20:40:16 GMT
+      - Wed, 07 Oct 2020 14:49:15 GMT
       Content-Type:
       - application/json
       Connection:
@@ -71,5 +71,5 @@ http_interactions:
         Joy","mbid":"1667e92c-84a4-455b-89c8-70bf5709c22d","match":"0.252587","url":"https://www.last.fm/music/No+Joy","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":""}],"streamable":"0"},{"name":"Memory
         Tapes","mbid":"fbd33a5a-06b5-4b46-98d1-8677f5dc44c6","match":"0.250841","url":"https://www.last.fm/music/Memory+Tapes","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":""}],"streamable":"0"}],"@attr":{"artist":"Wild
         Nothing"}}}'
-  recorded_at: Mon, 05 Oct 2020 20:40:16 GMT
+  recorded_at: Wed, 07 Oct 2020 14:49:15 GMT
 recorded_with: VCR 6.0.0

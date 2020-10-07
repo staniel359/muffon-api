@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=5&method=artist.getTopAlbums&page&track
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=5&method=artist.getTopAlbums
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 06 Oct 2020 14:47:16 GMT
+      - Wed, 07 Oct 2020 14:49:23 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -41,15 +41,15 @@ http_interactions:
       - '86400'
     body:
       encoding: UTF-8
-      string: '{"topalbums":{"album":[{"name":"Gemini","playcount":7086343,"mbid":"98174762-4674-4382-827f-db7248c4806c","url":"https://www.last.fm/music/Wild+Nothing/Gemini","artist":{"name":"Wild
-        Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/c60a738cd2244da9bc2b44b51d643602.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/c60a738cd2244da9bc2b44b51d643602.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/c60a738cd2244da9bc2b44b51d643602.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/c60a738cd2244da9bc2b44b51d643602.png","size":"extralarge"}]},{"name":"Nocturne","playcount":6177891,"mbid":"172124dd-72da-4822-9945-e81b262ca7b3","url":"https://www.last.fm/music/Wild+Nothing/Nocturne","artist":{"name":"Wild
+      string: '{"topalbums":{"album":[{"name":"Gemini","playcount":7087051,"mbid":"98174762-4674-4382-827f-db7248c4806c","url":"https://www.last.fm/music/Wild+Nothing/Gemini","artist":{"name":"Wild
+        Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/c60a738cd2244da9bc2b44b51d643602.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/c60a738cd2244da9bc2b44b51d643602.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/c60a738cd2244da9bc2b44b51d643602.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/c60a738cd2244da9bc2b44b51d643602.png","size":"extralarge"}]},{"name":"Nocturne","playcount":6178839,"mbid":"172124dd-72da-4822-9945-e81b262ca7b3","url":"https://www.last.fm/music/Wild+Nothing/Nocturne","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/3601d7b9f23e43aea6f9fa002672c6eb.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/3601d7b9f23e43aea6f9fa002672c6eb.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/3601d7b9f23e43aea6f9fa002672c6eb.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/3601d7b9f23e43aea6f9fa002672c6eb.png","size":"extralarge"}]},{"name":"Golden
-        Haze","playcount":689031,"mbid":"ee142db3-6834-428f-8b89-16f665138b01","url":"https://www.last.fm/music/Wild+Nothing/Golden+Haze","artist":{"name":"Wild
+        Haze","playcount":689089,"mbid":"ee142db3-6834-428f-8b89-16f665138b01","url":"https://www.last.fm/music/Wild+Nothing/Golden+Haze","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/d0398f9a72434e60a3d0479ffbb46c68.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/d0398f9a72434e60a3d0479ffbb46c68.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/d0398f9a72434e60a3d0479ffbb46c68.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/d0398f9a72434e60a3d0479ffbb46c68.png","size":"extralarge"}]},{"name":"Life
-        of Pause","playcount":907987,"url":"https://www.last.fm/music/Wild+Nothing/Life+of+Pause","artist":{"name":"Wild
+        of Pause","playcount":908217,"url":"https://www.last.fm/music/Wild+Nothing/Life+of+Pause","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/ae54820568b7b3e42e9fe0fca2155f20.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/ae54820568b7b3e42e9fe0fca2155f20.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/ae54820568b7b3e42e9fe0fca2155f20.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/ae54820568b7b3e42e9fe0fca2155f20.png","size":"extralarge"}]},{"name":"Empty
-        Estate","playcount":777051,"mbid":"0624b71b-8722-49bd-ae67-614f716543c3","url":"https://www.last.fm/music/Wild+Nothing/Empty+Estate","artist":{"name":"Wild
+        Estate","playcount":777097,"mbid":"0624b71b-8722-49bd-ae67-614f716543c3","url":"https://www.last.fm/music/Wild+Nothing/Empty+Estate","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/ee3fa5a535164e01b6f46496adb3240b.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/ee3fa5a535164e01b6f46496adb3240b.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/ee3fa5a535164e01b6f46496adb3240b.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/ee3fa5a535164e01b6f46496adb3240b.png","size":"extralarge"}]}],"@attr":{"artist":"Wild
-        Nothing","page":"1","perPage":"5","totalPages":"1109","total":"5543"}}}'
-  recorded_at: Tue, 06 Oct 2020 14:47:16 GMT
+        Nothing","page":"1","perPage":"5","totalPages":"1109","total":"5545"}}}'
+  recorded_at: Wed, 07 Oct 2020 14:49:23 GMT
 recorded_with: VCR 6.0.0

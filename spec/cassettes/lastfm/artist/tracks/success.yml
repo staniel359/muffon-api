@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=5&method=artist.getTopTracks&page&track
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=5&method=artist.getTopTracks
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 06 Oct 2020 14:46:21 GMT
+      - Wed, 07 Oct 2020 14:49:30 GMT
       Content-Type:
       - application/json
       Connection:
@@ -38,14 +38,14 @@ http_interactions:
       - '86400'
     body:
       encoding: UTF-8
-      string: '{"toptracks":{"track":[{"name":"Chinatown","playcount":"1212024","listeners":"206932","mbid":"9a74b1e7-a7a9-46fc-8ad3-58306fdac86f","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown","streamable":"0","artist":{"name":"Wild
-        Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"1"}},{"name":"Shadow","playcount":"1188281","listeners":"197182","mbid":"444148a3-ee43-44f3-b855-d50ea62a0bee","url":"https://www.last.fm/music/Wild+Nothing/_/Shadow","streamable":"0","artist":{"name":"Wild
+      string: '{"toptracks":{"track":[{"name":"Chinatown","playcount":"1212202","listeners":"206958","mbid":"9a74b1e7-a7a9-46fc-8ad3-58306fdac86f","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown","streamable":"0","artist":{"name":"Wild
+        Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"1"}},{"name":"Shadow","playcount":"1188484","listeners":"197211","mbid":"444148a3-ee43-44f3-b855-d50ea62a0bee","url":"https://www.last.fm/music/Wild+Nothing/_/Shadow","streamable":"0","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"2"}},{"name":"Live
-        In Dreams","playcount":"970938","listeners":"161388","mbid":"c294d6ba-7ed0-494a-94c2-2a0f8f6a68ab","url":"https://www.last.fm/music/Wild+Nothing/_/Live+In+Dreams","streamable":"0","artist":{"name":"Wild
+        In Dreams","playcount":"971066","listeners":"161406","mbid":"c294d6ba-7ed0-494a-94c2-2a0f8f6a68ab","url":"https://www.last.fm/music/Wild+Nothing/_/Live+In+Dreams","streamable":"0","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"3"}},{"name":"Summer
-        Holiday","playcount":"969833","listeners":"160701","mbid":"b48a77ec-eb37-4ab0-a6d9-626d5b5aa1aa","url":"https://www.last.fm/music/Wild+Nothing/_/Summer+Holiday","streamable":"0","artist":{"name":"Wild
-        Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"4"}},{"name":"Nocturne","playcount":"825079","listeners":"131370","mbid":"a1a28a89-2419-4d4e-af24-99038ca601cf","url":"https://www.last.fm/music/Wild+Nothing/_/Nocturne","streamable":"0","artist":{"name":"Wild
+        Holiday","playcount":"969917","listeners":"160711","mbid":"b48a77ec-eb37-4ab0-a6d9-626d5b5aa1aa","url":"https://www.last.fm/music/Wild+Nothing/_/Summer+Holiday","streamable":"0","artist":{"name":"Wild
+        Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"4"}},{"name":"Nocturne","playcount":"825219","listeners":"131388","mbid":"a1a28a89-2419-4d4e-af24-99038ca601cf","url":"https://www.last.fm/music/Wild+Nothing/_/Nocturne","streamable":"0","artist":{"name":"Wild
         Nothing","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"@attr":{"rank":"5"}}],"@attr":{"artist":"Wild
         Nothing","page":"1","perPage":"5","totalPages":"507","total":"2535"}}}'
-  recorded_at: Tue, 06 Oct 2020 14:46:21 GMT
+  recorded_at: Wed, 07 Oct 2020 14:49:29 GMT
 recorded_with: VCR 6.0.0

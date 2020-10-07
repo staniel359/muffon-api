@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=nocturne&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=album.getTopTags&page&track
+    uri: http://ws.audioscrobbler.com/2.0?album=nocturne&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=album.getTopTags
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 06 Oct 2020 16:01:34 GMT
+      - Wed, 07 Oct 2020 14:49:32 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -60,5 +60,5 @@ http_interactions:
         best new music","url":"https://www.last.fm/tag/pitchfork+best+new+music"},{"count":8,"name":"lapislazuli","url":"https://www.last.fm/tag/lapislazuli"},{"count":8,"name":"best
         of the 2012","url":"https://www.last.fm/tag/best+of+the+2012"},{"count":8,"name":"niemamnie","url":"https://www.last.fm/tag/niemamnie"}],"@attr":{"artist":"Wild
         Nothing","album":"Nocturne"}}}'
-  recorded_at: Tue, 06 Oct 2020 16:01:34 GMT
+  recorded_at: Wed, 07 Oct 2020 14:49:31 GMT
 recorded_with: VCR 6.0.0

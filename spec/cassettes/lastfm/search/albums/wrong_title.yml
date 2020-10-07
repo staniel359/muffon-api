@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&artist&autocorrect=1&format=json&limit=50&method=album.search&page&track
+    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=50&method=album.search
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 06 Oct 2020 09:40:31 GMT
+      - Wed, 07 Oct 2020 14:49:37 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -42,5 +42,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"50","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Tue, 06 Oct 2020 09:40:31 GMT
+  recorded_at: Wed, 07 Oct 2020 14:49:37 GMT
 recorded_with: VCR 6.0.0
