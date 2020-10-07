@@ -3,6 +3,10 @@ module LastFM
     class Info < LastFM::API
       private
 
+      def primary_args
+        [@args.artist]
+      end
+
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response('artist.getInfo')

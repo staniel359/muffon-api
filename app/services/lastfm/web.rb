@@ -1,7 +1,8 @@
 module LastFM
   class Web < Muffon::Base
     def call
-      return not_found_error if parsed_response.text.blank?
+      return bad_request_error if primary_args.any?(&:blank?)
+      return not_found_error if no_data?
 
       data
     rescue RestClient::NotFound
@@ -9,6 +10,10 @@ module LastFM
     end
 
     private
+
+    def no_data?
+      parsed_response.text.blank?
+    end
 
     def parsed_response
       @parsed_response ||= Nokogiri::HTML.parse(response)

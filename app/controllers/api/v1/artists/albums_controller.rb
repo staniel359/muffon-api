@@ -3,22 +3,22 @@ module API
     module Artists
       class AlbumsController < ApplicationController
         def index
-          render json: albums
+          render_data_with_status('artist_albums')
         end
 
         def show
-          render json: album
+          render_data_with_status('artist_album')
         end
 
         private
 
-        def albums
+        def artist_albums
           LastFM::Artist::Albums.call(
             params.slice(:artist, :page, :limit)
           )
         end
 
-        def album
+        def artist_album
           LastFM::Album::Info.call(
             params.slice(:artist, :album, :page)
           )

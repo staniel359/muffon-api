@@ -2,15 +2,15 @@ module API
   module V1
     class ArtistsController < ApplicationController
       def show
-        render json: artist_info
+        render_data_with_status('artist_info')
       end
 
       def images
-        render json: artist_images
+        render_data_with_status('artist_images')
       end
 
       def similar
-        render json: artist_similar
+        render_data_with_status('artist_similar')
       end
 
       private

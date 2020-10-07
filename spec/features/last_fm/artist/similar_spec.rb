@@ -16,8 +16,6 @@ RSpec.describe LastFM::Artist::Similar do
   end
 
   describe 'no processing' do
-    let(:not_found_error) { Helpers::LastFM.not_found_error }
-
     context 'when no artist name given' do
       let(:output) do
         VCR.use_cassette 'lastfm/artist/similar/no_name' do
@@ -25,7 +23,7 @@ RSpec.describe LastFM::Artist::Similar do
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
 
     context 'when wrong artist name' do
@@ -35,7 +33,7 @@ RSpec.describe LastFM::Artist::Similar do
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
     end
   end
 end

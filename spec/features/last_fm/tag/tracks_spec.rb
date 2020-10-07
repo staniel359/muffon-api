@@ -16,26 +16,24 @@ RSpec.describe LastFM::Tag::Tracks do
   end
 
   describe 'no processing' do
-    let(:not_found_error) { Helpers::LastFM.not_found_error }
-
     context 'when no tag name given' do
       let(:output) do
-        VCR.use_cassette 'lastfm/tag/tracks/no_tag_name' do
+        VCR.use_cassette 'lastfm/tag/tracks/no_name' do
           subject.call(tag: nil)
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
 
     context 'when wrong tag name' do
       let(:output) do
-        VCR.use_cassette 'lastfm/tag/tracks/wrong_tag_name' do
+        VCR.use_cassette 'lastfm/tag/tracks/wrong_name' do
           subject.call(tag: Helpers::LastFM::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
     end
   end
 end

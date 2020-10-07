@@ -3,6 +3,10 @@ module LastFM
     class Tags < LastFM::API
       private
 
+      def primary_args
+        [@args.model, @args.send(@args.model.to_s)]
+      end
+
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response("#{@args.model}.getTopTags")

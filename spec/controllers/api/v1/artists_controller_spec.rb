@@ -1,31 +1,75 @@
 require 'rails_helper'
 
 RSpec.describe API::V1::ArtistsController, type: :controller do
-  let(:params) { { artist: 'Wild Nothing' } }
+  let(:success) { { artist: 'Wild Nothing' } }
+  let(:no_name) { { artist: '' } }
+  let(:wrong_name) { { artist: Helpers::LastFM::RANDOM_STRING } }
 
   describe 'GET :show' do
-    it 'returns 200' do
-      VCR.use_cassette 'api/v1/artists/info' do
-        get :show, params: params
+    it 'returns 200 if artist exists' do
+      VCR.use_cassette 'api/v1/artists/info/success' do
+        get :show, params: success
         expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no artist name' do
+      VCR.use_cassette 'api/v1/artists/info/no_name' do
+        get :show, params: no_name
+        expect(response).to have_http_status(:bad_request)
+      end
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'api/v1/artists/info/wrong_name' do
+        get :show, params: wrong_name
+        expect(response).to have_http_status(:not_found)
       end
     end
   end
 
   describe 'GET :images' do
     it 'returns 200' do
-      VCR.use_cassette 'api/v1/artists/images' do
-        get :images, params: params
+      VCR.use_cassette 'api/v1/artists/images/success' do
+        get :images, params: success
         expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no artist name' do
+      VCR.use_cassette 'api/v1/artists/images/no_name' do
+        get :show, params: no_name
+        expect(response).to have_http_status(:bad_request)
+      end
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'api/v1/artists/images/wrong_name' do
+        get :show, params: wrong_name
+        expect(response).to have_http_status(:not_found)
       end
     end
   end
 
   describe 'GET :similar' do
     it 'returns 200' do
-      VCR.use_cassette 'api/v1/artists/similar' do
-        get :similar, params: params
+      VCR.use_cassette 'api/v1/artists/similar/success' do
+        get :similar, params: success
         expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no artist name' do
+      VCR.use_cassette 'api/v1/artists/similar/no_name' do
+        get :show, params: no_name
+        expect(response).to have_http_status(:bad_request)
+      end
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'api/v1/artists/similar/wrong_name' do
+        get :show, params: wrong_name
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

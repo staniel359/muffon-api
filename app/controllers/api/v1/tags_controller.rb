@@ -2,15 +2,15 @@ module API
   module V1
     class TagsController < ApplicationController
       def artists
-        render json: tag_artists
+        render_data_with_status('tag_artists')
       end
 
       def albums
-        render json: tag_albums
+        render_data_with_status('tag_albums')
       end
 
       def tracks
-        render json: tag_tracks
+        render_data_with_status('tag_tracks')
       end
 
       private

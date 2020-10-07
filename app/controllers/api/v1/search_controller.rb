@@ -2,15 +2,15 @@ module API
   module V1
     class SearchController < ApplicationController
       def artists
-        render json: artist_results
+        render_data_with_status('artist_results')
       end
 
       def albums
-        render json: album_results
+        render_data_with_status('album_results')
       end
 
       def tracks
-        render json: track_results
+        render_data_with_status('track_results')
       end
 
       private

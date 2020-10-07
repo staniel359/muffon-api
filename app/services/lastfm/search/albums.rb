@@ -1,26 +1,10 @@
 module LastFM
   module Search
-    class Albums < LastFM::API
+    class Albums < LastFM::Search::Base
       private
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('album.search')
-        )['results']
-      end
-
-      def data
-        { search: search_data }
-      end
-
-      def search_data
-        {
-          query: { album: @args.album },
-          results: albums,
-          page: parsed_response.dig(
-            'opensearch:Query', 'startPage'
-          ).to_i
-        }
+      def model_name
+        'album'
       end
 
       def albums

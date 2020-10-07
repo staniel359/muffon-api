@@ -3,6 +3,10 @@ module LastFM
     class Images < LastFM::Web
       private
 
+      def primary_args
+        [@args.artist]
+      end
+
       def link
         "https://www.last.fm/music/#{artist_name}/+images"
       end

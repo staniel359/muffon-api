@@ -1,24 +1,24 @@
 module LastFM
   module Tag
     class Info < LastFM::API
-      def call
-        return not_found_error if no_data?
-
-        { tag: tag_data }
-      rescue RestClient::InternalServerError
-        not_found_error if @args.tag.blank?
-      end
-
       private
 
+      def primary_args
+        [@args.tag]
+      end
+
       def no_data?
-        parsed_response.blank? || parsed_response['total'].zero?
+        super || parsed_response['total'].zero?
       end
 
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response('tag.getInfo')
         )['tag']
+      end
+
+      def data
+        { tag: tag_data }
       end
 
       def tag_data

@@ -51,18 +51,6 @@ module Helpers
         {:search=>{:page=>1, :query=>{:album=>"nocturne"}, :results=>[{:artist=>"Wild Nothing", :cover=>"https://lastfm.freetls.fastly.net/i/u/3601d7b9f23e43aea6f9fa002672c6eb.png", :title=>"Nocturne"}, {:artist=>"The Human Abstract", :cover=>"https://lastfm.freetls.fastly.net/i/u/48fe94c4cd994edfbff13e0c87234bce.png", :title=>"Nocturne"}, {:artist=>"Frédéric Chopin", :cover=>"https://lastfm.freetls.fastly.net/i/u/f6bb721f7c8dcff4892a2af2d1d60bb3.png", :title=>"Chopin: Nocturnes"}, {:artist=>"Little Boots", :cover=>"https://lastfm.freetls.fastly.net/i/u/850d9b20c6ff4f02cfa9d378b578b405.png", :title=>"Nocturnes"}, {:artist=>"Frédéric Chopin", :cover=>"https://lastfm.freetls.fastly.net/i/u/4d694d0ca275a963112708eff502db87.png", :title=>"Chopin: Nocturnes (Volume 1)"}]}}
       end
 
-      def search_artists_empty_data
-        {:search=>{:page=>1, :query=>{:artist=>"wejlhg239gh23"}, :results=>[]}}
-      end
-
-      def search_albums_empty_data
-        {:search=>{:page=>1, :query=>{:album=>"wejlhg239gh23"}, :results=>[]}}
-      end
-
-      def search_tracks_empty_data
-        {:search=>{:page=>1, :query=>{:track=>"wejlhg239gh23"}, :results=>[]}}
-      end
-
       def artist_tags_data
         {:tags=>{:artist=>"Wild Nothing", :tags=>[{:count=>100, :name=>"dream pop"}, {:count=>76, :name=>"shoegaze"}, {:count=>56, :name=>"indie pop"}, {:count=>45, :name=>"indie"}, {:count=>31, :name=>"seen live"}, {:count=>21, :name=>"tweegaze"}, {:count=>8, :name=>"Lo-Fi"}, {:count=>8, :name=>"american"}, {:count=>7, :name=>"chillwave"}, {:count=>4, :name=>"indie rock"}, {:count=>4, :name=>"pop"}, {:count=>4, :name=>"twee"}, {:count=>4, :name=>"alternative"}, {:count=>3, :name=>"new wave"}, {:count=>3, :name=>"electronic"}, {:count=>2, :name=>"twee pop"}, {:count=>2, :name=>"psychedelic"}, {:count=>2, :name=>"ambient"}, {:count=>2, :name=>"virginia"}, {:count=>2, :name=>"synthpop"}, {:count=>2, :name=>"jangle pop"}, {:count=>1, :name=>"rock"}, {:count=>1, :name=>"psychedelic pop"}, {:count=>1, :name=>"Dreamy"}, {:count=>1, :name=>"atmospheric"}, {:count=>1, :name=>"dream-pop"}, {:count=>1, :name=>"USA"}, {:count=>1, :name=>"Post-punk revival"}, {:count=>1, :name=>"hazy beach"}]}}
       end

@@ -1,7 +1,8 @@
 module LastFM
   class API < Muffon::Base
     def call
-      return not_found_error if parsed_response.blank?
+      return bad_request_error if primary_args.any?(&:blank?)
+      return not_found_error if no_data?
 
       data
     rescue RestClient::BadRequest
@@ -9,6 +10,10 @@ module LastFM
     end
 
     private
+
+    def no_data?
+      parsed_response.blank?
+    end
 
     def api_response(method)
       RestClient.get(api_link, params: params(method))

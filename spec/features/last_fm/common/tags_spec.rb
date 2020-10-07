@@ -63,19 +63,19 @@ RSpec.describe LastFM::Common::Tags do
 
     context 'when no artist name given' do
       let(:output) do
-        VCR.use_cassette 'lastfm/common/tags/artist/no_artist_name' do
+        VCR.use_cassette 'lastfm/common/tags/artist/no_name' do
           subject.call(
             artist: nil, model: 'artist'
           )
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(bad_request_error) }
     end
 
     context 'when wrong artist name' do
       let(:output) do
-        VCR.use_cassette 'lastfm/common/tags/artist/wrong_artist_name' do
+        VCR.use_cassette 'lastfm/common/tags/artist/wrong_name' do
           subject.call(
             artist: Helpers::LastFM::RANDOM_STRING,
             model: 'artist'
@@ -88,7 +88,7 @@ RSpec.describe LastFM::Common::Tags do
 
     context 'when no album title given' do
       let(:output) do
-        VCR.use_cassette 'lastfm/common/tags/album/no_album_title' do
+        VCR.use_cassette 'lastfm/common/tags/album/no_title' do
           subject.call(
             artist: 'wild nothing', album: nil, model: 'album'
           )
@@ -100,7 +100,7 @@ RSpec.describe LastFM::Common::Tags do
 
     context 'when wrong album title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/common/tags/album/wrong_album_title' do
+        VCR.use_cassette 'lastfm/common/tags/album/wrong_title' do
           subject.call(
             artist: 'wild nothing',
             album: Helpers::LastFM::RANDOM_STRING,
@@ -114,7 +114,7 @@ RSpec.describe LastFM::Common::Tags do
 
     context 'when no track title given' do
       let(:output) do
-        VCR.use_cassette 'lastfm/common/tags/track/no_track_title' do
+        VCR.use_cassette 'lastfm/common/tags/track/no_title' do
           subject.call(
             artist: 'wild nothing', track: nil, model: 'track'
           )
@@ -126,7 +126,7 @@ RSpec.describe LastFM::Common::Tags do
 
     context 'when wrong track title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/common/tags/track/wrong_track_title' do
+        VCR.use_cassette 'lastfm/common/tags/track/wrong_title' do
           subject.call(
             artist: 'wild nothing',
             track: Helpers::LastFM::RANDOM_STRING,

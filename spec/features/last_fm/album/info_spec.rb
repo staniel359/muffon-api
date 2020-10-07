@@ -18,21 +18,19 @@ RSpec.describe LastFM::Album::Info do
   end
 
   describe 'no processing' do
-    let(:not_found_error) { Helpers::LastFM.not_found_error }
-
     context 'when no album title given' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/info/no_album_title' do
+        VCR.use_cassette 'lastfm/album/info/no_title' do
           subject.call(artist: 'wild nothing')
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
 
     context 'when wrong album title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/info/wrong_album_title' do
+        VCR.use_cassette 'lastfm/album/info/wrong_title' do
           subject.call(
             artist: 'wild nothing',
             album: Helpers::LastFM::RANDOM_STRING
@@ -40,7 +38,7 @@ RSpec.describe LastFM::Album::Info do
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
     end
   end
 end

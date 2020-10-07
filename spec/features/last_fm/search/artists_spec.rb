@@ -17,25 +17,23 @@ RSpec.describe LastFM::Search::Artists do
 
   describe 'no processing' do
     context 'when no artist name given' do
-      let(:not_found_error) { Helpers::LastFM.not_found_error }
       let(:output) do
         VCR.use_cassette 'lastfm/search/artists/no_name' do
           subject.call(artist: nil)
         end
       end
 
-      it { expect(output).to eq(not_found_error) }
+      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
 
     context 'when wrong artist name' do
-      let(:empty_data) { Helpers::LastFM.search_artists_empty_data }
       let(:output) do
         VCR.use_cassette 'lastfm/search/artists/wrong_name' do
           subject.call(artist: Helpers::LastFM::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(empty_data) }
+      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
     end
   end
 end

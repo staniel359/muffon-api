@@ -3,6 +3,10 @@ module LastFM
     class Base < LastFM::Web
       private
 
+      def primary_args
+        [@args.tag]
+      end
+
       def link
         "https://www.last.fm/tag/#{tag_name}/#{collection}"
       end

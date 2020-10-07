@@ -3,22 +3,22 @@ module API
     module Artists
       class TracksController < ApplicationController
         def index
-          render json: tracks
+          render_data_with_status('artist_tracks')
         end
 
         def show
-          render json: track
+          render_data_with_status('artist_track')
         end
 
         private
 
-        def tracks
+        def artist_tracks
           LastFM::Artist::Tracks.call(
             params.slice(:artist, :page, :limit)
           )
         end
 
-        def track
+        def artist_track
           LastFM::Track::Info.call(
             params.slice(:artist, :track, :page)
           )
