@@ -1,18 +1,16 @@
 module LastFM
   module Artist
-    class Similar < LastFM::Base
-      def call
-        return not_found_data if parsed_response.blank?
-
-        { artist: similar_data }
-      end
-
+    class Similar < LastFM::API
       private
 
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response('artist.getSimilar')
         )['similarartists']
+      end
+
+      def data
+        { artist: similar_data }
       end
 
       def similar_data

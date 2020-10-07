@@ -13,5 +13,9 @@ module Muffon
     def secrets
       Rails.application.credentials
     end
+
+    def not_found_data
+      { error: 'Not found.' }
+    end
   end
 end

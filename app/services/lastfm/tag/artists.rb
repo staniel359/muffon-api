@@ -6,7 +6,7 @@ module LastFM
       def artists
         artists_list.map do |a|
           {
-            name: name(a),
+            name: artist_name(a),
             listeners_count: listeners_count(a)
           }
         end
@@ -16,7 +16,7 @@ module LastFM
         parsed_response.css('.big-artist-list-item')
       end
 
-      def name(artist)
+      def artist_name(artist)
         artist.css('.big-artist-list-title').text
       end
 

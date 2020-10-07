@@ -1,18 +1,16 @@
 module LastFM
   module Common
-    class Tags < LastFM::Base
-      def call
-        return not_found_data if parsed_response.blank?
-
-        { tags: tags_data }
-      end
-
+    class Tags < LastFM::API
       private
 
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response("#{@args.model}.getTopTags")
         )['toptags']
+      end
+
+      def data
+        { tags: tags_data }
       end
 
       def tags_data

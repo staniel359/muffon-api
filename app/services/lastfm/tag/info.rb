@@ -1,6 +1,6 @@
 module LastFM
   module Tag
-    class Info < LastFM::Base
+    class Info < LastFM::API
       def call
         return not_found_data if no_data?
 

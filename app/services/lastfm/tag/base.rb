@@ -1,29 +1,13 @@
 module LastFM
   module Tag
-    class Base < LastFM::Base
-      def call
-        return not_found_data if parsed_response.text.blank?
-
-        { tag: tag_data }
-      end
-
+    class Base < LastFM::Web
       private
 
-      def parsed_response
-        @parsed_response ||= Nokogiri::HTML.parse(web_response)
+      def link
+        "https://www.last.fm/tag/#{tag_name}/#{collection}"
       end
 
-      def web_response
-        RestClient.get(tag_link, params: params)
-      rescue RestClient::NotFound
-        nil
-      end
-
-      def tag_link
-        "https://www.last.fm/tag/#{link_tag_name}/#{collection}"
-      end
-
-      def link_tag_name
+      def tag_name
         CGI.escape(@args.tag.to_s)
       end
 
@@ -31,30 +15,22 @@ module LastFM
         @collection ||= self.class.name.demodulize.downcase
       end
 
-      def params
-        { page: @args.page }
+      def data
+        { tag: tag_data }
       end
 
       def tag_data
         {
-          name: tag_name,
+          name: name,
           collection.to_sym => send(collection),
           page: page
         }
       end
 
-      def tag_name
+      def name
         parsed_response.css('title').text.match(
           /Top (.+) #{collection}/
         )[1]
-      end
-
-      def page
-        (current_page.presence || 1).to_i
-      end
-
-      def current_page
-        parsed_response.css('.pagination-page span').text
       end
     end
   end

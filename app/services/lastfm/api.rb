@@ -1,5 +1,11 @@
 module LastFM
-  class Base < Muffon::Base
+  class API < Muffon::Base
+    def call
+      return not_found_data if parsed_response.blank?
+
+      data
+    end
+
     private
 
     def api_response(method)
@@ -37,11 +43,7 @@ module LastFM
     end
 
     def api_key
-      secrets.lastfm[:api_key][Rails.env.to_sym]
-    end
-
-    def not_found_data
-      { error: 'Not found.' }
+      secrets.lastfm.dig(:api_key, Rails.env.to_sym)
     end
   end
 end

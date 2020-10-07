@@ -1,30 +1,18 @@
 module LastFM
   module Artist
-    class Images < LastFM::Base
-      def call
-        return not_found_data if parsed_response.text.blank?
-
-        { artist: images_data }
-      end
-
+    class Images < LastFM::Web
       private
 
-      def parsed_response
-        @parsed_response ||= Nokogiri::HTML.parse(response)
-      end
-
-      def response
-        RestClient.get(images_link, params: { page: @args.page })
-      rescue RestClient::NotFound
-        nil
-      end
-
-      def images_link
+      def link
         "https://www.last.fm/music/#{artist_name}/+images"
       end
 
       def artist_name
         CGI.escape(@args.artist.to_s)
+      end
+
+      def data
+        { artist: images_data }
       end
 
       def images_data
@@ -43,16 +31,6 @@ module LastFM
         parsed_response.css('.image-list-item img').map do |i|
           i['src'].sub('/avatar170s', '')
         end
-      end
-
-      def page
-        (current_page.presence || 1).to_i
-      end
-
-      def current_page
-        parsed_response.css(
-          '.pagination-page[aria-current="page"] span'
-        ).text
       end
     end
   end

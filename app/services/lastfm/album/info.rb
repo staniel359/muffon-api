@@ -1,18 +1,16 @@
 module LastFM
   module Album
-    class Info < LastFM::Base
-      def call
-        return not_found_data if parsed_response.blank?
-
-        { album: album_data }
-      end
-
+    class Info < LastFM::API
       private
 
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response('album.getInfo')
         )['album']
+      end
+
+      def data
+        { album: album_data }
       end
 
       def album_data

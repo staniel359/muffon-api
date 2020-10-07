@@ -1,18 +1,16 @@
 module LastFM
   module Track
-    class Info < LastFM::Base
-      def call
-        return not_found_data if parsed_response.blank?
-
-        { track: track_data }
-      end
-
+    class Info < LastFM::API
       private
 
       def parsed_response
         @parsed_response ||= JSON.parse(
           api_response('track.getInfo')
         )['track']
+      end
+
+      def data
+        { track: track_data }
       end
 
       def track_data
