@@ -3,13 +3,13 @@ Rails.application.routes.draw do
     scope :v1, module: :v1 do
       namespace :artists, as: :artist do
         scope ':artist' do
-          get 'info'
+          get '', action: :info
           scope module: :albums do
             get 'albums'
           end
           namespace :albums, as: :album do
             scope ':album' do
-              get 'info'
+              get '', action: :info
             end
           end
           scope module: :tracks do
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
           end
           namespace :tracks, as: :track do
             scope ':track' do
-              get 'info'
+              get '', action: :info
             end
           end
           get 'images'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       end
       namespace :tags, as: :tag do
         scope ':tag' do
-          get 'info'
+          get '', action: :info
           get 'artists'
           get 'albums'
           get 'tracks'
