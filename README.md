@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/staniel359/muffon-api.svg?branch=main)](https://travis-ci.org/staniel359/muffon-api)
 
+## Methods
+
 ### artist.info
 
     /api/v1/artists/:artist
@@ -87,23 +89,22 @@
 
 ## TODO
 
-### album.similar
-
-
-### tag.similar
-
-
 ### top.artists
-
-### top.albums
 
 ### top.tracks
 
 ### top.tags
 
-
 ### local.artists
 
-### local.albums
-
 ### local.tracks
+
+## Questionable
+
+### album.similar
+
+### tag.similar
+
+### top.albums
+
+### local.albums
