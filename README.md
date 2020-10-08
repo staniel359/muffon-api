@@ -45,6 +45,11 @@
 ### track.tags
     
     /api/v1/artists/:artist/tracks/:track/tags
+
+### track.similar
+
+    /api/v1/artists/:artist/tracks/:track/similar
+    ?limit
     
 ### search.artists
 
@@ -83,9 +88,6 @@
 ## TODO
 
 ### album.similar
-
-
-### track.similar
 
 
 ### tag.similar

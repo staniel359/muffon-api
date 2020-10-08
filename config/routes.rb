@@ -23,6 +23,7 @@ Rails.application.routes.draw do
             scope ':track' do
               get '', action: :info
               get 'tags'
+              get 'similar'
             end
           end
         end

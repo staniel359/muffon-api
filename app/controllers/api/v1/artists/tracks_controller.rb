@@ -7,6 +7,8 @@ module API
         def info; end
 
         def tags; end
+
+        def similar; end
       end
     end
   end

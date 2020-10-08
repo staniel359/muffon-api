@@ -110,4 +110,41 @@ RSpec.describe API::V1::Artists::TracksController, type: :controller do
       end
     end
   end
+
+  describe 'GET :similar' do
+    it 'returns 200' do
+      VCR.use_cassette 'api/v1/artists/tracks/similar/success' do
+        get :similar, params: { artist: 'Kate Bush', track: 'Hounds Of Love' }
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no track title' do
+      VCR.use_cassette 'api/v1/artists/tracks/similar/no_track' do
+        get :similar, params: { artist: 'Kate Bush', track: '' }
+        expect(response).to have_http_status(:bad_request)
+      end
+    end
+
+    it 'returns 404 if wrong track title' do
+      VCR.use_cassette 'api/v1/artists/tracks/similar/wrong_track' do
+        get :similar, params: wrong_track
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    it 'returns 400 if no artist name' do
+      VCR.use_cassette 'api/v1/artists/tracks/similar/no_artist' do
+        get :similar, params: { artist: '', track: 'Hounds Of Love' }
+        expect(response).to have_http_status(:bad_request)
+      end
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'api/v1/artists/tracks/similar/wrong_artist' do
+        get :similar, params: wrong_artist
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
 end

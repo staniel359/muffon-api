@@ -39,6 +39,10 @@ module Helpers
         {:track=>{:album=>{:cover=>"https://lastfm.freetls.fastly.net/i/u/391be121643ab50801b7955b0ac5b50c.png", :title=>"Hounds of Love"}, :artist=>"Kate Bush", :description=>"\"Hounds of Love\" is a song written, produced and performed by British singer Kate Bush. It is the title track and the third single released from her number one 1985 album Hounds of Love. The single was released on 24 February 1986, and reached number 18 in the UK Singles Chart. \n\nIn October 2004, Q magazine placed this song at No.21 in its list of the 50 greatest British songs of all-time. \n\nBritish band The Futureheads covered the song in 2005, scoring a UK top 10 hit with it.", :length=>182, :listeners_count=>273791, :mbid=>"984deb15-92f3-4917-9929-c0e930dc8a54", :plays_count=>1785804, :tags=>["80s", "female vocalists", "pop", "alternative", "singer-songwriter"], :title=>"Hounds of Love"}}
       end
 
+      def track_similar_data
+        {:track=>{:artist=>"Wild Nothing", :similar=>[{:artist=>"Wild Nothing", :title=>"Confirmation"}, {:artist=>"Wild Nothing", :title=>"My Angel Lonely"}, {:artist=>"Craft Spells", :title=>"Party Talk"}, {:artist=>"Craft Spells", :title=>"After the Moment"}, {:artist=>"DIIV", :title=>"Home"}, {:artist=>"DIIV", :title=>"Follow"}, {:artist=>"Beach Fossils", :title=>"Window View"}, {:artist=>"Blouse", :title=>"Into Black"}, {:artist=>"Youth Lagoon", :title=>"Cannons"}, {:artist=>"Washed Out", :title=>"New Theory"}], :title=>"chinatown"}}
+      end
+
       def search_artists_data
         {:search=>{:page=>1, :query=>{:artist=>"wild nothing"}, :results=>[{:listeners_count=>544773, :name=>"Wild Nothing"}, {:listeners_count=>811, :name=>"Wild_Nothing"}, {:listeners_count=>233, :name=>"Wild Nothing //"}, {:listeners_count=>132, :name=>"Wild Nothing /"}, {:listeners_count=>178, :name=>"Beach Fossils feat. Wild Nothing"}]}}
       end
