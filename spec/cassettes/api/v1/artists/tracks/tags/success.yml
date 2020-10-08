@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=1&format=json&limit=50&method=track.getTopTags&track=Hounds%20Of%20Love
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 08 Oct 2020 11:45:14 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '7389'
+      Connection:
+      - keep-alive
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+    body:
+      encoding: UTF-8
+      string: '{"toptags":{"tag":[{"count":100,"name":"80s","url":"https://www.last.fm/tag/80s"},{"count":92,"name":"female
+        vocalists","url":"https://www.last.fm/tag/female+vocalists"},{"count":71,"name":"pop","url":"https://www.last.fm/tag/pop"},{"count":67,"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"count":49,"name":"singer-songwriter","url":"https://www.last.fm/tag/singer-songwriter"},{"count":38,"name":"Kate
+        Bush","url":"https://www.last.fm/tag/Kate+Bush"},{"count":27,"name":"rock","url":"https://www.last.fm/tag/rock"},{"count":23,"name":"Progressive
+        rock","url":"https://www.last.fm/tag/Progressive+rock"},{"count":22,"name":"british","url":"https://www.last.fm/tag/british"},{"count":22,"name":"art
+        rock","url":"https://www.last.fm/tag/art+rock"},{"count":14,"name":"new wave","url":"https://www.last.fm/tag/new+wave"},{"count":13,"name":"alternative
+        rock","url":"https://www.last.fm/tag/alternative+rock"},{"count":13,"name":"experimental","url":"https://www.last.fm/tag/experimental"},{"count":13,"name":"beautiful","url":"https://www.last.fm/tag/beautiful"},{"count":11,"name":"female","url":"https://www.last.fm/tag/female"},{"count":11,"name":"Love","url":"https://www.last.fm/tag/Love"},{"count":11,"name":"baroque
+        pop","url":"https://www.last.fm/tag/baroque+pop"},{"count":10,"name":"favorites","url":"https://www.last.fm/tag/favorites"},{"count":10,"name":"female
+        vocalist","url":"https://www.last.fm/tag/female+vocalist"},{"count":8,"name":"1985","url":"https://www.last.fm/tag/1985"},{"count":8,"name":"Hounds
+        of Love","url":"https://www.last.fm/tag/Hounds+of+Love"},{"count":6,"name":"atmospheric","url":"https://www.last.fm/tag/atmospheric"},{"count":6,"name":"emotional","url":"https://www.last.fm/tag/emotional"},{"count":5,"name":"indie","url":"https://www.last.fm/tag/indie"},{"count":5,"name":"adult
+        contemporary","url":"https://www.last.fm/tag/adult+contemporary"},{"count":5,"name":"haunting","url":"https://www.last.fm/tag/haunting"},{"count":5,"name":"Passionate","url":"https://www.last.fm/tag/Passionate"},{"count":5,"name":"ethereal","url":"https://www.last.fm/tag/ethereal"},{"count":5,"name":"Female
+        Voices","url":"https://www.last.fm/tag/Female+Voices"},{"count":4,"name":"classic","url":"https://www.last.fm/tag/classic"},{"count":4,"name":"folk","url":"https://www.last.fm/tag/folk"},{"count":4,"name":"Avant-Garde","url":"https://www.last.fm/tag/Avant-Garde"},{"count":4,"name":"Favourites","url":"https://www.last.fm/tag/Favourites"},{"count":4,"name":"art
+        pop","url":"https://www.last.fm/tag/art+pop"},{"count":3,"name":"classic rock","url":"https://www.last.fm/tag/classic+rock"},{"count":3,"name":"punk","url":"https://www.last.fm/tag/punk"},{"count":3,"name":"genius","url":"https://www.last.fm/tag/genius"},{"count":3,"name":"great
+        lyrics","url":"https://www.last.fm/tag/great+lyrics"},{"count":3,"name":"lovely","url":"https://www.last.fm/tag/lovely"},{"count":3,"name":"great
+        voice","url":"https://www.last.fm/tag/great+voice"},{"count":3,"name":"powerful","url":"https://www.last.fm/tag/powerful"},{"count":3,"name":"Kate","url":"https://www.last.fm/tag/Kate"},{"count":3,"name":"title
+        track","url":"https://www.last.fm/tag/title+track"},{"count":3,"name":"songs
+        I absolutely love","url":"https://www.last.fm/tag/songs+I+absolutely+love"},{"count":3,"name":"vugube62","url":"https://www.last.fm/tag/vugube62"},{"count":2,"name":"UK","url":"https://www.last.fm/tag/UK"},{"count":2,"name":"pop
+        rock","url":"https://www.last.fm/tag/pop+rock"},{"count":2,"name":"memories","url":"https://www.last.fm/tag/memories"},{"count":2,"name":"college
+        rock","url":"https://www.last.fm/tag/college+rock"},{"count":2,"name":"synth
+        pop","url":"https://www.last.fm/tag/synth+pop"},{"count":2,"name":"Driving","url":"https://www.last.fm/tag/Driving"},{"count":2,"name":"england","url":"https://www.last.fm/tag/england"},{"count":2,"name":"Progressive","url":"https://www.last.fm/tag/Progressive"},{"count":2,"name":"Mellow","url":"https://www.last.fm/tag/Mellow"},{"count":2,"name":"avantgarde","url":"https://www.last.fm/tag/avantgarde"},{"count":2,"name":"excellent","url":"https://www.last.fm/tag/excellent"},{"count":2,"name":"dramatic","url":"https://www.last.fm/tag/dramatic"},{"count":2,"name":"loved","url":"https://www.last.fm/tag/loved"},{"count":2,"name":"alternative
+        pop","url":"https://www.last.fm/tag/alternative+pop"},{"count":2,"name":"female
+        artists","url":"https://www.last.fm/tag/female+artists"},{"count":2,"name":"female
+        vocal","url":"https://www.last.fm/tag/female+vocal"},{"count":2,"name":"9","url":"https://www.last.fm/tag/9"},{"count":2,"name":"art","url":"https://www.last.fm/tag/art"},{"count":2,"name":"orange","url":"https://www.last.fm/tag/orange"},{"count":2,"name":"dog","url":"https://www.last.fm/tag/dog"},{"count":2,"name":"yellow","url":"https://www.last.fm/tag/yellow"},{"count":2,"name":"dogs","url":"https://www.last.fm/tag/dogs"},{"count":2,"name":"Hounds","url":"https://www.last.fm/tag/Hounds"},{"count":2,"name":"ecto","url":"https://www.last.fm/tag/ecto"},{"count":2,"name":"positive","url":"https://www.last.fm/tag/positive"},{"count":2,"name":"Shady","url":"https://www.last.fm/tag/Shady"},{"count":2,"name":"lovelovelove","url":"https://www.last.fm/tag/lovelovelove"},{"count":2,"name":"grew
+        up on","url":"https://www.last.fm/tag/grew+up+on"},{"count":2,"name":"songs
+        with animals in title","url":"https://www.last.fm/tag/songs+with+animals+in+title"},{"count":2,"name":"grady","url":"https://www.last.fm/tag/grady"},{"count":2,"name":"songs
+        to fall in love to","url":"https://www.last.fm/tag/songs+to+fall+in+love+to"},{"count":2,"name":"Classic
+        Bush","url":"https://www.last.fm/tag/Classic+Bush"},{"count":2,"name":"shady
+        grady","url":"https://www.last.fm/tag/shady+grady"},{"count":2,"name":"Kate
+        Bush - Hounds of Love","url":"https://www.last.fm/tag/Kate+Bush+-+Hounds+of+Love"},{"count":2,"name":"mvideo","url":"https://www.last.fm/tag/mvideo"},{"count":1,"name":"Soundtrack","url":"https://www.last.fm/tag/Soundtrack"},{"count":1,"name":"Disco","url":"https://www.last.fm/tag/Disco"},{"count":1,"name":"trance","url":"https://www.last.fm/tag/trance"},{"count":1,"name":"electronic","url":"https://www.last.fm/tag/electronic"},{"count":1,"name":"electronica","url":"https://www.last.fm/tag/electronica"},{"count":1,"name":"vocal","url":"https://www.last.fm/tag/vocal"},{"count":1,"name":"emo","url":"https://www.last.fm/tag/emo"},{"count":1,"name":"sexy","url":"https://www.last.fm/tag/sexy"},{"count":1,"name":"hard
+        rock","url":"https://www.last.fm/tag/hard+rock"},{"count":1,"name":"electro","url":"https://www.last.fm/tag/electro"},{"count":1,"name":"C","url":"https://www.last.fm/tag/C"},{"count":1,"name":"happy","url":"https://www.last.fm/tag/happy"},{"count":1,"name":"slow","url":"https://www.last.fm/tag/slow"},{"count":1,"name":"catchy","url":"https://www.last.fm/tag/catchy"},{"count":1,"name":"dark","url":"https://www.last.fm/tag/dark"},{"count":1,"name":"alternative
+        pop rock","url":"https://www.last.fm/tag/alternative+pop+rock"},{"count":1,"name":"folk-rock","url":"https://www.last.fm/tag/folk-rock"},{"count":1,"name":"romantique","url":"https://www.last.fm/tag/romantique"},{"count":1,"name":"Fusion","url":"https://www.last.fm/tag/Fusion"},{"count":1,"name":"chamber
+        pop","url":"https://www.last.fm/tag/chamber+pop"}],"@attr":{"artist":"Kate
+        Bush","track":"Hounds of Love"}}}'
+  recorded_at: Thu, 08 Oct 2020 11:45:14 GMT
+recorded_with: VCR 6.0.0

@@ -10,8 +10,7 @@ module API
       end
 
       def action_data
-        @action_data ||=
-          data_service.call(params.slice(*action_params))
+        @action_data ||= data_service.call(data_params)
       end
 
       def data_service
@@ -25,12 +24,23 @@ module API
       def modified_actions
         {
           'album/albums' => 'artist/albums',
-          'track/tracks' => 'artist/tracks'
+          'track/tracks' => 'artist/tracks',
+          'artist/tags' => 'common/tags',
+          'album/tags' => 'common/tags',
+          'track/tags' => 'common/tags'
         }
       end
 
       def controller_action
-        "#{controller_name.singularize}/#{params[:action]}"
+        "#{model_name}/#{params[:action]}"
+      end
+
+      def model_name
+        controller_name.singularize
+      end
+
+      def data_params
+        params.slice(*action_params).merge(model: model_name)
       end
 
       def action_params

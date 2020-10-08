@@ -5,6 +5,8 @@ module API
         def albums; end
 
         def info; end
+
+        def tags; end
       end
     end
   end
