@@ -1,35 +1,11 @@
 module API
   module V1
-    class ArtistsController < ApplicationController
-      def show
-        render_data_with_status('artist_info')
-      end
+    class ArtistsController < API::V1::BaseController
+      def info; end
 
-      def images
-        render_data_with_status('artist_images')
-      end
+      def images; end
 
-      def similar
-        render_data_with_status('artist_similar')
-      end
-
-      private
-
-      def artist_info
-        LastFM::Artist::Info.call(params.slice(:artist))
-      end
-
-      def artist_images
-        LastFM::Artist::Images.call(
-          params.slice(:artist, :page)
-        )
-      end
-
-      def artist_similar
-        LastFM::Artist::Similar.call(
-          params.slice(:artist, :limit)
-        )
-      end
+      def similar; end
     end
   end
 end

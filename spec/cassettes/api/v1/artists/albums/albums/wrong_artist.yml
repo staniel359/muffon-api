@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=Nocturne&api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=50&method=album.getInfo
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=50&method=artist.getTopAlbums
     body:
       encoding: US-ASCII
       string: ''
@@ -23,13 +23,16 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 19:46:26 GMT
+      - Wed, 07 Oct 2020 22:51:43 GMT
       Content-Type:
-      - application/json
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '77'
       Connection:
       - keep-alive
-      Content-Length:
-      - '50'
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -38,6 +41,6 @@ http_interactions:
       - '86400'
     body:
       encoding: UTF-8
-      string: '{"error":6,"message":"Album not found","links":[]}'
-  recorded_at: Wed, 07 Oct 2020 19:46:26 GMT
+      string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
+  recorded_at: Wed, 07 Oct 2020 22:51:43 GMT
 recorded_with: VCR 6.0.0
