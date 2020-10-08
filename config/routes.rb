@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       end
       namespace :tags, as: :tag do
         scope ':tag' do
+          get 'info'
           get 'artists'
           get 'albums'
           get 'tracks'

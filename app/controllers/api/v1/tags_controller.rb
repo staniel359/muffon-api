@@ -1,6 +1,8 @@
 module API
   module V1
     class TagsController < API::V1::BaseController
+      def info; end
+
       def artists; end
 
       def albums; end
