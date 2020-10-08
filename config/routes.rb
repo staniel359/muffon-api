@@ -41,6 +41,11 @@ Rails.application.routes.draw do
           get 'tracks'
         end
       end
+      namespace :top do
+        get 'artists'
+        get 'tracks'
+        get 'tags'
+      end
     end
   end
 end

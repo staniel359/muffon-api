@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=10&method=chart.getTopTracks
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Thu, 08 Oct 2020 18:51:50 GMT
+      Content-Type:
+      - application/json
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7670'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+    body:
+      encoding: UTF-8
+      string: '{"tracks":{"track":[{"name":"wAp (fEAt. mEgAn thEe stAllIOn)","duration":"0","playcount":"3662209","listeners":"260768","mbid":"","url":"https://www.last.fm/music/Cardi+B/_/wAp+(fEAt.+mEgAn+thEe+stAllIOn)","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"Cardi
+        B","mbid":"","url":"https://www.last.fm/music/Cardi+B"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"Blinding
+        Lights","duration":"0","playcount":"8242560","listeners":"503920","mbid":"","url":"https://www.last.fm/music/The+Weeknd/_/Blinding+Lights","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"The
+        Weeknd","mbid":"c8b03190-306c-4120-bb0b-6f2ebfc06ea9","url":"https://www.last.fm/music/The+Weeknd"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"Watermelon
+        Sugar","duration":"0","playcount":"5256372","listeners":"342037","mbid":"","url":"https://www.last.fm/music/Harry+Styles/_/Watermelon+Sugar","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"Harry
+        Styles","mbid":"","url":"https://www.last.fm/music/Harry+Styles"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"Dynamite","duration":"0","playcount":"23530969","listeners":"159565","mbid":"","url":"https://www.last.fm/music/BTS/_/Dynamite","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"BTS","mbid":"0d79fe8e-ba27-4859-bb8c-2f255f346853","url":"https://www.last.fm/music/BTS"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"Midnight
+        Sky","duration":"0","playcount":"2333329","listeners":"146937","mbid":"","url":"https://www.last.fm/music/Miley+Cyrus/_/Midnight+Sky","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"Miley
+        Cyrus","mbid":"7e9bd05a-117f-4cce-87bc-e011527a8b18","url":"https://www.last.fm/music/Miley+Cyrus"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"Ice
+        Cream (with Selena Gomez)","duration":"0","playcount":"3092942","listeners":"131870","mbid":"","url":"https://www.last.fm/music/BLACKPINK/_/Ice+Cream+(with+Selena+Gomez)","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"BLACKPINK","mbid":"","url":"https://www.last.fm/music/BLACKPINK"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"How
+        you like that","duration":"0","playcount":"5288867","listeners":"165180","mbid":"","url":"https://www.last.fm/music/BLACKPINK/_/How+you+like+that","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"BLACKPINK","mbid":"","url":"https://www.last.fm/music/BLACKPINK"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"doN''T
+        StArT nOw","duration":"0","playcount":"7679499","listeners":"401444","mbid":"","url":"https://www.last.fm/music/Dua+Lipa/_/doN%27T+StArT+nOw","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"Dua
+        Lipa","mbid":"","url":"https://www.last.fm/music/Dua+Lipa"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"rAIn
+        oN mE (with aRIaNa gRAndE)","duration":"0","playcount":"6426281","listeners":"244452","mbid":"","url":"https://www.last.fm/music/Lady+Gaga/_/rAIn+oN+mE+(with+aRIaNa+gRAndE)","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"Lady
+        Gaga","mbid":"650e7db6-b795-4eb5-a702-5ea2fc46c848","url":"https://www.last.fm/music/Lady+Gaga"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]},{"name":"The
+        Less I Know the Better","duration":"0","playcount":"8287019","listeners":"635162","mbid":"","url":"https://www.last.fm/music/Tame+Impala/_/The+Less+I+Know+the+Better","streamable":{"#text":"0","fulltrack":"0"},"artist":{"name":"Tame
+        Impala","mbid":"63aa26c3-d59b-4da4-84ac-716b54f1ef4d","url":"https://www.last.fm/music/Tame+Impala"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}]}],"@attr":{"page":"1","perPage":"10","totalPages":"2699476","total":"26994757"}}}'
+  recorded_at: Thu, 08 Oct 2020 18:51:49 GMT
+recorded_with: VCR 6.0.0

@@ -11,6 +11,10 @@ module LastFM
 
     private
 
+    def primary_args
+      []
+    end
+
     def no_data?
       parsed_response.blank?
     end

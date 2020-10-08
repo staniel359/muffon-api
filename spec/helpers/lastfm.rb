@@ -82,6 +82,18 @@ module Helpers
       def tag_info_data
         {:tag=>{:description=>"Dream pop is a genre of music where timbre and texture are as important, if not more so, than melody and song structure. Vocals when present are subsumed within the music and act as another texture or instrument. For example guitarists in dream pop played with feedback and effects to blur and mutate notes, to produce pure iridescent noise, not memorable melodies and toe-tapping tunes, although these when present they weren't the focus.\nThe Cocteau Twins are widely recognized as pioneers of the dream pop sound, their sound a collage of soft,  almost indecipherable vocals and languid soundscapes. A.R. Kane were the first band to explicitly describe their music as 'dream pop' and once claimed that \"a lot of the time we're trying to transform dream imagery into sounds.\" Which echoes My Bloody Valentine (who are a premier Dream Pop group who had a huge influence on 'shoegazers' like Slowdive and Lush) approach to recording music while in a state between sleep and wakefulness (hypnagogic).", :name=>"dream pop", :taggers_count=>24157, :taggings_count=>119450}}
       end
+
+      def top_artists_data
+        {:top=>{:artists=>["The Weeknd", "Lady Gaga", "Kanye West", "Taylor Swift", "Billie Eilish", "Drake", "Dua Lipa", "Ariana Grande", "Kendrick Lamar", "Rihanna"], :page=>1}}
+      end
+
+      def top_tracks_data
+        {:top=>{:page=>1, :tracks=>[{:artist=>"Cardi B", :title=>"wAp (fEAt. mEgAn thEe stAllIOn)"}, {:artist=>"The Weeknd", :title=>"Blinding Lights"}, {:artist=>"Harry Styles", :title=>"Watermelon Sugar"}, {:artist=>"BTS", :title=>"Dynamite"}, {:artist=>"Miley Cyrus", :title=>"Midnight Sky"}, {:artist=>"BLACKPINK", :title=>"Ice Cream (with Selena Gomez)"}, {:artist=>"BLACKPINK", :title=>"How you like that"}, {:artist=>"Dua Lipa", :title=>"doN'T StArT nOw"}, {:artist=>"Lady Gaga", :title=>"rAIn oN mE (with aRIaNa gRAndE)"}, {:artist=>"Tame Impala", :title=>"The Less I Know the Better"}]}}
+      end
+
+      def top_tags_data
+        {:top=>{:page=>1, :tags=>["rock", "electronic", "seen live", "alternative", "indie", "pop", "female vocalists", "metal", "alternative rock", "jazz"]}}
+      end
     end
   end
 end

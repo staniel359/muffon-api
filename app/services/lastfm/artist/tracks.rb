@@ -26,7 +26,7 @@ module LastFM
       end
 
       def tracks
-        parsed_response['track'].last(50).map do |t|
+        parsed_response['track'].map do |t|
           {
             title: t['name'],
             plays_count: t['playcount'].to_i,

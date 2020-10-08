@@ -87,13 +87,22 @@
     /api/v1/tags/:tag/tracks
     ?page
 
-## TODO
-
 ### top.artists
+
+    /api/v1/top/artists
+    ?limit,page
 
 ### top.tracks
 
+    /api/v1/top/tracks
+    ?limit,page
+
 ### top.tags
+
+    /api/v1/top/tags
+    ?limit
+
+## TODO
 
 ### local.artists
 
