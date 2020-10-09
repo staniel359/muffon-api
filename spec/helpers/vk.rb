@@ -20,7 +20,7 @@ module Helpers
       end
 
       def audio_data
-        {:tracks=>[{:artist=>"Wild Nothing", :link=>"https://cs4-9v4.vkuseraudio.net/p4/260c396dc43a80.mp3?extra=n0T71HZStH7LBVqraNynrK_QePeCHS_mPhLysPulKWThqSCmETP5BMHwCGeD33B8Ttpr5vbuXSh_XEsOiTXa8s7Qgq8PB1cO2dz4LXSBxw2oOWJ6C3xCSElFl_GwDV1nQcHpuRYU6ptsjkSA65qsOH7JQzo&long_chunk=1", :title=>"Sleight of Hand"}]}
+        {:tracks=>[{:artist=>"Wild Nothing", :link=>"https://cs4-1v4.vkuseraudio.net/p3/04ec2c04e7876c.mp3?extra=8WuhmTwUibVMjM0P4woFlEW85ddLnJAwMlF8XCUXBcwcVZekuoCVNBVppO-RCQsRpJORHtyiZz2QvuA1eekQHcESfjzhj3jfaokakRVGVBogcD_XAK2LdjfDZA-8rByHPGnQQnvDdn_uDu3o9jJrO9U9cP4&long_chunk=1", :title=>"Nocturne"}]}
       end
 
       def encoded_audio_link
@@ -29,6 +29,10 @@ module Helpers
 
       def decoded_audio_link
         'https://cs4-8v4.vkuseraudio.net/p4/ffe959a6cf6dc1.mp3?extra=PfON7zkK6Q4pEeirmBVpscu9OzHI9JmbjBjXkykqoxUaRnd2n_hoy_rtkusQ0W29Kbisb7_8tLvDNcn40nZqDG1T5dZo-z_mgHxq5zE-zOWl-EeyAwGO1oXy3Gx8WNTU1GNw5VELh4DAvEN0T-lN1DSWleM&long_chunk=1'
+      end
+
+      def track_data
+        {:tracks=>[{:artist=>"Wild Nothing", :link=>"https://cs4-5v4.vkuseraudio.net/p3/b33f6e557c6f6a.mp3?extra=tCZFoNkZCubYb_IkGBwMPMjbQcx9GanNDhI-Y-9cnRvuh9J05NHrCb2GzvaRYortDQe2MQBm7qziTP_Jc5_krI5RKa-GYLpZDhudgB86ifIeZsAd_vLk0n2_Fns14UVDt6cUn67h5hQ7cRslg2no_HsjUg&long_chunk=1", :title=>"Nocturne"}]}
       end
     end
   end

@@ -8,7 +8,7 @@ RSpec.describe VK::Audio do
       let(:output) do
         VCR.use_cassette 'vk/audio/success' do
           subject.call(
-            ids: ['-2001823619_58823619_ebe92dd9055e91e340_2349e4512b9e6f97e2']
+            ids: ['-2001904794_58904794_c2b4a23a2956b2ddeb_778e0f8167534138da']
           )
         end
       end
