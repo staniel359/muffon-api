@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vk.com/al_audio.php
+    body:
+      encoding: UTF-8
+      string: act=reload_audio&al=1&ids=58823619_2001823619_2349e4512b9e6f97e2_ebe92dd9055e91e340
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      Content-Length:
+      - '83'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - remixsid=310fe1d8ce5ae8653966524d330471dc80e0b7ec824a3e44ccc4ae8434aa0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Fri, 09 Oct 2020 19:55:56 GMT
+      Content-Type:
+      - text/html; charset=windows-1251
+      Content-Length:
+      - '199'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/3.26619
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixlang=0; expires=Tue, 05 Oct 2021 19:38:33 GMT; path=/; domain=.vk.com;
+        secure
+      - remixlang=114; expires=Thu, 30 Sep 2021 06:10:18 GMT; path=/; domain=.vk.com
+      Cache-Control:
+      - no-store
+      X-Frontend:
+      - front605108
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Expose-Headers:
+      - X-Frontend
+    body:
+      encoding: ASCII-8BIT
+      string: <!--{"payload":["8",["\"bad_hash\"","false","\"74055845\""]],"statsMeta":{"platform":"web2","st":false,"time":1602273356,"hash":"EZEQZ6ZHc5Yo7rkTwQsGDMfb3DFa8QPnBRaON5kJCY4"},"loaderVersion":"7988196","langVersion":"7048"}
+  recorded_at: Fri, 09 Oct 2020 19:55:55 GMT
+recorded_with: VCR 6.0.0
