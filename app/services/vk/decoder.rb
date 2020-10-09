@@ -23,7 +23,7 @@ module VK
 
     def data
       decoded_link.sub(
-        %r{(.+/)(.+/)(.+)(/index.m3u8)}, '\1\3.mp3'
+        %r{(/\w+)(/audios)?(/\w+)(/index.m3u8)}, '\2\3.mp3'
       )
     end
 
