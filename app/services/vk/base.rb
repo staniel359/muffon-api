@@ -1,7 +1,7 @@
 module VK
   class Base < Muffon::Base
     def call
-      return bad_request_error if primary_args.any?(&:blank?)
+      return bad_request_error if not_all_args?
       return retry_with_new_remixsid if auth_failed?
       return not_found_error if no_data?
 

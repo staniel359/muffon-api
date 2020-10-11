@@ -14,6 +14,10 @@ module Muffon
       Rails.application.credentials
     end
 
+    def not_all_args?
+      primary_args.any?(&:blank?)
+    end
+
     def bad_request_error
       { error: { code: 400, text: 'Bad request' } }
     end

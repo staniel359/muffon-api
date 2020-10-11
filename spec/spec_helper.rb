@@ -16,6 +16,7 @@
 require 'vcr'
 require './spec/helpers/lastfm'
 require './spec/helpers/vk'
+require './spec/helpers/bandcamp'
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
