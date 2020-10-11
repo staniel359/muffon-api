@@ -1,6 +1,6 @@
 module VK
   module Search
-    class Base < VK::Base
+    class Base < VK::Web
       private
 
       def primary_args
@@ -8,13 +8,7 @@ module VK
       end
 
       def no_data?
-        parsed_response['playlists'].blank?
-      end
-
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          response_to_json
-        ).dig('payload', 1, 1)
+        super || playlists.blank?
       end
 
       def request_params
@@ -23,8 +17,12 @@ module VK
           section: 'search',
           al: 1,
           q: @args.query,
-          owner_id: PAGE_ID
+          owner_id: secrets.vk[:page_id]
         }
+      end
+
+      def playlists
+        @playlists ||= parsed_response.dig(1, 1, 'playlists')
       end
 
       def data

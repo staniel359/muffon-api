@@ -64,7 +64,7 @@ module VK
     end
 
     def extra_second
-      vk_o(extra_strings[2]).match(/\v(.*)/)[1].to_i ^ PAGE_ID
+      vk_o(extra_strings[2]).match(/\v(.*)/)[1].to_i ^ secrets.vk[:page_id]
     end
 
     def vk_s(first, second)

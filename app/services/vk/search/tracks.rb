@@ -19,7 +19,7 @@ module VK
       end
 
       def tracks_list
-        parsed_response['playlists'].last['list']
+        playlists.last['list']
       end
     end
   end

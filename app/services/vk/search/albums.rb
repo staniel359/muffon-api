@@ -18,9 +18,7 @@ module VK
       end
 
       def official_albums
-        parsed_response['playlists'].select do |a|
-          a['isOfficial']
-        end
+        playlists.select { |a| a['isOfficial'] }
       end
 
       def artist(album)

@@ -1,27 +1,21 @@
 module VK
-  class Audio < VK::Base
+  class Audio < VK::Web
     private
 
     def primary_args
       [@args.ids]
     end
 
-    def no_data?
-      parsed_response.is_a?(String)
-    end
-
-    def parsed_response
-      @parsed_response ||= JSON.parse(
-        response_to_json
-      ).dig('payload', 1, 0)
-    end
-
     def request_params
       {
         act: 'reload_audio',
         al: 1,
-        ids: @args.ids.join(',')
+        ids: ids
       }
+    end
+
+    def ids
+      @args.ids.join(',')
     end
 
     def data
@@ -29,13 +23,17 @@ module VK
     end
 
     def tracks_data
-      parsed_response.map do |t|
+      tracks.map do |t|
         {
           title: t[3],
           artist: t[4],
           link: link(t)
         }
       end
+    end
+
+    def tracks
+      parsed_response.dig(1, 0)
     end
 
     def link(track)

@@ -21,5 +21,9 @@ module Muffon
     def not_found_error
       { error: { code: 404, text: 'Not found' } }
     end
+
+    def global
+      @global ||= Redis.new
+    end
   end
 end

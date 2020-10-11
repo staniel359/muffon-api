@@ -7,19 +7,25 @@ module VK
     end
 
     def no_data?
-      tracks[:search].blank?
+      search_data.blank?
     end
 
-    def tracks
-      @tracks ||= VK::Search::Tracks.call(query: @args.query)
+    def search_data
+      @search_data ||= VK::Search::Tracks.call(
+        query: @args.query
+      )[:search]
     end
 
     def data
-      VK::Audio.call(ids: [track_id])
+      { track: track_data }
+    end
+
+    def track_data
+      VK::Audio.call(ids: [track_id])[:tracks]
     end
 
     def track_id
-      tracks.dig(:search, :tracks, position, :audio_id)
+      search_data.dig(:tracks, position, :audio_id)
     end
 
     def position
