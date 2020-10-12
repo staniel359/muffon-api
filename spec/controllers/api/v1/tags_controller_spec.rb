@@ -14,10 +14,8 @@ RSpec.describe API::V1::TagsController, type: :controller do
     end
 
     it 'returns 400 if no tag name' do
-      VCR.use_cassette 'api/v1/tags/info/no_tag' do
-        get :info, params: no_tag
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :info, params: no_tag
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 400 if wrong tag name' do
@@ -37,10 +35,8 @@ RSpec.describe API::V1::TagsController, type: :controller do
     end
 
     it 'returns 400 if no tag name' do
-      VCR.use_cassette 'api/v1/tags/artists/no_tag' do
-        get :artists, params: no_tag
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :artists, params: no_tag
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 400 if wrong tag name' do
@@ -60,10 +56,8 @@ RSpec.describe API::V1::TagsController, type: :controller do
     end
 
     it 'returns 400 if no tag name' do
-      VCR.use_cassette 'api/v1/tags/albums/no_tag' do
-        get :albums, params: no_tag
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :albums, params: no_tag
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 400 if wrong tag name' do
@@ -83,10 +77,8 @@ RSpec.describe API::V1::TagsController, type: :controller do
     end
 
     it 'returns 400 if no tag name' do
-      VCR.use_cassette 'api/v1/tags/tracks/no_tag' do
-        get :tracks, params: no_tag
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :tracks, params: no_tag
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 400 if wrong tag name' do

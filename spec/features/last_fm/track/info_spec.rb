@@ -19,11 +19,13 @@ RSpec.describe LastFM::Track::Info do
 
   describe 'no processing' do
     context 'when no track title given' do
-      let(:output) do
-        VCR.use_cassette 'lastfm/track/info/no_title' do
-          subject.call(artist: 'kate bush')
-        end
-      end
+      let(:output) { subject.call(artist: 'kate bush') }
+
+      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+    end
+
+    context 'when no artist name given' do
+      let(:output) { subject.call(track: 'hounds of love') }
 
       it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
@@ -34,6 +36,19 @@ RSpec.describe LastFM::Track::Info do
           subject.call(
             artist: 'kate bush',
             track: Helpers::LastFM::RANDOM_STRING
+          )
+        end
+      end
+
+      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+    end
+
+    context 'when wrong artist name' do
+      let(:output) do
+        VCR.use_cassette 'lastfm/track/info/wrong_name' do
+          subject.call(
+            artist: Helpers::LastFM::RANDOM_STRING,
+            track: 'hounds of love'
           )
         end
       end

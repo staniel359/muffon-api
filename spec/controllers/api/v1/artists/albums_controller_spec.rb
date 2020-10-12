@@ -23,10 +23,8 @@ RSpec.describe API::V1::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/albums/albums/no_artist' do
-        get :albums, params: { artist: '' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :albums, params: { artist: '' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do
@@ -46,10 +44,8 @@ RSpec.describe API::V1::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no album title' do
-      VCR.use_cassette 'api/v1/artists/albums/info/no_album' do
-        get :info, params: { artist: 'Wild Nothing', album: '' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :info, params: { artist: 'Wild Nothing', album: '' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong album title' do
@@ -60,10 +56,8 @@ RSpec.describe API::V1::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/albums/info/no_artist' do
-        get :info, params: { artist: '', album: 'Nocturne' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :info, params: { artist: '', album: 'Nocturne' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do
@@ -83,10 +77,8 @@ RSpec.describe API::V1::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no album title' do
-      VCR.use_cassette 'api/v1/artists/albums/tags/no_album' do
-        get :tags, params: { artist: 'Wild Nothing', album: '' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :tags, params: { artist: 'Wild Nothing', album: '' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong album title' do
@@ -97,10 +89,8 @@ RSpec.describe API::V1::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/albums/tags/no_artist' do
-        get :tags, params: { artist: '', album: 'Nocturne' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :tags, params: { artist: '', album: 'Nocturne' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do

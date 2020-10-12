@@ -15,7 +15,7 @@ RSpec.describe VK::Decoder do
 
   describe 'no processing' do
     context 'when no link given' do
-      let(:output) { subject.call(link: '') }
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::VK.bad_request_error) }
     end

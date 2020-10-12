@@ -17,11 +17,7 @@ RSpec.describe VK::Search::Albums do
 
   describe 'no processing' do
     context 'when no query string given' do
-      let(:output) do
-        VCR.use_cassette 'vk/search/albums/no_query' do
-          subject.call
-        end
-      end
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::VK.bad_request_error) }
     end

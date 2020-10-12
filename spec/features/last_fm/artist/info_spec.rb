@@ -17,11 +17,7 @@ RSpec.describe LastFM::Artist::Info do
 
   describe 'no processing' do
     context 'when no artist name given' do
-      let(:output) do
-        VCR.use_cassette 'lastfm/artist/info/no_name' do
-          subject.call
-        end
-      end
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end

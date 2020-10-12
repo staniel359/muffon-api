@@ -19,11 +19,7 @@ RSpec.describe VK::Audio do
 
   describe 'no processing' do
     context 'when no id given' do
-      let(:output) do
-        VCR.use_cassette 'vk/audio/no_ids' do
-          subject.call(ids: [])
-        end
-      end
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::VK.bad_request_error) }
     end

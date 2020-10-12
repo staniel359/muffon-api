@@ -10,10 +10,8 @@ RSpec.describe API::V1::SearchController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/search/artists/no_name' do
-        get :artists, params: { artist: '' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :artists, params: { artist: '' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do
@@ -33,10 +31,8 @@ RSpec.describe API::V1::SearchController, type: :controller do
     end
 
     it 'returns 400 if no album title' do
-      VCR.use_cassette 'api/v1/search/albums/no_title' do
-        get :albums, params: { album: '' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :albums, params: { album: '' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong album title' do
@@ -56,10 +52,8 @@ RSpec.describe API::V1::SearchController, type: :controller do
     end
 
     it 'returns 400 if no track title' do
-      VCR.use_cassette 'api/v1/search/tracks/no_title' do
-        get :tracks, params: { track: '' }
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :tracks, params: { track: '' }
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong track title' do

@@ -20,21 +20,13 @@ RSpec.describe LastFM::Track::Similar do
 
   describe 'no processing' do
     context 'when no track title given' do
-      let(:output) do
-        VCR.use_cassette 'lastfm/track/similar/no_title' do
-          subject.call(artist: 'wild nothing')
-        end
-      end
+      let(:output) { subject.call(artist: 'wild nothing') }
 
       it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
 
     context 'when no artist name given' do
-      let(:output) do
-        VCR.use_cassette 'lastfm/track/similar/no_name' do
-          subject.call(track: 'chinatown')
-        end
-      end
+      let(:output) { subject.call(track: 'chinatown') }
 
       it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end

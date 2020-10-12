@@ -14,10 +14,8 @@ RSpec.describe API::V1::ArtistsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/info/no_name' do
-        get :info, params: no_name
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :info, params: no_name
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do
@@ -37,10 +35,8 @@ RSpec.describe API::V1::ArtistsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/images/no_name' do
-        get :images, params: no_name
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :images, params: no_name
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do
@@ -60,10 +56,8 @@ RSpec.describe API::V1::ArtistsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/similar/no_name' do
-        get :similar, params: no_name
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :similar, params: no_name
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do
@@ -83,10 +77,8 @@ RSpec.describe API::V1::ArtistsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      VCR.use_cassette 'api/v1/artists/tags/no_name' do
-        get :tags, params: no_name
-        expect(response).to have_http_status(:bad_request)
-      end
+      get :tags, params: no_name
+      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do

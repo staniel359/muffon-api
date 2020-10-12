@@ -31,11 +31,7 @@ RSpec.describe Bandcamp::Album::Info do
 
   describe 'no processing' do
     context 'when no link given' do
-      let(:output) do
-        VCR.use_cassette 'bandcamp/album/info/no_link' do
-          subject.call
-        end
-      end
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::Bandcamp.bad_request_error) }
     end

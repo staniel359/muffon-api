@@ -17,11 +17,7 @@ RSpec.describe LastFM::Search::Albums do
 
   describe 'no processing' do
     context 'when no album title given' do
-      let(:output) do
-        VCR.use_cassette 'lastfm/search/albums/no_title' do
-          subject.call
-        end
-      end
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
