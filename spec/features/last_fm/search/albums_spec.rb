@@ -19,7 +19,7 @@ RSpec.describe LastFM::Search::Albums do
     context 'when no album title given' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/albums/no_title' do
-          subject.call(album: nil)
+          subject.call
         end
       end
 

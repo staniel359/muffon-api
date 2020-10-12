@@ -7,7 +7,7 @@ RSpec.describe VK::Remixsid do
     context 'when no args given' do
       let(:output) do
         VCR.use_cassette 'vk/remixsid/success' do
-          subject.call(args: nil)
+          subject.call
         end
       end
 

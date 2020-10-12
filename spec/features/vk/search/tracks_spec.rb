@@ -19,7 +19,7 @@ RSpec.describe VK::Search::Tracks do
     context 'when no query string given' do
       let(:output) do
         VCR.use_cassette 'vk/search/tracks/no_query' do
-          subject.call(query: nil)
+          subject.call
         end
       end
 

@@ -22,7 +22,7 @@ RSpec.describe LastFM::Track::Similar do
     context 'when no track title given' do
       let(:output) do
         VCR.use_cassette 'lastfm/track/similar/no_title' do
-          subject.call(artist: 'wild nothing', track: nil)
+          subject.call(artist: 'wild nothing')
         end
       end
 
@@ -32,7 +32,7 @@ RSpec.describe LastFM::Track::Similar do
     context 'when no artist name given' do
       let(:output) do
         VCR.use_cassette 'lastfm/track/similar/no_name' do
-          subject.call(artist: nil, track: 'chinatown')
+          subject.call(track: 'chinatown')
         end
       end
 

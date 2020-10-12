@@ -52,9 +52,7 @@ RSpec.describe LastFM::Common::Tags do
     context 'when no model name given' do
       let(:output) do
         VCR.use_cassette 'lastfm/common/tags/no_model' do
-          subject.call(
-            artist: 'wild nothing', model: nil
-          )
+          subject.call(artist: 'wild nothing')
         end
       end
 
@@ -64,9 +62,7 @@ RSpec.describe LastFM::Common::Tags do
     context 'when no artist name given' do
       let(:output) do
         VCR.use_cassette 'lastfm/common/tags/artist/no_name' do
-          subject.call(
-            artist: nil, model: 'artist'
-          )
+          subject.call(model: 'artist')
         end
       end
 
@@ -90,7 +86,7 @@ RSpec.describe LastFM::Common::Tags do
       let(:output) do
         VCR.use_cassette 'lastfm/common/tags/album/no_title' do
           subject.call(
-            artist: 'wild nothing', album: nil, model: 'album'
+            artist: 'wild nothing', model: 'album'
           )
         end
       end
@@ -116,7 +112,7 @@ RSpec.describe LastFM::Common::Tags do
       let(:output) do
         VCR.use_cassette 'lastfm/common/tags/track/no_title' do
           subject.call(
-            artist: 'wild nothing', track: nil, model: 'track'
+            artist: 'wild nothing', model: 'track'
           )
         end
       end

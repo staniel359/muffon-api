@@ -19,7 +19,7 @@ RSpec.describe LastFM::Tag::Artists do
     context 'when no tag name given' do
       let(:output) do
         VCR.use_cassette 'lastfm/tag/artists/no_name' do
-          subject.call(tag: nil)
+          subject.call
         end
       end
 

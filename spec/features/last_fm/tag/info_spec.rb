@@ -20,7 +20,7 @@ RSpec.describe LastFM::Tag::Info do
       let(:bad_request_error) { Helpers::LastFM.bad_request_error }
       let(:output) do
         VCR.use_cassette 'lastfm/tag/info/no_name' do
-          subject.call(tag: nil)
+          subject.call
         end
       end
 

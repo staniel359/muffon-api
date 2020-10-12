@@ -19,7 +19,7 @@ RSpec.describe LastFM::Artist::Info do
     context 'when no artist name given' do
       let(:output) do
         VCR.use_cassette 'lastfm/artist/info/no_name' do
-          subject.call(artist: nil)
+          subject.call
         end
       end
 

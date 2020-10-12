@@ -1,11 +1,13 @@
 module Muffon
   class Base
-    def initialize(args)
+    def initialize(args = {})
       @args = OpenStruct.new(args)
     end
 
-    def self.call(args)
-      new(args).call
+    class << self
+      def call(args = {})
+        new(args).call
+      end
     end
 
     private

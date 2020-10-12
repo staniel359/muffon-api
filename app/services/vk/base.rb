@@ -21,7 +21,7 @@ module VK
     end
 
     def new_remixsid
-      VK::Remixsid.call(args: nil)
+      VK::Remixsid.call
     end
   end
 end
