@@ -44,6 +44,15 @@ Rails.application.routes.draw do
           get 'tags'
         end
       end
+      namespace :vk do
+        scope module: :tracks do
+          get 'track', action: :info
+        end
+        namespace :search do
+          get 'tracks'
+          get 'albums'
+        end
+      end
     end
   end
 end

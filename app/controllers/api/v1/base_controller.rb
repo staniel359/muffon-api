@@ -28,7 +28,10 @@ module API
       end
 
       def action_params
-        %i[artist album track tag page limit]
+        %i[
+          artist album track tag
+          page limit query position
+        ]
       end
 
       def status_code

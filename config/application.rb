@@ -39,6 +39,7 @@ module MuffonAPI
     config.generators do |g|
       g.request_specs false
       g.controller_specs true
+      g.skip_routes true
     end
   end
 end

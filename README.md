@@ -102,6 +102,23 @@
     /api/v1/lastfm/top/tags
     ?limit
 
+## VK
+
+### track.info
+
+    /api/v1/vk/track
+    ?query,position
+
+### search.tracks
+
+    /api/v1/vk/search/tracks
+    ?query
+
+### search.albums
+
+    /api/v1/vk/search/albums
+    ?query
+
 # TODO
 
 ### local.artists
@@ -121,23 +138,6 @@
 ### top.albums
 
 ### local.albums
-
-## VK
-
-### track.info
-
-    /api/v1/vk/search/track
-    ?query
-
-### search.tracks
-
-    /api/v1/vk/search/tracks
-    ?query
-
-### search.albums
-
-    /api/v1/vk/search/albums
-    ?query
 
 ## Bandcamp
 

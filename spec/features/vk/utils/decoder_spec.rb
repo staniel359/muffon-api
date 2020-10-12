@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe VK::Decoder do
+RSpec.describe VK::Utils::Decoder do
   subject { described_class }
 
   describe 'successful processing' do

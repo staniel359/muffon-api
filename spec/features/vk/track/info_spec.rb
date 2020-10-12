@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe VK::Track do
+RSpec.describe VK::Track::Info do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when query string given' do
       let(:output) do
-        VCR.use_cassette 'vk/track/success' do
+        VCR.use_cassette 'vk/track/info/success' do
           subject.call(query: 'wild nothing nocturne')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe VK::Track do
 
     context 'when wrong query string' do
       let(:output) do
-        VCR.use_cassette 'vk/track/wrong_query' do
+        VCR.use_cassette 'vk/track/info/wrong_query' do
           subject.call(query: Helpers::VK::RANDOM_STRING)
         end
       end
