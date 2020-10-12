@@ -2,111 +2,115 @@
 
 [![Build Status](https://travis-ci.org/staniel359/muffon-api.svg?branch=main)](https://travis-ci.org/staniel359/muffon-api)
 
-## Methods
+## Last.fm
 
 ### artist.info
 
-    /api/v1/artists/:artist
+    /api/v1/lastfm/artists/:artist
     
 ### artist.tags
     
-    /api/v1/artists/:artist/tags
+    /api/v1/lastfm/artists/:artist/tags
     
 ### artist.images
 
-    /api/v1/artists/:artist/images
+    /api/v1/lastfm/artists/:artist/images
     ?page
     
 ### artist.similar
 
-    /api/v1/artists/:artist/similar
+    /api/v1/lastfm/artists/:artist/similar
     ?limit
 
 ### artist.albums
     
-    /api/v1/artists/:artist/albums
+    /api/v1/lastfm/artists/:artist/albums
     ?limit,page
 
 ### album.info
     
-    /api/v1/artists/:artist/albums/:album
+    /api/v1/lastfm/artists/:artist/albums/:album
     
 ### album.tags
 
-    /api/v1/artists/:artist/albums/:album/tags
+    /api/v1/lastfm/artists/:artist/albums/:album/tags
     
 ### artist.tracks
     
-    /api/v1/artists/:artist/tracks
+    /api/v1/lastfm/artists/:artist/tracks
     ?limit,page
     
 ### track.info
     
-    /api/v1/artists/:artist/tracks/:track
+    /api/v1/lastfm/artists/:artist/tracks/:track
     
 ### track.tags
     
-    /api/v1/artists/:artist/tracks/:track/tags
+    /api/v1/lastfm/artists/:artist/tracks/:track/tags
 
 ### track.similar
 
-    /api/v1/artists/:artist/tracks/:track/similar
+    /api/v1/lastfm/artists/:artist/tracks/:track/similar
     ?limit
     
 ### search.artists
 
-    /api/v1/search/artists
+    /api/v1/lastfm/search/artists
     ?artist,limit,page
     
 ### search.albums
 
-    /api/v1/search/albums
+    /api/v1/lastfm/search/albums
     ?album,limit,page
     
 ### search.tracks
 
-    /api/v1/search/tracks
+    /api/v1/lastfm/search/tracks
     ?album,limit,page
     
 ### tag.info
 
-    /api/v1/tags/:tag
+    /api/v1/lastfm/tags/:tag
     
 ### tag.artists
 
-    /api/v1/tags/:tag/artists
+    /api/v1/lastfm/tags/:tag/artists
     ?page
     
 ### tag.albums
 
-    /api/v1/tags/:tag/albums
+    /api/v1/lastfm/tags/:tag/albums
     ?page
     
 ### tag.tracks
 
-    /api/v1/tags/:tag/tracks
+    /api/v1/lastfm/tags/:tag/tracks
     ?page
 
 ### top.artists
 
-    /api/v1/top/artists
+    /api/v1/lastfm/top/artists
     ?limit,page
 
 ### top.tracks
 
-    /api/v1/top/tracks
+    /api/v1/lastfm/top/tracks
     ?limit,page
 
 ### top.tags
 
-    /api/v1/top/tags
+    /api/v1/lastfm/top/tags
     ?limit
 
-## TODO
+# TODO
 
 ### local.artists
 
+    TODO
+
 ### local.tracks
+
+    TODO
 
 ## Questionable
 
@@ -117,3 +121,47 @@
 ### top.albums
 
 ### local.albums
+
+## VK
+
+### track.info
+
+    /api/v1/vk/search/track
+    ?query
+
+### search.tracks
+
+    /api/v1/vk/search/tracks
+    ?query
+
+### search.albums
+
+    /api/v1/vk/search/albums
+    ?query
+
+## Bandcamp
+
+### album.info
+
+    /api/v1/bandcamp/album
+    ?link
+
+### album.links
+
+    /api/v1/bandcamp/album/links
+    ?query
+
+## Google
+
+### search
+
+    /api/v1/google/search
+    ?query
+
+## Soundcloud
+
+    TODO
+
+## YouTube
+
+    TODO
