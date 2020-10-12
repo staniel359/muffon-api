@@ -4,7 +4,10 @@ module LastFM
       private
 
       def primary_args
-        [@args.model, @args.send(@args.model.to_s)]
+        [
+          @args.model, @args.artist,
+          @args.send(@args.model.to_s)
+        ]
       end
 
       def parsed_response
