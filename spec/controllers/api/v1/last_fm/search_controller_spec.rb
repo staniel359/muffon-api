@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe API::V1::SearchController, type: :controller do
+RSpec.describe API::V1::LastFM::SearchController, type: :controller do
   describe 'GET :artists' do
     it 'returns 200 if any artists' do
       VCR.use_cassette 'api/v1/search/artists/success' do

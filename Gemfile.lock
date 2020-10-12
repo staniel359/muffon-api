@@ -59,6 +59,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.1)
+    bindex (0.8.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
     bootsnap (1.4.8-java)
@@ -252,8 +253,15 @@ GEM
       unf_ext
     unf (0.1.4-java)
     unf_ext (0.0.7.7)
+    unf_ext (0.0.7.7-x64-mingw32)
+    unf_ext (0.0.7.7-x86-mingw32)
     unicode-display_width (1.7.0)
     vcr (6.0.0)
+    web-console (4.0.4)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
+      bindex (>= 0.4.0)
+      railties (>= 6.0.0)
     webmock (3.9.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -292,6 +300,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   vcr
+  web-console
   webmock
 
 RUBY VERSION

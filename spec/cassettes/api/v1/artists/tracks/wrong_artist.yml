@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=50&method=artist.getTopAlbums
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=50&method=artist.getTopTracks
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,16 +23,13 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 22:51:43 GMT
+      - Mon, 12 Oct 2020 16:52:59 GMT
       Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '77'
+      - application/json
       Connection:
       - keep-alive
-      Access-Control-Request-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
+      Content-Length:
+      - '77'
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -42,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
-  recorded_at: Wed, 07 Oct 2020 22:51:43 GMT
+  recorded_at: Mon, 12 Oct 2020 16:52:58 GMT
 recorded_with: VCR 6.0.0

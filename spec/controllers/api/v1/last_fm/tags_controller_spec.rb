@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe API::V1::TagsController, type: :controller do
+RSpec.describe API::V1::LastFM::TagsController, type: :controller do
   let(:tag) { { tag: 'dream pop' } }
   let(:no_tag) { { tag: '' } }
   let(:wrong_tag) { { tag: Helpers::LastFM::RANDOM_STRING } }
