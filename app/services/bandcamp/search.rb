@@ -14,11 +14,11 @@ module Bandcamp
     end
 
     def no_data?
-      google_data.blank?
+      search_response.blank?
     end
 
-    def google_data
-      @google_data ||= Google::Search.call(
+    def search_response
+      @search_response ||= Bing::Search.call(
         query: query, page: @args.page
       )[:search]
     end
@@ -33,8 +33,8 @@ module Bandcamp
 
     def search_data
       {
-        results: google_data[:results],
-        page: google_data[:page]
+        results: search_response[:results],
+        page: search_response[:page]
       }
     end
 

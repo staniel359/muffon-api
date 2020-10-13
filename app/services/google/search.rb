@@ -5,6 +5,8 @@ module Google
       return not_found_error if no_data?
 
       data
+    rescue RestClient::TooManyRequests
+      too_many_requests_error
     end
 
     private
@@ -26,9 +28,11 @@ module Google
     end
 
     def parsed_response
-      @parsed_response ||= Nokogiri::HTML.parse(
-        RestClient.get(google_link, params: params)
-      )
+      @parsed_response ||= Nokogiri::HTML.parse(response)
+    end
+
+    def response
+      RestClient.get(google_link, params: params)
     end
 
     def google_link
@@ -94,6 +98,10 @@ module Google
 
     def pages_block
       parsed_response.css('.SAez4c')
+    end
+
+    def too_many_requests_error
+      { error: { code: 429, text: 'Too many requests' } }
     end
   end
 end
