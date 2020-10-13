@@ -167,3 +167,11 @@
 ## YouTube
 
     TODO
+
+## MusicBrainz
+
+    TODO
+
+## Discogs
+
+    TODO
