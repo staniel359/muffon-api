@@ -1,0 +1,46 @@
+module Bandcamp
+  class Search < Muffon::Base
+    def call
+      return bad_request_error if not_all_args?
+      return not_found_error if no_data?
+
+      data
+    end
+
+    private
+
+    def primary_args
+      [@args.query]
+    end
+
+    def no_data?
+      google_data.blank?
+    end
+
+    def google_data
+      @google_data ||= Google::Search.call(
+        query: query, page: @args.page
+      )[:search]
+    end
+
+    def query
+      "#{@args.query} site:bandcamp.com"
+    end
+
+    def data
+      { search: search_data }
+    end
+
+    def search_data
+      {
+        results: google_data[:results],
+        page: google_data[:page]
+      }
+    end
+
+    # def album_regexp
+    #   %r{https?://(\w+(?:-\w+)*.bandcamp.com
+    #     /(?:album|track)/\w+(?:-\w+)*)}x
+    # end
+  end
+end

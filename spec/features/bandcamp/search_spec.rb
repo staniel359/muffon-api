@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe Bandcamp::Album::Links do
+RSpec.describe Bandcamp::Search do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/links/success' do
+        VCR.use_cassette 'bandcamp/search/success' do
           subject.call(query: 'wild nothing indigo')
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp.album_links_data) }
+      it { expect(output).to eq(Helpers::Bandcamp.search_data) }
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe Bandcamp::Album::Links do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/links/wrong_link' do
+        VCR.use_cassette 'bandcamp/search/wrong_query' do
           subject.call(query: Helpers::Bandcamp::RANDOM_STRING)
         end
       end
