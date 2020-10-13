@@ -2,7 +2,7 @@ module API
   module V1
     module LastFM
       module Artists
-        class TracksController < API::V1::BaseController
+        class TracksController < ArtistsController
           def info; end
 
           def tags; end
