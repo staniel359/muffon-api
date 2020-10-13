@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=5&method=track.search&track=chinatown
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=5&method=track.search&track=wild%20nothing%20chinatown
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,13 +23,13 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 14:49:39 GMT
+      - Tue, 13 Oct 2020 20:40:14 GMT
       Content-Type:
       - application/json
       Connection:
       - keep-alive
       Content-Length:
-      - '3366'
+      - '3452'
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -38,10 +38,11 @@ http_interactions:
       - '86400'
     body:
       encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","startPage":"1"},"opensearch:totalResults":"20136","opensearch:startIndex":"0","opensearch:itemsPerPage":"5","trackmatches":{"track":[{"name":"Chinatown","artist":"Wild
-        Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown","streamable":"FIXME","listeners":"206958","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"9a74b1e7-a7a9-46fc-8ad3-58306fdac86f"},{"name":"Chinatown","artist":"Destroyer","url":"https://www.last.fm/music/Destroyer/_/Chinatown","streamable":"FIXME","listeners":"144142","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"2aba763e-6ca4-4ecb-96c9-80a04dde15ab"},{"name":"Chinatown","artist":"Jets
-        to Brazil","url":"https://www.last.fm/music/Jets+to+Brazil/_/Chinatown","streamable":"FIXME","listeners":"67896","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"89b3e23e-75e4-48af-a6ae-84c4a4386db5"},{"name":"Chinatown","artist":"Liam
-        Gallagher","url":"https://www.last.fm/music/Liam+Gallagher/_/Chinatown","streamable":"FIXME","listeners":"35700","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"Chinatown","artist":"Do
-        Make Say Think","url":"https://www.last.fm/music/Do+Make+Say+Think/_/Chinatown","streamable":"FIXME","listeners":"55003","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"ed1a013c-9196-4c5b-84c7-31b0f3e6592b"}]},"@attr":{}}}'
-  recorded_at: Wed, 07 Oct 2020 14:49:39 GMT
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","startPage":"1"},"opensearch:totalResults":"183","opensearch:startIndex":"0","opensearch:itemsPerPage":"5","trackmatches":{"track":[{"name":"Chinatown","artist":"Wild
+        Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown","streamable":"FIXME","listeners":"207115","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"9a74b1e7-a7a9-46fc-8ad3-58306fdac86f"},{"name":"Chinatown
+        - Live from Brooklyn Steel","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown+-+Live+from+Brooklyn+Steel","streamable":"FIXME","listeners":"1574","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"Chinatown
+        - Wild Nothing","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown+-+Wild+Nothing","streamable":"FIXME","listeners":"202","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"Walking
+        In Chinatown (Empire Of The Sun x Wild Nothing)","artist":"The Hood Internet","url":"https://www.last.fm/music/The+Hood+Internet/_/Walking+In+Chinatown+(Empire+Of+The+Sun+x+Wild+Nothing)","streamable":"FIXME","listeners":"667","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"Wild
+        Nothing - Chinatown","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Wild+Nothing+-+Chinatown","streamable":"FIXME","listeners":"147","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""}]},"@attr":{}}}'
+  recorded_at: Tue, 13 Oct 2020 20:40:12 GMT
 recorded_with: VCR 6.0.0

@@ -44,15 +44,15 @@ module Helpers
       end
 
       def search_artists_data
-        {:search=>{:page=>1, :query=>{:artist=>"wild nothing"}, :results=>[{:listeners_count=>544773, :name=>"Wild Nothing"}, {:listeners_count=>811, :name=>"Wild_Nothing"}, {:listeners_count=>233, :name=>"Wild Nothing //"}, {:listeners_count=>132, :name=>"Wild Nothing /"}, {:listeners_count=>178, :name=>"Beach Fossils feat. Wild Nothing"}]}}
+        {:search=>{:page=>1, :query=>"wild nothing", :results=>[{:listeners_count=>545256, :name=>"Wild Nothing"}, {:listeners_count=>811, :name=>"Wild_Nothing"}, {:listeners_count=>233, :name=>"Wild Nothing //"}, {:listeners_count=>132, :name=>"Wild Nothing /"}, {:listeners_count=>178, :name=>"Beach Fossils feat. Wild Nothing"}]}}
       end
 
       def search_tracks_data
-        {:search=>{:page=>1, :query=>{:track=>"chinatown"}, :results=>[{:artist=>"Wild Nothing", :listeners_count=>206958, :title=>"Chinatown"}, {:artist=>"Destroyer", :listeners_count=>144142, :title=>"Chinatown"}, {:artist=>"Jets to Brazil", :listeners_count=>67896, :title=>"Chinatown"}, {:artist=>"Liam Gallagher", :listeners_count=>35700, :title=>"Chinatown"}, {:artist=>"Do Make Say Think", :listeners_count=>55003, :title=>"Chinatown"}]}}
+        {:search=>{:page=>1, :query=>"wild nothing chinatown", :results=>[{:artist=>"Wild Nothing", :listeners_count=>207115, :title=>"Chinatown"}, {:artist=>"Wild Nothing", :listeners_count=>1574, :title=>"Chinatown - Live from Brooklyn Steel"}, {:artist=>"Wild Nothing", :listeners_count=>202, :title=>"Chinatown - Wild Nothing"}, {:artist=>"The Hood Internet", :listeners_count=>667, :title=>"Walking In Chinatown (Empire Of The Sun x Wild Nothing)"}, {:artist=>"Wild Nothing", :listeners_count=>147, :title=>"Wild Nothing - Chinatown"}]}}
       end
 
       def search_albums_data
-        {:search=>{:page=>1, :query=>{:album=>"nocturne"}, :results=>[{:artist=>"Wild Nothing", :cover=>"https://lastfm.freetls.fastly.net/i/u/3601d7b9f23e43aea6f9fa002672c6eb.png", :title=>"Nocturne"}, {:artist=>"The Human Abstract", :cover=>"https://lastfm.freetls.fastly.net/i/u/48fe94c4cd994edfbff13e0c87234bce.png", :title=>"Nocturne"}, {:artist=>"Frédéric Chopin", :cover=>"https://lastfm.freetls.fastly.net/i/u/f6bb721f7c8dcff4892a2af2d1d60bb3.png", :title=>"Chopin: Nocturnes"}, {:artist=>"Little Boots", :cover=>"https://lastfm.freetls.fastly.net/i/u/850d9b20c6ff4f02cfa9d378b578b405.png", :title=>"Nocturnes"}, {:artist=>"Frédéric Chopin", :cover=>"https://lastfm.freetls.fastly.net/i/u/4d694d0ca275a963112708eff502db87.png", :title=>"Chopin: Nocturnes (Volume 1)"}]}}
+        {:search=>{:page=>1, :query=>"wild nothing nocturne", :results=>[{:artist=>"Wild Nothing", :cover=>"https://lastfm.freetls.fastly.net/i/u/3601d7b9f23e43aea6f9fa002672c6eb.png", :title=>"Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Nocturne [Bonus Tracks]"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Wild Nothing - Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"(2012) Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Nocturne - mu-sique.com"}]}}
       end
 
       def artist_tags_data

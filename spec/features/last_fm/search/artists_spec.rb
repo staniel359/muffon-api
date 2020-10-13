@@ -4,10 +4,10 @@ RSpec.describe LastFM::Search::Artists do
   subject { described_class }
 
   describe 'successful processing' do
-    context 'when artist exists' do
+    context 'when query present' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/artists/success' do
-          subject.call(artist: 'wild nothing', limit: 5)
+          subject.call(query: 'wild nothing', limit: 5)
         end
       end
 
@@ -16,16 +16,16 @@ RSpec.describe LastFM::Search::Artists do
   end
 
   describe 'no processing' do
-    context 'when no artist name given' do
+    context 'when no query' do
       let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
     end
 
-    context 'when wrong artist name' do
+    context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'lastfm/search/artists/wrong_name' do
-          subject.call(artist: Helpers::LastFM::RANDOM_STRING)
+        VCR.use_cassette 'lastfm/search/artists/wrong_query' do
+          subject.call(query: Helpers::LastFM::RANDOM_STRING)
         end
       end
 

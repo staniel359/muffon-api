@@ -37,19 +37,35 @@ module LastFM
       }
     end
 
+    def api_key
+      secrets.lastfm.dig(:api_key, Rails.env.to_sym)
+    end
+
     def args_params
       {
-        artist: @args.artist,
-        album: @args.album,
-        track: @args.track,
+        artist: artist_query,
+        album: album_query,
+        track: track_query,
         tag: @args.tag,
         page: @args.page,
-        limit: @args.limit || 50
+        limit: limit
       }.compact
     end
 
-    def api_key
-      secrets.lastfm.dig(:api_key, Rails.env.to_sym)
+    def artist_query
+      @args.artist
+    end
+
+    def album_query
+      @args.album
+    end
+
+    def track_query
+      @args.track
+    end
+
+    def limit
+      @args.limit || 50
     end
   end
 end

@@ -3,16 +3,20 @@ module LastFM
     class Albums < LastFM::Search::Base
       private
 
+      def album_query
+        @args.query
+      end
+
       def model_name
         'album'
       end
 
-      def albums
-        parsed_response.dig('albummatches', 'album').map do |a|
+      def results_data
+        results.map do |r|
           {
-            title: a['name'],
-            artist: a['artist'],
-            cover: a['image'].last['#text'].sub('/300x300', '')
+            title: r['name'],
+            artist: r['artist'],
+            cover: r['image'].last['#text'].sub('/300x300', '')
           }
         end
       end

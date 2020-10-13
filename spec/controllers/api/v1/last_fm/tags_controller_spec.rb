@@ -7,7 +7,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
 
   describe 'GET :info' do
     it 'returns 200 if tag exists' do
-      VCR.use_cassette 'api/v1/tags/info/success' do
+      VCR.use_cassette 'api/v1/lastfm/tags/info/success' do
         get :info, params: tag
         expect(response).to have_http_status(:ok)
       end
@@ -19,7 +19,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
     end
 
     it 'returns 400 if wrong tag name' do
-      VCR.use_cassette 'api/v1/tags/info/wrong_tag' do
+      VCR.use_cassette 'api/v1/lastfm/tags/info/wrong_tag' do
         get :info, params: wrong_tag
         expect(response).to have_http_status(:not_found)
       end
@@ -28,7 +28,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
 
   describe 'GET :artists' do
     it 'returns 200 if any artists' do
-      VCR.use_cassette 'api/v1/tags/artists/success' do
+      VCR.use_cassette 'api/v1/lastfm/tags/artists/success' do
         get :artists, params: tag
         expect(response).to have_http_status(:ok)
       end
@@ -40,7 +40,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
     end
 
     it 'returns 400 if wrong tag name' do
-      VCR.use_cassette 'api/v1/tags/artists/wrong_tag' do
+      VCR.use_cassette 'api/v1/lastfm/tags/artists/wrong_tag' do
         get :artists, params: wrong_tag
         expect(response).to have_http_status(:not_found)
       end
@@ -49,7 +49,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
 
   describe 'GET :albums' do
     it 'returns 200 if any albums' do
-      VCR.use_cassette 'api/v1/tags/albums/success' do
+      VCR.use_cassette 'api/v1/lastfm/tags/albums/success' do
         get :albums, params: tag
         expect(response).to have_http_status(:ok)
       end
@@ -61,7 +61,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
     end
 
     it 'returns 400 if wrong tag name' do
-      VCR.use_cassette 'api/v1/tags/albums/wrong_tag' do
+      VCR.use_cassette 'api/v1/lastfm/tags/albums/wrong_tag' do
         get :albums, params: wrong_tag
         expect(response).to have_http_status(:not_found)
       end
@@ -70,7 +70,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
 
   describe 'GET :tracks' do
     it 'returns 200 if any tracks' do
-      VCR.use_cassette 'api/v1/tags/tracks/success' do
+      VCR.use_cassette 'api/v1/lastfm/tags/tracks/success' do
         get :tracks, params: tag
         expect(response).to have_http_status(:ok)
       end
@@ -82,7 +82,7 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
     end
 
     it 'returns 400 if wrong tag name' do
-      VCR.use_cassette 'api/v1/tags/tracks/wrong_tag' do
+      VCR.use_cassette 'api/v1/lastfm/tags/tracks/wrong_tag' do
         get :tracks, params: wrong_tag
         expect(response).to have_http_status(:not_found)
       end

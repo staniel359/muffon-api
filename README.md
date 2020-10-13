@@ -56,17 +56,17 @@
 ### search.artists
 
     /api/v1/lastfm/search/artists
-    ?artist,limit,page
+    ?query,limit,page
     
 ### search.albums
 
     /api/v1/lastfm/search/albums
-    ?album,limit,page
+    ?query,limit,page
     
 ### search.tracks
 
     /api/v1/lastfm/search/tracks
-    ?album,limit,page
+    ?query,limit,page
     
 ### tag.info
 

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 14:49:38 GMT
+      - Tue, 13 Oct 2020 20:40:13 GMT
       Content-Type:
       - application/json
       Connection:
@@ -40,10 +40,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wild
         nothing","startPage":"1"},"opensearch:totalResults":"272","opensearch:startIndex":"0","opensearch:itemsPerPage":"5","artistmatches":{"artist":[{"name":"Wild
-        Nothing","listeners":"544773","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Wild_Nothing","listeners":"811","mbid":"","url":"https://www.last.fm/music/Wild_Nothing","streamable":"0","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"},{"#text":"","size":"mega"}]},{"name":"Wild
+        Nothing","listeners":"545256","mbid":"a181595e-5b84-4439-a5f4-f548ddfb64df","url":"https://www.last.fm/music/Wild+Nothing","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Wild_Nothing","listeners":"811","mbid":"","url":"https://www.last.fm/music/Wild_Nothing","streamable":"0","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"},{"#text":"","size":"mega"}]},{"name":"Wild
         Nothing //","listeners":"233","mbid":"","url":"https://www.last.fm/music/Wild+Nothing+%2F%2F","streamable":"0","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"},{"#text":"","size":"mega"}]},{"name":"Wild
         Nothing /","listeners":"132","mbid":"","url":"https://www.last.fm/music/Wild+Nothing+%2F","streamable":"0","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"},{"#text":"","size":"mega"}]},{"name":"Beach
         Fossils feat. Wild Nothing","listeners":"178","mbid":"3df3818e-7984-4c62-bee3-81f95f8c6651","url":"https://www.last.fm/music/Beach+Fossils+feat.+Wild+Nothing","streamable":"0","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"},{"#text":"","size":"mega"}]}]},"@attr":{"for":"wild
         nothing"}}}'
-  recorded_at: Wed, 07 Oct 2020 14:49:37 GMT
+  recorded_at: Tue, 13 Oct 2020 20:40:11 GMT
 recorded_with: VCR 6.0.0

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,13 +23,13 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 20:42:00 GMT
+      - Tue, 13 Oct 2020 20:42:52 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
       - '257'
-      Connection:
-      - keep-alive
+      Nncoection:
+      - close
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
@@ -42,5 +42,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"50","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Wed, 07 Oct 2020 20:42:00 GMT
+  recorded_at: Tue, 13 Oct 2020 20:42:50 GMT
 recorded_with: VCR 6.0.0

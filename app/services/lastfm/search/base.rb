@@ -4,7 +4,7 @@ module LastFM
       private
 
       def primary_args
-        [@args.send(model_name)]
+        [@args.query]
       end
 
       def no_data?
@@ -12,7 +12,9 @@ module LastFM
       end
 
       def results
-        @results ||= send("#{model_name}s")
+        @results ||= parsed_response.dig(
+          "#{model_name}matches", model_name
+        )
       end
 
       def parsed_response
@@ -27,14 +29,10 @@ module LastFM
 
       def search_data
         {
-          query: query,
-          results: results,
+          query: @args.query,
+          results: results_data,
           page: page
         }
-      end
-
-      def query
-        { model_name.to_sym => @args.send(model_name) }
       end
 
       def page
