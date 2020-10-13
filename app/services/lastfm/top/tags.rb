@@ -3,10 +3,11 @@ module LastFM
     class Tags < LastFM::Top::Base
       private
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('chart.getTopTags')
-        )['tags']
+      def service_info
+        {
+          api_method: 'chart.getTopTags',
+          response_data_node: 'tags'
+        }
       end
 
       def top_data
@@ -14,7 +15,7 @@ module LastFM
       end
 
       def tags
-        parsed_response['tag'].map { |t| t['name'] }
+        response_data['tag'].map { |t| t['name'] }
       end
     end
   end

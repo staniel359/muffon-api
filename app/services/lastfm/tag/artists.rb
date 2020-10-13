@@ -13,7 +13,7 @@ module LastFM
       end
 
       def artists_list
-        parsed_response.css('.big-artist-list-item')
+        response_data.css('.big-artist-list-item')
       end
 
       def artist_name(artist)

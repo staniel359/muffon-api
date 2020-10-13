@@ -3,8 +3,8 @@ module LastFM
     class Tracks < LastFM::Search::Base
       private
 
-      def track_query
-        @args.query
+      def model_params
+        { track: @args.query }
       end
 
       def model_name

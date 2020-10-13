@@ -9,11 +9,11 @@ module LastFM
     private
 
     def no_data?
-      parsed_response.text.blank?
+      response_data.text.blank?
     end
 
-    def parsed_response
-      @parsed_response ||= Nokogiri::HTML.parse(response)
+    def response_data
+      @response_data ||= Nokogiri::HTML.parse(response)
     end
 
     def response
@@ -29,7 +29,7 @@ module LastFM
     end
 
     def current_page
-      parsed_response.css('.pagination-page span').text
+      response_data.css('.pagination-page span').text
     end
   end
 end

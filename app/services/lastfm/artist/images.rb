@@ -28,11 +28,11 @@ module LastFM
       end
 
       def name
-        parsed_response.css('.header-new-title').text
+        response_data.css('.header-new-title').text
       end
 
       def images
-        parsed_response.css('.image-list-item img').map do |i|
+        response_data.css('.image-list-item img').map do |i|
           i['src'].sub('/avatar170s', '')
         end
       end

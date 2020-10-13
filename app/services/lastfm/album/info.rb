@@ -3,14 +3,15 @@ module LastFM
     class Info < LastFM::API
       private
 
-      def primary_args
-        [@args.artist, @args.album]
+      def service_info
+        {
+          api_method: 'album.getInfo',
+          response_data_node: 'album'
+        }
       end
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('album.getInfo')
-        )['album']
+      def primary_args
+        [@args.artist, @args.album]
       end
 
       def data
@@ -19,35 +20,35 @@ module LastFM
 
       def album_data
         {
-          title: parsed_response['name'],
-          artist: parsed_response['artist'],
+          title: response_data['name'],
+          artist: response_data['artist'],
           cover: cover,
-          mbid: parsed_response['mbid'] || '',
-          listeners_count: parsed_response['listeners'].to_i,
-          plays_count: parsed_response['playcount'].to_i,
+          mbid: response_data['mbid'] || '',
+          listeners_count: response_data['listeners'].to_i,
+          plays_count: response_data['playcount'].to_i,
           description: description,
           tags: tags, tracks: tracks
         }
       end
 
       def cover
-        parsed_response['image'].last['#text'].sub('/300x300', '')
+        response_data['image'].last['#text'].sub('/300x300', '')
       end
 
       def description
-        return '' if parsed_response['wiki'].blank?
+        return '' if response_data['wiki'].blank?
 
-        parsed_response.dig('wiki', 'content').match(
+        response_data.dig('wiki', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end
 
       def tags
-        parsed_response.dig('tags', 'tag').map { |t| t['name'] }
+        response_data.dig('tags', 'tag').map { |t| t['name'] }
       end
 
       def tracks
-        parsed_response.dig('tracks', 'track').map do |t|
+        response_data.dig('tracks', 'track').map do |t|
           {
             title: t['name'],
             length: t['duration'].to_i

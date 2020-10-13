@@ -3,6 +3,13 @@ module LastFM
     class Base < LastFM::API
       private
 
+      def service_info
+        {
+          api_method: "#{model_name}.search",
+          response_data_node: 'results'
+        }
+      end
+
       def primary_args
         [@args.query]
       end
@@ -12,15 +19,9 @@ module LastFM
       end
 
       def results
-        @results ||= parsed_response.dig(
+        @results ||= response_data.dig(
           "#{model_name}matches", model_name
         )
-      end
-
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response("#{model_name}.search")
-        )['results']
       end
 
       def data
@@ -36,7 +37,7 @@ module LastFM
       end
 
       def page
-        parsed_response.dig(
+        response_data.dig(
           'opensearch:Query', 'startPage'
         ).to_i
       end

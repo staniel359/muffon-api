@@ -3,14 +3,15 @@ module LastFM
     class Albums < LastFM::API
       private
 
-      def primary_args
-        [@args.artist]
+      def service_info
+        {
+          api_method: 'artist.getTopAlbums',
+          response_data_node: 'topalbums'
+        }
       end
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('artist.getTopAlbums')
-        )['topalbums']
+      def primary_args
+        [@args.artist]
       end
 
       def data
@@ -19,14 +20,14 @@ module LastFM
 
       def albums_data
         {
-          name: parsed_response.dig('@attr', 'artist'),
+          name: response_data.dig('@attr', 'artist'),
           albums: albums,
-          page: parsed_response.dig('@attr', 'page').to_i
+          page: response_data.dig('@attr', 'page').to_i
         }
       end
 
       def albums
-        parsed_response['album'].map do |a|
+        response_data['album'].map do |a|
           {
             title: a['name'],
             cover: a['image'].last['#text'].sub('/300x300', ''),

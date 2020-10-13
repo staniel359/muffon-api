@@ -3,14 +3,15 @@ module LastFM
     class Similar < LastFM::API
       private
 
-      def primary_args
-        [@args.artist]
+      def service_info
+        {
+          api_method: 'artist.getSimilar',
+          response_data_node: 'similarartists'
+        }
       end
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('artist.getSimilar')
-        )['similarartists']
+      def primary_args
+        [@args.artist]
       end
 
       def data
@@ -19,13 +20,13 @@ module LastFM
 
       def similar_data
         {
-          name: parsed_response.dig('@attr', 'artist'),
+          name: response_data.dig('@attr', 'artist'),
           similar: similar
         }
       end
 
       def similar
-        parsed_response['artist'].map { |a| a['name'] }
+        response_data['artist'].map { |a| a['name'] }
       end
     end
   end

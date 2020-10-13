@@ -32,7 +32,7 @@ module LastFM
       end
 
       def name
-        parsed_response.css('title').text.match(
+        response_data.css('title').text.match(
           /Top (.+) #{collection}/
         )[1]
       end

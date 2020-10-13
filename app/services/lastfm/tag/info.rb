@@ -3,18 +3,19 @@ module LastFM
     class Info < LastFM::API
       private
 
+      def service_info
+        {
+          api_method: 'tag.getInfo',
+          response_data_node: 'tag'
+        }
+      end
+
       def primary_args
         [@args.tag]
       end
 
       def no_data?
-        super || parsed_response['total'].zero?
-      end
-
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('tag.getInfo')
-        )['tag']
+        super || response_data['total'].zero?
       end
 
       def data
@@ -23,17 +24,17 @@ module LastFM
 
       def tag_data
         {
-          name: parsed_response['name'],
-          taggings_count: parsed_response['total'],
-          taggers_count: parsed_response['reach'],
+          name: response_data['name'],
+          taggings_count: response_data['total'],
+          taggers_count: response_data['reach'],
           description: description
         }
       end
 
       def description
-        return '' if parsed_response.dig('wiki', 'content').blank?
+        return '' if response_data.dig('wiki', 'content').blank?
 
-        parsed_response.dig('wiki', 'content').match(
+        response_data.dig('wiki', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end

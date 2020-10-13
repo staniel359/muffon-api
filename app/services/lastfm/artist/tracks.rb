@@ -3,14 +3,19 @@ module LastFM
     class Tracks < LastFM::API
       private
 
+      def service_info
+        {
+          api_method: 'artist.getTopTracks',
+          response_data_node: 'toptracks'
+        }
+      end
+
       def primary_args
         [@args.artist]
       end
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('artist.getTopTracks')
-        )['toptracks']
+      def api_method
+        'artist.getTopTracks'
       end
 
       def data
@@ -19,14 +24,14 @@ module LastFM
 
       def tracks_data
         {
-          name: parsed_response.dig('@attr', 'artist'),
+          name: response_data.dig('@attr', 'artist'),
           tracks: tracks,
-          page: parsed_response.dig('@attr', 'page').to_i
+          page: response_data.dig('@attr', 'page').to_i
         }
       end
 
       def tracks
-        parsed_response['track'].map do |t|
+        response_data['track'].map do |t|
           {
             title: t['name'],
             plays_count: t['playcount'].to_i,

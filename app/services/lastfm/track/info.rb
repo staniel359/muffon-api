@@ -3,14 +3,15 @@ module LastFM
     class Info < LastFM::API
       private
 
-      def primary_args
-        [@args.artist, @args.track]
+      def service_info
+        {
+          api_method: 'track.getInfo',
+          response_data_node: 'track'
+        }
       end
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('track.getInfo')
-        )['track']
+      def primary_args
+        [@args.artist, @args.track]
       end
 
       def data
@@ -19,44 +20,44 @@ module LastFM
 
       def track_data
         {
-          title: parsed_response['name'],
-          artist: parsed_response.dig('artist', 'name'),
-          mbid: parsed_response['mbid'] || '',
+          title: response_data['name'],
+          artist: response_data.dig('artist', 'name'),
+          mbid: response_data['mbid'] || '',
           length: length,
-          listeners_count: parsed_response['listeners'].to_i,
-          plays_count: parsed_response['playcount'].to_i,
+          listeners_count: response_data['listeners'].to_i,
+          plays_count: response_data['playcount'].to_i,
           album: album, tags: tags,
           description: description
         }
       end
 
       def length
-        parsed_response['duration'].to_i / 1_000
+        response_data['duration'].to_i / 1_000
       end
 
       def album
-        return {} if parsed_response['album'].blank?
+        return {} if response_data['album'].blank?
 
         {
-          title: parsed_response.dig('album', 'title'),
+          title: response_data.dig('album', 'title'),
           cover: cover
         }
       end
 
       def cover
-        parsed_response.dig(
+        response_data.dig(
           'album', 'image'
         ).last['#text'].sub('/300x300', '')
       end
 
       def tags
-        parsed_response.dig('toptags', 'tag').map { |t| t['name'] }
+        response_data.dig('toptags', 'tag').map { |t| t['name'] }
       end
 
       def description
-        return '' if parsed_response['wiki'].blank?
+        return '' if response_data['wiki'].blank?
 
-        parsed_response.dig('wiki', 'content').match(
+        response_data.dig('wiki', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end

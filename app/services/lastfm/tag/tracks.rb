@@ -13,7 +13,7 @@ module LastFM
       end
 
       def tracks_list
-        parsed_response.css('.chartlist-row')
+        response_data.css('.chartlist-row')
       end
     end
   end

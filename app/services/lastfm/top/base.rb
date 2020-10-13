@@ -3,12 +3,16 @@ module LastFM
     class Base < LastFM::API
       private
 
+      def primary_args
+        []
+      end
+
       def data
         { top: top_data }
       end
 
       def page
-        parsed_response.dig('@attr', 'page').to_i
+        response_data.dig('@attr', 'page').to_i
       end
     end
   end

@@ -8,29 +8,32 @@ module LastFM
 
     private
 
-    def primary_args
-      []
-    end
-
     def no_data?
-      parsed_response.blank?
+      response_data.blank?
     end
 
-    def api_response(method)
-      RestClient.get(api_link, params: params(method))
+    def response_data
+      @response_data ||=
+        JSON.parse(api_response)[data_node]
+    end
+
+    def api_response
+      RestClient.get(api_link, params: params)
     end
 
     def api_link
       'http://ws.audioscrobbler.com/2.0'
     end
 
-    def params(method)
-      base_params(method).merge(args_params)
+    def params
+      %w[base model extra].map do |scope|
+        send("#{scope}_params")
+      end.reduce(:merge).compact
     end
 
-    def base_params(method)
+    def base_params
       {
-        method: method,
+        method: service_info[:api_method],
         api_key: api_key,
         format: 'json',
         autocorrect: 1
@@ -41,31 +44,20 @@ module LastFM
       secrets.lastfm.dig(:api_key, Rails.env.to_sym)
     end
 
-    def args_params
-      {
-        artist: artist_query,
-        album: album_query,
-        track: track_query,
-        tag: @args.tag,
-        page: @args.page,
-        limit: limit
-      }.compact
+    def model_params
+      @args.to_h.slice(:artist, :album, :track)
     end
 
-    def artist_query
-      @args.artist
-    end
-
-    def album_query
-      @args.album
-    end
-
-    def track_query
-      @args.track
+    def extra_params
+      @args.to_h.slice(:tag, :page).merge(limit: limit)
     end
 
     def limit
       @args.limit || 50
+    end
+
+    def data_node
+      service_info[:response_data_node]
     end
   end
 end

@@ -15,7 +15,7 @@ module LastFM
       end
 
       def albums_list
-        parsed_response.css('.resource-list--release-list-item')
+        response_data.css('.resource-list--release-list-item')
       end
 
       def title(album)

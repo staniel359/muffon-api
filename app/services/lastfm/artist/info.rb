@@ -3,14 +3,15 @@ module LastFM
     class Info < LastFM::API
       private
 
-      def primary_args
-        [@args.artist]
+      def service_info
+        {
+          api_method: 'artist.getInfo',
+          response_data_node: 'artist'
+        }
       end
 
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response('artist.getInfo')
-        )['artist']
+      def primary_args
+        [@args.artist]
       end
 
       def data
@@ -19,10 +20,10 @@ module LastFM
 
       def artist_data
         {
-          name: parsed_response['name'],
-          mbid: parsed_response['mbid'] || '',
-          listeners_count: parsed_response.dig('stats', 'listeners').to_i,
-          plays_count: parsed_response.dig('stats', 'playcount').to_i,
+          name: response_data['name'],
+          mbid: response_data['mbid'] || '',
+          listeners_count: response_data.dig('stats', 'listeners').to_i,
+          plays_count: response_data.dig('stats', 'playcount').to_i,
           description: description,
           tags: tags,
           similar_artists: similar_artists
@@ -30,19 +31,19 @@ module LastFM
       end
 
       def description
-        return '' if parsed_response.dig('bio', 'content').blank?
+        return '' if response_data.dig('bio', 'content').blank?
 
-        parsed_response.dig('bio', 'content').match(
+        response_data.dig('bio', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
       end
 
       def tags
-        parsed_response.dig('tags', 'tag').map { |t| t['name'] }
+        response_data.dig('tags', 'tag').map { |t| t['name'] }
       end
 
       def similar_artists
-        parsed_response.dig('similar', 'artist').map { |a| a['name'] }
+        response_data.dig('similar', 'artist').map { |a| a['name'] }
       end
     end
   end

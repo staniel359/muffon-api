@@ -3,17 +3,18 @@ module LastFM
     class Tags < LastFM::API
       private
 
+      def service_info
+        {
+          api_method: "#{@args.model}.getTopTags",
+          response_data_node: 'toptags'
+        }
+      end
+
       def primary_args
         [
           @args.model, @args.artist,
           @args.send(@args.model.to_s)
         ]
-      end
-
-      def parsed_response
-        @parsed_response ||= JSON.parse(
-          api_response("#{@args.model}.getTopTags")
-        )['toptags']
       end
 
       def data
@@ -22,7 +23,7 @@ module LastFM
 
       def tags_data
         {
-          artist: parsed_response['@attr']['artist'],
+          artist: response_data['@attr']['artist'],
           album: add_data_if_model('album'),
           track: add_data_if_model('track'),
           tags: tags
@@ -30,11 +31,11 @@ module LastFM
       end
 
       def add_data_if_model(model)
-        parsed_response['@attr'][model] if @args.model == model
+        response_data['@attr'][model] if @args.model == model
       end
 
       def tags
-        parsed_response['tag'].map do |t|
+        response_data['tag'].map do |t|
           {
             name: t['name'],
             count: t['count']
