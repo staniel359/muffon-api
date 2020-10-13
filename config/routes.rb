@@ -53,6 +53,12 @@ Rails.application.routes.draw do
           get 'albums'
         end
       end
+      namespace :bandcamp do
+        scope module: :albums do
+          get 'album', action: :info
+        end
+        get 'search'
+      end
     end
   end
 end

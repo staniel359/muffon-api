@@ -119,6 +119,18 @@
     /api/v1/vk/search/albums
     ?query
 
+## Bandcamp
+
+### album.info
+
+    /api/v1/bandcamp/album
+    ?link,[artist,album]
+
+### search
+
+    /api/v1/bandcamp/search
+    ?query,page,limit
+
 # TODO
 
 ### local.artists
@@ -138,18 +150,6 @@
 ### top.albums
 
 ### local.albums
-
-## Bandcamp
-
-### album.info
-
-    /api/v1/bandcamp/album
-    ?link
-
-### album.links
-
-    /api/v1/bandcamp/album/links
-    ?query
 
 ## Google
 

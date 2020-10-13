@@ -18,9 +18,16 @@ module Bandcamp
     end
 
     def search_response
-      @search_response ||= Bing::Search.call(
-        query: query, page: @args.page
-      )[:search]
+      @search_response ||=
+        Bing::Search.call(search_args)[:search]
+    end
+
+    def search_args
+      {
+        query: query,
+        page: @args.page,
+        limit: @args.limit
+      }
     end
 
     def query

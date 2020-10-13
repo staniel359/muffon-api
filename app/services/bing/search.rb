@@ -44,7 +44,7 @@ module Bing
     def first
       return if @args.page.to_i.zero?
 
-      ((@args.page - 1) * 20) + 1
+      ((@args.page.to_i - 1) * 20) + 1
     end
 
     def count
