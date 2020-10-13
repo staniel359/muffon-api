@@ -59,6 +59,9 @@ Rails.application.routes.draw do
         end
         get 'search'
       end
+      namespace :bing do
+        get 'search'
+      end
     end
   end
 end

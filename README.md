@@ -131,7 +131,16 @@
     /api/v1/bandcamp/search
     ?query,page,limit
 
+## Bing
+
+### search
+
+    /api/v1/bing/search
+    ?query,limit,page
+
 # TODO
+
+## Last.fm
 
 ### local.artists
 
@@ -150,13 +159,6 @@
 ### top.albums
 
 ### local.albums
-
-## Google
-
-### search
-
-    /api/v1/google/search
-    ?query
 
 ## Soundcloud
 

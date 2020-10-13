@@ -1,5 +1,7 @@
 module Helpers
   module Bing
+    RANDOM_STRING = 'wejlhg239gh23'.freeze
+
     class << self
       def bad_request_error
         { error: { code: 400, text: 'Bad request' } }

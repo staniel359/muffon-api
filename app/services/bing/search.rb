@@ -65,15 +65,38 @@ module Bing
     def results_data
       results.map do |r|
         {
-          title: r.css('.b_title a')[-2].text,
-          link: r.css('.b_title a')[-2]['href'],
-          description: r.css('.b_caption p').text
+          title: link_title(r).text,
+          link: link_title(r)['href'],
+          description: description(r)
         }
       end
     end
 
+    def link_title(result)
+      result.css('a:not(.sh_favicon)')[0]
+    end
+
+    def description(result)
+      base_text(result).presence || wiki_text(result)
+    end
+
+    def base_text(result)
+      result.css('.b_caption p').text
+    end
+
+    def wiki_text(result)
+      result.css('.b_vList').text
+    end
+
     def page
-      parsed_response.css('.sb_pagS')[0].text.to_i
+      return 1 if current_page_block.blank?
+
+      current_page_block.text.to_i
+    end
+
+    def current_page_block
+      @current_page_block ||=
+        parsed_response.css('.sb_pagS')[0]
     end
   end
 end
