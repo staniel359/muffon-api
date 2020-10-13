@@ -35,15 +35,15 @@ module Bandcamp
 
       def album_script
         @album_script ||=
-          page_scripts.find { |s| album_script?(s) }
+          response_data.find { |s| album_script?(s) }
       end
 
-      def page_scripts
-        parsed_response.css('script')
+      def response_data
+        Nokogiri::HTML.parse(response).css('script')
       end
 
-      def parsed_response
-        Nokogiri::HTML.parse(RestClient.get(link))
+      def response
+        RestClient.get(link)
       end
 
       def album_script?(script)

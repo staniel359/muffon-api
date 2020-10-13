@@ -16,7 +16,7 @@ module VK
 
     def retry_with_new_remixsid
       global.set('remixsid', new_remixsid)
-      @parsed_response = nil
+      @response_data = nil
       call
     end
 

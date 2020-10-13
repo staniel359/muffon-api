@@ -11,11 +11,11 @@ module VK
     end
 
     def response_code
-      parsed_response[0].to_i
+      response_data[0].to_i
     end
 
-    def parsed_response
-      @parsed_response ||= JSON.parse(
+    def response_data
+      @response_data ||= JSON.parse(
         response_to_json
       )['payload']
     end

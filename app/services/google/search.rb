@@ -24,11 +24,11 @@ module Google
     end
 
     def nodes
-      parsed_response.css('.ZINbbc')
+      response_data.css('.ZINbbc')
     end
 
-    def parsed_response
-      @parsed_response ||= Nokogiri::HTML.parse(response)
+    def response_data
+      @response_data ||= Nokogiri::HTML.parse(response)
     end
 
     def response
@@ -97,7 +97,7 @@ module Google
     end
 
     def pages_block
-      parsed_response.css('.SAez4c')
+      response_data.css('.SAez4c')
     end
 
     def too_many_requests_error

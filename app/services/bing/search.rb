@@ -18,11 +18,11 @@ module Bing
     end
 
     def results
-      @results ||= parsed_response.css('.b_algo')
+      @results ||= response_data.css('.b_algo')
     end
 
-    def parsed_response
-      @parsed_response ||= Nokogiri::HTML.parse(response)
+    def response_data
+      @response_data ||= Nokogiri::HTML.parse(response)
     end
 
     def response
@@ -96,7 +96,7 @@ module Bing
 
     def current_page_block
       @current_page_block ||=
-        parsed_response.css('.sb_pagS')[0]
+        response_data.css('.sb_pagS')[0]
     end
   end
 end

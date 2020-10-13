@@ -34,7 +34,7 @@ module VK
       end
 
       def tracks
-        parsed_response.dig(1, 0)
+        response_data.dig(1, 0)
       end
 
       def link(track)

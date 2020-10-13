@@ -22,7 +22,7 @@ module VK
       end
 
       def playlists
-        @playlists ||= parsed_response.dig(1, 1, 'playlists')
+        @playlists ||= response_data.dig(1, 1, 'playlists')
       end
 
       def data

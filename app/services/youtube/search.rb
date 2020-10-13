@@ -18,11 +18,11 @@ module YouTube
     end
 
     def results_data
-      @results_data ||= parsed_response['items']
+      @results_data ||= response_data['items']
     end
 
-    def parsed_response
-      @parsed_response ||= JSON.parse(response)
+    def response_data
+      @response_data ||= JSON.parse(response)
     end
 
     def response
@@ -59,7 +59,7 @@ module YouTube
     def search_data
       {
         results: results,
-        next_page: parsed_response['nextPageToken']
+        next_page: response_data['nextPageToken']
       }
     end
 
