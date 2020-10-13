@@ -10,7 +10,7 @@ RSpec.describe API::V1::LastFM::SearchController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      get :artists, params: { artist: '' }
+      get :artists
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -31,7 +31,7 @@ RSpec.describe API::V1::LastFM::SearchController, type: :controller do
     end
 
     it 'returns 400 if no album title' do
-      get :albums, params: { album: '' }
+      get :albums
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -52,7 +52,7 @@ RSpec.describe API::V1::LastFM::SearchController, type: :controller do
     end
 
     it 'returns 400 if no track title' do
-      get :tracks, params: { track: '' }
+      get :tracks
       expect(response).to have_http_status(:bad_request)
     end
 

@@ -10,7 +10,7 @@ RSpec.describe API::V1::VK::TracksController, type: :controller do
     end
 
     it 'returns 400 if no query' do
-      get :info, params: { query: '' }
+      get :info
       expect(response).to have_http_status(:bad_request)
     end
 

@@ -10,7 +10,7 @@ RSpec.describe API::V1::BandcampController, type: :controller do
     end
 
     it 'returns 400 if no query' do
-      get :search, params: { query: '' }
+      get :search
       expect(response).to have_http_status(:bad_request)
     end
 
