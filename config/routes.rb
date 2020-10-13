@@ -62,6 +62,9 @@ Rails.application.routes.draw do
       namespace :bing do
         get 'search'
       end
+      namespace :youtube do
+        get 'search'
+      end
     end
   end
 end

@@ -138,6 +138,13 @@
     /api/v1/bing/search
     ?query,limit,page
 
+## YouTube
+
+### search
+
+    /api/v1/youtube/search
+    ?query,limit,next_page
+
 # TODO
 
 ## Last.fm
@@ -161,10 +168,6 @@
 ### local.albums
 
 ## Soundcloud
-
-    TODO
-
-## YouTube
 
     TODO
 
