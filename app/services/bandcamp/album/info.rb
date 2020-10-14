@@ -1,16 +1,6 @@
 module Bandcamp
   module Album
-    class Info < Muffon::Base
-      def call
-        return bad_request_error if not_all_args?
-        return not_found_error if no_data?
-        return retry_with_redirect_link if no_tracks?
-
-        data
-      rescue RestClient::NotFound, SocketError
-        not_found_error
-      end
-
+    class Info < Bandcamp::Base
       private
 
       def primary_args
@@ -28,9 +18,24 @@ module Bandcamp
       end
 
       def retrieve_link
-        Bandcamp::Album::Link.call(
-          @args.to_h.slice(:artist, :album)
-        )[:link]
+        links[position][:link] unless no_link?
+      end
+
+      def no_link?
+        links.blank? || links[position].blank?
+      end
+
+      def links
+        @links ||=
+          Bandcamp::Album::Links.call(links_args)[:links]
+      end
+
+      def links_args
+        @args.to_h.slice(:artist, :album)
+      end
+
+      def position
+        @args.position.to_i
       end
 
       def album_script
@@ -60,13 +65,24 @@ module Bandcamp
       end
 
       def retry_with_redirect_link
+        raise RestClient::NotFound if redirect_link.blank?
+
         self.class.name.constantize.call(
-          link: description
+          link: redirect_link
         )
+      end
+
+      def redirect_link
+        @redirect_link ||= description[link_regexp]
       end
 
       def description
         album_json.dig('current', 'about')
+      end
+
+      def link_regexp
+        %r{https?://\w+(?:-\w+)*.bandcamp.com/
+          (?:album|track)/\w+(?:-\w+)*}x
       end
 
       def data

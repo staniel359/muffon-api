@@ -1,39 +1,39 @@
 require 'rails_helper'
 
-RSpec.describe Bandcamp::Album::Link do
+RSpec.describe Bandcamp::Album::Links do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when artist and album present' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/link/success' do
-          subject.call(artist: 'wild nothing', album: 'indigo')
+        VCR.use_cassette 'bandcamp/album/links/success' do
+          subject.call(artist: 'luxury elite', album: 'tv party')
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp.album_link_data) }
+      it { expect(output).to eq(Helpers::Bandcamp.album_links_data) }
     end
   end
 
   describe 'no processing' do
     context 'when no artist' do
-      let(:output) { subject.call(album: 'indigo') }
+      let(:output) { subject.call(album: 'tv party') }
 
       it { expect(output).to eq(Helpers::Bandcamp.bad_request_error) }
     end
 
     context 'when no album' do
-      let(:output) { subject.call(artist: 'wild nothing') }
+      let(:output) { subject.call(artist: 'luxury elite') }
 
       it { expect(output).to eq(Helpers::Bandcamp.bad_request_error) }
     end
 
     context 'when wrong artist' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/link/wrong_artist' do
+        VCR.use_cassette 'bandcamp/album/links/wrong_artist' do
           subject.call(
             artist: Helpers::Bandcamp::RANDOM_STRING,
-            album: 'indigo'
+            album: 'tv party'
           )
         end
       end
@@ -43,9 +43,9 @@ RSpec.describe Bandcamp::Album::Link do
 
     context 'when wrong album' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/link/wrong_album' do
+        VCR.use_cassette 'bandcamp/album/links/wrong_album' do
           subject.call(
-            artist: 'wild nothing',
+            artist: 'luxury elite',
             album: Helpers::Bandcamp::RANDOM_STRING
           )
         end

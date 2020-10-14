@@ -1,12 +1,5 @@
 module Bandcamp
-  class Search < Muffon::Base
-    def call
-      return bad_request_error if not_all_args?
-      return not_found_error if no_data?
-
-      data
-    end
-
+  class Search < Bandcamp::Base
     private
 
     def primary_args
@@ -44,10 +37,5 @@ module Bandcamp
         page: search_response[:page]
       }
     end
-
-    # def album_regexp
-    #   %r{https?://(\w+(?:-\w+)*.bandcamp.com
-    #     /(?:album|track)/\w+(?:-\w+)*)}x
-    # end
   end
 end
