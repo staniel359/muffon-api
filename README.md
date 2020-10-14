@@ -190,3 +190,7 @@
 ## Discogs
 
     TODO
+
+## Rate Your Music
+
+    TODO
