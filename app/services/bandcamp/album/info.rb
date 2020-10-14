@@ -96,8 +96,8 @@ module Bandcamp
           cover: cover,
           release_date: release_date_formatted,
           description: description,
-          tracks: tracks,
-          link: album_json['url']
+          link: album_json['url'],
+          tracks: tracks
         }
       end
 

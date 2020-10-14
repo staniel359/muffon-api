@@ -41,4 +41,32 @@ RSpec.describe API::V1::Bandcamp::AlbumsController, type: :controller do
       end
     end
   end
+
+  describe 'GET :links' do
+    it 'returns 200 if query present' do
+      VCR.use_cassette 'api/v1/bandcamp/albums/links/success' do
+        get :links, params: { artist: 'wild nothing', album: 'indigo' }
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no query' do
+      get :links
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong artist' do
+      VCR.use_cassette 'api/v1/bandcamp/albums/links/wrong_artist' do
+        get :links, params: wrong_artist
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+
+    it 'returns 404 if wrong album' do
+      VCR.use_cassette 'api/v1/bandcamp/albums/links/wrong_album' do
+        get :links, params: wrong_album
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
 end

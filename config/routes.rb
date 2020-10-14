@@ -57,6 +57,9 @@ Rails.application.routes.draw do
         scope module: :albums do
           get 'album', action: :info
         end
+        namespace :album, module: :albums do
+          get 'links'
+        end
         get 'search'
       end
       namespace :bing do

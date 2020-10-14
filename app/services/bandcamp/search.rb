@@ -33,8 +33,8 @@ module Bandcamp
 
     def search_data
       {
-        results: search_response[:results],
-        page: search_response[:page]
+        page: search_response[:page],
+        results: search_response[:results]
       }
     end
   end

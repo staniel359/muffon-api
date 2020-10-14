@@ -126,6 +126,11 @@
     /api/v1/bandcamp/album
     ?link,[artist,album]
 
+### album.links
+
+    /api/v1/bandcamp/album/links
+    ?[artist,album]
+
 ### search
 
     /api/v1/bandcamp/search
