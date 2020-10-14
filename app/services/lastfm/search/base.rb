@@ -31,8 +31,8 @@ module LastFM
       def search_data
         {
           query: @args.query,
-          results: results_data,
-          page: page
+          page: page,
+          model_name.pluralize.to_sym => results_data
         }
       end
 

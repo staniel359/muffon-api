@@ -11,7 +11,10 @@ module LastFM
       end
 
       def top_data
-        { artists: artists, page: page }
+        {
+          page: page,
+          artists: artists
+        }
       end
 
       def artists

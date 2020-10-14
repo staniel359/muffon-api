@@ -54,8 +54,8 @@ module YouTube
 
     def search_data
       {
-        results: results,
-        next_page: response_data['nextPageToken']
+        next_page: response_data['nextPageToken'],
+        results: results
       }
     end
 

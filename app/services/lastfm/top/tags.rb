@@ -11,7 +11,7 @@ module LastFM
       end
 
       def top_data
-        { tags: tags, page: page }
+        { tags: tags }
       end
 
       def tags

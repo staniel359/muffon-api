@@ -21,8 +21,8 @@ module LastFM
       def albums_data
         {
           name: response_data.dig('@attr', 'artist'),
-          albums: albums,
-          page: response_data.dig('@attr', 'page').to_i
+          page: response_data.dig('@attr', 'page').to_i,
+          albums: albums
         }
       end
 

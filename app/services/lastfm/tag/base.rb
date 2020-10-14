@@ -26,8 +26,8 @@ module LastFM
       def tag_data
         {
           name: name,
-          collection.to_sym => send(collection),
-          page: page
+          page: page,
+          collection.to_sym => send(collection)
         }
       end
 

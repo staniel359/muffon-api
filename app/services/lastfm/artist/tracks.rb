@@ -25,8 +25,8 @@ module LastFM
       def tracks_data
         {
           name: response_data.dig('@attr', 'artist'),
-          tracks: tracks,
-          page: response_data.dig('@attr', 'page').to_i
+          page: response_data.dig('@attr', 'page').to_i,
+          tracks: tracks
         }
       end
 

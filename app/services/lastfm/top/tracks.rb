@@ -11,7 +11,10 @@ module LastFM
       end
 
       def top_data
-        { tracks: tracks, page: page }
+        {
+          page: page,
+          tracks: tracks
+        }
       end
 
       def tracks

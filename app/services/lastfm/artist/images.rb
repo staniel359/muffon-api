@@ -22,8 +22,8 @@ module LastFM
       def images_data
         {
           name: name,
-          images: images,
-          page: page
+          page: page,
+          images: images
         }
       end
 
