@@ -34,14 +34,10 @@ module LastFM
     def base_params
       {
         method: service_info[:api_method],
-        api_key: api_key,
+        api_key: secrets.lastfm[:api_key],
         format: 'json',
         autocorrect: 1
       }
-    end
-
-    def api_key
-      secrets.lastfm[:api_key]
     end
 
     def model_params

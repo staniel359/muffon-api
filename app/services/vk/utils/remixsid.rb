@@ -34,7 +34,7 @@ module VK
       end
 
       def body
-        Nokogiri::HTML.parse(response.body)
+        Nokogiri::HTML.parse(response)
       end
 
       def response

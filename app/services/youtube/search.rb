@@ -37,15 +37,11 @@ module YouTube
       {
         part: 'snippet',
         type: 'video',
-        key: api_key,
+        key: secrets.youtube[:api_key],
         q: @args.query,
         maxResults: limit,
         pageToken: @args.next_page
       }
-    end
-
-    def api_key
-      secrets.youtube[:api_key]
     end
 
     def limit

@@ -15,9 +15,8 @@ module VK
     end
 
     def response_data
-      @response_data ||= JSON.parse(
-        response_to_json
-      )['payload']
+      @response_data ||=
+        JSON.parse(response_to_json)['payload']
     end
 
     def response_to_json
