@@ -13,7 +13,7 @@ RSpec.describe VK::Utils::Audio do
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.audio_data) }
+      it { expect(output).to eq(Helpers::VK::Utils.audio_data) }
     end
   end
 

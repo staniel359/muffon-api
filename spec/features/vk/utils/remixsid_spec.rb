@@ -11,7 +11,7 @@ RSpec.describe VK::Utils::Remixsid do
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.remixsid) }
+      it { expect(output).to eq(Helpers::VK::Utils.remixsid_data) }
     end
   end
 end

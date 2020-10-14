@@ -11,7 +11,7 @@ RSpec.describe VK::Search::Albums do
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.search_albums_data) }
+      it { expect(output).to eq(Helpers::VK::Search.albums_data) }
     end
   end
 

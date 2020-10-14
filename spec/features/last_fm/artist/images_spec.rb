@@ -11,7 +11,7 @@ RSpec.describe LastFM::Artist::Images do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.artist_images_data) }
+      it { expect(output).to eq(Helpers::LastFM::Artist.images_data) }
     end
   end
 

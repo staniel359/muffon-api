@@ -15,7 +15,7 @@ RSpec.describe LastFM::Common::Tags do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.artist_tags_data) }
+      it { expect(output).to eq(Helpers::LastFM::Common.artist_tags_data) }
     end
   end
 
@@ -49,7 +49,7 @@ RSpec.describe LastFM::Common::Tags do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.album_tags_data) }
+      it { expect(output).to eq(Helpers::LastFM::Common.album_tags_data) }
     end
   end
 
@@ -109,7 +109,7 @@ RSpec.describe LastFM::Common::Tags do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.track_tags_data) }
+      it { expect(output).to eq(Helpers::LastFM::Common.track_tags_data) }
     end
   end
 

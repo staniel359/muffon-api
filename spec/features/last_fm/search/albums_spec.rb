@@ -11,7 +11,7 @@ RSpec.describe LastFM::Search::Albums do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.search_albums_data) }
+      it { expect(output).to eq(Helpers::LastFM::Search.albums_data) }
     end
   end
 

@@ -8,7 +8,7 @@ VCR.configure do |c|
     %w[youtube api_key],
     %w[vk page_id],
     %w[vk email],
-    %w[vk password],
+    %w[vk password]
   ]
   keys.each do |a|
     filter_name = "<#{a[0]}_#{a[1]}>".upcase

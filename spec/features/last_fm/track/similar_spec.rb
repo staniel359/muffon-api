@@ -14,7 +14,7 @@ RSpec.describe LastFM::Track::Similar do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.track_similar_data) }
+      it { expect(output).to eq(Helpers::LastFM::Track.similar_data) }
     end
   end
 

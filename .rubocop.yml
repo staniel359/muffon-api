@@ -12,8 +12,9 @@ AllCops:
   Exclude:
     - 'config/**/*'
     - 'db/**/*'
-    - 'spec/*_helper.rb'
-    - 'spec/helpers/*'
+    - 'spec/helpers/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
     - 'Gemfile'
     - 'Rakefile'
 

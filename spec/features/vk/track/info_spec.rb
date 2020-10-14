@@ -11,7 +11,7 @@ RSpec.describe VK::Track::Info do
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.track_data) }
+      it { expect(output).to eq(Helpers::VK::Track.info_data) }
     end
   end
 

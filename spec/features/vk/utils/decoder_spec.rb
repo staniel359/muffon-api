@@ -6,10 +6,10 @@ RSpec.describe VK::Utils::Decoder do
   describe 'successful processing' do
     context 'when link given' do
       let(:output) do
-        subject.call(link: Helpers::VK.encoded_audio_link)
+        subject.call(link: Helpers::VK::Utils.encoded_data)
       end
 
-      it { expect(output).to eq(Helpers::VK.decoded_audio_link) }
+      it { expect(output).to eq(Helpers::VK::Utils.decoded_data) }
     end
   end
 

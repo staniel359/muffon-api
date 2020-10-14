@@ -15,13 +15,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'vcr'
 require 'vcr_helper'
-require_relative 'helpers/base'
-require_relative 'helpers/lastfm'
-require_relative 'helpers/vk'
-require_relative 'helpers/bandcamp'
-require_relative 'helpers/google'
-require_relative 'helpers/bing'
-require_relative 'helpers/youtube'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

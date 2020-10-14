@@ -11,7 +11,7 @@ RSpec.describe LastFM::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.artist_info_data) }
+      it { expect(output).to eq(Helpers::LastFM::Artist.info_data) }
     end
   end
 

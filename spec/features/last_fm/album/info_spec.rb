@@ -13,7 +13,7 @@ RSpec.describe LastFM::Album::Info do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.album_info_data) }
+      it { expect(output).to eq(Helpers::LastFM::Album.info_data) }
     end
   end
 

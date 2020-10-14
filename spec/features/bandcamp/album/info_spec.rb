@@ -13,7 +13,7 @@ RSpec.describe Bandcamp::Album::Info do
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp.link_album_info_data) }
+      it { expect(output).to eq(Helpers::Bandcamp::Album.link_info_data) }
     end
 
     context 'when artist and album present' do
@@ -23,7 +23,7 @@ RSpec.describe Bandcamp::Album::Info do
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp.query_album_info_data) }
+      it { expect(output).to eq(Helpers::Bandcamp::Album.query_info_data) }
     end
 
     context 'when link present but redirected' do
@@ -37,7 +37,7 @@ RSpec.describe Bandcamp::Album::Info do
 
       it do
         expect(output).to eq(
-          Helpers::Bandcamp.link_redirect_album_info_data
+          Helpers::Bandcamp::Album.link_redirect_info_data
         )
       end
     end
@@ -51,7 +51,7 @@ RSpec.describe Bandcamp::Album::Info do
 
       it do
         expect(output).to eq(
-          Helpers::Bandcamp.query_redirect_album_info_data
+          Helpers::Bandcamp::Album.query_redirect_info_data
         )
       end
     end

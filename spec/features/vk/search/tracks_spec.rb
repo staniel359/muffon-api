@@ -11,7 +11,7 @@ RSpec.describe VK::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.search_tracks_data) }
+      it { expect(output).to eq(Helpers::VK::Search.tracks_data) }
     end
   end
 

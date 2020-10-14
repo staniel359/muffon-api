@@ -11,7 +11,7 @@ RSpec.describe Bandcamp::Album::Links do
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp.album_links_data) }
+      it { expect(output).to eq(Helpers::Bandcamp::Album.links_data) }
     end
   end
 
