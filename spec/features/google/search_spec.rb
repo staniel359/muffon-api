@@ -8,7 +8,8 @@ RSpec.describe Google::Search do
       let(:output) do
         VCR.use_cassette 'google/search/success' do
           subject.call(
-            query: 'wild nothing indigo bandcamp'
+            query: 'wild nothing indigo bandcamp',
+            limit: 5
           )
         end
       end

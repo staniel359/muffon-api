@@ -40,13 +40,17 @@ module Google
     end
 
     def params
-      { q: @args.query, start: start }
+      { q: @args.query, start: offset, num: limit }
     end
 
-    def start
+    def offset
       return if @args.page.to_i.zero?
 
-      (@args.page - 1) * 10
+      (@args.page.to_i - 1) * limit
+    end
+
+    def limit
+      (@args.limit || 20).to_i
     end
 
     def result_node?(node)
@@ -59,8 +63,8 @@ module Google
 
     def search_data
       {
-        results: results_data,
-        page: page
+        page: page,
+        results: results_data
       }
     end
 

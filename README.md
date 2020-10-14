@@ -136,6 +136,13 @@
     /api/v1/bandcamp/search
     ?query,page,limit
 
+## Google
+
+### search
+
+    /api/v1/google/search
+    ?query,limit,page
+
 ## Bing
 
 ### search

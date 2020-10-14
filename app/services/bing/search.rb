@@ -36,18 +36,18 @@ module Bing
     def params
       {
         q: @args.query,
-        first: first,
-        count: count
+        first: offset,
+        count: limit
       }
     end
 
-    def first
+    def offset
       return if @args.page.to_i.zero?
 
-      ((@args.page.to_i - 1) * count) + 1
+      ((@args.page.to_i - 1) * limit) + 1
     end
 
-    def count
+    def limit
       (@args.limit || 20).to_i
     end
 
