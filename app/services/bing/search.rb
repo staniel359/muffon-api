@@ -44,11 +44,11 @@ module Bing
     def first
       return if @args.page.to_i.zero?
 
-      ((@args.page.to_i - 1) * 20) + 1
+      ((@args.page.to_i - 1) * count) + 1
     end
 
     def count
-      @args.limit || 20
+      (@args.limit || 20).to_i
     end
 
     def data
@@ -57,9 +57,20 @@ module Bing
 
     def search_data
       {
-        results: results_data,
-        page: page
+        page: page,
+        results: results_data
       }
+    end
+
+    def page
+      return 1 if current_page_block.blank?
+
+      current_page_block.text.to_i
+    end
+
+    def current_page_block
+      @current_page_block ||=
+        response_data.css('.sb_pagS')[0]
     end
 
     def results_data
@@ -86,17 +97,6 @@ module Bing
 
     def wiki_text(result)
       result.css('.b_vList').text
-    end
-
-    def page
-      return 1 if current_page_block.blank?
-
-      current_page_block.text.to_i
-    end
-
-    def current_page_block
-      @current_page_block ||=
-        response_data.css('.sb_pagS')[0]
     end
   end
 end
