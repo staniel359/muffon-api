@@ -41,7 +41,7 @@ module LastFM
     end
 
     def api_key
-      secrets.lastfm.dig(:api_key, Rails.env.to_sym)
+      secrets.lastfm[:api_key]
     end
 
     def model_params

@@ -14,17 +14,13 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'vcr'
-require './spec/helpers/lastfm'
-require './spec/helpers/vk'
-require './spec/helpers/bandcamp'
-require './spec/helpers/google'
-require './spec/helpers/bing'
-require './spec/helpers/youtube'
-
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/cassettes'
-  c.hook_into :webmock
-end
+require 'vcr_helper'
+require_relative 'helpers/lastfm'
+require_relative 'helpers/vk'
+require_relative 'helpers/bandcamp'
+require_relative 'helpers/google'
+require_relative 'helpers/bing'
+require_relative 'helpers/youtube'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

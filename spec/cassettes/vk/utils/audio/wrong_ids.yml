@@ -10,13 +10,13 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Content-Length:
       - '83'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=49f7529ecbbc3c2f0a62c04cbee3d3cc410f0cdb85fd3d304a8de20139519
+      - remixsid=51dbc234c8e4db0f8c12a9d5555062e6ada60b2c414964674800a66c6567f
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sun, 11 Oct 2020 12:37:45 GMT
+      - Wed, 14 Oct 2020 10:39:38 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
@@ -37,13 +37,13 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - PHP/3.104307
+      - PHP/3.26680
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Tue, 19 Oct 2021 22:59:59 GMT; path=/; domain=.vk.com;
+      - remixlang=0; expires=Sun, 10 Oct 2021 02:20:57 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Thu, 07 Oct 2021 15:05:01 GMT; path=/; domain=.vk.com
+      - remixlang=114; expires=Thu, 21 Oct 2021 20:53:44 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
@@ -54,6 +54,6 @@ http_interactions:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":["8",["\"bad_hash\"","false","\"74075288\""]],"statsMeta":{"platform":"web2","st":false,"time":1602419865,"hash":"qpOUSv6In1zgQcXl5EFtI951G8JbidEAX1C6zQa3Dlc"},"loaderVersion":"8686803","langVersion":"7048"}
-  recorded_at: Sun, 11 Oct 2020 12:37:44 GMT
+      string: <!--{"payload":["8",["\"bad_hash\"","false","\"74112667\""]],"statsMeta":{"platform":"web2","st":false,"time":1602671978,"hash":"cBZe0jFAWZi7G3qiPdwy930bGx9ka9wIZLAeGiueSrX"},"loaderVersion":"11941975","langVersion":"7048"}
+  recorded_at: Wed, 14 Oct 2020 10:39:38 GMT
 recorded_with: VCR 6.0.0

@@ -4,3 +4,5 @@
 /storage/*
 .byebug_history
 /config/master.key
+/config/credentials/test.key
+/config/credentials/development.key

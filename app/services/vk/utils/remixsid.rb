@@ -25,7 +25,7 @@ module VK
           ip_h: selector_data('ip_h'),
           lg_h: selector_data('lg_h'),
           email: secrets.vk[:email],
-          pass: secrets.vk[:pass]
+          pass: secrets.vk[:password]
         }
       end
 

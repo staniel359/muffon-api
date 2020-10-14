@@ -10,13 +10,13 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Content-Length:
       - '66'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=d047ce5de44a2c7e713d6f696732c98b7d54253cf7e2bdcaf56cf36686715
+      - remixsid=51dbc234c8e4db0f8c12a9d5555062e6ada60b2c414964674800a66c6567f
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,21 +29,21 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sun, 11 Oct 2020 12:36:40 GMT
+      - Wed, 14 Oct 2020 10:49:40 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '711'
+      - '714'
       Connection:
       - keep-alive
       X-Powered-By:
-      - PHP/3.104307
+      - PHP/3.26680
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Wed, 06 Oct 2021 00:20:38 GMT; path=/; domain=.vk.com;
+      - remixlang=0; expires=Thu, 14 Oct 2021 01:35:08 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Thu, 14 Oct 2021 16:08:40 GMT; path=/; domain=.vk.com
+      - remixlang=114; expires=Tue, 19 Oct 2021 10:32:02 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
@@ -55,6 +55,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        PCEtLXsicGF5bG9hZCI6WzAsWyI8ZGl2IGNsYXNzPSdDYXRhbG9nU2VjdGlvbiBDYXRhbG9nU2VjdGlvbi0tZGl2aWRlZCBDYXRhbG9nU2VjdGlvbl9fc2VhcmNoX3Jlc3VsdHMnPjxkaXYgY2xhc3M9J0NhdGFsb2dCbG9jayBDYXRhbG9nQmxvY2stLWRpdmlkZWQnPiAgPGRpdiBjbGFzcz1cIkNhdGFsb2dCbG9ja19fY29udGVudCBDYXRhbG9nQmxvY2tfX3BsYWNlaG9sZGVyX2VtcHR5X3NlYXJjaCBDYXRhbG9nQmxvY2tfX3BsYWNlaG9sZGVyXCIgZGF0YS10eXBlPSdwbGFjZWhvbGRlcicgZGF0YS1pZD0nUFVsUVZBOEdSMFIzVzB0TUYwUUhCeVVPQVJsWlVBNFVHUTRFQmtGTk5CVWpDaHNWWFJaSFJINUpVMFFIQjFsVmRWOWRRaGtXWEVSOFNSNFRYMWdEQVhSWVVCRmRCbGhFYWtsZFZBOE5SMFIzWGt0TUJFaycgPjxkaXYgY2xhc3M9XCJQbGFjZWhvbGRlclwiPlxuICAgIDxkaXYgY2xhc3M9XCJQbGFjZWhvbGRlcl9faWNvbkNvbnRhaW5lclwiPlxuICAgICAgPGltZyBzcmM9XCJcL2ltYWdlc1wvc3ZnX2ljb25zXC9hdWRpb1wvYXVkaW9fbm90ZV82NC5zdmdcIiBhbHQ9XCJcIiBjbGFzcz1cIlBsYWNlaG9sZGVyX19pY29uXCI+XG4gIDxcL2Rpdj5cbiAgXG4gICAgPGRpdiBjbGFzcz1cIlBsYWNlaG9sZGVyX190ZXh0XCI+z+4g5+Dv8O7x8yA8c3Ryb25nPndlamxoZzIzOWdoMjM8XC9zdHJvbmc+IO3lIO3g6eTl7e4g7egg7uTt7ukg4PPk6O7n4O/o8eg8XC9kaXY+XG4gIFxuPFwvZGl2PjxcL2Rpdj48XC9kaXY+PFwvZGl2PiIseyJwbGF5bGlzdCI6ZmFsc2UsInBsYXlsaXN0cyI6W10sIm5leHRfZnJvbSI6IiIsIm5leHRGcm9tIjoiIiwic2VhcmNoX3F1ZXJ5Ijoid2VqbGhnMjM5Z2gyMyIsInNlYXJjaFBhcmFtcyI6eyJnbG9iYWxRdWVyeSI6IndlamxoZzIzOWdoMjMifSwic2VjdGlvbklkIjoiUFVsZFZBOE5SMFJ6U1ZOVWFnZFNSR3BKVUZRUEJVZEVma2xUUkFjSFdWVjFYMTFDR1JaY1JIeEpIaE5mV0FNQmRGaFFFVjBHV0VRNyIsImlzQmxvY2tQYWdpbmF0aW9uIjpmYWxzZX1dXSwic3RhdHNNZXRhIjp7InBsYXRmb3JtIjoid2ViMiIsInN0IjpmYWxzZSwidGltZSI6MTYwMjQxOTgwMCwiaGFzaCI6InVsOW96V3FCVHhQbDhwMDdTSHd5UTZWZWxiNXpJdzRLemdIdnVSeE1remcifSwibG9hZGVyVmVyc2lvbiI6Ijg2ODY4MDMiLCJwYWdldmlld0NhbmRpZGF0ZSI6dHJ1ZSwibGFuZ1ZlcnNpb24iOiI3MDQ4In0=
-  recorded_at: Sun, 11 Oct 2020 12:36:40 GMT
+        PCEtLXsicGF5bG9hZCI6WzAsWyI8ZGl2IGNsYXNzPSdDYXRhbG9nU2VjdGlvbiBDYXRhbG9nU2VjdGlvbi0tZGl2aWRlZCBDYXRhbG9nU2VjdGlvbl9fc2VhcmNoX3Jlc3VsdHMnPjxkaXYgY2xhc3M9J0NhdGFsb2dCbG9jayBDYXRhbG9nQmxvY2stLWRpdmlkZWQnPiAgPGRpdiBjbGFzcz1cIkNhdGFsb2dCbG9ja19fY29udGVudCBDYXRhbG9nQmxvY2tfX3BsYWNlaG9sZGVyX2VtcHR5X3NlYXJjaCBDYXRhbG9nQmxvY2tfX3BsYWNlaG9sZGVyXCIgZGF0YS10eXBlPSdwbGFjZWhvbGRlcicgZGF0YS1pZD0nUFVsUVZBOEdSMFIzVzB0TUYwUUhCeVVPQVJsWlVBNFVHUTRFQmtGTk5CVWpDaHNWWFJaSFJINUpVMFFIQjFsVmRWOWRRaGtXWEVSOFNSNFRYMWdEQVhSWVVCRmRCbGhFYWtsZFZBOE5SMFIzWGt0TUJFaycgPjxkaXYgY2xhc3M9XCJQbGFjZWhvbGRlclwiPlxuICAgIDxkaXYgY2xhc3M9XCJQbGFjZWhvbGRlcl9faWNvbkNvbnRhaW5lclwiPlxuICAgICAgPGltZyBzcmM9XCJcL2ltYWdlc1wvc3ZnX2ljb25zXC9hdWRpb1wvYXVkaW9fbm90ZV82NC5zdmdcIiBhbHQ9XCJcIiBjbGFzcz1cIlBsYWNlaG9sZGVyX19pY29uXCI+XG4gIDxcL2Rpdj5cbiAgXG4gICAgPGRpdiBjbGFzcz1cIlBsYWNlaG9sZGVyX190ZXh0XCI+z+4g5+Dv8O7x8yA8c3Ryb25nPndlamxoZzIzOWdoMjM8XC9zdHJvbmc+IO3lIO3g6eTl7e4g7egg7uTt7ukg4PPk6O7n4O/o8eg8XC9kaXY+XG4gIFxuPFwvZGl2PjxcL2Rpdj48XC9kaXY+PFwvZGl2PiIseyJwbGF5bGlzdCI6ZmFsc2UsInBsYXlsaXN0cyI6W10sIm5leHRfZnJvbSI6IiIsIm5leHRGcm9tIjoiIiwic2VhcmNoX3F1ZXJ5Ijoid2VqbGhnMjM5Z2gyMyIsInNlYXJjaFBhcmFtcyI6eyJnbG9iYWxRdWVyeSI6IndlamxoZzIzOWdoMjMifSwic2VjdGlvbklkIjoiUFVsZFZBOE5SMFJ6U1ZOVWFnZFNSR3BKVUZRUEJVZEVma2xUUkFjSFdWVjFYMTFDR1JaY1JIeEpIaE5mV0FNQmRGaFFFVjBHV0VRNyIsImlzQmxvY2tQYWdpbmF0aW9uIjpmYWxzZX1dXSwic3RhdHNNZXRhIjp7InBsYXRmb3JtIjoid2ViMiIsInN0IjpmYWxzZSwidGltZSI6MTYwMjY3MjU4MCwiaGFzaCI6IjhPa1hLd2ZKRzB6TDVRcGlvNXJQNzh2bXcwb3REc1FoZUdOTmJqaU5tUWcifSwibG9hZGVyVmVyc2lvbiI6IjExOTQxOTc1IiwicGFnZXZpZXdDYW5kaWRhdGUiOnRydWUsImxhbmdWZXJzaW9uIjoiNzA0OCJ9
+  recorded_at: Wed, 14 Oct 2020 10:49:40 GMT
 recorded_with: VCR 6.0.0

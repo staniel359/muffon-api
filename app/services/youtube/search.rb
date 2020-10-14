@@ -45,7 +45,7 @@ module YouTube
     end
 
     def api_key
-      secrets.dig(:youtube, :api_key, Rails.env.to_sym)
+      secrets.youtube[:api_key]
     end
 
     def limit
