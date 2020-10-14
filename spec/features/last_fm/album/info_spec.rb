@@ -21,7 +21,7 @@ RSpec.describe LastFM::Album::Info do
     context 'when no album title given' do
       let(:output) { subject.call(artist: 'wild nothing') }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong album title' do
@@ -29,12 +29,12 @@ RSpec.describe LastFM::Album::Info do
         VCR.use_cassette 'lastfm/album/info/wrong_title' do
           subject.call(
             artist: 'wild nothing',
-            album: Helpers::LastFM::RANDOM_STRING
+            album: Helpers::Base::RANDOM_STRING
           )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

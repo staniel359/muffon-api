@@ -22,7 +22,7 @@ RSpec.describe Google::Search do
     context 'when no query given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Google.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong query' do
@@ -32,7 +32,7 @@ RSpec.describe Google::Search do
         end
       end
 
-      it { expect(output).to eq(Helpers::Google.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

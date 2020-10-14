@@ -16,7 +16,7 @@ RSpec.describe API::V1::LastFM::SearchController, type: :controller do
 
     it 'returns 404 if wrong query' do
       VCR.use_cassette 'api/v1/lastfm/search/artists/wrong_query' do
-        get :artists, params: { query: Helpers::LastFM::RANDOM_STRING }
+        get :artists, params: { query: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end
@@ -37,7 +37,7 @@ RSpec.describe API::V1::LastFM::SearchController, type: :controller do
 
     it 'returns 404 if wrong query' do
       VCR.use_cassette 'api/v1/lastfm/search/albums/wrong_query' do
-        get :albums, params: { query: Helpers::LastFM::RANDOM_STRING }
+        get :albums, params: { query: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end
@@ -58,7 +58,7 @@ RSpec.describe API::V1::LastFM::SearchController, type: :controller do
 
     it 'returns 404 if wrong query' do
       VCR.use_cassette 'api/v1/lastfm/search/tracks/wrong_query' do
-        get :tracks, params: { query: Helpers::LastFM::RANDOM_STRING }
+        get :tracks, params: { query: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end

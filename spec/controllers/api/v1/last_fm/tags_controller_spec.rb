@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::LastFM::TagsController, type: :controller do
   let(:tag) { { tag: 'dream pop' } }
   let(:no_tag) { { tag: '' } }
-  let(:wrong_tag) { { tag: Helpers::LastFM::RANDOM_STRING } }
+  let(:wrong_tag) { { tag: Helpers::Base::RANDOM_STRING } }
 
   describe 'GET :info' do
     it 'returns 200 if tag exists' do

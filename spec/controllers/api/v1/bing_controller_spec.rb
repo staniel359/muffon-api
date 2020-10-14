@@ -16,7 +16,7 @@ RSpec.describe API::V1::BingController, type: :controller do
 
     it 'returns 404 if wrong query' do
       VCR.use_cassette 'api/v1/bing/search/wrong_query' do
-        get :search, params: { query: Helpers::Bing::RANDOM_STRING }
+        get :search, params: { query: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end

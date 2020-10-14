@@ -19,17 +19,17 @@ RSpec.describe LastFM::Artist::Images do
     context 'when no artist name given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'lastfm/artist/images/wrong_name' do
-          subject.call(artist: Helpers::LastFM::RANDOM_STRING)
+          subject.call(artist: Helpers::Base::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

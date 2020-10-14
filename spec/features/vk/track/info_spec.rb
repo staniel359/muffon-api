@@ -19,17 +19,17 @@ RSpec.describe VK::Track::Info do
     context 'when no query string given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::VK.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong query string' do
       let(:output) do
         VCR.use_cassette 'vk/track/info/wrong_query' do
-          subject.call(query: Helpers::VK::RANDOM_STRING)
+          subject.call(query: Helpers::Base::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

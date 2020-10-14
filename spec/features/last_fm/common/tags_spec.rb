@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe LastFM::Common::Tags do
   subject { described_class }
 
-  let(:random_string) { Helpers::LastFM::RANDOM_STRING }
-  let(:not_found_error) { Helpers::LastFM.not_found_error }
-  let(:bad_request_error) { Helpers::LastFM.bad_request_error }
+  let(:random_string) { Helpers::Base::RANDOM_STRING }
+  let(:not_found_error) { Helpers::Base.not_found_error }
+  let(:bad_request_error) { Helpers::Base.bad_request_error }
 
   describe 'Artist successful processing' do
     context 'when artist exists' do
@@ -163,7 +163,7 @@ RSpec.describe LastFM::Common::Tags do
     context 'when no args given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when no model name given' do
@@ -173,7 +173,7 @@ RSpec.describe LastFM::Common::Tags do
         )
       end
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
   end
 end

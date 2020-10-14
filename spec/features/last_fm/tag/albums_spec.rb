@@ -19,17 +19,17 @@ RSpec.describe LastFM::Tag::Albums do
     context 'when no tag name given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong tag name' do
       let(:output) do
         VCR.use_cassette 'lastfm/tag/albums/wrong_name' do
-          subject.call(tag: Helpers::LastFM::RANDOM_STRING)
+          subject.call(tag: Helpers::Base::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

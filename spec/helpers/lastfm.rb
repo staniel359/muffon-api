@@ -1,16 +1,6 @@
 module Helpers
   module LastFM
-    RANDOM_STRING = 'wejlhg239gh23'.freeze
-
     class << self
-      def bad_request_error
-        { error: { code: 400, text: 'Bad request' } }
-      end
-
-      def not_found_error
-        { error: { code: 404, text: 'Not found' } }
-      end
-
       def artist_info_data
         {:artist=>{:description=>"Wild Nothing is the solo project of Virginia-born Jack Tatum. Tatum began recording under the moniker Wild Nothing in the summer of 2009 in Blacksburg, Virginia. Upon gathering attention in indie music circles, he was signed with the Captured Tracks record label and began touring with a band. His debut full-length, \"Gemini,\" was released in spring 2010 to acclaim from Pitchfork Media and the music editors at Amazon.com. A follow-up album called \"Nocturne\" was released in 2012. His second EP \"Empty Estate\" was released in May 2013. Tatum's third LP entitled \"Life of Pause\" was released on February 19, 2016.", :listeners_count=>544773, :mbid=>"a181595e-5b84-4439-a5f4-f548ddfb64df", :name=>"Wild Nothing", :plays_count=>18885610, :similar_artists=>["Craft Spells", "Beach Fossils", "DIIV", "Small Black", "Blouse"], :tags=>["dream pop", "shoegaze", "indie pop", "indie", "seen live"]}}
       end

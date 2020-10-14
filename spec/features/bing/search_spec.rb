@@ -21,7 +21,7 @@ RSpec.describe Bing::Search do
     context 'when no query given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Bing.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong query' do
@@ -31,7 +31,7 @@ RSpec.describe Bing::Search do
         end
       end
 
-      it { expect(output).to eq(Helpers::Bing.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

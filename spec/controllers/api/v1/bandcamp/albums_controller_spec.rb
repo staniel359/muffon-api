@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe API::V1::Bandcamp::AlbumsController, type: :controller do
   let(:wrong_artist) do
     {
-      artist: Helpers::Bandcamp::RANDOM_STRING,
+      artist: Helpers::Base::RANDOM_STRING,
       album: 'indigo'
     }
   end
   let(:wrong_album) do
     {
       artist: 'wild nothing',
-      album: Helpers::Bandcamp::RANDOM_STRING
+      album: Helpers::Base::RANDOM_STRING
     }
   end
 

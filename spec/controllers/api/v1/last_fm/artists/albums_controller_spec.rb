@@ -4,12 +4,12 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
   let(:wrong_album) do
     {
       artist: 'Wild Nothing',
-      album: Helpers::LastFM::RANDOM_STRING
+      album: Helpers::Base::RANDOM_STRING
     }
   end
   let(:wrong_artist) do
     {
-      artist: Helpers::LastFM::RANDOM_STRING,
+      artist: Helpers::Base::RANDOM_STRING,
       album: 'Nocturne'
     }
   end

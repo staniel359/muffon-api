@@ -21,13 +21,13 @@ RSpec.describe LastFM::Track::Info do
     context 'when no track title given' do
       let(:output) { subject.call(artist: 'kate bush') }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when no artist name given' do
       let(:output) { subject.call(track: 'hounds of love') }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong track title' do
@@ -35,25 +35,25 @@ RSpec.describe LastFM::Track::Info do
         VCR.use_cassette 'lastfm/track/info/wrong_title' do
           subject.call(
             artist: 'kate bush',
-            track: Helpers::LastFM::RANDOM_STRING
+            track: Helpers::Base::RANDOM_STRING
           )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
 
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'lastfm/track/info/wrong_name' do
           subject.call(
-            artist: Helpers::LastFM::RANDOM_STRING,
+            artist: Helpers::Base::RANDOM_STRING,
             track: 'hounds of love'
           )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

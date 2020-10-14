@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::LastFM::ArtistsController, type: :controller do
   let(:success) { { artist: 'Wild Nothing' } }
   let(:no_name) { { artist: '' } }
-  let(:wrong_name) { { artist: Helpers::LastFM::RANDOM_STRING } }
+  let(:wrong_name) { { artist: Helpers::Base::RANDOM_STRING } }
 
   describe 'GET :info' do
     it 'returns 200 if artist exists' do
@@ -104,7 +104,7 @@ RSpec.describe API::V1::LastFM::ArtistsController, type: :controller do
 
     it 'returns 404 if wrong artist name' do
       VCR.use_cassette 'api/v1/lastfm/artists/albums/wrong_artist' do
-        get :albums, params: { artist: Helpers::LastFM::RANDOM_STRING }
+        get :albums, params: { artist: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end
@@ -125,7 +125,7 @@ RSpec.describe API::V1::LastFM::ArtistsController, type: :controller do
 
     it 'returns 404 if wrong artist name' do
       VCR.use_cassette 'api/v1/lastfm/artists/tracks/wrong_artist' do
-        get :tracks, params: { artist: Helpers::LastFM::RANDOM_STRING }
+        get :tracks, params: { artist: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end

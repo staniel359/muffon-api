@@ -1,16 +1,6 @@
 module Helpers
   module VK
-    RANDOM_STRING = 'wejlhg239gh23'.freeze
-
     class << self
-      def bad_request_error
-        { error: { code: 400, text: 'Bad request' } }
-      end
-
-      def not_found_error
-        { error: { code: 404, text: 'Not found' } }
-      end
-
       def search_tracks_data
         {:search=>{:tracks=>[{:artist=>"Wild Nothing", :audio_id=>"371745467_456356977_36b075f9ae3c6331d9_d83be484666c39875a", :length=>318, :title=>"Nocturne"}, {:artist=>"Wild Nothing", :audio_id=>"-2001472574_55472574_f5c8e1b60afdb5432a_0844078aec29557b6c", :length=>329, :title=>"Nocturne"}, {:artist=>"11  Wild Nothing", :audio_id=>"-137926065_456239193_8cd329a0871fb0756d_9fbf1a48fdbef97b50", :length=>320, :title=>"Nocturne"}, {:artist=>"Wild Nothing", :audio_id=>"-44640094_456242121_e390d03c5001126e18_acb1aafcde5d911199", :length=>329, :title=>"Nocturne (Live from Brooklyn Steel)"}, {:artist=>"Wild Nothing", :audio_id=>"85112205_206375563_ae50391d019b0c468d_c73afb0bf202ea8e7a", :length=>320, :title=>"Nocturne (zaycev.net)"}, {:artist=>"04 Wild Nothing", :audio_id=>"2000195956_324723570_a1824c685e5513f0d4_81430e3204a38d73c9", :length=>320, :title=>"Nocturne [MirrorLess052 - Nocturne]"}, {:artist=>"Wild Nothing", :audio_id=>"346919962_456239019_f53506d5d7d0e94512_2c26ec2150e3c0f581", :length=>320, :title=>"Nocturne"}, {:artist=>"Wild Nothing", :audio_id=>"86147289_354093074_9f5049ba4cbf304de1_04ba9753c0ea99be58", :length=>316, :title=>"Nocturne"}, {:artist=>"Wild Nothing", :audio_id=>"260660001_352262536_17a9791b826d76e5df_0a6ea1f9b364a81e1c", :length=>2656, :title=>"Nocturne (2012, Full Album)"}, {:artist=>"Neptune Weather Forecast", :audio_id=>"1240248_287527697_e7b7d095b2e09a5fdc_0997ecbd7c72a0831e", :length=>309, :title=>"Nocturne (Wild Nothing cover)"}, {:artist=>"Wild Nothing ", :audio_id=>"2000299822_401666077_293c2bf43904613ca7_682c2fb3f51f9155eb", :length=>2656, :title=>"Nocturne (Full Album)"}]}}
       end

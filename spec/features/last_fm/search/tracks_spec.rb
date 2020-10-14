@@ -19,17 +19,17 @@ RSpec.describe LastFM::Search::Tracks do
     context 'when no query' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::LastFM.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong query' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/tracks/wrong_query' do
-          subject.call(query: Helpers::LastFM::RANDOM_STRING)
+          subject.call(query: Helpers::Base::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

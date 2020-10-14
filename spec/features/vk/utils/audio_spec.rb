@@ -21,7 +21,7 @@ RSpec.describe VK::Utils::Audio do
     context 'when no id given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::VK.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when wrong id' do
@@ -33,7 +33,7 @@ RSpec.describe VK::Utils::Audio do
         end
       end
 
-      it { expect(output).to eq(Helpers::VK.not_found_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end
