@@ -32,9 +32,21 @@ module LastFM
       end
 
       def images
-        response_data.css('.image-list-item img').map do |i|
-          i['src'].sub('/avatar170s', '')
+        images_list.map do |i|
+          {
+            original: crop_image(i, ''),
+            cropped_600: crop_image(i, '/600x600'),
+            cropped_300: crop_image(i, '/300x300')
+          }
         end
+      end
+
+      def images_list
+        response_data.css('.image-list-item img')
+      end
+
+      def crop_image(image, crop)
+        image['src'].sub('/avatar170s', crop)
       end
     end
   end
