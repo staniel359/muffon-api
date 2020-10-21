@@ -30,10 +30,22 @@ module LastFM
         response_data['album'].map do |a|
           {
             title: a['name'],
-            cover: a['image'].last['#text'].sub('/300x300', ''),
+            covers: covers(a),
             plays_count: a['playcount'].to_i
           }
         end
+      end
+
+      def covers(album)
+        {
+          original: crop_cover(album, ''),
+          cropped_600: crop_cover(album, '/600x600'),
+          cropped_300: crop_cover(album, '/300x300')
+        }
+      end
+
+      def crop_cover(album, crop)
+        album['image'].last['#text'].sub('/300x300', crop)
       end
     end
   end
