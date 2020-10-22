@@ -26,7 +26,7 @@ module LastFM
           plays_count: response_data.dig('stats', 'playcount').to_i,
           description: description,
           tags: tags,
-          similar_artists: similar_artists
+          similar: similar
         }
       end
 
@@ -42,7 +42,7 @@ module LastFM
         response_data.dig('tags', 'tag').map { |t| t['name'] }
       end
 
-      def similar_artists
+      def similar
         response_data.dig('similar', 'artist').map { |a| a['name'] }
       end
     end
