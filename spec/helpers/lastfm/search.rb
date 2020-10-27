@@ -7,7 +7,7 @@ module Helpers
         end
 
         def albums_data
-          {:search=>{:albums=>[{:artist=>"Wild Nothing", :cover=>"https://lastfm.freetls.fastly.net/i/u/3601d7b9f23e43aea6f9fa002672c6eb.png", :title=>"Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Nocturne [Bonus Tracks]"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Wild Nothing - Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"(2012) Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Nocturne - mu-sique.com"}], :page=>1, :query=>"wild nothing nocturne"}}
+          {:search=>{:albums=>[{:artist=>"Wild Nothing", :cover=>"https://lastfm.freetls.fastly.net/i/u/64s/3601d7b9f23e43aea6f9fa002672c6eb.png", :title=>"Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Nocturne [Bonus Tracks]"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Wild Nothing - Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"(2012) Nocturne"}, {:artist=>"Wild Nothing", :cover=>"", :title=>"Nocturne - mu-sique.com"}], :page=>1, :query=>"wild nothing nocturne"}}
         end
 
         def tracks_data

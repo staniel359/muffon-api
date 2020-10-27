@@ -16,7 +16,7 @@ module LastFM
           {
             title: r['name'],
             artist: r['artist'],
-            cover: r['image'].last['#text'].sub('/300x300', '')
+            cover: r['image'][1]['#text']
           }
         end
       end
