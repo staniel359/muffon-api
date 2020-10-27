@@ -15,8 +15,7 @@ module LastFM
         results.map do |t|
           {
             title: t['name'],
-            artist: t['artist'],
-            listeners_count: t['listeners'].to_i
+            artist: t['artist']
           }
         end
       end

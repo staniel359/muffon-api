@@ -11,7 +11,7 @@ module Helpers
         end
 
         def tracks_data
-          {:search=>{:page=>1, :query=>"wild nothing chinatown", :tracks=>[{:artist=>"Wild Nothing", :listeners_count=>207115, :title=>"Chinatown"}, {:artist=>"Wild Nothing", :listeners_count=>1574, :title=>"Chinatown - Live from Brooklyn Steel"}, {:artist=>"Wild Nothing", :listeners_count=>202, :title=>"Chinatown - Wild Nothing"}, {:artist=>"The Hood Internet", :listeners_count=>667, :title=>"Walking In Chinatown (Empire Of The Sun x Wild Nothing)"}, {:artist=>"Wild Nothing", :listeners_count=>147, :title=>"Wild Nothing - Chinatown"}]}}
+          {:search=>{:page=>1, :query=>"wild nothing chinatown", :tracks=>[{:artist=>"Wild Nothing", :title=>"Chinatown"}, {:artist=>"Wild Nothing", :title=>"Chinatown - Live from Brooklyn Steel"}, {:artist=>"Wild Nothing", :title=>"Chinatown - Wild Nothing"}, {:artist=>"The Hood Internet", :title=>"Walking In Chinatown (Empire Of The Sun x Wild Nothing)"}, {:artist=>"Wild Nothing", :title=>"Wild Nothing - Chinatown"}]}}
         end
       end
     end
