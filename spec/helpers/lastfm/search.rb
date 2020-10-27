@@ -3,7 +3,7 @@ module Helpers
     module Search
       class << self
         def artists_data
-          {:search=>{:artists=>[{:listeners_count=>545256, :name=>"Wild Nothing"}, {:listeners_count=>811, :name=>"Wild_Nothing"}, {:listeners_count=>233, :name=>"Wild Nothing //"}, {:listeners_count=>132, :name=>"Wild Nothing /"}, {:listeners_count=>178, :name=>"Beach Fossils feat. Wild Nothing"}], :page=>1, :query=>"wild nothing"}}
+          {:search=>{:artists=>[{:image=>"https://lastfm.freetls.fastly.net/i/u/64s/22f79109136549c1afb6942d06b56b7c.jpg", :listeners_count=>546308, :name=>"Wild Nothing"}, {:image=>"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.jpg", :listeners_count=>812, :name=>"Wild_Nothing"}, {:image=>"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.jpg", :listeners_count=>233, :name=>"Wild Nothing //"}, {:image=>"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.jpg", :listeners_count=>132, :name=>"Wild Nothing /"}, {:image=>"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.jpg", :listeners_count=>180, :name=>"Beach Fossils feat. Wild Nothing"}]}}
         end
 
         def albums_data

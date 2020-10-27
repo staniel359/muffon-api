@@ -56,7 +56,7 @@
 ### search.artists
 
     /api/v1/lastfm/search/artists
-    ?query,limit,page
+    ?query,limit
     
 ### search.albums
 
