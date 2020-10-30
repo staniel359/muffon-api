@@ -7,7 +7,7 @@ RSpec.describe LastFM::Artist::Similar do
     context 'when artist exists' do
       let(:output) do
         VCR.use_cassette 'lastfm/artist/similar/success' do
-          subject.call(artist: 'wild nothing')
+          subject.call(artist: 'wild nothing', limit: 10)
         end
       end
 

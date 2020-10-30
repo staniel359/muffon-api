@@ -23,7 +23,7 @@ RSpec.describe API::V1::LastFM::Artists::TracksController, type: :controller do
     end
 
     it 'returns 400 if no track title' do
-      get :info, params: { artist: 'Kate Bush', track: '' }
+      get :info, params: { artist: 'Kate Bush', track: ' ' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -35,7 +35,7 @@ RSpec.describe API::V1::LastFM::Artists::TracksController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      get :info, params: { artist: '', track: 'Hounds Of Love' }
+      get :info, params: { artist: ' ', track: 'Hounds Of Love' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -56,7 +56,7 @@ RSpec.describe API::V1::LastFM::Artists::TracksController, type: :controller do
     end
 
     it 'returns 400 if no track title' do
-      get :tags, params: { artist: 'Kate Bush', track: '' }
+      get :tags, params: { artist: 'Kate Bush', track: ' ' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -68,7 +68,7 @@ RSpec.describe API::V1::LastFM::Artists::TracksController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      get :tags, params: { artist: '', track: 'Hounds Of Love' }
+      get :tags, params: { artist: ' ', track: 'Hounds Of Love' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -89,7 +89,7 @@ RSpec.describe API::V1::LastFM::Artists::TracksController, type: :controller do
     end
 
     it 'returns 400 if no track title' do
-      get :similar, params: { artist: 'Kate Bush', track: '' }
+      get :similar, params: { artist: 'Kate Bush', track: ' ' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -101,7 +101,7 @@ RSpec.describe API::V1::LastFM::Artists::TracksController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      get :similar, params: { artist: '', track: 'Hounds Of Love' }
+      get :similar, params: { artist: ' ', track: 'Hounds Of Love' }
       expect(response).to have_http_status(:bad_request)
     end
 

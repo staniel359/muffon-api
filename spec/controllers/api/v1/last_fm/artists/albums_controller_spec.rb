@@ -23,7 +23,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no album title' do
-      get :info, params: { artist: 'Wild Nothing', album: '' }
+      get :info, params: { artist: 'Wild Nothing', album: ' ' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -35,7 +35,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      get :info, params: { artist: '', album: 'Nocturne' }
+      get :info, params: { artist: ' ', album: 'Nocturne' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -56,7 +56,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no album title' do
-      get :tags, params: { artist: 'Wild Nothing', album: '' }
+      get :tags, params: { artist: 'Wild Nothing', album: ' ' }
       expect(response).to have_http_status(:bad_request)
     end
 
@@ -68,7 +68,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if no artist name' do
-      get :tags, params: { artist: '', album: 'Nocturne' }
+      get :tags, params: { artist: ' ', album: 'Nocturne' }
       expect(response).to have_http_status(:bad_request)
     end
 
