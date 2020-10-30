@@ -2,21 +2,21 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
       scope :lastfm, module: :lastfm do
-        namespace :artists, as: :artist do
+        namespace :artists, as: :artist, constraints: { artist: /[^\/]+/ } do
           scope ':artist' do
             get '', action: :info
             get 'tags'
             get 'images'
             get 'similar'
             get 'albums'
-            namespace :albums, as: :album do
+            namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
               scope ':album' do
                 get '', action: :info
                 get 'tags'
               end
             end
             get 'tracks'
-            namespace :tracks, as: :track do
+            namespace :tracks, as: :track, constraints: { track: /[^\/]+/ } do
               scope ':track' do
                 get '', action: :info
                 get 'tags'
@@ -30,7 +30,7 @@ Rails.application.routes.draw do
           get 'albums'
           get 'tracks'
         end
-        namespace :tags, as: :tag do
+        namespace :tags, as: :tag, constraints: { tag: /[^\/]+/ } do
           scope ':tag' do
             get '', action: :info
             get 'artists'
