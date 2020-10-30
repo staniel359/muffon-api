@@ -26,12 +26,13 @@ module LastFM
         {
           name: response_data.dig('@attr', 'artist'),
           page: response_data.dig('@attr', 'page').to_i,
+          total_pages: response_data.dig('@attr', 'totalPages').to_i,
           tracks: tracks
         }
       end
 
       def tracks
-        response_data['track'].map do |t|
+        response_data['track'].last(limit).map do |t|
           {
             title: t['name'],
             plays_count: t['playcount'].to_i,

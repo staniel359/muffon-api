@@ -22,12 +22,13 @@ module LastFM
         {
           name: response_data.dig('@attr', 'artist'),
           page: response_data.dig('@attr', 'page').to_i,
+          total_pages: response_data.dig('@attr', 'totalPages').to_i,
           albums: albums
         }
       end
 
       def albums
-        response_data['album'].map do |a|
+        response_data['album'].last(limit).map do |a|
           {
             title: a['name'],
             covers: covers(a),

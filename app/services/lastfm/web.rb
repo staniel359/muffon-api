@@ -4,6 +4,8 @@ module LastFM
       super
     rescue RestClient::NotFound
       not_found_error
+    rescue RestClient::Exceptions::OpenTimeout
+      timeout_error
     end
 
     private

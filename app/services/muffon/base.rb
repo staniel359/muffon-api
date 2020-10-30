@@ -28,6 +28,10 @@ module Muffon
       { error: { code: 404, text: 'Not found' } }
     end
 
+    def timeout_error
+      { error: { code: 504, text: 'Gateway Timeout' } }
+    end
+
     def global
       @global ||= Redis.new
     end

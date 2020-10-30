@@ -4,6 +4,8 @@ module LastFM
       super
     rescue RestClient::BadRequest
       bad_request_error
+    rescue RestClient::Exceptions::OpenTimeout
+      timeout_error
     end
 
     private
@@ -49,7 +51,7 @@ module LastFM
     end
 
     def limit
-      @args.limit || 50
+      (@args.limit || 50).to_i
     end
 
     def data_node
