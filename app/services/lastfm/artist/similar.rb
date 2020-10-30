@@ -14,6 +14,10 @@ module LastFM
         [@args.artist]
       end
 
+      def limit
+        50
+      end
+
       def data
         { artist: similar_data }
       end
@@ -21,12 +25,30 @@ module LastFM
       def similar_data
         {
           name: response_data.dig('@attr', 'artist'),
+          page: page,
+          total_pages: (limit / page_limit).ceil,
           similar: similar
         }
       end
 
       def similar
-        response_data['artist'].map { |a| a['name'] }
+        similar_paginated.map { |a| a['name'] }
+      end
+
+      def similar_paginated
+        response_data['artist'][offset, page_limit] || []
+      end
+
+      def offset
+        (page - 1) * page_limit
+      end
+
+      def page_limit
+        @args.limit.to_i.in?(1..50) ? @args.limit.to_i : limit
+      end
+
+      def page
+        (@args.page || 1).to_i
       end
     end
   end
