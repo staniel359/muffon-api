@@ -26,8 +26,8 @@ module VK
       def tracks_data
         tracks.map do |t|
           {
-            title: t[3],
-            artist: t[4],
+            title: CGI.unescapeHTML(t[3]),
+            artist: CGI.unescapeHTML(t[4]),
             link: link(t)
           }
         end

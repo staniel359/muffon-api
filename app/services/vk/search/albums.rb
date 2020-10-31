@@ -10,8 +10,8 @@ module VK
       def albums
         official_albums.map do |a|
           {
-            title: a['title'],
-            artist: artist(a),
+            title: CGI.unescapeHTML(a['title']),
+            artist: CGI.unescapeHTML(artist(a)),
             tracks: tracks(a)
           }
         end
@@ -28,8 +28,8 @@ module VK
       def tracks(album)
         album['list'].map do |t|
           {
-            title: t[3],
-            artist: t[4],
+            title: CGI.unescapeHTML(t[3]),
+            artist: CGI.unescapeHTML(t[4]),
             length: t[5],
             audio_id: audio_id(t)
           }

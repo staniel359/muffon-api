@@ -22,7 +22,7 @@ module VK
       end
 
       def track_data
-        VK::Utils::Audio.call(ids: [track_id])[:tracks]
+        VK::Utils::Audio.call(ids: [track_id])[:tracks][0]
       end
 
       def track_id

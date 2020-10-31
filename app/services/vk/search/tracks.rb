@@ -10,8 +10,8 @@ module VK
       def tracks
         tracks_list.map do |t|
           {
-            title: t[3],
-            artist: t[4],
+            title: CGI.unescapeHTML(t[3]),
+            artist: CGI.unescapeHTML(t[4]),
             length: t[5],
             audio_id: audio_id(t)
           }
