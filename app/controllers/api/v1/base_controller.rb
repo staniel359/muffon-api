@@ -30,7 +30,7 @@ module API
       def action_params
         %i[
           artist album track tag page
-          limit query position next_page
+          limit query index next_page
         ]
       end
 

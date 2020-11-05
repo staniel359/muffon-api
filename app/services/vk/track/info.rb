@@ -18,19 +18,23 @@ module VK
       end
 
       def data
-        { track: track_data }
+        {
+          track: track_data,
+          index: index,
+          index_total: search_data[:tracks].size - 1
+        }
       end
 
       def track_data
-        VK::Utils::Audio.call(ids: [track_id])[:tracks][0]
+        VK::Utils::Audio.call(ids: [track_id]).dig(:tracks, 0)
       end
 
       def track_id
-        search_data.dig(:tracks, position, :audio_id)
+        search_data.dig(:tracks, index, :audio_id)
       end
 
-      def position
-        @args.position.to_i
+      def index
+        @args.index.to_i
       end
     end
   end

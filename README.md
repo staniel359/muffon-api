@@ -107,7 +107,7 @@
 ### track.info
 
     /api/v1/vk/track
-    ?query,position
+    ?query,index
 
 ### search.tracks
 
