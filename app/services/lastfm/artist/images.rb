@@ -35,8 +35,8 @@ module LastFM
         images_list.map do |i|
           {
             original: crop_image(i, ''),
-            cropped_600: crop_image(i, '/600x600'),
-            cropped_300: crop_image(i, '/300x300')
+            large: crop_image(i, '/600x600'),
+            medium: crop_image(i, '/300x300')
           }
         end
       end

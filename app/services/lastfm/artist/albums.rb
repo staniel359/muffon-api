@@ -40,8 +40,8 @@ module LastFM
       def covers(album)
         {
           original: crop_cover(album, ''),
-          cropped_600: crop_cover(album, '/600x600'),
-          cropped_300: crop_cover(album, '/300x300')
+          large: crop_cover(album, '/600x600'),
+          medium: crop_cover(album, '/300x300')
         }
       end
 
