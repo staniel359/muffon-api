@@ -24,21 +24,33 @@ module LastFM
 
       def tracks_data
         {
-          name: response_data.dig('@attr', 'artist'),
-          page: response_data.dig('@attr', 'page').to_i,
-          total_pages: response_data.dig('@attr', 'totalPages').to_i,
+          name: extra_data['artist'],
+          page: extra_data['page'].to_i,
+          total_pages: extra_data['totalPages'].to_i,
           tracks: tracks
         }
+      end
+
+      def extra_data
+        response_data['@attr']
       end
 
       def tracks
         response_data['track'].last(limit).map do |t|
           {
+            id: track_id(t),
             title: t['name'],
-            plays_count: t['playcount'].to_i,
             listeners_count: t['listeners'].to_i
           }
         end
+      end
+
+      def track_id(track)
+        ::Track.with_artist_title(artist_id, track['name']).id
+      end
+
+      def artist_id
+        @artist_id ||= ::Artist.with_name(extra_data['artist']).id
       end
     end
   end

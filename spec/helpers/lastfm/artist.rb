@@ -19,7 +19,7 @@ module Helpers
         end
 
         def tracks_data
-          {:artist=>{:name=>"Wild Nothing", :page=>1, :total_pages=>507, :tracks=>[{:listeners_count=>206958, :plays_count=>1212202, :title=>"Chinatown"}, {:listeners_count=>197211, :plays_count=>1188484, :title=>"Shadow"}, {:listeners_count=>161406, :plays_count=>971066, :title=>"Live In Dreams"}, {:listeners_count=>160711, :plays_count=>969917, :title=>"Summer Holiday"}, {:listeners_count=>131388, :plays_count=>825219, :title=>"Nocturne"}]}}
+          {:artist=>{:name=>"Wild Nothing", :page=>1, :total_pages=>507, :tracks=>[{:id=>1, :listeners_count=>206958, :title=>"Chinatown"}, {:id=>2, :listeners_count=>197211, :title=>"Shadow"}, {:id=>3, :listeners_count=>161406, :title=>"Live In Dreams"}, {:id=>4, :listeners_count=>160711, :title=>"Summer Holiday"}, {:id=>5, :listeners_count=>131388, :title=>"Nocturne"}]}}
         end
       end
     end
