@@ -20,19 +20,22 @@ module LastFM
 
       def albums_data
         {
-          name: response_data.dig('@attr', 'artist'),
-          page: response_data.dig('@attr', 'page').to_i,
-          total_pages: response_data.dig('@attr', 'totalPages').to_i,
+          name: extra_data['artist'],
+          page: extra_data['page'].to_i,
+          total_pages: extra_data['totalPages'].to_i,
           albums: albums
         }
+      end
+
+      def extra_data
+        response_data['@attr']
       end
 
       def albums
         response_data['album'].last(limit).map do |a|
           {
             title: a['name'],
-            covers: covers(a),
-            plays_count: a['playcount'].to_i
+            covers: covers(a)
           }
         end
       end
