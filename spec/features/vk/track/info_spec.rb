@@ -31,5 +31,15 @@ RSpec.describe VK::Track::Info do
 
       it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
+
+    context 'when out of index' do
+      let(:output) do
+        VCR.use_cassette 'vk/track/info/out_of_index' do
+          subject.call(query: 'wild nothing nocturne', index: 50)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
+    end
   end
 end
