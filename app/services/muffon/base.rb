@@ -28,6 +28,10 @@ module Muffon
       { error: { code: 404, text: 'Not found' } }
     end
 
+    def server_error
+      { error: { code: 503, text: 'Service Unavailable' } }
+    end
+
     def timeout_error
       { error: { code: 504, text: 'Gateway Timeout' } }
     end

@@ -6,6 +6,8 @@ module LastFM
       bad_request_error
     rescue RestClient::Exceptions::OpenTimeout
       timeout_error
+    rescue RestClient::InternalServerError
+      server_error
     end
 
     private
