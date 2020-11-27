@@ -22,7 +22,7 @@ module LastFM
         {
           title: response_data['name'],
           artist: response_data['artist'],
-          cover: cover,
+          covers: covers,
           mbid: response_data['mbid'] || '',
           listeners_count: response_data['listeners'].to_i,
           plays_count: response_data['playcount'].to_i,
@@ -31,8 +31,16 @@ module LastFM
         }
       end
 
-      def cover
-        response_data['image'].last['#text'].sub('/300x300', '')
+      def covers
+        {
+          original: cover_link.sub('/300x300', ''),
+          large: cover_link.sub('/300x300', '/600x600'),
+          medium: cover_link
+        }
+      end
+
+      def cover_link
+        response_data['image'].last['#text']
       end
 
       def description
@@ -50,10 +58,20 @@ module LastFM
       def tracks
         response_data.dig('tracks', 'track').map do |t|
           {
+            id: track_id(t),
             title: t['name'],
             length: t['duration'].to_i
           }
         end
+      end
+
+      def track_id(track)
+        ::Track.with_artist_title(artist_id, track['name']).id
+      end
+
+      def artist_id
+        @artist_id ||=
+          ::Artist.with_name(response_data['artist']).id
       end
     end
   end
