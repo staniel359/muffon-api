@@ -32,6 +32,7 @@ module LastFM
         {
           query: @args.query,
           page: page,
+          total_pages: total_pages,
           model_name.pluralize.to_sym => results_data
         }
       end
@@ -40,6 +41,14 @@ module LastFM
         response_data.dig(
           'opensearch:Query', 'startPage'
         ).to_i
+      end
+
+      def total_pages
+        total_results.fdiv(limit).ceil
+      end
+
+      def total_results
+        response_data['opensearch:totalResults'].to_i
       end
     end
   end

@@ -12,7 +12,7 @@ module LastFM
       end
 
       def results_data
-        results.map do |t|
+        results.last(limit).map do |t|
           {
             id: track_id(t),
             title: t['name'],

@@ -12,7 +12,7 @@ module LastFM
       end
 
       def results_data
-        results.map do |r|
+        results.last(limit).map do |r|
           {
             title: r['name'],
             artist: r['artist'],
