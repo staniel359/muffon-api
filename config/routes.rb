@@ -13,6 +13,7 @@ Rails.application.routes.draw do
               scope ':album' do
                 get '', action: :info
                 get 'tags'
+                get 'listeners_count'
               end
             end
             get 'tracks'
