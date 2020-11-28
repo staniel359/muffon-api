@@ -10,6 +10,8 @@ module API
 
         def similar; end
 
+        def similar_list; end
+
         def albums; end
 
         def tracks; end

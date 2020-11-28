@@ -1,21 +1,18 @@
 module LastFM
   module Artist
-    class Similar < LastFM::API
+    class Similar < LastFM::Web
       private
-
-      def service_info
-        {
-          api_method: 'artist.getSimilar',
-          response_data_node: 'similarartists'
-        }
-      end
 
       def primary_args
         [@args.artist]
       end
 
-      def limit
-        50
+      def link
+        "https://www.last.fm/music/#{artist_name}/+similar"
+      end
+
+      def artist_name
+        CGI.escape(@args.artist.to_s)
       end
 
       def data
@@ -24,31 +21,37 @@ module LastFM
 
       def similar_data
         {
-          name: response_data.dig('@attr', 'artist'),
+          name: name,
           page: page,
-          total_pages: (limit / page_limit).ceil,
+          total_pages: total_pages,
           similar: similar
         }
       end
 
+      def name
+        response_data.css('.header-new-title').text
+      end
+
+      def total_pages
+        return 0 if last_page.blank?
+
+        last_page.text.strip.to_i
+      end
+
+      def last_page
+        response_data.css('.pagination-page').last
+      end
+
       def similar
-        similar_paginated.map { |a| a['name'] }
+        similar_list.map { |s| similar_artist_data(s) }
       end
 
-      def similar_paginated
-        response_data['artist'][offset, page_limit] || []
+      def similar_list
+        response_data.css('.similar-artists-item')
       end
 
-      def offset
-        (page - 1) * page_limit
-      end
-
-      def page_limit
-        @args.limit.to_i.in?(1..50) ? @args.limit.to_i : limit
-      end
-
-      def page
-        (@args.page || 1).to_i
+      def similar_artist_data(similar)
+        LastFM::Artist::Similar::Artist.call(similar: similar)
       end
     end
   end

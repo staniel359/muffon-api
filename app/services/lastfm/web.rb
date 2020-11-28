@@ -29,7 +29,9 @@ module LastFM
     end
 
     def page
-      (current_page.presence || 1).to_i
+      return 1 if current_page.blank?
+
+      current_page.scan(/\d+/).join.to_i
     end
 
     def current_page
