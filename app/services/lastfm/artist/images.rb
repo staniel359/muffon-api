@@ -36,7 +36,8 @@ module LastFM
           {
             original: crop_image(i, ''),
             large: crop_image(i, '/600x600'),
-            medium: crop_image(i, '/300x300')
+            medium: crop_image(i, '/300x300'),
+            small: crop_image(i, '/174s')
           }
         end
       end
