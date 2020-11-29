@@ -20,15 +20,29 @@ module LastFM
 
       def track_data
         {
-          title: response_data['name'],
-          artist: response_data.dig('artist', 'name'),
+          id: id, title: track_title, artist: artist_name,
           mbid: response_data['mbid'] || '',
-          length: length,
           listeners_count: response_data['listeners'].to_i,
           plays_count: response_data['playcount'].to_i,
-          description: description,
+          length: length, description: description,
           album: album, tags: tags
         }
+      end
+
+      def id
+        ::Track.with_artist_id_title(artist_id, track_title).id
+      end
+
+      def artist_id
+        ::Artist.with_name(artist_name).id
+      end
+
+      def artist_name
+        response_data.dig('artist', 'name')
+      end
+
+      def track_title
+        response_data['name']
       end
 
       def length

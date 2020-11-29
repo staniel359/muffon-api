@@ -3,7 +3,7 @@ class Track < ApplicationRecord
 
   belongs_to :artist
 
-  def self.with_artist_title(artist_id, title)
+  def self.with_artist_id_title(artist_id, title)
     where(
       'artist_id = ? AND LOWER(title) = ?',
       artist_id, title.downcase

@@ -66,7 +66,7 @@ module LastFM
       end
 
       def track_id(track)
-        ::Track.with_artist_title(artist_id, track['name']).id
+        ::Track.with_artist_id_title(artist_id, track['name']).id
       end
 
       def artist_id
