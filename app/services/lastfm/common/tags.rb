@@ -18,29 +18,48 @@ module LastFM
       end
 
       def data
-        { tags: tags_data }
+        send("#{@args.model}_tags_data")
       end
 
-      def tags_data
+      def artist_tags_data
         {
-          artist: response_data['@attr']['artist'],
-          album: add_data_if_model('album'),
-          track: add_data_if_model('track'),
-          tags: tags
-        }.compact
+          artist: {
+            name: artist,
+            tags: tags
+          }
+        }
       end
 
-      def add_data_if_model(model)
-        response_data['@attr'][model] if @args.model == model
+      def artist
+        response_data.dig('@attr', 'artist')
+      end
+
+      def album_tags_data
+        {
+          album: {
+            title: title('album'),
+            artist: artist,
+            tags: tags
+          }
+        }
+      end
+
+      def title(model)
+        response_data.dig('@attr', model)
+      end
+
+      def track_tags_data
+        {
+          track: {
+            title: title('track'),
+            artist: artist,
+            tags: tags
+          }
+        }
       end
 
       def tags
-        response_data['tag'].map do |t|
-          {
-            name: t['name'],
-            count: t['count']
-          }
-        end
+        response_data['tag'].map { |t| t.slice('name', 'count') }
       end
     end
   end
