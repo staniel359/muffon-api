@@ -48,14 +48,21 @@ module LastFM
 
         {
           title: response_data.dig('album', 'title'),
-          cover: cover
+          covers: covers
+        }
+      end
+
+      def covers
+        {
+          original: cover.sub('/300x300', ''),
+          large: cover.sub('/300x300', '/600x600'),
+          medium: cover,
+          small: cover.sub('/300x300', '/174s')
         }
       end
 
       def cover
-        response_data.dig(
-          'album', 'image'
-        ).last['#text'].sub('/300x300', '')
+        response_data.dig('album', 'image').last['#text']
       end
 
       def tags
