@@ -33,7 +33,7 @@ module LastFM
       def cover(album)
         album.css(
           '.resource-list--release-list-item-image img'
-        )[0]['src'].sub('/300x300', '')
+        )[0]['src']
       end
 
       def listeners_count(album)

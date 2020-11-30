@@ -27,6 +27,7 @@ module LastFM
         {
           name: name,
           page: page,
+          total_pages: total_pages,
           collection.to_sym => send(collection)
         }
       end
@@ -35,6 +36,16 @@ module LastFM
         response_data.css('title').text.match(
           /Top (.+) #{collection}/
         )[1]
+      end
+
+      def total_pages
+        return 0 if last_page.blank?
+
+        last_page.text.strip.to_i
+      end
+
+      def last_page
+        response_data.css('.pagination-page').last
       end
     end
   end
