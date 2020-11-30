@@ -59,7 +59,12 @@ module LastFM
       end
 
       def tags
-        response_data['tag'].map { |t| t.slice('name', 'count') }
+        response_data['tag'].map do |t|
+          {
+            name: t['name'],
+            percent: t['count']
+          }
+        end
       end
     end
   end
