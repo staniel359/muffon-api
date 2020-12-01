@@ -28,7 +28,7 @@ module LastFM
           name: name,
           page: page,
           total_pages: total_pages,
-          collection.to_sym => send(collection)
+          collection.to_sym => collection_data
         }
       end
 
@@ -46,6 +46,10 @@ module LastFM
 
       def last_page
         response_data.css('.pagination-page').last
+      end
+
+      def collection_data
+        page > total_pages ? [] : send(collection)
       end
     end
   end

@@ -25,17 +25,11 @@ module LastFM
     end
 
     def params
-      { page: @args.page }
+      { page: (page if @args.page.present?) }
     end
 
     def page
-      return 1 if current_page.blank?
-
-      current_page.scan(/\d+/).join.to_i
-    end
-
-    def current_page
-      response_data.css('.pagination-page span').text
+      [@args.page.to_i, 1].max
     end
   end
 end
