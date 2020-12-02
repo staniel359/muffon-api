@@ -8,7 +8,6 @@ Rails.application.routes.draw do
             get 'tags'
             get 'images'
             get 'similar'
-            get 'similar_list'
             get 'albums'
             namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
               scope ':album' do
