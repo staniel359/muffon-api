@@ -1,7 +1,7 @@
 module LastFM
   module Artist
     class Similar
-      class Artist < LastFM::Web
+      class Artist < LastFM::Artist::Similar
         def call
           similar_artist_data
         end

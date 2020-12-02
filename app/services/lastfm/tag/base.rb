@@ -38,16 +38,6 @@ module LastFM
         )[1]
       end
 
-      def total_pages
-        return 0 if last_page.blank?
-
-        last_page.text.strip.to_i
-      end
-
-      def last_page
-        response_data.css('.pagination-page').last
-      end
-
       def collection_data
         page > total_pages ? [] : send(collection)
       end

@@ -32,17 +32,9 @@ module LastFM
         response_data.css('.header-new-title').text
       end
 
-      def total_pages
-        return 0 if last_page.blank?
-
-        last_page.text.strip.to_i
-      end
-
-      def last_page
-        response_data.css('.pagination-page').last
-      end
-
       def similar
+        return [] if page > total_pages
+
         similar_list.map { |s| similar_artist_data(s) }
       end
 

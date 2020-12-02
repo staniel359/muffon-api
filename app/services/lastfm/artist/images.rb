@@ -23,6 +23,7 @@ module LastFM
         {
           name: name,
           page: page,
+          total_pages: total_pages,
           images: images
         }
       end
@@ -32,23 +33,27 @@ module LastFM
       end
 
       def images
-        images_list.map do |i|
-          {
-            original: crop_image(i, ''),
-            large: crop_image(i, '/600x600'),
-            medium: crop_image(i, '/300x300'),
-            small: crop_image(i, '/174s'),
-            extrasmall: crop_image(i, '/64s')
-          }
-        end
+        return [] if page > total_pages
+
+        images_list.map { |i| image_data(i) }
       end
 
       def images_list
         response_data.css('.image-list-item img')
       end
 
-      def crop_image(image, crop)
-        image['src'].sub('/avatar170s', crop)
+      def image_data(image)
+        {
+          original: crop(image, ''),
+          large: crop(image, '/600x600'),
+          medium: crop(image, '/300x300'),
+          small: crop(image, '/174s'),
+          extrasmall: crop(image, '/64s')
+        }
+      end
+
+      def crop(image, size)
+        image['src'].sub('/avatar170s', size)
       end
     end
   end

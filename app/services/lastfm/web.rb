@@ -31,5 +31,15 @@ module LastFM
     def page
       [@args.page.to_i, 1].max
     end
+
+    def total_pages
+      return 0 if last_page.blank?
+
+      last_page.text.strip.to_i
+    end
+
+    def last_page
+      response_data.css('.pagination-page').last
+    end
   end
 end
