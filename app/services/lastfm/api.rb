@@ -1,15 +1,5 @@
 module LastFM
   class API < LastFM::Base
-    def call
-      super
-    rescue RestClient::BadRequest
-      bad_request_error
-    rescue RestClient::Exceptions::OpenTimeout
-      timeout_error
-    rescue RestClient::InternalServerError
-      server_error
-    end
-
     private
 
     def no_data?

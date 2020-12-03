@@ -20,20 +20,8 @@ module Muffon
       primary_args.any?(&:blank?)
     end
 
-    def bad_request_error
-      { error: { code: 400, text: 'Bad request' } }
-    end
-
-    def not_found_error
-      { error: { code: 404, text: 'Not found' } }
-    end
-
-    def server_error
-      { error: { code: 503, text: 'Service Unavailable' } }
-    end
-
-    def timeout_error
-      { error: { code: 504, text: 'Gateway Timeout' } }
+    def errors
+      Muffon::Errors.call
     end
 
     def global
