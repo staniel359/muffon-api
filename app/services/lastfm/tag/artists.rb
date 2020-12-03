@@ -30,7 +30,7 @@ module LastFM
       def image(artist)
         artist.css(
           '.big-artist-list-avatar-desktop img'
-        )[0]['src'].sub('/270x205', '/300x300')
+        )[0]['src'].sub('/270x205', '/174s')
       end
     end
   end
