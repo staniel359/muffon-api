@@ -33,7 +33,7 @@ module LastFM
     end
 
     def total_pages
-      return 0 if last_page.blank?
+      return 1 if last_page.blank?
 
       last_page.text.strip.to_i
     end
