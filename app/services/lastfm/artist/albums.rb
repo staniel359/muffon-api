@@ -44,7 +44,9 @@ module LastFM
         {
           original: crop_cover(album, ''),
           large: crop_cover(album, '/600x600'),
-          medium: crop_cover(album, '/300x300')
+          medium: crop_cover(album, '/300x300'),
+          small: crop_cover(album, '/174s'),
+          extrasmall: crop_cover(album, '/64s')
         }
       end
 
