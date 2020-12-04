@@ -8,8 +8,8 @@ module LastFM
           {
             title: title(a),
             artist: artist(a),
-            cover: cover(a),
-            listeners_count: listeners_count(a)
+            listeners_count: listeners_count(a),
+            images: images(a)
           }
         end
       end
@@ -30,16 +30,22 @@ module LastFM
         ).text
       end
 
-      def cover(album)
-        album.css(
-          '.resource-list--release-list-item-image img'
-        )[0]['src'].sub('/300x300', '/174s')
-      end
-
       def listeners_count(album)
         album.css(
           '.resource-list--release-list-item-listeners'
         ).text.scan(/\d/).join.to_i
+      end
+
+      def images(album)
+        LastFM::Utils::ImagesData.call(
+          image: image(album), model: 'album'
+        )
+      end
+
+      def image(album)
+        album.css(
+          '.resource-list--release-list-item-image img'
+        )[0]['src']
       end
     end
   end

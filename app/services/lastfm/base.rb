@@ -5,19 +5,19 @@ module LastFM
       return errors.not_found if no_data?
 
       data
-    rescue StandardError => e
+    rescue *errors_to_handle => e
       handle_error(e)
     end
 
     private
 
-    def handle_error(error)
-      case error
-      when *bad_request_errors then errors.bad_request
-      when *not_found_errors then errors.not_found
-      when *bad_gateway_errors then errors.bad_gateway
-      when *gateway_timeout_errors then errors.gateway_timeout
-      end
+    def errors_to_handle
+      [
+        bad_request_errors,
+        not_found_errors,
+        bad_gateway_errors,
+        gateway_timeout_errors
+      ].flatten
     end
 
     def bad_request_errors
@@ -34,6 +34,15 @@ module LastFM
 
     def gateway_timeout_errors
       [RestClient::Exceptions::OpenTimeout]
+    end
+
+    def handle_error(error)
+      case error
+      when *bad_request_errors then errors.bad_request
+      when *not_found_errors then errors.not_found
+      when *bad_gateway_errors then errors.bad_gateway
+      when *gateway_timeout_errors then errors.gateway_timeout
+      end
     end
   end
 end

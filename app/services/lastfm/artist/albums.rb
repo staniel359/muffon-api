@@ -35,23 +35,15 @@ module LastFM
         response_data['album'].last(limit).map do |a|
           {
             title: a['name'],
-            covers: covers(a)
+            images: images(a)
           }
         end
       end
 
-      def covers(album)
-        {
-          original: crop_cover(album, ''),
-          large: crop_cover(album, '/600x600'),
-          medium: crop_cover(album, '/300x300'),
-          small: crop_cover(album, '/174s'),
-          extrasmall: crop_cover(album, '/64s')
-        }
-      end
-
-      def crop_cover(album, crop)
-        album['image'].last['#text'].sub('/300x300', crop)
+      def images(album)
+        LastFM::Utils::ImagesData.call(
+          data: album, model: 'album'
+        )
       end
     end
   end

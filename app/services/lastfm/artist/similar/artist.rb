@@ -16,9 +16,9 @@ module LastFM
           {
             name: name,
             listeners_count: listeners_count,
+            description: description,
             images: images,
-            tags: tags,
-            description: description
+            tags: tags
           }
         end
 
@@ -32,13 +32,16 @@ module LastFM
           ).text.scan(/\d/).join.to_i
         end
 
+        def description
+          @args.similar.css(
+            '.similar-artists-item-wiki.visible-lg'
+          ).text.strip.sub('… read more', '...')
+        end
+
         def images
-          {
-            original: image.sub('/300x300', ''),
-            large: image.sub('/300x300', '/600x600'),
-            medium: image,
-            small: image.sub('/300x300', '/174s')
-          }
+          LastFM::Utils::ImagesData.call(
+            image: image, model: 'artist'
+          )
         end
 
         def image
@@ -47,12 +50,6 @@ module LastFM
 
         def tags
           @args.similar.css('.tag').map(&:text)
-        end
-
-        def description
-          @args.similar.css(
-            '.similar-artists-item-wiki.visible-lg'
-          ).text.strip.sub('… read more', '...')
         end
       end
     end

@@ -16,15 +16,15 @@ module LastFM
       end
 
       def data
-        { artist: images_data }
+        { artist: artist_data }
       end
 
-      def images_data
+      def artist_data
         {
           name: name,
           page: page,
           total_pages: total_pages,
-          images: images
+          images: images_data
         }
       end
 
@@ -32,28 +32,24 @@ module LastFM
         response_data.css('.header-new-title').text
       end
 
-      def images
+      def images_data
         return [] if page > total_pages
 
-        images_list.map { |i| image_data(i) }
+        images_list_data.presence || [images(nil)]
+      end
+
+      def images_list_data
+        images_list.map { |i| images(i['src']) }
       end
 
       def images_list
         response_data.css('.image-list-item img')
       end
 
-      def image_data(image)
-        {
-          original: crop(image, ''),
-          large: crop(image, '/600x600'),
-          medium: crop(image, '/300x300'),
-          small: crop(image, '/174s'),
-          extrasmall: crop(image, '/64s')
-        }
-      end
-
-      def crop(image, size)
-        image['src'].sub('/avatar170s', size)
+      def images(image)
+        LastFM::Utils::ImagesData.call(
+          image: image, model: 'artist'
+        )
       end
     end
   end

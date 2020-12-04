@@ -16,9 +16,15 @@ module LastFM
           {
             title: r['name'],
             artist: r['artist'],
-            cover: r['image'][1]['#text']
+            images: images(r)
           }
         end
+      end
+
+      def images(result)
+        LastFM::Utils::ImagesData.call(
+          data: result, model: 'album'
+        )
       end
     end
   end

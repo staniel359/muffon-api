@@ -7,8 +7,8 @@ module LastFM
         artists_list.map do |a|
           {
             name: artist_name(a),
-            image: image(a),
-            listeners_count: listeners_count(a)
+            listeners_count: listeners_count(a),
+            images: images(a)
           }
         end
       end
@@ -27,10 +27,16 @@ module LastFM
         ).text.scan(/\d/).join.to_i
       end
 
+      def images(artist)
+        LastFM::Utils::ImagesData.call(
+          image: image(artist), model: 'album'
+        )
+      end
+
       def image(artist)
         artist.css(
           '.big-artist-list-avatar-desktop img'
-        )[0]['src'].sub('/270x205', '/174s')
+        )[0]['src']
       end
     end
   end

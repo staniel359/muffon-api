@@ -20,12 +20,13 @@ module LastFM
 
       def track_data
         {
-          id: id, title: track_title, artist: artist_name,
+          id: id, title: track_title,
+          artist: artist_name, album: album_title,
           mbid: response_data['mbid'] || '',
           listeners_count: response_data['listeners'].to_i,
           plays_count: response_data['playcount'].to_i,
           length: length, description: description,
-          album: album, tags: tags
+          images: images, tags: tags
         }
       end
 
@@ -45,6 +46,12 @@ module LastFM
         response_data['name']
       end
 
+      def album_title
+        return '' if response_data['album'].blank?
+
+        response_data.dig('album', 'title')
+      end
+
       def length
         response_data['duration'].to_i / 1_000
       end
@@ -57,26 +64,10 @@ module LastFM
         )[1].strip
       end
 
-      def album
-        return {} if response_data['album'].blank?
-
-        {
-          title: response_data.dig('album', 'title'),
-          covers: covers
-        }
-      end
-
-      def covers
-        {
-          original: cover.sub('/300x300', ''),
-          large: cover.sub('/300x300', '/600x600'),
-          medium: cover,
-          small: cover.sub('/300x300', '/174s')
-        }
-      end
-
-      def cover
-        response_data.dig('album', 'image').last['#text']
+      def images
+        LastFM::Utils::ImagesData.call(
+          data: response_data['album'], model: 'album'
+        )
       end
 
       def tags

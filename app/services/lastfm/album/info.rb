@@ -22,25 +22,12 @@ module LastFM
         {
           title: response_data['name'],
           artist: response_data['artist'],
-          covers: covers,
           mbid: response_data['mbid'] || '',
           listeners_count: response_data['listeners'].to_i,
           plays_count: response_data['playcount'].to_i,
           description: description,
-          tags: tags, tracks: tracks
+          images: images, tags: tags, tracks: tracks
         }
-      end
-
-      def covers
-        {
-          original: cover_link.sub('/300x300', ''),
-          large: cover_link.sub('/300x300', '/600x600'),
-          medium: cover_link
-        }
-      end
-
-      def cover_link
-        response_data['image'].last['#text']
       end
 
       def description
@@ -49,6 +36,12 @@ module LastFM
         response_data.dig('wiki', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
+      end
+
+      def images
+        LastFM::Utils::ImagesData.call(
+          data: response_data, model: 'album'
+        )
       end
 
       def tags
