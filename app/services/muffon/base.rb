@@ -20,8 +20,8 @@ module Muffon
       primary_args.any?(&:blank?)
     end
 
-    def errors
-      Muffon::Errors.call
+    def handlers
+      Muffon::Errors.handlers
     end
 
     def global

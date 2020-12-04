@@ -18,8 +18,8 @@ module VK
         @extra_strings ||= @args.link.match(/extra=(.*)#(.*)/)
       end
 
-      def errors
-        Muffon::Errors.call.tap { |h| h.not_found = '' }
+      def handlers
+        Muffon::Errors.handlers.tap { |h| h.not_found = '' }
       end
 
       def data
