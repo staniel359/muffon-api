@@ -51,7 +51,8 @@ module Muffon
           errors: [
             RestClient::InternalServerError,
             RestClient::ServiceUnavailable,
-            JSON::ParserError, SocketError
+            JSON::ParserError, SocketError,
+            Errno::ENETUNREACH
           ],
           handler: format_handler([502, 'Bad Gateway'])
         }
