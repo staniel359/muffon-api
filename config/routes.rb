@@ -37,6 +37,7 @@ Rails.application.routes.draw do
             get 'artists'
             get 'albums'
             get 'tracks'
+            get 'similar'
           end
         end
         namespace :top do

@@ -9,6 +9,8 @@ module API
         def albums; end
 
         def tracks; end
+
+        def similar; end
       end
     end
   end
