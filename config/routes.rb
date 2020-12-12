@@ -47,8 +47,10 @@ Rails.application.routes.draw do
         end
       end
       namespace :vk do
-        scope module: :tracks do
-          get 'track', action: :info
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
         end
         namespace :search do
           get 'tracks'

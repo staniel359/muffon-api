@@ -31,6 +31,7 @@ module API
         %i[
           artist album track tag page
           limit query index next_page
+          track_id
         ]
       end
 

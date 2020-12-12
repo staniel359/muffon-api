@@ -4,10 +4,13 @@ RSpec.describe VK::Track::Info do
   subject { described_class }
 
   describe 'successful processing' do
-    context 'when query string given' do
+    context 'when track_id given' do
+      let(:track_id) do
+        '371745467_456356977_2c172e57fa47bb373b_9efa0eab8ba5f239f6'
+      end
       let(:output) do
         VCR.use_cassette 'vk/track/info/success' do
-          subject.call(query: 'wild nothing nocturne')
+          subject.call(track_id: track_id)
         end
       end
 
@@ -16,26 +19,16 @@ RSpec.describe VK::Track::Info do
   end
 
   describe 'no processing' do
-    context 'when no query string given' do
+    context 'when no track_id given' do
       let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
-    context 'when wrong query string' do
+    context 'when wrong track_id' do
       let(:output) do
-        VCR.use_cassette 'vk/track/info/wrong_query' do
-          subject.call(query: Helpers::Base::RANDOM_STRING)
-        end
-      end
-
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
-    end
-
-    context 'when out of index' do
-      let(:output) do
-        VCR.use_cassette 'vk/track/info/out_of_index' do
-          subject.call(query: 'wild nothing nocturne', index: 50)
+        VCR.use_cassette 'vk/track/info/wrong_id' do
+          subject.call(track_id: Helpers::Base::RANDOM_STRING)
         end
       end
 

@@ -4,37 +4,23 @@ module VK
       private
 
       def primary_args
-        [@args.query]
+        [@args.track_id]
       end
 
       def no_data?
-        search_data.blank? || track_id.blank?
-      end
-
-      def search_data
-        @search_data ||= VK::Search::Tracks.call(
-          query: @args.query
-        )[:search]
-      end
-
-      def track_id
-        @track_id ||= search_data.dig(:tracks, index, :audio_id)
-      end
-
-      def data
-        {
-          track: track_data,
-          index: index,
-          index_total: search_data[:tracks].size - 1
-        }
+        track_data.blank?
       end
 
       def track_data
-        VK::Utils::Audio.call(ids: [track_id]).dig(:tracks, 0)
+        @track_data ||= tracks_data.dig(:tracks, 0)
       end
 
-      def index
-        @args.index.to_i
+      def tracks_data
+        VK::Utils::Audio.call(ids: [@args.track_id])
+      end
+
+      def data
+        { track: track_data }
       end
     end
   end

@@ -2,21 +2,20 @@ require 'rails_helper'
 
 RSpec.describe API::V1::VK::TracksController, type: :controller do
   describe 'GET :info' do
+    let(:track_id) do
+      '371745467_456356977_2c172e57fa47bb373b_9efa0eab8ba5f239f6'
+    end
+
     it 'returns 200 if track exists' do
       VCR.use_cassette 'api/v1/vk/tracks/info/success' do
-        get :info, params: { query: 'wild nothing chinatown' }
+        get :info, params: { track_id: track_id }
         expect(response).to have_http_status(:ok)
       end
     end
 
-    it 'returns 400 if no query' do
-      get :info
-      expect(response).to have_http_status(:bad_request)
-    end
-
-    it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/vk/tracks/info/wrong_query' do
-        get :info, params: { query: Helpers::Base::RANDOM_STRING }
+    it 'returns 404 if wrong track_id' do
+      VCR.use_cassette 'api/v1/vk/tracks/info/wrong_id' do
+        get :info, params: { track_id: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:not_found)
       end
     end
