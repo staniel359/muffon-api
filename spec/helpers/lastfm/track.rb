@@ -7,7 +7,7 @@ module Helpers
         end
 
         def similar_data
-          {:track=>{:artist=>"Wild Nothing", :similar=>[{:artist=>"Wild Nothing", :title=>"Confirmation"}, {:artist=>"Wild Nothing", :title=>"My Angel Lonely"}, {:artist=>"Craft Spells", :title=>"Party Talk"}, {:artist=>"Craft Spells", :title=>"After the Moment"}, {:artist=>"DIIV", :title=>"Home"}, {:artist=>"DIIV", :title=>"Follow"}, {:artist=>"Beach Fossils", :title=>"Window View"}, {:artist=>"Blouse", :title=>"Into Black"}, {:artist=>"Youth Lagoon", :title=>"Cannons"}, {:artist=>"Washed Out", :title=>"New Theory"}], :title=>"chinatown"}}
+          {:track=>{:artist=>"Wild Nothing", :page=>2, :similar=>[{:artist=>"Slowdive", :id=>1, :length=>231, :title=>"Alison"}, {:artist=>"Slowdive", :id=>2, :length=>287, :title=>"When the Sun Hits"}, {:artist=>"Cigarettes After Sex", :id=>3, :length=>0, :title=>"Apocalypse"}, {:artist=>"Fazerdaze", :id=>4, :length=>0, :title=>"Lucky Girl"}, {:artist=>"Ride", :id=>5, :length=>0, :title=>"Vapour Trail - 2001 Remaster"}, {:artist=>"Alvvays", :id=>6, :length=>0, :title=>"In Undertow"}, {:artist=>"Blonde Redhead", :id=>7, :length=>317, :title=>"23"}, {:artist=>"Cocteau Twins", :id=>8, :length=>361, :title=>"Heaven or Las Vegas"}, {:artist=>"Still Corners", :id=>9, :length=>374, :title=>"The Trip"}, {:artist=>"Galaxie 500", :id=>10, :length=>234, :title=>"Tugboat"}], :title=>"chinatown", :total_pages=>25}}
         end
       end
     end

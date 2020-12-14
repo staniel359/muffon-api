@@ -9,7 +9,8 @@ RSpec.describe LastFM::Track::Similar do
         VCR.use_cassette 'lastfm/track/similar/success' do
           subject.call(
             artist: 'wild nothing',
-            track: 'chinatown', limit: 10
+            track: 'chinatown',
+            limit: 10, page: 2
           )
         end
       end
