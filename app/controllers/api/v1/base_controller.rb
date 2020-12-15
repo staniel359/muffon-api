@@ -29,9 +29,8 @@ module API
 
       def action_params
         %i[
-          artist album track tag page
-          limit query index next_page
-          track_id
+          artist album track tag page limit query index
+          next_page track_id album_id owner_id access_hash
         ]
       end
 

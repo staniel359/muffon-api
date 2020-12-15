@@ -47,6 +47,11 @@ Rails.application.routes.draw do
         end
       end
       namespace :vk do
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+          end
+        end
         namespace :tracks, as: :track do
           scope ':track_id' do
             get '', action: :info

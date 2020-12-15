@@ -41,5 +41,9 @@ module VK
     def auth_failed?
       response_code.to_i == 3
     end
+
+    def artist_name(album)
+      album['authorName'].match(%r{<a.+>(.+)</a>}).try(:[], 1) || ''
+    end
   end
 end

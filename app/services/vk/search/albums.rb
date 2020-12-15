@@ -3,37 +3,33 @@ module VK
     class Albums < VK::Search::Base
       private
 
+      def request_params
+        {
+          act: 'section',
+          al: 1,
+          owner_id: secrets.vk[:page_id],
+          q: @args.query
+        }
+      end
+
+      def results
+        @results ||= response_data.dig(1, 1, 'playlists')
+      end
+
       def search_data
         { albums: albums }
       end
 
       def albums
-        official_albums.map do |a|
-          {
-            title: CGI.unescapeHTML(a['title']),
-            artist: CGI.unescapeHTML(artist(a)),
-            tracks: tracks(a)
-          }
-        end
+        official_albums.map { |a| album_data(a) }
       end
 
       def official_albums
-        playlists.select { |a| a['isOfficial'] }
+        results.select { |r| r['isOfficial'] }
       end
 
-      def artist(album)
-        album['authorName'].match(%r{<a.+>(.+)</a>})[1]
-      end
-
-      def tracks(album)
-        album['list'].map do |t|
-          {
-            title: CGI.unescapeHTML(t[3]),
-            artist: CGI.unescapeHTML(t[4]),
-            length: t[5],
-            audio_id: audio_id(t)
-          }
-        end
+      def album_data(album)
+        VK::Search::Albums::Album.call(album: album)
       end
     end
   end

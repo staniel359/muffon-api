@@ -7,7 +7,7 @@ RSpec.describe VK::Search::Tracks do
     context 'when query string given' do
       let(:output) do
         VCR.use_cassette 'vk/search/tracks/success' do
-          subject.call(query: 'wild nothing nocturne')
+          subject.call(query: 'wild nothing')
         end
       end
 
