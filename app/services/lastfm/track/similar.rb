@@ -33,7 +33,7 @@ module LastFM
       end
 
       def page
-        (@args.page || 1).to_i
+        [@args.page.to_i, 1].max
       end
 
       def total_pages

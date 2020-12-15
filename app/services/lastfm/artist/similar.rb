@@ -12,7 +12,7 @@ module LastFM
       end
 
       def artist_name
-        CGI.escape(@args.artist.to_s)
+        format_param(@args.artist)
       end
 
       def data

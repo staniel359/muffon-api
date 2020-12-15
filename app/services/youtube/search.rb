@@ -45,7 +45,7 @@ module YouTube
     end
 
     def limit
-      @args.limit || 20
+      (@args.limit || 20).to_i
     end
 
     def data

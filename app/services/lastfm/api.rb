@@ -20,9 +20,9 @@ module LastFM
     end
 
     def params
-      %w[base model extra].map do |scope|
-        send("#{scope}_params")
-      end.reduce(:merge).compact
+      [
+        base_params, model_params, extra_params
+      ].reduce(:merge).compact
     end
 
     def base_params
@@ -35,11 +35,23 @@ module LastFM
     end
 
     def model_params
-      @args.to_h.slice(:artist, :album, :track)
+      {
+        artist: format_param(@args.artist),
+        album: format_param(@args.album),
+        track: format_param(@args.track)
+      }
+    end
+
+    def format_param(param)
+      param.to_s.strip.presence
     end
 
     def extra_params
-      @args.to_h.slice(:tag, :page).merge(limit: limit)
+      {
+        tag: format_param(@args.tag),
+        page: @args.page,
+        limit: limit
+      }
     end
 
     def limit

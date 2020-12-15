@@ -31,5 +31,9 @@ module LastFM
     def last_page
       response_data.css('.pagination-page').last
     end
+
+    def format_param(param)
+      CGI.escape(param.to_s.strip).presence
+    end
   end
 end

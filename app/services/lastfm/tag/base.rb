@@ -12,7 +12,7 @@ module LastFM
       end
 
       def tag_name
-        CGI.escape(@args.tag.to_s)
+        format_param(@args.tag)
       end
 
       def collection
