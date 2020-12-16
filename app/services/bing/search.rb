@@ -69,34 +69,15 @@ module Bing
     end
 
     def current_page_block
-      @current_page_block ||=
-        response_data.css('.sb_pagS')[0]
+      @current_page_block ||= response_data.css('.sb_pagS')[0]
     end
 
     def results_data
-      results.map do |r|
-        {
-          title: link_title(r).text,
-          link: link_title(r)['href'],
-          description: description(r)
-        }
-      end
+      results.map { |r| result_data(r) }
     end
 
-    def link_title(result)
-      result.css('a:not(.sh_favicon)')[0]
-    end
-
-    def description(result)
-      base_text(result).presence || wiki_text(result)
-    end
-
-    def base_text(result)
-      result.css('.b_caption p').text
-    end
-
-    def wiki_text(result)
-      result.css('.b_vList').text
+    def result_data(result)
+      Bing::Search::Result.call(result: result)
     end
   end
 end
