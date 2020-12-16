@@ -6,3 +6,5 @@
 /config/master.key
 /config/credentials/test.key
 /config/credentials/development.key
+
+/config/credentials/production.key
