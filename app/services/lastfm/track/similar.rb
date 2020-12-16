@@ -25,57 +25,33 @@ module LastFM
       def track_data
         {
           title: @args.track,
-          artist: response_data.dig('@attr', 'artist'),
-          page: page,
-          total_pages: total_pages,
+          artist: artist,
+          page: similar_paginated[:page],
+          total_pages: similar_paginated[:total_pages],
           similar: similar
         }
       end
 
-      def page
-        [@args.page.to_i, 1].max
-      end
-
-      def total_pages
-        response_data['track'].size.fdiv(page_limit).ceil
-      end
-
-      def page_limit
-        (@args.limit || 50).to_i
-      end
-
-      def similar
-        similar_paginated.map { |t| similar_track_data(t) }
+      def artist
+        response_data.dig('@attr', 'artist')
       end
 
       def similar_paginated
-        response_data['track'].slice(offset, page_limit) || []
+        @similar_paginated ||= LastFM::Utils::Paginated.call(
+          collection: response_data['track'],
+          page: @args.page,
+          limit: @args.limit
+        )
       end
 
-      def offset
-        (page - 1) * page_limit
+      def similar
+        similar_paginated[:collection].map do |t|
+          similar_track_data(t)
+        end
       end
 
       def similar_track_data(track)
         LastFM::Track::Similar::Track.call(similar: track)
-      end
-
-      def track_id(track)
-        ::Track.with_artist_id_title(
-          artist_id(track), track_title(track)
-        ).id
-      end
-
-      def artist_id(track)
-        ::Artist.with_name(artist_name(track)).id
-      end
-
-      def artist_name(track)
-        track.dig('artist', 'name')
-      end
-
-      def track_title(track)
-        track['name']
       end
     end
   end

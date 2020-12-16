@@ -7,7 +7,7 @@ RSpec.describe LastFM::Top::Tags do
     context 'when no primary args' do
       let(:output) do
         VCR.use_cassette 'lastfm/top/tags/success' do
-          subject.call(limit: 10)
+          subject.call(limit: 10, page: 2)
         end
       end
 

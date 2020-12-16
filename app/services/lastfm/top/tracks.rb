@@ -10,18 +10,16 @@ module LastFM
         }
       end
 
-      def top_data
-        {
-          page: page,
-          tracks: tracks
-        }
+      def collection_name
+        'tracks'
       end
 
-      def tracks
-        response_data['track'].map do |t|
+      def collection
+        response_data['track'].last(limit).map do |t|
           {
             title: t['name'],
-            artist: t.dig('artist', 'name')
+            artist: t.dig('artist', 'name'),
+            listeners_count: t['listeners'].to_i
           }
         end
       end

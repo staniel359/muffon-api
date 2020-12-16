@@ -10,15 +10,17 @@ module LastFM
         }
       end
 
-      def top_data
-        {
-          page: page,
-          artists: artists
-        }
+      def collection_name
+        'artists'
       end
 
-      def artists
-        response_data['artist'].map { |a| a['name'] }
+      def collection
+        response_data['artist'].last(limit).map do |a|
+          {
+            name: a['name'],
+            listeners_count: a['listeners'].to_i
+          }
+        end
       end
     end
   end

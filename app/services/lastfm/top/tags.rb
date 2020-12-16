@@ -10,12 +10,37 @@ module LastFM
         }
       end
 
-      def top_data
-        { tags: tags }
+      def collection_name
+        'tags'
       end
 
-      def tags
-        response_data['tag'].map { |t| t['name'] }
+      def limit
+        1000
+      end
+
+      def page
+        tags_paginated[:page]
+      end
+
+      def total_pages
+        tags_paginated[:total_pages]
+      end
+
+      def collection
+        tags_paginated[:collection].map do |t|
+          {
+            name: t['name'],
+            taggers_count: t['reach'].to_i
+          }
+        end
+      end
+
+      def tags_paginated
+        @tags_paginated ||= LastFM::Utils::Paginated.call(
+          collection: response_data['tag'],
+          page: @args.page,
+          limit: @args.limit
+        )
       end
     end
   end
