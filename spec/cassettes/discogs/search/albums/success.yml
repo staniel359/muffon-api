@@ -1,0 +1,142 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page=2&per_page=5&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=release
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 15:55:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '60'
+      X-Discogs-Ratelimit-Used:
+      - '0'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Link:
+      - <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=1&per_page=5>;
+        rel="first", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=1326&per_page=5>;
+        rel="last", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=1&per_page=5>;
+        rel="prev", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=3&per_page=5>;
+        rel="next"
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination": {"page": 2, "pages": 1326, "per_page": 5, "items": 6626,
+        "urls": {"first": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=1&per_page=5",
+        "last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=1326&per_page=5",
+        "prev": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=1&per_page=5",
+        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=3&per_page=5"}},
+        "results": [{"country": "Canada", "year": "1983", "format": ["Vinyl", "LP",
+        "Mini-Album", "Limited Edition", "Compilation"], "label": ["EMI America",
+        "EMI America", "Ever Reddy", "Capitol Records-EMI Of Canada Limited", "Capitol
+        Records-EMI Of Canada Limited", "EMI America Recording Studios", "Novercia
+        Ltd.", "EMI America Records", "EMI America Records", "Beechwood Music Corp.",
+        "Screen Gems-EMI Music Inc.", "McClear Place", "Capitol Records-EMI Of Canada
+        Limited"], "type": "release", "genre": ["Rock"], "style": ["Art Rock", "Pop
+        Rock"], "id": 1944543, "barcode": ["19004-1", "19004-2", "MLP 19004 A! 1610
+        \"diolge\" G. Mcl [bullseye stamp]", "MLP 19004 B! 1610 \"diolge\" G. Mcl
+        [bullseye stamp]", "BMI"], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
+        "uri": "/Kate-Bush-Kate-Bush/release/1944543", "catno": "MLP-19004", "title":
+        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/mQXucPdM3hVBFFHTQ7Mo2rkWxSo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1944543-1394392510-9359.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/_9TkWYcGrDxK7iAvxAFECKCsHHg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1944543-1394392510-9359.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/1944543", "community": {"want":
+        92, "have": 115}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "text": "White", "descriptions": ["LP", "Mini-Album", "Limited Edition",
+        "Compilation"]}]}, {"country": "Canada", "year": "1983", "format": ["Vinyl",
+        "LP", "Mini-Album", "Compilation"], "label": ["EMI America", "EMI America",
+        "Novercia Ltd.", "EMI America Records", "EMI America Records", "Capitol Records,
+        Inc.", "Beechwood Music Corp.", "Screen Gems-EMI Music Inc.", "EMI America
+        Recording Studios", "Capitol Records-EMI Of Canada Limited", "CBS Records
+        Canada Ltd.", "Capitol Records-EMI Of Canada Limited", "Capitol Records-EMI
+        Of Canada Limited", "Capitol Records-EMI Of Canada Limited"], "type": "release",
+        "genre": ["Rock"], "style": ["Art Rock", "Pop Rock"], "id": 4951656, "barcode":
+        ["BMI", "19004-1", "19004-2", "G. DM-6 [bullseye] MLP 19004 A! 1610 \"diolge\"
+        M CC", "G. DM-8 MLP 19004 Bpe . 1610-/6s. [bullseye]", "G. DM-10 [bullseye]
+        MLP 19004 A! 1610 \"diolge\" M CC", "G. DM-10 MLP 19004 Bpe . 1610-/6s. [bullseye]"],
+        "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
+        "uri": "/Kate-Bush-Kate-Bush/release/4951656", "catno": "MLP-19004", "title":
+        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/VFzITZtSKzCk9VYypBxBfMMG4TI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4951656-1380388875-8040.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/1Dx8cXD6QXCnRqZqKC3ig6PUyIk=/fit-in/280x280/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4951656-1380388875-8040.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/4951656", "community": {"want":
+        58, "have": 125}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "descriptions": ["LP", "Mini-Album", "Compilation"]}]}, {"country": "Canada",
+        "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Compilation", "Limited
+        Edition"], "label": ["EMI America", "Capitol Records-EMI Of Canada Limited",
+        "EMI America Recording Studios", "Novercia Ltd.", "EMI America Records", "Beechwood
+        Music Corp.", "Screen Gems-EMI Music Inc.", "Capitol Records-EMI Of Canada
+        Limited"], "type": "release", "genre": ["Rock"], "style": ["Art Rock", "Pop
+        Rock"], "id": 2385486, "barcode": ["BMI", "19004-1", "19004-2", "MLP 19004
+        A! 1610 \u00f6/.:lge'' G. Mcc \u29bf", "MLP 19004 B! 1610 \u00f6/.:lge'' G.
+        Mc\u2014 \u29bf"], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
+        "uri": "/Kate-Bush-Kate-Bush/release/2385486", "catno": "MLP-19004", "title":
+        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/xBaXcs-H2hM1r2cXQL8KuWUAPiQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2385486-1329571532.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/OMqn9dX1iIasGFVwJ0SN7Ws8C4E=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2385486-1329571532.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/2385486", "community": {"want":
+        101, "have": 64}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "text": "Green Translucent", "descriptions": ["LP", "Mini-Album", "Compilation",
+        "Limited Edition"]}]}, {"country": "US", "year": "1982", "format": ["Vinyl",
+        "12\"", "33 \u2153 RPM", "Promo", "Sampler"], "label": ["EMI America", "EMI
+        AMERICA Records", "Kate Bush Music Ltd.", "Capitol Records, Inc.", "EMI America"],
+        "type": "release", "genre": ["Rock"], "style": ["Pop Rock", "Experimental"],
+        "id": 2858958, "barcode": [], "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush/release/2858958",
+        "catno": "SPRO-9847", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/8zEt4Y_FMImhFuHTbIQ-KTT6y_U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2858958-1304315838.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/iTa77EayZUIpEeGDS3nJV-F3v4w=/fit-in/255x255/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2858958-1304315838.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/2858958", "community": {"want":
+        93, "have": 55}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "descriptions": ["12\"", "33 \u2153 RPM", "Promo", "Sampler"]}]}, {"country":
+        "Canada", "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Limited
+        Edition", "Compilation"], "label": ["EMI America"], "type": "release", "genre":
+        ["Rock"], "style": ["Art Rock", "Pop Rock"], "id": 2385472, "barcode": [],
+        "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
+        "uri": "/Kate-Bush-Kate-Bush/release/2385472", "catno": "MLP-19004", "title":
+        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/QxdPgZvNlM8opfEPwBkOEVp49iY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2385472-1280948928.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/-qNIVQUVM195tS-QpsvZ0lOl1e8=/fit-in/433x450/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2385472-1280948928.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/2385472", "community": {"want":
+        102, "have": 57}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "text": "Blue", "descriptions": ["LP", "Mini-Album", "Limited Edition",
+        "Compilation"]}]}]}'
+  recorded_at: Thu, 17 Dec 2020 15:55:54 GMT
+recorded_with: VCR 6.0.0

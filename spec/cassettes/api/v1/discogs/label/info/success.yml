@@ -1,0 +1,217 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/labels/26126?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 18:16:48 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '59'
+      X-Discogs-Ratelimit-Used:
+      - '1'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 26126, "name": "EMI", "resource_url": "https://api.discogs.com/labels/26126",
+        "uri": "https://www.discogs.com/label/26126-EMI", "releases_url": "https://api.discogs.com/labels/26126/releases",
+        "images": [{"type": "primary", "uri": "https://img.discogs.com/Ic_CY2JvgeciBmF8y6pf1uhSNwc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1588617999-6338.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Ic_CY2JvgeciBmF8y6pf1uhSNwc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1588617999-6338.jpeg.jpg",
+        "uri150": "https://img.discogs.com/x0nK65U3gRlIMMmamXBehv47vWs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1588617999-6338.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/z59gi13xUIkOO4rwdh6sbsfTy_s=/fit-in/600x300/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1601717794-6029.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/z59gi13xUIkOO4rwdh6sbsfTy_s=/fit-in/600x300/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1601717794-6029.jpeg.jpg",
+        "uri150": "https://img.discogs.com/fvUFE7jqZXP_1IXA9448HGqw3GM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1601717794-6029.jpeg.jpg",
+        "width": 600, "height": 300}, {"type": "secondary", "uri": "https://img.discogs.com/kpqQbcHNy2BvEHlL_l8gJKpLjwA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1588617999-3095.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/kpqQbcHNy2BvEHlL_l8gJKpLjwA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1588617999-3095.jpeg.jpg",
+        "uri150": "https://img.discogs.com/rI58YUCot632ZX-yxS06lW_yPno=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1588617999-3095.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/SZwPGjqt7YceLffhMZkV1q0JCjY=/fit-in/600x331/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1206468451.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/SZwPGjqt7YceLffhMZkV1q0JCjY=/fit-in/600x331/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1206468451.jpeg.jpg",
+        "uri150": "https://img.discogs.com/epe-JxJJVxhuatkr9lugq75ZilU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1206468451.jpeg.jpg",
+        "width": 600, "height": 331}, {"type": "secondary", "uri": "https://img.discogs.com/usENvjCIegGHpxLdgSWwrb41DZ4=/fit-in/591x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1264969175.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/usENvjCIegGHpxLdgSWwrb41DZ4=/fit-in/591x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1264969175.jpeg.jpg",
+        "uri150": "https://img.discogs.com/385cazQKisWGOONJr_kAm6rFdg8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1264969175.jpeg.jpg",
+        "width": 591, "height": 590}, {"type": "secondary", "uri": "https://img.discogs.com/o-ADYqg_BTTUkMnjc-MBrE3ZmJY=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1504389665-6993.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/o-ADYqg_BTTUkMnjc-MBrE3ZmJY=/fit-in/500x500/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1504389665-6993.jpeg.jpg",
+        "uri150": "https://img.discogs.com/4MDTVCwUc5gLM2VmyyG59fe5Kt0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1504389665-6993.jpeg.jpg",
+        "width": 500, "height": 500}, {"type": "secondary", "uri": "https://img.discogs.com/HwyePxZRHCD59n0Ydde4JvxFn_c=/fit-in/264x323/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1506765357-4154.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/HwyePxZRHCD59n0Ydde4JvxFn_c=/fit-in/264x323/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1506765357-4154.jpeg.jpg",
+        "uri150": "https://img.discogs.com/CQQc31BbqfcxOODd2vPB7Ojl6oM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1506765357-4154.jpeg.jpg",
+        "width": 264, "height": 323}, {"type": "secondary", "uri": "https://img.discogs.com/qq-8dQ9iseUwws2OLDrV_V93AEY=/fit-in/248x233/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1540715474-4221.png.jpg",
+        "resource_url": "https://img.discogs.com/qq-8dQ9iseUwws2OLDrV_V93AEY=/fit-in/248x233/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1540715474-4221.png.jpg",
+        "uri150": "https://img.discogs.com/RUU1LjFAP_ZkXjz9_OYQtPnAFA0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1540715474-4221.png.jpg",
+        "width": 248, "height": 233}, {"type": "secondary", "uri": "https://img.discogs.com/Uyxlddl8SrhCvEadCKa9SLYbGnI=/fit-in/600x143/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1552350230-7857.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Uyxlddl8SrhCvEadCKa9SLYbGnI=/fit-in/600x143/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1552350230-7857.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Tj8Evkkh4fcPabNoF7IYJVT0Lug=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1552350230-7857.jpeg.jpg",
+        "width": 600, "height": 143}, {"type": "secondary", "uri": "https://img.discogs.com/KBWrILXJOIGWxq-3nXUJKESHLeg=/fit-in/600x636/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1588782245-7016.png.jpg",
+        "resource_url": "https://img.discogs.com/KBWrILXJOIGWxq-3nXUJKESHLeg=/fit-in/600x636/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1588782245-7016.png.jpg",
+        "uri150": "https://img.discogs.com/xtG9SC3gQ1U5XpUk8UGIAXEkPa8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1588782245-7016.png.jpg",
+        "width": 600, "height": 636}, {"type": "secondary", "uri": "https://img.discogs.com/QfPNj_CtZNLrR7-fcgHbh6VUWkQ=/fit-in/500x239/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1303093880.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/QfPNj_CtZNLrR7-fcgHbh6VUWkQ=/fit-in/500x239/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-26126-1303093880.jpeg.jpg",
+        "uri150": "https://img.discogs.com/tArRFEtM8JUSVlTqcrWqIPrp8Gc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-26126-1303093880.jpeg.jpg",
+        "width": 500, "height": 239}], "profile": "EMI was the label of UK company
+        [l=EMI Records Ltd.], also known as [l=EMI Records].\r\nAfter a hiatus, EMI
+        was relaunched as a label by Universal Music Group in 2020.\r\nLabel Code:
+        LC 0542 / LC 00542. \r\n[b]EMI did not exist as a label until 1 January 1973
+        (the exception being a few Indian releases around 1969 and 60s Australian
+        test-pressings related to [l=EMI Studios Sydney]). It should not be added
+        as a label to any release before that date, aside from those Indian releases.
+        Furthermore it should not be added as a label on any release with a primary
+        branded label such as [l=His Master''s Voice], [l=Columbia], [l=Path\u00e9],
+        [l=Parlophone], [l=Capitol Records], etc., as the boxed EMI logo that appears
+        with the primary label simply implies that the label formed part of the EMI
+        Group (please do not confuse with [l1032063]), not that EMI was a label. In
+        these cases, it is permitted to add EMI as a Record Company ([url=https://www.discogs.com/forum/thread/357844]discussion[/url]
+        / [url=https://www.discogs.com/forum/thread/768565]more discussion[/url])
+        as it was the corporate logo of the parent companies [l293204] / [l359207]
+        (EMI) and was not intended as a label.[/b]\r\n\r\nFrom 1996 until September
+        2012 the ultimate parent company / owner of all the EMI labels and companies
+        was EMI Group Ltd. ([l1032063].)\r\n\r\nAfter that date [l=Universal Music
+        Group] now owns large parts of the former EMI Group, with the former [l=EMI
+        Records Ltd.] (which includes most EMI UK & Europe operations) being renamed
+        as [l=Parlophone Records Ltd.] and being sold off to the [l=Warner Music Group].\r\n\r\nEMI
+        was a major label and had a lot of sub and sister labels which also carry
+        the EMI logo and manage its huge amount of releases all over the world. \r\n\r\n[u]The
+        EMI country codes (introduced on 1 June, 1969)[/u]: In most cases the EMI
+        Codes are the first two letters of the record''s catalog#. These EMI Country
+        Codes were used to indicate the country in which the record was pressed. Note
+        this doesn''t necessarily means the record was also released in that country.
+        Please enter this catalogue number against whichever label is branded on the
+        release.\r\n\r\n OC = UK\r\n 0C = UK \r\n 1A = Netherlands \r\n 1C = Germany
+        \r\n 1E = UK\r\n 1J = Spain \r\n 2C = France \r\n 2E = Austria \r\n 2J = Greece
+        \r\n 3C = Italy \r\n 3E = Switzerland \r\n 4B, 4C = Belgium \r\n 4E = Sweden
+        \r\n 5C = Netherlands \r\n 5E = Finland \r\n 6C = Denmark \r\n 6E = Denmark
+        \r\n 7C = Sweden \r\n 7E = Norway \r\n 8E = Portugal \r\n 9C = Finland \r\n
+        10C = Spain \r\n 11C = Portugal \r\n 12C = Austria \r\n 13C = Switzerland
+        \r\n 14C = Greece\r\n 16C = Australia (unused on releases)\r\n 17C = New Zealand
+        (unused on releases)\r\n 31C = Brazil\r\n 32C = Chile\r\n 33C = Mexico\r\n
+        82C = South Africa\r\n\r\nFor unofficial releases which use the EMI-logo and/or
+        claim to be an EMI-release please use this label: [l=EMI (2)]!\r\n\r\nPlease
+        [url=http://www.discogs.com/help/forums]ask in the forums[/url] if you are
+        in doubt.", "parent_label": {"id": 38404, "name": "Universal Music Group",
+        "resource_url": "https://api.discogs.com/labels/38404"}, "data_quality": "Needs
+        Vote", "urls": ["http://www.emimusic.com/about/history/timeline/", "http://www.emimusic.com/about/history/",
+        "http://www.emimusic.com", "https://en.wikipedia.org/wiki/EMI", "http://www.facebook.com/EMIGroup",
+        "http://twitter.com/emimusic"], "sublabels": [{"id": 612836, "name": "101
+        Hits", "resource_url": "https://api.discogs.com/labels/612836"}, {"id": 1331840,
+        "name": "15 De Coleccion", "resource_url": "https://api.discogs.com/labels/1331840"},
+        {"id": 972508, "name": "2 CD Originals", "resource_url": "https://api.discogs.com/labels/972508"},
+        {"id": 1369189, "name": "2 LP''s En Un CD", "resource_url": "https://api.discogs.com/labels/1369189"},
+        {"id": 565671, "name": "20 Chansons D''or", "resource_url": "https://api.discogs.com/labels/565671"},
+        {"id": 676296, "name": "2CD Originais", "resource_url": "https://api.discogs.com/labels/676296"},
+        {"id": 799682, "name": "3 CD Originals", "resource_url": "https://api.discogs.com/labels/799682"},
+        {"id": 582456, "name": "3CD Originals", "resource_url": "https://api.discogs.com/labels/582456"},
+        {"id": 860409, "name": "80 Introuvables", "resource_url": "https://api.discogs.com/labels/860409"},
+        {"id": 530238, "name": "A Time To Remember", "resource_url": "https://api.discogs.com/labels/530238"},
+        {"id": 941, "name": "Additive", "resource_url": "https://api.discogs.com/labels/941"},
+        {"id": 43881, "name": "Ardeck", "resource_url": "https://api.discogs.com/labels/43881"},
+        {"id": 62892, "name": "Axis (3)", "resource_url": "https://api.discogs.com/labels/62892"},
+        {"id": 377171, "name": "Blue Line", "resource_url": "https://api.discogs.com/labels/377171"},
+        {"id": 12747, "name": "Chemistry", "resource_url": "https://api.discogs.com/labels/12747"},
+        {"id": 1273670, "name": "Classical Moods", "resource_url": "https://api.discogs.com/labels/1273670"},
+        {"id": 1806416, "name": "Cool Price (2)", "resource_url": "https://api.discogs.com/labels/1806416"},
+        {"id": 1804766, "name": "Dance Adiction", "resource_url": "https://api.discogs.com/labels/1804766"},
+        {"id": 318095, "name": "Dance For Ever", "resource_url": "https://api.discogs.com/labels/318095"},
+        {"id": 1604850, "name": "DB Production (2)", "resource_url": "https://api.discogs.com/labels/1604850"},
+        {"id": 923063, "name": "Disco Dr\u00f8net", "resource_url": "https://api.discogs.com/labels/923063"},
+        {"id": 321650, "name": "Do You Remember?", "resource_url": "https://api.discogs.com/labels/321650"},
+        {"id": 715867, "name": "Electrospective", "resource_url": "https://api.discogs.com/labels/715867"},
+        {"id": 271148, "name": "EMI Capitol De Mexico, S.A. De C.V.", "resource_url":
+        "https://api.discogs.com/labels/271148"}, {"id": 172030, "name": "EMI Chrysalis",
+        "resource_url": "https://api.discogs.com/labels/172030"}, {"id": 399472, "name":
+        "EMI Creative Services", "resource_url": "https://api.discogs.com/labels/399472"},
+        {"id": 173532, "name": "EMI Dance House", "resource_url": "https://api.discogs.com/labels/173532"},
+        {"id": 39845, "name": "EMI Digital", "resource_url": "https://api.discogs.com/labels/39845"},
+        {"id": 349021, "name": "EMI France SA", "resource_url": "https://api.discogs.com/labels/349021"},
+        {"id": 1565673, "name": "EMI Hot Hits", "resource_url": "https://api.discogs.com/labels/1565673"},
+        {"id": 436765, "name": "EMI Operations Italy S.p.A.", "resource_url": "https://api.discogs.com/labels/436765"},
+        {"id": 77297, "name": "EMI Premium", "resource_url": "https://api.discogs.com/labels/77297"},
+        {"id": 1738764, "name": "EMI Standards", "resource_url": "https://api.discogs.com/labels/1738764"},
+        {"id": 96578, "name": "EMI Studio", "resource_url": "https://api.discogs.com/labels/96578"},
+        {"id": 291676, "name": "EMI Studios (2)", "resource_url": "https://api.discogs.com/labels/291676"},
+        {"id": 935638, "name": "EMI Sync", "resource_url": "https://api.discogs.com/labels/935638"},
+        {"id": 1005872, "name": "EMI''s Pop F\u00f8r Serie", "resource_url": "https://api.discogs.com/labels/1005872"},
+        {"id": 333495, "name": "Erato Serie", "resource_url": "https://api.discogs.com/labels/333495"},
+        {"id": 20680, "name": "Escape", "resource_url": "https://api.discogs.com/labels/20680"},
+        {"id": 345563, "name": "Heart Of Soul", "resource_url": "https://api.discogs.com/labels/345563"},
+        {"id": 1914378, "name": "Het Beste Van (6)", "resource_url": "https://api.discogs.com/labels/1914378"},
+        {"id": 965847, "name": "Hi Fi Collection", "resource_url": "https://api.discogs.com/labels/965847"},
+        {"id": 825660, "name": "Historical Archives", "resource_url": "https://api.discogs.com/labels/825660"},
+        {"id": 19886, "name": "Hydra", "resource_url": "https://api.discogs.com/labels/19886"},
+        {"id": 40818, "name": "Interdance", "resource_url": "https://api.discogs.com/labels/40818"},
+        {"id": 498014, "name": "Jazz Masters (5)", "resource_url": "https://api.discogs.com/labels/498014"},
+        {"id": 1379409, "name": "Just Great Songs", "resource_url": "https://api.discogs.com/labels/1379409"},
+        {"id": 1036334, "name": "Kids Expresse", "resource_url": "https://api.discogs.com/labels/1036334"},
+        {"id": 503739, "name": "Legends Of The 20th Century", "resource_url": "https://api.discogs.com/labels/503739"},
+        {"id": 1088607, "name": "Liberty/UA", "resource_url": "https://api.discogs.com/labels/1088607"},
+        {"id": 565156, "name": "Master Of Funk & Soul Series", "resource_url": "https://api.discogs.com/labels/565156"},
+        {"id": 521638, "name": "Masters Of Funk & Soul", "resource_url": "https://api.discogs.com/labels/521638"},
+        {"id": 534141, "name": "Music Of Ireland Series", "resource_url": "https://api.discogs.com/labels/534141"},
+        {"id": 13480, "name": "Nutbush", "resource_url": "https://api.discogs.com/labels/13480"},
+        {"id": 55577, "name": "Power Exchange Records & Tapes", "resource_url": "https://api.discogs.com/labels/55577"},
+        {"id": 1012590, "name": "Price Attack!", "resource_url": "https://api.discogs.com/labels/1012590"},
+        {"id": 1652454, "name": "Pure (21)", "resource_url": "https://api.discogs.com/labels/1652454"},
+        {"id": 689146, "name": "Queen 25", "resource_url": "https://api.discogs.com/labels/689146"},
+        {"id": 307796, "name": "SBK (2)", "resource_url": "https://api.discogs.com/labels/307796"},
+        {"id": 79361, "name": "Sesam", "resource_url": "https://api.discogs.com/labels/79361"},
+        {"id": 34660, "name": "Sidewalk", "resource_url": "https://api.discogs.com/labels/34660"},
+        {"id": 688675, "name": "Star Gold (2)", "resource_url": "https://api.discogs.com/labels/688675"},
+        {"id": 42484, "name": "Starline", "resource_url": "https://api.discogs.com/labels/42484"},
+        {"id": 8170, "name": "Syncopate (2)", "resource_url": "https://api.discogs.com/labels/8170"},
+        {"id": 1100434, "name": "Talent (15)", "resource_url": "https://api.discogs.com/labels/1100434"},
+        {"id": 1945707, "name": "The Gramophone Company Of India Ltd. (U.K. Branch)",
+        "resource_url": "https://api.discogs.com/labels/1945707"}, {"id": 336487,
+        "name": "The Red Room (3)", "resource_url": "https://api.discogs.com/labels/336487"},
+        {"id": 956110, "name": "The Sound Gallery (2)", "resource_url": "https://api.discogs.com/labels/956110"},
+        {"id": 38831, "name": "Transcopic", "resource_url": "https://api.discogs.com/labels/38831"},
+        {"id": 444961, "name": "Transglobal EMI", "resource_url": "https://api.discogs.com/labels/444961"},
+        {"id": 394523, "name": "Twogether", "resource_url": "https://api.discogs.com/labels/394523"},
+        {"id": 870923, "name": "Voltron Recordz", "resource_url": "https://api.discogs.com/labels/870923"},
+        {"id": 261060, "name": "Wereldsterren", "resource_url": "https://api.discogs.com/labels/261060"},
+        {"id": 314296, "name": "Worldwide Series", "resource_url": "https://api.discogs.com/labels/314296"}]}'
+  recorded_at: Thu, 17 Dec 2020 18:16:49 GMT
+recorded_with: VCR 6.0.0

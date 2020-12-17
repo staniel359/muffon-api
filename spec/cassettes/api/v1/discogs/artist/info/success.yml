@@ -1,0 +1,260 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/artists/85929?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 13:48:38 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '59'
+      X-Discogs-Ratelimit-Used:
+      - '1'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name": "Kate Bush", "id": 85929, "resource_url": "https://api.discogs.com/artists/85929",
+        "uri": "https://www.discogs.com/artist/85929-Kate-Bush", "releases_url": "https://api.discogs.com/artists/85929/releases",
+        "images": [{"type": "primary", "uri": "https://img.discogs.com/VFxhrfX4BK2TztjZ0Uae0uaLvJY=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1167437440.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/VFxhrfX4BK2TztjZ0Uae0uaLvJY=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1167437440.jpeg.jpg",
+        "uri150": "https://img.discogs.com/wp9-gdyqMwsNup_8_wflTTyQsKU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1167437440.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/zIYwtu3Q96E8k9dIxc9iFPvjStI=/600x784/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1514452799-9029.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/zIYwtu3Q96E8k9dIxc9iFPvjStI=/600x784/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1514452799-9029.jpeg.jpg",
+        "uri150": "https://img.discogs.com/hPfLo4Dg7Hnvf6cDD8vsbIDkxeE=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1514452799-9029.jpeg.jpg",
+        "width": 600, "height": 784}, {"type": "secondary", "uri": "https://img.discogs.com/wfcKAEbyJTzJmxTRkZiBICsxvUw=/550x548/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1454671532-9101.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/wfcKAEbyJTzJmxTRkZiBICsxvUw=/550x548/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1454671532-9101.jpeg.jpg",
+        "uri150": "https://img.discogs.com/MTGNyqhG3hea3qq_26x7AjzMsjE=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1454671532-9101.jpeg.jpg",
+        "width": 550, "height": 548}, {"type": "secondary", "uri": "https://img.discogs.com/V709znOHTxDl8IPcsFs943T0yV0=/252x252/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354410-8934.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/V709znOHTxDl8IPcsFs943T0yV0=/252x252/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354410-8934.jpeg.jpg",
+        "uri150": "https://img.discogs.com/BBHUfhHbS_0mR-Y8R-NhoH5SUGE=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354410-8934.jpeg.jpg",
+        "width": 252, "height": 252}, {"type": "secondary", "uri": "https://img.discogs.com/ROzotSnOHP5RZnV7LP8u4TX2Lqg=/320x320/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1125765375.gif.jpg",
+        "resource_url": "https://img.discogs.com/ROzotSnOHP5RZnV7LP8u4TX2Lqg=/320x320/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1125765375.gif.jpg",
+        "uri150": "https://img.discogs.com/FLz-Mg7UbEJN0YLWkHjbchzCGvI=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1125765375.gif.jpg",
+        "width": 320, "height": 320}, {"type": "secondary", "uri": "https://img.discogs.com/R5FhGZLEkRCQB7DcXl95a-cpW1Y=/596x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1306052314.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/R5FhGZLEkRCQB7DcXl95a-cpW1Y=/596x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1306052314.jpeg.jpg",
+        "uri150": "https://img.discogs.com/vDDThiFZSdwsnsVpQwM5JeYZ_8Y=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1306052314.jpeg.jpg",
+        "width": 596, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/ZsjMLkxJdYRfiD-Uhekh1mVsGUM=/500x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1306052299.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/ZsjMLkxJdYRfiD-Uhekh1mVsGUM=/500x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1306052299.jpeg.jpg",
+        "uri150": "https://img.discogs.com/uEH6cdLbomOd2U3CfV-aGS0jYO8=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1306052299.jpeg.jpg",
+        "width": 500, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/CXzwlrD5e-FkRf_ZNrvyifsEDws=/500x376/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1451308644-3348.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/CXzwlrD5e-FkRf_ZNrvyifsEDws=/500x376/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1451308644-3348.jpeg.jpg",
+        "uri150": "https://img.discogs.com/HlnJbtMO0Z28VNWYvLCD7GqKHFQ=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1451308644-3348.jpeg.jpg",
+        "width": 500, "height": 376}, {"type": "secondary", "uri": "https://img.discogs.com/EpYUp77VIT5pI3cxHEw7IAKq-xc=/600x393/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1281533548.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/EpYUp77VIT5pI3cxHEw7IAKq-xc=/600x393/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1281533548.jpeg.jpg",
+        "uri150": "https://img.discogs.com/hU0h2-BMXnaAPvQClQb4KDoG8c8=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1281533548.jpeg.jpg",
+        "width": 600, "height": 393}, {"type": "secondary", "uri": "https://img.discogs.com/NtkFsRST76f6rUjsNwgMwXC6N4U=/422x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1146025318.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/NtkFsRST76f6rUjsNwgMwXC6N4U=/422x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1146025318.jpeg.jpg",
+        "uri150": "https://img.discogs.com/XVnhyoQ51S8HIcNJzZr7dPVo32Y=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1146025318.jpeg.jpg",
+        "width": 422, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/nM1b-5iA7BjLHkqBfbznV3jqBg0=/500x685/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1287539675.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/nM1b-5iA7BjLHkqBfbznV3jqBg0=/500x685/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1287539675.jpeg.jpg",
+        "uri150": "https://img.discogs.com/-4KN3_PW20egg0EtOYpRhIFGmSg=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1287539675.jpeg.jpg",
+        "width": 500, "height": 685}, {"type": "secondary", "uri": "https://img.discogs.com/3kxU8j7Ela-STTQl0dG4p3vMgLQ=/390x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1205697052.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/3kxU8j7Ela-STTQl0dG4p3vMgLQ=/390x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1205697052.jpeg.jpg",
+        "uri150": "https://img.discogs.com/JzmT_7zxQBDuE7yfuxjzk2YXL7w=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1205697052.jpeg.jpg",
+        "width": 390, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/eU0w8zP7Q5K03boMTHi4OHbGNz8=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1553810644-3244.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/eU0w8zP7Q5K03boMTHi4OHbGNz8=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1553810644-3244.jpeg.jpg",
+        "uri150": "https://img.discogs.com/ccy5IK_C54TDvwM-BAvWjioWEWk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1553810644-3244.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/D9HSq-yaJFg3SL2wPssRiuo4ivI=/600x440/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1306052307.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/D9HSq-yaJFg3SL2wPssRiuo4ivI=/600x440/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1306052307.jpeg.jpg",
+        "uri150": "https://img.discogs.com/ri67XZHKgAWNgNLXFQQI_wqj4Vk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1306052307.jpeg.jpg",
+        "width": 600, "height": 440}, {"type": "secondary", "uri": "https://img.discogs.com/4kBcMEj_5wQV-WTlry6-napU8aw=/467x468/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1287539291.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/4kBcMEj_5wQV-WTlry6-napU8aw=/467x468/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1287539291.jpeg.jpg",
+        "uri150": "https://img.discogs.com/YxSkRqAaDatIndhXeVKsAKcLAjc=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1287539291.jpeg.jpg",
+        "width": 467, "height": 468}, {"type": "secondary", "uri": "https://img.discogs.com/_vJM770oqDO4Lmn85ZwpnWrSQhc=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1205696958.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/_vJM770oqDO4Lmn85ZwpnWrSQhc=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1205696958.jpeg.jpg",
+        "uri150": "https://img.discogs.com/7CxsBi5YKWsO65P2QKMeg2eRJDc=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1205696958.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/VRNF5DOIb9_gw7h_Mu-zp-2NU3E=/500x664/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1347833361-1562.gif.jpg",
+        "resource_url": "https://img.discogs.com/VRNF5DOIb9_gw7h_Mu-zp-2NU3E=/500x664/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1347833361-1562.gif.jpg",
+        "uri150": "https://img.discogs.com/uUr8iRdlE19IZiAGw6AarVAyHrM=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1347833361-1562.gif.jpg",
+        "width": 500, "height": 664}, {"type": "secondary", "uri": "https://img.discogs.com/fJz63UPvpvTAPYZzj4Gr4oGz6YE=/537x550/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382739943-6754.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/fJz63UPvpvTAPYZzj4Gr4oGz6YE=/537x550/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382739943-6754.jpeg.jpg",
+        "uri150": "https://img.discogs.com/OxLZK3PjKhK74enGPcl6nPIU1qg=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382739943-6754.jpeg.jpg",
+        "width": 537, "height": 550}, {"type": "secondary", "uri": "https://img.discogs.com/_sS91k9WK3buSB4_DceiBcnHD1k=/543x777/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382739959-9764.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/_sS91k9WK3buSB4_DceiBcnHD1k=/543x777/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382739959-9764.jpeg.jpg",
+        "uri150": "https://img.discogs.com/jMcc1-gpPVrNNrMQR8-tSwzYko8=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382739959-9764.jpeg.jpg",
+        "width": 543, "height": 777}, {"type": "secondary", "uri": "https://img.discogs.com/srcwctH9s4Xot2aIXpdcaYRjsyU=/524x722/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742042-1583.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/srcwctH9s4Xot2aIXpdcaYRjsyU=/524x722/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742042-1583.jpeg.jpg",
+        "uri150": "https://img.discogs.com/G4toI23P3b1f37uA2KoQ5xVPsm8=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742042-1583.jpeg.jpg",
+        "width": 524, "height": 722}, {"type": "secondary", "uri": "https://img.discogs.com/3K3QOciIewruFgPsjCoujN-2xrU=/540x676/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742201-8848.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/3K3QOciIewruFgPsjCoujN-2xrU=/540x676/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742201-8848.jpeg.jpg",
+        "uri150": "https://img.discogs.com/z4hGNjsIA1gKeeRU63A659EbdVA=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742201-8848.jpeg.jpg",
+        "width": 540, "height": 676}, {"type": "secondary", "uri": "https://img.discogs.com/oz-Wov0hJwdJiFhMpPSNLkV8Roo=/571x580/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742280-9335.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/oz-Wov0hJwdJiFhMpPSNLkV8Roo=/571x580/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742280-9335.jpeg.jpg",
+        "uri150": "https://img.discogs.com/y6FH5MHKt6cqdcx3yMj78LwKjlA=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742280-9335.jpeg.jpg",
+        "width": 571, "height": 580}, {"type": "secondary", "uri": "https://img.discogs.com/VR28QAh-OTwFMSEqqZoAb4XcWLk=/600x610/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742323-1933.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/VR28QAh-OTwFMSEqqZoAb4XcWLk=/600x610/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742323-1933.jpeg.jpg",
+        "uri150": "https://img.discogs.com/90dHp6ywu9Kz5LiC1z6tO6dzGDk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742323-1933.jpeg.jpg",
+        "width": 600, "height": 610}, {"type": "secondary", "uri": "https://img.discogs.com/GOo5fCG1_H2yvEGECLaUl9mVmbk=/564x756/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742344-6443.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/GOo5fCG1_H2yvEGECLaUl9mVmbk=/564x756/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742344-6443.jpeg.jpg",
+        "uri150": "https://img.discogs.com/PYv1ajdSLRGuydUhu4HLAJlTwcE=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742344-6443.jpeg.jpg",
+        "width": 564, "height": 756}, {"type": "secondary", "uri": "https://img.discogs.com/4z4A_pNRMUNhSle5wxlfA6CcSmY=/600x833/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742384-4871.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/4z4A_pNRMUNhSle5wxlfA6CcSmY=/600x833/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742384-4871.jpeg.jpg",
+        "uri150": "https://img.discogs.com/O8A7BcBQvuft29rcSwddJmuY--4=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742384-4871.jpeg.jpg",
+        "width": 600, "height": 833}, {"type": "secondary", "uri": "https://img.discogs.com/FQ7eBgvSfUkmX7xhzxSTtLRl46Q=/600x593/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742407-8712.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/FQ7eBgvSfUkmX7xhzxSTtLRl46Q=/600x593/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742407-8712.jpeg.jpg",
+        "uri150": "https://img.discogs.com/FQvNTlp-RyZnX8plNsoWKRis-a4=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742407-8712.jpeg.jpg",
+        "width": 600, "height": 593}, {"type": "secondary", "uri": "https://img.discogs.com/La7bLG_Jv-fpq8BuHEc33kJXOIQ=/600x804/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742477-9354.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/La7bLG_Jv-fpq8BuHEc33kJXOIQ=/600x804/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742477-9354.jpeg.jpg",
+        "uri150": "https://img.discogs.com/RY4CCl05r6iZYvk8-Vi_lcTZUCI=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742477-9354.jpeg.jpg",
+        "width": 600, "height": 804}, {"type": "secondary", "uri": "https://img.discogs.com/Kwpn-Fm4LBf8JrloUDPRijVrn1I=/600x785/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742852-4359.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Kwpn-Fm4LBf8JrloUDPRijVrn1I=/600x785/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742852-4359.jpeg.jpg",
+        "uri150": "https://img.discogs.com/MHAdhss8OYiKrNf-G233SFwXxfU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742852-4359.jpeg.jpg",
+        "width": 600, "height": 785}, {"type": "secondary", "uri": "https://img.discogs.com/3jmdVO-IaG6VPwnjubiEMqjsSq0=/600x800/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742883-8476.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/3jmdVO-IaG6VPwnjubiEMqjsSq0=/600x800/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742883-8476.jpeg.jpg",
+        "uri150": "https://img.discogs.com/IR7-sJSW0d-6TK28l9OfyJEc6Zk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742883-8476.jpeg.jpg",
+        "width": 600, "height": 800}, {"type": "secondary", "uri": "https://img.discogs.com/9GjRnI3o0-PeOZjyebfAquQJNfE=/486x720/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354407-2886.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/9GjRnI3o0-PeOZjyebfAquQJNfE=/486x720/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354407-2886.jpeg.jpg",
+        "uri150": "https://img.discogs.com/IYIv71h-tQxOX-q18ogmTnFU9ec=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354407-2886.jpeg.jpg",
+        "width": 486, "height": 720}, {"type": "secondary", "uri": "https://img.discogs.com/giySChAJPWbbf9QJ3z9OL404nAo=/350x447/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354408-2549.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/giySChAJPWbbf9QJ3z9OL404nAo=/350x447/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354408-2549.jpeg.jpg",
+        "uri150": "https://img.discogs.com/cy4tcVIjig_Kn8uA8kOjUpvSLDU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354408-2549.jpeg.jpg",
+        "width": 350, "height": 447}, {"type": "secondary", "uri": "https://img.discogs.com/Dyo2f33wBknNqoNSGab9F3_WHis=/376x580/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354408-3656.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Dyo2f33wBknNqoNSGab9F3_WHis=/376x580/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354408-3656.jpeg.jpg",
+        "uri150": "https://img.discogs.com/qPNgiKTtJSfaR5h9fqqOXJ_h00o=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354408-3656.jpeg.jpg",
+        "width": 376, "height": 580}, {"type": "secondary", "uri": "https://img.discogs.com/5MloOx3bGXazq9Eq_HLI07lPFYI=/500x724/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-7620.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/5MloOx3bGXazq9Eq_HLI07lPFYI=/500x724/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-7620.jpeg.jpg",
+        "uri150": "https://img.discogs.com/POFv1dnDCBsz5p8Hxsg5b44baCQ=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354409-7620.jpeg.jpg",
+        "width": 500, "height": 724}, {"type": "secondary", "uri": "https://img.discogs.com/wIIJsnRQDApxL8nV6ojJlHFhUmQ=/594x460/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-7535.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/wIIJsnRQDApxL8nV6ojJlHFhUmQ=/594x460/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-7535.jpeg.jpg",
+        "uri150": "https://img.discogs.com/_CQOBeKkd6JyvbFPcRDDr2JKBn0=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354409-7535.jpeg.jpg",
+        "width": 594, "height": 460}, {"type": "secondary", "uri": "https://img.discogs.com/GQG6nnEDIxfaZTYJLIXfkzHadl4=/600x768/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-1465.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/GQG6nnEDIxfaZTYJLIXfkzHadl4=/600x768/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-1465.jpeg.jpg",
+        "uri150": "https://img.discogs.com/ZElV2sDQ7WTdmPWPDd13VP31z7U=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354409-1465.jpeg.jpg",
+        "width": 600, "height": 768}, {"type": "secondary", "uri": "https://img.discogs.com/M3K8wcntwTJv1LrgElAGlvhxwq4=/600x773/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354410-5109.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/M3K8wcntwTJv1LrgElAGlvhxwq4=/600x773/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354410-5109.jpeg.jpg",
+        "uri150": "https://img.discogs.com/jo6EhWJlCjEsJVFTEpM9T498RxU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354410-5109.jpeg.jpg",
+        "width": 600, "height": 773}, {"type": "secondary", "uri": "https://img.discogs.com/Lkok7TY7rBn_tTunwGwyr82gqrw=/574x467/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-1319.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Lkok7TY7rBn_tTunwGwyr82gqrw=/574x467/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-1319.jpeg.jpg",
+        "uri150": "https://img.discogs.com/9Ap43R8JpyN0o4Npjngjs2CLgEI=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354409-1319.jpeg.jpg",
+        "width": 574, "height": 467}, {"type": "secondary", "uri": "https://img.discogs.com/ubM33hqzkudrW9jcQT6Ul_9Bt1Y=/496x653/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-6940.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/ubM33hqzkudrW9jcQT6Ul_9Bt1Y=/496x653/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354409-6940.jpeg.jpg",
+        "uri150": "https://img.discogs.com/-Tj28ykDxDPOpzvuYZjJXPg8jjY=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354409-6940.jpeg.jpg",
+        "width": 496, "height": 653}, {"type": "secondary", "uri": "https://img.discogs.com/KZIqODAjiVmHS-vbkmabqoPA_WM=/600x800/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354410-4774.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/KZIqODAjiVmHS-vbkmabqoPA_WM=/600x800/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354410-4774.jpeg.jpg",
+        "uri150": "https://img.discogs.com/cnE9WzX2KPdXAIpMUf6_SB2oJiw=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354410-4774.jpeg.jpg",
+        "width": 600, "height": 800}, {"type": "secondary", "uri": "https://img.discogs.com/MsdOKS1i27vpLQ6Nxsl3aKBVGnc=/600x585/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354411-9970.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/MsdOKS1i27vpLQ6Nxsl3aKBVGnc=/600x585/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354411-9970.jpeg.jpg",
+        "uri150": "https://img.discogs.com/h7nO2FMmgy2Ye9aQ7Tg48Fg3kjA=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354411-9970.jpeg.jpg",
+        "width": 600, "height": 585}, {"type": "secondary", "uri": "https://img.discogs.com/fpK6VwoLlleNmJP9_KWNVupF6ko=/600x833/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354411-9972.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/fpK6VwoLlleNmJP9_KWNVupF6ko=/600x833/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1452354411-9972.jpeg.jpg",
+        "uri150": "https://img.discogs.com/hEckELpvTKB0r_nIzuFu8azPXbk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1452354411-9972.jpeg.jpg",
+        "width": 600, "height": 833}, {"type": "secondary", "uri": "https://img.discogs.com/3JqI4MJMA1h3qHv15ajnu8iZytY=/591x339/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1149328165.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/3JqI4MJMA1h3qHv15ajnu8iZytY=/591x339/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1149328165.jpeg.jpg",
+        "uri150": "https://img.discogs.com/KhozDPsR8JUZVSw5C_gFPom6SiY=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1149328165.jpeg.jpg",
+        "width": 591, "height": 339}, {"type": "secondary", "uri": "https://img.discogs.com/K0_lwA1-WgEKx0-9i146Qw8YtHI=/415x318/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654922-5557.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/K0_lwA1-WgEKx0-9i146Qw8YtHI=/415x318/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654922-5557.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Vcws5rL0xmiVJzjCCTSxj3mMovw=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654922-5557.jpeg.jpg",
+        "width": 415, "height": 318}, {"type": "secondary", "uri": "https://img.discogs.com/w4KKLHRE3TOTLL3T2Cpp99JaM1I=/501x790/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-9956.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/w4KKLHRE3TOTLL3T2Cpp99JaM1I=/501x790/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-9956.jpeg.jpg",
+        "uri150": "https://img.discogs.com/zPSlwPrXh36hh28EeunMxNsOSEY=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-9956.jpeg.jpg",
+        "width": 501, "height": 790}, {"type": "secondary", "uri": "https://img.discogs.com/3xJJGU27PxbLB55iTYZVYza9zLE=/449x761/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-9964.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/3xJJGU27PxbLB55iTYZVYza9zLE=/449x761/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-9964.jpeg.jpg",
+        "uri150": "https://img.discogs.com/JPe-tUeEhCr0g_isFuvjjW9BCLk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-9964.jpeg.jpg",
+        "width": 449, "height": 761}, {"type": "secondary", "uri": "https://img.discogs.com/96dPF-SEYbr4QdcXeMQoYj9WI-s=/562x776/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-7699.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/96dPF-SEYbr4QdcXeMQoYj9WI-s=/562x776/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-7699.jpeg.jpg",
+        "uri150": "https://img.discogs.com/SWCX_4xBF8q0QLFj3szYb00vfug=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-7699.jpeg.jpg",
+        "width": 562, "height": 776}, {"type": "secondary", "uri": "https://img.discogs.com/_IYbnMRghluACzUHJYDmiw_yv7s=/533x776/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-1380.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/_IYbnMRghluACzUHJYDmiw_yv7s=/533x776/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-1380.jpeg.jpg",
+        "uri150": "https://img.discogs.com/-DlVtnlfcU6EOTXR4HVh3pnrIGA=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-1380.jpeg.jpg",
+        "width": 533, "height": 776}, {"type": "secondary", "uri": "https://img.discogs.com/p2OgrCwPYSiK9nQyU-i-PKDXJWA=/568x710/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654922-8469.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/p2OgrCwPYSiK9nQyU-i-PKDXJWA=/568x710/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654922-8469.jpeg.jpg",
+        "uri150": "https://img.discogs.com/5PmQq03KGqhsVl3Hzhhc5l_fK9M=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654922-8469.jpeg.jpg",
+        "width": 568, "height": 710}, {"type": "secondary", "uri": "https://img.discogs.com/gHR9bQ6NdyqnTw06jqT_9H5YlWg=/491x739/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-4570.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/gHR9bQ6NdyqnTw06jqT_9H5YlWg=/491x739/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-4570.jpeg.jpg",
+        "uri150": "https://img.discogs.com/TcsP8UGuH-LF-DORwdyC1lVJxXw=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-4570.jpeg.jpg",
+        "width": 491, "height": 739}, {"type": "secondary", "uri": "https://img.discogs.com/kjvDMF_90wbpZ9Su6QMZRp9MZps=/559x747/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-7349.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/kjvDMF_90wbpZ9Su6QMZRp9MZps=/559x747/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-7349.jpeg.jpg",
+        "uri150": "https://img.discogs.com/2T-MAzYQGvmhqhOEiqQxwnV1oqc=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-7349.jpeg.jpg",
+        "width": 559, "height": 747}, {"type": "secondary", "uri": "https://img.discogs.com/fkShaFoGDfnvNrybbFxj5R2tbXE=/595x484/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-6123.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/fkShaFoGDfnvNrybbFxj5R2tbXE=/595x484/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-6123.jpeg.jpg",
+        "uri150": "https://img.discogs.com/ggWW-lnuGOqu5tQgNw_98eHPMgo=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-6123.jpeg.jpg",
+        "width": 595, "height": 484}, {"type": "secondary", "uri": "https://img.discogs.com/pgKJzpnCwvDx1Jyh3l_J4O1xDDY=/556x577/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-2026.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/pgKJzpnCwvDx1Jyh3l_J4O1xDDY=/556x577/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-2026.jpeg.jpg",
+        "uri150": "https://img.discogs.com/SHy3xGmGWj8AwCuh_4oo7lmE6bs=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-2026.jpeg.jpg",
+        "width": 556, "height": 577}, {"type": "secondary", "uri": "https://img.discogs.com/JBW7zHx2Etj4jReWyd2iJPAqmK0=/516x679/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-4687.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/JBW7zHx2Etj4jReWyd2iJPAqmK0=/516x679/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1559654923-4687.jpeg.jpg",
+        "uri150": "https://img.discogs.com/iQ1KhGLJkVLYWq1BsjQ211DuvVg=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1559654923-4687.jpeg.jpg",
+        "width": 516, "height": 679}], "realname": "Catherine Bush", "profile": "Highly
+        distinctive singer/songwriter, born July 30th, 1958. Bush was signed to EMI
+        at age 16 after [a=David Gilmour] heard her work and helped her produce a
+        demo tape.\r\n\r\nIn 1978 (at age 19), her debut single \"Wuthering Heights\"
+        reached #1 in four countries. She has maintained a large cult following ever
+        since. Bush''s most prolific creative period was between 1978 to 1993, with
+        a release of new material and new albums every few years. After the 1993 release
+        of \"The Red Shoes,\" she began an extended break from public view,  and devoted
+        time to her family.\r\n\r\n\"Aerial,\" Bush''s first album in 12 years, was
+        released in November 2005, preceded by single \"King Of The Mountain\". In
+        2011, two Kate Bush albums were released: \"Director''s Cut,\" a reworking
+        of several songs from \"The Sensual World\" and \"The Red Shoes,\" and \"50
+        Words for Snow,\" an album of new music.\r\n\r\nIn 2014, Bush performed in
+        a series of live concerts in London, her first concerts in decades. All performances
+        of the show, called \"Before The Dawn,\" sold out in minutes.\r\n\r\nShe was
+        appointed Commander of the Most Excellent Order of the British Empire (CBE)
+        in the 2013 New Year Honours for services to music.", "urls": ["http://www.katebush.com/",
+        "https://www.facebook.com/katebush", "https://twitter.com/katebushmusic",
+        "https://www.youtube.com/user/KateBushMusic", "https://www.youtube.com/user/KateBushVEVO",
+        "http://www.katebushnews.com/", "https://www.imdb.com/name/nm0124165/", "https://www.whosampled.com/Kate-Bush/",
+        "https://en.wikipedia.org/wiki/Kate_Bush", "https://theworldofkatebush.blogspot.com/",
+        "https://www.allmusic.com/artist/kate-bush-mn0000855423", "https://rateyourmusic.com/artist/kate-bush"],
+        "namevariations": ["(Kate Bush)", "Bush", "C. Bush", "Catherine Bush", "K
+        Bush", "K. Bush", "K.Bush", "Kate", "Katherine Bush", "\u041a\u0435\u0439\u0442
+        \u0411\u0443\u0448", "\u05e7\u05d9\u05d9\u05d8 \u05d1\u05d5\u05e9", "\u05e7\u05d9\u05d9\u05ea
+        \u05d1\u05d5\u05e9", "\u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5", "\u51f1\u7279\u5e03\u5e0c",
+        "\ucf00\uc774\ud2b8 \ubd80\uc2dc"], "aliases": [{"id": 3629532, "name": "Girl
+        From The Ivy", "resource_url": "https://api.discogs.com/artists/3629532"}],
+        "groups": [{"id": 406643, "name": "Spirit Of The Forest", "resource_url":
+        "https://api.discogs.com/artists/406643", "active": true}, {"id": 420265,
+        "name": "Ferry Aid", "resource_url": "https://api.discogs.com/artists/420265",
+        "active": true}, {"id": 3263822, "name": "Kate Bush And Friends", "resource_url":
+        "https://api.discogs.com/artists/3263822", "active": true}, {"id": 4253308,
+        "name": "KT Bush Band", "resource_url": "https://api.discogs.com/artists/4253308",
+        "active": true}, {"id": 5673206, "name": "The KT Fellowship", "resource_url":
+        "https://api.discogs.com/artists/5673206", "active": true}], "data_quality":
+        "Needs Vote"}'
+  recorded_at: Thu, 17 Dec 2020 13:48:38 GMT
+recorded_with: VCR 6.0.0

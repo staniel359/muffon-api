@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page&per_page&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=label
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 15:49:02 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '58'
+      X-Discogs-Ratelimit-Used:
+      - '2'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination": {"page": 1, "pages": 1, "per_page": 50, "items": 19,
+        "urls": {}}, "results": [{"id": 398040, "type": "label", "master_id": null,
+        "master_url": null, "uri": "/label/398040-Kate-Bush", "title": "Kate Bush",
+        "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/398040"}, {"id": 269254, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/269254-Kate-Bush-Music-Ltd",
+        "title": "Kate Bush Music Ltd.", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/269254"}, {"id": 295774, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/295774-Kate-Bush-Music-Publishing-Ltd",
+        "title": "Kate Bush Music Publishing Ltd.", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/295774"}, {"id": 272245, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/272245-Kate-Bush-Music",
+        "title": "Kate Bush Music", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/272245"}, {"id": 149951, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/149951-Not-On-Label-Kate-Bush",
+        "title": "Not On Label (Kate Bush)", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/149951"}, {"id": 735999, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/735999-Kate-Bush-Paper-Sleeve-Collection",
+        "title": "Kate Bush Paper Sleeve Collection", "thumb": "https://img.discogs.com/5G_nJ-AE9CsYb555GzetKZXeWh0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-735999-1410293356-6598.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/wQjfdi_0QwxqavX1Ydow6G8kdPw=/fit-in/600x626/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-735999-1410293356-6598.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/labels/735999"}, {"id": 389241, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/389241-Kate-Bush-Music-Inc",
+        "title": "Kate Bush Music, Inc.", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/389241"}, {"id": 1718396,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/1718396-Kate-Bush-Music-Publishing",
+        "title": "Kate Bush Music Publishing", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/1718396"}, {"id": 245607,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/245607-Fish-People",
+        "title": "Fish People", "thumb": "https://img.discogs.com/B_LWDFmCWtTosnxZWGuSIHyEwRE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-245607-1305647853.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/WPdM8Q65T98cJw10JV0wRmE_rHs=/fit-in/510x408/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-245607-1305647853.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/labels/245607"}, {"id": 398039, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/398039-Noble-And-Brite",
+        "title": "Noble And Brite", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/398039"}, {"id": 266601, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/266601-Novercia-Ltd",
+        "title": "Novercia Ltd.", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/266601"}, {"id": 313949, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/313949-Noble-Brite-Ltd",
+        "title": "Noble & Brite Ltd.", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/313949"}, {"id": 142220, "type":
+        "label", "master_id": null, "master_url": null, "uri": "/label/142220-Original-Stamper-Series",
+        "title": "Original Stamper Series", "thumb": "https://img.discogs.com/DcLGiXoGyKvXBXsOLW3nniwxj9k=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-142220-1482139961-1229.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/4enDj33vXGOBiDcKc3oDU7ixpgs=/fit-in/204x35/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-142220-1482139961-1229.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/labels/142220"}, {"id": 1908058,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/1908058-Novercia-Records-Ltd",
+        "title": "Novercia Records Ltd.", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/1908058"}, {"id": 1646056,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/1646056-Noble-Brite",
+        "title": "Noble & Brite", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/1646056"}, {"id": 170187,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/170187-Public-Recordings",
+        "title": "Public Recordings", "thumb": "https://img.discogs.com/wc3jS7YWZhXXVvMc_ATe5XeNhJg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-170187-1297611331.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/aEPMScJllQ1sSM1FPQeYe_IFn1k=/fit-in/499x238/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-170187-1297611331.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/labels/170187"}, {"id": 1793946,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/1793946-Catherine-Earnshaw",
+        "title": "Catherine Earnshaw", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/labels/1793946"}, {"id": 1596589,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/1596589-Unicef-Blue-Vinyl",
+        "title": "Unicef Blue Vinyl", "thumb": "https://img.discogs.com/nFpRL37wrn4dz2lrWTGxAmYGjrE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-1596589-1550152064-9992.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/mMypgCFHi52eOmu-cQ7byoKYmeY=/fit-in/600x384/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-1596589-1550152064-9992.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/labels/1596589"}, {"id": 729583,
+        "type": "label", "master_id": null, "master_url": null, "uri": "/label/729583-Newpool-Music",
+        "title": "Newpool Music", "thumb": "https://img.discogs.com/2YH7WsJsBxODmzGBjBOquVzyjV8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/L-729583-1408905581-2375.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/Vr_XhHLxldTlZ3KEPmuTzz8EIbE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-729583-1408905581-2375.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/labels/729583"}]}'
+  recorded_at: Thu, 17 Dec 2020 15:49:03 GMT
+recorded_with: VCR 6.0.0

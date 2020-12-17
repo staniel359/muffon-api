@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&page=2&per_page=5&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 14:07:37 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '58'
+      X-Discogs-Ratelimit-Used:
+      - '2'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Link:
+      - <https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5>;
+        rel="first", <https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=475&per_page=5>;
+        rel="last", <https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5>;
+        rel="prev", <https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5>;
+        rel="next"
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination": {"page": 2, "pages": 475, "per_page": 5, "items": 2374,
+        "urls": {"first": "https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5",
+        "last": "https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=475&per_page=5",
+        "prev": "https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5",
+        "next": "https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5"}},
+        "releases": [{"id": 15520428, "status": "Accepted", "type": "release", "format":
+        "Cass, Promo", "label": "EMI", "title": "Lionheart (Interview And Album Tracks)",
+        "resource_url": "https://api.discogs.com/releases/15520428", "role": "Main",
+        "artist": "Kate Bush", "year": 1978, "thumb": "https://img.discogs.com/eUUt2L5BqcjtK4OCPCAVXr0D2Mk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15520428-1592922952-8048.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 8, "in_collection": 0}}}, {"id": 917609,
+        "title": "4 Sucessos", "type": "master", "main_release": 6244018, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/917609",
+        "year": 1978, "thumb": "https://img.discogs.com/nqkVuVg9CrkMLCKwl51Z5vGubwk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6244018-1536536139-3553.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 139, "in_collection": 23}}}, {"id":
+        369137, "title": "\u30ed\u30fc\u30ea\u30f3\u30fb\u30b6\u30fb\u30dc\u30fc\u30eb
+        = Them Heavy People", "type": "master", "main_release": 3469547, "artist":
+        "Kate Bush = \u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*", "role": "Main",
+        "resource_url": "https://api.discogs.com/masters/369137", "year": 1978, "thumb":
+        "https://img.discogs.com/gXBw9ACplINM0i9MYAW8EcBWrLw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3469547-1563498260-1125.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 167, "in_collection": 133}}}, {"id":
+        1663955, "title": "Special D.J. Copy", "type": "master", "main_release": 14620342,
+        "artist": "Kate Bush = \u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*",
+        "role": "Main", "resource_url": "https://api.discogs.com/masters/1663955",
+        "year": 1978, "thumb": "https://img.discogs.com/DDhHByf9eSmTJoeD7EwcI2G2dpU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-14620342-1578335808-4264.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 33, "in_collection": 4}}}, {"id": 1115469,
+        "title": "\u5606\u304d\u306e\u5929\u4f7f = Moving / \u5d50\u30f6\u4e18 = Wuthering
+        Heights", "type": "master", "main_release": 2471409, "artist": "\u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*",
+        "role": "Main", "resource_url": "https://api.discogs.com/masters/1115469",
+        "year": 1978, "thumb": "https://img.discogs.com/4Jw5YZVtXSwMGvdA8Ccu1I7PGB0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2471409-1543489826-1910.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 212, "in_collection": 169}}}]}'
+  recorded_at: Thu, 17 Dec 2020 14:07:38 GMT
+recorded_with: VCR 6.0.0

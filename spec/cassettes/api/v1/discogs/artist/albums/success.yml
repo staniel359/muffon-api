@@ -1,0 +1,291 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&page&per_page&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 14:06:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '60'
+      X-Discogs-Ratelimit-Used:
+      - '0'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination": {"page": 1, "pages": 48, "per_page": 50, "items": 2374,
+        "urls": {"last": "https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=48&per_page=50",
+        "next": "https://api.discogs.com/artists/85929/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=2&per_page=50"}},
+        "releases": [{"id": 4350894, "status": "Accepted", "type": "release", "format":
+        "7\", Jukebox", "label": "EMI", "title": "Wuthering Heights / Bella Sarai",
+        "resource_url": "https://api.discogs.com/releases/4350894", "role": "Main",
+        "artist": "Kate Bush / La Bottega Dell''Arte", "year": 1978, "thumb": "https://img.discogs.com/emcVQ4Ro-GvJEoLQvzAj6r1-xFE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4350894-1485174051-4866.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 27, "in_collection": 34}}}, {"id":
+        4766345, "status": "Accepted", "type": "release", "format": "7\", Jukebox",
+        "label": "EMI", "title": "Hammer Horror / Una Serata In Rima", "resource_url":
+        "https://api.discogs.com/releases/4766345", "role": "Main", "artist": "Kate
+        Bush / Marras*", "year": 1978, "thumb": "https://img.discogs.com/yn3dlU1IRWPRRtqYFZscKv6XCUM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4766345-1374857107-5615.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 17, "in_collection": 19}}}, {"id":
+        7213618, "status": "Accepted", "type": "release", "format": "7\", Promo",
+        "label": "Motown, EMI", "title": "Lovin'', Livin'' And Givin'' / Wuthering
+        Heights", "resource_url": "https://api.discogs.com/releases/7213618", "role":
+        "Main", "artist": "Diana Ross / Kate Bush", "year": 1978, "thumb": "https://img.discogs.com/9R9EL_9IIv1V9Cm0UOeCWARyQNQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7213618-1443773927-9958.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 23, "in_collection": 6}}}, {"id": 9628679,
+        "status": "Accepted", "type": "release", "format": "Acetate, 7\", W/Lbl",
+        "label": "\u3086\u3046\u305b\u3093", "title": "\u30cf\u30f3\u30de\u30fc\u30fb\u30db\u30e9\u30fc
+        = Hammer Horror / \u30d8\u30a4! \u30ad\u30f3\u30b0\u30fb\u30b3\u30f3\u30b0
+        = Hey! King Kong", "resource_url": "https://api.discogs.com/releases/9628679",
+        "role": "Main", "artist": "\u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*
+        = Kate Bush / \u30b5\u30f3\u30c7\u30a3\u30fc\u30fb\u30aa\u30cb\u30fc\u30eb*
+        = Sandy O''Neil*", "year": 1978, "thumb": "https://img.discogs.com/BOsZ1GQ791lxXj8Abjc_G7Zh6Oc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9628679-1483967677-2642.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 27, "in_collection": 1}}}, {"id": 11533303,
+        "status": "Accepted", "type": "release", "format": "Acetate, 7\"", "label":
+        "EMI Brigadiers", "title": "\"Kate Bush\" (From Album EMCJ(D)5151)", "resource_url":
+        "https://api.discogs.com/releases/11533303", "role": "Main", "artist": "Kate
+        Bush", "year": 1978, "thumb": "https://img.discogs.com/X_bbtHRwHPHZml4LpyRnlRDT5xU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11533303-1518029319-1000.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 19, "in_collection": 2}}}, {"id": 15520428,
+        "status": "Accepted", "type": "release", "format": "Cass, Promo", "label":
+        "EMI", "title": "Lionheart (Interview And Album Tracks)", "resource_url":
+        "https://api.discogs.com/releases/15520428", "role": "Main", "artist": "Kate
+        Bush", "year": 1978, "thumb": "https://img.discogs.com/eUUt2L5BqcjtK4OCPCAVXr0D2Mk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15520428-1592922952-8048.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 8, "in_collection": 0}}}, {"id": 917609,
+        "title": "4 Sucessos", "type": "master", "main_release": 6244018, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/917609",
+        "year": 1978, "thumb": "https://img.discogs.com/nqkVuVg9CrkMLCKwl51Z5vGubwk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6244018-1536536139-3553.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 139, "in_collection": 23}}}, {"id":
+        369137, "title": "\u30ed\u30fc\u30ea\u30f3\u30fb\u30b6\u30fb\u30dc\u30fc\u30eb
+        = Them Heavy People", "type": "master", "main_release": 3469547, "artist":
+        "Kate Bush = \u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*", "role": "Main",
+        "resource_url": "https://api.discogs.com/masters/369137", "year": 1978, "thumb":
+        "https://img.discogs.com/gXBw9ACplINM0i9MYAW8EcBWrLw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3469547-1563498260-1125.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 167, "in_collection": 133}}}, {"id":
+        1663955, "title": "Special D.J. Copy", "type": "master", "main_release": 14620342,
+        "artist": "Kate Bush = \u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*",
+        "role": "Main", "resource_url": "https://api.discogs.com/masters/1663955",
+        "year": 1978, "thumb": "https://img.discogs.com/DDhHByf9eSmTJoeD7EwcI2G2dpU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-14620342-1578335808-4264.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 33, "in_collection": 4}}}, {"id": 1115469,
+        "title": "\u5606\u304d\u306e\u5929\u4f7f = Moving / \u5d50\u30f6\u4e18 = Wuthering
+        Heights", "type": "master", "main_release": 2471409, "artist": "\u30b1\u30a4\u30c8\u30fb\u30d6\u30c3\u30b7\u30e5*",
+        "role": "Main", "resource_url": "https://api.discogs.com/masters/1115469",
+        "year": 1978, "thumb": "https://img.discogs.com/4Jw5YZVtXSwMGvdA8Ccu1I7PGB0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2471409-1543489826-1910.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 212, "in_collection": 169}}}, {"id":
+        28522, "title": "Lionheart", "type": "master", "main_release": 426108, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28522",
+        "year": 1978, "thumb": "https://img.discogs.com/s5fH5ok5OjpeqXsUhjwTEP1pb2s=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-426108-1558297258-5571.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 500, "in_collection": 4747}}}, {"id":
+        28531, "title": "The Kick Inside", "type": "master", "main_release": 414374,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28531",
+        "year": 1978, "thumb": "https://img.discogs.com/Bn-CGnPTPylj9O0fSn36n0jqahQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-414374-1411407209-7587.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 1205, "in_collection": 7730}}}, {"id":
+        421753, "title": "\u30d6\u30eb\u30fc\u306e\u30b7\u30f3\u30d5\u30a9\u30cb\u30fc
+        = Symphony In Blue", "type": "master", "main_release": 3864388, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/421753",
+        "year": 1978, "thumb": "https://img.discogs.com/SIjow0o95dZ1WuGAAgspa4opNNg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3864388-1420376329-9650.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 138, "in_collection": 97}}}, {"id":
+        28548, "title": "Wuthering Heights", "type": "master", "main_release": 459101,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28548",
+        "year": 1978, "thumb": "https://img.discogs.com/HIbF5bQtHgzkJCjs5LQkzMgs9tA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-459101-1280777508.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 311, "in_collection": 634}}}, {"id":
+        28552, "title": "Hammer Horror", "type": "master", "main_release": 823030,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28552",
+        "year": 1978, "thumb": "https://img.discogs.com/NRi5SSAeKTGVgKkC1N9heh8vftM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-823030-1280780060.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 107, "in_collection": 640}}}, {"id":
+        28560, "title": "The Man With The Child In His Eyes", "type": "master", "main_release":
+        2640592, "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28560",
+        "year": 1978, "thumb": "https://img.discogs.com/gatvDcAeQ-_iETtS1Yc43gLZ5J8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2640592-1406974482-7086.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 153, "in_collection": 332}}}, {"id":
+        1404277, "title": "Strange Phenomena", "type": "master", "main_release": 6776875,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/1404277",
+        "year": 1979, "thumb": "https://img.discogs.com/nr8Stz42OFqa8CFMb_s0HwR_g54=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6776875-1426415291-5507.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 50, "in_collection": 29}}}, {"id":
+        1404279, "title": "Them Heavy People", "type": "master", "main_release": 11963196,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/1404279",
+        "year": 1979, "thumb": "https://img.discogs.com/rJMnc8Kw_riTgfcdTDGIdfJ9jTU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11963196-1525711096-5385.png.jpg",
+        "stats": {"community": {"in_wantlist": 22, "in_collection": 53}}}, {"id":
+        28564, "title": "Wow", "type": "master", "main_release": 459097, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28564",
+        "year": 1979, "thumb": "https://img.discogs.com/j-rDTQr-g-RdL49nOagt6LFArfI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-459097-1258561874.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 117, "in_collection": 628}}}, {"id":
+        28569, "title": "On Stage", "type": "master", "main_release": 484015, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28569",
+        "year": 1979, "thumb": "https://img.discogs.com/8INflKTilouXVsC6qTmhA-XZ8rE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-484015-1472958337-6796.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 100, "in_collection": 764}}}, {"id":
+        3256850, "status": "Accepted", "type": "release", "format": "7\", Jukebox",
+        "label": "EMI", "title": "Babooshka / Dammelo", "resource_url": "https://api.discogs.com/releases/3256850",
+        "role": "Main", "artist": "Kate Bush / Bianca Berg", "year": 1980, "thumb":
+        "https://img.discogs.com/saKnNGlWlK5Ohlepy3ob6yxwZCU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3256850-1379605761-6627.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 12, "in_collection": 30}}}, {"id":
+        6260868, "status": "Accepted", "type": "release", "format": "7\", Jukebox,
+        Promo", "label": "Motown, EMI", "title": "One More Time For Love / Breathing",
+        "resource_url": "https://api.discogs.com/releases/6260868", "role": "Main",
+        "artist": "B. Preston*, Syreeta / Kate Bush", "year": 1980, "thumb": "https://img.discogs.com/6fGbXEGOpgLD98lVSbvw9mQDyqU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6260868-1415027048-6486.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 10, "in_collection": 3}}}, {"id": 1116942,
+        "title": "Some Edited Highlights From Her New Album \"Never For Ever\"", "type":
+        "master", "main_release": 9639879, "artist": "Kate Bush", "role": "Main",
+        "resource_url": "https://api.discogs.com/masters/1116942", "year": 1980, "thumb":
+        "https://img.discogs.com/akda6r1PswoKozfQtRf7Lo9g1_Q=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9639879-1484048376-8771.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 21, "in_collection": 45}}}, {"id":
+        332806, "title": "December Will Be Magic Again", "type": "master", "main_release":
+        483941, "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/332806",
+        "year": 1980, "thumb": "https://img.discogs.com/3YZ4P1iiXAja4jwiBIQJK66qdc8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-483941-1501769253-6246.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 152, "in_collection": 991}}}, {"id":
+        28573, "title": "Army Dreamers", "type": "master", "main_release": 459106,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28573",
+        "year": 1980, "thumb": "https://img.discogs.com/KuV_F7fKnSsdCSVu3Jg57NR2lb4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-459106-1250470315.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 174, "in_collection": 724}}}, {"id":
+        28582, "title": "Never For Ever", "type": "master", "main_release": 508248,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28582",
+        "year": 1980, "thumb": "https://img.discogs.com/IoFoY2CZGVcolOdNbHsJlNeRXJQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-508248-1474741790-3505.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 696, "in_collection": 5031}}}, {"id":
+        28589, "title": "Babooshka", "type": "master", "main_release": 459095, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28589",
+        "year": 1980, "thumb": "https://img.discogs.com/W9Woih7iGVC7PC-RrraheThmmKQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-459095-1165621907.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 207, "in_collection": 1305}}}, {"id":
+        28594, "title": "Breathing", "type": "master", "main_release": 418345, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28594",
+        "year": 1980, "thumb": "https://img.discogs.com/yzJNViQ-sxyChU_NUzgXKeeEtgI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-418345-1472955903-8350.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 123, "in_collection": 824}}}, {"id":
+        2984815, "status": "Accepted", "type": "release", "format": "7\", Promo",
+        "label": "EMI", "title": "Bette Davis Eyes / Sat In Your Lap", "resource_url":
+        "https://api.discogs.com/releases/2984815", "role": "Main", "artist": "Kim
+        Carnes / Kate Bush", "year": 1981, "thumb": "https://img.discogs.com/5xbrCT18a1mt7Vo1YE_hPxRo2Hs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2984815-1511742755-9794.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 37, "in_collection": 44}}}, {"id":
+        304800, "title": "Live At Hammersmith Odeon", "type": "master", "main_release":
+        3971558, "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/304800",
+        "year": 1981, "thumb": "https://img.discogs.com/GTrYbvf7dO6VNxMSDJIHUoW4Gcg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3971558-1382374303-3051.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 29, "in_collection": 30}}}, {"id":
+        28601, "title": "Sat In Your Lap", "type": "master", "main_release": 851077,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28601",
+        "year": 1981, "thumb": "https://img.discogs.com/2hfRHbJP2B1FuA6usjUakD_-lI8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-851077-1258552625.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 120, "in_collection": 754}}}, {"id":
+        2858958, "status": "Accepted", "type": "release", "format": "12\", Promo,
+        Smplr", "label": "EMI America, EMI America", "title": "Kate Bush", "resource_url":
+        "https://api.discogs.com/releases/2858958", "role": "Main", "artist": "Kate
+        Bush", "year": 1982, "thumb": "https://img.discogs.com/8zEt4Y_FMImhFuHTbIQ-KTT6y_U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2858958-1304315838.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 93, "in_collection": 55}}}, {"id":
+        2984802, "status": "Accepted", "type": "release", "format": "7\", Promo",
+        "label": "EMI", "title": "The Dreaming / Principessa", "resource_url": "https://api.discogs.com/releases/2984802",
+        "role": "Main", "artist": "Kate Bush / Alice (4)", "year": 1982, "thumb":
+        "https://img.discogs.com/KbK_0DRp7BnasBS4KTNhkSZ_f1s=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2984802-1364716598-6788.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 18, "in_collection": 34}}}, {"id":
+        3637274, "status": "Accepted", "type": "release", "format": "LP, Comp, Promo,
+        Smplr", "label": "EMI America, Harvest", "title": "Kate Bush Sampler", "resource_url":
+        "https://api.discogs.com/releases/3637274", "role": "Main", "artist": "Kate
+        Bush", "year": 1982, "thumb": "https://img.discogs.com/XG8UBDLsq4DgEQ5BI9zBaUyB7cQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3637274-1597241579-7821.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 81, "in_collection": 40}}}, {"id":
+        369685, "title": "There Goes A Tenner", "type": "master", "main_release":
+        484032, "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/369685",
+        "year": 1982, "thumb": "https://img.discogs.com/WRnyUKS4c8pygjBcdWgxaZ_5Wnw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-484032-1290891229.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 156, "in_collection": 313}}}, {"id":
+        28607, "title": "Suspended In Gaffa", "type": "master", "main_release": 1361817,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28607",
+        "year": 1982, "thumb": "https://img.discogs.com/g0kMApUoKlWyYrcltlhFndmlKy8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1361817-1474373545-1250.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 77, "in_collection": 204}}}, {"id":
+        28613, "title": "The Dreaming", "type": "master", "main_release": 461384,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28613",
+        "year": 1982, "thumb": "https://img.discogs.com/sOgPLrKY7A29qQIGM1ly7N2uzV0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-461384-1116860433.gif.jpg",
+        "stats": {"community": {"in_wantlist": 890, "in_collection": 3172}}}, {"id":
+        28636, "title": "The Dreaming", "type": "master", "main_release": 483966,
+        "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28636",
+        "year": 1982, "thumb": "https://img.discogs.com/Rdzx6la-X-MULVSeW5G9usW5ye4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-483966-1159663352.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 94, "in_collection": 677}}}, {"id":
+        16075630, "status": "Accepted", "type": "release", "format": "LP, MiniAlbum,
+        Comp, Promo", "label": "EMI America", "title": "Kate Bush", "resource_url":
+        "https://api.discogs.com/releases/16075630", "role": "Main", "artist": "Kate
+        Bush", "year": 1983, "thumb": "", "stats": {"community": {"in_wantlist": 1,
+        "in_collection": 0}}}, {"id": 231754, "title": "The Single File", "type":
+        "master", "main_release": 7338613, "artist": "Kate Bush", "role": "Main",
+        "resource_url": "https://api.discogs.com/masters/231754", "year": 1983, "thumb":
+        "https://img.discogs.com/os8QoUUdXbWGp4e5Sttg72ZlcAQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7338613-1439279916-5899.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 19, "in_collection": 4}}}, {"id": 608911,
+        "title": "Wuthering Heights / The Man With The Child In His Eyes", "type":
+        "master", "main_release": 736415, "artist": "Kate Bush", "role": "Main", "resource_url":
+        "https://api.discogs.com/masters/608911", "year": 1983, "thumb": "https://img.discogs.com/mAb4nr9TTtcrd87OZRzt1JqY9Lc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-736415-1194993165.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 29, "in_collection": 39}}}, {"id":
+        1680106, "title": "Un Baiser D''enfant (The Infant Kiss)", "type": "master",
+        "main_release": 6240472, "artist": "Kate Bush", "role": "Main", "resource_url":
+        "https://api.discogs.com/masters/1680106", "year": 1983, "thumb": "https://img.discogs.com/E3ZHhk7rx-7c1_cvNdN-BnLf38M=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6240472-1414521855-8599.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 35, "in_collection": 14}}}, {"id":
+        119657, "title": "Kate Bush", "type": "master", "main_release": 483467, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/119657",
+        "year": 1983, "thumb": "https://img.discogs.com/5Zt2fHc_N6Yb14J77nxRAuf9Jkg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-483467-1335763473.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 133, "in_collection": 722}}}, {"id":
+        1650232, "title": "Night Of The Swallow", "type": "master", "main_release":
+        2471587, "artist": "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/1650232",
+        "year": 1983, "thumb": "https://img.discogs.com/KwpbPuDB_Bx2Sh9y-wgC8SB05hA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2471587-1576082841-3634.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 271, "in_collection": 101}}}, {"id":
+        751163, "title": "Ne T''enfuis Pas / Un Baiser D''enfant", "type": "master",
+        "main_release": 3358157, "artist": "Kate Bush", "role": "Main", "resource_url":
+        "https://api.discogs.com/masters/751163", "year": 1983, "thumb": "https://img.discogs.com/4pNbk42ZFV7-caaMQmHveAeK2L0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3358157-1327227512.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 114, "in_collection": 213}}}, {"id":
+        2478017, "status": "Accepted", "type": "release", "format": "Box, Comp, Ltd
+        + 10x7\", Single, RP + 2x7\", Single ", "label": "EMI", "title": "The Single
+        File 1978~1983", "resource_url": "https://api.discogs.com/releases/2478017",
+        "role": "Main", "artist": "Kate Bush", "year": 1984, "thumb": "https://img.discogs.com/JitSxfpGvTg4bmiNcg01BEqr4xA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2478017-1300026759.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 244, "in_collection": 325}}}, {"id":
+        28649, "title": "Kate Bush", "type": "master", "main_release": 477573, "artist":
+        "Kate Bush", "role": "Main", "resource_url": "https://api.discogs.com/masters/28649",
+        "year": 1984, "thumb": "https://img.discogs.com/RRovRsjndfrXvYeLxa9FI14Uv6c=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-477573-1119442188.jpg.jpg",
+        "stats": {"community": {"in_wantlist": 120, "in_collection": 606}}}, {"id":
+        3043599, "status": "Accepted", "type": "release", "format": "7\", Promo",
+        "label": "EMI", "title": "En La Mira De Los Asesinos (A View To A Kill) /
+        Subiendo Esa Colina (Running Up That Hill)", "resource_url": "https://api.discogs.com/releases/3043599",
+        "role": "Main", "artist": "Duran Duran / Kate Bush", "year": 1985, "thumb":
+        "https://img.discogs.com/TKfoAgdBa2oxM_X6mfus5EMnBnI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3043599-1313085232.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 24, "in_collection": 14}}}, {"id":
+        5107053, "status": "Accepted", "type": "release", "format": "7\", Promo",
+        "label": "EMI, EMI", "title": "Some People / Running Up That Hill", "resource_url":
+        "https://api.discogs.com/releases/5107053", "role": "Main", "artist": "Belouis
+        Some / Kate Bush", "year": 1985, "thumb": "https://img.discogs.com/vD3QQNjsKY2vPjpvonpLdFokhmg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5107053-1462357898-5230.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 15, "in_collection": 21}}}, {"id":
+        13747218, "status": "Accepted", "type": "release", "format": "VHS, Single,
+        Promo, PAL", "label": "EMI", "title": "Cloudbusting", "resource_url": "https://api.discogs.com/releases/13747218",
+        "role": "Main", "artist": "Kate Bush", "year": 1985, "thumb": "https://img.discogs.com/3-jmiHirwLOBuM6V5ynf1AzVnyo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13747218-1560259084-7512.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 9, "in_collection": 1}}}]}'
+  recorded_at: Thu, 17 Dec 2020 14:06:00 GMT
+recorded_with: VCR 6.0.0

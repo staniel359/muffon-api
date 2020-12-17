@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&page=2&per_page=5&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 14:39:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '59'
+      X-Discogs-Ratelimit-Used:
+      - '1'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Link:
+      - <https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5>;
+        rel="first", <https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=33178&per_page=5>;
+        rel="last", <https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5>;
+        rel="prev", <https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5>;
+        rel="next"
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination": {"page": 2, "pages": 33178, "per_page": 5, "items":
+        165888, "urls": {"first": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5",
+        "last": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=33178&per_page=5",
+        "prev": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5",
+        "next": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5"}},
+        "releases": [{"status": "Accepted", "format": "CD, Album", "catno": "-2",
+        "thumb": "https://img.discogs.com/hrOvUrDPOW8hCHM8QMGOvu9DGaQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15526749-1593026512-7810.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/15526749", "title": "Cabaret
+        Le Musical De Broadway Live", "id": 15526749, "year": 2007, "artist": "Various"},
+        {"status": "Accepted", "format": "3x12\", Comp", "catno": "!K7071lp, K7071LP",
+        "thumb": "https://img.discogs.com/f_f4l6CjrX8oCoiIAiXPSY-1GQE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-130768-001.jpg.jpg",
+        "resource_url": "https://api.discogs.com/releases/130768", "title": "DJ-Kicks",
+        "id": 130768, "year": 1998, "artist": "Andrea Parker"}, {"status": "Accepted",
+        "format": "5x12\", Comp, RE, RM, Tri", "catno": "!K7073LP", "thumb": "https://img.discogs.com/-S3RUg7K9NE9KmXGUJGlfgac7HY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6794957-1426780517-4728.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/6794957", "title": "The
+        K&D Sessions\u2122", "id": 6794957, "year": 2015, "artist": "Kruder Dorfmeister*"},
+        {"status": "Accepted", "format": "CD, Comp", "catno": "\"none\"", "thumb":
+        "https://img.discogs.com/A1AhrSDLU6mTmYxJOUe5okTGWgQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15148912-1587339130-1877.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/15148912", "title": "The
+        Best Of", "id": 15148912, "year": 1999, "artist": "Brenda Fassie"}, {"status":
+        "Accepted", "format": "LP", "catno": "(062) 74 8628 1", "thumb": "https://img.discogs.com/9FeYYLC959O7vXEWlQ8zYEIX9hI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11592442-1519060575-7725.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/11592442", "title": "Rock
+        & Rocc", "id": 11592442, "year": 1987, "artist": "Monano Y Su Banda"}]}'
+  recorded_at: Thu, 17 Dec 2020 14:39:27 GMT
+recorded_with: VCR 6.0.0

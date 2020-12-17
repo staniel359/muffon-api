@@ -71,6 +71,37 @@ Rails.application.routes.draw do
         end
         get 'search'
       end
+      namespace :discogs do
+        namespace :search do
+          get 'artists'
+          get 'labels'
+          get 'groups'
+          get 'albums'
+        end
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get '', action: :info
+            get 'albums'
+          end
+        end
+        namespace :labels, as: :label do
+          scope ':label_id' do
+            get '', action: :info
+            get 'albums'
+          end
+        end
+        namespace :groups, as: :group do
+          scope ':group_id' do
+            get '', action: :info
+            get 'albums'
+          end
+        end
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+          end
+        end
+      end
       namespace :bing do
         get 'search'
       end

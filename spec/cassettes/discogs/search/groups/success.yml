@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page=2&per_page=5&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=master
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Dec 2020 15:57:15 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '58'
+      X-Discogs-Ratelimit-Used:
+      - '2'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Link:
+      - <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=1&per_page=5>;
+        rel="first", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=131&per_page=5>;
+        rel="last", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=1&per_page=5>;
+        rel="prev", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=3&per_page=5>;
+        rel="next"
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagination": {"page": 2, "pages": 131, "per_page": 5, "items": 654,
+        "urls": {"first": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=1&per_page=5",
+        "last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=131&per_page=5",
+        "prev": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=1&per_page=5",
+        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=master&page=3&per_page=5"}},
+        "results": [{"country": "Europe", "year": "1985", "format": ["CD", "Album"],
+        "label": ["EMI", "EMI", "EMI", "Novercia Ltd.", "Novercia Ltd.", "Kate Bush
+        Music Publishing Ltd.", "EMI", "EMI Records Ltd.", "Windmill Lane Studios"],
+        "type": "master", "genre": ["Pop"], "style": ["Pop Rock", "Ballad"], "id":
+        28680, "barcode": ["0 77774 61642 3", "Biem/Jasrac", "CDP 7 46164 2 7C3",
+        "none", "none", "ADD", "PM 516"], "master_id": 28680, "master_url": "https://api.discogs.com/masters/28680",
+        "uri": "/Kate-Bush-Hounds-Of-Love/master/28680", "catno": "CDP 7 46164 2",
+        "title": "Kate Bush - Hounds Of Love", "thumb": "https://img.discogs.com/zCuaX-OdeD0uCVNrL9q7K8iReJM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16233996-1605730391-7184.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/eaRPicce1W5US9W1UGo5aukMbyA=/fit-in/600x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-16233996-1605730391-7184.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/masters/28680", "community": {"want":
+        40109, "have": 40763}}, {"country": "UK", "year": "1978", "format": ["Vinyl",
+        "LP", "Album", "Stereo"], "label": ["EMI", "EMI", "EMI Records Ltd.", "Air
+        Studios", "EMI", "Kate Bush Music Ltd.", "Garrod & Lofthouse"], "type": "master",
+        "genre": ["Rock", "Pop"], "style": ["Art Rock", "Pop Rock"], "id": 28531,
+        "barcode": ["YAX.5389", "YAX.5390", "YAX 5389-3", "YAX 5390-1", "YAX 5389-2",
+        "YAX 5390-1", "YAX 5389-2", "YAX 5390-2", "YAX 5389-1", "YAX 5390-1         V",
+        "YAX 5389-2 G L A  3", "YAX 5390-3 U D P 1", "YAX 5389-5", "YAX 5390-1  ",
+        "YAX 5389-2   RRR  C", "YAX 5390-1  RRT  S", "YAX 5390-4", "YAX 5390-1", "REMBER
+        YOURSELF", "YAX 5389-3", "Remember Yourself !", "YAX 5390-3", "YAX 5389-2  GDD  4",
+        "YAX 5390-3  GLO  1", "YAX 5389-4 U II P  1", "REMEMBER YOURSELF", "YAX 5390-1
+        U II P  3", "YAX 5389-2  ROL 6", "YAX 5390-3  RRL 2", "7802 TM", "YAX 5389-5
+        \u2144\u039bD 2", "REMEMBER YOURSELF", "YAX 5390-4 AMR"], "master_id": 28531,
+        "master_url": "https://api.discogs.com/masters/28531", "uri": "/Kate-Bush-The-Kick-Inside/master/28531",
+        "catno": "EMC 3223", "title": "Kate Bush - The Kick Inside", "thumb": "https://img.discogs.com/Bn-CGnPTPylj9O0fSn36n0jqahQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-414374-1411407209-7587.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/l4tj9nFGF6KgmETZZPwox8pC06w=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-414374-1411407209-7587.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/masters/28531", "community": {"want":
+        30971, "have": 40091}}, {"country": "UK", "year": "1978", "format": ["Vinyl",
+        "LP", "Album", "Stereo"], "label": ["EMI", "EMI", "Super Bear Studios", "EMI
+        Records Ltd.", "Kate Bush", "EMI Music Publishing Ltd.", "Kate Bush", "EMI
+        Music Publishing Ltd.", "Garrod & Lofthouse", "EMI Records Ltd."], "type":
+        "master", "genre": ["Rock", "Pop"], "style": ["Art Rock", "Pop Rock", "Ballad"],
+        "id": 28522, "barcode": ["YAX.5548", "YAX.5549", "YAX 5548-2", "YAX 5549-1
+        HOPE YOU LIKE IT!", "YAX 5548-3 RTC", "YAX 5549-3 HOPE YOU LIKE IT!", "YAX
+        5548-9 202 BLAIR''S 1", "YAX 5549-2 HLC HOPE YOU LIKE IT! 4", "YAX 5548-1
+        CRT 2", "YAX 5549-2 HL HOPE YOU LIKE IT! 2", "YAX 5548-1 OV 1", "YAX 5549-2
+        HVG HOPE YOU LIKE IT!  4", "YAX 5548-1  1  GLA", "YAX 5549-3  HOPE YOU LIKE
+        IT!  4", "YAX 5548-3  GGP  2", "YAX 5549-2  GOG P  HOPE YOU LIKE IT!  4",
+        "YAX 5548-3 CAT D", "YAX 5549-2 HD HOPE YOU LIKE IT! 1", "YAX 5548-2  GPM  3",
+        "YAX 5549-3  HOPE YOU LIKE IT!  GMR 2"], "master_id": 28522, "master_url":
+        "https://api.discogs.com/masters/28522", "uri": "/Kate-Bush-Lionheart/master/28522",
+        "catno": "EMA 787", "title": "Kate Bush - Lionheart", "thumb": "https://img.discogs.com/s5fH5ok5OjpeqXsUhjwTEP1pb2s=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-426108-1558297258-5571.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/noGLOKfZ82etdLvvfdONrWuKgk0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-426108-1558297258-5571.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/masters/28522", "community": {"want":
+        8751, "have": 23875}}, {"country": "UK", "year": "1980", "format": ["Vinyl",
+        "LP", "Album"], "label": ["EMI", "EMI", "EMI Records Ltd.", "Novercia Ltd.",
+        "Kate Bush Music Ltd.", "EMI Music Publishing Ltd.", "Garrod & Lofthouse",
+        "EMI Records Ltd.", "EMI Records Ltd.", "Abbey Road Studios", "Air Studios"],
+        "type": "master", "genre": ["Rock", "Pop"], "style": ["Pop Rock", "Art Rock"],
+        "id": 28582, "barcode": ["EMA 794 A-3", "EMA 794 B-3", "EMA 794 A-5", "EMA
+        794 B-3", "EMA 794 A-5", "EMA 794 B-4", "Mi", "Do", "3 12 [Vertical]", "3
+        11 [Vertical]", "2 11 [Vertical]", "1 14 [Vertical]", "[A pair of glasses]",
+        "EMA 794 A-3 6 MI", "EMA 794 B-3 6 DO [A pair of glasses, etched] 5", "EMA
+        794 A-3 6 MI", "EMA 794 B-4 1 DO [A pair of glasses, etched] ", "TM 8009 G
+        & L"], "master_id": 28582, "master_url": "https://api.discogs.com/masters/28582",
+        "uri": "/Kate-Bush-Never-For-Ever/master/28582", "catno": "EMA 794", "title":
+        "Kate Bush - Never For Ever", "thumb": "https://img.discogs.com/IoFoY2CZGVcolOdNbHsJlNeRXJQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-508248-1474741790-3505.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/4Q2fb_Xl3livj4xYonoeXM1lQb4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-508248-1474741790-3505.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/masters/28582", "community": {"want":
+        10639, "have": 26455}}, {"country": "UK", "year": "1986", "format": ["Vinyl",
+        "LP", "Compilation"], "label": ["EMI", "EMI", "EMI Records Ltd.", "Novercia
+        Ltd.", "Kate Bush Music Ltd.", "EMI Music Publishing Ltd.", "Novercia Ltd.",
+        "The Town House", "EMI Records Ltd.", "Howards Printers (Slough) Ltd."], "type":
+        "master", "genre": ["Electronic", "Rock", "Pop"], "style": ["Pop Rock", "Art
+        Rock", "Synth-pop", "Experimental", "Ballad"], "id": 28732, "barcode": ["5
+        099926 120119", "KBTV 1A", "KBTV 1B", "KBTV 1 A-2U-1-1 : TK TOWNHOUSE D",
+        "KBTV 1 3-3U-1- :: TK TOWNHOUSE D", "TK TOWNHOUSE D KBTV 1 A-3U-1-4-x1xx",
+        "TK D TOWNHOUSE KBTV 1 B-1U-1-411", "KBTV 1 A-4U-1-1-2   TK   TOWNHOUSE   D",
+        "KBTV 1 B-4U-1-1   TK   TOWNHOUSE   D", "KBTV 1 A-4U-1-1-X1   TK TOWNHOUSE",
+        "KBTV 1 3-2U-1-1-X1   TK TOWNHOUSE", "KBTV 1 A-3U-1-7 TK TOWNHOUSE D", "KBTV
+        1 B-1U-1-4 TK TOWNHOUSE D", "KBTV 1 A-3U-1-1- TK TOWNHOUSE D", "KBTV 1 B-2U-1-3-1
+        TK D TOWNHOUSE"], "master_id": 28732, "master_url": "https://api.discogs.com/masters/28732",
+        "uri": "/Kate-Bush-The-Whole-Story/master/28732", "catno": "KBTV 1", "title":
+        "Kate Bush - The Whole Story", "thumb": "https://img.discogs.com/QjfB8JbPaCp-VwJZ2uNGZkn0Jmg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-310245-1375463802-5512.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/nQIG-Cy8maIH3HumXzYkM_8QXmo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-310245-1375463802-5512.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/masters/28732", "community": {"want":
+        4678, "have": 21491}}]}'
+  recorded_at: Thu, 17 Dec 2020 15:57:15 GMT
+recorded_with: VCR 6.0.0
