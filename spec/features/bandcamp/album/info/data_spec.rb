@@ -1,31 +1,31 @@
 require 'rails_helper'
 
-RSpec.describe Bandcamp::Album::Info do
+RSpec.describe Bandcamp::Album::Info::Data do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when album_link present' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/info/success' do
+        VCR.use_cassette 'bandcamp/album/info/data/success' do
           subject.call(
             album_link: 'wildnothingct.bandcamp.com/album/indigo'
           )
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp::Album.source_data) }
+      it { expect(output).to eq(Helpers::Bandcamp::Album::Info.source_data) }
     end
 
     context 'when link present but redirected' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/info/redirect_success' do
+        VCR.use_cassette 'bandcamp/album/info/data/redirect_success' do
           subject.call(
             album_link: 'luxuryelite.bandcamp.com/album/blind-date'
           )
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp::Album.redirect_data) }
+      it { expect(output).to eq(Helpers::Bandcamp::Album::Info.redirect_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Bandcamp::Album::Info do
 
     context 'when wrong link' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/album/info/wrong_link' do
+        VCR.use_cassette 'bandcamp/album/info/data/wrong_link' do
           subject.call(album_link: Helpers::Base::RANDOM_STRING)
         end
       end

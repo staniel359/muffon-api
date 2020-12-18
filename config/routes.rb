@@ -63,13 +63,15 @@ Rails.application.routes.draw do
         end
       end
       namespace :bandcamp do
-        scope module: :albums do
-          get 'album', action: :info
+        namespace :search do
+          get 'albums'
+          get 'tracks'
         end
-        namespace :album, module: :albums do
-          get 'links'
+        namespace :albums, as: :album, constraints: { album_link: /.+/ } do
+          scope ':album_link' do
+            get '', action: :info
+          end
         end
-        get 'search'
       end
       namespace :discogs do
         namespace :search do

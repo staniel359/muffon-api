@@ -3,7 +3,8 @@ module Bandcamp
     def call
       return handlers.bad_request if not_all_args?
       return handlers.not_found if no_data?
-      return retry_with_redirect_link if no_tracks?
+
+      yield if block_given?
 
       data
     rescue RestClient::NotFound, SocketError
@@ -12,8 +13,12 @@ module Bandcamp
 
     private
 
-    def no_tracks?
-      false
+    def response_data
+      Nokogiri::HTML.parse(response)
+    end
+
+    def response
+      RestClient.get(link)
     end
   end
 end
