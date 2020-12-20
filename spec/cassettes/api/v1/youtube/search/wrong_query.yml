@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=20&pageToken&part=snippet&q=wejlhg239gh23&type=video
+    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=10&pageToken&part=snippet&q=wejlhg239gh23&type=video
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 14 Oct 2020 09:30:09 GMT
+      - Sun, 20 Dec 2020 18:11:05 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -39,9 +39,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-Q050=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-27=":443"; ma=2592000,h3-T051=":443";
-        ma=2592000,h3-T050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443";
-        ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -49,13 +48,13 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "omgoYdzYAooD3P33GMfjX3e_uLA",
+          "etag": "VHH_1ADaCsJtW-B5VEv__zvzafY",
           "regionCode": "BY",
           "pageInfo": {
             "totalResults": 0,
-            "resultsPerPage": 20
+            "resultsPerPage": 10
           },
           "items": []
         }
-  recorded_at: Wed, 14 Oct 2020 09:30:09 GMT
+  recorded_at: Sun, 20 Dec 2020 18:11:04 GMT
 recorded_with: VCR 6.0.0
