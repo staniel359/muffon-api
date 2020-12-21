@@ -28,8 +28,9 @@ module Bandcamp
           artist: album_info_data['artist'],
           cover: cover,
           released: released,
+          bandcamp_link: album_info_data['url'],
+          bandcamp_id: album_info_data['id'],
           description: description,
-          link: album_info_data['url'],
           tracks: tracks
         }
       end
