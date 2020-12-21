@@ -8,7 +8,6 @@ module VK
           act: 'load_section',
           al: 1,
           playlist_id: playlist_id,
-          owner_id: secrets.vk[:page_id],
           offset: @args.next_page
         }
       end
