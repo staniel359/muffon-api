@@ -87,6 +87,12 @@ Rails.application.routes.draw do
             get '', action: :info
           end
         end
+
+        namespace :tracks, as: :track, constraints: { track_link: /.+/ } do
+          scope ':track_link' do
+            get '', action: :info
+          end
+        end
       end
 
       # Discogs

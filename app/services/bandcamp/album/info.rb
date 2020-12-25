@@ -1,6 +1,10 @@
 module Bandcamp
   module Album
     class Info < Bandcamp::Base
+      def call
+        super { return handle_no_tracks if no_tracks? }
+      end
+
       private
 
       def primary_args
@@ -8,14 +12,39 @@ module Bandcamp
       end
 
       def no_data?
-        album_info_data.blank?
+        album_scripts.blank?
       end
 
-      def album_info_data
-        @album_info_data ||=
-          Bandcamp::Album::Info::Data.call(
-            album_link: @args.album_link
-          )[:album]
+      def album_scripts
+        @album_scripts ||= response_data.css('script')
+      end
+
+      def no_tracks?
+        tracks_data.blank?
+      end
+
+      def tracks_data
+        @tracks_data ||= JSON.parse(
+          album_scripts[3]['data-tralbum']
+        )['trackinfo']
+      end
+
+      def handle_no_tracks
+        return redirect if redirect_link.present?
+
+        handlers.not_found
+      end
+
+      def redirect_link
+        info_data['description'].to_s[bandcamp_link_regexp]
+      end
+
+      def info_data
+        @info_data ||= JSON.parse(album_scripts[0])
+      end
+
+      def redirect
+        self.class.name.constantize.call(album_link: redirect_link)
       end
 
       def data
@@ -24,52 +53,54 @@ module Bandcamp
 
       def album_data
         {
-          title: title,
-          artist: album_info_data['artist'],
-          cover: cover,
-          released: released,
-          bandcamp_link: album_info_data['url'],
-          bandcamp_id: album_info_data['id'],
-          description: description,
+          title: info_data['name'],
+          artist: artist_name,
+          images: images,
+          released: time_formatted(info_data['datePublished']),
+          bandcamp_link: info_data['@id'],
+          description: info_data['description'],
+          tags: info_data['keywords'].split(', '),
           tracks: tracks
         }
       end
 
-      def title
-        album_info_data.dig('current', 'title')
+      def artist_name
+        info_data.dig('byArtist', 'name')
       end
 
-      def cover
-        "https://f4.bcbits.com/img/a#{album_art_id}_10.jpg"
-      end
-
-      def album_art_id
-        album_info_data.dig('current', 'art_id')
-      end
-
-      def released
-        return '' if release_date.blank?
-
-        Time.zone.parse(release_date).strftime('%Y-%m-%d')
-      end
-
-      def release_date
-        album_info_data.dig('current', 'release_date')
-      end
-
-      def description
-        album_info_data.dig('current', 'about') || ''
+      def images
+        {
+          original: info_data['image'],
+          large: info_data['image'].sub('_10', '_5'),
+          medium: info_data['image'].sub('_10', '_4'),
+          small: info_data['image'].sub('_10', '_7')
+        }
       end
 
       def tracks
-        album_info_data['trackinfo'].map do |t|
+        tracks_data.map do |t|
           {
+            id: track_id(t),
             title: t['title'],
-            length: t['duration'].ceil,
-            link: t['title_link'],
-            audio_link: t.dig('file', 'mp3-128').to_s
+            length: t['duration'].floor,
+            bandcamp_link: artist_link + t['title_link'],
+            has_audio: t['file'].present?
           }
         end
+      end
+
+      def track_id(track)
+        ::Track.with_artist_id_title(
+          artist_id, track['title']
+        ).id
+      end
+
+      def artist_id
+        @artist_id ||= ::Artist.with_name(artist_name).id
+      end
+
+      def artist_link
+        info_data.dig('byArtist', '@id')
       end
     end
   end

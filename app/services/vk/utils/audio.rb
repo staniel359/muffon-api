@@ -28,7 +28,7 @@ module VK
           {
             title: CGI.unescapeHTML(t[3]),
             artist: CGI.unescapeHTML(t[4]),
-            link: link(t)
+            audio_link: audio_link(t)
           }
         end
       end
@@ -37,7 +37,7 @@ module VK
         response_data.dig(1, 0)
       end
 
-      def link(track)
+      def audio_link(track)
         VK::Utils::Decoder.call(link: track[2])
       end
     end

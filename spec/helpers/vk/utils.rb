@@ -3,7 +3,7 @@ module Helpers
     module Utils
       class << self
         def audio_data
-          {:tracks=>[{:artist=>"Wild Nothing", :link=>"https://cs4-1v4.vkuseraudio.net/p3/357172ef7c4ae5.mp3?extra=eOtUulf_nXXFggmyxEZoYVzek-F8XWVF4W0IrHlRBoztJnJop9B9bQVeS02U0VqLQz4elPMTN6Mc9XX7Ghmrwv-5LED2hFK-kkODSCJpRA_gd1pMm3Tt8byvpSnScHxq9k6pt6EedrMm_bdJGz08XwK88Q&long_chunk=1", :title=>"Nocturne"}]}
+          {:tracks=>[{:artist=>"Wild Nothing", :audio_link=>"https://cs4-1v4.vkuseraudio.net/p3/357172ef7c4ae5.mp3?extra=eOtUulf_nXXFggmyxEZoYVzek-F8XWVF4W0IrHlRBoztJnJop9B9bQVeS02U0VqLQz4elPMTN6Mc9XX7Ghmrwv-5LED2hFK-kkODSCJpRA_gd1pMm3Tt8byvpSnScHxq9k6pt6EedrMm_bdJGz08XwK88Q&long_chunk=1", :title=>"Nocturne"}]}
         end
 
         def encoded_data
