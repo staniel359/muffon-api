@@ -84,6 +84,7 @@ Rails.application.routes.draw do
 
         namespace :albums, as: :album, constraints: { album_link: /.+/ } do
           scope ':album_link' do
+            get 'tags'
             get '', action: :info
           end
         end

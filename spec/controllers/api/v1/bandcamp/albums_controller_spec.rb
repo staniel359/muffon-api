@@ -18,4 +18,22 @@ RSpec.describe API::V1::Bandcamp::AlbumsController, type: :controller do
       end
     end
   end
+
+  describe 'GET :tags' do
+    let(:album_link) { 'luxuryelite.bandcamp.com/album/high-society' }
+
+    it 'returns 200 if album_link present' do
+      VCR.use_cassette 'api/v1/bandcamp/albums/tags/success' do
+        get :tags, params: { album_link: album_link }
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 404 if wrong album_link' do
+      VCR.use_cassette 'api/v1/bandcamp/albums/tags/wrong_link' do
+        get :tags, params: { album_link: Helpers::Base::RANDOM_STRING }
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
 end

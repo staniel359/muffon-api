@@ -1,23 +1,11 @@
 module Bandcamp
   module Album
-    class Info < Bandcamp::Base
+    class Info < Bandcamp::Album::Base
       def call
         super { return handle_no_tracks if no_tracks? }
       end
 
       private
-
-      def primary_args
-        [@args.album_link]
-      end
-
-      def no_data?
-        album_scripts.blank?
-      end
-
-      def album_scripts
-        @album_scripts ||= response_data.css('script')
-      end
 
       def no_tracks?
         tracks_data.blank?
@@ -39,10 +27,6 @@ module Bandcamp
         info_data['description'].to_s[bandcamp_link_regexp]
       end
 
-      def info_data
-        @info_data ||= JSON.parse(album_scripts[0])
-      end
-
       def redirect
         self.class.name.constantize.call(album_link: redirect_link)
       end
@@ -59,7 +43,7 @@ module Bandcamp
           released: time_formatted(info_data['datePublished']),
           bandcamp_link: info_data['@id'],
           description: info_data['description'],
-          tags: info_data['keywords'].split(', '),
+          tags: info_data['keywords'].split(', ').first(5),
           tracks: tracks
         }
       end

@@ -3,6 +3,8 @@ module API
     module Bandcamp
       class AlbumsController < API::V1::BaseController
         def info; end
+
+        def tags; end
       end
     end
   end
