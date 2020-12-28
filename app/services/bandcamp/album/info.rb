@@ -57,7 +57,7 @@ module Bandcamp
           original: info_data['image'],
           large: info_data['image'].sub('_10', '_5'),
           medium: info_data['image'].sub('_10', '_4'),
-          small: info_data['image'].sub('_10', '_7')
+          small: info_data['image'].sub('_10', '_3')
         }
       end
 
