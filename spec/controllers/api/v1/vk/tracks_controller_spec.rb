@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::VK::TracksController, type: :controller do
   describe 'GET :info' do
     let(:track_id) do
-      '371745467_456356977_2c172e57fa47bb373b_9efa0eab8ba5f239f6'
+      '371745457_456339911_eb5f8906faa447eca3_d8bb3376116d501f9d'
     end
 
     it 'returns 200 if track exists' do

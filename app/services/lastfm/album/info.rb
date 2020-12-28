@@ -19,15 +19,36 @@ module LastFM
       end
 
       def album_data
+        album_base_data.merge(album_extra_data)
+      end
+
+      def album_base_data
         {
           title: response_data['name'],
-          artist: response_data['artist'],
-          mbid: response_data['mbid'] || '',
+          artist: artist_name,
+          mbid: response_data['mbid'].to_s
+        }
+      end
+
+      def artist_name
+        response_data['artist']
+      end
+
+      def album_extra_data
+        {
+          images: images,
           listeners_count: response_data['listeners'].to_i,
           plays_count: response_data['playcount'].to_i,
           description: description,
-          images: images, tags: tags, tracks: tracks
+          tags: tags,
+          tracks: tracks
         }
+      end
+
+      def images
+        LastFM::Utils::ImagesData.call(
+          data: response_data, model: 'album'
+        )
       end
 
       def description
@@ -38,12 +59,6 @@ module LastFM
         )[1].strip
       end
 
-      def images
-        LastFM::Utils::ImagesData.call(
-          data: response_data, model: 'album'
-        )
-      end
-
       def tags
         response_data.dig('tags', 'tag').map { |t| t['name'] }
       end
@@ -51,20 +66,15 @@ module LastFM
       def tracks
         response_data.dig('tracks', 'track').map do |t|
           {
-            id: track_id(t),
-            title: t['name'],
+            id: track_id(artist_name, track_title(t)),
+            title: track_title(t),
             length: t['duration'].to_i
           }
         end
       end
 
-      def track_id(track)
-        ::Track.with_artist_id_title(artist_id, track['name']).id
-      end
-
-      def artist_id
-        @artist_id ||=
-          ::Artist.with_name(response_data['artist']).id
+      def track_title(track)
+        track['name']
       end
     end
   end

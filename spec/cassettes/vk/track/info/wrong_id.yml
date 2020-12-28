@@ -16,7 +16,7 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=669c300e597100a9981a1e27b798f476b845dfd91384da364ee4b8fd82f5d
+      - remixsid=8af4603262bf0311c75230028e1514c004b91e9237ba08b029b52742459f5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,31 +29,31 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sat, 12 Dec 2020 21:50:47 GMT
+      - Tue, 29 Dec 2020 11:10:28 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '208'
+      - '201'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.105335
+      - KPHP/7.4.105588
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Fri, 17 Dec 2021 23:38:50 GMT; path=/; domain=.vk.com;
+      - remixlang=0; expires=Sat, 08 Jan 2022 11:10:18 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Thu, 09 Dec 2021 10:46:41 GMT; path=/; domain=.vk.com
+      - remixlang=114; expires=Sat, 08 Jan 2022 08:59:35 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
-      - front623307
+      - front204300
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":["8",["\"no_audios\"","false","\"74898130\""]],"statsMeta":{"platform":"web2","st":false,"time":1607809847,"hash":"WMJNvRuBmxwA0ZzLkzRi6zMm8lgGrjf4BPtpAwVwRWc"},"loaderVersion":"15773978","langVersion":"7051"}
-  recorded_at: Sat, 12 Dec 2020 21:50:45 GMT
+      string: <!--{"payload":["8",["\"no_audios\"","false","\"75022490\""]],"statsMeta":{"platform":"web2","st":false,"time":1609240228,"hash":"uFrbdnoE2g6ydmLtGxLm0fY4Z45DovNL2mA5OI7Yoww"},"loaderVersion":"143240","langVersion":"7051"}
+  recorded_at: Tue, 29 Dec 2020 11:10:27 GMT
 recorded_with: VCR 6.0.0

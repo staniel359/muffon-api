@@ -33,11 +33,18 @@ module VK
 
       def album_data
         {
-          title: album['title'],
-          subtitle: album['subTitle'].to_s,
-          artist: artist_name(album),
-          cover: album['coverUrl'],
-          tracks: tracks
+          title: album_title(album),
+          artist: album_artist_name(album),
+          images: images,
+          plays_count: album['listens'].to_i,
+          tracks: (tracks unless @args.track)
+        }
+      end
+
+      def images
+        {
+          original: album['coverUrl'],
+          medium: album['coverUrl']
         }
       end
 
@@ -46,7 +53,23 @@ module VK
       end
 
       def track_data(track)
-        VK::Search::Tracks::Track.call(track: track)
+        track_base_data(track).merge(track_extra_data(track))
+      end
+
+      def track_base_data(track)
+        {
+          id: track_id(track),
+          title: track_title(track),
+          artist: track_artist_name(track)
+        }
+      end
+
+      def track_extra_data(track)
+        {
+          length: track[5],
+          has_audio: audio_id(track).present?,
+          vk_id: audio_id(track)
+        }
       end
     end
   end

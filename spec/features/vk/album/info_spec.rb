@@ -8,8 +8,8 @@ RSpec.describe VK::Album::Info do
       let(:output) do
         VCR.use_cassette 'vk/album/info/success' do
           subject.call(
-            album_id: '1018186', owner_id: '-2000018186',
-            access_hash: '4b0d541e5c641772e4'
+            album_id: '1916168', owner_id: '-2000916168',
+            access_hash: '43c15929fe11506130'
           )
         end
       end

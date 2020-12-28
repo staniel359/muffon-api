@@ -6,9 +6,9 @@ module LastFM
       def tracks
         tracks_list.map do |t|
           {
-            id: track_id(t),
+            id: track_id(artist_name(t), title(t)),
             title: title(t),
-            artist: artist(t)
+            artist: artist_name(t)
           }
         end
       end
@@ -17,17 +17,7 @@ module LastFM
         response_data.css('.chartlist-row')
       end
 
-      def track_id(track)
-        ::Track.with_artist_id_title(
-          artist_id(track), title(track)
-        ).id
-      end
-
-      def artist_id(track)
-        ::Artist.with_name(artist(track)).id
-      end
-
-      def artist(track)
+      def artist_name(track)
         track.css('.chartlist-artist a').text
       end
 

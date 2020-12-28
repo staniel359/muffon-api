@@ -14,22 +14,19 @@ module LastFM
       def results_data
         results.last(limit).map do |t|
           {
-            id: track_id(t),
-            title: t['name'],
-            artist: t['artist']
+            id: track_id(artist_name(t), title(t)),
+            title: title(t),
+            artist: artist_name(t)
           }
         end
       end
 
-      def track_id(track)
-        ::Track.with_artist_id_title(
-          artist_id(track['artist']),
-          track['name']
-        ).id
+      def artist_name(track)
+        track['artist']
       end
 
-      def artist_id(name)
-        ::Artist.with_name(name).id
+      def title(track)
+        track['name']
       end
     end
   end

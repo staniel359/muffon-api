@@ -14,26 +14,18 @@ module LastFM
 
         def similar_track_data
           {
-            id: track_id,
-            title: track_title,
+            id: track_id(artist_name, title),
+            title: title,
             artist: artist_name,
-            length: @args.similar['duration'] || 0
+            length: @args.similar['duration'].to_i
           }
-        end
-
-        def track_id
-          ::Track.with_artist_id_title(artist_id, track_title).id
-        end
-
-        def artist_id
-          ::Artist.with_name(artist_name).id
         end
 
         def artist_name
           @args.similar.dig('artist', 'name')
         end
 
-        def track_title
+        def title
           @args.similar['name']
         end
       end

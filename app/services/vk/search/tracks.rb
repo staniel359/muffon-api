@@ -13,11 +13,11 @@ module VK
       end
 
       def playlist_id
-        albums_data.dig(:search, :albums, -1, :vk_id)
+        albums_data.dig(:search, :albums, 0, :vk_id)
       end
 
       def albums_data
-        VK::Search::Albums.call(query: @args.query)
+        VK::Search::Albums.call(query: @args.query, tracks: true)
       end
 
       def results
@@ -36,7 +36,12 @@ module VK
       end
 
       def track_data(track)
-        VK::Search::Tracks::Track.call(track: track)
+        {
+          title: track_title(track),
+          artist: track_artist_name(track),
+          length: track[5],
+          vk_id: audio_id(track)
+        }
       end
     end
   end

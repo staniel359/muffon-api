@@ -6,7 +6,7 @@ RSpec.describe VK::Track::Info do
   describe 'successful processing' do
     context 'when track_id given' do
       let(:track_id) do
-        '371745467_456356977_2c172e57fa47bb373b_9efa0eab8ba5f239f6'
+        '-2001935215_33935215_7b514cf46be10cd026_912976b49bc6a9f884'
       end
       let(:output) do
         VCR.use_cassette 'vk/track/info/success' do

@@ -42,8 +42,41 @@ module VK
       response_code.to_i == 3
     end
 
-    def artist_name(album)
-      album['authorName'].match(%r{<a.+>(.+)</a>}).try(:[], 1) || ''
+    def album_title(album)
+      title = album['title'] || album[:title]
+      subtitle = album['subTitle'] || album[:subtitle]
+
+      full_title(title, subtitle)
+    end
+
+    def full_title(title, subtitle)
+      return CGI.unescapeHTML(title) if subtitle.blank?
+
+      CGI.unescapeHTML("#{title} (#{subtitle})")
+    end
+
+    def album_artist_name(album)
+      CGI.unescapeHTML(
+        album['authorName'].match(%r{<a.+>(.+)</a>})[1]
+      )
+    end
+
+    def track_id(track)
+      super(track_artist_name(track), track_title(track))
+    end
+
+    def track_artist_name(track)
+      CGI.unescapeHTML(track[4])
+    end
+
+    def track_title(track)
+      full_title(track[3], track[16])
+    end
+
+    def audio_id(track)
+      hashes = track[13].split('/')
+
+      "#{track[1]}_#{track[0]}_#{hashes[2]}_#{hashes[5]}"
     end
   end
 end

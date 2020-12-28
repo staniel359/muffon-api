@@ -16,7 +16,7 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=966195dca31ca6ebd1817a17a740e0d3d0cc869f1891b18f2cc38c9a7c255
+      - remixsid=8af4603262bf0311c75230028e1514c004b91e9237ba08b029b52742459f5
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,25 +29,25 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Tue, 15 Dec 2020 15:45:39 GMT
+      - Tue, 29 Dec 2020 11:13:14 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '255'
+      - '254'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.105390
+      - KPHP/7.4.105588
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Wed, 22 Dec 2021 09:54:38 GMT; path=/; domain=.vk.com;
+      - remixlang=0; expires=Tue, 28 Dec 2021 08:57:55 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Sun, 19 Dec 2021 11:57:45 GMT; path=/; domain=.vk.com
+      - remixlang=114; expires=Sat, 08 Jan 2022 11:44:17 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
-      - front212404
+      - front605106
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
@@ -55,6 +55,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '<!--{"payload":["8",["\"ERR_103: Invalid user id, in al_audio.php?act=load_section,
-        code #74922690\"","false","\"74922588\""]],"statsMeta":{"platform":"web2","st":false,"time":1608047139,"hash":"uZZvdORv6v8VkKUJx46KrWFfNr1eLJ3IquQxFrF67tk"},"loaderVersion":"8870714","langVersion":"7051"}'
-  recorded_at: Tue, 15 Dec 2020 15:45:39 GMT
+        code #75022870\"","false","\"75022605\""]],"statsMeta":{"platform":"web2","st":false,"time":1609240394,"hash":"Bv9Tfv7lQ5GXHv4q28WCU4qdAszYufPcXxkvqrj0qns"},"loaderVersion":"143240","langVersion":"7051"}'
+  recorded_at: Tue, 29 Dec 2020 11:13:14 GMT
 recorded_with: VCR 6.0.0

@@ -21,7 +21,7 @@ module LastFM
       def artist_data
         {
           name: response_data['name'],
-          mbid: response_data['mbid'] || '',
+          mbid: response_data['mbid'].to_s,
           listeners_count: response_data.dig('stats', 'listeners').to_i,
           plays_count: response_data.dig('stats', 'playcount').to_i,
           description: description,

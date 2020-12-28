@@ -64,23 +64,17 @@ module Bandcamp
       def tracks
         tracks_data.map do |t|
           {
-            id: track_id(t),
-            title: t['title'],
+            id: track_id(artist_name, title(t)),
+            title: title(t),
             length: t['duration'].floor,
-            bandcamp_link: artist_link + t['title_link'],
-            has_audio: t['file'].present?
+            has_audio: t['file'].present?,
+            bandcamp_link: artist_link + t['title_link']
           }
         end
       end
 
-      def track_id(track)
-        ::Track.with_artist_id_title(
-          artist_id, track['title']
-        ).id
-      end
-
-      def artist_id
-        @artist_id ||= ::Artist.with_name(artist_name).id
+      def title(track)
+        track['title']
       end
 
       def artist_link

@@ -2,16 +2,12 @@ module VK
   module Utils
     class Remixsid < VK::Base
       def call
-        data
-      end
-
-      private
-
-      def data
         post_login
       rescue RestClient::Found => e
         process_redirect(e)
       end
+
+      private
 
       def post_login
         RestClient.post('login.vk.com', params, extra_data)

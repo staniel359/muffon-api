@@ -19,23 +19,16 @@ module LastFM
       end
 
       def track_data
+        track_base_data.merge(track_extra_data)
+      end
+
+      def track_base_data
         {
-          id: id, title: track_title,
-          artist: artist_name, album: album_title,
-          mbid: response_data['mbid'] || '',
-          listeners_count: response_data['listeners'].to_i,
-          plays_count: response_data['playcount'].to_i,
-          length: length, description: description,
-          images: images, tags: tags
+          id: track_id(artist_name, track_title),
+          title: track_title,
+          artist: artist_name,
+          mbid: response_data['mbid'].to_s
         }
-      end
-
-      def id
-        ::Track.with_artist_id_title(artist_id, track_title).id
-      end
-
-      def artist_id
-        ::Artist.with_name(artist_name).id
       end
 
       def artist_name
@@ -46,14 +39,22 @@ module LastFM
         response_data['name']
       end
 
-      def album_title
-        return '' if response_data['album'].blank?
-
-        response_data.dig('album', 'title')
+      def track_extra_data
+        {
+          album: response_data.dig('album', 'title').to_s,
+          images: images,
+          listeners_count: response_data['listeners'].to_i,
+          plays_count: response_data['playcount'].to_i,
+          length: response_data['duration'].to_i / 1_000,
+          description: description,
+          tags: tags
+        }
       end
 
-      def length
-        response_data['duration'].to_i / 1_000
+      def images
+        LastFM::Utils::ImagesData.call(
+          data: response_data['album'], model: 'album'
+        )
       end
 
       def description
@@ -62,12 +63,6 @@ module LastFM
         response_data.dig('wiki', 'content').match(
           %r{(.+)<a href="http(s?)://www.last.fm}m
         )[1].strip
-      end
-
-      def images
-        LastFM::Utils::ImagesData.call(
-          data: response_data['album'], model: 'album'
-        )
       end
 
       def tags

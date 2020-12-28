@@ -27,5 +27,15 @@ module Muffon
     def global
       @global ||= Redis.new
     end
+
+    def track_id(artist_name, title)
+      ::Track.with_artist_id_title(
+        artist_id(artist_name), title
+      ).id
+    end
+
+    def artist_id(artist_name)
+      ::Artist.with_name(artist_name).id
+    end
   end
 end
