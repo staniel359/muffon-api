@@ -16,7 +16,9 @@ module Bing
       end
 
       def title
-        link_title[0].text.presence || link_title[1].text
+        link_title[0].text.presence ||
+          link_title[1].text.presence ||
+          link_title[2].text
       end
 
       def link_title
