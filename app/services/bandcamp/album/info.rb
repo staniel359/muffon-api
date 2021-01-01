@@ -42,7 +42,7 @@ module Bandcamp
           images: images,
           released: time_formatted(info_data['datePublished']),
           bandcamp_link: info_data['@id'],
-          description: info_data['description'],
+          description: info_data['description'].to_s,
           tags: info_data['keywords'].split(', ').first(5),
           tracks: tracks
         }

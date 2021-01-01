@@ -37,5 +37,11 @@ module Muffon
     def artist_id(artist_name)
       ::Artist.with_name(artist_name).id
     end
+
+    def time_formatted(time)
+      Time.zone.parse(time).strftime('%d %b %Y')
+    rescue ArgumentError
+      time
+    end
   end
 end

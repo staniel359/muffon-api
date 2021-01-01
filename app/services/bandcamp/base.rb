@@ -33,9 +33,5 @@ module Bandcamp
     def response
       RestClient.get(link)
     end
-
-    def time_formatted(time)
-      Time.zone.parse(time).strftime('%Y-%m-%d')
-    end
   end
 end

@@ -24,7 +24,7 @@ module Spotify
           title: response_data['name'],
           artists: artists,
           image: response_data.dig('images', 0, 'url'),
-          released: response_data['release_date'],
+          released: time_formatted(response_data['release_date']),
           label: response_data['label'],
           genres: response_data['genres'],
           tracks: tracks

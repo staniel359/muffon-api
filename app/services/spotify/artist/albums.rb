@@ -30,7 +30,7 @@ module Spotify
           {
             title: a['name'],
             image: a.dig('images', 0, 'url'),
-            released: a['release_date'],
+            released: time_formatted(a['release_date']),
             spotify_id: a['id']
           }
         end
