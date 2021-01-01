@@ -13,12 +13,12 @@ module Bandcamp
 
     private
 
-    def invalid_link?
-      link && link[bandcamp_link_regexp].blank?
+    def primary_args
+      [@args.link]
     end
 
-    def link
-      @args.album_link || @args.track_link
+    def invalid_link?
+      @args.link && @args.link[bandcamp_link_regexp].blank?
     end
 
     def bandcamp_link_regexp
@@ -26,12 +26,46 @@ module Bandcamp
         (?:album|track)/(\w|-)+(?:-\w+)*}x
     end
 
+    def no_data?
+      scripts.blank?
+    end
+
+    def scripts
+      @scripts ||= response_data.css('script')
+    end
+
     def response_data
       Nokogiri::HTML.parse(response)
     end
 
     def response
-      RestClient.get(link)
+      RestClient.get(@args.link)
+    end
+
+    def base_data
+      @base_data ||= JSON.parse(scripts[0])
+    end
+
+    def extra_data
+      @extra_data ||= JSON.parse(scripts[3]['data-tralbum'])
+    end
+
+    def tracks_data
+      @tracks_data ||= extra_data['trackinfo']
+    end
+
+    def images
+      {
+        original: image,
+        large: image.sub('_10', '_5'),
+        medium: image.sub('_10', '_4'),
+        small: image.sub('_10', '_3'),
+        extrasmall: image.sub('_10', '_42')
+      }
+    end
+
+    def image
+      "https://f4.bcbits.com/img/a#{extra_data['art_id']}_10.jpg"
     end
   end
 end

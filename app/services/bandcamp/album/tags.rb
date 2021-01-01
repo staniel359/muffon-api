@@ -1,13 +1,17 @@
 module Bandcamp
   module Album
-    class Tags < Bandcamp::Album::Base
+    class Tags < Bandcamp::Base
       private
+
+      def data
+        { album: album_data }
+      end
 
       def album_data
         {
-          title: info_data['name'],
-          artist: info_data.dig('byArtist', 'name'),
-          tags: info_data['keywords'].split(', ')
+          title: base_data['name'],
+          artist: base_data.dig('byArtist', 'name'),
+          tags: base_data['keywords'].split(', ')
         }
       end
     end

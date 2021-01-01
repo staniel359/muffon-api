@@ -4,11 +4,11 @@ RSpec.describe Bandcamp::Album::Tags do
   subject { described_class }
 
   describe 'successful processing' do
-    context 'when album_link present' do
+    context 'when link present' do
       let(:output) do
         VCR.use_cassette 'bandcamp/album/tags/success' do
           subject.call(
-            album_link: 'luxuryelite.bandcamp.com/album/high-society'
+            link: 'luxuryelite.bandcamp.com/album/high-society'
           )
         end
       end
@@ -18,7 +18,7 @@ RSpec.describe Bandcamp::Album::Tags do
   end
 
   describe 'no processing' do
-    context 'when no album_link given' do
+    context 'when no link given' do
       let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
@@ -27,7 +27,7 @@ RSpec.describe Bandcamp::Album::Tags do
     context 'when wrong link' do
       let(:output) do
         VCR.use_cassette 'bandcamp/album/tags/wrong_link' do
-          subject.call(album_link: Helpers::Base::RANDOM_STRING)
+          subject.call(link: Helpers::Base::RANDOM_STRING)
         end
       end
 

@@ -31,8 +31,7 @@ module API
         %i[
           artist album track tag page limit offset query index
           next_page track_id album_id owner_id access_hash
-          group_id artist_id label_id search_type album_link
-          track_link
+          group_id artist_id label_id search_type link
         ]
       end
 

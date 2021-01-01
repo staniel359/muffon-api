@@ -1,6 +1,6 @@
 module Bandcamp
   module Album
-    class Info < Bandcamp::Album::Base
+    class Info < Bandcamp::Base
       def call
         super { return handle_no_tracks if no_tracks? }
       end
@@ -11,12 +11,6 @@ module Bandcamp
         tracks_data.blank?
       end
 
-      def tracks_data
-        @tracks_data ||= JSON.parse(
-          album_scripts[3]['data-tralbum']
-        )['trackinfo']
-      end
-
       def handle_no_tracks
         return redirect if redirect_link.present?
 
@@ -24,11 +18,11 @@ module Bandcamp
       end
 
       def redirect_link
-        info_data['description'].to_s[bandcamp_link_regexp]
+        base_data['description'].to_s[bandcamp_link_regexp]
       end
 
       def redirect
-        self.class.name.constantize.call(album_link: redirect_link)
+        self.class.name.constantize.call(link: redirect_link)
       end
 
       def data
@@ -37,28 +31,19 @@ module Bandcamp
 
       def album_data
         {
-          title: info_data['name'],
+          title: base_data['name'],
           artist: artist_name,
           images: images,
-          released: time_formatted(info_data['datePublished']),
-          bandcamp_link: info_data['@id'],
-          description: info_data['description'].to_s,
-          tags: info_data['keywords'].split(', ').first(5),
+          released: time_formatted(base_data['datePublished']),
+          bandcamp_link: base_data['@id'],
+          description: base_data['description'].to_s,
+          tags: base_data['keywords'].split(', ').first(5),
           tracks: tracks
         }
       end
 
       def artist_name
-        info_data.dig('byArtist', 'name')
-      end
-
-      def images
-        {
-          original: info_data['image'],
-          large: info_data['image'].sub('_10', '_5'),
-          medium: info_data['image'].sub('_10', '_4'),
-          small: info_data['image'].sub('_10', '_3')
-        }
+        base_data.dig('byArtist', 'name')
       end
 
       def tracks
@@ -68,7 +53,7 @@ module Bandcamp
             title: title(t),
             length: t['duration'].floor,
             has_audio: t['file'].present?,
-            bandcamp_link: artist_link + t['title_link']
+            bandcamp_link: track_link(t)
           }
         end
       end
@@ -77,8 +62,8 @@ module Bandcamp
         track['title']
       end
 
-      def artist_link
-        info_data.dig('byArtist', '@id')
+      def track_link(track)
+        base_data.dig('byArtist', '@id') + track['title_link']
       end
     end
   end
