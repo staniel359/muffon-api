@@ -36,6 +36,7 @@ module VK
           title: album_title(album),
           artist: album_artist_name(album),
           images: images,
+          released: released,
           plays_count: album['listens'].to_i,
           tracks: (tracks unless @args.track)
         }
@@ -46,6 +47,10 @@ module VK
           original: album['coverUrl'],
           medium: album['coverUrl']
         }
+      end
+
+      def released
+        album['infoLine1'].split('<span class="dvd"></span>').last
       end
 
       def tracks
