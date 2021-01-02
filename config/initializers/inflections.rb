@@ -16,6 +16,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'LastFM'
   inflect.acronym 'VK'
   inflect.acronym 'YouTube'
+  inflect.acronym 'SoundCloud'
 
   inflect.uncountable %w(discogs)
 end

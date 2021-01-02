@@ -162,6 +162,27 @@ Rails.application.routes.draw do
         end
       end
 
+      # SoundCloud
+
+      namespace :soundcloud do
+        namespace :search do
+          get 'albums'
+          get 'tracks'
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
+      end
+
       # Bing
 
       namespace :bing do

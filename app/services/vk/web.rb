@@ -43,6 +43,8 @@ module VK
     end
 
     def album_title(album)
+      return '' if album.blank?
+
       title = album['title'] || album[:title]
       subtitle = album['subTitle'] || album[:subtitle]
 

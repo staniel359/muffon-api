@@ -40,7 +40,15 @@ module VK
           title: track_title(track),
           artist: track_artist_name(track),
           length: track[5],
-          vk_id: audio_id(track)
+          audio: audio_data(track)
+        }
+      end
+
+      def audio_data(track)
+        {
+          present: audio_id(track).present?,
+          id: audio_id(track),
+          source: 'vk'
         }
       end
     end

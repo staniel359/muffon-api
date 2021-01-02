@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/playlists/wejlhg239gh23?client_id=<SOUNDCLOUD_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.soundcloud.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Jan 2021 11:41:49 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 ecaa40073bdefd3aeab35205d96e7782.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - AMS50-C1
+      X-Amz-Cf-Id:
+      - jdz1zJN23Z1xZBdUeKG-OR9SDY7phcVVNLfz0iFtW5cSKT_u42tr9g==
+    body:
+      encoding: ASCII-8BIT
+      string: 'Invalid playlist id: ''wejlhg239gh23'''
+  recorded_at: Sat, 02 Jan 2021 11:41:49 GMT
+recorded_with: VCR 6.0.0

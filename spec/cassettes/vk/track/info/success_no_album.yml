@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vk.com/al_audio.php
+    body:
+      encoding: UTF-8
+      string: act=reload_audio&al=1&ids=-84103919_456239128_8c16b87c8b98d012d7_63da417055a7fb92d8
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Content-Length:
+      - '83'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - remixsid=7abeef8336494ba8bbd8eb691b551b17b6c7926fa73aa33e525c2d420a6d7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Sat, 02 Jan 2021 14:41:22 GMT
+      Content-Type:
+      - text/html; charset=windows-1251
+      Content-Length:
+      - '1270'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.105607
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixlang=0; expires=Tue, 11 Jan 2022 01:38:02 GMT; path=/; domain=.vk.com;
+        secure
+      - remixlang=114; expires=Thu, 23 Dec 2021 17:01:45 GMT; path=/; domain=.vk.com
+      Cache-Control:
+      - no-store
+      X-Frontend:
+      - front605108
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Expose-Headers:
+      - X-Frontend
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCEtLXsicGF5bG9hZCI6WzAsW1tbNDU2MjM5MTI4LC04NDEwMzkxOSwiaHR0cHM6XC9cL3ZrLmNvbVwvbXAzXC9hdWRpb19hcGlfdW5hdmFpbGFibGUubXAzP2V4dHJhPXlZODF2M200b2dET0N3cmJsT3ZXeU12THRZOUlzMTBYek12d3BzT1dCMXZqbWRMcW1JOXNzTnFPRE12MnpnWHhCSlBBdmhHXC96M3p1enRmNHVkSzR5TGJQRWVpNW9lNWl2TlAwQ09EMG1kSEpFZ0RLeXVMdkNNSzRFSTEwQk52ZGx0ekhBTzFjdFpDOXYxanBEd0RQQjNyVHVPUzFDWmJzbU01Mm1NbmZDM21VQ09TTXJ0ejFuWnJKbXRmUUFZNXBDZGZaRHRpWXozcVl1SnJVdnduV213OFR0d1RLcXhQTW52TFlxSnFaeUk4WG9oZlFDd0xWdE5MZEJKR09sTXZ4eXhuTXZoUFh5dlBkcmR2aHdNeVpBTHJjbTJIeHNLamV5dnpoRWRLVm14ejN2T0hBbnRyVXlMYlZDZHZrbXc5VHhaenp2Tm0jQXFTWm5aYSIsIiYjMTI0NTA7JiMxMjUyMzsmIzEyNTExOyYjMTI0OTA7IiwiTklHSFRNQVJFIiwzMDcsMCwwLCIiLDAsMiwiIiwiW10iLCI0MzFmM2M0Zjk2OTkxMWEyM2VcL1wvOWI4MzU2NWE2NTllMmQ3Mzg0XC9cL1wvMjA5NjQ0ODJmYThjMjg3YTMxXC8iLCIiLHsiZHVyYXRpb24iOjMwNywiY29udGVudF9pZCI6Ii04NDEwMzkxOV80NTYyMzkxMjgiLCJwdWlkMjIiOjExLCJhY2NvdW50X2FnZV90eXBlIjozLCJfU0lURUlEIjoyNzYsInZrX2lkIjo8VktfUEFHRV9JRD4sInZlciI6MjUxMTE2fSwiIiwiIiwiIixmYWxzZSwiYzAxZGY4ZmZvQlRhbHJQUHNkamd0YjFiU2Nwd1pDcTVtcUdiT0EiLDAsMCx0cnVlLCI0NTZjOTZiNGE1OGNhMDhjZjUiLGZhbHNlXV0sZmFsc2UsIjY2OWM1YjMzMGM4MzE2NjRlMyIsW11dXSwic3RhdHNNZXRhIjp7InBsYXRmb3JtIjoid2ViMiIsInN0IjpmYWxzZSwidGltZSI6MTYwOTU5ODQ4MiwiaGFzaCI6InhpUXJIa1NPR2lxUm56Z3c0NVQxeHpPUm9QajhDVUw1bkR0MExVdURicHoifSwibG9hZGVyVmVyc2lvbiI6IjE0MzI0MCIsImxhbmdWZXJzaW9uIjoiNzA1MSIsImxhbmdLZXlzIjp7Imdsb2JhbCI6W10sImxvY2FsIjp7ImF1ZGlvX2RlbGV0ZV9hdWRpbyI6ItPk4Ovo8vwg4PPk6O7n4O/o8fwiLCJhdWRpb19kb250X3Nob3ciOiLB7uv8+OUg7eUg7+7q4Of74uDy/CIsImF1ZGlvX3BlcmZvcm1lcnNfb25seSI6Iu/uIOjx7+7r7ejy5ev/7CIsImF1ZGlvX29wZW5fYWxidW0iOiLO8urw+/L8IODr/OHu7CIsImF1ZGlvX3RpdGxlc19zZWFyY2giOiLv7iDq7uzv7ufo9uj/7CIsImF1ZGlvX2dsb2JhbF9zZWFyY2hfZm91bmQiOlsiIiwiwiDv7ujx6uUg7eDp5OXt4CAlcyDg8+To7ufg7+jx/CIsIsIg7+7o8erlIO3g6eTl7e4gJXMg4PPk6O7n4O/o8egiLCLCIO/u6PHq5SDt4Onk5e3uICVzIODz5Oju5+Dv6PHl6SJdLCJhdWRpb19zaXRlX3J1bGVzX3Zpb2xhdGlvbl93YXJuaW5nIjoiwPPk6O7n4O/o8fwge2F1ZGlvfSDh++vgIOjn+v/y4CDo5yDv8+Hr6Pft7uPuIOTu8fLz7+Ag4iDx4v/n6CDxIO3g8PP45e3o5ewg7/Dg4ujrIPHg6fLgLiIsImF1ZGlvX3NpdGVfcnVsZXNfdmlvbGF0aW9uX2hlYWRlciI6Isfg7/Dl+bjt7eD/IODz5Oju5+Dv6PH8In19LCJ0ZW1wbGF0ZXMiOnsiXyI6Il8iLCJhdWRpb19iaXRzX3RvX2NscyI6IntcIjFcIjpcImF1ZGlvX2hhc19seXJpY3NcIixcIjJcIjpcImF1ZGlvX2Nhbl9hZGRcIixcIjRcIjpcImF1ZGlvX2NsYWltZWRcIixcIjhcIjpcImF1ZGlvX2Zyb21fcXVldWVcIixcIjE2XCI6XCJhdWRpb19ocVwiLFwiMTAyNFwiOlwiYXVkaW9fZXhwbGljaXRcIixcIjMyXCI6XCJhdWRpb19scGJcIixcIjY0XCI6XCJhdWRpb19oYXNfdGh1bWJcIixcIjI1NlwiOlwiYXVkaW9fbW9kZXJfY2xhaW1lZFwiLFwiMjA0OFwiOlwiYXVkaW9fZm9jdXNcIixcIjQwOTZcIjpcImF1ZGlvX21vZHVsZV93aWRlXCJ9In19
+  recorded_at: Sat, 02 Jan 2021 14:41:22 GMT
+recorded_with: VCR 6.0.0

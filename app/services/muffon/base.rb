@@ -39,7 +39,7 @@ module Muffon
     end
 
     def time_formatted(time)
-      Time.zone.parse(time).strftime('%d %b %Y')
+      Time.zone.parse(time)&.strftime('%d %b %Y').to_s
     rescue ArgumentError
       time
     end

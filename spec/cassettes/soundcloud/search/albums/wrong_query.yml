@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-v2.soundcloud.com/search/albums?client_id=<SOUNDCLOUD_API_KEY>&limit=20&offset=0&q=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api-v2.soundcloud.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '119'
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Jan 2021 11:41:56 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ff34f581ad0f4009e4c404975952e7f0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - AMS50-C1
+      X-Amz-Cf-Id:
+      - J23PdAgMg6kN5oJ9-GgYIIsIWB6ZCZjOj6XU1OIA18V50n0E8E9chw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:b28284e4caa5473a82eb202d78b13060"}'
+  recorded_at: Sat, 02 Jan 2021 11:41:56 GMT
+recorded_with: VCR 6.0.0

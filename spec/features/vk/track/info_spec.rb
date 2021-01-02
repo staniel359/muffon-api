@@ -16,6 +16,19 @@ RSpec.describe VK::Track::Info do
 
       it { expect(output).to eq(Helpers::VK::Track.info_data) }
     end
+
+    context 'when track with no album' do
+      let(:track_id) do
+        '-84103919_456239128_8c16b87c8b98d012d7_63da417055a7fb92d8'
+      end
+      let(:output) do
+        VCR.use_cassette 'vk/track/info/success_no_album' do
+          subject.call(track_id: track_id)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::VK::Track.info_no_album_data) }
+    end
   end
 
   describe 'no processing' do

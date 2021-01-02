@@ -58,22 +58,20 @@ module VK
       end
 
       def track_data(track)
-        track_base_data(track).merge(track_extra_data(track))
-      end
-
-      def track_base_data(track)
         {
           id: track_id(track),
           title: track_title(track),
-          artist: track_artist_name(track)
+          artist: track_artist_name(track),
+          length: track[5],
+          audio: audio_data(track)
         }
       end
 
-      def track_extra_data(track)
+      def audio_data(track)
         {
-          length: track[5],
-          has_audio: audio_id(track).present?,
-          vk_id: audio_id(track)
+          present: audio_id(track).present?,
+          id: audio_id(track),
+          source: 'vk'
         }
       end
     end

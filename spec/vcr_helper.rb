@@ -12,7 +12,8 @@ VCR.configure do |c|
     %w[vk password],
     %w[discogs api_key],
     %w[discogs api_secret],
-    %w[spotify api_key]
+    %w[spotify api_key],
+    %w[soundcloud api_key]
   ]
 
   keys.each do |a|

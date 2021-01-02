@@ -35,7 +35,7 @@ module Bandcamp
           artist: artist_name,
           images: images,
           released: time_formatted(base_data['datePublished']),
-          bandcamp_link: base_data['@id'],
+          link: base_data['@id'],
           description: base_data['description'].to_s,
           tags: base_data['keywords'].split(', ').first(5),
           tracks: tracks
@@ -52,8 +52,8 @@ module Bandcamp
             id: track_id(artist_name, title(t)),
             title: title(t),
             length: t['duration'].floor,
-            has_audio: t['file'].present?,
-            bandcamp_link: track_link(t)
+            link: track_link(t),
+            audio: audio_data(t)
           }
         end
       end
@@ -64,6 +64,13 @@ module Bandcamp
 
       def track_link(track)
         base_data.dig('byArtist', '@id') + track['title_link']
+      end
+
+      def audio_data(track)
+        {
+          present: track['file'].present?,
+          source: 'bandcamp'
+        }
       end
     end
   end

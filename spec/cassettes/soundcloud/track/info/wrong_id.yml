@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/tracks/wejlhg239gh23?client_id=<SOUNDCLOUD_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.soundcloud.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '59'
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 02 Jan 2021 13:50:38 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 4ce5e5162c2d4fc9022ceb290f794ffe.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - AMS1-C1
+      X-Amz-Cf-Id:
+      - dzceIVkCucf5i4X_fuNQPkDA27bBVQRSYb0l9vjrRgr4ycv-l-IdVw==
+    body:
+      encoding: ASCII-8BIT
+      string: 'Invalid track id: ''wejlhg239gh23'''
+  recorded_at: Sat, 02 Jan 2021 13:50:38 GMT
+recorded_with: VCR 6.0.0
