@@ -59,7 +59,9 @@ module VK
 
     def album_artist_name(album)
       CGI.unescapeHTML(
-        album['authorName'].match(%r{<a.+>(.+)</a>})[1]
+        album['authorName'].match(
+          %r{<a.+>(.+)</a>}
+        ).to_a[1] || 'Various Artists'
       )
     end
 
