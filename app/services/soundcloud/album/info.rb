@@ -36,11 +36,11 @@ module SoundCloud
       end
 
       def tags
-        [response_data['genre'], tags_list].flatten
+        [response_data['genre'], tags_list].flatten.reject(&:blank?)
       end
 
       def tags_list
-        response_data['tags'].split(/\s?"\s?/).reject(&:blank?)
+        response_data['tags'].split(/\s?"\s?/)
       end
 
       def tracks
