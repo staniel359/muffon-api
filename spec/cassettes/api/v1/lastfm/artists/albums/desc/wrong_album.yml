@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&artist=Wild%20Nothing&autocorrect=1&format=json&limit=50&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Sat, 09 Jan 2021 10:45:32 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '50'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Via:
+      - 1.1 google
+    body:
+      encoding: UTF-8
+      string: '{"error":6,"message":"Album not found","links":[]}'
+  recorded_at: Sat, 09 Jan 2021 10:45:32 GMT
+recorded_with: VCR 6.0.0

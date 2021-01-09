@@ -5,6 +5,8 @@ module API
         class TracksController < ArtistsController
           def info; end
 
+          def description; end
+
           def tags; end
 
           def similar; end

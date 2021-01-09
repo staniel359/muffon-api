@@ -61,5 +61,20 @@ module LastFM
     def data_node
       service_info[:response_data_node]
     end
+
+    def description
+      return '' if description_data.blank?
+
+      description_data.match(description_regexp)[1].strip
+    end
+
+    def description_data
+      response_data.dig('bio', 'content') ||
+        response_data.dig('wiki', 'content')
+    end
+
+    def description_regexp
+      %r{(.+)<a href="http(s?)://www.last.fm}m
+    end
   end
 end

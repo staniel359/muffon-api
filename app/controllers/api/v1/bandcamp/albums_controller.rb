@@ -4,6 +4,8 @@ module API
       class AlbumsController < API::V1::BaseController
         def info; end
 
+        def description; end
+
         def tags; end
       end
     end

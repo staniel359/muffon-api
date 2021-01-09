@@ -39,7 +39,7 @@ module LastFM
           images: images,
           listeners_count: response_data['listeners'].to_i,
           plays_count: response_data['playcount'].to_i,
-          description: description,
+          description: description_truncated,
           tags: tags,
           tracks: tracks
         }
@@ -49,14 +49,6 @@ module LastFM
         LastFM::Utils::ImagesData.call(
           data: response_data, model: 'album'
         )
-      end
-
-      def description
-        return '' if response_data['wiki'].blank?
-
-        response_data.dig('wiki', 'content').match(
-          %r{(.+)<a href="http(s?)://www.last.fm}m
-        )[1].strip
       end
 
       def tags

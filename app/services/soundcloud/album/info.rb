@@ -1,19 +1,7 @@
 module SoundCloud
   module Album
-    class Info < SoundCloud::Base
+    class Info < SoundCloud::Album::Base
       private
-
-      def primary_args
-        [@args.album_id]
-      end
-
-      def link
-        "#{base_link}/playlists/#{@args.album_id}"
-      end
-
-      def data
-        { album: album_data }
-      end
 
       def album_data
         {
@@ -21,8 +9,8 @@ module SoundCloud
           artist: response_data.dig('user', 'username'),
           images: images(response_data),
           released: released,
-          description: response_data['description'].to_s,
-          tags: tags,
+          description: description_truncated,
+          tags: tags.first(5),
           tracks: tracks
         }
       end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         namespace :artists, as: :artist, constraints: { artist: /[^\/]+/ } do
           scope ':artist' do
             get '', action: :info
+            get 'description'
             get 'tags'
             get 'images'
             get 'similar'
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
             namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
               scope ':album' do
                 get '', action: :info
+                get 'description'
                 get 'tags'
                 get 'listeners_count'
               end
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
             namespace :tracks, as: :track, constraints: { track: /[^\/]+/ } do
               scope ':track' do
                 get '', action: :info
+                get 'description'
                 get 'tags'
                 get 'similar'
               end
@@ -81,6 +84,7 @@ Rails.application.routes.draw do
 
         namespace :albums, as: :album, constraints: { link: /.+/ } do
           scope ':link' do
+            get 'description'
             get 'tags'
             get '', action: :info
           end
@@ -173,6 +177,8 @@ Rails.application.routes.draw do
         namespace :albums, as: :album do
           scope ':album_id' do
             get '', action: :info
+            get 'description'
+            get 'tags'
           end
         end
 

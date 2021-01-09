@@ -4,6 +4,8 @@ module API
       class ArtistsController < API::V1::BaseController
         def info; end
 
+        def description; end
+
         def tags; end
 
         def images; end

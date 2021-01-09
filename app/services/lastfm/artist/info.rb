@@ -24,18 +24,10 @@ module LastFM
           mbid: response_data['mbid'].to_s,
           listeners_count: response_data.dig('stats', 'listeners').to_i,
           plays_count: response_data.dig('stats', 'playcount').to_i,
-          description: description,
+          description: description_truncated,
           tags: tags,
           similar: similar
         }
-      end
-
-      def description
-        return '' if response_data.dig('bio', 'content').blank?
-
-        response_data.dig('bio', 'content').match(
-          %r{(.+)<a href="http(s?)://www.last.fm}m
-        )[1].strip
       end
 
       def tags

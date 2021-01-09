@@ -43,5 +43,9 @@ module Muffon
     rescue ArgumentError
       time
     end
+
+    def description_truncated
+      description.truncate_words(75)
+    end
   end
 end

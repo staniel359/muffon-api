@@ -5,6 +5,8 @@ module API
         class AlbumsController < ArtistsController
           def info; end
 
+          def description; end
+
           def tags; end
 
           def listeners_count; end

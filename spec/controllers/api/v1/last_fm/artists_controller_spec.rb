@@ -68,6 +68,27 @@ RSpec.describe API::V1::LastFM::ArtistsController, type: :controller do
     end
   end
 
+  describe 'GET :description' do
+    it 'returns 200 if artist exists' do
+      VCR.use_cassette 'api/v1/lastfm/artists/description/success' do
+        get :description, params: success
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no artist name' do
+      get :description, params: no_name
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'api/v1/lastfm/artists/description/wrong_name' do
+        get :description, params: wrong_name
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
+
   describe 'GET :tags' do
     it 'returns 200 if artist exists' do
       VCR.use_cassette 'api/v1/lastfm/artists/tags/success' do

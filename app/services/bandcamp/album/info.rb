@@ -1,6 +1,6 @@
 module Bandcamp
   module Album
-    class Info < Bandcamp::Base
+    class Info < Bandcamp::Album::Base
       def call
         super { return handle_no_tracks if no_tracks? }
       end
@@ -18,7 +18,7 @@ module Bandcamp
       end
 
       def redirect_link
-        base_data['description'].to_s[bandcamp_link_regexp]
+        description[bandcamp_link_regexp]
       end
 
       def redirect
@@ -36,8 +36,8 @@ module Bandcamp
           images: images,
           released: time_formatted(base_data['datePublished']),
           link: base_data['@id'],
-          description: base_data['description'].to_s,
-          tags: base_data['keywords'].split(', ').first(5),
+          description: description_truncated,
+          tags: tags.first(5),
           tracks: tracks
         }
       end
