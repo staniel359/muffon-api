@@ -67,5 +67,13 @@ module Bandcamp
     def image
       "https://f4.bcbits.com/img/a#{extra_data['art_id']}_10.jpg"
     end
+
+    def artist_name
+      base_data.dig('byArtist', 'name')
+    end
+
+    def track_title
+      base_data['name']
+    end
   end
 end

@@ -32,9 +32,19 @@ module VK
       end
 
       def album_data
+        album_base_data.merge(album_extra_data)
+      end
+
+      def album_base_data
         {
           title: album_title(album),
           artist: album_artist_name(album),
+          source: 'vk'
+        }
+      end
+
+      def album_extra_data
+        {
           images: images,
           released: released,
           plays_count: album['listens'].to_i,

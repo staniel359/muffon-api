@@ -5,8 +5,8 @@ module Bandcamp
 
       def album_data
         {
-          title: base_data['name'],
-          artist: base_data.dig('byArtist', 'name'),
+          title: track_title,
+          artist: artist_name,
           description: description
         }
       end

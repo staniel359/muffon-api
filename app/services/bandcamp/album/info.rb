@@ -30,11 +30,21 @@ module Bandcamp
       end
 
       def album_data
+        album_base_data.merge(album_extra_data)
+      end
+
+      def album_base_data
         {
-          title: base_data['name'],
+          title: track_title,
           artist: artist_name,
+          source: 'bandcamp'
+        }
+      end
+
+      def album_extra_data
+        {
           images: images,
-          released: time_formatted(base_data['datePublished']),
+          released: released,
           link: base_data['@id'],
           description: description_truncated,
           tags: tags.first(5),
@@ -42,24 +52,20 @@ module Bandcamp
         }
       end
 
-      def artist_name
-        base_data.dig('byArtist', 'name')
+      def released
+        time_formatted(base_data['datePublished'])
       end
 
       def tracks
         tracks_data.map do |t|
           {
-            id: track_id(artist_name, title(t)),
-            title: title(t),
+            id: track_id(artist_name, t['title']),
+            title: t['title'],
             length: t['duration'].floor,
             link: track_link(t),
             audio: audio_data(t)
           }
         end
-      end
-
-      def title(track)
-        track['title']
       end
 
       def track_link(track)

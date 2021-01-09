@@ -42,15 +42,11 @@ module LastFM
       def tracks
         response_data['track'].last(limit).map do |t|
           {
-            id: track_id(artist_name, title(t)),
-            title: title(t),
+            id: track_id(artist_name, t['name']),
+            title: t['name'],
             listeners_count: t['listeners'].to_i
           }
         end
-      end
-
-      def title(track)
-        track['name']
       end
     end
   end

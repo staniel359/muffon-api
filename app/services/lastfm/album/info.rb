@@ -26,7 +26,7 @@ module LastFM
         {
           title: response_data['name'],
           artist: artist_name,
-          mbid: response_data['mbid'].to_s
+          source: 'lastfm'
         }
       end
 
@@ -58,15 +58,11 @@ module LastFM
       def tracks
         response_data.dig('tracks', 'track').map do |t|
           {
-            id: track_id(artist_name, track_title(t)),
-            title: track_title(t),
+            id: track_id(artist_name, t['name']),
+            title: t['name'],
             length: t['duration'].to_i
           }
         end
-      end
-
-      def track_title(track)
-        track['name']
       end
     end
   end

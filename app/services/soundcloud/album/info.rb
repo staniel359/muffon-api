@@ -4,9 +4,23 @@ module SoundCloud
       private
 
       def album_data
+        album_base_data.merge(album_extra_data)
+      end
+
+      def album_base_data
         {
           title: response_data['title'],
-          artist: response_data.dig('user', 'username'),
+          artist: artist_name(response_data),
+          source: 'soundcloud'
+        }
+      end
+
+      def artist_name(track)
+        track.dig('user', 'username')
+      end
+
+      def album_extra_data
+        {
           images: images(response_data),
           released: released,
           description: description_truncated,
@@ -23,32 +37,16 @@ module SoundCloud
         )
       end
 
-      def tags
-        [response_data['genre'], tags_list].flatten.reject(&:blank?)
-      end
-
-      def tags_list
-        response_data['tags'].split(/\s?"\s?/)
-      end
-
       def tracks
         response_data['tracks'].map do |t|
           {
-            id: track_id(artist_name(t), track_title(t)),
-            title: track_title(t),
+            id: track_id(artist_name(t), t['title']),
+            title: t['title'],
             artist: artist_name(t),
             length: t['duration'] / 1_000,
             audio: audio_data(t)
           }
         end
-      end
-
-      def artist_name(track)
-        track.dig('user', 'username')
-      end
-
-      def track_title(track)
-        track['title']
       end
 
       def audio_data(track)
