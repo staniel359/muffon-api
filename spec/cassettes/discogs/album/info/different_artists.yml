@@ -1,0 +1,223 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/releases/546618?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 Jan 2021 11:21:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '59'
+      X-Discogs-Ratelimit-Used:
+      - '1'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Content-Language:
+      - en
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 546618, "status": "Accepted", "year": 2001, "resource_url":
+        "https://api.discogs.com/releases/546618", "uri": "https://www.discogs.com/Various-I-Love-Disco-Diamonds-Collection-Vol-5/release/546618",
+        "artists": [{"name": "Various", "anv": "", "join": "", "role": "", "tracks":
+        "", "id": 194, "resource_url": ""}], "artists_sort": "Various", "labels":
+        [{"name": "Blanco Y Negro (2)", "catno": "MXCD 1155 (c)", "entity_type": "1",
+        "entity_type_name": "Label", "id": 1967, "resource_url": "https://api.discogs.com/labels/1967"}],
+        "series": [{"name": "I Love Disco Diamonds", "catno": "5", "entity_type":
+        "2", "entity_type_name": "Series", "id": 271628, "resource_url": "https://api.discogs.com/labels/271628"}],
+        "companies": [{"name": "Blanco Y Negro Music Studios", "catno": "", "entity_type":
+        "29", "entity_type_name": "Mastered At", "id": 271932, "resource_url": "https://api.discogs.com/labels/271932"},
+        {"name": "GEMA O.D.", "catno": "", "entity_type": "16", "entity_type_name":
+        "Made By", "id": 286537, "resource_url": "https://api.discogs.com/labels/286537"}],
+        "formats": [{"name": "CD", "qty": "1", "descriptions": ["Compilation", "Limited
+        Edition"]}], "data_quality": "Needs Vote", "community": {"have": 224, "want":
+        49, "rating": {"count": 48, "average": 4.71}, "submitter": {"username": "DiscoMagic",
+        "resource_url": "https://api.discogs.com/users/DiscoMagic"}, "contributors":
+        [{"username": "DiscoMagic", "resource_url": "https://api.discogs.com/users/DiscoMagic"},
+        {"username": "memory", "resource_url": "https://api.discogs.com/users/memory"},
+        {"username": "moseslawson", "resource_url": "https://api.discogs.com/users/moseslawson"},
+        {"username": "djmark", "resource_url": "https://api.discogs.com/users/djmark"},
+        {"username": "bausl", "resource_url": "https://api.discogs.com/users/bausl"},
+        {"username": "m-basic", "resource_url": "https://api.discogs.com/users/m-basic"},
+        {"username": "ThomDLorean", "resource_url": "https://api.discogs.com/users/ThomDLorean"},
+        {"username": "zipjezopje", "resource_url": "https://api.discogs.com/users/zipjezopje"},
+        {"username": "frank42", "resource_url": "https://api.discogs.com/users/frank42"}],
+        "data_quality": "Needs Vote", "status": "Accepted"}, "format_quantity": 1,
+        "date_added": "2005-10-24T08:15:19-07:00", "date_changed": "2020-03-29T06:34:46-07:00",
+        "num_for_sale": 12, "lowest_price": 9.76, "title": "I Love Disco Diamonds
+        Collection Vol.  5", "country": "Spain", "released": "2001", "notes": "Special
+        Edition.\nOriginal Extended Versions\nTrack 13 is a Hidden Track With the
+        \"I Love Disco Diamonds\" radio wedge (title take from cdtext)\n", "released_formatted":
+        "2001", "identifiers": [{"type": "Barcode", "value": "8421597030294", "description":
+        "Scanned"}, {"type": "Barcode", "value": "8 421597 030294", "description":
+        "Text"}, {"type": "Rights Society", "value": "SGAE"}, {"type": "Dep\u00f3sito
+        Legal", "value": "B-26539/01"}, {"type": "Matrix / Runout", "value": "GEMA
+        O.D. MXCD1155 #1$"}, {"type": "Mastering SID Code", "value": "IFPI L192"},
+        {"type": "Mould SID Code", "value": "IFPI 3290"}], "genres": ["Electronic"],
+        "styles": ["Italo-Disco"], "tracklist": [{"position": "1", "type_": "track",
+        "artists": [{"name": "Michael Fortunati", "anv": "", "join": "", "role": "",
+        "tracks": "", "id": 106993, "resource_url": "https://api.discogs.com/artists/106993"}],
+        "title": "Into The Night (Slip And Slide)", "extraartists": [{"name": "M.
+        De San Antonio", "anv": "", "join": "", "role": "Written-By", "tracks": "",
+        "id": 113562, "resource_url": "https://api.discogs.com/artists/113562"}, {"name":
+        "Mario Nigro", "anv": "M. Nigro", "join": "", "role": "Written-By", "tracks":
+        "", "id": 738036, "resource_url": "https://api.discogs.com/artists/738036"},
+        {"name": "Pierre Nigro", "anv": "P. Nigro", "join": "", "role": "Written-By",
+        "tracks": "", "id": 738037, "resource_url": "https://api.discogs.com/artists/738037"}],
+        "duration": "5:15"}, {"position": "2", "type_": "track", "artists": [{"name":
+        "Silvio Pozzoli", "anv": "Silver Pozzoli", "join": "", "role": "", "tracks":
+        "", "id": 253528, "resource_url": "https://api.discogs.com/artists/253528"}],
+        "title": "Step By Step", "extraartists": [{"name": "Graziano Pegoraro", "anv":
+        "Pegoraro", "join": "", "role": "Written-By", "tracks": "", "id": 149987,
+        "resource_url": "https://api.discogs.com/artists/149987"}, {"name": "Naimy
+        Hackett", "anv": "Hackett", "join": "", "role": "Written-By", "tracks": "",
+        "id": 274648, "resource_url": "https://api.discogs.com/artists/274648"}, {"name":
+        "Romano Bais", "anv": "Bais", "join": "", "role": "Written-By", "tracks":
+        "", "id": 529854, "resource_url": "https://api.discogs.com/artists/529854"}],
+        "duration": "5:30"}, {"position": "3", "type_": "track", "artists": [{"name":
+        "Cliff Turner", "anv": "", "join": "", "role": "", "tracks": "", "id": 19779,
+        "resource_url": "https://api.discogs.com/artists/19779"}], "title": "Moonlight
+        Affair", "extraartists": [{"name": "Axel Breitung", "anv": "A. Breitung",
+        "join": "", "role": "Written-By", "tracks": "", "id": 67980, "resource_url":
+        "https://api.discogs.com/artists/67980"}, {"name": "Bernd Dietrich", "anv":
+        "B. Dietrich", "join": "", "role": "Written-By", "tracks": "", "id": 322592,
+        "resource_url": "https://api.discogs.com/artists/322592"}, {"name": "Engelbert
+        Simons", "anv": "E. Simons", "join": "", "role": "Written-By", "tracks": "",
+        "id": 429721, "resource_url": "https://api.discogs.com/artists/429721"}],
+        "duration": "6:12"}, {"position": "4", "type_": "track", "artists": [{"name":
+        "L''Affair", "anv": "", "join": "", "role": "", "tracks": "", "id": 86858,
+        "resource_url": "https://api.discogs.com/artists/86858"}], "title": "Secret
+        Eyes", "extraartists": [{"name": "Bernd Menssen", "anv": "Bernd Mensen", "join":
+        "", "role": "Written-By", "tracks": "", "id": 1300566, "resource_url": "https://api.discogs.com/artists/1300566"},
+        {"name": "Ralf Ren\u00e9 Mau\u00e9", "anv": "Ralf Ren\u00e9 Maue", "join":
+        "", "role": "Written-By", "tracks": "", "id": 133697, "resource_url": "https://api.discogs.com/artists/133697"}],
+        "duration": "5:48"}, {"position": "5", "type_": "track", "artists": [{"name":
+        "Ray (2)", "anv": "", "join": "", "role": "", "tracks": "", "id": 155849,
+        "resource_url": "https://api.discogs.com/artists/155849"}], "title": "I''m
+        Not A Dreamer", "extraartists": [{"name": "Floriano Mengucci", "anv": "F.
+        Mengucci", "join": "", "role": "Written-By", "tracks": "", "id": 268129, "resource_url":
+        "https://api.discogs.com/artists/268129"}, {"name": "Gennaro Mambelli", "anv":
+        "G. Mambelli", "join": "", "role": "Written-By", "tracks": "", "id": 268128,
+        "resource_url": "https://api.discogs.com/artists/268128"}, {"name": "Giancarlo
+        Cristofaroni", "anv": "G. Cristofaroni", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2761896, "resource_url": "https://api.discogs.com/artists/2761896"}],
+        "duration": "5:15"}, {"position": "6", "type_": "track", "artists": [{"name":
+        "Fred Ventura", "anv": "", "join": "", "role": "", "tracks": "", "id": 19799,
+        "resource_url": "https://api.discogs.com/artists/19799"}], "title": "Leave
+        Me Alone", "extraartists": [{"name": "Federico Di Bonaventura", "anv": "",
+        "join": "", "role": "Written-By", "tracks": "", "id": 618418, "resource_url":
+        "https://api.discogs.com/artists/618418"}], "duration": "5:35"}, {"position":
+        "7", "type_": "track", "artists": [{"name": "Closed", "anv": "", "join": "",
+        "role": "", "tracks": "", "id": 187090, "resource_url": "https://api.discogs.com/artists/187090"}],
+        "title": "Living In Your Eyes", "extraartists": [{"name": "Gino", "anv": "",
+        "join": "", "role": "Written-By", "tracks": "", "id": 143024, "resource_url":
+        "https://api.discogs.com/artists/143024"}, {"name": "J. Stefanelli", "anv":
+        "Stephanelli", "join": "", "role": "Written-By", "tracks": "", "id": 417603,
+        "resource_url": "https://api.discogs.com/artists/417603"}], "duration": "6:40"},
+        {"position": "8", "type_": "track", "artists": [{"name": "Brian And The Eden",
+        "anv": "", "join": "", "role": "", "tracks": "", "id": 31758, "resource_url":
+        "https://api.discogs.com/artists/31758"}], "title": "Celebration Tonight",
+        "extraartists": [{"name": "Abraham Conteh Koroma", "anv": "Abraham C. Koroma",
+        "join": "", "role": "Written-By", "tracks": "", "id": 385085, "resource_url":
+        "https://api.discogs.com/artists/385085"}], "duration": "6:09"}, {"position":
+        "9", "type_": "track", "artists": [{"name": "B.B. & Band", "anv": "", "join":
+        "", "role": "", "tracks": "", "id": 106371, "resource_url": "https://api.discogs.com/artists/106371"}],
+        "title": "Hold Me Tight", "extraartists": [{"name": "Mario Boncaldo", "anv":
+        "M. Boncaldo", "join": "", "role": "Written-By", "tracks": "", "id": 167028,
+        "resource_url": "https://api.discogs.com/artists/167028"}, {"name": "Tony
+        Carrasco", "anv": "T. Carrasco", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44640, "resource_url": "https://api.discogs.com/artists/44640"}],
+        "duration": "6:00"}, {"position": "10", "type_": "track", "artists": [{"name":
+        "Digital Emotion", "anv": "", "join": "", "role": "", "tracks": "", "id":
+        26571, "resource_url": "https://api.discogs.com/artists/26571"}], "title":
+        "Go Go Yellow Screen", "extraartists": [{"name": "Adams & Fleisner", "anv":
+        "A. Adams - Fleisner", "join": "", "role": "Written-By", "tracks": "", "id":
+        101610, "resource_url": "https://api.discogs.com/artists/101610"}], "duration":
+        "8:33"}, {"position": "11", "type_": "track", "artists": [{"name": "Texas
+        Johnny", "anv": "", "join": "", "role": "", "tracks": "", "id": 187092, "resource_url":
+        "https://api.discogs.com/artists/187092"}], "title": "Superman", "extraartists":
+        [{"name": "Giovanni Rondelli", "anv": "Rondelli", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1488847, "resource_url": "https://api.discogs.com/artists/1488847"}],
+        "duration": "6:54"}, {"position": "12", "type_": "track", "artists": [{"name":
+        "Sphinx (2)", "anv": "", "join": "", "role": "", "tracks": "", "id": 186972,
+        "resource_url": "https://api.discogs.com/artists/186972"}], "title": "Bad
+        Girl", "extraartists": [{"name": "Glen White", "anv": "G. White", "join":
+        "", "role": "Written-By", "tracks": "", "id": 307882, "resource_url": "https://api.discogs.com/artists/307882"},
+        {"name": "Luciano Ninzatti", "anv": "L. Ninzatti", "join": "", "role": "Written-By",
+        "tracks": "", "id": 234334, "resource_url": "https://api.discogs.com/artists/234334"},
+        {"name": "Mamared", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 657683, "resource_url": "https://api.discogs.com/artists/657683"},
+        {"name": "Stefano Pulga", "anv": "S. Pulga", "join": "", "role": "Written-By",
+        "tracks": "", "id": 187085, "resource_url": "https://api.discogs.com/artists/187085"}],
+        "duration": "5:14"}, {"position": "13", "type_": "track", "artists": [{"name":
+        "No Artist", "anv": "", "join": "", "role": "", "tracks": "", "id": 118760,
+        "resource_url": ""}], "title": "I Love Disco Diamonds", "duration": "0:06"}],
+        "extraartists": [{"name": "Rafael Carmona P\u00e9rez", "anv": "", "join":
+        "", "role": "Created By, Compiled By", "tracks": "", "id": 535130, "resource_url":
+        "https://api.discogs.com/artists/535130"}, {"name": "Jordi Maga\u00f1a", "anv":
+        "Jordi Maga\u00f1a.01", "join": "", "role": "Design [E+D]", "tracks": "",
+        "id": 481919, "resource_url": "https://api.discogs.com/artists/481919"}, {"name":
+        "Quim Quer", "anv": "", "join": "", "role": "Mastered By [Compilation]", "tracks":
+        "", "id": 57564, "resource_url": "https://api.discogs.com/artists/57564"}],
+        "images": [{"type": "secondary", "uri": "https://img.discogs.com/4OfuamS4jsj1NPVedmKuum5q5kk=/fit-in/600x615/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657019.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/4OfuamS4jsj1NPVedmKuum5q5kk=/fit-in/600x615/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657019.jpeg.jpg",
+        "uri150": "https://img.discogs.com/qCPjElOXCz4Gl9MCSo4k9YnauEE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-546618-1150657019.jpeg.jpg",
+        "width": 600, "height": 615}, {"type": "secondary", "uri": "https://img.discogs.com/J-1hlMlkzTstk5zKAjufeHYzSD8=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657032.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/J-1hlMlkzTstk5zKAjufeHYzSD8=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657032.jpeg.jpg",
+        "uri150": "https://img.discogs.com/4Vf0nn3icAn9kUt_nEfsTFoq4R0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-546618-1150657032.jpeg.jpg",
+        "width": 600, "height": 606}, {"type": "secondary", "uri": "https://img.discogs.com/vFf46EbhJiUJGFjotGCd2ss7rwQ=/fit-in/600x612/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657059.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/vFf46EbhJiUJGFjotGCd2ss7rwQ=/fit-in/600x612/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657059.jpeg.jpg",
+        "uri150": "https://img.discogs.com/J79lPjillE-eITKpDoTXHk9U4oc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-546618-1150657059.jpeg.jpg",
+        "width": 600, "height": 612}, {"type": "secondary", "uri": "https://img.discogs.com/Aqyu6hTJQGLk0gkn5lDgIsMTYBc=/fit-in/600x462/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657070.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Aqyu6hTJQGLk0gkn5lDgIsMTYBc=/fit-in/600x462/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657070.jpeg.jpg",
+        "uri150": "https://img.discogs.com/gjDat7alT5FHnFsqLRnken4o_DY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-546618-1150657070.jpeg.jpg",
+        "width": 600, "height": 462}, {"type": "secondary", "uri": "https://img.discogs.com/EHHJ62lOYb2HR3BqKsKkU2kir7g=/fit-in/500x507/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657079.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/EHHJ62lOYb2HR3BqKsKkU2kir7g=/fit-in/500x507/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-546618-1150657079.jpeg.jpg",
+        "uri150": "https://img.discogs.com/AskEZgkDUV397splwAUQNqSkkVo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-546618-1150657079.jpeg.jpg",
+        "width": 500, "height": 507}], "thumb": "https://img.discogs.com/qCPjElOXCz4Gl9MCSo4k9YnauEE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-546618-1150657019.jpeg.jpg",
+        "estimated_weight": 85}'
+  recorded_at: Sun, 10 Jan 2021 11:21:55 GMT
+recorded_with: VCR 6.0.0

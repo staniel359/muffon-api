@@ -12,32 +12,41 @@ module Discogs
       end
 
       def group_data
+        group_base_data.merge(group_extra_data)
+      end
+
+      def group_base_data
         {
           title: response_data['title'],
-          artists: artists,
-          image: image,
+          artist: artist_name(response_data['artists']),
+          source: 'discogs'
+        }
+      end
+
+      def group_extra_data
+        {
+          images: images,
           released: response_data['year'].to_s,
-          description: response_data['notes'].to_s,
-          discogs_main_album_id: response_data['main_release'],
+          description: description,
           tracks: tracks
         }
       end
 
-      def api_link
-        "https://api.discogs.com/masters/#{@args.group_id}"
-      end
-
-      def artists
-        response_data['artists'].map do |a|
-          {
-            name: a['name'],
-            discogs_id: a['id']
-          }
-        end
+      def link
+        "#{base_link}/masters/#{@args.group_id}"
       end
 
       def tracks
-        Discogs::Tracks.call(tracks: response_data['tracklist'])
+        tracks_filtered.map { |t| track_data(t) }
+      end
+
+      def track_data(track)
+        {
+          id: track_id(track),
+          title: track['title'],
+          artist: (track_artist_name(track) if track['artists']),
+          length: length_formatted(track['duration'])
+        }.compact
       end
     end
   end

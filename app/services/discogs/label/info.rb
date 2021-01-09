@@ -19,8 +19,8 @@ module Discogs
         }
       end
 
-      def api_link
-        "https://api.discogs.com/labels/#{@args.label_id}"
+      def link
+        "#{base_link}/labels/#{@args.label_id}"
       end
     end
   end

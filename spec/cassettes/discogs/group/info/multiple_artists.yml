@@ -1,0 +1,472 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/masters/1531968?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 Jan 2021 11:07:08 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '60'
+      X-Discogs-Ratelimit-Used:
+      - '0'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Content-Language:
+      - en
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 1531968, "main_release": 13482030, "most_recent_release": 13482030,
+        "resource_url": "https://api.discogs.com/masters/1531968", "uri": "https://www.discogs.com/Labrinth-Sia-Diplo-Present-LSD-LSD/master/1531968",
+        "versions_url": "https://api.discogs.com/masters/1531968/versions", "main_release_url":
+        "https://api.discogs.com/releases/13482030", "most_recent_release_url": "https://api.discogs.com/releases/13482030",
+        "num_for_sale": 43, "lowest_price": 9.76, "images": [{"type": "primary", "uri":
+        "https://img.discogs.com/ZlrzE8x12BvQvYyqYct1PnbLYMI=/fit-in/600x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1575718866-1396.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/ZlrzE8x12BvQvYyqYct1PnbLYMI=/fit-in/600x590/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1575718866-1396.jpeg.jpg",
+        "uri150": "https://img.discogs.com/YwtVd21HmsDndiGlAH798GT4WgY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13482030-1575718866-1396.jpeg.jpg",
+        "width": 600, "height": 590}, {"type": "secondary", "uri": "https://img.discogs.com/jUuBn2ks5S_rmuJz0lcgTNMLcH0=/fit-in/600x508/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1555042687-4563.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/jUuBn2ks5S_rmuJz0lcgTNMLcH0=/fit-in/600x508/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1555042687-4563.jpeg.jpg",
+        "uri150": "https://img.discogs.com/WNsPg4txi9iP8NA6BrW_O7ExS1w=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13482030-1555042687-4563.jpeg.jpg",
+        "width": 600, "height": 508}, {"type": "secondary", "uri": "https://img.discogs.com/dkS3bHTC0Gaz-YeG6gAibZxZpR8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1575718914-4273.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/dkS3bHTC0Gaz-YeG6gAibZxZpR8=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1575718914-4273.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Di4R_80TOqBRLxHfAPKqL30tOas=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13482030-1575718914-4273.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/kBf-aHt5r2WwobCp3FQzQ0oiVd0=/fit-in/500x441/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1555042686-1040.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/kBf-aHt5r2WwobCp3FQzQ0oiVd0=/fit-in/500x441/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13482030-1555042686-1040.jpeg.jpg",
+        "uri150": "https://img.discogs.com/kyVa0DHJHArNuplLEZXyNEDwlM8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13482030-1555042686-1040.jpeg.jpg",
+        "width": 500, "height": 441}], "genres": ["Electronic", "Pop"], "styles":
+        ["Synth-pop", "Dance-pop"], "year": 2019, "tracklist": [{"position": "1",
+        "type_": "track", "title": "Welcome To The Wonderful World Of", "extraartists":
+        [{"name": "Labrinth", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Jacob Richards (2)", "anv": "", "join": "", "role": "Engineer [Assistant
+        Mix]", "tracks": "", "id": 6551382, "resource_url": "https://api.discogs.com/artists/6551382"},
+        {"name": "Mike Seaberg", "anv": "", "join": "", "role": "Engineer [Assistant
+        Mix]", "tracks": "", "id": 6592157, "resource_url": "https://api.discogs.com/artists/6592157"},
+        {"name": "Rashawn McLean", "anv": "", "join": "", "role": "Engineer [Assistant
+        Mix]", "tracks": "", "id": 6551384, "resource_url": "https://api.discogs.com/artists/6551384"},
+        {"name": "Jaycen Joshua", "anv": "Jaycen Joshua for The Penua Project", "join":
+        "", "role": "Mixed By", "tracks": "", "id": 285031, "resource_url": "https://api.discogs.com/artists/285031"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "1:56"}, {"position": "2", "type_": "track", "title": "Angel In
+        Your Eyes", "extraartists": [{"name": "Labrinth", "anv": "", "join": "", "role":
+        "Engineer", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Robin Florent", "anv": "", "join": "", "role": "Engineer [Mix Assistant]",
+        "tracks": "", "id": 4864753, "resource_url": "https://api.discogs.com/artists/4864753"},
+        {"name": "Scott Desmarais", "anv": "", "join": "", "role": "Engineer [Mix
+        Assistant]", "tracks": "", "id": 5721781, "resource_url": "https://api.discogs.com/artists/5721781"},
+        {"name": "Chris Galland", "anv": "", "join": "", "role": "Engineer [Mix]",
+        "tracks": "", "id": 1608079, "resource_url": "https://api.discogs.com/artists/1608079"},
+        {"name": "Manny Marroquin", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 67636, "resource_url": "https://api.discogs.com/artists/67636"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Nathaniel Ledwidge", "anv": "Nathaniel \"Detonate\" Ledwidge", "join":
+        "", "role": "Producer, Instrumentation By, Programmed By", "tracks": "", "id":
+        2945072, "resource_url": "https://api.discogs.com/artists/2945072"}, {"name":
+        "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks": "", "id":
+        44758, "resource_url": "https://api.discogs.com/artists/44758"}, {"name":
+        "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:06"}, {"position": "3", "type_": "track", "title": "Genius",
+        "extraartists": [{"name": "Bart Schoudel", "anv": "", "join": "", "role":
+        "Engineer", "tracks": "", "id": 2096235, "resource_url": "https://api.discogs.com/artists/2096235"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Luke Dimond", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 5916437, "resource_url": "https://api.discogs.com/artists/5916437"},
+        {"name": "Robin Florent", "anv": "", "join": "", "role": "Engineer [Mix Assistant]",
+        "tracks": "", "id": 4864753, "resource_url": "https://api.discogs.com/artists/4864753"},
+        {"name": "Scott Desmarais", "anv": "", "join": "", "role": "Engineer [Mix
+        Assistant]", "tracks": "", "id": 5721781, "resource_url": "https://api.discogs.com/artists/5721781"},
+        {"name": "Chris Galland", "anv": "", "join": "", "role": "Engineer [Mix]",
+        "tracks": "", "id": 1608079, "resource_url": "https://api.discogs.com/artists/1608079"},
+        {"name": "Manny Marroquin", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 67636, "resource_url": "https://api.discogs.com/artists/67636"},
+        {"name": "Gustave Rudman", "anv": "", "join": "", "role": "Producer [Additional
+        Vocal Production], Orchestrated By, Arranged By [Additional Arrangement]",
+        "tracks": "", "id": 742541, "resource_url": "https://api.discogs.com/artists/742541"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Producer,
+        Instrumentation By, Programmed By", "tracks": "", "id": 348921, "resource_url":
+        "https://api.discogs.com/artists/348921"}, {"name": "Labrinth", "anv": "",
+        "join": "", "role": "Producer, Instrumentation By, Programmed By", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:33"}, {"position": "4", "type_": "track", "title": "Audio",
+        "extraartists": [{"name": "Junior Blender", "anv": "Jr Blender", "join": "",
+        "role": "Co-producer", "tracks": "", "id": 348921, "resource_url": "https://api.discogs.com/artists/348921"},
+        {"name": "Bart Schoudel", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 2096235, "resource_url": "https://api.discogs.com/artists/2096235"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Robin Florent", "anv": "", "join": "", "role": "Engineer [Mix Assistant]",
+        "tracks": "", "id": 4864753, "resource_url": "https://api.discogs.com/artists/4864753"},
+        {"name": "Scott Desmarais", "anv": "", "join": "", "role": "Engineer [Mix
+        Assistant]", "tracks": "", "id": 5721781, "resource_url": "https://api.discogs.com/artists/5721781"},
+        {"name": "Chris Galland", "anv": "", "join": "", "role": "Engineer [Mix]",
+        "tracks": "", "id": 1608079, "resource_url": "https://api.discogs.com/artists/1608079"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Instrumentation By, Programmed
+        By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Instrumentation
+        By, Programmed By", "tracks": "", "id": 348921, "resource_url": "https://api.discogs.com/artists/348921"},
+        {"name": "King Henry (2)", "anv": "", "join": "", "role": "Instrumentation
+        By, Programmed By", "tracks": "", "id": 3301976, "resource_url": "https://api.discogs.com/artists/3301976"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Instrumentation By, Programmed
+        By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Manny Marroquin", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 67636, "resource_url": "https://api.discogs.com/artists/67636"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer", "tracks": "",
+        "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"}, {"name":
+        "King Henry (2)", "anv": "", "join": "", "role": "Producer", "tracks": "",
+        "id": 3301976, "resource_url": "https://api.discogs.com/artists/3301976"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Gustave Rudman", "anv": "", "join": "", "role": "Producer [Additional
+        Production], Arranged By [Additional Arrangement]", "tracks": "", "id": 742541,
+        "resource_url": "https://api.discogs.com/artists/742541"}, {"name": "Henry
+        Allen (3)", "anv": "Henry Agincourt Allen", "join": "", "role": "Written-By",
+        "tracks": "", "id": 4553455, "resource_url": "https://api.discogs.com/artists/4553455"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:24"}, {"position": "5", "type_": "track", "title": "Thunderclouds",
+        "extraartists": [{"name": "Bart Schoudel", "anv": "", "join": "", "role":
+        "Engineer", "tracks": "", "id": 2096235, "resource_url": "https://api.discogs.com/artists/2096235"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Robin Florent", "anv": "", "join": "", "role": "Engineer [Mix Assistant]",
+        "tracks": "", "id": 4864753, "resource_url": "https://api.discogs.com/artists/4864753"},
+        {"name": "Scott Desmarais", "anv": "", "join": "", "role": "Engineer [Mix
+        Assistant]", "tracks": "", "id": 5721781, "resource_url": "https://api.discogs.com/artists/5721781"},
+        {"name": "Chris Galland", "anv": "", "join": "", "role": "Engineer [Mix]",
+        "tracks": "", "id": 1608079, "resource_url": "https://api.discogs.com/artists/1608079"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Instrumentation By, Programmed
+        By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Instrumentation
+        By, Programmed By", "tracks": "", "id": 348921, "resource_url": "https://api.discogs.com/artists/348921"},
+        {"name": "King Henry (2)", "anv": "", "join": "", "role": "Instrumentation
+        By, Programmed By", "tracks": "", "id": 3301976, "resource_url": "https://api.discogs.com/artists/3301976"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Instrumentation By, Programmed
+        By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Manny Marroquin", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 67636, "resource_url": "https://api.discogs.com/artists/67636"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer", "tracks": "",
+        "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"}, {"name":
+        "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Producer", "tracks":
+        "", "id": 348921, "resource_url": "https://api.discogs.com/artists/348921"},
+        {"name": "King Henry (2)", "anv": "", "join": "", "role": "Producer", "tracks":
+        "", "id": 3301976, "resource_url": "https://api.discogs.com/artists/3301976"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Henry Allen (3)", "anv": "Henry Agincourt Allen", "join": "", "role":
+        "Written-By", "tracks": "", "id": 4553455, "resource_url": "https://api.discogs.com/artists/4553455"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:07"}, {"position": "6", "type_": "track", "title": "Mountains",
+        "extraartists": [{"name": "Bart Schoudel", "anv": "", "join": "", "role":
+        "Engineer", "tracks": "", "id": 2096235, "resource_url": "https://api.discogs.com/artists/2096235"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Luke Dimond", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 5916437, "resource_url": "https://api.discogs.com/artists/5916437"},
+        {"name": "Robin Florent", "anv": "", "join": "", "role": "Engineer [Mix Assistant]",
+        "tracks": "", "id": 4864753, "resource_url": "https://api.discogs.com/artists/4864753"},
+        {"name": "Scott Desmarais", "anv": "", "join": "", "role": "Engineer [Mix
+        Assistant]", "tracks": "", "id": 5721781, "resource_url": "https://api.discogs.com/artists/5721781"},
+        {"name": "Chris Galland", "anv": "", "join": "", "role": "Engineer [Mix]",
+        "tracks": "", "id": 1608079, "resource_url": "https://api.discogs.com/artists/1608079"},
+        {"name": "Manny Marroquin", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 67636, "resource_url": "https://api.discogs.com/artists/67636"},
+        {"name": "Boaz van de Beatz", "anv": "", "join": "", "role": "Producer [Additional
+        Production]", "tracks": "", "id": 3345632, "resource_url": "https://api.discogs.com/artists/3345632"},
+        {"name": "Gustave Rudman", "anv": "", "join": "", "role": "Producer [Additional
+        Production]", "tracks": "", "id": 742541, "resource_url": "https://api.discogs.com/artists/742541"},
+        {"name": "Yoda Francesco", "anv": "", "join": "", "role": "Producer [Additional
+        Production]", "tracks": "", "id": 7072561, "resource_url": "https://api.discogs.com/artists/7072561"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Nathaniel Ledwidge", "anv": "Nathaniel \"Detonate\" Ledwidge", "join":
+        "", "role": "Producer, Instrumentation By, Programmed By", "tracks": "", "id":
+        2945072, "resource_url": "https://api.discogs.com/artists/2945072"}, {"name":
+        "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks": "", "id":
+        44758, "resource_url": "https://api.discogs.com/artists/44758"}, {"name":
+        "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:14"}, {"position": "7", "type_": "track", "title": "No New
+        Friends", "extraartists": [{"name": "Bart Schoudel", "anv": "", "join": "",
+        "role": "Engineer", "tracks": "", "id": 2096235, "resource_url": "https://api.discogs.com/artists/2096235"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "John Hanes", "anv": "", "join": "", "role": "Engineer [For Mix]",
+        "tracks": "", "id": 210636, "resource_url": "https://api.discogs.com/artists/210636"},
+        {"name": "Serban Ghenea", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 105435, "resource_url": "https://api.discogs.com/artists/105435"},
+        {"name": "Nathaniel Ledwidge", "anv": "Nathaniel \"Detonate\" Ledwidge", "join":
+        "", "role": "Producer [Additional Production]", "tracks": "", "id": 2945072,
+        "resource_url": "https://api.discogs.com/artists/2945072"}, {"name": "Diplo",
+        "anv": "", "join": "", "role": "Producer, Instrumentation By, Programmed By",
+        "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Producer,
+        Instrumentation By, Programmed By", "tracks": "", "id": 348921, "resource_url":
+        "https://api.discogs.com/artists/348921"}, {"name": "King Henry (2)", "anv":
+        "", "join": "", "role": "Producer, Instrumentation By, Programmed By", "tracks":
+        "", "id": 3301976, "resource_url": "https://api.discogs.com/artists/3301976"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Henry Allen (3)", "anv": "Henry Agincourt Allen", "join": "", "role":
+        "Written-By", "tracks": "", "id": 4553455, "resource_url": "https://api.discogs.com/artists/4553455"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "2:55"}, {"position": "8", "type_": "track", "title": "Heaven
+        Can Wait", "extraartists": [{"name": "Labrinth", "anv": "", "join": "", "role":
+        "Engineer", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "John Hanes", "anv": "", "join": "", "role": "Engineer [For Mix]",
+        "tracks": "", "id": 210636, "resource_url": "https://api.discogs.com/artists/210636"},
+        {"name": "Serban Ghenea", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 105435, "resource_url": "https://api.discogs.com/artists/105435"},
+        {"name": "Nathaniel Ledwidge", "anv": "Nathaniel \"Detonate\" Ledwidge", "join":
+        "", "role": "Producer [Additional Production]", "tracks": "", "id": 2945072,
+        "resource_url": "https://api.discogs.com/artists/2945072"}, {"name": "Diplo",
+        "anv": "", "join": "", "role": "Producer, Instrumentation By, Programmed By",
+        "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Producer,
+        Instrumentation By, Programmed By", "tracks": "", "id": 348921, "resource_url":
+        "https://api.discogs.com/artists/348921"}, {"name": "Labrinth", "anv": "",
+        "join": "", "role": "Producer, Instrumentation By, Programmed By", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:15"}, {"position": "9", "type_": "track", "title": "It''s Time",
+        "extraartists": [{"name": "Labrinth", "anv": "", "join": "", "role": "Engineer",
+        "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Robin Florent", "anv": "", "join": "", "role": "Engineer [Mix Assistant]",
+        "tracks": "", "id": 4864753, "resource_url": "https://api.discogs.com/artists/4864753"},
+        {"name": "Scott Desmarais", "anv": "", "join": "", "role": "Engineer [Mix
+        Assistant]", "tracks": "", "id": 5721781, "resource_url": "https://api.discogs.com/artists/5721781"},
+        {"name": "Chris Galland", "anv": "", "join": "", "role": "Engineer [Mix]",
+        "tracks": "", "id": 1608079, "resource_url": "https://api.discogs.com/artists/1608079"},
+        {"name": "Manny Marroquin", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "", "id": 67636, "resource_url": "https://api.discogs.com/artists/67636"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Labrinth", "anv": "", "join": "", "role": "Producer, Instrumentation
+        By, Programmed By", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:29"}, {"position": "10", "type_": "track", "title": "Genius
+        (Lil Wayne Remix)", "extraartists": [{"name": "Bart Schoudel", "anv": "",
+        "join": "", "role": "Engineer", "tracks": "", "id": 2096235, "resource_url":
+        "https://api.discogs.com/artists/2096235"}, {"name": "Labrinth", "anv": "",
+        "join": "", "role": "Engineer", "tracks": "", "id": 1154116, "resource_url":
+        "https://api.discogs.com/artists/1154116"}, {"name": "Luke Dimond", "anv":
+        "", "join": "", "role": "Engineer", "tracks": "", "id": 5916437, "resource_url":
+        "https://api.discogs.com/artists/5916437"}, {"name": "John Hanes", "anv":
+        "", "join": "", "role": "Engineer [For Mix]", "tracks": "", "id": 210636,
+        "resource_url": "https://api.discogs.com/artists/210636"}, {"name": "Lil Wayne",
+        "anv": "", "join": "", "role": "Featuring, Remix", "tracks": "", "id": 1065010,
+        "resource_url": "https://api.discogs.com/artists/1065010"}, {"name": "Serban
+        Ghenea", "anv": "", "join": "", "role": "Mixed By", "tracks": "", "id": 105435,
+        "resource_url": "https://api.discogs.com/artists/105435"}, {"name": "Gustave
+        Rudman", "anv": "", "join": "", "role": "Producer [Additional Vocal Production],
+        Orchestrated By, Arranged By [Additional Arrangement]", "tracks": "", "id":
+        742541, "resource_url": "https://api.discogs.com/artists/742541"}, {"name":
+        "Diplo", "anv": "", "join": "", "role": "Producer, Instrumentation By, Programmed
+        By", "tracks": "", "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"},
+        {"name": "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Producer,
+        Instrumentation By, Programmed By", "tracks": "", "id": 348921, "resource_url":
+        "https://api.discogs.com/artists/348921"}, {"name": "Labrinth", "anv": "",
+        "join": "", "role": "Producer, Instrumentation By, Programmed By", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Jason Delattiboudere", "anv": "", "join": "", "role": "Recorded
+        By [Lil Wayne Recorded By / Assistant]", "tracks": "", "id": 6826666, "resource_url":
+        "https://api.discogs.com/artists/6826666"}, {"name": "Manny Galvez", "anv":
+        "", "join": "", "role": "Recorded By [Lil Wayne Recorded By]", "tracks": "",
+        "id": 5720205, "resource_url": "https://api.discogs.com/artists/5720205"},
+        {"name": "Dwayne Carter", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 689691, "resource_url": "https://api.discogs.com/artists/689691"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "2:42"}], "artists": [{"name": "Labrinth", "anv": "", "join":
+        ",", "role": "", "tracks": "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Sia", "anv": "", "join": "&", "role": "", "tracks": "", "id": 21991,
+        "resource_url": "https://api.discogs.com/artists/21991"}, {"name": "Diplo",
+        "anv": "", "join": "Present", "role": "", "tracks": "", "id": 191242, "resource_url":
+        "https://api.discogs.com/artists/191242"}, {"name": "LSD (53)", "anv": "",
+        "join": "", "role": "", "tracks": "", "id": 6470489, "resource_url": "https://api.discogs.com/artists/6470489"}],
+        "title": "LSD", "notes": "The debut album by [a=Labrinth], [a=Sia] & [a=Diplo]
+        as supergroup [a=LSD (53)]. Featuring 10 tracks, including 5 pre-released
+        singles, the album was released on 12 April 2019, debuted and peaked at #70
+        on the Billboard 200 and #44 on the UK Albums Chart.\r\nThe album was written
+        by the trio, with additional writing from [a=Philip Meckseper] and [url=https://www.discogs.com/artist/4553455-Henry-Allen-3]Henry
+        Agincourt Allen[/url] on some of the tracks.\r\n", "data_quality": "Correct",
+        "videos": [{"uri": "https://www.youtube.com/watch?v=FSdnj6yRiDo", "title":
+        "Labrinth, Sia & Diplo Present... No New Friends (On Vinyl Record)", "description":
+        "This track was taken from Labrinth, Sia & Diplo Present... album (2019)\n\nMy
+        home music system:\n\n- Audio-Technica AT-LP120 USB Black edition\n- Audio-Technica
+        AT-VM95E\n- Yamaha R-S300\n- Roland Quad-Capture UA-55\n\nThis content was
+        made public based on permis", "duration": 175, "embed": true}, {"uri": "https://www.youtube.com/watch?v=sCZoFqBn574",
+        "title": "Labrinth, Sia & Diplo Present... - Audio (on Vinyl Record)", "description":
+        "This track was taken from Labrinth, Sia & Diplo Present... album (2019)\n\nMy
+        home music system:\n\n- Audio-Technica AT-LP120 USB Black edition\n- Audio-Technica
+        AT-VM95E\n- Yamaha R-S300\n- Roland Quad-Capture UA-55\n\nThis content was
+        made public based on permis", "duration": 206, "embed": true}, {"uri": "https://www.youtube.com/watch?v=HhoATZ1Imtw",
+        "title": "LSD - Genius ft. Sia, Diplo, Labrinth", "description": "Labrinth,
+        Sia & Diplo present LSD - Genius (Official Video)\n\nStream LSD\u2019s Genius:
+        http://smarturl.it/LSD-Genius\nSpotify: http://smarturl.it/LSD-Genius/Spotify\niTunes:  http://smarturl.it/LSD-Genius/iTunes\nApple
+        Music:  http://smarturl.it/LSD-Genius/Appl", "duration": 223, "embed": true},
+        {"uri": "https://www.youtube.com/watch?v=tjA7nAHOAww", "title": "LSD - Audio
+        (Official Video) ft. Sia, Diplo, Labrinth", "description": "Labrinth, Sia
+        & Diplo present LSD - Audio (Official Video)\n\nStream LSD\u2019s Audio: http://smarturl.it/LSD-Audio\nSpotify:
+        http://smarturl.it/LSD-Audio/Spotify\niTunes: http://smarturl.it/LSD-Audio/iTunes\nApple
+        Music:  http://smarturl.it/LSD-Audio/AppleMusic\n", "duration": 226, "embed":
+        true}, {"uri": "https://www.youtube.com/watch?v=kg1BljLu9YY", "title": "LSD
+        - Thunderclouds (Official Video) ft. Sia, Diplo, Labrinth", "description":
+        "Labrinth, Sia & Diplo present LSD - Thunderclouds (Official Music Video)\nAlbum
+        out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream
+        Thunderclouds now: http://smarturl.it/Thunderclouds?iqid=OfficialVid", "duration":
+        196, "embed": true}, {"uri": "https://www.youtube.com/watch?v=kkUIdK9eaIk",
+        "title": "LSD - No New Friends (Official Video) ft. Labrinth, Sia, Diplo",
+        "description": "Labrinth, Sia & Diplo present LSD \u2013 No New Friends (Official
+        Video)\n\nSubscribe to Diplo YouTube Channel - http://diplo.fm/YouTube\n \nStream
+        No New Friends: http://smarturl.it/LSD-album \nSpotify - http://smarturl.it/LSD-album/spotify
+        \nApple Music - http:/", "duration": 179, "embed": true}, {"uri": "https://www.youtube.com/watch?v=yv5_CXdv1lc",
+        "title": "LSD - Genius (Lil Wayne Remix) ft. Lil Wayne, Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Genius (Lil Wayne Remix)\n\nAlbum
+        out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream
+        LSD\u2019s Genius (Lil Wayne Remix): http://smarturl.it/GeniusRemix\nSpotify:
+        http://", "duration": 164, "embed": true}, {"uri": "https://www.youtube.com/watch?v=doelku0dqoI",
+        "title": "LSD - Welcome to the Wonderful World of (Official Audio) ft. Sia,
+        Diplo, Labrinth", "description": "Labrinth, Sia & Diplo present LSD - Welcome
+        to the Wonderful World of\n\nStream \u201cWelcome to the Wonderful World of\u201c
+        now: https://smarturl.it/LSD-album \n\nAmazon -\u00a0https://smarturl.it/LSD-album/az\nApple
+        Music -\u00a0https://smarturl.it/LSD-album/applemusic\nG", "duration": 119,
+        "embed": true}, {"uri": "https://www.youtube.com/watch?v=RRUEnHDxYLU", "title":
+        "LSD - Thunderclouds (feat. Sia, Diplo & Labrinth) (64-bit Version) [HQ Audio]",
+        "description": "Hi guys!\n\nThank you for watching this video! I hope you
+        enjoyed it ^^\n\n\u25ba AllAboutSIA\n\u25ba https://www.youtube.com/c/AllAboutSIA2\n\n\u25ba
+        Contact:\n\u25ba G-MAIL: allsiassongs@gmail.com\n\u25ba SOUNDCLOUD: https://soundcloud.com/allaboutsia\n\u25ba
+        TWITTER: https://twit", "duration": 113, "embed": true}, {"uri": "https://www.youtube.com/watch?v=F-7aA6_9n5U",
+        "title": "LSD - Angel in Your Eyes (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Angel in Your Eyes\n\nStream
+        \u201cAngel in Your Eyes\u201c now: https://smarturl.it/LSD-album \n\nAmazon
+        -\u00a0https://smarturl.it/LSD-album/az\nApple Music -\u00a0https://smarturl.it/LSD-album/applemusic\nGoogle
+        Play -\u00a0https://smarturl", "duration": 188, "embed": true}, {"uri": "https://www.youtube.com/watch?v=I1-mcn1Hgh8",
+        "title": "LSD - Mountains (Official Lyric Video) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Mountains (Official Lyric
+        Video)\nAlbum out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream
+        Mountains now: http://smarturl.it/LSD-Mountains?iqid=Lyric\nSpotify: http",
+        "duration": 192, "embed": true}, {"uri": "https://www.youtube.com/watch?v=JvmwdC_2K2Q",
+        "title": "LSD - Heaven Can Wait (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Heaven Can Wait\n\nStream
+        \u201cHeaven Can Wait now: http://smarturl.it/LSD-album \n\nAmazon -\u00a0http://smarturl.it/LSD-album/az\nApple
+        Music -\u00a0http://smarturl.it/LSD-album/applemusic\nGoogle Play -\u00a0http://smarturl.it/LSD-albu",
+        "duration": 198, "embed": true}, {"uri": "https://www.youtube.com/watch?v=AkdBZEGbAsE",
+        "title": "LSD - It''s Time (Official Audio) ft. Sia, Diplo, Labrinth", "description":
+        "Labrinth, Sia & Diplo present LSD - It''s Time\n\nStream \u201cIt''s Time\u201c
+        now: http://smarturl.it/LSD-album \n\nAmazon -\u00a0http://smarturl.it/LSD-album/az\nApple
+        Music -\u00a0http://smarturl.it/LSD-album/applemusic\nGoogle Play -\u00a0http://smarturl.it/LSD-album/googlepl",
+        "duration": 212, "embed": true}]}'
+  recorded_at: Sun, 10 Jan 2021 11:07:07 GMT
+recorded_with: VCR 6.0.0

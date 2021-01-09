@@ -1,0 +1,349 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/releases/13812684?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 10 Jan 2021 11:21:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '60'
+      X-Discogs-Ratelimit-Used:
+      - '0'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Content-Language:
+      - en
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 13812684, "status": "Accepted", "year": 2019, "resource_url":
+        "https://api.discogs.com/releases/13812684", "uri": "https://www.discogs.com/Labrinth-Sia-Diplo-Present-LSD-LSD/release/13812684",
+        "artists": [{"name": "Labrinth", "anv": "", "join": ",", "role": "", "tracks":
+        "", "id": 1154116, "resource_url": "https://api.discogs.com/artists/1154116"},
+        {"name": "Sia", "anv": "", "join": "&", "role": "", "tracks": "", "id": 21991,
+        "resource_url": "https://api.discogs.com/artists/21991"}, {"name": "Diplo",
+        "anv": "", "join": "Present", "role": "", "tracks": "", "id": 191242, "resource_url":
+        "https://api.discogs.com/artists/191242"}, {"name": "LSD (53)", "anv": "",
+        "join": "", "role": "", "tracks": "", "id": 6470489, "resource_url": "https://api.discogs.com/artists/6470489"}],
+        "artists_sort": "Labrinth, Sia & Diplo Present LSD (53)", "labels": [{"name":
+        "Columbia", "catno": "19075904821", "entity_type": "1", "entity_type_name":
+        "Label", "id": 1866, "resource_url": "https://api.discogs.com/labels/1866"},
+        {"name": "Records (11)", "catno": "19075904821", "entity_type": "1", "entity_type_name":
+        "Label", "id": 1097844, "resource_url": "https://api.discogs.com/labels/1097844"},
+        {"name": "Mad Decent", "catno": "19075904821", "entity_type": "1", "entity_type_name":
+        "Label", "id": 56916, "resource_url": "https://api.discogs.com/labels/56916"},
+        {"name": "Monkey Puzzle Records", "catno": "19075904821", "entity_type": "1",
+        "entity_type_name": "Label", "id": 110344, "resource_url": "https://api.discogs.com/labels/110344"},
+        {"name": "Sony Music", "catno": "19075904821", "entity_type": "1", "entity_type_name":
+        "Label", "id": 25487, "resource_url": "https://api.discogs.com/labels/25487"}],
+        "series": [], "companies": [{"name": "RECORDS, LLC", "catno": "", "entity_type":
+        "14", "entity_type_name": "Copyright (c)", "id": 885675, "resource_url": "https://api.discogs.com/labels/885675"},
+        {"name": "RECORDS, LLC", "catno": "", "entity_type": "13", "entity_type_name":
+        "Phonographic Copyright (p)", "id": 885675, "resource_url": "https://api.discogs.com/labels/885675"},
+        {"name": "Columbia", "catno": "", "entity_type": "14", "entity_type_name":
+        "Copyright (c)", "id": 1866, "resource_url": "https://api.discogs.com/labels/1866"},
+        {"name": "Columbia", "catno": "", "entity_type": "13", "entity_type_name":
+        "Phonographic Copyright (p)", "id": 1866, "resource_url": "https://api.discogs.com/labels/1866"},
+        {"name": "Sony Music Entertainment", "catno": "", "entity_type": "4", "entity_type_name":
+        "Record Company", "id": 29073, "resource_url": "https://api.discogs.com/labels/29073"},
+        {"name": "Sony Music Entertainment International Services GmbH", "catno":
+        "", "entity_type": "4", "entity_type_name": "Record Company", "id": 737249,
+        "resource_url": "https://api.discogs.com/labels/737249"}, {"name": "Sterling
+        Sound", "catno": "", "entity_type": "30", "entity_type_name": "Lacquer Cut
+        At", "id": 264060, "resource_url": "https://api.discogs.com/labels/264060"},
+        {"name": "GZ Media", "catno": "190487E", "entity_type": "17", "entity_type_name":
+        "Pressed By", "id": 430654, "resource_url": "https://api.discogs.com/labels/430654"}],
+        "formats": [{"name": "Vinyl", "qty": "1", "text": "Clear w/ Blue & Orange
+        Splatter", "descriptions": ["LP", "Album"]}], "data_quality": "Needs Vote",
+        "community": {"have": 654, "want": 356, "rating": {"count": 67, "average":
+        4.45}, "submitter": {"username": "eisclub", "resource_url": "https://api.discogs.com/users/eisclub"},
+        "contributors": [{"username": "eisclub", "resource_url": "https://api.discogs.com/users/eisclub"},
+        {"username": "danil.", "resource_url": "https://api.discogs.com/users/danil."},
+        {"username": "aarins99vinyl", "resource_url": "https://api.discogs.com/users/aarins99vinyl"},
+        {"username": "pphbavalon", "resource_url": "https://api.discogs.com/users/pphbavalon"},
+        {"username": "Eric-X", "resource_url": "https://api.discogs.com/users/Eric-X"},
+        {"username": "zevulon", "resource_url": "https://api.discogs.com/users/zevulon"},
+        {"username": "Jordao095", "resource_url": "https://api.discogs.com/users/Jordao095"},
+        {"username": "Honkelkonkel", "resource_url": "https://api.discogs.com/users/Honkelkonkel"},
+        {"username": "viestursm", "resource_url": "https://api.discogs.com/users/viestursm"}],
+        "data_quality": "Needs Vote", "status": "Accepted"}, "format_quantity": 1,
+        "date_added": "2019-06-27T14:34:34-07:00", "date_changed": "2020-12-04T06:08:37-08:00",
+        "num_for_sale": 23, "lowest_price": 24.27, "master_id": 1531968, "master_url":
+        "https://api.discogs.com/masters/1531968", "title": "LSD", "country": "Europe",
+        "released": "2019-06-28", "notes": "Track 7, \"No New Friends\" is renamed
+        as \"Know New Friends\" and the title on cover and inner sleeve does also
+        have K and W in Know in different colour from the rest of the title, implying
+        the initial No New Friends.\n\nPrinted inner sleeve.\n\nTrack order runs in
+        a sequential manner on cover and on inner sleeve.", "released_formatted":
+        "28 Jun 2019", "identifiers": [{"type": "Barcode", "value": "190759048214",
+        "description": "Scanned"}, {"type": "Barcode", "value": "1 90759 04821 4",
+        "description": "Text"}, {"type": "Label Code", "value": "LC 00162"}, {"type":
+        "Matrix / Runout", "value": "AL 19075904821 RKS STERLING 190487E1/A", "description":
+        "Runout A"}, {"type": "Matrix / Runout", "value": "BL 19075904821 RKS STERLING
+        190487E2/A", "description": "Runout B"}], "videos": [{"uri": "https://www.youtube.com/watch?v=FSdnj6yRiDo",
+        "title": "Labrinth, Sia & Diplo Present... No New Friends (On Vinyl Record)",
+        "description": "This track was taken from Labrinth, Sia & Diplo Present...
+        album (2019)\n\nMy home music system:\n\n- Audio-Technica AT-LP120 USB Black
+        edition\n- Audio-Technica AT-VM95E\n- Yamaha R-S300\n- Roland Quad-Capture
+        UA-55\n\nThis content was made public based on permis", "duration": 175, "embed":
+        true}, {"uri": "https://www.youtube.com/watch?v=sCZoFqBn574", "title": "Labrinth,
+        Sia & Diplo Present... - Audio (on Vinyl Record)", "description": "This track
+        was taken from Labrinth, Sia & Diplo Present... album (2019)\n\nMy home music
+        system:\n\n- Audio-Technica AT-LP120 USB Black edition\n- Audio-Technica AT-VM95E\n-
+        Yamaha R-S300\n- Roland Quad-Capture UA-55\n\nThis content was made public
+        based on permis", "duration": 206, "embed": true}, {"uri": "https://www.youtube.com/watch?v=HhoATZ1Imtw",
+        "title": "LSD - Genius ft. Sia, Diplo, Labrinth", "description": "Labrinth,
+        Sia & Diplo present LSD - Genius (Official Video)\n\nStream LSD\u2019s Genius:
+        http://smarturl.it/LSD-Genius\nSpotify: http://smarturl.it/LSD-Genius/Spotify\niTunes:  http://smarturl.it/LSD-Genius/iTunes\nApple
+        Music:  http://smarturl.it/LSD-Genius/Appl", "duration": 223, "embed": true},
+        {"uri": "https://www.youtube.com/watch?v=tjA7nAHOAww", "title": "LSD - Audio
+        (Official Video) ft. Sia, Diplo, Labrinth", "description": "Labrinth, Sia
+        & Diplo present LSD - Audio (Official Video)\n\nStream LSD\u2019s Audio: http://smarturl.it/LSD-Audio\nSpotify:
+        http://smarturl.it/LSD-Audio/Spotify\niTunes: http://smarturl.it/LSD-Audio/iTunes\nApple
+        Music:  http://smarturl.it/LSD-Audio/AppleMusic\n", "duration": 226, "embed":
+        true}, {"uri": "https://www.youtube.com/watch?v=kg1BljLu9YY", "title": "LSD
+        - Thunderclouds (Official Video) ft. Sia, Diplo, Labrinth", "description":
+        "Labrinth, Sia & Diplo present LSD - Thunderclouds (Official Music Video)\nAlbum
+        out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream
+        Thunderclouds now: http://smarturl.it/Thunderclouds?iqid=OfficialVid", "duration":
+        196, "embed": true}, {"uri": "https://www.youtube.com/watch?v=kkUIdK9eaIk",
+        "title": "LSD - No New Friends (Official Video) ft. Labrinth, Sia, Diplo",
+        "description": "Labrinth, Sia & Diplo present LSD \u2013 No New Friends (Official
+        Video)\n\nSubscribe to Diplo YouTube Channel - http://diplo.fm/YouTube\n \nStream
+        No New Friends: http://smarturl.it/LSD-album \nSpotify - http://smarturl.it/LSD-album/spotify
+        \nApple Music - http:/", "duration": 179, "embed": true}, {"uri": "https://www.youtube.com/watch?v=yv5_CXdv1lc",
+        "title": "LSD - Genius (Lil Wayne Remix) ft. Lil Wayne, Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Genius (Lil Wayne Remix)\n\nAlbum
+        out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream
+        LSD\u2019s Genius (Lil Wayne Remix): http://smarturl.it/GeniusRemix\nSpotify:
+        http://", "duration": 164, "embed": true}, {"uri": "https://www.youtube.com/watch?v=doelku0dqoI",
+        "title": "LSD - Welcome to the Wonderful World of (Official Audio) ft. Sia,
+        Diplo, Labrinth", "description": "Labrinth, Sia & Diplo present LSD - Welcome
+        to the Wonderful World of\n\nStream \u201cWelcome to the Wonderful World of\u201c
+        now: https://smarturl.it/LSD-album \n\nAmazon -\u00a0https://smarturl.it/LSD-album/az\nApple
+        Music -\u00a0https://smarturl.it/LSD-album/applemusic\nG", "duration": 119,
+        "embed": true}, {"uri": "https://www.youtube.com/watch?v=RRUEnHDxYLU", "title":
+        "LSD - Thunderclouds (feat. Sia, Diplo & Labrinth) (64-bit Version) [HQ Audio]",
+        "description": "Hi guys!\n\nThank you for watching this video! I hope you
+        enjoyed it ^^\n\n\u25ba AllAboutSIA\n\u25ba https://www.youtube.com/c/AllAboutSIA2\n\n\u25ba
+        Contact:\n\u25ba G-MAIL: allsiassongs@gmail.com\n\u25ba SOUNDCLOUD: https://soundcloud.com/allaboutsia\n\u25ba
+        TWITTER: https://twit", "duration": 113, "embed": true}, {"uri": "https://www.youtube.com/watch?v=F-7aA6_9n5U",
+        "title": "LSD - Angel in Your Eyes (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Angel in Your Eyes\n\nStream
+        \u201cAngel in Your Eyes\u201c now: https://smarturl.it/LSD-album \n\nAmazon
+        -\u00a0https://smarturl.it/LSD-album/az\nApple Music -\u00a0https://smarturl.it/LSD-album/applemusic\nGoogle
+        Play -\u00a0https://smarturl", "duration": 188, "embed": true}, {"uri": "https://www.youtube.com/watch?v=I1-mcn1Hgh8",
+        "title": "LSD - Mountains (Official Lyric Video) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Mountains (Official Lyric
+        Video)\nAlbum out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream
+        Mountains now: http://smarturl.it/LSD-Mountains?iqid=Lyric\nSpotify: http",
+        "duration": 192, "embed": true}, {"uri": "https://www.youtube.com/watch?v=JvmwdC_2K2Q",
+        "title": "LSD - Heaven Can Wait (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Heaven Can Wait\n\nStream
+        \u201cHeaven Can Wait now: http://smarturl.it/LSD-album \n\nAmazon -\u00a0http://smarturl.it/LSD-album/az\nApple
+        Music -\u00a0http://smarturl.it/LSD-album/applemusic\nGoogle Play -\u00a0http://smarturl.it/LSD-albu",
+        "duration": 198, "embed": true}, {"uri": "https://www.youtube.com/watch?v=AkdBZEGbAsE",
+        "title": "LSD - It''s Time (Official Audio) ft. Sia, Diplo, Labrinth", "description":
+        "Labrinth, Sia & Diplo present LSD - It''s Time\n\nStream \u201cIt''s Time\u201c
+        now: http://smarturl.it/LSD-album \n\nAmazon -\u00a0http://smarturl.it/LSD-album/az\nApple
+        Music -\u00a0http://smarturl.it/LSD-album/applemusic\nGoogle Play -\u00a0http://smarturl.it/LSD-album/googlepl",
+        "duration": 212, "embed": true}], "genres": ["Electronic", "Pop"], "styles":
+        ["Synth-pop", "Dance-pop"], "tracklist": [{"position": "A1", "type_": "track",
+        "title": "Welcome To The Wonderful World Of", "extraartists": [{"name": "Sia
+        Furler", "anv": "", "join": "", "role": "Written-By", "tracks": "", "id":
+        44758, "resource_url": "https://api.discogs.com/artists/44758"}, {"name":
+        "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "1:56"}, {"position": "A2", "type_": "track", "title": "Angel
+        In Your Eyes", "extraartists": [{"name": "Sia Furler", "anv": "", "join":
+        "", "role": "Written-By", "tracks": "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:06"}, {"position": "A3", "type_": "track", "title": "Genius",
+        "extraartists": [{"name": "Philip Meckseper", "anv": "", "join": "", "role":
+        "Written-By", "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:33"}, {"position": "A4", "type_": "track", "title": "Audio",
+        "extraartists": [{"name": "Henry Allen (3)", "anv": "Henry Agincourt Allen",
+        "join": "", "role": "Written-By", "tracks": "", "id": 4553455, "resource_url":
+        "https://api.discogs.com/artists/4553455"}, {"name": "Philip Meckseper", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 2311540, "resource_url":
+        "https://api.discogs.com/artists/2311540"}, {"name": "Sia Furler", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 44758, "resource_url":
+        "https://api.discogs.com/artists/44758"}, {"name": "Timothy McKenzie", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 1568579, "resource_url":
+        "https://api.discogs.com/artists/1568579"}, {"name": "Wesley Pentz", "anv":
+        "Thomas Wesley Pentz", "join": "", "role": "Written-By", "tracks": "", "id":
+        899117, "resource_url": "https://api.discogs.com/artists/899117"}], "duration":
+        "3:24"}, {"position": "A5", "type_": "track", "title": "Thunderclouds", "extraartists":
+        [{"name": "Henry Allen (3)", "anv": "Henry Agincourt Allen", "join": "", "role":
+        "Written-By", "tracks": "", "id": 4553455, "resource_url": "https://api.discogs.com/artists/4553455"},
+        {"name": "Philip Meckseper", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:07"}, {"position": "B6", "type_": "track", "title": "Mountains",
+        "extraartists": [{"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:14"}, {"position": "B7", "type_": "track", "title": "Know New
+        Friends", "extraartists": [{"name": "Henry Allen (3)", "anv": "Henry Agincourt
+        Allen", "join": "", "role": "Written-By", "tracks": "", "id": 4553455, "resource_url":
+        "https://api.discogs.com/artists/4553455"}, {"name": "Philip Meckseper", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 2311540, "resource_url":
+        "https://api.discogs.com/artists/2311540"}, {"name": "Sia Furler", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 44758, "resource_url":
+        "https://api.discogs.com/artists/44758"}, {"name": "Wesley Pentz", "anv":
+        "Thomas Wesley Pentz", "join": "", "role": "Written-By", "tracks": "", "id":
+        899117, "resource_url": "https://api.discogs.com/artists/899117"}], "duration":
+        "2:55"}, {"position": "B8", "type_": "track", "title": "Heaven Can Wait",
+        "extraartists": [{"name": "Philip Meckseper", "anv": "", "join": "", "role":
+        "Written-By", "tracks": "", "id": 2311540, "resource_url": "https://api.discogs.com/artists/2311540"},
+        {"name": "Sia Furler", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:15"}, {"position": "B9", "type_": "track", "title": "It''s
+        Time", "extraartists": [{"name": "Sia Furler", "anv": "", "join": "", "role":
+        "Written-By", "tracks": "", "id": 44758, "resource_url": "https://api.discogs.com/artists/44758"},
+        {"name": "Timothy McKenzie", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 1568579, "resource_url": "https://api.discogs.com/artists/1568579"},
+        {"name": "Wesley Pentz", "anv": "Thomas Wesley Pentz", "join": "", "role":
+        "Written-By", "tracks": "", "id": 899117, "resource_url": "https://api.discogs.com/artists/899117"}],
+        "duration": "3:29"}, {"position": "B10", "type_": "track", "title": "Genius
+        (Lil Wayne Remix)", "extraartists": [{"name": "Lil Wayne", "anv": "", "join":
+        "", "role": "Featuring, Remix", "tracks": "", "id": 1065010, "resource_url":
+        "https://api.discogs.com/artists/1065010"}, {"name": "Dwayne Carter", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 689691, "resource_url":
+        "https://api.discogs.com/artists/689691"}, {"name": "Philip Meckseper", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 2311540, "resource_url":
+        "https://api.discogs.com/artists/2311540"}, {"name": "Sia Furler", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 44758, "resource_url":
+        "https://api.discogs.com/artists/44758"}, {"name": "Timothy McKenzie", "anv":
+        "", "join": "", "role": "Written-By", "tracks": "", "id": 1568579, "resource_url":
+        "https://api.discogs.com/artists/1568579"}, {"name": "Wesley Pentz", "anv":
+        "Thomas Wesley Pentz", "join": "", "role": "Written-By", "tracks": "", "id":
+        899117, "resource_url": "https://api.discogs.com/artists/899117"}], "duration":
+        "2:42"}], "extraartists": [{"name": "Annie Stoll", "anv": "", "join": "",
+        "role": "Art Direction [Photo]", "tracks": "", "id": 3097261, "resource_url":
+        "https://api.discogs.com/artists/3097261"}, {"name": "Katy Eggleton", "anv":
+        "", "join": "", "role": "Art Direction [Photo]", "tracks": "", "id": 7251465,
+        "resource_url": "https://api.discogs.com/artists/7251465"}, {"name": "LSD
+        (53)", "anv": "", "join": "", "role": "Art Direction [Photo]", "tracks": "",
+        "id": 6470489, "resource_url": "https://api.discogs.com/artists/6470489"},
+        {"name": "Gabriel Alcala", "anv": "", "join": "", "role": "Art Direction,
+        Design", "tracks": "", "id": 1296649, "resource_url": "https://api.discogs.com/artists/1296649"},
+        {"name": "Pres Rodriguez", "anv": "", "join": "", "role": "Art Direction,
+        Design", "tracks": "", "id": 3156400, "resource_url": "https://api.discogs.com/artists/3156400"},
+        {"name": "Pres Rodriguez", "anv": "", "join": "", "role": "Creative Director",
+        "tracks": "", "id": 3156400, "resource_url": "https://api.discogs.com/artists/3156400"},
+        {"name": "Sara Nataf", "anv": "", "join": "", "role": "Creative Director [Photo]",
+        "tracks": "", "id": 7251464, "resource_url": "https://api.discogs.com/artists/7251464"},
+        {"name": "Bart Schoudel", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "A3, A4, A5, B6, B7, B10", "id": 2096235, "resource_url": "https://api.discogs.com/artists/2096235"},
+        {"name": "Luke Dimond", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "A3, B6, B10", "id": 5916437, "resource_url": "https://api.discogs.com/artists/5916437"},
+        {"name": "Ron Perry (6)", "anv": "", "join": "", "role": "Executive-Producer",
+        "tracks": "", "id": 5257701, "resource_url": "https://api.discogs.com/artists/5257701"},
+        {"name": "Gabriel Alcala", "anv": "", "join": "", "role": "Illustration",
+        "tracks": "", "id": 1296649, "resource_url": "https://api.discogs.com/artists/1296649"},
+        {"name": "Ryan Smith (2)", "anv": "RKS", "join": "", "role": "Lacquer Cut
+        By", "tracks": "", "id": 463852, "resource_url": "https://api.discogs.com/artists/463852"},
+        {"name": "JUCO", "anv": "", "join": "", "role": "Photography By", "tracks":
+        "", "id": 4753796, "resource_url": "https://api.discogs.com/artists/4753796"},
+        {"name": "Diplo", "anv": "", "join": "", "role": "Producer", "tracks": "",
+        "id": 191242, "resource_url": "https://api.discogs.com/artists/191242"}, {"name":
+        "Junior Blender", "anv": "Jr Blender", "join": "", "role": "Producer", "tracks":
+        "A3, A5, B7, B8, B10", "id": 348921, "resource_url": "https://api.discogs.com/artists/348921"},
+        {"name": "King Henry (2)", "anv": "", "join": "", "role": "Producer", "tracks":
+        "A4, A5, B7", "id": 3301976, "resource_url": "https://api.discogs.com/artists/3301976"},
+        {"name": "Nathaniel Ledwidge", "anv": "Nathaniel \"Detonate\" Ledwidge", "join":
+        "", "role": "Producer", "tracks": "A2, B6", "id": 2945072, "resource_url":
+        "https://api.discogs.com/artists/2945072"}, {"name": "Labrinth", "anv": "",
+        "join": "", "role": "Producer, Engineer", "tracks": "", "id": 1154116, "resource_url":
+        "https://api.discogs.com/artists/1154116"}], "images": [{"type": "primary",
+        "uri": "https://img.discogs.com/AHN5gi-unGimk9fqUXPajn_oTYw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432464-4174.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/AHN5gi-unGimk9fqUXPajn_oTYw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432464-4174.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Go3g0Vnk5urqBXGsV5_LVTsBDVo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432464-4174.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/y0W60se3qQYUbBJrujQlTkCnFPg=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432475-6022.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/y0W60se3qQYUbBJrujQlTkCnFPg=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432475-6022.jpeg.jpg",
+        "uri150": "https://img.discogs.com/fOrRxUIRYa2KuJAoiptjbp_Ek5c=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432475-6022.jpeg.jpg",
+        "width": 600, "height": 599}, {"type": "secondary", "uri": "https://img.discogs.com/tP5Molra8yylW_Yoen3V6OF_mNo=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432479-1333.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/tP5Molra8yylW_Yoen3V6OF_mNo=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432479-1333.jpeg.jpg",
+        "uri150": "https://img.discogs.com/ezbgCdxQPLj2IFPGb26EUaog6vo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432479-1333.jpeg.jpg",
+        "width": 600, "height": 606}, {"type": "secondary", "uri": "https://img.discogs.com/j8fjFM9EUi97sAhYW2xeGjhhWhA=/fit-in/600x627/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432483-7663.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/j8fjFM9EUi97sAhYW2xeGjhhWhA=/fit-in/600x627/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432483-7663.jpeg.jpg",
+        "uri150": "https://img.discogs.com/kz91l4jjz-AFxjXjJmswDFFzkBQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432483-7663.jpeg.jpg",
+        "width": 600, "height": 627}, {"type": "secondary", "uri": "https://img.discogs.com/gQawVoYAIOGE0iM8h8HslkIEs-w=/fit-in/600x592/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432493-1981.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/gQawVoYAIOGE0iM8h8HslkIEs-w=/fit-in/600x592/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432493-1981.jpeg.jpg",
+        "uri150": "https://img.discogs.com/oJcDnBfByIBW9U5NmxV_ZF9W3ZA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432493-1981.jpeg.jpg",
+        "width": 600, "height": 592}, {"type": "secondary", "uri": "https://img.discogs.com/QiL1IwC8F7z8EXeGaQv-TO3hc0w=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432501-5082.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/QiL1IwC8F7z8EXeGaQv-TO3hc0w=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432501-5082.jpeg.jpg",
+        "uri150": "https://img.discogs.com/tMKoZ7gjqUmfVvgcFPGwmwUwpYw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432501-5082.jpeg.jpg",
+        "width": 600, "height": 596}, {"type": "secondary", "uri": "https://img.discogs.com/wHohhEJ1OA8AdFESl-E9uIBUavE=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432508-3237.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/wHohhEJ1OA8AdFESl-E9uIBUavE=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13812684-1562432508-3237.jpeg.jpg",
+        "uri150": "https://img.discogs.com/XGTyTD4oNbKHsPQLVKa-9SW5G9k=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432508-3237.jpeg.jpg",
+        "width": 600, "height": 599}], "thumb": "https://img.discogs.com/Go3g0Vnk5urqBXGsV5_LVTsBDVo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13812684-1562432464-4174.jpeg.jpg",
+        "estimated_weight": 230}'
+  recorded_at: Sun, 10 Jan 2021 11:21:53 GMT
+recorded_with: VCR 6.0.0

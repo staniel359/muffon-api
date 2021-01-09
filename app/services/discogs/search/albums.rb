@@ -18,8 +18,7 @@ module Discogs
             image: g['cover_image'],
             released: g['year'].to_s,
             format: g['format'].uniq.join(', '),
-            discogs_id: g['id'],
-            discogs_group_id: g['master_id']
+            discogs_id: g['id']
           }
         end
       end

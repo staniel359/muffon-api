@@ -27,8 +27,8 @@ module Discogs
         response_data.dig('pagination', 'page')
       end
 
-      def api_link
-        'https://api.discogs.com/database/search'
+      def link
+        "#{base_link}/database/search"
       end
 
       def extra_params

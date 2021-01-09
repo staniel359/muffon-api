@@ -23,8 +23,8 @@ module Discogs
         response_data.dig('pagination', 'page')
       end
 
-      def api_link
-        "https://api.discogs.com/artists/#{@args.artist_id}/releases"
+      def link
+        "#{base_link}/artists/#{@args.artist_id}/releases"
       end
 
       def total_pages

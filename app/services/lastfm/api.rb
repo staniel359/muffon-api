@@ -12,10 +12,10 @@ module LastFM
     end
 
     def api_response
-      RestClient.get(api_link, params: params)
+      RestClient.get(link, params: params)
     end
 
-    def api_link
+    def link
       'http://ws.audioscrobbler.com/2.0'
     end
 
