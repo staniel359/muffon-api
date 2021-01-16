@@ -23,10 +23,14 @@ module Discogs
         }
       end
 
+      def link
+        "#{base_link}/releases/#{@args.album_id}"
+      end
+
       def album_extra_data
         {
           images: images,
-          released: response_data['released_formatted'].to_s,
+          released: released,
           description: description,
           labels: labels,
           tags: tags,
@@ -34,8 +38,8 @@ module Discogs
         }
       end
 
-      def link
-        "#{base_link}/releases/#{@args.album_id}"
+      def released
+        response_data['released_formatted'].to_s
       end
 
       def labels
@@ -43,7 +47,9 @@ module Discogs
       end
 
       def tags
-        response_data.values_at('genres', 'styles').flatten.uniq
+        response_data.values_at(
+          'genres', 'styles'
+        ).flatten.compact.uniq
       end
 
       def tracks
