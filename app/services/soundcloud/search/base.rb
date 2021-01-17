@@ -8,11 +8,7 @@ module SoundCloud
       end
 
       def no_data?
-        response_data['collection'].blank?
-      end
-
-      def search_link
-        'https://api-v2.soundcloud.com/search'
+        response_data.blank?
       end
 
       def extra_params

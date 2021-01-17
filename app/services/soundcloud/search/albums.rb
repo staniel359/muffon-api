@@ -4,11 +4,11 @@ module SoundCloud
       private
 
       def link
-        "#{search_link}/albums"
+        "#{base_link}/playlists"
       end
 
       def limit
-        (@args.limit || 20).to_i
+        100
       end
 
       def search_data
@@ -16,13 +16,22 @@ module SoundCloud
       end
 
       def albums_data
-        response_data['collection'].map do |a|
+        playlists_filtered.first(results_limit).map do |a|
           {
             title: a['title'],
             artist: a.dig('user', 'username'),
-            soundcloud_id: a['id']
+            soundcloud_id: a['id'],
+            type: a['playlist_type']
           }
         end
+      end
+
+      def playlists_filtered
+        response_data.select { |p| p['playlist_type'].present? }
+      end
+
+      def results_limit
+        (@args.limit || 20).to_i
       end
     end
   end

@@ -7,7 +7,7 @@ RSpec.describe SoundCloud::Search::Tracks do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'soundcloud/search/tracks/success' do
-          subject.call(query: 'luxury elite', limit: 10, page: 2)
+          subject.call(query: 'saint pepsi', limit: 10, page: 2)
         end
       end
 

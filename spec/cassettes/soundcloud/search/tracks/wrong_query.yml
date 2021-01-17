@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/search/tracks?client_id=<SOUNDCLOUD_API_KEY>&limit=50&offset=0&q=wejlhg239gh23
+    uri: https://api.soundcloud.com/tracks?client_id=<SOUNDCLOUD_API_KEY>&limit=50&offset=0&q=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api-v2.soundcloud.com
+      - api.soundcloud.com
   response:
     status:
       code: 200
@@ -23,37 +23,37 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '119'
+      - '28'
       Connection:
       - keep-alive
       Date:
-      - Sat, 02 Jan 2021 11:41:58 GMT
+      - Tue, 02 Feb 2021 12:35:32 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
-      - private, max-age=0
+      - public, max-age=60, must-revalidate
       Referrer-Policy:
       - no-referrer
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
       - nosniff
-      Strict-Transport-Security:
-      - max-age=63072000
       Server:
       - am/2
       Vary:
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 4f516e51d4c38a41272c9098bf829774.cloudfront.net (CloudFront)
+      - 1.1 3529bf84e9522012233c3dd2a59fdfe9.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - AMS50-C1
+      - ARN1-C1
       X-Amz-Cf-Id:
-      - 16PRdMvtpgOjedxcfBesnxYg2adBFeArK9-SQ6mr62rZJ0FrlSWMsg==
+      - yZa5BKn4L5vET2VFjbzer2jmAF3A4anEi3PoH3EarXsySNZJ_-RDmA==
+      Age:
+      - '37'
     body:
       encoding: ASCII-8BIT
-      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:6a0c3d7d21e34fbfb652619d6d77ba31"}'
-  recorded_at: Sat, 02 Jan 2021 11:41:58 GMT
+      string: "[]"
+  recorded_at: Tue, 02 Feb 2021 12:36:08 GMT
 recorded_with: VCR 6.0.0

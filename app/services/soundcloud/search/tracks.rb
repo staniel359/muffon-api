@@ -4,7 +4,7 @@ module SoundCloud
       private
 
       def link
-        "#{search_link}/tracks"
+        "#{base_link}/tracks"
       end
 
       def limit
@@ -16,7 +16,7 @@ module SoundCloud
       end
 
       def tracks_data
-        response_data['collection'].map do |t|
+        response_data.map do |t|
           {
             title: t['title'],
             artist: t.dig('user', 'username'),
