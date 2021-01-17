@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=50&method=tag.getInfo&tag=dream%20pop
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.9.15.1
+      Date:
+      - Sun, 17 Jan 2021 16:06:43 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1863'
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Via:
+      - 1.1 google
+    body:
+      encoding: UTF-8
+      string: '{"tag":{"name":"dream pop","total":120326,"reach":24273,"wiki":{"summary":"Dream
+        pop is a genre of music where timbre and texture are as important, if not
+        more so, than melody and song structure. Vocals when present are subsumed
+        within the music and act as another texture or instrument. For example guitarists
+        in dream pop played with feedback and effects to blur and mutate notes, to
+        produce pure iridescent noise, not memorable melodies and toe-tapping tunes,
+        although these when present they weren''t the focus.\nThe Cocteau Twins are
+        widely recognized as pioneers of the dream pop sound <a href=\"http://www.last.fm/tag/dream+pop\">Read
+        more on Last.fm</a>.","content":"Dream pop is a genre of music where timbre
+        and texture are as important, if not more so, than melody and song structure.
+        Vocals when present are subsumed within the music and act as another texture
+        or instrument. For example guitarists in dream pop played with feedback and
+        effects to blur and mutate notes, to produce pure iridescent noise, not memorable
+        melodies and toe-tapping tunes, although these when present they weren''t
+        the focus.\nThe Cocteau Twins are widely recognized as pioneers of the dream
+        pop sound, their sound a collage of soft,  almost indecipherable vocals and
+        languid soundscapes. A.R. Kane were the first band to explicitly describe
+        their music as ''dream pop'' and once claimed that \"a lot of the time we''re
+        trying to transform dream imagery into sounds.\" Which echoes My Bloody Valentine
+        (who are a premier Dream Pop group who had a huge influence on ''shoegazers''
+        like Slowdive and Lush) approach to recording music while in a state between
+        sleep and wakefulness (hypnagogic).\n\n\n\n <a href=\"http://www.last.fm/tag/dream+pop\">Read
+        more on Last.fm</a>. User-contributed text is available under the Creative
+        Commons By-SA License; additional terms may apply."}}}'
+  recorded_at: Sun, 17 Jan 2021 16:06:42 GMT
+recorded_with: VCR 6.0.0

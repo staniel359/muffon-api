@@ -26,6 +26,27 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
     end
   end
 
+  describe 'GET :description' do
+    it 'returns 200 if tag exists' do
+      VCR.use_cassette 'api/v1/lastfm/tags/description/success' do
+        get :description, params: tag
+        expect(response).to have_http_status(:ok)
+      end
+    end
+
+    it 'returns 400 if no tag name' do
+      get :description, params: no_tag
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 400 if wrong tag name' do
+      VCR.use_cassette 'api/v1/lastfm/tags/description/wrong_tag' do
+        get :description, params: wrong_tag
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
+
   describe 'GET :artists' do
     it 'returns 200 if any artists' do
       VCR.use_cassette 'api/v1/lastfm/tags/artists/success' do

@@ -1,6 +1,6 @@
 module LastFM
   module Tag
-    class Info < LastFM::API
+    class Description < LastFM::API
       private
 
       def service_info
@@ -25,9 +25,7 @@ module LastFM
       def tag_data
         {
           name: response_data['name'],
-          taggings_count: response_data['total'],
-          taggers_count: response_data['reach'],
-          description: description_truncated
+          description: description
         }
       end
     end
