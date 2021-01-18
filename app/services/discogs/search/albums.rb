@@ -12,15 +12,20 @@ module Discogs
       end
 
       def albums
-        response_data['results'].map do |g|
+        response_data['results'].map do |a|
           {
-            title: g['title'],
-            image: g['cover_image'],
-            released: g['year'].to_s,
-            format: g['format'].uniq.join(', '),
-            discogs_id: g['id']
+            title: a['title'],
+            images: images(a),
+            released: a['year'].to_s,
+            discogs_id: a['id']
           }
         end
+      end
+
+      def images(album)
+        {
+          original: album['cover_image']
+        }
       end
     end
   end

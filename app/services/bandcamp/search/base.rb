@@ -12,7 +12,7 @@ module Bandcamp
       end
 
       def search_response
-        @search_response ||= Google::Search.call(params)[:search]
+        @search_response ||= Bing::Search.call(params)[:search]
       end
 
       def params
@@ -38,6 +38,7 @@ module Bandcamp
         results_filtered.first(limit).map do |r|
           {
             title: r[:title],
+            images: images,
             link: r[:link]
           }
         end
@@ -49,6 +50,18 @@ module Bandcamp
 
       def limit
         (@args.limit || 20).to_i
+      end
+
+      def images
+        {
+          original: default_image.sub('/300x300', ''),
+          extrasmall: default_image.sub('/300x300', '/34s')
+        }
+      end
+
+      def default_image
+        'https://lastfm.freetls.fastly.net/i/u/300x300/'\
+        'c6f59c1e5e7240a4c0d427abd71f3dbb.png'
       end
     end
   end

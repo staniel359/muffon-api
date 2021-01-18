@@ -15,12 +15,17 @@ module Discogs
         response_data['results'].map do |g|
           {
             title: g['title'],
-            image: g['cover_image'],
+            image: images(g),
             released: g['year'].to_s,
-            format: g['format'].uniq.join(', '),
             discogs_id: g['master_id']
           }
         end
+      end
+
+      def images(group)
+        {
+          original: group['cover_image']
+        }
       end
     end
   end
