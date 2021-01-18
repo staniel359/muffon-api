@@ -5,8 +5,6 @@ module SoundCloud
       return handlers.not_found if no_data?
 
       data
-    rescue *Muffon::Errors.list => e
-      Muffon::Errors.handle(e.class)
     end
 
     private

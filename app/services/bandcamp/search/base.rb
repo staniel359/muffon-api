@@ -12,7 +12,7 @@ module Bandcamp
       end
 
       def search_response
-        @search_response ||= Bing::Search.call(params)[:search]
+        @search_response ||= Google::Search.call(params)[:search]
       end
 
       def params

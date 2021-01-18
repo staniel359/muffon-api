@@ -7,6 +7,8 @@ module Muffon
     class << self
       def call(args = {})
         new(args).call
+      rescue *Muffon::Errors.list => e
+        Muffon::Errors.handle(e.class)
       end
     end
 

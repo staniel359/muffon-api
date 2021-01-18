@@ -23,6 +23,7 @@ module Muffon
         {
           bad_request: bad_request_data,
           not_found: not_found_data,
+          too_many_requests: too_many_requests_data,
           bad_gateway: bad_gateway_data,
           gateway_timeout: gateway_timeout_data
         }
@@ -43,6 +44,13 @@ module Muffon
         {
           errors: [RestClient::NotFound],
           handler: format_handler([404, 'Not found'])
+        }
+      end
+
+      def too_many_requests_data
+        {
+          errors: [RestClient::TooManyRequests],
+          handler: format_handler([429, 'Too Many Requests'])
         }
       end
 

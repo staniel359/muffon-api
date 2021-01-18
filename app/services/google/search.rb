@@ -5,8 +5,6 @@ module Google
       return handlers.not_found if no_data?
 
       data
-    rescue RestClient::TooManyRequests
-      too_many_requests_error
     end
 
     private
@@ -32,11 +30,26 @@ module Google
     end
 
     def response
-      RestClient.get(google_link, params: params)
+      RestClient.get(link, headers)
     end
 
-    def google_link
+    def link
       'https://www.google.com/search'
+    end
+
+    def headers
+      {
+        'Cookie' => cookie,
+        params: params
+      }
+    end
+
+    def cookie
+      return '' if Rails.env.production?
+
+      'GOOGLE_ABUSE_EXEMPTION=ID=00f4d94532e7fc7d'\
+        ":TM=1610958213:C=r:IP=#{Muffon::IP.call}-"\
+        ':S=APGng0uPsxRmCfpoakb2T0c3vkDB5vDMeQ'
     end
 
     def params
@@ -44,7 +57,7 @@ module Google
     end
 
     def offset
-      return if @args.page.to_i.zero?
+      return 0 if @args.page.to_i.zero?
 
       (@args.page.to_i - 1) * limit
     end
@@ -71,18 +84,18 @@ module Google
     def results_data
       results.map do |r|
         {
-          title: title(r),
-          link: link(r),
+          title: result_title(r),
+          link: result_link(r),
           description: description(r)
         }
       end
     end
 
-    def title(result)
+    def result_title(result)
       result.css('.vvjwJb')[0].text
     end
 
-    def link(result)
+    def result_link(result)
       CGI.parse(
         URI.parse(
           result.css('a')[0]['href']
@@ -102,10 +115,6 @@ module Google
 
     def pages_block
       response_data.css('.SAez4c')
-    end
-
-    def too_many_requests_error
-      { error: { code: 429, text: 'Too many requests' } }
     end
   end
 end

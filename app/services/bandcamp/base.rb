@@ -7,8 +7,6 @@ module Bandcamp
       yield if block_given?
 
       data
-    rescue *Muffon::Errors.list => e
-      Muffon::Errors.handle(e.class)
     end
 
     private
