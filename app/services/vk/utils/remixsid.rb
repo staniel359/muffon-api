@@ -2,15 +2,15 @@ module VK
   module Utils
     class Remixsid < VK::Base
       def call
-        post_login
+        response
       rescue RestClient::Found => e
         process_redirect(e)
       end
 
       private
 
-      def post_login
-        RestClient.post('login.vk.com', params, extra_data)
+      def link
+        'https://login.vk.com'
       end
 
       def params
@@ -26,23 +26,22 @@ module VK
       end
 
       def selector_data(name)
-        body.css("input[name='#{name}']")[0]['value']
+        base_response_data.css("input[name='#{name}']")[0]['value']
       end
 
-      def body
-        Nokogiri::HTML.parse(response)
+      def base_response_data
+        Nokogiri::HTML.parse(base_response)
       end
 
-      def response
-        @response ||= RestClient.get('vk.com')
-      end
-
-      def extra_data
-        { headers: headers, cookies: response.cookies }
+      def base_response
+        @base_response ||= RestClient.get('https://vk.com')
       end
 
       def headers
-        { 'User-Agent' => user_agent }
+        {
+          cookies: base_response.cookies,
+          'User-Agent' => user_agent
+        }
       end
 
       def user_agent
@@ -55,7 +54,7 @@ module VK
       end
 
       def redirect_response(redirect)
-        RestClient.get(redirect_link(redirect), extra_data)
+        RestClient.get(redirect_link(redirect), headers)
       end
 
       def redirect_link(redirect)

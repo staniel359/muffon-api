@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://vk.com/
+    uri: https://vk.com/
     body:
       encoding: US-ASCII
       string: ''
@@ -117,7 +117,7 @@ http_interactions:
   recorded_at: Wed, 14 Oct 2020 10:53:53 GMT
 - request:
     method: post
-    uri: http://login.vk.com/
+    uri: https://login.vk.com/
     body:
       encoding: UTF-8
       string: act=login&role=al_frame&expire=&ip_h=65cb5123526f25da4c&lg_h=0ce013a9038a4f9b56&email=<VK_EMAIL>&pass=<VK_PASSWORD>

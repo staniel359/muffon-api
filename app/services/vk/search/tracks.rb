@@ -3,7 +3,7 @@ module VK
     class Tracks < VK::Search::Base
       private
 
-      def request_params
+      def params
         {
           act: 'load_section',
           al: 1,

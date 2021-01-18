@@ -15,7 +15,7 @@ module VK
         @album ||= response_data.dig(1, 0)
       end
 
-      def request_params
+      def params
         {
           act: 'load_section',
           al: 1,

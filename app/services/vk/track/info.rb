@@ -15,7 +15,7 @@ module VK
         @track ||= response_data.dig(1, 0, 0)
       end
 
-      def request_params
+      def params
         {
           act: 'reload_audio',
           al: 1,

@@ -3,7 +3,7 @@ module VK
     class Albums < VK::Search::Base
       private
 
-      def request_params
+      def params
         {
           act: 'section',
           al: 1,

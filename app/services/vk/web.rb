@@ -23,14 +23,11 @@ module VK
       response.sub('<!--', '')
     end
 
-    def response
-      RestClient.post(
-        'https://vk.com/al_audio.php',
-        request_params, cookies
-      )
+    def link
+      'https://vk.com/al_audio.php'
     end
 
-    def cookies
+    def headers
       { cookies: { remixsid: remixsid } }
     end
 
