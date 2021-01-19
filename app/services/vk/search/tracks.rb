@@ -3,36 +3,16 @@ module VK
     class Tracks < VK::Search::Base
       private
 
-      def params
-        {
-          act: 'load_section',
-          al: 1,
-          playlist_id: playlist_id,
-          offset: @args.next_page
-        }
+      def collection_name
+        'tracks'
       end
 
-      def playlist_id
-        albums_data.dig(:search, :albums, 0, :vk_id)
+      def collection_data
+        tracks_list.map { |t| track_data(t) }
       end
 
-      def albums_data
-        VK::Search::Albums.call(query: @args.query, tracks: true)
-      end
-
-      def results
-        @results ||= response_data.dig(1, 0)
-      end
-
-      def search_data
-        {
-          next_page: results['nextOffset'],
-          tracks: tracks
-        }
-      end
-
-      def tracks
-        results['list'].map { |t| track_data(t) }
+      def tracks_list
+        results.dig('playlist', 'list')
       end
 
       def track_data(track)
