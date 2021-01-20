@@ -11,8 +11,8 @@ module Spotify
         results.blank?
       end
 
-      def base_link
-        "https://api.spotify.com/v1/artists/#{@args.artist_id}"
+      def artist_base_link
+        "#{base_link}/artists/#{@args.artist_id}"
       end
     end
   end

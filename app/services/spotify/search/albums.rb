@@ -7,22 +7,17 @@ module Spotify
         'albums'
       end
 
-      def albums
+      def collection_type
+        'album'
+      end
+
+      def collection_data
         results.map do |a|
           {
             title: a['name'],
-            artists: artists(a),
-            image: a.dig('images', 0, 'url'),
+            artist: artist_name(a),
+            images: images(a, 'album'),
             released: time_formatted(a['release_date']),
-            spotify_id: a['id']
-          }
-        end
-      end
-
-      def artists(album)
-        album['artists'].map do |a|
-          {
-            name: a['name'],
             spotify_id: a['id']
           }
         end

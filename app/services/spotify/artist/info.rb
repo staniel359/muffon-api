@@ -8,7 +8,7 @@ module Spotify
       end
 
       def link
-        base_link
+        artist_base_link
       end
 
       def data
@@ -18,8 +18,8 @@ module Spotify
       def artist_data
         {
           name: response_data['name'],
-          image: response_data.dig('images', 0, 'url'),
-          genres: response_data['genres']
+          images: images(response_data, 'artist'),
+          tags: response_data['genres']
         }
       end
     end

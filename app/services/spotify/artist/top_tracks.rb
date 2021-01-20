@@ -1,21 +1,32 @@
 module Spotify
-  module Search
-    class Tracks < Spotify::Search::Base
+  module Artist
+    class TopTracks < Spotify::Artist::Base
       private
 
-      def collection_name
-        'tracks'
+      def results
+        response_data['tracks']
       end
 
-      def collection_type
-        'track'
+      def link
+        "#{artist_base_link}/top-tracks"
       end
 
-      def collection_data
+      def params
+        { country: 'US' }
+      end
+
+      def data
+        { artist: artist_data }
+      end
+
+      def artist_data
+        { tracks: tracks_data }
+      end
+
+      def tracks_data
         results.map do |t|
           {
             title: t['name'],
-            artist: artist_name(t),
             album: album_data(t),
             length: length(t),
             audio: audio_data(t)

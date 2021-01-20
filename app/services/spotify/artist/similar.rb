@@ -8,22 +8,22 @@ module Spotify
       end
 
       def link
-        "#{base_link}/related-artists"
-      end
-
-      def base_params
-        {}
+        "#{artist_base_link}/related-artists"
       end
 
       def data
-        { artist: { similar: similar } }
+        { artist: artist_data }
       end
 
-      def similar
+      def artist_data
+        { similar: similar_data }
+      end
+
+      def similar_data
         results.map do |a|
           {
             name: a['name'],
-            image: a.dig('images', 0, 'url'),
+            images: images(a, 'artist'),
             spotify_id: a['id']
           }
         end

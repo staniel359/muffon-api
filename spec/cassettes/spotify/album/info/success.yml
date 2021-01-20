@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/albums/3OYnManu1Nlxnw9OMng7BH?limit=20&offset=0
+    uri: https://api.spotify.com/v1/albums/3OYnManu1Nlxnw9OMng7BH
     body:
       encoding: US-ASCII
       string: ''

@@ -16,20 +16,27 @@ module Spotify
       end
 
       def link
-        'https://api.spotify.com/v1/search'
+        "#{base_link}/search"
       end
 
-      def extra_params
-        { type: collection_name.singularize }
+      def params
+        {
+          q: @args.query,
+          limit: limit,
+          offset: offset,
+          type: collection_type
+        }
       end
 
       def data
+        { search: search_data }
+      end
+
+      def search_data
         {
-          search: {
-            page: page,
-            total_pages: total_pages,
-            collection_name.to_sym => send(collection_name)
-          }
+          page: page,
+          total_pages: total_pages,
+          collection_name.to_sym => collection_data
         }
       end
 

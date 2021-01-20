@@ -8,16 +8,22 @@ module Spotify
       end
 
       def link
-        "#{base_link}/albums"
+        "#{artist_base_link}/albums"
+      end
+
+      def params
+        { offset: offset, limit: limit }
       end
 
       def data
+        { artist: artist_data }
+      end
+
+      def artist_data
         {
-          artist: {
-            page: page,
-            total_pages: total_pages,
-            albums: albums
-          }
+          page: page,
+          total_pages: total_pages,
+          albums: albums_data
         }
       end
 
@@ -25,12 +31,11 @@ module Spotify
         response_data['total']
       end
 
-      def albums
+      def albums_data
         results.map do |a|
           {
             title: a['name'],
-            image: a.dig('images', 0, 'url'),
-            released: time_formatted(a['release_date']),
+            images: images(a, 'album'),
             spotify_id: a['id']
           }
         end

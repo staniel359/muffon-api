@@ -6,7 +6,7 @@ module API
 
         def albums; end
 
-        def tracks; end
+        def top_tracks; end
 
         def similar; end
       end

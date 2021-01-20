@@ -33,17 +33,17 @@ RSpec.describe API::V1::Spotify::ArtistsController, type: :controller do
     end
   end
 
-  describe 'GET :tracks' do
+  describe 'GET :top_tracks' do
     it 'returns 200 if artist_id present' do
-      VCR.use_cassette 'api/v1/spotify/artists/tracks/success' do
-        get :tracks, params: { artist_id: '1aSxMhuvixZ8h9dK9jIDwL' }
+      VCR.use_cassette 'api/v1/spotify/artists/top_tracks/success' do
+        get :top_tracks, params: { artist_id: '1aSxMhuvixZ8h9dK9jIDwL' }
         expect(response).to have_http_status(:ok)
       end
     end
 
     it 'returns 400 if wrong artist_id' do
-      VCR.use_cassette 'api/v1/spotify/artists/tracks/wrong_id' do
-        get :tracks, params: { artist_id: Helpers::Base::RANDOM_STRING }
+      VCR.use_cassette 'api/v1/spotify/artists/top_tracks/wrong_id' do
+        get :top_tracks, params: { artist_id: Helpers::Base::RANDOM_STRING }
         expect(response).to have_http_status(:bad_request)
       end
     end

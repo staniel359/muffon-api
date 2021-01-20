@@ -12,7 +12,7 @@ module Spotify
       end
 
       def link
-        "https://api.spotify.com/v1/albums/#{@args.album_id}"
+        "#{base_link}/albums/#{@args.album_id}"
       end
 
       def data
@@ -20,32 +20,37 @@ module Spotify
       end
 
       def album_data
+        album_base_data.merge(album_extra_data)
+      end
+
+      def album_base_data
         {
           title: response_data['name'],
-          artists: artists,
-          image: response_data.dig('images', 0, 'url'),
-          released: time_formatted(response_data['release_date']),
+          artist: artist_name(response_data),
+          source: 'spotify'
+        }
+      end
+
+      def album_extra_data
+        {
+          images: images(response_data, 'album'),
+          released: released,
           label: response_data['label'],
-          genres: response_data['genres'],
+          tags: response_data['genres'],
           tracks: tracks
         }
       end
 
-      def artists
-        response_data['artists'].map do |a|
-          {
-            name: a['name'],
-            spotify_id: a['id']
-          }
-        end
+      def released
+        time_formatted(response_data['release_date'])
       end
 
       def tracks
         response_data.dig('tracks', 'items').map do |t|
           {
             title: t['name'],
-            length: t['duration_ms'].fdiv(1000).ceil,
-            spotify_id: t['id']
+            length: length(t),
+            audio: audio_data(t)
           }
         end
       end

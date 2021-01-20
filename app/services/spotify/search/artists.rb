@@ -7,11 +7,15 @@ module Spotify
         'artists'
       end
 
-      def artists
+      def collection_type
+        'artist'
+      end
+
+      def collection_data
         results.map do |a|
           {
             name: a['name'],
-            image: a.dig('images', 0, 'url'),
+            image: images(a, 'artist'),
             spotify_id: a['id']
           }
         end

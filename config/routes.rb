@@ -152,7 +152,7 @@ Rails.application.routes.draw do
           scope ':artist_id' do
             get '', action: :info
             get 'albums'
-            get 'tracks'
+            get 'top_tracks'
             get 'similar'
           end
         end

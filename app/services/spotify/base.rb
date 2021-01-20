@@ -19,6 +19,10 @@ module Spotify
       RestClient.get(link, headers)
     end
 
+    def base_link
+      'https://api.spotify.com/v1'
+    end
+
     def headers
       {
         'Authorization' => "Bearer #{spotify_token}",
@@ -31,11 +35,7 @@ module Spotify
     end
 
     def params
-      base_params.merge(extra_params).compact
-    end
-
-    def base_params
-      { q: @args.query, limit: limit, offset: offset }
+      {}
     end
 
     def limit
@@ -50,10 +50,6 @@ module Spotify
       (@args.page || 1).to_i
     end
 
-    def extra_params
-      {}
-    end
-
     def total_pages
       total_items.fdiv(limit).ceil
     end
@@ -65,6 +61,48 @@ module Spotify
 
     def new_spotify_token
       Spotify::Token.call
+    end
+
+    def artist_name(data)
+      data['artists'].map { |a| a['name'] }.join(', ')
+    end
+
+    def images(data, model)
+      if images_list(data).present?
+        images_data(data)
+      else
+        default_images_data(model)
+      end
+    end
+
+    def images_list(data)
+      data['images']
+    end
+
+    def images_data(data)
+      {
+        original: image_data(data, 0),
+        large: image_data(data, -3),
+        medium: image_data(data, -2),
+        small: image_data(data, -1),
+        extrasmall: image_data(data, -1)
+      }
+    end
+
+    def image_data(data, index)
+      images_list(data).dig(index, 'url')
+    end
+
+    def length(track)
+      track['duration_ms'].fdiv(1000).ceil
+    end
+
+    def audio_data(track)
+      {
+        present: track['id'].present?,
+        id: track['id'],
+        source: 'spotify'
+      }
     end
   end
 end

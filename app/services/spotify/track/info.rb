@@ -12,7 +12,7 @@ module Spotify
       end
 
       def link
-        "https://api.spotify.com/v1/tracks/#{@args.track_id}"
+        "#{base_link}/tracks/#{@args.track_id}"
       end
 
       def data
@@ -22,31 +22,25 @@ module Spotify
       def track_data
         {
           title: response_data['name'],
-          artists: artists(response_data),
-          length: response_data['duration_ms'].fdiv(1000).ceil,
-          albums: albums
+          artist: artist_name(response_data),
+          album: album_data,
+          length: length(response_data),
+          audio: audio_data(response_data)
         }
       end
 
-      def artists(model)
-        model['artists'].map do |a|
-          {
-            name: a['name'],
-            spotify_id: a['id']
-          }
-        end
+      def album_data
+        {
+          title: album['name'],
+          artist: artist_name(album),
+          images: images(album, 'album'),
+          released: time_formatted(album['release_date']),
+          spotify_id: album['id']
+        }
       end
 
-      def albums
-        [response_data['album']].map do |a|
-          {
-            title: a['name'],
-            artists: artists(a),
-            image: a.dig('images', 0, 'url'),
-            released: time_formatted(a['release_date']),
-            spotify_id: a['id']
-          }
-        end
+      def album
+        response_data['album']
       end
     end
   end

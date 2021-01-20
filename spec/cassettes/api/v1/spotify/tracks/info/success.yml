@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/tracks/29d0nY7TzCoi22XBqDQkiP?limit=20&offset=0
+    uri: https://api.spotify.com/v1/tracks/29d0nY7TzCoi22XBqDQkiP
     body:
       encoding: US-ASCII
       string: ''
