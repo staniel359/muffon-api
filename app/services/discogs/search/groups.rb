@@ -11,21 +11,19 @@ module Discogs
         'group'
       end
 
-      def groups
+      def collection_name
+        'groups'
+      end
+
+      def collection_data
         response_data['results'].map do |g|
           {
             title: g['title'],
-            image: images(g),
+            images: images(g['cover_image'], 'album'),
             released: g['year'].to_s,
             discogs_id: g['master_id']
           }
         end
-      end
-
-      def images(group)
-        {
-          original: group['cover_image']
-        }
       end
     end
   end

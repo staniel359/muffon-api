@@ -19,7 +19,7 @@ module Discogs
         {
           page: page,
           total_pages: total_pages,
-          collection_key => send(collection_key)
+          collection_name.to_sym => collection_data
         }
       end
 
@@ -40,16 +40,8 @@ module Discogs
         }
       end
 
-      def discogs_collection_type
-        collection_type
-      end
-
       def total_pages
         response_data.dig('pagination', 'pages')
-      end
-
-      def collection_key
-        collection_type.pluralize.to_sym
       end
     end
   end

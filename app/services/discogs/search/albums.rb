@@ -11,21 +11,19 @@ module Discogs
         'album'
       end
 
-      def albums
+      def collection_name
+        'albums'
+      end
+
+      def collection_data
         response_data['results'].map do |a|
           {
             title: a['title'],
-            images: images(a),
+            images: images(a['cover_image'], 'album'),
             released: a['year'].to_s,
             discogs_id: a['id']
           }
         end
-      end
-
-      def images(album)
-        {
-          original: album['cover_image']
-        }
       end
     end
   end

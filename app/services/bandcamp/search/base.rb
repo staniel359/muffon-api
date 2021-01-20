@@ -48,20 +48,16 @@ module Bandcamp
         search_response[:results].select { |r| matched?(r) }
       end
 
+      def matched?(result)
+        result[:link][%r{/#{model_name}/}].present?
+      end
+
       def limit
         (@args.limit || 20).to_i
       end
 
       def images
-        {
-          original: default_image.sub('/300x300', ''),
-          extrasmall: default_image.sub('/300x300', '/34s')
-        }
-      end
-
-      def default_image
-        'https://lastfm.freetls.fastly.net/i/u/300x300/'\
-        'c6f59c1e5e7240a4c0d427abd71f3dbb.png'
+        default_images_data(model_name)
       end
     end
   end

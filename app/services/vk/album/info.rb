@@ -45,17 +45,10 @@ module VK
 
       def album_extra_data
         {
-          images: images,
+          images: images(album['coverUrl'], 'album'),
           released: released,
           plays_count: album['listens'].to_i,
-          tracks: (tracks unless @args.track)
-        }
-      end
-
-      def images
-        {
-          original: album['coverUrl'],
-          medium: album['coverUrl']
+          tracks: tracks_data
         }
       end
 
@@ -63,7 +56,7 @@ module VK
         album['infoLine1'].split('<span class="dvd"></span>').last
       end
 
-      def tracks
+      def tracks_data
         album['list'].map { |t| track_data(t) }
       end
 

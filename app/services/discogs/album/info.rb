@@ -29,7 +29,7 @@ module Discogs
 
       def album_extra_data
         {
-          images: images,
+          images: images(main_image, 'album'),
           released: released,
           description: description,
           labels: labels,

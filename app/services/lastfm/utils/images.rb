@@ -1,6 +1,6 @@
 module LastFM
   module Utils
-    class ImagesData < LastFM::Base
+    class Images < LastFM::Base
       def call
         images_data
       end
@@ -25,29 +25,36 @@ module LastFM
       end
 
       def image
-        @args.image || data_image || default_image
+        return @args.image if @args.image.present?
+        return data_image if data_image.present?
+        return default_image if @args.model.present?
+
+        ''
       end
 
       def data_image
         return if @args.data.blank?
 
-        @args.data['image'].last['#text'].presence
+        @args.data['image'].last['#text']
       end
 
       def default_image
-        return '' if @args.model.blank?
-
-        send("#{@args.model}_default_image")
+        send("default_#{@args.model}_image")
       end
 
-      def artist_default_image
+      def default_artist_image
         'https://lastfm.freetls.fastly.net/i/u/300x300/'\
         '2a96cbd8b46e442fc41c2b86b821562f.png'
       end
 
-      def album_default_image
+      def default_album_image
         'https://lastfm.freetls.fastly.net/i/u/300x300/'\
         'c6f59c1e5e7240a4c0d427abd71f3dbb.png'
+      end
+
+      def default_track_image
+        'https://lastfm.freetls.fastly.net/i/u/300x300/'\
+        '4128a6eb29f94943c9d206c08e625904.png'
       end
     end
   end

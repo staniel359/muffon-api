@@ -7,8 +7,8 @@ module Bandcamp
         'albums'
       end
 
-      def matched?(result)
-        result[:link][%r{/album/}].present?
+      def model_name
+        'album'
       end
     end
   end

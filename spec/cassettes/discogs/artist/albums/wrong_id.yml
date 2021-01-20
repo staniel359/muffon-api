@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: NOT FOUND
     headers:
       Date:
-      - Thu, 17 Dec 2020 14:07:38 GMT
+      - Wed, 20 Jan 2021 09:41:01 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '58'
+      - '59'
       X-Discogs-Ratelimit-Used:
-      - '2'
+      - '1'
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -47,5 +47,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"message": "The requested resource was not found."}'
-  recorded_at: Thu, 17 Dec 2020 14:07:39 GMT
+  recorded_at: Wed, 20 Jan 2021 09:40:59 GMT
 recorded_with: VCR 6.0.0

@@ -40,7 +40,19 @@ module Discogs
       {}
     end
 
-    def images
+    def images(image, model)
+      if image_present?(image)
+        images_data(image)
+      else
+        default_images_data(model)
+      end
+    end
+
+    def image_present?(image)
+      image.present? && !image.end_with?('/spacer.gif')
+    end
+
+    def images_data(image)
       {
         original: image,
         large: image,
@@ -50,12 +62,18 @@ module Discogs
       }
     end
 
-    def image
-      primary_image.to_h['uri'].to_s
+    def main_image
+      return if images_list.blank?
+
+      (primary_image || images_list[0])['uri']
     end
 
     def primary_image
-      response_data['images'].to_a.find { |i| i['type'] == 'primary' }
+      images_list.find { |i| i['type'] == 'primary' }
+    end
+
+    def images_list
+      response_data['images']
     end
 
     def length_formatted(length)

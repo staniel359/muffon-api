@@ -19,16 +19,10 @@ module VK
         {
           title: album_title(album),
           artist: album_artist_name(album),
-          images: images(album),
+          images: images(album['coverUrl'], 'album'),
           vk_id: album['id'],
           vk_owner_id: album['ownerId'],
           vk_access_hash: album['accessHash']
-        }
-      end
-
-      def images(album)
-        {
-          original: album['coverUrl']
         }
       end
     end

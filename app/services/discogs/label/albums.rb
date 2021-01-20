@@ -40,7 +40,7 @@ module Discogs
           {
             title: a['title'],
             artist: a['artist'],
-            image: a['thumb'],
+            images: images(a['thumb'], 'album'),
             released: a['year'].to_s,
             discogs_id: a['id']
           }

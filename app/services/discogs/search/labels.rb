@@ -3,15 +3,23 @@ module Discogs
     class Labels < Discogs::Search::Base
       private
 
+      def discogs_collection_type
+        'label'
+      end
+
       def collection_type
         'label'
       end
 
-      def labels
+      def collection_name
+        'labels'
+      end
+
+      def collection_data
         response_data['results'].map do |l|
           {
             title: l['title'],
-            image: l['cover_image'],
+            images: images(l['cover_image'], 'artist'),
             discogs_id: l['id']
           }
         end

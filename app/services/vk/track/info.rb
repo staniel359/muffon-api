@@ -41,55 +41,35 @@ module VK
 
       def track_extra_data
         {
-          album: album_title(album_data),
-          images: images,
+          images: images(track[14], 'track'),
+          album: album_data,
           length: track[5],
           audio: audio_data
         }
       end
 
       def album_data
-        @album_data ||= VK::Album::Info.call(album_args)[:album].to_h
-      end
+        return {} if track[19].blank?
 
-      def album_args
-        return {} unless track[19]
+        owner_id, vk_id, access_hash = track[19]
 
         {
-          album_id: track[19][1],
-          owner_id: track[19][0],
-          access_hash: track[19][2],
-          track: true
+          vk_id: vk_id,
+          owner_id: owner_id,
+          access_hash: access_hash
         }
-      end
-
-      def images
-        {
-          original: album_images[:original].to_s,
-          medium: album_images[:medium].to_s,
-          small: track_images[1].to_s,
-          extrasmall: track_images[0].to_s
-        }
-      end
-
-      def album_images
-        album_data[:images].to_h
-      end
-
-      def track_images
-        track[14].split(',')
       end
 
       def audio_data
         {
-          present: audio_link.present?,
+          present: track[2].present?,
           link: audio_link,
           source: 'vk'
         }
       end
 
       def audio_link
-        @audio_link ||= VK::Utils::Decoder.call(link: track[2])
+        VK::Utils::Decoder.call(link: track[2])
       end
     end
   end

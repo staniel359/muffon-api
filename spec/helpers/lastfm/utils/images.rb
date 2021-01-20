@@ -1,7 +1,7 @@
 module Helpers
   module LastFM
     module Utils
-      module ImagesData
+      module Images
         class << self
           def no_args_data
             {:original=>"", :large=>"", :medium=>"", :small=>"", :extrasmall=>""}

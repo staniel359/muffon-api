@@ -20,7 +20,7 @@ module SoundCloud
           id: track_id(artist_name, title),
           title: title,
           artist: artist_name,
-          images: images(response_data),
+          images: images(response_data, 'track'),
           length: response_data['duration'] / 1_000,
           plays_count: response_data['playback_count'],
           audio: audio_data

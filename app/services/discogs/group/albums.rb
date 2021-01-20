@@ -39,7 +39,7 @@ module Discogs
         response_data['versions'].map do |a|
           {
             title: a['title'],
-            image: a['thumb'],
+            images: images(a['thumb'], 'album'),
             released: a['released'],
             format: a['format'],
             discogs_id: a['id']

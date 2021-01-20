@@ -47,7 +47,7 @@ module LastFM
       end
 
       def images(image)
-        LastFM::Utils::ImagesData.call(
+        LastFM::Utils::Images.call(
           image: image, model: 'artist'
         )
       end

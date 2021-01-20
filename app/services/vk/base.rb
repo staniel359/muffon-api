@@ -28,5 +28,23 @@ module VK
     def response
       RestClient.post(link, params, headers)
     end
+
+    def images(image, model)
+      if image.present?
+        images_data(image)
+      else
+        default_images_data(model)
+      end
+    end
+
+    def images_data(image)
+      {
+        original: image,
+        large: image,
+        medium: image,
+        small: image,
+        extrasmall: image
+      }
+    end
   end
 end

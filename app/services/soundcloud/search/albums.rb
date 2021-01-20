@@ -20,7 +20,7 @@ module SoundCloud
           {
             title: a['title'],
             artist: a.dig('user', 'username'),
-            images: images(a),
+            images: images(a, 'album'),
             soundcloud_id: a['id']
           }
         end

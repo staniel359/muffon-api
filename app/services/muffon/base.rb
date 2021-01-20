@@ -49,5 +49,9 @@ module Muffon
     def description_truncated
       description.truncate_words(75)
     end
+
+    def default_images_data(model)
+      LastFM::Utils::Images.call(model: model)
+    end
   end
 end
