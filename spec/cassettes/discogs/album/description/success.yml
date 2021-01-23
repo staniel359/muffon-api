@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 26 Jan 2021 15:13:42 GMT
+      - Tue, 26 Jan 2021 15:11:52 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '58'
+      - '59'
       X-Discogs-Ratelimit-Used:
-      - '2'
+      - '1'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
@@ -404,5 +404,5 @@ http_interactions:
         "uri150": "https://img.discogs.com/tWrgQGpOpddno5R3-0aPO44-SHY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1565970893-1043.jpeg.jpg",
         "width": 600, "height": 600}], "thumb": "https://img.discogs.com/2OD9C3Mh-8jz6tzALCjdoLERAos=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
         "estimated_weight": 230}'
-  recorded_at: Tue, 26 Jan 2021 15:13:41 GMT
+  recorded_at: Tue, 26 Jan 2021 15:11:51 GMT
 recorded_with: VCR 6.0.0

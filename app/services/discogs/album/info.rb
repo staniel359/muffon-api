@@ -1,15 +1,7 @@
 module Discogs
   module Album
-    class Info < Discogs::Base
+    class Info < Discogs::Album::Base
       private
-
-      def primary_args
-        [@args.album_id]
-      end
-
-      def data
-        { album: album_data }
-      end
 
       def album_data
         album_base_data.merge(album_extra_data)
@@ -18,23 +10,19 @@ module Discogs
       def album_base_data
         {
           title: response_data['title'],
-          artist: artist_name(response_data['artists']),
+          artist: artist_data,
           source: 'discogs'
         }
       end
 
-      def link
-        "#{base_link}/releases/#{@args.album_id}"
-      end
-
       def album_extra_data
         {
-          images: images(main_image, 'album'),
+          images: images_data(main_image, 'album'),
           released: released,
-          description: description,
+          description: description_truncated,
           labels: labels,
           tags: tags,
-          tracks: tracks
+          tracks: tracks_data
         }
       end
 
@@ -50,19 +38,6 @@ module Discogs
         response_data.values_at(
           'genres', 'styles'
         ).flatten.compact.uniq
-      end
-
-      def tracks
-        tracks_filtered.map { |t| track_data(t) }
-      end
-
-      def track_data(track)
-        {
-          id: track_id(track),
-          title: track['title'],
-          artist: (track_artist_name(track) if track['artists']),
-          length: length_formatted(track['duration'])
-        }.compact
       end
     end
   end

@@ -15,15 +15,13 @@ module Discogs
         'groups'
       end
 
-      def collection_data
-        response_data['results'].map do |g|
-          {
-            title: g['title'],
-            images: images(g['cover_image'], 'album'),
-            released: g['year'].to_s,
-            discogs_id: g['master_id']
-          }
-        end
+      def collection_item_data(group)
+        {
+          title: group['title'],
+          images: images_data(group['cover_image'], 'album'),
+          released: group['year'].to_s,
+          discogs_id: group['master_id']
+        }
       end
     end
   end

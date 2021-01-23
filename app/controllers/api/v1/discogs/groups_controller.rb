@@ -4,6 +4,8 @@ module API
       class GroupsController < API::V1::BaseController
         def info; end
 
+        def description; end
+
         def albums; end
       end
     end

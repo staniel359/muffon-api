@@ -7,7 +7,7 @@ RSpec.describe Discogs::Album::Info do
     context 'when album_id given' do
       let(:output) do
         VCR.use_cassette 'discogs/album/info/success' do
-          subject.call(album_id: '16233996')
+          subject.call(album_id: '197163')
         end
       end
 

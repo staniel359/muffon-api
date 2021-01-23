@@ -18,107 +18,58 @@ module Discogs
     end
 
     def api_response
-      RestClient.get(link, params: params)
+      RestClient.get(link, headers)
     end
 
     def base_link
       'https://api.discogs.com'
     end
 
-    def params
-      auth_params.merge(extra_params)
+    def headers
+      { params: params }
     end
 
-    def auth_params
+    def params
       {
         key: secrets.discogs[:api_key],
         secret: secrets.discogs[:api_secret]
       }
     end
 
-    def extra_params
-      {}
-    end
-
-    def images(image, model)
-      if image_present?(image)
-        images_data(image)
-      else
-        default_images_data(model)
-      end
-    end
-
-    def image_present?(image)
-      image.present? && !image.end_with?('/spacer.gif')
-    end
-
-    def images_data(image)
-      {
-        original: image,
-        large: image,
-        medium: image,
-        small: image,
-        extrasmall: image
-      }
-    end
-
-    def main_image
-      return if images_list.blank?
-
-      (primary_image || images_list[0])['uri']
-    end
-
-    def primary_image
-      images_list.find { |i| i['type'] == 'primary' }
-    end
-
-    def images_list
-      response_data['images']
-    end
-
-    def length_formatted(length)
-      length.split(':').map(&:to_i).inject { |m, s| m * 60 + s }.to_i
-    end
-
-    def tracks_filtered
-      response_data['tracklist'].select { |t| t['type_'] == 'track' }
+    def artist_data
+      { name: artist_name(response_data['artists']) }
     end
 
     def artist_name(artists)
-      artists.map do |a|
-        [a['name'], artist_join(a['join'])]
-      end.flatten.join
+      Discogs::Utils::ArtistName.call(artists: artists)
     end
 
-    def artist_join(join)
-      return join if join == ''
-
-      pre_space = ' ' unless join == ','
-
-      "#{pre_space}#{join} "
+    def albums_data
+      albums_list.map { |a| album_data(a) }
     end
 
-    def track_id(track)
-      super(track_artist_name(track), track['title'])
+    def albums_list
+      response_data['releases'] || response_data['versions']
     end
 
-    def track_artist_name(track)
-      artists = track['artists'] || response_data['artists']
+    def images_data(image, model)
+      Discogs::Utils::Images.call(image: image, model: model)
+    end
 
-      artist_name(artists)
+    def main_image
+      Discogs::Utils::MainImage.call(response_data: response_data)
+    end
+
+    def length_formatted(length)
+      Discogs::Utils::Length.call(length: length)
     end
 
     def description
-      artists_gsub = description_data.gsub(/\[a=(.*?)\]/, '\1')
-      groups_gsub = artists_gsub.gsub(
-        /\[m=(.*?)\]/,
-        'https://www.discogs.com/master/\1'
-      )
-      groups_gsub.gsub(/\[.*?\]/, '')
+      Discogs::Utils::Description.call(description: response_data['notes'])
     end
 
-    def description_data
-      response_data['notes'].to_s
+    def tracks_data
+      Discogs::Utils::Tracks.call(response_data: response_data)
     end
   end
 end

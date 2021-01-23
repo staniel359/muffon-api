@@ -15,14 +15,12 @@ module Discogs
         'labels'
       end
 
-      def collection_data
-        response_data['results'].map do |l|
-          {
-            title: l['title'],
-            images: images(l['cover_image'], 'artist'),
-            discogs_id: l['id']
-          }
-        end
+      def collection_item_data(label)
+        {
+          title: label['title'],
+          images: images_data(label['cover_image'], 'artist'),
+          discogs_id: label['id']
+        }
       end
     end
   end

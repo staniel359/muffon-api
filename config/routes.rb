@@ -113,7 +113,6 @@ Rails.application.routes.draw do
 
         namespace :artists, as: :artist do
           scope ':artist_id' do
-            get '', action: :info
             get 'albums'
           end
         end
@@ -128,6 +127,7 @@ Rails.application.routes.draw do
         namespace :groups, as: :group do
           scope ':group_id' do
             get '', action: :info
+            get 'description'
             get 'albums'
           end
         end
@@ -135,6 +135,7 @@ Rails.application.routes.draw do
         namespace :albums, as: :album do
           scope ':album_id' do
             get '', action: :info
+            get 'description'
           end
         end
       end

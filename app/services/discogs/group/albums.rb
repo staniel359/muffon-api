@@ -1,50 +1,26 @@
 module Discogs
   module Group
-    class Albums < Discogs::Base
+    class Albums < Discogs::Group::Base
+      include Discogs::Paginated
+
       private
 
-      def primary_args
-        [@args.group_id]
-      end
-
       def data
-        { group: group_data }
-      end
-
-      def group_data
-        {
-          page: page,
-          total_pages: total_pages,
-          albums: albums
-        }
-      end
-
-      def page
-        response_data.dig('pagination', 'page')
+        { group: paginated_data }
       end
 
       def link
-        "#{base_link}/masters/#{@args.group_id}/versions"
+        "#{group_link}/versions"
       end
 
-      def total_pages
-        response_data.dig('pagination', 'pages')
-      end
-
-      def extra_params
-        { page: @args.page, per_page: @args.limit }
-      end
-
-      def albums
-        response_data['versions'].map do |a|
-          {
-            title: a['title'],
-            images: images(a['thumb'], 'album'),
-            released: a['released'],
-            format: a['format'],
-            discogs_id: a['id']
-          }
-        end
+      def album_data(album)
+        {
+          title: album['title'],
+          images: images_data(album['thumb'], 'album'),
+          released: album['released'],
+          format: album['format'],
+          discogs_id: album['id']
+        }
       end
     end
   end

@@ -15,14 +15,12 @@ module Discogs
         'artists'
       end
 
-      def collection_data
-        response_data['results'].map do |a|
-          {
-            name: a['title'],
-            images: images(a['cover_image'], 'artist'),
-            discogs_id: a['id']
-          }
-        end
+      def collection_item_data(artist)
+        {
+          name: artist['title'],
+          images: images_data(artist['cover_image'], 'artist'),
+          discogs_id: artist['id']
+        }
       end
     end
   end

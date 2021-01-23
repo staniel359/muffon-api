@@ -1,11 +1,7 @@
 module Discogs
   module Group
-    class Info < Discogs::Base
+    class Info < Discogs::Group::Base
       private
-
-      def primary_args
-        [@args.group_id]
-      end
 
       def data
         { group: group_data }
@@ -18,35 +14,18 @@ module Discogs
       def group_base_data
         {
           title: response_data['title'],
-          artist: artist_name(response_data['artists']),
+          artist: artist_data,
           source: 'discogs'
         }
       end
 
       def group_extra_data
         {
-          images: images(main_image, 'album'),
+          images: images_data(main_image, 'album'),
           released: response_data['year'].to_s,
-          description: description,
-          tracks: tracks
+          description: description_truncated,
+          tracks: tracks_data
         }
-      end
-
-      def link
-        "#{base_link}/masters/#{@args.group_id}"
-      end
-
-      def tracks
-        tracks_filtered.map { |t| track_data(t) }
-      end
-
-      def track_data(track)
-        {
-          id: track_id(track),
-          title: track['title'],
-          artist: (track_artist_name(track) if track['artists']),
-          length: length_formatted(track['duration'])
-        }.compact
       end
     end
   end

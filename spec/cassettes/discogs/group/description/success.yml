@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 26 Jan 2021 15:15:09 GMT
+      - Tue, 26 Jan 2021 15:19:29 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,9 +33,9 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '59'
+      - '57'
       X-Discogs-Ratelimit-Used:
-      - '1'
+      - '3'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
@@ -207,5 +207,5 @@ http_interactions:
         {"uri": "https://www.youtube.com/watch?v=IHknoSQZibU", "title": "Madonna -
         Holiday [Audio]", "description": "Madonna, Holiday from The First Album. \u00a9
         1983 WMG.", "duration": 371, "embed": true}]}'
-  recorded_at: Tue, 26 Jan 2021 15:15:08 GMT
+  recorded_at: Tue, 26 Jan 2021 15:19:28 GMT
 recorded_with: VCR 6.0.0

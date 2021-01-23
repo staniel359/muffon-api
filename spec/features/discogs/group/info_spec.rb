@@ -7,7 +7,7 @@ RSpec.describe Discogs::Group::Info do
     context 'when group_id given' do
       let(:output) do
         VCR.use_cassette 'discogs/group/info/success' do
-          subject.call(group_id: '28680')
+          subject.call(group_id: '5319')
         end
       end
 

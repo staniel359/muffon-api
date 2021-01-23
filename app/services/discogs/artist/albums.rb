@@ -1,6 +1,8 @@
 module Discogs
   module Artist
     class Albums < Discogs::Base
+      include Discogs::Paginated
+
       private
 
       def primary_args
@@ -8,47 +10,27 @@ module Discogs
       end
 
       def data
-        { artist: artist_data }
-      end
-
-      def artist_data
-        {
-          page: page,
-          total_pages: total_pages,
-          albums: albums
-        }
-      end
-
-      def page
-        response_data.dig('pagination', 'page')
+        { artist: paginated_data }
       end
 
       def link
         "#{base_link}/artists/#{@args.artist_id}/releases"
       end
 
-      def total_pages
-        response_data.dig('pagination', 'pages')
-      end
-
-      def extra_params
-        { page: @args.page, per_page: @args.limit }
-      end
-
-      def albums
-        response_data['releases'].map do |a|
-          {
-            title: a['title'],
-            artist: a['artist'],
-            images: images(a['thumb'], 'album'),
-            released: a['year'].to_s,
-            id_key(a).to_sym => a['id']
-          }
-        end
+      def album_data(album)
+        {
+          title: album['title'],
+          artist: album['artist'],
+          images: images_data(album['thumb'], 'album'),
+          released: album['year'].to_s,
+          id_key(album) => album['id']
+        }
       end
 
       def id_key(album)
-        album['type'] == 'master' ? 'discogs_group_id' : 'discogs_id'
+        id_name = album['type'] == 'master' ? 'group_id' : 'id'
+
+        "discogs_#{id_name}".to_sym
       end
     end
   end
