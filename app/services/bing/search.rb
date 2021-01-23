@@ -26,11 +26,15 @@ module Bing
     end
 
     def response
-      RestClient.get(bing_link, params: params)
+      RestClient.get(link, headers)
     end
 
-    def bing_link
+    def link
       'https://www.bing.com/search'
+    end
+
+    def headers
+      { params: params }
     end
 
     def params
