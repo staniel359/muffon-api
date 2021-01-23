@@ -8,7 +8,7 @@ module Bandcamp
       private
 
       def no_tracks?
-        tracks_data.blank?
+        tracks_list.blank?
       end
 
       def handle_no_tracks
@@ -18,7 +18,7 @@ module Bandcamp
       end
 
       def redirect_link
-        description[bandcamp_link_regexp]
+        description[link_regexp]
       end
 
       def redirect
@@ -36,19 +36,19 @@ module Bandcamp
       def album_base_data
         {
           title: track_title,
-          artist: artist_name,
+          artist: artist_data,
           source: 'bandcamp'
         }
       end
 
       def album_extra_data
         {
-          images: images,
+          images: images_data,
           released: released,
           link: base_data['@id'],
           description: description_truncated,
           tags: tags.first(5),
-          tracks: tracks
+          tracks: tracks_data
         }
       end
 
@@ -56,16 +56,18 @@ module Bandcamp
         time_formatted(base_data['datePublished'])
       end
 
-      def tracks
-        tracks_data.map do |t|
-          {
-            id: track_id(artist_name, t['title']),
-            title: t['title'],
-            length: t['duration'].floor,
-            link: track_link(t),
-            audio: audio_data(t)
-          }
-        end
+      def tracks_data
+        tracks_list.map { |t| track_data(t) }
+      end
+
+      def track_data(track)
+        {
+          id: track_id(artist_name, track['title']),
+          title: track['title'],
+          length: track['duration'].floor,
+          link: track_link(track),
+          audio: audio_data(track)
+        }
       end
 
       def track_link(track)

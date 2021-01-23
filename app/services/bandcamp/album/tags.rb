@@ -6,7 +6,7 @@ module Bandcamp
       def album_data
         {
           title: track_title,
-          artist: artist_name,
+          artist: artist_data,
           tags: tags
         }
       end

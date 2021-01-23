@@ -16,10 +16,10 @@ module Bandcamp
     end
 
     def invalid_link?
-      @args.link && @args.link[bandcamp_link_regexp].blank?
+      @args.link && @args.link[link_regexp].blank?
     end
 
-    def bandcamp_link_regexp
+    def link_regexp
       %r{(https?://)*\w+(?:-\w+)*.bandcamp.com/
         (?:album|track)/(\w|-)+(?:-\w+)*}x
     end
@@ -45,25 +45,22 @@ module Bandcamp
     end
 
     def extra_data
-      @extra_data ||= JSON.parse(scripts[3]['data-tralbum'])
+      @extra_data ||=
+        JSON.parse(scripts[3]['data-tralbum'])
     end
 
-    def tracks_data
-      @tracks_data ||= extra_data['trackinfo']
+    def tracks_list
+      @tracks_list ||= extra_data['trackinfo']
     end
 
-    def images
-      {
-        original: image,
-        large: image.sub('_10', '_5'),
-        medium: image.sub('_10', '_4'),
-        small: image.sub('_10', '_3'),
-        extrasmall: image.sub('_10', '_42')
-      }
+    def images_data
+      Bandcamp::Utils::Images.call(
+        image_id: extra_data['art_id']
+      )
     end
 
-    def image
-      "https://f4.bcbits.com/img/a#{extra_data['art_id']}_10.jpg"
+    def artist_data
+      { name: artist_name }
     end
 
     def artist_name

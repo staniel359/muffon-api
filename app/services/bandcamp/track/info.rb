@@ -15,17 +15,25 @@ module Bandcamp
         {
           id: track_id(artist_name, track_title),
           title: track_title,
-          artist: artist_name
+          artist: artist_data
         }
       end
 
       def track_extra_data
         {
-          album: base_data.dig('inAlbum', 'name'),
-          images: images,
-          length: base_data['duration_secs'].floor,
+          album: album_data,
+          images: images_data,
+          length: length,
           audio: audio_data
         }
+      end
+
+      def album_data
+        { title: base_data.dig('inAlbum', 'name') }
+      end
+
+      def length
+        base_data['duration_secs'].floor
       end
 
       def audio_data
@@ -37,7 +45,7 @@ module Bandcamp
       end
 
       def audio_link
-        tracks_data.dig(0, 'file', 'mp3-128')
+        tracks_list.dig(0, 'file', 'mp3-128')
       end
     end
   end

@@ -16,7 +16,11 @@ module Bandcamp
       end
 
       def params
-        { query: query, page: @args.page, limit: 50 }
+        {
+          query: query,
+          page: @args.page,
+          limit: 50
+        }
       end
 
       def query
@@ -30,18 +34,16 @@ module Bandcamp
       def search_data
         {
           page: search_response[:page],
-          collection_name.to_sym => collection
+          collection_name.to_sym => collection_data
         }
       end
 
-      def collection
-        results_filtered.first(limit).map do |r|
-          {
-            title: r[:title],
-            images: images,
-            link: r[:link]
-          }
-        end
+      def collection_data
+        collection_list.map { |i| collection_item_data(i) }
+      end
+
+      def collection_list
+        results_filtered.first(limit)
       end
 
       def results_filtered
@@ -56,7 +58,15 @@ module Bandcamp
         (@args.limit || 20).to_i
       end
 
-      def images
+      def collection_item_data(item)
+        {
+          title: item[:title],
+          images: images_data,
+          link: item[:link]
+        }
+      end
+
+      def images_data
         default_images_data(model_name)
       end
     end
