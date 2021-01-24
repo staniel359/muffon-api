@@ -1,18 +1,24 @@
 module Spotify
   module Artist
-    class Albums < Spotify::Artist::Base
+    class Albums < Spotify::Base
+      include Spotify::Paginated
+
       private
+
+      def primary_args
+        [@args.artist_id]
+      end
+
+      def no_data?
+        results.blank?
+      end
 
       def results
         response_data['items']
       end
 
       def link
-        "#{artist_base_link}/albums"
-      end
-
-      def params
-        { offset: offset, limit: limit }
+        "#{base_link}/artists/#{@args.artist_id}/albums"
       end
 
       def data
@@ -32,13 +38,15 @@ module Spotify
       end
 
       def albums_data
-        results.map do |a|
-          {
-            title: a['name'],
-            images: images(a, 'album'),
-            spotify_id: a['id']
-          }
-        end
+        results.map { |r| album_data(r) }
+      end
+
+      def album_data(album)
+        {
+          title: album['name'],
+          images: images_data(album, 'album'),
+          spotify_id: album['id']
+        }
       end
     end
   end

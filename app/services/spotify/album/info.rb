@@ -26,18 +26,18 @@ module Spotify
       def album_base_data
         {
           title: response_data['name'],
-          artist: artist_name(response_data),
+          artist: artist_data(response_data),
           source: 'spotify'
         }
       end
 
       def album_extra_data
         {
-          images: images(response_data, 'album'),
+          images: images_data(response_data, 'album'),
           released: released,
-          label: response_data['label'],
+          labels: [response_data['label']],
           tags: response_data['genres'],
-          tracks: tracks
+          tracks: tracks_data
         }
       end
 
@@ -45,14 +45,20 @@ module Spotify
         time_formatted(response_data['release_date'])
       end
 
-      def tracks
-        response_data.dig('tracks', 'items').map do |t|
-          {
-            title: t['name'],
-            length: length(t),
-            audio: audio_data(t)
-          }
-        end
+      def tracks_data
+        tracks_list.map { |t| track_data(t) }
+      end
+
+      def tracks_list
+        response_data.dig('tracks', 'items')
+      end
+
+      def track_data(track)
+        {
+          title: track['name'],
+          length: length(track),
+          audio: audio_data(track)
+        }
       end
     end
   end

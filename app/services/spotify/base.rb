@@ -31,27 +31,15 @@ module Spotify
     end
 
     def spotify_token
+      if global.get('spotify_token').blank?
+        global.set('spotify_token', new_spotify_token)
+      end
+
       global.get('spotify_token')
     end
 
     def params
       {}
-    end
-
-    def limit
-      (@args.limit || 20).to_i
-    end
-
-    def offset
-      (page - 1) * limit
-    end
-
-    def page
-      (@args.page || 1).to_i
-    end
-
-    def total_pages
-      total_items.fdiv(limit).ceil
     end
 
     def retry_with_new_spotify_token
@@ -63,34 +51,16 @@ module Spotify
       Spotify::Token.call
     end
 
+    def artist_data(data)
+      { name: artist_name(data) }
+    end
+
     def artist_name(data)
       data['artists'].map { |a| a['name'] }.join(', ')
     end
 
-    def images(data, model)
-      if images_list(data).present?
-        images_data(data)
-      else
-        default_images_data(model)
-      end
-    end
-
-    def images_list(data)
-      data['images']
-    end
-
-    def images_data(data)
-      {
-        original: image_data(data, 0),
-        large: image_data(data, -3),
-        medium: image_data(data, -2),
-        small: image_data(data, -1),
-        extrasmall: image_data(data, -1)
-      }
-    end
-
-    def image_data(data, index)
-      images_list(data).dig(index, 'url')
+    def images_data(data, model)
+      Spotify::Utils::Images.call(data: data, model: model)
     end
 
     def length(track)
@@ -99,7 +69,7 @@ module Spotify
 
     def audio_data(track)
       {
-        present: track['id'].present?,
+        present: false,
         id: track['id'],
         source: 'spotify'
       }

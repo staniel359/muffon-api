@@ -11,29 +11,18 @@ module Spotify
         'track'
       end
 
-      def collection_data
-        results.map do |t|
-          {
-            title: t['name'],
-            artist: artist_name(t),
-            album: album_data(t),
-            length: length(t),
-            audio: audio_data(t)
-          }
-        end
-      end
-
-      def album_data(track)
+      def collection_item_data(track)
         {
-          title: album(track)['name'],
-          artist: artist_name(album(track)),
-          images: images(album(track), 'album'),
-          spotify_id: album(track)['id']
+          title: track['name'],
+          artist: artist_data(track),
+          album: album_data(track),
+          length: length(track),
+          audio: audio_data(track)
         }
       end
 
-      def album(track)
-        track['album']
+      def album_data(track)
+        { title: track.dig('album', 'name') }
       end
     end
   end

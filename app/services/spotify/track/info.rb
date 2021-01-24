@@ -20,27 +20,31 @@ module Spotify
       end
 
       def track_data
+        track_base_data.merge(track_extra_data)
+      end
+
+      def track_base_data
         {
+          id: track_id(
+            artist_name(response_data),
+            response_data['name']
+          ),
           title: response_data['name'],
-          artist: artist_name(response_data),
+          artist: artist_data(response_data)
+        }
+      end
+
+      def track_extra_data
+        {
           album: album_data,
+          images: images_data(response_data['album'], 'track'),
           length: length(response_data),
           audio: audio_data(response_data)
         }
       end
 
       def album_data
-        {
-          title: album['name'],
-          artist: artist_name(album),
-          images: images(album, 'album'),
-          released: time_formatted(album['release_date']),
-          spotify_id: album['id']
-        }
-      end
-
-      def album
-        response_data['album']
+        { name: response_data.dig('album', 'name') }
       end
     end
   end

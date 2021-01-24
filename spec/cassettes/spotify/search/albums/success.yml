@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Authorization:
       - Bearer <SPOTIFY_TOKEN>
       Accept-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 19 Dec 2020 10:25:21 GMT
+      - Sat, 30 Jan 2021 07:14:24 GMT
       Server:
       - envoy
       Via:
@@ -100,76 +100,39 @@ http_interactions:
               "album_type" : "album",
               "artists" : [ {
                 "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"
+                  "spotify" : "https://open.spotify.com/artist/0eDvMgVFoNV3TpwtrVCoTj"
                 },
-                "href" : "https://api.spotify.com/v1/artists/7Ln80lUS6He07XvHI8qqHH",
-                "id" : "7Ln80lUS6He07XvHI8qqHH",
-                "name" : "Arctic Monkeys",
+                "href" : "https://api.spotify.com/v1/artists/0eDvMgVFoNV3TpwtrVCoTj",
+                "id" : "0eDvMgVFoNV3TpwtrVCoTj",
+                "name" : "Pop Smoke",
                 "type" : "artist",
-                "uri" : "spotify:artist:7Ln80lUS6He07XvHI8qqHH"
-              } ],
-              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/album/78bpIziExqiI9qztvNFlQu"
-              },
-              "href" : "https://api.spotify.com/v1/albums/78bpIziExqiI9qztvNFlQu",
-              "id" : "78bpIziExqiI9qztvNFlQu",
-              "images" : [ {
-                "height" : 640,
-                "url" : "https://i.scdn.co/image/ab67616d0000b2734ae1c4c5c45aabe565499163",
-                "width" : 640
-              }, {
-                "height" : 300,
-                "url" : "https://i.scdn.co/image/ab67616d00001e024ae1c4c5c45aabe565499163",
-                "width" : 300
-              }, {
-                "height" : 64,
-                "url" : "https://i.scdn.co/image/ab67616d000048514ae1c4c5c45aabe565499163",
-                "width" : 64
-              } ],
-              "name" : "AM",
-              "release_date" : "2013-09-09",
-              "release_date_precision" : "day",
-              "total_tracks" : 12,
-              "type" : "album",
-              "uri" : "spotify:album:78bpIziExqiI9qztvNFlQu"
-            }, {
-              "album_type" : "album",
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/26AHtbjWKiwYzsoGoUZq53"
-                },
-                "href" : "https://api.spotify.com/v1/artists/26AHtbjWKiwYzsoGoUZq53",
-                "id" : "26AHtbjWKiwYzsoGoUZq53",
-                "name" : "Pentatonix",
-                "type" : "artist",
-                "uri" : "spotify:artist:26AHtbjWKiwYzsoGoUZq53"
+                "uri" : "spotify:artist:0eDvMgVFoNV3TpwtrVCoTj"
               } ],
               "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
               "external_urls" : {
-                "spotify" : "https://open.spotify.com/album/3sId8sOH47yqOWopzbEtJn"
+                "spotify" : "https://open.spotify.com/album/7e7t0MCrNDcJZsPwUKjmOc"
               },
-              "href" : "https://api.spotify.com/v1/albums/3sId8sOH47yqOWopzbEtJn",
-              "id" : "3sId8sOH47yqOWopzbEtJn",
+              "href" : "https://api.spotify.com/v1/albums/7e7t0MCrNDcJZsPwUKjmOc",
+              "id" : "7e7t0MCrNDcJZsPwUKjmOc",
               "images" : [ {
                 "height" : 640,
-                "url" : "https://i.scdn.co/image/ab67616d0000b273ddbbb08d6f7a6ed263fa6afc",
+                "url" : "https://i.scdn.co/image/ab67616d0000b27377ada0863603903f57b34369",
                 "width" : 640
               }, {
                 "height" : 300,
-                "url" : "https://i.scdn.co/image/ab67616d00001e02ddbbb08d6f7a6ed263fa6afc",
+                "url" : "https://i.scdn.co/image/ab67616d00001e0277ada0863603903f57b34369",
                 "width" : 300
               }, {
                 "height" : 64,
-                "url" : "https://i.scdn.co/image/ab67616d00004851ddbbb08d6f7a6ed263fa6afc",
+                "url" : "https://i.scdn.co/image/ab67616d0000485177ada0863603903f57b34369",
                 "width" : 64
               } ],
-              "name" : "A Pentatonix Christmas Deluxe",
-              "release_date" : "2017-12-06",
+              "name" : "Shoot For The Stars Aim For The Moon",
+              "release_date" : "2020-07-03",
               "release_date_precision" : "day",
-              "total_tracks" : 16,
+              "total_tracks" : 19,
               "type" : "album",
-              "uri" : "spotify:album:3sId8sOH47yqOWopzbEtJn"
+              "uri" : "spotify:album:7e7t0MCrNDcJZsPwUKjmOc"
             }, {
               "album_type" : "album",
               "artists" : [ {
@@ -211,46 +174,83 @@ http_interactions:
               "album_type" : "album",
               "artists" : [ {
                 "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/6Xgp2XMz1fhVYe7i6yNAax"
+                  "spotify" : "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
                 },
-                "href" : "https://api.spotify.com/v1/artists/6Xgp2XMz1fhVYe7i6yNAax",
-                "id" : "6Xgp2XMz1fhVYe7i6yNAax",
-                "name" : "Trippie Redd",
+                "href" : "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
+                "id" : "66CXWjxzNUsdJxJ2JdwvnR",
+                "name" : "Ariana Grande",
                 "type" : "artist",
-                "uri" : "spotify:artist:6Xgp2XMz1fhVYe7i6yNAax"
+                "uri" : "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
               } ],
               "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
               "external_urls" : {
-                "spotify" : "https://open.spotify.com/album/0tKX7BLXiiRgXUKYdJzjEz"
+                "spotify" : "https://open.spotify.com/album/3euz4vS7ezKGnNSwgyvKcd"
               },
-              "href" : "https://api.spotify.com/v1/albums/0tKX7BLXiiRgXUKYdJzjEz",
-              "id" : "0tKX7BLXiiRgXUKYdJzjEz",
+              "href" : "https://api.spotify.com/v1/albums/3euz4vS7ezKGnNSwgyvKcd",
+              "id" : "3euz4vS7ezKGnNSwgyvKcd",
               "images" : [ {
                 "height" : 640,
-                "url" : "https://i.scdn.co/image/ab67616d0000b273cd81b9f0393348b6537c9d92",
+                "url" : "https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605",
                 "width" : 640
               }, {
                 "height" : 300,
-                "url" : "https://i.scdn.co/image/ab67616d00001e02cd81b9f0393348b6537c9d92",
+                "url" : "https://i.scdn.co/image/ab67616d00001e025ef878a782c987d38d82b605",
                 "width" : 300
               }, {
                 "height" : 64,
-                "url" : "https://i.scdn.co/image/ab67616d00004851cd81b9f0393348b6537c9d92",
+                "url" : "https://i.scdn.co/image/ab67616d000048515ef878a782c987d38d82b605",
                 "width" : 64
               } ],
-              "name" : "A Love Letter To You 4",
-              "release_date" : "2019-11-22",
+              "name" : "Positions",
+              "release_date" : "2020-10-30",
               "release_date_precision" : "day",
-              "total_tracks" : 21,
+              "total_tracks" : 14,
               "type" : "album",
-              "uri" : "spotify:album:0tKX7BLXiiRgXUKYdJzjEz"
+              "uri" : "spotify:album:3euz4vS7ezKGnNSwgyvKcd"
+            }, {
+              "album_type" : "single",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s",
+                "id" : "1uNFoZAHBGtllmzznpCI3s",
+                "name" : "Justin Bieber",
+                "type" : "artist",
+                "uri" : "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/51kijm0sjZz0yOa3kVBPUU"
+              },
+              "href" : "https://api.spotify.com/v1/albums/51kijm0sjZz0yOa3kVBPUU",
+              "id" : "51kijm0sjZz0yOa3kVBPUU",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2734b02db5cefb177ff97346cf2",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e024b02db5cefb177ff97346cf2",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048514b02db5cefb177ff97346cf2",
+                "width" : 64
+              } ],
+              "name" : "Anyone",
+              "release_date" : "2021-01-01",
+              "release_date_precision" : "day",
+              "total_tracks" : 1,
+              "type" : "album",
+              "uri" : "spotify:album:51kijm0sjZz0yOa3kVBPUU"
             } ],
             "limit" : 5,
             "next" : "https://api.spotify.com/v1/search?query=a&type=album&offset=10&limit=5",
             "offset" : 5,
             "previous" : "https://api.spotify.com/v1/search?query=a&type=album&offset=0&limit=5",
-            "total" : 10008
+            "total" : 10007
           }
         }
-  recorded_at: Sat, 19 Dec 2020 10:25:21 GMT
+  recorded_at: Sat, 30 Jan 2021 07:14:24 GMT
 recorded_with: VCR 6.0.0

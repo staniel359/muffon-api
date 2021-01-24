@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Authorization:
       - Bearer <SPOTIFY_TOKEN>
       Accept-Encoding:
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=3600
+      - public, max-age=72128
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -44,7 +44,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 19 Dec 2020 10:25:19 GMT
+      - Sat, 30 Jan 2021 07:14:23 GMT
       Server:
       - envoy
       Via:
@@ -59,6 +59,44 @@ http_interactions:
         {
           "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=5&limit=5&include_groups=album,single,compilation,appears_on",
           "items" : [ {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "UY", "VN", "XK", "ZA" ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/2mOtRzRf4igdjKs1UzUWFr"
+            },
+            "href" : "https://api.spotify.com/v1/albums/2mOtRzRf4igdjKs1UzUWFr",
+            "id" : "2mOtRzRf4igdjKs1UzUWFr",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b2734f97d4bf55d152cff4e52d28",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e024f97d4bf55d152cff4e52d28",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d000048514f97d4bf55d152cff4e52d28",
+              "width" : 64
+            } ],
+            "name" : "50 Words for Snow (2018 Remaster)",
+            "release_date" : "2011-11-21",
+            "release_date_precision" : "day",
+            "total_tracks" : 7,
+            "type" : "album",
+            "uri" : "spotify:album:2mOtRzRf4igdjKs1UzUWFr"
+          }, {
             "album_group" : "album",
             "album_type" : "album",
             "artists" : [ {
@@ -210,50 +248,12 @@ http_interactions:
             "total_tracks" : 16,
             "type" : "album",
             "uri" : "spotify:album:5hAtR86rztwrKh83zUokGu"
-          }, {
-            "album_group" : "album",
-            "album_type" : "album",
-            "artists" : [ {
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
-              },
-              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
-              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
-              "name" : "Kate Bush",
-              "type" : "artist",
-              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
-            } ],
-            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "UY", "VN", "XK", "ZA" ],
-            "external_urls" : {
-              "spotify" : "https://open.spotify.com/album/4sIzJ870jz52cH2rRraqG2"
-            },
-            "href" : "https://api.spotify.com/v1/albums/4sIzJ870jz52cH2rRraqG2",
-            "id" : "4sIzJ870jz52cH2rRraqG2",
-            "images" : [ {
-              "height" : 640,
-              "url" : "https://i.scdn.co/image/ab67616d0000b2735a882f1004cfd0be580bcb21",
-              "width" : 640
-            }, {
-              "height" : 300,
-              "url" : "https://i.scdn.co/image/ab67616d00001e025a882f1004cfd0be580bcb21",
-              "width" : 300
-            }, {
-              "height" : 64,
-              "url" : "https://i.scdn.co/image/ab67616d000048515a882f1004cfd0be580bcb21",
-              "width" : 64
-            } ],
-            "name" : "Aerial",
-            "release_date" : "2005-10-03",
-            "release_date_precision" : "day",
-            "total_tracks" : 8,
-            "type" : "album",
-            "uri" : "spotify:album:4sIzJ870jz52cH2rRraqG2"
           } ],
           "limit" : 5,
           "next" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=10&limit=5&include_groups=album,single,compilation,appears_on",
           "offset" : 5,
           "previous" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=0&limit=5&include_groups=album,single,compilation,appears_on",
-          "total" : 136
+          "total" : 137
         }
-  recorded_at: Sat, 19 Dec 2020 10:25:19 GMT
+  recorded_at: Sat, 30 Jan 2021 07:14:22 GMT
 recorded_with: VCR 6.0.0

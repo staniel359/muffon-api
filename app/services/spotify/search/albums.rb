@@ -11,16 +11,14 @@ module Spotify
         'album'
       end
 
-      def collection_data
-        results.map do |a|
-          {
-            title: a['name'],
-            artist: artist_name(a),
-            images: images(a, 'album'),
-            released: time_formatted(a['release_date']),
-            spotify_id: a['id']
-          }
-        end
+      def collection_item_data(album)
+        {
+          title: album['name'],
+          artist: artist_data(album),
+          images: images_data(album, 'album'),
+          released: time_formatted(album['release_date']),
+          spotify_id: album['id']
+        }
       end
     end
   end

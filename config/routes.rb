@@ -151,10 +151,7 @@ Rails.application.routes.draw do
 
         namespace :artists, as: :artist do
           scope ':artist_id' do
-            get '', action: :info
             get 'albums'
-            get 'top_tracks'
-            get 'similar'
           end
         end
 

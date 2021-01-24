@@ -1,6 +1,8 @@
 module Spotify
   module Search
     class Base < Spotify::Base
+      include Spotify::Paginated
+
       private
 
       def primary_args
@@ -20,12 +22,11 @@ module Spotify
       end
 
       def params
-        {
-          q: @args.query,
-          limit: limit,
-          offset: offset,
-          type: collection_type
-        }
+        super.merge(search_params).merge(pagination_params)
+      end
+
+      def search_params
+        { q: @args.query, type: collection_type }
       end
 
       def data
@@ -42,6 +43,10 @@ module Spotify
 
       def total_items
         response_data.dig(collection_name, 'total')
+      end
+
+      def collection_data
+        results.map { |r| collection_item_data(r) }
       end
     end
   end
