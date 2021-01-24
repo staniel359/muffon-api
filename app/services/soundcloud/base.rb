@@ -41,30 +41,20 @@ module SoundCloud
       secrets.soundcloud[:api_key]
     end
 
-    def images(data, model)
-      if image(data).present?
-        images_data(data)
-      else
-        default_images_data(model)
-      end
+    def artist_data(model)
+      { name: artist_name(model) }
     end
 
-    def image(data)
-      data['artwork_url']
+    def artist_name(data)
+      data.dig('user', 'username')
     end
 
-    def images_data(data)
-      {
-        original: crop_image(data, 't500x500'),
-        large: crop_image(data, 't500x500'),
-        medium: crop_image(data, 't300x300'),
-        small: crop_image(data, 'large'),
-        extrasmall: crop_image(data, 't67x67')
-      }
+    def images_data(data, model)
+      SoundCloud::Utils::Images.call(data: data, model: model)
     end
 
-    def crop_image(data, size)
-      data['artwork_url'].sub('large', size)
+    def length(data)
+      data['duration'] / 1_000
     end
   end
 end

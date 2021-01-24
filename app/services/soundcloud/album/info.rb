@@ -10,22 +10,18 @@ module SoundCloud
       def album_base_data
         {
           title: response_data['title'],
-          artist: artist_name(response_data),
+          artist: artist_data(response_data),
           source: 'soundcloud'
         }
       end
 
-      def artist_name(track)
-        track.dig('user', 'username')
-      end
-
       def album_extra_data
         {
-          images: images(response_data, 'album'),
+          images: images_data(response_data, 'album'),
           released: released,
           description: description_truncated,
           tags: tags.first(5),
-          tracks: tracks
+          tracks: tracks_data
         }
       end
 
@@ -37,16 +33,22 @@ module SoundCloud
         )
       end
 
-      def tracks
-        response_data['tracks'].map do |t|
-          {
-            id: track_id(artist_name(t), t['title']),
-            title: t['title'],
-            artist: artist_name(t),
-            length: t['duration'] / 1_000,
-            audio: audio_data(t)
-          }
-        end
+      def tracks_data
+        tracks_list.map { |t| track_data(t) }
+      end
+
+      def tracks_list
+        response_data['tracks']
+      end
+
+      def track_data(track)
+        {
+          id: track_id(artist_name(track), track['title']),
+          title: track['title'],
+          artist: artist_data(track),
+          length: length(track),
+          audio: audio_data(track)
+        }
       end
 
       def audio_data(track)

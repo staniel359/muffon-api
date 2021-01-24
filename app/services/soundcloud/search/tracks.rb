@@ -3,27 +3,29 @@ module SoundCloud
     class Tracks < SoundCloud::Search::Base
       private
 
-      def link
-        "#{base_link}/tracks"
+      def soundcloud_collection_name
+        'tracks'
       end
 
-      def limit
+      def collection_name
+        'tracks'
+      end
+
+      def total_limit
         (@args.limit || 50).to_i
       end
 
-      def search_data
-        { tracks: tracks_data }
+      def collection_list
+        response_data
       end
 
-      def tracks_data
-        response_data.map do |t|
-          {
-            title: t['title'],
-            artist: t.dig('user', 'username'),
-            length: t['duration'] / 1_000,
-            audio: audio_data(t)
-          }
-        end
+      def collection_item_data(track)
+        {
+          title: track['title'],
+          artist: artist_data(track),
+          length: length(track),
+          audio: audio_data(track)
+        }
       end
 
       def audio_data(track)

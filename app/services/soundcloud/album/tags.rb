@@ -6,7 +6,7 @@ module SoundCloud
       def album_data
         {
           title: response_data['title'],
-          artist: response_data.dig('user', 'username'),
+          artist: artist_data(response_data),
           tags: tags
         }
       end

@@ -16,23 +16,29 @@ module SoundCloud
       end
 
       def track_data
+        track_base_data.merge(track_extra_data)
+      end
+
+      def track_base_data
         {
-          id: track_id(artist_name, title),
-          title: title,
-          artist: artist_name,
-          images: images(response_data, 'track'),
-          length: response_data['duration'] / 1_000,
-          plays_count: response_data['playback_count'],
-          audio: audio_data
+          id: track_id(
+            artist_name(response_data),
+            response_data['title']
+          ),
+          title: response_data['title'],
+          artist: artist_data(response_data)
         }
       end
 
-      def artist_name
-        response_data.dig('user', 'username')
-      end
-
-      def title
-        response_data['title']
+      def track_extra_data
+        {
+          images: images_data(response_data, 'track'),
+          plays_count: response_data['playback_count'],
+          length: length(response_data),
+          description: response_data['description'],
+          tags: [response_data['genre']],
+          audio: audio_data
+        }
       end
 
       def audio_data

@@ -3,35 +3,37 @@ module SoundCloud
     class Albums < SoundCloud::Search::Base
       private
 
-      def link
-        "#{base_link}/playlists"
+      def soundcloud_collection_name
+        'playlists'
       end
 
-      def limit
+      def collection_name
+        'albums'
+      end
+
+      def total_limit
         100
       end
 
-      def search_data
-        { albums: albums_data }
-      end
-
-      def albums_data
-        playlists_filtered.first(results_limit).map do |a|
-          {
-            title: a['title'],
-            artist: a.dig('user', 'username'),
-            images: images(a, 'album'),
-            soundcloud_id: a['id']
-          }
-        end
+      def collection_list
+        playlists_filtered.first(limit)
       end
 
       def playlists_filtered
         response_data.select { |p| p['playlist_type'].present? }
       end
 
-      def results_limit
+      def limit
         (@args.limit || 20).to_i
+      end
+
+      def collection_item_data(album)
+        {
+          title: album['title'],
+          artist: artist_data(album),
+          images: images_data(album, 'album'),
+          soundcloud_id: album['id']
+        }
       end
     end
   end
