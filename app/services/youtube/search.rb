@@ -7,23 +7,56 @@ module YouTube
     end
 
     def data
+      { search: search_data }
+    end
+
+    def search_data
       {
-        search: {
-          next_page: response_data['nextPageToken'],
-          videos: videos
-        }
+        next_page: response_data['nextPageToken'],
+        results: results_data
       }
     end
 
-    def videos
-      results.map do |r|
-        {
-          title: r.dig('snippet', 'title'),
-          description: r.dig('snippet', 'description'),
-          preview: r.dig('snippet', 'thumbnails', 'medium', 'url'),
-          video_id: r.dig('id', 'videoId')
-        }
-      end
+    def results_data
+      results.map { |r| result_data(r) }
+    end
+
+    def result_data(result)
+      {
+        title: result.dig('snippet', 'title'),
+        channel: channel_data(result),
+        images: images_data(result),
+        published: published(result),
+        description: result.dig('snippet', 'description'),
+        video: video_data(result)
+      }
+    end
+
+    def published(result)
+      time_formatted(result.dig('snippet', 'publishedAt'))
+    end
+
+    def channel_data(result)
+      {
+        id: result.dig('snippet', 'channelId'),
+        title: result.dig('snippet', 'channelTitle')
+      }
+    end
+
+    def images_data(result)
+      {
+        large: image(result, 'high'),
+        medium: image(result, 'medium'),
+        small: image(result, 'default')
+      }
+    end
+
+    def image(result, size)
+      result.dig('snippet', 'thumbnails', size, 'url')
+    end
+
+    def video_data(result)
+      { id: result.dig('id', 'videoId') }
     end
   end
 end

@@ -22,7 +22,11 @@ module YouTube
     end
 
     def response
-      RestClient.get(link, params: params)
+      RestClient.get(link, headers)
+    end
+
+    def headers
+      { params: params }
     end
 
     def link
@@ -36,12 +40,13 @@ module YouTube
         key: secrets.youtube[:api_key],
         q: @args.query,
         maxResults: limit,
-        pageToken: @args.next_page
+        pageToken: @args.next_page,
+        videoCategoryId: 10
       }
     end
 
     def limit
-      (@args.limit || 10).to_i
+      (@args.limit || 20).to_i
     end
   end
 end
