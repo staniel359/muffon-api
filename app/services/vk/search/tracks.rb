@@ -18,7 +18,7 @@ module VK
       def track_data(track)
         {
           title: track_title(track),
-          artist: track_artist_name(track),
+          artist: track_artist_data(track),
           length: track[5],
           audio: audio_data(track)
         }

@@ -38,14 +38,14 @@ module VK
       def album_base_data
         {
           title: album_title(album),
-          artist: album_artist_name(album),
+          artist: album_artist_data(album),
           source: 'vk'
         }
       end
 
       def album_extra_data
         {
-          images: images(album['coverUrl'], 'album'),
+          images: images_data(album['coverUrl'], 'album'),
           released: released,
           plays_count: album['listens'].to_i,
           tracks: tracks_data
@@ -57,14 +57,18 @@ module VK
       end
 
       def tracks_data
-        album['list'].map { |t| track_data(t) }
+        tracks_list.map { |t| track_data(t) }
+      end
+
+      def tracks_list
+        album['list']
       end
 
       def track_data(track)
         {
           id: track_id(track),
           title: track_title(track),
-          artist: track_artist_name(track),
+          artist: track_artist_data(track),
           length: track[5],
           audio: audio_data(track)
         }

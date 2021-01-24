@@ -1,13 +1,17 @@
 module VK
   class Web < VK::Base
-    private
+    def call
+      return handlers.bad_request if not_all_args?
+      return retry_with_new_remixsid if auth_failed?
+      return handlers.not_found if no_data?
 
-    def no_data?
-      wrong_request?
+      data
     end
 
-    def wrong_request?
-      response_code.to_i == 8
+    private
+
+    def auth_failed?
+      response_code == 3
     end
 
     def response_code
@@ -28,42 +32,49 @@ module VK
     end
 
     def headers
-      { cookies: { remixsid: remixsid } }
+      { cookies: cookies }
     end
 
-    def remixsid
-      global.get('remixsid')
+    def cookies
+      { remixsid: global.get('remixsid') }
     end
 
-    def auth_failed?
-      response_code.to_i == 3
+    def no_data?
+      response_code == 8
     end
 
     def album_title(album)
       return '' if album.blank?
 
-      title = album['title'] || album[:title]
-      subtitle = album['subTitle'] || album[:subtitle]
+      album = album.transform_keys { |k| k.downcase.to_sym }
 
-      full_title(title, subtitle)
+      full_title(album[:title], album[:subtitle])
     end
 
     def full_title(title, subtitle)
-      return CGI.unescapeHTML(title) if subtitle.blank?
+      subtitle_text = "(#{subtitle})" if subtitle.present?
+      full_text = [title, subtitle_text].compact.join(' ')
 
-      CGI.unescapeHTML("#{title} (#{subtitle})")
+      CGI.unescapeHTML(full_text)
+    end
+
+    def album_artist_data(album)
+      { name: album_artist_name(album) }
     end
 
     def album_artist_name(album)
-      CGI.unescapeHTML(
-        album['authorName'].match(
-          %r{<a.+>(.+)</a>}
-        ).to_a[1] || 'Various Artists'
-      )
+      artist_name =
+        album['authorName'].match(%r{<a.+>(.+)</a>}).to_a[1]
+
+      CGI.unescapeHTML(artist_name) || 'Various Artists'
     end
 
     def track_id(track)
       super(track_artist_name(track), track_title(track))
+    end
+
+    def track_artist_data(track)
+      { name: track_artist_name(track) }
     end
 
     def track_artist_name(track)

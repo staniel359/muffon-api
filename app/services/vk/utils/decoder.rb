@@ -4,28 +4,26 @@ module VK
       VK_STR = 'abcdefghijklmnopqrstuvwxyz'\
         'ABCDEFGHIJKLMN0PQRSTUVWXYZO123456789+/='.freeze
 
+      def call
+        data
+      end
+
       private
 
-      def primary_args
-        [@args.link]
+      def data
+        return '' if no_data?
+
+        decoded_link.sub(
+          %r{(/\w+)(/audios)?(/\w+)(/index.m3u8)}, '\2\3.mp3'
+        )
       end
 
       def no_data?
-        extra_strings.blank?
+        @args.link.blank? || extra_strings.blank?
       end
 
       def extra_strings
         @extra_strings ||= @args.link.match(/extra=(.*)#(.*)/)
-      end
-
-      def handlers
-        Muffon::Utils::Errors.handlers.tap { |h| h.not_found = '' }
-      end
-
-      def data
-        decoded_link.sub(
-          %r{(/\w+)(/audios)?(/\w+)(/index.m3u8)}, '\2\3.mp3'
-        )
       end
 
       def decoded_link

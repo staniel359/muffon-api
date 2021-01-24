@@ -35,14 +35,14 @@ module VK
         {
           id: track_id(track),
           title: track_title(track),
-          artist: track_artist_name(track)
+          artist: track_artist_data(track)
         }
       end
 
       def track_extra_data
         {
-          images: images(track[14], 'track'),
           album: album_data,
+          images: images_data(track[14], 'track'),
           length: track[5],
           audio: audio_data
         }

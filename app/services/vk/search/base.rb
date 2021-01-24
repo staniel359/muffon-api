@@ -22,9 +22,9 @@ module VK
       end
 
       def section_id
-        VK::Search::Results.call(
-          query: @args.query
-        ).dig(:search, :results, collection_name.to_sym)
+        VK::Search::Results.call(query: @args.query).dig(
+          :search, :results, collection_name.to_sym
+        )
       end
 
       def results

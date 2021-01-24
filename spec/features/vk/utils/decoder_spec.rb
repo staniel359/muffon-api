@@ -17,7 +17,7 @@ RSpec.describe VK::Utils::Decoder do
     context 'when no link given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect(output).to eq('') }
     end
 
     context 'when wrong link' do

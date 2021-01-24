@@ -18,8 +18,8 @@ module VK
       def album_data(album)
         {
           title: album_title(album),
-          artist: album_artist_name(album),
-          images: images(album['coverUrl'], 'album'),
+          artist: album_artist_data(album),
+          images: images_data(album['coverUrl'], 'album'),
           vk_id: album['id'],
           vk_owner_id: album['ownerId'],
           vk_access_hash: album['accessHash']
