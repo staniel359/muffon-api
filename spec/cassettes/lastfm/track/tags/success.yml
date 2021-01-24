@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&limit=50&method=track.getTopTags&track=chinatown
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=track.getTopTags&track=chinatown
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,13 +23,11 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Wed, 07 Oct 2020 14:49:32 GMT
+      - Sat, 23 Jan 2021 15:40:37 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
       - '5468'
-      Connection:
-      - keep-alive
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
@@ -39,6 +37,8 @@ http_interactions:
       - "*"
       Access-Control-Max-Age:
       - '86400'
+      Via:
+      - 1.1 google
     body:
       encoding: UTF-8
       string: '{"toptags":{"tag":[{"count":100,"name":"dream pop","url":"https://www.last.fm/tag/dream+pop"},{"count":46,"name":"indie","url":"https://www.last.fm/tag/indie"},{"count":46,"name":"chillwave","url":"https://www.last.fm/tag/chillwave"},{"count":42,"name":"shoegaze","url":"https://www.last.fm/tag/shoegaze"},{"count":13,"name":"electronica","url":"https://www.last.fm/tag/electronica"},{"count":13,"name":"indie
@@ -73,5 +73,5 @@ http_interactions:
         of 2015","url":"https://www.last.fm/tag/song+of+2015"},{"count":5,"name":"to
         all the boys ive loved before","url":"https://www.last.fm/tag/to+all+the+boys+ive+loved+before"}],"@attr":{"artist":"Wild
         Nothing","track":"Chinatown"}}}'
-  recorded_at: Wed, 07 Oct 2020 14:49:32 GMT
+  recorded_at: Sat, 23 Jan 2021 15:40:36 GMT
 recorded_with: VCR 6.0.0

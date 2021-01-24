@@ -1,49 +1,21 @@
 module LastFM
   module Artist
-    class Albums < LastFM::API
+    class Albums < LastFM::Artist::API::Paginated
       private
 
-      def service_info
+      def model_name
+        'album'
+      end
+
+      def collection_name
+        'albums'
+      end
+
+      def collection_item_data(album)
         {
-          api_method: 'artist.getTopAlbums',
-          response_data_node: 'topalbums'
+          title: album['name'],
+          images: images_data(album, 'album')
         }
-      end
-
-      def primary_args
-        [@args.artist]
-      end
-
-      def data
-        { artist: albums_data }
-      end
-
-      def albums_data
-        {
-          name: extra_data['artist'],
-          page: extra_data['page'].to_i,
-          total_pages: extra_data['totalPages'].to_i,
-          albums: albums
-        }
-      end
-
-      def extra_data
-        response_data['@attr']
-      end
-
-      def albums
-        response_data['album'].last(limit).map do |a|
-          {
-            title: a['name'],
-            images: images(a)
-          }
-        end
-      end
-
-      def images(album)
-        LastFM::Utils::Images.call(
-          data: album, model: 'album'
-        )
       end
     end
   end

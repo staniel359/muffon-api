@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=50&method=album.search
+    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=1000&method=album.search
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,13 +23,11 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 13 Oct 2020 20:29:57 GMT
+      - Tue, 26 Jan 2021 16:49:13 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '257'
-      Connection:
-      - keep-alive
+      - '259'
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
@@ -39,8 +37,10 @@ http_interactions:
       - "*"
       Access-Control-Max-Age:
       - '86400'
+      Via:
+      - 1.1 google
     body:
       encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"50","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Tue, 13 Oct 2020 20:29:55 GMT
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"1000","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
+  recorded_at: Tue, 26 Jan 2021 16:49:11 GMT
 recorded_with: VCR 6.0.0

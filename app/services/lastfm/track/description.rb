@@ -1,6 +1,6 @@
 module LastFM
   module Track
-    class Description < LastFM::API
+    class Description < LastFM::Track::Base
       private
 
       def service_info
@@ -10,17 +10,11 @@ module LastFM
         }
       end
 
-      def primary_args
-        [@args.artist, @args.track]
-      end
-
-      def data
+      def track_data
         {
-          track: {
-            title: response_data['name'],
-            artist: response_data.dig('artist', 'name'),
-            description: description
-          }
+          title: response_data['name'],
+          artist: artist_data,
+          description: description
         }
       end
     end

@@ -1,6 +1,8 @@
 module LastFM
   module Track
-    class Similar < LastFM::API
+    class Similar < LastFM::Track::Base
+      include LastFM::API::Paginated
+
       private
 
       def service_info
@@ -10,48 +12,30 @@ module LastFM
         }
       end
 
-      def primary_args
-        [@args.artist, @args.track]
-      end
-
-      def limit
-        250
-      end
-
-      def data
-        { track: track_data }
+      def params
+        super.merge(pagination_params)
       end
 
       def track_data
         {
           title: @args.track,
-          artist: artist,
-          page: similar_paginated[:page],
-          total_pages: similar_paginated[:total_pages],
-          similar: similar
+          artist: artist_data,
+          page: page,
+          total_pages: total_pages,
+          similar: collection_data
         }
       end
 
-      def artist
-        response_data.dig('@attr', 'artist')
+      def artist_data
+        { name: response_data.dig('@attr', 'artist') }
       end
 
-      def similar_paginated
-        @similar_paginated ||= LastFM::Utils::Paginated.call(
-          collection: response_data['track'],
-          page: @args.page,
-          limit: @args.limit
-        )
+      def raw_collection
+        response_data['track']
       end
 
-      def similar
-        similar_paginated[:collection].map do |t|
-          similar_track_data(t)
-        end
-      end
-
-      def similar_track_data(track)
-        LastFM::Track::Similar::Track.call(similar: track)
+      def collection_item_data(similar)
+        LastFM::Track::Similar::Track.call(similar: similar)
       end
     end
   end

@@ -7,7 +7,7 @@ RSpec.describe LastFM::Artist::Images do
     context 'when artist exists' do
       let(:output) do
         VCR.use_cassette 'lastfm/artist/images/success' do
-          subject.call(artist: 'wild nothing')
+          subject.call(artist: 'wild nothing', page: 2)
         end
       end
 

@@ -1,6 +1,8 @@
 module LastFM
   module Search
-    class Base < LastFM::API
+    class Base < LastFM::API::Base
+      include LastFM::API::Paginated
+
       private
 
       def service_info
@@ -24,31 +26,28 @@ module LastFM
         )
       end
 
+      def params
+        super.merge(search_params).merge(pagination_params)
+      end
+
+      def search_params
+        { model_name.to_sym => @args.query }
+      end
+
       def data
         { search: search_data }
       end
 
       def search_data
         {
-          query: @args.query,
           page: page,
           total_pages: total_pages,
-          model_name.pluralize.to_sym => results_data
+          collection_name.to_sym => collection_data
         }
       end
 
-      def page
-        response_data.dig(
-          'opensearch:Query', 'startPage'
-        ).to_i
-      end
-
-      def total_pages
-        total_results.fdiv(limit).ceil
-      end
-
-      def total_results
-        response_data['opensearch:totalResults'].to_i
+      def raw_collection
+        results
       end
     end
   end

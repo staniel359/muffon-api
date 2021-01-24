@@ -7,31 +7,14 @@ module Muffon
     private
 
     def data
-      new_controller_action.camelize.safe_constantize
+      [folder_name, file_name].join('/').camelize.safe_constantize
     end
 
-    def new_controller_action
-      exception_actions[controller_action] ||
-        controller_action
+    def folder_name
+      exceptions[controller_name] || controller_name
     end
 
-    def exception_actions
-      {
-        'lastfm/artist/tags' => 'lastfm/common/tags',
-        'lastfm/album/tags' => 'lastfm/common/tags',
-        'lastfm/track/tags' => 'lastfm/common/tags'
-      }
-    end
-
-    def controller_action
-      [new_controller, action].join('/')
-    end
-
-    def new_controller
-      exception_controllers[controller] || controller
-    end
-
-    def exception_controllers
+    def exceptions
       {
         'lastfm/artist/album' => 'lastfm/album',
         'lastfm/artist/track' => 'lastfm/track',
@@ -40,13 +23,13 @@ module Muffon
       }
     end
 
-    def controller
+    def controller_name
       @args.controller.sub(
         'api/v1/', ''
       ).split('/').map(&:singularize).join('/')
     end
 
-    def action
+    def file_name
       @args.action
     end
   end

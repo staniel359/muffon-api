@@ -16,8 +16,8 @@ module LastFM
           {
             id: track_id(artist_name, title),
             title: title,
-            artist: artist_name,
-            length: @args.similar['duration'].to_i
+            artist: artist_data,
+            length: length
           }
         end
 
@@ -27,6 +27,14 @@ module LastFM
 
         def title
           @args.similar['name']
+        end
+
+        def artist_data
+          { name: artist_name }
+        end
+
+        def length
+          @args.similar['duration'].to_i
         end
       end
     end

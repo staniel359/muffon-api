@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&artist=Wild%20Nothing&autocorrect=1&format=json&limit=50&method=album.getTopTags
+    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&artist=Wild%20Nothing&autocorrect=1&format=json&method=album.getTopTags
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.1p83
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,13 +23,11 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Thu, 08 Oct 2020 11:42:27 GMT
+      - Tue, 26 Jan 2021 16:44:46 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
       - '50'
-      Connection:
-      - keep-alive
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
@@ -39,8 +37,10 @@ http_interactions:
       - "*"
       Access-Control-Max-Age:
       - '86400'
+      Via:
+      - 1.1 google
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"Album not found","links":[]}'
-  recorded_at: Thu, 08 Oct 2020 11:42:26 GMT
+  recorded_at: Tue, 26 Jan 2021 16:44:44 GMT
 recorded_with: VCR 6.0.0

@@ -17,13 +17,15 @@ module LastFM
             name: name,
             listeners_count: listeners_count,
             description: description,
-            images: images,
+            images: images_data(image, 'artist'),
             tags: tags
           }
         end
 
         def name
-          @args.similar.css('.similar-artists-item-name a').text
+          @args.similar.css(
+            '.similar-artists-item-name a'
+          ).text
         end
 
         def listeners_count
@@ -38,14 +40,10 @@ module LastFM
           ).text.strip.sub('… read more', '...')
         end
 
-        def images
-          LastFM::Utils::Images.call(
-            image: image, model: 'artist'
-          )
-        end
-
         def image
-          @args.similar.css('.similar-artists-item-image img')[0]['src']
+          @args.similar.css(
+            '.similar-artists-item-image img'
+          )[0]['src']
         end
 
         def tags

@@ -3,22 +3,24 @@ module LastFM
     class Tracks < LastFM::Search::Base
       private
 
-      def model_params
-        { track: @args.query }
-      end
-
       def model_name
         'track'
       end
 
-      def results_data
-        results.last(limit).map do |t|
-          {
-            id: track_id(t['artist'], t['name']),
-            title: t['name'],
-            artist: t['artist']
-          }
-        end
+      def collection_name
+        'tracks'
+      end
+
+      def collection_item_data(track)
+        {
+          id: track_id(track['artist'], track['name']),
+          title: track['name'],
+          artist: track_artist_data(track)
+        }
+      end
+
+      def track_artist_data(track)
+        { name: track['artist'] }
       end
     end
   end

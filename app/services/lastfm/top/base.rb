@@ -1,10 +1,19 @@
 module LastFM
   module Top
-    class Base < LastFM::API
+    class Base < LastFM::API::Base
+      include LastFM::API::Paginated
+
       private
 
-      def primary_args
-        []
+      def service_info
+        {
+          api_method: "chart.getTop#{collection_name.capitalize}",
+          response_data_node: collection_name
+        }
+      end
+
+      def params
+        super.merge(pagination_params)
       end
 
       def data
@@ -13,18 +22,14 @@ module LastFM
 
       def top_data
         {
-          page: page,
-          total_pages: total_pages,
-          collection_name.to_sym => collection
+          page: paginated_data[:page],
+          total_pages: paginated_data[:total_pages],
+          collection_name.to_sym => collection_data
         }
       end
 
-      def page
-        response_data.dig('@attr', 'page').to_i
-      end
-
-      def total_pages
-        response_data.dig('@attr', 'totalPages').to_i
+      def raw_collection
+        response_data[model_name]
       end
     end
   end

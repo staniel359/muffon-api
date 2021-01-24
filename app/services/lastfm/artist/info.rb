@@ -1,41 +1,32 @@
 module LastFM
   module Artist
-    class Info < LastFM::API
+    class Info < LastFM::Artist::API::Base
       private
-
-      def service_info
-        {
-          api_method: 'artist.getInfo',
-          response_data_node: 'artist'
-        }
-      end
-
-      def primary_args
-        [@args.artist]
-      end
-
-      def data
-        { artist: artist_data }
-      end
 
       def artist_data
         {
           name: response_data['name'],
-          mbid: response_data['mbid'].to_s,
-          listeners_count: response_data.dig('stats', 'listeners').to_i,
-          plays_count: response_data.dig('stats', 'playcount').to_i,
+          listeners_count: listeners_count,
+          plays_count: plays_count,
           description: description_truncated,
-          tags: tags,
-          similar: similar
+          tags: tags
         }
       end
 
-      def tags
-        response_data.dig('tags', 'tag').map { |t| t['name'] }
+      def listeners_count
+        response_data.dig('stats', 'listeners').to_i
       end
 
-      def similar
-        response_data.dig('similar', 'artist').map { |a| a['name'] }
+      def plays_count
+        response_data.dig('stats', 'playcount').to_i
+      end
+
+      def tags
+        tags_list.map { |t| t['name'] }
+      end
+
+      def tags_list
+        response_data.dig('tags', 'tag')
       end
     end
   end

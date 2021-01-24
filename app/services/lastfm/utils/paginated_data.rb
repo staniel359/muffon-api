@@ -1,6 +1,6 @@
 module LastFM
   module Utils
-    class Paginated < LastFM::Base
+    class PaginatedData < LastFM::Base
       def call
         paginated_data
       end
@@ -11,28 +11,28 @@ module LastFM
         {
           page: page,
           total_pages: total_pages,
-          collection: collection
+          collection: collection_data
         }
       end
 
       def page
-        [@args.page.to_i, 1].max
+        (@args.page || 1).to_i
       end
 
       def total_pages
-        @args.collection.size.fdiv(page_limit).ceil
+        @args.data.size.fdiv(limit).ceil
       end
 
-      def page_limit
+      def limit
         (@args.limit || 50).to_i
       end
 
-      def collection
-        @args.collection.slice(offset, page_limit) || []
+      def collection_data
+        @args.data.slice(offset, limit).to_a
       end
 
       def offset
-        (page - 1) * page_limit
+        (page - 1) * limit
       end
     end
   end

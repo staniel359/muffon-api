@@ -3,21 +3,19 @@ module LastFM
     class Artists < LastFM::Search::Base
       private
 
-      def model_params
-        { artist: @args.query }
-      end
-
       def model_name
         'artist'
       end
 
-      def results_data
-        results.last(limit).map do |r|
-          {
-            name: r['name'],
-            listeners_count: r['listeners'].to_i
-          }
-        end
+      def collection_name
+        'artists'
+      end
+
+      def collection_item_data(artist)
+        {
+          name: artist['name'],
+          listeners_count: artist['listeners'].to_i
+        }
       end
     end
   end

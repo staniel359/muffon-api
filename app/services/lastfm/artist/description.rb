@@ -1,25 +1,12 @@
 module LastFM
   module Artist
-    class Description < LastFM::API
+    class Description < LastFM::Artist::API::Base
       private
 
-      def service_info
+      def artist_data
         {
-          api_method: 'artist.getInfo',
-          response_data_node: 'artist'
-        }
-      end
-
-      def primary_args
-        [@args.artist]
-      end
-
-      def data
-        {
-          artist: {
-            name: response_data['name'],
-            description: description
-          }
+          name: response_data['name'],
+          description: description
         }
       end
     end

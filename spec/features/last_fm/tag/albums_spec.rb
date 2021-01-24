@@ -7,7 +7,7 @@ RSpec.describe LastFM::Tag::Albums do
     context 'when tag exists' do
       let(:output) do
         VCR.use_cassette 'lastfm/tag/albums/success' do
-          subject.call(tag: 'dream pop')
+          subject.call(tag: 'dream pop', page: 2)
         end
       end
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=1&format=json&limit=50&method=track.getInfo&track=wejlhg239gh23
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=1&format=json&method=track.getInfo&track=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Sat, 09 Jan 2021 12:29:34 GMT
+      - Tue, 26 Jan 2021 16:44:53 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"Track not found","links":[]}'
-  recorded_at: Sat, 09 Jan 2021 12:29:34 GMT
+  recorded_at: Tue, 26 Jan 2021 16:44:51 GMT
 recorded_with: VCR 6.0.0

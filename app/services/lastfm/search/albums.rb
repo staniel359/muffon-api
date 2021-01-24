@@ -3,28 +3,24 @@ module LastFM
     class Albums < LastFM::Search::Base
       private
 
-      def model_params
-        { album: @args.query }
-      end
-
       def model_name
         'album'
       end
 
-      def results_data
-        results.last(limit).map do |r|
-          {
-            title: r['name'],
-            artist: r['artist'],
-            images: images(r)
-          }
-        end
+      def collection_name
+        'albums'
       end
 
-      def images(result)
-        LastFM::Utils::Images.call(
-          data: result, model: 'album'
-        )
+      def collection_item_data(album)
+        {
+          title: album['name'],
+          artist: album_artist_data(album),
+          images: images_data(album, 'album')
+        }
+      end
+
+      def album_artist_data(album)
+        { name: album['artist'] }
       end
     end
   end

@@ -3,25 +3,24 @@ module LastFM
     class Tracks < LastFM::Top::Base
       private
 
-      def service_info
-        {
-          api_method: 'chart.getTopTracks',
-          response_data_node: 'tracks'
-        }
+      def model_name
+        'track'
       end
 
       def collection_name
         'tracks'
       end
 
-      def collection
-        response_data['track'].last(limit).map do |t|
-          {
-            title: t['name'],
-            artist: t.dig('artist', 'name'),
-            listeners_count: t['listeners'].to_i
-          }
-        end
+      def collection_item_data(track)
+        {
+          title: track['name'],
+          artist: track_artist_data(track),
+          listeners_count: track['listeners'].to_i
+        }
+      end
+
+      def track_artist_data(track)
+        { name: track.dig('artist', 'name') }
       end
     end
   end

@@ -1,6 +1,6 @@
 module LastFM
   module Track
-    class Info < LastFM::API
+    class Info < LastFM::Track::Base
       private
 
       def service_info
@@ -10,55 +10,58 @@ module LastFM
         }
       end
 
-      def primary_args
-        [@args.artist, @args.track]
-      end
-
-      def data
-        { track: track_data }
-      end
-
       def track_data
         track_base_data.merge(track_extra_data)
       end
 
       def track_base_data
         {
-          id: track_id(artist_name, track_title),
-          title: track_title,
-          artist: artist_name,
-          mbid: response_data['mbid'].to_s
+          id: track_id(artist_name, response_data['name']),
+          title: response_data['name'],
+          artist: artist_data
         }
-      end
-
-      def artist_name
-        response_data.dig('artist', 'name')
-      end
-
-      def track_title
-        response_data['name']
       end
 
       def track_extra_data
         {
-          album: response_data.dig('album', 'title').to_s,
-          images: images,
-          listeners_count: response_data['listeners'].to_i,
-          plays_count: response_data['playcount'].to_i,
-          length: response_data['duration'].to_i / 1_000,
+          album: album_data,
+          images: images_data(album, 'track'),
+          listeners_count: listeners_count,
+          plays_count: plays_count,
+          length: length,
           description: description_truncated,
           tags: tags
         }
       end
 
-      def images
-        LastFM::Utils::Images.call(
-          data: response_data['album'], model: 'album'
-        )
+      def album_data
+        return {} if album.blank?
+
+        { title: album['title'] }
+      end
+
+      def album
+        response_data['album']
+      end
+
+      def listeners_count
+        response_data['listeners'].to_i
+      end
+
+      def plays_count
+        response_data['playcount'].to_i
+      end
+
+      def length
+        response_data['duration'].to_i / 1_000
       end
 
       def tags
-        response_data.dig('toptags', 'tag').map { |t| t['name'] }
+        tags_list.map { |t| t['name'] }
+      end
+
+      def tags_list
+        response_data.dig('toptags', 'tag')
       end
     end
   end

@@ -1,38 +1,13 @@
 module LastFM
   module Artist
-    class Similar < LastFM::Web
+    class Similar < LastFM::Artist::Web::Paginated
       private
 
-      def primary_args
-        [@args.artist]
+      def collection_name
+        'similar'
       end
 
-      def link
-        "https://www.last.fm/music/#{artist_name}/+similar"
-      end
-
-      def artist_name
-        format_param(@args.artist)
-      end
-
-      def data
-        { artist: similar_data }
-      end
-
-      def similar_data
-        {
-          name: name,
-          page: page,
-          total_pages: total_pages,
-          similar: similar
-        }
-      end
-
-      def name
-        response_data.css('.header-new-title').text
-      end
-
-      def similar
+      def collection_data
         return [] if page > total_pages
 
         similar_list.map { |s| similar_artist_data(s) }

@@ -1,21 +1,14 @@
 module LastFM
   module Album
-    class ListenersCount < LastFM::API
+    class ListenersCount < LastFM::Album::Base
       private
 
-      def service_info
+      def album_data
         {
-          api_method: 'album.getInfo',
-          response_data_node: 'album'
+          title: response_data['name'],
+          artist: artist_data,
+          listeners_count: response_data['listeners'].to_i
         }
-      end
-
-      def primary_args
-        [@args.artist, @args.album]
-      end
-
-      def data
-        { listeners_count: response_data['listeners'].to_i }
       end
     end
   end
