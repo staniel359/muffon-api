@@ -19,7 +19,7 @@ module VK
       end
 
       def handlers
-        Muffon::Errors.handlers.tap { |h| h.not_found = '' }
+        Muffon::Utils::Errors.handlers.tap { |h| h.not_found = '' }
       end
 
       def data

@@ -7,8 +7,8 @@ module Muffon
     class << self
       def call(args = {})
         new(args).call
-      rescue *Muffon::Errors.list => e
-        Muffon::Errors.handle(e.class)
+      rescue *Muffon::Utils::Errors.list => e
+        Muffon::Utils::Errors.handle(e.class)
       end
     end
 
@@ -23,7 +23,7 @@ module Muffon
     end
 
     def handlers
-      Muffon::Errors.handlers
+      Muffon::Utils::Errors.handlers
     end
 
     def global

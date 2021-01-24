@@ -48,7 +48,7 @@ module Google
       return '' if Rails.env.production?
 
       'GOOGLE_ABUSE_EXEMPTION=ID=00f4d94532e7fc7d'\
-        ":TM=1610958213:C=r:IP=#{Muffon::IP.call}-"\
+        ":TM=1610958213:C=r:IP=#{Muffon::Utils::IP.call}-"\
         ':S=APGng0uPsxRmCfpoakb2T0c3vkDB5vDMeQ'
     end
 

@@ -14,7 +14,7 @@ module API
       end
 
       def data_service
-        Muffon::ActionService.call(
+        Muffon::Utils::EndpointService.call(
           params.slice(:controller, :action)
         )
       end
