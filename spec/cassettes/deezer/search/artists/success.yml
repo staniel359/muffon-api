@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.deezer.com/search/artist?index=5&limit=5&q=a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Host:
+      - blm-web-142
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 25 Jan 2021 11:35:28 GMT
+      Content-Length:
+      - '4102'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr47c0b72e9a086b6f4ca7129c50f9d6204cacd8; expires=Sat,
+        24-Jul-2021 11:35:28 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":1263299,"name":"Trazendo a Arca","link":"https:\/\/www.deezer.com\/artist\/1263299","picture":"https:\/\/api.deezer.com\/artist\/1263299\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/84ecdf180ba452414790e46cea7af2eb\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/84ecdf180ba452414790e46cea7af2eb\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/84ecdf180ba452414790e46cea7af2eb\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/84ecdf180ba452414790e46cea7af2eb\/1000x1000-000000-80-0-0.jpg","nb_album":18,"nb_fan":295725,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1263299\/top?limit=50","type":"artist"},{"id":3473031,"name":"Jotta
+        A","link":"https:\/\/www.deezer.com\/artist\/3473031","picture":"https:\/\/api.deezer.com\/artist\/3473031\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f26ed2a31ea41e500fd1c4e31756aa10\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f26ed2a31ea41e500fd1c4e31756aa10\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f26ed2a31ea41e500fd1c4e31756aa10\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/f26ed2a31ea41e500fd1c4e31756aa10\/1000x1000-000000-80-0-0.jpg","nb_album":17,"nb_fan":74515,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/3473031\/top?limit=50","type":"artist"},{"id":86149102,"name":"Class
+        A","link":"https:\/\/www.deezer.com\/artist\/86149102","picture":"https:\/\/api.deezer.com\/artist\/86149102\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7a26d1b5728ee1e37636e578d1ddb19a\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7a26d1b5728ee1e37636e578d1ddb19a\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7a26d1b5728ee1e37636e578d1ddb19a\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/7a26d1b5728ee1e37636e578d1ddb19a\/1000x1000-000000-80-0-0.jpg","nb_album":13,"nb_fan":944,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/86149102\/top?limit=50","type":"artist"},{"id":4601564,"name":"Le
+        A","link":"https:\/\/www.deezer.com\/artist\/4601564","picture":"https:\/\/api.deezer.com\/artist\/4601564\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0c15bf2eed94461bab655efae5fec4e5\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0c15bf2eed94461bab655efae5fec4e5\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0c15bf2eed94461bab655efae5fec4e5\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/0c15bf2eed94461bab655efae5fec4e5\/1000x1000-000000-80-0-0.jpg","nb_album":11,"nb_fan":5321,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/4601564\/top?limit=50","type":"artist"},{"id":13015249,"name":"A
+        Banca Records","link":"https:\/\/www.deezer.com\/artist\/13015249","picture":"https:\/\/api.deezer.com\/artist\/13015249\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/684e080c92a211747cb927b63c4704cb\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/684e080c92a211747cb927b63c4704cb\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/684e080c92a211747cb927b63c4704cb\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/684e080c92a211747cb927b63c4704cb\/1000x1000-000000-80-0-0.jpg","nb_album":58,"nb_fan":27158,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/13015249\/top?limit=50","type":"artist"}],"total":300,"prev":"https:\/\/api.deezer.com\/search\/artist?q=a&limit=5&index=0","next":"https:\/\/api.deezer.com\/search\/artist?q=a&limit=5&index=10"}'
+  recorded_at: Mon, 25 Jan 2021 11:35:28 GMT
+recorded_with: VCR 6.0.0

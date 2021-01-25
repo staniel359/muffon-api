@@ -6,5 +6,23 @@ module Deezer
 
       data
     end
+
+    private
+
+    def response_data
+      @response_data ||= JSON.parse(response)
+    end
+
+    def response
+      RestClient.get(link, headers)
+    end
+
+    def base_link
+      'https://api.deezer.com'
+    end
+
+    def headers
+      { params: params }
+    end
   end
 end

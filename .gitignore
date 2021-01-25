@@ -10,3 +10,5 @@
 /config/credentials/production.key
 
 TODO.txt
+
+/public/temp

@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.deezer.com/search/track?index=5&limit=5&q=a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Host:
+      - blm-web-148
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 25 Jan 2021 11:42:59 GMT
+      Content-Length:
+      - '9961'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_frd4759fc3a3b9df18e33a4867aff8892934154e; expires=Sat,
+        24-Jul-2021 11:42:59 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":1211059202,"readable":true,"title":"A Place A Time","title_short":"A
+        Place A Time","title_version":"","link":"https:\/\/www.deezer.com\/track\/1211059202","duration":182,"rank":100000,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-5.dzcdn.net\/stream\/c-56234bf68521f0989c0da2db9f2ac2a2-2.mp3","md5_image":"c2ed0439b021611f291c8d8bd00ee3a1","artist":{"id":87400502,"name":"Abigail
+        Marazzini","link":"https:\/\/www.deezer.com\/artist\/87400502","picture":"https:\/\/api.deezer.com\/artist\/87400502\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c2cd3eedcbe99b7a6c13f89e0c022b05\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c2cd3eedcbe99b7a6c13f89e0c022b05\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c2cd3eedcbe99b7a6c13f89e0c022b05\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/c2cd3eedcbe99b7a6c13f89e0c022b05\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/87400502\/top?limit=50","type":"artist"},"album":{"id":200447422,"title":"House
+        Relax, Vol. 8 (Deep and Chill Selection)","cover":"https:\/\/api.deezer.com\/album\/200447422\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c2ed0439b021611f291c8d8bd00ee3a1\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c2ed0439b021611f291c8d8bd00ee3a1\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c2ed0439b021611f291c8d8bd00ee3a1\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/c2ed0439b021611f291c8d8bd00ee3a1\/1000x1000-000000-80-0-0.jpg","md5_image":"c2ed0439b021611f291c8d8bd00ee3a1","tracklist":"https:\/\/api.deezer.com\/album\/200447422\/tracks","type":"album"},"type":"track"},{"id":1196837882,"readable":true,"title":"A
+        Poco a Poco","title_short":"A Poco a Poco","title_version":"","link":"https:\/\/www.deezer.com\/track\/1196837882","duration":172,"rank":100000,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-c15ab2063a584e8cb6c1158383a25acb-2.mp3","md5_image":"fcd6e48e970c77afb756338370fead36","artist":{"id":77122,"name":"Bruno
+        Lauzi","link":"https:\/\/www.deezer.com\/artist\/77122","picture":"https:\/\/api.deezer.com\/artist\/77122\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/77122\/top?limit=50","type":"artist"},"album":{"id":197508332,"title":"Just
+        When I Needed You Most","cover":"https:\/\/api.deezer.com\/album\/197508332\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fcd6e48e970c77afb756338370fead36\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fcd6e48e970c77afb756338370fead36\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fcd6e48e970c77afb756338370fead36\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/fcd6e48e970c77afb756338370fead36\/1000x1000-000000-80-0-0.jpg","md5_image":"fcd6e48e970c77afb756338370fead36","tracklist":"https:\/\/api.deezer.com\/album\/197508332\/tracks","type":"album"},"type":"track"},{"id":1216937542,"readable":true,"title":"A
+        dos\u0165, a dos\u0165","title_short":"A dos\u0165, a dos\u0165","title_version":"","link":"https:\/\/www.deezer.com\/track\/1216937542","duration":154,"rank":100000,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-7.dzcdn.net\/stream\/c-7423ff6bc0150fd3a5ce5777ecb03216-2.mp3","md5_image":"d1e7a1a5e4a5125d02dc9b9643ca7506","artist":{"id":3737381,"name":"Zuzka
+        Lonsk\u00e1","link":"https:\/\/www.deezer.com\/artist\/3737381","picture":"https:\/\/api.deezer.com\/artist\/3737381\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/588dee658de0fccf65639144cab521c6\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/588dee658de0fccf65639144cab521c6\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/588dee658de0fccf65639144cab521c6\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/588dee658de0fccf65639144cab521c6\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/3737381\/top?limit=50","type":"artist"},"album":{"id":201740282,"title":"Nejv\u00fdznamn\u011bj\u0161\u00ed
+        texta\u0159i \u010desk\u00e9 popul\u00e1rn\u00ed hudby Bohuslav N\u00e1dvorn\u00edk
+        II. (1955-1959)","cover":"https:\/\/api.deezer.com\/album\/201740282\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e7a1a5e4a5125d02dc9b9643ca7506\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e7a1a5e4a5125d02dc9b9643ca7506\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e7a1a5e4a5125d02dc9b9643ca7506\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/d1e7a1a5e4a5125d02dc9b9643ca7506\/1000x1000-000000-80-0-0.jpg","md5_image":"d1e7a1a5e4a5125d02dc9b9643ca7506","tracklist":"https:\/\/api.deezer.com\/album\/201740282\/tracks","type":"album"},"type":"track"},{"id":1200014852,"readable":true,"title":"A
+        Poco a Poco","title_short":"A Poco a Poco","title_version":"","link":"https:\/\/www.deezer.com\/track\/1200014852","duration":172,"rank":100000,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-c15ab2063a584e8cb6c1158383a25acb-2.mp3","md5_image":"a527218693377b4b058fe343f1152da8","artist":{"id":77122,"name":"Bruno
+        Lauzi","link":"https:\/\/www.deezer.com\/artist\/77122","picture":"https:\/\/api.deezer.com\/artist\/77122\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/38ecbd335afa70e7c5a8eecf942e77b8\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/77122\/top?limit=50","type":"artist"},"album":{"id":198221542,"title":"Sweet
+        Sensation","cover":"https:\/\/api.deezer.com\/album\/198221542\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a527218693377b4b058fe343f1152da8\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a527218693377b4b058fe343f1152da8\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a527218693377b4b058fe343f1152da8\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/a527218693377b4b058fe343f1152da8\/1000x1000-000000-80-0-0.jpg","md5_image":"a527218693377b4b058fe343f1152da8","tracklist":"https:\/\/api.deezer.com\/album\/198221542\/tracks","type":"album"},"type":"track"},{"id":1137327542,"readable":true,"title":"Quadri
+        A Punta","title_short":"Quadri A Punta","title_version":"","link":"https:\/\/www.deezer.com\/track\/1137327542","duration":67,"rank":67694,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-b.dzcdn.net\/stream\/c-b12d804cad63b0a9a89e08a44b9d563d-3.mp3","md5_image":"76c9483985db857ba57eb0433e0f2012","artist":{"id":7895476,"name":"V
+        A","link":"https:\/\/www.deezer.com\/artist\/7895476","picture":"https:\/\/api.deezer.com\/artist\/7895476\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ed08af346680b2c5262e376908b17ad2\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ed08af346680b2c5262e376908b17ad2\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ed08af346680b2c5262e376908b17ad2\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ed08af346680b2c5262e376908b17ad2\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/7895476\/top?limit=50","type":"artist"},"album":{"id":185313562,"title":"GILBERT
+        CANCRO TECNO COMPILATION 2021","cover":"https:\/\/api.deezer.com\/album\/185313562\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/76c9483985db857ba57eb0433e0f2012\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/76c9483985db857ba57eb0433e0f2012\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/76c9483985db857ba57eb0433e0f2012\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/76c9483985db857ba57eb0433e0f2012\/1000x1000-000000-80-0-0.jpg","md5_image":"76c9483985db857ba57eb0433e0f2012","tracklist":"https:\/\/api.deezer.com\/album\/185313562\/tracks","type":"album"},"type":"track"}],"total":300,"prev":"https:\/\/api.deezer.com\/search\/track?q=a&limit=5&index=0","next":"https:\/\/api.deezer.com\/search\/track?q=a&limit=5&index=10"}'
+  recorded_at: Mon, 25 Jan 2021 11:42:59 GMT
+recorded_with: VCR 6.0.0

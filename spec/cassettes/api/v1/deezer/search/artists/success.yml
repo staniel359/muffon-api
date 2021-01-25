@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.deezer.com/search/artist?index=0&limit=20&q=kate%20bush
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Host:
+      - blm-web-158
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 25 Jan 2021 11:34:32 GMT
+      Content-Length:
+      - '2245'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr457c5cc4ecff560e25cb17566a5323bb08ab88; expires=Sat,
+        24-Jul-2021 11:34:32 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":1049,"name":"Kate Bush","link":"https:\/\/www.deezer.com\/artist\/1049","picture":"https:\/\/api.deezer.com\/artist\/1049\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/1000x1000-000000-80-0-0.jpg","nb_album":28,"nb_fan":146095,"radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},{"id":5327124,"name":"Kate''s
+        Bush","link":"https:\/\/www.deezer.com\/artist\/5327124","picture":"https:\/\/api.deezer.com\/artist\/5327124\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2b75017035349be22d85d47ce831a1ad\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2b75017035349be22d85d47ce831a1ad\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2b75017035349be22d85d47ce831a1ad\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/2b75017035349be22d85d47ce831a1ad\/1000x1000-000000-80-0-0.jpg","nb_album":1,"nb_fan":59,"radio":false,"tracklist":"https:\/\/api.deezer.com\/artist\/5327124\/top?limit=50","type":"artist"},{"id":1049866,"name":"Karaoke
+        - Kate Bush","link":"https:\/\/www.deezer.com\/artist\/1049866","picture":"https:\/\/api.deezer.com\/artist\/1049866\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/\/1000x1000-000000-80-0-0.jpg","nb_album":0,"nb_fan":80,"radio":false,"tracklist":"https:\/\/api.deezer.com\/artist\/1049866\/top?limit=50","type":"artist"}],"total":3}'
+  recorded_at: Mon, 25 Jan 2021 11:34:32 GMT
+recorded_with: VCR 6.0.0

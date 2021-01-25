@@ -191,6 +191,16 @@ Rails.application.routes.draw do
         end
       end
 
+      # Deezer
+
+      namespace :deezer do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+        end
+      end
+
       # Bing
 
       namespace :bing do

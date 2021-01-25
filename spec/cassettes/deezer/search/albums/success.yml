@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.deezer.com/search/album?index=5&limit=5&q=a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Host:
+      - blm-web-136
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 25 Jan 2021 11:42:57 GMT
+      Content-Length:
+      - '8119'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr884c4687bd71ae589adb466a603ca4fb42c962; expires=Sat,
+        24-Jul-2021 11:42:57 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":202243132,"title":"Harmony A","link":"https:\/\/www.deezer.com\/album\/202243132","cover":"https:\/\/api.deezer.com\/album\/202243132\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/90277ddcb01725ce52e68a3a24fa5884\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/90277ddcb01725ce52e68a3a24fa5884\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/90277ddcb01725ce52e68a3a24fa5884\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/90277ddcb01725ce52e68a3a24fa5884\/1000x1000-000000-80-0-0.jpg","md5_image":"90277ddcb01725ce52e68a3a24fa5884","genre_id":113,"nb_tracks":10,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/202243132\/tracks","explicit_lyrics":false,"artist":{"id":5080,"name":"Various
+        Artists","link":"https:\/\/www.deezer.com\/artist\/5080","picture":"https:\/\/api.deezer.com\/artist\/5080\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/5080\/top?limit=50","type":"artist"},"type":"album"},{"id":199438412,"title":"PAINLESS","link":"https:\/\/www.deezer.com\/album\/199438412","cover":"https:\/\/api.deezer.com\/album\/199438412\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/4fe7a175366a0017efd3db9dd7f44dc9\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/4fe7a175366a0017efd3db9dd7f44dc9\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/4fe7a175366a0017efd3db9dd7f44dc9\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/4fe7a175366a0017efd3db9dd7f44dc9\/1000x1000-000000-80-0-0.jpg","md5_image":"4fe7a175366a0017efd3db9dd7f44dc9","genre_id":116,"nb_tracks":1,"record_type":"single","tracklist":"https:\/\/api.deezer.com\/album\/199438412\/tracks","explicit_lyrics":false,"artist":{"id":5422795,"name":"Josh
+        A","link":"https:\/\/www.deezer.com\/artist\/5422795","picture":"https:\/\/api.deezer.com\/artist\/5422795\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/0295ac528b24f539b73a0004a1906ed0\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/0295ac528b24f539b73a0004a1906ed0\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/0295ac528b24f539b73a0004a1906ed0\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/0295ac528b24f539b73a0004a1906ed0\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/5422795\/top?limit=50","type":"artist"},"type":"album"},{"id":197320172,"title":"When
+        a Man Loves a Woman","link":"https:\/\/www.deezer.com\/album\/197320172","cover":"https:\/\/api.deezer.com\/album\/197320172\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/53e1f7f8b396aa1bfe88eb26f81caf6b\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/53e1f7f8b396aa1bfe88eb26f81caf6b\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/53e1f7f8b396aa1bfe88eb26f81caf6b\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/53e1f7f8b396aa1bfe88eb26f81caf6b\/1000x1000-000000-80-0-0.jpg","md5_image":"53e1f7f8b396aa1bfe88eb26f81caf6b","genre_id":132,"nb_tracks":10,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/197320172\/tracks","explicit_lyrics":false,"artist":{"id":5080,"name":"Various
+        Artists","link":"https:\/\/www.deezer.com\/artist\/5080","picture":"https:\/\/api.deezer.com\/artist\/5080\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/5080\/top?limit=50","type":"artist"},"type":"album"},{"id":198240142,"title":"When
+        a Man Loves a Woman","link":"https:\/\/www.deezer.com\/album\/198240142","cover":"https:\/\/api.deezer.com\/album\/198240142\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/e4657e9513fd0b748e4cd6f09a923930\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/e4657e9513fd0b748e4cd6f09a923930\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/e4657e9513fd0b748e4cd6f09a923930\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/e4657e9513fd0b748e4cd6f09a923930\/1000x1000-000000-80-0-0.jpg","md5_image":"e4657e9513fd0b748e4cd6f09a923930","genre_id":132,"nb_tracks":10,"record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/198240142\/tracks","explicit_lyrics":false,"artist":{"id":5080,"name":"Various
+        Artists","link":"https:\/\/www.deezer.com\/artist\/5080","picture":"https:\/\/api.deezer.com\/artist\/5080\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/6fd017dac44f23dd3e15d512e3a5d970\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/5080\/top?limit=50","type":"artist"},"type":"album"},{"id":200119222,"title":"It''s
+        A Sin","link":"https:\/\/www.deezer.com\/album\/200119222","cover":"https:\/\/api.deezer.com\/album\/200119222\/image","cover_small":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/3cb8fcbf384c25537845cb6df8ed5177\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/3cb8fcbf384c25537845cb6df8ed5177\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/3cb8fcbf384c25537845cb6df8ed5177\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/cdns-images.dzcdn.net\/images\/cover\/3cb8fcbf384c25537845cb6df8ed5177\/1000x1000-000000-80-0-0.jpg","md5_image":"3cb8fcbf384c25537845cb6df8ed5177","genre_id":132,"nb_tracks":1,"record_type":"single","tracklist":"https:\/\/api.deezer.com\/album\/200119222\/tracks","explicit_lyrics":false,"artist":{"id":4023815,"name":"Years
+        & Years","link":"https:\/\/www.deezer.com\/artist\/4023815","picture":"https:\/\/api.deezer.com\/artist\/4023815\/image","picture_small":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/598cb98d83d2699a547ae1807f81b88f\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/598cb98d83d2699a547ae1807f81b88f\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/598cb98d83d2699a547ae1807f81b88f\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/cdns-images.dzcdn.net\/images\/artist\/598cb98d83d2699a547ae1807f81b88f\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/4023815\/top?limit=50","type":"artist"},"type":"album"}],"total":297,"prev":"https:\/\/api.deezer.com\/search\/album?q=a&limit=5&index=0","next":"https:\/\/api.deezer.com\/search\/album?q=a&limit=5&index=10"}'
+  recorded_at: Mon, 25 Jan 2021 11:42:57 GMT
+recorded_with: VCR 6.0.0
