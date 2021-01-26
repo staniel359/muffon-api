@@ -35,7 +35,7 @@ http_interactions:
       P3p:
       - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
       X-Host:
-      - blm-web-65
+      - blm-web-144
       X-Content-Type-Options:
       - nosniff
       Content-Length:
@@ -43,17 +43,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 25 Jan 2021 11:34:33 GMT
+      - Tue, 26 Jan 2021 10:55:40 GMT
       Connection:
       - keep-alive
       Set-Cookie:
-      - dzr_uniq_id=dzr_uniq_id_fr2ae1c4d55b06e24a6cae1f7e5bb642c212014f; expires=Sat,
-        24-Jul-2021 11:34:33 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+      - dzr_uniq_id=dzr_uniq_id_fr72b6661bb85c49aaa2ff959cf4793e3c6ba869; expires=Sun,
+        25-Jul-2021 10:55:40 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
         HttpOnly; SameSite=None
       X-Org:
       - FR
     body:
       encoding: UTF-8
       string: '{"data":[],"total":0}'
-  recorded_at: Mon, 25 Jan 2021 11:34:32 GMT
+  recorded_at: Tue, 26 Jan 2021 10:55:39 GMT
 recorded_with: VCR 6.0.0

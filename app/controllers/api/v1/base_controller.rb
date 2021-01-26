@@ -10,7 +10,7 @@ module API
       end
 
       def action_data
-        @action_data ||= data_service.call(data_params)
+        @action_data ||= data_service&.call(data_params)
       end
 
       def data_service
@@ -36,7 +36,7 @@ module API
       end
 
       def status_code
-        action_data.dig(:error, :code) || 200
+        action_data&.dig(:error, :code) || 200
       end
     end
   end

@@ -2,18 +2,21 @@ module Deezer
   module Utils
     module Audio
       class Decoder < Deezer::Utils::Base
+        AUDIO_FILES_PATH = 'temp/audio/deezer'.freeze
         CHUNK_SIZE = 2048
         INTERVAL_CHUNK = 3
 
         def call
-          return '' if @args.track_id.blank? || data.blank?
+          return '' if no_data?
 
-          create_dir_if_not_exists
-          save_decrypted_file
-          return_file_path_if_file_exists
+          save_file_and_return_file_name
         end
 
         private
+
+        def no_data?
+          @args.track_id.blank? || data.blank?
+        end
 
         def data
           @data ||= decrypted_binary_data
@@ -66,24 +69,18 @@ module Deezer
             )
         end
 
-        def create_dir_if_not_exists
-          FileUtils.mkdir_p(dir_name) unless File.directory?(dir_name)
+        def save_file_and_return_file_name
+          FileUtils.mkdir_p("public/#{AUDIO_FILES_PATH}")
+
+          file = File.open("public/#{audio_file_path}", 'wb')
+
+          file.write(data)
+
+          File.exist?(file) ? audio_file_path : ''
         end
 
-        def dir_name
-          'public/temp/audio/deezer'
-        end
-
-        def save_decrypted_file
-          File.open(file_path, 'wb') { |f| f.write(data) }
-        end
-
-        def return_file_path_if_file_exists
-          File.exist?(file_path) ? file_path : ''
-        end
-
-        def file_path
-          "#{dir_name}/#{@args.track_id}.mp3"
+        def audio_file_path
+          "#{AUDIO_FILES_PATH}/#{@args.track_id}.mp3"
         end
       end
     end

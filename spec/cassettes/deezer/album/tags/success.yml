@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.deezer.com/album/1063611
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Host:
+      - blm-web-57
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 26 Jan 2021 11:13:38 GMT
+      Content-Length:
+      - '9585'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr6b571962003cdbed00f6e225e83df0b884ca92; expires=Sun,
+        25-Jul-2021 11:13:38 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"id":1063611,"title":"Hounds Of Love","upc":"5099902930152","link":"https:\/\/www.deezer.com\/album\/1063611","share":"https:\/\/www.deezer.com\/album\/1063611?utm_source=deezer&utm_content=album-1063611&utm_term=0_1611659618&utm_medium=web","cover":"https:\/\/api.deezer.com\/album\/1063611\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/1000x1000-000000-80-0-0.jpg","md5_image":"9f2d90023183010d657b01cba6bd5f19","genre_id":132,"genres":{"data":[{"id":132,"name":"Pop","picture":"https:\/\/api.deezer.com\/genre\/132\/image","type":"genre"}]},"label":"Parlophone
+        UK","nb_tracks":12,"duration":2842,"fans":24250,"rating":0,"release_date":"2011-05-16","record_type":"album","available":true,"tracklist":"https:\/\/api.deezer.com\/album\/1063611\/tracks","explicit_lyrics":false,"explicit_content_lyrics":7,"explicit_content_cover":2,"contributors":[{"id":1049,"name":"Kate
+        Bush","link":"https:\/\/www.deezer.com\/artist\/1049","share":"https:\/\/www.deezer.com\/artist\/1049?utm_source=deezer&utm_content=artist-1049&utm_term=0_1611659618&utm_medium=web","picture":"https:\/\/api.deezer.com\/artist\/1049\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/1000x1000-000000-80-0-0.jpg","radio":true,"tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist","role":"Main"}],"artist":{"id":1049,"name":"Kate
+        Bush","picture":"https:\/\/api.deezer.com\/artist\/1049\/image","picture_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/56x56-000000-80-0-0.jpg","picture_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/250x250-000000-80-0-0.jpg","picture_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/500x500-000000-80-0-0.jpg","picture_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/artist\/ccbaf14c0164d376285f6500944fba21\/1000x1000-000000-80-0-0.jpg","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"album","tracks":{"data":[{"id":11616579,"readable":true,"title":"Running
+        Up That Hill (A Deal With God)","title_short":"Running Up That Hill (A Deal
+        With God)","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616579","duration":298,"rank":488919,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-2.dzcdn.net\/stream\/c-20d97b302bb6209f943e23a2a153300d-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616580,"readable":true,"title":"Hounds
+        Of Love","title_short":"Hounds Of Love","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616580","duration":183,"rank":455160,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-a.dzcdn.net\/stream\/c-a256e3199306b99f50a9038be44dd95d-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616581,"readable":true,"title":"The
+        Big Sky (Special Single Mix)","title_short":"The Big Sky","title_version":"(Special
+        Single Mix)","link":"https:\/\/www.deezer.com\/track\/11616581","duration":278,"rank":327214,"explicit_lyrics":false,"explicit_content_lyrics":6,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-d.dzcdn.net\/stream\/c-dfe929f24be19d11acb44205febfc533-8.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616582,"readable":true,"title":"Mother
+        Stands For Comfort","title_short":"Mother Stands For Comfort","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616582","duration":188,"rank":379162,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3bfdcc3d730ed898bdd5bd2557fb9434-8.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616583,"readable":true,"title":"Cloudbusting","title_short":"Cloudbusting","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616583","duration":310,"rank":453343,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-8.dzcdn.net\/stream\/c-860951cb43f342be81a4cb17aa4dc76b-5.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616584,"readable":true,"title":"And
+        Dream Of Sheep","title_short":"And Dream Of Sheep","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616584","duration":165,"rank":344740,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-cce2c5a55eca678b312e2e8e1451041d-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616585,"readable":true,"title":"Under
+        Ice","title_short":"Under Ice","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616585","duration":141,"rank":311903,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-6.dzcdn.net\/stream\/c-6350cd26c4e064e6171ac922f2f52fa5-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616586,"readable":true,"title":"Waking
+        The Witch","title_short":"Waking The Witch","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616586","duration":258,"rank":304322,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-f.dzcdn.net\/stream\/c-ff6053441d4caf7cbb51b2a6a5bc686b-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616587,"readable":true,"title":"Watching
+        You Without Me","title_short":"Watching You Without Me","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616587","duration":247,"rank":290329,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-1.dzcdn.net\/stream\/c-1eb9525d3dbadc61623823601aad66ad-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616588,"readable":true,"title":"Jig
+        Of Life","title_short":"Jig Of Life","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616588","duration":244,"rank":351766,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-a.dzcdn.net\/stream\/c-aefd6871bb3aa9698763ca1d9db21bea-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616589,"readable":true,"title":"Hello
+        Earth","title_short":"Hello Earth","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616589","duration":373,"rank":318612,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-c.dzcdn.net\/stream\/c-c955c4a694d1539315c27bbb752d5adf-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"},{"id":11616590,"readable":true,"title":"The
+        Morning Fog","title_short":"The Morning Fog","title_version":"","link":"https:\/\/www.deezer.com\/track\/11616590","duration":157,"rank":343498,"explicit_lyrics":false,"explicit_content_lyrics":0,"explicit_content_cover":2,"preview":"https:\/\/cdns-preview-3.dzcdn.net\/stream\/c-3798db23a787090a6a27c5d1fdbb2179-7.mp3","md5_image":"9f2d90023183010d657b01cba6bd5f19","artist":{"id":1049,"name":"Kate
+        Bush","tracklist":"https:\/\/api.deezer.com\/artist\/1049\/top?limit=50","type":"artist"},"type":"track"}]}}'
+  recorded_at: Tue, 26 Jan 2021 11:13:37 GMT
+recorded_with: VCR 6.0.0

@@ -199,6 +199,25 @@ Rails.application.routes.draw do
           get 'albums'
           get 'tracks'
         end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'tags'
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
       end
 
       # Bing
@@ -220,4 +239,6 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  match '*path', :to => 'application#not_found', via: :all
 end

@@ -20,7 +20,7 @@ module Deezer
           album: album_data(track),
           images: images_data(track['album'], 'track'),
           length: track['duration'],
-          deezer_id: track['id']
+          audio: audio_data(track)
         }
       end
 
@@ -32,6 +32,14 @@ module Deezer
         return {} if track['album'].blank?
 
         { title: track.dig('album', 'title') }
+      end
+
+      def audio_data(track)
+        {
+          present: track['id'].present?,
+          id: track['id'],
+          source: 'deezer'
+        }
       end
     end
   end

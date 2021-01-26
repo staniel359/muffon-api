@@ -24,5 +24,13 @@ module Deezer
     def headers
       { params: params }
     end
+
+    def params
+      {}
+    end
+
+    def images_data(data, model)
+      Deezer::Utils::Images.call(data: data, model: model)
+    end
   end
 end

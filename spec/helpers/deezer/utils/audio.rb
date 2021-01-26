@@ -8,7 +8,7 @@ module Helpers
           end
 
           def decoder_data
-            'public/temp/audio/deezer/11221319.mp3'
+            'temp/audio/deezer/11221319.mp3'
           end
         end
       end

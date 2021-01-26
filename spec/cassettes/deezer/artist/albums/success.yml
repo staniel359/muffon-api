@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.deezer.com/artist/1049/albums?index=5&limit=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Access-Control-Allow-Headers:
+      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - Location
+      Access-Control-Max-Age:
+      - '86400'
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Host:
+      - blm-web-143
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 25 Jan 2021 14:27:41 GMT
+      Content-Length:
+      - '4570'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - dzr_uniq_id=dzr_uniq_id_fr91e32a30095dbae0d73135bac5fc2ae58035f3; expires=Sat,
+        24-Jul-2021 14:27:41 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":1063593,"title":"The Dreaming","link":"https:\/\/www.deezer.com\/album\/1063593","cover":"https:\/\/api.deezer.com\/album\/1063593\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f49bc636bee7bc52139239e716a78587\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f49bc636bee7bc52139239e716a78587\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f49bc636bee7bc52139239e716a78587\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/f49bc636bee7bc52139239e716a78587\/1000x1000-000000-80-0-0.jpg","md5_image":"f49bc636bee7bc52139239e716a78587","genre_id":132,"fans":8854,"release_date":"2011-05-16","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/1063593\/tracks","explicit_lyrics":false,"type":"album"},{"id":1063594,"title":"The
+        Sensual World","link":"https:\/\/www.deezer.com\/album\/1063594","cover":"https:\/\/api.deezer.com\/album\/1063594\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd87f3bc387bbeda06368ef634c250db\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd87f3bc387bbeda06368ef634c250db\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd87f3bc387bbeda06368ef634c250db\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/cd87f3bc387bbeda06368ef634c250db\/1000x1000-000000-80-0-0.jpg","md5_image":"cd87f3bc387bbeda06368ef634c250db","genre_id":132,"fans":10169,"release_date":"2011-05-16","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/1063594\/tracks","explicit_lyrics":false,"type":"album"},{"id":1063611,"title":"Hounds
+        Of Love","link":"https:\/\/www.deezer.com\/album\/1063611","cover":"https:\/\/api.deezer.com\/album\/1063611\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/9f2d90023183010d657b01cba6bd5f19\/1000x1000-000000-80-0-0.jpg","md5_image":"9f2d90023183010d657b01cba6bd5f19","genre_id":132,"fans":24244,"release_date":"2011-05-16","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/1063611\/tracks","explicit_lyrics":false,"type":"album"},{"id":91707972,"title":"Director''s
+        Cut (2018 Remaster)","link":"https:\/\/www.deezer.com\/album\/91707972","cover":"https:\/\/api.deezer.com\/album\/91707972\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/825b279a1297b1ebac84289dd9d1c82d\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/825b279a1297b1ebac84289dd9d1c82d\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/825b279a1297b1ebac84289dd9d1c82d\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/825b279a1297b1ebac84289dd9d1c82d\/1000x1000-000000-80-0-0.jpg","md5_image":"825b279a1297b1ebac84289dd9d1c82d","genre_id":132,"fans":418,"release_date":"2011-05-16","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/91707972\/tracks","explicit_lyrics":false,"type":"album"},{"id":91707992,"title":"Aerial
+        (2018 Remaster)","link":"https:\/\/www.deezer.com\/album\/91707992","cover":"https:\/\/api.deezer.com\/album\/91707992\/image","cover_small":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/324cc57b8739f4c13feb5184fb970f0c\/56x56-000000-80-0-0.jpg","cover_medium":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/324cc57b8739f4c13feb5184fb970f0c\/250x250-000000-80-0-0.jpg","cover_big":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/324cc57b8739f4c13feb5184fb970f0c\/500x500-000000-80-0-0.jpg","cover_xl":"https:\/\/e-cdns-images.dzcdn.net\/images\/cover\/324cc57b8739f4c13feb5184fb970f0c\/1000x1000-000000-80-0-0.jpg","md5_image":"324cc57b8739f4c13feb5184fb970f0c","genre_id":132,"fans":1816,"release_date":"2005-11-07","record_type":"album","tracklist":"https:\/\/api.deezer.com\/album\/91707992\/tracks","explicit_lyrics":false,"type":"album"}],"total":28,"prev":"https:\/\/api.deezer.com\/artist\/1049\/albums?limit=5&index=0","next":"https:\/\/api.deezer.com\/artist\/1049\/albums?limit=5&index=10"}'
+  recorded_at: Mon, 25 Jan 2021 14:27:40 GMT
+recorded_with: VCR 6.0.0
