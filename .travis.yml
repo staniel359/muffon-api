@@ -1,9 +1,11 @@
 language: ruby
+os: linux
+dist: xenial
 cache: bundler
-rvm: 3.0.0
+rvm: 2.7.2
 services:
   - postgresql
-  - redis-server
+  - redis
 before_script:
   - psql -c "create database muffon_api_test;" -U postgres
   - psql -c "create user muffon_api_test with createdb login password 'muffon_api_test';" -U postgres
