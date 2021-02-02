@@ -220,9 +220,40 @@ Rails.application.routes.draw do
         end
       end
 
-      # Bing
+      # Yandex Music
 
-      namespace :bing do
+      namespace :yandex do
+        namespace :music do
+          namespace :search do
+            get 'artists'
+            get 'albums'
+            get 'tracks'
+          end
+
+          namespace :artists, as: :artist do
+            scope ':artist_id' do
+              get 'albums'
+            end
+          end
+
+          namespace :albums, as: :album do
+            scope ':album_id' do
+              get '', action: :info
+              get 'tags'
+            end
+          end
+
+          namespace :tracks, as: :track do
+            scope ':track_id' do
+              get '', action: :info
+            end
+          end
+        end
+      end
+
+      # YouTube
+
+      namespace :youtube do
         get 'search'
       end
 
@@ -232,9 +263,9 @@ Rails.application.routes.draw do
         get 'search'
       end
 
-      # YouTube
+      # Bing
 
-      namespace :youtube do
+      namespace :bing do
         get 'search'
       end
     end

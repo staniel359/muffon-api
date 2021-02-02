@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://music.yandex.ru/api/v2.1/handlers/track/2203364/web-album_track-track-track-main/download/m
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      X-Retpath-Y:
+      - https://music.yandex.ru/
+      Cookie:
+      - Session_id=<YANDEX_MUSIC_SESSION_ID>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - music.yandex.ru
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Disposition:
+      - attachment; filename=json.txt
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 31 Jan 2021 09:45:23 GMT
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [ { "url": "https://dr.yandex.net/muz_nel"}]}'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Compat:
+      - '5'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - i=xjMJ8H5myfFiBNENOtxIkhZERBpu3htc4kibjtpcBYYKX/GFR6wFVfqPgDid4JEfVQpks/TI+qYBnqfdiCAJ9hZaH5k=;
+        Expires=Tue, 31-Jan-2023 09:45:23 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=187525801612086323; path=/; domain=.yandex.ru; expires=Fri, 31 Jan
+        2031 09:45:23 GMT; max-age=315360000
+    body:
+      encoding: ASCII-8BIT
+      string: '{"codec":"mp3","bitrate":192,"src":"//storage.mds.yandex.net/file-download-info/1536641_5fdf84fe.2877833.12.2203364/2?sign=12bbec44691d92a5fac0e7737530e2528fc73e3f99e4041ac31df7830bc0b56a&ts=60167c6f&offset=46479","gain":false,"preview":false}'
+  recorded_at: Sun, 31 Jan 2021 09:45:23 GMT
+- request:
+    method: get
+    uri: https://storage.mds.yandex.net/file-download-info/1536641_5fdf84fe.2877833.12.2203364/2?format=json&offset=46479&sign=12bbec44691d92a5fac0e7737530e2528fc73e3f99e4041ac31df7830bc0b56a&ts=60167c6f
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - storage.mds.yandex.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 31 Jan 2021 09:45:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      X-Mds-Request-Id:
+      - 131abd2b81354ba2
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Length
+      X-Robots-Tag:
+      - noindex, noarchive, nofollow
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 600, "success_fraction": 0.001,
+        "failure_fraction": 0.01}'
+      Report-To:
+      - '{"group": "network-errors", "max_age": 600, "endpoints": [ { "url": "https://dr.yandex.net/s3_nel"}]}'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"s":"7e72b7de9f9f6d9aaca0c0141da8fde648e4fd12248c8381a2b29031e86ae6f9","ts":"0005ba2fef49681b","path":"/rmusic/U2FsdGVkX1_KZaW09Fi2yXSoLCuAMKPzmJ01DN3ffndJ6dAeUuo7iR5q9r5F6_6DYyBiPT52l9lbdAo-nS166mpDen9mBo5y5UMzU_CmTbk/7e72b7de9f9f6d9aaca0c0141da8fde648e4fd12248c8381a2b29031e86ae6f9/46479","host":"s363man.storage.yandex.net"}'
+  recorded_at: Sun, 31 Jan 2021 09:45:24 GMT
+recorded_with: VCR 6.0.0

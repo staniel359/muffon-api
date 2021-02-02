@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://music.yandex.ru/handlers/album.jsx?album=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - music.yandex.ru
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 31 Jan 2021 16:21:38 GMT
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [ { "url": "https://dr.yandex.net/muz_nel"}]}'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Compat:
+      - '5'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - i=NKIDrWzFCTmkmV8VjOSytd9Ms1wxJcnxhRmWjvMR2Wj58UEfoHb3/WBs8XV52ehNo4hq45LhdWharx1dyeLSViRjFdE=;
+        Expires=Tue, 31-Jan-2023 16:21:38 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=775439061612110098; path=/; domain=.yandex.ru; expires=Fri, 31 Jan
+        2031 16:21:38 GMT; max-age=315360000
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Not Found"}'
+  recorded_at: Sun, 31 Jan 2021 16:21:38 GMT
+recorded_with: VCR 6.0.0

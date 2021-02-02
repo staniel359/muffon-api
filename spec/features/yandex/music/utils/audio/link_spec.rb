@@ -1,0 +1,37 @@
+require 'rails_helper'
+
+RSpec.describe Yandex::Music::Utils::Audio::Link do
+  subject { described_class }
+
+  describe 'successful processing' do
+    context 'when track_id given' do
+      let(:output) do
+        VCR.use_cassette 'yandex/music/utils/audio/link/success' do
+          subject.call(track_id: '2203364')
+        end
+      end
+
+      it do
+        expect(output).to eq(Helpers::Yandex::Music::Utils::Audio.link_data)
+      end
+    end
+  end
+
+  describe 'unsuccessful processing' do
+    context 'when no track_id given' do
+      let(:output) { subject.call }
+
+      it { expect(output).to eq('') }
+    end
+
+    context 'when wrong track_id' do
+      let(:output) do
+        VCR.use_cassette 'yandex/music/utils/audio/link/wrong_id' do
+          subject.call(track_id: Helpers::Base::RANDOM_STRING)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+  end
+end

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://music.yandex.ru/handlers/music-search.jsx?lang=en&page=0&text=wejlhg239gh23&type=tracks
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - music.yandex.ru
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 31 Jan 2021 12:18:06 GMT
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [ { "url": "https://dr.yandex.net/muz_nel"}]}'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Compat:
+      - '5'
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - i=1orfZ/9DDbiKaZoUIzI5hp6F4DgU7OdwnlMsT9kugun3fy0FmxkPYKVHtQBh0oaR98IMlHd0Hwp6CUS/Y/98E+SJ9r4=;
+        Expires=Tue, 31-Jan-2023 12:18:06 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=8373184331612095486; path=/; domain=.yandex.ru; expires=Fri, 31
+        Jan 2031 12:18:06 GMT; max-age=315360000
+    body:
+      encoding: ASCII-8BIT
+      string: '{"text":"wejlhg239gh23","albums":{"items":[]},"tracks":{"items":[]},"podcasts":{"items":[]},"podcast_episodes":{"items":[]},"artists":{"items":[]},"videos":{"items":[]},"playlists":{"items":[]},"users":{"items":[]},"request_id":"1612095486387583-17499134002600754719.2","searchRequestId":"music-stable-back-vla-16.vla.yp-c.yandex.net-1612095486387583-17499134002600754719.2-1612095486405","extendedParams":{},"misspell":{},"counts":{"artists":0,"albums":0,"tracks":0,"podcasts":0,"podcast_episodes":0,"videos":6,"playlists":0,"users":0}}'
+  recorded_at: Sun, 31 Jan 2021 12:18:06 GMT
+recorded_with: VCR 6.0.0
