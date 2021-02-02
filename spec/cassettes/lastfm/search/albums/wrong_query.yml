@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=1000&method=album.search
+    uri: http://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=2000&method=album.search
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 26 Jan 2021 16:49:13 GMT
+      - Tue, 02 Feb 2021 09:10:00 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -41,6 +41,6 @@ http_interactions:
       - 1.1 google
     body:
       encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"1000","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Tue, 26 Jan 2021 16:49:11 GMT
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"2000","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
+  recorded_at: Tue, 02 Feb 2021 09:10:01 GMT
 recorded_with: VCR 6.0.0

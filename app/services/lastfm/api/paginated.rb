@@ -1,12 +1,14 @@
 module LastFM
   module API
     module Paginated
-      TOTAL_LIMIT = 1_000
-
       private
 
       def pagination_params
-        { limit: TOTAL_LIMIT }
+        { limit: total_limit }
+      end
+
+      def total_limit
+        2_000
       end
 
       def paginated_array(data)
