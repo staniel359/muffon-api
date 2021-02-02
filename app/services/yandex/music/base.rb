@@ -32,6 +32,14 @@ module Yandex
         data['artists'].map { |a| a['name'] }.join(', ')
       end
 
+      def title
+        response_data['title']
+      end
+
+      def artist_data
+        { name: artist_name(response_data) }
+      end
+
       def images_data(data, model)
         Yandex::Music::Utils::Images.call(data: data, model: model)
       end

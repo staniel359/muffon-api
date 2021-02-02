@@ -5,7 +5,7 @@ module LastFM
 
       def artist_data
         {
-          name: response_data['name'],
+          name: title,
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,

@@ -21,11 +21,8 @@ module SoundCloud
 
       def track_base_data
         {
-          id: track_id(
-            artist_name(response_data),
-            response_data['title']
-          ),
-          title: response_data['title'],
+          id: track_id(artist_name(response_data), title),
+          title: title,
           artist: artist_data(response_data)
         }
       end

@@ -10,7 +10,8 @@ module Yandex
 
         def album_base_data
           {
-            title: response_data['title'],
+            id: album_id(artist_name(response_data), title),
+            title: title,
             artist: artist_data,
             source: 'yandex'
           }

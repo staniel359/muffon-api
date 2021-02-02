@@ -22,8 +22,12 @@ module LastFM
         { album: album_data }
       end
 
-      def artist_data
-        { name: response_data['artist'] }
+      def artist_name
+        response_data['artist']
+      end
+
+      def listeners_count
+        response_data['listeners'].to_i
       end
     end
   end

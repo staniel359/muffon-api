@@ -13,8 +13,8 @@ module Bandcamp
 
       def track_base_data
         {
-          id: track_id(artist_name, track_title),
-          title: track_title,
+          id: track_id(artist_name, title),
+          title: title,
           artist: artist_data
         }
       end

@@ -24,10 +24,6 @@ module Yandex
           { album: album_data }
         end
 
-        def artist_data
-          { name: artist_name(response_data) }
-        end
-
         def tags
           [response_data['genre']]
         end

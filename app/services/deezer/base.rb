@@ -32,5 +32,17 @@ module Deezer
     def images_data(data, model)
       Deezer::Utils::Images.call(data: data, model: model)
     end
+
+    def title
+      response_data['title']
+    end
+
+    def artist_name(data)
+      data.dig('artist', 'name')
+    end
+
+    def artist_data(data)
+      { name: artist_name(data) }
+    end
   end
 end

@@ -6,7 +6,7 @@ module Yandex
 
         def album_data
           {
-            title: response_data['title'],
+            title: title,
             artist: artist_data,
             tags: tags
           }

@@ -9,7 +9,8 @@ module LastFM
 
       def album_base_data
         {
-          title: response_data['name'],
+          id: album_id(artist_name, title),
+          title: title,
           artist: artist_data,
           source: 'lastfm'
         }
@@ -24,10 +25,6 @@ module LastFM
           tags: tags,
           tracks: tracks_data
         }
-      end
-
-      def listeners_count
-        response_data['listeners'].to_i
       end
 
       def plays_count
@@ -52,10 +49,19 @@ module LastFM
 
       def track_data(track)
         {
-          id: track_id(response_data['artist'], track['name']),
+          id: track_id(track_artist_name(track), track['name']),
           title: track['name'],
+          artist: track_artist_data(track),
           length: track['duration'].to_i
         }
+      end
+
+      def track_artist_name(track)
+        track.dig('artist', 'name')
+      end
+
+      def track_artist_data(track)
+        { name: track_artist_name(track) }
       end
     end
   end

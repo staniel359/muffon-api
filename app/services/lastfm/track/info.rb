@@ -16,8 +16,8 @@ module LastFM
 
       def track_base_data
         {
-          id: track_id(artist_name, response_data['name']),
-          title: response_data['name'],
+          id: track_id(artist_name, title),
+          title: title,
           artist: artist_data
         }
       end

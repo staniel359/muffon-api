@@ -41,12 +41,16 @@ module SoundCloud
       secrets.soundcloud[:api_key]
     end
 
-    def artist_data(model)
-      { name: artist_name(model) }
-    end
-
     def artist_name(data)
       data.dig('user', 'username')
+    end
+
+    def title
+      response_data['title']
+    end
+
+    def artist_data(data)
+      { name: artist_name(data) }
     end
 
     def images_data(data, model)

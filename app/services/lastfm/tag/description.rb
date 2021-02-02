@@ -5,7 +5,7 @@ module LastFM
 
       def tag_data
         {
-          name: response_data['name'],
+          name: title,
           description: description
         }
       end

@@ -36,12 +36,29 @@ module Discogs
       }
     end
 
-    def artist_data
-      { name: artist_name(response_data['artists']) }
+    def artist_name(data)
+      data['artists'].map { |a| artist_with_join(a) }.flatten.join
     end
 
-    def artist_name(artists)
-      Discogs::Utils::ArtistName.call(artists: artists)
+    def artist_with_join(artist)
+      [artist['name'], join_data(artist)]
+    end
+
+    def join_data(data)
+      join = " #{data['join']} "
+
+      return join.strip if data['join'] == ''
+      return join.lstrip if data['join'] == ','
+
+      join
+    end
+
+    def title
+      response_data['title']
+    end
+
+    def artist_data(data)
+      { name: artist_name(data) }
     end
 
     def albums_data
@@ -57,15 +74,39 @@ module Discogs
     end
 
     def main_image
-      Discogs::Utils::MainImage.call(response_data: response_data)
+      return if images_list.blank?
+
+      (primary_image || images_list[0])['uri']
+    end
+
+    def images_list
+      response_data['images']
+    end
+
+    def primary_image
+      images_list.find { |i| i['type'] == 'primary' }
     end
 
     def length_formatted(length)
-      Discogs::Utils::Length.call(length: length)
+      length.split(':').map(&:to_i).inject { |m, s| m * 60 + s }.to_i
     end
 
     def description
-      Discogs::Utils::Description.call(description: response_data['notes'])
+      desc = response_data['notes'].to_s
+
+      description_rules.each do |rule|
+        desc = desc.gsub(rule[0], rule[1])
+      end
+
+      desc
+    end
+
+    def description_rules
+      [
+        [/\[a=(.*?)\]/, '\1'],
+        [/\[m=(.*?)\]/, 'https://www.discogs.com/master/\1'],
+        [/\[.*?\]/, '']
+      ]
     end
 
     def tracks_data

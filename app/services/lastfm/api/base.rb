@@ -52,6 +52,14 @@ module LastFM
         service_info[:response_data_node]
       end
 
+      def title
+        response_data['name']
+      end
+
+      def artist_data
+        { name: artist_name }
+      end
+
       def description
         LastFM::Utils::Description.call(data: response_data)
       end

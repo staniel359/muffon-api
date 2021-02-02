@@ -25,7 +25,8 @@ module Spotify
 
       def album_base_data
         {
-          title: response_data['name'],
+          id: album_id(artist_name(response_data), title),
+          title: title,
           artist: artist_data(response_data),
           source: 'spotify'
         }
@@ -55,7 +56,9 @@ module Spotify
 
       def track_data(track)
         {
+          id: track_id(artist_name(track), track['name']),
           title: track['name'],
+          artist: artist_data(track),
           length: length(track),
           audio: audio_data(track)
         }

@@ -25,11 +25,8 @@ module Spotify
 
       def track_base_data
         {
-          id: track_id(
-            artist_name(response_data),
-            response_data['name']
-          ),
-          title: response_data['name'],
+          id: track_id(artist_name(response_data), title),
+          title: title,
           artist: artist_data(response_data)
         }
       end

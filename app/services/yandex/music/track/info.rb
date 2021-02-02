@@ -9,11 +9,11 @@ module Yandex
         end
 
         def no_data?
-          track_raw_data.blank?
+          response_data.blank?
         end
 
-        def track_raw_data
-          response_data['track']
+        def response_data
+          @response_data ||= super['track']
         end
 
         def link
@@ -37,24 +37,17 @@ module Yandex
 
         def track_base_data
           {
-            id: track_id(
-              artist_name(track_raw_data),
-              track_raw_data['title']
-            ),
-            title: track_raw_data['title'],
+            id: track_id(artist_name(response_data), title),
+            title: title,
             artist: artist_data
           }
-        end
-
-        def artist_data
-          { name: artist_name(track_raw_data) }
         end
 
         def track_extra_data
           {
             album: album_data,
             images: images_data(album_raw_data, 'track'),
-            length: length(track_raw_data),
+            length: length(response_data),
             audio: audio_data
           }
         end
@@ -66,7 +59,7 @@ module Yandex
         end
 
         def album_raw_data
-          @album_raw_data ||= track_raw_data.dig('albums', 0)
+          @album_raw_data ||= response_data.dig('albums', 0)
         end
 
         def audio_data
@@ -79,7 +72,7 @@ module Yandex
 
         def audio_link
           @audio_link ||= Yandex::Music::Utils::Audio::Link.call(
-            track_id: track_raw_data['id'].to_i
+            track_id: response_data['id'].to_i
           )
         end
       end

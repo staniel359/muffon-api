@@ -5,9 +5,9 @@ module LastFM
 
       def album_data
         {
-          title: response_data['name'],
+          title: title,
           artist: artist_data,
-          listeners_count: response_data['listeners'].to_i
+          listeners_count: listeners_count
         }
       end
     end

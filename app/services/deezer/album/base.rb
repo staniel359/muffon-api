@@ -18,6 +18,14 @@ module Deezer
       def data
         { album: album_data }
       end
+
+      def tags
+        tags_list.map { |g| g['name'] }
+      end
+
+      def tags_list
+        response_data.dig('genres', 'data')
+      end
     end
   end
 end

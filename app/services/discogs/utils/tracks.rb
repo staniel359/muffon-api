@@ -20,11 +20,14 @@ module Discogs
       end
 
       def track_data(track)
-        Discogs::Utils::Track.call(track: track, artists: artists)
-      end
+        track['artists'] ||= @args.response_data['artists']
 
-      def artists
-        @args.response_data['artists']
+        {
+          id: track_id(artist_name(track), track['title']),
+          title: track['title'],
+          artist: artist_data(track),
+          length: length_formatted(track['duration'])
+        }
       end
     end
   end

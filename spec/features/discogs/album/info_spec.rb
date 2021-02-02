@@ -14,20 +14,6 @@ RSpec.describe Discogs::Album::Info do
       it { expect(output).to eq(Helpers::Discogs::Album.info_data) }
     end
 
-    context 'when multiple artists' do
-      let(:output) do
-        VCR.use_cassette 'discogs/album/info/multiple_artists' do
-          subject.call(album_id: '13812684')
-        end
-      end
-
-      it do
-        expect(output).to eq(
-          Helpers::Discogs::Album.info_multiple_artists_data
-        )
-      end
-    end
-
     context 'when different artists' do
       let(:output) do
         VCR.use_cassette 'discogs/album/info/different_artists' do
@@ -38,6 +24,20 @@ RSpec.describe Discogs::Album::Info do
       it do
         expect(output).to eq(
           Helpers::Discogs::Album.info_different_artists_data
+        )
+      end
+    end
+
+    context 'when multiple artists' do
+      let(:output) do
+        VCR.use_cassette 'discogs/album/info/multiple_artists' do
+          subject.call(album_id: '13812684')
+        end
+      end
+
+      it do
+        expect(output).to eq(
+          Helpers::Discogs::Album.info_multiple_artists_data
         )
       end
     end

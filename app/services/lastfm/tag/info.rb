@@ -5,7 +5,7 @@ module LastFM
 
       def tag_data
         {
-          name: response_data['name'],
+          name: title,
           taggings_count: response_data['total'],
           taggers_count: response_data['reach'],
           description: description_truncated

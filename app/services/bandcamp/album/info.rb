@@ -35,7 +35,8 @@ module Bandcamp
 
       def album_base_data
         {
-          title: track_title,
+          id: album_id(artist_name, title),
+          title: title,
           artist: artist_data,
           source: 'bandcamp'
         }
@@ -64,6 +65,7 @@ module Bandcamp
         {
           id: track_id(artist_name, track['title']),
           title: track['title'],
+          artist: artist_data,
           length: track['duration'].floor,
           link: track_link(track),
           audio: audio_data(track)

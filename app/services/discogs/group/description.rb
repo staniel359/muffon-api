@@ -9,8 +9,8 @@ module Discogs
 
       def group_data
         {
-          title: response_data['title'],
-          artist: artist_data,
+          title: title,
+          artist: artist_data(response_data),
           description: description
         }
       end

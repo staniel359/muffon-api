@@ -5,7 +5,7 @@ module SoundCloud
 
       def album_data
         {
-          title: response_data['title'],
+          title: title,
           artist: artist_data(response_data),
           description: description
         }

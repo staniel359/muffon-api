@@ -51,12 +51,16 @@ module Spotify
       Spotify::Token.call
     end
 
-    def artist_data(data)
-      { name: artist_name(data) }
-    end
-
     def artist_name(data)
       data['artists'].map { |a| a['name'] }.join(', ')
+    end
+
+    def title
+      response_data['name']
+    end
+
+    def artist_data(data)
+      { name: artist_name(data) }
     end
 
     def images_data(data, model)

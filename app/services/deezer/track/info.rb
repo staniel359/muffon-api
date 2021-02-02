@@ -25,17 +25,10 @@ module Deezer
 
       def track_main_data
         {
-          id: track_id(
-            response_data.dig('artist', 'name'),
-            response_data['title']
-          ),
-          title: response_data['title'],
-          artist: artist_data
+          id: track_id(artist_name(response_data), title),
+          title: title,
+          artist: artist_data(response_data)
         }
-      end
-
-      def artist_data
-        { name: response_data.dig('artist', 'name') }
       end
 
       def track_extra_data

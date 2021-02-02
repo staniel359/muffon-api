@@ -15,10 +15,6 @@ module LastFM
         { track: track_data }
       end
 
-      def artist_data
-        { name: artist_name }
-      end
-
       def artist_name
         response_data.dig('artist', 'name')
       end

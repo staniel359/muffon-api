@@ -40,6 +40,12 @@ module Muffon
       ::Artist.with_name(artist_name).id
     end
 
+    def album_id(artist_name, title, album_type = 'album')
+      ::Album.with_artist_id_title_type(
+        artist_id(artist_name), title, album_type
+      ).id
+    end
+
     def time_formatted(time)
       Time.zone.parse(time)&.strftime('%d %b %Y').to_s
     rescue ArgumentError
