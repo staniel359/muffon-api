@@ -15,6 +15,8 @@ module Yandex
         end
 
         def image
+          return if @args.data.blank?
+
           @image ||=
             @args.data.dig('cover', 'uri') || @args.data['coverUri']
         end
