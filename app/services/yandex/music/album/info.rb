@@ -13,7 +13,7 @@ module Yandex
             id: album_id(artist_name(response_data), title),
             title: title,
             artist: artist_data,
-            source: 'yandex'
+            source: 'yandex_music'
           }
         end
 
@@ -61,7 +61,7 @@ module Yandex
           {
             present: track['id'].present?,
             id: track['id'].to_i,
-            source: 'yandex'
+            source: 'yandex_music'
           }
         end
       end

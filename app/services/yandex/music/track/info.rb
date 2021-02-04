@@ -66,7 +66,7 @@ module Yandex
           {
             present: audio_link.present?,
             link: audio_link,
-            source: 'yandex'
+            source: 'yandex_music'
           }
         end
 
