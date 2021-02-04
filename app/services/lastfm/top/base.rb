@@ -16,10 +16,6 @@ module LastFM
         super.merge(pagination_params)
       end
 
-      def total_limit
-        1_000
-      end
-
       def data
         { top: top_data }
       end

@@ -11,6 +11,10 @@ module LastFM
         'tracks'
       end
 
+      def total_limit
+        2_000
+      end
+
       def collection_item_data(track)
         {
           id: track_id(extra_data['artist'], track['name']),

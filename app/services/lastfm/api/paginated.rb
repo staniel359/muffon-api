@@ -8,7 +8,7 @@ module LastFM
       end
 
       def total_limit
-        2_000
+        1_000
       end
 
       def paginated_array(data)
