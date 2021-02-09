@@ -1,6 +1,6 @@
 module Google
   class Search < Muffon::Base
-    PAGE_LIMIT = 10
+    include Google::Paginated
     PAGES_LIMIT = 10
 
     def call
@@ -51,16 +51,6 @@ module Google
 
     def scope_id
       secrets.google.dig(:scopes, @args.scope.to_sym)
-    end
-
-    def offset
-      return if @args.page.blank?
-
-      (page - 1) * PAGE_LIMIT
-    end
-
-    def page
-      (@args.page || 1).to_i
     end
 
     def data
