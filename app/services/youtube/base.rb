@@ -1,5 +1,7 @@
 module YouTube
   class Base < Muffon::Base
+    include YouTube::Paginated
+
     def call
       return handlers.bad_request if not_all_args?
       return handlers.not_found if no_data?
@@ -43,10 +45,6 @@ module YouTube
         pageToken: @args.next_page,
         videoCategoryId: 10
       }
-    end
-
-    def limit
-      (@args.limit || 20).to_i
     end
   end
 end
