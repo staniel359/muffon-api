@@ -30,7 +30,7 @@ module LastFM
         { name: response_data.dig('@attr', 'artist') }
       end
 
-      def raw_collection
+      def collection_list
         response_data['track']
       end
 

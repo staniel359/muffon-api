@@ -26,7 +26,7 @@ module LastFM
           }
         end
 
-        def raw_collection
+        def collection_list
           response_data[model_name]
         end
       end

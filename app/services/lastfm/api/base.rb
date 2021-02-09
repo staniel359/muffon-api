@@ -25,9 +25,7 @@ module LastFM
       end
 
       def artist_params
-        {
-          artist: format_param(@args.artist)
-        }
+        { artist: format_param(@args.artist) }
       end
 
       def format_param(param)
@@ -61,7 +59,18 @@ module LastFM
       end
 
       def description
-        LastFM::Utils::Description.call(data: response_data)
+        return '' if description_data.blank?
+
+        description_data.match(description_regexp)[1].strip
+      end
+
+      def description_data
+        response_data.dig('bio', 'content') ||
+          response_data.dig('wiki', 'content')
+      end
+
+      def description_regexp
+        %r{(.+)<a href="http(s?)://www.last.fm}m
       end
     end
   end

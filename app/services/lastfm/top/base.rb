@@ -22,13 +22,13 @@ module LastFM
 
       def top_data
         {
-          page: paginated_data[:page],
-          total_pages: paginated_data[:total_pages],
+          page: page,
+          total_pages: total_pages,
           collection_name.to_sym => collection_data
         }
       end
 
-      def raw_collection
+      def collection_list
         response_data[model_name]
       end
     end

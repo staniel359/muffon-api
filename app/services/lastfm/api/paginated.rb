@@ -11,32 +11,28 @@ module LastFM
         1_000
       end
 
-      def paginated_array(data)
-        LastFM::Utils::PaginatedData.call(
-          data: data,
-          page: @args.page,
-          limit: @args.limit
-        )
-      end
-
       def page
-        paginated_data[:page]
-      end
-
-      def paginated_data
-        @paginated_data ||= paginated_array(raw_collection)
-      end
-
-      def collection_data
-        collection_list.map { |i| collection_item_data(i) }
-      end
-
-      def collection_list
-        paginated_data[:collection]
+        (@args.page || 1).to_i
       end
 
       def total_pages
-        paginated_data[:total_pages]
+        collection_list.size.fdiv(limit).ceil
+      end
+
+      def limit
+        (@args.limit || 50).to_i
+      end
+
+      def collection_paginated
+        collection_list.slice(offset, limit).to_a
+      end
+
+      def offset
+        (page - 1) * limit
+      end
+
+      def collection_data
+        collection_paginated.map { |i| collection_item_data(i) }
       end
     end
   end
