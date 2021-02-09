@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.discogs.com/masters/wejlhg239gh23/versions?key=<DISCOGS_API_KEY>&page&per_page&secret=<DISCOGS_API_SECRET>
+    uri: https://api.discogs.com/masters/wejlhg239gh23/versions?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
     body:
       encoding: US-ASCII
       string: ''

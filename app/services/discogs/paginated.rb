@@ -8,9 +8,17 @@ module Discogs
 
     def pagination_params
       {
-        page: @args.page,
-        per_page: @args.limit
-      }
+        page: (page if @args.page.present?),
+        per_page: (limit if @args.limit.present?)
+      }.compact
+    end
+
+    def page
+      (@args.page || 1).to_i
+    end
+
+    def limit
+      (@args.limit || 20).to_i
     end
 
     def paginated_data
@@ -21,16 +29,8 @@ module Discogs
       }
     end
 
-    def page
-      pagination['page']
-    end
-
-    def pagination
-      response_data['pagination']
-    end
-
     def total_pages
-      pagination['pages']
+      response_data.dig('pagination', 'pages')
     end
   end
 end

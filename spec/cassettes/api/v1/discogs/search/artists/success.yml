@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page&per_page&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=artist
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=artist
     body:
       encoding: US-ASCII
       string: ''
