@@ -1,6 +1,8 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::Base
+      include SoundCloud::Paginated
+
       private
 
       def primary_args
@@ -8,27 +10,31 @@ module SoundCloud
       end
 
       def no_data?
-        response_data.blank?
+        collection_list.blank?
+      end
+
+      def collection_list
+        response_data['collection']
       end
 
       def link
-        "#{base_link}/#{soundcloud_collection_name}"
+        "#{base_link}/search/#{collection_name}"
+      end
+
+      def base_link
+        'https://api-v2.soundcloud.com'
+      end
+
+      def client_id
+        secrets.soundcloud[:api_v2_key]
       end
 
       def extra_params
         {
           q: @args.query,
-          limit: total_limit,
+          limit: limit,
           offset: offset
         }
-      end
-
-      def offset
-        (page - 1) * total_limit
-      end
-
-      def page
-        (@args.page || 1).to_i
       end
 
       def data

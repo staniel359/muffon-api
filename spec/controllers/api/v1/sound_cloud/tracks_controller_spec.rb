@@ -12,7 +12,7 @@ RSpec.describe API::V1::SoundCloud::TracksController, type: :controller do
     it 'returns 400 if wrong track_id' do
       VCR.use_cassette 'api/v1/soundcloud/tracks/info/wrong_id' do
         get :info, params: { track_id: Helpers::Base::RANDOM_STRING }
-        expect(response).to have_http_status(:bad_request)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

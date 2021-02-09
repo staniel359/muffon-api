@@ -23,11 +23,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '59'
+      - '184'
       Connection:
       - keep-alive
       Date:
-      - Sat, 02 Jan 2021 13:46:54 GMT
+      - Tue, 09 Feb 2021 10:53:25 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -45,13 +45,14 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 dfc3a7bfbc818f103aa0634d79f28907.cloudfront.net (CloudFront)
+      - 1.1 c418ea866520d52fb3d0a50002762664.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - WAW50-C1
+      - HEL50-C2
       X-Amz-Cf-Id:
-      - jiUP2440-fivV14cQp9PUJu7YeIVCXmFGJEI6Ztt1w6h4G9IhB-KAQ==
+      - o1vjC3LVhmmHSTB6bjHlJRFbxNbOY4PeuOiWrC8Pg7YuZsk24XJUsA==
     body:
       encoding: ASCII-8BIT
-      string: 'Invalid track id: ''wejlhg239gh23'''
-  recorded_at: Sat, 02 Jan 2021 13:46:54 GMT
+      string: '{"code":400,"message":"Invalid track id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
+        - Bad Request","errors":[{"error_message":"Invalid track id: ''wejlhg239gh23''"}],"error":null}'
+  recorded_at: Tue, 09 Feb 2021 10:53:26 GMT
 recorded_with: VCR 6.0.0

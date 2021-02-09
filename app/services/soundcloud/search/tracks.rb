@@ -3,20 +3,8 @@ module SoundCloud
     class Tracks < SoundCloud::Search::Base
       private
 
-      def soundcloud_collection_name
-        'tracks'
-      end
-
       def collection_name
         'tracks'
-      end
-
-      def total_limit
-        (@args.limit || 50).to_i
-      end
-
-      def collection_list
-        response_data
       end
 
       def collection_item_data(track)

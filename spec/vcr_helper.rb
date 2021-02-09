@@ -14,6 +14,7 @@ VCR.configure do |c|
     %i[discogs api_secret],
     %i[spotify api_key],
     %i[soundcloud api_key],
+    %i[soundcloud api_v2_key],
     %i[deezer test_track_token],
     %i[deezer test_api_token],
     %i[deezer test_license_token],

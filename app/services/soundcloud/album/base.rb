@@ -7,6 +7,10 @@ module SoundCloud
         [@args.album_id]
       end
 
+      def no_data?
+        response_data.blank?
+      end
+
       def link
         "#{base_link}/playlists/#{@args.album_id}"
       end

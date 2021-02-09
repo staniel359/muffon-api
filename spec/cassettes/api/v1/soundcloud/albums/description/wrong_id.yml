@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 09 Jan 2021 15:01:39 GMT
+      - Tue, 09 Feb 2021 10:53:15 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -45,14 +45,16 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 ab1d15e056bdcedbea349504173a4ecb.cloudfront.net (CloudFront)
+      - 1.1 e0efba8a72628bfc3dc6d4d637b28302.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - AMS50-C1
+      - FRA2-C1
       X-Amz-Cf-Id:
-      - F_xNCoZnDLJdpV3y-TXF9lzkmdHeUrtqIEkLCvStlK4cv8b6C3rK2Q==
+      - X4Lv3VGLG7ZdvHJ8G40bVzBA9eM7htgb3oA7YsO02yVGICLNGX8Dhg==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"code":400,"message":"Invalid playlist id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
         - Bad Request","errors":[{"error_message":"Invalid playlist id: ''wejlhg239gh23''"}],"error":null}'
-  recorded_at: Sat, 09 Jan 2021 15:01:38 GMT
+  recorded_at: Tue, 09 Feb 2021 10:53:17 GMT
 recorded_with: VCR 6.0.0

@@ -23,11 +23,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '62'
+      - '185'
       Connection:
       - keep-alive
       Date:
-      - Sat, 02 Jan 2021 11:44:59 GMT
+      - Tue, 09 Feb 2021 10:31:56 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -45,13 +45,16 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 50004ba6b399efd7e9feb3e04887ccc1.cloudfront.net (CloudFront)
+      - 1.1 16a997ff6fbe7c67cad69373ff69353d.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - WAW50-C1
+      - HEL50-C2
       X-Amz-Cf-Id:
-      - WBV1Mfqew4Bq64EGzna57eLEdxNIC8-i4I4hHYsfDFbQhv7ed6Kvdw==
+      - CSUvpoP5Wgq32D0EXpwCYDWfJ8O3sOxJZKx59IDiMdbLp7XlHG5wLw==
+      Age:
+      - '3'
     body:
       encoding: ASCII-8BIT
-      string: 'Invalid playlist id: ''wejlhg239gh23'''
-  recorded_at: Sat, 02 Jan 2021 11:44:59 GMT
+      string: '{"code":400,"message":"Invalid playlist id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
+        - Bad Request","errors":[{"error_message":"Invalid playlist id: ''wejlhg239gh23''"}],"error":null}'
+  recorded_at: Tue, 09 Feb 2021 10:31:59 GMT
 recorded_with: VCR 6.0.0

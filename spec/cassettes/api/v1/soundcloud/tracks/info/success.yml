@@ -23,11 +23,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '829'
+      - '832'
       Connection:
       - keep-alive
       Date:
-      - Sat, 02 Jan 2021 13:46:53 GMT
+      - Tue, 09 Feb 2021 10:53:24 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -45,17 +45,17 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 4c7664383840971890a08804c2d41e86.cloudfront.net (CloudFront)
+      - 1.1 f74ebd28d1b7fe154fb59d89abda909b.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - WAW50-C1
+      - HEL50-C2
       X-Amz-Cf-Id:
-      - _h8deVKJGEQLOpoYaOoFmkG57SDegAu1ha40ubw9NxlWsHOBjlSR_g==
+      - 8zypaXbEtNIU-T6E7eqB8E26Ca1_Zk3-k6irNGroipViWJv8jZ0tMA==
     body:
       encoding: ASCII-8BIT
-      string: '{"kind":"track","id":296774474,"created_at":"2016/12/08 02:53:46 +0000","user_id":247403880,"duration":46267,"commentable":true,"comment_count":28,"state":"finished","original_content_size":1583159,"last_modified":"2020/07/30
+      string: '{"kind":"track","id":296774474,"created_at":"2016/12/08 02:53:46 +0000","user_id":247403880,"duration":46267,"commentable":true,"comment_count":31,"state":"finished","original_content_size":1583159,"last_modified":"2020/07/30
         20:34:06 +0000","sharing":"public","tag_list":"vaporwave","permalink":"luxury-elite-all-night","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"label_id":null,"genre":"V
         A P O R W A V E","title":"LUXURY ELITE - ALL NIGHT","description":"Luxury
         Elite''s All Night\nLate Night Delight (c) Luxury Elite","label_name":null,"release":null,"track_type":null,"key_signature":null,"isrc":null,"video_url":null,"bpm":null,"release_year":null,"release_month":null,"release_day":null,"original_format":"mp3","license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/296774474","user":{"id":247403880,"kind":"user","permalink":"that-gay-lmao","username":"scubb","last_modified":"2018/08/09
-        02:33:02 +0000","uri":"https://api.soundcloud.com/users/247403880","permalink_url":"https://soundcloud.com/that-gay-lmao","avatar_url":"https://i1.sndcdn.com/avatars-000485875731-se22vc-large.jpg"},"user_uri":"https://api.soundcloud.com/users/247403880","permalink_url":"https://soundcloud.com/that-gay-lmao/luxury-elite-all-night","artwork_url":"https://i1.sndcdn.com/artworks-000197371808-7uwudi-large.jpg","stream_url":"https://api.soundcloud.com/tracks/296774474/stream","download_url":"https://api.soundcloud.com/tracks/296774474/download","waveform_url":"https://wave.sndcdn.com/y3cxJMT8ueg3_m.png","domain_lockings":null,"available_country_codes":null,"label":null,"secret_token":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":61267,"download_count":0,"favoritings_count":1122,"reposts_count":48,"downloadable":false,"downloads_remaining":null}'
-  recorded_at: Sat, 02 Jan 2021 13:46:53 GMT
+        02:33:02 +0000","uri":"https://api.soundcloud.com/users/247403880","permalink_url":"https://soundcloud.com/that-gay-lmao","avatar_url":"https://i1.sndcdn.com/avatars-000485875731-se22vc-large.jpg"},"user_uri":"https://api.soundcloud.com/users/247403880","permalink_url":"https://soundcloud.com/that-gay-lmao/luxury-elite-all-night","artwork_url":"https://i1.sndcdn.com/artworks-000197371808-7uwudi-large.jpg","stream_url":"https://api.soundcloud.com/tracks/296774474/stream","download_url":"https://api.soundcloud.com/tracks/296774474/download","waveform_url":"https://wave.sndcdn.com/y3cxJMT8ueg3_m.png","domain_lockings":null,"available_country_codes":null,"label":null,"secret_token":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":62411,"download_count":0,"favoritings_count":1144,"reposts_count":49,"downloadable":false,"downloads_remaining":null}'
+  recorded_at: Tue, 09 Feb 2021 10:53:25 GMT
 recorded_with: VCR 6.0.0

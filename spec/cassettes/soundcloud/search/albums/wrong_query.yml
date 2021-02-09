@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.soundcloud.com/playlists?client_id=<SOUNDCLOUD_API_KEY>&limit=100&offset=0&q=wejlhg239gh23
+    uri: https://api-v2.soundcloud.com/search/albums?client_id=<SOUNDCLOUD_API_V2_KEY>&limit=20&offset=0&q=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,11 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.soundcloud.com
+      - api-v2.soundcloud.com
   response:
     status:
       code: 200
@@ -23,37 +23,37 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '28'
+      - '119'
       Connection:
       - keep-alive
       Date:
-      - Tue, 02 Feb 2021 12:35:30 GMT
+      - Tue, 09 Feb 2021 10:48:46 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
-      - public, max-age=60, must-revalidate
+      - private, max-age=0
       Referrer-Policy:
       - no-referrer
       X-Frame-Options:
       - DENY
       X-Content-Type-Options:
       - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
       Server:
       - am/2
       Vary:
       - Origin
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 10ba4f180c8b00c38f956300d7b2f4c8.cloudfront.net (CloudFront)
+      - 1.1 4cea94b0894987ae880983d50307d214.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - ARN1-C1
+      - WAW50-C1
       X-Amz-Cf-Id:
-      - lY3drRS9_38nDpPEpZvSpC0tCC7iZyo0DH1vGBAdaoNvBUdjkEcrkA==
-      Age:
-      - '37'
+      - TWm_GX1KEaEQjnVBvxZ_40hNTK6bqy1s38DasecPuKMgJrR3I8aGBg==
     body:
       encoding: ASCII-8BIT
-      string: "[]"
-  recorded_at: Tue, 02 Feb 2021 12:36:06 GMT
+      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:5c33365b6e484981822062bb65710d0e"}'
+  recorded_at: Tue, 09 Feb 2021 10:48:47 GMT
 recorded_with: VCR 6.0.0

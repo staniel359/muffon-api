@@ -12,7 +12,7 @@ RSpec.describe API::V1::SoundCloud::AlbumsController, type: :controller do
     it 'returns 400 if wrong album_id' do
       VCR.use_cassette 'api/v1/soundcloud/albums/info/wrong_id' do
         get :info, params: { album_id: Helpers::Base::RANDOM_STRING }
-        expect(response).to have_http_status(:bad_request)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end
@@ -28,7 +28,7 @@ RSpec.describe API::V1::SoundCloud::AlbumsController, type: :controller do
     it 'returns 400 if wrong album_id' do
       VCR.use_cassette 'api/v1/soundcloud/albums/description/wrong_id' do
         get :description, params: { album_id: Helpers::Base::RANDOM_STRING }
-        expect(response).to have_http_status(:bad_request)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end
@@ -44,7 +44,7 @@ RSpec.describe API::V1::SoundCloud::AlbumsController, type: :controller do
     it 'returns 400 if wrong album_id' do
       VCR.use_cassette 'api/v1/soundcloud/albums/tags/wrong_id' do
         get :tags, params: { album_id: Helpers::Base::RANDOM_STRING }
-        expect(response).to have_http_status(:bad_request)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

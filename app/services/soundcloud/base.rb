@@ -9,12 +9,10 @@ module SoundCloud
 
     private
 
-    def no_data?
-      false
-    end
-
     def response_data
       @response_data ||= JSON.parse(response)
+    rescue RestClient::BadRequest
+      nil
     end
 
     def response
@@ -57,8 +55,8 @@ module SoundCloud
       SoundCloud::Utils::Images.call(data: data, model: model)
     end
 
-    def length(data)
-      data['duration'] / 1_000
+    def length(track)
+      track['duration'] / 1_000
     end
   end
 end
