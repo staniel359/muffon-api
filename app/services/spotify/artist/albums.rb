@@ -33,7 +33,7 @@ module Spotify
         }
       end
 
-      def total_items
+      def total_items_count
         response_data['total']
       end
 

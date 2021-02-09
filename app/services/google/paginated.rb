@@ -1,15 +1,12 @@
 module Google
   module Paginated
+    include Muffon::Paginated
     PAGE_LIMIT = 10
 
     private
 
-    def offset
-      (page - 1) * PAGE_LIMIT if @args.page.present?
-    end
-
-    def page
-      (@args.page || 1).to_i
+    def limit
+      PAGE_LIMIT
     end
   end
 end

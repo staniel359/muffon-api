@@ -44,11 +44,12 @@ module Yandex
           }
         end
 
-        def total_pages
-          total_items, limit =
-            response_data['pager'].values_at('total', 'perPage')
+        def total_items_count
+          response_data.dig('pager', 'total')
+        end
 
-          total_items.fdiv(limit).ceil
+        def limit
+          response_data.dig('pager', 'perPage')
         end
 
         def collection_data

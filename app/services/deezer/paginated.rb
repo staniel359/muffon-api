@@ -1,5 +1,7 @@
 module Deezer
   module Paginated
+    include Muffon::Paginated
+
     private
 
     def params
@@ -13,18 +15,6 @@ module Deezer
       }
     end
 
-    def limit
-      (@args.limit || 20).to_i
-    end
-
-    def offset
-      (page - 1) * limit
-    end
-
-    def page
-      (@args.page || 1).to_i
-    end
-
     def paginated_data
       {
         page: page,
@@ -33,8 +23,8 @@ module Deezer
       }
     end
 
-    def total_pages
-      response_data['total'].fdiv(limit).ceil
+    def total_items_count
+      response_data['total']
     end
 
     def collection_data

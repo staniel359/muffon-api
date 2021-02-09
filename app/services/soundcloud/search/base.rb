@@ -1,7 +1,7 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::Base
-      include SoundCloud::Paginated
+      include Muffon::Paginated
 
       private
 

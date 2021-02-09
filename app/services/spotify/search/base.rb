@@ -41,7 +41,7 @@ module Spotify
         }
       end
 
-      def total_items
+      def total_items_count
         response_data.dig(collection_name, 'total')
       end
 

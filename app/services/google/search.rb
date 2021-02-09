@@ -41,7 +41,7 @@ module Google
         key: api_key,
         q: @args.query,
         cx: scope_id,
-        start: offset
+        start: (offset if @args.page.present?)
       }.compact
     end
 
@@ -60,20 +60,12 @@ module Google
     def search_data
       {
         page: page,
-        total_pages: total_pages,
+        total_pages: [total_pages, PAGES_LIMIT].min,
         results: response_data['items']
       }
     end
 
-    def total_pages
-      [actual_total_pages, PAGES_LIMIT].min
-    end
-
-    def actual_total_pages
-      total_results.fdiv(PAGE_LIMIT).ceil
-    end
-
-    def total_results
+    def total_items_count
       response_data.dig(
         'queries', 'request', 0, 'totalResults'
       ).to_i

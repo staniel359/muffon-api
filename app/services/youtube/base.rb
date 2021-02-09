@@ -1,6 +1,6 @@
 module YouTube
   class Base < Muffon::Base
-    include YouTube::Paginated
+    include Muffon::Paginated
 
     def call
       return handlers.bad_request if not_all_args?
