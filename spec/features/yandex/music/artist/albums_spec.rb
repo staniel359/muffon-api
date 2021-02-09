@@ -7,7 +7,7 @@ RSpec.describe Yandex::Music::Artist::Albums do
     context 'when artist_id present' do
       let(:output) do
         VCR.use_cassette 'yandex/music/artist/albums/success' do
-          subject.call(artist_id: '15446')
+          subject.call(artist_id: '15446', limit: 5, page: 2)
         end
       end
 

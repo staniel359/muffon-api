@@ -2,6 +2,8 @@ module Yandex
   module Music
     module Search
       class Base < Yandex::Music::Base
+        include Yandex::Music::Paginated
+
         private
 
         def primary_args
@@ -28,10 +30,6 @@ module Yandex
             page: page - 1,
             lang: 'en'
           }
-        end
-
-        def page
-          (@args.page || 1).to_i
         end
 
         def data

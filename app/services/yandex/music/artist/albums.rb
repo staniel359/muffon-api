@@ -2,6 +2,8 @@ module Yandex
   module Music
     module Artist
       class Albums < Yandex::Music::Base
+        include Yandex::Music::Paginated
+
         private
 
         def primary_args
@@ -25,21 +27,22 @@ module Yandex
         end
 
         def data
-          { artist: artist_data }
+          { artist: artist_data.merge(paginated_data) }
         end
 
         def artist_data
-          {
-            name: response_data.dig('artist', 'name'),
-            albums: albums_data
-          }
+          { name: response_data.dig('artist', 'name') }
+        end
+
+        def collection_name
+          'albums'
         end
 
         def albums_data
-          albums_list.map { |a| album_data(a) }
+          paginated_collection.map { |a| album_data(a) }
         end
 
-        def albums_list
+        def collection_list
           response_data['albums']
         end
 
