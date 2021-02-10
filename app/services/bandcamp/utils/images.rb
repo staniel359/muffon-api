@@ -9,16 +9,16 @@ module Bandcamp
 
       def data
         {
-          original: image,
-          large: image.sub('_10', '_5'),
-          medium: image.sub('_10', '_4'),
-          small: image.sub('_10', '_3'),
-          extrasmall: image.sub('_10', '_42')
+          original: resized_image('_10'),
+          large: resized_image('_5'),
+          medium: resized_image('_4'),
+          small: resized_image('_3'),
+          extrasmall: resized_image('_42')
         }
       end
 
-      def image
-        "https://f4.bcbits.com/img/a#{@args.image_id}_10.jpg"
+      def resized_image(size)
+        @args.image.sub(/_23|_2|_5|_10/, size)
       end
     end
   end

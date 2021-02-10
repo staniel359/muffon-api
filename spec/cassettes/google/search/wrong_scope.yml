@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?key=<GOOGLE_API_KEY>&q=wild%20nothing
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Fri, 05 Feb 2021 10:03:23 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "error": {
+            "code": 400,
+            "message": "Request contains an invalid argument.",
+            "errors": [
+              {
+                "message": "Request contains an invalid argument.",
+                "domain": "global",
+                "reason": "badRequest"
+              }
+            ],
+            "status": "INVALID_ARGUMENT"
+          }
+        }
+  recorded_at: Fri, 05 Feb 2021 10:03:23 GMT
+recorded_with: VCR 6.0.0

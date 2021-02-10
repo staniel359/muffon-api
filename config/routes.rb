@@ -82,21 +82,35 @@ Rails.application.routes.draw do
 
       namespace :bandcamp do
         namespace :search do
+          get 'artists'
           get 'albums'
           get 'tracks'
         end
 
-        namespace :albums, as: :album, constraints: { link: /.+/ } do
-          scope ':link' do
-            get 'description'
-            get 'tags'
-            get '', action: :info
+        namespace :artists, as: :artist do
+          scope ':artist' do
+            get 'albums'
+
+            namespace :albums, as: :album do
+              scope ':album' do
+                get 'description'
+                get 'tags'
+                get '', action: :info
+              end
+            end
+
+            namespace :tracks, as: :track do
+              scope ':track' do
+                get '', action: :info
+              end
+            end
           end
         end
 
-        namespace :tracks, as: :track, constraints: { link: /.+/ } do
-          scope ':link' do
-            get '', action: :info
+        namespace :labels, as: :label do
+          scope ':label' do
+            get 'artists'
+            get 'albums'
           end
         end
       end
@@ -254,18 +268,6 @@ Rails.application.routes.draw do
       # YouTube
 
       namespace :youtube do
-        get 'search'
-      end
-
-      # Google
-
-      namespace :google do
-        get 'search'
-      end
-
-      # Bing
-
-      namespace :bing do
         get 'search'
       end
     end

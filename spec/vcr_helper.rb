@@ -16,12 +16,16 @@ VCR.configure do |c|
     %i[soundcloud api_key],
     %i[deezer test_track_token],
     %i[deezer test_api_token],
-    %i[deezer test_license_token]
+    %i[deezer test_license_token],
+    %i[google api_key],
+    %i[google scopes bandcamp_albums],
+    %i[google scopes bandcamp_artists],
+    %i[google scopes bandcamp_tracks]
   ]
 
   keys.each do |arr|
-    filter_name = "<#{arr[0]}_#{arr[1]}>".upcase
-    value = Rails.application.credentials.dig(arr[0], arr[1])
+    filter_name = "<#{arr.join('_').upcase}>"
+    value = Rails.application.credentials.dig(*arr)
 
     c.filter_sensitive_data(filter_name) do
       CGI.escape(value.to_s)

@@ -2,73 +2,35 @@ module Bandcamp
   class Base < Muffon::Base
     def call
       return handlers.bad_request if not_all_args?
-      return handlers.not_found if invalid_link? || no_data?
-
-      yield if block_given?
+      return handlers.not_found if no_data?
 
       data
     end
 
     private
 
-    def primary_args
-      [@args.link]
-    end
-
-    def invalid_link?
-      @args.link && @args.link[link_regexp].blank?
-    end
-
-    def link_regexp
-      %r{(https?://)*\w+(?:-\w+)*.bandcamp.com/
-        (?:album|track)/(\w|-)+(?:-\w+)*}x
-    end
-
     def no_data?
-      scripts.blank?
-    end
-
-    def scripts
-      @scripts ||= response_data.css('script')
+      response_data.blank?
     end
 
     def response_data
-      Nokogiri::HTML.parse(response)
+      @response_data ||= JSON.parse(response)
     end
 
     def response
-      RestClient.get(@args.link)
+      RestClient.get(link, headers)
     end
 
-    def base_data
-      @base_data ||= JSON.parse(scripts[0])
+    def headers
+      { params: params }
     end
 
-    def extra_data
-      @extra_data ||=
-        JSON.parse(scripts[3]['data-tralbum'])
+    def params
+      {}
     end
 
-    def tracks_list
-      @tracks_list ||= extra_data['trackinfo']
-    end
-
-    def images_data
-      Bandcamp::Utils::Images.call(
-        image_id: extra_data['art_id']
-      )
-    end
-
-    def artist_name
-      base_data.dig('byArtist', 'name')
-    end
-
-    def title
-      base_data['name']
-    end
-
-    def artist_data
-      { name: artist_name }
+    def images_data(image)
+      Bandcamp::Utils::Images.call(image: image)
     end
   end
 end

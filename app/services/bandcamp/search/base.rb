@@ -7,24 +7,16 @@ module Bandcamp
         [@args.query]
       end
 
-      def no_data?
-        search_response.blank?
-      end
-
-      def search_response
-        @search_response ||= Bing::Search.call(params)[:search]
+      def response_data
+        @response_data ||= Google::Search.call(params)[:search]
       end
 
       def params
         {
-          query: query,
-          page: @args.page,
-          limit: 50
+          query: @args.query,
+          scope: "bandcamp_#{collection_name}",
+          page: @args.page
         }
-      end
-
-      def query
-        "#{@args.query} site:bandcamp.com"
       end
 
       def data
@@ -33,7 +25,8 @@ module Bandcamp
 
       def search_data
         {
-          page: search_response[:page],
+          page: response_data[:page],
+          total_pages: response_data[:total_pages],
           collection_name.to_sym => collection_data
         }
       end
@@ -43,31 +36,42 @@ module Bandcamp
       end
 
       def collection_list
-        results_filtered.first(limit)
+        response_data[:results]
       end
 
-      def results_filtered
-        search_response[:results].select { |r| matched?(r) }
+      def artist_name(item)
+        opengraph_data(item, 'site_name').to_s
       end
 
-      def matched?(result)
-        result[:link][%r{/#{model_name}/}].present?
+      def opengraph_data(item, name)
+        item.dig('pagemap', 'metatags', 0, "og:#{name}")
       end
 
-      def limit
-        (@args.limit || 20).to_i
+      def image(item)
+        item.dig('pagemap', 'cse_image', 0, 'src')
       end
 
-      def collection_item_data(item)
+      def link_data(data)
+        artist, album_type, title = data.scan(link_regexp).flatten
+
         {
-          title: item[:title],
-          images: images_data,
-          link: item[:link]
+          title: title.to_s,
+          artist: artist.to_s,
+          album_type: album_type.to_s
         }
       end
 
-      def images_data
-        default_images_data(model_name)
+      def link_regexp
+        %r{(?=https?://)?([\w-]+).bandcamp.com
+          (?:(?:/(album|track))(?:/([\w\-]+))?)?}x
+      end
+
+      def title(item)
+        opengraph_data(item, 'title').split(', by ')[0]
+      end
+
+      def artist_data(item)
+        { name: artist_name(item) }
       end
     end
   end

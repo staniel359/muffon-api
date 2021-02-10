@@ -4,12 +4,11 @@ RSpec.describe Google::Search do
   subject { described_class }
 
   describe 'successful processing' do
-    context 'when query present' do
+    context 'when query and scope present' do
       let(:output) do
         VCR.use_cassette 'google/search/success' do
           subject.call(
-            query: 'wild nothing indigo bandcamp',
-            limit: 5
+            query: 'wild nothing', scope: 'bandcamp_albums', page: 2
           )
         end
       end
@@ -20,7 +19,13 @@ RSpec.describe Google::Search do
 
   describe 'no processing' do
     context 'when no query given' do
-      let(:output) { subject.call }
+      let(:output) { subject.call(scope: 'bandcamp_albums') }
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+
+    context 'when no scope given' do
+      let(:output) { subject.call(query: 'wild nothing') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
@@ -28,11 +33,27 @@ RSpec.describe Google::Search do
     context 'when wrong query' do
       let(:output) do
         VCR.use_cassette 'google/search/wrong_query' do
-          subject.call(query: '*')
+          subject.call(
+            query: Helpers::Base::RANDOM_STRING,
+            scope: 'bandcamp_albums'
+          )
         end
       end
 
       it { expect(output).to eq(Helpers::Base.not_found_error) }
+    end
+
+    context 'when wrong scope' do
+      let(:output) do
+        VCR.use_cassette 'google/search/wrong_scope' do
+          subject.call(
+            query: 'wild nothing',
+            scope: Helpers::Base::RANDOM_STRING
+          )
+        end
+      end
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
   end
 end

@@ -19,6 +19,8 @@ module Muffon
         {
           'lastfm/artist/album' => 'lastfm/album',
           'lastfm/artist/track' => 'lastfm/track',
+          'bandcamp/artist/album' => 'bandcamp/album',
+          'bandcamp/artist/track' => 'bandcamp/track',
           'spotify/artist/album' => 'spotify/album',
           'spotify/artist/track' => 'spotify/track'
         }

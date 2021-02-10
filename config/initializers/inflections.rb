@@ -14,6 +14,7 @@
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'IP'
   inflect.acronym 'API'
+  inflect.acronym 'ID'
   inflect.acronym 'LastFM'
   inflect.acronym 'VK'
   inflect.acronym 'YouTube'

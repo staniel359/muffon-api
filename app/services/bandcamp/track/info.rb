@@ -1,11 +1,7 @@
 module Bandcamp
   module Track
-    class Info < Bandcamp::Base
+    class Info < Bandcamp::Track::Base
       private
-
-      def data
-        { track: track_data }
-      end
 
       def track_data
         track_base_data.merge(track_extra_data)
@@ -13,39 +9,31 @@ module Bandcamp
 
       def track_base_data
         {
-          id: track_id(artist_name, title),
+          id: track_id(artist_name(response_data), title),
           title: title,
-          artist: artist_data
+          artist: artist_data(response_data)
         }
       end
 
       def track_extra_data
         {
           album: album_data,
-          images: images_data,
-          length: length,
-          audio: audio_data
+          images: images_data(image(response_data)),
+          length: length(track),
+          description: description_truncated,
+          tags: tags.first(5),
+          audio: audio_data(track)
         }
       end
 
       def album_data
-        { title: base_data.dig('inAlbum', 'name') }
+        return {} if response_data['album_title'].blank?
+
+        { title: response_data['album_title'] }
       end
 
-      def length
-        base_data['duration_secs'].floor
-      end
-
-      def audio_data
-        {
-          present: audio_link.present?,
-          link: audio_link,
-          source: 'bandcamp'
-        }
-      end
-
-      def audio_link
-        tracks_list.dig(0, 'file', 'mp3-128')
+      def track
+        tracks_list[0]
       end
     end
   end

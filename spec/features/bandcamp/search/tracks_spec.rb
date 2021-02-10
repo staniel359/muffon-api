@@ -7,7 +7,7 @@ RSpec.describe Bandcamp::Search::Tracks do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'bandcamp/search/tracks/success' do
-          subject.call(query: 'wild nothing nocturne')
+          subject.call(query: 'wild nothing', page: 2)
         end
       end
 

@@ -1,5 +1,8 @@
 module Google
   class Search < Muffon::Base
+    PAGE_LIMIT = 10
+    PAGES_LIMIT = 10
+
     def call
       return handlers.bad_request if not_all_args?
       return handlers.not_found if no_data?
@@ -10,23 +13,15 @@ module Google
     private
 
     def primary_args
-      [@args.query]
+      [@args.query, @args.scope]
     end
 
     def no_data?
-      results.blank?
-    end
-
-    def results
-      @results ||= nodes.select { |n| result_node?(n) }
-    end
-
-    def nodes
-      response_data.css('.ZINbbc')
+      response_data['items'].blank?
     end
 
     def response_data
-      @response_data ||= Nokogiri::HTML.parse(response)
+      @response_data ||= JSON.parse(response)
     end
 
     def response
@@ -34,40 +29,38 @@ module Google
     end
 
     def link
-      'https://www.google.com/search'
+      'https://www.googleapis.com/customsearch/v1/siterestrict'
     end
 
     def headers
-      {
-        'Cookie' => cookie,
-        params: params
-      }
-    end
-
-    def cookie
-      return '' if Rails.env.production?
-
-      'GOOGLE_ABUSE_EXEMPTION=ID=00f4d94532e7fc7d'\
-        ":TM=1610958213:C=r:IP=#{Muffon::Utils::IP.call}-"\
-        ':S=APGng0uPsxRmCfpoakb2T0c3vkDB5vDMeQ'
+      { params: params }
     end
 
     def params
-      { q: @args.query, start: offset, num: limit }
+      {
+        key: api_key,
+        q: @args.query,
+        cx: scope_id,
+        start: offset
+      }.compact
+    end
+
+    def api_key
+      secrets.google[:api_key]
+    end
+
+    def scope_id
+      secrets.google.dig(:scopes, @args.scope.to_sym)
     end
 
     def offset
-      return 0 if @args.page.to_i.zero?
+      return if @args.page.blank?
 
-      (@args.page.to_i - 1) * limit
+      (page - 1) * PAGE_LIMIT
     end
 
-    def limit
-      (@args.limit || 20).to_i
-    end
-
-    def result_node?(node)
-      node.css('.kCrYT .vvjwJb').any?
+    def page
+      (@args.page || 1).to_i
     end
 
     def data
@@ -77,44 +70,23 @@ module Google
     def search_data
       {
         page: page,
-        results: results_data
+        total_pages: total_pages,
+        results: response_data['items']
       }
     end
 
-    def results_data
-      results.map do |r|
-        {
-          title: result_title(r),
-          link: result_link(r),
-          description: description(r)
-        }
-      end
+    def total_pages
+      [actual_total_pages, PAGES_LIMIT].min
     end
 
-    def result_title(result)
-      result.css('.vvjwJb')[0].text
+    def actual_total_pages
+      total_results.fdiv(PAGE_LIMIT).ceil
     end
 
-    def result_link(result)
-      CGI.parse(
-        URI.parse(
-          result.css('a')[0]['href']
-        ).query
-      ).dig('q', 0)
-    end
-
-    def description(result)
-      result.css('.s3v9rd')[0].text
-    end
-
-    def page
-      return 1 if pages_block.blank?
-
-      pages_block[0].text[/\d+/][0].to_i
-    end
-
-    def pages_block
-      response_data.css('.SAez4c')
+    def total_results
+      response_data.dig(
+        'queries', 'request', 0, 'totalResults'
+      ).to_i
     end
   end
 end
