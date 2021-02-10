@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ARTISTS>&key=<GOOGLE_API_KEY>&q=wejlhg239gh23
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ARTISTS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -17,17 +17,17 @@ http_interactions:
       - www.googleapis.com
   response:
     status:
-      code: 429
-      message: Too Many Requests
+      code: 200
+      message: OK
     headers:
+      Content-Type:
+      - application/json; charset=UTF-8
       Vary:
       - Origin
       - Referer
       - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
       Date:
-      - Sat, 06 Feb 2021 13:06:26 GMT
+      - Wed, 10 Feb 2021 15:59:00 GMT
       Server:
       - ESF
       Cache-Control:
@@ -47,18 +47,11 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-          "error": {
-            "code": 429,
-            "message": "Quota exceeded for quota metric 'Site Restricted Queries' and limit 'Site Restricted Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:135548979581'.",
-            "errors": [
-              {
-                "message": "Quota exceeded for quota metric 'Site Restricted Queries' and limit 'Site Restricted Queries per day' of service 'customsearch.googleapis.com' for consumer 'project_number:135548979581'.",
-                "domain": "global",
-                "reason": "rateLimitExceeded"
-              }
-            ],
-            "status": "RESOURCE_EXHAUSTED"
+          "queries": {
+            "request": [
+              {}
+            ]
           }
         }
-  recorded_at: Sat, 06 Feb 2021 13:06:26 GMT
+  recorded_at: Wed, 10 Feb 2021 15:58:59 GMT
 recorded_with: VCR 6.0.0

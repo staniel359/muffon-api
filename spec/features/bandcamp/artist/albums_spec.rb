@@ -7,7 +7,7 @@ RSpec.describe Bandcamp::Artist::Albums do
     context 'when artist present' do
       let(:output) do
         VCR.use_cassette 'bandcamp/artist/albums/success' do
-          subject.call(artist: 'luxuryelite', limit: 5, page: 2)
+          subject.call(artist_id: '2707934946', limit: 5, page: 2)
         end
       end
 
@@ -25,7 +25,7 @@ RSpec.describe Bandcamp::Artist::Albums do
     context 'when wrong artist' do
       let(:output) do
         VCR.use_cassette 'bandcamp/artist/albums/wrong_artist' do
-          subject.call(artist: Helpers::Base::RANDOM_STRING)
+          subject.call(artist_id: Helpers::Base::RANDOM_STRING)
         end
       end
 

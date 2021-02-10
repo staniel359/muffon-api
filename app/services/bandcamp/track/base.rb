@@ -1,13 +1,13 @@
 module Bandcamp
   module Track
-    class Base < Bandcamp::API::Album::Base
+    class Base < Bandcamp::API::Playlist::Base
       private
 
-      def bandcamp_album_title
-        @args.track
+      def bandcamp_playlist_id
+        @args.track_id
       end
 
-      def bandcamp_album_type
+      def bandcamp_playlist_type
         'track'
       end
 

@@ -1,15 +1,11 @@
 module Bandcamp
   module API
-    module Album
+    module Playlist
       class Base < Bandcamp::API::Base
         private
 
         def primary_args
-          [@args.artist, bandcamp_album_title]
-        end
-
-        def id_link
-          "#{artist_id_link}/#{bandcamp_album_type}/#{bandcamp_album_title}"
+          [@args.artist_id, bandcamp_playlist_id]
         end
 
         def link
@@ -18,9 +14,9 @@ module Bandcamp
 
         def params
           {
-            band_id: id_data[:artist_id],
-            tralbum_id: id_data[:id],
-            tralbum_type: bandcamp_album_type[0]
+            band_id: @args.artist_id,
+            tralbum_id: bandcamp_playlist_id,
+            tralbum_type: bandcamp_playlist_type[0]
           }
         end
 

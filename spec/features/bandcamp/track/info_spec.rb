@@ -7,7 +7,7 @@ RSpec.describe Bandcamp::Track::Info do
     context 'when track present with album' do
       let(:output) do
         VCR.use_cassette 'bandcamp/track/info/success_album' do
-          subject.call(artist: 'wildnothingct', track: 'letting-go')
+          subject.call(artist_id: '2228040235', track_id: '2723372494')
         end
       end
 
@@ -17,7 +17,7 @@ RSpec.describe Bandcamp::Track::Info do
     context 'when track present with description' do
       let(:output) do
         VCR.use_cassette 'bandcamp/track/info/success_description' do
-          subject.call(artist: 'wildnothingct', track: 'blue-wings')
+          subject.call(artist_id: '2228040235', track_id: '1709958085')
         end
       end
 
@@ -38,8 +38,8 @@ RSpec.describe Bandcamp::Track::Info do
       let(:output) do
         VCR.use_cassette 'bandcamp/track/info/wrong_track' do
           subject.call(
-            artist: 'wildnothingct',
-            track: Helpers::Base::RANDOM_STRING
+            artist_id: '2228040235',
+            track_id: Helpers::Base::RANDOM_STRING
           )
         end
       end

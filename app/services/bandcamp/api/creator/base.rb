@@ -1,15 +1,11 @@
 module Bandcamp
   module API
-    module Artist
+    module Creator
       class Base < Bandcamp::API::Base
         private
 
         def primary_args
-          [bandcamp_artist_name]
-        end
-
-        def id_link
-          artist_id_link
+          [bandcamp_creator_id]
         end
 
         def link
@@ -17,7 +13,7 @@ module Bandcamp
         end
 
         def params
-          { band_id: id_data[:id] }
+          { band_id: bandcamp_creator_id }
         end
 
         def albums_data

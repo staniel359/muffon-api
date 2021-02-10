@@ -40,19 +40,11 @@ module Bandcamp
       end
 
       def artist_name(item)
-        opengraph_data(item, 'site_name').to_s
+        item[:site_name]
       end
 
-      def opengraph_data(item, name)
-        item.dig('pagemap', 'metatags', 0, "og:#{name}")
-      end
-
-      def image(item)
-        item.dig('pagemap', 'cse_image', 0, 'src')
-      end
-
-      def link_data(data)
-        artist, album_type, title = data.scan(link_regexp).flatten
+      def link_data(link)
+        artist, album_type, title = link.scan(link_regexp).flatten
 
         {
           title: title.to_s,
@@ -67,7 +59,7 @@ module Bandcamp
       end
 
       def title(item)
-        opengraph_data(item, 'title').split(', by ')[0]
+        item[:title].split(', by ')[0]
       end
 
       def artist_data(item)

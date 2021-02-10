@@ -4,13 +4,13 @@ RSpec.describe(
   API::V1::Bandcamp::Artists::TracksController, type: :controller
 ) do
   let(:wrong_album) do
-    { artist: 'wildnothingct', track: Helpers::Base::RANDOM_STRING }
+    { artist_id: '2228040235', track_id: Helpers::Base::RANDOM_STRING }
   end
 
   describe 'GET :info' do
     it 'returns 200 if track present' do
       VCR.use_cassette 'api/v1/bandcamp/artists/tracks/info/success' do
-        get :info, params: { artist: 'wildnothingct', track: 'letting-go' }
+        get :info, params: { artist_id: '2228040235', track_id: '2723372494' }
         expect(response).to have_http_status(:ok)
       end
     end

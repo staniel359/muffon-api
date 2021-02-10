@@ -3,14 +3,15 @@ require 'rails_helper'
 RSpec.describe(
   API::V1::Bandcamp::Artists::AlbumsController, type: :controller
 ) do
+  let(:album) { { artist_id: '2228040235', album_id: '452973411' } }
   let(:wrong_album) do
-    { artist: 'wildnothingct', album: Helpers::Base::RANDOM_STRING }
+    { artist_id: '2228040235', album_id: Helpers::Base::RANDOM_STRING }
   end
 
   describe 'GET :info' do
     it 'returns 200 if album present' do
       VCR.use_cassette 'api/v1/bandcamp/artists/albums/info/success' do
-        get :info, params: { artist: 'wildnothingct', album: 'indigo' }
+        get :info, params: album
         expect(response).to have_http_status(:ok)
       end
     end
@@ -26,7 +27,7 @@ RSpec.describe(
   describe 'GET :description' do
     it 'returns 200 if album present' do
       VCR.use_cassette 'api/v1/bandcamp/artists/albums/desc/success' do
-        get :description, params: { artist: 'wildnothingct', album: 'indigo' }
+        get :description, params: album
         expect(response).to have_http_status(:ok)
       end
     end
@@ -42,7 +43,7 @@ RSpec.describe(
   describe 'GET :tags' do
     it 'returns 200 if album present' do
       VCR.use_cassette 'api/v1/bandcamp/artists/albums/tags/success' do
-        get :tags, params: { artist: 'wildnothingct', album: 'indigo' }
+        get :tags, params: album
         expect(response).to have_http_status(:ok)
       end
     end

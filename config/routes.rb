@@ -87,20 +87,38 @@ Rails.application.routes.draw do
           get 'tracks'
         end
 
-        namespace :artists, as: :artist do
+        namespace :id do
           scope ':artist' do
+            get '', action: :artist
+
+            scope :albums do
+              scope ':album' do
+                get '', action: :album
+              end
+            end
+
+            scope :tracks do
+              scope ':track' do
+                get '', action: :track
+              end
+            end
+          end
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
             get 'albums'
 
             namespace :albums, as: :album do
-              scope ':album' do
+              scope ':album_id' do
+                get '', action: :info
                 get 'description'
                 get 'tags'
-                get '', action: :info
               end
             end
 
             namespace :tracks, as: :track do
-              scope ':track' do
+              scope ':track_id' do
                 get '', action: :info
               end
             end
@@ -108,7 +126,7 @@ Rails.application.routes.draw do
         end
 
         namespace :labels, as: :label do
-          scope ':label' do
+          scope ':label_id' do
             get 'artists'
             get 'albums'
           end

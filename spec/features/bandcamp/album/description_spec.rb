@@ -7,7 +7,7 @@ RSpec.describe Bandcamp::Album::Description do
     context 'when album present' do
       let(:output) do
         VCR.use_cassette 'bandcamp/album/description/success' do
-          subject.call(artist: 'wildnothingct', album: 'indigo')
+          subject.call(artist_id: '2228040235', album_id: '452973411')
         end
       end
 
@@ -26,8 +26,8 @@ RSpec.describe Bandcamp::Album::Description do
       let(:output) do
         VCR.use_cassette 'bandcamp/album/description/wrong_album' do
           subject.call(
-            artist: 'wildnothingct',
-            album: Helpers::Base::RANDOM_STRING
+            artist_id: '2228040235',
+            album_id: Helpers::Base::RANDOM_STRING
           )
         end
       end

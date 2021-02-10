@@ -1,6 +1,6 @@
 module Bandcamp
   module Artist
-    class Albums < Bandcamp::API::Artist::Base
+    class Albums < Bandcamp::Artist::Base
       include Bandcamp::Paginated
 
       private

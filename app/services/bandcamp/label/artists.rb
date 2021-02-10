@@ -1,17 +1,7 @@
 module Bandcamp
   module Label
-    class Artists < Bandcamp::API::Artist::Base
-      include Bandcamp::Paginated
-
+    class Artists < Bandcamp::Label::Base
       private
-
-      def data
-        { label: label_data.merge(paginated_data) }
-      end
-
-      def label_data
-        { name: response_data['name'] }
-      end
 
       def collection_name
         'artists'

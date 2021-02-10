@@ -14,8 +14,8 @@ module Bandcamp
       def collection_item_data(item)
         {
           name: artist_name(item),
-          images: images_data(image(item)),
-          link: link_data(item['link']).slice(:artist)
+          images: images_data(item[:image]),
+          link: link_data(item[:link]).slice(:artist)
         }
       end
     end

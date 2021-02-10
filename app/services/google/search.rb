@@ -41,7 +41,8 @@ module Google
         key: api_key,
         q: @args.query,
         cx: scope_id,
-        start: (offset if @args.page.present?)
+        start: (offset if @args.page.present?),
+        fields: fields
       }.compact
     end
 
@@ -53,6 +54,12 @@ module Google
       secrets.google.dig(:scopes, @args.scope.to_sym)
     end
 
+    def fields
+      'queries(request(totalResults)),'\
+        'items(pagemap(metatags(og:site_name,'\
+        'og:url,og:title),cse_image))'
+    end
+
     def data
       { search: search_data }
     end
@@ -61,7 +68,7 @@ module Google
       {
         page: page,
         total_pages: [total_pages, PAGES_LIMIT].min,
-        results: response_data['items']
+        results: results_data
       }
     end
 
@@ -69,6 +76,27 @@ module Google
       response_data.dig(
         'queries', 'request', 0, 'totalResults'
       ).to_i
+    end
+
+    def results_data
+      results_list.map { |r| result_data(r) }
+    end
+
+    def results_list
+      response_data['items']
+    end
+
+    def result_data(result)
+      {
+        site_name: opengraph_data(result, 'site_name'),
+        title: opengraph_data(result, 'title'),
+        link: opengraph_data(result, 'url'),
+        image: result.dig('pagemap', 'cse_image', 0, 'src')
+      }
+    end
+
+    def opengraph_data(result, name)
+      result.dig('pagemap', 'metatags', 0, "og:#{name}")
     end
   end
 end
