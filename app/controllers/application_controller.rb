@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   def not_found
-    render json: not_found_handler, status: 404
+    render json: not_found_handler, status: :not_found
   end
 
   private
