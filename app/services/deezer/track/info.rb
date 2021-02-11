@@ -53,17 +53,20 @@ module Deezer
 
       def audio_data
         {
-          present: audio_file_path.present?,
-          path: audio_file_path,
+          present: audio_path.present?,
+          link: audio_link,
           source: 'deezer'
         }
       end
 
-      def audio_file_path
-        @audio_file_path ||=
-          Deezer::Utils::Audio::Decoder.call(
-            track_id: response_data['id']
-          )
+      def audio_path
+        @audio_path ||= Deezer::Utils::Audio::Decoder.call(
+          track_id: response_data['id']
+        )
+      end
+
+      def audio_link
+        "#{secrets[:url]}/#{audio_path}"
       end
     end
   end

@@ -2,7 +2,7 @@ module Deezer
   module Utils
     module Audio
       class Decoder < Deezer::Utils::Base
-        AUDIO_FILES_PATH = 'temp/audio/deezer'.freeze
+        AUDIO_FOLDER = 'temp/audio/deezer'.freeze
         CHUNK_SIZE = 2048
         INTERVAL_CHUNK = 3
 
@@ -70,17 +70,17 @@ module Deezer
         end
 
         def save_file_and_return_file_name
-          FileUtils.mkdir_p("public/#{AUDIO_FILES_PATH}")
+          FileUtils.mkdir_p("public/#{AUDIO_FOLDER}")
 
-          file = File.open("public/#{audio_file_path}", 'wb')
+          file = File.open("public/#{audio_path}", 'wb')
 
           file.write(data)
 
-          File.exist?(file) ? audio_file_path : ''
+          File.exist?(file) ? audio_path : ''
         end
 
-        def audio_file_path
-          "#{AUDIO_FILES_PATH}/#{@args.track_id}.mp3"
+        def audio_path
+          "#{AUDIO_FOLDER}/#{@args.track_id}.mp3"
         end
       end
     end
