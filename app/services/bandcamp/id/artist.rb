@@ -1,6 +1,6 @@
 module Bandcamp
-  module ID
-    class Artist < Bandcamp::ID::Base
+  module Id
+    class Artist < Bandcamp::Id::Base
       private
 
       def primary_args

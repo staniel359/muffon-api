@@ -13,7 +13,6 @@
 # These inflection rules are supported but not enabled by default:
 ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'API'
-  inflect.acronym 'ID'
   inflect.acronym 'LastFM'
   inflect.acronym 'VK'
   inflect.acronym 'YouTube'

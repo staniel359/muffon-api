@@ -1,5 +1,5 @@
 module Bandcamp
-  module ID
+  module Id
     class Base < Bandcamp::Base
       private
 

@@ -1,7 +1,7 @@
 module Bandcamp
-  module ID
+  module Id
     module Playlist
-      class Base < Bandcamp::ID::Base
+      class Base < Bandcamp::Id::Base
         private
 
         def primary_args

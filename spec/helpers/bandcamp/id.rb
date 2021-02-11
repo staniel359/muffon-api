@@ -1,6 +1,6 @@
 module Helpers
   module Bandcamp
-    module ID
+    module Id
       class << self
         def album_data
           {:album=>{:artist_id=>2228040235, :id=>452973411}}

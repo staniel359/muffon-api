@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Bandcamp::ID::Album do
+RSpec.describe Bandcamp::Id::Album do
   subject { described_class }
 
   describe 'successful processing' do
@@ -11,7 +11,7 @@ RSpec.describe Bandcamp::ID::Album do
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp::ID.album_data) }
+      it { expect(output).to eq(Helpers::Bandcamp::Id.album_data) }
     end
   end
 

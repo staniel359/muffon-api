@@ -1,6 +1,6 @@
 module Bandcamp
-  module ID
-    class Album < Bandcamp::ID::Playlist::Base
+  module Id
+    class Album < Bandcamp::Id::Playlist::Base
       private
 
       def model_name
