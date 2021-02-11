@@ -1,6 +1,6 @@
 module Muffon
-  module Utils
-    class EndpointService < Muffon::Base
+  module API
+    class Service < Muffon::Base
       def call
         data
       end
@@ -8,7 +8,8 @@ module Muffon
       private
 
       def data
-        [folder_name, file_name].join('/').camelize.safe_constantize
+        [folder_name, file_name]
+          .join('/').camelize.safe_constantize
       end
 
       def folder_name

@@ -6,28 +6,30 @@ module API
       private
 
       def render_data_with_status
-        render json: action_data, status: status_code
+        render(
+          {
+            json: action_data,
+            status: status_code
+          }
+        )
       end
 
       def action_data
-        @action_data ||= data_service&.call(data_params)
+        @action_data ||=
+          action_service&.call(action_service_args)
       end
 
-      def data_service
-        Muffon::Utils::EndpointService.call(
+      def action_service
+        Muffon::API::Service.call(
           params.slice(:controller, :action)
         )
       end
 
-      def data_params
-        params.slice(*action_params).merge(model: model_name)
+      def action_service_args
+        params.slice(*permitted_params)
       end
 
-      def model_name
-        controller_name.singularize
-      end
-
-      def action_params
+      def permitted_params
         %i[
           artist album track tag label
           page next_page limit offset
@@ -38,7 +40,9 @@ module API
       end
 
       def status_code
-        action_data&.dig(:error, :code) || 200
+        return 204 if action_data.blank?
+
+        action_data.dig(:error, :code) || 200
       end
     end
   end
