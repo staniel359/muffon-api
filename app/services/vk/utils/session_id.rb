@@ -1,6 +1,6 @@
 module VK
   module Utils
-    class Remixsid < VK::Base
+    class SessionId < VK::Base
       def call
         response
       rescue RestClient::Found => e

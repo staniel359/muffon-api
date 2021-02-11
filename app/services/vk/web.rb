@@ -2,7 +2,7 @@ module VK
   class Web < VK::Base
     def call
       return handlers.bad_request if not_all_args?
-      return retry_with_new_remixsid if auth_failed?
+      return retry_with_new_session_id if auth_failed?
       return handlers.not_found if no_data?
 
       data
@@ -32,11 +32,18 @@ module VK
     end
 
     def headers
-      { cookies: cookies }
+      { cookies: { remixsid: global.get('vk_session_id') } }
     end
 
-    def cookies
-      { remixsid: global.get('remixsid') }
+    def retry_with_new_session_id
+      global.set('vk_session_id', new_session_id)
+      @response_data = nil
+
+      global.get('vk_session_id').present? ? call : handlers.not_found
+    end
+
+    def new_session_id
+      VK::Utils::SessionId.call
     end
 
     def no_data?
@@ -83,6 +90,10 @@ module VK
 
     def track_title(track)
       full_title(track[3], track[16])
+    end
+
+    def images_data(image, model)
+      VK::Utils::Images.call(image: image, model: model)
     end
 
     def audio_id(track)
