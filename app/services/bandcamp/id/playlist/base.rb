@@ -22,11 +22,8 @@ module Bandcamp
         end
 
         def data
-          { model_type.to_sym => model_data }
-        end
-
-        def model_data
           {
+            type: model_type,
             id: model_response_data['id'],
             artist_id: artist_id
           }

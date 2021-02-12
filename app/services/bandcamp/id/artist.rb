@@ -16,11 +16,10 @@ module Bandcamp
       end
 
       def data
-        { model_type.to_sym => model_data }
-      end
-
-      def model_data
-        { id: model_response_data['id'] }
+        {
+          type: model_type,
+          id: model_response_data['id']
+        }
       end
 
       def model_type

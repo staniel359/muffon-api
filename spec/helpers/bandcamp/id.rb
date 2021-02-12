@@ -3,19 +3,19 @@ module Helpers
     module Id
       class << self
         def album_data
-          {:album=>{:artist_id=>2228040235, :id=>452973411}}
+          {:artist_id=>2228040235, :id=>452973411, :type=>"album"}
         end
 
         def artist_data
-          {:artist=>{:id=>2228040235}}
+          {:id=>2228040235, :type=>"artist"}
         end
 
         def label_data
-          {:label=>{:id=>2304199212}}
+          {:id=>2304199212, :type=>"label"}
         end
 
         def track_data
-          {:track=>{:artist_id=>2228040235, :id=>2723372494}}
+          {:artist_id=>2228040235, :id=>2723372494, :type=>"track"}
         end
       end
     end
