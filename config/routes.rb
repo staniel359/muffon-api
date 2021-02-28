@@ -288,6 +288,34 @@ Rails.application.routes.draw do
       namespace :youtube do
         get 'search'
       end
+
+      # Odnoklassniki
+
+      namespace :odnoklassniki do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
+      end
     end
   end
 

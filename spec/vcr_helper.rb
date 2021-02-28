@@ -19,7 +19,9 @@ VCR.configure do |c|
     %i[google scopes bandcamp_artists],
     %i[google scopes bandcamp_tracks],
     %i[yandex csrf_token], %i[yandex email],
-    %i[yandex password], %i[yandex unique_uid]
+    %i[yandex password], %i[yandex unique_uid],
+    %i[odnoklassniki email], %i[odnoklassniki password],
+    %i[odnoklassniki test_session_id]
   ]
 
   keys.each do |arr|

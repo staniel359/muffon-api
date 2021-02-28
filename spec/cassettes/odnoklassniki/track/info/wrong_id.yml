@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://wmf.ok.ru/play;jsessionid=<ODNOKLASSNIKI_TEST_SESSION_ID>?imgfmt=base&tid=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - wmf.ok.ru
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - Apache
+      Date:
+      - Sun, 28 Feb 2021 17:46:56 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '982'
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+    body:
+      encoding: UTF-8
+      string: '<html><head><title>Apache Tomcat/7.0.79 (ok11) - Error report</title><style><!--H1
+        {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}
+        H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;}
+        H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;}
+        BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;}
+        B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;}
+        P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A
+        {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP
+        Status 400 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b>
+        <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically
+        incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.79
+        (ok11)</h3></body></html>'
+  recorded_at: Sun, 28 Feb 2021 17:46:56 GMT
+recorded_with: VCR 6.0.0

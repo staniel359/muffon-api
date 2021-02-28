@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://wmf.ok.ru/albums;jsessionid=<ODNOKLASSNIKI_TEST_SESSION_ID>?count=5&imgfmt=base&q=kate%20bush&start=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - wmf.ok.ru
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Date:
+      - Sun, 28 Feb 2021 17:46:50 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+      Content-Language:
+      - en-US
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "chunk" : {
+            "start" : 5,
+            "count" : 5,
+            "more" : true
+          },
+          "albums" : [ {
+            "id" : 122882150003559,
+            "name" : "The Whole Story",
+            "ensemble" : "Kate Bush",
+            "masterArtistId" : 122882931409564,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv4wxiWu8lqJyXWh7UnawwR6NW24BNJ9OSkMV7EVpXGEo",
+            "playlistId" : 15033928657,
+            "tracksCount" : 12,
+            "legal" : 1,
+            "year" : 1986,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            } ],
+            "allArtists" : [ {
+              "id" : 122882931409564,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb4zBmgCNEwUB70eq4nt-OQ",
+              "name" : "Kate Bush"
+            } ]
+          }, {
+            "id" : 122882149917522,
+            "name" : "Never For Ever",
+            "ensemble" : "Kate Bush",
+            "masterArtistId" : 122882931409564,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv4wxiWu8lqJyXWh7UnawwR10SNyFYHbVwvBPNr0X_wVk",
+            "playlistId" : 15033928609,
+            "tracksCount" : 11,
+            "legal" : 1,
+            "year" : 1980,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            } ],
+            "allArtists" : [ {
+              "id" : 122882931409564,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb4zBmgCNEwUB70eq4nt-OQ",
+              "name" : "Kate Bush"
+            } ]
+          }, {
+            "id" : 122909892023105,
+            "name" : "Hounds of Love (2018 Remaster)",
+            "ensemble" : "Kate Bush",
+            "masterArtistId" : 122882931409564,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb3U1plUYXSE4U-RR40Ht_A",
+            "playlistId" : 15043196775,
+            "tracksCount" : 12,
+            "legal" : 1,
+            "year" : 1985,
+            "genres" : [ {
+              "id" : 1,
+              "label" : "Pop"
+            }, {
+              "id" : 154,
+              "label" : "Pop rock"
+            } ],
+            "allArtists" : [ {
+              "id" : 122882931409564,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb4zBmgCNEwUB70eq4nt-OQ",
+              "name" : "Kate Bush"
+            } ]
+          }, {
+            "id" : 122882149790515,
+            "name" : "Remastered, Pt. I",
+            "ensemble" : "Kate Bush",
+            "masterArtistId" : 122882931409564,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb4zBmgCNEwUB70eq4nt-OQ",
+            "playlistId" : 15033928595,
+            "tracksCount" : 44,
+            "legal" : 1,
+            "year" : 2018,
+            "genres" : [ {
+              "id" : 1,
+              "label" : "Pop"
+            }, {
+              "id" : 154,
+              "label" : "Pop rock"
+            } ],
+            "allArtists" : [ {
+              "id" : 122882931409564,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb4zBmgCNEwUB70eq4nt-OQ",
+              "name" : "Kate Bush"
+            } ]
+          }, {
+            "id" : 13708438946596,
+            "name" : "The Red Shoes",
+            "ensemble" : "Kate Bush",
+            "masterArtistId" : 122882931409564,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvY45rGdjFzuT2q4NpiicjLdXGC-p88zlZA9p75X1N7Xc",
+            "playlistId" : 15009678450,
+            "tracksCount" : 10,
+            "year" : 0,
+            "genres" : [ ],
+            "allArtists" : [ {
+              "id" : 122882931409564,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyb4zBmgCNEwUB70eq4nt-OQ",
+              "name" : "Kate Bush"
+            } ]
+          } ],
+          "relevantCounts" : {
+            "artists" : 1001,
+            "albums" : 3867,
+            "tracks" : 55325,
+            "playlists" : 53
+          }
+        }
+  recorded_at: Sun, 28 Feb 2021 17:46:50 GMT
+recorded_with: VCR 6.0.0

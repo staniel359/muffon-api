@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://wmf.ok.ru/play;jsessionid=<ODNOKLASSNIKI_TEST_SESSION_ID>?imgfmt=base&tid=123042442621275
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - wmf.ok.ru
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Date:
+      - Sun, 28 Feb 2021 17:46:44 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+      Content-Language:
+      - en-US
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJwbGF5IiA6ICJodHRwczovL211c2ljZC5teWNkbi5tZS92MC9zdHJlYW0/aWQ9djBfMTAwMzY2MTY3NDVfMV8xJmNpZD12MF8xMDAzNjYxNjc0NV8xXzEmZmlkPTEyMzA0MjQ0MjYyMTI3NSZ1aWQ9MjFhZWJkNmI4NDhlMTBjYjY4MzgzM2Y1MzkzNWNiOTImc2lkPWFmODA3NjIxOTgxNTE5MTBlMDQyYmM4YjNiNmM5ZjkxODJjZTI4ZTI0ZjhlMWYyOWIyNDgyNjJhOGU4YmI4ZmU5Y2M0NzhjOTczYTQxYzI1Mjg3ZjJiNjIwY2NiMGNlMWQ3MTI1ZDZmZTdhYjNkMWY4NGIzM2IyODNkZDk2NmZjJnRzPTE2MTQ1MzQ0MDQ1MzMmbWQ1PWI1MDE2OWE2NGY5MjdlMGM4MjgyOTkyODA2YTdjNzdiIiwKICAiaW1hZ2UiIDogImh0dHBzOi8vaS5teWNkbi5tZS9pP3I9QURFcGZKM0l6ak9JcHBWeVFkNXFIcnF2dHktbm1wWFZWbUUtWGxMbGM4STdFQzhDa3AxT2RqOHdqZC1PWHJhanlhZyIsCiAgImNvdW50cnkiIDogIkJZIiwKICAic3Vic2NyaWJlZCIgOiBmYWxzZSwKICAiYWxidW1zIiA6IFsgewogICAgImlkIiA6IC0xNjY0MDkwMzIyLAogICAgImVuc2VtYmxlIiA6ICJLYXRlIEJ1c2giLAogICAgIm5hbWUiIDogIlZ1ZWx2ZSBhbCBTw6FiYWRvIE5vY2hlIChMb3MgODAgRGUgTG9zIDgwKSIKICB9IF0sCiAgImZyaWVuZCIgOiB7CiAgICAiZ2VuZGVyIiA6IDAsCiAgICAiaWRVbmVuY3J5cHRlZCIgOiAwLAogICAgImlkIiA6ICIwIgogIH0sCiAgInRyYWNrIiA6IHsKICAgICJpZCIgOiAxMjMwNDI0NDI2MjEyNzUsCiAgICAiZW5zZW1ibGUiIDogIkthdGUgQnVzaCIsCiAgICAiZHVyYXRpb24iIDogMjkxLAogICAgImlkRm9yRG93bmxvYWQiIDogMTIzMDQyNDQyNjIxMjc1LAogICAgImNvcHlyaWdodE93bmVySWQiIDogNjQsCiAgICAiY29weXJpZ2h0T3duZXJOYW1lIiA6ICJCZWxpZXZlIERpZ2l0YWwiLAogICAgInJlbGVhc2VJZCIgOiAzMTgxOTk1NywKICAgICJpbWFnZVVybCIgOiAiaHR0cHM6Ly9pLm15Y2RuLm1lL2k/cj1BREVwZkozSXpqT0lwcFZ5UWQ1cUhycXZ0eS1ubXBYVlZtRS1YbExsYzhJN0VDOENrcDFPZGo4d2pkLU9YcmFqeWFnIiwKICAgICJzaXplIiA6IDExNjUyNzAxLAogICAgIm1hc3RlckFydGlzdElkIiA6IC0xOTI4MTcwNTI5LAogICAgImFsYnVtSWQiIDogLTE2NjQwOTAzMjIsCiAgICAibmFtZSIgOiAiUnVubmluZyB1cCBUaGF0IEhpbGwiLAogICAgImlzRG93bmxvYWRBbGxvd2VkIiA6IHRydWUsCiAgICAiZ2lmdFByaWNlIiA6IDcsCiAgICAiY3R4IiA6ICJudWxsOjAiLAogICAgImVkaXRSZXN0cmljdGVkIiA6IHRydWUsCiAgICAiYWxsQXJ0aXN0cyIgOiBbIF0KICB9LAogICJ1bWFQYXlsb2FkIiA6ICJ7XG4gIFwidW1hXCIgOiB0cnVlLFxuICBcInJlbGVhc2VJZFwiIDogMzE4MTk5NTcsXG4gIFwicGVybWlzc2lvblR5cGVcIiA6IDIsXG4gIFwidHJhY2tsaXN0VHlwZVwiIDogbnVsbCxcbiAgXCJ0cmFja2xpc3RJZFwiIDogbnVsbCxcbiAgXCJ0cmFja0lkXCIgOiAxMjMwNDI0NDI2MjEyNzVcbn0iLAogICJzdWJzY3JpcHRpb25BdmFpbGFibGUiIDogdHJ1ZQp9
+  recorded_at: Sun, 28 Feb 2021 17:46:44 GMT
+recorded_with: VCR 6.0.0
