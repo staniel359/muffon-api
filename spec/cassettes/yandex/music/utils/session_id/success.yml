@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 11 Feb 2021 13:24:33 GMT
+      - Mon, 01 Mar 2021 07:58:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -50,7 +50,7 @@ http_interactions:
       - 'default-src ''none'';style-src ''self'' yastatic.net ''unsafe-inline'' ''unsafe-eval''
         s3.mds.yandex.net s3.mdst.yandex.net;script-src ''self'' yastatic.net mc.admetrica.ru
         mc.yandex.ru chat.s3.yandex.net api-maps.yandex.ru suggest-maps.yandex.net
-        export.yandex.ru ''unsafe-eval'' ''unsafe-inline'' ''nonce-2a58198e-3ced-4163-bbd1-0451c04aeb51''
+        export.yandex.ru ''unsafe-eval'' ''unsafe-inline'' ''nonce-f36789aa-03ec-4076-9265-a43de81c879d''
         https://yandex.ru/global-notifications/butterfly/stable/butterfly.js;img-src
         ''self'' yastatic.net https://ysa-static.passport.yandex.ru https://ysa-static.passport.yandex.net
         yandex.st data: mc.admetrica.ru mc.yandex.ru api-maps.yandex.ru *.captcha.yandex.net
@@ -83,10 +83,10 @@ http_interactions:
       - policyref="/w3c/p3p.xml", CP="NON DSP ADM DEV PSD IVDo OUR IND STP PHY PRE
         NAV UNI"
       Set-Cookie:
-      - yandexuid=892662051613049873; Max-Age=315360000; Domain=.yandex.ru; Path=/;
-        Expires=Sun, 09 Feb 2031 13:24:33 GMT; Secure
+      - yandexuid=154504101614585524; Max-Age=315360000; Domain=.yandex.ru; Path=/;
+        Expires=Thu, 27 Feb 2031 07:58:44 GMT; Secure
       Etag:
-      - W/"14b-Jw86+vNWIzUqjWVssqEW0d9eeWo"
+      - W/"14b-oaxgP50mSRkCIMT0mZ07XpwIBkw"
     body:
       encoding: UTF-8
       string: '{"primary_alias_type":5,"magic_link_email":"<YANDEX_EMAIL>","csrf_token":"<YANDEX_CSRF_TOKEN>","track_id":"<YANDEX_TRACK_ID>","can_authorize":true,"status":"ok","preferred_auth_method":"password","auth_methods":["password","magic_link","magic_x_token"],"id":"<YANDEX_ID>"}'
@@ -103,7 +103,7 @@ http_interactions:
       User-Agent:
       - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
       Content-Length:
-      - '131'
+      - '145'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
@@ -120,7 +120,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 11 Feb 2021 13:24:34 GMT
+      - Mon, 01 Mar 2021 07:58:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -141,7 +141,7 @@ http_interactions:
       - 'default-src ''none'';style-src ''self'' yastatic.net ''unsafe-inline'' ''unsafe-eval''
         s3.mds.yandex.net s3.mdst.yandex.net;script-src ''self'' yastatic.net mc.admetrica.ru
         mc.yandex.ru chat.s3.yandex.net api-maps.yandex.ru suggest-maps.yandex.net
-        export.yandex.ru ''unsafe-eval'' ''unsafe-inline'' ''nonce-f2f99b13-fc0b-4852-bfb2-d5f4b7985fc6''
+        export.yandex.ru ''unsafe-eval'' ''unsafe-inline'' ''nonce-4fc95f7f-ebe5-4ee3-8810-fae6169d9ae5''
         https://yandex.ru/global-notifications/butterfly/stable/butterfly.js;img-src
         ''self'' yastatic.net https://ysa-static.passport.yandex.ru https://ysa-static.passport.yandex.net
         yandex.st data: mc.admetrica.ru mc.yandex.ru api-maps.yandex.ru *.captcha.yandex.net
@@ -174,35 +174,35 @@ http_interactions:
       - policyref="/w3c/p3p.xml", CP="NON DSP ADM DEV PSD IVDo OUR IND STP PHY PRE
         NAV UNI"
       Set-Cookie:
-      - L=CQhEfmt0b1B1Zm5FcQZ8DmJ7S19fdEd4BiMSPT0SVFFTUS9UARYrIF8pNg8=.1613049874.14508.328132.7fda49a2b15617b5aa8a146b9fb6492d;
+      - L=WlJjXHVBfURzAXtUVAdbUl5AdkxKf0Z8XCwjMAlWTDVCBzQqIhZQVWozCj0=.1614585524.14526.318781.5226d0262964766058d700e053570c57;
         Domain=.yandex.ru; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Path=/
       - Session_id=<YANDEX_SESSION_ID>;
         Domain=.yandex.ru; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; HttpOnly;
         Path=/
-      - lah=M098T0q9-vmzVELlp6fJMXpCWXkdNxQiHDIfYGFOeAULCQZfQhQtIQ.1613049874.14508.1.521ac5774abca44be84f931a597ae163;
+      - lah=YBVbbVS0_53APFbZ28PjYU14ZG4eMxcrXjdrNxZRIjNfDx0hYRRWVA.1614585524.14526.1.a09c785deb738d93435c9ed011fe4899;
         Domain=.passport.yandex.ru; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure;
         HttpOnly; Path=/
-      - mda2_beacon=1613049874114; Domain=.passport.yandex.ru; Expires=Tue, 19 Jan
+      - mda2_beacon=1614585524806; Domain=.passport.yandex.ru; Expires=Tue, 19 Jan
         2038 03:14:07 GMT; Secure; Path=/
-      - sessguard=1.1613049874.1613049874102:CMGssg:4c..3:230119.500:14766.AYy03kQS.X1aVaQzyREY57wJgpXzV7xKHoAI;
+      - sessguard=1.1614585524.1614585524794:CMGssg:43..3:230973.500:15193.QBD95EDM.X3WdS_gjvst6ZW_XEw7i3FsQvgM;
         Domain=.passport.yandex.ru; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure;
         HttpOnly; Path=/
-      - sessionid2=3:1613049874.5.0.1613049874102:CMGssg:4c.1|1069814265.0.2.0:3|230119.853732.yEkHVoD9T9hpDn2O5Cp5GSiixFM;
+      - sessionid2=3:1614585524.5.0.1614585524794:CMGssg:43.1|1356585926.0.2|230973.446817.mGn7m6_CrVaSJ5Kq9tFKbHErbNU;
         Domain=.yandex.ru; Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; HttpOnly;
         Path=/
       - yandex_login=<YANDEX_EMAIL>; Domain=.yandex.ru; Expires=Tue, 19 Jan
         2038 03:14:07 GMT; Secure; Path=/
-      - yandexuid=801978191613049873; Max-Age=315360000; Domain=.yandex.ru; Path=/;
-        Expires=Sun, 09 Feb 2031 13:24:33 GMT; Secure
-      - yp=1928409874.udn.cDpzdGFuaWVsMzU5QGdtYWlsLmNvbQ%3D%3D; Domain=.yandex.ru;
+      - yandexuid=662509931614585524; Max-Age=315360000; Domain=.yandex.ru; Path=/;
+        Expires=Thu, 27 Feb 2031 07:58:44 GMT; Secure
+      - yp=1929945524.udn.cDptdWZmb24uYXBpQGdtYWlsLmNvbQ%3D%3D; Domain=.yandex.ru;
         Expires=Tue, 19 Jan 2038 03:14:07 GMT; Secure; Path=/
-      - ys=udn.cDpzdGFuaWVsMzU5QGdtYWlsLmNvbQ%3D%3D; Domain=.yandex.ru; Secure; Path=/
+      - ys=udn.cDptdWZmb24uYXBpQGdtYWlsLmNvbQ%3D%3D; Domain=.yandex.ru; Secure; Path=/
       X-Default-Uid:
-      - '1069814265'
+      - '1356585926'
       Etag:
       - W/"f-VaSQ4oDUiZblZNAEkkN+sX+q3Sg"
     body:
       encoding: UTF-8
       string: '{"status":"ok"}'
-  recorded_at: Thu, 11 Feb 2021 13:24:33 GMT
+  recorded_at: Mon, 01 Mar 2021 07:58:44 GMT
 recorded_with: VCR 6.0.0

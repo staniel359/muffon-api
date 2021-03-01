@@ -43,7 +43,11 @@ module Yandex
           end
 
           def session_id
-            global.get('yandex_session_id')
+            if Rails.env.test?
+              secrets.yandex[:test_session_id]
+            else
+              global.get('yandex_session_id')
+            end
           end
 
           def retry_with_new_session_id

@@ -11,9 +11,7 @@ RSpec.describe Yandex::Music::Utils::Audio::Link do
         end
       end
 
-      it do
-        expect(output).to eq(Helpers::Yandex::Music::Utils::Audio.link_data)
-      end
+      it { expect(output).to be_present }
     end
   end
 

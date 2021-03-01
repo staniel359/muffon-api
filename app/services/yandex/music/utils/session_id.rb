@@ -52,7 +52,7 @@ module Yandex
         def headers
           {
             cookies: {
-              uniqueuid: secrets.yandex[:unique_uid]
+              uniqueuid: secrets.yandex[:unique_uid].to_s
             }
           }
         end
