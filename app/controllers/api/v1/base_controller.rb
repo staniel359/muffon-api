@@ -36,6 +36,7 @@ module API
           artist_id album_id track_id
           owner_id group_id label_id
           query access_hash album_type
+          path
         ]
       end
 

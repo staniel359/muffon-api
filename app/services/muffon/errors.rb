@@ -42,7 +42,7 @@ module Muffon
 
       def not_found_data
         {
-          errors: [RestClient::NotFound, SocketError],
+          errors: [RestClient::NotFound],
           handler: format_handler([404, 'Not found'])
         }
       end
@@ -59,7 +59,7 @@ module Muffon
           errors: [
             RestClient::InternalServerError,
             RestClient::ServiceUnavailable,
-            JSON::ParserError,
+            JSON::ParserError, SocketError,
             Errno::ENETUNREACH
           ],
           handler: format_handler([502, 'Bad Gateway'])

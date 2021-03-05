@@ -18,5 +18,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'YouTube'
   inflect.acronym 'SoundCloud'
 
-  inflect.uncountable %w(discogs)
+  inflect.uncountable %w(discogs genius)
 end

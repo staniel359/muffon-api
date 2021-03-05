@@ -316,6 +316,20 @@ Rails.application.routes.draw do
           end
         end
       end
+
+      # Genius
+
+      namespace :genius do
+        namespace :search do
+          get 'tracks'
+        end
+
+        namespace :tracks, as: :track do
+          scope ':path' do
+            get 'lyrics'
+          end
+        end
+      end
     end
   end
 

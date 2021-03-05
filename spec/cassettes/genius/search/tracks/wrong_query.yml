@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://genius.com/api/search/song?page=1&per_page=20&q=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - genius.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 05 Mar 2021 07:49:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d114d005b7510d0d0ec7a1c3c0e6414a91614930551; expires=Sun, 04-Apr-21
+        07:49:11 GMT; path=/; domain=.genius.com; HttpOnly; SameSite=Lax
+      - _genius_ab_test_cohort=4; Max-Age=2147483647; Path=/
+      - no_public_cache=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 -0000
+      Cf-Ray:
+      - 62b1bf0b2cf7cc7b-WAW
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Etag:
+      - W/"b9af78cd7afe3e616c084d0f30db9342"
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - '08a2f5baf90000cc7bca9c2000000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Status:
+      - 200 OK
+      X-Runtime:
+      - '33'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"status":200},"response":{"sections":[{"type":"song","hits":[]}],"next_page":null}}'
+  recorded_at: Fri, 05 Mar 2021 07:49:12 GMT
+recorded_with: VCR 6.0.0
