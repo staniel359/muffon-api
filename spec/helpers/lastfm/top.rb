@@ -3,15 +3,15 @@ module Helpers
     module Top
       class << self
         def artists_data
-          {:top=>{:artists=>[{:listeners_count=>976101, :name=>"Dua Lipa"}, {:listeners_count=>4236385, :name=>"Lady Gaga"}, {:listeners_count=>2259346, :name=>"Lana Del Rey"}, {:listeners_count=>3780497, :name=>"Drake"}, {:listeners_count=>1846443, :name=>"Kendrick Lamar"}], :page=>2, :total_pages=>200}}
+          {:top=>{:artists=>[{:listeners_count=>2812681, :name=>"OutKast"}, {:listeners_count=>767464, :name=>"Troye Sivan"}, {:listeners_count=>4314639, :name=>"Muse"}, {:listeners_count=>452077, :name=>"Mitski"}, {:listeners_count=>452777, :name=>"Conan Gray"}], :page=>2, :total_pages=>20}}
         end
 
         def tags_data
-          {:top=>{:page=>2, :tags=>[{:name=>"pop", :taggers_count=>226712}, {:name=>"female vocalists", :taggers_count=>167984}, {:name=>"metal", :taggers_count=>155922}, {:name=>"alternative rock", :taggers_count=>167151}, {:name=>"jazz", :taggers_count=>146870}], :total_pages=>200}}
+          {:top=>{:page=>2, :tags=>[{:name=>"pop", :taggers_count=>227129}, {:name=>"female vocalists", :taggers_count=>168171}, {:name=>"metal", :taggers_count=>156025}, {:name=>"alternative rock", :taggers_count=>167255}, {:name=>"jazz", :taggers_count=>147224}], :total_pages=>40}}
         end
 
         def tracks_data
-          {:top=>{:page=>2, :total_pages=>200, :tracks=>[{:artist=>{:name=>"Taylor Swift"}, :listeners_count=>201145, :title=>"willow"}, {:artist=>{:name=>"Cardi B"}, :listeners_count=>361221, :title=>"wAp (fEAt. mEgAn thEe stAllIOn)"}, {:artist=>{:name=>"Dua Lipa"}, :listeners_count=>468358, :title=>"doN'T StArT nOw"}, {:artist=>{:name=>"Billie Eilish"}, :listeners_count=>232143, :title=>"therefore i am"}, {:artist=>{:name=>"Lana Del Rey"}, :listeners_count=>99911, :title=>"Chemtrails Over the Country Club"}]}}
+          {:top=>{:page=>2, :total_pages=>10, :tracks=>[{:artist=>{:name=>"Arctic Monkeys"}, :listeners_count=>1160832, :title=>"Fluorescent Adolescent"}, {:artist=>{:name=>"Grimes"}, :listeners_count=>646927, :title=>"Oblivion"}, {:artist=>{:name=>"Frank Ocean"}, :listeners_count=>256059, :title=>"In My Room"}, {:artist=>{:name=>"MGMT"}, :listeners_count=>1589515, :title=>"Electric Feel"}, {:artist=>{:name=>"Taylor Swift"}, :listeners_count=>206304, :title=>"sEvEN"}]}}
         end
       end
     end

@@ -11,7 +11,7 @@ module Helpers
         end
 
         def similar_data
-          {:track=>{:artist=>{:name=>"Wild Nothing"}, :page=>2, :similar=>[{:artist=>{:name=>"DIIV"}, :id=>1, :length=>0, :title=>"Dopamine"}, {:artist=>{:name=>"DIIV"}, :id=>2, :length=>165, :title=>"Follow"}, {:artist=>{:name=>"Beach House"}, :id=>3, :length=>0, :title=>"Wildflower"}, {:artist=>{:name=>"Slowdive"}, :id=>4, :length=>231, :title=>"Alison"}, {:artist=>{:name=>"Airiel"}, :id=>5, :length=>566, :title=>"In Your Room"}], :title=>"chinatown", :total_pages=>50}}
+          {:track=>{:artist=>{:name=>"Wild Nothing"}, :page=>2, :similar=>[{:artist=>{:name=>"Craft Spells"}, :id=>1, :length=>240, :title=>"After the Moment"}, {:artist=>{:name=>"DIIV"}, :id=>2, :length=>185, :title=>"Sometime"}, {:artist=>{:name=>"Beach Fossils"}, :id=>3, :length=>201, :title=>"Shallow"}, {:artist=>{:name=>"Beach House"}, :id=>4, :length=>0, :title=>"Space Song"}, {:artist=>{:name=>"Chapterhouse"}, :id=>5, :length=>303, :title=>"Pearl"}], :title=>"chinatown", :total_pages=>40}}
         end
 
         def tags_data

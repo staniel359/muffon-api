@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=1000&method=track.search&track=wejlhg239gh23
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=500&method=track.search&track=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,11 +23,11 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Thu, 04 Feb 2021 07:59:10 GMT
+      - Mon, 05 Apr 2021 14:14:24 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '208'
+      - '207'
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -38,6 +38,6 @@ http_interactions:
       - 1.1 google
     body:
       encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"1000","trackmatches":{"track":[]},"@attr":{}}}'
-  recorded_at: Thu, 04 Feb 2021 07:59:10 GMT
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"500","trackmatches":{"track":[]},"@attr":{}}}'
+  recorded_at: Mon, 05 Apr 2021 14:14:23 GMT
 recorded_with: VCR 6.0.0

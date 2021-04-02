@@ -12,7 +12,7 @@ module LastFM
       end
 
       def total_limit
-        2_000
+        750
       end
 
       def collection_item_data(track)

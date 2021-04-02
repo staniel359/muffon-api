@@ -14,7 +14,7 @@ module LastFM
       end
 
       def total_limit
-        1_000
+        200
       end
 
       def collection_data

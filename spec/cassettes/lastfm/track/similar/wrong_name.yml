@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=1000&method=track.getSimilar&track=chinatown
+    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=200&method=track.getSimilar&track=chinatown
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Thu, 04 Feb 2021 07:55:48 GMT
+      - Mon, 05 Apr 2021 14:21:23 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,5 +39,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"Track not found","links":[]}'
-  recorded_at: Thu, 04 Feb 2021 07:55:48 GMT
+  recorded_at: Mon, 05 Apr 2021 14:21:22 GMT
 recorded_with: VCR 6.0.0

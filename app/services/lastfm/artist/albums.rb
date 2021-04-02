@@ -11,6 +11,10 @@ module LastFM
         'albums'
       end
 
+      def total_limit
+        300
+      end
+
       def collection_item_data(album)
         {
           title: album['name'],
