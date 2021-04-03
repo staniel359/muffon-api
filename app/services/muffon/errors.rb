@@ -68,7 +68,10 @@ module Muffon
 
       def gateway_timeout_data
         {
-          errors: [RestClient::Exceptions::OpenTimeout],
+          errors: [
+            RestClient::GatewayTimeout,
+            RestClient::Exceptions::OpenTimeout
+          ],
           handler: format_handler([504, 'Gateway Timeout'])
         }
       end
