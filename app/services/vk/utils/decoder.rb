@@ -36,7 +36,7 @@ module VK
 
       def vk_o(string)
         index2 = i = 0
-        string.split('').each_with_object([]) do |s, result|
+        string.chars.each_with_object([]) do |s, result|
           if div_four(index2)
             (i = sym_index(s) + (i << 6)) && (index2 += 1)
             result << chr(i, shift(index2))
@@ -71,7 +71,7 @@ module VK
         return first unless l.positive?
 
         o = vk_s_child(first, second)
-        first = first.split('')
+        first = first.chars
         (1...l).each do |a|
           b = o[l - 1 - a]
           first[a], first[b] = first[b], first[a]
