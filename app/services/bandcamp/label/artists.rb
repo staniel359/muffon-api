@@ -19,12 +19,16 @@ module Bandcamp
         {
           name: artist['name'],
           images: images_data(image(artist)),
-          link: { artist_id: artist['id'] }
+          id_data: id_data(artist)
         }
       end
 
       def image(data)
         "https://f4.bcbits.com/img/00#{data['image_id']}_10.jpg"
+      end
+
+      def id_data(artist)
+        { artist_id: artist['id'] }
       end
     end
   end

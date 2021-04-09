@@ -30,7 +30,7 @@ module Bandcamp
             artist: album_artist_data(album),
             images: images_data(image(album)),
             released: time_formatted(album['release_date']),
-            link: link_data(album)
+            id_data: id_data(album)
           }
         end
 
@@ -42,7 +42,7 @@ module Bandcamp
           album['artist_name'] || response_data['name']
         end
 
-        def link_data(album)
+        def id_data(album)
           {
             album_id: album['item_id'],
             artist_id: album['band_id'],

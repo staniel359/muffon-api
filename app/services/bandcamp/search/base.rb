@@ -43,7 +43,7 @@ module Bandcamp
         item[:site_name]
       end
 
-      def link_data(link)
+      def id_data(link)
         artist, album_type, title = link.scan(link_regexp).flatten
 
         {
