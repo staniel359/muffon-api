@@ -15,7 +15,7 @@ module Yandex
             album: album_data(track),
             images: images_data(track, 'track'),
             length: length(track),
-            yandex_music_id: track['id']
+            audio: audio_data(track)
           }
         end
 
@@ -25,6 +25,14 @@ module Yandex
 
         def album_data(track)
           { title: track.dig('albums', 0, 'title') }
+        end
+
+        def audio_data(track)
+          {
+            present: track['id'].present?,
+            id: track['id'],
+            source: 'yandex_music'
+          }
         end
       end
     end
