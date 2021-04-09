@@ -3,6 +3,12 @@ module SoundCloud
     class Base < SoundCloud::Base
       include Muffon::Paginated
 
+      def call
+        super
+      rescue RestClient::Unauthorized
+        retry_with_new_client_id
+      end
+
       private
 
       def primary_args
@@ -26,7 +32,11 @@ module SoundCloud
       end
 
       def client_id
-        secrets.soundcloud[:api_v2_key]
+        if Rails.env.test?
+          secrets.soundcloud[:test_v2_client_id]
+        else
+          global.get('soundcloud_v2_client_id')
+        end
       end
 
       def extra_params
@@ -35,6 +45,16 @@ module SoundCloud
           limit: limit,
           offset: offset
         }
+      end
+
+      def retry_with_new_client_id
+        global.set('soundcloud_v2_client_id', new_client_id)
+
+        call
+      end
+
+      def new_client_id
+        SoundCloud::Utils::ClientId.call
       end
 
       def data

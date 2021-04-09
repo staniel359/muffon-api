@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/search/albums?client_id=<SOUNDCLOUD_API_V2_KEY>&limit=20&offset=0&q=wejlhg239gh23
+    uri: https://api-v2.soundcloud.com/search/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=20&offset=0&q=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 09 Feb 2021 10:53:21 GMT
+      - Fri, 09 Apr 2021 15:34:40 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -47,13 +47,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 6a3cc273c6d3056526b53421b6dd28ea.cloudfront.net (CloudFront)
+      - 1.1 d49f413028fbcce32318aa161c4707a1.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - HEL50-C2
       X-Amz-Cf-Id:
-      - rPSWLLEaXkSxuUNJCvNr4xjTlXpQEAIbMjp9U3Q-7fTjeV9-BRtDUA==
+      - wrvINk7jqN_utwKOOJCsTmcSV2CPXs7mThKbKZkchqzbdhXgvXYrTA==
     body:
       encoding: ASCII-8BIT
-      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:4ce7ed90396a4e6da3e8a68733138496"}'
-  recorded_at: Tue, 09 Feb 2021 10:53:21 GMT
+      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:48c5cda6a221477fb4c775e58835341d"}'
+  recorded_at: Fri, 09 Apr 2021 15:34:40 GMT
 recorded_with: VCR 6.0.0

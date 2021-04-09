@@ -8,7 +8,7 @@ VCR.configure do |c|
     %i[lastfm api_key], %i[spotify api_key],
     %i[vk page_id], %i[vk email], %i[vk password],
     %i[discogs api_key], %i[discogs api_secret],
-    %i[soundcloud api_key], %i[soundcloud api_v2_key],
+    %i[soundcloud api_key], %i[soundcloud test_v2_client_id],
     %i[deezer test_track_token],
     %i[deezer test_api_token],
     %i[deezer test_license_token],

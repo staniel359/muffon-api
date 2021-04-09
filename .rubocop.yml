@@ -20,6 +20,8 @@ AllCops:
 
 Layout/LineLength:
   Max: 80
+Layout/EndOfLine:
+  Enabled: false
 
 Metrics/BlockLength:
   Exclude:
