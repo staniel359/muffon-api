@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe VK::Search::Results do
+RSpec.describe VK::Search::Sections do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when query string given' do
       let(:output) do
-        VCR.use_cassette 'vk/search/results/success' do
+        VCR.use_cassette 'vk/search/sections/success' do
           subject.call(query: 'wild nothing')
         end
       end
 
-      it { expect(output).to eq(Helpers::VK::Search.results_data) }
+      it { expect(output).to eq(Helpers::VK::Search.sections_data) }
     end
   end
 
@@ -24,12 +24,12 @@ RSpec.describe VK::Search::Results do
 
     context 'when wrong query string' do
       let(:output) do
-        VCR.use_cassette 'vk/search/results/wrong_query' do
+        VCR.use_cassette 'vk/search/sections/wrong_query' do
           subject.call(query: Helpers::Base::RANDOM_STRING)
         end
       end
 
-      it { expect(output).to eq(Helpers::VK::Search.results_no_data) }
+      it { expect(output).to eq(Helpers::VK::Search.sections_no_data) }
     end
   end
 end

@@ -73,7 +73,11 @@ module VK
       artist_name =
         album['authorName'].match(%r{<a.+>(.+)</a>}).to_a[1]
 
-      CGI.unescapeHTML(artist_name) || 'Various Artists'
+      if artist_name.present?
+        CGI.unescapeHTML(artist_name)
+      else
+        'Various Artists'
+      end
     end
 
     def track_id(track)

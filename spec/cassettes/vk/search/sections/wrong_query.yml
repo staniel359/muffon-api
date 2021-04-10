@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vk.com/al_audio.php
+    body:
+      encoding: UTF-8
+      string: act=section&al=1&owner_id=<VK_PAGE_ID>&q=wejlhg239gh23
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - remixsid=8beda7e485bd7c1191d0aea123281d4f9bda806a16e9b1a25c7b52074fe4a
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Sat, 10 Apr 2021 18:47:16 GMT
+      Content-Type:
+      - text/html; charset=windows-1251
+      Content-Length:
+      - '776'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.106809
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixlang=0; expires=Mon, 11 Apr 2022 18:00:30 GMT; path=/; domain=.vk.com;
+        secure
+      - remixlang=114; expires=Sat, 09 Apr 2022 21:58:24 GMT; path=/; domain=.vk.com
+      Cache-Control:
+      - no-store
+      X-Frontend:
+      - front225206
+      Strict-Transport-Security:
+      - max-age=15768000
+      Access-Control-Expose-Headers:
+      - X-Frontend
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCEtLXsicGF5bG9hZCI6WzAsWyI8ZGl2IGNsYXNzPSdDYXRhbG9nU2VjdGlvbiBDYXRhbG9nU2VjdGlvbi0tZGl2aWRlZCBDYXRhbG9nU2VjdGlvbl9fc2VhcmNoX3Jlc3VsdHMnPjxkaXYgY2xhc3M9J0NhdGFsb2dCbG9jayBDYXRhbG9nQmxvY2stLWRpdmlkZWQnPiAgPGRpdiBjbGFzcz1cIkNhdGFsb2dCbG9ja19fY29udGVudCBDYXRhbG9nQmxvY2tfX3BsYWNlaG9sZGVyX2VtcHR5X3NlYXJjaCBDYXRhbG9nQmxvY2tfX2xheW91dC0tcGxhY2Vob2xkZXJcIiBkYXRhLXR5cGU9J3BsYWNlaG9sZGVyJyBkYXRhLWlkPSdQVWxRVkE4R1IwUjNXMHRNRjBRSEJ5VU9BUmxaVUE0VUdRNEVCa0ZOTkJVakNoc1ZYUlpIUkg1SlUwUUhCMWxWZFY5ZFFoa1dYRVI4U1I0VFgxZ0RBWFJZVUJGZEJsaEVha2xkVkE4TlIwUjNYa3RNQkVrJyAgID48ZGl2IGNsYXNzPVwiUGxhY2Vob2xkZXJcIj5cbiAgICA8ZGl2IGNsYXNzPVwiUGxhY2Vob2xkZXJfX2ljb25Db250YWluZXJcIj5cbiAgICAgIDxpbWcgc3JjPVwiXC9pbWFnZXNcL3N2Z19pY29uc1wvYXVkaW9cL2F1ZGlvX25vdGVfNjQuc3ZnXCIgYWx0PVwiXCIgY2xhc3M9XCJQbGFjZWhvbGRlcl9faWNvblwiPlxuICA8XC9kaXY+XG4gIFxuICAgIDxkaXYgY2xhc3M9XCJQbGFjZWhvbGRlcl9fdGV4dFwiPs/uIOfg7/Du8fMgPHN0cm9uZz53ZWpsaGcyMzlnaDIzPFwvc3Ryb25nPiDt5SDt4Onk5e3uIO3oIO7k7e7pIODz5Oju5+Dv6PHoPFwvZGl2PlxuICBcbjxcL2Rpdj48XC9kaXY+PFwvZGl2PjxcL2Rpdj4iLHsicGxheWxpc3QiOm51bGwsInBsYXlsaXN0cyI6W10sIm5leHRfZnJvbSI6IiIsIm5leHRGcm9tIjoiIiwic2VhcmNoX3F1ZXJ5Ijoid2VqbGhnMjM5Z2gyMyIsImhpbnRzIjpbXSwic2VhcmNoUGFyYW1zIjp7Imdsb2JhbFF1ZXJ5Ijoid2VqbGhnMjM5Z2gyMyJ9LCJ0aXRsZSI6ItDl5/Pr/PLg8vsg7+7o8ergIiwic2VjdGlvbklkIjoiUFVsZFZBOE5SMFJ6U1ZOVWFnZFNSR3BKVUZRUEJVZEVma2xUUkFjSFdWVjFYMTFDR1JaY1JIeEpIaE5mV0FNQmRGaFFFVjBHV0VRNyIsImJsb2NrSWRzIjpbIlBVbFFWQThHUjBSM1cwdE1GMFFIQnlVT0FSbFpVQTRVR1E0RUJrRk5OQlVqQ2hzVlhSWkhSSDVKVTBRSEIxbFZkVjlkUWhrV1hFUjhTUjRUWDFnREFYUllVQkZkQmxoRWFrbGRWQThOUjBSM1hrdE1CRWsiXSwiaXNCbG9ja1BhZ2luYXRpb24iOmZhbHNlLCJxaWQiOm51bGx9XV0sInN0YXRzTWV0YSI6eyJwbGF0Zm9ybSI6IndlYjIiLCJzdCI6ZmFsc2UsInRpbWUiOjE2MTgwODA0MzYsImhhc2giOiJaV1JuNHU4UmRndVZrTHdFNndieEtxZ2Njb1czb3ExWGprZmdsR3Eycjd6In0sImxvYWRlclZlcnNpb24iOiI3ODM5Njg4IiwicGFnZXZpZXdDYW5kaWRhdGUiOnRydWUsImxhbmdWZXJzaW9uIjoiNzA4MiJ9
+  recorded_at: Sat, 10 Apr 2021 18:47:17 GMT
+recorded_with: VCR 6.0.0

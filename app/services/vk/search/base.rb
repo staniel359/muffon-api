@@ -22,9 +22,11 @@ module VK
       end
 
       def section_id
-        VK::Search::Results.call(query: @args.query).dig(
-          :search, :results, collection_name.to_sym
-        )
+        sections.dig(:search, :sections, collection_name.to_sym)
+      end
+
+      def sections
+        VK::Search::Sections.call(query: @args.query)
       end
 
       def results
