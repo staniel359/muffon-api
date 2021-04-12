@@ -31,9 +31,13 @@ module Muffon
 
       def bad_request_data
         {
-          errors: [RestClient::BadRequest],
+          errors: bad_request_errors,
           handler: format_handler([400, 'Bad request'])
         }
+      end
+
+      def bad_request_errors
+        [RestClient::BadRequest]
       end
 
       def format_handler(data)
@@ -42,39 +46,56 @@ module Muffon
 
       def not_found_data
         {
-          errors: [RestClient::NotFound],
+          errors: not_found_errors,
           handler: format_handler([404, 'Not found'])
         }
       end
 
+      def not_found_errors
+        [RestClient::NotFound]
+      end
+
       def too_many_requests_data
         {
-          errors: [RestClient::TooManyRequests],
+          errors: too_many_requests_errors,
           handler: format_handler([429, 'Too Many Requests'])
         }
       end
 
+      def too_many_requests_errors
+        [RestClient::TooManyRequests]
+      end
+
       def bad_gateway_data
         {
-          errors: [
-            RestClient::InternalServerError,
-            RestClient::ServiceUnavailable,
-            JSON::ParserError, SocketError,
-            Errno::ENETUNREACH, OpenSSL::SSL::SSLError,
-            RestClient::ServerBrokeConnection
-          ],
+          errors: bad_gateway_errors,
           handler: format_handler([502, 'Bad Gateway'])
         }
       end
 
+      def bad_gateway_errors
+        [
+          RestClient::InternalServerError,
+          RestClient::ServerBrokeConnection,
+          RestClient::ServiceUnavailable,
+          RestClient::RequestFailed,
+          OpenSSL::SSL::SSLError, SocketError,
+          Errno::ENETUNREACH, JSON::ParserError
+        ]
+      end
+
       def gateway_timeout_data
         {
-          errors: [
-            RestClient::GatewayTimeout,
-            RestClient::Exceptions::OpenTimeout
-          ],
+          errors: gateway_timeout_errors,
           handler: format_handler([504, 'Gateway Timeout'])
         }
+      end
+
+      def gateway_timeout_errors
+        [
+          RestClient::Exceptions::OpenTimeout,
+          RestClient::GatewayTimeout
+        ]
       end
     end
   end
