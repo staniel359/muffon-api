@@ -1,23 +1,7 @@
 module Odnoklassniki
   module Album
-    class Info < Odnoklassniki::Base
+    class Info < Odnoklassniki::Album::Base
       private
-
-      def primary_args
-        [@args.album_id]
-      end
-
-      def endpoint_name
-        'album'
-      end
-
-      def params
-        super.merge({ albumId: @args.album_id })
-      end
-
-      def data
-        { album: album_data }
-      end
 
       def album_data
         album_base_data.merge(album_extra_data)
@@ -32,25 +16,13 @@ module Odnoklassniki
         }
       end
 
-      def album
-        response_data['album']
-      end
-
-      def title
-        album['name']
-      end
-
       def album_extra_data
         {
           images: images_data(album, 'album'),
           released: released(album),
-          tags: tags,
+          tags: tags.first(5),
           tracks: tracks_data
         }
-      end
-
-      def tags
-        album['genres'].map { |t| t['label'] }
       end
 
       def tracks_data
