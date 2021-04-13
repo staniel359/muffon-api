@@ -10,7 +10,7 @@ module LastFM
       def collection_data
         return [] if page > total_pages
 
-        images_list.map { |i| images_data(i['src'], 'artist') }
+        images_list.map { |i| image_data(i['src'], 'artist') }
       end
 
       def images_list

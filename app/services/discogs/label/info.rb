@@ -14,7 +14,7 @@ module Discogs
       def label_data
         {
           name: response_data['name'],
-          images: images_data(main_image, 'artist'),
+          image: image_data(main_image, 'artist'),
           description: response_data['profile']
         }
       end

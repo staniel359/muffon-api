@@ -18,7 +18,7 @@ module Discogs
       def collection_item_data(artist)
         {
           name: artist['title'],
-          images: images_data(artist['cover_image'], 'artist'),
+          image: image_data(artist['cover_image'], 'artist'),
           discogs_id: artist['id']
         }
       end

@@ -1,6 +1,6 @@
 module VK
   module Utils
-    class Images < VK::Base
+    class Image < VK::Base
       def call
         data
       end
@@ -8,12 +8,12 @@ module VK
       private
 
       def data
-        return images_data if @args.image.present?
+        return image_data if @args.image.present?
 
-        default_images_data(@args.model)
+        default_image_data(@args.model)
       end
 
-      def images_data
+      def image_data
         {
           original: @args.image,
           large: @args.image,

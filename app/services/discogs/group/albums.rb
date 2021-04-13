@@ -16,7 +16,7 @@ module Discogs
       def album_data(album)
         {
           title: album['title'],
-          images: images_data(album['thumb'], 'album'),
+          image: image_data(album['thumb'], 'album'),
           released: album['released'],
           format: album['format'],
           discogs_id: album['id']

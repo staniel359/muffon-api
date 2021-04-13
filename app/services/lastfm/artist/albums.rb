@@ -18,7 +18,7 @@ module LastFM
       def collection_item_data(album)
         {
           title: album['name'],
-          images: images_data(album, 'album')
+          image: image_data(album, 'album')
         }
       end
     end

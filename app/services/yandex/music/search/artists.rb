@@ -11,7 +11,7 @@ module Yandex
         def collection_item_data(artist)
           {
             name: artist['name'],
-            images: images_data(artist, 'artist'),
+            image: image_data(artist, 'artist'),
             yandex_music_id: artist['id']
           }
         end

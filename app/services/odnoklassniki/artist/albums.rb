@@ -40,7 +40,7 @@ module Odnoklassniki
       def album_data(album)
         {
           title: album['name'],
-          images: album['image'],
+          image: album['image'],
           released: album['year'].to_s,
           odnoklassniki_id: album['id']
         }

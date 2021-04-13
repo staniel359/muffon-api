@@ -13,7 +13,7 @@ module Yandex
             title: full_title(track),
             artist: artist_data(track),
             album: album_data(track),
-            images: images_data(track, 'track'),
+            image: image_data(track, 'track'),
             length: length(track),
             audio: audio_data(track)
           }

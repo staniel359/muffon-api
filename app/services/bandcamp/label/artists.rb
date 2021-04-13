@@ -18,7 +18,7 @@ module Bandcamp
       def artist_data(artist)
         {
           name: artist['name'],
-          images: images_data(image(artist)),
+          image: image_data(image(artist)),
           id_data: id_data(artist)
         }
       end

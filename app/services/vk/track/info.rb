@@ -42,7 +42,7 @@ module VK
       def track_extra_data
         {
           album: album_data,
-          images: images_data(track[14], 'track'),
+          image: image_data(track[14], 'track'),
           length: track[5],
           audio: audio_data
         }

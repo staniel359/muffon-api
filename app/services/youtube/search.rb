@@ -25,7 +25,7 @@ module YouTube
       {
         title: result.dig('snippet', 'title'),
         channel: channel_data(result),
-        images: images_data(result),
+        image: image_data(result),
         published: published(result),
         description: result.dig('snippet', 'description'),
         video: video_data(result)
@@ -43,7 +43,7 @@ module YouTube
       }
     end
 
-    def images_data(result)
+    def image_data(result)
       {
         large: image(result, 'high'),
         medium: image(result, 'medium'),

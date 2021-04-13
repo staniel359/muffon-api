@@ -34,7 +34,7 @@ module Spotify
 
       def album_extra_data
         {
-          images: images_data(response_data, 'album'),
+          image: image_data(response_data, 'album'),
           released: released,
           labels: [response_data['label']],
           tags: response_data['genres'],

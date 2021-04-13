@@ -15,7 +15,7 @@ module Spotify
         {
           title: album['name'],
           artist: artist_data(album),
-          images: images_data(album, 'album'),
+          image: image_data(album, 'album'),
           released: time_formatted(album['release_date']),
           spotify_id: album['id']
         }

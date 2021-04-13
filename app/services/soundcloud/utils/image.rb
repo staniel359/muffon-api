@@ -1,6 +1,6 @@
 module SoundCloud
   module Utils
-    class Images < SoundCloud::Base
+    class Image < SoundCloud::Base
       def call
         data
       end
@@ -8,16 +8,16 @@ module SoundCloud
       private
 
       def data
-        return images_data if image.present?
+        return image_data if image.present?
 
-        default_images_data(@args.model)
+        default_image_data(@args.model)
       end
 
       def image
         @args.data.to_h['artwork_url']
       end
 
-      def images_data
+      def image_data
         {
           original: crop_image('t500x500'),
           large: crop_image('t500x500'),

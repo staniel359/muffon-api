@@ -29,8 +29,8 @@ module Bandcamp
       {}
     end
 
-    def images_data(image)
-      Bandcamp::Utils::Images.call(image: image)
+    def image_data(image)
+      Bandcamp::Utils::Image.call(image: image)
     end
   end
 end

@@ -1,6 +1,6 @@
 module Bandcamp
   module Utils
-    class Images < Bandcamp::Base
+    class Image < Bandcamp::Base
       def call
         data
       end

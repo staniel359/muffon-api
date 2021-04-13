@@ -18,7 +18,7 @@ module Deezer
 
       def album_extra_data
         {
-          images: images_data(response_data, 'album'),
+          image: image_data(response_data, 'album'),
           listeners_count: response_data['fans'],
           released: released,
           labels: [response_data['label']],

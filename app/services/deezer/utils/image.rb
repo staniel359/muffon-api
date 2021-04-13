@@ -1,6 +1,6 @@
 module Deezer
   module Utils
-    class Images < Deezer::Base
+    class Image < Deezer::Base
       def call
         data
       end
@@ -8,9 +8,9 @@ module Deezer
       private
 
       def data
-        return images_data if image.present?
+        return image_data if image.present?
 
-        default_images_data(@args.model)
+        default_image_data(@args.model)
       end
 
       def image
@@ -21,7 +21,7 @@ module Deezer
         @args.data['picture_xl'] || @args.data['cover_xl']
       end
 
-      def images_data
+      def image_data
         {
           original: crop_image('1200x1200'),
           large: crop_image('600x600'),

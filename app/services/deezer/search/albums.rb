@@ -17,7 +17,7 @@ module Deezer
         {
           title: album['title'],
           artist: artist_data(album),
-          images: images_data(album, 'album'),
+          image: image_data(album, 'album'),
           deezer_id: album['id']
         }
       end

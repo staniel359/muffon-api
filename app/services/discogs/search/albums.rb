@@ -18,7 +18,7 @@ module Discogs
       def collection_item_data(album)
         {
           title: album['title'],
-          images: images_data(album['cover_image'], 'album'),
+          image: image_data(album['cover_image'], 'album'),
           released: album['year'].to_s,
           discogs_id: album['id']
         }

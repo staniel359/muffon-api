@@ -18,7 +18,7 @@ module SoundCloud
 
       def album_extra_data
         {
-          images: images_data(response_data, 'album'),
+          image: image_data(response_data, 'album'),
           released: released,
           description: description_truncated,
           tags: tags.first(5),

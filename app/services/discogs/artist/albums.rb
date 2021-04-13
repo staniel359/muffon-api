@@ -21,7 +21,7 @@ module Discogs
         {
           title: album['title'],
           artist: album['artist'],
-          images: images_data(album['thumb'], 'album'),
+          image: image_data(album['thumb'], 'album'),
           released: album['year'].to_s,
           id_key(album) => album['id']
         }

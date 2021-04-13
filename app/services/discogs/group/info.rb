@@ -22,7 +22,7 @@ module Discogs
 
       def group_extra_data
         {
-          images: images_data(main_image, 'album'),
+          image: image_data(main_image, 'album'),
           released: response_data['year'].to_s,
           description: description_truncated,
           tracks: tracks_data

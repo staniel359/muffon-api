@@ -42,7 +42,7 @@ module Odnoklassniki
       def track_extra_data
         {
           album: album_data,
-          images: images_data(response_data, 'track'),
+          image: image_data(response_data, 'track'),
           length: track['duration'],
           audio: audio_data
         }

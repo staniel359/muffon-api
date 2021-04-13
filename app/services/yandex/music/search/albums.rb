@@ -12,7 +12,7 @@ module Yandex
           {
             title: album['title'],
             artist: artist_data(album),
-            images: images_data(album, 'album'),
+            image: image_data(album, 'album'),
             released: album['originalReleaseYear'].to_s,
             yandex_music_id: album['id']
           }

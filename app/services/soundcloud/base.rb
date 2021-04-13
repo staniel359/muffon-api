@@ -51,8 +51,8 @@ module SoundCloud
       { name: artist_name(data) }
     end
 
-    def images_data(data, model)
-      SoundCloud::Utils::Images.call(data: data, model: model)
+    def image_data(data, model)
+      SoundCloud::Utils::Image.call(data: data, model: model)
     end
 
     def length(track)

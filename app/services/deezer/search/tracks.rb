@@ -18,7 +18,7 @@ module Deezer
           title: track['title'],
           artist: artist_data(track),
           album: album_data(track),
-          images: images_data(track['album'], 'track'),
+          image: image_data(track['album'], 'track'),
           length: track['duration'],
           audio: audio_data(track)
         }

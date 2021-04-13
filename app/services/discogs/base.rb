@@ -69,8 +69,8 @@ module Discogs
       response_data['releases'] || response_data['versions']
     end
 
-    def images_data(image, model)
-      Discogs::Utils::Images.call(image: image, model: model)
+    def image_data(image, model)
+      Discogs::Utils::Image.call(image: image, model: model)
     end
 
     def main_image

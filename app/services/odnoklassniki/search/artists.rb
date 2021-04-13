@@ -20,7 +20,7 @@ module Odnoklassniki
       def collection_list_item(artist)
         {
           name: artist['name'],
-          images: images_data(artist, 'artist'),
+          image: image_data(artist, 'artist'),
           odnoklassniki_id: artist['id']
         }
       end

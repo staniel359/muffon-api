@@ -56,8 +56,8 @@ module Muffon
       description.truncate_words(75)
     end
 
-    def default_images_data(model)
-      LastFM::Utils::Images.call(model: model)
+    def default_image_data(model)
+      LastFM::Utils::Image.call(model: model)
     end
   end
 end

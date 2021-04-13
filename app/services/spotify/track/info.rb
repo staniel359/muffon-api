@@ -34,7 +34,7 @@ module Spotify
       def track_extra_data
         {
           album: album_data,
-          images: images_data(response_data['album'], 'track'),
+          image: image_data(response_data['album'], 'track'),
           length: length(response_data),
           audio: audio_data(response_data)
         }

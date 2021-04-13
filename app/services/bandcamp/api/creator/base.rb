@@ -28,7 +28,7 @@ module Bandcamp
           {
             title: album['title'],
             artist: album_artist_data(album),
-            images: images_data(image(album)),
+            image: image_data(image(album)),
             released: time_formatted(album['release_date']),
             id_data: id_data(album)
           }

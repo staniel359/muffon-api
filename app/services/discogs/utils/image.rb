@@ -1,6 +1,6 @@
 module Discogs
   module Utils
-    class Images < Discogs::Base
+    class Image < Discogs::Base
       def call
         data
       end
@@ -8,9 +8,9 @@ module Discogs
       private
 
       def data
-        return images_data if image_present?
+        return image_data if image_present?
 
-        default_images_data(@args.model)
+        default_image_data(@args.model)
       end
 
       def image_present?
@@ -18,7 +18,7 @@ module Discogs
           !@args.image.end_with?('/spacer.gif')
       end
 
-      def images_data
+      def image_data
         {
           original: @args.image,
           large: @args.image,

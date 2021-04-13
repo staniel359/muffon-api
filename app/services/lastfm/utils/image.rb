@@ -1,13 +1,13 @@
 module LastFM
   module Utils
-    class Images < LastFM::Base
+    class Image < LastFM::Base
       def call
-        images_data
+        image_data
       end
 
       private
 
-      def images_data
+      def image_data
         {
           original: crop_image(''),
           large: crop_image('/600x600'),

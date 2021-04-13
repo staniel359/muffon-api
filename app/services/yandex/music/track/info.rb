@@ -46,7 +46,7 @@ module Yandex
         def track_extra_data
           {
             album: album_data,
-            images: images_data(album_raw_data, 'track'),
+            image: image_data(album_raw_data, 'track'),
             length: length(response_data),
             audio: audio_data
           }

@@ -44,7 +44,7 @@ module Spotify
       def album_data(album)
         {
           title: album['name'],
-          images: images_data(album, 'album'),
+          image: image_data(album, 'album'),
           spotify_id: album['id']
         }
       end

@@ -33,7 +33,7 @@ module SoundCloud
 
       def track_extra_data
         {
-          images: images_data(response_data, 'track'),
+          image: image_data(response_data, 'track'),
           plays_count: response_data['playback_count'],
           length: length(response_data),
           description: response_data['description'],

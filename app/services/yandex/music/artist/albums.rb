@@ -50,7 +50,7 @@ module Yandex
         def album_data(album)
           {
             title: full_title(album),
-            images: images_data(album, 'album'),
+            image: image_data(album, 'album'),
             released: album['year'].to_s,
             yandex_music_id: album['id']
           }

@@ -18,7 +18,7 @@ module LastFM
 
       def album_extra_data
         {
-          images: images_data(response_data, 'album'),
+          image: image_data(response_data, 'album'),
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,

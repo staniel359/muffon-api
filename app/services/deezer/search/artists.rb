@@ -16,7 +16,7 @@ module Deezer
       def collection_item_data(artist)
         {
           name: artist['name'],
-          images: images_data(artist, 'artist'),
+          image: image_data(artist, 'artist'),
           listeners_count: artist['nb_fan'],
           deezer_id: artist['id']
         }

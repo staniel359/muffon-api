@@ -17,7 +17,7 @@ module LastFM
             name: name,
             listeners_count: listeners_count,
             description: description,
-            images: images_data(image, 'artist'),
+            image: image_data(image, 'artist'),
             tags: tags
           }
         end

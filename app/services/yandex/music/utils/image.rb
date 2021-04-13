@@ -1,7 +1,7 @@
 module Yandex
   module Music
     module Utils
-      class Images < Yandex::Music::Base
+      class Image < Yandex::Music::Base
         def call
           data
         end
@@ -9,9 +9,9 @@ module Yandex
         private
 
         def data
-          return images_data if image.present?
+          return image_data if image.present?
 
-          default_images_data(@args.model)
+          default_image_data(@args.model)
         end
 
         def image
@@ -21,7 +21,7 @@ module Yandex
             @args.data.dig('cover', 'uri') || @args.data['coverUri']
         end
 
-        def images_data
+        def image_data
           {
             original: crop_image(1000),
             large: crop_image(600),

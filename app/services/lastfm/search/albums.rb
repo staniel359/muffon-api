@@ -15,7 +15,7 @@ module LastFM
         {
           title: album['name'],
           artist: album_artist_data(album),
-          images: images_data(album, 'album')
+          image: image_data(album, 'album')
         }
       end
 

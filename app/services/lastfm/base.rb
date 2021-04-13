@@ -21,11 +21,11 @@ module LastFM
       { params: params }
     end
 
-    def images_data(data_or_image, model)
+    def image_data(data_or_image, model)
       image = data_or_image if data_or_image.is_a?(String)
       data = data_or_image if data_or_image.is_a?(Hash)
 
-      LastFM::Utils::Images.call(
+      LastFM::Utils::Image.call(
         data: data, image: image, model: model
       )
     end

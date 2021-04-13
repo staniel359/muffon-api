@@ -11,7 +11,7 @@ module SoundCloud
         {
           title: album['title'],
           artist: artist_data(album),
-          images: images_data(album, 'album'),
+          image: image_data(album, 'album'),
           soundcloud_id: album['id']
         }
       end

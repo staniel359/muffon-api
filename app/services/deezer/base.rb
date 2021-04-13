@@ -29,8 +29,8 @@ module Deezer
       {}
     end
 
-    def images_data(data, model)
-      Deezer::Utils::Images.call(data: data, model: model)
+    def image_data(data, model)
+      Deezer::Utils::Image.call(data: data, model: model)
     end
 
     def title

@@ -25,7 +25,7 @@ module LastFM
       def track_extra_data
         {
           album: album_data,
-          images: images_data(album, 'track'),
+          image: image_data(album, 'track'),
           listeners_count: listeners_count,
           plays_count: plays_count,
           length: length,

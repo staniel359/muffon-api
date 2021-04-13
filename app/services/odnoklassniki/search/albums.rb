@@ -11,7 +11,7 @@ module Odnoklassniki
         {
           title: album['name'],
           artist: artist_data(album),
-          images: images_data(album, 'album'),
+          image: image_data(album, 'album'),
           released: released(album),
           odnoklassniki_id: album['id']
         }

@@ -18,7 +18,7 @@ module Bandcamp
 
       def album_extra_data
         {
-          images: images_data(image(response_data)),
+          image: image_data(image(response_data)),
           released: released,
           description: description_truncated,
           tags: tags.first(5),

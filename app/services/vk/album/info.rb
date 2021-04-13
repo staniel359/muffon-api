@@ -46,7 +46,7 @@ module VK
 
       def album_extra_data
         {
-          images: images_data(album['coverUrl'], 'album'),
+          image: image_data(album['coverUrl'], 'album'),
           released: released,
           plays_count: album['listens'].to_i,
           tracks: tracks_data

@@ -96,8 +96,8 @@ module VK
       full_title(track[3], track[16])
     end
 
-    def images_data(image, model)
-      VK::Utils::Images.call(image: image, model: model)
+    def image_data(image, model)
+      VK::Utils::Image.call(image: image, model: model)
     end
 
     def audio_id(track)

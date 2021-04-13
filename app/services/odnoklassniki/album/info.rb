@@ -18,7 +18,7 @@ module Odnoklassniki
 
       def album_extra_data
         {
-          images: images_data(album, 'album'),
+          image: image_data(album, 'album'),
           released: released(album),
           tags: tags.first(5),
           tracks: tracks_data

@@ -64,8 +64,8 @@ module Odnoklassniki
       data['ensemble']
     end
 
-    def images_data(data, model)
-      Odnoklassniki::Utils::Images.call(
+    def image_data(data, model)
+      Odnoklassniki::Utils::Image.call(
         image: data['image'], model: model
       )
     end
