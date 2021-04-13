@@ -35,6 +35,14 @@ module Bandcamp
       def track
         tracks_list[0]
       end
+
+      def audio_data(track)
+        {
+          present: audio_link(track).present?,
+          link: audio_link(track),
+          source: 'bandcamp'
+        }
+      end
     end
   end
 end

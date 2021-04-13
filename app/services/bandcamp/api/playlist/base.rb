@@ -48,14 +48,6 @@ module Bandcamp
           response_data['tracks']
         end
 
-        def audio_data(track)
-          {
-            present: audio_link(track).present?,
-            link: audio_link(track),
-            source: 'bandcamp'
-          }
-        end
-
         def audio_link(track)
           track.dig('streaming_url', 'mp3-128')
         end
