@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/artist.jsx?artist=wejlhg239gh23&sort=year&what=albums
+    uri: https://music.yandex.ru/handlers/artist.jsx?artist=wejlhg239gh23&lang=en&sort=year&what=albums
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 31 Jan 2021 13:10:25 GMT
+      - Tue, 13 Apr 2021 10:42:58 GMT
       Nel:
       - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
         "failure_fraction": 0.1}'
@@ -42,13 +42,13 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - i=kE/MAuhSDsnrVnI8bdpLvrI2vXo5RHLWHPeouerbjVLM9AVQ5Q7PpqXpdPz4GrhTIsNNvbFyscNZjN8MB5QEiQ7wG/M=;
-        Expires=Tue, 31-Jan-2023 13:10:25 GMT; Domain=.yandex.ru; Path=/; Secure;
+      - i=cBDE9lcL2gEiOZ8ge1cXkI/0rhLFKTvP2oUVdpVSAtVpASd573Cg0GOkchd5VWOI0r8HM6taX0FWimBDFhsNt4HmpAQ=;
+        Expires=Thu, 13-Apr-2023 10:42:58 GMT; Domain=.yandex.ru; Path=/; Secure;
         HttpOnly
-      - yandexuid=3707216961612098625; path=/; domain=.yandex.ru; expires=Fri, 31
-        Jan 2031 13:10:25 GMT; max-age=315360000
+      - yandexuid=5262849431618310578; path=/; domain=.yandex.ru; expires=Sun, 13
+        Apr 2031 10:42:58 GMT; max-age=315360000
     body:
       encoding: UTF-8
       string: '{"message":"Bad Request"}'
-  recorded_at: Sun, 31 Jan 2021 13:10:25 GMT
+  recorded_at: Tue, 13 Apr 2021 10:42:57 GMT
 recorded_with: VCR 6.0.0

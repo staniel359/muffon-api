@@ -17,7 +17,10 @@ module Yandex
         end
 
         def params
-          { album: @args.album_id }
+          {
+            album: @args.album_id,
+            lang: 'en'
+          }
         end
 
         def data

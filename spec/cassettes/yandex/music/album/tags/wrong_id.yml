@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/album.jsx?album=wejlhg239gh23
+    uri: https://music.yandex.ru/handlers/album.jsx?album=wejlhg239gh23&lang=en
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 31 Jan 2021 16:23:01 GMT
+      - Tue, 13 Apr 2021 10:41:32 GMT
       Nel:
       - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
         "failure_fraction": 0.1}'
@@ -42,13 +42,13 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - i=XHKdGZUjqLH79ZNf623Qao1+n6RdiJXBEscS6WMiOFfcinLqsNg9hW0QKoGdnlkzrr1QK1e9PO8GIohnuUX59TF8ty0=;
-        Expires=Tue, 31-Jan-2023 16:23:01 GMT; Domain=.yandex.ru; Path=/; Secure;
+      - i=H1jrJiu/AHfWZOG3S/2OurU4aoJzN+oDrm5/JEVvaoYtIiOMSTtA6EJ4yzW27SL9B4x8dTq4RWVPs+x2bx/28ebALyM=;
+        Expires=Thu, 13-Apr-2023 10:41:32 GMT; Domain=.yandex.ru; Path=/; Secure;
         HttpOnly
-      - yandexuid=3462924831612110181; path=/; domain=.yandex.ru; expires=Fri, 31
-        Jan 2031 16:23:01 GMT; max-age=315360000
+      - yandexuid=349565201618310492; path=/; domain=.yandex.ru; expires=Sun, 13 Apr
+        2031 10:41:32 GMT; max-age=315360000
     body:
       encoding: ASCII-8BIT
       string: '{"message":"Not Found"}'
-  recorded_at: Sun, 31 Jan 2021 16:23:01 GMT
+  recorded_at: Tue, 13 Apr 2021 10:41:32 GMT
 recorded_with: VCR 6.0.0

@@ -22,7 +22,8 @@ module Yandex
           {
             artist: @args.artist_id,
             what: 'albums',
-            sort: 'year'
+            sort: 'year',
+            lang: 'en'
           }
         end
 
