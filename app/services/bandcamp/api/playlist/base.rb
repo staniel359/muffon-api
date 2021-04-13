@@ -33,7 +33,7 @@ module Bandcamp
         end
 
         def length(track)
-          track['duration'].floor
+          track['duration'].to_i
         end
 
         def description
