@@ -1,0 +1,410 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/releases/197163?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 Apr 2021 11:34:12 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '57'
+      X-Discogs-Ratelimit-Used:
+      - '3'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Content-Language:
+      - en
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 197163, "status": "Accepted", "year": 1985, "resource_url":
+        "https://api.discogs.com/releases/197163", "uri": "https://www.discogs.com/Kate-Bush-Hounds-Of-Love/release/197163",
+        "artists": [{"name": "Kate Bush", "anv": "", "join": "", "role": "", "tracks":
+        "", "id": 85929, "resource_url": "https://api.discogs.com/artists/85929"}],
+        "artists_sort": "Kate Bush", "labels": [{"name": "EMI", "catno": "KAB1", "entity_type":
+        "1", "entity_type_name": "Label", "id": 26126, "resource_url": "https://api.discogs.com/labels/26126"},
+        {"name": "EMI", "catno": "EJ 24 0384 1", "entity_type": "1", "entity_type_name":
+        "Label", "id": 26126, "resource_url": "https://api.discogs.com/labels/26126"},
+        {"name": "EMI", "catno": "EJ2403841", "entity_type": "1", "entity_type_name":
+        "Label", "id": 26126, "resource_url": "https://api.discogs.com/labels/26126"}],
+        "series": [], "companies": [{"name": "Kate Bush Music Ltd.", "catno": "",
+        "entity_type": "21", "entity_type_name": "Published By", "id": 269254, "resource_url":
+        "https://api.discogs.com/labels/269254"}, {"name": "EMI Music Publishing Ltd.",
+        "catno": "", "entity_type": "21", "entity_type_name": "Published By", "id":
+        265460, "resource_url": "https://api.discogs.com/labels/265460"}, {"name":
+        "Novercia Ltd.", "catno": "", "entity_type": "13", "entity_type_name": "Phonographic
+        Copyright (p)", "id": 266601, "resource_url": "https://api.discogs.com/labels/266601"},
+        {"name": "Novercia Ltd.", "catno": "", "entity_type": "14", "entity_type_name":
+        "Copyright (c)", "id": 266601, "resource_url": "https://api.discogs.com/labels/266601"},
+        {"name": "The Town House", "catno": "", "entity_type": "29", "entity_type_name":
+        "Mastered At", "id": 87246, "resource_url": "https://api.discogs.com/labels/87246"},
+        {"name": "James Upton Ltd.", "catno": "", "entity_type": "19", "entity_type_name":
+        "Printed By", "id": 265244, "resource_url": "https://api.discogs.com/labels/265244"},
+        {"name": "EMI Records Ltd.", "catno": "", "entity_type": "10", "entity_type_name":
+        "Manufactured By", "id": 63404, "resource_url": "https://api.discogs.com/labels/63404"},
+        {"name": "EMI Records", "catno": "", "entity_type": "17", "entity_type_name":
+        "Pressed By", "id": 754, "resource_url": "https://api.discogs.com/labels/754"},
+        {"name": "Windmill Lane Studios", "catno": "", "entity_type": "24", "entity_type_name":
+        "Engineered At", "id": 273134, "resource_url": "https://api.discogs.com/labels/273134"}],
+        "formats": [{"name": "Vinyl", "qty": "1", "descriptions": ["LP", "Album",
+        "Stereo"]}], "data_quality": "Needs Vote", "community": {"have": 7105, "want":
+        2550, "rating": {"count": 627, "average": 4.41}, "submitter": {"username":
+        "hmvh", "resource_url": "https://api.discogs.com/users/hmvh"}, "contributors":
+        [{"username": "hmvh", "resource_url": "https://api.discogs.com/users/hmvh"},
+        {"username": "brixtonmc", "resource_url": "https://api.discogs.com/users/brixtonmc"},
+        {"username": "Forklift_Alex", "resource_url": "https://api.discogs.com/users/Forklift_Alex"},
+        {"username": "auboisdormant", "resource_url": "https://api.discogs.com/users/auboisdormant"},
+        {"username": "Silentbob", "resource_url": "https://api.discogs.com/users/Silentbob"},
+        {"username": "e-kartoffel", "resource_url": "https://api.discogs.com/users/e-kartoffel"},
+        {"username": "Main_Street", "resource_url": "https://api.discogs.com/users/Main_Street"},
+        {"username": "cvalda44", "resource_url": "https://api.discogs.com/users/cvalda44"},
+        {"username": "DIFFO", "resource_url": "https://api.discogs.com/users/DIFFO"},
+        {"username": "Vocephus", "resource_url": "https://api.discogs.com/users/Vocephus"},
+        {"username": "Oedipus_Recs", "resource_url": "https://api.discogs.com/users/Oedipus_Recs"},
+        {"username": "_TheBeatles", "resource_url": "https://api.discogs.com/users/_TheBeatles"},
+        {"username": "double-happiness", "resource_url": "https://api.discogs.com/users/double-happiness"},
+        {"username": "TheatreX", "resource_url": "https://api.discogs.com/users/TheatreX"},
+        {"username": "chillyboy64", "resource_url": "https://api.discogs.com/users/chillyboy64"},
+        {"username": "gatogato", "resource_url": "https://api.discogs.com/users/gatogato"},
+        {"username": "lastpost", "resource_url": "https://api.discogs.com/users/lastpost"},
+        {"username": "virginvinyl", "resource_url": "https://api.discogs.com/users/virginvinyl"},
+        {"username": "LolH", "resource_url": "https://api.discogs.com/users/LolH"},
+        {"username": "aclbernie", "resource_url": "https://api.discogs.com/users/aclbernie"},
+        {"username": "jopla2", "resource_url": "https://api.discogs.com/users/jopla2"},
+        {"username": "calim", "resource_url": "https://api.discogs.com/users/calim"},
+        {"username": "DiscogsUpdateBot", "resource_url": "https://api.discogs.com/users/DiscogsUpdateBot"},
+        {"username": "WNessa", "resource_url": "https://api.discogs.com/users/WNessa"},
+        {"username": "Alkamii", "resource_url": "https://api.discogs.com/users/Alkamii"},
+        {"username": "cliffonthemoon", "resource_url": "https://api.discogs.com/users/cliffonthemoon"},
+        {"username": "okeydokey", "resource_url": "https://api.discogs.com/users/okeydokey"},
+        {"username": "tangent1979", "resource_url": "https://api.discogs.com/users/tangent1979"},
+        {"username": "iltempio", "resource_url": "https://api.discogs.com/users/iltempio"},
+        {"username": "Ioveless", "resource_url": "https://api.discogs.com/users/Ioveless"},
+        {"username": "KevinSanderson", "resource_url": "https://api.discogs.com/users/KevinSanderson"},
+        {"username": "Tesbertt", "resource_url": "https://api.discogs.com/users/Tesbertt"},
+        {"username": "cannymusic", "resource_url": "https://api.discogs.com/users/cannymusic"},
+        {"username": "Alderfish", "resource_url": "https://api.discogs.com/users/Alderfish"},
+        {"username": "BrokenFriend", "resource_url": "https://api.discogs.com/users/BrokenFriend"},
+        {"username": "MarLuis", "resource_url": "https://api.discogs.com/users/MarLuis"},
+        {"username": "oberkorn67", "resource_url": "https://api.discogs.com/users/oberkorn67"},
+        {"username": "Gary2604", "resource_url": "https://api.discogs.com/users/Gary2604"},
+        {"username": "cluelessvinyl123", "resource_url": "https://api.discogs.com/users/cluelessvinyl123"},
+        {"username": "venetian-guy", "resource_url": "https://api.discogs.com/users/venetian-guy"},
+        {"username": "bargainvinyl1", "resource_url": "https://api.discogs.com/users/bargainvinyl1"},
+        {"username": "bobbins15", "resource_url": "https://api.discogs.com/users/bobbins15"},
+        {"username": "ko_sank", "resource_url": "https://api.discogs.com/users/ko_sank"},
+        {"username": "The_Beatles.", "resource_url": "https://api.discogs.com/users/The_Beatles."},
+        {"username": "vinylupnorth", "resource_url": "https://api.discogs.com/users/vinylupnorth"},
+        {"username": "kyle15", "resource_url": "https://api.discogs.com/users/kyle15"},
+        {"username": "bobpitman", "resource_url": "https://api.discogs.com/users/bobpitman"}],
+        "data_quality": "Needs Vote", "status": "Accepted"}, "format_quantity": 1,
+        "date_added": "2003-10-21T07:36:33-07:00", "date_changed": "2021-04-11T10:43:45-07:00",
+        "num_for_sale": 32, "lowest_price": 15.66, "master_id": 28680, "master_url":
+        "https://api.discogs.com/masters/28680", "title": "Hounds Of Love", "country":
+        "UK", "released": "1985-09-16", "notes": "Printed inner sleeve of lyrics,
+        credits and photographs.\nSome copies included an inner merchandise leaflet.\nMatrix
+        runout strings stamped. ''TOWNHOUSE'' mastering signature etched.\n\nCatalogue
+        numbers:\nKAB1 and EJ 24 0384 1 can be found on the rear sleeve and spine.\nEJ2403841
+        can be found on the inner sleeve and labels.\n\nEngineer at Windmill Lane
+        : Bill Somerville-Large.\nJohn Williams appears courtesy of [l19936].\nYouth
+        appears with kind permission of [l38030].\nHelicopter on \"Waking The Witch\"
+        by kind permission of [url=https://www.discogs.com/Pink-Floyd-The-Wall/master/11329]Pink
+        Floyd \"The Wall\"[/url].\n\"Jig Of Life\": original music discovered by Paddy
+        Bush.\n\"Hello Earth\" contains elements of ''Tsintskaro'', a Georgian folk
+        song.\n\n[Labels];\n\u2117 1985 Original Sound Recordings made by Noverica
+        Ltd.\n\u00a9 1985 Noverica Ltd.\n\u00a9 Kate Bush Music Ltd. EMI Music Publishing
+        Ltd.\nManufactured in the UK by EMI Records Limited.\n\n[Inner sleeve]\n\u00a9
+        Kate Bush Music Ltd. EMI Music Publishing Ltd.\nLyrics used by Permission.\n\n[Rear
+        sleeve]:\n\u2117 1985 Original Sound Recordings made by Noverica Ltd.\n\u00a9
+        1985 Noverica Ltd.", "released_formatted": "16 Sep 1985", "identifiers": [{"type":
+        "Barcode", "value": "5 099924 038416", "description": "Text"}, {"type": "Barcode",
+        "value": "5099924038416", "description": "Scanned"}, {"type": "Other", "value":
+        "RS 8509 JU", "description": "Sleeve, printer''s code, variants 1, 2"}, {"type":
+        "Other", "value": "RB 8509 JU", "description": "Sleeve, printer''s code, variant
+        3 to 8, 10, 11"}, {"type": "Matrix / Runout", "value": "EJ2403841 A", "description":
+        "Side A label"}, {"type": "Matrix / Runout", "value": "EJ2403841 B", "description":
+        "Side B label"}, {"type": "Matrix / Runout", "value": "EJ 2403841 A-4U-1-1
+        TOWNHOUSE", "description": "Side A runout, variant 1"}, {"type": "Matrix /
+        Runout", "value": "EJ 2403841 B-5U-1-1-1 TOWNHOUSE CU", "description": "Side
+        B runout, variant 1"}, {"type": "Matrix / Runout", "value": "EJ 2403841 A-1-1-1
+        TOWNHOUSE", "description": "Side A runout, variant 2"}, {"type": "Matrix /
+        Runout", "value": "EJ 2403841 B-6U-1-3 TOWNHOUSE", "description": "Side B
+        runout, variant 2"}, {"type": "Matrix / Runout", "value": "EJ 2403841 A-1-1-1-21
+        TOWNHOUSE D", "description": "Side A runout, variant 3"}, {"type": "Matrix
+        / Runout", "value": "EJ 2403841 B-5U-1-1-1 ED TOWNHOUSE CU", "description":
+        "Side B runout, variant 3"}, {"type": "Matrix / Runout", "value": "EJ 2403841
+        A-1-1-1  D TOWNHOUSE", "description": "Side A runout, variant 4"}, {"type":
+        "Matrix / Runout", "value": "EJ 2403841 B-6U-1-2 TOWNHOUSE", "description":
+        "Side B runout, variant 4"}, {"type": "Matrix / Runout", "value": "EJ 2403841
+        A-4U-1-1 TOWNHOUSE", "description": "Side A runout, variant 5"}, {"type":
+        "Matrix / Runout", "value": "EJ 2403841 B-7-1-4- TOWNHOUSE", "description":
+        "Side B runout, variant 5"}, {"type": "Matrix / Runout", "value": "EJ 2403841
+        A-4U-1-4- TOWNHOUSE", "description": "Side A runout, variant 6"}, {"type":
+        "Matrix / Runout", "value": "EJ 2403841 B-6U-1-3- TOWNHOUSE", "description":
+        "Side B runout, variant 6"}, {"type": "Matrix / Runout", "value": "EJ 2403841
+        A-4U-1-2 TOWNHOUSE", "description": "Side A runout, variant 7"}, {"type":
+        "Matrix / Runout", "value": "EJ 2403841 B-6U-1-1-2 TOWNHOUSE", "description":
+        "Side B runout, variant 7"}, {"type": "Matrix / Runout", "value": "EJ 2403841
+        A-4U-1-2 TOWNHOUSE", "description": "Side A runout, variant 8"}, {"type":
+        "Matrix / Runout", "value": "EJ 2403841 B-6U-1-3- TOWNHOUSE", "description":
+        "Side B runout, variant 8"}, {"type": "Matrix / Runout", "value": "EJ 2403841
+        A-1-1-1 TOWNHOUSE", "description": "Side A runout, variant 9"}, {"type": "Matrix
+        / Runout", "value": "EJ 2403841 B-6U-1-9 TOWNHOUSE", "description": "Side
+        B runout, variant 9"}, {"type": "Matrix / Runout", "value": "EJ 2403841 A-4U-1-1-35
+        TOWNHOUSE", "description": "Side A runout, variant 10"}, {"type": "Matrix
+        / Runout", "value": "EJ 2403841 B-7-1-5-9 TOWNHOUSE", "description": "Side
+        B runout, variant 10"}, {"type": "Matrix / Runout", "value": "EJ 2403841 A-4U-1-1\u295b
+        TOWNHOUSE", "description": "Side A runout, variant 11"}, {"type": "Matrix
+        / Runout", "value": "EJ 2403841 B-6U-1-9\u295b : : TOWNHOUSE", "description":
+        "Side B runout, variant 11"}], "videos": [{"uri": "https://www.youtube.com/watch?v=wp43OdtAAkM",
+        "title": "Kate Bush - Running Up That Hill - Official Music Video", "description":
+        "Official music video for the single Running Up That Hill written and produced
+        by British singer Kate Bush.\n\nThe song was the first single from Kate''s
+        1985 album Hounds of Love and released in the UK on 5 August 1985.\n  \nRunning
+        Up That Hill entered th", "duration": 297, "embed": true}, {"uri": "https://www.youtube.com/watch?v=pllRW9wETzw",
+        "title": "Kate Bush - Cloudbusting - Official Music Video", "description":
+        "Official music video for the single Cloudbusting written, produced and performed
+        by the British singer Kate Bush. It was the second single released from her
+        no.1 1985 album Hounds of Love. Cloudbusting peaked at no.20 in the UK Singles
+        Chart.\r\n\r\nThe m", "duration": 417, "embed": true}, {"uri": "https://www.youtube.com/watch?v=PXVxpgHjV1Y",
+        "title": "Kate Bush - Running Up That Hill (Extended 12 Version)", "description":
+        "", "duration": 633, "embed": true}, {"uri": "https://www.youtube.com/watch?v=sV7w5TaYjRA",
+        "title": "Kate Bush - The Big Sky - Official Music Video", "description":
+        "Official music video for the single The Big Sky written and produced by British
+        singer Kate Bush.\r\n\r\nThe song was the fourth and final single from the
+        No. 1 album Hounds of Love.  The single was released on 28th April 1986 and
+        peaked at number 37 in the", "duration": 264, "embed": true}], "genres": ["Electronic",
+        "Rock", "Pop"], "styles": ["Art Rock", "Experimental", "Pop Rock"], "tracklist":
+        [{"position": "", "type_": "heading", "title": "Hounds Of Love", "duration":
+        ""}, {"position": "A1", "type_": "track", "title": "Running Up That Hill (A
+        Deal With God)", "extraartists": [{"name": "Paddy Bush", "anv": "", "join":
+        "", "role": "Balalaika", "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"},
+        {"name": "Del Palmer", "anv": "", "join": "", "role": "Bass", "tracks": "",
+        "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"}, {"name":
+        "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks": "", "id":
+        304254, "resource_url": "https://api.discogs.com/artists/304254"}], "duration":
+        ""}, {"position": "A2", "type_": "track", "title": "Hounds Of Love", "extraartists":
+        [{"name": "Jonathan Williams (4)", "anv": "Johnathan Williams", "join": "",
+        "role": "Cello", "tracks": "", "id": 335904, "resource_url": "https://api.discogs.com/artists/335904"},
+        {"name": "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"}],
+        "duration": ""}, {"position": "A3", "type_": "track", "title": "The Big Sky",
+        "extraartists": [{"name": "Youth", "anv": "", "join": "", "role": "Bass",
+        "tracks": "", "id": 2656, "resource_url": "https://api.discogs.com/artists/2656"},
+        {"name": "Paddy Bush", "anv": "", "join": "", "role": "Didgeridoo [Dijeridu]",
+        "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"},
+        {"name": "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Charlie Morgan", "anv": "Charlie", "join": "", "role": "Handclaps
+        [Handclapping]", "tracks": "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Del Palmer", "anv": "Del", "join": "", "role": "Handclaps [Handclapping]",
+        "tracks": "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"},
+        {"name": "Morris Pert", "anv": "", "join": "", "role": "Percussion", "tracks":
+        "", "id": 281925, "resource_url": "https://api.discogs.com/artists/281925"}],
+        "duration": ""}, {"position": "A4", "type_": "track", "title": "Mother Stands
+        For Comfort", "extraartists": [{"name": "Eberhard Weber", "anv": "", "join":
+        "", "role": "Bass", "tracks": "", "id": 169989, "resource_url": "https://api.discogs.com/artists/169989"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"}],
+        "duration": ""}, {"position": "A5", "type_": "track", "title": "Cloudbusting",
+        "extraartists": [{"name": "Dave Lawson", "anv": "", "join": "", "role": "Arranged
+        By [Arranged For Strings By]", "tracks": "", "id": 468457, "resource_url":
+        "https://api.discogs.com/artists/468457"}, {"name": "Brian Bath", "anv": "",
+        "join": "", "role": "Backing Vocals", "tracks": "", "id": 281921, "resource_url":
+        "https://api.discogs.com/artists/281921"}, {"name": "Del Palmer", "anv": "",
+        "join": "", "role": "Backing Vocals", "tracks": "", "id": 205697, "resource_url":
+        "https://api.discogs.com/artists/205697"}, {"name": "John Carder Bush", "anv":
+        "", "join": "", "role": "Backing Vocals", "tracks": "", "id": 281917, "resource_url":
+        "https://api.discogs.com/artists/281917"}, {"name": "Paddy Bush", "anv": "",
+        "join": "", "role": "Backing Vocals", "tracks": "", "id": 281922, "resource_url":
+        "https://api.discogs.com/artists/281922"}, {"name": "Charlie Morgan", "anv":
+        "", "join": "", "role": "Drums", "tracks": "", "id": 249350, "resource_url":
+        "https://api.discogs.com/artists/249350"}, {"name": "Stuart Elliott", "anv":
+        "", "join": "", "role": "Drums", "tracks": "", "id": 304254, "resource_url":
+        "https://api.discogs.com/artists/304254"}, {"name": "The Medicci Sextet",
+        "anv": "", "join": "", "role": "Strings", "tracks": "", "id": 281919, "resource_url":
+        "https://api.discogs.com/artists/281919"}], "duration": ""}, {"position":
+        "", "type_": "heading", "title": "The Ninth Wave", "duration": ""}, {"position":
+        "B1", "type_": "track", "title": "And Dream Of Sheep", "extraartists": [{"name":
+        "Donal Lunny", "anv": "", "join": "", "role": "Bouzouki", "tracks": "", "id":
+        255429, "resource_url": "https://api.discogs.com/artists/255429"}, {"name":
+        "John Sheahan", "anv": "", "join": "", "role": "Whistle [Whistles]", "tracks":
+        "", "id": 281918, "resource_url": "https://api.discogs.com/artists/281918"}],
+        "duration": ""}, {"position": "B2", "type_": "track", "title": "Under Ice",
+        "extraartists": [{"name": "Paddy Bush", "anv": "", "join": "", "role": "Harmony
+        Vocals [Harmonic Vocals]", "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"}],
+        "duration": ""}, {"position": "B3", "type_": "track", "title": "Waking The
+        Witch", "extraartists": [{"name": "Charlie Morgan", "anv": "", "join": "",
+        "role": "Drums", "tracks": "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Kevin McAlea", "anv": "", "join": "", "role": "Sequenced By [Synthesiser
+        Sequences]", "tracks": "", "id": 281920, "resource_url": "https://api.discogs.com/artists/281920"},
+        {"name": "Del Palmer", "anv": "", "join": "", "role": "Synthesizer [Fairlight
+        Bass]", "tracks": "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"}],
+        "duration": ""}, {"position": "B4", "type_": "track", "title": "Watching You
+        Without Me", "extraartists": [{"name": "Danny Thompson", "anv": "", "join":
+        "", "role": "Double Bass", "tracks": "", "id": 65787, "resource_url": "https://api.discogs.com/artists/65787"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"}],
+        "duration": ""}, {"position": "B5", "type_": "track", "title": "Jig Of Life",
+        "extraartists": [{"name": "Donal Lunny", "anv": "", "join": "", "role": "Bouzouki,
+        Bodhr\u00e1n", "tracks": "", "id": 255429, "resource_url": "https://api.discogs.com/artists/255429"},
+        {"name": "Paddy Bush", "anv": "", "join": "", "role": "Didgeridoo [Dijeridu]",
+        "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"},
+        {"name": "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Stuart Elliott", "anv": "Stuart Elliot", "join": "", "role": "Drums",
+        "tracks": "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"},
+        {"name": "John Sheahan", "anv": "", "join": "", "role": "Fiddle [Fiddles],
+        Whistle [Whistles]", "tracks": "", "id": 281918, "resource_url": "https://api.discogs.com/artists/281918"},
+        {"name": "John Carder Bush", "anv": "", "join": "", "role": "Narrator [Narration
+        By]", "tracks": "", "id": 281917, "resource_url": "https://api.discogs.com/artists/281917"},
+        {"name": "Liam O''Flynn", "anv": "", "join": "", "role": "Uilleann Pipes",
+        "tracks": "", "id": 255447, "resource_url": "https://api.discogs.com/artists/255447"},
+        {"name": "John Carder Bush", "anv": "", "join": "", "role": "Vocals", "tracks":
+        "", "id": 281917, "resource_url": "https://api.discogs.com/artists/281917"}],
+        "duration": ""}, {"position": "B6", "type_": "track", "title": "Hello Earth",
+        "extraartists": [{"name": "Michael Berkeley", "anv": "", "join": "", "role":
+        "Arranged By [Arranged For Voices By]", "tracks": "", "id": 683293, "resource_url":
+        "https://api.discogs.com/artists/683293"}, {"name": "Eberhard Weber", "anv":
+        "", "join": "", "role": "Bass", "tracks": "", "id": 169989, "resource_url":
+        "https://api.discogs.com/artists/169989"}, {"name": "Donal Lunny", "anv":
+        "", "join": "", "role": "Bouzouki", "tracks": "", "id": 255429, "resource_url":
+        "https://api.discogs.com/artists/255429"}, {"name": "The Richard Hickox Singers",
+        "anv": "", "join": "", "role": "Choir", "tracks": "", "id": 281926, "resource_url":
+        "https://api.discogs.com/artists/281926"}, {"name": "Richard Hickox", "anv":
+        "", "join": "", "role": "Directed By [Choir Directed By]", "tracks": "", "id":
+        683292, "resource_url": "https://api.discogs.com/artists/683292"}, {"name":
+        "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks": "", "id":
+        304254, "resource_url": "https://api.discogs.com/artists/304254"}, {"name":
+        "Brian Bath", "anv": "", "join": "", "role": "Guitar", "tracks": "", "id":
+        281921, "resource_url": "https://api.discogs.com/artists/281921"}, {"name":
+        "Liam O''Flynn", "anv": "", "join": "", "role": "Uilleann Pipes", "tracks":
+        "", "id": 255447, "resource_url": "https://api.discogs.com/artists/255447"}],
+        "duration": ""}, {"position": "B7", "type_": "track", "title": "The Morning
+        Fog", "extraartists": [{"name": "Del Palmer", "anv": "", "join": "", "role":
+        "Bass", "tracks": "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"},
+        {"name": "John Williams (7)", "anv": "", "join": "", "role": "Guitar", "tracks":
+        "", "id": 337094, "resource_url": "https://api.discogs.com/artists/337094"},
+        {"name": "Kevin McAlea", "anv": "", "join": "", "role": "Synthesizer", "tracks":
+        "", "id": 281920, "resource_url": "https://api.discogs.com/artists/281920"},
+        {"name": "Paddy Bush", "anv": "", "join": "", "role": "Violin [Violins], Fujara
+        [Fujare]", "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"}],
+        "duration": ""}], "extraartists": [{"name": "Bill Whelan", "anv": "", "join":
+        "", "role": "Arranged By [Irish Arrangements], Fujara", "tracks": "", "id":
+        254923, "resource_url": "https://api.discogs.com/artists/254923"}, {"name":
+        "Michael Kamen", "anv": "Michael Kaman", "join": "", "role": "Arranged By
+        [Orchestral]", "tracks": "", "id": 106802, "resource_url": "https://api.discogs.com/artists/106802"},
+        {"name": "Bill Smith Studio", "anv": "", "join": "", "role": "Design", "tracks":
+        "", "id": 818902, "resource_url": "https://api.discogs.com/artists/818902"},
+        {"name": "Bill Somerville-Large", "anv": "", "join": "", "role": "Engineer",
+        "tracks": "", "id": 1757762, "resource_url": "https://api.discogs.com/artists/1757762"},
+        {"name": "Brian Tench", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 77834, "resource_url": "https://api.discogs.com/artists/77834"},
+        {"name": "Del Palmer", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"},
+        {"name": "Haydn Bendall", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 272862, "resource_url": "https://api.discogs.com/artists/272862"},
+        {"name": "James Guthrie", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 171450, "resource_url": "https://api.discogs.com/artists/171450"},
+        {"name": "Nigel Walker", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 24860, "resource_url": "https://api.discogs.com/artists/24860"},
+        {"name": "Paul Hardiman", "anv": "", "join": "", "role": "Engineer", "tracks":
+        "", "id": 108898, "resource_url": "https://api.discogs.com/artists/108898"},
+        {"name": "Pearse Dunne", "anv": "", "join": "", "role": "Engineer [Assistant]",
+        "tracks": "", "id": 414377, "resource_url": "https://api.discogs.com/artists/414377"},
+        {"name": "Alan Murphy", "anv": "", "join": "", "role": "Guitar", "tracks":
+        "A1, A3, B3", "id": 281923, "resource_url": "https://api.discogs.com/artists/281923"},
+        {"name": "Ian Cooper", "anv": "", "join": "", "role": "Lacquer Cut By [Cut
+        By]", "tracks": "", "id": 264258, "resource_url": "https://api.discogs.com/artists/264258"},
+        {"name": "Brian Tench", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "A1, A3, A5, B1 to B7", "id": 77834, "resource_url": "https://api.discogs.com/artists/77834"},
+        {"name": "Julian Mendelsohn", "anv": "", "join": "", "role": "Mixed By", "tracks":
+        "A2, A4", "id": 34066, "resource_url": "https://api.discogs.com/artists/34066"},
+        {"name": "Jim Jones", "anv": "", "join": "", "role": "Other [Studio Maintenance]",
+        "tracks": "", "id": 92800, "resource_url": "https://api.discogs.com/artists/92800"},
+        {"name": "John Carder Bush", "anv": "", "join": "", "role": "Photography By",
+        "tracks": "", "id": 281917, "resource_url": "https://api.discogs.com/artists/281917"},
+        {"name": "Kate Bush", "anv": "", "join": "", "role": "Producer, Piano, Synthesizer
+        [Fairlight], Voice, Written-By", "tracks": "", "id": 85929, "resource_url":
+        "https://api.discogs.com/artists/85929"}, {"name": "Del Palmer", "anv": "",
+        "join": "", "role": "Programmed By [All Linn Programming]", "tracks": "",
+        "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"}],
+        "images": [{"type": "primary", "uri": "https://img.discogs.com/hhTPrZI9OWGpxXwceG6W1mKUnd0=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/hhTPrZI9OWGpxXwceG6W1mKUnd0=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
+        "uri150": "https://img.discogs.com/2OD9C3Mh-8jz6tzALCjdoLERAos=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
+        "width": 600, "height": 597}, {"type": "secondary", "uri": "https://img.discogs.com/sPwOIOECWDKQGrHNAXcLElMXdAw=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590944-5665.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/sPwOIOECWDKQGrHNAXcLElMXdAw=/fit-in/600x596/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590944-5665.jpeg.jpg",
+        "uri150": "https://img.discogs.com/nuIT1IEVJXmTAF5Fybw9XL2OxXA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590944-5665.jpeg.jpg",
+        "width": 600, "height": 596}, {"type": "secondary", "uri": "https://img.discogs.com/EU7HyYngUnUSOqbvyC7zNvvH0r8=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590546-6996.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/EU7HyYngUnUSOqbvyC7zNvvH0r8=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590546-6996.jpeg.jpg",
+        "uri150": "https://img.discogs.com/SaEjqm8tSBno_Wzc9sVEia2NQpE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590546-6996.jpeg.jpg",
+        "width": 600, "height": 599}, {"type": "secondary", "uri": "https://img.discogs.com/60BSwiUeOGvo5SyCu2Zcvoxtpig=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590507-7260.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/60BSwiUeOGvo5SyCu2Zcvoxtpig=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590507-7260.jpeg.jpg",
+        "uri150": "https://img.discogs.com/CpuEIVXbMrgRCytl_qR-TL9pVQQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590507-7260.jpeg.jpg",
+        "width": 600, "height": 598}, {"type": "secondary", "uri": "https://img.discogs.com/HHE6oYRvoy0u5i8t9Q6-x2uq4Zg=/fit-in/600x605/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590947-1152.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/HHE6oYRvoy0u5i8t9Q6-x2uq4Zg=/fit-in/600x605/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590947-1152.jpeg.jpg",
+        "uri150": "https://img.discogs.com/sC6mK3_pkIca7WqLSNMxyIaxIsw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590947-1152.jpeg.jpg",
+        "width": 600, "height": 605}, {"type": "secondary", "uri": "https://img.discogs.com/97CGehq8dmQffQTANKhuh2qV3Nc=/fit-in/600x612/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590946-6484.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/97CGehq8dmQffQTANKhuh2qV3Nc=/fit-in/600x612/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590946-6484.jpeg.jpg",
+        "uri150": "https://img.discogs.com/vZH9RQlEivTXL6VW2YiRFN0Z80k=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590946-6484.jpeg.jpg",
+        "width": 600, "height": 612}, {"type": "secondary", "uri": "https://img.discogs.com/QjBKZTlIN2EgpS1g8K497x-uiE0=/fit-in/600x182/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1558188449-2764.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/QjBKZTlIN2EgpS1g8K497x-uiE0=/fit-in/600x182/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1558188449-2764.jpeg.jpg",
+        "uri150": "https://img.discogs.com/osK3q5wuzg9PULYNjXdeh8R3eYo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1558188449-2764.jpeg.jpg",
+        "width": 600, "height": 182}, {"type": "secondary", "uri": "https://img.discogs.com/6u6j-I19p0i2tsDIHdG6jwjHiY8=/fit-in/600x171/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1558188453-4957.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/6u6j-I19p0i2tsDIHdG6jwjHiY8=/fit-in/600x171/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1558188453-4957.jpeg.jpg",
+        "uri150": "https://img.discogs.com/vcjo1zxos9ZPpg9x6lE2iEMGKnM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1558188453-4957.jpeg.jpg",
+        "width": 600, "height": 171}, {"type": "secondary", "uri": "https://img.discogs.com/qU6GDN6NRP24znBn-xp0fRffuSU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1565970892-6468.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/qU6GDN6NRP24znBn-xp0fRffuSU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1565970892-6468.jpeg.jpg",
+        "uri150": "https://img.discogs.com/EBswJfm3qmXLibZ0xqqurszLgIM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1565970892-6468.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/mC4xpODP-b_mVHlj2fUu4SgmJH0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1565970893-1043.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/mC4xpODP-b_mVHlj2fUu4SgmJH0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1565970893-1043.jpeg.jpg",
+        "uri150": "https://img.discogs.com/tWrgQGpOpddno5R3-0aPO44-SHY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1565970893-1043.jpeg.jpg",
+        "width": 600, "height": 600}], "thumb": "https://img.discogs.com/2OD9C3Mh-8jz6tzALCjdoLERAos=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
+        "estimated_weight": 230}'
+  recorded_at: Sun, 18 Apr 2021 11:34:12 GMT
+recorded_with: VCR 6.0.0

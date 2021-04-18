@@ -3,10 +3,6 @@ module Discogs
     class Info < Discogs::Group::Base
       private
 
-      def data
-        { group: group_data }
-      end
-
       def group_data
         group_base_data.merge(group_extra_data)
       end
@@ -25,6 +21,7 @@ module Discogs
           image: image_data(main_image, 'album'),
           released: response_data['year'].to_s,
           description: description_truncated,
+          tags: tags.first(5),
           tracks: tracks_data
         }
       end

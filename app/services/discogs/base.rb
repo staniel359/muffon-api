@@ -109,6 +109,12 @@ module Discogs
       ]
     end
 
+    def tags
+      response_data.values_at(
+        'genres', 'styles'
+      ).flatten.compact.uniq
+    end
+
     def tracks_data
       Discogs::Utils::Tracks.call(response_data: response_data)
     end

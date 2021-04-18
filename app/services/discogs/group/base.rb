@@ -14,6 +14,10 @@ module Discogs
       def group_link
         "#{base_link}/masters/#{@args.group_id}"
       end
+
+      def data
+        { group: group_data }
+      end
     end
   end
 end

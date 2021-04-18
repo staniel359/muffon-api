@@ -22,7 +22,7 @@ module Discogs
           released: released,
           description: description_truncated,
           labels: labels,
-          tags: tags,
+          tags: tags.first(5),
           tracks: tracks_data
         }
       end
@@ -33,12 +33,6 @@ module Discogs
 
       def labels
         response_data['labels'].map { |l| l['name'] }.uniq
-      end
-
-      def tags
-        response_data.values_at(
-          'genres', 'styles'
-        ).flatten.compact.uniq
       end
     end
   end

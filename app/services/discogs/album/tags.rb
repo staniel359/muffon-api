@@ -1,13 +1,13 @@
 module Discogs
-  module Group
-    class Description < Discogs::Group::Base
+  module Album
+    class Tags < Discogs::Album::Base
       private
 
-      def group_data
+      def album_data
         {
           title: title,
           artist: artist_data(response_data),
-          description: description
+          tags: tags
         }
       end
     end

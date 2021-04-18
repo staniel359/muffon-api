@@ -6,6 +6,8 @@ module API
 
         def description; end
 
+        def tags; end
+
         def albums; end
       end
     end

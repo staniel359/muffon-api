@@ -7,12 +7,12 @@ module Discogs
         [@args.album_id]
       end
 
-      def data
-        { album: album_data }
-      end
-
       def link
         "#{base_link}/releases/#{@args.album_id}"
+      end
+
+      def data
+        { album: album_data }
       end
     end
   end

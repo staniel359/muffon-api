@@ -5,8 +5,8 @@ module Discogs
 
       private
 
-      def data
-        { group: paginated_data }
+      def group_data
+        paginated_data
       end
 
       def link

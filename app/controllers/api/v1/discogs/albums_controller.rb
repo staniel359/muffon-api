@@ -5,6 +5,8 @@ module API
         def info; end
 
         def description; end
+
+        def tags; end
       end
     end
   end

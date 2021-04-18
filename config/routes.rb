@@ -160,6 +160,7 @@ Rails.application.routes.draw do
           scope ':group_id' do
             get '', action: :info
             get 'description'
+            get 'tags'
             get 'albums'
           end
         end
@@ -168,6 +169,7 @@ Rails.application.routes.draw do
           scope ':album_id' do
             get '', action: :info
             get 'description'
+            get 'tags'
           end
         end
       end

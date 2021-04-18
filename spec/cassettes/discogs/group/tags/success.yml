@@ -1,0 +1,213 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/masters/5319?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 18 Apr 2021 11:44:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '58'
+      X-Discogs-Ratelimit-Used:
+      - '2'
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Expose-Headers:
+      - Location
+      Content-Language:
+      - en
+      X-Discogs-Media-Type:
+      - discogs.v2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - public, must-revalidate
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 5319, "main_release": 2897713, "most_recent_release": 15771473,
+        "resource_url": "https://api.discogs.com/masters/5319", "uri": "https://www.discogs.com/Madonna-Madonna/master/5319",
+        "versions_url": "https://api.discogs.com/masters/5319/versions", "main_release_url":
+        "https://api.discogs.com/releases/2897713", "most_recent_release_url": "https://api.discogs.com/releases/15771473",
+        "num_for_sale": 1781, "lowest_price": 1.07, "images": [{"type": "primary",
+        "uri": "https://img.discogs.com/rixdaC6cvsrM9IAsKtADIq2bN3c=/fit-in/589x589/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246651.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/rixdaC6cvsrM9IAsKtADIq2bN3c=/fit-in/589x589/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246651.jpeg.jpg",
+        "uri150": "https://img.discogs.com/_zZ0cXp9rtV_RI4nxTGv7ofKSg0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1306246651.jpeg.jpg",
+        "width": 589, "height": 589}, {"type": "secondary", "uri": "https://img.discogs.com/CCUQB0RQyI2AVZOTlLgvrm_99W4=/fit-in/589x589/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246668.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/CCUQB0RQyI2AVZOTlLgvrm_99W4=/fit-in/589x589/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246668.jpeg.jpg",
+        "uri150": "https://img.discogs.com/wTBT-sDECE8WWll9obRb0JRw39k=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1306246668.jpeg.jpg",
+        "width": 589, "height": 589}, {"type": "secondary", "uri": "https://img.discogs.com/tYK6XiO03GOaGDB9ZXxTqSPWQzQ=/fit-in/538x540/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246708.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/tYK6XiO03GOaGDB9ZXxTqSPWQzQ=/fit-in/538x540/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246708.jpeg.jpg",
+        "uri150": "https://img.discogs.com/rMG-LWyCUQPKorFGIcyhL5Fe9O8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1306246708.jpeg.jpg",
+        "width": 538, "height": 540}, {"type": "secondary", "uri": "https://img.discogs.com/L9KnIFMo25QR3FQZHtigwEOTEhg=/fit-in/550x545/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246734.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/L9KnIFMo25QR3FQZHtigwEOTEhg=/fit-in/550x545/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1306246734.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Fjsna9YbB2lpnomGgduSMwrNCtY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1306246734.jpeg.jpg",
+        "width": 550, "height": 545}, {"type": "secondary", "uri": "https://img.discogs.com/8fwNNXV0cpSDoJNR-yoZ_o5cNlo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1418144648-5250.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/8fwNNXV0cpSDoJNR-yoZ_o5cNlo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1418144648-5250.jpeg.jpg",
+        "uri150": "https://img.discogs.com/5VHHBG5rep04QRj0lUr1Z5U1XsQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1418144648-5250.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/26-VzWFXgyMtuejth4iDVvCwpPM=/fit-in/600x581/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1475353606-3172.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/26-VzWFXgyMtuejth4iDVvCwpPM=/fit-in/600x581/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1475353606-3172.jpeg.jpg",
+        "uri150": "https://img.discogs.com/M0cDn9TEk-KWDHXv-AUAMZ9n31c=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1475353606-3172.jpeg.jpg",
+        "width": 600, "height": 581}, {"type": "secondary", "uri": "https://img.discogs.com/eW8iJ-fsbWCrw0Yp0e-ugS7heiQ=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967114-1725.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/eW8iJ-fsbWCrw0Yp0e-ugS7heiQ=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967114-1725.jpeg.jpg",
+        "uri150": "https://img.discogs.com/LhdVQnkCjLiKU_6QsVDO_YTF6cA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1482967114-1725.jpeg.jpg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://img.discogs.com/AOkwehsTSXLijvGLr4SRuFD34o8=/fit-in/600x593/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967119-9409.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/AOkwehsTSXLijvGLr4SRuFD34o8=/fit-in/600x593/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967119-9409.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Ez1Bm36SdyKivjcM51u781dpAlI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1482967119-9409.jpeg.jpg",
+        "width": 600, "height": 593}, {"type": "secondary", "uri": "https://img.discogs.com/KjPgtf2YzwhiQMyRuZuuoP16ILc=/fit-in/600x498/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967099-8869.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/KjPgtf2YzwhiQMyRuZuuoP16ILc=/fit-in/600x498/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967099-8869.jpeg.jpg",
+        "uri150": "https://img.discogs.com/vWbyigBwIuwKzqOJOAt9IxWY6Sw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1482967099-8869.jpeg.jpg",
+        "width": 600, "height": 498}, {"type": "secondary", "uri": "https://img.discogs.com/xBJGXZHDHHf5PPb_UnrCovhqtME=/fit-in/600x106/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967160-8194.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/xBJGXZHDHHf5PPb_UnrCovhqtME=/fit-in/600x106/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967160-8194.jpeg.jpg",
+        "uri150": "https://img.discogs.com/pjUrUjPjr0aKSSBmenB6t0pqXnY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1482967160-8194.jpeg.jpg",
+        "width": 600, "height": 106}, {"type": "secondary", "uri": "https://img.discogs.com/Lz4xxP0HcIR7CFxbnUrJq3E5q4s=/fit-in/600x168/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967160-1098.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/Lz4xxP0HcIR7CFxbnUrJq3E5q4s=/fit-in/600x168/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967160-1098.jpeg.jpg",
+        "uri150": "https://img.discogs.com/j8y89eo8u0VqcOLW9PtSP_P3T64=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1482967160-1098.jpeg.jpg",
+        "width": 600, "height": 168}, {"type": "secondary", "uri": "https://img.discogs.com/gOe2BtwNmqn9a2pMOJrDisQ6QFs=/fit-in/600x73/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967160-7671.jpeg.jpg",
+        "resource_url": "https://img.discogs.com/gOe2BtwNmqn9a2pMOJrDisQ6QFs=/fit-in/600x73/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2897713-1482967160-7671.jpeg.jpg",
+        "uri150": "https://img.discogs.com/Z_9GBL7HsFDVuW9nE_AWb8Kw31U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2897713-1482967160-7671.jpeg.jpg",
+        "width": 600, "height": 73}], "genres": ["Electronic", "Pop"], "styles": ["Synth-pop"],
+        "year": 1983, "tracklist": [{"position": "A1", "type_": "track", "title":
+        "Lucky Star", "extraartists": [{"name": "Jay Mark", "anv": "", "join": "",
+        "role": "Engineer [Remix]", "tracks": "", "id": 67955, "resource_url": "https://api.discogs.com/artists/67955"},
+        {"name": "Paul Pesco", "anv": "", "join": "", "role": "Guitar", "tracks":
+        "", "id": 126134, "resource_url": "https://api.discogs.com/artists/126134"},
+        {"name": "John \"Jellybean\" Benitez", "anv": "", "join": "", "role": "Remix",
+        "tracks": "", "id": 214625, "resource_url": "https://api.discogs.com/artists/214625"},
+        {"name": "Madonna", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"}],
+        "duration": "5:30"}, {"position": "A2", "type_": "track", "title": "Borderline",
+        "extraartists": [{"name": "Anthony Jackson", "anv": "", "join": "", "role":
+        "Electric Bass", "tracks": "", "id": 135848, "resource_url": "https://api.discogs.com/artists/135848"},
+        {"name": "Reggie Lucas", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 62811, "resource_url": "https://api.discogs.com/artists/62811"}],
+        "duration": "5:18"}, {"position": "A3", "type_": "track", "title": "Burning
+        Up", "extraartists": [{"name": "Jay Mark", "anv": "", "join": "", "role":
+        "Engineer [Remix]", "tracks": "", "id": 67955, "resource_url": "https://api.discogs.com/artists/67955"},
+        {"name": "Paul Pesco", "anv": "", "join": "", "role": "Guitar", "tracks":
+        "", "id": 126134, "resource_url": "https://api.discogs.com/artists/126134"},
+        {"name": "John \"Jellybean\" Benitez", "anv": "", "join": "", "role": "Remix",
+        "tracks": "", "id": 214625, "resource_url": "https://api.discogs.com/artists/214625"},
+        {"name": "Madonna", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"}],
+        "duration": "4:48"}, {"position": "A4", "type_": "track", "title": "I Know
+        It", "extraartists": [{"name": "Madonna", "anv": "", "join": "", "role": "Written-By",
+        "tracks": "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"}],
+        "duration": "3:45"}, {"position": "B1", "type_": "track", "title": "Holiday",
+        "extraartists": [{"name": "Fred Zarr", "anv": "", "join": "", "role": "Arranged
+        By [Co-arranged], Drums, Electric Piano [Fender Rhodes], Piano [Acoustic],
+        Synthesizer [Moog Bass, Ob-x]", "tracks": "", "id": 115952, "resource_url":
+        "https://api.discogs.com/artists/115952"}, {"name": "Tina B", "anv": "Tina
+        B.", "join": "", "role": "Backing Vocals", "tracks": "", "id": 39293, "resource_url":
+        "https://api.discogs.com/artists/39293"}, {"name": "Raymond Hudson", "anv":
+        "", "join": "", "role": "Bass", "tracks": "", "id": 344942, "resource_url":
+        "https://api.discogs.com/artists/344942"}, {"name": "Madonna", "anv": "",
+        "join": "", "role": "Cowbell", "tracks": "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"},
+        {"name": "Jay Mark", "anv": "", "join": "", "role": "Engineer [Mixing]", "tracks":
+        "", "id": 67955, "resource_url": "https://api.discogs.com/artists/67955"},
+        {"name": "Michael Hutchinson", "anv": "", "join": "", "role": "Engineer [Recording]",
+        "tracks": "", "id": 434825, "resource_url": "https://api.discogs.com/artists/434825"},
+        {"name": "Bashiri Johnson", "anv": "", "join": "", "role": "Percussion", "tracks":
+        "", "id": 144589, "resource_url": "https://api.discogs.com/artists/144589"},
+        {"name": "John \"Jellybean\" Benitez", "anv": "", "join": "", "role": "Producer",
+        "tracks": "", "id": 214625, "resource_url": "https://api.discogs.com/artists/214625"},
+        {"name": "Lisa Stevens", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 135261, "resource_url": "https://api.discogs.com/artists/135261"},
+        {"name": "Curtis Hudson", "anv": "", "join": "", "role": "Written-By, Arranged
+        By, Guitar", "tracks": "", "id": 28101, "resource_url": "https://api.discogs.com/artists/28101"}],
+        "duration": "6:08"}, {"position": "B2", "type_": "track", "title": "Think
+        Of Me", "extraartists": [{"name": "Madonna", "anv": "", "join": "", "role":
+        "Written-By", "tracks": "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"}],
+        "duration": "4:53"}, {"position": "B3", "type_": "track", "title": "Physical
+        Attraction", "extraartists": [{"name": "Jay Mark", "anv": "", "join": "",
+        "role": "Engineer [Remix]", "tracks": "", "id": 67955, "resource_url": "https://api.discogs.com/artists/67955"},
+        {"name": "John \"Jellybean\" Benitez", "anv": "", "join": "", "role": "Remix",
+        "tracks": "", "id": 214625, "resource_url": "https://api.discogs.com/artists/214625"},
+        {"name": "Reggie Lucas", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 62811, "resource_url": "https://api.discogs.com/artists/62811"}],
+        "duration": "6:35"}, {"position": "B4", "type_": "track", "title": "Everybody",
+        "extraartists": [{"name": "Butch Jones", "anv": "", "join": "", "role": "Engineer",
+        "tracks": "", "id": 160038, "resource_url": "https://api.discogs.com/artists/160038"},
+        {"name": "Mark Kamins", "anv": "", "join": "", "role": "Producer", "tracks":
+        "", "id": 21152, "resource_url": "https://api.discogs.com/artists/21152"},
+        {"name": "Madonna", "anv": "", "join": "", "role": "Written-By", "tracks":
+        "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"}],
+        "duration": "4:57"}], "artists": [{"name": "Madonna", "anv": "", "join": "",
+        "role": "", "tracks": "", "id": 8760, "resource_url": "https://api.discogs.com/artists/8760"}],
+        "title": "Madonna", "notes": "Eponymous debut album, released on 27 July 1983.
+        Reissued in 1985 as \"The First Album\".\r\n\r\nThe original version of the
+        album included a 4:48 version of \"Burning Up\" with a synth-pop arrangement.
+        On many subsequent pressings, however, a 3:41 version driven by electric guitars
+        takes its place.\r\n\r\nSingles:\r\n[url=https://www.discogs.com/Madonna-Everybody-Todo-El-Mundo/master/5423]Everybody[/url]
+        \u25aa [url=https://www.discogs.com/Madonna-Burning-Up-Ardiendo/master/5519]Burning
+        Up[/url] \u25aa [url=https://www.discogs.com/Madonna-Holiday/master/5592]Holiday[/url]
+        \u25aa [url=https://www.discogs.com/Madonna-Lucky-Star/master/5744]Lucky Star[/url]
+        \u25aa [url=https://www.discogs.com/Madonna-Borderline/master/5473]Borderline[/url]\r\n\r\nSpecial
+        releases / Double A-sides / Repackagings:\r\n[url=https://www.discogs.com/Madonna-Holiday-Everybody/master/295403]Holiday
+        / Everybody[/url] \u25aa [url=https://www.discogs.com/Madonna-Burning-Up-Ardiendo/master/5519]Burning
+        Up / Physical Attraction[/url] \u25aa [url=https://www.discogs.com/Madonna-Holiday-Borderline/master/349379]Holiday
+        / Borderline[/url] \u25aa [url=https://www.discogs.com/Madonna-Burning-Up-Holiday/master/1105423]Burning
+        Up / Holiday[/url] \u25aa [url=https://www.discogs.com/Madonna-Physical-Attraction/release/2365795]Physical
+        Attraction[/url]", "data_quality": "Correct", "videos": [{"uri": "https://www.youtube.com/watch?v=cOqr_x_9fMc",
+        "title": "Madonna - Everybody [Official Music Video]", "description": "You''re
+        watching the official music video for Everybody from Madonna''s eponymous
+        debut album released on Sire Records in 1983. Buy/Stream the self-titled album
+        here: https://Madonna.lnk.to/Madonna \nListen to Madonna\u2019s latest release
+        here: https://Madon", "duration": 356, "embed": true}, {"uri": "https://www.youtube.com/watch?v=pufec0Hps00",
+        "title": "Madonna - Burning Up [Official Music Video]", "description": "You''re
+        watching the official music video for Burning Up from Madonna''s eponymous
+        debut album released on Sire Records in 1983. Buy/Stream the self-titled album
+        here: https://Madonna.lnk.to/Madonna \nListen to Madonna\u2019s latest release
+        here: https://Mado", "duration": 221, "embed": true}, {"uri": "https://www.youtube.com/watch?v=5Rswx2Z7SDw",
+        "title": "Madonna - Holiday [Official Music Video]", "description": "Copyright
+        Sire Records\u00a9 1983\r\n\r\nThe rarely seen official music video featuring
+        her brother Christopher and friend Erica Bell who is credited for designing
+        Madonna''s look.\r\n\r\nFAIR USE This video, along with the audio, have been
+        uploaded for entertainment ", "duration": 236, "embed": true}, {"uri": "https://www.youtube.com/watch?v=ThHz9wlBeLU",
+        "title": "Madonna - Lucky Star [Official Music Video]", "description": "You''re
+        watching the official music video for Lucky Star from Madonna''s eponymous
+        debut album released on Sire Records in 1983. Buy/Stream the self-titled album
+        here: https://Madonna.lnk.to/Madonna \nListen to Madonna\u2019s latest release
+        here: https://Mado", "duration": 243, "embed": true}, {"uri": "https://www.youtube.com/watch?v=rSaC-YbSDpo",
+        "title": "Madonna - Borderline [Official Music Video]", "description": "You''re
+        watching the official music video for Borderline from Madonna''s eponymous
+        debut album released on Sire Records in 1983. Buy/Stream the self-titled album
+        here: https://Madonna.lnk.to/Madonna \nListen to Madonna\u2019s latest release
+        here: https://Mado", "duration": 238, "embed": true}]}'
+  recorded_at: Sun, 18 Apr 2021 11:44:11 GMT
+recorded_with: VCR 6.0.0
