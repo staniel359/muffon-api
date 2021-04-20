@@ -43,13 +43,29 @@ module Bandcamp
         item[:site_name]
       end
 
-      def id_data(link)
-        artist, album_type, title = link.scan(link_regexp).flatten
+      def title(item)
+        item[:title].split(', by ')[0]
+      end
+
+      def artist_data(item)
+        {
+          name: artist_name(item),
+          bandcamp_name: link_data(item[:link])[:artist]
+        }
+      end
+
+      def bandcamp_artist(item)
+        link_data(item[:link])[:artist]
+      end
+
+      def link_data(link)
+        artist, model, title =
+          link.scan(link_regexp).flatten
 
         {
-          title: title.to_s,
           artist: artist.to_s,
-          album_type: album_type.to_s
+          model: model || 'artist',
+          title: title.to_s
         }
       end
 
@@ -58,12 +74,12 @@ module Bandcamp
           (?:(?:/(album|track))(?:/([\w\-]+))?)?}x
       end
 
-      def title(item)
-        item[:title].split(', by ')[0]
+      def bandcamp_model(item)
+        link_data(item[:link])[:model]
       end
 
-      def artist_data(item)
-        { name: artist_name(item) }
+      def bandcamp_title(item)
+        link_data(item[:link])[:title]
       end
     end
   end

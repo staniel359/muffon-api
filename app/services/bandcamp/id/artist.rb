@@ -17,8 +17,8 @@ module Bandcamp
 
       def data
         {
-          type: model_type,
-          id: model_response_data['id']
+          id: model_response_data['id'],
+          model: model_type
         }
       end
 

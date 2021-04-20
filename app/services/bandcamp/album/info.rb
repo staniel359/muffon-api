@@ -52,7 +52,9 @@ module Bandcamp
         {
           present: audio_link(track).present?,
           id: track['track_id'],
-          artist_id: track['band_id'],
+          artist: {
+            id: track['band_id']
+          },
           source: 'bandcamp'
         }
       end

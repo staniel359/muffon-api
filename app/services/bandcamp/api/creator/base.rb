@@ -27,27 +27,23 @@ module Bandcamp
         def album_data(album)
           {
             title: album['title'],
+            bandcamp_id: album['item_id'],
+            bandcamp_model: album['item_type'],
             artist: album_artist_data(album),
             image: image_data(image(album)),
-            released: time_formatted(album['release_date']),
-            id_data: id_data(album)
+            released: time_formatted(album['release_date'])
           }
         end
 
         def album_artist_data(album)
-          { name: album_artist_name(album) }
+          {
+            name: album_artist_name(album),
+            bandcamp_id: album['band_id']
+          }
         end
 
         def album_artist_name(album)
           album['artist_name'] || response_data['name']
-        end
-
-        def id_data(album)
-          {
-            album_id: album['item_id'],
-            artist_id: album['band_id'],
-            album_type: album['item_type']
-          }
         end
       end
     end
