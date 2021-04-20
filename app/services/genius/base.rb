@@ -6,5 +6,11 @@ module Genius
 
       data
     end
+
+    private
+
+    def no_data?
+      false
+    end
   end
 end

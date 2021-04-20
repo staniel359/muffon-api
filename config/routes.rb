@@ -329,6 +329,7 @@ Rails.application.routes.draw do
 
         namespace :tracks, as: :track do
           scope ':path' do
+            get '', action: :info
             get 'lyrics'
           end
         end

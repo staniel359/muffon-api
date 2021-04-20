@@ -1,13 +1,13 @@
 module Genius
   module Track
-    class Lyrics < Genius::Track::Base
+    class Info < Genius::Track::Base
       private
 
       def track_data
         {
           title: track_info('title'),
           artist: artist_data,
-          lyrics: lyrics
+          lyrics: lyrics.truncate_words(50)
         }
       end
     end
