@@ -5,7 +5,7 @@ module Genius
 
       def track_data
         {
-          title: track_info('title'),
+          title: title,
           artist: artist_data,
           lyrics: lyrics.truncate_words(50)
         }

@@ -7,16 +7,6 @@ module Genius
         [@args.path]
       end
 
-      def data
-        return try_again if lyrics_raw_data.blank?
-
-        { track: track_data }
-      end
-
-      def lyrics_raw_data
-        response_data.css('.lyrics')[0]
-      end
-
       def response_data
         @response_data ||= Nokogiri::HTML.parse(response)
       end
@@ -29,30 +19,51 @@ module Genius
         "https://genius.com/#{@args.path}"
       end
 
-      def try_again
-        self.class.call(@args)
+      def data
+        { track: track_data }
       end
 
-      def track_data
-        {
-          title: track_info('title'),
-          artist: artist_data,
-          lyrics: lyrics
-        }
-      end
-
-      def lyrics
-        lyrics_raw_data.css('p').text
+      def title
+        track_info('title') || title_alternative
       end
 
       def track_info(class_name)
         response_data.css(
           ".header_with_cover_art-primary_info-#{class_name}"
-        ).text
+        ).text.presence
+      end
+
+      def title_alternative
+        response_data.css('.jQiTNQ').text
       end
 
       def artist_data
-        { name: track_info('primary_artist') }
+        { name: artist_name }
+      end
+
+      def artist_name
+        track_info('primary_artist') ||
+          artist_name_alternative
+      end
+
+      def artist_name_alternative
+        response_data.css('.eTAmkN').text
+      end
+
+      def lyrics
+        lyrics_original || lyrics_alternative
+      end
+
+      def lyrics_original
+        response_data.css('.lyrics p').text.presence
+      end
+
+      def lyrics_alternative
+        response_data.css('.jgQsqn br').each do |br|
+          br.replace("\n")
+        end
+
+        response_data.css('.jgQsqn').text
       end
     end
   end
