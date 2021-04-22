@@ -288,7 +288,9 @@ Rails.application.routes.draw do
       # YouTube
 
       namespace :youtube do
-        get 'search'
+        namespace :search do
+          get 'videos'
+        end
       end
 
       # Odnoklassniki

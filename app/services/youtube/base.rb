@@ -15,10 +15,6 @@ module YouTube
       [@args.query]
     end
 
-    def no_data?
-      results.blank?
-    end
-
     def response_data
       @response_data ||= JSON.parse(response)
     end

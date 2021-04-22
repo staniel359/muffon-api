@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe YouTube::Search do
+RSpec.describe YouTube::Search::Videos do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'youtube/search/success' do
+        VCR.use_cassette 'youtube/search/videos/success' do
           subject.call(query: 'wild nothing chinatown', limit: 5)
         end
       end
 
-      it { expect(output).to eq(Helpers::YouTube.search_data) }
+      it { expect(output).to eq(Helpers::YouTube::Search.videos_data) }
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe YouTube::Search do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'youtube/search/wrong_query' do
+        VCR.use_cassette 'youtube/search/videos/wrong_query' do
           subject.call(query: Helpers::Base::RANDOM_STRING)
         end
       end
