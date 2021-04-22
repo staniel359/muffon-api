@@ -78,9 +78,9 @@ module Muffon
           RestClient::InternalServerError,
           RestClient::ServerBrokeConnection,
           RestClient::ServiceUnavailable,
-          RestClient::RequestFailed,
-          OpenSSL::SSL::SSLError, SocketError,
-          Errno::ENETUNREACH, JSON::ParserError
+          RestClient::RequestFailed, SocketError,
+          Errno::ENETUNREACH, Errno::ECONNREFUSED,
+          OpenSSL::SSL::SSLError, JSON::ParserError
         ]
       end
 
