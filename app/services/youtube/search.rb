@@ -23,17 +23,17 @@ module YouTube
 
     def result_data(result)
       {
-        title: result.dig('snippet', 'title'),
+        title: title(result),
         channel: channel_data(result),
         image: image_data(result),
         published: published(result),
-        description: result.dig('snippet', 'description'),
+        description: description(result),
         video: video_data(result)
       }
     end
 
-    def published(result)
-      time_formatted(result.dig('snippet', 'publishedAt'))
+    def title(result)
+      CGI.unescapeHTML(result.dig('snippet', 'title'))
     end
 
     def channel_data(result)
@@ -53,6 +53,14 @@ module YouTube
 
     def image(result, size)
       result.dig('snippet', 'thumbnails', size, 'url')
+    end
+
+    def published(result)
+      time_formatted(result.dig('snippet', 'publishedAt'))
+    end
+
+    def description(result)
+      CGI.unescapeHTML(result.dig('snippet', 'description'))
     end
 
     def video_data(result)
