@@ -24,7 +24,8 @@ module Genius
       end
 
       def title
-        track_info('title') || title_alternative
+        track_info('title') ||
+          xpath_data('SongHeader__Title').text
       end
 
       def track_info(class_name)
@@ -33,8 +34,10 @@ module Genius
         ).text.presence
       end
 
-      def title_alternative
-        response_data.css('.jQiTNQ').text
+      def xpath_data(class_name)
+        response_data.xpath(
+          "//*[contains(@class, '#{class_name}')]"
+        )
       end
 
       def artist_data
@@ -43,11 +46,7 @@ module Genius
 
       def artist_name
         track_info('primary_artist') ||
-          artist_name_alternative
-      end
-
-      def artist_name_alternative
-        response_data.css('.eTAmkN').text
+          xpath_data('SongHeader__Artist').text
       end
 
       def lyrics
@@ -59,11 +58,11 @@ module Genius
       end
 
       def lyrics_alternative
-        response_data.css('.jgQsqn br').each do |br|
-          br.replace("\n")
-        end
+        nodes = xpath_data('Lyrics__Container')
 
-        response_data.css('.jgQsqn').text
+        nodes.css('br').each { |br| br.replace("\n") }
+
+        nodes.text
       end
     end
   end
