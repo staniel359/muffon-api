@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=20&pageToken&part=snippet&q=wejlhg239gh23&type=video&videoCategoryId=10
+    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=20&part=snippet&q=wejlhg239gh23&type=video
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sun, 24 Jan 2021 17:21:25 GMT
+      - Tue, 27 Apr 2021 20:02:58 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -48,7 +48,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "8lvNtWfQnYutDiALGZ4l9I0jT3g",
+          "etag": "fMycYpE4ktsKS4sNPKWemDv204w",
           "regionCode": "BY",
           "pageInfo": {
             "totalResults": 0,
@@ -56,5 +56,5 @@ http_interactions:
           },
           "items": []
         }
-  recorded_at: Sun, 24 Jan 2021 17:21:25 GMT
+  recorded_at: Tue, 27 Apr 2021 20:02:57 GMT
 recorded_with: VCR 6.0.0

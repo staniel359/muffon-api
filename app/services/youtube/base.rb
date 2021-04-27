@@ -38,9 +38,8 @@ module YouTube
         key: secrets.youtube[:api_key],
         q: @args.query,
         maxResults: limit,
-        pageToken: @args.next_page,
-        videoCategoryId: 10
-      }
+        pageToken: @args.next_page
+      }.compact
     end
   end
 end
