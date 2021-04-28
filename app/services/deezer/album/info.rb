@@ -51,7 +51,7 @@ module Deezer
 
       def audio_data(track)
         {
-          present: track['id'].present?,
+          present: track['readable'],
           id: track['id'],
           source: 'deezer'
         }

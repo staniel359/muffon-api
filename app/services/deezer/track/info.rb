@@ -66,6 +66,8 @@ module Deezer
       end
 
       def audio_link
+        return '' if audio_path.blank?
+
         "#{secrets[:url]}/#{audio_path}"
       end
     end

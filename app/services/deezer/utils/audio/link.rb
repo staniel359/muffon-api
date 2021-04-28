@@ -13,7 +13,7 @@ module Deezer
         def data
           response_data.dig(
             'data', 0, 'media', 0, 'sources', 0, 'url'
-          )
+          ).to_s
         end
 
         def response_data

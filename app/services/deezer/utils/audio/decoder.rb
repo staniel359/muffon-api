@@ -15,7 +15,15 @@ module Deezer
         private
 
         def no_data?
-          @args.track_id.blank? || data.blank?
+          @args.track_id.blank? ||
+            audio_link.blank? ||
+            data.blank?
+        end
+
+        def audio_link
+          @audio_link ||= Deezer::Utils::Audio::Link.call(
+            track_id: @args.track_id
+          )
         end
 
         def data
@@ -36,14 +44,11 @@ module Deezer
           @binary_data ||= RestClient.get(audio_link).body
         end
 
-        def audio_link
-          Deezer::Utils::Audio::Link.call(track_id: @args.track_id)
-        end
-
         def process_chunk(index, memo)
           chunk = chunk(index)
 
-          decrypt_chunk?(index, chunk) && chunk = blowfish.decrypt(chunk)
+          decrypt_chunk?(index, chunk) &&
+            chunk = blowfish.decrypt(chunk)
 
           memo << chunk
         end
@@ -59,7 +64,8 @@ module Deezer
         end
 
         def decrypt_chunk?(index, chunk)
-          (index % INTERVAL_CHUNK).zero? && chunk.size == CHUNK_SIZE
+          (index % INTERVAL_CHUNK).zero? &&
+            chunk.size == CHUNK_SIZE
         end
 
         def blowfish
