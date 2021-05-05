@@ -336,6 +336,16 @@ Rails.application.routes.draw do
           end
         end
       end
+
+      # Rate Your Music
+
+      namespace :rateyourmusic do
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+      end
     end
   end
 

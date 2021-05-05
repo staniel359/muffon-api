@@ -19,7 +19,8 @@ VCR.configure do |c|
     %i[yandex email], %i[yandex password], %i[yandex unique_uid],
     %i[yandex csrf_token], %i[yandex test_session_id],
     %i[odnoklassniki email], %i[odnoklassniki password],
-    %i[odnoklassniki test_session_id]
+    %i[odnoklassniki test_session_id],
+    %i[rateyourmusic session_id]
   ]
 
   keys.each do |arr|
