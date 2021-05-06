@@ -48,7 +48,7 @@ module Spotify
     end
 
     def new_spotify_token
-      Spotify::Token.call
+      Spotify::Utils::Token.call
     end
 
     def artist_name(data)
