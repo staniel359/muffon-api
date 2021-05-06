@@ -34,7 +34,9 @@ module Muffon
     def exception_controllers
       {
         'lastfm/artist/album' => 'lastfm/album',
-        'lastfm/artist/track' => 'lastfm/track'
+        'lastfm/artist/track' => 'lastfm/track',
+        'spotify/artist/album' => 'spotify/album',
+        'spotify/artist/track' => 'spotify/track'
       }
     end
 

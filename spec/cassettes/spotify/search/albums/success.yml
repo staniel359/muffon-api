@@ -1,0 +1,256 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=5&offset=5&q=a&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Authorization:
+      - Bearer <SPOTIFY_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 19 Dec 2020 10:25:21 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "albums" : {
+            "href" : "https://api.spotify.com/v1/search?query=a&type=album&offset=5&limit=5",
+            "items" : [ {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6LuN9FCkKOj5PcnpouEgny"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6LuN9FCkKOj5PcnpouEgny",
+                "id" : "6LuN9FCkKOj5PcnpouEgny",
+                "name" : "Khalid",
+                "type" : "artist",
+                "uri" : "spotify:artist:6LuN9FCkKOj5PcnpouEgny"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/6kf46HbnYCZzP6rjvQHYzg"
+              },
+              "href" : "https://api.spotify.com/v1/albums/6kf46HbnYCZzP6rjvQHYzg",
+              "id" : "6kf46HbnYCZzP6rjvQHYzg",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273988ede5e1276e758b5f9e577",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02988ede5e1276e758b5f9e577",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851988ede5e1276e758b5f9e577",
+                "width" : 64
+              } ],
+              "name" : "American Teen",
+              "release_date" : "2017-04-27",
+              "release_date_precision" : "day",
+              "total_tracks" : 15,
+              "type" : "album",
+              "uri" : "spotify:album:6kf46HbnYCZzP6rjvQHYzg"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"
+                },
+                "href" : "https://api.spotify.com/v1/artists/7Ln80lUS6He07XvHI8qqHH",
+                "id" : "7Ln80lUS6He07XvHI8qqHH",
+                "name" : "Arctic Monkeys",
+                "type" : "artist",
+                "uri" : "spotify:artist:7Ln80lUS6He07XvHI8qqHH"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/78bpIziExqiI9qztvNFlQu"
+              },
+              "href" : "https://api.spotify.com/v1/albums/78bpIziExqiI9qztvNFlQu",
+              "id" : "78bpIziExqiI9qztvNFlQu",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2734ae1c4c5c45aabe565499163",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e024ae1c4c5c45aabe565499163",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048514ae1c4c5c45aabe565499163",
+                "width" : 64
+              } ],
+              "name" : "AM",
+              "release_date" : "2013-09-09",
+              "release_date_precision" : "day",
+              "total_tracks" : 12,
+              "type" : "album",
+              "uri" : "spotify:album:78bpIziExqiI9qztvNFlQu"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/26AHtbjWKiwYzsoGoUZq53"
+                },
+                "href" : "https://api.spotify.com/v1/artists/26AHtbjWKiwYzsoGoUZq53",
+                "id" : "26AHtbjWKiwYzsoGoUZq53",
+                "name" : "Pentatonix",
+                "type" : "artist",
+                "uri" : "spotify:artist:26AHtbjWKiwYzsoGoUZq53"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/3sId8sOH47yqOWopzbEtJn"
+              },
+              "href" : "https://api.spotify.com/v1/albums/3sId8sOH47yqOWopzbEtJn",
+              "id" : "3sId8sOH47yqOWopzbEtJn",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273ddbbb08d6f7a6ed263fa6afc",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02ddbbb08d6f7a6ed263fa6afc",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851ddbbb08d6f7a6ed263fa6afc",
+                "width" : 64
+              } ],
+              "name" : "A Pentatonix Christmas Deluxe",
+              "release_date" : "2017-12-06",
+              "release_date_precision" : "day",
+              "total_tracks" : 16,
+              "type" : "album",
+              "uri" : "spotify:album:3sId8sOH47yqOWopzbEtJn"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/5pKCCKE2ajJHZ9KAiaK11H"
+                },
+                "href" : "https://api.spotify.com/v1/artists/5pKCCKE2ajJHZ9KAiaK11H",
+                "id" : "5pKCCKE2ajJHZ9KAiaK11H",
+                "name" : "Rihanna",
+                "type" : "artist",
+                "uri" : "spotify:artist:5pKCCKE2ajJHZ9KAiaK11H"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/4UlGauD7ROb3YbVOFMgW5u"
+              },
+              "href" : "https://api.spotify.com/v1/albums/4UlGauD7ROb3YbVOFMgW5u",
+              "id" : "4UlGauD7ROb3YbVOFMgW5u",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b27333c6b920eabcf4c00d7a1093",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e0233c6b920eabcf4c00d7a1093",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d0000485133c6b920eabcf4c00d7a1093",
+                "width" : 64
+              } ],
+              "name" : "ANTI (Deluxe)",
+              "release_date" : "2016-01-28",
+              "release_date_precision" : "day",
+              "total_tracks" : 16,
+              "type" : "album",
+              "uri" : "spotify:album:4UlGauD7ROb3YbVOFMgW5u"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6Xgp2XMz1fhVYe7i6yNAax"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6Xgp2XMz1fhVYe7i6yNAax",
+                "id" : "6Xgp2XMz1fhVYe7i6yNAax",
+                "name" : "Trippie Redd",
+                "type" : "artist",
+                "uri" : "spotify:artist:6Xgp2XMz1fhVYe7i6yNAax"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/0tKX7BLXiiRgXUKYdJzjEz"
+              },
+              "href" : "https://api.spotify.com/v1/albums/0tKX7BLXiiRgXUKYdJzjEz",
+              "id" : "0tKX7BLXiiRgXUKYdJzjEz",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273cd81b9f0393348b6537c9d92",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02cd81b9f0393348b6537c9d92",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851cd81b9f0393348b6537c9d92",
+                "width" : 64
+              } ],
+              "name" : "A Love Letter To You 4",
+              "release_date" : "2019-11-22",
+              "release_date_precision" : "day",
+              "total_tracks" : 21,
+              "type" : "album",
+              "uri" : "spotify:album:0tKX7BLXiiRgXUKYdJzjEz"
+            } ],
+            "limit" : 5,
+            "next" : "https://api.spotify.com/v1/search?query=a&type=album&offset=10&limit=5",
+            "offset" : 5,
+            "previous" : "https://api.spotify.com/v1/search?query=a&type=album&offset=0&limit=5",
+            "total" : 10008
+          }
+        }
+  recorded_at: Sat, 19 Dec 2020 10:25:21 GMT
+recorded_with: VCR 6.0.0

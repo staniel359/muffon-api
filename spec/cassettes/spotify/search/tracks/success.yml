@@ -1,0 +1,411 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=5&offset=5&q=a&type=track
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Authorization:
+      - Bearer <SPOTIFY_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 19 Dec 2020 10:25:24 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "tracks" : {
+            "href" : "https://api.spotify.com/v1/search?query=a&type=track&offset=5&limit=5",
+            "items" : [ {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/2tIP7SsRs7vjIcLrU85W8J"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/2tIP7SsRs7vjIcLrU85W8J",
+                  "id" : "2tIP7SsRs7vjIcLrU85W8J",
+                  "name" : "The Kid LAROI",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/3YjfdLdpQcVI72uKhooZst"
+                },
+                "href" : "https://api.spotify.com/v1/albums/3YjfdLdpQcVI72uKhooZst",
+                "id" : "3YjfdLdpQcVI72uKhooZst",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273df16d539f508603bfb1efe02",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02df16d539f508603bfb1efe02",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851df16d539f508603bfb1efe02",
+                  "width" : 64
+                } ],
+                "name" : "F*CK LOVE (SAVAGE)",
+                "release_date" : "2020-11-06",
+                "release_date_precision" : "day",
+                "total_tracks" : 22,
+                "type" : "album",
+                "uri" : "spotify:album:3YjfdLdpQcVI72uKhooZst"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/2tIP7SsRs7vjIcLrU85W8J"
+                },
+                "href" : "https://api.spotify.com/v1/artists/2tIP7SsRs7vjIcLrU85W8J",
+                "id" : "2tIP7SsRs7vjIcLrU85W8J",
+                "name" : "The Kid LAROI",
+                "type" : "artist",
+                "uri" : "spotify:artist:2tIP7SsRs7vjIcLrU85W8J"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 151704,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USSM12006583"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3QCU8BT0zDS9LPVfEhRFEE"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3QCU8BT0zDS9LPVfEhRFEE",
+              "id" : "3QCU8BT0zDS9LPVfEhRFEE",
+              "is_local" : false,
+              "name" : "ALWAYS DO",
+              "popularity" : 85,
+              "preview_url" : "https://p.scdn.co/mp3-preview/3ef5e6d7a6dc9e7de92c98df9c733766adaee71d?cid=<SPOTIFY_API_KEY>",
+              "track_number" : 4,
+              "type" : "track",
+              "uri" : "spotify:track:3QCU8BT0zDS9LPVfEhRFEE"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/6KImCVD70vtIoJWnq6nGn3"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/6KImCVD70vtIoJWnq6nGn3",
+                  "id" : "6KImCVD70vtIoJWnq6nGn3",
+                  "name" : "Harry Styles",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:6KImCVD70vtIoJWnq6nGn3"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7xV2TzoaVc0ycW7fwBwAml"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7xV2TzoaVc0ycW7fwBwAml",
+                "id" : "7xV2TzoaVc0ycW7fwBwAml",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b27377fdcfda6535601aff081b6a",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e0277fdcfda6535601aff081b6a",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d0000485177fdcfda6535601aff081b6a",
+                  "width" : 64
+                } ],
+                "name" : "Fine Line",
+                "release_date" : "2019-12-13",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:7xV2TzoaVc0ycW7fwBwAml"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6KImCVD70vtIoJWnq6nGn3"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6KImCVD70vtIoJWnq6nGn3",
+                "id" : "6KImCVD70vtIoJWnq6nGn3",
+                "name" : "Harry Styles",
+                "type" : "artist",
+                "uri" : "spotify:artist:6KImCVD70vtIoJWnq6nGn3"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 207133,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "USSM11912588"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3jjujdWJ72nww5eGnfs2E7"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3jjujdWJ72nww5eGnfs2E7",
+              "id" : "3jjujdWJ72nww5eGnfs2E7",
+              "is_local" : false,
+              "name" : "Adore You",
+              "popularity" : 88,
+              "preview_url" : "https://p.scdn.co/mp3-preview/2dbeaa922270b3372d221f09c773a38696aed573?cid=<SPOTIFY_API_KEY>",
+              "track_number" : 3,
+              "type" : "track",
+              "uri" : "spotify:track:3jjujdWJ72nww5eGnfs2E7"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/4MCBfE4596Uoi2O4DtmEMz"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/4MCBfE4596Uoi2O4DtmEMz",
+                  "id" : "4MCBfE4596Uoi2O4DtmEMz",
+                  "name" : "Juice WRLD",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:4MCBfE4596Uoi2O4DtmEMz"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6tkjU4Umpo79wwkgPMV3nZ"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6tkjU4Umpo79wwkgPMV3nZ",
+                "id" : "6tkjU4Umpo79wwkgPMV3nZ",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273f7db43292a6a99b21b51d5b4",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02f7db43292a6a99b21b51d5b4",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851f7db43292a6a99b21b51d5b4",
+                  "width" : 64
+                } ],
+                "name" : "Goodbye & Good Riddance",
+                "release_date" : "2018-12-10",
+                "release_date_precision" : "day",
+                "total_tracks" : 17,
+                "type" : "album",
+                "uri" : "spotify:album:6tkjU4Umpo79wwkgPMV3nZ"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/4MCBfE4596Uoi2O4DtmEMz"
+                },
+                "href" : "https://api.spotify.com/v1/artists/4MCBfE4596Uoi2O4DtmEMz",
+                "id" : "4MCBfE4596Uoi2O4DtmEMz",
+                "name" : "Juice WRLD",
+                "type" : "artist",
+                "uri" : "spotify:artist:4MCBfE4596Uoi2O4DtmEMz"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 169999,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USUG11802039"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5wujBwqG7INdStqGd4tRMX"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5wujBwqG7INdStqGd4tRMX",
+              "id" : "5wujBwqG7INdStqGd4tRMX",
+              "is_local" : false,
+              "name" : "Armed And Dangerous",
+              "popularity" : 82,
+              "preview_url" : null,
+              "track_number" : 5,
+              "type" : "track",
+              "uri" : "spotify:track:5wujBwqG7INdStqGd4tRMX"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu",
+                  "id" : "0fA0VVWsXO9YnASrzqfmYu",
+                  "name" : "Kid Cudi",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:0fA0VVWsXO9YnASrzqfmYu"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/64nbgEEIcY4g1ElVLONJ0w"
+                },
+                "href" : "https://api.spotify.com/v1/albums/64nbgEEIcY4g1ElVLONJ0w",
+                "id" : "64nbgEEIcY4g1ElVLONJ0w",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736f43a625b608f7177caa18c9",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026f43a625b608f7177caa18c9",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516f43a625b608f7177caa18c9",
+                  "width" : 64
+                } ],
+                "name" : "Man On The Moon III: The Chosen",
+                "release_date" : "2020-12-11",
+                "release_date_precision" : "day",
+                "total_tracks" : 18,
+                "type" : "album",
+                "uri" : "spotify:album:64nbgEEIcY4g1ElVLONJ0w"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu"
+                },
+                "href" : "https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu",
+                "id" : "0fA0VVWsXO9YnASrzqfmYu",
+                "name" : "Kid Cudi",
+                "type" : "artist",
+                "uri" : "spotify:artist:0fA0VVWsXO9YnASrzqfmYu"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 199786,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "USUM72023836"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/6myUpr3GDR80Dg3zqNTmmG"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/6myUpr3GDR80Dg3zqNTmmG",
+              "id" : "6myUpr3GDR80Dg3zqNTmmG",
+              "is_local" : false,
+              "name" : "Another Day",
+              "popularity" : 78,
+              "preview_url" : null,
+              "track_number" : 3,
+              "type" : "track",
+              "uri" : "spotify:track:6myUpr3GDR80Dg3zqNTmmG"
+            }, {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/1VPmR4DJC1PlOtd0IADAO0"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/1VPmR4DJC1PlOtd0IADAO0",
+                  "id" : "1VPmR4DJC1PlOtd0IADAO0",
+                  "name" : "$uicideBoy$",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:1VPmR4DJC1PlOtd0IADAO0"
+                } ],
+                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/6lH2MWwv4aBA2OK7uuYy0n"
+                },
+                "href" : "https://api.spotify.com/v1/albums/6lH2MWwv4aBA2OK7uuYy0n",
+                "id" : "6lH2MWwv4aBA2OK7uuYy0n",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b27307aa1426cb2b3cfd8ad67c64",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e0207aa1426cb2b3cfd8ad67c64",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d0000485107aa1426cb2b3cfd8ad67c64",
+                  "width" : 64
+                } ],
+                "name" : "STOP STARING AT THE SHADOWS",
+                "release_date" : "2020-02-14",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:6lH2MWwv4aBA2OK7uuYy0n"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1VPmR4DJC1PlOtd0IADAO0"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1VPmR4DJC1PlOtd0IADAO0",
+                "id" : "1VPmR4DJC1PlOtd0IADAO0",
+                "name" : "$uicideBoy$",
+                "type" : "artist",
+                "uri" : "spotify:artist:1VPmR4DJC1PlOtd0IADAO0"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "disc_number" : 1,
+              "duration_ms" : 168489,
+              "explicit" : true,
+              "external_ids" : {
+                "isrc" : "QZAPK1900020"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/41LhQUkElADQ5YUbpYv2D0"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/41LhQUkElADQ5YUbpYv2D0",
+              "id" : "41LhQUkElADQ5YUbpYv2D0",
+              "is_local" : false,
+              "name" : "...And To Those I Love, Thanks For Sticking Around",
+              "popularity" : 82,
+              "preview_url" : null,
+              "track_number" : 12,
+              "type" : "track",
+              "uri" : "spotify:track:41LhQUkElADQ5YUbpYv2D0"
+            } ],
+            "limit" : 5,
+            "next" : "https://api.spotify.com/v1/search?query=a&type=track&offset=10&limit=5",
+            "offset" : 5,
+            "previous" : "https://api.spotify.com/v1/search?query=a&type=track&offset=0&limit=5",
+            "total" : 100008
+          }
+        }
+  recorded_at: Sat, 19 Dec 2020 10:25:23 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,211 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=5&offset=5&q=a&type=artist
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Authorization:
+      - Bearer <SPOTIFY_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 19 Dec 2020 10:25:22 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "artists" : {
+            "href" : "https://api.spotify.com/v1/search?query=a&type=artist&offset=5&limit=5",
+            "items" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH"
+              },
+              "followers" : {
+                "href" : null,
+                "total" : 10308989
+              },
+              "genres" : [ "garage rock", "modern rock", "permanent wave", "rock", "sheffield indie" ],
+              "href" : "https://api.spotify.com/v1/artists/7Ln80lUS6He07XvHI8qqHH",
+              "id" : "7Ln80lUS6He07XvHI8qqHH",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ed0552e9746ed2bbf04ae4bcb5525700ca31522d",
+                "width" : 640
+              }, {
+                "height" : 320,
+                "url" : "https://i.scdn.co/image/b435e99aa7f1e27db56b6a4dc9df85e5636b22d6",
+                "width" : 320
+              }, {
+                "height" : 160,
+                "url" : "https://i.scdn.co/image/73c4e49abed008fe0c5e4f1437b8b486c7670ecd",
+                "width" : 160
+              } ],
+              "name" : "Arctic Monkeys",
+              "popularity" : 86,
+              "type" : "artist",
+              "uri" : "spotify:artist:7Ln80lUS6He07XvHI8qqHH"
+            }, {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/4sj6D0zlMOl25nprDJBiU9"
+              },
+              "followers" : {
+                "href" : null,
+                "total" : 325939
+              },
+              "genres" : [ "adult standards", "easy listening", "mellow gold" ],
+              "href" : "https://api.spotify.com/v1/artists/4sj6D0zlMOl25nprDJBiU9",
+              "id" : "4sj6D0zlMOl25nprDJBiU9",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/cd88f73a20d4760a44e0e4f2378eefa9b1a0910e",
+                "width" : 640
+              }, {
+                "height" : 320,
+                "url" : "https://i.scdn.co/image/4f44f5575e79e472e2078f95ec9e78768658250d",
+                "width" : 320
+              }, {
+                "height" : 160,
+                "url" : "https://i.scdn.co/image/395d1258d17a0bd2bbead87dba510041c52ed4fa",
+                "width" : 160
+              } ],
+              "name" : "Andy Williams",
+              "popularity" : 80,
+              "type" : "artist",
+              "uri" : "spotify:artist:4sj6D0zlMOl25nprDJBiU9"
+            }, {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/711MCceyCBcFnzjGY4Q7Un"
+              },
+              "followers" : {
+                "href" : null,
+                "total" : 17153279
+              },
+              "genres" : [ "album rock", "australian rock", "hard rock", "rock" ],
+              "href" : "https://api.spotify.com/v1/artists/711MCceyCBcFnzjGY4Q7Un",
+              "id" : "711MCceyCBcFnzjGY4Q7Un",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/52f9c4f83d8642ed80a0bad0317ab940e034de08",
+                "width" : 640
+              }, {
+                "height" : 320,
+                "url" : "https://i.scdn.co/image/64d25927322389160df14e1966849040954b29bb",
+                "width" : 320
+              }, {
+                "height" : 160,
+                "url" : "https://i.scdn.co/image/a7fa12b3b307ac3f172cf1760f385b44bc29e083",
+                "width" : 160
+              } ],
+              "name" : "AC/DC",
+              "popularity" : 85,
+              "type" : "artist",
+              "uri" : "spotify:artist:711MCceyCBcFnzjGY4Q7Un"
+            }, {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/6s22t5Y3prQHyaHWUN1R1C"
+              },
+              "followers" : {
+                "href" : null,
+                "total" : 1523724
+              },
+              "genres" : [ "modern rock" ],
+              "href" : "https://api.spotify.com/v1/artists/6s22t5Y3prQHyaHWUN1R1C",
+              "id" : "6s22t5Y3prQHyaHWUN1R1C",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ce07af97cf3c49b36eb3a5f7a27d59be35e971eb",
+                "width" : 640
+              }, {
+                "height" : 320,
+                "url" : "https://i.scdn.co/image/4745d41538f92faf4d00552ab5abf5779489d229",
+                "width" : 320
+              }, {
+                "height" : 160,
+                "url" : "https://i.scdn.co/image/c6613ce1f597d48b7e130f484468910adeb60aba",
+                "width" : 160
+              } ],
+              "name" : "AJR",
+              "popularity" : 77,
+              "type" : "artist",
+              "uri" : "spotify:artist:6s22t5Y3prQHyaHWUN1R1C"
+            }, {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/4SsVbpTthjScTS7U2hmr1X"
+              },
+              "followers" : {
+                "href" : null,
+                "total" : 5782734
+              },
+              "genres" : [ "latin", "latin hip hop", "reggaeton", "trap latino", "tropical" ],
+              "href" : "https://api.spotify.com/v1/artists/4SsVbpTthjScTS7U2hmr1X",
+              "id" : "4SsVbpTthjScTS7U2hmr1X",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/6548171735f9aa921589e059c7e6ef8e08116425",
+                "width" : 640
+              }, {
+                "height" : 320,
+                "url" : "https://i.scdn.co/image/f8429ad23b45d0a7599259aa1bb31c986cba714d",
+                "width" : 320
+              }, {
+                "height" : 160,
+                "url" : "https://i.scdn.co/image/e1d845305fa684fa79b8c150297e8d788b97dfec",
+                "width" : 160
+              } ],
+              "name" : "Arcangel",
+              "popularity" : 86,
+              "type" : "artist",
+              "uri" : "spotify:artist:4SsVbpTthjScTS7U2hmr1X"
+            } ],
+            "limit" : 5,
+            "next" : "https://api.spotify.com/v1/search?query=a&type=artist&offset=10&limit=5",
+            "offset" : 5,
+            "previous" : "https://api.spotify.com/v1/search?query=a&type=artist&offset=0&limit=5",
+            "total" : 10006
+          }
+        }
+  recorded_at: Sat, 19 Dec 2020 10:25:22 GMT
+recorded_with: VCR 6.0.0

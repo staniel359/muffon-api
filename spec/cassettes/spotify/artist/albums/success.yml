@@ -1,0 +1,259 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?limit=5&offset=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Authorization:
+      - Bearer <SPOTIFY_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=3600
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 19 Dec 2020 10:25:19 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=5&limit=5&include_groups=album,single,compilation,appears_on",
+          "items" : [ {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "UY", "VN", "XK", "ZA" ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/5jYdgzyT71V5j4MQm327gF"
+            },
+            "href" : "https://api.spotify.com/v1/albums/5jYdgzyT71V5j4MQm327gF",
+            "id" : "5jYdgzyT71V5j4MQm327gF",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b273cee9bfe3dceb9b95d344b1f5",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e02cee9bfe3dceb9b95d344b1f5",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d00004851cee9bfe3dceb9b95d344b1f5",
+              "width" : 64
+            } ],
+            "name" : "Director's Cut",
+            "release_date" : "2011-05-16",
+            "release_date_precision" : "day",
+            "total_tracks" : 11,
+            "type" : "album",
+            "uri" : "spotify:album:5jYdgzyT71V5j4MQm327gF"
+          }, {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/2pQr45goebKERx0ntdhsIA"
+            },
+            "href" : "https://api.spotify.com/v1/albums/2pQr45goebKERx0ntdhsIA",
+            "id" : "2pQr45goebKERx0ntdhsIA",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b27397e2adfc615470adb686ad35",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e0297e2adfc615470adb686ad35",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d0000485197e2adfc615470adb686ad35",
+              "width" : 64
+            } ],
+            "name" : "Director's Cut (2018 Remaster)",
+            "release_date" : "2011-05-16",
+            "release_date_precision" : "day",
+            "total_tracks" : 11,
+            "type" : "album",
+            "uri" : "spotify:album:2pQr45goebKERx0ntdhsIA"
+          }, {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "UY", "VN", "XK", "ZA" ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/0xo3ZL0B9982pr08stcNlt"
+            },
+            "href" : "https://api.spotify.com/v1/albums/0xo3ZL0B9982pr08stcNlt",
+            "id" : "0xo3ZL0B9982pr08stcNlt",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b273639b5d6334f08ce04de0fc03",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e02639b5d6334f08ce04de0fc03",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d00004851639b5d6334f08ce04de0fc03",
+              "width" : 64
+            } ],
+            "name" : "Aerial (2018 Remaster)",
+            "release_date" : "2005-11-07",
+            "release_date_precision" : "day",
+            "total_tracks" : 16,
+            "type" : "album",
+            "uri" : "spotify:album:0xo3ZL0B9982pr08stcNlt"
+          }, {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ "US" ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/5hAtR86rztwrKh83zUokGu"
+            },
+            "href" : "https://api.spotify.com/v1/albums/5hAtR86rztwrKh83zUokGu",
+            "id" : "5hAtR86rztwrKh83zUokGu",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b273e6d5420e86091c2ffa2c3484",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e02e6d5420e86091c2ffa2c3484",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d00004851e6d5420e86091c2ffa2c3484",
+              "width" : 64
+            } ],
+            "name" : "Aerial",
+            "release_date" : "2005-11-07",
+            "release_date_precision" : "day",
+            "total_tracks" : 16,
+            "type" : "album",
+            "uri" : "spotify:album:5hAtR86rztwrKh83zUokGu"
+          }, {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "UY", "VN", "XK", "ZA" ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/4sIzJ870jz52cH2rRraqG2"
+            },
+            "href" : "https://api.spotify.com/v1/albums/4sIzJ870jz52cH2rRraqG2",
+            "id" : "4sIzJ870jz52cH2rRraqG2",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b2735a882f1004cfd0be580bcb21",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e025a882f1004cfd0be580bcb21",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d000048515a882f1004cfd0be580bcb21",
+              "width" : 64
+            } ],
+            "name" : "Aerial",
+            "release_date" : "2005-10-03",
+            "release_date_precision" : "day",
+            "total_tracks" : 8,
+            "type" : "album",
+            "uri" : "spotify:album:4sIzJ870jz52cH2rRraqG2"
+          } ],
+          "limit" : 5,
+          "next" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=10&limit=5&include_groups=album,single,compilation,appears_on",
+          "offset" : 5,
+          "previous" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=0&limit=5&include_groups=album,single,compilation,appears_on",
+          "total" : 136
+        }
+  recorded_at: Sat, 19 Dec 2020 10:25:19 GMT
+recorded_with: VCR 6.0.0

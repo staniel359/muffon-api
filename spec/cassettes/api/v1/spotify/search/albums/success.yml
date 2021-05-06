@@ -1,0 +1,811 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=kate%20bush&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      Authorization:
+      - Bearer <SPOTIFY_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 19 Dec 2020 10:25:17 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "albums" : {
+            "href" : "https://api.spotify.com/v1/search?query=kate+bush&type=album&offset=0&limit=20",
+            "items" : [ {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/3OYnManu1Nlxnw9OMng7BH"
+              },
+              "href" : "https://api.spotify.com/v1/albums/3OYnManu1Nlxnw9OMng7BH",
+              "id" : "3OYnManu1Nlxnw9OMng7BH",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2735c390e413e27798edd4d18b4",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e025c390e413e27798edd4d18b4",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048515c390e413e27798edd4d18b4",
+                "width" : 64
+              } ],
+              "name" : "Hounds of Love (2018 Remaster)",
+              "release_date" : "1985-09-16",
+              "release_date_precision" : "day",
+              "total_tracks" : 12,
+              "type" : "album",
+              "uri" : "spotify:album:3OYnManu1Nlxnw9OMng7BH"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/5NKTuBLCYhN0OwqFiGdXd1"
+              },
+              "href" : "https://api.spotify.com/v1/albums/5NKTuBLCYhN0OwqFiGdXd1",
+              "id" : "5NKTuBLCYhN0OwqFiGdXd1",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b27330da683c0c018535adbaf0e5",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e0230da683c0c018535adbaf0e5",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d0000485130da683c0c018535adbaf0e5",
+                "width" : 64
+              } ],
+              "name" : "The Kick Inside",
+              "release_date" : "1978-02-17",
+              "release_date_precision" : "day",
+              "total_tracks" : 13,
+              "type" : "album",
+              "uri" : "spotify:album:5NKTuBLCYhN0OwqFiGdXd1"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/4MYtX4Kta7FL4NVUE0FYws"
+              },
+              "href" : "https://api.spotify.com/v1/albums/4MYtX4Kta7FL4NVUE0FYws",
+              "id" : "4MYtX4Kta7FL4NVUE0FYws",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273786b6e14d94db2177fe8f9df",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02786b6e14d94db2177fe8f9df",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851786b6e14d94db2177fe8f9df",
+                "width" : 64
+              } ],
+              "name" : "Never for Ever",
+              "release_date" : "1980-09-08",
+              "release_date_precision" : "day",
+              "total_tracks" : 11,
+              "type" : "album",
+              "uri" : "spotify:album:4MYtX4Kta7FL4NVUE0FYws"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "US" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/4wkCDfNmFIkL8kE4tGmvYc"
+              },
+              "href" : "https://api.spotify.com/v1/albums/4wkCDfNmFIkL8kE4tGmvYc",
+              "id" : "4wkCDfNmFIkL8kE4tGmvYc",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2731199dfdd8703f3afa4328561",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e021199dfdd8703f3afa4328561",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048511199dfdd8703f3afa4328561",
+                "width" : 64
+              } ],
+              "name" : "The Sensual World",
+              "release_date" : "1989-10-16",
+              "release_date_precision" : "day",
+              "total_tracks" : 10,
+              "type" : "album",
+              "uri" : "spotify:album:4wkCDfNmFIkL8kE4tGmvYc"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/0KBFDO8qcY0zhybIESEQUt"
+              },
+              "href" : "https://api.spotify.com/v1/albums/0KBFDO8qcY0zhybIESEQUt",
+              "id" : "0KBFDO8qcY0zhybIESEQUt",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273ec89a9b2a07d1bfef45148b9",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02ec89a9b2a07d1bfef45148b9",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851ec89a9b2a07d1bfef45148b9",
+                "width" : 64
+              } ],
+              "name" : "Never for Ever (2018 Remaster)",
+              "release_date" : "1980-09-07",
+              "release_date_precision" : "day",
+              "total_tracks" : 11,
+              "type" : "album",
+              "uri" : "spotify:album:0KBFDO8qcY0zhybIESEQUt"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/1gRJsaJ7ExC9Q9YdB9ZMC5"
+              },
+              "href" : "https://api.spotify.com/v1/albums/1gRJsaJ7ExC9Q9YdB9ZMC5",
+              "id" : "1gRJsaJ7ExC9Q9YdB9ZMC5",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273fd5b33fad57b23e897f155ed",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02fd5b33fad57b23e897f155ed",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851fd5b33fad57b23e897f155ed",
+                "width" : 64
+              } ],
+              "name" : "The Dreaming",
+              "release_date" : "1982",
+              "release_date_precision" : "year",
+              "total_tracks" : 10,
+              "type" : "album",
+              "uri" : "spotify:album:1gRJsaJ7ExC9Q9YdB9ZMC5"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "US" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/72MmcinutOLOAMic13Edb6"
+              },
+              "href" : "https://api.spotify.com/v1/albums/72MmcinutOLOAMic13Edb6",
+              "id" : "72MmcinutOLOAMic13Edb6",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273ca95e0c672a2277dccba901c",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02ca95e0c672a2277dccba901c",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851ca95e0c672a2277dccba901c",
+                "width" : 64
+              } ],
+              "name" : "The Red Shoes",
+              "release_date" : "1993-11-02",
+              "release_date_precision" : "day",
+              "total_tracks" : 12,
+              "type" : "album",
+              "uri" : "spotify:album:72MmcinutOLOAMic13Edb6"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/714xU1smIkRBp7ERAhFRbO"
+              },
+              "href" : "https://api.spotify.com/v1/albums/714xU1smIkRBp7ERAhFRbO",
+              "id" : "714xU1smIkRBp7ERAhFRbO",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2738d6eaed9d898cc7219247dc3",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e028d6eaed9d898cc7219247dc3",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048518d6eaed9d898cc7219247dc3",
+                "width" : 64
+              } ],
+              "name" : "The Kick Inside (2018 Remaster)",
+              "release_date" : "1978-02-17",
+              "release_date_precision" : "day",
+              "total_tracks" : 13,
+              "type" : "album",
+              "uri" : "spotify:album:714xU1smIkRBp7ERAhFRbO"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "US" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/5hAtR86rztwrKh83zUokGu"
+              },
+              "href" : "https://api.spotify.com/v1/albums/5hAtR86rztwrKh83zUokGu",
+              "id" : "5hAtR86rztwrKh83zUokGu",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273e6d5420e86091c2ffa2c3484",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02e6d5420e86091c2ffa2c3484",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851e6d5420e86091c2ffa2c3484",
+                "width" : 64
+              } ],
+              "name" : "Aerial",
+              "release_date" : "2005-11-07",
+              "release_date_precision" : "day",
+              "total_tracks" : 16,
+              "type" : "album",
+              "uri" : "spotify:album:5hAtR86rztwrKh83zUokGu"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "US" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/1sFrZZRJfBb3QHfcIgaRUP"
+              },
+              "href" : "https://api.spotify.com/v1/albums/1sFrZZRJfBb3QHfcIgaRUP",
+              "id" : "1sFrZZRJfBb3QHfcIgaRUP",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2736fa9683eec8b36b246fcb07f",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e026fa9683eec8b36b246fcb07f",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048516fa9683eec8b36b246fcb07f",
+                "width" : 64
+              } ],
+              "name" : "50 Words For Snow",
+              "release_date" : "2011-11-22",
+              "release_date_precision" : "day",
+              "total_tracks" : 7,
+              "type" : "album",
+              "uri" : "spotify:album:1sFrZZRJfBb3QHfcIgaRUP"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/7qeRejAsyqrM1hw3LwVPYp"
+              },
+              "href" : "https://api.spotify.com/v1/albums/7qeRejAsyqrM1hw3LwVPYp",
+              "id" : "7qeRejAsyqrM1hw3LwVPYp",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b27387b9051fea7e0f99f7225234",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e0287b9051fea7e0f99f7225234",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d0000485187b9051fea7e0f99f7225234",
+                "width" : 64
+              } ],
+              "name" : "Lionheart",
+              "release_date" : "1978-11-13",
+              "release_date_precision" : "day",
+              "total_tracks" : 10,
+              "type" : "album",
+              "uri" : "spotify:album:7qeRejAsyqrM1hw3LwVPYp"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/2CRirDu87zmvr01X8MkcQ8"
+              },
+              "href" : "https://api.spotify.com/v1/albums/2CRirDu87zmvr01X8MkcQ8",
+              "id" : "2CRirDu87zmvr01X8MkcQ8",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2739e081e924a3330ec99fa0bfa",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e029e081e924a3330ec99fa0bfa",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048519e081e924a3330ec99fa0bfa",
+                "width" : 64
+              } ],
+              "name" : "Lionheart (2018 Remaster)",
+              "release_date" : "1978-11-12",
+              "release_date_precision" : "day",
+              "total_tracks" : 10,
+              "type" : "album",
+              "uri" : "spotify:album:2CRirDu87zmvr01X8MkcQ8"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "US" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/0NAzQ4QXcT7UaNbD3HyK9J"
+              },
+              "href" : "https://api.spotify.com/v1/albums/0NAzQ4QXcT7UaNbD3HyK9J",
+              "id" : "0NAzQ4QXcT7UaNbD3HyK9J",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273d9fef43b32a9c4fb16241459",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02d9fef43b32a9c4fb16241459",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851d9fef43b32a9c4fb16241459",
+                "width" : 64
+              } ],
+              "name" : "Before The Dawn (Live)",
+              "release_date" : "2016-12-02",
+              "release_date_precision" : "day",
+              "total_tracks" : 29,
+              "type" : "album",
+              "uri" : "spotify:album:0NAzQ4QXcT7UaNbD3HyK9J"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/2pQr45goebKERx0ntdhsIA"
+              },
+              "href" : "https://api.spotify.com/v1/albums/2pQr45goebKERx0ntdhsIA",
+              "id" : "2pQr45goebKERx0ntdhsIA",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b27397e2adfc615470adb686ad35",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e0297e2adfc615470adb686ad35",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d0000485197e2adfc615470adb686ad35",
+                "width" : 64
+              } ],
+              "name" : "Director's Cut (2018 Remaster)",
+              "release_date" : "2011-05-16",
+              "release_date_precision" : "day",
+              "total_tracks" : 11,
+              "type" : "album",
+              "uri" : "spotify:album:2pQr45goebKERx0ntdhsIA"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/59dmyw7CgPluQ6PlTmn7ik"
+              },
+              "href" : "https://api.spotify.com/v1/albums/59dmyw7CgPluQ6PlTmn7ik",
+              "id" : "59dmyw7CgPluQ6PlTmn7ik",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b2732cce9fdc37f180bf96779551",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e022cce9fdc37f180bf96779551",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d000048512cce9fdc37f180bf96779551",
+                "width" : 64
+              } ],
+              "name" : "The Dreaming (2018 Remaster)",
+              "release_date" : "1982-09-13",
+              "release_date_precision" : "day",
+              "total_tracks" : 10,
+              "type" : "album",
+              "uri" : "spotify:album:59dmyw7CgPluQ6PlTmn7ik"
+            }, {
+              "album_type" : "single",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/3mGCLimuzOdod4Lnegny4d"
+                },
+                "href" : "https://api.spotify.com/v1/artists/3mGCLimuzOdod4Lnegny4d",
+                "id" : "3mGCLimuzOdod4Lnegny4d",
+                "name" : "Twinkle Twinkle Little Rock Star",
+                "type" : "artist",
+                "uri" : "spotify:artist:3mGCLimuzOdod4Lnegny4d"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/0oVru5duK6YyFWYJOsZ2VN"
+              },
+              "href" : "https://api.spotify.com/v1/albums/0oVru5duK6YyFWYJOsZ2VN",
+              "id" : "0oVru5duK6YyFWYJOsZ2VN",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273a9d4eb7c0de14c813038c486",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02a9d4eb7c0de14c813038c486",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851a9d4eb7c0de14c813038c486",
+                "width" : 64
+              } ],
+              "name" : "Lullaby Versions of Kate Bush",
+              "release_date" : "2014-09-23",
+              "release_date_precision" : "day",
+              "total_tracks" : 6,
+              "type" : "album",
+              "uri" : "spotify:album:0oVru5duK6YyFWYJOsZ2VN"
+            }, {
+              "album_type" : "album",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/648dUUIlz7RSeg3O8CbTat"
+                },
+                "href" : "https://api.spotify.com/v1/artists/648dUUIlz7RSeg3O8CbTat",
+                "id" : "648dUUIlz7RSeg3O8CbTat",
+                "name" : "Midnite String Quartet",
+                "type" : "artist",
+                "uri" : "spotify:artist:648dUUIlz7RSeg3O8CbTat"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/6FrLy2MZX8coMN5Br2Gku1"
+              },
+              "href" : "https://api.spotify.com/v1/albums/6FrLy2MZX8coMN5Br2Gku1",
+              "id" : "6FrLy2MZX8coMN5Br2Gku1",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273c7b6d14671e83e148586d244",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02c7b6d14671e83e148586d244",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851c7b6d14671e83e148586d244",
+                "width" : 64
+              } ],
+              "name" : "MSQ Performs Kate Bush",
+              "release_date" : "2016-12-16",
+              "release_date_precision" : "day",
+              "total_tracks" : 7,
+              "type" : "album",
+              "uri" : "spotify:album:6FrLy2MZX8coMN5Br2Gku1"
+            }, {
+              "album_type" : "single",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+                },
+                "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+                "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+                "name" : "Kate Bush",
+                "type" : "artist",
+                "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/2Nxf3lS4huFPiHyy4p2xOd"
+              },
+              "href" : "https://api.spotify.com/v1/albums/2Nxf3lS4huFPiHyy4p2xOd",
+              "id" : "2Nxf3lS4huFPiHyy4p2xOd",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273c529ce107afe12e940934abe",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02c529ce107afe12e940934abe",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851c529ce107afe12e940934abe",
+                "width" : 64
+              } ],
+              "name" : "The Interview Tapes",
+              "release_date" : "1992-01-20",
+              "release_date_precision" : "day",
+              "total_tracks" : 5,
+              "type" : "album",
+              "uri" : "spotify:album:2Nxf3lS4huFPiHyy4p2xOd"
+            }, {
+              "album_type" : "single",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/7I6YO6H42IV9BOqqqwvlpM"
+                },
+                "href" : "https://api.spotify.com/v1/artists/7I6YO6H42IV9BOqqqwvlpM",
+                "id" : "7I6YO6H42IV9BOqqqwvlpM",
+                "name" : "Sharpson",
+                "type" : "artist",
+                "uri" : "spotify:artist:7I6YO6H42IV9BOqqqwvlpM"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/0Hnv9Ts0ScR2Vc67V8ilTj"
+              },
+              "href" : "https://api.spotify.com/v1/albums/0Hnv9Ts0ScR2Vc67V8ilTj",
+              "id" : "0Hnv9Ts0ScR2Vc67V8ilTj",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273288dee4cc57c143eb57962ef",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02288dee4cc57c143eb57962ef",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851288dee4cc57c143eb57962ef",
+                "width" : 64
+              } ],
+              "name" : "Kate Bush",
+              "release_date" : "2019-12-09",
+              "release_date_precision" : "day",
+              "total_tracks" : 1,
+              "type" : "album",
+              "uri" : "spotify:album:0Hnv9Ts0ScR2Vc67V8ilTj"
+            }, {
+              "album_type" : "single",
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6k6qwbWRBkyaxNGN5uDKxG"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6k6qwbWRBkyaxNGN5uDKxG",
+                "id" : "6k6qwbWRBkyaxNGN5uDKxG",
+                "name" : "Viva City",
+                "type" : "artist",
+                "uri" : "spotify:artist:6k6qwbWRBkyaxNGN5uDKxG"
+              } ],
+              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "ZA" ],
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/album/14NLxbzP4eb0Gh3FO5rdtm"
+              },
+              "href" : "https://api.spotify.com/v1/albums/14NLxbzP4eb0Gh3FO5rdtm",
+              "id" : "14NLxbzP4eb0Gh3FO5rdtm",
+              "images" : [ {
+                "height" : 640,
+                "url" : "https://i.scdn.co/image/ab67616d0000b273b9f5858a91e2e4fbdf6605ce",
+                "width" : 640
+              }, {
+                "height" : 300,
+                "url" : "https://i.scdn.co/image/ab67616d00001e02b9f5858a91e2e4fbdf6605ce",
+                "width" : 300
+              }, {
+                "height" : 64,
+                "url" : "https://i.scdn.co/image/ab67616d00004851b9f5858a91e2e4fbdf6605ce",
+                "width" : 64
+              } ],
+              "name" : "Kate Bush",
+              "release_date" : "2008-07-21",
+              "release_date_precision" : "day",
+              "total_tracks" : 6,
+              "type" : "album",
+              "uri" : "spotify:album:14NLxbzP4eb0Gh3FO5rdtm"
+            } ],
+            "limit" : 20,
+            "next" : "https://api.spotify.com/v1/search?query=kate+bush&type=album&offset=20&limit=20",
+            "offset" : 0,
+            "previous" : null,
+            "total" : 100
+          }
+        }
+  recorded_at: Sat, 19 Dec 2020 10:25:17 GMT
+recorded_with: VCR 6.0.0
