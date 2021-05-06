@@ -31,10 +31,7 @@ RSpec.describe LastFM::Album::Tags do
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'lastfm/album/tags/wrong_artist' do
-          subject.call(
-            artist: Helpers::Base::RANDOM_STRING,
-            album: 'nocturne'
-          )
+          subject.call(artist: random, album: 'nocturne')
         end
       end
 
@@ -44,10 +41,7 @@ RSpec.describe LastFM::Album::Tags do
     context 'when wrong album title' do
       let(:output) do
         VCR.use_cassette 'lastfm/album/tags/wrong_title' do
-          subject.call(
-            artist: 'wild nothing',
-            album: Helpers::Base::RANDOM_STRING
-          )
+          subject.call(artist: 'wild nothing', album: random)
         end
       end
 

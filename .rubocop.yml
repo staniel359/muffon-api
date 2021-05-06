@@ -7,11 +7,12 @@ inherit_mode:
     - Exclude
 
 AllCops:
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.0.1
   NewCops: enable
   Exclude:
     - 'config/**/*'
     - 'db/**/*'
+    - 'public/temp/**/*'
     - 'spec/helpers/**/*'
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
@@ -20,6 +21,8 @@ AllCops:
 
 Layout/LineLength:
   Max: 80
+  Exclude:
+    - 'spec/**/*_spec.rb'
 Layout/EndOfLine:
   Enabled: false
 

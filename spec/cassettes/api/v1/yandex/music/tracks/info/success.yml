@@ -68,7 +68,7 @@ http_interactions:
       X-Retpath-Y:
       - https://music.yandex.ru/
       Cookie:
-      - Session_id=<YANDEX_TEST_SESSION_ID>
+      - Session_id=<YANDEX_SESSION_ID>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:

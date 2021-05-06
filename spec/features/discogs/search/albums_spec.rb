@@ -25,7 +25,7 @@ RSpec.describe Discogs::Search::Albums do
     context 'when wrong query string' do
       let(:output) do
         VCR.use_cassette 'discogs/search/albums/wrong_query' do
-          subject.call(query: Helpers::Base::RANDOM_STRING)
+          subject.call(query: random)
         end
       end
 

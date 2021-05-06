@@ -25,10 +25,7 @@ RSpec.describe LastFM::Album::Description do
     context 'when wrong album title' do
       let(:output) do
         VCR.use_cassette 'lastfm/album/description/wrong_title' do
-          subject.call(
-            artist: 'wild nothing',
-            album: Helpers::Base::RANDOM_STRING
-          )
+          subject.call(artist: 'wild nothing', album: random)
         end
       end
 

@@ -25,7 +25,7 @@ RSpec.describe Yandex::Music::Search::Albums do
     context 'when wrong query' do
       let(:output) do
         VCR.use_cassette 'yandex/music/search/albums/wrong_query' do
-          subject.call(query: Helpers::Base::RANDOM_STRING)
+          subject.call(query: random)
         end
       end
 

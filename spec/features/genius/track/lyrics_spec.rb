@@ -25,7 +25,7 @@ RSpec.describe Genius::Track::Lyrics do
     context 'when wrong path' do
       let(:output) do
         VCR.use_cassette 'genius/track/lyrics/wrong_path' do
-          subject.call(path: Helpers::Base::RANDOM_STRING)
+          subject.call(path: random)
         end
       end
 

@@ -25,7 +25,7 @@ RSpec.describe LastFM::Artist::Images do
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'lastfm/artist/images/wrong_name' do
-          subject.call(artist: Helpers::Base::RANDOM_STRING)
+          subject.call(artist: random)
         end
       end
 

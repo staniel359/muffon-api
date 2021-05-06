@@ -25,7 +25,7 @@ RSpec.describe Yandex::Music::Utils::Audio::Link do
     context 'when wrong track_id' do
       let(:output) do
         VCR.use_cassette 'yandex/music/utils/audio/link/wrong_id' do
-          subject.call(track_id: Helpers::Base::RANDOM_STRING)
+          subject.call(track_id: random)
         end
       end
 

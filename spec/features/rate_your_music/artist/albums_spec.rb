@@ -27,9 +27,7 @@ RSpec.describe RateYourMusic::Artist::Albums do
     context 'when wrong artist' do
       let(:output) do
         VCR.use_cassette 'rateyourmusic/artist/albums/wrong_artist' do
-          subject.call(
-            artist_id: Helpers::Base::RANDOM_STRING, album_type: 'album'
-          )
+          subject.call(artist_id: random, album_type: 'album')
         end
       end
 
@@ -49,9 +47,7 @@ RSpec.describe RateYourMusic::Artist::Albums do
     context 'when wrong album type' do
       let(:output) do
         VCR.use_cassette 'rateyourmusic/artist/albums/wrong_album_type' do
-          subject.call(
-            artist_id: '2854', album_type: Helpers::Base::RANDOM_STRING
-          )
+          subject.call(artist_id: '2854', album_type: random)
         end
       end
 

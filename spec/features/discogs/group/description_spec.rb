@@ -25,7 +25,7 @@ RSpec.describe Discogs::Group::Description do
     context 'when wrong group_id' do
       let(:output) do
         VCR.use_cassette 'discogs/group/description/wrong_id' do
-          subject.call(group_id: Helpers::Base::RANDOM_STRING)
+          subject.call(group_id: random)
         end
       end
 

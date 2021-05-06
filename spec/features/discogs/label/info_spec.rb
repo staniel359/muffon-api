@@ -25,7 +25,7 @@ RSpec.describe Discogs::Label::Info do
     context 'when wrong label_id' do
       let(:output) do
         VCR.use_cassette 'discogs/label/info/wrong_id' do
-          subject.call(label_id: Helpers::Base::RANDOM_STRING)
+          subject.call(label_id: random)
         end
       end
 

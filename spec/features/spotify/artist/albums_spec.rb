@@ -21,7 +21,7 @@ RSpec.describe Spotify::Artist::Albums do
     context 'when wrong artist_id' do
       let(:output) do
         VCR.use_cassette 'spotify/artist/albums/wrong_id' do
-          subject.call(artist_id: Helpers::Base::RANDOM_STRING)
+          subject.call(artist_id: random)
         end
       end
 

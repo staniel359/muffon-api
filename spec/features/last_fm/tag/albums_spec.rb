@@ -25,7 +25,7 @@ RSpec.describe LastFM::Tag::Albums do
     context 'when wrong tag name' do
       let(:output) do
         VCR.use_cassette 'lastfm/tag/albums/wrong_name' do
-          subject.call(tag: Helpers::Base::RANDOM_STRING)
+          subject.call(tag: random)
         end
       end
 

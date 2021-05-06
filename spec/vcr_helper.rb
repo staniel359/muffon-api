@@ -4,28 +4,27 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
 
-  keys = [
-    %i[lastfm api_key], %i[spotify api_key],
-    %i[vk page_id], %i[vk email], %i[vk password],
-    %i[discogs api_key], %i[discogs api_secret],
+  secrets = [
+    %i[lastfm api_key], %i[vk page_id], %i[vk email],
+    %i[vk password], %i[discogs api_key], %i[discogs api_secret],
     %i[soundcloud api_key], %i[soundcloud test_v2_client_id],
-    %i[deezer test_track_token],
-    %i[deezer test_api_token],
-    %i[deezer test_license_token],
-    %i[youtube api_key], %i[google api_key],
-    %i[google scopes bandcamp_albums],
+    %i[deezer test_track_token], %i[deezer test_api_token],
+    %i[deezer test_license_token], %i[youtube api_key],
+    %i[google api_key], %i[google scopes bandcamp_albums],
     %i[google scopes bandcamp_artists],
     %i[google scopes bandcamp_tracks],
-    %i[yandex email], %i[yandex password], %i[yandex unique_uid],
-    %i[yandex csrf_token], %i[yandex test_session_id],
+    %i[yandex email], %i[yandex password], %i[yandex csrf_token],
     %i[odnoklassniki email], %i[odnoklassniki password],
-    %i[odnoklassniki test_session_id],
-    %i[rateyourmusic session_id]
+    %i[odnoklassniki test_session_id], %i[deezer test_track_token],
+    %i[deezer test_api_token], %i[deezer test_license_token]
   ]
 
-  keys.each do |arr|
-    filter_name = "<#{arr.join('_').upcase}>"
-    value = CGI.escape(Rails.application.credentials.dig(*arr).to_s)
-    c.filter_sensitive_data(filter_name) { value }
+  secrets.each do |keys|
+    filter_name = "<#{keys.join('_').upcase}>"
+    filter_value = CGI.escape(
+      Rails.application.credentials.dig(*keys).to_s
+    )
+
+    c.filter_sensitive_data(filter_name) { filter_value }
   end
 end

@@ -25,7 +25,7 @@ RSpec.describe LastFM::Search::Artists do
     context 'when wrong query' do
       let(:output) do
         VCR.use_cassette 'lastfm/search/artists/wrong_query' do
-          subject.call(query: Helpers::Base::RANDOM_STRING)
+          subject.call(query: random)
         end
       end
 

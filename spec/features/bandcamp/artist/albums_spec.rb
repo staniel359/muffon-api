@@ -25,7 +25,7 @@ RSpec.describe Bandcamp::Artist::Albums do
     context 'when wrong artist' do
       let(:output) do
         VCR.use_cassette 'bandcamp/artist/albums/wrong_artist' do
-          subject.call(artist_id: Helpers::Base::RANDOM_STRING)
+          subject.call(artist_id: random)
         end
       end
 

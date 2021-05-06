@@ -25,10 +25,7 @@ RSpec.describe Bandcamp::Id::Track do
     context 'when wrong track' do
       let(:output) do
         VCR.use_cassette 'bandcamp/id/track/wrong_title' do
-          subject.call(
-            artist: 'wildnothingct',
-            track: Helpers::Base::RANDOM_STRING
-          )
+          subject.call(artist: 'wildnothingct', track: random)
         end
       end
 

@@ -25,7 +25,7 @@ RSpec.describe Yandex::Music::Artist::Albums do
     context 'when wrong artist_id' do
       let(:output) do
         VCR.use_cassette 'yandex/music/artist/albums/wrong_id' do
-          subject.call(artist_id: Helpers::Base::RANDOM_STRING)
+          subject.call(artist_id: random)
         end
       end
 

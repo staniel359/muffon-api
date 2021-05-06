@@ -25,7 +25,7 @@ RSpec.describe Deezer::Album::Info do
     context 'when wrong album_id' do
       let(:output) do
         VCR.use_cassette 'deezer/album/info/wrong_id' do
-          subject.call(album_id: Helpers::Base::RANDOM_STRING)
+          subject.call(album_id: random)
         end
       end
 

@@ -29,7 +29,7 @@ RSpec.describe YouTube::Search::Videos do
     context 'when wrong query' do
       let(:output) do
         VCR.use_cassette 'youtube/search/videos/wrong_query' do
-          subject.call(query: Helpers::Base::RANDOM_STRING)
+          subject.call(query: random)
         end
       end
 
