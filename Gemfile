@@ -13,6 +13,7 @@ gem 'nokogiri'
 gem 'bootsnap', require: false
 gem 'sentry-ruby'
 gem 'sentry-rails'
+gem 'whenever', require: false
 
 group :development do
   gem 'listen'

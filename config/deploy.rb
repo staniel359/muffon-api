@@ -46,3 +46,5 @@ set :rbenv_ruby, '3.0.1'
 set :puma_bind, 'tcp://127.0.0.1:4000'
 set :puma_service_unit_name, 'muffon'
 set :puma_workers, 2
+
+set :whenever_roles, -> { :app }
