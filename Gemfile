@@ -11,6 +11,8 @@ gem 'rack-cors'
 gem 'rest-client'
 gem 'nokogiri'
 gem 'bootsnap', require: false
+gem 'sentry-ruby'
+gem 'sentry-rails'
 
 group :development do
   gem 'listen'

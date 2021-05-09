@@ -101,6 +101,15 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
+    faraday (1.4.1)
+      faraday-excon (~> 1.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-excon (1.1.0)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.1.0)
     ffi (1.15.0)
     ffi (1.15.0-java)
     ffi (1.15.0-x64-mingw32)
@@ -131,6 +140,7 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     msgpack (1.4.2-java)
+    multipart-post (2.1.1)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
@@ -244,6 +254,17 @@ GEM
       rubocop (~> 1.0)
       rubocop-ast (>= 1.1.0)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.4)
+    sentry-rails (4.4.0)
+      railties (>= 5.0)
+      sentry-ruby-core (~> 4.4.0.pre.beta)
+    sentry-ruby (4.4.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      faraday (>= 1.0)
+      sentry-ruby-core (= 4.4.1)
+    sentry-ruby-core (4.4.1)
+      concurrent-ruby
+      faraday
     spoon (0.0.6)
       ffi
     spring (2.1.1)
@@ -314,6 +335,8 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
+  sentry-rails
+  sentry-ruby
   spring
   spring-watcher-listen
   tzinfo-data
