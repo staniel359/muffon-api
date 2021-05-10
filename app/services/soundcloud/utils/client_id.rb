@@ -16,7 +16,7 @@ module SoundCloud
       end
 
       def link
-        'https://a-v2.sndcdn.com/assets/3-6335593a.js'
+        'https://a-v2.sndcdn.com/assets/3-1810168b.js'
       end
     end
   end
