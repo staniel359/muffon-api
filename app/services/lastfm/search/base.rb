@@ -47,7 +47,7 @@ module LastFM
       end
 
       def collection_list
-        results
+        results.reject { |r| r['name'] == '(null)' }
       end
     end
   end

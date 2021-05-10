@@ -27,7 +27,9 @@ module LastFM
         end
 
         def collection_list
-          response_data[model_name]
+          response_data[model_name].reject do |r|
+            r['name'] == '(null)'
+          end
         end
       end
     end
