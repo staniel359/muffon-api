@@ -18,7 +18,7 @@ module Bandcamp
         end
 
         def model_response
-          response_data[3]['data-tralbum']
+          response_data[4]['data-tralbum']
         end
 
         def data

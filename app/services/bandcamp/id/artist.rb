@@ -12,7 +12,7 @@ module Bandcamp
       end
 
       def model_response
-        response_data[2]['data-band']
+        response_data[3]['data-band']
       end
 
       def data
