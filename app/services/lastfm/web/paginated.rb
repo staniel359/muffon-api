@@ -1,7 +1,7 @@
 module LastFM
   module Web
     module Paginated
-      include Muffon::Paginated
+      include Muffon::Utils::Paginated
 
       private
 

@@ -36,7 +36,7 @@ module Deezer
           album: album_data,
           image: image_data(response_data['album'], 'track'),
           length: response_data['duration'],
-          released: released,
+          released: date_formatted(response_data['release_date']),
           audio: audio_data
         }
       end
@@ -45,10 +45,6 @@ module Deezer
         return {} if response_data['album'].blank?
 
         { title: response_data.dig('album', 'title') }
-      end
-
-      def released
-        time_formatted(response_data['release_date'])
       end
 
       def audio_data

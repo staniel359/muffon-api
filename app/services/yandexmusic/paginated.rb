@@ -1,6 +1,6 @@
 module YandexMusic
   module Paginated
-    include Muffon::Paginated
+    include Muffon::Utils::Paginated
 
     private
 

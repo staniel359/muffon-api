@@ -31,7 +31,7 @@ module Bandcamp
             bandcamp_model: album['item_type'],
             artist: album_artist_data(album),
             image: image_data(image(album)),
-            released: time_formatted(album['release_date'])
+            released: date_formatted(album['release_date'])
           }
         end
 

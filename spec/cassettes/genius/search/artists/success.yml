@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://genius.com/api/search/artist?page=2&per_page=5&q=a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - genius.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 May 2021 13:03:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 64ec16853ac11624-WAW
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Etag:
+      - W/"3456c35396aaafa3b62fa51e822f7dfd"
+      Set-Cookie:
+      - _genius_ab_test_cohort=44; Max-Age=2147483647; Path=/
+      - no_public_cache=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 -0000
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - 0a076c673f0000162440a21000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Status:
+      - 200 OK
+      X-Runtime:
+      - '75'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"status":200},"response":{"sections":[{"type":"artist","hits":[{"highlights":[],"index":"artist","type":"artist","result":{"_type":"artist","api_path":"/artists/26507","header_image_url":"https://images.genius.com/0b63409589894fbd955a658fc89f08dd.1000x429x1.jpg","id":26507,"image_url":"https://images.genius.com/d36a47955ac0ddb12748c5e7c2bd4b4b.640x640x1.jpg","index_character":"a","is_meme_verified":false,"is_verified":true,"name":"Ariana
+        Grande","slug":"Ariana-grande","url":"https://genius.com/artists/Ariana-grande","iq":2468}},{"highlights":[],"index":"artist","type":"artist","result":{"_type":"artist","api_path":"/artists/12417","header_image_url":"https://images.genius.com/4631ca30c1de3b660f5e2492e9dcbc85.1000x333x1.jpg","id":12417,"image_url":"https://images.genius.com/f20bb1eec5e435894d2818613d46265e.1000x1000x1.jpg","index_character":"a","is_meme_verified":false,"is_verified":true,"name":"A$AP
+        Rocky","slug":"A-ap-rocky","url":"https://genius.com/artists/A-ap-rocky","iq":29508}},{"highlights":[],"index":"artist","type":"artist","result":{"_type":"artist","api_path":"/artists/492","header_image_url":"https://images.genius.com/9993d1270da8380d4db0f5b2dc2ddce5.747x363x1.jpg","id":492,"image_url":"https://images.genius.com/a74b4f7cd37f14bd8cdb146422a96690.309x309x1.jpg","index_character":"b","is_meme_verified":true,"is_verified":true,"name":"Big
+        Sean","slug":"Big-sean","url":"https://genius.com/artists/Big-sean","iq":17644}},{"highlights":[],"index":"artist","type":"artist","result":{"_type":"artist","api_path":"/artists/621678","header_image_url":"https://images.genius.com/854e3b41f244636a74bdd7b7f4ee714c.1000x333x1.jpg","id":621678,"image_url":"https://images.genius.com/5a60c41c5543b9286bc6d645603c8df8.568x568x1.jpg","index_character":"c","is_meme_verified":true,"is_verified":true,"name":"Cardi
+        B","slug":"Cardi-b","url":"https://genius.com/artists/Cardi-b","iq":1198}},{"highlights":[],"index":"artist","type":"artist","result":{"_type":"artist","api_path":"/artists/685","header_image_url":"https://images.genius.com/e61096e0e1ee149330067c8be70da09a.794x250x1.png","id":685,"image_url":"https://images.genius.com/1e7e02ed79232ebc8d954680125e8396.798x798x1.jpg","index_character":"t","is_meme_verified":false,"is_verified":false,"name":"Tyler,
+        The Creator","slug":"Tyler-the-creator","url":"https://genius.com/artists/Tyler-the-creator"}}]}],"next_page":3}}'
+  recorded_at: Thu, 13 May 2021 13:03:38 GMT
+recorded_with: VCR 6.0.0

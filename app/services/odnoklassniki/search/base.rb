@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Search
     class Base < Odnoklassniki::Base
-      include Muffon::Paginated
+      include Muffon::Utils::Paginated
 
       private
 

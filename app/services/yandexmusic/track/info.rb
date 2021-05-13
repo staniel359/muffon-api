@@ -45,20 +45,20 @@ module YandexMusic
       def track_extra_data
         {
           album: album_data,
-          image: image_data(album_raw_data, 'track'),
+          image: image_data(album, 'track'),
           length: length(response_data),
           audio: audio_data
         }
       end
 
       def album_data
-        return {} if album_raw_data.blank?
+        return {} if album.blank?
 
-        { title: album_raw_data['title'] }
+        { title: album['title'] }
       end
 
-      def album_raw_data
-        @album_raw_data ||= response_data.dig('albums', 0)
+      def album
+        @album ||= response_data.dig('albums', 0)
       end
 
       def audio_data

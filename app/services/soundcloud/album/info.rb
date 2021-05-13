@@ -19,7 +19,7 @@ module SoundCloud
       def album_extra_data
         {
           image: image_data(response_data, 'album'),
-          released: released,
+          released: date_formatted(released),
           description: description_truncated,
           tags: tags.first(5),
           tracks: tracks_data
@@ -27,10 +27,8 @@ module SoundCloud
       end
 
       def released
-        time_formatted(
-          response_data.values_at(
-            'release_year', 'release_month', 'release_day'
-          ).compact.join('-')
+        response_data.values_at(
+          'release_year', 'release_month', 'release_day'
         )
       end
 

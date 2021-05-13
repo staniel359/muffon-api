@@ -20,15 +20,11 @@ module Deezer
         {
           image: image_data(response_data, 'album'),
           listeners_count: response_data['fans'],
-          released: released,
+          released: date_formatted(response_data['release_date']),
           labels: [response_data['label']],
           tags: tags.first(5),
           tracks: tracks_data
         }
-      end
-
-      def released
-        time_formatted(response_data['release_date'])
       end
 
       def tracks_data

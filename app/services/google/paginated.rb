@@ -1,6 +1,6 @@
 module Google
   module Paginated
-    include Muffon::Paginated
+    include Muffon::Utils::Paginated
     PAGE_LIMIT = 10
 
     private

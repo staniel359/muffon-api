@@ -12,5 +12,9 @@ module Genius
     def no_data?
       false
     end
+
+    def image_data(image)
+      Genius::Utils::Image.call(image: image)
+    end
   end
 end

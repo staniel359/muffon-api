@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Artist
     class Albums < Odnoklassniki::Base
-      include Muffon::Paginated
+      include Muffon::Utils::Paginated
 
       private
 

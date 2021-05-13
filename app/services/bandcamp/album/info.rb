@@ -19,19 +19,11 @@ module Bandcamp
       def album_extra_data
         {
           image: image_data(image(response_data)),
-          released: released,
+          released: date_formatted(response_data['release_date']),
           description: description_truncated,
           tags: tags.first(5),
           tracks: tracks_data
         }
-      end
-
-      def released
-        time_formatted(
-          Time.zone.at(
-            response_data['release_date']
-          ).to_s
-        )
       end
 
       def tracks_data

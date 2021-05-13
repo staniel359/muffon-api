@@ -61,7 +61,7 @@ module YouTube
       end
 
       def published(video)
-        time_formatted(video.dig('snippet', 'publishedAt'))
+        date_formatted(video.dig('snippet', 'publishedAt'))
       end
 
       def description(video)

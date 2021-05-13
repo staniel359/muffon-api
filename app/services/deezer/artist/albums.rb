@@ -30,7 +30,7 @@ module Deezer
           title: album['title'],
           image: image_data(album, 'album'),
           listeners_count: album['fans'],
-          released: time_formatted(album['release_date']),
+          released: date_formatted(album['release_date']),
           deezer_id: album['id']
         }
       end

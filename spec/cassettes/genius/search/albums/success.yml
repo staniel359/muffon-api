@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://genius.com/api/search/album?page=2&per_page=5&q=a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - genius.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 May 2021 13:53:04 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 64ec5ee599ddf134-ARN
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Etag:
+      - W/"4d42ffb089f45560186f4944427e9a85"
+      Set-Cookie:
+      - _genius_ab_test_cohort=24; Max-Age=2147483647; Path=/
+      - no_public_cache=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 -0000
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - 0a0799a3960000f1343b0da000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Status:
+      - 200 OK
+      X-Runtime:
+      - '78'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"status":200},"response":{"sections":[{"type":"album","hits":[{"highlights":[],"index":"album","type":"album","result":{"_type":"album","api_path":"/albums/477262","cover_art_thumbnail_url":"https://images.genius.com/9d35a5dff10090e6c1d5e077932cea99.300x300x1.jpg","cover_art_url":"https://images.genius.com/9d35a5dff10090e6c1d5e077932cea99.1000x1000x1.jpg","full_title":"After
+        Hours by The Weeknd","id":477262,"name":"After Hours","name_with_artist":"After
+        Hours (artist: The Weeknd)","release_date_components":{"year":2020,"month":3,"day":20},"url":"https://genius.com/albums/The-weeknd/After-hours","artist":{"_type":"artist","api_path":"/artists/2358","header_image_url":"https://images.genius.com/e7aef4529f05c3da2e21aec75a2861e9.1000x562x1.jpg","id":2358,"image_url":"https://images.genius.com/f0813e600d43b8b43c94e8ba1dde880a.640x640x1.png","index_character":"w","is_meme_verified":false,"is_verified":true,"name":"The
+        Weeknd","slug":"The-weeknd","url":"https://genius.com/artists/The-weeknd","iq":6285}}},{"highlights":[],"index":"album","type":"album","result":{"_type":"album","api_path":"/albums/29884","cover_art_thumbnail_url":"https://images.genius.com/aa16cba40f43828a61bbb6212de712bd.300x300x1.jpg","cover_art_url":"https://images.genius.com/aa16cba40f43828a61bbb6212de712bd.750x750x1.jpg","full_title":"Acid
+        Rap by Chance the Rapper","id":29884,"name":"Acid Rap","name_with_artist":"Acid
+        Rap (artist: Chance the Rapper)","release_date_components":{"year":2013,"month":4,"day":30},"url":"https://genius.com/albums/Chance-the-rapper/Acid-rap","artist":{"_type":"artist","api_path":"/artists/16751","header_image_url":"https://images.genius.com/27ac36b6f8cdba29f97d0a94834bbdb7.1000x563x1.jpg","id":16751,"image_url":"https://images.genius.com/9db1a9643a028d62543e44c90da3a6ad.1000x1000x1.jpg","index_character":"c","is_meme_verified":false,"is_verified":true,"name":"Chance
+        the Rapper","slug":"Chance-the-rapper","url":"https://genius.com/artists/Chance-the-rapper","iq":47715}}},{"highlights":[],"index":"album","type":"album","result":{"_type":"album","api_path":"/albums/35169","cover_art_thumbnail_url":"https://images.genius.com/aef6271cd5ea58ad565933e5eb81bc59.300x300x1.jpg","cover_art_url":"https://images.genius.com/aef6271cd5ea58ad565933e5eb81bc59.1000x1000x1.jpg","full_title":"A
+        Night at the Opera by Queen","id":35169,"name":"A Night at the Opera","name_with_artist":"A
+        Night at the Opera (artist: Queen)","release_date_components":{"year":1975,"month":11,"day":21},"url":"https://genius.com/albums/Queen/A-night-at-the-opera","artist":{"_type":"artist","api_path":"/artists/563","header_image_url":"https://images.genius.com/34a2fdbce52184eebfe33f45f6290ad7.1000x228x1.jpg","id":563,"image_url":"https://images.genius.com/30a049d2de687550227ba815650eb196.585x585x1.png","index_character":"q","is_meme_verified":false,"is_verified":false,"name":"Queen","slug":"Queen","url":"https://genius.com/artists/Queen"}}},{"highlights":[],"index":"album","type":"album","result":{"_type":"album","api_path":"/albums/544652","cover_art_thumbnail_url":"https://images.genius.com/e0dcecefaaf15a4279620dc8b583ed9f.300x300x1.jpg","cover_art_url":"https://images.genius.com/e0dcecefaaf15a4279620dc8b583ed9f.822x822x1.jpg","full_title":"Acid
+        Rap (Re-Release) by Chance the Rapper","id":544652,"name":"Acid Rap (Re-Release)","name_with_artist":"Acid
+        Rap (Re-Release) (artist: Chance the Rapper)","release_date_components":{"year":2019,"month":6,"day":28},"url":"https://genius.com/albums/Chance-the-rapper/Acid-rap-re-release","artist":{"_type":"artist","api_path":"/artists/16751","header_image_url":"https://images.genius.com/27ac36b6f8cdba29f97d0a94834bbdb7.1000x563x1.jpg","id":16751,"image_url":"https://images.genius.com/9db1a9643a028d62543e44c90da3a6ad.1000x1000x1.jpg","index_character":"c","is_meme_verified":false,"is_verified":true,"name":"Chance
+        the Rapper","slug":"Chance-the-rapper","url":"https://genius.com/artists/Chance-the-rapper","iq":47715}}},{"highlights":[],"index":"album","type":"album","result":{"_type":"album","api_path":"/albums/328417","cover_art_thumbnail_url":"https://images.genius.com/b72ffa400a4c1fe6ce65cae15548217f.300x300x1.png","cover_art_url":"https://images.genius.com/b72ffa400a4c1fe6ce65cae15548217f.1000x1000x1.png","full_title":"American
+        Teen by Khalid","id":328417,"name":"American Teen","name_with_artist":"American
+        Teen (artist: Khalid)","release_date_components":{"year":2017,"month":3,"day":3},"url":"https://genius.com/albums/Khalid/American-teen","artist":{"_type":"artist","api_path":"/artists/9932","header_image_url":"https://images.genius.com/f5f89af97e454e04a4f0344b02ae0918.1000x562x1.jpg","id":9932,"image_url":"https://images.genius.com/67238ec42a2fb4d563962126d9712b5e.1000x1000x1.jpg","index_character":"k","is_meme_verified":false,"is_verified":true,"name":"Khalid","slug":"Khalid","url":"https://genius.com/artists/Khalid","iq":12871}}}]}],"next_page":3}}'
+  recorded_at: Thu, 13 May 2021 13:53:04 GMT
+recorded_with: VCR 6.0.0

@@ -6,6 +6,6 @@ class ApplicationController < ActionController::API
   private
 
   def not_found_handler
-    Muffon::Errors.handlers.not_found
+    Muffon::Utils::Errors.handlers.not_found
   end
 end

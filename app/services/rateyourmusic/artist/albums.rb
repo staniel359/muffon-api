@@ -1,7 +1,7 @@
 module RateYourMusic
   module Artist
     class Albums < Muffon::Base
-      include Muffon::Paginated
+      include Muffon::Utils::Paginated
 
       def call
         return handlers.bad_request if not_all_args?

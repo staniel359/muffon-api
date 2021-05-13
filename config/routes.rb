@@ -324,6 +324,8 @@ Rails.application.routes.draw do
 
       namespace :genius do
         namespace :search do
+          get 'artists'
+          get 'albums'
           get 'tracks'
         end
 

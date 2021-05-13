@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Muffon::Errors do
+RSpec.describe Muffon::Utils::Errors do
   subject { described_class }
 
   describe 'successful processing' do

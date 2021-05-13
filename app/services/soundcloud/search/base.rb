@@ -1,7 +1,7 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::Base
-      include Muffon::Paginated
+      include Muffon::Utils::Paginated
 
       def call
         super

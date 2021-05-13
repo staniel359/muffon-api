@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://genius.com/api/search/artist?page=1&per_page=20&q=molly%20nilsson
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - genius.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 13 May 2021 13:02:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 64ec1549effaf288-WAW
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Etag:
+      - W/"14dc6f2f2626528fd6594fe8304948ef"
+      Set-Cookie:
+      - _genius_ab_test_cohort=23; Max-Age=2147483647; Path=/
+      - no_public_cache=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 -0000
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - 0a076ba2350000f28850a73000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Status:
+      - 200 OK
+      X-Runtime:
+      - '180'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"status":200},"response":{"sections":[{"type":"artist","hits":[{"highlights":[],"index":"artist","type":"artist","result":{"_type":"artist","api_path":"/artists/211560","header_image_url":"https://images.genius.com/ffc4a1fff3ae586b29ec24a80ed4c9de.1000x429x1.jpg","id":211560,"image_url":"https://images.genius.com/50f0b4e5b2c2e67eafc71ec10210124e.681x600x1.jpg","index_character":"m","is_meme_verified":false,"is_verified":false,"name":"Molly
+        Nilsson","slug":"Molly-nilsson","url":"https://genius.com/artists/Molly-nilsson"}}]}],"next_page":2}}'
+  recorded_at: Thu, 13 May 2021 13:02:48 GMT
+recorded_with: VCR 6.0.0
