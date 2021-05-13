@@ -4,7 +4,7 @@ module Genius
       private
 
       def primary_args
-        [@args.path]
+        [@args.track_id]
       end
 
       def response_data
@@ -16,7 +16,7 @@ module Genius
       end
 
       def link
-        "https://genius.com/#{@args.path}"
+        "https://genius.com/#{@args.track_id}"
       end
 
       def data

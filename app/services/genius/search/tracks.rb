@@ -62,7 +62,7 @@ module Genius
         {
           title: track['title'],
           artist: artist_data(track),
-          path: track['path'].remove('/')
+          genius_id: track['path'].remove('/')
         }
       end
 
