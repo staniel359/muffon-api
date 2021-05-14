@@ -48,3 +48,17 @@ set :puma_service_unit_name, 'muffon'
 set :puma_workers, 2
 
 set :whenever_roles, -> { :app }
+
+before 'deploy:check', 'creds:copy'
+
+namespace :creds do
+  desc 'Copy credentials'
+  task :copy do
+    on roles(:all) do |host|
+      upload!(
+        'config/credentials/production.yml.enc',
+        '/root/muffon-api/shared/config/credentials/production.yml.enc'
+      )
+    end
+  end
+end
