@@ -13,6 +13,10 @@ module Helpers
         def tracks_data
           {:search=>{:page=>2, :total_pages=>38, :tracks=>[{:artist=>{:name=>"Wild Nothing"}, :id=>1, :title=>"Chinatown (Live from Brooklyn Steel)"}, {:artist=>{:name=>"Wild Nothing"}, :id=>2, :title=>"Gemini - Chinatown"}, {:artist=>{:name=>"Wild_Nothing"}, :id=>3, :title=>"Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :id=>4, :title=>"10 Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :id=>5, :title=>"\"Chinatown\" from the album Gemini (Captured Tracks) - Wild N"}]}}
         end
+
+        def tags_data
+          {:search=>{:page=>2, :tags=>[{:name=>"orchestral pop"}, {:name=>"trip-pop"}, {:name=>"sunshine pop"}, {:name=>"emo-pop"}, {:name=>"nightmare pop"}, {:name=>"pop opera"}, {:name=>"hk-pop"}, {:name=>"emo pop"}, {:name=>"fight-pop"}, {:name=>"weed pop"}], :total_pages=>10}}
+        end
       end
     end
   end

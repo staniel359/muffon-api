@@ -33,7 +33,7 @@ module Google
     end
 
     def headers
-      { params: params }
+      { params: params.compact }
     end
 
     def params
@@ -43,7 +43,7 @@ module Google
         cx: scope_id,
         start: (offset if @args.page.present?),
         fields: fields
-      }.compact
+      }
     end
 
     def api_key

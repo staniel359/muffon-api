@@ -1,0 +1,221 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_LASTFM_TAGS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=pop
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Fri, 14 May 2021 10:05:26 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "queries": {
+            "request": [
+              {
+                "totalResults": "8970000"
+              }
+            ]
+          },
+          "items": [
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Indie pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/indie+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Chamber pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/chamber+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Math pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/math%20pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Cambodian pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/cambodian+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Arabic pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/arabic+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Japanese city pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/japanese+city+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Industrial pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/industrial+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Dance-pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/dance-pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Orchestral pop music | Last.fm",
+                    "og:url": "https://www.last.fm/tag/orchestral+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Fri, 14 May 2021 10:05:26 GMT
+recorded_with: VCR 6.0.0

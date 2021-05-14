@@ -37,6 +37,7 @@ Rails.application.routes.draw do
           get 'artists'
           get 'albums'
           get 'tracks'
+          get 'tags'
         end
 
         namespace :tags, as: :tag, constraints: { tag: /[^\/]+/ } do
