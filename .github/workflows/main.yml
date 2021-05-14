@@ -1,16 +1,13 @@
 name: main
-
-on:
-  push:
-    branches: [ main ]
+on: push
 
 jobs:
-  check:
+  CD:
     runs-on: ubuntu-latest
 
     services:
       postgres:
-        image: postgres:12
+        image: postgres:13
         env:
           POSTGRES_DB: muffon_api_test
           POSTGRES_USER: muffon_api_test
@@ -22,7 +19,8 @@ jobs:
         ports: ['6379:6379']
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Set up Checkout
+      uses: actions/checkout@v2
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
@@ -32,13 +30,21 @@ jobs:
     - name: Install dependencies
       run: bundle install
 
-    - name: Run Rubocop
+    - name: Lint
       run: bundle exec rubocop
 
-    - name: Run RSpec
+    - name: Test
       env:
         RAILS_ENV: test
         RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
       run: |
-        bundle exec rake db:migrate
+        bundle exec rails db:migrate
         bundle exec rspec
+
+    - name: Deploy
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: |
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+        bundle exec cap production deploy
