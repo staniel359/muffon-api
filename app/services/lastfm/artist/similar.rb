@@ -1,24 +1,29 @@
 module LastFM
   module Artist
-    class Similar < LastFM::Artist::Web::Paginated
+    class Similar < LastFM::Artist::API::Paginated
       private
+
+      def service_info
+        {
+          api_method: 'artist.getSimilar',
+          response_data_node: 'similarartists'
+        }
+      end
 
       def collection_name
         'similar'
       end
 
-      def collection_data
-        return [] if page > total_pages
-
-        similar_list.map { |s| similar_artist_data(s) }
+      def model_name
+        'artist'
       end
 
-      def similar_list
-        response_data.css('.similar-artists-item')
+      def total_limit
+        250
       end
 
-      def similar_artist_data(similar)
-        LastFM::Artist::Similar::Artist.call(similar: similar)
+      def collection_item_data(similar)
+        { name: similar['name'] }
       end
     end
   end

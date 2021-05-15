@@ -3,12 +3,19 @@ module LastFM
     class Tracks < LastFM::Artist::API::Paginated
       private
 
-      def model_name
-        'track'
+      def service_info
+        {
+          api_method: 'artist.getTopTracks',
+          response_data_node: 'toptracks'
+        }
       end
 
       def collection_name
         'tracks'
+      end
+
+      def model_name
+        'track'
       end
 
       def total_limit

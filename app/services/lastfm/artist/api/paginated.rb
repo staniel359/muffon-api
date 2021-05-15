@@ -6,13 +6,6 @@ module LastFM
 
         private
 
-        def service_info
-          {
-            api_method: "artist.getTop#{collection_name.capitalize}",
-            response_data_node: "top#{collection_name}"
-          }
-        end
-
         def params
           super.merge(pagination_params)
         end
