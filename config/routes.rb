@@ -330,6 +330,12 @@ Rails.application.routes.draw do
           get 'tracks'
         end
 
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
         namespace :tracks, as: :track do
           scope ':track_id' do
             get '', action: :info
