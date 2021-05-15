@@ -31,10 +31,6 @@ module LastFM
         response_data['playcount'].to_i
       end
 
-      def tags
-        tags_list.map { |t| t['name'] }
-      end
-
       def tags_list
         response_data.dig('tags', 'tag')
       end

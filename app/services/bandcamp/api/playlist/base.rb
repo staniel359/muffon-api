@@ -40,8 +40,8 @@ module Bandcamp
           response_data['about'].to_s
         end
 
-        def tags
-          response_data['tags'].map { |t| t['name'] }
+        def tags_list
+          response_data['tags']
         end
 
         def tracks_list

@@ -5,8 +5,8 @@ module LastFM
 
       def tag_data
         {
-          name: name,
-          similar: similar
+          name: name.downcase,
+          similar: tags
         }
       end
 
@@ -20,11 +20,7 @@ module LastFM
         base_link
       end
 
-      def similar
-        similar_list.map { |t| t.css('a')[0].text }
-      end
-
-      def similar_list
+      def tags_list
         response_data.css('.tags-list .tag')
       end
     end

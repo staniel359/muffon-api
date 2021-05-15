@@ -27,8 +27,8 @@ module Odnoklassniki
         album['name']
       end
 
-      def tags
-        album['genres'].map { |t| t['label'] }
+      def tags_list
+        album['genres']
       end
     end
   end

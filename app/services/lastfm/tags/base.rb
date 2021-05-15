@@ -22,17 +22,13 @@ module LastFM
         { name: extra_data['artist'] }
       end
 
-      def tags
-        tags_list.map { |t| tag_data(t) }
-      end
-
       def tags_list
         response_data['tag']
       end
 
-      def tag_data(tag)
+      def tag_item_data(tag)
         {
-          name: tag['name'],
+          name: tag_item_name(tag),
           percent: tag['count']
         }
       end

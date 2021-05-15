@@ -46,8 +46,8 @@ module LastFM
           )[0]['src']
         end
 
-        def tags
-          @args.similar.css('.tag').map(&:text)
+        def tags_list
+          @args.similar.css('.tag')
         end
       end
     end

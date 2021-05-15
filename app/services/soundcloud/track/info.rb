@@ -37,9 +37,13 @@ module SoundCloud
           plays_count: response_data['playback_count'],
           length: length(response_data),
           description: response_data['description'],
-          tags: [response_data['genre']],
+          tags: tags,
           audio: audio_data
         }
+      end
+
+      def tags_list
+        [response_data['genre']]
       end
 
       def audio_data

@@ -57,5 +57,24 @@ module Muffon
     def default_image_data(model)
       LastFM::Utils::Image.call(model: model)
     end
+
+    def tags
+      tags_list.map { |t| tag_item_data(t) }
+    end
+
+    def tag_item_data(tag)
+      { name: tag_item_name(tag) }
+    end
+
+    def tag_item_name(tag)
+      case tag.class.name
+      when 'Hash'
+        tag['name'] || tag['label']
+      when 'String'
+        tag
+      when 'Nokogiri::XML::Element'
+        tag.text
+      end
+    end
   end
 end

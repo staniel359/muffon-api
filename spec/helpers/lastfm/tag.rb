@@ -19,7 +19,7 @@ module Helpers
         end
 
         def similar_data
-          {:tag=>{:name=>"Dream pop", :similar=>["shoegaze", "indie", "indie pop", "electronic", "ethereal", "female vocalists"]}}
+          {:tag=>{:name=>"dream pop", :similar=>[{:name=>"shoegaze"}, {:name=>"indie"}, {:name=>"indie pop"}, {:name=>"electronic"}, {:name=>"ethereal"}, {:name=>"female vocalists"}]}}
         end
 
         def tracks_data

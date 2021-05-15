@@ -109,7 +109,7 @@ module Discogs
       ]
     end
 
-    def tags
+    def tags_list
       response_data.values_at(
         'genres', 'styles'
       ).flatten.compact.uniq

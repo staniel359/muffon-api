@@ -31,23 +31,15 @@ module LastFM
         {
           page: response_data[:page],
           total_pages: response_data[:total_pages],
-          tags: tags_data
+          tags: tags
         }
-      end
-
-      def tags_data
-        tags_list.map { |t| tag_data(t) }
       end
 
       def tags_list
         response_data[:results]
       end
 
-      def tag_data(tag)
-        { name: tag_name(tag) }
-      end
-
-      def tag_name(tag)
+      def tag_item_name(tag)
         tag[:title].match(
           /(.+) music | Last.fm/
         )[1].downcase

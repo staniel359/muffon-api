@@ -23,12 +23,11 @@ module SoundCloud
         response_data['description'].to_s
       end
 
-      def tags
-        [response_data['genre'], tags_list].flatten.reject(&:blank?)
-      end
-
       def tags_list
-        response_data['tags'].split(/\s?"\s?/)
+        [
+          response_data['genre'],
+          response_data['tags'].split(/\s?"\s?/)
+        ].flatten.reject(&:blank?)
       end
     end
   end

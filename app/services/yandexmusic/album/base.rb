@@ -26,7 +26,7 @@ module YandexMusic
         { album: album_data }
       end
 
-      def tags
+      def tags_list
         [response_data['genre']]
       end
     end

@@ -14,20 +14,6 @@ RSpec.describe Discogs::Group::Info do
       it { expect(output).to eq(Helpers::Discogs::Group.info_data) }
     end
 
-    context 'when multiple artists' do
-      let(:output) do
-        VCR.use_cassette 'discogs/group/info/multiple_artists' do
-          subject.call(group_id: '1531968')
-        end
-      end
-
-      it do
-        expect(output).to eq(
-          Helpers::Discogs::Group.info_multiple_artists_data
-        )
-      end
-    end
-
     context 'when different artists' do
       let(:output) do
         VCR.use_cassette 'discogs/group/info/different_artists' do
@@ -38,6 +24,20 @@ RSpec.describe Discogs::Group::Info do
       it do
         expect(output).to eq(
           Helpers::Discogs::Group.info_different_artists_data
+        )
+      end
+    end
+
+    context 'when multiple artists' do
+      let(:output) do
+        VCR.use_cassette 'discogs/group/info/multiple_artists' do
+          subject.call(group_id: '1531968')
+        end
+      end
+
+      it do
+        expect(output).to eq(
+          Helpers::Discogs::Group.info_multiple_artists_data
         )
       end
     end

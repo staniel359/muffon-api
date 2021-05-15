@@ -37,9 +37,13 @@ module Spotify
           image: image_data(response_data, 'album'),
           released: date_formatted(response_data['release_date']),
           labels: [response_data['label']],
-          tags: response_data['genres'],
+          tags: tags.first(5),
           tracks: tracks_data
         }
+      end
+
+      def tags_list
+        response_data['genres']
       end
 
       def tracks_data

@@ -56,10 +56,6 @@ module LastFM
         response_data['duration'].to_i / 1_000
       end
 
-      def tags
-        tags_list.map { |t| t['name'] }
-      end
-
       def tags_list
         response_data.dig('toptags', 'tag')
       end
