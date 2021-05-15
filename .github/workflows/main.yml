@@ -27,7 +27,7 @@ jobs:
       with:
         bundler-cache: true
 
-    - name: Install dependencies
+    - name: Set up dependencies
       run: bundle install
 
     - name: Lint
