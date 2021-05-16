@@ -336,6 +336,13 @@ Rails.application.routes.draw do
           end
         end
 
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'description'
+          end
+        end
+
         namespace :tracks, as: :track do
           scope ':track_id' do
             get '', action: :info
