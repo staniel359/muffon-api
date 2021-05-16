@@ -9,16 +9,23 @@ module Genius
 
       def album_primary_data
         {
-          title: album['name'],
+          title: title,
           genius_id: album['id'],
           artist: artist_data
+        }
+      end
+
+      def artist_data
+        {
+          name: artist_name,
+          genius_id: album.dig('artist', 'id')
         }
       end
 
       def album_extra_data
         {
           image: image_data(album['cover_art_url']),
-          released: album_released(album),
+          released: released(album),
           description: description_truncated,
           tracks: tracks_data
         }

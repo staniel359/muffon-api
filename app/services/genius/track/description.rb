@@ -1,9 +1,9 @@
 module Genius
-  module Album
-    class Description < Genius::Album::Base
+  module Track
+    class Description < Genius::Track::Base
       private
 
-      def album_data
+      def track_data
         {
           title: title,
           artist: artist_data,

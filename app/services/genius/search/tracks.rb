@@ -14,7 +14,7 @@ module Genius
       def collection_item_data(track)
         {
           title: track['title'],
-          genius_id: track['path'].remove('/'),
+          genius_id: track['id'],
           artist: artist_data(track)
         }
       end

@@ -17,7 +17,7 @@ module Genius
           genius_id: album['id'],
           artist: artist_data(album),
           image: image_data(album['cover_art_url']),
-          released: album_released(album)
+          released: released(album)
         }
       end
 

@@ -4,6 +4,10 @@ module API
       class TracksController < API::V1::BaseController
         def info; end
 
+        def description; end
+
+        def tags; end
+
         def lyrics; end
       end
     end

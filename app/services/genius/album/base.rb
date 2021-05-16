@@ -31,11 +31,16 @@ module Genius
         { album: album_data }
       end
 
+      def title
+        album['name']
+      end
+
       def artist_data
-        {
-          name: album.dig('artist', 'name'),
-          genius_id: album.dig('artist', 'id')
-        }
+        { name: artist_name }
+      end
+
+      def artist_name
+        album.dig('artist', 'name')
       end
 
       def description

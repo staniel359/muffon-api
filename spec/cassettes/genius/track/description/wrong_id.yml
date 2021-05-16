@@ -21,7 +21,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Sun, 16 May 2021 11:44:24 GMT
+      - Sun, 16 May 2021 11:44:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,11 +29,11 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 65045a968e89f2bc-WAW
+      - 65045a62be885024-WAW
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _genius_ab_test_cohort=13; Max-Age=2147483647; Path=/
+      - _genius_ab_test_cohort=75; Max-Age=2147483647; Path=/
       Vary:
       - Accept-Encoding
       Via:
@@ -41,17 +41,17 @@ http_interactions:
       Cf-Cache-Status:
       - MISS
       Cf-Request-Id:
-      - 0a1696f2160000f2bc531a2000000001
+      - 0a1696d1b1000050244a150000000001
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Status:
       - 404 Not Found
       X-Runtime:
-      - '11'
+      - '7'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
       string: '{"meta":{"status":404,"message":"404 Not Found"}}'
-  recorded_at: Sun, 16 May 2021 11:44:24 GMT
+  recorded_at: Sun, 16 May 2021 11:44:15 GMT
 recorded_with: VCR 6.0.0

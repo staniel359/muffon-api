@@ -7,8 +7,16 @@ module Genius
         [@args.track_id]
       end
 
+      def no_data?
+        track.blank?
+      end
+
+      def track
+        @track ||= response_data.dig('response', 'song')
+      end
+
       def response_data
-        @response_data ||= Nokogiri::HTML.parse(response)
+        JSON.parse(response)
       end
 
       def response
@@ -16,7 +24,7 @@ module Genius
       end
 
       def link
-        "https://genius.com/#{@args.track_id}"
+        "https://genius.com/api/songs/#{@args.track_id}"
       end
 
       def data
@@ -24,20 +32,7 @@ module Genius
       end
 
       def title
-        track_info('title') ||
-          xpath_data('SongHeader__Title').text
-      end
-
-      def track_info(class_name)
-        response_data.css(
-          ".header_with_cover_art-primary_info-#{class_name}"
-        ).text.presence
-      end
-
-      def xpath_data(class_name)
-        response_data.xpath(
-          "//*[contains(@class, '#{class_name}')]"
-        )
+        track['title_with_featured']
       end
 
       def artist_data
@@ -45,24 +40,21 @@ module Genius
       end
 
       def artist_name
-        track_info('primary_artist') ||
-          xpath_data('SongHeader__Artist').text
+        track['primary_artist']['name']
+      end
+
+      def description
+        track['description_preview']
+      end
+
+      def tags_list
+        track['tags']
       end
 
       def lyrics
-        lyrics_original || lyrics_alternative
-      end
-
-      def lyrics_original
-        response_data.css('.lyrics p').text.presence
-      end
-
-      def lyrics_alternative
-        nodes = xpath_data('Lyrics__Container')
-
-        nodes.css('br').each { |br| br.replace("\n") }
-
-        nodes.text
+        Genius::Track::Info::Lyrics.call(
+          track_slug: track['path']
+        )[:lyrics]
       end
     end
   end

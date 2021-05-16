@@ -7,7 +7,7 @@ RSpec.describe Genius::Track::Lyrics do
     context 'when id present' do
       let(:output) do
         VCR.use_cassette 'genius/track/lyrics/success' do
-          subject.call(track_id: 'Molly-nilsson-ugly-girl-lyrics')
+          subject.call(track_id: '344944')
         end
       end
 

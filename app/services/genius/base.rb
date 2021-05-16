@@ -17,8 +17,8 @@ module Genius
       Genius::Utils::Image.call(image: image)
     end
 
-    def album_released(album)
-      Genius::Utils::Album::Released.call(album: album)
+    def released(data)
+      Genius::Utils::Released.call(data: data)
     end
   end
 end

@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe Genius::Track::Info do
+RSpec.describe Genius::Track::Description do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when id present' do
       let(:output) do
-        VCR.use_cassette 'genius/track/info/success' do
+        VCR.use_cassette 'genius/track/description/success' do
           subject.call(track_id: '344944')
         end
       end
 
-      it { expect(output).to eq(Helpers::Genius::Track.info_data) }
+      it { expect(output).to eq(Helpers::Genius::Track.description_data) }
     end
   end
 
@@ -24,7 +24,7 @@ RSpec.describe Genius::Track::Info do
 
     context 'when wrong id' do
       let(:output) do
-        VCR.use_cassette 'genius/track/info/wrong_id' do
+        VCR.use_cassette 'genius/track/description/wrong_id' do
           subject.call(track_id: random)
         end
       end

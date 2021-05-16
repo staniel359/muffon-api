@@ -11,7 +11,7 @@ module Helpers
         end
 
         def tracks_data
-          {:search=>{:page=>2, :tracks=>[{:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>"Molly-nilsson-ten-new-lives-lyrics", :title=>"Ten New Lives"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>"Molly-nilsson-hiroshima-street-lyrics", :title=>"Hiroshima Street"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>"Molly-nilsson-im-still-wearing-his-jacket-lyrics", :title=>"I’m Still Wearing His Jacket"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>"Molly-nilsson-a-slice-of-lemon-lyrics", :title=>"A Slice Of Lemon"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>"Molly-nilsson-not-today-satan-lyrics", :title=>"Not Today Satan"}]}}
+          {:search=>{:page=>2, :tracks=>[{:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>2884669, :title=>"Ten New Lives"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>2831051, :title=>"Hiroshima Street"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>2878302, :title=>"I’m Still Wearing His Jacket"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>4055661, :title=>"A Slice Of Lemon"}, {:artist=>{:genius_id=>211560, :name=>"Molly Nilsson"}, :genius_id=>2987445, :title=>"Not Today Satan"}]}}
         end
       end
     end
