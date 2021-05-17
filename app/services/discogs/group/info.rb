@@ -4,7 +4,9 @@ module Discogs
       private
 
       def group_data
-        group_base_data.merge(group_extra_data)
+        group_base_data
+          .merge(group_extra_data)
+          .merge(with_more_data)
       end
 
       def group_base_data

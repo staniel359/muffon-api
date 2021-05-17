@@ -1,26 +1,12 @@
 module SoundCloud
   module Track
-    class Info < SoundCloud::Base
+    class Info < SoundCloud::Track::Base
       private
 
-      def primary_args
-        [@args.track_id]
-      end
-
-      def no_data?
-        response_data.blank?
-      end
-
-      def link
-        "#{base_link}/tracks/#{@args.track_id}"
-      end
-
-      def data
-        { track: track_data }
-      end
-
       def track_data
-        track_base_data.merge(track_extra_data)
+        track_base_data
+          .merge(track_extra_data)
+          .merge(with_more_data)
       end
 
       def track_base_data
@@ -36,10 +22,14 @@ module SoundCloud
           image: image_data(response_data, 'track'),
           plays_count: response_data['playback_count'],
           length: length(response_data),
-          description: response_data['description'],
+          description: description_truncated,
           tags: tags,
           audio: audio_data
         }
+      end
+
+      def description
+        response_data['description']
       end
 
       def tags_list

@@ -4,8 +4,17 @@ module LastFM
       private
 
       def artist_data
+        artist_base_data
+          .merge(artist_extra_data)
+          .merge(with_more_data)
+      end
+
+      def artist_base_data
+        { name: title }
+      end
+
+      def artist_extra_data
         {
-          name: title,
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,

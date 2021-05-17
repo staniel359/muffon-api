@@ -4,10 +4,12 @@ module Deezer
       private
 
       def album_data
-        album_main_data.merge(album_extra_data)
+        album_base_data
+          .merge(album_extra_data)
+          .merge(with_more_data)
       end
 
-      def album_main_data
+      def album_base_data
         {
           id: album_id(artist_name(response_data), title),
           title: title,

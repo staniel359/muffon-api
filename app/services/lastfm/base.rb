@@ -29,5 +29,9 @@ module LastFM
         data: data, image: image, model: model
       )
     end
+
+    def with_more_tags?
+      defined?(tags_list) && tags_list.length >= 5
+    end
   end
 end

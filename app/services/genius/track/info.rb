@@ -4,10 +4,12 @@ module Genius
       private
 
       def track_data
-        track_primary_data.merge(track_extra_data)
+        track_base_data
+          .merge(track_extra_data)
+          .merge(with_more_data)
       end
 
-      def track_primary_data
+      def track_base_data
         {
           title: title,
           genius_id: track['id'],

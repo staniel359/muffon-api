@@ -20,10 +20,10 @@ module Deezer
       end
 
       def track_data
-        track_main_data.merge(track_extra_data)
+        track_base_data.merge(track_extra_data)
       end
 
-      def track_main_data
+      def track_base_data
         {
           id: track_id(artist_name(response_data), title),
           title: title,

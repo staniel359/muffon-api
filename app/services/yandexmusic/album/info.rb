@@ -4,7 +4,9 @@ module YandexMusic
       private
 
       def album_data
-        album_base_data.merge(album_extra_data)
+        album_base_data
+          .merge(album_extra_data)
+          .merge(with_more_data)
       end
 
       def album_base_data

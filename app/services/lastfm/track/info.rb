@@ -11,7 +11,9 @@ module LastFM
       end
 
       def track_data
-        track_base_data.merge(track_extra_data)
+        track_base_data
+          .merge(track_extra_data)
+          .merge(with_more_data)
       end
 
       def track_base_data

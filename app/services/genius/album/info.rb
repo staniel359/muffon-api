@@ -4,10 +4,12 @@ module Genius
       private
 
       def album_data
-        album_primary_data.merge(album_extra_data)
+        album_base_data
+          .merge(album_extra_data)
+          .merge(with_more_data)
       end
 
-      def album_primary_data
+      def album_base_data
         {
           title: title,
           genius_id: album['id'],
