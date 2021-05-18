@@ -25,13 +25,6 @@ module LastFM
       def tags_list
         response_data['tag']
       end
-
-      def tag_item_data(tag)
-        {
-          name: tag_item_name(tag),
-          percent: tag['count']
-        }
-      end
     end
   end
 end
