@@ -58,5 +58,9 @@ module SoundCloud
     def length(track)
       track['duration'] / 1_000
     end
+
+    def description
+      response_data['description'].to_s
+    end
   end
 end

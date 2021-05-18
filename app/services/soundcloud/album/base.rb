@@ -19,10 +19,6 @@ module SoundCloud
         { album: album_data }
       end
 
-      def description
-        response_data['description'].to_s
-      end
-
       def tags_list
         [
           response_data['genre'],

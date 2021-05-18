@@ -28,12 +28,8 @@ module SoundCloud
         }
       end
 
-      def description
-        response_data['description']
-      end
-
       def tags_list
-        [response_data['genre']]
+        [response_data['genre']].compact
       end
 
       def audio_data
