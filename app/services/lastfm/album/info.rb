@@ -34,6 +34,8 @@ module LastFM
       end
 
       def tags_list
+        return [] if response_data['tags'].blank?
+
         response_data.dig('tags', 'tag')
       end
 
@@ -42,7 +44,9 @@ module LastFM
       end
 
       def tracks_list
-        response_data.dig('tracks', 'track')
+        [
+          response_data.dig('tracks', 'track')
+        ].flatten.compact
       end
 
       def track_data(track)
