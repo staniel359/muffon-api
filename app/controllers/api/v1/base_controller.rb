@@ -1,48 +1,56 @@
 module API
   module V1
     class BaseController < ApplicationController
-      before_action :render_data_with_status
+      PERMITTED_PARAMS = %i[
+        access_hash
+        album
+        album_id
+        album_type
+        artist
+        artist_id
+        group_id
+        label
+        label_id
+        limit
+        next_page
+        offset
+        owner_id
+        page
+        query
+        tag
+        track
+        track_id
+      ].freeze
 
       private
 
       def render_data_with_status
         render(
           {
-            json: action_data,
-            status: status_code
+            json: data,
+            status: status
           }
         )
       end
 
-      def action_data
-        @action_data ||=
-          action_service&.call(action_service_args)
+      def data
+        @data ||= data_service&.call(data_args)
       end
 
-      def action_service
-        Muffon::API::Service.call(
+      def data_service
+        Muffon::API::DataService.call(
           params.slice(:controller, :action)
         )
       end
 
-      def action_service_args
-        params.slice(*permitted_params)
+      def data_args
+        params.slice(*PERMITTED_PARAMS)
       end
 
-      def permitted_params
-        %i[
-          artist album track tag label
-          page next_page limit offset
-          artist_id album_id track_id
-          owner_id group_id label_id
-          query access_hash album_type
-        ]
-      end
+      def status
+        return 204 if data.blank?
 
-      def status_code
-        return 204 if action_data.blank?
-
-        action_data.dig(:error, :code) || 200
+        data.dig(:error, :code) || 200
       end
     end
   end

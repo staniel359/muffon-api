@@ -1,6 +1,6 @@
 module Muffon
   module API
-    class Service < Muffon::Base
+    class DataService < Muffon::Base
       def call
         data
       end
