@@ -6,4 +6,10 @@ class Artist < ApplicationRecord
       'LOWER(name) = ?', name.downcase
     ).first_or_create(name: name)
   end
+
+  def image
+    return if image_url.blank?
+
+    LastFM::Utils::Image.call(image: image_url)
+  end
 end
