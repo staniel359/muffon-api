@@ -14,6 +14,7 @@ module LastFM
       def collection_item_data(artist)
         {
           name: artist['name'],
+          image: artist_image_data(artist['name']),
           listeners_count: artist['listeners'].to_i
         }
       end

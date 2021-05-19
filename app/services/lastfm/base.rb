@@ -33,5 +33,9 @@ module LastFM
     def with_more_tags?
       defined?(tags_list) && tags_list.length >= 5
     end
+
+    def artist_image_data(artist)
+      ::Artist.with_name(artist).image
+    end
   end
 end

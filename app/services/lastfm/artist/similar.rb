@@ -23,7 +23,10 @@ module LastFM
       end
 
       def collection_item_data(similar)
-        { name: similar['name'] }
+        {
+          name: similar['name'],
+          image: artist_image_data(similar['name'])
+        }
       end
     end
   end
