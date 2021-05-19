@@ -3,7 +3,7 @@ class Artist < ApplicationRecord
 
   def self.with_name(name)
     where(
-      'LOWER(name) = ?', name.downcase
+      'LOWER(name) = ?', name.strip.downcase
     ).first_or_create(name: name)
   end
 

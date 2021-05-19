@@ -15,6 +15,8 @@ module API
         end
 
         def images
+          artist.update(image_url: artist_image_url)
+
           render_data_with_status
         end
 
@@ -28,6 +30,23 @@ module API
 
         def tracks
           render_data_with_status
+        end
+
+        private
+
+        def artist
+          Artist.with_name(params[:artist])
+        end
+
+        def artist_image_url
+          data.dig(:artist, :images, 0, :medium) ||
+            artist_default_image_url
+        end
+
+        def artist_default_image_url
+          ::LastFM::Utils::Image.call(
+            model: 'artist'
+          )[:medium]
         end
       end
     end
