@@ -51,7 +51,7 @@ module Muffon
     end
 
     def description_truncated
-      description.truncate_words(75)
+      description.truncate(400)
     end
 
     def default_image_data(model)

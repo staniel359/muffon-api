@@ -15,7 +15,7 @@ module Helpers
         end
 
         def info_data
-          {:tag=>{:description=>"Dream pop is a genre of music where timbre and texture are as important, if not more so, than melody and song structure. Vocals when present are subsumed within the music and act as another texture or instrument. For example guitarists in dream pop played with feedback and effects to blur and mutate notes, to produce pure iridescent noise, not memorable melodies and toe-tapping tunes, although these when present they weren't the focus.\nThe Cocteau...", :with_more=>{:description=>true}, :name=>"dream pop", :taggers_count=>24277, :taggings_count=>120372}}
+          {:tag=>{:description=>"Dream pop is a genre of music where timbre and texture are as important, if not more so, than melody and song structure. Vocals when present are subsumed within the music and act as another texture or instrument. For example guitarists in dream pop played with feedback and effects to blur and mutate notes, to produce pure iridescent noise, not memorable melodies and toe-tapping tunes, although ...", :with_more=>{:description=>true}, :name=>"dream pop", :taggers_count=>24277, :taggings_count=>120372}}
         end
 
         def similar_data

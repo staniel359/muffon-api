@@ -15,7 +15,7 @@ module Helpers
         end
 
         def info_data
-          {:artist=>{:description=>"Wild Nothing is the solo project of Virginia-born Jack Tatum. Tatum began recording under the moniker Wild Nothing in the summer of 2009 in Blacksburg, Virginia. Upon gathering attention in indie music circles, he was signed with the Captured Tracks record label and began touring with a band. His debut full-length, \"Gemini,\" was released in spring 2010 to acclaim from Pitchfork Media and the music editors at Amazon.com. A follow-up album called \"Nocturne\" was released...", :with_more=>{:description=>true, :tags=>true}, :listeners_count=>544773, :name=>"Wild Nothing", :plays_count=>18885610, :tags=>[{:name=>"dream pop"}, {:name=>"shoegaze"}, {:name=>"indie pop"}, {:name=>"indie"}, {:name=>"seen live"}]}}
+          {:artist=>{:description=>"Wild Nothing is the solo project of Virginia-born Jack Tatum. Tatum began recording under the moniker Wild Nothing in the summer of 2009 in Blacksburg, Virginia. Upon gathering attention in indie music circles, he was signed with the Captured Tracks record label and began touring with a band. His debut full-length, \"Gemini,\" was released in spring 2010 to acclaim from Pitchfork Media and the mu...", :with_more=>{:description=>true, :tags=>true}, :listeners_count=>544773, :name=>"Wild Nothing", :plays_count=>18885610, :tags=>[{:name=>"dream pop"}, {:name=>"shoegaze"}, {:name=>"indie pop"}, {:name=>"indie"}, {:name=>"seen live"}]}}
         end
 
         def similar_data

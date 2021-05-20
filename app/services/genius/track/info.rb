@@ -30,7 +30,7 @@ module Genius
           released: released(track),
           description: description_truncated,
           tags: tags.first(5),
-          lyrics: lyrics.truncate_words(50)
+          lyrics: lyrics.truncate(250)
         }
       end
 
