@@ -15,8 +15,7 @@ module API
         end
 
         def images
-          artist.update(image_url: artist_image_url)
-
+          update_artist_image
           render_data_with_status
         end
 
@@ -34,19 +33,8 @@ module API
 
         private
 
-        def artist
-          Artist.with_name(params[:artist])
-        end
-
-        def artist_image_url
-          data.dig(:artist, :images, 0, :medium) ||
-            artist_default_image_url
-        end
-
-        def artist_default_image_url
-          ::LastFM::Utils::Image.call(
-            model: 'artist'
-          )[:medium]
+        def update_artist_image
+          Muffon::Updater::Artist::Image.call(data: data)
         end
       end
     end
