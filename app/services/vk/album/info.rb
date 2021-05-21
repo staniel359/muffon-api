@@ -37,7 +37,6 @@ module VK
 
       def album_base_data
         {
-          id: album_id(album_artist_name(album), album_title(album)),
           title: album_title(album),
           artist: album_artist_data(album),
           source: 'vk'

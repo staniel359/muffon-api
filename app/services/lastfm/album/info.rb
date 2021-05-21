@@ -11,7 +11,6 @@ module LastFM
 
       def album_base_data
         {
-          id: album_id(artist_name, title),
           title: title,
           artist: artist_data,
           source: 'lastfm'

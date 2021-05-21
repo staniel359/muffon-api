@@ -1,16 +1,14 @@
 class Album < ApplicationRecord
-  enum album_type: { album: 0, group: 1 }, _prefix: 'type'
-
-  validates :title, :album_type, presence: true
+  validates :title, presence: true
 
   belongs_to :artist
 
-  def self.with_artist_id_title_type(artist_id, title, album_type)
+  def self.with_artist_id_title(artist_id, title)
     where(
-      'artist_id = ? AND LOWER(title) = ? AND album_type = ?',
-      artist_id, title.downcase, album_types[album_type]
+      'artist_id = ? AND LOWER(title) = ?',
+      artist_id, title.downcase
     ).first_or_create!(
-      artist_id: artist_id, title: title, album_type: album_type
+      artist_id: artist_id, title: title
     )
   end
 end

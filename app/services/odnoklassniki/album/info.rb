@@ -11,7 +11,6 @@ module Odnoklassniki
 
       def album_base_data
         {
-          id: album_id(artist_name(album), title),
           title: title,
           artist: artist_data(album),
           source: 'odnoklassniki'

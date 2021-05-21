@@ -11,7 +11,6 @@ module Bandcamp
 
       def album_base_data
         {
-          id: album_id(artist_name(response_data), title),
           title: title,
           artist: artist_data(response_data),
           source: 'bandcamp'
