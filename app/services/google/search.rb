@@ -2,13 +2,25 @@ module Google
   class Search < Muffon::Base
     include Google::Paginated
     PAGES_LIMIT = 10
-
-    def call
-      return handlers.bad_request if not_all_args?
-      return handlers.not_found if no_data?
-
-      data
-    end
+    FIELDS = <<~FIELDS.freeze
+      queries(
+        request(
+          totalResults
+        )
+      ),
+      items(
+        pagemap(
+          metatags(
+            og:site_name,
+            og:url,
+            og:title,
+            og:description
+          ),
+          cse_image
+        )
+      )
+    FIELDS
+    include Muffon::Utils::Pagination
 
     private
 
@@ -57,7 +69,7 @@ module Google
     def fields
       'queries(request(totalResults)),'\
         'items(pagemap(metatags(og:site_name,'\
-        'og:url,og:title),cse_image))'
+        'og:url,og:title,og:description),cse_image))'
     end
 
     def data
@@ -67,9 +79,13 @@ module Google
     def search_data
       {
         page: page,
-        total_pages: [total_pages, PAGES_LIMIT].min,
+        total_pages: total_pages_count_formatted,
         results: results_data
       }
+    end
+
+    def total_pages_count_formatted
+      [total_pages_count, PAGES_LIMIT].min
     end
 
     def total_items_count
@@ -91,7 +107,8 @@ module Google
         site_name: opengraph_data(result, 'site_name'),
         title: opengraph_data(result, 'title'),
         link: opengraph_data(result, 'url'),
-        image: result.dig('pagemap', 'cse_image', 0, 'src')
+        image: result.dig('pagemap', 'cse_image', 0, 'src'),
+        description: opengraph_data(result, 'description')
       }
     end
 

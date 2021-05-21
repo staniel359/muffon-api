@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title,og:description),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 10 Feb 2021 10:09:30 GMT
+      - Sat, 22 May 2021 07:30:33 GMT
       Server:
       - ESF
       Cache-Control:
@@ -60,5 +60,5 @@ http_interactions:
             "status": "INVALID_ARGUMENT"
           }
         }
-  recorded_at: Wed, 10 Feb 2021 10:09:29 GMT
+  recorded_at: Sat, 22 May 2021 07:30:32 GMT
 recorded_with: VCR 6.0.0

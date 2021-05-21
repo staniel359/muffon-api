@@ -3,8 +3,12 @@ module Bandcamp
     class Track < Bandcamp::Id::Playlist::Base
       private
 
-      def model_name
-        'track'
+      def primary_args
+        [@args.artist, @args.track]
+      end
+
+      def link
+        "#{base_link}/track/#{@args.track}"
       end
     end
   end

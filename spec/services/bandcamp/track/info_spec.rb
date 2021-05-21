@@ -21,9 +21,7 @@ RSpec.describe Bandcamp::Track::Info do
         end
       end
 
-      it do
-        expect(output).to eq(Helpers::Bandcamp::Track.info_description_data)
-      end
+      it { expect(output).to eq(Helpers::Bandcamp::Track.info_description_data) }
     end
   end
 

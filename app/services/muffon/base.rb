@@ -1,15 +1,24 @@
 module Muffon
   class Base
-    def initialize(args = {})
-      @args = OpenStruct.new(args)
-    end
+    ERRORS = Muffon::Utils::Errors
 
     class << self
       def call(args = {})
         new(args).call
-      rescue *Muffon::Utils::Errors.list => e
-        Muffon::Utils::Errors.handle(e.class)
+      rescue *ERRORS.list => e
+        ERRORS.handle(e.class)
       end
+    end
+
+    def initialize(args = {})
+      @args = OpenStruct.new(args)
+    end
+
+    def call
+      return bad_request if not_all_args?
+      return not_found if no_data?
+
+      data
     end
 
     private
@@ -22,12 +31,12 @@ module Muffon
       primary_args.any?(&:blank?)
     end
 
-    def handlers
-      Muffon::Utils::Errors.handlers
+    def not_found
+      ERRORS.handlers[:not_found]
     end
 
-    def global
-      @global ||= Redis.new
+    def bad_request
+      ERRORS.handlers[:bad_request]
     end
 
     def artist_id(artist_name)
@@ -40,14 +49,12 @@ module Muffon
       ).id
     end
 
-    def album_id(artist_name, title, album_type = 'album')
-      ::Album.with_artist_id_title_type(
-        artist_id(artist_name), title, album_type
-      ).id
+    def date_formatted(data)
+      Muffon::Utils::Date.format(data)
     end
 
-    def date_formatted(data, format = nil)
-      Muffon::Utils::Date.format(data, format)
+    def duration_formatted(data)
+      Muffon::Utils::Duration.format(data)
     end
 
     def description_truncated
@@ -58,20 +65,40 @@ module Muffon
       LastFM::Utils::Image.call(model: model)
     end
 
+    def artist_formatted
+      { name: artist_names }
+    end
+
+    def artist_names
+      artists.pluck(:name).join(', ')
+    end
+
+    def album_formatted
+      return {} if albums.blank?
+
+      { title: album_title }
+    end
+
+    def album_title
+      albums.dig(0, :title)
+    end
+
     def tags
-      tags_list.map { |t| tag_item_data(t) }
+      tags_list.map do |t|
+        tag_data_formatted(t)
+      end
     end
 
-    def tag_item_data(tag)
-      { name: tag_item_name(tag) }
+    def tag_data_formatted(tag)
+      { name: tag_name_formatted(tag) }
     end
 
-    def tag_item_name(tag)
+    def tag_name_formatted(tag)
       case tag.class.name
-      when 'Hash'
-        tag['name'] || tag['label']
       when 'String'
         tag
+      when 'Hash'
+        tag['name'] || tag['label']
       when 'Nokogiri::XML::Element'
         tag.text
       end
@@ -88,7 +115,8 @@ module Muffon
 
     def with_more_description?
       defined?(description) &&
-        description.size > description_truncated.size
+        description.size >
+          description_truncated.size
     end
 
     def with_more_tags?

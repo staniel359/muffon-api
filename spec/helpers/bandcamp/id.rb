@@ -3,19 +3,19 @@ module Helpers
     module Id
       class << self
         def album_data
-          {:artist=>{:id=>2228040235}, :id=>452973411, :model=>"album"}
+          {:id=>{:artists=>[{:bandcamp_id=>2228040235, :name=>"Wild Nothing"}], :bandcamp_id=>452973411, :bandcamp_model=>"album", :title=>"Indigo"}}
         end
 
         def artist_data
-          {:id=>2228040235, :model=>"artist"}
+          {:id=>{:bandcamp_id=>2228040235, :bandcamp_model=>"artist", :name=>"Wild Nothing"}}
         end
 
         def label_data
-          {:id=>2304199212, :model=>"label"}
+          {:id=>{:bandcamp_id=>2304199212, :bandcamp_model=>"label", :name=>"Captured Tracks"}}
         end
 
         def track_data
-          {:artist=>{:id=>2228040235}, :id=>2723372494, :model=>"track"}
+          {:id=>{:artists=>[{:bandcamp_id=>2228040235, :name=>"Wild Nothing"}], :bandcamp_id=>2723372494, :bandcamp_model=>"track", :title=>"Letting Go"}}
         end
       end
     end

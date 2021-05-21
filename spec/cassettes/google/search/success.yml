@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ALBUMS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=10
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ALBUMS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title,og:description),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=10
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 10 Feb 2021 10:09:26 GMT
+      - Sat, 22 May 2021 07:30:31 GMT
       Server:
       - ESF
       Cache-Control:
@@ -45,7 +45,187 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        ewogICJxdWVyaWVzIjogewogICAgInJlcXVlc3QiOiBbCiAgICAgIHsKICAgICAgICAidG90YWxSZXN1bHRzIjogIjI5NTAwIgogICAgICB9CiAgICBdCiAgfSwKICAiaXRlbXMiOiBbCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiRW1wdHkgRXN0YXRlLCBieSBXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vd2lsZG5vdGhpbmdjdC5iYW5kY2FtcC5jb20vYWxidW0vZW1wdHktZXN0YXRlIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2EwMTAyOTc1MjAzXzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIldpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJMaWZlIG9mIFBhdXNlLCBieSBXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vd2lsZG5vdGhpbmdjdC5iYW5kY2FtcC5jb20vdHJhY2svbGlmZS1vZi1wYXVzZSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMDMwMTc2OTQxN181LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJDYXB0dXJlZCBUcmFja3MiLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiV2lsZCBOb3RoaW5nIC0gQSBXb21hbidzIFdpc2RvbSBbRGVtb10sIGJ5IENhcHR1cmVkIFRyYWNrcyIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly9jYXB0dXJlZHRyYWNrcy5iYW5kY2FtcC5jb20vdHJhY2svd2lsZC1ub3RoaW5nLWEtd29tYW5zLXdpc2RvbS1kZW1vIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2EzNjc0NTAzNjQ2XzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIldpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJHb2xkZW4gSGF6ZSwgYnkgV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL2FsYnVtL2dvbGRlbi1oYXplIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2E0MTcxNTM0ODUzXzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIldpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJBIERhbmNpbmcgU2hlbGwsIGJ5IFdpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly93aWxkbm90aGluZ2N0LmJhbmRjYW1wLmNvbS90cmFjay9hLWRhbmNpbmctc2hlbGwiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTAxMDI5NzUyMDNfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiTW9sbHkgQnVyY2giLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiRW1vdGlvbiwgYnkgTW9sbHkgQnVyY2giLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vbW9sbHlidXJjaC5iYW5kY2FtcC5jb20vYWxidW0vZW1vdGlvbiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMzYwMDUzMTc5MV81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiVGhpcyBDaGFpbiBXb24ndCBCcmVhaywgYnkgV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL3RoaXMtY2hhaW4td29udC1icmVhayIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMTYxMjAwNDc2NF81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJTbWFsbCBCbGFjayIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJCb3lzIExpZmUgKFdpbGQgTm90aGluZyBSZW1peCksIGJ5IFNtYWxsIEJsYWNrIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3NtYWxsYmxhY2suYmFuZGNhbXAuY29tL3RyYWNrL2JveXMtbGlmZS13aWxkLW5vdGhpbmctcmVtaXgiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTEwNDAxNzM3MzVfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIk8gTGlsYWMsIGJ5IFdpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly93aWxkbm90aGluZ2N0LmJhbmRjYW1wLmNvbS90cmFjay9vLWxpbGFjIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2E0MTEzNjQyNjM2XzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIldpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJOb2N0dXJuZSDigJMgTGl2ZSBGcm9tIEJyb29rbHluIFN0ZWVsLCBieSBXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vd2lsZG5vdGhpbmdjdC5iYW5kY2FtcC5jb20vdHJhY2svbm9jdHVybmUtbGl2ZS1mcm9tLWJyb29rbHluLXN0ZWVsIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2E0MTIxMjA4NzMwXzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfQogIF0KfQo=
-  recorded_at: Wed, 10 Feb 2021 10:09:26 GMT
+      string: |
+        {
+          "queries": {
+            "request": [
+              {
+                "totalResults": "5020"
+              }
+            ]
+          },
+          "items": [
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "6 track album",
+                    "og:title": "Golden Haze, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/album/golden-haze"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a4171534853_16.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Parked In Hell",
+                    "og:description": "13 track album",
+                    "og:title": "Young Man's Fancy, by Magic Bullets",
+                    "og:url": "https://parkedinhell.bandcamp.com/album/young-mans-fancy"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a2438059751_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Basin Spectra",
+                    "og:description": "3 track album",
+                    "og:title": "Gemini Wild Nothing EP, by Basin Spectra",
+                    "og:url": "https://basinspectra.bandcamp.com/album/gemini-wild-nothing-ep"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a0509659330_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Moongazing Hare",
+                    "og:description": "12 track album",
+                    "og:title": "Wild Nothing, by Moongazing Hare",
+                    "og:url": "https://moongazinghare.bandcamp.com/album/wild-nothing"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a1315545409_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Yumi Zouma",
+                    "og:description": "4 track album",
+                    "og:title": "Remix EP, by Yumi Zouma",
+                    "og:url": "https://yumizouma.bandcamp.com/album/remix-ep"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a1261811385_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "SF Perkele",
+                    "og:description": "1 track album",
+                    "og:title": "Wild Nothing (2014), by SF Perkele",
+                    "og:url": "https://sfperkele.bandcamp.com/album/wild-nothing-2014"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a2799967513_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "winds measure recordings",
+                    "og:title": "wild horses think of nothing else the sea - tape readings, by patrick farmer",
+                    "og:description": "7 track album",
+                    "og:url": "https://windsmeasurerecordings.bandcamp.com/album/wild-horses-think-of-nothing-else-the-sea-tape-readings"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a0633133344_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Funeral Party",
+                    "og:description": "4 track album",
+                    "og:title": "Sparrow's Tongue, by The Column",
+                    "og:url": "https://funeralparty.bandcamp.com/album/sparrows-tongue"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a0801341544_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Beach Vacation",
+                    "og:description": "4 track album",
+                    "og:title": "Maritime EP, by Beach Vacation",
+                    "og:url": "https://beachvacation.bandcamp.com/album/maritime-ep"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3819592219_16.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "mvnners",
+                    "og:description": "8 track album",
+                    "og:title": "try to fall asleep without her, demos, by mvnners",
+                    "og:url": "https://mvnners.bandcamp.com/album/try-to-fall-asleep-without-her-demos"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3001996439_5.jpg"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Sat, 22 May 2021 07:30:30 GMT
 recorded_with: VCR 6.0.0

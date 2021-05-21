@@ -1,21 +1,23 @@
 module Bandcamp
   module Label
-    class Base < Bandcamp::API::Creator::Base
-      include Bandcamp::Paginated
+    class Base < Bandcamp::Base
+      include Muffon::Utils::Pagination
 
       private
 
-      def bandcamp_creator_id
-        @args.label_id
+      def primary_args
+        [@args.label_id]
+      end
+
+      def params
+        { band_id: @args.label_id }
       end
 
       def data
-        { label: label_data.merge(paginated_data) }
+        { label: paginated_data }
       end
 
-      def label_data
-        { name: response_data['name'] }
-      end
+      alias link artist_label_link
     end
   end
 end

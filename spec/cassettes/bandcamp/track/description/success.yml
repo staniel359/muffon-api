@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bandcamp.com/api/mobile/22/tralbum_details?band_id=2228040235&tralbum_id=1709958085&tralbum_type=t
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - bandcamp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store
+      Set-Cookie:
+      - BACKENDID=red-a2b9-14; path=/; Secure
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 21 May 2021 16:07:17 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4046-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1621613236.336028,VS0,VE862
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhYm91dCI6IkZyb20gSmFjayBUYXR1bTog4oCcVGhlcmUgd2VyZSBhIG51bWJlciBvZiBzb25ncyB0aGF0IHdlcmUga2lja2luZyB3aGVuIEkgd2FzIGZpbmlzaGluZyBJbmRpZ28gYW5kIOKAmEJsdWUgV2luZ3PigJkgd2FzIHZlcnkgbmVhcmx5IGluY2x1ZGVkLiBJIGhhZCBzZW50IHRoZSBhbGJ1bSBvZmYgdG8gbWFzdGVyaW5nLCBidXQgdGhlIHNvbmcgZGlkbid0IHNpdCByaWdodCB3aXRoIG1lIGFuZCBJIGRlY2lkZWQsIGF0IHRoZSBsYXN0IHBvc3NpYmxlIG1vbWVudCwgdG8gbGVhdmUgaXQgb2ZmIHRoZSBhbGJ1bS4gSXQncyBpbnRlbnRpb25hbGx5IGEgdmVyeSBiaXR0ZXJzd2VldCBzb3VuZGluZyBzb25nLiBJIGFza2VkIEJlbiBUYWxtaSB3aG8gZGlkIHRoZSBzdHJpbmcgYXJyYW5nZW1lbnRzIG9uIOKAmFNoYWRvd+KAmSB0byBoZWxwIG91dCB3aXRoIHRoaXMgdmVyeSBzaW1wbGUgZGlzc29uYW50IHN0cmluZyBwYXJ0IEkgd2FzIGhlYXJpbmcgaW4gbXkgaGVhZCB3aGljaCBpcyBub3cgbXkgZmF2b3JpdGUgZWxlbWVudCBpbiB0aGUgdHJhY2suIEl0J3MgYSBzb25nIGFib3V0IHdhbGtpbmcgdGhyb3VnaCB0byB0aGUgb3RoZXIgc2lkZSBvZiBjcmlwcGxpbmcgc2VsZi1kb3VidCB3aXRoIHRoZSBoZWxwIG9mIHNvbWVvbmUgeW91IGxvdmUuIEl0J3MgYSByZW1pbmRlciB0byBteXNlbGYgbm90IHRvIGxldCB0aGluZ3Mgc3BpcmFsLCBoYXJkIGFzIGl0IG1heSBiZSBhdCB0aW1lcy7igJ0iLCJiYW5kIjp7ImxvY2F0aW9uIjoiQmxhY2tzYnVyZywgVmlyZ2luaWEiLCJiYW5kX2lkIjoyMjI4MDQwMjM1LCJiaW8iOiJBc2sgSmFjayBUYXR1bSB3aGF0IOKAmFdpbGQgTm90aGluZ+KAmSBtZWFucyBhbmQgaGXigJlsbCBhbnN3ZXI6IOKAmGEgY29udHJhZGljdGlvbuKAmS4gSW4gMjAxMCwgMjEgeWVhciBvbGQgVGF0dW0gcmVsZWFzZWQgb25lIG9mIHRoZSBmaW5lc3QgY3VsdCBwb3AgcmVjb3JkcyBvZiB0aGUgc3VtbWVyIHdoaWxzdCBlbnNjb25jZWQgaW4gaGlzIHNlbmlvciB5ZWFyIG9mIGNvbGxlZ2UgaW4gQmxhY2tzYnVyZywgVkEsIGEgc21hbGwgbWlkLWF0bGFudGljIHRvd24gYmV0dGVyIGtub3duIGZvciBwcm9kdWNpbmcgZm9vdGJhbGwgZmFucyBhbmQgZW5naW5lZXJzIHRoYW4gbXVzaWNpYW5zLiBUYXR1bSBsaXZlcyBpbiBjb250cmFkaWN0aW9ucy4iLCJuYW1lIjoiV2lsZCBOb3RoaW5nIiwiaW1hZ2VfaWQiOjE4NDU1MjQwfSwidHlwZSI6InQiLCJsYWJlbCI6IkNhcHR1cmVkIFRyYWNrcyIsImZyZWVfZG93bmxvYWQiOmZhbHNlLCJyZXF1aXJlX2VtYWlsIjpmYWxzZSwiaXNfcHVyY2hhc2FibGUiOnRydWUsImNyZWRpdHMiOm51bGwsIm51bV9kb3dubG9hZGFibGVfdHJhY2tzIjoxLCJwcmljZSI6MS4wLCJpc19wcmVvcmRlciI6ZmFsc2UsInJlbGVhc2VfZGF0ZSI6MTU0NzU5NjgwMCwiYWxidW1fdGl0bGUiOm51bGwsImFsYnVtX2lkIjpudWxsLCJhcnRfaWQiOjM4NjExODE2NTgsImhhc19kaWdpdGFsX2Rvd25sb2FkIjp0cnVlLCJ0YWdzIjpbeyJsb2NfaWQiOm51bGwsImlzbG9jIjpmYWxzZSwiZ2VvbmFtZSI6bnVsbCwibm9ybV9uYW1lIjoicm9jayIsInVybCI6Ii90YWcvcm9jayIsIm5hbWUiOiJSb2NrIn0seyJsb2NfaWQiOm51bGwsImlzbG9jIjpmYWxzZSwiZ2VvbmFtZSI6bnVsbCwibm9ybV9uYW1lIjoiaW5kaWUiLCJ1cmwiOiIvdGFnL2luZGllIiwibmFtZSI6ImluZGllIn0seyJsb2NfaWQiOm51bGwsImlzbG9jIjpmYWxzZSwiZ2VvbmFtZSI6bnVsbCwibm9ybV9uYW1lIjoiaW5kaWUtcG9wIiwidXJsIjoiL3RhZy9pbmRpZS1wb3AiLCJuYW1lIjoiaW5kaWUgcG9wIn0seyJsb2NfaWQiOjE1NzUwMjk0MTIsImlzbG9jIjp0cnVlLCJnZW9uYW1lIjp7ImZ1bGxuYW1lIjoiQmxhY2tzYnVyZywgVmlyZ2luaWEiLCJuYW1lIjoiQmxhY2tzYnVyZyIsImlkIjo0NzQ3ODI2fSwibm9ybV9uYW1lIjoiYmxhY2tzYnVyZyIsInVybCI6Ii90YWcvYmxhY2tzYnVyZyIsIm5hbWUiOiJCbGFja3NidXJnIn1dLCJsYWJlbF9pZCI6MjMwNDE5OTIxMiwiY3VycmVuY3kiOiJVU0QiLCJmZWF0dXJlZF90cmFja19pZCI6MTcwOTk1ODA4NSwicGFja2FnZV9hcnQiOltdLCJiYW5kY2FtcF91cmwiOiJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL2JsdWUtd2luZ3MiLCJ0cmFsYnVtX2FydGlzdCI6IldpbGQgTm90aGluZyIsIm1lcmNoX3NvbGRfb3V0IjpudWxsLCJ0aXRsZSI6IkJsdWUgV2luZ3MiLCJpZCI6MTcwOTk1ODA4NSwic3RyZWFtaW5nX2xpbWl0IjozLCJwYWNrYWdlX2RldGFpbHNfbGl0ZSI6e30sImlzX3NldF9wcmljZSI6ZmFsc2UsInRyYWNrcyI6W3siaGFzX2x5cmljcyI6ZmFsc2UsImxhYmVsIjoiQ2FwdHVyZWQgVHJhY2tzIiwiaXNfcHVyY2hhc2FibGUiOnRydWUsInJlcXVpcmVfZW1haWwiOmZhbHNlLCJiYW5kX25hbWUiOiJXaWxkIE5vdGhpbmciLCJkdXJhdGlvbiI6MjI1Ljg5MywicHJpY2UiOjEuMCwiYWxidW1fdGl0bGUiOm51bGwsInRyYWNrX251bSI6bnVsbCwidHJhY2tfaWQiOjE3MDk5NTgwODUsImlzX3N0cmVhbWFibGUiOnRydWUsImFsYnVtX2lkIjpudWxsLCJhcnRfaWQiOm51bGwsImVuY29kaW5nc19pZCI6MzI1Mjg2MTQwNCwiYmFuZF9pZCI6MjIyODA0MDIzNSwiaGFzX2RpZ2l0YWxfZG93bmxvYWQiOnRydWUsImxhYmVsX2lkIjoyMzA0MTk5MjEyLCJjdXJyZW5jeSI6IlVTRCIsIm1lcmNoX2lkcyI6bnVsbCwic3RyZWFtaW5nX3VybCI6eyJtcDMtMTI4IjoiaHR0cHM6Ly9iYW5kY2FtcC5jb20vc3RyZWFtX3JlZGlyZWN0P2VuYz1tcDMtMTI4JnRyYWNrX2lkPTE3MDk5NTgwODUmdHM9MTYyMTYxMjE3NiZ0PWE3MDdjYmYyNzU4OWMwMGU0MDgwODNlYmQyMTgwYTZhMTJmMzczYTIifSwibWVyY2hfc29sZF9vdXQiOm51bGwsInRpdGxlIjoiQmx1ZSBXaW5ncyIsInRyYWNrX2xpY2Vuc2VfaWQiOm51bGwsImlzX3NldF9wcmljZSI6ZmFsc2V9XX0=
+  recorded_at: Fri, 21 May 2021 16:07:15 GMT
+recorded_with: VCR 6.0.0

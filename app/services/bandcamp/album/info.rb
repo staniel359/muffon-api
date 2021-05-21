@@ -12,44 +12,49 @@ module Bandcamp
       def album_base_data
         {
           title: title,
-          artist: artist_data(response_data),
-          source: 'bandcamp'
+          bandcamp_id: bandcamp_id,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def album_extra_data
         {
-          image: image_data(image(response_data)),
-          released: date_formatted(response_data['release_date']),
+          image: image_data,
+          release_date: release_date,
           description: description_truncated,
           tags: tags.first(5),
-          tracks: tracks_data
+          tracks: tracks
         }
       end
 
-      def tracks_data
-        tracks_list.map { |t| track_data(t) }
+      def image_data
+        image_data_formatted(
+          image(response_data)
+        )
       end
 
-      def track_data(track)
-        {
-          id: track_id(track['band_name'], track['title']),
-          title: track['title'],
-          artist: artist_data(track),
-          length: length(track),
-          audio: audio_data(track)
-        }
+      def release_date
+        date_formatted(
+          response_data['release_date']
+        )
       end
 
-      def audio_data(track)
-        {
-          present: audio_link(track).present?,
-          id: track['track_id'],
-          artist: {
-            id: track['band_id']
-          },
-          source: 'bandcamp'
-        }
+      def tracks
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
+      end
+
+      def tracks_list
+        response_data['tracks']
+      end
+
+      def track_data_formatted(track)
+        Bandcamp::Album::Info::Track.call(
+          track: track
+        )
       end
     end
   end

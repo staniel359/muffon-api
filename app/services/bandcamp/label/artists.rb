@@ -1,31 +1,26 @@
 module Bandcamp
   module Label
     class Artists < Bandcamp::Label::Base
+      COLLECTION_NAME = 'artists'.freeze
+
       private
 
-      def collection_name
-        'artists'
+      def total_items_count
+        artists_list.size
       end
 
-      def artists_data
-        paginated_collection.map { |a| artist_data(a) }
+      def artists_list
+        @artists_list ||= response_data['artists']
       end
 
       def collection_list
-        response_data['artists']
+        collection_paginated(artists_list)
       end
 
-      def artist_data(artist)
-        {
-          name: artist['name'],
-          bandcamp_id: artist['id'],
-          bandcamp_model: 'artist',
-          image: image_data(image(artist))
-        }
-      end
-
-      def image(data)
-        "https://f4.bcbits.com/img/00#{data['image_id']}_10.jpg"
+      def collection_item_data_formatted(artist)
+        Bandcamp::Label::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

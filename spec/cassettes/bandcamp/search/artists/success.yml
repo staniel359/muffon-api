@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ARTISTS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=a&start=10
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ARTISTS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=a&start=10
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 10 Feb 2021 15:58:58 GMT
+      - Wed, 02 Jun 2021 15:18:27 GMT
       Server:
       - ESF
       Cache-Control:
@@ -45,7 +45,170 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        ewogICJxdWVyaWVzIjogewogICAgInJlcXVlc3QiOiBbCiAgICAgIHsKICAgICAgICAidG90YWxSZXN1bHRzIjogIjEyNDAwMDAwIgogICAgICB9CiAgICBdCiAgfSwKICAiaXRlbXMiOiBbCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICLFoGlyb20iLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiQSBVbml2ZXJzZSB0aGF0IFJvYXN0cyBCbG9zc29tcyBmb3IgYSBIb3JzZSwgYnkgxaBpcm9tIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3Npcm9tLmJhbmRjYW1wLmNvbSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMDE1NzQyNjU3OF81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJBIFNoZWxsIGluIHRoZSBQaXQiLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiQSBTaGVsbCBpbiB0aGUgUGl0IiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL2FzaGVsbGludGhlcGl0LmJhbmRjYW1wLmNvbSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy8wMDIyNTczMzUzXzIzLmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJBIFN0b3JtIG9mIExpZ2h0IiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIkFuZCBXZSBXZXB0IFRoZSBCbGFjayBPY2VhbiwgYnkgQSBTdG9ybSBvZiBMaWdodCIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly9hc3Rvcm1vZmxpZ2h0LmJhbmRjYW1wLmNvbSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMDQ3NzM5NjU5Ml81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJCYW5nIG9uIGEgQ2FuIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIkJhbmcgb24gYSBDYW4iLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vYmFuZ29uYWNhbi5iYW5kY2FtcC5jb20iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvMDAwNDQ2ODc4OV8yMy5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiQSBEZWVyIEEgSG9yc2UiLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiV2hhdCBJZiBJIFdhcywgYnkgQSBEZWVyIEEgSG9yc2UiLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vYWRlZXJhaG9yc2UuYmFuZGNhbXAuY29tIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2EyNTk4ODA5MTQzXzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIkEgR2lhbnQgRG9nIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIkEgR2lhbnQgRG9nIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL2FnaWFudGRvZy5iYW5kY2FtcC5jb20iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvMDAwMDY1MTE0Nl8yMy5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiQSBQbGFjZSBUbyBCdXJ5IFN0cmFuZ2VycyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJBIFBsYWNlIFRvIEJ1cnkgU3RyYW5nZXJzIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL2FwbGFjZXRvYnVyeXN0cmFuZ2Vycy5iYW5kY2FtcC5jb20iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvMDAxOTc0MTA5Ml8yMy5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiSGVhcnQgb2YgR29sZDogQSBUcmlidXRlIHRvIFdvb2RzIG9mIFlwcmVzIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIkhlYXJ0IG9mIEdvbGQ6IEEgVHJpYnV0ZSB0byBXb29kcyBvZiBZcHJlcywgYnkgSGVhcnQgb2YgR29sZDogQSBUcmlidXRlIHRvIFdvb2RzIG9mIFlwcmVzIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL2RhdmlkZ29sZHRyaWJ1dGUuYmFuZGNhbXAuY29tIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2EwNTk0MTkyMzAxXzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIk1hcnkgSGFsdm9yc29uICYgSm9obiBEaWV0ZXJpY2giLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiYSB0YW5nbGUgb2Ygc3RhcnMsIGJ5IE1hcnkgSGFsdm9yc29uICYgSm9obiBEaWV0ZXJpY2giLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vaGFsdm9yc29uZGlldGVyaWNoLmJhbmRjYW1wLmNvbSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMTA2OTEzNjQxNF81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJhIHdhdmUgcHJlc3MiLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiYSB3YXZlIHByZXNzIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL2F3YXZlcHJlc3MuYmFuZGNhbXAuY29tIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nLzAwMDc1MDk0NDlfMjMuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfQogIF0KfQo=
-  recorded_at: Wed, 10 Feb 2021 15:58:58 GMT
+      string: |
+        {
+          "queries": {
+            "request": [
+              {
+                "totalResults": "18"
+              }
+            ]
+          },
+          "items": [
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "A Strangely Isolated Place",
+                    "og:title": "A Strangely Isolated Place",
+                    "og:description": "Ambient adjacent.\n\nPlease check our site for all shipping/store options: http://asip.me/stockists",
+                    "og:url": "https://astrangelyisolatedplace.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/0020131968_23.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "group A",
+                    "og:title": "group A",
+                    "og:description": "Experimental music and performance act based in Berlin/Tokyo",
+                    "og:url": "https://groupa.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/0023555975_23.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Aaron Parks",
+                    "og:description": "12 track album",
+                    "og:title": "Little Big II: Dreams of a Mechanical Man, by Aaron Parks",
+                    "og:url": "https://aaronparksmusic.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3026510332_16.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "a wave press",
+                    "og:title": "a wave press",
+                    "og:description": "a wave press is a private press, owned and operated by Casey Anderson, with an emphasis on experimental work in and around music and sound.",
+                    "og:url": "https://awavepress.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/0007509449_23.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Like A Villain",
+                    "og:description": "track by Holland Andrews",
+                    "og:title": "Gloss (Single), by Holland Andrews",
+                    "og:url": "https://likeavillain.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a2562531103_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "A Giant Dog",
+                    "og:title": "A Giant Dog",
+                    "og:description": "A Giant Dog is raucous ear candy culled from the hook-driven melodies of Slade, the glammy swagger of Marc Bolan, the morbid fantasy of Killer-era Alice Cooper, and the unpredictable wit of Sparks. These songs are by, for, and about the losers, freaks, and outcasts. The lonely. The terminally horny. Boozehounds and party animals.",
+                    "og:url": "https://agiantdog.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/0000651146_23.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "D/A/D",
+                    "og:description": "10 track album",
+                    "og:title": "The Construct, by D/A/D",
+                    "og:url": "https://dadmusic.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a2926820940_16.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Mourning [A] BLKstar",
+                    "og:title": "Mourning [A] BLKstar",
+                    "og:description": "Formed in 2015 by RA Washington, M[A]B looks to forage new pathways toward heart music by melding soul, blues, electronics, avant-poetics w/ futurist beats.",
+                    "og:url": "https://mourningablkstar.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/0019478620_23.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "A Shell in the Pit",
+                    "og:title": "A Shell in the Pit",
+                    "og:description": "Vancouver-based composer and sound designer. Contact me here: http://www.ashellinthepit.com/contact.html",
+                    "og:url": "https://ashellinthepit.bandcamp.com"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/0022573353_23.jpg"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Wed, 02 Jun 2021 15:18:26 GMT
 recorded_with: VCR 6.0.0

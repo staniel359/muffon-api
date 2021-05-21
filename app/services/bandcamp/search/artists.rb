@@ -1,23 +1,14 @@
 module Bandcamp
   module Search
     class Artists < Bandcamp::Search::Base
+      COLLECTION_NAME = 'artists'.freeze
+
       private
 
-      def collection_name
-        'artists'
-      end
-
-      def model_name
-        'artist'
-      end
-
-      def collection_item_data(item)
-        {
-          name: artist_name(item),
-          bandcamp_name: bandcamp_artist(item),
-          bandcamp_model: bandcamp_model(item),
-          image: image_data(item[:image])
-        }
+      def collection_item_data_formatted(artist)
+        Bandcamp::Search::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

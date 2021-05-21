@@ -7,24 +7,28 @@ module Bandcamp
         [@args.artist]
       end
 
-      def link
-        "https://#{@args.artist}.bandcamp.com"
-      end
-
       def model_response
-        response_data[3]['data-band']
+        @model_response ||=
+          response_data[3]['data-band']
       end
 
-      def data
+      def id_data
         {
-          id: model_response_data['id'],
-          model: model_type
+          name: model_response_data['name'],
+          bandcamp_id: bandcamp_id,
+          bandcamp_model: model_type
         }
       end
 
       def model_type
-        model_response_data['is_label'] ? 'label' : 'artist'
+        label? ? 'label' : 'artist'
       end
+
+      def label?
+        model_response_data['is_label']
+      end
+
+      alias link base_link
     end
   end
 end

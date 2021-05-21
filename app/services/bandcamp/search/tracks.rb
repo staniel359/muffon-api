@@ -1,29 +1,14 @@
 module Bandcamp
   module Search
     class Tracks < Bandcamp::Search::Base
+      COLLECTION_NAME = 'tracks'.freeze
+
       private
 
-      def collection_name
-        'tracks'
-      end
-
-      def model_name
-        'track'
-      end
-
-      def collection_item_data(item)
-        {
-          title: title(item),
-          bandcamp_title: bandcamp_title(item),
-          bandcamp_model: bandcamp_model(item),
-          artist: artist_data(item),
-          image: image_data(item[:image]),
-          audio: audio_data
-        }
-      end
-
-      def audio_data
-        { source: 'bandcamp' }
+      def collection_item_data_formatted(track)
+        Bandcamp::Search::Tracks::Track.call(
+          track: track
+        )
       end
     end
   end

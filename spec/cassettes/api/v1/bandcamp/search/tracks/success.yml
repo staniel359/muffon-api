@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_TRACKS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_TRACKS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=0
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 10 Feb 2021 15:57:45 GMT
+      - Wed, 02 Jun 2021 15:18:01 GMT
       Server:
       - ESF
       Cache-Control:
@@ -45,7 +45,187 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        ewogICJxdWVyaWVzIjogewogICAgInJlcXVlc3QiOiBbCiAgICAgIHsKICAgICAgICAidG90YWxSZXN1bHRzIjogIjEwNjAwIgogICAgICB9CiAgICBdCiAgfSwKICAiaXRlbXMiOiBbCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiQmx1ZSBXaW5ncywgYnkgV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL2JsdWUtd2luZ3MiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTM4NjExODE2NThfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIkZveWVyLCBieSBXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vd2lsZG5vdGhpbmdjdC5iYW5kY2FtcC5jb20vdHJhY2svZm95ZXIiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTAwMTM0Nzc0OTlfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiTW9sbHkgQnVyY2giLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiRW1vdGlvbiBmZWF0LiBXaWxkIE5vdGhpbmcsIGJ5IE1vbGx5IEJ1cmNoIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL21vbGx5YnVyY2guYmFuZGNhbXAuY29tL3RyYWNrL2Vtb3Rpb24tZmVhdC13aWxkLW5vdGhpbmctMiIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMzYwMDUzMTc5MV81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiTGlmZSBvZiBQYXVzZSwgYnkgV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL2xpZmUtb2YtcGF1c2UiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTAzMDE3Njk0MTdfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiQ2FwdHVyZWQgVHJhY2tzIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIldpbGQgTm90aGluZyAtIEEgV29tYW4ncyBXaXNkb20gW0RlbW9dLCBieSBDYXB0dXJlZCBUcmFja3MiLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vY2FwdHVyZWR0cmFja3MuYmFuZGNhbXAuY29tL3RyYWNrL3dpbGQtbm90aGluZy1hLXdvbWFucy13aXNkb20tZGVtbyIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMzY3NDUwMzY0Nl81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiQSBEYW5jaW5nIFNoZWxsLCBieSBXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vd2lsZG5vdGhpbmdjdC5iYW5kY2FtcC5jb20vdHJhY2svYS1kYW5jaW5nLXNoZWxsIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2EwMTAyOTc1MjAzXzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIldpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJUaGlzIENoYWluIFdvbid0IEJyZWFrLCBieSBXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vd2lsZG5vdGhpbmdjdC5iYW5kY2FtcC5jb20vdHJhY2svdGhpcy1jaGFpbi13b250LWJyZWFrIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nL2ExNjEyMDA0NzY0XzUuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIlNtYWxsIEJsYWNrIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIkJveXMgTGlmZSAoV2lsZCBOb3RoaW5nIFJlbWl4KSwgYnkgU21hbGwgQmxhY2siLAogICAgICAgICAgICAib2c6dXJsIjogImh0dHBzOi8vc21hbGxibGFjay5iYW5kY2FtcC5jb20vdHJhY2svYm95cy1saWZlLXdpbGQtbm90aGluZy1yZW1peCIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy9hMTA0MDE3MzczNV81LmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6dGl0bGUiOiAiTyBMaWxhYywgYnkgV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL28tbGlsYWMiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTQxMTM2NDI2MzZfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiV2lsZCBOb3RoaW5nIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIk5vY3R1cm5lIOKAkyBMaXZlIEZyb20gQnJvb2tseW4gU3RlZWwsIGJ5IFdpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly93aWxkbm90aGluZ2N0LmJhbmRjYW1wLmNvbS90cmFjay9ub2N0dXJuZS1saXZlLWZyb20tYnJvb2tseW4tc3RlZWwiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTQxMjEyMDg3MzBfNS5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgXQp9Cg==
-  recorded_at: Wed, 10 Feb 2021 15:57:45 GMT
+      string: |
+        {
+          "queries": {
+            "request": [
+              {
+                "totalResults": "6740"
+              }
+            ]
+          },
+          "items": [
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "track by Wild Nothing",
+                    "og:title": "Blue Wings, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/blue-wings"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3861181658_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "from the album Life of Pause",
+                    "og:title": "Life of Pause, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/life-of-pause"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a0301769417_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Captured Tracks",
+                    "og:title": "Wild Nothing - A Woman's Wisdom [Demo], by Captured Tracks",
+                    "og:description": "from the album Before That, This: A Demo Compilation",
+                    "og:url": "https://capturedtracks.bandcamp.com/track/wild-nothing-a-womans-wisdom-demo"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3674503646_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "from the album Laughing Gas EP",
+                    "og:title": "Foyer, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/foyer"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a0013477499_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "from the album Indigo",
+                    "og:title": "Partners in Motion, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/partners-in-motion"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3221996752_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Molly Burch",
+                    "og:description": "from the album Emotion",
+                    "og:title": "Emotion feat. Wild Nothing, by Molly Burch",
+                    "og:url": "https://mollyburch.bandcamp.com/track/emotion-feat-wild-nothing-2"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3600531791_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "from the album Gemini",
+                    "og:title": "Chinatown, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/chinatown"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a4113642636_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "from the album Nocturne",
+                    "og:title": "Disappear Always, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/disappear-always"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a1612004764_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "High Highs",
+                    "og:description": "track by High Highs",
+                    "og:title": "Live In Dreams (Wild Nothing Cover), by High Highs",
+                    "og:url": "https://highhighsmusic.bandcamp.com/track/live-in-dreams-wild-nothing-cover"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a1225868145_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Wild Nothing",
+                    "og:description": "from the album Nocturne",
+                    "og:title": "Paradise, by Wild Nothing",
+                    "og:url": "https://wildnothingct.bandcamp.com/track/paradise"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a1612004764_5.jpg"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Wed, 02 Jun 2021 15:18:00 GMT
 recorded_with: VCR 6.0.0
