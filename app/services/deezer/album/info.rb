@@ -12,46 +12,47 @@ module Deezer
       def album_base_data
         {
           title: title,
-          artist: artist_data(response_data),
-          source: 'deezer'
+          deezer_id: deezer_id,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def album_extra_data
         {
-          image: image_data(response_data, 'album'),
-          listeners_count: response_data['fans'],
-          released: date_formatted(response_data['release_date']),
-          labels: [response_data['label']],
-          tags: tags.first(5),
-          tracks: tracks_data
+          image: image_data,
+          listeners_count: listeners_count,
+          release_date: release_date,
+          labels: labels,
+          tracks: tracks
         }
       end
 
-      def tracks_data
-        tracks_list.map { |t| track_data(t) }
+      def listeners_count
+        album['NB_FAN']
+      end
+
+      def labels
+        album['LABEL_NAME'].split('/')
+      end
+
+      def tracks
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
       end
 
       def tracks_list
-        response_data.dig('tracks', 'data')
+        response_data.dig(
+          'results', 'SONGS', 'data'
+        )
       end
 
-      def track_data(track)
-        {
-          id: track_id(artist_name(track), track['title']),
-          title: track['title'],
-          artist: artist_data(track),
-          length: track['duration'],
-          audio: audio_data(track)
-        }
-      end
-
-      def audio_data(track)
-        {
-          present: track['readable'],
-          id: track['id'],
-          source: 'deezer'
-        }
+      def track_data_formatted(track)
+        Deezer::Album::Info::Track.call(
+          track: track['FALLBACK'] || track
+        )
       end
     end
   end

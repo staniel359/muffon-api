@@ -1,24 +1,56 @@
 module Genius
   class Base < Muffon::Base
-    def call
-      return handlers.bad_request if not_all_args?
-      return handlers.not_found if no_data?
-
-      data
-    end
+    BASE_LINK = 'https://genius.com/api'.freeze
 
     private
 
-    def no_data?
-      false
+    def response_data
+      JSON.parse(response)
     end
 
-    def image_data(image)
+    def response
+      RestClient.get(link, headers)
+    end
+
+    def headers
+      { params: params }
+    end
+
+    def params
+      {}
+    end
+
+    def artists
+      artists_list.map do |a|
+        artist_data_formatted(a)
+      end
+    end
+
+    def artists_list
+      [artist]
+    end
+
+    def artist_data_formatted(artist)
+      {
+        name: artist['name'],
+        genius_id: artist['id']
+      }
+    end
+
+    def image_data_formatted(image)
       Genius::Utils::Image.call(image: image)
     end
 
-    def released(data)
-      Genius::Utils::Released.call(data: data)
+    def raw_release_date_formatted(data)
+      date_formatted(
+        raw_release_date(data)
+      )
+    end
+
+    def raw_release_date(data)
+      (
+        data['release_date_components'] || {}
+      ).values.compact
     end
   end
 end

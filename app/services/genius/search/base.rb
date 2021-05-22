@@ -1,7 +1,7 @@
 module Genius
   module Search
     class Base < Genius::Base
-      include Muffon::Utils::Paginated
+      include Muffon::Utils::Pagination
 
       private
 
@@ -19,20 +19,12 @@ module Genius
         )
       end
 
-      def response_data
-        JSON.parse(response)
-      end
-
-      def response
-        RestClient.get(link, headers)
-      end
-
       def link
-        "https://genius.com/api/search/#{model_name}"
+        "#{BASE_LINK}/search/#{model_name}"
       end
 
-      def headers
-        { params: params }
+      def model_name
+        self.class::MODEL_NAME
       end
 
       def params
@@ -44,20 +36,7 @@ module Genius
       end
 
       def data
-        { search: search_data }
-      end
-
-      def search_data
-        {
-          page: page,
-          collection_name.to_sym => collection_data
-        }
-      end
-
-      def collection_data
-        collection_list.map do |i|
-          collection_item_data(i['result'])
-        end
+        { search: paginated_data }
       end
     end
   end

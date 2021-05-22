@@ -29,6 +29,7 @@ Layout/EndOfLine:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
+    - 'spec/vcr_helper.rb'
 
 Style/Documentation:
   Enabled: false

@@ -1,6 +1,12 @@
 module Deezer
   module Utils
     class Image < Deezer::Base
+      IMAGE_MODELS = {
+        artist: 'artist',
+        album: 'cover',
+        track: 'cover'
+      }.freeze
+
       def call
         data
       end
@@ -8,31 +14,35 @@ module Deezer
       private
 
       def data
-        return image_data if image.present?
+        return image_data if @args.image_id.present?
 
         default_image_data(@args.model)
       end
 
-      def image
-        @image ||= @args.data && image_url
-      end
-
-      def image_url
-        @args.data['picture_xl'] || @args.data['cover_xl']
-      end
-
       def image_data
         {
-          original: crop_image('1200x1200'),
-          large: crop_image('600x600'),
-          medium: crop_image('300x300'),
-          small: crop_image('100x100'),
-          extrasmall: crop_image('50x50')
+          original: image_resized('1000x1000'),
+          large: image_resized('600x600'),
+          medium: image_resized('300x300'),
+          small: image_resized('100x100'),
+          extrasmall: image_resized('50x50')
         }
       end
 
-      def crop_image(size)
+      def image_resized(size)
         image.sub('1000x1000', size)
+      end
+
+      def image
+        @image ||= 'https://cdns-images.dzcdn.net'\
+          "/images/#{image_model}/#{@args.image_id}"\
+          '/1000x1000-000000-80-0-0.jpg'
+      end
+
+      def image_model
+        @image_model ||= IMAGE_MODELS[
+          @args.model.to_sym
+        ]
       end
     end
   end

@@ -2,7 +2,7 @@ module Deezer
   module Utils
     module Audio
       class Decoder
-        class Blowfish < Deezer::Utils::Base
+        class Blowfish < Deezer::Utils::Audio::Decoder
           def initialize(args = {})
             super
 

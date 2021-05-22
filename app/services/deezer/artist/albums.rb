@@ -1,38 +1,80 @@
 module Deezer
   module Artist
     class Albums < Deezer::Base
-      include Deezer::Paginated
+      API_METHOD = 'album.getDiscography'.freeze
+      ALBUM_TYPE_IDS = {
+        album: '1',
+        single: '0'
+      }.freeze
+      COLLECTION_NAME = 'albums'.freeze
+      include Muffon::Utils::Pagination
 
       private
 
       def primary_args
-        [@args.artist_id]
+        [
+          @args.artist_id,
+          @args.album_type
+        ]
       end
 
       def no_data?
-        response_data['data'].blank?
+        albums_list.blank?
       end
 
-      def link
-        "#{base_link}/artist/#{@args.artist_id}/albums"
+      def albums_list
+        @albums_list ||= response_data.dig(
+          'results', 'data'
+        )
       end
 
-      def collection_name
-        'albums'
+      def payload
+        {
+          art_id: @args.artist_id,
+          discography_mode: 'all',
+          filter_role_id: ['0'],
+          lang: 'en',
+          nb: '200'
+        }.to_json
       end
 
       def data
         { artist: paginated_data }
       end
 
-      def collection_item_data(album)
-        {
-          title: album['title'],
-          image: image_data(album, 'album'),
-          listeners_count: album['fans'],
-          released: date_formatted(album['release_date']),
-          deezer_id: album['id']
-        }
+      def total_items_count
+        albums_list_filtered_sorted.size
+      end
+
+      def albums_list_filtered_sorted
+        @albums_list_filtered_sorted ||=
+          albums_list_filtered.sort_by do |a|
+            a['ORIGINAL_RELEASE_DATE']
+          end.reverse
+      end
+
+      def albums_list_filtered
+        albums_list.select do |a|
+          a['TYPE'] == album_type_id
+        end
+      end
+
+      def album_type_id
+        ALBUM_TYPE_IDS[
+          @args.album_type.to_sym
+        ]
+      end
+
+      def collection_list
+        collection_paginated(
+          albums_list_filtered_sorted
+        )
+      end
+
+      def collection_item_data_formatted(album)
+        Deezer::Artist::Albums::Album.call(
+          album: album
+        )
       end
     end
   end

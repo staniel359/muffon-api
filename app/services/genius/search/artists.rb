@@ -1,15 +1,10 @@
 module Genius
   module Search
     class Artists < Genius::Search::Base
+      COLLECTION_NAME = 'artists'.freeze
+      MODEL_NAME = 'artist'.freeze
+
       private
-
-      def model_name
-        'artist'
-      end
-
-      def collection_name
-        'artists'
-      end
 
       def collection_item_data(artist)
         {

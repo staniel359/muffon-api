@@ -5,19 +5,29 @@ VCR.configure do |c|
   c.hook_into :webmock
 
   secrets = [
-    %i[lastfm api_key], %i[vk page_id], %i[vk email],
-    %i[vk password], %i[discogs api_key], %i[discogs api_secret],
-    %i[soundcloud api_key], %i[soundcloud test_v2_client_id],
-    %i[deezer test_track_token], %i[deezer test_api_token],
-    %i[deezer test_license_token], %i[youtube api_key],
-    %i[google api_key], %i[google scopes lastfm_tags],
+    %i[deezer api_token],
+    %i[deezer license_token],
+    %i[deezer track_token],
+    %i[discogs api_key],
+    %i[discogs api_secret],
+    %i[google api_key],
     %i[google scopes bandcamp_albums],
     %i[google scopes bandcamp_artists],
     %i[google scopes bandcamp_tracks],
-    %i[yandex email], %i[yandex password], %i[yandex csrf_token],
-    %i[odnoklassniki email], %i[odnoklassniki password],
-    %i[odnoklassniki test_session_id], %i[deezer test_track_token],
-    %i[deezer test_api_token], %i[deezer test_license_token]
+    %i[google scopes lastfm_tags],
+    %i[lastfm api_key],
+    %i[odnoklassniki email],
+    %i[odnoklassniki password],
+    %i[odnoklassniki test_session_id],
+    %i[soundcloud api_key],
+    %i[soundcloud test_v2_client_id],
+    %i[vk email],
+    %i[vk page_id],
+    %i[vk password],
+    %i[yandex csrf_token],
+    %i[yandex email],
+    %i[yandex password],
+    %i[youtube api_key]
   ]
 
   secrets.each do |keys|

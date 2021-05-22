@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.deezer.com/album/wejlhg239gh23
+    method: post
+    uri: https://www.deezer.com/ajax/gw-light.php?api_token=&api_version=1.0&method=deezer.getUserData
     body:
       encoding: US-ASCII
       string: ''
@@ -10,11 +10,17 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - sid=<DEEZER_SESSION_ID>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.deezer.com
+      - www.deezer.com
   response:
     status:
       code: 200
@@ -22,38 +28,129 @@ http_interactions:
     headers:
       Server:
       - Apache
-      Access-Control-Allow-Headers:
-      - X-Requested-With, Content-Type, Authorization, Origin, Accept, Accept-Encoding
-      Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, DELETE, PUT
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Expose-Headers:
-      - Location
-      Access-Control-Max-Age:
-      - '86400'
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
       P3p:
       - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Deezer-Client-Ip:
+      - 178.172.193.8
       X-Host:
-      - blm-web-149
+      - blm-web-120
+      X-Ua-Compatible:
+      - IE=edge,chrome=1,requiresActiveX=true
       X-Content-Type-Options:
       - nosniff
-      Content-Length:
-      - '65'
       Content-Type:
       - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
       Date:
-      - Tue, 26 Jan 2021 10:55:21 GMT
+      - Wed, 02 Jun 2021 09:00:25 GMT
+      Content-Length:
+      - '14921'
       Connection:
       - keep-alive
       Set-Cookie:
-      - dzr_uniq_id=dzr_uniq_id_fr5e5fee1c44a3e1cd84c4f770115cacb5a12997; expires=Sun,
-        25-Jul-2021 10:55:21 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
-        HttpOnly; SameSite=None
+      - _abck=8276069BFE14F1D9F8A4D2362C23920A~-1~YAAQBNT1V7AtdKl5AQAAxNXzywWvBETxUhEPTzOVj+bzOu9WxCJkkxWX+mmo35f3wWMl2M9NDzTv4ap6Nd/mh5rBKBF/uaAa5gaN2QkPmgieQ0dlHp2L1e3tb5gRaA6vhNf3zo0Caxkb0UyndlztcuGwJKgZLxa05033D1y1g6PqaSBS+th5G/RycXyJCP6Z7VlvugjFhz01V0C6gOcii/nRkAuDGRKrjHI/42fhn3Ti9nioXW32Krk69qVb4RZf6L4UFT6nBJLr56NK1i6ZELBorcineJE+flucWPY+BTnurBLdGDRukGAzmL5Sg85m1iIP+GDn7e65M1y/qnjiWPNsKa5hK3A5PyZuPjN9UAq1zcwy+/HnEiM=~-1~-1~-1;
+        Domain=.deezer.com; Path=/; Expires=Thu, 02 Jun 2022 09:00:25 GMT; Max-Age=31536000;
+        Secure
+      - bm_sz=6D0ED67861AD15B2C88633E3319C2B7A~YAAQBNT1V68tdKl5AQAAxNXzywsoZpEtMqg7sUDxVQk2+8vksw8AisOCWQOPXUgKiE+uZeGug+PSBBngpjXpiDQ71ZjKsCHCLk2v1H/0l4pacpJQItazfTFDWdchXp+Kf4kbv2OndSeYZd3vTusbu+L6lEhGIZdaKSwYdoFwWvvoMeCda15vDrGeIsE/1xCe;
+        Domain=.deezer.com; Path=/; Expires=Wed, 02 Jun 2021 13:00:25 GMT; Max-Age=14400;
+        HttpOnly
+      - sid=<DEEZER_SESSION_ID>; path=/; domain=.deezer.com;
+        secure; HttpOnly; SameSite=None
       X-Org:
       - FR
     body:
       encoding: UTF-8
-      string: '{"error":{"type":"DataException","message":"no data","code":800}}'
-  recorded_at: Tue, 26 Jan 2021 10:55:20 GMT
+      string: '{"error":[],"results":{"USER":{"USER_ID":0,"USER_PICTURE":"","INSCRIPTION_DATE":"","TRY_AND_BUY":{"AVAILABLE":true,"ACTIVE":"0","DATE_START":"0000-00-00
+        00:00:00","DATE_END":"0000-00-00 00:00:00","PLATEFORM":"none","DAYS_LEFT_MOB":0},"PARTNERS":"0","TOOLBAR":[],"OPTIONS":{"mobile_preview":true,"mobile_radio":true,"mobile_streaming":false,"mobile_streaming_duration":0,"mobile_offline":false,"mobile_sound_quality":{"low":true,"standard":true,"high":false,"lossless":false,"reality":false},"default_download_on_mobile_network":false,"mobile_hq":false,"mobile_lossless":false,"tablet_sound_quality":{"low":true,"standard":true,"high":false,"lossless":false,"reality":false},"audio_quality_default_preset":"fast","web_preview":true,"web_radio":true,"web_streaming":false,"web_streaming_duration":0,"web_offline":false,"web_hq":false,"web_lossless":false,"web_sound_quality":{"low":true,"standard":true,"high":false,"lossless":false,"reality":false},"license_token":"<DEEZER_LICENSE_TOKEN>","expiration_timestamp":1623920425,"license_country":"BY","ads_display":true,"ads_audio":true,"dj":false,"nb_devices":0,"multi_account":false,"multi_account_max_allowed":1,"radio_skips":6,"too_many_devices":false,"business":false,"business_mod":false,"business_box_owner":false,"business_box_manager":false,"business_box":false,"business_no_right":false,"allow_subscription":false,"allow_trial_mobile":true,"timestamp":1622624425,"can_subscribe":false,"can_subscribe_family":false,"show_subscription_section":false,"streaming_group":"ads","queuelist_edition":false,"web_streaming_used":0},"AUDIO_SETTINGS":{"default_preset":"balanced","default_download_on_mobile_network":false,"presets":[{"mobile_download":"standard","mobile_streaming":"standard","wifi_download":"high","wifi_streaming":"high","id":"balanced","title":"Balanced","description":"Improve
+        audio quality when connected to WiFi."}],"connected_device_streaming_preset":"standard"},"SETTING":{"global":{"language":"","social":true,"popup_unload":false,"filter_explicit_lyrics":false,"is_kid":false,"has_up_next":true,"dark_mode":"off","onboarding":false,"onboarding_progress":0,"cookie_consent_string":"","has_root_consent":0,"happy_hour":"","recommendation_country":"BY","has_joined_family":false,"explicit_level_forced":false},"site":{"livebar_state":"close","livebar_tab":"ticker","push_mobile":0,"howto_step":0,"edito_tag":0,"display_confirm_discovery":0,"cast_audio_quality":"standard"},"twitter":{"share_comment":true,"share_favourite":true,"share_loved":true,"share_share":true},"facebook":{"share_comment":true,"share_favourite":true,"share_loved":true,"share_listen":true,"share_share":true},"google":{"share_comment":false,"share_favourite":false,"share_loved":false,"share_listen":false,"share_share":false},"notification_mail":{"share":false,"friend_follow":false,"playlist_comment":false,"playlist_follow":false,"artist_new_release":false,"artist_status":false,"new_message":false},"notification_mobile":{"share":false,"friend_follow":false,"playlist_comment":false,"playlist_follow":false,"artist_new_release":false,"artist_status":false,"new_message":false},"newsletter":{"editor":false,"talk":false,"event":false,"game":false,"special_offer":false,"panel":false},"optin_mail":[],"optin_push":[],"optin_inapp":[],"optin_sms":[],"beta_user":{"ios":false,"android":false,"windowsphone":false,"windows":false},"tips":{"player":false,"flow":true,"add_to_library":true,"lyrics":2,"up_next":true},"audio_quality_settings":{"preset":"fast","download_on_mobile_network":false,"connected_device_streaming_preset":false},"customer_message":[],"mobile_message":[],"adjust":[],"abtest":[],"ads":{"featurefm_token":false,"test_format":false,"force_adsource":"auto"},"tracking":[]},"LASTFM":{},"TWITTER":{},"FACEBOOK":{},"GOOGLEPLUS":{},"FAVORITE_TAG":0,"ABTEST":{"discovery_algorithms":{"id":"discovery_card","option":"svd_discovery","behaviour":"new
+        discovery algorithm, based on nearest neighbours search"},"flow_algorithms":{"id":"Flow-2021-april-2","option":"C","behaviour":"default
+        algorithm, using v2 tags for reco, old tag embeddings"},"playlists_suggestion_algorithm_october_2020":{"id":"playlists_suggestion_algorithm_october_2020","option":"default","behaviour":"Suggest
+        playlists thompson sampling reinforcement learning, fallback on coldstart
+        models"},"share_android_image_preview":{"id":"share_android_image_preview","option":"default","behaviour":"default
+        sharing"},"artist_essentials_rail":{"id":"artist_essentials_rail","option":"B","behaviour":"display
+        artist essentials rail"},"family_page":{"id":"family_page","option":"control","behaviour":"Default
+        \"classical\" family page. User is part of the AB test"},"premium_tab":{"id":"premium_tab","option":"default","behaviour":"Default
+        classical Premium Tab"}},"MULTI_ACCOUNT":[],"ONBOARDING_MODAL":false,"ADS_OFFER":"0","ENTRYPOINTS":{},"ADS_TEST_FORMAT":"","NEW_USER":false,"CONSENT_STRING":[],"RECOMMENDATION_COUNTRY":"BY","CAN_BE_CONVERTED_TO_INDEPENDENT":false,"EXPLICIT_CONTENT_LEVEL":"explicit_display","EXPLICIT_CONTENT_LEVELS_AVAILABLE":["explicit_display","explicit_no_recommendation","explicit_hide"],"CAN_EDIT_EXPLICIT_CONTENT_LEVEL":true,"DEVICES_COUNT":0,"HAS_UPNEXT":true,"LOVEDTRACKS_ID":"3726816282","OPTINS":{"channel":[],"optin":[],"group":[]}},"SETTING_LANG":"en","SETTING_LOCALE":"en-GB","DIRECTION":"ltr","SESSION_ID":"<DEEZER_SESSION_ID>","USER_TOKEN":"<DEEZER_USER_TOKEN>","PLAYLIST_WELCOME_ID":"1362496565","OFFER_ID":"0","OFFER_ELIGIBILITIES":[],"COUNTRY":"BY","COUNTRY_CATEGORY":"default","MIN_LEGAL_AGE":16,"FAMILY_KIDS_AGE":12,"SERVER_TIMESTAMP":1622624425,"PLAYER_TOKEN":"c6587216592c97c810e52b29569f58a3e6b76d856a33b7a7bc21a9d8800a97c6add5028f9d3d51afb50cbdfd378088e086809c701b11f458fae495026dc3fd743472aeb18d41296a8afd71075400bb33b56af111dd86330db5101cc9987eebbd6661415ba089f3756d8e3fa590513b098c56c7b9809d670121ffd1d295be669e3bd2a0df24d3ee59d3cfac8d107df7f75badf0f40611dba5b4326c31ba0e25066ac6553519711d080914f8668b7746159e1a55a58143ab65c85a80b01ac5bebfc75c68339c170957ecc5aa1652e4c4bb6cc24c45099f10bee9593a19e3d3d34279a544ae56398811a9a5795ddee844ce6d663b66690ea456bb7f49e9f5729da3f25900bfece33f4f1ab3101e3ae2e53342396e675e6bf5559e0b5ea4794ab114c759bd916a8c3181a5d6e25359416b7279579ff4b01adaba84f3f8eeddef1d2de5864113508cf74de8fa65acea7935863181edc9017fb9a3d31f8b44ccfe8544daad56e445fa1a35266ac3540f0a53f89e6af3481b647da902163f5d0691d01c26c089278589fb298b5f679a15c7836bbd24d1238e3a256c03eef61798408b20c65927ac6ba162503d6366f2e1f13c668eb77f4c513b588dddf7bfc6e6e00390b01b07dba6513ddb45ec17699c9934269d901e6c2982226bc6409ec1ee625a3f365dddc9c2a0dd9a75255551416c587e08b5df8f3605b4631716db6cb02927988f1e68786524b00defca6cc05ecd65890231aaacf0474175e6aec56c0715f0f886a79e783607cfe9140a61c4e5fe805456dee35b66ce9ac8a00a7163c8b48b93520a9115fa9ffca5eb1012146efc7ba5f30f30c659681460f3ce39775684fbd2703e893500a8993ab8a53725739e7374ae74d8109c4b741eb3bba4a7a59267b70ad84a521170a7f6e26475cc768b3b2be7ab1865cf2808ab7dec03d39ba76d5bf769f528edea4cdd57bbae3c71e8d78890c3751d56854309ea0bc3a06968642dfb2497a3de5fc343faa85e730fafcfabb4845bde49907b437cf7f08c9570be43f72faf47e10f6b7e07f77d2aa29ae2ba","checkForm":"<DEEZER_API_TOKEN>","FROM_ONBOARDING":"false","CUSTO":"","SETTING_REFERER_UPLOAD":"FR","REG_FLOW":["email"],"LOGIN_FLOW":["email"],"__DZR_GATEKEEPS__":{"operator_v2":false,"operator_termsconditions":false,"voicecallback":false,"voice_control_freemium_amazon":true,"waze":false,"operator_test":false,"artist_essentials":false,"artist_highlight":true,"artist_mix_as_feature":false,"concert_page":false,"context_menu_refactoring":false,"explicit_user_settings":true,"fullwidth_artist_masthead":false,"googleanalytics_on_contentpages":false,"lego_adapter_album_page":false,"lego_adapter_artist_page":false,"linear_track_preview_artist_page":true,"linear_track_preview_album_page":true,"mena_launch":false,"mobile_masthead_v2":false,"new_track_cell":false,"open_explicit_display":true,"personal_stats":false,"public_api_track_contributors":false,"screenshot_detection":false,"share_facebook_story":false,"share_whatsapp_direct":false,"share_instagram_story":false,"share_lyrics_instagram_story":false,"share_snapchat_story":false,"share_whatsapp_card":false,"story_video_background":false,"ucps_website":true,"android_labs":false,"android_sponge":false,"android_jukebox":false,"awareness_headphones":false,"exo_player_2":false,"api_mob_ssl":true,"cell_add_to_library":false,"console_log":false,"dark_mode":true,"deeztools":false,"dynamic_calculated_smartcache":true,"employee_feature":false,"force_v5":true,"ios_new_filter_swift":false,"ios_developer_menu":false,"media_provider_api":false,"batch_requests":true,"use_media_service":true,"use_url_generation":true,"metric.start_time":false,"metric.storage":false,"metric.timetoauth":false,"metric.timetoplay":false,"metric.memoryusage":false,"metric.the_reichenbach_fall":false,"metric.media_request_errors":true,"metric.podcastdownload":true,"metric.api":false,"cdn_metrics":false,"metric.playback_errors":true,"metric.playback_attempts":false,"mobile_mod_player":false,"avaudioengine":false,"change_chunk_size":true,"dzplayer_refacto":false,"gapless_playback":false,"prefetch_multiple_tracks":false,"triforce_queuelist_messages":false,"triforce_queuelist_ui":false,"volume_normalization":true,"public_api_album":false,"public_api_test":false,"public_api_track":false,"public_api_visible_test":true,"read_buffer_v2":false,"remote_control":false,"sentry":false,"single_instance_playback":false,"synchro_web_to_mobile":false,"ad_triton":false,"ads_transparency_report":false,"enable_adjust_affiliation_unique_id_param":false,"iam_new_release_test_mode":false,"iam_new_release_only_on_friday":false,"iam_new_release":false,"android_auth_module_integration":false,"appcusto_testing":false,"appcusto_audio_settings":false,"appcusto_subscription_renewal":true,"like_track_braze_event":false,"disable_appcusto_desktop":true,"appcusto_homepod_settings":true,"braze_test_mode":false,"disable_conversion_boxes_family":true,"appcusto_conversion_box":false,"disable_customer_message_in_user_auth":false,"time_to_deliver_tracking":true,"disable_change_password":false,"disable_change_email":false,"secured_change_password":true,"secured_change_email":true,"secured_session_constant_code":false,"siwa_disabled":false,"register_no_emoji":true,"authentication_phone":false,"new_social_connect_errors":true,"gender_nonbinary":true,"privacy_and_transfer_data_needed":false,"disable_device_limitation":false,"family_b2c":true,"free_xp_happy_hour":false,"reset_queuelist_on_switch_to_free":false,"force_homepage_redirection_to_hifi_page":false,"braze_customer_message_enabled":false,"inbox_v2":true,"inbox_v0":true,"ios_disable_offline_at_launch":false,"onboarding_artists":true,"launch_onboarding":true,"deeplink_skips_onboarding":true,"opening_interstitial_android":false,"opening_interstitial_ios":false,"opening_interstitial_mobile_v2":false,"enable_optin_access":false,"premium_box":false,"restricted_shuffle":true,"tcfv2_consent_screen_webview":true,"ios_app_tracking_transparency":false,"batch_utm_logs":false,"deactivate_trial_mobile":true,"webview_dark_mode_enabled":false,"android_auto":true,"conversion_entrypoints_ng":true,"desktop_client_windows":true,"electron_html5_playback":true,"filter_content_for_verified_artists":true,"fnac_migration":true,"GDPR":true,"multi_account":true,"multi_account_subscribe":true,"native_reg_wp":true,"notification_center":true,"onboarding_handle_genre":true,"player_ng":true,"recaptcha_login":true,"recaptcha_signup":true,"sponsored_track_audio_signal":true,"up_next":true,"partner_activation_journey":false,"lyrics_on_cast":true,"hhe_enabled":false,"ios_homepod_setup":false,"cast_receiver_v5":false,"cast_receiver_v5_360":false,"free_on_cast":false,"gcast_force_beta":false,"30s_preview":false,"30s_preview_artist_disco":false,"inapp_audiobooks":false,"carplay":false,"curator_edito":false,"curator_local":false,"curator_feature":false,"datagrid_refacto":false,"dynamic_page_v21":true,"channels":true,"christmas_easter_egg_player":true,"family_profile_migration":true,"family_parental_control":true,"family_picker_with_sub_accounts":true,"family_account_invitation":true,"favorites_tab_redesign":false,"mymusic_recently_played":true,"mymusic_display_dislikes":true,"mymusic_masthead":true,"mymusic_nodatas":true,"mymusic_tests_2016aug":true,"feed_empty":false,"flow_back_queuelist":false,"flow_in_homepage":true,"flow_multi_flow":false,"tab_flow_v1":false,"close_block_feature":true,"remove_lasttab":true,"library_importer_tmm":false,"livestream_page":false,"metric.dynamic_page_loading":true,"metric.playlist_page_loading":true,"metric.favorite_tracks_page_loading":true,"onboarding_channels":true,"onboarding_split":false,"onboarding_recall_artist_covers":false,"linear_track_preview_playlist_page":true,"playlist_page_with_lego":false,"playlist_create":false,"playlist_assistant":false,"playlist_limit_2000":false,"songcatcher_playlist":false,"new_track_cells_playlists":false,"talk":true,"tab_podcast":true,"podcast_page_refacto":false,"downloaded_podcast_episodes":false,"talk_latest_playlist":true,"podcast_notifications_enabled":false,"podcast_notifications_disabled":true,"episode_download_in_player":false,"latest_episodes":true,"recommendation_country":true,"network_status_bar":true,"offline_search":false,"search_autocorrect":true,"search_enriched_topresult":false,"search_query_suggestions":true,"search_refacto":false,"search_tag":false,"search_topresult":false,"search_page_filter_type":false,"search_home_new_channels":false,"songcatcher":false,"new_bottomtabbar":false,"unlimited_favorite_tracks":true,"unlimited_favorite_tracks_parallel_fetch":true},"thirdParty":{"facebook":{"appData":{"id":241284008322,"namespace":"deezer-app","scope":"email,user_birthday","version":"9.0","channel":"https:\/\/www.deezer.com\/fbgateway.html"},"lang":"en_GB"},"googleplus":{"appData":{"client_id":"630457285321-d5nmkpnjktjoeh426nvdu40rch1b1qe0.apps.googleusercontent.com","client_key":"<DEEZER_CLIENT_KEY>","name":"Deezer","scope":"https:\/\/www.googleapis.com\/auth\/userinfo.profile
+        https:\/\/www.googleapis.com\/auth\/userinfo.email https:\/\/www.googleapis.com\/auth\/user.emails.read
+        https:\/\/www.googleapis.com\/auth\/user.birthday.read","redirect_uri":"postmessage","access_type":"offline","cookie_policy":"single_host_origin","request_visible_actions":"http:\/\/schemas.google.com\/AddActivity
+        http:\/\/schemas.google.com\/ListenActivity http:\/\/schemas.google.com\/CommentActivity","version":"v1"}},"braze":{"apiKey":"5ba97124-1b79-4acc-86b7-9547bc58cb18","isAvailable":true}},"URL_MEDIA":"https:\/\/media.deezer.com","GAIN":{"TARGET":"-15","ADS":"-13"},"checkFormLogin":"<DEEZER_API_LOGIN_TOKEN>"}}'
+  recorded_at: Wed, 02 Jun 2021 09:00:24 GMT
+- request:
+    method: post
+    uri: https://www.deezer.com/ajax/gw-light.php?api_token=<DEEZER_API_TOKEN>&api_version=1.0&method=deezer.pageAlbum
+    body:
+      encoding: UTF-8
+      string: '{"alb_id":"wejlhg239gh23","lang":"en"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Content-Length:
+      - '38'
+      Cookie:
+      - sid=<DEEZER_SESSION_ID>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.deezer.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Deezer-Client-Ip:
+      - 178.172.193.8
+      X-Host:
+      - blm-web-106
+      X-Ua-Compatible:
+      - IE=edge,chrome=1,requiresActiveX=true
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 02 Jun 2021 09:00:25 GMT
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - _abck=74DF688A82B91F09A02FA2B70D4F3F46~-1~YAAQBNT1V7ItdKl5AQAAqdbzywWqR1fs93GZWVbQPg9kONDcD8iIC6QUawgLQwScBYD1eOZQeNI1i/DsWsigSJtiE6xalt9UrdT3v7Aij2U2LLpABOUvhL7LQ0Jq1yAf0aoQmtFweOirjW9kZ38ZnH7aJ+CDXqZyOctDlpLKOszMviFk1AuBE49eDzKZ+9fRqWeMZx2vJ4wUsI1G/j68pmgtZDA9v4tv9V0a0uFwTlOV7LcolvIm6cOiaqtbzoOISS3QE1MptNT4NRDBGY+1y5ci7g8Mbv58XO50011qMgEw7ue/M9lM+0xluuVlhFkIoB73n7CF/N2lMuHSGXWrNc2lp3zBemJj81+3tXq20I2TQiyf402SkOI=~-1~-1~-1;
+        Domain=.deezer.com; Path=/; Expires=Thu, 02 Jun 2022 09:00:25 GMT; Max-Age=31536000;
+        Secure
+      - bm_sz=8CF4175CBECBC3FB70B50B6428FDFB2C~YAAQBNT1V7EtdKl5AQAAqdbzywuikq5N18U2UMVo/cQEY09xVo0q2fNL8dHpSUtgm78Lu+jTZEkML9eHVoqwXrT5oWCTcLeWSOUJmdBmeQSVRCDLaKU2GHhJ5OCi/hKJJKnQAarrPwQiOLUYZdUIcY0rEqKWvjVKGBUXUTkQZzH82NUhN1LVL1lRZ7Nx5sU9;
+        Domain=.deezer.com; Path=/; Expires=Wed, 02 Jun 2021 13:00:25 GMT; Max-Age=14400;
+        HttpOnly
+      - sid=<DEEZER_SESSION_ID>; path=/; domain=.deezer.com;
+        secure; HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"error":{"REQUEST_ERROR":"Wrong parameters"},"results":{},"payload":null}'
+  recorded_at: Wed, 02 Jun 2021 09:00:24 GMT
 recorded_with: VCR 6.0.0

@@ -1,6 +1,8 @@
 module Genius
   module Track
     class Base < Genius::Base
+      include Genius::Utils::Track
+
       private
 
       def primary_args
@@ -12,35 +14,23 @@ module Genius
       end
 
       def track
-        @track ||= response_data.dig('response', 'song')
-      end
-
-      def response_data
-        JSON.parse(response)
-      end
-
-      def response
-        RestClient.get(link)
+        @track ||= response_data.dig(
+          'response', 'song'
+        )
       end
 
       def link
-        "https://genius.com/api/songs/#{@args.track_id}"
+        "#{BASE_LINK}/songs/#{@args.track_id}"
       end
 
       def data
         { track: track_data }
       end
 
-      def title
-        track['title_with_featured']
-      end
-
-      def artist_data
-        { name: artist_name }
-      end
-
-      def artist_name
-        track['primary_artist']['name']
+      def artists_list
+        track.values_at(
+          'primary_artist', 'featured_artists'
+        ).flatten.compact
       end
 
       def description

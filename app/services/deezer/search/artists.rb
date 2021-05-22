@@ -1,25 +1,15 @@
 module Deezer
   module Search
     class Artists < Deezer::Search::Base
-      include Deezer::Paginated
+      COLLECTION_NAME = 'artists'.freeze
+      MODEL_NAME = 'artist'.freeze
 
       private
 
-      def model_name
-        'artist'
-      end
-
-      def collection_name
-        'artists'
-      end
-
-      def collection_item_data(artist)
-        {
-          name: artist['name'],
-          image: image_data(artist, 'artist'),
-          listeners_count: artist['nb_fan'],
-          deezer_id: artist['id']
-        }
+      def collection_item_data_formatted(artist)
+        Deezer::Search::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

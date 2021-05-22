@@ -1,6 +1,9 @@
 module Deezer
   module Album
     class Base < Deezer::Base
+      API_METHOD = 'deezer.pageAlbum'.freeze
+      include Deezer::Utils::Album
+
       private
 
       def primary_args
@@ -8,19 +11,24 @@ module Deezer
       end
 
       def no_data?
-        response_data['error'].present?
+        album.blank?
       end
 
-      def link
-        "#{base_link}/album/#{@args.album_id}"
+      def album
+        @album ||= response_data.dig(
+          'results', 'DATA'
+        )
+      end
+
+      def payload
+        {
+          alb_id: @args.album_id,
+          lang: 'en'
+        }.to_json
       end
 
       def data
         { album: album_data }
-      end
-
-      def tags_list
-        response_data.dig('genres', 'data')
       end
     end
   end

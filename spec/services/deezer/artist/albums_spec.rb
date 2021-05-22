@@ -7,7 +7,7 @@ RSpec.describe Deezer::Artist::Albums do
     context 'when artist_id present' do
       let(:output) do
         VCR.use_cassette 'deezer/artist/albums/success' do
-          subject.call(artist_id: '1049', limit: 5, page: 2)
+          subject.call(artist_id: '1049', album_type: 'album', limit: 5, page: 2)
         end
       end
 
@@ -17,7 +17,13 @@ RSpec.describe Deezer::Artist::Albums do
 
   describe 'no processing' do
     context 'when no artist_id' do
-      let(:output) { subject.call }
+      let(:output) { subject.call(album_type: 'album') }
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+
+    context 'when no album_type' do
+      let(:output) { subject.call(artist_id: '1049') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
@@ -25,7 +31,7 @@ RSpec.describe Deezer::Artist::Albums do
     context 'when wrong artist_id' do
       let(:output) do
         VCR.use_cassette 'deezer/artist/albums/wrong_id' do
-          subject.call(artist_id: random)
+          subject.call(artist_id: random, album_type: 'album')
         end
       end
 

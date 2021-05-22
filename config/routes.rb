@@ -246,7 +246,6 @@ Rails.application.routes.draw do
         namespace :albums, as: :album do
           scope ':album_id' do
             get '', action: :info
-            get 'tags'
           end
         end
 

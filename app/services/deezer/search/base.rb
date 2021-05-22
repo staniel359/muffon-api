@@ -1,6 +1,9 @@
 module Deezer
   module Search
     class Base < Deezer::Base
+      API_METHOD = 'search.music'.freeze
+      include Muffon::Utils::Pagination
+
       private
 
       def primary_args
@@ -8,19 +11,37 @@ module Deezer
       end
 
       def no_data?
-        response_data['data'].blank?
+        collection_list.blank?
       end
 
-      def link
-        "#{base_link}/search/#{model_name}"
+      def collection_list
+        @collection_list ||= response_data.dig(
+          'results', 'data'
+        )
       end
 
-      def params
-        { q: @args.query }
+      def payload
+        {
+          filter: 'all',
+          nb: limit,
+          output: output,
+          query: @args.query,
+          start: offset
+        }.to_json
+      end
+
+      def output
+        self.class::MODEL_NAME.upcase
       end
 
       def data
         { search: paginated_data }
+      end
+
+      def total_items_count
+        response_data.dig(
+          'results', 'total'
+        )
       end
     end
   end

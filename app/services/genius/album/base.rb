@@ -1,6 +1,8 @@
 module Genius
   module Album
     class Base < Genius::Base
+      include Genius::Utils::Album
+
       private
 
       def primary_args
@@ -12,35 +14,17 @@ module Genius
       end
 
       def album
-        @album ||= response_data.dig('response', 'album')
-      end
-
-      def response_data
-        JSON.parse(response)
-      end
-
-      def response
-        RestClient.get(link)
+        @album ||= response_data.dig(
+          'response', 'album'
+        )
       end
 
       def link
-        "https://genius.com/api/albums/#{@args.album_id}"
+        "#{BASE_LINK}/albums/#{@args.album_id}"
       end
 
       def data
         { album: album_data }
-      end
-
-      def title
-        album['name']
-      end
-
-      def artist_data
-        { name: artist_name }
-      end
-
-      def artist_name
-        album.dig('artist', 'name')
       end
 
       def description

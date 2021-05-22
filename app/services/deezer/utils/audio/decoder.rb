@@ -1,7 +1,7 @@
 module Deezer
   module Utils
     module Audio
-      class Decoder < Deezer::Utils::Base
+      class Decoder < Deezer::Base
         AUDIO_FOLDER = 'temp/audio/deezer'.freeze
         CHUNK_SIZE = 2048
         INTERVAL_CHUNK = 3
@@ -37,11 +37,15 @@ module Deezer
         end
 
         def chunks_count
-          binary_data.size.fdiv(CHUNK_SIZE).ceil
+          binary_data.size.fdiv(
+            CHUNK_SIZE
+          ).ceil
         end
 
         def binary_data
-          @binary_data ||= RestClient.get(audio_link).body
+          @binary_data ||= RestClient.get(
+            audio_link
+          ).body
         end
 
         def process_chunk(index, memo)
@@ -60,7 +64,10 @@ module Deezer
             binary_data.size - used_chunks_size
           ].min
 
-          binary_data[used_chunks_size, current_chunk_size]
+          binary_data[
+            used_chunks_size,
+            current_chunk_size
+          ]
         end
 
         def decrypt_chunk?(index, chunk)
@@ -76,13 +83,19 @@ module Deezer
         end
 
         def save_file_and_return_file_name
-          FileUtils.mkdir_p("public/#{AUDIO_FOLDER}")
+          FileUtils.mkdir_p(
+            "public/#{AUDIO_FOLDER}"
+          )
 
-          file = File.open("public/#{audio_path}", 'wb')
+          audio_file.write(data)
 
-          file.write(data)
+          File.exist?(audio_file) ? audio_path : ''
+        end
 
-          File.exist?(file) ? audio_path : ''
+        def audio_file
+          @audio_file ||= File.open(
+            "public/#{audio_path}", 'wb'
+          )
         end
 
         def audio_path

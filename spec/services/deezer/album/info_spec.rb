@@ -7,7 +7,7 @@ RSpec.describe Deezer::Album::Info do
     context 'when album_id present' do
       let(:output) do
         VCR.use_cassette 'deezer/album/info/success' do
-          subject.call(album_id: '1063611')
+          subject.call(album_id: '8548989')
         end
       end
 
