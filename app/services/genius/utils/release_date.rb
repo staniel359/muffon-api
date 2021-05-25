@@ -1,6 +1,6 @@
 module Genius
   module Utils
-    class Released < Genius::Base
+    class ReleaseDate < Genius::Base
       def call
         data
       end
@@ -23,10 +23,18 @@ module Genius
 
       def released_format
         [
-          ('%d' if released['day'].present?),
-          ('%b' if released['month'].present?),
+          ('%d' if day_present?),
+          ('%b' if month_present?),
           '%Y'
         ].compact.join(' ')
+      end
+
+      def day_present?
+        released['day'].present?
+      end
+
+      def month_present?
+        released['month'].present?
       end
     end
   end

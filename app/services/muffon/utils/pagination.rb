@@ -8,7 +8,7 @@ module Muffon
           page: page,
           total_pages: total_pages_count,
           collection_name.to_sym => collection_data
-        }
+        }.compact
       end
 
       def page
@@ -16,6 +16,8 @@ module Muffon
       end
 
       def total_pages_count
+        return unless defined?(total_items_count)
+
         total_items_count.fdiv(limit).ceil
       end
 

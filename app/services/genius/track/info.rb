@@ -12,43 +12,46 @@ module Genius
       def track_base_data
         {
           title: title,
-          genius_id: track['id'],
-          artist: artist_data
-        }
-      end
-
-      def artist_data
-        {
-          name: artist_name,
-          genius_id: track.dig('primary_artist', 'id')
+          genius_id: genius_id,
+          artist: artist_formatted,
+          artists: artists
         }
       end
 
       def track_extra_data
         {
+          album: album_formatted,
           albums: albums,
-          released: released(track),
+          image: image_data,
+          release_date: release_date,
           description: description_truncated,
           tags: tags.first(5),
-          lyrics: lyrics.truncate(250)
+          lyrics: lyrics_truncated
         }
       end
 
       def albums
-        albums_list.map { |a| album_data(a) }
+        @albums ||= albums_list.map do |a|
+          album_data_formatted(a)
+        end
+      end
+
+      def release_date
+        raw_release_date_formatted(track)
       end
 
       def albums_list
         track['albums']
       end
 
-      def album_data(album)
-        {
-          title: album['name'],
-          genius_id: album['id'],
-          image: image_data(album['cover_art_url']),
-          released: released(album)
-        }
+      def album_data_formatted(album)
+        Genius::Track::Info::Album.call(
+          album: album
+        )
+      end
+
+      def lyrics_truncated
+        lyrics.truncate(250)
       end
     end
   end

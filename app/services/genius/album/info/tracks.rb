@@ -19,26 +19,19 @@ module Genius
         end
 
         def data
-          { tracks: tracks_data }
+          { tracks: tracks }
         end
 
-        def tracks_data
-          tracks_list.map { |t| track_data(t['song']) }
+        def tracks
+          tracks_list.map do |t|
+            track_data_formatted(t)
+          end
         end
 
-        def track_data(track)
-          {
-            title: track['title_with_featured'],
-            genius_id: track['id'],
-            artist: artist_data(track)
-          }
-        end
-
-        def artist_data(track)
-          {
-            name: track.dig('primary_artist', 'name'),
-            genius_id: track.dig('primary_artist', 'id')
-          }
+        def track_data_formatted(track)
+          Genius::Album::Info::Tracks::Track.call(
+            track: track['song']
+          )
         end
       end
     end

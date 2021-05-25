@@ -6,19 +6,10 @@ module Genius
 
       private
 
-      def collection_item_data(track)
-        {
-          title: track['title'],
-          genius_id: track['id'],
-          artist: artist_data(track)
-        }
-      end
-
-      def artist_data(track)
-        {
-          name: track.dig('primary_artist', 'name'),
-          genius_id: track.dig('primary_artist', 'id')
-        }
+      def collection_item_data_formatted(track)
+        Genius::Search::Tracks::Track.call(
+          track: track['result']
+        )
       end
     end
   end

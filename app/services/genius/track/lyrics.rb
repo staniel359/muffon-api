@@ -4,11 +4,7 @@ module Genius
       private
 
       def track_data
-        {
-          title: title,
-          artist: artist_data,
-          lyrics: lyrics
-        }
+        { lyrics: lyrics }
       end
     end
   end

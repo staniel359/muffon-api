@@ -12,31 +12,25 @@ module Genius
       def album_base_data
         {
           title: title,
-          genius_id: album['id'],
-          artist: artist_data
-        }
-      end
-
-      def artist_data
-        {
-          name: artist_name,
-          genius_id: album.dig('artist', 'id')
+          genius_id: genius_id,
+          artist: artist_formatted,
+          artists: artists
         }
       end
 
       def album_extra_data
         {
-          image: image_data(album['cover_art_url']),
-          released: released(album),
+          image: image_data,
+          release_date: release_date,
           description: description_truncated,
-          tracks: tracks_data
+          tracks: tracks
         }
       end
 
-      def tracks_data
+      def tracks
         Genius::Album::Info::Tracks.call(
           album_id: @args.album_id
-        )[:tracks].to_a
+        )[:tracks] || []
       end
     end
   end

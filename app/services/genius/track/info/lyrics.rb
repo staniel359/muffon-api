@@ -13,19 +13,16 @@ module Genius
         end
 
         def lyrics
-          @lyrics ||= lyrics_original || lyrics_alternative
+          @lyrics ||=
+            lyrics_original.presence || lyrics_alternative
         end
 
         def lyrics_original
-          response_data.css('.lyrics p').text.presence
+          response_data.css('.lyrics p').text
         end
 
         def response_data
           @response_data ||= Nokogiri::HTML.parse(response)
-        end
-
-        def response
-          RestClient.get(link)
         end
 
         def link

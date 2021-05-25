@@ -6,12 +6,10 @@ module Genius
 
       private
 
-      def collection_item_data(artist)
-        {
-          name: artist['name'],
-          genius_id: artist['id'],
-          image: image_data(artist['image_url'])
-        }
+      def collection_item_data_formatted(artist)
+        Genius::Search::Artists::Artist.call(
+          artist: artist['result']
+        )
       end
     end
   end
