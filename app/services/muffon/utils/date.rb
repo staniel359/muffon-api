@@ -3,14 +3,18 @@ module Muffon
     class Date < Muffon::Base
       class << self
         def format(date_data, date_format)
+          format_date(date_data, date_format)
+        end
+
+        private
+
+        def format_date(date_data, date_format)
           date_format ||= '%d %b %Y'
 
           date(date_data).strftime(date_format)
         rescue ArgumentError
           date_data
         end
-
-        private
 
         def date(date_data)
           case date_data.class.name

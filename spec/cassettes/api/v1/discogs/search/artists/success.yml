@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=artist
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page=1&per_page=20&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=artist
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 17 Dec 2020 15:49:00 GMT
+      - Tue, 25 May 2021 09:21:38 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,15 +33,17 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '60'
+      - '56'
       X-Discogs-Ratelimit-Used:
-      - '0'
+      - '4'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
       - HEAD,OPTIONS,GET,OPTIONS
       Access-Control-Expose-Headers:
       - Location
+      Content-Language:
+      - en
       X-Discogs-Media-Type:
       - discogs.v2
       Access-Control-Allow-Origin:
@@ -58,12 +60,12 @@ http_interactions:
       - max-age=15724800
     body:
       encoding: ASCII-8BIT
-      string: '{"pagination": {"page": 1, "pages": 3, "per_page": 50, "items": 112,
-        "urls": {"last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=3&per_page=50",
-        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=2&per_page=50"}},
+      string: '{"pagination": {"page": 1, "pages": 6, "per_page": 20, "items": 117,
+        "urls": {"last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=6&per_page=20&query=kate+bush&type=artist",
+        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=2&per_page=20&query=kate+bush&type=artist"}},
         "results": [{"id": 85929, "type": "artist", "master_id": null, "master_url":
-        null, "uri": "/artist/85929-Kate-Bush", "title": "Kate Bush", "thumb": "https://img.discogs.com/wp9-gdyqMwsNup_8_wflTTyQsKU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1167437440.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/VFxhrfX4BK2TztjZ0Uae0uaLvJY=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1167437440.jpeg.jpg",
+        null, "uri": "/artist/85929-Kate-Bush", "title": "Kate Bush", "thumb": "https://img.discogs.com/2YnNpDB2D-adpB7efiA-epohiFw=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-85929-1382742029-2169.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/Tfn0QDHqibkP0T-MqPaDXeGohq8=/600x466/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-85929-1382742029-2169.jpeg.jpg",
         "resource_url": "https://api.discogs.com/artists/85929"}, {"id": 281922, "type":
         "artist", "master_id": null, "master_url": null, "uri": "/artist/281922-Paddy-Bush",
         "title": "Paddy Bush", "thumb": "https://img.discogs.com/d86RKfIUIKkVoIBfJdGhQjqV4mQ=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-281922-1276811920.jpeg.jpg",
@@ -74,19 +76,19 @@ http_interactions:
         "cover_image": "https://img.discogs.com/CsX9xya3fyl21IgH7SEJAbbrbP0=/600x714/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-281917-1514722270-2871.jpeg.jpg",
         "resource_url": "https://api.discogs.com/artists/281917"}, {"id": 3263822,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/3263822-Kate-Bush-And-Friends",
-        "title": "Kate Bush And Friends", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kate Bush And Friends", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/3263822"}, {"id": 3514969,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/3514969-Kates-Bush",
-        "title": "Kate''s Bush", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kate''s Bush", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/3514969"}, {"id": 894348,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/894348-Dr-Bush",
-        "title": "Dr. Bush", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Dr. Bush", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/894348"}, {"id": 4826440,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/4826440-Kate-Bush-Visuals",
-        "title": "Kate Bush Visuals", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kate Bush Visuals", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/4826440"}, {"id": 7929076,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/7929076-Kates-Bush-2",
-        "title": "Kate''s Bush (2)", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kate''s Bush (2)", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/7929076"}, {"id": 4253308,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/4253308-KT-Bush-Band",
         "title": "KT Bush Band", "thumb": "https://img.discogs.com/YsTtb00fTQ-mInh-oJjmV3irBIk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-4253308-1424003200-8672.jpeg.jpg",
@@ -97,13 +99,14 @@ http_interactions:
         "cover_image": "https://img.discogs.com/lBlC5vaoJxwiK8do7s4-LLzG77k=/374x369/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-2222811-1607794608-8769.jpeg.jpg",
         "resource_url": "https://api.discogs.com/artists/2222811"}, {"id": 1846153,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1846153-Kindlight",
-        "title": "Kindlight", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kindlight", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/1846153"}, {"id": 2264167,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/2264167-Albert-McIntosh",
-        "title": "Albert McIntosh", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Albert McIntosh", "thumb": "https://img.discogs.com/RJYmljoTI4BTD86nveDhklZo7TU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-2264167-1615673060-3744.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/s3-F89v0LNEGbNf0ekqlluMr8os=/600x337/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-2264167-1615673060-3744.jpeg.jpg",
         "resource_url": "https://api.discogs.com/artists/2264167"}, {"id": 3703389,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/3703389-Bushy-Kate",
-        "title": "Bushy Kate", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Bushy Kate", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/3703389"}, {"id": 514757,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/514757-Danny-McIntosh",
         "title": "Danny McIntosh", "thumb": "https://img.discogs.com/hlzZkHLuCoe4WOuMiaRWuNdzqJI=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-514757-1326930069.jpeg.jpg",
@@ -114,134 +117,20 @@ http_interactions:
         "cover_image": "https://img.discogs.com/N-WjLDO5og1H8vJGVJLE70HnXgo=/237x269/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-205697-1290575667.jpeg.jpg",
         "resource_url": "https://api.discogs.com/artists/205697"}, {"id": 5931205,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/5931205-Robert-Allsopp",
-        "title": "Robert Allsopp", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/5931205"}, {"id": 715810,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/715810-Roland-10",
-        "title": "Roland (10)", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/715810"}, {"id": 112848,
+        "title": "Robert Allsopp", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/artists/5931205"}, {"id": 112848,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/112848-John-Giblin",
         "title": "John Giblin", "thumb": "https://img.discogs.com/K1hTbzIsQJBBGGnQ7QNNVj_XVWo=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-112848-1127059670.jpeg.jpg",
         "cover_image": "https://img.discogs.com/3IZiLIB3kOlPoyMZqjvuQz-0N-s=/250x200/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-112848-1127059670.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/112848"}, {"id": 91496, "type":
+        "resource_url": "https://api.discogs.com/artists/112848"}, {"id": 715810,
+        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/715810-Roland-10",
+        "title": "Roland (10)", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/artists/715810"}, {"id": 91496, "type":
         "artist", "master_id": null, "master_url": null, "uri": "/artist/91496-Teri-Reed",
-        "title": "Teri Reed", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Teri Reed", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/91496"}, {"id": 1915687,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1915687-Paul-Maxwell-4",
-        "title": "Paul Maxwell (4)", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/1915687"}, {"id": 1574074,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1574074-Keef-4",
-        "title": "Keef (4)", "thumb": "https://img.discogs.com/_UXYYUCipLlWFUgmCsqieJ66Bm0=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-1574074-1602444074-4098.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/JZmAAEQdtagwoIiZep6yKe7nIXE=/369x396/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-1574074-1602444074-4098.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/1574074"}, {"id": 281923,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/281923-Alan-Murphy",
-        "title": "Alan Murphy", "thumb": "https://img.discogs.com/Y3CPIJo1d70BP_7URrrZbsC2zRQ=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-281923-1332960459.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/aEISP1xuRPSXCI713YI_R7GXsuc=/230x352/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-281923-1332960459.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/281923"}, {"id": 255710,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/255710-Ian-Bairnson",
-        "title": "Ian Bairnson", "thumb": "https://img.discogs.com/XTRwnFRg9Af5NjGTyq34VnFH-o4=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-255710-1122817845.jpg.jpg",
-        "cover_image": "https://img.discogs.com/KZX0BWqHIGhbErWNNFPFkKuJOkA=/457x717/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-255710-1122817845.jpg.jpg",
-        "resource_url": "https://api.discogs.com/artists/255710"}, {"id": 110863,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/110863-David-Gilmour",
-        "title": "David Gilmour", "thumb": "https://img.discogs.com/3Y5K11m9pzMN_OtStmVNETUWCMY=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-110863-1222552771.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/zg3IeUKVoH5FYlFFnaPSFVYotyM=/344x344/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-110863-1222552771.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/110863"}, {"id": 394239,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/394239-Michael-Wood",
-        "title": "Michael Wood", "thumb": "https://img.discogs.com/zErycnBPYKDUbqvx0C-nQBHRwi0=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-394239-1584601516-9334.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/hcjK5P9J5ZG62ObWmQZc4h4PkRs=/600x337/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-394239-1584601516-9334.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/394239"}, {"id": 254923,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/254923-Bill-Whelan",
-        "title": "Bill Whelan", "thumb": "https://img.discogs.com/tug4mSzgFDtbvax8kFwhVeC1Plc=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-254923-1125239762.jpg.jpg",
-        "cover_image": "https://img.discogs.com/vus5J1mTQ1xpQeyvvNSggsxhG24=/165x219/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-254923-1125239762.jpg.jpg",
-        "resource_url": "https://api.discogs.com/artists/254923"}, {"id": 169102,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/169102-Paul-Thomas",
-        "title": "Paul Thomas", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/169102"}, {"id": 394238,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/394238-Dan-McIntosh",
-        "title": "Dan McIntosh", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/394238"}, {"id": 1794906,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1794906-Keith-MacMillan",
-        "title": "Keith MacMillan", "thumb": "https://img.discogs.com/N1PhtB1lCK7KIOHFv-ycfJsMFvc=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-1794906-1469633552-1596.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/1iQYgreXJOvGcfrXiYMCQfmqKHs=/192x262/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-1794906-1469633552-1596.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/1794906"}, {"id": 385386,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/385386-Preston-Heyman",
-        "title": "Preston Heyman", "thumb": "https://img.discogs.com/d6WXMrqG4mnGzou2CNvFm1KyW5I=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-385386-1448744550-1567.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/dn8A5aZFTPSQPGIdd2wfAfB1gPw=/300x300/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-385386-1448744550-1567.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/385386"}, {"id": 217456,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/217456-Andrew-Powell",
-        "title": "Andrew Powell", "thumb": "https://img.discogs.com/rrjXfgthJ7dP9YYkbY4yf3xTv9w=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-217456-1122818127.jpg.jpg",
-        "cover_image": "https://img.discogs.com/8F-Wosjwb6GHcC44G8uORVwq-58=/500x459/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-217456-1122818127.jpg.jpg",
-        "resource_url": "https://api.discogs.com/artists/217456"}, {"id": 253649,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/253649-Omar-Hakim",
-        "title": "Omar Hakim", "thumb": "https://img.discogs.com/wtO79agtipM2yQ1YdNYYxL6XPcM=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-253649-1594650709-4523.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/4nyY2Shv6qz_qXmrANRKkmG5pdk=/600x380/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-253649-1594650709-4523.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/253649"}, {"id": 485, "type":
-        "artist", "master_id": null, "master_url": null, "uri": "/artist/485-Spooncurve",
-        "title": "Spooncurve", "thumb": "https://img.discogs.com/Sdw6G-aGkO7ylLwaD73ExEBBpuA=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-485-1202831693.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/F74re5y8HdQOZGaiUg3U49Va1M0=/250x250/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-485-1202831693.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/485"}, {"id": 304254, "type":
-        "artist", "master_id": null, "master_url": null, "uri": "/artist/304254-Stuart-Elliott",
-        "title": "Stuart Elliott", "thumb": "https://img.discogs.com/lMgfewprAin8_bJ0d6uDS2WuGos=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-304254-1150623620.gif.jpg",
-        "cover_image": "https://img.discogs.com/at-BLkE_z3A4pYAb9lNL74fp3c0=/200x200/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-304254-1150623620.gif.jpg",
-        "resource_url": "https://api.discogs.com/artists/304254"}, {"id": 2264168,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/2264168-Lily-Cornford",
-        "title": "Lily Cornford", "thumb": "https://img.discogs.com/TBWCOtQ58gXBYjFjXUXdfwLkpLg=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-2264168-1523201146-5701.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/a8_g9E9lBJXFi8O8WwFXPPOCh8Y=/600x600/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-2264168-1523201146-5701.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/2264168"}, {"id": 5673206,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/5673206-The-KT-Fellowship",
-        "title": "The KT Fellowship", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/5673206"}, {"id": 680060,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/680060-Gered-Mankowitz",
-        "title": "Gered Mankowitz", "thumb": "https://img.discogs.com/HYbjkY_diX0R-vLamTy7NDWIjT8=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-680060-1446493309-7393.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/afXX5KBLmDhhgPnLarh_SD5mDxs=/533x533/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-680060-1446493309-7393.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/680060"}, {"id": 479678,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/479678-Colin-Lloyd-Tucker",
-        "title": "Colin Lloyd-Tucker", "thumb": "https://img.discogs.com/yPVog7XOsBVhCdXbDlS58TjtgXk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-479678-1536923648-3979.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/eES6k20lyAqIFBXm5YubWsn0Rlk=/316x377/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-479678-1536923648-3979.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/479678"}, {"id": 2638671,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/2638671-\u0414\u0438\u043c\u0438\u0442\u044a\u0440-\u041f\u0435\u043d\u0435\u0432",
-        "title": "\u0414\u0438\u043c\u0438\u0442\u044a\u0440 \u041f\u0435\u043d\u0435\u0432",
-        "thumb": "https://img.discogs.com/TEGSWH6CyDDigQ2fPJHOLaTGP0A=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-2638671-1426446743-4801.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/txa3WtlQaQFg5-2WjcVMiZL2k4g=/552x620/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-2638671-1426446743-4801.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/2638671"}, {"id": 381174,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/381174-Dave-Gilmour",
-        "title": "Dave Gilmour", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/381174"}, {"id": 5399676,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/5399676-David-Mitchell-26",
-        "title": "David Mitchell (26)", "thumb": "https://img.discogs.com/gkpt2pvdfG8XuCdJb-8IUoQ2gRk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-5399676-1480517962-6117.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/lP4G8J0sVNd8dds3TsEBuSWoGMg=/360x480/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-5399676-1480517962-6117.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/5399676"}, {"id": 75910,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/75910-Stephen-W-Tayler",
-        "title": "Stephen W. Tayler", "thumb": "https://img.discogs.com/SY4RBdFHLxHELP4C_TEAKo20FAk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-75910-1443310542-8855.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/NM5gpT0NiLupuaJrEmpMjrvBYYU=/600x597/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-75910-1443310542-8855.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/75910"}, {"id": 717818, "type":
-        "artist", "master_id": null, "master_url": null, "uri": "/artist/717818-Albert-Niland",
-        "title": "Albert Niland", "thumb": "https://img.discogs.com/xAfsTHGHEO0flowQ7M9mPBCSmUU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-717818-1170099040.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/LrZHVnSmEEJFKr0uP8Mp212UnWM=/200x151/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-717818-1170099040.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/717818"}, {"id": 49145, "type":
-        "artist", "master_id": null, "master_url": null, "uri": "/artist/49145-ACO",
-        "title": "ACO", "thumb": "https://img.discogs.com/iIJz_Lalbi4y7jaIoIFZvvpvbJo=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-49145-1378433484-4377.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/ORbqwjgGhtJ2zSMhyQNeHtOZJG8=/500x472/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-49145-1378433484-4377.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/49145"}, {"id": 2047510,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/2047510-Sorry-Boys",
-        "title": "Sorry Boys", "thumb": "https://img.discogs.com/PRxte9Jemfdaxg_sU3298d5qYys=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-2047510-1412778638-4601.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/n6XZZSofSGAfL0umeGk52pSmisM=/450x628/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-2047510-1412778638-4601.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/2047510"}, {"id": 1998747,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1998747-Jimmy-Murakami",
-        "title": "Jimmy Murakami", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/1998747"}, {"id": 1910164,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1910164-Ian-Ross-5",
-        "title": "Ian Ross (5)", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/1910164"}, {"id": 1815916,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/1815916-Bob-Mercer",
-        "title": "Bob Mercer", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
-        "resource_url": "https://api.discogs.com/artists/1815916"}, {"id": 3788031,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/3788031-Tom-Dunning-Your-Boyfriends",
-        "title": "Tom Dunning & Your Boyfriends", "thumb": "https://img.discogs.com/wfM_bLdtgubtaFwRLVDT30K6rNU=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-3788031-1456148289-9115.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/if44uLeIxnIYkEaxj9TXNBbSbnA=/600x450/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-3788031-1456148289-9115.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/3788031"}, {"id": 4391509,
-        "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/4391509-Thomas-Dunning",
-        "title": "Thomas Dunning", "thumb": "https://img.discogs.com/adjWPqG4PEAG_Rd2Wcm5UpEQUmk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-4391509-1456161159-7571.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/hlUxP-tt7H3x7VyNnYBPhwJwzEQ=/600x450/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-4391509-1456161159-7571.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/artists/4391509"}]}'
-  recorded_at: Thu, 17 Dec 2020 15:49:00 GMT
+        "title": "Paul Maxwell (4)", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
+        "resource_url": "https://api.discogs.com/artists/1915687"}]}'
+  recorded_at: Tue, 25 May 2021 09:21:39 GMT
 recorded_with: VCR 6.0.0

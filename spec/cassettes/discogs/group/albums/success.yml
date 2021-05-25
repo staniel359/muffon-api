@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 17 Dec 2020 13:30:12 GMT
+      - Tue, 25 May 2021 08:21:10 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,15 +33,17 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '53'
+      - '60'
       X-Discogs-Ratelimit-Used:
-      - '7'
+      - '0'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
       - HEAD,OPTIONS,GET,OPTIONS
       Access-Control-Expose-Headers:
       - Location
+      Content-Language:
+      - en
       X-Discogs-Media-Type:
       - discogs.v2
       Access-Control-Allow-Origin:
@@ -58,18 +60,18 @@ http_interactions:
       - max-age=15724800
     body:
       encoding: ASCII-8BIT
-      string: '{"pagination": {"page": 2, "pages": 37, "per_page": 5, "items": 182,
+      string: '{"pagination": {"page": 2, "pages": 38, "per_page": 5, "items": 187,
         "urls": {"first": "https://api.discogs.com/masters/28680/versions?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5",
-        "last": "https://api.discogs.com/masters/28680/versions?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=37&per_page=5",
+        "last": "https://api.discogs.com/masters/28680/versions?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=38&per_page=5",
         "prev": "https://api.discogs.com/masters/28680/versions?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5",
         "next": "https://api.discogs.com/masters/28680/versions?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5"}},
-        "filters": {"applied": {}, "available": {"format": {"Album": 174, "LP": 62,
-        "Vinyl": 62, "CD": 56, "Cassette": 56, "Reissue": 54, "Unofficial Release":
-        20, "Remastered": 16, "Club Edition": 15, "Promo": 11, "Limited Edition":
-        10, "Stereo": 10, "CDr": 6, "Misprint": 4, "White Label": 4, "Special Edition":
-        3, "Test Pressing": 3, "File": 2, "AAC": 1, "FLAC": 1, "Numbered": 1, "Repress":
-        1}, "label": {"Emi": 103, "Novercia Ltd.": 87, "Emi Music Publishing Ltd.":
-        35, "Kate Bush Music Ltd.": 32, "Emi Records Ltd.": 30, "Windmill Lane Studios":
+        "filters": {"applied": {}, "available": {"format": {"Album": 179, "LP": 64,
+        "Vinyl": 64, "CD": 58, "Cassette": 57, "Reissue": 55, "Unofficial Release":
+        21, "Remastered": 18, "Club Edition": 14, "Promo": 11, "Stereo": 11, "Limited
+        Edition": 10, "CDr": 6, "Misprint": 4, "White Label": 4, "Special Edition":
+        3, "Test Pressing": 3, "File": 2, "Repress": 2, "AAC": 1, "FLAC": 1, "Numbered":
+        1}, "label": {"Emi": 107, "Novercia Ltd.": 91, "Emi Music Publishing Ltd.":
+        38, "Kate Bush Music Ltd.": 35, "Emi Records Ltd.": 33, "Windmill Lane Studios":
         24, "Emi America Records": 23, "Emi America": 22, "Capitol Records, Inc.":
         16, "Emi-Manhattan Records": 15, "Kate Bush Music Publishing Ltd.": 13, "Screen
         Gems-Emi Music Inc.": 13, "The Town House": 12, "Columbia House": 10, "Emi
@@ -78,16 +80,16 @@ http_interactions:
         "Path\u00e9 Marconi Emi": 6, "Audio Fidelity": 5, "Capitol Mastering": 5,
         "Capitol Records Pressing Plant, Jacksonville": 5, "Capitol Records-Emi Of
         Canada Limited": 5, "4P Nicolaus Gmbh": 4, "Capitol Industries-Emi, Inc.":
-        4, "Bill Smith Studio": 3, "Cbs Records Ltd.": 3, "Cinram": 3, "Emi Italiana
-        S.P.A.": 3, "Emi Swindon": 3, "Noble And Brite": 3, "Portrait": 3, "Record
-        Technology Incorporated": 3, "747": 2, "Abbey Road Studios": 2, "Capitol Records
-        Pressing Plant, Winchester": 2, "Columbia Records Pressing Plant, Don Mills,
-        On": 2, "Digital Audio Disc Corp.": 2, "Disque Americ": 2, "Emi 100": 2, "Emi
-        Greece": 2, "Emi Mfg.": 2, "Emi Music Canada": 2, "Emi Music Publishing":
-        2, "Emi Records Australia": 2, "Emi Usa": 2, "Emi-Odeon, S.A.": 2, "Emial
-        S.A.": 2, "Grafica Pozzoli S.P.A.": 2, "Jugoton": 2, "Kate Bush Paper Sleeve
-        Collection": 2, "Noverica Limited": 2, "Oasis Record Co.": 2, "Oasis Records":
-        2, "Parlophone": 2, "Rock Records & Tapes": 2, "Sonopress": 2, "Supermasters":
+        4, "Bill Smith Studio": 3, "Cbs Records Ltd.": 3, "Cinram": 3, "Emi 100":
+        3, "Emi Italiana S.P.A.": 3, "Emi Music Canada": 3, "Emi Swindon": 3, "Noble
+        And Brite": 3, "Oasis Records": 3, "Portrait": 3, "Record Technology Incorporated":
+        3, "747": 2, "Abbey Road Studios": 2, "Capitol Records Pressing Plant, Winchester":
+        2, "Columbia Records Pressing Plant, Don Mills, On": 2, "Digital Audio Disc
+        Corp.": 2, "Disque Americ": 2, "Emi Greece": 2, "Emi Mfg.": 2, "Emi Music
+        Publishing": 2, "Emi Records Australia": 2, "Emi Usa": 2, "Emi-Odeon, S.A.":
+        2, "Emial S.A.": 2, "Grafica Pozzoli S.P.A.": 2, "Jugoton": 2, "Kate Bush
+        Paper Sleeve Collection": 2, "Noverica Limited": 2, "Oasis Record Co.": 2,
+        "Parlophone": 2, "Rock Records & Tapes": 2, "Sonopress": 2, "Supermasters":
         2, "Thomsun Original": 2, "7Rock": 1, "Album Series": 1, "Atlantic Records":
         1, "Basf": 1, "Bertelsmann Club": 1, "Bmg Direct Marketing, Inc.": 1, "Brawo":
         1, "Capitol Jax": 1, "Carlton Productions": 1, "Castle": 1, "Cbs": 1, "Cbs
@@ -95,64 +97,65 @@ http_interactions:
         1, "Columbia, Athens": 1, "Cool Price": 1, "Coolprice": 1, "Dadc": 1, "Das
         Boot Recording": 1, "Digital Audio Technologies Australia": 1, "Discos Cbs,
         S.A., Colombia": 1, "Dyna Emi": 1, "Ego Record": 1, "Emi Capitol De Mexico,
-        S.A. De C.V.": 1, "Emi Music France": 1, "Emi Music Group Australasia": 1,
-        "Emi Music Group Of Companies": 1, "Emi Music Japan Inc": 1, "Emi Music Publ.
-        Sa": 1, "Emi Music South Africa (Pty) Ltd.": 1, "Emi-Odeon Fonogr\u00e1fica,
-        Industrial E Eletr\u00f4nica Ltda.": 1, "Eska Records": 1, "Fonobr\u00e1s,
-        Distribuidora Fonogr\u00e1fica Brasileira Ltda.": 1, "Forever Young": 1, "Gana
-        Studio": 1, "Gold Typhoon": 1, "Gold Typhoon Music Co. Ltd.": 1, "Golden Hit":
-        1, "Golden Peacock": 1, "Green Club Riviera": 1, "Indugraf Madrid, S.A.":
-        1, "Interpak": 1, "K.E.C.P.P.": 1, "Kent Elektronik San. Ve Tic. A.\u015e.":
-        1, "Mediamotion": 1, "Mg Records": 1, "Michael": 1, "New Wave": 1, "Nimbus,
-        Virginia": 1, "Oasis Emi Korea": 1, "Offset France": 1, "Optimal Media Gmbh":
-        1, "Path\u00e9 Marconi S.A.": 1, "Professional Duplication Studio L. Dziugie\u0142":
-        1, "Pt. Aquarius Musikindo": 1, "Rainbo Records": 1, "Record Industry": 1,
-        "Rege": 1, "Regency Media": 1, "Rhino Records": 1, "S180 Series": 1, "Simply
-        Vinyl": 1, "Sonic, S.A.": 1, "Sonopress Usa": 1, "Sunny": 1, "Takt Music":
-        1, "Tatarek": 1, "Team Records": 1, "The Gramophone Company Of India Ltd.":
-        1, "Top Album Series": 1, "Universal Music & Video Distribution, Corp.": 1,
-        "Universal Music Domestic Division": 1, "Universal Records": 1, "Vivo": 1,
-        "Warner Music Canada Co.": 1, "Warner Music Japan Inc.": 1, "\u6efe\u77f3\u570b\u969b\u97f3\u6a02\u80a1\u4efd\u6709\u9650\u516c\u53f8":
-        1}, "country": {"US": 31, "Europe": 29, "Canada": 16, "Japan": 13, "UK": 12,
+        S.A. De C.V.": 1, "Emi Electrola Gmbh": 1, "Emi Music France": 1, "Emi Music
+        Group Australasia": 1, "Emi Music Group Of Companies": 1, "Emi Music Japan
+        Inc": 1, "Emi Music Publ. Sa": 1, "Emi Music South Africa (Pty) Ltd.": 1,
+        "Emi-Odeon Fonogr\u00e1fica, Industrial E Eletr\u00f4nica Ltda.": 1, "Eska
+        Records": 1, "Fonobr\u00e1s, Distribuidora Fonogr\u00e1fica Brasileira Ltda.":
+        1, "Forever Young": 1, "Gana Studio": 1, "Gold Typhoon": 1, "Gold Typhoon
+        Music Co. Ltd.": 1, "Golden Hit": 1, "Golden Peacock": 1, "Green Club Riviera":
+        1, "Indugraf Madrid, S.A.": 1, "Interpak": 1, "K.E.C.P.P.": 1, "Kent Elektronik
+        San. Ve Tic. A.\u015e.": 1, "Mediamotion": 1, "Mg Records": 1, "Michael":
+        1, "New Wave": 1, "Nimbus, Virginia": 1, "Oasis Emi Korea": 1, "Offset France":
+        1, "Optimal Media Gmbh": 1, "Path\u00e9 Marconi S.A.": 1, "Professional Duplication
+        Studio L. Dziugie\u0142": 1, "Pt. Aquarius Musikindo": 1, "Rainbo Records":
+        1, "Record Industry": 1, "Rege": 1, "Regency Media": 1, "Rhino Records": 1,
+        "S180 Series": 1, "Simply Vinyl": 1, "Sonic, S.A.": 1, "Sonopress Usa": 1,
+        "Sunny": 1, "Takt": 1, "Takt Music": 1, "Tatarek": 1, "Team Records": 1, "The
+        Gramophone Company Of India Ltd.": 1, "Top Album Series": 1, "Universal Music
+        & Video Distribution, Corp.": 1, "Universal Music Domestic Division": 1, "Universal
+        Records": 1, "Vivo": 1, "Warner Music Canada Co.": 1, "Warner Music Japan
+        Inc.": 1, "\u6efe\u77f3\u570b\u969b\u97f3\u6a02\u80a1\u4efd\u6709\u9650\u516c\u53f8":
+        1}, "country": {"US": 31, "Europe": 29, "Canada": 17, "UK": 14, "Japan": 13,
         "France": 6, "Poland": 6, "Indonesia": 5, "UK & Europe": 5, "Australia": 4,
-        "Italy": 4, "Saudi Arabia": 4, "Taiwan": 4, "Argentina": 3, "Germany": 3,
-        "Israel": 3, "Netherlands": 3, "Spain": 3, "Thailand": 3, "Greece": 2, "New
-        Zealand": 2, "Russia": 2, "South Korea": 2, "Unknown": 2, "Yugoslavia": 2,
+        "Germany": 4, "Italy": 4, "Saudi Arabia": 4, "Taiwan": 4, "Argentina": 3,
+        "Israel": 3, "Netherlands": 3, "South Korea": 3, "Spain": 3, "Thailand": 3,
+        "Greece": 2, "New Zealand": 2, "Russia": 2, "Unknown": 2, "Yugoslavia": 2,
         "Australia & New Zealand": 1, "Brazil": 1, "Colombia": 1, "German Democratic
         Republic (GDR)": 1, "India": 1, "Ireland": 1, "Mexico": 1, "Philippines":
         1, "Portugal": 1, "Romania": 1, "South Africa": 1, "Turkey": 1, "Zimbabwe":
-        1}, "released": {"1985": 95, "1997": 10, "2011": 5, "2014": 4, "2018": 3,
-        "1990": 2, "1986": 1, "1987": 1, "1989": 1, "1993": 1, "1994": 1, "1995":
-        1, "2000": 1, "2005": 1, "2008": 1, "2010": 1}}}, "filter_facets": [{"title":
-        "Format", "id": "format", "values": [{"title": "Album", "value": "Album",
-        "count": 174}, {"title": "LP", "value": "LP", "count": 62}, {"title": "Vinyl",
-        "value": "Vinyl", "count": 62}, {"title": "CD", "value": "CD", "count": 56},
-        {"title": "Cassette", "value": "Cassette", "count": 56}, {"title": "Reissue",
-        "value": "Reissue", "count": 54}, {"title": "Unofficial Release", "value":
-        "Unofficial+Release", "count": 20}, {"title": "Remastered", "value": "Remastered",
-        "count": 16}, {"title": "Club Edition", "value": "Club+Edition", "count":
-        15}, {"title": "Promo", "value": "Promo", "count": 11}, {"title": "Limited
-        Edition", "value": "Limited+Edition", "count": 10}, {"title": "Stereo", "value":
-        "Stereo", "count": 10}, {"title": "CDr", "value": "CDr", "count": 6}, {"title":
-        "Misprint", "value": "Misprint", "count": 4}, {"title": "White Label", "value":
-        "White+Label", "count": 4}, {"title": "Special Edition", "value": "Special+Edition",
-        "count": 3}, {"title": "Test Pressing", "value": "Test+Pressing", "count":
-        3}, {"title": "File", "value": "File", "count": 2}, {"title": "AAC", "value":
-        "AAC", "count": 1}, {"title": "FLAC", "value": "FLAC", "count": 1}, {"title":
-        "Numbered", "value": "Numbered", "count": 1}, {"title": "Repress", "value":
-        "Repress", "count": 1}], "allows_multiple_values": true}, {"title": "Label",
-        "id": "label", "values": [{"title": "Emi", "value": "Emi", "count": 103},
-        {"title": "Novercia Ltd.", "value": "Novercia+Ltd.", "count": 87}, {"title":
-        "Emi Music Publishing Ltd.", "value": "Emi+Music+Publishing+Ltd.", "count":
-        35}, {"title": "Kate Bush Music Ltd.", "value": "Kate+Bush+Music+Ltd.", "count":
-        32}, {"title": "Emi Records Ltd.", "value": "Emi+Records+Ltd.", "count": 30},
-        {"title": "Windmill Lane Studios", "value": "Windmill+Lane+Studios", "count":
-        24}, {"title": "Emi America Records", "value": "Emi+America+Records", "count":
-        23}, {"title": "Emi America", "value": "Emi+America", "count": 22}, {"title":
-        "Capitol Records, Inc.", "value": "Capitol+Records%2C+Inc.", "count": 16},
-        {"title": "Emi-Manhattan Records", "value": "Emi-Manhattan+Records", "count":
-        15}, {"title": "Kate Bush Music Publishing Ltd.", "value": "Kate+Bush+Music+Publishing+Ltd.",
-        "count": 13}, {"title": "Screen Gems-Emi Music Inc.", "value": "Screen+Gems-Emi+Music+Inc.",
+        1}, "released": {"1985": 98, "1997": 10, "2011": 5, "2014": 4, "2018": 3,
+        "1990": 2, "1986": 1, "1987": 1, "1989": 1, "1991": 1, "1993": 1, "1994":
+        1, "1995": 1, "2000": 1, "2005": 1, "2008": 1, "2010": 1}}}, "filter_facets":
+        [{"title": "Format", "id": "format", "values": [{"title": "Album", "value":
+        "Album", "count": 179}, {"title": "LP", "value": "LP", "count": 64}, {"title":
+        "Vinyl", "value": "Vinyl", "count": 64}, {"title": "CD", "value": "CD", "count":
+        58}, {"title": "Cassette", "value": "Cassette", "count": 57}, {"title": "Reissue",
+        "value": "Reissue", "count": 55}, {"title": "Unofficial Release", "value":
+        "Unofficial+Release", "count": 21}, {"title": "Remastered", "value": "Remastered",
+        "count": 18}, {"title": "Club Edition", "value": "Club+Edition", "count":
+        14}, {"title": "Promo", "value": "Promo", "count": 11}, {"title": "Stereo",
+        "value": "Stereo", "count": 11}, {"title": "Limited Edition", "value": "Limited+Edition",
+        "count": 10}, {"title": "CDr", "value": "CDr", "count": 6}, {"title": "Misprint",
+        "value": "Misprint", "count": 4}, {"title": "White Label", "value": "White+Label",
+        "count": 4}, {"title": "Special Edition", "value": "Special+Edition", "count":
+        3}, {"title": "Test Pressing", "value": "Test+Pressing", "count": 3}, {"title":
+        "File", "value": "File", "count": 2}, {"title": "Repress", "value": "Repress",
+        "count": 2}, {"title": "AAC", "value": "AAC", "count": 1}, {"title": "FLAC",
+        "value": "FLAC", "count": 1}, {"title": "Numbered", "value": "Numbered", "count":
+        1}], "allows_multiple_values": true}, {"title": "Label", "id": "label", "values":
+        [{"title": "Emi", "value": "Emi", "count": 107}, {"title": "Novercia Ltd.",
+        "value": "Novercia+Ltd.", "count": 91}, {"title": "Emi Music Publishing Ltd.",
+        "value": "Emi+Music+Publishing+Ltd.", "count": 38}, {"title": "Kate Bush Music
+        Ltd.", "value": "Kate+Bush+Music+Ltd.", "count": 35}, {"title": "Emi Records
+        Ltd.", "value": "Emi+Records+Ltd.", "count": 33}, {"title": "Windmill Lane
+        Studios", "value": "Windmill+Lane+Studios", "count": 24}, {"title": "Emi America
+        Records", "value": "Emi+America+Records", "count": 23}, {"title": "Emi America",
+        "value": "Emi+America", "count": 22}, {"title": "Capitol Records, Inc.", "value":
+        "Capitol+Records%2C+Inc.", "count": 16}, {"title": "Emi-Manhattan Records",
+        "value": "Emi-Manhattan+Records", "count": 15}, {"title": "Kate Bush Music
+        Publishing Ltd.", "value": "Kate+Bush+Music+Publishing+Ltd.", "count": 13},
+        {"title": "Screen Gems-Emi Music Inc.", "value": "Screen+Gems-Emi+Music+Inc.",
         "count": 13}, {"title": "The Town House", "value": "The+Town+House", "count":
         12}, {"title": "Columbia House", "value": "Columbia+House", "count": 10},
         {"title": "Emi Services Benelux B.V.", "value": "Emi+Services+Benelux+B.V.",
@@ -170,31 +173,31 @@ http_interactions:
         4}, {"title": "Capitol Industries-Emi, Inc.", "value": "Capitol+Industries-Emi%2C+Inc.",
         "count": 4}, {"title": "Bill Smith Studio", "value": "Bill+Smith+Studio",
         "count": 3}, {"title": "Cbs Records Ltd.", "value": "Cbs+Records+Ltd.", "count":
-        3}, {"title": "Cinram", "value": "Cinram", "count": 3}, {"title": "Emi Italiana
-        S.P.A.", "value": "Emi+Italiana+S.P.A.", "count": 3}, {"title": "Emi Swindon",
-        "value": "Emi+Swindon", "count": 3}, {"title": "Noble And Brite", "value":
-        "Noble+And+Brite", "count": 3}, {"title": "Portrait", "value": "Portrait",
-        "count": 3}, {"title": "Record Technology Incorporated", "value": "Record+Technology+Incorporated",
-        "count": 3}, {"title": "747", "value": "747", "count": 2}, {"title": "Abbey
-        Road Studios", "value": "Abbey+Road+Studios", "count": 2}, {"title": "Capitol
-        Records Pressing Plant, Winchester", "value": "Capitol+Records+Pressing+Plant%2C+Winchester",
-        "count": 2}, {"title": "Columbia Records Pressing Plant, Don Mills, On", "value":
-        "Columbia+Records+Pressing+Plant%2C+Don+Mills%2C+On", "count": 2}, {"title":
-        "Digital Audio Disc Corp.", "value": "Digital+Audio+Disc+Corp.", "count":
-        2}, {"title": "Disque Americ", "value": "Disque+Americ", "count": 2}, {"title":
-        "Emi 100", "value": "Emi+100", "count": 2}, {"title": "Emi Greece", "value":
-        "Emi+Greece", "count": 2}, {"title": "Emi Mfg.", "value": "Emi+Mfg.", "count":
-        2}, {"title": "Emi Music Canada", "value": "Emi+Music+Canada", "count": 2},
-        {"title": "Emi Music Publishing", "value": "Emi+Music+Publishing", "count":
-        2}, {"title": "Emi Records Australia", "value": "Emi+Records+Australia", "count":
-        2}, {"title": "Emi Usa", "value": "Emi+Usa", "count": 2}, {"title": "Emi-Odeon,
-        S.A.", "value": "Emi-Odeon%2C+S.A.", "count": 2}, {"title": "Emial S.A.",
-        "value": "Emial+S.A.", "count": 2}, {"title": "Grafica Pozzoli S.P.A.", "value":
-        "Grafica+Pozzoli+S.P.A.", "count": 2}, {"title": "Jugoton", "value": "Jugoton",
-        "count": 2}, {"title": "Kate Bush Paper Sleeve Collection", "value": "Kate+Bush+Paper+Sleeve+Collection",
-        "count": 2}, {"title": "Noverica Limited", "value": "Noverica+Limited", "count":
-        2}, {"title": "Oasis Record Co.", "value": "Oasis+Record+Co.", "count": 2},
-        {"title": "Oasis Records", "value": "Oasis+Records", "count": 2}, {"title":
+        3}, {"title": "Cinram", "value": "Cinram", "count": 3}, {"title": "Emi 100",
+        "value": "Emi+100", "count": 3}, {"title": "Emi Italiana S.P.A.", "value":
+        "Emi+Italiana+S.P.A.", "count": 3}, {"title": "Emi Music Canada", "value":
+        "Emi+Music+Canada", "count": 3}, {"title": "Emi Swindon", "value": "Emi+Swindon",
+        "count": 3}, {"title": "Noble And Brite", "value": "Noble+And+Brite", "count":
+        3}, {"title": "Oasis Records", "value": "Oasis+Records", "count": 3}, {"title":
+        "Portrait", "value": "Portrait", "count": 3}, {"title": "Record Technology
+        Incorporated", "value": "Record+Technology+Incorporated", "count": 3}, {"title":
+        "747", "value": "747", "count": 2}, {"title": "Abbey Road Studios", "value":
+        "Abbey+Road+Studios", "count": 2}, {"title": "Capitol Records Pressing Plant,
+        Winchester", "value": "Capitol+Records+Pressing+Plant%2C+Winchester", "count":
+        2}, {"title": "Columbia Records Pressing Plant, Don Mills, On", "value": "Columbia+Records+Pressing+Plant%2C+Don+Mills%2C+On",
+        "count": 2}, {"title": "Digital Audio Disc Corp.", "value": "Digital+Audio+Disc+Corp.",
+        "count": 2}, {"title": "Disque Americ", "value": "Disque+Americ", "count":
+        2}, {"title": "Emi Greece", "value": "Emi+Greece", "count": 2}, {"title":
+        "Emi Mfg.", "value": "Emi+Mfg.", "count": 2}, {"title": "Emi Music Publishing",
+        "value": "Emi+Music+Publishing", "count": 2}, {"title": "Emi Records Australia",
+        "value": "Emi+Records+Australia", "count": 2}, {"title": "Emi Usa", "value":
+        "Emi+Usa", "count": 2}, {"title": "Emi-Odeon, S.A.", "value": "Emi-Odeon%2C+S.A.",
+        "count": 2}, {"title": "Emial S.A.", "value": "Emial+S.A.", "count": 2}, {"title":
+        "Grafica Pozzoli S.P.A.", "value": "Grafica+Pozzoli+S.P.A.", "count": 2},
+        {"title": "Jugoton", "value": "Jugoton", "count": 2}, {"title": "Kate Bush
+        Paper Sleeve Collection", "value": "Kate+Bush+Paper+Sleeve+Collection", "count":
+        2}, {"title": "Noverica Limited", "value": "Noverica+Limited", "count": 2},
+        {"title": "Oasis Record Co.", "value": "Oasis+Record+Co.", "count": 2}, {"title":
         "Parlophone", "value": "Parlophone", "count": 2}, {"title": "Rock Records
         & Tapes", "value": "Rock+Records+%26+Tapes", "count": 2}, {"title": "Sonopress",
         "value": "Sonopress", "count": 2}, {"title": "Supermasters", "value": "Supermasters",
@@ -219,6 +222,7 @@ http_interactions:
         "count": 1}, {"title": "Dyna Emi", "value": "Dyna+Emi", "count": 1}, {"title":
         "Ego Record", "value": "Ego+Record", "count": 1}, {"title": "Emi Capitol De
         Mexico, S.A. De C.V.", "value": "Emi+Capitol+De+Mexico%2C+S.A.+De+C.V.", "count":
+        1}, {"title": "Emi Electrola Gmbh", "value": "Emi+Electrola+Gmbh", "count":
         1}, {"title": "Emi Music France", "value": "Emi+Music+France", "count": 1},
         {"title": "Emi Music Group Australasia", "value": "Emi+Music+Group+Australasia",
         "count": 1}, {"title": "Emi Music Group Of Companies", "value": "Emi+Music+Group+Of+Companies",
@@ -258,12 +262,13 @@ http_interactions:
         "count": 1}, {"title": "Simply Vinyl", "value": "Simply+Vinyl", "count": 1},
         {"title": "Sonic, S.A.", "value": "Sonic%2C+S.A.", "count": 1}, {"title":
         "Sonopress Usa", "value": "Sonopress+Usa", "count": 1}, {"title": "Sunny",
-        "value": "Sunny", "count": 1}, {"title": "Takt Music", "value": "Takt+Music",
-        "count": 1}, {"title": "Tatarek", "value": "Tatarek", "count": 1}, {"title":
-        "Team Records", "value": "Team+Records", "count": 1}, {"title": "The Gramophone
-        Company Of India Ltd.", "value": "The+Gramophone+Company+Of+India+Ltd.", "count":
-        1}, {"title": "Top Album Series", "value": "Top+Album+Series", "count": 1},
-        {"title": "Universal Music & Video Distribution, Corp.", "value": "Universal+Music+%26+Video+Distribution%2C+Corp.",
+        "value": "Sunny", "count": 1}, {"title": "Takt", "value": "Takt", "count":
+        1}, {"title": "Takt Music", "value": "Takt+Music", "count": 1}, {"title":
+        "Tatarek", "value": "Tatarek", "count": 1}, {"title": "Team Records", "value":
+        "Team+Records", "count": 1}, {"title": "The Gramophone Company Of India Ltd.",
+        "value": "The+Gramophone+Company+Of+India+Ltd.", "count": 1}, {"title": "Top
+        Album Series", "value": "Top+Album+Series", "count": 1}, {"title": "Universal
+        Music & Video Distribution, Corp.", "value": "Universal+Music+%26+Video+Distribution%2C+Corp.",
         "count": 1}, {"title": "Universal Music Domestic Division", "value": "Universal+Music+Domestic+Division",
         "count": 1}, {"title": "Universal Records", "value": "Universal+Records",
         "count": 1}, {"title": "Vivo", "value": "Vivo", "count": 1}, {"title": "Warner
@@ -274,68 +279,67 @@ http_interactions:
         "count": 1}], "allows_multiple_values": true}, {"title": "Country", "id":
         "country", "values": [{"title": "US", "value": "US", "count": 31}, {"title":
         "Europe", "value": "Europe", "count": 29}, {"title": "Canada", "value": "Canada",
-        "count": 16}, {"title": "Japan", "value": "Japan", "count": 13}, {"title":
-        "UK", "value": "UK", "count": 12}, {"title": "France", "value": "France",
-        "count": 6}, {"title": "Poland", "value": "Poland", "count": 6}, {"title":
-        "Indonesia", "value": "Indonesia", "count": 5}, {"title": "UK & Europe", "value":
-        "UK+%26+Europe", "count": 5}, {"title": "Australia", "value": "Australia",
-        "count": 4}, {"title": "Italy", "value": "Italy", "count": 4}, {"title": "Saudi
-        Arabia", "value": "Saudi+Arabia", "count": 4}, {"title": "Taiwan", "value":
-        "Taiwan", "count": 4}, {"title": "Argentina", "value": "Argentina", "count":
-        3}, {"title": "Germany", "value": "Germany", "count": 3}, {"title": "Israel",
-        "value": "Israel", "count": 3}, {"title": "Netherlands", "value": "Netherlands",
-        "count": 3}, {"title": "Spain", "value": "Spain", "count": 3}, {"title": "Thailand",
-        "value": "Thailand", "count": 3}, {"title": "Greece", "value": "Greece", "count":
-        2}, {"title": "New Zealand", "value": "New+Zealand", "count": 2}, {"title":
-        "Russia", "value": "Russia", "count": 2}, {"title": "South Korea", "value":
-        "South+Korea", "count": 2}, {"title": "Unknown", "value": "Unknown", "count":
-        2}, {"title": "Yugoslavia", "value": "Yugoslavia", "count": 2}, {"title":
-        "Australia & New Zealand", "value": "Australia+%26+New+Zealand", "count":
-        1}, {"title": "Brazil", "value": "Brazil", "count": 1}, {"title": "Colombia",
-        "value": "Colombia", "count": 1}, {"title": "German Democratic Republic (GDR)",
-        "value": "German+Democratic+Republic+%28GDR%29", "count": 1}, {"title": "India",
-        "value": "India", "count": 1}, {"title": "Ireland", "value": "Ireland", "count":
-        1}, {"title": "Mexico", "value": "Mexico", "count": 1}, {"title": "Philippines",
-        "value": "Philippines", "count": 1}, {"title": "Portugal", "value": "Portugal",
-        "count": 1}, {"title": "Romania", "value": "Romania", "count": 1}, {"title":
-        "South Africa", "value": "South+Africa", "count": 1}, {"title": "Turkey",
-        "value": "Turkey", "count": 1}, {"title": "Zimbabwe", "value": "Zimbabwe",
-        "count": 1}], "allows_multiple_values": true}, {"title": "Released", "id":
-        "released", "values": [{"title": "1985", "value": "1985", "count": 95}, {"title":
-        "1997", "value": "1997", "count": 10}, {"title": "2011", "value": "2011",
-        "count": 5}, {"title": "2014", "value": "2014", "count": 4}, {"title": "2018",
-        "value": "2018", "count": 3}, {"title": "1990", "value": "1990", "count":
-        2}, {"title": "1986", "value": "1986", "count": 1}, {"title": "1987", "value":
-        "1987", "count": 1}, {"title": "1989", "value": "1989", "count": 1}, {"title":
-        "1993", "value": "1993", "count": 1}, {"title": "1994", "value": "1994", "count":
-        1}, {"title": "1995", "value": "1995", "count": 1}, {"title": "2000", "value":
-        "2000", "count": 1}, {"title": "2005", "value": "2005", "count": 1}, {"title":
-        "2008", "value": "2008", "count": 1}, {"title": "2010", "value": "2010", "count":
-        1}], "allows_multiple_values": false}], "versions": [{"id": 13451942, "label":
-        "EMI", "country": "Turkey", "title": "Hounds Of Love", "major_formats": ["Cassette"],
-        "format": "Album", "catno": "TCKAB1, EJ240384 4", "released": "1985", "status":
-        "Accepted", "resource_url": "https://api.discogs.com/releases/13451942", "thumb":
-        "https://img.discogs.com/nZQ3gvoYTOhcjWRVvEI3wFKw4GU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13451942-1554478114-6070.jpeg.jpg",
-        "stats": {"community": {"in_wantlist": 82, "in_collection": 1}}}, {"id": 472418,
-        "label": "EMI America", "country": "US", "title": "Hounds Of Love", "major_formats":
-        ["Vinyl"], "format": "LP, Album", "catno": "ST-17171", "released": "1985",
-        "status": "Accepted", "resource_url": "https://api.discogs.com/releases/472418",
-        "thumb": "https://img.discogs.com/aZxv_GxE-kANQSkvMWcEe2c7zfM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-472418-1353030573-8475.jpeg.jpg",
-        "stats": {"community": {"in_wantlist": 884, "in_collection": 3653}}}, {"id":
-        917884, "label": "EMI", "country": "Australia & New Zealand", "title": "Hounds
-        Of Love", "major_formats": ["Vinyl"], "format": "LP, Album", "catno": "EMC.240384",
-        "released": "1985", "status": "Accepted", "resource_url": "https://api.discogs.com/releases/917884",
-        "thumb": "https://img.discogs.com/br3cf7yI1Y7Bic_mGdl4nbA5dKw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-917884-1172828781.jpeg.jpg",
-        "stats": {"community": {"in_wantlist": 368, "in_collection": 461}}}, {"id":
-        11601238, "label": "Oasis Records (4)", "country": "South Korea", "title":
-        "Hounds Of Love", "major_formats": ["Vinyl"], "format": "LP, Album, Promo",
-        "catno": "OLE-594, EJ-2403841", "released": "1985", "status": "Accepted",
-        "resource_url": "https://api.discogs.com/releases/11601238", "thumb": "https://img.discogs.com/eEOgApuy-qxqSQbxHJ-I3uOHHh4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11601238-1519225084-9237.jpeg.jpg",
-        "stats": {"community": {"in_wantlist": 165, "in_collection": 18}}}, {"id":
-        10670539, "label": "Rock Records & Tapes", "country": "Taiwan", "title": "Hounds
-        Of Love", "major_formats": ["Vinyl"], "format": "LP, Album", "catno": "RE-5009,
-        ST-17171", "released": "1985", "status": "Accepted", "resource_url": "https://api.discogs.com/releases/10670539",
-        "thumb": "https://img.discogs.com/AIoJ8oMwtMOSrQ5tkQ7fO8X1bLM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10670539-1605971326-7199.jpeg.jpg",
-        "stats": {"community": {"in_wantlist": 194, "in_collection": 12}}}]}'
-  recorded_at: Thu, 17 Dec 2020 13:30:12 GMT
+        "count": 17}, {"title": "UK", "value": "UK", "count": 14}, {"title": "Japan",
+        "value": "Japan", "count": 13}, {"title": "France", "value": "France", "count":
+        6}, {"title": "Poland", "value": "Poland", "count": 6}, {"title": "Indonesia",
+        "value": "Indonesia", "count": 5}, {"title": "UK & Europe", "value": "UK+%26+Europe",
+        "count": 5}, {"title": "Australia", "value": "Australia", "count": 4}, {"title":
+        "Germany", "value": "Germany", "count": 4}, {"title": "Italy", "value": "Italy",
+        "count": 4}, {"title": "Saudi Arabia", "value": "Saudi+Arabia", "count": 4},
+        {"title": "Taiwan", "value": "Taiwan", "count": 4}, {"title": "Argentina",
+        "value": "Argentina", "count": 3}, {"title": "Israel", "value": "Israel",
+        "count": 3}, {"title": "Netherlands", "value": "Netherlands", "count": 3},
+        {"title": "South Korea", "value": "South+Korea", "count": 3}, {"title": "Spain",
+        "value": "Spain", "count": 3}, {"title": "Thailand", "value": "Thailand",
+        "count": 3}, {"title": "Greece", "value": "Greece", "count": 2}, {"title":
+        "New Zealand", "value": "New+Zealand", "count": 2}, {"title": "Russia", "value":
+        "Russia", "count": 2}, {"title": "Unknown", "value": "Unknown", "count": 2},
+        {"title": "Yugoslavia", "value": "Yugoslavia", "count": 2}, {"title": "Australia
+        & New Zealand", "value": "Australia+%26+New+Zealand", "count": 1}, {"title":
+        "Brazil", "value": "Brazil", "count": 1}, {"title": "Colombia", "value": "Colombia",
+        "count": 1}, {"title": "German Democratic Republic (GDR)", "value": "German+Democratic+Republic+%28GDR%29",
+        "count": 1}, {"title": "India", "value": "India", "count": 1}, {"title": "Ireland",
+        "value": "Ireland", "count": 1}, {"title": "Mexico", "value": "Mexico", "count":
+        1}, {"title": "Philippines", "value": "Philippines", "count": 1}, {"title":
+        "Portugal", "value": "Portugal", "count": 1}, {"title": "Romania", "value":
+        "Romania", "count": 1}, {"title": "South Africa", "value": "South+Africa",
+        "count": 1}, {"title": "Turkey", "value": "Turkey", "count": 1}, {"title":
+        "Zimbabwe", "value": "Zimbabwe", "count": 1}], "allows_multiple_values": true},
+        {"title": "Released", "id": "released", "values": [{"title": "1985", "value":
+        "1985", "count": 98}, {"title": "1997", "value": "1997", "count": 10}, {"title":
+        "2011", "value": "2011", "count": 5}, {"title": "2014", "value": "2014", "count":
+        4}, {"title": "2018", "value": "2018", "count": 3}, {"title": "1990", "value":
+        "1990", "count": 2}, {"title": "1986", "value": "1986", "count": 1}, {"title":
+        "1987", "value": "1987", "count": 1}, {"title": "1989", "value": "1989", "count":
+        1}, {"title": "1991", "value": "1991", "count": 1}, {"title": "1993", "value":
+        "1993", "count": 1}, {"title": "1994", "value": "1994", "count": 1}, {"title":
+        "1995", "value": "1995", "count": 1}, {"title": "2000", "value": "2000", "count":
+        1}, {"title": "2005", "value": "2005", "count": 1}, {"title": "2008", "value":
+        "2008", "count": 1}, {"title": "2010", "value": "2010", "count": 1}], "allows_multiple_values":
+        false}], "versions": [{"id": 4914783, "label": "EMI America", "country": "US",
+        "title": "Hounds Of Love", "major_formats": ["Cassette"], "format": "Album",
+        "catno": "4XT-17171", "released": "1985", "status": "Accepted", "resource_url":
+        "https://api.discogs.com/releases/4914783", "thumb": "https://img.discogs.com/LpNjqGvdOfrn2ayJEClGC4_V09U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4914783-1381013800-6461.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 238, "in_collection": 54}}}, {"id":
+        9034297, "label": "EMI", "country": "Argentina", "title": "Jaur\u00eda De
+        Amor", "major_formats": ["Vinyl"], "format": "LP, Album", "catno": "81 2403841
+        8344", "released": "1985", "status": "Accepted", "resource_url": "https://api.discogs.com/releases/9034297",
+        "thumb": "https://img.discogs.com/4Z-6VvWH-C4i1uAB4bBH4_fba-o=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9034297-1473625187-6672.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 254, "in_collection": 31}}}, {"id":
+        14289143, "label": "EMI-Manhattan Records", "country": "US", "title": "Hounds
+        Of Love", "major_formats": ["CD"], "format": "Album", "catno": "CDP 7 46164
+        2", "released": "1985", "status": "Accepted", "resource_url": "https://api.discogs.com/releases/14289143",
+        "thumb": "https://img.discogs.com/TSz-XoJ62Ol5R2XXDFAsxGJ47zM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-14289143-1583115266-5541.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 108, "in_collection": 25}}}, {"id":
+        6773292, "label": "EMI", "country": "Europe", "title": "Hounds Of Love", "major_formats":
+        ["Vinyl"], "format": "LP, Album, Promo, White Label", "catno": "1C 064-24
+        0384 1", "released": "1985", "status": "Accepted", "resource_url": "https://api.discogs.com/releases/6773292",
+        "thumb": "https://img.discogs.com/Vx4kaqf1RtFV0s8ZfFog-_Ol80s=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6773292-1426346885-2525.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 314, "in_collection": 7}}}, {"id":
+        4914926, "label": "EMI", "country": "Europe", "title": "Hounds Of Love", "major_formats":
+        ["Cassette"], "format": "Album", "catno": "238-7 46164 4, 7461644", "released":
+        "1985", "status": "Accepted", "resource_url": "https://api.discogs.com/releases/4914926",
+        "thumb": "https://img.discogs.com/y_HUTeO4gqpxGcoCU6SwL0gIdOI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4914926-1381016626-7204.jpeg.jpg",
+        "stats": {"community": {"in_wantlist": 234, "in_collection": 7}}}]}'
+  recorded_at: Tue, 25 May 2021 08:21:11 GMT
 recorded_with: VCR 6.0.0

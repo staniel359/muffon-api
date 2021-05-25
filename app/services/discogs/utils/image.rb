@@ -14,8 +14,11 @@ module Discogs
       end
 
       def image_present?
-        @args.image.present? &&
-          !@args.image.end_with?('/spacer.gif')
+        @args.image.present? && !placeholder?
+      end
+
+      def placeholder?
+        @args.image.end_with?('/spacer.gif')
       end
 
       def image_data

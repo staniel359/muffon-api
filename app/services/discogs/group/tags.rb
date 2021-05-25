@@ -4,11 +4,7 @@ module Discogs
       private
 
       def group_data
-        {
-          title: title,
-          artist: artist_data(response_data),
-          tags: tags
-        }
+        { tags: tags }
       end
     end
   end

@@ -155,6 +155,7 @@ Rails.application.routes.draw do
         namespace :labels, as: :label do
           scope ':label_id' do
             get '', action: :info
+            get 'description'
             get 'albums'
           end
         end

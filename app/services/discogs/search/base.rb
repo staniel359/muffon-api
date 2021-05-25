@@ -1,7 +1,7 @@
 module Discogs
   module Search
     class Base < Discogs::Base
-      include Discogs::Paginated
+      include Discogs::Utils::Pagination
 
       private
 
@@ -10,23 +10,15 @@ module Discogs
       end
 
       def no_data?
-        response_data['results'].blank?
+        collection_list.blank?
       end
 
-      def data
-        { search: search_data }
-      end
-
-      def search_data
-        {
-          page: page,
-          total_pages: total_pages,
-          collection_name.to_sym => collection_data
-        }
+      def collection_list
+        @collection_list ||= response_data['results']
       end
 
       def link
-        "#{base_link}/database/search"
+        "#{BASE_LINK}/database/search"
       end
 
       def params
@@ -36,16 +28,22 @@ module Discogs
       def search_params
         {
           query: @args.query,
-          type: discogs_collection_type
+          type: collection_type
         }
       end
 
-      def collection_list
-        response_data['results']
+      def collection_type
+        self.class::COLLECTION_TYPE
       end
 
-      def collection_data
-        collection_list.map { |i| collection_item_data(i) }
+      def data
+        { search: paginated_data }
+      end
+
+      def total_pages_count
+        response_data.dig(
+          'pagination', 'pages'
+        )
       end
     end
   end

@@ -1,6 +1,8 @@
 module Discogs
   module Group
-    class Base < Discogs::Base
+    class Base < Discogs::Album::Base
+      include Discogs::Utils::Album
+
       private
 
       def primary_args
@@ -8,15 +10,15 @@ module Discogs
       end
 
       def link
-        group_link
-      end
-
-      def group_link
-        "#{base_link}/masters/#{@args.group_id}"
+        "#{BASE_LINK}/masters/#{@args.group_id}"
       end
 
       def data
         { group: group_data }
+      end
+
+      def album
+        @album ||= response_data
       end
     end
   end

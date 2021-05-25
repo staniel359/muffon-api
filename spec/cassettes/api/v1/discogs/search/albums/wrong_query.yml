@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&query=wejlhg239gh23&secret=<DISCOGS_API_SECRET>&type=release
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page=1&per_page=20&query=wejlhg239gh23&secret=<DISCOGS_API_SECRET>&type=release
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 17 Dec 2020 15:49:08 GMT
+      - Tue, 25 May 2021 09:21:48 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,15 +33,17 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '53'
+      - '49'
       X-Discogs-Ratelimit-Used:
-      - '7'
+      - '11'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
       - HEAD,OPTIONS,GET,OPTIONS
       Access-Control-Expose-Headers:
       - Location
+      Content-Language:
+      - en
       X-Discogs-Media-Type:
       - discogs.v2
       Access-Control-Allow-Origin:
@@ -58,7 +60,7 @@ http_interactions:
       - max-age=15724800
     body:
       encoding: ASCII-8BIT
-      string: '{"pagination": {"page": 1, "pages": 1, "per_page": 50, "items": 0,
+      string: '{"pagination": {"page": 1, "pages": 1, "per_page": 20, "items": 0,
         "urls": {}}, "results": []}'
-  recorded_at: Thu, 17 Dec 2020 15:49:09 GMT
+  recorded_at: Tue, 25 May 2021 09:21:49 GMT
 recorded_with: VCR 6.0.0

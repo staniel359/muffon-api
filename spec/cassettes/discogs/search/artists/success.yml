@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 17 Dec 2020 15:54:35 GMT
+      - Tue, 25 May 2021 09:18:00 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -42,11 +42,13 @@ http_interactions:
       - HEAD,OPTIONS,GET,OPTIONS
       Access-Control-Expose-Headers:
       - Location
+      Content-Language:
+      - en
       Link:
-      - <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=1&per_page=5>;
-        rel="first", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=23&per_page=5>;
-        rel="last", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=1&per_page=5>;
-        rel="prev", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=3&per_page=5>;
+      - <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5&query=kate+bush&type=artist>;
+        rel="first", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=24&per_page=5&query=kate+bush&type=artist>;
+        rel="last", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5&query=kate+bush&type=artist>;
+        rel="prev", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5&query=kate+bush&type=artist>;
         rel="next"
       X-Discogs-Media-Type:
       - discogs.v2
@@ -64,20 +66,20 @@ http_interactions:
       - max-age=15724800
     body:
       encoding: ASCII-8BIT
-      string: '{"pagination": {"page": 2, "pages": 23, "per_page": 5, "items": 112,
-        "urls": {"first": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=1&per_page=5",
-        "last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=23&per_page=5",
-        "prev": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=1&per_page=5",
-        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=artist&page=3&per_page=5"}},
+      string: '{"pagination": {"page": 2, "pages": 24, "per_page": 5, "items": 117,
+        "urls": {"first": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5&query=kate+bush&type=artist",
+        "last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=24&per_page=5&query=kate+bush&type=artist",
+        "prev": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=1&per_page=5&query=kate+bush&type=artist",
+        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3&per_page=5&query=kate+bush&type=artist"}},
         "results": [{"id": 894348, "type": "artist", "master_id": null, "master_url":
         null, "uri": "/artist/894348-Dr-Bush", "title": "Dr. Bush", "thumb": "", "cover_image":
-        "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/894348"}, {"id": 4826440,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/4826440-Kate-Bush-Visuals",
-        "title": "Kate Bush Visuals", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kate Bush Visuals", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/4826440"}, {"id": 7929076,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/7929076-Kates-Bush-2",
-        "title": "Kate''s Bush (2)", "thumb": "", "cover_image": "https://img.discogs.com/44ee095fadda529481bcc7ef36c882a13a60df73/images/spacer.gif",
+        "title": "Kate''s Bush (2)", "thumb": "", "cover_image": "https://img.discogs.com/ff591de98745b0dc6f6345d2314025182ac8bed7/images/spacer.gif",
         "resource_url": "https://api.discogs.com/artists/7929076"}, {"id": 4253308,
         "type": "artist", "master_id": null, "master_url": null, "uri": "/artist/4253308-KT-Bush-Band",
         "title": "KT Bush Band", "thumb": "https://img.discogs.com/YsTtb00fTQ-mInh-oJjmV3irBIk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-4253308-1424003200-8672.jpeg.jpg",
@@ -87,5 +89,5 @@ http_interactions:
         "title": "Nick Price (2)", "thumb": "https://img.discogs.com/pvyeZsDvcuDpHow-t9oXiZkr0sk=/150x150/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-2222811-1607794608-8769.jpeg.jpg",
         "cover_image": "https://img.discogs.com/lBlC5vaoJxwiK8do7s4-LLzG77k=/374x369/smart/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/A-2222811-1607794608-8769.jpeg.jpg",
         "resource_url": "https://api.discogs.com/artists/2222811"}]}'
-  recorded_at: Thu, 17 Dec 2020 15:54:36 GMT
+  recorded_at: Tue, 25 May 2021 09:18:01 GMT
 recorded_with: VCR 6.0.0

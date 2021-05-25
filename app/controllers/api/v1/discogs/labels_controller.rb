@@ -6,6 +6,10 @@ module API
           render_data_with_status
         end
 
+        def description
+          render_data_with_status
+        end
+
         def albums
           render_data_with_status
         end

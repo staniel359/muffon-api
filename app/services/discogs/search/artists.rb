@@ -1,26 +1,15 @@
 module Discogs
   module Search
     class Artists < Discogs::Search::Base
+      COLLECTION_NAME = 'artists'.freeze
+      COLLECTION_TYPE = 'artist'.freeze
+
       private
 
-      def discogs_collection_type
-        'artist'
-      end
-
-      def collection_type
-        'artist'
-      end
-
-      def collection_name
-        'artists'
-      end
-
-      def collection_item_data(artist)
-        {
-          name: artist['title'],
-          image: image_data(artist['cover_image'], 'artist'),
-          discogs_id: artist['id']
-        }
+      def collection_item_data_formatted(artist)
+        Discogs::Search::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

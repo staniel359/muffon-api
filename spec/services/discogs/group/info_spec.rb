@@ -21,11 +21,7 @@ RSpec.describe Discogs::Group::Info do
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Discogs::Group.info_different_artists_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Discogs::Group.info_different_artists_data) }
     end
 
     context 'when multiple artists' do
@@ -35,11 +31,7 @@ RSpec.describe Discogs::Group::Info do
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Discogs::Group.info_multiple_artists_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Discogs::Group.info_multiple_artists_data) }
     end
   end
 

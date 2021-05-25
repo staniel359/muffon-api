@@ -12,18 +12,20 @@ module Discogs
       def group_base_data
         {
           title: title,
-          artist: artist_data(response_data),
-          source: 'discogs'
+          discogs_id: discogs_id,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def group_extra_data
         {
-          image: image_data(main_image, 'album'),
-          released: response_data['year'].to_s,
+          image: image_data,
+          release_date: release_date,
           description: description_truncated,
           tags: tags.first(5),
-          tracks: tracks_data
+          tracks: tracks
         }
       end
     end

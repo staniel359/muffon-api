@@ -1,26 +1,15 @@
 module Discogs
   module Search
     class Labels < Discogs::Search::Base
+      COLLECTION_NAME = 'labels'.freeze
+      COLLECTION_TYPE = 'label'.freeze
+
       private
 
-      def discogs_collection_type
-        'label'
-      end
-
-      def collection_type
-        'label'
-      end
-
-      def collection_name
-        'labels'
-      end
-
-      def collection_item_data(label)
-        {
-          title: label['title'],
-          image: image_data(label['cover_image'], 'artist'),
-          discogs_id: label['id']
-        }
+      def collection_item_data_formatted(label)
+        Discogs::Search::Labels::Label.call(
+          label: label
+        )
       end
     end
   end

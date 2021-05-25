@@ -1,27 +1,30 @@
 module Discogs
   module Group
     class Albums < Discogs::Group::Base
-      include Discogs::Paginated
+      COLLECTION_NAME = 'albums'.freeze
+      include Discogs::Utils::Pagination
 
       private
 
-      def group_data
-        paginated_data
-      end
-
       def link
-        "#{group_link}/versions"
+        "#{super}/versions"
       end
 
-      def album_data(album)
-        {
-          title: album['title'],
-          image: image_data(album['thumb'], 'album'),
-          released: album['released'],
-          format: album['format'],
-          discogs_id: album['id']
-        }
+      def total_pages_count
+        album.dig('pagination', 'pages')
       end
+
+      def collection_list
+        album['versions']
+      end
+
+      def collection_item_data_formatted(album)
+        Discogs::Group::Albums::Album.call(
+          album: album
+        )
+      end
+
+      alias group_data paginated_data
     end
   end
 end

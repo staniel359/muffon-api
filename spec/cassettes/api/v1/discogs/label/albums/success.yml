@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    uri: https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&page=1&per_page=20&secret=<DISCOGS_API_SECRET>&sort=year&sort_order=desc
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 17 Dec 2020 18:16:50 GMT
+      - Tue, 25 May 2021 09:21:36 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,15 +33,17 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '57'
+      - '58'
       X-Discogs-Ratelimit-Used:
-      - '3'
+      - '2'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
       - HEAD,OPTIONS,GET,OPTIONS
       Access-Control-Expose-Headers:
       - Location
+      Content-Language:
+      - en
       X-Discogs-Media-Type:
       - discogs.v2
       Access-Control-Allow-Origin:
@@ -58,188 +60,83 @@ http_interactions:
       - max-age=15724800
     body:
       encoding: ASCII-8BIT
-      string: '{"pagination": {"page": 1, "pages": 3318, "per_page": 50, "items":
-        165895, "urls": {"last": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=3318&per_page=50",
-        "next": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=2&per_page=50"}},
-        "releases": [{"status": "Accepted", "format": "CD, Album, Promo", "catno":
-        "none", "thumb": "https://img.discogs.com/rLYiu1QGhcRqGUMAmb6CL-tP3yI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16087740-1603208300-4017.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/16087740", "title": "Saturdays
-        = Youth", "id": 16087740, "year": 2008, "artist": "M83"}, {"status": "Accepted",
-        "format": "LP, Album, Mono", "catno": "LKCA-1, _LKCA_1", "thumb": "https://img.discogs.com/u1zkvn8iLchuin2V7A_PVkpiKuQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-14806042-1582122227-1573.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/14806042", "title": "Chori
-        Chori", "id": 14806042, "year": 1975, "artist": "Shankar Jaikishan*"}, {"status":
-        "Accepted", "format": "LP", "catno": "119 791935 1, -", "thumb": "https://img.discogs.com/z93btUJ1MLpBDLyu6IScn1yJW2o=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16236060-1605741028-3317.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/16236060", "title": "Rust
-        In Peace", "id": 16236060, "year": 1991, "artist": "Megadeth"}, {"status":
-        "Accepted", "format": "CD, Promo, Smplr", "catno": "-", "thumb": "https://img.discogs.com/vOdvHP9qU23CmpIfK7A9eZiUUXk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15863600-1599193179-6378.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/15863600", "title": "Awas
-        Da\u2019 Soundtrack", "id": 15863600, "year": 1995, "artist": "KRU (3)"},
-        {"status": "Accepted", "format": "CD, Album", "catno": "-2", "thumb": "https://img.discogs.com/hrOvUrDPOW8hCHM8QMGOvu9DGaQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15526749-1593026512-7810.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/15526749", "title": "Cabaret
-        Le Musical De Broadway Live", "id": 15526749, "year": 2007, "artist": "Various"},
-        {"status": "Accepted", "format": "3x12\", Comp", "catno": "!K7071lp, K7071LP",
-        "thumb": "https://img.discogs.com/f_f4l6CjrX8oCoiIAiXPSY-1GQE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-130768-001.jpg.jpg",
-        "resource_url": "https://api.discogs.com/releases/130768", "title": "DJ-Kicks",
-        "id": 130768, "year": 1998, "artist": "Andrea Parker"}, {"status": "Accepted",
-        "format": "5x12\", Comp, RE, RM, Tri", "catno": "!K7073LP", "thumb": "https://img.discogs.com/-S3RUg7K9NE9KmXGUJGlfgac7HY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6794957-1426780517-4728.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6794957", "title": "The
-        K&D Sessions\u2122", "id": 6794957, "year": 2015, "artist": "Kruder Dorfmeister*"},
-        {"status": "Accepted", "format": "CD, Comp", "catno": "\"none\"", "thumb":
-        "https://img.discogs.com/A1AhrSDLU6mTmYxJOUe5okTGWgQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15148912-1587339130-1877.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/15148912", "title": "The
-        Best Of", "id": 15148912, "year": 1999, "artist": "Brenda Fassie"}, {"status":
-        "Accepted", "format": "LP", "catno": "(062) 74 8628 1", "thumb": "https://img.discogs.com/9FeYYLC959O7vXEWlQ8zYEIX9hI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11592442-1519060575-7725.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/11592442", "title": "Rock
-        & Rocc", "id": 11592442, "year": 1987, "artist": "Monano Y Su Banda"}, {"status":
-        "Accepted", "format": "CD, Album, Comp", "catno": "(09460)36747521", "thumb":
-        "https://img.discogs.com/hjU8I-x8aOE67FNJ4avSRxQ5yXQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11050803-1508935724-1448.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/11050803", "title": "Emotions",
-        "id": 11050803, "year": 2006, "artist": "Murray Head"}, {"status": "Accepted",
-        "format": "CD, Album", "catno": "(218) 0 77778 92562 0, 218 7892567 0", "thumb":
-        "https://img.discogs.com/hbIxdw3CNrGxt0z2MM_utzdOAsk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4677769-1371950693-6741.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/4677769", "title": "Sentidos
-        Opuestos", "id": 4677769, "year": 1993, "artist": "Sentidos Opuestos"}, {"status":
-        "Accepted", "format": "CD, Album", "catno": "(218) 0 77778 92562 0, 0777 789256
-        20", "thumb": "https://img.discogs.com/DujqoIevzsabD7lS1LZztasQ6Co=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-997582-1601005466-4781.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/997582", "title": "Sentidos
-        Opuestos", "id": 997582, "year": 0, "artist": "Sentidos Opuestos"}, {"status":
-        "Accepted", "format": "Cass, Comp", "catno": "(264) 7131284 PM 464", "thumb":
-        "https://img.discogs.com/W3aczfwgIrqALLjbJLjOLy9sHtM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16175078-1604728128-1098.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/16175078", "title": "The
-        Best Of R.E.M.", "id": 16175078, "year": 1991, "artist": "R.E.M."}, {"status":
-        "Accepted", "format": "7\", Single", "catno": "(45) 1187157, (45) 1187 157",
-        "thumb": "https://img.discogs.com/YfZpNHLqTeDEhTMyg5d7vWI0wck=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2057045-1589696488-3719.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/2057045", "title": "Prospettiva
-        Nevski", "id": 2057045, "year": 1985, "artist": "Alice (4)"}, {"status": "Accepted",
-        "format": "7\", Single", "catno": "(45) 1272527", "thumb": "https://img.discogs.com/5NvsUSdk3Ew4ZNWh8fpkgUIQco0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6509831-1438487701-1483.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6509831", "title": "This
-        Is Your Life / Mr.Average", "id": 6509831, "year": 1985, "artist": "The Art
-        Company"}, {"status": "Accepted", "format": "7\", Single", "catno": "(45)
-        2007377", "thumb": "https://img.discogs.com/sSq-7NZZN7h63LNWQBQGrN6qbfQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7538403-1514992018-5738.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/7538403", "title": "Round
-        And Around", "id": 7538403, "year": 1985, "artist": "Jaki Graham"}, {"status":
-        "Accepted", "format": "12\", Maxi", "catno": "(49) 1273306", "thumb": "https://img.discogs.com/AmkQclfu-iTsjCFHSdanuxejhm4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-12533028-1537117084-3595.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/12533028", "title": "This
-        Is Your Life / Mr.Average", "id": 12533028, "year": 1985, "artist": "The Art
-        Company"}, {"status": "Accepted", "format": "7\"", "catno": "(5C006-25647",
-        "thumb": "https://img.discogs.com/j_zSty6nnaVS_ZQSQaucVyNuK4U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4472258-1365851138-2026.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/4472258", "title": "Doctor
-        Sax", "id": 4472258, "year": 1977, "artist": "Henry \"Doc\" Vegas"}, {"status":
-        "Accepted", "format": "LP, Album", "catno": "(90) 1187091", "thumb": "https://img.discogs.com/6E74CQwLiFk0ABFtB0IXj6t9daY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10336917-1495559108-5522.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10336917", "title": "Gioielli
-        Rubati", "id": 10336917, "year": 1985, "artist": "Alice (4)"}, {"status":
-        "Accepted", "format": "LP, Album", "catno": "(90) 2403511", "thumb": "https://img.discogs.com/WC1FoYmKyUuHLSO3rlFw44sp6Aw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13381027-1553120890-6893.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/13381027", "title": "Heaven
-        Knows", "id": 13381027, "year": 1985, "artist": "Jaki Graham"}, {"status":
-        "Accepted", "format": "LP, Album, Tex", "catno": "L 35690, L-35,690, (EMC3115)",
-        "thumb": "https://img.discogs.com/PQz1Ks0QEoiC6RuDTNwGvvch7O4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8002322-1497863698-2999.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8002322", "title": "Glenn
-        Cardier", "id": 8002322, "year": 1976, "artist": "Glenn Cardier"}, {"status":
-        "Accepted", "format": "LP, Album, Tex", "catno": "L-35,690, (EMC3115)", "thumb":
-        "https://img.discogs.com/1GZWjkPJ0RCjAi3G61NM9pG5ovQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16046356-1602477805-2564.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/16046356", "title": "Glenn
-        Cardier", "id": 16046356, "year": 1976, "artist": "Glenn Cardier"}, {"status":
-        "Accepted", "format": "File, AAC, Single", "catno": "(none)", "thumb": "https://img.discogs.com/W_pzm8x11e8ZDQ1r_5ZRpWRe_E4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4404523-1363995928-9446.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/4404523", "title": "Up In
-        The Air", "id": 4404523, "year": 2013, "artist": "Thirty Seconds to Mars*"},
-        {"status": "Accepted", "format": "CDr, Album, Promo, RE, RM", "catno": "(none)",
-        "thumb": "https://img.discogs.com/dfz7Snx6Joy-A7tOKfizFdUSRGg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8552752-1501371498-3961.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8552752", "title": "Peace
-        Sells... But Who''s Buying?", "id": 8552752, "year": 2004, "artist": "Megadeth"},
-        {"status": "Accepted", "format": "CDr, Album, Promo, RE, RM", "catno": "(none)",
-        "thumb": "https://img.discogs.com/FiJZZetvurfGHy3aJb-IiiREBdg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8552808-1502381176-9323.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8552808", "title": "Countdown
-        To Extinction", "id": 8552808, "year": 2004, "artist": "Megadeth"}, {"status":
-        "Accepted", "format": "Cass, Album", "catno": "(none)", "thumb": "https://img.discogs.com/VhruE3H3nG-d66BB3YkLPElmEuQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9600999-1483464959-9185.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9600999", "title": "At The
-        Club", "id": 9600999, "year": 1997, "artist": "Kenickie"}, {"status": "Accepted",
-        "format": "LP, Album", "catno": "(P) 39", "thumb": "https://img.discogs.com/jOKGibCeJV9ReOgGBWAB-MceuJQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9056146-1474006108-8745.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9056146", "title": "Queen
-        II ", "id": 9056146, "year": 0, "artist": "Queen"}, {"status": "Accepted",
-        "format": "LP, Album", "catno": "(S) Apple-2016", "thumb": "https://img.discogs.com/lNxVVeVmDK9hkwRvTZEYwpK-qtM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4648091-1410630792-4021.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/4648091", "title": "Ram
-        (Carnero)", "id": 4648091, "year": 1971, "artist": "Paul y Linda McCartney*"},
-        {"status": "Accepted", "format": "LP, Album", "catno": "(S) Apple-2018", "thumb":
-        "https://img.discogs.com/LqjJ-l7pnLLosnq1WWMpmFUMQBk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6084064-1410644618-5373.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6084064", "title": "Imagine
-        (Imag\u00ednate)", "id": 6084064, "year": 1972, "artist": "John Lennon / Plastic
-        Ono Band* Con The Flux Fiddlers"}, {"status": "Accepted", "format": "LP",
-        "catno": "(S) LDC-36786", "thumb": "https://img.discogs.com/ADrJ1EILSzcIctEh246Z2KyVT9Q=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-12691734-1540140364-2356.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/12691734", "title": "\u00a1Esta
-        Noche Nos Pasamos!", "id": 12691734, "year": 1972, "artist": "Argentino Rossi,
-        Los Invitados, Jorge Carrasco Y Su Orquesta"}, {"status": "Accepted", "format":
-        "LP, Album, Promo", "catno": "(S)10040", "thumb": "https://img.discogs.com/XQ_NrSW4JvoxoLur5Nt0fKDWNpw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-15965807-1601060940-2039.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/15965807", "title": "Alas",
-        "id": 15965807, "year": 1971, "artist": "Michel Colombier"}, {"status": "Accepted",
-        "format": "LP", "catno": "(S)LDC-36823", "thumb": "https://img.discogs.com/dczQV1TN1kisIG4-XcMtewwCkBE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11736999-1521513835-5488.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/11736999", "title": "Canto
-        de Pueblos Andinos Vol. 1", "id": 11736999, "year": 1973, "artist": "Inti
-        Illimani"}, {"status": "Accepted", "format": "LP, Comp", "catno": "OPXH 1008,
-        (XPPX 101)", "thumb": "https://img.discogs.com/Nsnp7TCXQm0A2drQLpffVxM_H2Y=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7699991-1447001385-4830.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/7699991", "title": "Barbara
-        Chante Brassens Et Brel", "id": 7699991, "year": 0, "artist": "Barbara (5)"},
-        {"status": "Accepted", "format": "LP, Album, RE", "catno": "EAS-80698", "thumb":
-        "https://img.discogs.com/Ezqusmf_87wKC2WSHRDsvxjAWTM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9246074-1477293381-6677.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9246074", "title": "Sentimental
-        Journey", "id": 9246074, "year": 1977, "artist": "Ringo Starr"}, {"status":
-        "Accepted", "format": "LP, Album", "catno": "[101] 2406441, 10007", "thumb":
-        "https://img.discogs.com/BrvjWtx5Qta5_GFmFihIJB61AKM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8326786-1459425503-2111.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8326786", "title": "Electric
-        Cafe", "id": 8326786, "year": 1986, "artist": "Kraftwerk"}, {"status": "Accepted",
-        "format": "Cass, Album, RE", "catno": "[53] 1176584", "thumb": "", "resource_url":
-        "https://api.discogs.com/releases/13491350", "title": "Duetti D''Amore (Arie
-        Da: Otello, Iris, Carmen, I Pescatori Di Perle, Faust)", "id": 13491350, "year":
-        0, "artist": "Rosanna Carteri E Giuseppe di Stefano"}, {"status": "Accepted",
-        "format": "12\"", "catno": "#014", "thumb": "https://img.discogs.com/sgo4oWr1oIPjgXQlM57oWA57dlg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3007557-1499575241-7365.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/3007557", "title": "Exothermic
-        Reaction / Future Funkizm", "id": 3007557, "year": 2011, "artist": "Skream"},
-        {"status": "Accepted", "format": "Betacam SP", "catno": "#121043", "thumb":
-        "https://img.discogs.com/6Pqfu848tVFmIKzPRmAJagznjtc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861472-1505535726-1607.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861472", "title": "Twisted
-        Transistor (Short Version)", "id": 10861472, "year": 2005, "artist": "Korn"},
-        {"status": "Accepted", "format": "Betacam SP", "catno": "#121316", "thumb":
-        "https://img.discogs.com/w18YXYvNLJOk5hg04kKCPUbQDcA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861448-1505535024-9142.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861448", "title": "See
-        You On The Other Side (Launch Tour Footage)", "id": 10861448, "year": 2005,
-        "artist": "Korn"}, {"status": "Accepted", "format": "Betacam SP", "catno":
-        "#122700", "thumb": "https://img.discogs.com/YSGj3I7MaT-_ev4cotB0OySUV84=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861498-1505536386-4675.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861498", "title": "Coming
-        Undone (Live Music Video)", "id": 10861498, "year": 2006, "artist": "Korn"},
-        {"status": "Accepted", "format": "Betacam SP", "catno": "#123866", "thumb":
-        "https://img.discogs.com/ioFMpxkfwNt-arba2E4mwY2ThbY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861493-1505536111-3779.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861493", "title": "Coming
-        Undone (Edited Version)", "id": 10861493, "year": 2006, "artist": "Korn"},
-        {"status": "Accepted", "format": "DVDr, Promo, TP, PAL", "catno": "#126028",
-        "thumb": "https://img.discogs.com/dsmWWH70aJeetuq5Q9YB_VNHnXU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10186454-1494507941-3910.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10186454", "title": "Liverpool
-        8", "id": 10186454, "year": 2008, "artist": "Ringo Starr"}, {"status": "Accepted",
-        "format": "Betacam SP", "catno": "#127571", "thumb": "https://img.discogs.com/2vi9zTcecx6Pc3-uNA0ECINU7jE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861519-1505536860-7507.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861519", "title": "Freak
-        On A Leash (Live - MTV Unleashed)", "id": 10861519, "year": 2007, "artist":
-        "Korn"}, {"status": "Accepted", "format": "Betacam SP", "catno": "#127926",
-        "thumb": "https://img.discogs.com/59WCXSnn_63cwj8Y8sN1iI8zArQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861524-1505537117-1390.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861524", "title": "Creep
-        (MTV Unplugged)", "id": 10861524, "year": 2007, "artist": "Korn"}, {"status":
-        "Accepted", "format": "Betacam SP, Advance", "catno": "#128344", "thumb":
-        "https://img.discogs.com/xbGbAgGddmadMiQFEIz9jjEC-bU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861536-1505537462-4179.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861536", "title": "Evolution
-        ", "id": 10861536, "year": 2007, "artist": "Korn"}, {"status": "Accepted",
-        "format": "Betacam SP", "catno": "#129050", "thumb": "https://img.discogs.com/kgT5DTwOKSBRJbfT6A5bt84XyUE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861546-1505537845-6375.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861546", "title": "Hold
-        On (Making Of The Video)", "id": 10861546, "year": 2008, "artist": "Korn"},
-        {"status": "Accepted", "format": "Betacam SP", "catno": "#129543", "thumb":
-        "https://img.discogs.com/Zx1uFdNF6m3foUiB2gALBNHedKQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10861531-1510336065-6215.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10861531", "title": "Haze",
-        "id": 10861531, "year": 2008, "artist": "Korn"}, {"status": "Accepted", "format":
-        "CD, Album", "catno": "#5", "thumb": "https://img.discogs.com/O5q7ogjo7as3t3uEFPWHEyhG0kY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4079908-1354556723-8802.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/4079908", "title": "Agitprop",
-        "id": 4079908, "year": 2010, "artist": "DDR (11)"}, {"status": "Accepted",
-        "format": "7\"", "catno": "#50001", "thumb": "https://img.discogs.com/qNZKFkcfiQNPzYTsK19s6bp50rw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8845650-1470108257-7471.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8845650", "title": "Big
-        Tiny Little Plays 3 Great Hits By Al Trace", "id": 8845650, "year": 0, "artist":
-        "Big Tiny Little*"}, {"status": "Accepted", "format": "LP, Comp", "catno":
-        "#81988", "thumb": "https://img.discogs.com/OrD0sOpHNKsVvOLBwKm-DQ0MI4Q=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-16368642-1607322830-1691.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/16368642", "title": "Now
-        That''s What I Call Music 8", "id": 16368642, "year": 1988, "artist": "Various"}]}'
-  recorded_at: Thu, 17 Dec 2020 18:16:51 GMT
+      string: '{"pagination": {"page": 1, "pages": 8694, "per_page": 20, "items":
+        173876, "urls": {"last": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=8694&per_page=20&sort=year&sort_order=desc",
+        "next": "https://api.discogs.com/labels/26126/releases?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=2&per_page=20&sort=year&sort_order=desc"}},
+        "releases": [{"status": "Accepted", "format": "12\", Single, Ltd", "catno":
+        "VST 2209", "thumb": "https://img.discogs.com/lWqQkgTg2ZcAlgcd99qevcBUrLA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18387763-1618970662-5734.png.jpg",
+        "resource_url": "https://api.discogs.com/releases/18387763", "title": "Chemicals",
+        "id": 18387763, "year": 2021, "artist": "SG Lewis"}, {"status": "Accepted",
+        "format": "LP, Album, Ltd, RE, 180", "catno": "VM LP 179, VMLP179, 3 C064-17889",
+        "thumb": "https://img.discogs.com/C-vYsbUNSU7YWh6RUTEChS4GDZo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18806704-1621521544-5159.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18806704", "title": "L''Uovo
+        Di Colombo", "id": 18806704, "year": 2021, "artist": "L''Uovo Di Colombo"},
+        {"status": "Accepted", "format": "CD", "catno": "UPCH-20578", "thumb": "",
+        "resource_url": "https://api.discogs.com/releases/17821441", "title": "2+0+2+1+3+1+1=
+        10 Years 10 Songs", "id": 17821441, "year": 2021, "artist": "Radwimps"}, {"status":
+        "Accepted", "format": "CD + DVD", "catno": "UPCH-20577", "thumb": "", "resource_url":
+        "https://api.discogs.com/releases/17822650", "title": "2+0+2+1+3+1+1= 10 Years
+        10 Songs", "id": 17822650, "year": 2021, "artist": "Radwimps"}, {"status":
+        "Accepted", "format": "CD + Blu-ray", "catno": "UPCH-20576", "thumb": "",
+        "resource_url": "https://api.discogs.com/releases/17822785", "title": "2+0+2+1+3+1+1=
+        10 Years 10 Songs", "id": 17822785, "year": 2021, "artist": "Radwimps"}, {"status":
+        "Accepted", "format": "2xLP", "catno": "UPCH-20520", "thumb": "https://img.discogs.com/Zg128zGuXBDiwx1TSCSYAZ-11Ug=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18872866-1621925086-7052.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18872866", "title": "\u5929\u6c17\u306e\u5b50",
+        "id": 18872866, "year": 2021, "artist": "Radwimps"}, {"status": "Accepted",
+        "format": "CD, Album, SHM + CD, EP, SHM + Ltd, RE, RM", "catno": "UICY-79559/60",
+        "thumb": "https://img.discogs.com/8Tw3JU16ncdnKCY6Gq9X9uH3ksc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18837250-1621705016-8048.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18837250", "title": "Made
+        In Heaven", "id": 18837250, "year": 2021, "artist": "Queen"}, {"status": "Accepted",
+        "format": "2xCD, Album, Ltd, RE, SHM", "catno": "UICY-79557", "thumb": "https://img.discogs.com/tayiZrTY4H_YJJfbYatcT8E4wgA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18801217-1621698324-6547.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18801217", "title": "Innuendo",
+        "id": 18801217, "year": 2021, "artist": "Queen"}, {"status": "Accepted", "format":
+        "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79555/6", "thumb":
+        "https://img.discogs.com/EzwfM-XqsmxgR2J2UN_Ct9yvtO4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18837247-1621704891-6056.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18837247", "title": "The
+        Miracle", "id": 18837247, "year": 2021, "artist": "Queen"}, {"status": "Accepted",
+        "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79553/4",
+        "thumb": "https://img.discogs.com/E8cmvnv89ooU-6f4fRkttILiGNY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18837208-1621704472-8818.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18837208", "title": "A Kind
+        Of Magic", "id": 18837208, "year": 2021, "artist": "Queen"}, {"status": "Accepted",
+        "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79551/2",
+        "thumb": "https://img.discogs.com/Qe_KK_I43Xp7MqBeNbNgiTeena8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18837202-1621704366-2504.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18837202", "title": "The
+        Works", "id": 18837202, "year": 2021, "artist": "Queen"}, {"status": "Accepted",
+        "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79549/50",
+        "thumb": "https://img.discogs.com/mWaSFKo0PAhjsgpctcvOc8Gih_c=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836650-1621702311-2546.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836650", "title": "Hot
+        Space", "id": 18836650, "year": 2021, "artist": "Queen"}, {"status": "Accepted",
+        "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79547/8",
+        "thumb": "https://img.discogs.com/UrbpplKgvKxrTEQEKnSCgfqHpKM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836638-1621702186-4449.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836638", "title": "Flash
+        Gordon (Original Soundtrack Music)", "id": 18836638, "year": 2021, "artist":
+        "Queen"}, {"status": "Accepted", "format": "CD, Album, RE + CD, EP, RE + Ltd,
+        RM, SHM", "catno": "UICY-79545/6", "thumb": "https://img.discogs.com/0fRoB-1yIKTknUcxp-IFudLJzFg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836419-1621701668-8661.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836419", "title": "The
+        Game", "id": 18836419, "year": 2021, "artist": "Queen"}, {"status": "Accepted",
+        "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79543/4",
+        "thumb": "https://img.discogs.com/Z-iG7oaiHvQmhZNn3QbaNKq9gjY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836425-1621701254-6970.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836425", "title": "Jazz",
+        "id": 18836425, "year": 2021, "artist": "Queen"}, {"status": "Accepted", "format":
+        "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno": "UICY-79541/2", "thumb":
+        "https://img.discogs.com/c2gaifvoFB46qRtOgAblEiahCHE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836203-1621700425-3394.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836203", "title": "News
+        Of The World", "id": 18836203, "year": 2021, "artist": "Queen"}, {"status":
+        "Accepted", "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno":
+        "UICY-79539/40", "thumb": "https://img.discogs.com/jvkwy4uLWjpiclvk4hssQ1kWBu8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836197-1621700282-3763.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836197", "title": "A Day
+        At The Races", "id": 18836197, "year": 2021, "artist": "Queen"}, {"status":
+        "Accepted", "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno":
+        "UICY-79537/8", "thumb": "https://img.discogs.com/YHGrLtomMgej7LUwL0GCAJiF7Ec=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836074-1621699882-3741.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836074", "title": "A Night
+        At The Opera", "id": 18836074, "year": 2021, "artist": "Queen"}, {"status":
+        "Accepted", "format": "CD, Album, RE + CD, EP, RE + Ltd, RM, SHM", "catno":
+        "UICY-79535/6", "thumb": "https://img.discogs.com/9NwA7Ove8yZbLdqV4-xflHlbumw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18836065-1621699721-1105.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18836065", "title": "Sheer
+        Heart Attack", "id": 18836065, "year": 2021, "artist": "Queen"}, {"status":
+        "Accepted", "format": "CD, Album, RE, SHM + CD, EP, RE, SHM + Ltd, RM", "catno":
+        "UICY-79533/4", "thumb": "https://img.discogs.com/dwVVp8pDFgBcFWXIEzitMogyKBA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-18835996-1621699117-7664.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/18835996", "title": "Queen
+        II", "id": 18835996, "year": 2021, "artist": "Queen"}]}'
+  recorded_at: Tue, 25 May 2021 09:21:37 GMT
 recorded_with: VCR 6.0.0

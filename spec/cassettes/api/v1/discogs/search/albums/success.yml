@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=release
+    uri: https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&page=1&per_page=20&query=kate%20bush&secret=<DISCOGS_API_SECRET>&type=release
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 17 Dec 2020 15:49:07 GMT
+      - Tue, 25 May 2021 09:21:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -33,18 +33,20 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '54'
+      - '50'
       X-Discogs-Ratelimit-Used:
-      - '6'
+      - '10'
       Access-Control-Allow-Headers:
       - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
       Access-Control-Allow-Methods:
       - HEAD,OPTIONS,GET,OPTIONS
       Access-Control-Expose-Headers:
       - Location
+      Content-Language:
+      - en
       Link:
-      - <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=133&per_page=50>;
-        rel="last", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=2&per_page=50>;
+      - <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=343&per_page=20&query=kate+bush&type=release>;
+        rel="last", <https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=2&per_page=20&query=kate+bush&type=release>;
         rel="next"
       X-Discogs-Media-Type:
       - discogs.v2
@@ -62,9 +64,9 @@ http_interactions:
       - max-age=15724800
     body:
       encoding: ASCII-8BIT
-      string: '{"pagination": {"page": 1, "pages": 133, "per_page": 50, "items": 6626,
-        "urls": {"last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=133&per_page=50",
-        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&query=kate+bush&type=release&page=2&per_page=50"}},
+      string: '{"pagination": {"page": 1, "pages": 343, "per_page": 20, "items": 6853,
+        "urls": {"last": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=343&per_page=20&query=kate+bush&type=release",
+        "next": "https://api.discogs.com/database/search?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>&page=2&per_page=20&query=kate+bush&type=release"}},
         "results": [{"country": "US", "year": "1983", "format": ["Vinyl", "LP", "Mini-Album",
         "Compilation", "Stereo"], "label": ["EMI America", "Screen Gems-EMI Music
         Inc.", "Novercia Ltd.", "EMI America Records", "EMI America Records", "Capitol
@@ -79,36 +81,38 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/5Zt2fHc_N6Yb14J77nxRAuf9Jkg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-483467-1335763473.jpeg.jpg",
         "cover_image": "https://img.discogs.com/giBVIqUaHUxOX8MC5nDJI6-rLFw=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-483467-1335763473.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/483467", "community": {"want":
-        133, "have": 722}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        144, "have": 764}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["LP", "Mini-Album", "Compilation", "Stereo"]}]}, {"country":
         "German Democratic Republic (GDR)", "year": "1984", "format": ["Vinyl", "LP",
-        "Compilation"], "label": ["AMIGA", "EMI Records Ltd.", "EMI Records Ltd.",
-        "VEB Deutsche Schallplatten Berlin", "VEB Gotha-Druck"], "type": "release",
-        "genre": ["Electronic", "Rock"], "style": ["Pop Rock", "Synth-pop", "Experimental"],
-        "id": 477573, "barcode": ["8 56 072-1A", "8 56 072-2A", "AWA", "16,10 M"],
-        "master_id": 28649, "master_url": "https://api.discogs.com/masters/28649",
-        "uri": "/Kate-Bush-Kate-Bush/release/477573", "catno": "8 56 072", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/RRovRsjndfrXvYeLxa9FI14Uv6c=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-477573-1119442188.jpg.jpg",
+        "Compilation", "Stereo"], "label": ["AMIGA", "VEB Deutsche Schallplatten Berlin",
+        "VEB Deutsche Schallplatten Potsdam-Babelsberg", "EMI Records Ltd.", "EMI
+        Records Ltd.", "VEB VMW \"Ernst Th\u00e4lmann\", Werk Gotha-Druck"], "type":
+        "release", "genre": ["Electronic", "Rock"], "style": ["Pop Rock", "Synth-pop",
+        "Experimental"], "id": 477573, "barcode": ["AWA", "16,10 M", "TGL 10609",
+        "Ag 511/01/84/A", "8 56 072-1A J84 EN C 1A1 K", "8 56 072-2A J84 EN C 1A1
+        G", "8 56 072-1A J84 EN C 1C3 A0", "8 56 072-2A J84 EN C 1C1 AA"], "master_id":
+        28649, "master_url": "https://api.discogs.com/masters/28649", "uri": "/Kate-Bush-Kate-Bush/release/477573",
+        "catno": "8 56 072", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/RRovRsjndfrXvYeLxa9FI14Uv6c=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-477573-1119442188.jpg.jpg",
         "cover_image": "https://img.discogs.com/0gvcsClHYyxdkTYF3nLV-C3EaiI=/fit-in/599x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-477573-1119442188.jpg.jpg",
         "resource_url": "https://api.discogs.com/releases/477573", "community": {"want":
-        120, "have": 606}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["LP", "Compilation"]}]}, {"country": "Canada", "year":
-        "1983", "format": ["Vinyl", "LP", "Mini-Album", "Compilation"], "label": ["EMI
-        America", "EMI America", "Ever Reddy", "Novercia Ltd.", "EMI America Records",
-        "EMI America Records", "Beechwood Music Corp.", "Screen Gems-EMI Music Inc.",
-        "EMI America Recording Studios", "Capitol Records-EMI Of Canada Limited",
-        "Capitol Records-EMI Of Canada Limited", "McClear Place", "Capitol Records-EMI
-        Of Canada Limited"], "type": "release", "genre": ["Rock"], "style": ["Art
-        Rock", "Pop Rock"], "id": 1695399, "barcode": ["19004-1", "19004-2", "MLP
-        19004 A! 1610 \"diolge\" G. Mcl [bullseye stamp]", "MLP 19004 B! 1610 \"diolge\"
-        G. Mcl [bullseye stamp]", "BMI", "MLP 19004 A! 1610 \"diolge\" G. Mcl    DM-   [bullseye
-        stamp]", "MLP 19004 B Re (Re is underlined and also handwritten)  1610 S.    DM-  -  [bullseye
-        stamp]      S."], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
-        "uri": "/Kate-Bush-Kate-Bush/release/1695399", "catno": "MLP-19004", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/Q8vNAAeS8wyvEJpOVl4i9zA42gc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1695399-1389112187-6992.jpeg.jpg",
+        132, "have": 687}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "descriptions": ["LP", "Compilation", "Stereo"]}]}, {"country": "Canada",
+        "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Compilation"], "label":
+        ["EMI America", "EMI America", "Ever Reddy", "Novercia Ltd.", "EMI America
+        Records", "EMI America Records", "Beechwood Music Corp.", "Screen Gems-EMI
+        Music Inc.", "EMI America Recording Studios", "Capitol Records-EMI Of Canada
+        Limited", "Capitol Records-EMI Of Canada Limited", "McClear Place", "Capitol
+        Records-EMI Of Canada Limited"], "type": "release", "genre": ["Rock"], "style":
+        ["Art Rock", "Pop Rock"], "id": 1695399, "barcode": ["19004-1", "19004-2",
+        "MLP 19004 A! 1610 \"diolge\" G. Mcl [bullseye stamp]", "MLP 19004 B! 1610
+        \"diolge\" G. Mcl [bullseye stamp]", "BMI", "MLP 19004 A! 1610 \"diolge\"
+        G. Mcl    DM-   [bullseye stamp]", "MLP 19004 B Re (Re is underlined and also
+        handwritten)  1610 S.    DM-  -  [bullseye stamp]      S."], "master_id":
+        119657, "master_url": "https://api.discogs.com/masters/119657", "uri": "/Kate-Bush-Kate-Bush/release/1695399",
+        "catno": "MLP-19004", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/Q8vNAAeS8wyvEJpOVl4i9zA42gc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1695399-1389112187-6992.jpeg.jpg",
         "cover_image": "https://img.discogs.com/0V0zM8ECKx3Oxm_oUsqKEVQzuUE=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1695399-1389112187-6992.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/1695399", "community": {"want":
-        77, "have": 256}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        87, "have": 276}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["LP", "Mini-Album", "Compilation"]}]}, {"country": "US",
         "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Compilation"], "label":
         ["EMI America", "Screen Gems-EMI Music Inc.", "Novercia Ltd.", "EMI America
@@ -122,35 +126,34 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/x6xGgBBV42yWrWWlTBYSepM1cB8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4949382-1491783255-1220.jpeg.jpg",
         "cover_image": "https://img.discogs.com/s38mWLZoWpngIY9yZ0kigx1rf8o=/fit-in/600x588/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4949382-1491783255-1220.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/4949382", "community": {"want":
-        52, "have": 218}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        55, "have": 256}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["LP", "Mini-Album", "Compilation"]}]}, {"country": "Canada",
         "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Limited Edition",
-        "Compilation"], "label": ["EMI America", "EMI America"], "type": "release",
-        "genre": ["Rock"], "style": ["Art Rock", "Pop Rock"], "id": 2348032, "barcode":
-        ["19004-1", "19004-2", "MLP 19004 A! 1610 \"diolge\" G. M CC", "MLP 19004
-        B! 1610 \"diolge\" G. M CC"], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
-        "uri": "/Kate-Bush-Kate-Bush/release/2348032", "catno": "MLP-19004", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/iJz5G3uh1oYUX7xUfE-0HwwxyBw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2348032-1279627143.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/d5RKJvN8pMh4tY2UjB6xlmz397s=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2348032-1279627143.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/2348032", "community": {"want":
-        99, "have": 110}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Gold", "descriptions": ["LP", "Mini-Album", "Limited Edition",
-        "Compilation"]}]}, {"country": "Canada", "year": "1983", "format": ["Vinyl",
-        "LP", "Mini-Album", "Limited Edition", "Compilation"], "label": ["EMI America",
-        "EMI America", "Ever Reddy", "Capitol Records-EMI Of Canada Limited", "Capitol
-        Records-EMI Of Canada Limited", "EMI America Recording Studios", "Novercia
-        Ltd.", "EMI America Records", "EMI America Records", "Beechwood Music Corp.",
-        "Screen Gems-EMI Music Inc.", "McClear Place", "Capitol Records-EMI Of Canada
-        Limited"], "type": "release", "genre": ["Rock"], "style": ["Art Rock", "Pop
-        Rock"], "id": 1944543, "barcode": ["19004-1", "19004-2", "MLP 19004 A! 1610
-        \"diolge\" G. Mcl [bullseye stamp]", "MLP 19004 B! 1610 \"diolge\" G. Mcl
-        [bullseye stamp]", "BMI"], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
-        "uri": "/Kate-Bush-Kate-Bush/release/1944543", "catno": "MLP-19004", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/mQXucPdM3hVBFFHTQ7Mo2rkWxSo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1944543-1394392510-9359.jpeg.jpg",
+        "Compilation"], "label": ["EMI America", "EMI America", "Ever Reddy", "Capitol
+        Records-EMI Of Canada Limited", "Capitol Records-EMI Of Canada Limited", "EMI
+        America Recording Studios", "Novercia Ltd.", "EMI America Records", "EMI America
+        Records", "Beechwood Music Corp.", "Screen Gems-EMI Music Inc.", "McClear
+        Place", "Capitol Records-EMI Of Canada Limited"], "type": "release", "genre":
+        ["Rock"], "style": ["Art Rock", "Pop Rock"], "id": 1944543, "barcode": ["19004-1",
+        "19004-2", "MLP 19004 A! 1610 \"diolge\" G. Mcl [bullseye stamp]", "MLP 19004
+        B! 1610 \"diolge\" G. Mcl [bullseye stamp]", "BMI"], "master_id": 119657,
+        "master_url": "https://api.discogs.com/masters/119657", "uri": "/Kate-Bush-Kate-Bush/release/1944543",
+        "catno": "MLP-19004", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/mQXucPdM3hVBFFHTQ7Mo2rkWxSo=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1944543-1394392510-9359.jpeg.jpg",
         "cover_image": "https://img.discogs.com/_9TkWYcGrDxK7iAvxAFECKCsHHg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1944543-1394392510-9359.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/1944543", "community": {"want":
-        92, "have": 115}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        105, "have": 129}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "text": "White", "descriptions": ["LP", "Mini-Album", "Limited Edition",
+        "Compilation"]}]}, {"country": "Canada", "year": "1983", "format": ["Vinyl",
+        "LP", "Mini-Album", "Limited Edition", "Compilation"], "label": ["EMI America",
+        "EMI America"], "type": "release", "genre": ["Rock"], "style": ["Art Rock",
+        "Pop Rock"], "id": 2348032, "barcode": ["19004-1", "19004-2", "MLP 19004 A!
+        1610 \"diolge\" G. M CC", "MLP 19004 B! 1610 \"diolge\" G. M CC"], "master_id":
+        119657, "master_url": "https://api.discogs.com/masters/119657", "uri": "/Kate-Bush-Kate-Bush/release/2348032",
+        "catno": "MLP-19004", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/iJz5G3uh1oYUX7xUfE-0HwwxyBw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2348032-1279627143.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/d5RKJvN8pMh4tY2UjB6xlmz397s=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2348032-1279627143.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/2348032", "community": {"want":
+        107, "have": 119}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "text": "Gold", "descriptions": ["LP", "Mini-Album", "Limited Edition",
         "Compilation"]}]}, {"country": "Canada", "year": "1983", "format": ["Vinyl",
         "LP", "Mini-Album", "Compilation"], "label": ["EMI America", "EMI America",
         "Novercia Ltd.", "EMI America Records", "EMI America Records", "Capitol Records,
@@ -167,31 +170,18 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/VFzITZtSKzCk9VYypBxBfMMG4TI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4951656-1380388875-8040.jpeg.jpg",
         "cover_image": "https://img.discogs.com/1Dx8cXD6QXCnRqZqKC3ig6PUyIk=/fit-in/280x280/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4951656-1380388875-8040.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/4951656", "community": {"want":
-        58, "have": 125}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["LP", "Mini-Album", "Compilation"]}]}, {"country": "Canada",
-        "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Compilation", "Limited
-        Edition"], "label": ["EMI America", "Capitol Records-EMI Of Canada Limited",
-        "EMI America Recording Studios", "Novercia Ltd.", "EMI America Records", "Beechwood
-        Music Corp.", "Screen Gems-EMI Music Inc.", "Capitol Records-EMI Of Canada
-        Limited"], "type": "release", "genre": ["Rock"], "style": ["Art Rock", "Pop
-        Rock"], "id": 2385486, "barcode": ["BMI", "19004-1", "19004-2", "MLP 19004
-        A! 1610 \u00f6/.:lge'' G. Mcc \u29bf", "MLP 19004 B! 1610 \u00f6/.:lge'' G.
-        Mc\u2014 \u29bf"], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
-        "uri": "/Kate-Bush-Kate-Bush/release/2385486", "catno": "MLP-19004", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/xBaXcs-H2hM1r2cXQL8KuWUAPiQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2385486-1329571532.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/OMqn9dX1iIasGFVwJ0SN7Ws8C4E=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2385486-1329571532.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/2385486", "community": {"want":
-        101, "have": 64}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Green Translucent", "descriptions": ["LP", "Mini-Album", "Compilation",
-        "Limited Edition"]}]}, {"country": "US", "year": "1982", "format": ["Vinyl",
-        "12\"", "33 \u2153 RPM", "Promo", "Sampler"], "label": ["EMI America", "EMI
-        AMERICA Records", "Kate Bush Music Ltd.", "Capitol Records, Inc.", "EMI America"],
-        "type": "release", "genre": ["Rock"], "style": ["Pop Rock", "Experimental"],
-        "id": 2858958, "barcode": [], "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush/release/2858958",
+        63, "have": 145}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "descriptions": ["LP", "Mini-Album", "Compilation"]}]}, {"country": "US",
+        "year": "1982", "format": ["Vinyl", "12\"", "33 \u2153 RPM", "Promo", "Sampler"],
+        "label": ["EMI America", "EMI AMERICA Records", "Kate Bush Music Ltd.", "Capitol
+        Records, Inc.", "EMI America"], "type": "release", "genre": ["Rock"], "style":
+        ["Pop Rock", "Experimental"], "id": 2858958, "barcode": ["SPRO-1\u00b79847-P-3
+        \u26ac MASTERED BY LIBERTY 0", "SPRO-1\u00b79848-P\u00b73 \u26ac MASTERED
+        BY LIBERTY 0"], "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush/release/2858958",
         "catno": "SPRO-9847", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/8zEt4Y_FMImhFuHTbIQ-KTT6y_U=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2858958-1304315838.jpeg.jpg",
         "cover_image": "https://img.discogs.com/iTa77EayZUIpEeGDS3nJV-F3v4w=/fit-in/255x255/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2858958-1304315838.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/2858958", "community": {"want":
-        93, "have": 55}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        92, "have": 58}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["12\"", "33 \u2153 RPM", "Promo", "Sampler"]}]}, {"country":
         "Canada", "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Limited
         Edition", "Compilation"], "label": ["EMI America"], "type": "release", "genre":
@@ -201,19 +191,33 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/QxdPgZvNlM8opfEPwBkOEVp49iY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2385472-1280948928.jpeg.jpg",
         "cover_image": "https://img.discogs.com/-qNIVQUVM195tS-QpsvZ0lOl1e8=/fit-in/433x450/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2385472-1280948928.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/2385472", "community": {"want":
-        102, "have": 57}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        107, "have": 62}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "text": "Blue", "descriptions": ["LP", "Mini-Album", "Limited Edition",
-        "Compilation"]}]}, {"country": "UK", "year": "2005", "format": ["CD", "Compilation",
-        "Promo"], "label": ["EMI", "EMI", "Novercia Ltd.", "EMI Records Ltd.", "EMI
-        Records Ltd.", "Kate Bush", "Noble And Brite", "EMI Records Ltd.", "EMI Records
-        Ltd.", "Capitol Music"], "type": "release", "genre": ["Rock", "Pop"], "style":
-        [], "id": 3113948, "barcode": ["LC 0452", "343 4732"], "master_id": 0, "master_url":
-        null, "uri": "/Kate-Bush-Kate-Bush/release/3113948", "catno": "343 4732",
-        "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/qFqoaMVaqNZCIXRTokbXYxj3PAI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3113948-1404551080-4814.jpeg.jpg",
+        "Compilation"]}]}, {"country": "Canada", "year": "1983", "format": ["Vinyl",
+        "LP", "Mini-Album", "Compilation", "Limited Edition"], "label": ["EMI America",
+        "Capitol Records-EMI Of Canada Limited", "EMI America Recording Studios",
+        "Novercia Ltd.", "EMI America Records", "Beechwood Music Corp.", "Screen Gems-EMI
+        Music Inc.", "Capitol Records-EMI Of Canada Limited"], "type": "release",
+        "genre": ["Rock"], "style": ["Art Rock", "Pop Rock"], "id": 2385486, "barcode":
+        ["BMI", "19004-1", "19004-2", "MLP 19004 A! 1610 \u00f6/.:lge'' G. Mcc \u29bf",
+        "MLP 19004 B! 1610 \u00f6/.:lge'' G. Mc\u2014 \u29bf"], "master_id": 119657,
+        "master_url": "https://api.discogs.com/masters/119657", "uri": "/Kate-Bush-Kate-Bush/release/2385486",
+        "catno": "MLP-19004", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/xBaXcs-H2hM1r2cXQL8KuWUAPiQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2385486-1329571532.jpeg.jpg",
+        "cover_image": "https://img.discogs.com/OMqn9dX1iIasGFVwJ0SN7Ws8C4E=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2385486-1329571532.jpeg.jpg",
+        "resource_url": "https://api.discogs.com/releases/2385486", "community": {"want":
+        106, "have": 66}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        "1", "text": "Green Translucent", "descriptions": ["LP", "Mini-Album", "Compilation",
+        "Limited Edition"]}]}, {"country": "UK", "year": "2005", "format": ["CD",
+        "Compilation", "Promo"], "label": ["EMI", "EMI", "Novercia Ltd.", "EMI Records
+        Ltd.", "EMI Records Ltd.", "Kate Bush", "Noble And Brite", "EMI Records Ltd.",
+        "EMI Records Ltd.", "Capitol Music"], "type": "release", "genre": ["Rock",
+        "Pop"], "style": [], "id": 3113948, "barcode": ["LC 0452", "343 4732"], "master_id":
+        0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush/release/3113948", "catno":
+        "343 4732", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/qFqoaMVaqNZCIXRTokbXYxj3PAI=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3113948-1404551080-4814.jpeg.jpg",
         "cover_image": "https://img.discogs.com/iVRMmD3DZ-R5zmYjl2mrIuvBj88=/fit-in/600x606/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3113948-1404551080-4814.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/3113948", "community": {"want":
-        42, "have": 94}, "format_quantity": 1, "formats": [{"name": "CD", "qty": "1",
-        "descriptions": ["Compilation", "Promo"]}]}, {"country": "Canada", "year":
+        47, "have": 101}, "format_quantity": 1, "formats": [{"name": "CD", "qty":
+        "1", "descriptions": ["Compilation", "Promo"]}]}, {"country": "Canada", "year":
         "1983", "format": ["Vinyl", "LP", "Mini-Album", "Limited Edition", "Compilation"],
         "label": ["EMI America", "EMI America"], "type": "release", "genre": ["Rock"],
         "style": ["Art Rock", "Pop Rock"], "id": 4861439, "barcode": ["19004-1", "19004-2",
@@ -223,7 +227,7 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/GUo6342QofYuN7yR9BPBhOUMlX0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4861439-1377772348-1907.jpeg.jpg",
         "cover_image": "https://img.discogs.com/_AnlmNP5_--AdBLgtibHeg75Pyc=/fit-in/600x347/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4861439-1377772348-1907.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/4861439", "community": {"want":
-        109, "have": 15}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        116, "have": 17}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "text": "Clear", "descriptions": ["LP", "Mini-Album", "Limited Edition",
         "Compilation"]}]}, {"country": "German Democratic Republic (GDR)", "genre":
         ["Electronic", "Rock"], "format": ["Vinyl", "LP", "Compilation", "Repress"],
@@ -235,7 +239,7 @@ http_interactions:
         "catno": "8 56 072", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/iPompr2hAH0gpiTEZ-W9b4nK0Tg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3248704-1322300300.jpeg.jpg",
         "cover_image": "https://img.discogs.com/lUch227fqFe3JtQSFxHU4ySSpe0=/fit-in/600x605/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3248704-1322300300.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/3248704", "community": {"want":
-        52, "have": 67}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        58, "have": 76}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["LP", "Compilation", "Repress"]}]}, {"country": "Canada",
         "year": "1983", "format": ["Vinyl", "LP", "Mini-Album", "Compilation", "Limited
         Edition"], "label": ["EMI America", "EMI America", "Screen Gems-EMI Music
@@ -249,7 +253,7 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/q8b7XW6TQngC6g1DHEbGXEo77Vk=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6064841-1410210349-8753.jpeg.jpg",
         "cover_image": "https://img.discogs.com/lcfj7ebl8J38DwWR9-_cShdMRY4=/fit-in/600x614/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6064841-1410210349-8753.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/6064841", "community": {"want":
-        87, "have": 17}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        97, "have": 17}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "text": "Brown", "descriptions": ["LP", "Mini-Album", "Compilation",
         "Limited Edition"]}]}, {"country": "Canada", "year": "1982", "format": ["Vinyl",
         "LP", "Compilation", "Promo", "Sampler"], "label": ["EMI America", "Harvest",
@@ -261,7 +265,7 @@ http_interactions:
         "title": "Kate Bush - Kate Bush Sampler", "thumb": "https://img.discogs.com/XG8UBDLsq4DgEQ5BI9zBaUyB7cQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3637274-1597241579-7821.jpeg.jpg",
         "cover_image": "https://img.discogs.com/rDSX-S2PYj6ESPc9rMDwMoWGyZw=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3637274-1597241579-7821.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/3637274", "community": {"want":
-        81, "have": 40}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        84, "have": 43}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["LP", "Compilation", "Promo", "Sampler"]}]}, {"country":
         "UK", "year": "1986", "format": ["Vinyl", "7\"", "45 RPM", "Unofficial Release"],
         "label": ["Not On Label (Kate Bush)", "Orlake Records"], "type": "release",
@@ -271,7 +275,7 @@ http_interactions:
         Bush - Kate Bush", "thumb": "https://img.discogs.com/7SyseWY9jbbcy-lf_H75MFWvEo4=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3741595-1382121581-8241.jpeg.jpg",
         "cover_image": "https://img.discogs.com/3tPwcq0BDmc26XHW8AhkCOg5kAk=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3741595-1382121581-8241.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/3741595", "community": {"want":
-        4, "have": 25}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        4, "have": 26}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["7\"", "45 RPM", "Unofficial Release"]}]}, {"country":
         "Canada", "year": "1985", "format": ["Vinyl", "12\"", "33 \u2153 RPM", "Promo",
         "Sampler"], "label": ["EMI America", "Ever Reddy", "Capitol Records-EMI Of
@@ -286,7 +290,7 @@ http_interactions:
         "SPRO-282", "title": "Kate Bush - An Interview With Kate Bush", "thumb": "https://img.discogs.com/620RRR59gv2LWw8jKY4ExHLJQTc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1944556-1394395378-6810.jpeg.jpg",
         "cover_image": "https://img.discogs.com/4u5GwaweBcuXlQOmKc3A6UhsIjM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1944556-1394395378-6810.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/1944556", "community": {"want":
-        96, "have": 33}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        99, "have": 37}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["12\"", "33 \u2153 RPM", "Promo", "Sampler"]}]}, {"country":
         "US", "year": "1983", "format": ["Cassette", "Mini-Album", "Compilation"],
         "label": ["EMI America", "EMI AMERICA Records", "EMI AMERICA Records", "EMI
@@ -297,7 +301,7 @@ http_interactions:
         "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/S0SS36xrFiOz3KkjNzIvQDpzo54=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2737941-1371731108-8187.jpeg.jpg",
         "cover_image": "https://img.discogs.com/dWRF39vOMWLwTzNDcadYpMSYAH0=/fit-in/281x448/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2737941-1371731108-8187.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/2737941", "community": {"want":
-        37, "have": 15}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
+        35, "have": 16}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
         "1", "text": "Expanded Dynamic Range", "descriptions": ["Mini-Album", "Compilation"]}]},
         {"country": "Unknown", "genre": ["Non-Music"], "format": ["Vinyl", "7\"",
         "Picture Disc", "Unofficial Release"], "style": ["Interview"], "id": 2729802,
@@ -307,7 +311,7 @@ http_interactions:
         "https://img.discogs.com/5A6ibXOEh8vZGHPVzXUYyNVenYE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2729802-1298404282.jpeg.jpg",
         "cover_image": "https://img.discogs.com/fmcnGm3f6CHLYR8CtZfMBk6Y1Vo=/fit-in/584x592/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2729802-1298404282.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/2729802", "community": {"want":
-        10, "have": 51}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
+        8, "have": 54}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
         "1", "descriptions": ["7\"", "Picture Disc", "Unofficial Release"]}]}, {"country":
         "German Democratic Republic (GDR)", "year": "1984", "format": ["Cassette",
         "Compilation"], "label": ["AMIGA", "VEB Deutsche Schallplatten Berlin", "EMI
@@ -317,355 +321,7 @@ http_interactions:
         "catno": "056 072", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/CmlPU4LA72ImOqd1OE2PW4vjruM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1009470-1484744381-9738.jpeg.jpg",
         "cover_image": "https://img.discogs.com/TDVbZWgHss15xDgdpt8shdW9v5A=/fit-in/600x943/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1009470-1484744381-9738.jpeg.jpg",
         "resource_url": "https://api.discogs.com/releases/1009470", "community": {"want":
-        32, "have": 11}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
-        "1", "text": "Red/White Labels", "descriptions": ["Compilation"]}]}, {"country":
-        "UK", "genre": ["Non-Music"], "format": ["Vinyl", "Shape", "7\"", "Limited
-        Edition", "Picture Disc", "Unofficial Release"], "style": ["Interview"], "id":
-        3632498, "label": ["Stand Up & Talk!"], "type": "release", "barcode": [],
-        "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush-Stand-Up-Talk/release/3632498",
-        "catno": "STANDUP 2", "title": "Kate Bush - Kate Bush - Stand Up & Talk!",
-        "thumb": "https://img.discogs.com/Gpif0INl_wyJ-HaMBBh-2ovhAJQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3632498-1338153210-9705.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/VXky7uZTyEwu1NMEgG4MrX7xIHI=/fit-in/448x490/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3632498-1338153210-9705.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/3632498", "community": {"want":
-        52, "have": 28}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["Shape", "7\"", "Limited Edition", "Picture Disc", "Unofficial
-        Release"]}]}, {"country": "UK", "genre": ["Non-Music"], "format": ["Vinyl",
-        "12\"", "Picture Disc", "Limited Edition", "33 \u2153 RPM", "Unofficial Release"],
-        "style": ["Interview"], "id": 1632607, "label": ["Baktabak"], "type": "release",
-        "barcode": ["BAK 2073 A", "BAK 2073 B"], "master_id": 0, "master_url": null,
-        "uri": "/Kate-Bush-Kate-Bush-II-Interview-Picture-Disc-Limited-Edition/release/1632607",
-        "catno": "BAK 2073", "title": "Kate Bush - Kate Bush II - Interview Picture
-        Disc \u00b7 Limited Edition", "thumb": "https://img.discogs.com/KkvU0zl8t3li47h2tHKDxrBmwh0=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1632607-1335158831.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/VTbQSAKFIY4oOdqvH4z_DJFxRmo=/fit-in/500x488/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1632607-1335158831.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/1632607", "community": {"want":
-        25, "have": 111}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["12\"", "Picture Disc", "Limited Edition", "33 \u2153
-        RPM", "Unofficial Release"]}]}, {"country": "UK", "year": "2005", "format":
-        ["Vinyl", "12\"", "Unofficial Release"], "label": ["Not On Label (Kate Bush)",
-        "Not On Label (Michael Jackson)"], "type": "release", "genre": ["Electronic"],
-        "style": ["House"], "id": 2463792, "barcode": [], "master_id": 0, "master_url":
-        null, "uri": "/Kate-Bush-Michael-Jackson-Kates-Bush/release/2463792", "catno":
-        "KB-001", "title": "Kate Bush / Michael Jackson - Kate''s Bush", "thumb":
-        "https://img.discogs.com/I-xZJfcq9NUtoMSDyKJ-FSBjR88=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2463792-1470397176-4796.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/6NGcBfuM0TBI3JoJG5Snmo_URPM=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2463792-1470397176-4796.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/2463792", "community": {"want":
-        11, "have": 22}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["12\"", "Unofficial Release"]}]}, {"country": "UK",
-        "year": "1986", "format": ["Vinyl", "7\"", "45 RPM", "Unofficial Release"],
-        "label": ["Not On Label (Kate Bush)", "Orlake Records"], "type": "release",
-        "genre": ["Non-Music"], "style": ["Interview"], "id": 9299272, "barcode":
-        ["ORLAKE KATE BUSH"], "master_id": 455355, "master_url": "https://api.discogs.com/masters/455355",
-        "uri": "/Kate-Bush-Kate-Bush/release/9299272", "catno": "none", "title": "Kate
-        Bush - Kate Bush", "thumb": "https://img.discogs.com/Za4vpYrOuBHFjieYyCXu6UpTkok=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9299272-1478192318-9580.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/1IchIiywysmiWwVEvmht2BNfKNo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9299272-1478192318-9580.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9299272", "community": {"want":
-        3, "have": 13}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Green vinyl", "descriptions": ["7\"", "45 RPM", "Unofficial
-        Release"]}]}, {"country": "Canada", "year": "1983", "format": ["Cassette",
-        "Mini-Album", "Compilation"], "label": ["EMI America", "EMI America", "Novercia
-        Ltd.", "Capitol Records, Inc.", "EMI America Records", "Screen Gems-EMI Music
-        Inc.", "Beechwood Music Corp.", "Capitol Records-EMI Of Canada Limited", "Screen
-        Gems-EMI Music Inc.", "Beechwood Music Corp.", "Capitol Records-EMI Of Canada
-        Limited", "Capitol Records-EMI Of Canada Limited", "Capitol Records-EMI Of
-        Canada Limited"], "type": "release", "genre": ["Rock"], "style": ["Pop Rock"],
-        "id": 7463898, "barcode": ["BMI"], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
-        "uri": "/Kate-Bush-Kate-Bush/release/7463898", "catno": "4LP-19004", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/iT5Fgms_MsS-x86yQbG1UmQ3P48=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7463898-1441997596-1406.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/ADCoC40cU6pGHGEQr7XR9D0LzY4=/fit-in/600x901/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7463898-1441997596-1406.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/7463898", "community": {"want":
-        22, "have": 8}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
-        "1", "text": "Dolby System", "descriptions": ["Mini-Album", "Compilation"]}]},
-        {"country": "UK", "genre": ["Non-Music"], "format": ["Vinyl", "7\"", "Limited
-        Edition", "Unofficial Release"], "style": ["Interview"], "id": 3554505, "label":
-        ["Not On Label (Kate Bush)"], "type": "release", "barcode": [], "master_id":
-        434927, "master_url": "https://api.discogs.com/masters/434927", "uri": "/Kate-Bush-Kate-Bush-Interview-1986/release/3554505",
-        "catno": "KB7", "title": "Kate Bush - Kate Bush Interview 1986", "thumb":
-        "https://img.discogs.com/nOg_BmQSwHy1nwLlJyFgU4CPiwQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3554505-1337052393-1427.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/QsLyB6nMF97b-MJrpmftd8KRZPc=/fit-in/480x488/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3554505-1337052393-1427.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/3554505", "community": {"want":
-        7, "have": 29}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "White", "descriptions": ["7\"", "Limited Edition", "Unofficial
-        Release"]}]}, {"country": "UK", "year": "1986", "format": ["Vinyl", "7\"",
-        "45 RPM", "Unofficial Release"], "label": ["Not On Label (Kate Bush)", "Orlake
-        Records"], "type": "release", "genre": ["Non-Music"], "style": ["Interview"],
-        "id": 9299257, "barcode": ["ORLAKE KATE BUSH"], "master_id": 455355, "master_url":
-        "https://api.discogs.com/masters/455355", "uri": "/Kate-Bush-Kate-Bush/release/9299257",
-        "catno": "none", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/hpKHtUE0dm5dSXPtzZlfgCMV8mM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9299257-1478192053-4385.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/B5-b1-LkGNnvpFDJMBneTzOBIXU=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9299257-1478192053-4385.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9299257", "community": {"want":
-        2, "have": 12}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Blue vinyl", "descriptions": ["7\"", "45 RPM", "Unofficial Release"]}]},
-        {"country": "Canada", "year": "1983", "format": ["Cassette", "Mini-Album",
-        "Compilation"], "label": ["EMI America", "Capitol Records-EMI Of Canada Limited"],
-        "type": "release", "genre": ["Rock"], "style": ["Pop Rock"], "id": 9313544,
-        "barcode": [], "master_id": 119657, "master_url": "https://api.discogs.com/masters/119657",
-        "uri": "/Kate-Bush-Kate-Bush/release/9313544", "catno": "4LP-19004", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/6T6FVz_06dUCJ72ap23ZBgTX-kU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9313544-1536749703-9978.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/OrGlAJb-2GcwRNSy5H1eRcSD6tw=/fit-in/442x700/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9313544-1536749703-9978.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9313544", "community": {"want":
-        18, "have": 8}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
-        "1", "descriptions": ["Mini-Album", "Compilation"]}]}, {"country": "Unknown",
-        "genre": ["Non-Music"], "format": ["Vinyl", "7\"", "Unofficial Release"],
-        "style": ["Interview"], "id": 3604466, "label": ["Not On Label (Kate Bush)"],
-        "type": "release", "barcode": [], "master_id": 455355, "master_url": "https://api.discogs.com/masters/455355",
-        "uri": "/Kate-Bush-Kate-Bush/release/3604466", "catno": "none", "title": "Kate
-        Bush - Kate Bush", "thumb": "https://img.discogs.com/IrPvP5_YrJfkgwhbCVpKs70OFgs=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3604466-1337048207-2112.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/ohcAi8nf_ZvlsfAswltG57KK8ko=/fit-in/485x480/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3604466-1337048207-2112.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/3604466", "community": {"want":
-        5, "have": 18}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Red Translucent", "descriptions": ["7\"", "Unofficial Release"]}]},
-        {"country": "UK", "year": "2014", "format": ["CD", "Compilation"], "label":
-        ["Mojo Magazine", "Mojo Magazine"], "type": "release", "genre": ["Rock", "Pop"],
-        "style": ["Indie Pop", "Indie Rock"], "id": 6013327, "barcode": ["Mojo Oct
-        2014", "IFPI LY19", "IFPI AAZ07", "mcps"], "master_id": 0, "master_url": null,
-        "uri": "/Various-The-Dreamers-Mojo-Presents-15-Tracks-Of-Kate-Bush-Inspired-Dream-Pop/release/6013327",
-        "catno": "October 2014", "title": "Various - The Dreamers (Mojo Presents 15
-        Tracks Of Kate Bush-Inspired Dream Pop)", "thumb": "https://img.discogs.com/bi8hzJkDKa7QQwaMovNam49Su-I=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6013327-1410954677-8229.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/7KIdstugoZIY2jxyj7MeQcBqkhg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6013327-1410954677-8229.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6013327", "community": {"want":
-        18, "have": 524}, "format_quantity": 1, "formats": [{"name": "CD", "qty":
-        "1", "descriptions": ["Compilation"]}]}, {"country": "France", "year": "1995",
-        "format": ["CD", "Compilation", "Reissue"], "label": ["EMI", "EMI France",
-        "EMI Records Ltd.", "Novercia Ltd.", "EMI France", "Novercia Ltd.", "EMI Records
-        Ltd.", "EMI France"], "type": "release", "genre": ["Electronic", "Rock", "Pop"],
-        "style": ["Art Rock", "Pop Rock", "Synth-pop", "Vocal"], "id": 6339001, "barcode":
-        ["7 24348 34622 3", "0 77774 64142 5", "PM 520"], "master_id": 28732, "master_url":
-        "https://api.discogs.com/masters/28732", "uri": "/Kate-Bush-The-Best-Of-Kate-Bush-The-Whole-Story/release/6339001",
-        "catno": "7464142", "title": "Kate Bush - The Best Of Kate Bush (The Whole
-        Story)", "thumb": "https://img.discogs.com/-A9PntfK9P_V6FpBp9wLUVC0LJc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6339001-1593518389-1008.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/ZC6siJoFNIE4cBLwkGjnxUK-lr0=/fit-in/600x528/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6339001-1593518389-1008.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6339001", "community": {"want":
-        29, "have": 37}, "format_quantity": 1, "formats": [{"name": "CD", "qty": "1",
-        "text": "Slipcase", "descriptions": ["Compilation", "Reissue"]}]}, {"country":
-        "UK", "year": "2016", "format": ["CDr", "Transcription"], "label": ["BBC Radio
-        6 Music"], "type": "release", "genre": ["Rock", "Non-Music", "Pop"], "style":
-        ["Pop Rock", "Interview"], "id": 10663059, "barcode": [], "master_id": 0,
-        "master_url": null, "uri": "/Kate-Bush-Documentary-Kate-Bush-On-6-Music/release/10663059",
-        "catno": "none", "title": "Kate Bush - Documentary (Kate Bush On 6 Music)",
-        "thumb": "https://img.discogs.com/ASx2N655LuTR5i-QqT-eZOhYdGc=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10663059-1501956775-9147.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/jYheT5-rPrIv_M8rRZJorzYV500=/fit-in/600x592/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10663059-1501956775-9147.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/10663059", "community":
-        {"want": 29, "have": 3}, "format_quantity": 1, "formats": [{"name": "CDr",
-        "qty": "1", "descriptions": ["Transcription"]}]}, {"country": "UK", "year":
-        "2012", "format": ["CDr", "Transcription"], "label": ["BBC Radio 6 Music",
-        "BBC"], "type": "release", "genre": ["Rock", "Non-Music", "Pop"], "style":
-        ["Pop Rock", "Interview"], "id": 8677723, "barcode": [], "master_id": 0, "master_url":
-        null, "uri": "/Kate-Bush-Mark-Radcliffe-Talks-With-Kate-Bush/release/8677723",
-        "catno": "none", "title": "Kate Bush - Mark Radcliffe Talks With Kate Bush",
-        "thumb": "https://img.discogs.com/UwX-Ijr2treKBgegdpdZdTD_-74=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8677723-1466433871-9552.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/5bf1OaPIO522IbxlA9QpUnqkP4k=/fit-in/600x591/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8677723-1466433871-9552.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8677723", "community": {"want":
-        32, "have": 2}, "format_quantity": 1, "formats": [{"name": "CDr", "qty": "1",
-        "descriptions": ["Transcription"]}]}, {"country": "UK", "year": "1994", "format":
-        ["Cassette", "Compilation"], "label": ["Not On Label", "Abbey Road Studios"],
-        "type": "release", "genre": ["Rock", "Pop"], "style": ["Art Rock", "Pop Rock"],
-        "id": 7203681, "barcode": [], "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush/release/7203681",
-        "catno": "none", "title": "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/vfEU7zzpCr4jnZ_GpYze_1bSwfg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-7203681-1436096940-2849.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/IzqZPatDhH-W_ZiAE6fGymNOFLk=/fit-in/600x391/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-7203681-1436096940-2849.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/7203681", "community": {"want":
-        16, "have": 1}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
-        "1", "descriptions": ["Compilation"]}]}, {"country": "France", "year": "1995",
-        "format": ["CD", "Compilation", "Repress"], "label": ["EMI France", "Best
-        Of", "EMI Records Ltd.", "Novercia Ltd.", "EMI France", "Novercia Ltd.", "EMI
-        Records Ltd."], "type": "release", "genre": ["Electronic", "Rock", "Pop"],
-        "style": ["Art Rock", "Pop Rock", "Synth-pop"], "id": 8693719, "barcode":
-        ["0 77774 64142 5", "PM 520"], "master_id": 28732, "master_url": "https://api.discogs.com/masters/28732",
-        "uri": "/Kate-Bush-Best-Of-Kate-Bush-The-Whole-Story/release/8693719", "catno":
-        "7464142", "title": "Kate Bush - Best Of Kate Bush (The Whole Story)", "thumb":
-        "https://img.discogs.com/RGyDG9HsZu-Df0LKhX7qjNqLSjg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8693719-1466759136-7793.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/0-RvaS47VRJzm6z0Y40Mf4BkkJ0=/fit-in/600x534/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8693719-1466759136-7793.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/8693719", "community": {"want":
-        25, "have": 12}, "format_quantity": 1, "formats": [{"name": "CD", "qty": "1",
-        "text": "Slipcase", "descriptions": ["Compilation", "Repress"]}]}, {"country":
-        "UK", "year": "2005", "format": ["CD", "Unofficial Release"], "label": ["Chrome
-        Dreams", "Maximum"], "type": "release", "genre": ["Non-Music"], "style": ["Art
-        Rock"], "id": 6365024, "barcode": [], "master_id": 0, "master_url": null,
-        "uri": "/Kate-Bush-Maximum-Kate-Bush-The-Unauthorised-Biography-Of-Kate-Bush/release/6365024",
-        "catno": "ABCD221", "title": "Kate Bush - Maximum Kate Bush (The Unauthorised
-        Biography Of Kate Bush)", "thumb": "https://img.discogs.com/-cbZXxXq-AgOEyfRnQbbchmoFPA=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6365024-1424426714-6747.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/-13qjqkeHQ5lT0qqBiFhCljLN8I=/fit-in/600x532/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6365024-1424426714-6747.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6365024", "community": {"want":
-        1, "have": 17}, "format_quantity": 1, "formats": [{"name": "CD", "qty": "1",
-        "descriptions": ["Unofficial Release"]}]}, {"country": "UK", "genre": ["Non-Music"],
-        "format": ["Vinyl", "12\"", "Picture Disc", "Unofficial Release"], "style":
-        ["Interview"], "id": 3632531, "label": ["Not On Label (Kate Bush)", "Orlake
-        Records"], "type": "release", "barcode": ["ZUFG+006+A ORLAKE", "ZUFG+006+B
-        ORLAKE"], "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush-Chat-With-The-Stars/release/3632531",
-        "catno": "ZUFG 006", "title": "Kate Bush - Kate Bush - Chat With The Stars",
-        "thumb": "https://img.discogs.com/s1VU5QYyHUU_6r-VDWY7_4w7aBw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3632531-1338154035-3710.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/TB8Rehn1dzVfP8fLoPtA4nsvW7w=/fit-in/481x479/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3632531-1338154035-3710.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/3632531", "community": {"want":
-        12, "have": 15}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["12\"", "Picture Disc", "Unofficial Release"]}]}, {"country":
-        "US", "genre": ["Non-Music"], "format": ["Cassette", "Promo", "Stereo"], "style":
-        ["Interview"], "id": 9481646, "label": ["Columbia", "CBS Records Studio, New
-        York"], "type": "release", "barcode": [], "master_id": 0, "master_url": null,
-        "uri": "/Kate-Bush-Kate-Bush-Interview/release/9481646", "catno": "none",
-        "title": "Kate Bush - Kate Bush Interview", "thumb": "https://img.discogs.com/3i4BaX1gU6BgHfv_XOcvpnyl2PQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9481646-1481344106-9317.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/tRD2v0ZtVmYebUUOrJTqac4eV9Q=/fit-in/600x450/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-9481646-1481344106-9317.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/9481646", "community": {"want":
-        17, "have": 0}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
-        "1", "descriptions": ["Promo", "Stereo"]}]}, {"country": "Japan", "year":
-        "1985", "format": ["Flexi-disc", "7\"", "Partially Unofficial"], "label":
-        ["TK"], "type": "release", "genre": ["Rock"], "style": ["Prog Rock"], "id":
-        8684764, "barcode": [], "master_id": 0, "master_url": null, "uri": "/Kate-Bush-1985-Kate-Bush-Message/release/8684764",
-        "catno": "SAMPLE E-7228", "title": "Kate Bush - 1985 Kate Bush Message", "thumb":
-        "https://img.discogs.com/p6_DcHeJU9f-jZDcM8_mS5E0HYY=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8684764-1526406900-6561.png.jpg",
-        "cover_image": "https://img.discogs.com/4stiqBhgcaL__z_0WxC3Z_hUMo0=/fit-in/486x511/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8684764-1526406900-6561.png.jpg",
-        "resource_url": "https://api.discogs.com/releases/8684764", "community": {"want":
-        8, "have": 7}, "format_quantity": 1, "formats": [{"name": "Flexi-disc", "qty":
-        "1", "text": "Fan Club Flexi-disc", "descriptions": ["7\"", "Partially Unofficial"]}]},
-        {"country": "UK", "year": "1986", "format": ["Vinyl", "7\"", "45 RPM", "Unofficial
-        Release"], "label": ["Not On Label (Kate Bush)", "Orlake Records"], "type":
-        "release", "genre": ["Non-Music"], "style": ["Interview"], "id": 13848179,
-        "barcode": ["ORLAKE KATE BUSH"], "master_id": 455355, "master_url": "https://api.discogs.com/masters/455355",
-        "uri": "/Kate-Bush-Kate-Bush/release/13848179", "catno": "none", "title":
-        "Kate Bush - Kate Bush", "thumb": "https://img.discogs.com/db43SF2ROLQfDNDld4FNHVb5tFg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-13848179-1582828812-6672.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/N0UVyfIF7GSlbzzYR7lUgKjNDKQ=/fit-in/600x587/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-13848179-1582828812-6672.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/13848179", "community":
-        {"want": 2, "have": 6}, "format_quantity": 1, "formats": [{"name": "Vinyl",
-        "qty": "1", "text": "Yellow", "descriptions": ["7\"", "45 RPM", "Unofficial
-        Release"]}]}, {"country": "US", "year": "2011", "format": ["CDr", "Promo",
-        "Sampler"], "label": ["Carlin America, Inc."], "type": "release", "genre":
-        ["Rock", "Pop"], "style": ["Alternative Rock"], "id": 6090580, "barcode":
-        [], "master_id": 340523, "master_url": "https://api.discogs.com/masters/340523",
-        "uri": "/Kate-Bush-Carlin-Kate-Bush-Sampler/release/6090580", "catno": "none",
-        "title": "Kate Bush - Carlin Kate Bush Sampler", "thumb": "https://img.discogs.com/9nz7o1IlAnLst_r7ABjQQp0I3qU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-6090580-1428052977-2947.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/c3JtFyxijqhwKDE5f9YJq04-HO8=/fit-in/600x516/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6090580-1428052977-2947.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/6090580", "community": {"want":
-        17, "have": 1}, "format_quantity": 1, "formats": [{"name": "CDr", "qty": "1",
-        "descriptions": ["Promo", "Sampler"]}]}, {"country": "UK", "year": "1978",
-        "format": ["Vinyl", "LP", "Album", "Stereo"], "label": ["EMI", "EMI", "EMI
-        Records Ltd.", "Air Studios", "EMI", "Kate Bush Music Ltd.", "Garrod & Lofthouse"],
-        "type": "release", "genre": ["Rock", "Pop"], "style": ["Art Rock", "Pop Rock"],
-        "id": 414374, "barcode": ["YAX.5389", "YAX.5390", "YAX 5389-3", "YAX 5390-1",
-        "YAX 5389-2", "YAX 5390-1", "YAX 5389-2", "YAX 5390-2", "YAX 5389-1", "YAX
-        5390-1         V", "YAX 5389-2 G L A  3", "YAX 5390-3 U D P 1", "YAX 5389-5",
-        "YAX 5390-1  ", "YAX 5389-2   RRR  C", "YAX 5390-1  RRT  S", "YAX 5390-4",
-        "YAX 5390-1", "REMBER YOURSELF", "YAX 5389-3", "Remember Yourself !", "YAX
-        5390-3", "YAX 5389-2  GDD  4", "YAX 5390-3  GLO  1", "YAX 5389-4 U II P  1",
-        "REMEMBER YOURSELF", "YAX 5390-1 U II P  3", "YAX 5389-2  ROL 6", "YAX 5390-3  RRL
-        2", "7802 TM", "YAX 5389-5 \u2144\u039bD 2", "REMEMBER YOURSELF", "YAX 5390-4
-        AMR"], "master_id": 28531, "master_url": "https://api.discogs.com/masters/28531",
-        "uri": "/Kate-Bush-The-Kick-Inside/release/414374", "catno": "EMC 3223", "title":
-        "Kate Bush - The Kick Inside", "thumb": "https://img.discogs.com/Bn-CGnPTPylj9O0fSn36n0jqahQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-414374-1411407209-7587.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/l4tj9nFGF6KgmETZZPwox8pC06w=/fit-in/600x598/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-414374-1411407209-7587.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/414374", "community": {"want":
-        1205, "have": 7731}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["LP", "Album", "Stereo"]}]}, {"country": "US", "year":
-        "1990", "format": ["VHS", "Unofficial Release", "NTSC", "Compilation"], "label":
-        ["Mirage Video"], "type": "release", "genre": ["Rock", "Pop"], "style": ["Pop
-        Rock", "Art Rock"], "id": 4132737, "barcode": [], "master_id": 0, "master_url":
-        null, "uri": "/Kate-Bush-Kate-Bush-The-Collection/release/4132737", "catno":
-        "none", "title": "Kate Bush - Kate Bush The Collection", "thumb": "https://img.discogs.com/IZZNIDLaNPwGZVKBRW4sSQV-eLg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4132737-1356377659-3705.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/_lkhhQsL9ckcfYjYhY89eG35UO0=/fit-in/271x499/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4132737-1356377659-3705.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/4132737", "community": {"want":
-        8, "have": 6}, "format_quantity": 1, "formats": [{"name": "VHS", "qty": "1",
-        "descriptions": ["Unofficial Release", "NTSC", "Compilation"]}]}, {"country":
-        "UK", "year": "1985", "format": ["Vinyl", "LP", "Album", "Stereo"], "label":
-        ["EMI", "EMI", "EMI", "Kate Bush Music Ltd.", "EMI Music Publishing Ltd.",
-        "Novercia Ltd.", "Novercia Ltd.", "The Town House", "James Upton Ltd.", "EMI
-        Records Ltd.", "EMI Records", "Windmill Lane Studios"], "type": "release",
-        "genre": ["Electronic", "Rock", "Pop"], "style": ["Art Rock", "Experimental",
-        "Pop Rock"], "id": 197163, "barcode": ["5 099924 038416", "5099924038416",
-        "EJ2403841 A", "EJ2403841 B", "EJ 2403841 A-4U-1-1", "EJ 2403841 B-5U-1-1-1",
-        "EJ 2403841 A-1-1-1 ", "EJ 2403841 B-6U-1-3", "EJ 2403841 A-1-1-1", "EJ 2403841
-        B-5U-1-1-1", "EJ 2403841 A-1-1-1  D", "EJ 2403841 B-6U-1-2", "EJ 2403841 A-4U-1-1",
-        "EJ 2403841 B-7-1-4-", "EJ 2403841 A-4U-1-4-", "EJ 2403841 B-6U-1-3-", "EJ
-        2403841 A-4U-1-2", "EJ 2403841 B-6U-1-1-2", "EJ 2403841 A-4U-1-2", "EJ 2403841
-        B-6U-1-3-", "EJ 2403841 A-1-1-1", "EJ 2403841 B-6U-1-9", "TOWNHOUSE", "TOWNHOUSE
-        CU", "EJ 2403841 A-4U-1-1-35 [35 are very faint]", "EJ 2403841 B-7-1-5-9",
-        "RS 8509 JU", "RB 8509 JU"], "master_id": 28680, "master_url": "https://api.discogs.com/masters/28680",
-        "uri": "/Kate-Bush-Hounds-Of-Love/release/197163", "catno": "KAB1", "title":
-        "Kate Bush - Hounds Of Love", "thumb": "https://img.discogs.com/2OD9C3Mh-8jz6tzALCjdoLERAos=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/hhTPrZI9OWGpxXwceG6W1mKUnd0=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-197163-1475590932-6411.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/197163", "community": {"want":
-        2298, "have": 6681}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "descriptions": ["LP", "Album", "Stereo"]}]}, {"country": "UK", "year":
-        "1978", "format": ["Vinyl", "LP", "Album", "Stereo"], "label": ["EMI", "EMI",
-        "Super Bear Studios", "EMI Records Ltd.", "Kate Bush", "EMI Music Publishing
-        Ltd.", "Kate Bush", "EMI Music Publishing Ltd.", "Garrod & Lofthouse", "EMI
-        Records Ltd."], "type": "release", "genre": ["Rock", "Pop"], "style": ["Art
-        Rock", "Pop Rock", "Ballad"], "id": 426108, "barcode": ["YAX.5548", "YAX.5549",
-        "YAX 5548-2", "YAX 5549-1 HOPE YOU LIKE IT!", "YAX 5548-3 RTC", "YAX 5549-3
-        HOPE YOU LIKE IT!", "YAX 5548-9 202 BLAIR''S 1", "YAX 5549-2 HLC HOPE YOU
-        LIKE IT! 4", "YAX 5548-1 CRT 2", "YAX 5549-2 HL HOPE YOU LIKE IT! 2", "YAX
-        5548-1 OV 1", "YAX 5549-2 HVG HOPE YOU LIKE IT!  4", "YAX 5548-1  1  GLA",
-        "YAX 5549-3  HOPE YOU LIKE IT!  4", "YAX 5548-3  GGP  2", "YAX 5549-2  GOG
-        P  HOPE YOU LIKE IT!  4", "YAX 5548-3 CAT D", "YAX 5549-2 HD HOPE YOU LIKE
-        IT! 1", "YAX 5548-2  GPM  3", "YAX 5549-3  HOPE YOU LIKE IT!  GMR 2"], "master_id":
-        28522, "master_url": "https://api.discogs.com/masters/28522", "uri": "/Kate-Bush-Lionheart/release/426108",
-        "catno": "EMA 787", "title": "Kate Bush - Lionheart", "thumb": "https://img.discogs.com/s5fH5ok5OjpeqXsUhjwTEP1pb2s=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-426108-1558297258-5571.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/noGLOKfZ82etdLvvfdONrWuKgk0=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-426108-1558297258-5571.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/426108", "community": {"want":
-        500, "have": 4747}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Gatefold", "descriptions": ["LP", "Album", "Stereo"]}]}, {"country":
-        "South Africa", "year": "1978", "format": ["Acetate", "7\"", "33 \u2153 RPM"],
-        "label": ["EMI Brigadiers", "EMI Music South Africa (Pty) Ltd.", "Tension
-        South Africa", "EMI Brigadiers", "EMI Brigadiers"], "type": "release", "genre":
-        ["Rock"], "style": ["Art Rock", "Pop Rock"], "id": 11533303, "barcode": ["A.S.A.P.I."],
-        "master_id": 0, "master_url": null, "uri": "/Kate-Bush-Kate-Bush-From-Album-EMCJD5151/release/11533303",
-        "catno": "none", "title": "Kate Bush - \"Kate Bush\" (From Album EMCJ(D)5151)",
-        "thumb": "https://img.discogs.com/X_bbtHRwHPHZml4LpyRnlRDT5xU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-11533303-1518029319-1000.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/2nsG68Jlat_Z1pY-fcXxfc1sLbA=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-11533303-1518029319-1000.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/11533303", "community":
-        {"want": 19, "have": 2}, "format_quantity": 1, "formats": [{"name": "Acetate",
-        "qty": "1", "descriptions": ["7\"", "33 \u2153 RPM"]}]}, {"country": "USA
-        & Canada", "year": "1998", "format": ["CD", "Compilation"], "label": ["Brown
-        Star Records", "Brown Star Records", "Novercia Ltd.", "Kate Bush Music Ltd.",
-        "Golden Mastering", "CDman", "Disque Americ"], "type": "release", "genre":
-        ["Rock", "Pop"], "style": [], "id": 5604328, "barcode": ["658719694722", "DADR
-        CDMAN 1-800-527-3347 1AU02<1773> BSR6947"], "master_id": 0, "master_url":
-        null, "uri": "/Various-I-Wanna-Be-Kate-The-Songs-Of-Kate-Bush/release/5604328",
-        "catno": "BSR 6947", "title": "Various - I Wanna Be Kate - The Songs Of Kate
-        Bush", "thumb": "https://img.discogs.com/uZyfCwEcBba2EHCmv8wzmFm3jN8=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5604328-1430822506-9856.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/ccKTTDO7LxUQBXmPfImZOCfOCII=/fit-in/600x594/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5604328-1430822506-9856.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/5604328", "community": {"want":
-        10, "have": 39}, "format_quantity": 1, "formats": [{"name": "CD", "qty": "1",
-        "descriptions": ["Compilation"]}]}, {"country": "UK", "year": "1986", "format":
-        ["Vinyl", "LP", "Compilation"], "label": ["EMI", "EMI", "EMI Records Ltd.",
-        "Novercia Ltd.", "Kate Bush Music Ltd.", "EMI Music Publishing Ltd.", "Novercia
-        Ltd.", "The Town House", "EMI Records Ltd.", "Howards Printers (Slough) Ltd."],
-        "type": "release", "genre": ["Electronic", "Rock", "Pop"], "style": ["Pop
-        Rock", "Art Rock", "Synth-pop", "Experimental", "Ballad"], "id": 310245, "barcode":
-        ["5 099926 120119", "KBTV 1A", "KBTV 1B", "KBTV 1 A-2U-1-1 : TK TOWNHOUSE
-        D", "KBTV 1 3-3U-1- :: TK TOWNHOUSE D", "TK TOWNHOUSE D KBTV 1 A-3U-1-4-x1xx",
-        "TK D TOWNHOUSE KBTV 1 B-1U-1-411", "KBTV 1 A-4U-1-1-2   TK   TOWNHOUSE   D",
-        "KBTV 1 B-4U-1-1   TK   TOWNHOUSE   D", "KBTV 1 A-4U-1-1-X1   TK TOWNHOUSE",
-        "KBTV 1 3-2U-1-1-X1   TK TOWNHOUSE", "KBTV 1 A-3U-1-7 TK TOWNHOUSE D", "KBTV
-        1 B-1U-1-4 TK TOWNHOUSE D", "KBTV 1 A-3U-1-1- TK TOWNHOUSE D", "KBTV 1 B-2U-1-3-1
-        TK D TOWNHOUSE"], "master_id": 28732, "master_url": "https://api.discogs.com/masters/28732",
-        "uri": "/Kate-Bush-The-Whole-Story/release/310245", "catno": "KBTV 1", "title":
-        "Kate Bush - The Whole Story", "thumb": "https://img.discogs.com/QjfB8JbPaCp-VwJZ2uNGZkn0Jmg=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-310245-1375463802-5512.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/nQIG-Cy8maIH3HumXzYkM_8QXmo=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-310245-1375463802-5512.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/310245", "community": {"want":
-        370, "have": 5064}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Gatefold", "descriptions": ["LP", "Compilation"]}]}, {"country":
-        "UK", "year": "1980", "format": ["Vinyl", "LP", "Album"], "label": ["EMI",
-        "EMI", "EMI Records Ltd.", "Novercia Ltd.", "Kate Bush Music Ltd.", "EMI Music
-        Publishing Ltd.", "Garrod & Lofthouse", "EMI Records Ltd.", "EMI Records Ltd.",
-        "Abbey Road Studios", "Air Studios"], "type": "release", "genre": ["Rock",
-        "Pop"], "style": ["Pop Rock", "Art Rock"], "id": 508248, "barcode": ["EMA
-        794 A-3", "EMA 794 B-3", "EMA 794 A-5", "EMA 794 B-3", "EMA 794 A-5", "EMA
-        794 B-4", "Mi", "Do", "3 12 [Vertical]", "3 11 [Vertical]", "2 11 [Vertical]",
-        "1 14 [Vertical]", "[A pair of glasses]", "EMA 794 A-3 6 MI", "EMA 794 B-3
-        6 DO [A pair of glasses, etched] 5", "EMA 794 A-3 6 MI", "EMA 794 B-4 1 DO
-        [A pair of glasses, etched] ", "TM 8009 G & L"], "master_id": 28582, "master_url":
-        "https://api.discogs.com/masters/28582", "uri": "/Kate-Bush-Never-For-Ever/release/508248",
-        "catno": "EMA 794", "title": "Kate Bush - Never For Ever", "thumb": "https://img.discogs.com/IoFoY2CZGVcolOdNbHsJlNeRXJQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-508248-1474741790-3505.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/4Q2fb_Xl3livj4xYonoeXM1lQb4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-508248-1474741790-3505.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/508248", "community": {"want":
-        696, "have": 5032}, "format_quantity": 1, "formats": [{"name": "Vinyl", "qty":
-        "1", "text": "Gatefold", "descriptions": ["LP", "Album"]}]}, {"country": "UK",
-        "year": "2000", "format": ["CD", "Album"], "label": ["Dressed To Kill"], "type":
-        "release", "genre": ["Pop"], "style": ["Vocal"], "id": 2370928, "barcode":
-        ["666629120026"], "master_id": 1203611, "master_url": "https://api.discogs.com/masters/1203611",
-        "uri": "/E-Clypse-Featuring-Jemma-Price-A-Tribute-To-Kate-Bush/release/2370928",
-        "catno": "DOP261", "title": "E-Clypse Featuring Jemma Price - A Tribute To
-        Kate Bush", "thumb": "https://img.discogs.com/Zmc8rNyqfOqfYW8x5M8fe2bBW10=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2370928-1454637519-8364.jpeg.jpg",
-        "cover_image": "https://img.discogs.com/WyBQo4YoozL8-TdIabhwIjTqwCQ=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2370928-1454637519-8364.jpeg.jpg",
-        "resource_url": "https://api.discogs.com/releases/2370928", "community": {"want":
-        2, "have": 26}, "format_quantity": 1, "formats": [{"name": "CD", "qty": "1",
-        "descriptions": ["Album"]}]}]}'
-  recorded_at: Thu, 17 Dec 2020 15:49:07 GMT
+        31, "have": 12}, "format_quantity": 1, "formats": [{"name": "Cassette", "qty":
+        "1", "text": "Red/White Labels", "descriptions": ["Compilation"]}]}]}'
+  recorded_at: Tue, 25 May 2021 09:21:47 GMT
 recorded_with: VCR 6.0.0
