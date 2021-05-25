@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ALBUMS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title,og:description),cse_image))&key=<GOOGLE_API_KEY>&q=wejlhg239gh23
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ALBUMS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wejlhg239gh23&start=0
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sat, 22 May 2021 07:30:32 GMT
+      - Wed, 02 Jun 2021 11:18:09 GMT
       Server:
       - ESF
       Cache-Control:
@@ -53,5 +53,5 @@ http_interactions:
             ]
           }
         }
-  recorded_at: Sat, 22 May 2021 07:30:31 GMT
+  recorded_at: Wed, 02 Jun 2021 11:18:09 GMT
 recorded_with: VCR 6.0.0

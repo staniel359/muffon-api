@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title,og:description),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=0
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Sat, 22 May 2021 07:30:33 GMT
+      - Wed, 02 Jun 2021 11:18:10 GMT
       Server:
       - ESF
       Cache-Control:
@@ -60,5 +60,5 @@ http_interactions:
             "status": "INVALID_ARGUMENT"
           }
         }
-  recorded_at: Sat, 22 May 2021 07:30:32 GMT
+  recorded_at: Wed, 02 Jun 2021 11:18:09 GMT
 recorded_with: VCR 6.0.0

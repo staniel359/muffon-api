@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ALBUMS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title,og:description),cse_image))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=10
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ALBUMS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=10
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sat, 22 May 2021 07:30:31 GMT
+      - Wed, 02 Jun 2021 11:18:07 GMT
       Server:
       - ESF
       Cache-Control:
@@ -50,7 +50,7 @@ http_interactions:
           "queries": {
             "request": [
               {
-                "totalResults": "5020"
+                "totalResults": "4210"
               }
             ]
           },
@@ -76,15 +76,15 @@ http_interactions:
               "pagemap": {
                 "metatags": [
                   {
-                    "og:site_name": "Parked In Hell",
-                    "og:description": "13 track album",
-                    "og:title": "Young Man's Fancy, by Magic Bullets",
-                    "og:url": "https://parkedinhell.bandcamp.com/album/young-mans-fancy"
+                    "og:site_name": "Moongazing Hare",
+                    "og:description": "12 track album",
+                    "og:title": "Wild Nothing, by Moongazing Hare",
+                    "og:url": "https://moongazinghare.bandcamp.com/album/wild-nothing"
                   }
                 ],
                 "cse_image": [
                   {
-                    "src": "https://f4.bcbits.com/img/a2438059751_5.jpg"
+                    "src": "https://f4.bcbits.com/img/a1315545409_5.jpg"
                   }
                 ]
               }
@@ -102,23 +102,6 @@ http_interactions:
                 "cse_image": [
                   {
                     "src": "https://f4.bcbits.com/img/a0509659330_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Moongazing Hare",
-                    "og:description": "12 track album",
-                    "og:title": "Wild Nothing, by Moongazing Hare",
-                    "og:url": "https://moongazinghare.bandcamp.com/album/wild-nothing"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a1315545409_5.jpg"
                   }
                 ]
               }
@@ -161,32 +144,15 @@ http_interactions:
               "pagemap": {
                 "metatags": [
                   {
-                    "og:site_name": "winds measure recordings",
-                    "og:title": "wild horses think of nothing else the sea - tape readings, by patrick farmer",
-                    "og:description": "7 track album",
-                    "og:url": "https://windsmeasurerecordings.bandcamp.com/album/wild-horses-think-of-nothing-else-the-sea-tape-readings"
+                    "og:site_name": "mvnners",
+                    "og:description": "8 track album",
+                    "og:title": "try to fall asleep without her, demos, by mvnners",
+                    "og:url": "https://mvnners.bandcamp.com/album/try-to-fall-asleep-without-her-demos"
                   }
                 ],
                 "cse_image": [
                   {
-                    "src": "https://f4.bcbits.com/img/a0633133344_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Funeral Party",
-                    "og:description": "4 track album",
-                    "og:title": "Sparrow's Tongue, by The Column",
-                    "og:url": "https://funeralparty.bandcamp.com/album/sparrows-tongue"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a0801341544_5.jpg"
+                    "src": "https://f4.bcbits.com/img/a3001996439_5.jpg"
                   }
                 ]
               }
@@ -212,20 +178,54 @@ http_interactions:
               "pagemap": {
                 "metatags": [
                   {
-                    "og:site_name": "mvnners",
-                    "og:description": "8 track album",
-                    "og:title": "try to fall asleep without her, demos, by mvnners",
-                    "og:url": "https://mvnners.bandcamp.com/album/try-to-fall-asleep-without-her-demos"
+                    "og:site_name": "winds measure recordings",
+                    "og:title": "wild horses think of nothing else the sea - tape readings, by patrick farmer",
+                    "og:description": "7 track album",
+                    "og:url": "https://windsmeasurerecordings.bandcamp.com/album/wild-horses-think-of-nothing-else-the-sea-tape-readings"
                   }
                 ],
                 "cse_image": [
                   {
-                    "src": "https://f4.bcbits.com/img/a3001996439_5.jpg"
+                    "src": "https://f4.bcbits.com/img/a0633133344_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Vacant Stare Records",
+                    "og:description": "5 track album",
+                    "og:title": "Passing Glance EP, by TONER",
+                    "og:url": "https://vacantstarerecords.bandcamp.com/album/passing-glance-ep"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a3926807426_5.jpg"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Funeral Party",
+                    "og:description": "4 track album",
+                    "og:title": "Sparrow's Tongue, by The Column",
+                    "og:url": "https://funeralparty.bandcamp.com/album/sparrows-tongue"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://f4.bcbits.com/img/a0801341544_5.jpg"
                   }
                 ]
               }
             }
           ]
         }
-  recorded_at: Sat, 22 May 2021 07:30:30 GMT
+  recorded_at: Wed, 02 Jun 2021 11:18:06 GMT
 recorded_with: VCR 6.0.0
