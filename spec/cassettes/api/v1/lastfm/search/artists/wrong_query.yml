@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=200&method=artist.search
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&limit=200&method=artist.search
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Mon, 05 Apr 2021 14:14:20 GMT
+      - Thu, 27 May 2021 14:58:12 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -36,8 +36,10 @@ http_interactions:
       - '86400'
       Via:
       - 1.1 google
+      Alt-Svc:
+      - clear
     body:
       encoding: UTF-8
       string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"200","artistmatches":{"artist":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Mon, 05 Apr 2021 14:14:19 GMT
+  recorded_at: Thu, 27 May 2021 14:58:12 GMT
 recorded_with: VCR 6.0.0

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
             get 'images'
             get 'similar'
             get 'albums'
+            get 'tracks'
+
             namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
               scope ':album' do
                 get '', action: :info
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
                 get 'listeners_count'
               end
             end
-            get 'tracks'
+
             namespace :tracks, as: :track, constraints: { track: /[^\/]+/ } do
               scope ':track' do
                 get '', action: :info

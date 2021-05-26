@@ -3,20 +3,18 @@ module LastFM
     class Base < LastFM::Base
       private
 
-      def no_data?
-        response_data.text.blank?
-      end
-
       def response_data
-        @response_data ||= Nokogiri::HTML.parse(response)
+        @response_data ||= Nokogiri::HTML.parse(
+          response
+        )
       end
 
       def params
         {}
       end
 
-      def format_param(param)
-        CGI.escape(param.to_s.strip).presence
+      def param_formatted(param)
+        CGI.escape(super)
       end
     end
   end

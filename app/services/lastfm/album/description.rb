@@ -4,11 +4,7 @@ module LastFM
       private
 
       def album_data
-        {
-          title: title,
-          artist: artist_data,
-          description: description
-        }
+        { description: description }
       end
     end
   end

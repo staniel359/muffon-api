@@ -1,26 +1,16 @@
 module LastFM
   module Search
     class Albums < LastFM::Search::Base
+      API_METHOD = 'album.search'.freeze
+      COLLECTION_NAME = 'albums'.freeze
+      MODEL_NAME = 'album'.freeze
+
       private
 
-      def model_name
-        'album'
-      end
-
-      def collection_name
-        'albums'
-      end
-
-      def collection_item_data(album)
-        {
-          title: album['name'],
-          artist: album_artist_data(album),
-          image: image_data(album, 'album')
-        }
-      end
-
-      def album_artist_data(album)
-        { name: album['artist'] }
+      def collection_item_data_formatted(album)
+        LastFM::Search::Albums::Album.call(
+          album: album
+        )
       end
     end
   end

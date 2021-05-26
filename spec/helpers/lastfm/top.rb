@@ -3,15 +3,15 @@ module Helpers
     module Top
       class << self
         def artists_data
-          {:top=>{:artists=>[{:listeners_count=>2812681, :name=>"OutKast"}, {:listeners_count=>767464, :name=>"Troye Sivan"}, {:listeners_count=>4314639, :name=>"Muse"}, {:listeners_count=>452077, :name=>"Mitski"}, {:listeners_count=>452777, :name=>"Conan Gray"}], :page=>2, :total_pages=>20}}
+          {:top=>{:artists=>[{:listeners_count=>1709570, :name=>"Ariana Grande"}, {:listeners_count=>2810444, :name=>"Taylor Swift"}, {:listeners_count=>3913116, :name=>"Drake"}, {:listeners_count=>480677, :name=>"Olivia Rodrigo"}, {:listeners_count=>1968765, :name=>"Kendrick Lamar"}], :page=>2, :total_pages=>2000}}
         end
 
         def tags_data
-          {:top=>{:page=>2, :tags=>[{:name=>"pop", :taggers_count=>227129}, {:name=>"female vocalists", :taggers_count=>168171}, {:name=>"metal", :taggers_count=>156025}, {:name=>"alternative rock", :taggers_count=>167255}, {:name=>"jazz", :taggers_count=>147224}], :total_pages=>40}}
+          {:top=>{:page=>2, :tags=>[{:name=>"pop", :taggers_count=>227450}, {:name=>"female vocalists", :taggers_count=>168280}, {:name=>"metal", :taggers_count=>156113}, {:name=>"alternative rock", :taggers_count=>167342}, {:name=>"jazz", :taggers_count=>147336}], :total_pages=>200}}
         end
 
         def tracks_data
-          {:top=>{:page=>2, :total_pages=>10, :tracks=>[{:artist=>{:name=>"Arctic Monkeys"}, :listeners_count=>1160832, :title=>"Fluorescent Adolescent"}, {:artist=>{:name=>"Grimes"}, :listeners_count=>646927, :title=>"Oblivion"}, {:artist=>{:name=>"Frank Ocean"}, :listeners_count=>256059, :title=>"In My Room"}, {:artist=>{:name=>"MGMT"}, :listeners_count=>1589515, :title=>"Electric Feel"}, {:artist=>{:name=>"Taylor Swift"}, :listeners_count=>206304, :title=>"sEvEN"}]}}
+          {:top=>{:page=>2, :total_pages=>2000, :tracks=>[{:artist=>{:name=>"Billie Eilish"}, :artists=>[{:name=>"Billie Eilish"}], :listeners_count=>191247, :title=>"Your Power"}, {:artist=>{:name=>"The Weeknd"}, :artists=>[{:name=>"The Weeknd"}], :listeners_count=>739551, :title=>"Blinding Lights"}, {:artist=>{:name=>"Olivia Rodrigo"}, :artists=>[{:name=>"Olivia Rodrigo"}], :listeners_count=>156179, :title=>"brutal"}, {:artist=>{:name=>"Dua Lipa"}, :artists=>[{:name=>"Dua Lipa"}], :listeners_count=>331525, :title=>"Levitating (feat. DaBaby)"}, {:artist=>{:name=>"Olivia Rodrigo"}, :artists=>[{:name=>"Olivia Rodrigo"}], :listeners_count=>141154, :title=>"traitor"}]}}
         end
       end
     end

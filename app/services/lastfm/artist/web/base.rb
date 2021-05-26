@@ -8,16 +8,18 @@ module LastFM
           [@args.artist]
         end
 
-        def artist_link
-          "https://www.last.fm/music/#{artist_name}"
-        end
-
-        def artist_name
-          format_param(@args.artist)
+        def base_link
+          "https://www.last.fm/music/#{artist_name_formatted}"
         end
 
         def data
           { artist: artist_data }
+        end
+
+        def name
+          response_data.css(
+            '.header-new-title'
+          )[0].text
         end
       end
     end

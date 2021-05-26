@@ -1,13 +1,10 @@
 module LastFM
   module Artist
-    class Description < LastFM::Artist::API::Base
+    class Description < LastFM::Artist::Base
       private
 
       def artist_data
-        {
-          name: title,
-          description: description
-        }
+        { description: description }
       end
     end
   end

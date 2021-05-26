@@ -1,29 +1,38 @@
 module LastFM
   module Tags
-    class Base < LastFM::API::Base
+    class Base < LastFM::Base
       private
 
-      def service_info
-        {
-          api_method: "#{model_name}.getTopTags",
-          response_data_node: 'toptags'
-        }
+      def no_data?
+        model.blank? || tags_list.blank?
+      end
+
+      def model
+        @model ||= response_data['toptags']
       end
 
       def params
-        super.merge(send("#{model_name}_params"))
+        super.merge(model_params)
       end
 
-      def extra_data
-        response_data['@attr']
+      def model_params
+        send("#{model_name}_params")
       end
 
-      def artist_data
-        { name: extra_data['artist'] }
+      def model_name
+        self.class::MODEL_NAME
       end
 
       def tags_list
-        response_data['tag']
+        @tags_list ||= model['tag']
+      end
+
+      def data
+        { model_name.to_sym => model_data }
+      end
+
+      def model_data
+        { tags: tags }
       end
     end
   end

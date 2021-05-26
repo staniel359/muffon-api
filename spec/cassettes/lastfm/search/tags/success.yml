@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_LASTFM_TAGS>&fields=queries(request(totalResults)),items(pagemap(metatags(og:site_name,og:url,og:title),cse_image))&key=<GOOGLE_API_KEY>&q=pop&start=10
+    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_LASTFM_TAGS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=pop&start=10
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 14 May 2021 10:06:52 GMT
+      - Wed, 02 Jun 2021 12:19:22 GMT
       Server:
       - ESF
       Cache-Control:
@@ -50,7 +50,7 @@ http_interactions:
           "queries": {
             "request": [
               {
-                "totalResults": "9220000"
+                "totalResults": "9110000"
               }
             ]
           },
@@ -60,8 +60,9 @@ http_interactions:
                 "metatags": [
                   {
                     "og:site_name": "Last.fm",
-                    "og:title": "Orchestral pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/orchestral+pop"
+                    "og:title": "Ambient pop music | Last.fm",
+                    "og:description": "Find ambient pop tracks, artists, and albums. Find the latest in ambient pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/ambient+pop"
                   }
                 ],
                 "cse_image": [
@@ -76,8 +77,9 @@ http_interactions:
                 "metatags": [
                   {
                     "og:site_name": "Last.fm",
-                    "og:title": "Trip-pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/trip-pop"
+                    "og:title": "Teen pop music | Last.fm",
+                    "og:description": "Find teen pop tracks, artists, and albums. Find the latest in teen pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/teen+pop"
                   }
                 ],
                 "cse_image": [
@@ -92,8 +94,60 @@ http_interactions:
                 "metatags": [
                   {
                     "og:site_name": "Last.fm",
-                    "og:title": "Sunshine pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/sunshine+pop"
+                    "og:title": "80s pop music | Last.fm",
+                    "og:description": "Find 80s pop tracks, artists, and albums. Find the latest in 80s pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/80s+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Dark pop music | Last.fm",
+                    "og:description": "Find dark pop tracks, artists, and albums. Find the latest in dark pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/dark+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Death pop music | Last.fm",
+                    "og:description": "Find death pop tracks, artists, and albums. Find the latest in death pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/death+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Gothic pop music | Last.fm",
+                    "og:description": "Find gothic pop tracks, artists, and albums. Find the latest in gothic pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/gothic+pop"
                   }
                 ],
                 "cse_image": [
@@ -109,6 +163,7 @@ http_interactions:
                   {
                     "og:site_name": "Last.fm",
                     "og:title": "Emo-pop music | Last.fm",
+                    "og:description": "Find emo-pop tracks, artists, and albums. Find the latest in emo-pop music at Last.fm.",
                     "og:url": "https://www.last.fm/tag/emo-pop"
                   }
                 ],
@@ -124,72 +179,9 @@ http_interactions:
                 "metatags": [
                   {
                     "og:site_name": "Last.fm",
-                    "og:title": "Nightmare pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/nightmare+pop"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Last.fm",
-                    "og:title": "Pop opera music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/pop+opera"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Last.fm",
-                    "og:title": "Hk-pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/hk-pop"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Last.fm",
-                    "og:title": "Emo pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/emo+pop"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Last.fm",
-                    "og:title": "Fight-pop music | Last.fm",
-                    "og:url": "https://www.last.fm/tag/fight-pop"
+                    "og:title": "Doom pop music | Last.fm",
+                    "og:description": "Find doom pop tracks, artists, and albums. Find the latest in doom pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/doom+pop"
                   }
                 ],
                 "cse_image": [
@@ -205,7 +197,25 @@ http_interactions:
                   {
                     "og:site_name": "Last.fm",
                     "og:title": "Weed pop music | Last.fm",
+                    "og:description": "Find weed pop tracks, artists, and albums. Find the latest in weed pop music at Last.fm.",
                     "og:url": "https://www.last.fm/tag/weed+pop"
+                  }
+                ],
+                "cse_image": [
+                  {
+                    "src": "https://www.last.fm/static/images/lastfm_logo_facebook.15d8133be114.png"
+                  }
+                ]
+              }
+            },
+            {
+              "pagemap": {
+                "metatags": [
+                  {
+                    "og:site_name": "Last.fm",
+                    "og:title": "Hk-pop music | Last.fm",
+                    "og:description": "Find hk-pop tracks, artists, and albums. Find the latest in hk-pop music at Last.fm.",
+                    "og:url": "https://www.last.fm/tag/hk-pop"
                   }
                 ],
                 "cse_image": [
@@ -217,5 +227,5 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Fri, 14 May 2021 10:06:52 GMT
+  recorded_at: Wed, 02 Jun 2021 12:19:21 GMT
 recorded_with: VCR 6.0.0

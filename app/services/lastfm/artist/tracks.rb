@@ -1,34 +1,45 @@
 module LastFM
   module Artist
-    class Tracks < LastFM::Artist::API::Paginated
+    class Tracks < LastFM::Artist::Base
+      API_METHOD = 'artist.getTopTracks'.freeze
+      COLLECTION_NAME = 'tracks'.freeze
+      TOTAL_LIMIT = 750
+      LIMIT = 500
+      include LastFM::Utils::Pagination
+
       private
 
-      def service_info
-        {
-          api_method: 'artist.getTopTracks',
-          response_data_node: 'toptracks'
-        }
+      def no_data?
+        super || tracks_list.blank?
       end
 
-      def collection_name
-        'tracks'
-      end
-
-      def model_name
-        'track'
+      def artist
+        @artist ||= response_data['toptracks']
       end
 
       def total_limit
-        750
+        TOTAL_LIMIT
       end
 
-      def collection_item_data(track)
-        {
-          id: track_id(extra_data['artist'], track['name']),
-          title: track['name'],
-          listeners_count: track['listeners'].to_i
-        }
+      def tracks_list
+        @tracks_list ||= artist['track']
       end
+
+      def total_items_count
+        [tracks_list.size, LIMIT].min
+      end
+
+      def collection_list
+        collection_paginated(tracks_list)
+      end
+
+      def collection_item_data_formatted(track)
+        LastFM::Artist::Tracks::Track.call(
+          track: track
+        )
+      end
+
+      alias artist_data paginated_data
     end
   end
 end

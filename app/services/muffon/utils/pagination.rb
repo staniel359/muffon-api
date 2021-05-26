@@ -3,22 +3,15 @@ module Muffon
     module Pagination
       private
 
-      def paginated_data
+      def pagination_params
         {
           page: page,
-          total_pages: total_pages_count,
-          collection_name.to_sym => collection_data
-        }.compact
+          limit: limit
+        }
       end
 
       def page
         (@args.page || 1).to_i
-      end
-
-      def total_pages_count
-        return unless defined?(total_items_count)
-
-        total_items_count.fdiv(limit).ceil
       end
 
       def limit
@@ -64,6 +57,10 @@ module Muffon
 
       def offset
         (page - 1) * limit
+      end
+
+      def page_out_of_bounds?
+        page > total_pages_count
       end
     end
   end

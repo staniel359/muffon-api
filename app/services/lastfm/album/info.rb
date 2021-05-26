@@ -12,57 +12,49 @@ module LastFM
       def album_base_data
         {
           title: title,
-          artist: artist_data,
-          source: 'lastfm'
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def album_extra_data
         {
-          image: image_data(response_data, 'album'),
+          image: image_data,
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,
           tags: tags,
-          tracks: tracks_data
+          tracks: tracks
         }
       end
 
       def plays_count
-        response_data['playcount'].to_i
+        album['playcount'].to_i
       end
 
       def tags_list
-        return [] if response_data['tags'].blank?
+        return [] if album['tags'].blank?
 
-        response_data.dig('tags', 'tag')
+        album.dig('tags', 'tag')
       end
 
-      def tracks_data
-        tracks_list.map { |t| track_data(t) }
+      def tracks
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
       end
 
       def tracks_list
         [
-          response_data.dig('tracks', 'track')
+          album.dig('tracks', 'track')
         ].flatten.compact
       end
 
-      def track_data(track)
-        {
-          id: track_id(track_artist_name(track), track['name']),
-          title: track['name'],
-          artist: track_artist_data(track),
-          length: track['duration'].to_i
-        }
-      end
-
-      def track_artist_name(track)
-        track.dig('artist', 'name')
-      end
-
-      def track_artist_data(track)
-        { name: track_artist_name(track) }
+      def track_data_formatted(track)
+        LastFM::Album::Info::Track.call(
+          track: track
+        )
       end
     end
   end

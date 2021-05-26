@@ -1,33 +1,34 @@
 module LastFM
   module Search
-    class Base < LastFM::API::Base
-      include LastFM::API::Paginated
+    class Base < LastFM::Base
+      include LastFM::Utils::Pagination
 
       private
-
-      def service_info
-        {
-          api_method: "#{model_name}.search",
-          response_data_node: 'results'
-        }
-      end
 
       def primary_args
         [@args.query]
       end
 
       def no_data?
-        super || results.blank?
+        results_list.blank? || page_out_of_bounds?
       end
 
-      def results
-        @results ||= response_data.dig(
-          "#{model_name}matches", model_name
+      def results_list
+        @results_list ||= response_data.dig(
+          'results',
+          "#{model_name}matches",
+          model_name
         )
       end
 
+      def model_name
+        self.class::MODEL_NAME
+      end
+
       def params
-        super.merge(search_params).merge(pagination_params)
+        super
+          .merge(search_params)
+          .merge(pagination_params)
       end
 
       def search_params
@@ -35,19 +36,24 @@ module LastFM
       end
 
       def data
-        { search: search_data }
+        { search: paginated_data }
       end
 
-      def search_data
-        {
-          page: page,
-          total_pages: total_pages,
-          collection_name.to_sym => collection_data
-        }
+      def total_items_count
+        results_list_filtered.size
+      end
+
+      def results_list_filtered
+        @results_list_filtered ||=
+          results_list.reject do |r|
+            r['name'] == '(null)'
+          end
       end
 
       def collection_list
-        results.reject { |r| r['name'] == '(null)' }
+        collection_paginated(
+          results_list_filtered
+        )
       end
     end
   end

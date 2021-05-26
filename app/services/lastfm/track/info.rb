@@ -3,13 +3,6 @@ module LastFM
     class Info < LastFM::Track::Base
       private
 
-      def service_info
-        {
-          api_method: 'track.getInfo',
-          response_data_node: 'track'
-        }
-      end
-
       def track_data
         track_base_data
           .merge(track_extra_data)
@@ -18,48 +11,63 @@ module LastFM
 
       def track_base_data
         {
-          id: track_id(artist_name, title),
           title: title,
-          artist: artist_data
+          artist: artist_formatted,
+          artists: artists
         }
       end
 
       def track_extra_data
         {
-          album: album_data,
-          image: image_data(album, 'track'),
+          album: album_formatted,
+          albums: albums,
+          image: image_data,
           listeners_count: listeners_count,
           plays_count: plays_count,
-          length: length,
+          duration: duration,
           description: description_truncated,
           tags: tags
         }
       end
 
-      def album_data
-        return {} if album.blank?
+      def albums
+        @albums ||= [album_data_formatted].compact
+      end
+
+      def album_data_formatted
+        return if album.blank?
 
         { title: album['title'] }
       end
 
       def album
-        response_data['album']
+        @album ||= track['album']
+      end
+
+      def image_data
+        image_data_formatted(image, 'track')
+      end
+
+      def image
+        track.dig('album', 'image', -1, '#text')
       end
 
       def listeners_count
-        response_data['listeners'].to_i
+        track['listeners'].to_i
       end
 
       def plays_count
-        response_data['playcount'].to_i
+        track['playcount'].to_i
       end
 
-      def length
-        response_data['duration'].to_i / 1_000
+      def duration
+        duration_formatted(
+          track['duration'].to_i / 1_000
+        )
       end
 
       def tags_list
-        response_data.dig('toptags', 'tag')
+        track.dig('toptags', 'tag')
       end
     end
   end

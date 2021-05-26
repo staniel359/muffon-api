@@ -1,15 +1,17 @@
 module LastFM
   module Top
-    class Base < LastFM::API::Base
-      include LastFM::API::Paginated
+    class Base < LastFM::Base
+      TOTAL_ITEMS_COUNT = 10_000
+      include Muffon::Utils::Pagination
 
       private
 
-      def service_info
-        {
-          api_method: "chart.getTop#{collection_name.capitalize}",
-          response_data_node: collection_name
-        }
+      def primary_args
+        []
+      end
+
+      def no_data?
+        page_out_of_bounds?
       end
 
       def params
@@ -17,19 +19,21 @@ module LastFM
       end
 
       def data
-        { top: top_data }
+        { top: paginated_data }
       end
 
-      def top_data
-        {
-          page: page,
-          total_pages: total_pages,
-          collection_name.to_sym => collection_data
-        }
+      def total_items_count
+        TOTAL_ITEMS_COUNT
       end
 
       def collection_list
-        response_data[model_name]
+        response_data.dig(
+          collection_name, model_name
+        )
+      end
+
+      def model_name
+        self.class::MODEL_NAME
       end
     end
   end

@@ -1,17 +1,24 @@
 module LastFM
   module Album
-    class Base < LastFM::API::Base
+    class Base < LastFM::Base
+      API_METHOD = 'album.getInfo'.freeze
+      include LastFM::Utils::Album
+
       private
 
-      def service_info
-        {
-          api_method: 'album.getInfo',
-          response_data_node: 'album'
-        }
+      def primary_args
+        [
+          @args.artist,
+          @args.album
+        ]
       end
 
-      def primary_args
-        [@args.artist, @args.album]
+      def no_data?
+        album.blank?
+      end
+
+      def album
+        @album ||= response_data['album']
       end
 
       def params
@@ -22,12 +29,14 @@ module LastFM
         { album: album_data }
       end
 
-      def artist_name
-        response_data['artist']
+      def listeners_count
+        album['listeners'].to_i
       end
 
-      def listeners_count
-        response_data['listeners'].to_i
+      def description
+        description_formatted(
+          album.dig('wiki', 'content')
+        )
       end
     end
   end

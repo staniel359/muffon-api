@@ -1,26 +1,20 @@
 module LastFM
   module Top
     class Tracks < LastFM::Top::Base
+      API_METHOD = 'chart.getTopTracks'.freeze
+      COLLECTION_NAME = 'tracks'.freeze
+      MODEL_NAME = 'track'.freeze
+
       private
 
-      def model_name
-        'track'
+      def collection_list
+        super.last(limit)
       end
 
-      def collection_name
-        'tracks'
-      end
-
-      def collection_item_data(track)
-        {
-          title: track['name'],
-          artist: track_artist_data(track),
-          listeners_count: track['listeners'].to_i
-        }
-      end
-
-      def track_artist_data(track)
-        { name: track.dig('artist', 'name') }
+      def collection_item_data_formatted(track)
+        LastFM::Top::Tracks::Track.call(
+          track: track
+        )
       end
     end
   end

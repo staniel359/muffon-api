@@ -1,6 +1,8 @@
 module LastFM
   module Search
-    class Tags < LastFM::Base
+    class Tags < LastFM::Search::Base
+      COLLECTION_NAME = 'tags'.freeze
+
       private
 
       def primary_args
@@ -12,7 +14,9 @@ module LastFM
       end
 
       def response_data
-        @response_data ||= Google::Search.call(params)[:search]
+        @response_data ||= Google::Search.call(
+          params
+        )[:search]
       end
 
       def params
@@ -23,27 +27,25 @@ module LastFM
         }
       end
 
-      def data
-        { search: search_data }
+      def page
+        response_data[:page]
       end
 
-      def search_data
-        {
-          page: response_data[:page],
-          total_pages: response_data[:total_pages],
-          tags: tags
-        }
+      def total_pages_count
+        response_data[:total_pages]
       end
 
       def tags_list
         response_data[:results]
       end
 
-      def tag_item_name(tag)
+      def tag_name_formatted(tag)
         tag[:title].match(
           /(.+) music | Last.fm/
         )[1].downcase
       end
+
+      alias collection tags
     end
   end
 end

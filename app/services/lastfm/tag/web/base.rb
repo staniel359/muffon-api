@@ -2,7 +2,7 @@ module LastFM
   module Tag
     module Web
       class Base < LastFM::Web::Base
-        include LastFM::Web::Paginated
+        include LastFM::Utils::Web::Pagination
 
         private
 
@@ -10,16 +10,26 @@ module LastFM
           [@args.tag]
         end
 
-        def base_link
-          "https://www.last.fm/tag/#{tag_name}"
+        def no_data?
+          collection_list.blank? || page_out_of_bounds?
+        end
+
+        def collection_list
+          @collection_list ||= send(
+            "#{collection_name}_list"
+          )
         end
 
         def link
           "#{base_link}/#{collection_name}"
         end
 
+        def base_link
+          "https://www.last.fm/tag/#{tag_name}"
+        end
+
         def tag_name
-          format_param(@args.tag)
+          param_formatted(@args.tag)
         end
 
         def params
@@ -27,28 +37,11 @@ module LastFM
         end
 
         def data
-          { tag: tag_data }
+          { tag: paginated_data }
         end
 
-        def tag_data
-          {
-            name: name,
-            page: page,
-            total_pages: total_pages,
-            collection_name.to_sym => collection_data
-          }
-        end
-
-        def name
-          response_data.css('title').text.match(
-            /Top (.+) #{collection_name}/
-          )[1]
-        end
-
-        def collection_data
-          return [] if page > total_pages
-
-          send(collection_name)
+        def artist_data_formatted
+          { name: artist_name }
         end
       end
     end

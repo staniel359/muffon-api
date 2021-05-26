@@ -2,39 +2,25 @@ module LastFM
   module Track
     class Similar
       class Track < LastFM::Track::Similar
+        include LastFM::Utils::Track
+
         def call
-          similar_track_data
+          data
         end
 
         private
 
-        def primary_args
-          [@args.similar]
-        end
-
-        def similar_track_data
+        def data
           {
-            id: track_id(artist_name, title),
             title: title,
-            artist: artist_data,
-            length: length
+            artist: artist_formatted,
+            artists: artists,
+            duration: duration
           }
         end
 
-        def artist_name
-          @args.similar.dig('artist', 'name')
-        end
-
-        def title
-          @args.similar['name']
-        end
-
-        def artist_data
-          { name: artist_name }
-        end
-
-        def length
-          @args.similar['duration'].to_i
+        def track
+          @track ||= @args.track
         end
       end
     end

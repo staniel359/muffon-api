@@ -1,21 +1,32 @@
 module LastFM
   module Artist
-    class Images < LastFM::Artist::Web::Paginated
+    class Images < LastFM::Artist::Web::Base
+      COLLECTION_NAME = 'images'.freeze
+      include LastFM::Utils::Web::Pagination
+
       private
 
-      def collection_name
-        'images'
+      def no_data?
+        collection_list.blank? || page_out_of_bounds?
       end
 
-      def collection_data
-        return [] if page > total_pages
-
-        images_list.map { |i| image_data(i['src'], 'artist') }
+      def collection_list
+        @collection_list ||= response_data.css(
+          '.image-list-item img'
+        )
       end
 
-      def images_list
-        response_data.css('.image-list-item img')
+      def link
+        "#{base_link}/+images"
       end
+
+      def collection_item_data_formatted(image)
+        image_data_formatted(
+          image['src'], 'artist'
+        )
+      end
+
+      alias artist_data paginated_data
     end
   end
 end

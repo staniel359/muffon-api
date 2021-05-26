@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=artist.getTopTags
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=artist.getTopTags
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Sat, 23 Jan 2021 15:33:35 GMT
+      - Wed, 26 May 2021 10:37:27 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -39,18 +39,20 @@ http_interactions:
       - '86400'
       Via:
       - 1.1 google
+      Alt-Svc:
+      - clear
     body:
       encoding: UTF-8
       string: '{"toptags":{"tag":[{"count":100,"name":"dream pop","url":"https://www.last.fm/tag/dream+pop"},{"count":76,"name":"shoegaze","url":"https://www.last.fm/tag/shoegaze"},{"count":56,"name":"indie
         pop","url":"https://www.last.fm/tag/indie+pop"},{"count":45,"name":"indie","url":"https://www.last.fm/tag/indie"},{"count":31,"name":"seen
         live","url":"https://www.last.fm/tag/seen+live"},{"count":21,"name":"tweegaze","url":"https://www.last.fm/tag/tweegaze"},{"count":8,"name":"Lo-Fi","url":"https://www.last.fm/tag/Lo-Fi"},{"count":8,"name":"american","url":"https://www.last.fm/tag/american"},{"count":7,"name":"chillwave","url":"https://www.last.fm/tag/chillwave"},{"count":4,"name":"indie
         rock","url":"https://www.last.fm/tag/indie+rock"},{"count":4,"name":"pop","url":"https://www.last.fm/tag/pop"},{"count":4,"name":"twee","url":"https://www.last.fm/tag/twee"},{"count":4,"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"count":3,"name":"new
-        wave","url":"https://www.last.fm/tag/new+wave"},{"count":3,"name":"electronic","url":"https://www.last.fm/tag/electronic"},{"count":2,"name":"twee
+        wave","url":"https://www.last.fm/tag/new+wave"},{"count":3,"name":"electronic","url":"https://www.last.fm/tag/electronic"},{"count":3,"name":"twee
         pop","url":"https://www.last.fm/tag/twee+pop"},{"count":2,"name":"psychedelic","url":"https://www.last.fm/tag/psychedelic"},{"count":2,"name":"ambient","url":"https://www.last.fm/tag/ambient"},{"count":2,"name":"synthpop","url":"https://www.last.fm/tag/synthpop"},{"count":2,"name":"virginia","url":"https://www.last.fm/tag/virginia"},{"count":2,"name":"jangle
         pop","url":"https://www.last.fm/tag/jangle+pop"},{"count":1,"name":"rock","url":"https://www.last.fm/tag/rock"},{"count":1,"name":"psychedelic
         pop","url":"https://www.last.fm/tag/psychedelic+pop"},{"count":1,"name":"Dreamy","url":"https://www.last.fm/tag/Dreamy"},{"count":1,"name":"atmospheric","url":"https://www.last.fm/tag/atmospheric"},{"count":1,"name":"dream-pop","url":"https://www.last.fm/tag/dream-pop"},{"count":1,"name":"USA","url":"https://www.last.fm/tag/USA"},{"count":1,"name":"Post-punk
         revival","url":"https://www.last.fm/tag/Post-punk+revival"},{"count":1,"name":"hazy
         beach","url":"https://www.last.fm/tag/hazy+beach"}],"@attr":{"artist":"Wild
         Nothing"}}}'
-  recorded_at: Sat, 23 Jan 2021 15:33:35 GMT
+  recorded_at: Wed, 26 May 2021 10:37:28 GMT
 recorded_with: VCR 6.0.0

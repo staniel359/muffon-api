@@ -1,26 +1,16 @@
 module LastFM
   module Track
     class Tags < LastFM::Tags::Base
+      API_METHOD = 'track.getTopTags'.freeze
+      MODEL_NAME = 'track'.freeze
+
       private
 
       def primary_args
-        [@args.artist, @args.track]
-      end
-
-      def model_name
-        'track'
-      end
-
-      def data
-        { track: track_data }
-      end
-
-      def track_data
-        {
-          title: extra_data['track'],
-          artist: artist_data,
-          tags: tags
-        }
+        [
+          @args.artist,
+          @args.track
+        ]
       end
     end
   end

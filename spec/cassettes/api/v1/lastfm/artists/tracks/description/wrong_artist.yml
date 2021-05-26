@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&method=track.getInfo&track=Hounds%20Of%20Love
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&method=track.getInfo&track=Hounds%20Of%20Love
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 26 Jan 2021 16:44:54 GMT
+      - Thu, 03 Jun 2021 06:12:45 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -36,8 +36,10 @@ http_interactions:
       - '86400'
       Via:
       - 1.1 google
+      Alt-Svc:
+      - clear
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"Track not found","links":[]}'
-  recorded_at: Tue, 26 Jan 2021 16:44:52 GMT
+  recorded_at: Thu, 03 Jun 2021 06:12:45 GMT
 recorded_with: VCR 6.0.0

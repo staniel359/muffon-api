@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&method=tag.getInfo&tag=dream%20pop
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&method=tag.getInfo&tag=dream%20pop
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Sun, 24 Jan 2021 10:14:10 GMT
+      - Thu, 27 May 2021 08:51:41 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -39,9 +39,11 @@ http_interactions:
       - '86400'
       Via:
       - 1.1 google
+      Alt-Svc:
+      - clear
     body:
       encoding: UTF-8
-      string: '{"tag":{"name":"dream pop","total":120372,"reach":24277,"wiki":{"summary":"Dream
+      string: '{"tag":{"name":"dream pop","total":121456,"reach":24431,"wiki":{"summary":"Dream
         pop is a genre of music where timbre and texture are as important, if not
         more so, than melody and song structure. Vocals when present are subsumed
         within the music and act as another texture or instrument. For example guitarists
@@ -65,5 +67,5 @@ http_interactions:
         sleep and wakefulness (hypnagogic).\n\n\n\n <a href=\"http://www.last.fm/tag/dream+pop\">Read
         more on Last.fm</a>. User-contributed text is available under the Creative
         Commons By-SA License; additional terms may apply."}}}'
-  recorded_at: Sun, 24 Jan 2021 10:14:09 GMT
+  recorded_at: Thu, 27 May 2021 08:51:42 GMT
 recorded_with: VCR 6.0.0

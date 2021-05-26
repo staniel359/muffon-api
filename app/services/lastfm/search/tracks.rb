@@ -1,30 +1,21 @@
 module LastFM
   module Search
     class Tracks < LastFM::Search::Base
+      API_METHOD = 'track.search'.freeze
+      COLLECTION_NAME = 'tracks'.freeze
+      MODEL_NAME = 'track'.freeze
+      TOTAL_LIMIT = 500
+
       private
 
-      def model_name
-        'track'
-      end
-
-      def collection_name
-        'tracks'
-      end
-
       def total_limit
-        500
+        TOTAL_LIMIT
       end
 
-      def collection_item_data(track)
-        {
-          id: track_id(track['artist'], track['name']),
-          title: track['name'],
-          artist: track_artist_data(track)
-        }
-      end
-
-      def track_artist_data(track)
-        { name: track['artist'] }
+      def collection_item_data_formatted(track)
+        LastFM::Search::Tracks::Track.call(
+          track: track
+        )
       end
     end
   end

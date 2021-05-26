@@ -1,10 +1,24 @@
 module LastFM
   module Track
-    class Base < LastFM::API::Base
+    class Base < LastFM::Base
+      API_METHOD = 'track.getInfo'.freeze
+      include LastFM::Utils::Track
+
       private
 
       def primary_args
-        [@args.artist, @args.track]
+        [
+          @args.artist,
+          @args.track
+        ]
+      end
+
+      def no_data?
+        track.blank?
+      end
+
+      def track
+        @track ||= response_data['track']
       end
 
       def params
@@ -15,8 +29,10 @@ module LastFM
         { track: track_data }
       end
 
-      def artist_name
-        response_data.dig('artist', 'name')
+      def description
+        description_formatted(
+          track.dig('wiki', 'content')
+        )
       end
     end
   end

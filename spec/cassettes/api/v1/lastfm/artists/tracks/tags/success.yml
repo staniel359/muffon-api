@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=1&format=json&method=track.getTopTags&track=Hounds%20Of%20Love
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=1&format=json&method=track.getTopTags&track=Hounds%20Of%20Love
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Tue, 26 Jan 2021 16:44:54 GMT
+      - Thu, 03 Jun 2021 06:12:46 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -39,13 +39,16 @@ http_interactions:
       - '86400'
       Via:
       - 1.1 google
+      Alt-Svc:
+      - clear
     body:
       encoding: UTF-8
       string: '{"toptags":{"tag":[{"count":100,"name":"80s","url":"https://www.last.fm/tag/80s"},{"count":92,"name":"female
         vocalists","url":"https://www.last.fm/tag/female+vocalists"},{"count":71,"name":"pop","url":"https://www.last.fm/tag/pop"},{"count":67,"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"count":49,"name":"singer-songwriter","url":"https://www.last.fm/tag/singer-songwriter"},{"count":38,"name":"Kate
         Bush","url":"https://www.last.fm/tag/Kate+Bush"},{"count":27,"name":"rock","url":"https://www.last.fm/tag/rock"},{"count":23,"name":"Progressive
-        rock","url":"https://www.last.fm/tag/Progressive+rock"},{"count":22,"name":"british","url":"https://www.last.fm/tag/british"},{"count":22,"name":"art
-        rock","url":"https://www.last.fm/tag/art+rock"},{"count":14,"name":"new wave","url":"https://www.last.fm/tag/new+wave"},{"count":13,"name":"alternative
+        rock","url":"https://www.last.fm/tag/Progressive+rock"},{"count":23,"name":"art
+        rock","url":"https://www.last.fm/tag/art+rock"},{"count":22,"name":"british","url":"https://www.last.fm/tag/british"},{"count":14,"name":"new
+        wave","url":"https://www.last.fm/tag/new+wave"},{"count":13,"name":"alternative
         rock","url":"https://www.last.fm/tag/alternative+rock"},{"count":13,"name":"experimental","url":"https://www.last.fm/tag/experimental"},{"count":13,"name":"beautiful","url":"https://www.last.fm/tag/beautiful"},{"count":11,"name":"female","url":"https://www.last.fm/tag/female"},{"count":11,"name":"Love","url":"https://www.last.fm/tag/Love"},{"count":11,"name":"baroque
         pop","url":"https://www.last.fm/tag/baroque+pop"},{"count":10,"name":"favorites","url":"https://www.last.fm/tag/favorites"},{"count":10,"name":"female
         vocalist","url":"https://www.last.fm/tag/female+vocalist"},{"count":8,"name":"1985","url":"https://www.last.fm/tag/1985"},{"count":8,"name":"Hounds
@@ -73,5 +76,5 @@ http_interactions:
         rock","url":"https://www.last.fm/tag/hard+rock"},{"count":1,"name":"electro","url":"https://www.last.fm/tag/electro"},{"count":1,"name":"C","url":"https://www.last.fm/tag/C"},{"count":1,"name":"happy","url":"https://www.last.fm/tag/happy"},{"count":1,"name":"slow","url":"https://www.last.fm/tag/slow"},{"count":1,"name":"catchy","url":"https://www.last.fm/tag/catchy"},{"count":1,"name":"dark","url":"https://www.last.fm/tag/dark"},{"count":1,"name":"alternative
         pop rock","url":"https://www.last.fm/tag/alternative+pop+rock"},{"count":1,"name":"folk-rock","url":"https://www.last.fm/tag/folk-rock"},{"count":1,"name":"romantique","url":"https://www.last.fm/tag/romantique"},{"count":1,"name":"Fusion","url":"https://www.last.fm/tag/Fusion"}],"@attr":{"artist":"Kate
         Bush","track":"Hounds of Love"}}}'
-  recorded_at: Tue, 26 Jan 2021 16:44:53 GMT
+  recorded_at: Thu, 03 Jun 2021 06:12:46 GMT
 recorded_with: VCR 6.0.0

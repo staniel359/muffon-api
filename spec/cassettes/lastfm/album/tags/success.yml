@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?album=nocturne&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=album.getTopTags
+    uri: https://ws.audioscrobbler.com/2.0?album=nocturne&api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=album.getTopTags
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.9.15.1
       Date:
-      - Sat, 23 Jan 2021 15:28:39 GMT
+      - Tue, 25 May 2021 16:27:10 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -39,6 +39,8 @@ http_interactions:
       - '86400'
       Via:
       - 1.1 google
+      Alt-Svc:
+      - clear
     body:
       encoding: UTF-8
       string: '{"toptags":{"tag":[{"count":100,"name":"2012","url":"https://www.last.fm/tag/2012"},{"count":85,"name":"dream
@@ -60,5 +62,5 @@ http_interactions:
         best new music","url":"https://www.last.fm/tag/pitchfork+best+new+music"},{"count":8,"name":"lapislazuli","url":"https://www.last.fm/tag/lapislazuli"},{"count":8,"name":"best
         of the 2012","url":"https://www.last.fm/tag/best+of+the+2012"},{"count":8,"name":"niemamnie","url":"https://www.last.fm/tag/niemamnie"}],"@attr":{"artist":"Wild
         Nothing","album":"Nocturne"}}}'
-  recorded_at: Sat, 23 Jan 2021 15:28:39 GMT
+  recorded_at: Tue, 25 May 2021 16:27:10 GMT
 recorded_with: VCR 6.0.0

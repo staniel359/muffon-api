@@ -1,13 +1,10 @@
 module LastFM
   module Tag
-    class Description < LastFM::Tag::API::Base
+    class Description < LastFM::Tag::Base
       private
 
       def tag_data
-        {
-          name: title,
-          description: description
-        }
+        { description: description }
       end
     end
   end
