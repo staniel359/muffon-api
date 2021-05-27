@@ -3,13 +3,6 @@ module Bandcamp
     SOURCE_ID = 'bandcamp'.freeze
     BASE_LINK = 'https://bandcamp.com/api/mobile/22'.freeze
 
-    def call
-      return handlers.bad_request if not_all_args?
-      return handlers.not_found if no_data?
-
-      data
-    end
-
     private
 
     def no_data?

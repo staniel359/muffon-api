@@ -1,6 +1,8 @@
 module Muffon
   module Utils
     module Pagination
+      PAGE_LIMIT = 20
+
       private
 
       def pagination_params
@@ -19,7 +21,7 @@ module Muffon
       end
 
       def page_limit
-        20
+        PAGE_LIMIT
       end
 
       def paginated_data

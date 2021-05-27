@@ -4,7 +4,7 @@ module Spotify
       def call
         retrieve_token
       rescue RestClient::BadRequest
-        handlers.bad_request
+        handlers[:bad_request]
       end
 
       private

@@ -2,13 +2,6 @@ module YouTube
   class Base < Muffon::Base
     include Muffon::Utils::Paginated
 
-    def call
-      return handlers.bad_request if not_all_args?
-      return handlers.not_found if no_data?
-
-      data
-    end
-
     private
 
     def primary_args

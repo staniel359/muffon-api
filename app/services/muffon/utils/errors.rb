@@ -1,102 +1,90 @@
 module Muffon
   module Utils
-    class Errors < Muffon::Base
+    class Errors
       class << self
-        def list
-          errors_handlers_data.values.pluck(:errors).flatten
-        end
+        ERRORS_DATA = {
+          bad_request: {
+            errors: [
+              RestClient::BadRequest
+            ],
+            handler: {
+              error: {
+                code: 400,
+                text: 'Bad request'
+              }
+            }
+          },
+          not_found: {
+            errors: [
+              RestClient::NotFound
+            ],
+            handler: {
+              error: {
+                code: 404,
+                text: 'Not found'
+              }
+            }
+          },
+          too_many_requests: {
+            errors: [
+              RestClient::TooManyRequests
+            ],
+            handler: {
+              error: {
+                code: 429,
+                text: 'Too Many Requests'
+              }
+            }
+          },
+          bad_gateway: {
+            errors: [
+              Errno::ECONNREFUSED,
+              Errno::ENETUNREACH,
+              JSON::ParserError,
+              OpenSSL::SSL::SSLError,
+              RestClient::InternalServerError,
+              RestClient::RequestFailed,
+              RestClient::ServerBrokeConnection,
+              RestClient::ServiceUnavailable,
+              SocketError
+            ],
+            handler: {
+              error: {
+                code: 502,
+                text: 'Bad Gateway'
+              }
+            }
+          },
+          gateway_timeout: {
+            errors: [
+              RestClient::GatewayTimeout,
+              RestClient::Exceptions::OpenTimeout
+            ],
+            handler: {
+              error: {
+                code: 504,
+                text: 'Gateway Timeout'
+              }
+            }
+          }
+        }.freeze
 
-        def handle(error)
-          errors_handlers_data.values.find do |k, _|
-            k[:errors].include?(error)
-          end.try(:[], :handler)
+        def list
+          ERRORS_DATA.values.pluck(
+            :errors
+          ).flatten
         end
 
         def handlers
-          OpenStruct.new(
-            errors_handlers_data.transform_values { |v| v[:handler] }
-          )
+          ERRORS_DATA.transform_values do |v|
+            v[:handler]
+          end
         end
 
-        private
-
-        def errors_handlers_data
-          {
-            bad_request: bad_request_data,
-            not_found: not_found_data,
-            too_many_requests: too_many_requests_data,
-            bad_gateway: bad_gateway_data,
-            gateway_timeout: gateway_timeout_data
-          }
-        end
-
-        def bad_request_data
-          {
-            errors: bad_request_errors,
-            handler: format_handler([400, 'Bad request'])
-          }
-        end
-
-        def bad_request_errors
-          [RestClient::BadRequest]
-        end
-
-        def format_handler(data)
-          { error: { code: data[0], text: data[1] } }
-        end
-
-        def not_found_data
-          {
-            errors: not_found_errors,
-            handler: format_handler([404, 'Not found'])
-          }
-        end
-
-        def not_found_errors
-          [RestClient::NotFound]
-        end
-
-        def too_many_requests_data
-          {
-            errors: too_many_requests_errors,
-            handler: format_handler([429, 'Too Many Requests'])
-          }
-        end
-
-        def too_many_requests_errors
-          [RestClient::TooManyRequests]
-        end
-
-        def bad_gateway_data
-          {
-            errors: bad_gateway_errors,
-            handler: format_handler([502, 'Bad Gateway'])
-          }
-        end
-
-        def bad_gateway_errors
-          [
-            RestClient::InternalServerError,
-            RestClient::ServerBrokeConnection,
-            RestClient::ServiceUnavailable,
-            RestClient::RequestFailed, SocketError,
-            Errno::ENETUNREACH, Errno::ECONNREFUSED,
-            OpenSSL::SSL::SSLError, JSON::ParserError
-          ]
-        end
-
-        def gateway_timeout_data
-          {
-            errors: gateway_timeout_errors,
-            handler: format_handler([504, 'Gateway Timeout'])
-          }
-        end
-
-        def gateway_timeout_errors
-          [
-            RestClient::Exceptions::OpenTimeout,
-            RestClient::GatewayTimeout
-          ]
+        def handle(error)
+          ERRORS_DATA.values.find do |k|
+            k[:errors].include?(error)
+          end.try(:[], :handler)
         end
       end
     end

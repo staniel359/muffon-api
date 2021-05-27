@@ -3,13 +3,6 @@ module Deezer
     BASE_LINK = 'https://www.deezer.com/ajax/gw-light.php'.freeze
     SOURCE_ID = 'deezer'.freeze
 
-    def call
-      return handlers.bad_request if not_all_args?
-      return handlers.not_found if no_data?
-
-      data
-    end
-
     private
 
     def response_data

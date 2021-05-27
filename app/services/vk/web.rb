@@ -1,9 +1,9 @@
 module VK
   class Web < VK::Base
     def call
-      return handlers.bad_request if not_all_args?
+      return handlers[:bad_request] if not_all_args?
       return retry_with_new_session_id if auth_failed?
-      return handlers.not_found if no_data?
+      return handlers[:not_found] if no_data?
 
       data
     end
@@ -39,7 +39,7 @@ module VK
       global.set('vk_session_id', new_session_id)
       @response_data = nil
 
-      global.get('vk_session_id').present? ? call : handlers.not_found
+      global.get('vk_session_id').present? ? call : handlers[:not_found]
     end
 
     def new_session_id
