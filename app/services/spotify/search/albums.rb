@@ -1,24 +1,15 @@
 module Spotify
   module Search
     class Albums < Spotify::Search::Base
+      COLLECTION_NAME = 'albums'.freeze
+      COLLECTION_TYPE = 'album'.freeze
+
       private
 
-      def collection_name
-        'albums'
-      end
-
-      def collection_type
-        'album'
-      end
-
-      def collection_item_data(album)
-        {
-          title: album['name'],
-          artist: artist_data(album),
-          image: image_data(album, 'album'),
-          released: date_formatted(album['release_date']),
-          spotify_id: album['id']
-        }
+      def collection_item_data_formatted(album)
+        Spotify::Search::Albums::Album.call(
+          album: album
+        )
       end
     end
   end

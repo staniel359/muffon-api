@@ -1,15 +1,17 @@
 module Spotify
   module Utils
     class Token < Spotify::Base
+      BASE_LINK = 'https://accounts.spotify.com/api/token'.freeze
+
       def call
-        retrieve_token
+        data
       rescue RestClient::BadRequest
         handlers[:bad_request]
       end
 
       private
 
-      def retrieve_token
+      def data
         JSON.parse(response)['access_token']
       end
 
@@ -18,7 +20,7 @@ module Spotify
       end
 
       def link
-        'https://accounts.spotify.com/api/token'
+        BASE_LINK
       end
 
       def params
@@ -30,7 +32,11 @@ module Spotify
       end
 
       def auth_token
-        Base64.strict_encode64("#{client_id}:#{client_secret}")
+        Base64.strict_encode64(raw_token)
+      end
+
+      def raw_token
+        "#{client_id}:#{client_secret}"
       end
 
       def client_id

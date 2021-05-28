@@ -1,53 +1,34 @@
 module Spotify
   module Artist
-    class Albums < Spotify::Base
-      include Spotify::Paginated
+    class Albums < Spotify::Artist::Base
+      COLLECTION_NAME = 'albums'.freeze
+      include Spotify::Utils::Pagination
 
       private
 
-      def primary_args
-        [@args.artist_id]
-      end
-
       def no_data?
-        results.blank?
+        collection_list.blank?
       end
 
-      def results
-        response_data['items']
+      def collection_list
+        @collection_list ||= response_data['items']
       end
 
       def link
-        "#{base_link}/artists/#{@args.artist_id}/albums"
-      end
-
-      def data
-        { artist: artist_data }
-      end
-
-      def artist_data
-        {
-          page: page,
-          total_pages: total_pages,
-          albums: albums_data
-        }
+        "#{super}/albums"
       end
 
       def total_items_count
         response_data['total']
       end
 
-      def albums_data
-        results.map { |r| album_data(r) }
+      def collection_item_data_formatted(album)
+        Spotify::Artist::Albums::Album.call(
+          album: album
+        )
       end
 
-      def album_data(album)
-        {
-          title: album['name'],
-          image: image_data(album, 'album'),
-          spotify_id: album['id']
-        }
-      end
+      alias artist_data paginated_data
     end
   end
 end

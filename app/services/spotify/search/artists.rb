@@ -1,22 +1,15 @@
 module Spotify
   module Search
     class Artists < Spotify::Search::Base
+      COLLECTION_NAME = 'artists'.freeze
+      COLLECTION_TYPE = 'artist'.freeze
+
       private
 
-      def collection_name
-        'artists'
-      end
-
-      def collection_type
-        'artist'
-      end
-
-      def collection_item_data(artist)
-        {
-          name: artist['name'],
-          image: image_data(artist, 'artist'),
-          spotify_id: artist['id']
-        }
+      def collection_item_data_formatted(artist)
+        Spotify::Search::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

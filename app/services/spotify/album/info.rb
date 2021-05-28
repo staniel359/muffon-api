@@ -1,61 +1,51 @@
 module Spotify
   module Album
-    class Info < Spotify::Base
+    class Info < Spotify::Album::Base
       private
 
-      def primary_args
-        [@args.album_id]
-      end
-
-      def no_data?
-        response_data.blank?
-      end
-
-      def link
-        "#{base_link}/albums/#{@args.album_id}"
-      end
-
-      def data
-        { album: album_data }
-      end
-
       def album_data
-        album_base_data.merge(album_extra_data)
+        album_base_data
+          .merge(album_extra_data)
+          .merge(with_more_data)
       end
 
       def album_base_data
         {
           title: title,
-          artist: artist_data(response_data),
-          source: 'spotify'
+          spotify_id: spotify_id,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def album_extra_data
         {
-          image: image_data(response_data, 'album'),
-          released: date_formatted(response_data['release_date']),
-          labels: [response_data['label']],
-          tracks: tracks_data
+          image: image_data,
+          release_date: release_date,
+          labels: labels,
+          tracks: tracks
         }
       end
 
-      def tracks_data
-        tracks_list.map { |t| track_data(t) }
+      def labels
+        [album['label']]
+      end
+
+      def tracks
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
       end
 
       def tracks_list
-        response_data.dig('tracks', 'items')
+        album.dig('tracks', 'items')
       end
 
-      def track_data(track)
-        {
-          id: track_id(artist_name(track), track['name']),
-          title: track['name'],
-          artist: artist_data(track),
-          length: length(track),
-          audio: audio_data(track)
-        }
+      def track_data_formatted(track)
+        Spotify::Album::Info::Track.call(
+          track: track
+        )
       end
     end
   end

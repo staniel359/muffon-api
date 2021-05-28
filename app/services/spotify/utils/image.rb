@@ -14,20 +14,20 @@ module Spotify
       end
 
       def images_list
-        @args.data.to_h['images']
+        @images_list ||= @args.data['images']
       end
 
       def image_data
         {
-          original: images(0),
-          large: images(-3),
-          medium: images(-2),
-          small: images(-1),
-          extrasmall: images(-1)
+          original: image(0),
+          large: image(-3),
+          medium: image(-2),
+          small: image(-1),
+          extrasmall: image(-1)
         }
       end
 
-      def images(index)
+      def image(index)
         images_list.dig(index, 'url')
       end
     end

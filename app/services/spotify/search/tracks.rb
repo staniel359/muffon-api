@@ -1,28 +1,15 @@
 module Spotify
   module Search
     class Tracks < Spotify::Search::Base
+      COLLECTION_NAME = 'tracks'.freeze
+      COLLECTION_TYPE = 'track'.freeze
+
       private
 
-      def collection_name
-        'tracks'
-      end
-
-      def collection_type
-        'track'
-      end
-
-      def collection_item_data(track)
-        {
-          title: track['name'],
-          artist: artist_data(track),
-          album: album_data(track),
-          length: length(track),
-          audio: audio_data(track)
-        }
-      end
-
-      def album_data(track)
-        { title: track.dig('album', 'name') }
+      def collection_item_data_formatted(track)
+        Spotify::Search::Tracks::Track.call(
+          track: track
+        )
       end
     end
   end

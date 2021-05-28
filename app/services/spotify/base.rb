@@ -1,5 +1,9 @@
 module Spotify
   class Base < Muffon::Base
+    BASE_LINK = 'https://api.spotify.com/v1'.freeze
+    SOURCE_ID = 'spotify'.freeze
+    include Muffon::Utils::Global
+
     def call
       super
     rescue RestClient::Unauthorized
@@ -16,64 +20,59 @@ module Spotify
       RestClient.get(link, headers)
     end
 
-    def base_link
-      'https://api.spotify.com/v1'
-    end
-
     def headers
       {
-        'Authorization' => "Bearer #{spotify_token}",
-        params: params
+        params: params,
+        'Authorization' => "Bearer #{spotify_token}"
       }
-    end
-
-    def spotify_token
-      if global.get('spotify_token').blank?
-        global.set('spotify_token', new_spotify_token)
-      end
-
-      global.get('spotify_token')
     end
 
     def params
       {}
     end
 
-    def retry_with_new_spotify_token
-      global.set('spotify_token', new_spotify_token)
-      call
+    def spotify_token
+      get_global_value('spotify_token')
     end
 
-    def new_spotify_token
+    def global_value
       Spotify::Utils::Token.call
     end
 
-    def artist_name(data)
-      data['artists'].map { |a| a['name'] }.join(', ')
+    def retry_with_new_spotify_token
+      update_global_value('spotify_token')
+
+      call
     end
 
-    def title
-      response_data['name']
+    def artists
+      artists_list.map do |a|
+        artist_data_formatted(a)
+      end
     end
 
-    def artist_data(data)
-      { name: artist_name(data) }
-    end
-
-    def image_data(data, model)
-      Spotify::Utils::Image.call(data: data, model: model)
-    end
-
-    def length(track)
-      track['duration_ms'].fdiv(1000).ceil
-    end
-
-    def audio_data(track)
+    def artist_data_formatted(artist)
       {
-        present: false,
-        id: track['id'],
-        source: 'spotify'
+        name: artist['name'],
+        spotify_id: artist['id']
       }
+    end
+
+    def albums
+      @albums ||= [album_data_formatted]
+    end
+
+    def album_data_formatted
+      {
+        title: album['name'],
+        spotify_id: album['id']
+      }
+    end
+
+    def image_data_formatted(data, model)
+      Spotify::Utils::Image.call(
+        data: data, model: model
+      )
     end
   end
 end
