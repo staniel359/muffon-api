@@ -62,7 +62,8 @@ module Muffon
       end
 
       def page_out_of_bounds?
-        page > total_pages_count
+        page < 1 ||
+          page > total_pages_count
       end
     end
   end

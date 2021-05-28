@@ -12,36 +12,36 @@ module Odnoklassniki
       def album_base_data
         {
           title: title,
-          artist: artist_data(album),
-          source: 'odnoklassniki'
+          odnoklassniki_id: odnoklassniki_id,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def album_extra_data
         {
-          image: image_data(album, 'album'),
-          released: released(album),
+          image: image_data,
+          release_date: release_date,
           tags: tags.first(5),
-          tracks: tracks_data
+          tracks: tracks
         }
       end
 
-      def tracks_data
-        tracks_list.map { |t| track_data(t) }
+      def tracks
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
       end
 
       def tracks_list
         response_data['tracks']
       end
 
-      def track_data(track)
-        {
-          id: track_id(artist_name(track), track['name']),
-          title: track['name'],
-          artist: artist_data(track),
-          length: track['duration'],
-          audio: audio_data(track)
-        }
+      def track_data_formatted(track)
+        Odnoklassniki::Album::Info::Track.call(
+          track: track
+        )
       end
     end
   end

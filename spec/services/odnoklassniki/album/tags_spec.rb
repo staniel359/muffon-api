@@ -7,15 +7,11 @@ RSpec.describe Odnoklassniki::Album::Tags do
     context 'when album_id present' do
       let(:output) do
         VCR.use_cassette 'odnoklassniki/album/tags/success' do
-          subject.call(album_id: '122909892023105')
+          subject.call(album_id: '122881922573186')
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Odnoklassniki::Album.tags_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Odnoklassniki::Album.tags_data) }
     end
   end
 

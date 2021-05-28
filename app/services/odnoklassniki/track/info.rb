@@ -1,77 +1,65 @@
 module Odnoklassniki
   module Track
-    class Info < Odnoklassniki::Base
+    class Info < Odnoklassniki::Track::Base
       private
 
-      def primary_args
-        [@args.track_id]
-      end
-
-      def endpoint_name
-        'play'
-      end
-
-      def params
-        super.merge({ tid: @args.track_id })
-      end
-
-      def data
-        { track: track_data }
-      end
-
       def track_data
-        track_base_data.merge(track_extra_data)
+        track_base_data
+          .merge(track_extra_data)
       end
 
       def track_base_data
         {
-          id: track_id(artist_name(track), title),
           title: title,
-          artist: artist_data(track)
+          odnoklassniki_id: odnoklassniki_id,
+          artist: artist_formatted,
+          artists: artists
         }
-      end
-
-      def track
-        response_data['track']
-      end
-
-      def title
-        track['name']
       end
 
       def track_extra_data
         {
-          album: album_data,
-          image: image_data(response_data, 'track'),
-          length: track['duration'],
+          album: album_formatted,
+          albums: albums,
+          image: image_data,
+          duration: duration,
           audio: audio_data
         }
       end
 
-      def album_data
-        { title: response_data.dig('albums', 0, 'name') }
+      def albums
+        @albums ||= albums_list.map do |a|
+          album_data_formatted(a)
+        end
+      end
+
+      def albums_list
+        response_data['albums']
+      end
+
+      def album_data_formatted(album)
+        {
+          title: album['name'],
+          odnoklassniki_id: album['id']
+        }
+      end
+
+      def image
+        response_data['image']
       end
 
       def audio_data
         {
-          present: response_data['play'].present?,
+          present: audio_present?,
           link: audio_link,
-          source: 'odnoklassniki'
+          source_id: SOURCE_ID
         }
       end
 
       def audio_link
-        "#{response_data['play']}&clientHash=#{client_hash}"
-      end
-
-      def client_hash
-        Odnoklassniki::Utils::ClientHash.call(md5: md5_string)
-      end
-
-      def md5_string
-        Rack::Utils.parse_nested_query(
-          response_data['play']
-        )['md5']
+        Odnoklassniki::Utils::Audio::Link.call(
+          link: response_data['play']
+        )
       end
     end
   end

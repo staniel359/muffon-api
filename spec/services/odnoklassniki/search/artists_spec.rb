@@ -11,11 +11,7 @@ RSpec.describe Odnoklassniki::Search::Artists do
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Odnoklassniki::Search.artists_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Odnoklassniki::Search.artists_data) }
     end
   end
 

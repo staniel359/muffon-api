@@ -1,18 +1,21 @@
 module Odnoklassniki
   module Album
     class Base < Odnoklassniki::Base
+      ENDPOINT_NAME = 'album'.freeze
+      include Odnoklassniki::Utils::Album
+
       private
 
       def primary_args
         [@args.album_id]
       end
 
-      def endpoint_name
-        'album'
+      def params
+        super.merge(album_params)
       end
 
-      def params
-        super.merge({ albumId: @args.album_id })
+      def album_params
+        { albumId: @args.album_id }
       end
 
       def data
@@ -20,11 +23,7 @@ module Odnoklassniki
       end
 
       def album
-        response_data['album']
-      end
-
-      def title
-        album['name']
+        @album ||= response_data['album']
       end
 
       def tags_list

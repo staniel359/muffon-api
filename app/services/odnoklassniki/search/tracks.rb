@@ -1,26 +1,15 @@
 module Odnoklassniki
   module Search
     class Tracks < Odnoklassniki::Search::Base
+      COLLECTION_NAME = 'tracks'.freeze
+      ENDPOINT_NAME = 'tracks'.freeze
+
       private
 
-      def collection_name
-        'tracks'
-      end
-
-      def collection_list_item(track)
-        {
-          title: track['name'],
-          artist: artist_data(track),
-          album: album_data(track),
-          length: track['duration'],
-          audio: audio_data(track)
-        }
-      end
-
-      def album_data(track)
-        return {} if track['albumId'].negative?
-
-        { id: track['albumId'] }
+      def collection_item_data_formatted(track)
+        Odnoklassniki::Search::Tracks::Track.call(
+          track: track
+        )
       end
     end
   end

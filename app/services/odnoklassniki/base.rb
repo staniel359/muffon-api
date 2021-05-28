@@ -1,5 +1,8 @@
 module Odnoklassniki
   class Base < Muffon::Base
+    SOURCE_ID = 'odnoklassniki'.freeze
+    include Muffon::Utils::Global
+
     def call
       return handlers[:bad_request] if not_all_args?
       return retry_with_new_session_id if auth_failed?
@@ -23,15 +26,26 @@ module Odnoklassniki
     end
 
     def link
-      "https://wmf.ok.ru/#{endpoint_name};jsessionid=#{session_id}"
+      "https://wmf.ok.ru/#{endpoint_name};"\
+        "jsessionid=#{session_id}"
+    end
+
+    def endpoint_name
+      self.class::ENDPOINT_NAME
     end
 
     def session_id
-      if Rails.env.test?
-        secrets.odnoklassniki[:test_session_id]
-      else
-        global.get('odnoklassniki_session_id')
-      end
+      return test_session_id if Rails.env.test?
+
+      get_global_value('odnoklassniki_session_id')
+    end
+
+    def test_session_id
+      secrets.odnoklassniki[:test_session_id]
+    end
+
+    def global_value
+      Odnoklassniki::Utils::SessionId.call
     end
 
     def headers
@@ -43,49 +57,34 @@ module Odnoklassniki
     end
 
     def retry_with_new_session_id
-      global.set('odnoklassniki_session_id', new_session_id)
       @response_data = nil
-      call
-    end
 
-    def new_session_id
-      Odnoklassniki::Utils::SessionId.call
+      update_global_value('odnoklassniki_session_id')
+
+      call
     end
 
     def no_data?
       response_data['error'].present?
     end
 
-    def artist_data(data)
-      { name: artist_name(data) }
+    def artists
+      artists_list.map do |a|
+        artist_data_formatted(a)
+      end
     end
 
-    def artist_name(data)
-      data['ensemble']
-    end
-
-    def image_data(data, model)
-      Odnoklassniki::Utils::Image.call(
-        image: data['image'], model: model
-      )
-    end
-
-    def released(album)
-      return '' if album['year'].zero?
-
-      album['year'].to_s
-    end
-
-    def audio_data(track)
+    def artist_data_formatted(artist)
       {
-        present: audio_id(track).present?,
-        id: audio_id(track),
-        source: 'odnoklassniki'
+        name: artist['name'],
+        odnoklassniki_id: artist['id']
       }
     end
 
-    def audio_id(track)
-      track['idForDownload'] || track['id']
+    def image_data_formatted(image, model)
+      Odnoklassniki::Utils::Image.call(
+        image: image, model: model
+      )
     end
   end
 end

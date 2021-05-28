@@ -1,20 +1,15 @@
 module Odnoklassniki
   module Search
     class Albums < Odnoklassniki::Search::Base
+      COLLECTION_NAME = 'albums'.freeze
+      ENDPOINT_NAME = 'albums'.freeze
+
       private
 
-      def collection_name
-        'albums'
-      end
-
-      def collection_list_item(album)
-        {
-          title: album['name'],
-          artist: artist_data(album),
-          image: image_data(album, 'album'),
-          released: released(album),
-          odnoklassniki_id: album['id']
-        }
+      def collection_item_data_formatted(album)
+        Odnoklassniki::Search::Albums::Album.call(
+          album: album
+        )
       end
     end
   end

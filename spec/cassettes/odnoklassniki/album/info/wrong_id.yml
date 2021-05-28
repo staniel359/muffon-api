@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - Apache
       Date:
-      - Sun, 28 Feb 2021 17:46:47 GMT
+      - Fri, 28 May 2021 06:28:25 GMT
       Content-Type:
       - text/html;charset=utf-8
       Content-Length:
@@ -46,5 +46,5 @@ http_interactions:
         <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically
         incorrect.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.79
         (ok11)</h3></body></html>'
-  recorded_at: Sun, 28 Feb 2021 17:46:46 GMT
+  recorded_at: Fri, 28 May 2021 06:28:25 GMT
 recorded_with: VCR 6.0.0

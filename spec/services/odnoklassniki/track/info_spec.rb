@@ -11,11 +11,7 @@ RSpec.describe Odnoklassniki::Track::Info do
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Odnoklassniki::Track.info_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Odnoklassniki::Track.info_data) }
     end
   end
 

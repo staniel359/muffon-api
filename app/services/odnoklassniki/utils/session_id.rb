@@ -1,6 +1,8 @@
 module Odnoklassniki
   module Utils
     class SessionId < Odnoklassniki::Base
+      BASE_LINK = 'https://ok.ru/dk'.freeze
+
       def call
         response
       rescue RestClient::Found => e
@@ -14,20 +16,32 @@ module Odnoklassniki
       end
 
       def link
-        'https://ok.ru/dk'
+        BASE_LINK
       end
 
       def payload
         {
-          'st.email' => secrets.odnoklassniki[:email],
-          'st.password' => secrets.odnoklassniki[:password],
+          'st.email' => email,
+          'st.password' => password,
           'st.posted' => 'set',
           'st.lang' => 'en'
         }
       end
 
+      def email
+        secrets.odnoklassniki[:email]
+      end
+
+      def password
+        secrets.odnoklassniki[:password]
+      end
+
       def headers
-        { params: { cmd: 'AnonymLogin' } }
+        { params: params }
+      end
+
+      def params
+        { cmd: 'AnonymLogin' }
       end
 
       def session_id(redirect)

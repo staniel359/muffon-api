@@ -1,50 +1,34 @@
 module Odnoklassniki
   module Artist
-    class Albums < Odnoklassniki::Base
-      include Muffon::Utils::Paginated
+    class Albums < Odnoklassniki::Artist::Base
+      COLLECTION_NAME = 'albums'.freeze
+      include Muffon::Utils::Pagination
 
       private
 
-      def primary_args
-        [@args.artist_id]
+      def no_data?
+        albums_list.blank? || page_out_of_bounds?
       end
 
-      def endpoint_name
-        'artist'
+      def albums_list
+        @albums_list ||= response_data['masterAlbums']
       end
 
-      def params
-        super.merge({ artistId: @args.artist_id })
-      end
-
-      def data
-        { artist: artist_data }
-      end
-
-      def artist_data
-        {
-          page: page,
-          total_pages: total_pages,
-          albums: albums_data
-        }
+      def total_items_count
+        albums_list.size
       end
 
       def collection_list
-        response_data['masterAlbums']
+        collection_paginated(albums_list)
       end
 
-      def albums_data
-        paginated_collection.map { |album| album_data(album) }
+      def collection_item_data_formatted(album)
+        Odnoklassniki::Artist::Albums::Album.call(
+          album: album
+        )
       end
 
-      def album_data(album)
-        {
-          title: album['name'],
-          image: album['image'],
-          released: album['year'].to_s,
-          odnoklassniki_id: album['id']
-        }
-      end
+      alias artist_data paginated_data
     end
   end
 end

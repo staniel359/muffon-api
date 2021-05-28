@@ -1,28 +1,29 @@
 module Odnoklassniki
   module Search
     class Artists < Odnoklassniki::Search::Base
-      private
+      COLLECTION_NAME = 'artists'.freeze
+      ENDPOINT_NAME = 'artists'.freeze
 
-      def collection_name
-        'artists'
-      end
+      private
 
       def collection_list
         return super if first_artist.blank?
 
-        super.prepend(first_artist)
+        @collection_list ||= super.prepend(
+          first_artist
+        )
       end
 
       def first_artist
-        response_data.dig('bestMatch', 'artist')
+        @first_artist ||= response_data.dig(
+          'bestMatch', 'artist'
+        )
       end
 
-      def collection_list_item(artist)
-        {
-          name: artist['name'],
-          image: image_data(artist, 'artist'),
-          odnoklassniki_id: artist['id']
-        }
+      def collection_item_data_formatted(artist)
+        Odnoklassniki::Search::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

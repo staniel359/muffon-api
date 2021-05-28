@@ -11,11 +11,7 @@ RSpec.describe Odnoklassniki::Search::Albums do
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Odnoklassniki::Search.albums_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Odnoklassniki::Search.albums_data) }
     end
   end
 

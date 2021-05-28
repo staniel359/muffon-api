@@ -13,11 +13,7 @@ RSpec.describe Odnoklassniki::Artist::Albums do
         end
       end
 
-      it do
-        expect(output).to eq(
-          Helpers::Odnoklassniki::Artist.albums_data
-        )
-      end
+      it { expect(output).to eq(Helpers::Odnoklassniki::Artist.albums_data) }
     end
   end
 
