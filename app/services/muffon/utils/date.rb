@@ -2,31 +2,53 @@ module Muffon
   module Utils
     class Date < Muffon::Base
       class << self
-        def format(date, format = nil)
-          format_date(date, format)
+        FORMAT = '%d %b %Y'.freeze
+
+        def format(date)
+          return '' if date.blank?
+
+          date_formatted(date)
         end
 
         private
 
-        def format_date(date, format)
+        def date_formatted(date)
+          class_name = date.class.name.downcase
+          method_name = "date_#{class_name}_formatted"
+
+          send(method_name, date)
+        end
+
+        def date_integer_formatted(date)
+          return '' if date.zero?
+
+          Time.zone.at(date).to_date.strftime(
+            FORMAT
+          )
+        end
+
+        def date_string_formatted(date)
           return '' if date == '0'
 
-          date_parsed(date).strftime(
-            format || '%d %b %Y'
+          format = format_formatted(
+            date.split(%r{[\s\-]}).size
           )
-        rescue ArgumentError
+
+          ::Date.parse(date).strftime(format)
+        rescue ::Date::Error
           date
         end
 
-        def date_parsed(date)
-          case date.class.name
-          when 'Array'
-            ::Date.new(*date)
-          when 'String'
-            ::Date.parse(date)
-          when 'Integer'
-            Time.zone.at(date).to_date
-          end
+        def format_formatted(size)
+          FORMAT.split.reverse.slice(
+            0, size
+          ).reverse.join(' ')
+        end
+
+        def date_array_formatted(date)
+          format = format_formatted(date.size)
+
+          ::Date.new(*date).strftime(format)
         end
       end
     end

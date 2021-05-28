@@ -1,53 +1,55 @@
 module RateYourMusic
   module Artist
-    class Albums < Muffon::Base
-      include Muffon::Utils::Paginated
+    class Albums < RateYourMusic::Artist::Base
+      ACTION = 'ExpandDiscographySection'.freeze
+      ALBUM_TYPES = {
+        album: 's',
+        ep: 'e',
+        single: 'i',
+        live: 'l',
+        compilation: 'c',
+        appearance: 'a',
+        unofficial: 'b',
+        various: 'v',
+        video: 'd'
+      }.freeze
+      COLLECTION_NAME = 'albums'.freeze
+      include Muffon::Utils::Pagination
 
       def call
-        return handlers[:bad_request] if not_all_args?
-        return handlers[:not_found] if wrong_artist_id?
         return handlers[:bad_request] if wrong_album_type?
-        return handlers[:not_found] if no_data?
 
-        data
+        super
       end
 
       private
 
       def primary_args
-        [@args.artist_id, @args.album_type]
-      end
-
-      def wrong_artist_id?
-        @args.artist_id.to_i.to_s != @args.artist_id
+        [
+          @args.artist_id,
+          @args.album_type
+        ]
       end
 
       def wrong_album_type?
-        album_type_code.blank?
-      end
-
-      def album_type_code
-        album_type_codes[album_type.to_sym]
+        album_type.blank?
       end
 
       def album_type
-        @args.album_type.downcase.strip
+        @album_type ||= ALBUM_TYPES[
+          album_type_formatted
+        ]
       end
 
-      def album_type_codes
-        {
-          album: 's', ep: 'e',
-          single: 'i', live: 'l',
-          compilation: 'c',
-          appearance: 'a',
-          unofficial: 'b',
-          various: 'v',
-          video: 'd'
-        }
+      def album_type_formatted
+        return if @args.album_type.blank?
+
+        @args.album_type.downcase.strip.to_sym
       end
 
       def no_data?
-        response_matched_data.blank?
+        response_matched_data.blank? ||
+          page_out_of_bounds?
       end
 
       def response_matched_data
@@ -56,72 +58,47 @@ module RateYourMusic
         ).try(:[], 1)
       end
 
-      def response
-        RestClient.post(link, payload, headers)
-      end
-
-      def link
-        "https://rateyourmusic.com/httprequest/#{action}"
-      end
-
-      def action
-        'ExpandDiscographySection'
-      end
-
       def payload
         {
           artist_id: @args.artist_id,
-          action: action,
-          type: album_type_code,
+          action: ACTION,
+          type: album_type,
           sort: 'release_date.a',
           show_appearances: 'false'
         }
       end
 
-      def headers
-        { cookies: cookies }
-      end
-
-      def cookies
-        {
-          sec_bs: '566989052d497161dc086e1fcde53ee3',
-          sec_id: 'bd0797c7f90da39e6dda610b5827ad97',
-          sec_ts: '1620159431',
-          ulv: secrets.rateyourmusic[:session_id]
-        }
-      end
-
       def matched_block_regexp
-        %r{<div id="disco_type_#{album_type_code}">(.+)</div>}
+        %r{<div id="disco_type_#{album_type}">(.+)</div>}
       end
 
-      def data
-        { artist: artist_data }
+      def total_items_count
+        albums_list.size
       end
 
-      def artist_data
-        {
-          page: page,
-          total_pages: total_pages,
-          albums: albums_data
-        }
+      def albums_list
+        @albums_list ||= response_data.css(
+          '.disco_release'
+        )
       end
 
-      def albums_data
-        paginated_collection.map { |a| album_data(a) }
+      def response_data
+        Nokogiri::HTML.parse(
+          response_matched_data
+        )
       end
 
       def collection_list
-        Nokogiri::HTML.parse(
-          response_matched_data
-        ).css('.disco_release')
+        collection_paginated(albums_list)
       end
 
-      def album_data(album)
+      def collection_item_data_formatted(album)
         RateYourMusic::Artist::Albums::Album.call(
           album: album
         )
       end
+
+      alias artist_data paginated_data
     end
   end
 end
