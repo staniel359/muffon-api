@@ -1,19 +1,14 @@
 module SoundCloud
   module Search
     class Albums < SoundCloud::Search::Base
+      COLLECTION_NAME = 'albums'.freeze
+
       private
 
-      def collection_name
-        'albums'
-      end
-
-      def collection_item_data(album)
-        {
-          title: album['title'],
-          artist: artist_data(album),
-          image: image_data(album, 'album'),
-          soundcloud_id: album['id']
-        }
+      def collection_item_data_formatted(album)
+        SoundCloud::Search::Albums::Album.call(
+          album: album
+        )
       end
     end
   end

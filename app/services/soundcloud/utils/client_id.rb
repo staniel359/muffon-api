@@ -1,6 +1,10 @@
 module SoundCloud
   module Utils
     class ClientId < SoundCloud::Base
+      BASE_LINK =
+        'https://a-v2.sndcdn.com'\
+        '/assets/3-1810168b.js'.freeze
+
       def call
         data
       end
@@ -8,15 +12,15 @@ module SoundCloud
       private
 
       def data
-        response.body.match(/client_id=(\w+)/)[1]
+        response.match(/client_id=(\w+)/)[1]
       end
 
-      def response_data
-        RestClient.get(link).body
+      def response
+        RestClient.get(link)
       end
 
       def link
-        'https://a-v2.sndcdn.com/assets/3-1810168b.js'
+        BASE_LINK
       end
     end
   end

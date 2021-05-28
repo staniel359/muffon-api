@@ -31,7 +31,7 @@ module Muffon
           return '' if date == '0'
 
           format = format_formatted(
-            date.split(%r{[\s\-]}).size
+            date.split(/[\s\-]/).size
           )
 
           ::Date.parse(date).strftime(format)

@@ -1,27 +1,14 @@
 module SoundCloud
   module Search
     class Tracks < SoundCloud::Search::Base
+      COLLECTION_NAME = 'tracks'.freeze
+
       private
 
-      def collection_name
-        'tracks'
-      end
-
-      def collection_item_data(track)
-        {
-          title: track['title'],
-          artist: artist_data(track),
-          length: length(track),
-          audio: audio_data(track)
-        }
-      end
-
-      def audio_data(track)
-        {
-          present: track['id'].present?,
-          id: track['id'],
-          source: 'soundcloud'
-        }
+      def collection_item_data_formatted(track)
+        SoundCloud::Search::Tracks::Track.call(
+          track: track
+        )
       end
     end
   end

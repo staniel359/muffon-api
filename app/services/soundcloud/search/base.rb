@@ -1,7 +1,9 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::Base
-      include Muffon::Utils::Paginated
+      BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
+      include Muffon::Utils::Global
+      include Muffon::Utils::Pagination
 
       def call
         super
@@ -20,26 +22,34 @@ module SoundCloud
       end
 
       def collection_list
-        response_data['collection']
+        @collection_list ||= response_data['collection']
       end
 
       def link
-        "#{base_link}/search/#{collection_name}"
-      end
-
-      def base_link
-        'https://api-v2.soundcloud.com'
+        "#{BASE_LINK}/search/#{collection_name}"
       end
 
       def client_id
-        if Rails.env.test?
-          secrets.soundcloud[:test_v2_client_id]
-        else
-          global.get('soundcloud_v2_client_id')
-        end
+        return test_client_id if Rails.env.test?
+
+        get_global_value(
+          'soundcloud_v2_client_id'
+        )
       end
 
-      def extra_params
+      def test_client_id
+        secrets.soundcloud[:test_v2_client_id]
+      end
+
+      def global_value
+        SoundCloud::Utils::ClientId.call
+      end
+
+      def params
+        super.merge(search_params)
+      end
+
+      def search_params
         {
           q: @args.query,
           limit: limit,
@@ -48,25 +58,19 @@ module SoundCloud
       end
 
       def retry_with_new_client_id
-        global.set('soundcloud_v2_client_id', new_client_id)
+        update_global_value(
+          'soundcloud_v2_client_id'
+        )
 
         call
       end
 
-      def new_client_id
-        SoundCloud::Utils::ClientId.call
-      end
-
       def data
-        { search: search_data }
+        { search: paginated_data }
       end
 
-      def search_data
-        { collection_name.to_sym => collection_data }
-      end
-
-      def collection_data
-        collection_list.map { |t| collection_item_data(t) }
+      def total_items_count
+        response_data['total_results']
       end
     end
   end

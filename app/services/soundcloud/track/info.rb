@@ -11,32 +11,38 @@ module SoundCloud
 
       def track_base_data
         {
-          id: track_id(artist_name(response_data), title),
           title: title,
-          artist: artist_data(response_data)
+          soundcloud_id: soundcloud_id,
+          artist: artist_formatted,
+          artists: artists
         }
       end
 
       def track_extra_data
         {
-          image: image_data(response_data, 'track'),
-          plays_count: response_data['playback_count'],
-          length: length(response_data),
+          image: image_data,
+          duration: duration,
           description: description_truncated,
-          tags: tags,
+          tags: tags.first(5),
           audio: audio_data
         }
       end
 
+      def image_data
+        image_data_formatted(
+          track['artwork_url'], 'track'
+        )
+      end
+
       def tags_list
-        [response_data['genre']].compact
+        [track['genre']].compact
       end
 
       def audio_data
         {
-          present: audio_link.present?,
+          present: audio_present?,
           link: audio_link,
-          source: 'soundcloud'
+          source_id: SOURCE_ID
         }
       end
 

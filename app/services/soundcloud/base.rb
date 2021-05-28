@@ -1,5 +1,8 @@
 module SoundCloud
   class Base < Muffon::Base
+    BASE_LINK = 'https://api.soundcloud.com'.freeze
+    SOURCE_ID = 'soundcloud'.freeze
+
     private
 
     def response_data
@@ -9,51 +12,36 @@ module SoundCloud
     end
 
     def response
-      RestClient.get(link, params: params)
+      RestClient.get(link, headers)
     end
 
-    def base_link
-      'https://api.soundcloud.com'
+    def headers
+      { params: params }
     end
 
     def params
-      base_params.merge(extra_params)
-    end
-
-    def base_params
       { client_id: client_id }
-    end
-
-    def extra_params
-      {}
     end
 
     def client_id
       secrets.soundcloud[:api_key]
     end
 
-    def artist_name(data)
-      data.dig('user', 'username')
+    def artists
+      [artist_data_formatted]
     end
 
-    def title
-      response_data['title']
+    def artist_data_formatted
+      {
+        name: artist['username'],
+        soundcloud_id: artist['id']
+      }
     end
 
-    def artist_data(data)
-      { name: artist_name(data) }
-    end
-
-    def image_data(data, model)
-      SoundCloud::Utils::Image.call(data: data, model: model)
-    end
-
-    def length(track)
-      track['duration'] / 1_000
-    end
-
-    def description
-      response_data['description'].to_s
+    def image_data_formatted(image, model)
+      SoundCloud::Utils::Image.call(
+        image: image, model: model
+      )
     end
   end
 end

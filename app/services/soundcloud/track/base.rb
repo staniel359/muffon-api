@@ -1,6 +1,8 @@
 module SoundCloud
   module Track
     class Base < SoundCloud::Base
+      include SoundCloud::Utils::Track
+
       private
 
       def primary_args
@@ -8,11 +10,15 @@ module SoundCloud
       end
 
       def no_data?
-        response_data.blank?
+        track.blank?
+      end
+
+      def track
+        @track ||= response_data
       end
 
       def link
-        "#{base_link}/tracks/#{@args.track_id}"
+        "#{BASE_LINK}/tracks/#{@args.track_id}"
       end
 
       def data
