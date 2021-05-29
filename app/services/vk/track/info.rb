@@ -1,75 +1,58 @@
 module VK
   module Track
-    class Info < VK::Web
+    class Info < VK::Track::Base
       private
 
-      def primary_args
-        [@args.track_id]
-      end
-
-      def no_data?
-        super || track.blank?
-      end
-
-      def track
-        @track ||= response_data.dig(1, 0, 0)
-      end
-
-      def params
-        {
-          act: 'reload_audio',
-          al: 1,
-          ids: @args.track_id
-        }
-      end
-
-      def data
-        { track: track_data }
-      end
-
       def track_data
-        track_base_data.merge(track_extra_data)
+        track_base_data
+          .merge(track_extra_data)
+          .merge(with_more_data)
       end
 
       def track_base_data
         {
-          id: track_id(track),
-          title: track_title(track),
-          artist: track_artist_data(track)
+          title: title,
+          vk_id: vk_id,
+          artist: artist_formatted,
+          artists: artists
         }
       end
 
       def track_extra_data
         {
-          album: album_data,
-          image: image_data(track[14], 'track'),
-          length: track[5],
+          albums: albums,
+          image: image_data,
+          duration: duration,
           audio: audio_data
         }
       end
 
-      def album_data
-        return {} if track[19].blank?
+      def albums
+        [album_data_formatted].compact
+      end
 
-        owner_id, vk_id, access_hash = track[19]
+      def album_data_formatted
+        return if track[19].blank?
 
         {
-          vk_id: vk_id,
-          owner_id: owner_id,
-          access_hash: access_hash
+          vk_id: track.dig(19, 1),
+          owner_id: track.dig(19, 0),
+          access_hash: track.dig(19, 2)
         }
       end
 
       def audio_data
         {
-          present: track[2].present?,
+          present: audio_link.present?,
           link: audio_link,
-          source: 'vk'
+          source_id: SOURCE_ID
         }
       end
 
       def audio_link
-        VK::Utils::Decoder.call(link: track[2])
+        @audio_link || VK::Utils::Audio::Link.call(
+          link: track[2]
+        )
       end
     end
   end

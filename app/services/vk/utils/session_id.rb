@@ -1,6 +1,8 @@
 module VK
   module Utils
     class SessionId < VK::Base
+      BASE_LINK = 'https://login.vk.com'.freeze
+
       def call
         response
       rescue RestClient::Found => e
@@ -10,7 +12,7 @@ module VK
       private
 
       def link
-        'https://login.vk.com'
+        BASE_LINK
       end
 
       def params
@@ -20,13 +22,15 @@ module VK
           expire: '',
           ip_h: selector_data('ip_h'),
           lg_h: selector_data('lg_h'),
-          email: secrets.vk[:email],
-          pass: secrets.vk[:password]
+          email: email,
+          pass: password
         }
       end
 
       def selector_data(name)
-        base_response_data.css("input[name='#{name}']")[0]['value']
+        base_response_data.css(
+          "input[name='#{name}']"
+        )[0]['value']
       end
 
       def base_response_data
@@ -34,7 +38,17 @@ module VK
       end
 
       def base_response
-        @base_response ||= RestClient.get('https://vk.com')
+        @base_response ||= RestClient.get(
+          'https://vk.com'
+        )
+      end
+
+      def email
+        secrets.vk[:email]
+      end
+
+      def password
+        secrets.vk[:password]
       end
 
       def headers
@@ -45,16 +59,21 @@ module VK
       end
 
       def user_agent
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:81.0) '\
+        'Mozilla/5.0 '\
+          '(Windows NT 10.0; Win64; x64; rv:81.0) '\
           'Gecko/20100101 Firefox/81.0'
       end
 
       def process_redirect(redirect)
-        redirect_response(redirect).cookies['remixsid']
+        redirect_response(
+          redirect
+        ).cookies['remixsid']
       end
 
       def redirect_response(redirect)
-        RestClient.get(redirect_link(redirect), headers)
+        RestClient.get(
+          redirect_link(redirect), headers
+        )
       end
 
       def redirect_link(redirect)

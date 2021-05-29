@@ -10,13 +10,13 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Content-Length:
       - '89'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=8af4603262bf0311c75230028e1514c004b91e9237ba08b029b52742459f5
+      - remixsid=<VK_SESSION_ID>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,25 +29,25 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Tue, 29 Dec 2020 11:13:14 GMT
+      - Wed, 02 Jun 2021 14:46:20 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '254'
+      - '263'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.105588
+      - KPHP/7.4.107360
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Tue, 28 Dec 2021 08:57:55 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Mon, 23 May 2022 16:30:48 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Sat, 28 May 2022 15:26:20 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Sat, 08 Jan 2022 11:44:17 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
-      - front605106
+      - front605108
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
@@ -55,6 +55,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '<!--{"payload":["8",["\"ERR_103: Invalid user id, in al_audio.php?act=load_section,
-        code #75022870\"","false","\"75022605\""]],"statsMeta":{"platform":"web2","st":false,"time":1609240394,"hash":"Bv9Tfv7lQ5GXHv4q28WCU4qdAszYufPcXxkvqrj0qns"},"loaderVersion":"143240","langVersion":"7051"}'
-  recorded_at: Tue, 29 Dec 2020 11:13:14 GMT
+        code #75960409\"","false","\"75960410\""]],"statsMeta":{"platform":"web2","st":false,"time":1622645180,"hash":"OumFgdRNjzn6j1WuzueuFLPVn7j7HYwj6ICYzGe0Eso"},"loaderVersion":"7288387","langPack":3,"langVersion":"4580"}'
+  recorded_at: Wed, 02 Jun 2021 14:46:19 GMT
 recorded_with: VCR 6.0.0

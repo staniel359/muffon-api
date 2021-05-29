@@ -1,30 +1,21 @@
 module VK
   module Search
     class Albums < VK::Search::Base
+      COLLECTION_NAME = 'albums'.freeze
+
       private
 
-      def collection_name
-        'albums'
-      end
-
-      def collection_data
-        albums_list.map { |a| album_data(a) }
-      end
-
-      def albums_list
+      def collection_list
         results['playlists']
       end
 
-      def album_data(album)
-        {
-          title: album_title(album),
-          artist: album_artist_data(album),
-          image: image_data(album['coverUrl'], 'album'),
-          vk_id: album['id'],
-          vk_owner_id: album['ownerId'],
-          vk_access_hash: album['accessHash']
-        }
+      def collection_item_data_formatted(album)
+        VK::Search::Albums::Album.call(
+          album: album
+        )
       end
+
+      alias search_data paginated_data
     end
   end
 end

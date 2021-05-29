@@ -1,6 +1,8 @@
 module VK
   module Search
-    class Base < VK::Web
+    class Base < VK::Base
+      include Muffon::Utils::Pagination
+
       private
 
       def primary_args
@@ -15,18 +17,20 @@ module VK
         {
           act: 'load_catalog_section',
           al: 1,
-          owner_id: secrets.vk[:page_id],
+          owner_id: vk_owner_id,
           section_id: section_id,
           start_from: @args.next_page
         }
       end
 
       def section_id
-        sections.dig(:search, :sections, collection_name.to_sym)
+        sections[collection_name.to_sym]
       end
 
       def sections
-        VK::Search::Sections.call(query: @args.query)
+        VK::Search::Sections.call(
+          query: @args.query
+        ).dig(:search, :sections)
       end
 
       def results
@@ -37,11 +41,12 @@ module VK
         { search: search_data }
       end
 
-      def search_data
-        {
-          next_page: results['next_from'],
-          collection_name.to_sym => collection_data
-        }
+      def page
+        nil
+      end
+
+      def next_page
+        results['next_from']
       end
     end
   end

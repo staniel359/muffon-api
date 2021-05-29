@@ -1,85 +1,69 @@
 module VK
   module Album
-    class Info < VK::Web
+    class Info < VK::Album::Base
       private
 
-      def primary_args
-        [@args.album_id]
-      end
-
-      def no_data?
-        super || album.blank?
-      end
-
-      def album
-        @album ||= response_data.dig(1, 0)
-      end
-
-      def params
-        {
-          act: 'load_section',
-          al: 1,
-          playlist_id: @args.album_id,
-          owner_id: @args.owner_id,
-          access_hash: @args.access_hash,
-          offset: @args.next_page,
-          type: 'playlist'
-        }
-      end
-
-      def data
-        { album: album_data }
-      end
-
       def album_data
-        album_base_data.merge(album_extra_data)
+        album_base_data
+          .merge(album_extra_data)
+          .merge(with_more_data)
       end
 
       def album_base_data
         {
-          title: album_title(album),
-          artist: album_artist_data(album),
-          source: 'vk'
+          title: title,
+          extra_title: extra_title,
+          vk_id: vk_id,
+          vk_owner_id: vk_owner_id,
+          vk_access_hash: vk_access_hash,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
         }
       end
 
       def album_extra_data
         {
-          image: image_data(album['coverUrl'], 'album'),
-          released: released,
-          plays_count: album['listens'].to_i,
+          image: image_data,
+          release_date: release_date,
+          plays_count: plays_count,
+          tags: tags,
           tracks: tracks_data
         }
       end
 
-      def released
-        album['infoLine1'].split('<span class="dvd"></span>').last
+      def release_date
+        info_split[-1]
+      end
+
+      def info_split
+        @info_split ||= album['infoLine1'].split(
+          '<span class="dvd"></span>'
+        )
+      end
+
+      def plays_count
+        album['listens'].to_i
+      end
+
+      def tags_list
+        info_split[0].split(', ')
       end
 
       def tracks_data
-        tracks_list.map { |t| track_data(t) }
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
       end
 
       def tracks_list
         album['list']
       end
 
-      def track_data(track)
-        {
-          id: track_id(track),
-          title: track_title(track),
-          artist: track_artist_data(track),
-          length: track[5],
-          audio: audio_data(track)
-        }
-      end
-
-      def audio_data(track)
-        {
-          present: audio_id(track).present?,
-          id: audio_id(track),
-          source: 'vk'
-        }
+      def track_data_formatted(track)
+        VK::Album::Info::Track.call(
+          track: track
+        )
       end
     end
   end

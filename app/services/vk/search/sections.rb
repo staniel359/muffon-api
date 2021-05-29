@@ -4,20 +4,22 @@ module VK
       private
 
       def no_data?
-        super || sections.blank?
+        super || section_ids_list.blank?
       end
 
       def params
         {
           act: 'section',
           al: 1,
-          owner_id: secrets.vk[:page_id],
+          owner_id: vk_owner_id,
           q: @args.query
         }
       end
 
-      def sections
-        @sections ||= response_data.dig(1, 1)
+      def section_ids_list
+        @section_ids_list ||= response_data.dig(
+          1, 1, 'blockIds'
+        )
       end
 
       def search_data
@@ -25,44 +27,28 @@ module VK
       end
 
       def sections_data
-        sections_list.map do |id|
-          section_data(id)
+        section_ids_list.map do |id|
+          section_data_formatted(id)
         end.inject(:merge)
       end
 
-      def sections_list
-        sections['blockIds']
-      end
-
-      def section_data(id)
-        { type_keys[data_type(id)] => id }
-      end
-
-      def data_type(id)
-        data_class(id).match(/global_(\w+)/).try(:[], 1).to_s
-      end
-
-      def data_class(id)
-        html_response_data.css("[data-id=#{id}]")[0].attr('class')
-      end
-
-      def html_response_data
-        Nokogiri::HTML.parse(
-          response_data.dig(1, 0).gsub(
-            "<!--\n          -<>->", ''
-          )
+      def section_data_formatted(section_id)
+        VK::Search::Sections::Section.call(
+          section_id: section_id,
+          html_response_data: html_response_data
         )
       end
 
-      def type_keys
-        {
-          'artists' => :artists,
-          'albums' => :albums,
-          'playlists' => :playlists,
-          'clips' => :videos,
-          'audios' => :tracks,
-          '' => :placeholder
-        }
+      def html_response_data
+        @html_response_data ||= Nokogiri::HTML.parse(
+          html_response
+        )
+      end
+
+      def html_response
+        response_data.dig(1, 0).remove(
+          "<!--\n          -<>->"
+        )
       end
     end
   end
