@@ -1,18 +1,14 @@
 module YandexMusic
   module Search
     class Artists < YandexMusic::Search::Base
+      COLLECTION_NAME = 'artists'.freeze
+
       private
 
-      def collection_name
-        'artists'
-      end
-
-      def collection_item_data(artist)
-        {
-          name: artist['name'],
-          image: image_data(artist, 'artist'),
-          yandex_music_id: artist['id']
-        }
+      def collection_item_data_formatted(artist)
+        YandexMusic::Search::Artists::Artist.call(
+          artist: artist
+        )
       end
     end
   end

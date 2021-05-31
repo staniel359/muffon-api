@@ -12,57 +12,52 @@ module YandexMusic
       def album_base_data
         {
           title: title,
-          artist: artist_data,
-          source: 'yandexmusic'
-        }
+          extra_title: extra_title,
+          yandex_music_id: yandex_music_id,
+          artist: artist_formatted,
+          artists: artists,
+          source_id: SOURCE_ID
+        }.compact
       end
 
       def album_extra_data
         {
-          image: image_data(response_data, 'album'),
-          released: response_data['year'].to_s,
+          image: image_data,
+          release_date: release_date,
           labels: labels,
           tags: tags.first(5),
-          tracks: tracks_data
+          tracks: tracks
         }
       end
 
       def labels
-        labels_list.map { |l| l['name'] }
+        labels_list.map do |l|
+          label_data_formatted(l)
+        end
       end
 
       def labels_list
         response_data['labels']
       end
 
-      def tracks_data
-        tracks_list.map { |t| track_data(t) }
+      def label_data_formatted(label)
+        { name: label['name'] }
+      end
+
+      def tracks
+        tracks_list.map do |t|
+          track_data_formatted(t)
+        end
       end
 
       def tracks_list
         response_data['volumes'].flatten
       end
 
-      def track_data(track)
-        {
-          id: track_id(artist_name(track), track['title']),
-          title: track['title'],
-          artist: track_artist_data(track),
-          length: length(track),
-          audio: audio_data(track)
-        }
-      end
-
-      def track_artist_data(track)
-        { name: artist_name(track) }
-      end
-
-      def audio_data(track)
-        {
-          present: track['id'].present?,
-          id: track['id'].to_i,
-          source: 'yandexmusic'
-        }
+      def track_data_formatted(track)
+        YandexMusic::Album::Info::Track.call(
+          track: track
+        )
       end
     end
   end

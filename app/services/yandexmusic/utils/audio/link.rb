@@ -2,6 +2,8 @@ module YandexMusic
   module Utils
     module Audio
       class Link < YandexMusic::Base
+        include Muffon::Utils::Global
+
         def call
           return '' if @args.track_id.blank?
           return retry_with_new_session_id if wrong_session_id?
@@ -16,12 +18,15 @@ module YandexMusic
         end
 
         def track_data_response_data
-          @track_data_response_data ||=
-            JSON.parse(track_data_response)
+          @track_data_response_data ||= JSON.parse(
+            track_data_response
+          )
         end
 
         def track_data_response
-          RestClient.get(track_data_link, track_data_headers)
+          RestClient.get(
+            track_data_link, track_data_headers
+          )
         end
 
         def track_data_link
@@ -42,26 +47,33 @@ module YandexMusic
         end
 
         def session_id
-          if Rails.env.test?
-            secrets.yandex[:test_session_id]
-          else
-            global.get('yandex_session_id')
-          end
+          return test_session_id if Rails.env.test?
+
+          get_global_value(
+            'yandex_music_session_id'
+          )
         end
 
-        def retry_with_new_session_id
-          global.set('yandex_session_id', new_session_id)
-
-          self.class.call(track_id: @args.track_id)
+        def test_session_id
+          secrets.yandex_music[:test_session_id]
         end
 
-        def new_session_id
+        def global_value
           YandexMusic::Utils::SessionId.call
         end
 
+        def retry_with_new_session_id
+          update_global_value(
+            'yandex_music_session_id'
+          )
+
+          call
+        end
+
         def data
-          host, ts, path =
-            audio_data_response_data.values_at('host', 'ts', 'path')
+          host, ts, path = audio_data_response_data.values_at(
+            'host', 'ts', 'path'
+          )
 
           "https://#{host}/get-mp3/0/#{ts}#{path}"
         end
@@ -71,7 +83,9 @@ module YandexMusic
         end
 
         def audio_data_response
-          RestClient.get(audio_data_link, audio_data_headers)
+          RestClient.get(
+            audio_data_link, audio_data_headers
+          )
         end
 
         def audio_data_link
@@ -79,7 +93,11 @@ module YandexMusic
         end
 
         def audio_data_headers
-          { params: { format: 'json' } }
+          { params: params }
+        end
+
+        def params
+          { format: 'json' }
         end
       end
     end

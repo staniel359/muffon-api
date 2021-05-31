@@ -24,9 +24,9 @@ VCR.configure do |c|
     %i[vk email],
     %i[vk page_id],
     %i[vk password],
-    %i[yandex csrf_token],
-    %i[yandex email],
-    %i[yandex password],
+    %i[yandex_music csrf_token],
+    %i[yandex_music email],
+    %i[yandex_music password],
     %i[youtube api_key]
   ]
 

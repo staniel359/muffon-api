@@ -16,22 +16,27 @@ module YandexMusic
       def image
         return if @args.data.blank?
 
-        @image ||=
-          @args.data.dig('cover', 'uri') || @args.data['coverUri']
+        @image ||= @args.data.dig(
+          'cover', 'uri'
+        ) || @args.data['coverUri']
       end
 
       def image_data
         {
-          original: crop_image(1000),
-          large: crop_image(600),
-          medium: crop_image(300),
-          small: crop_image(100),
-          extrasmall: crop_image(50)
+          original: image_formatted('1000'),
+          large: image_formatted('600'),
+          medium: image_formatted('300'),
+          small: image_formatted('100'),
+          extrasmall: image_formatted('50')
         }
       end
 
-      def crop_image(size)
-        "https://#{image.sub('%%', "#{size}x#{size}")}"
+      def image_formatted(size)
+        "https://#{image_resized(size)}"
+      end
+
+      def image_resized(size)
+        image.sub('%%', "#{size}x#{size}")
       end
     end
   end

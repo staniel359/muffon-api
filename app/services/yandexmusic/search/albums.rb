@@ -1,24 +1,14 @@
 module YandexMusic
   module Search
     class Albums < YandexMusic::Search::Base
+      COLLECTION_NAME = 'albums'.freeze
+
       private
 
-      def collection_name
-        'albums'
-      end
-
-      def collection_item_data(album)
-        {
-          title: album['title'],
-          artist: artist_data(album),
-          image: image_data(album, 'album'),
-          released: album['originalReleaseYear'].to_s,
-          yandex_music_id: album['id']
-        }
-      end
-
-      def artist_data(album)
-        { name: artist_name(album) }
+      def collection_item_data_formatted(album)
+        YandexMusic::Search::Albums::Album.call(
+          album: album
+        )
       end
     end
   end

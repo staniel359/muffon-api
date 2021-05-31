@@ -1,6 +1,8 @@
 module YandexMusic
   module Album
     class Base < YandexMusic::Base
+      include YandexMusic::Utils::Album
+
       private
 
       def primary_args
@@ -8,18 +10,23 @@ module YandexMusic
       end
 
       def no_data?
-        response_data['id'].blank?
+        yandex_music_id.blank?
+      end
+
+      def album
+        @album ||= response_data
       end
 
       def link
-        'https://music.yandex.ru/handlers/album.jsx'
+        "#{BASE_LINK}/album.jsx"
       end
 
       def params
-        {
-          album: @args.album_id,
-          lang: 'en'
-        }
+        super.merge(album_params)
+      end
+
+      def album_params
+        { album: @args.album_id }
       end
 
       def data
@@ -27,7 +34,7 @@ module YandexMusic
       end
 
       def tags_list
-        [response_data['genre']]
+        [album['genre']]
       end
     end
   end

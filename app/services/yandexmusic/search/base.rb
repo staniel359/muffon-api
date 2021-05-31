@@ -1,7 +1,7 @@
 module YandexMusic
   module Search
     class Base < YandexMusic::Base
-      include YandexMusic::Paginated
+      include Muffon::Utils::Pagination
 
       private
 
@@ -14,45 +14,45 @@ module YandexMusic
       end
 
       def collection_list
-        @collection_list ||=
-          response_data.dig(collection_name, 'items')
+        @collection_list ||= response_data.dig(
+          collection_name, 'items'
+        )
+      end
+
+      def collection_name
+        self.class::COLLECTION_NAME
       end
 
       def link
-        'https://music.yandex.ru/handlers/music-search.jsx'
+        "#{BASE_LINK}/music-search.jsx"
       end
 
       def params
+        super.merge(search_params)
+      end
+
+      def search_params
         {
-          type: collection_name,
           text: @args.query,
-          page: page - 1,
-          lang: 'en'
+          type: collection_name,
+          page: page - 1
         }
       end
 
       def data
-        { search: search_data }
-      end
-
-      def search_data
-        {
-          page: page,
-          total_pages: total_pages,
-          collection_name.to_sym => collection_data
-        }
+        { search: paginated_data }
       end
 
       def total_items_count
-        response_data.dig('pager', 'total')
+        response_data.dig(
+          'pager', 'total'
+        )
       end
 
       def limit
-        response_data.dig('pager', 'perPage')
-      end
-
-      def collection_data
-        collection_list.map { |i| collection_item_data(i) }
+        response_data.dig(
+          'pager', 'perPage'
+        )
       end
     end
   end

@@ -1,59 +1,45 @@
 module YandexMusic
   module Artist
-    class Albums < YandexMusic::Base
-      include YandexMusic::Paginated
+    class Albums < YandexMusic::Artist::Base
+      COLLECTION_NAME = 'albums'.freeze
+      include Muffon::Utils::Pagination
 
       private
 
-      def primary_args
-        [@args.artist_id]
-      end
-
       def no_data?
-        response_data['albums'].blank?
+        albums_list.blank?
       end
 
-      def link
-        'https://music.yandex.ru/handlers/artist.jsx'
+      def albums_list
+        @albums_list ||= response_data['albums']
       end
 
       def params
+        super.merge(albums_params)
+      end
+
+      def albums_params
         {
-          artist: @args.artist_id,
           what: 'albums',
-          sort: 'year',
-          lang: 'en'
+          sort: 'year'
         }
-      end
-
-      def data
-        { artist: artist_data.merge(paginated_data) }
-      end
-
-      def artist_data
-        { name: response_data.dig('artist', 'name') }
-      end
-
-      def collection_name
-        'albums'
-      end
-
-      def albums_data
-        paginated_collection.map { |a| album_data(a) }
       end
 
       def collection_list
-        response_data['albums']
+        collection_paginated(albums_list)
       end
 
-      def album_data(album)
-        {
-          title: full_title(album),
-          image: image_data(album, 'album'),
-          released: album['year'].to_s,
-          yandex_music_id: album['id']
-        }
+      def total_items_count
+        albums_list.size
       end
+
+      def collection_item_data_formatted(album)
+        YandexMusic::Artist::Albums::Album.call(
+          album: album
+        )
+      end
+
+      alias artist_data paginated_data
     end
   end
 end

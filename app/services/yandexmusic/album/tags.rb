@@ -4,11 +4,7 @@ module YandexMusic
       private
 
       def album_data
-        {
-          title: title,
-          artist: artist_data,
-          tags: tags
-        }
+        { tags: tags }
       end
     end
   end

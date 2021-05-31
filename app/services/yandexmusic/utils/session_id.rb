@@ -12,19 +12,22 @@ module YandexMusic
       end
 
       def password_response
-        RestClient.post(password_link, password_payload, headers)
+        RestClient.post(
+          password_link, password_payload, headers
+        )
       end
 
       def password_link
-        'https://passport.yandex.ru/registration-validations'\
+        'https://passport.yandex.ru'\
+          '/registration-validations'\
           '/auth/multi_step/commit_password'
       end
 
       def password_payload
         {
           track_id: track_id,
-          csrf_token: secrets.yandex[:csrf_token],
-          password: secrets.yandex[:password]
+          csrf_token: csrf_token,
+          password: password
         }
       end
 
@@ -33,27 +36,46 @@ module YandexMusic
       end
 
       def email_response
-        RestClient.post(email_link, email_payload, headers)
+        RestClient.post(
+          email_link, email_payload, headers
+        )
       end
 
       def email_link
-        'https://passport.yandex.ru/registration-validations'\
+        'https://passport.yandex.ru'\
+          '/registration-validations'\
           '/auth/multi_step/start'
       end
 
       def email_payload
         {
-          csrf_token: secrets.yandex[:csrf_token],
-          login: secrets.yandex[:email]
+          csrf_token: csrf_token,
+          login: email
         }
       end
 
+      def csrf_token
+        secrets.yandex_music[:csrf_token]
+      end
+
+      def email
+        secrets.yandex_music[:email]
+      end
+
       def headers
-        {
-          cookies: {
-            uniqueuid: secrets.yandex[:unique_uid].to_s
-          }
-        }
+        { cookies: cookies }
+      end
+
+      def cookies
+        { uniqueuid: unique_uid }
+      end
+
+      def unique_uid
+        secrets.yandex_music[:unique_uid]
+      end
+
+      def password
+        secrets.yandex_music[:password]
       end
     end
   end

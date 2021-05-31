@@ -1,5 +1,8 @@
 module YandexMusic
   class Base < Muffon::Base
+    BASE_LINK = 'https://music.yandex.ru/handlers'.freeze
+    SOURCE_ID = 'yandexmusic'.freeze
+
     private
 
     def response_data
@@ -14,30 +17,27 @@ module YandexMusic
       { params: params }
     end
 
-    def full_title(data)
-      return data['title'] if data['version'].blank?
-
-      "#{data['title']} (#{data['version']})"
+    def params
+      { lang: 'en' }
     end
 
-    def artist_name(data)
-      data['artists'].map { |a| a['name'] }.join(', ')
+    def artists
+      artists_list.map do |a|
+        artist_data_formatted(a)
+      end
     end
 
-    def title
-      response_data['title']
+    def artist_data_formatted(artist)
+      {
+        name: artist['name'],
+        yandex_music_id: artist['id']
+      }
     end
 
-    def artist_data
-      { name: artist_name(response_data) }
-    end
-
-    def image_data(data, model)
-      YandexMusic::Utils::Image.call(data: data, model: model)
-    end
-
-    def length(track)
-      track['durationMs'] / 1_000
+    def image_data_formatted(data, model)
+      YandexMusic::Utils::Image.call(
+        data: data, model: model
+      )
     end
   end
 end
