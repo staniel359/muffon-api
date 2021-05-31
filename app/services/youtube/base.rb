@@ -1,6 +1,9 @@
 module YouTube
   class Base < Muffon::Base
-    include Muffon::Utils::Paginated
+    BASE_LINK =
+      'https://www.googleapis.com'\
+      '/youtube/v3/search'.freeze
+    include Muffon::Utils::Pagination
 
     private
 
@@ -16,23 +19,27 @@ module YouTube
       RestClient.get(link, headers)
     end
 
+    def link
+      BASE_LINK
+    end
+
     def headers
       { params: params }
     end
 
-    def link
-      'https://www.googleapis.com/youtube/v3/search'
-    end
-
     def params
       {
+        key: api_key,
+        q: @args.query,
         part: 'snippet',
         type: 'video',
-        key: secrets.youtube[:api_key],
-        q: @args.query,
         maxResults: limit,
         pageToken: @args.next_page
       }.compact
+    end
+
+    def api_key
+      secrets.youtube[:api_key]
     end
   end
 end
