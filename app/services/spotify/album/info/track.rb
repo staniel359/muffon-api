@@ -14,6 +14,7 @@ module Spotify
           {
             title: title,
             spotify_id: spotify_id,
+            player_id: player_id,
             artist: artist_formatted,
             artists: artists,
             duration: duration,

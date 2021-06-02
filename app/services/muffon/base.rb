@@ -39,26 +39,6 @@ module Muffon
       ERRORS.handlers[:bad_request]
     end
 
-    def artist_id(artist_name)
-      ::Artist.with_name(artist_name).id
-    end
-
-    def track_id(artist_name, title)
-      ::Track.with_artist_id_title(
-        artist_id(artist_name), title
-      ).id
-    end
-
-    def artist_id(artist_name)
-      ::Artist.with_name(artist_name).id
-    end
-
-    def track_id(artist_name, title)
-      ::Track.with_artist_id_title(
-        artist_id(artist_name), title
-      ).id
-    end
-
     def date_formatted(data)
       Muffon::Utils::Date.format(data)
     end
@@ -73,6 +53,12 @@ module Muffon
 
     def default_image_data(model)
       LastFM::Utils::Image.call(model: model)
+    end
+
+    def player_id
+      ::Track.with_artist_title(
+        artist_formatted[:name], title
+      ).player_id
     end
 
     def artist_formatted

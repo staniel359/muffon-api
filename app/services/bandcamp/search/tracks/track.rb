@@ -17,6 +17,7 @@ module Bandcamp
             title: title,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
+            player_id: player_id,
             artist: artist_formatted,
             artists: artists
           }

@@ -27,7 +27,7 @@ module Helpers
         end
 
         def tracks_data
-          {:artist=>{:page=>2, :total_pages=>100, :tracks=>[{:listeners_count=>125638, :title=>"Paradise"}, {:listeners_count=>110463, :title=>"Drifter"}, {:listeners_count=>108810, :title=>"Only Heather"}, {:listeners_count=>106552, :title=>"Midnight Song"}, {:listeners_count=>102189, :title=>"Pessimist"}]}}
+          {:artist=>{:page=>2, :total_pages=>100, :tracks=>[{:listeners_count=>125754, :title=>"Paradise", :player_id=>"1"}, {:listeners_count=>110497, :title=>"Drifter", :player_id=>"1"}, {:listeners_count=>108934, :title=>"Only Heather", :player_id=>"1"}, {:listeners_count=>106610, :title=>"Midnight Song", :player_id=>"1"}, {:listeners_count=>102214, :title=>"Pessimist", :player_id=>"1"}]}}
         end
       end
     end

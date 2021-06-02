@@ -14,6 +14,7 @@ module Bandcamp
           {
             title: title,
             bandcamp_id: bandcamp_id,
+            player_id: player_id,
             artist: artist_formatted,
             artists: artists,
             duration: duration,

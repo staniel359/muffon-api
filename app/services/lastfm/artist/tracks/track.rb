@@ -13,6 +13,7 @@ module LastFM
         def data
           {
             title: title,
+            player_id: player_id,
             listeners_count: listeners_count
           }
         end

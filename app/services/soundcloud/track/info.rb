@@ -13,6 +13,7 @@ module SoundCloud
         {
           title: title,
           soundcloud_id: soundcloud_id,
+          player_id: player_id,
           artist: artist_formatted,
           artists: artists
         }
