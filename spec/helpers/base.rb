@@ -4,11 +4,11 @@ module Helpers
 
     class << self
       def bad_request_error
-        { error: { code: 400, text: 'Bad request' } }
+        Muffon::Utils::Errors.handlers[:bad_request]
       end
 
       def not_found_error
-        { error: { code: 404, text: 'Not found' } }
+        Muffon::Utils::Errors.handlers[:not_found]
       end
     end
   end

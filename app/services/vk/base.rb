@@ -5,9 +5,9 @@ module VK
     include Muffon::Utils::Global
 
     def call
-      return handlers[:bad_request] if not_all_args?
+      return bad_request if not_all_args?
       return retry_with_new_session_id if auth_failed?
-      return handlers[:not_found] if no_data?
+      return not_found if no_data?
 
       data
     end

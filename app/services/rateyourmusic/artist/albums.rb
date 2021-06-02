@@ -17,7 +17,7 @@ module RateYourMusic
       include Muffon::Utils::Pagination
 
       def call
-        return handlers[:bad_request] if wrong_album_type?
+        return bad_request if wrong_album_type?
 
         super
       end

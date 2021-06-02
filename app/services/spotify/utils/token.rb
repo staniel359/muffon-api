@@ -6,7 +6,7 @@ module Spotify
       def call
         data
       rescue RestClient::BadRequest
-        handlers[:bad_request]
+        bad_request
       end
 
       private

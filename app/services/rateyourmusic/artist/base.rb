@@ -2,7 +2,7 @@ module RateYourMusic
   module Artist
     class Base < RateYourMusic::Base
       def call
-        return handlers[:not_found] if wrong_artist_id?
+        return not_found if wrong_artist_id?
 
         super
       end
