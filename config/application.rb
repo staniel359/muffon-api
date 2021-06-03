@@ -1,45 +1,32 @@
 require_relative 'boot'
 
-require "rails"
-# Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-require "active_storage/engine"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_mailbox/engine"
-require "action_text/engine"
-require "action_view/railtie"
-require "action_cable/engine"
-# require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require 'rails'
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
+require 'active_model/railtie'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'active_job/railtie'
+require 'action_cable/engine'
+
+# require 'active_storage/engine'
+# require 'action_text/engine'
+
 Bundler.require(*Rails.groups)
 
 module MuffonAPI
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration can go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded after loading
-    # the framework and any gems in your application.
-
-    # Only loads a smaller set of middleware suitable for API only apps.
-    # Middleware like session, flash, cookies can be added back manually.
-    # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    config.autoload_paths << Rails.root.join("app/services/")
+    config.autoload_paths << Rails.root.join('app/services/')
 
-    config.generators do |g|
-      g.request_specs false
-      g.controller_specs true
-      g.skip_routes true
+    config.generators do |c|
+      c.request_specs(false)
+      c.controller_specs(true)
+      c.skip_routes(true)
     end
+
+    config.filter_parameters += [:password]
   end
 end
