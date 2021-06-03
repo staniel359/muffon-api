@@ -32,7 +32,13 @@ module Spotify
     end
 
     def spotify_token
+      return test_token if Rails.env.test?
+
       get_global_value('spotify_token')
+    end
+
+    def test_token
+      secrets.spotify[:token]
     end
 
     def global_value

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Authorization:
       - Bearer <SPOTIFY_TOKEN>
       Accept-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 30 Jan 2021 07:14:15 GMT
+      - Thu, 03 Jun 2021 06:44:54 GMT
       Server:
       - envoy
       Via:
@@ -62,5 +62,5 @@ http_interactions:
             "message" : "invalid id"
           }
         }
-  recorded_at: Sat, 30 Jan 2021 07:14:14 GMT
+  recorded_at: Thu, 03 Jun 2021 06:44:54 GMT
 recorded_with: VCR 6.0.0

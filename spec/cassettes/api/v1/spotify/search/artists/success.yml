@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Authorization:
       - Bearer <SPOTIFY_TOKEN>
       Accept-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 30 Jan 2021 07:14:16 GMT
+      - Thu, 03 Jun 2021 06:44:56 GMT
       Server:
       - envoy
       Via:
@@ -65,9 +65,9 @@ http_interactions:
               },
               "followers" : {
                 "href" : null,
-                "total" : 712274
+                "total" : 772841
               },
-              "genres" : [ "art pop", "art rock", "baroque pop", "dance rock", "new wave pop", "permanent wave", "piano rock", "singer-songwriter" ],
+              "genres" : [ "art pop", "art rock", "baroque pop", "new wave pop", "permanent wave", "piano rock", "singer-songwriter" ],
               "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
               "id" : "1aSxMhuvixZ8h9dK9jIDwL",
               "images" : [ {
@@ -84,7 +84,7 @@ http_interactions:
                 "width" : 64
               } ],
               "name" : "Kate Bush",
-              "popularity" : 71,
+              "popularity" : 70,
               "type" : "artist",
               "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
             }, {
@@ -93,7 +93,7 @@ http_interactions:
               },
               "followers" : {
                 "href" : null,
-                "total" : 105
+                "total" : 106
               },
               "genres" : [ ],
               "href" : "https://api.spotify.com/v1/artists/2OVyEZ8pzFnBw0XfZCKhqe",
@@ -139,5 +139,5 @@ http_interactions:
             "total" : 3
           }
         }
-  recorded_at: Sat, 30 Jan 2021 07:14:16 GMT
+  recorded_at: Thu, 03 Jun 2021 06:44:55 GMT
 recorded_with: VCR 6.0.0
