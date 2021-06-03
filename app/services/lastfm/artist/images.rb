@@ -26,7 +26,9 @@ module LastFM
         )
       end
 
-      alias artist_data paginated_data
+      def artist_data
+        { name: name }.merge(paginated_data)
+      end
     end
   end
 end
