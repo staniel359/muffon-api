@@ -59,10 +59,12 @@ module YandexMusic
         end
 
         def global_value
-          YandexMusic::Utils::SessionId.call
+          @global_value ||= YandexMusic::Utils::SessionId.call
         end
 
         def retry_with_new_session_id
+          return if global_value.blank?
+
           update_global_value(
             'yandex_music_session_id'
           )
