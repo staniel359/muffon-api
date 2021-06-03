@@ -6,7 +6,7 @@ RSpec.describe Deezer::Artist::Albums do
   describe 'successful processing' do
     context 'when artist_id present' do
       let(:output) do
-        VCR.use_cassette 'deezer/artist/albums/success' do
+        VCR.use_cassette 'services/deezer/artist/albums/success' do
           subject.call(artist_id: '1049', album_type: 'album', limit: 5, page: 2)
         end
       end
@@ -30,7 +30,7 @@ RSpec.describe Deezer::Artist::Albums do
 
     context 'when wrong artist_id' do
       let(:output) do
-        VCR.use_cassette 'deezer/artist/albums/wrong_id' do
+        VCR.use_cassette 'services/deezer/artist/albums/wrong_id' do
           subject.call(artist_id: random, album_type: 'album')
         end
       end

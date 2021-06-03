@@ -6,7 +6,7 @@ RSpec.describe YandexMusic::Track::Info do
   describe 'successful processing' do
     context 'when track_id present' do
       let(:output) do
-        VCR.use_cassette 'yandexmusic/track/info/success' do
+        VCR.use_cassette 'services/yandexmusic/track/info/success' do
           subject.call(track_id: '2203363')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe YandexMusic::Track::Info do
 
     context 'when wrong track_id' do
       let(:output) do
-        VCR.use_cassette 'yandexmusic/track/info/wrong_id' do
+        VCR.use_cassette 'services/yandexmusic/track/info/wrong_id' do
           subject.call(track_id: random)
         end
       end

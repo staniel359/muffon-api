@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::Discogs::LabelsController, type: :controller do
   describe 'GET :info' do
     it 'returns 200 if label_id present' do
-      VCR.use_cassette 'api/v1/discogs/label/info/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/label/info/success' do
         get :info, params: { label_id: '26126' }
       end
 
@@ -11,7 +11,7 @@ RSpec.describe API::V1::Discogs::LabelsController, type: :controller do
     end
 
     it 'returns 404 if wrong label_id' do
-      VCR.use_cassette 'api/v1/discogs/label/info/wrong_id' do
+      VCR.use_cassette 'controllers/api/v1/discogs/label/info/wrong_id' do
         get :info, params: { label_id: random }
       end
 
@@ -21,7 +21,7 @@ RSpec.describe API::V1::Discogs::LabelsController, type: :controller do
 
   describe 'GET :description' do
     it 'returns 200 if label_id present' do
-      VCR.use_cassette 'api/v1/discogs/label/description/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/label/description/success' do
         get :description, params: { label_id: '26126' }
       end
 
@@ -29,7 +29,7 @@ RSpec.describe API::V1::Discogs::LabelsController, type: :controller do
     end
 
     it 'returns 404 if wrong label_id' do
-      VCR.use_cassette 'api/v1/discogs/label/description/wrong_id' do
+      VCR.use_cassette 'controllers/api/v1/discogs/label/description/wrong_id' do
         get :description, params: { label_id: random }
       end
 
@@ -39,7 +39,7 @@ RSpec.describe API::V1::Discogs::LabelsController, type: :controller do
 
   describe 'GET :albums' do
     it 'returns 200 if label_id present' do
-      VCR.use_cassette 'api/v1/discogs/label/albums/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/label/albums/success' do
         get :albums, params: { label_id: '26126' }
       end
 
@@ -47,7 +47,7 @@ RSpec.describe API::V1::Discogs::LabelsController, type: :controller do
     end
 
     it 'returns 404 if wrong label_id' do
-      VCR.use_cassette 'api/v1/discogs/label/albums/wrong_id' do
+      VCR.use_cassette 'controllers/api/v1/discogs/label/albums/wrong_id' do
         get :albums, params: { label_id: random }
       end
 

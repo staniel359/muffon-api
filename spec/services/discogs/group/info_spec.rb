@@ -6,7 +6,7 @@ RSpec.describe Discogs::Group::Info do
   describe 'successful processing' do
     context 'when group_id given' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/info/success' do
+        VCR.use_cassette 'services/discogs/group/info/success' do
           subject.call(group_id: '5319')
         end
       end
@@ -16,7 +16,7 @@ RSpec.describe Discogs::Group::Info do
 
     context 'when different artists' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/info/different_artists' do
+        VCR.use_cassette 'services/discogs/group/info/different_artists' do
           subject.call(group_id: '992584')
         end
       end
@@ -26,7 +26,7 @@ RSpec.describe Discogs::Group::Info do
 
     context 'when multiple artists' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/info/multiple_artists' do
+        VCR.use_cassette 'services/discogs/group/info/multiple_artists' do
           subject.call(group_id: '1531968')
         end
       end
@@ -44,7 +44,7 @@ RSpec.describe Discogs::Group::Info do
 
     context 'when wrong group_id' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/info/wrong_id' do
+        VCR.use_cassette 'services/discogs/group/info/wrong_id' do
           subject.call(group_id: random)
         end
       end

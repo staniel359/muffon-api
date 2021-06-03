@@ -6,7 +6,7 @@ RSpec.describe Discogs::Group::Tags do
   describe 'successful processing' do
     context 'when group_id given' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/tags/success' do
+        VCR.use_cassette 'services/discogs/group/tags/success' do
           subject.call(group_id: '5319')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Discogs::Group::Tags do
 
     context 'when wrong group_id' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/tags/wrong_id' do
+        VCR.use_cassette 'services/discogs/group/tags/wrong_id' do
           subject.call(group_id: random)
         end
       end

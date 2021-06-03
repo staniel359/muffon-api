@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
   describe 'GET :info' do
     it 'returns 200' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/info/success' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/info/success' do
         get :info, params: { artist: 'Wild Nothing', album: 'Nocturne' }
       end
 
@@ -17,7 +17,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong album title' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/info/wrong_album' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/info/wrong_album' do
         get :info, params: { artist: 'Wild Nothing', album: random }
       end
 
@@ -31,7 +31,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong artist name' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/info/wrong_artist' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/info/wrong_artist' do
         get :info, params: { artist: random, album: 'Nocturne' }
       end
 
@@ -41,7 +41,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
 
   describe 'GET :description' do
     it 'returns 200' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/description/success' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/description/success' do
         get :description, params: { artist: 'Wild Nothing', album: 'Nocturne' }
       end
 
@@ -55,7 +55,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong album title' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/description/wrong_album' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/description/wrong_album' do
         get :description, params: { artist: 'Wild Nothing', album: random }
       end
 
@@ -69,7 +69,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong artist name' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/description/wrong_artist' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/description/wrong_artist' do
         get :description, params: { artist: random, album: 'Nocturne' }
       end
 
@@ -79,7 +79,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
 
   describe 'GET :tags' do
     it 'returns 200' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/tags/success' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/tags/success' do
         get :tags, params: { artist: 'Wild Nothing', album: 'Nocturne' }
       end
 
@@ -93,7 +93,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong album title' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/tags/wrong_album' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/tags/wrong_album' do
         get :tags, params: { artist: 'Wild Nothing', album: random }
       end
 
@@ -107,7 +107,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong artist name' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/tags/wrong_artist' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/tags/wrong_artist' do
         get :tags, params: { artist: random, album: 'Nocturne' }
       end
 
@@ -117,7 +117,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
 
   describe 'GET :listeners_count' do
     it 'returns 200' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/listeners/success' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/listeners/success' do
         get :listeners_count, params: { artist: 'Wild Nothing', album: 'Nocturne' }
       end
 
@@ -131,7 +131,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong album title' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/listeners/wrong_album' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/listeners/wrong_album' do
         get :listeners_count, params: { artist: 'Wild Nothing', album: random }
       end
 
@@ -145,7 +145,7 @@ RSpec.describe API::V1::LastFM::Artists::AlbumsController, type: :controller do
     end
 
     it 'returns 404 if wrong artist name' do
-      VCR.use_cassette 'api/v1/lastfm/artists/albums/listeners/wrong_artist' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/listeners/wrong_artist' do
         get :listeners_count, params: { artist: random, album: 'Nocturne' }
       end
 

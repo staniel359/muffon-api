@@ -6,7 +6,7 @@ RSpec.describe LastFM::Search::Tracks do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'lastfm/search/tracks/success' do
+        VCR.use_cassette 'services/lastfm/search/tracks/success' do
           subject.call(
             query: 'wild nothing chinatown', limit: 5, page: 2
           )
@@ -26,7 +26,7 @@ RSpec.describe LastFM::Search::Tracks do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'lastfm/search/tracks/wrong_query' do
+        VCR.use_cassette 'services/lastfm/search/tracks/wrong_query' do
           subject.call(query: random)
         end
       end

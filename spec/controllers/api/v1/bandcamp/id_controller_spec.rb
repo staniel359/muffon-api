@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
   describe 'GET :artist' do
     it 'returns 200 if artist present' do
-      VCR.use_cassette 'api/v1/bandcamp/id/artist/success' do
+      VCR.use_cassette 'controllers/api/v1/bandcamp/id/artist/success' do
         get :artist, params: { artist: 'wildnothingct' }
       end
 
@@ -11,7 +11,7 @@ RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
     end
 
     it 'returns 404 if wrong artist' do
-      VCR.use_cassette 'api/v1/bandcamp/id/artist/wrong_name' do
+      VCR.use_cassette 'controllers/api/v1/bandcamp/id/artist/wrong_name' do
         get :artist, params: { artist: random }
       end
 
@@ -21,7 +21,7 @@ RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
 
   describe 'GET :album' do
     it 'returns 200 if album present' do
-      VCR.use_cassette 'api/v1/bandcamp/id/album/success' do
+      VCR.use_cassette 'controllers/api/v1/bandcamp/id/album/success' do
         get :album, params: { artist: 'wildnothingct', album: 'indigo' }
       end
 
@@ -29,7 +29,7 @@ RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
     end
 
     it 'returns 404 if wrong album' do
-      VCR.use_cassette 'api/v1/bandcamp/id/album/wrong_title' do
+      VCR.use_cassette 'controllers/api/v1/bandcamp/id/album/wrong_title' do
         get :album, params: { artist: 'wildnothingct', album: random }
       end
 
@@ -39,7 +39,7 @@ RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
 
   describe 'GET :track' do
     it 'returns 200 if track present' do
-      VCR.use_cassette 'api/v1/bandcamp/id/track/success' do
+      VCR.use_cassette 'controllers/api/v1/bandcamp/id/track/success' do
         get :track, params: { artist: 'wildnothingct', track: 'letting-go' }
       end
 
@@ -47,7 +47,7 @@ RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
     end
 
     it 'returns 404 if wrong track' do
-      VCR.use_cassette 'api/v1/bandcamp/id/track/wrong_title' do
+      VCR.use_cassette 'controllers/api/v1/bandcamp/id/track/wrong_title' do
         get :track, params: { artist: 'wildnothingct', track: random }
       end
 

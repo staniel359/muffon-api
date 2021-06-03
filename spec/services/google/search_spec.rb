@@ -6,7 +6,7 @@ RSpec.describe Google::Search do
   describe 'successful processing' do
     context 'when query and scope present' do
       let(:output) do
-        VCR.use_cassette 'google/search/success' do
+        VCR.use_cassette 'services/google/search/success' do
           subject.call(
             query: 'wild nothing', scope: 'bandcamp_albums', page: 2
           )
@@ -32,7 +32,7 @@ RSpec.describe Google::Search do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'google/search/wrong_query' do
+        VCR.use_cassette 'services/google/search/wrong_query' do
           subject.call(query: random, scope: 'bandcamp_albums')
         end
       end
@@ -42,7 +42,7 @@ RSpec.describe Google::Search do
 
     context 'when wrong scope' do
       let(:output) do
-        VCR.use_cassette 'google/search/wrong_scope' do
+        VCR.use_cassette 'services/google/search/wrong_scope' do
           subject.call(query: 'wild nothing', scope: random)
         end
       end

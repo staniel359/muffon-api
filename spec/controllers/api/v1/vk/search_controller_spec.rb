@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::VK::SearchController, type: :controller do
   describe 'GET :tracks' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/vk/search/tracks/success' do
+      VCR.use_cassette 'controllers/api/v1/vk/search/tracks/success' do
         get :tracks, params: { query: 'wild nothing chinatown' }
       end
 
@@ -17,7 +17,7 @@ RSpec.describe API::V1::VK::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/vk/search/tracks/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/vk/search/tracks/wrong_query' do
         get :tracks, params: { query: random }
       end
 
@@ -27,7 +27,7 @@ RSpec.describe API::V1::VK::SearchController, type: :controller do
 
   describe 'GET :albums' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/vk/search/albums/success' do
+      VCR.use_cassette 'controllers/api/v1/vk/search/albums/success' do
         get :albums, params: { query: 'wild nothing chinatown' }
       end
 
@@ -41,7 +41,7 @@ RSpec.describe API::V1::VK::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/vk/search/albums/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/vk/search/albums/wrong_query' do
         get :albums, params: { query: random }
       end
 

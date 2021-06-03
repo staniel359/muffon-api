@@ -6,7 +6,7 @@ RSpec.describe Genius::Track::Info do
   describe 'successful processing' do
     context 'when id present' do
       let(:output) do
-        VCR.use_cassette 'genius/track/info/success' do
+        VCR.use_cassette 'services/genius/track/info/success' do
           subject.call(track_id: '344944')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Genius::Track::Info do
 
     context 'when wrong id' do
       let(:output) do
-        VCR.use_cassette 'genius/track/info/wrong_id' do
+        VCR.use_cassette 'services/genius/track/info/wrong_id' do
           subject.call(track_id: random)
         end
       end

@@ -6,7 +6,7 @@ RSpec.describe Bandcamp::Id::Artist do
   describe 'successful processing' do
     context 'when artist present' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/id/artist/success' do
+        VCR.use_cassette 'services/bandcamp/id/artist/success' do
           subject.call(artist: 'wildnothingct')
         end
       end
@@ -16,7 +16,7 @@ RSpec.describe Bandcamp::Id::Artist do
 
     context 'when label present' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/id/label/success' do
+        VCR.use_cassette 'services/bandcamp/id/label/success' do
           subject.call(artist: 'capturedtracks')
         end
       end
@@ -34,7 +34,7 @@ RSpec.describe Bandcamp::Id::Artist do
 
     context 'when wrong artist' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/id/artist/wrong_name' do
+        VCR.use_cassette 'services/bandcamp/id/artist/wrong_name' do
           subject.call(artist: random)
         end
       end

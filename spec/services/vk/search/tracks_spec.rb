@@ -6,7 +6,7 @@ RSpec.describe VK::Search::Tracks do
   describe 'successful processing' do
     context 'when query string given' do
       let(:output) do
-        VCR.use_cassette 'vk/search/tracks/success' do
+        VCR.use_cassette 'services/vk/search/tracks/success' do
           subject.call(query: 'wild nothing')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe VK::Search::Tracks do
 
     context 'when wrong query string' do
       let(:output) do
-        VCR.use_cassette 'vk/search/tracks/wrong_query' do
+        VCR.use_cassette 'services/vk/search/tracks/wrong_query' do
           subject.call(query: random)
         end
       end

@@ -6,7 +6,7 @@ RSpec.describe LastFM::Artist::Info do
   describe 'successful processing' do
     context 'when artist exists' do
       let(:output) do
-        VCR.use_cassette 'lastfm/artist/info/success' do
+        VCR.use_cassette 'services/lastfm/artist/info/success' do
           subject.call(artist: 'wild nothing')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe LastFM::Artist::Info do
 
     context 'when wrong artist name' do
       let(:output) do
-        VCR.use_cassette 'lastfm/artist/info/wrong_name' do
+        VCR.use_cassette 'services/lastfm/artist/info/wrong_name' do
           subject.call(artist: random)
         end
       end

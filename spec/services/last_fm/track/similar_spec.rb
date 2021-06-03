@@ -6,7 +6,7 @@ RSpec.describe LastFM::Track::Similar do
   describe 'successful processing' do
     context 'when artist and track exists' do
       let(:output) do
-        VCR.use_cassette 'lastfm/track/similar/success' do
+        VCR.use_cassette 'services/lastfm/track/similar/success' do
           subject.call(
             artist: 'wild nothing', track: 'chinatown', limit: 5, page: 2
           )
@@ -32,7 +32,7 @@ RSpec.describe LastFM::Track::Similar do
 
     context 'when wrong track title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/track/similar/wrong_title' do
+        VCR.use_cassette 'services/lastfm/track/similar/wrong_title' do
           subject.call(artist: 'wild nothing', track: random)
         end
       end
@@ -42,7 +42,7 @@ RSpec.describe LastFM::Track::Similar do
 
     context 'when wrong artist name' do
       let(:output) do
-        VCR.use_cassette 'lastfm/track/similar/wrong_name' do
+        VCR.use_cassette 'services/lastfm/track/similar/wrong_name' do
           subject.call(artist: random, track: 'chinatown')
         end
       end

@@ -6,7 +6,7 @@ RSpec.describe Discogs::Group::Albums do
   describe 'successful processing' do
     context 'when group_id given' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/albums/success' do
+        VCR.use_cassette 'services/discogs/group/albums/success' do
           subject.call(group_id: '28680', page: 2, limit: 5)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Discogs::Group::Albums do
 
     context 'when wrong group_id' do
       let(:output) do
-        VCR.use_cassette 'discogs/group/albums/wrong_id' do
+        VCR.use_cassette 'services/discogs/group/albums/wrong_id' do
           subject.call(group_id: random)
         end
       end

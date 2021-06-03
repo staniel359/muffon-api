@@ -6,7 +6,7 @@ RSpec.describe YandexMusic::Album::Info do
   describe 'successful processing' do
     context 'when album_id present' do
       let(:output) do
-        VCR.use_cassette 'yandexmusic/album/info/success' do
+        VCR.use_cassette 'services/yandexmusic/album/info/success' do
           subject.call(album_id: '7375624')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe YandexMusic::Album::Info do
 
     context 'when wrong album_id' do
       let(:output) do
-        VCR.use_cassette 'yandexmusic/album/info/wrong_id' do
+        VCR.use_cassette 'services/yandexmusic/album/info/wrong_id' do
           subject.call(album_id: random)
         end
       end

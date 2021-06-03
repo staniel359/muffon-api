@@ -6,7 +6,7 @@ RSpec.describe YouTube::Search::Videos do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'youtube/search/videos/success' do
+        VCR.use_cassette 'services/youtube/search/videos/success' do
           subject.call(
             query: 'wild nothing chinatown',
             limit: 5,
@@ -28,7 +28,7 @@ RSpec.describe YouTube::Search::Videos do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'youtube/search/videos/wrong_query' do
+        VCR.use_cassette 'services/youtube/search/videos/wrong_query' do
           subject.call(query: random)
         end
       end

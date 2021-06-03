@@ -6,7 +6,7 @@ RSpec.describe Spotify::Track::Info do
   describe 'successful processing' do
     context 'when track_id present' do
       let(:output) do
-        VCR.use_cassette 'spotify/track/info/success' do
+        VCR.use_cassette 'services/spotify/track/info/success' do
           subject.call(track_id: '29d0nY7TzCoi22XBqDQkiP')
         end
       end
@@ -18,7 +18,7 @@ RSpec.describe Spotify::Track::Info do
   describe 'no processing' do
     context 'when wrong track_id' do
       let(:output) do
-        VCR.use_cassette 'spotify/track/info/wrong_id' do
+        VCR.use_cassette 'services/spotify/track/info/wrong_id' do
           subject.call(track_id: random)
         end
       end

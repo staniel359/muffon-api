@@ -6,7 +6,7 @@ RSpec.describe Deezer::Search::Albums do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'deezer/search/albums/success' do
+        VCR.use_cassette 'services/deezer/search/albums/success' do
           subject.call(query: 'a', limit: 5, page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Deezer::Search::Albums do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'deezer/search/albums/wrong_query' do
+        VCR.use_cassette 'services/deezer/search/albums/wrong_query' do
           subject.call(query: random)
         end
       end

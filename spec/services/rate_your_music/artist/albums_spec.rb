@@ -6,7 +6,7 @@ RSpec.describe RateYourMusic::Artist::Albums do
   describe 'successful processing' do
     context 'when artist present' do
       let(:output) do
-        VCR.use_cassette 'rateyourmusic/artist/albums/success' do
+        VCR.use_cassette 'services/rateyourmusic/artist/albums/success' do
           subject.call(
             artist_id: '2854', limit: 5, page: 2, album_type: 'album'
           )
@@ -26,7 +26,7 @@ RSpec.describe RateYourMusic::Artist::Albums do
 
     context 'when wrong artist' do
       let(:output) do
-        VCR.use_cassette 'rateyourmusic/artist/albums/wrong_artist' do
+        VCR.use_cassette 'services/rateyourmusic/artist/albums/wrong_artist' do
           subject.call(artist_id: random, album_type: 'album')
         end
       end
@@ -36,7 +36,7 @@ RSpec.describe RateYourMusic::Artist::Albums do
 
     context 'when no album type' do
       let(:output) do
-        VCR.use_cassette 'rateyourmusic/artist/albums/no_album_type' do
+        VCR.use_cassette 'services/rateyourmusic/artist/albums/no_album_type' do
           subject.call(artist_id: '2854')
         end
       end
@@ -46,7 +46,7 @@ RSpec.describe RateYourMusic::Artist::Albums do
 
     context 'when wrong album type' do
       let(:output) do
-        VCR.use_cassette 'rateyourmusic/artist/albums/wrong_album_type' do
+        VCR.use_cassette 'services/rateyourmusic/artist/albums/wrong_album_type' do
           subject.call(artist_id: '2854', album_type: random)
         end
       end

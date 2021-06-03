@@ -6,7 +6,7 @@ RSpec.describe Spotify::Artist::Albums do
   describe 'successful processing' do
     context 'when artist_id present' do
       let(:output) do
-        VCR.use_cassette 'spotify/artist/albums/success' do
+        VCR.use_cassette 'services/spotify/artist/albums/success' do
           subject.call(
             artist_id: '1aSxMhuvixZ8h9dK9jIDwL', limit: 5, page: 2
           )
@@ -20,7 +20,7 @@ RSpec.describe Spotify::Artist::Albums do
   describe 'no processing' do
     context 'when wrong artist_id' do
       let(:output) do
-        VCR.use_cassette 'spotify/artist/albums/wrong_id' do
+        VCR.use_cassette 'services/spotify/artist/albums/wrong_id' do
           subject.call(artist_id: random)
         end
       end

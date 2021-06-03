@@ -6,7 +6,7 @@ RSpec.describe Bandcamp::Track::Description do
   describe 'successful processing' do
     context 'when track present' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/track/description/success' do
+        VCR.use_cassette 'services/bandcamp/track/description/success' do
           subject.call(artist_id: '2228040235', track_id: '1709958085')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Bandcamp::Track::Description do
 
     context 'when wrong track' do
       let(:output) do
-        VCR.use_cassette 'bandcamp/track/description/wrong_track' do
+        VCR.use_cassette 'services/bandcamp/track/description/wrong_track' do
           subject.call(artist_id: '2228040235', track_id: random)
         end
       end

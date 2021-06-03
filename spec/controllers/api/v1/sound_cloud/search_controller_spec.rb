@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::SoundCloud::SearchController, type: :controller do
   describe 'GET :albums' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/soundcloud/search/albums/success' do
+      VCR.use_cassette 'controllers/api/v1/soundcloud/search/albums/success' do
         get :albums, params: { query: 'luxury elite' }
       end
 
@@ -17,7 +17,7 @@ RSpec.describe API::V1::SoundCloud::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/soundcloud/search/albums/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/soundcloud/search/albums/wrong_query' do
         get :albums, params: { query: random }
       end
 
@@ -27,7 +27,7 @@ RSpec.describe API::V1::SoundCloud::SearchController, type: :controller do
 
   describe 'GET :tracks' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/soundcloud/search/tracks/success' do
+      VCR.use_cassette 'controllers/api/v1/soundcloud/search/tracks/success' do
         get :tracks, params: { query: 'luxury elite' }
       end
 
@@ -41,7 +41,7 @@ RSpec.describe API::V1::SoundCloud::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/soundcloud/search/tracks/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/soundcloud/search/tracks/wrong_query' do
         get :tracks, params: { query: random }
       end
 

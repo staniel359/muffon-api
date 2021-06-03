@@ -6,7 +6,7 @@ RSpec.describe LastFM::Track::Description do
   describe 'successful processing' do
     context 'when artist and track exists' do
       let(:output) do
-        VCR.use_cassette 'lastfm/track/description/success' do
+        VCR.use_cassette 'services/lastfm/track/description/success' do
           subject.call(
             artist: 'kate bush', track: 'hounds of love'
           )
@@ -32,7 +32,7 @@ RSpec.describe LastFM::Track::Description do
 
     context 'when wrong track title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/track/description/wrong_title' do
+        VCR.use_cassette 'services/lastfm/track/description/wrong_title' do
           subject.call(artist: 'kate bush', track: random)
         end
       end
@@ -42,7 +42,7 @@ RSpec.describe LastFM::Track::Description do
 
     context 'when wrong artist name' do
       let(:output) do
-        VCR.use_cassette 'lastfm/track/description/wrong_name' do
+        VCR.use_cassette 'services/lastfm/track/description/wrong_name' do
           subject.call(artist: random, track: 'hounds of love')
         end
       end

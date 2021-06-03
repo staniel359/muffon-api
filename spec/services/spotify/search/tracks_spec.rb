@@ -6,7 +6,7 @@ RSpec.describe Spotify::Search::Tracks do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'spotify/search/tracks/success' do
+        VCR.use_cassette 'services/spotify/search/tracks/success' do
           subject.call(query: 'a', limit: 5, page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Spotify::Search::Tracks do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'spotify/search/tracks/wrong_query' do
+        VCR.use_cassette 'services/spotify/search/tracks/wrong_query' do
           subject.call(query: random)
         end
       end

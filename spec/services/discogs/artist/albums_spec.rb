@@ -6,7 +6,7 @@ RSpec.describe Discogs::Artist::Albums do
   describe 'successful processing' do
     context 'when artist_id given' do
       let(:output) do
-        VCR.use_cassette 'discogs/artist/albums/success' do
+        VCR.use_cassette 'services/discogs/artist/albums/success' do
           subject.call(artist_id: '6271', album_type: 'album', page: 2)
         end
       end
@@ -30,7 +30,7 @@ RSpec.describe Discogs::Artist::Albums do
 
     context 'when wrong artist_id' do
       let(:output) do
-        VCR.use_cassette 'discogs/artist/albums/wrong_id' do
+        VCR.use_cassette 'services/discogs/artist/albums/wrong_id' do
           subject.call(artist_id: random, album_type: 'album')
         end
       end

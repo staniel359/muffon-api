@@ -6,7 +6,7 @@ RSpec.describe SoundCloud::Search::Albums do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/search/albums/success' do
+        VCR.use_cassette 'services/soundcloud/search/albums/success' do
           subject.call(query: 'wild nothing', limit: 10, page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe SoundCloud::Search::Albums do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/search/albums/wrong_query' do
+        VCR.use_cassette 'services/soundcloud/search/albums/wrong_query' do
           subject.call(query: random)
         end
       end

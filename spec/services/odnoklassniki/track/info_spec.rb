@@ -6,7 +6,7 @@ RSpec.describe Odnoklassniki::Track::Info do
   describe 'successful processing' do
     context 'when track_id present' do
       let(:output) do
-        VCR.use_cassette 'odnoklassniki/track/info/success' do
+        VCR.use_cassette 'services/odnoklassniki/track/info/success' do
           subject.call(track_id: '123042442621275')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Odnoklassniki::Track::Info do
 
     context 'when wrong track_id' do
       let(:output) do
-        VCR.use_cassette 'odnoklassniki/track/info/wrong_id' do
+        VCR.use_cassette 'services/odnoklassniki/track/info/wrong_id' do
           subject.call(track_id: random)
         end
       end

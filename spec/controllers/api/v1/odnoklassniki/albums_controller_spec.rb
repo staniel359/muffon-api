@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::Odnoklassniki::AlbumsController, type: :controller do
   describe 'GET :info' do
     it 'returns 200 if album_id present' do
-      VCR.use_cassette 'api/v1/odnoklassniki/albums/info/success' do
+      VCR.use_cassette 'controllers/api/v1/odnoklassniki/albums/info/success' do
         get :info, params: { album_id: '122909892023105' }
       end
 
@@ -11,7 +11,7 @@ RSpec.describe API::V1::Odnoklassniki::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if wrong album_id' do
-      VCR.use_cassette 'api/v1/odnoklassniki/albums/info/wrong_id' do
+      VCR.use_cassette 'controllers/api/v1/odnoklassniki/albums/info/wrong_id' do
         get :info, params: { album_id: random }
       end
 
@@ -21,7 +21,7 @@ RSpec.describe API::V1::Odnoklassniki::AlbumsController, type: :controller do
 
   describe 'GET :tags' do
     it 'returns 200 if album_id present' do
-      VCR.use_cassette 'api/v1/odnoklassniki/albums/tags/success' do
+      VCR.use_cassette 'controllers/api/v1/odnoklassniki/albums/tags/success' do
         get :tags, params: { album_id: '122909892023105' }
       end
 
@@ -29,7 +29,7 @@ RSpec.describe API::V1::Odnoklassniki::AlbumsController, type: :controller do
     end
 
     it 'returns 400 if wrong album_id' do
-      VCR.use_cassette 'api/v1/odnoklassniki/albums/tags/wrong_id' do
+      VCR.use_cassette 'controllers/api/v1/odnoklassniki/albums/tags/wrong_id' do
         get :tags, params: { album_id: random }
       end
 

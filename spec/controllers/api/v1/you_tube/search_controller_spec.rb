@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::YouTube::SearchController, type: :controller do
   describe 'GET :videos' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/youtube/search/videos/success' do
+      VCR.use_cassette 'controllers/api/v1/youtube/search/videos/success' do
         get :videos, params: { query: 'wild nothing chinatown' }
       end
 
@@ -17,7 +17,7 @@ RSpec.describe API::V1::YouTube::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/youtube/search/videos/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/youtube/search/videos/wrong_query' do
         get :videos, params: { query: random }
       end
 

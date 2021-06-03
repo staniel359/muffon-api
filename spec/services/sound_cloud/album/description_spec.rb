@@ -6,7 +6,7 @@ RSpec.describe SoundCloud::Album::Description do
   describe 'successful processing' do
     context 'when album_id present' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/album/description/success' do
+        VCR.use_cassette 'services/soundcloud/album/description/success' do
           subject.call(album_id: '447196953')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe SoundCloud::Album::Description do
 
     context 'when wrong album_id' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/album/description/wrong_id' do
+        VCR.use_cassette 'services/soundcloud/album/description/wrong_id' do
           subject.call(album_id: random)
         end
       end

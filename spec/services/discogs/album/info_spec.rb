@@ -6,7 +6,7 @@ RSpec.describe Discogs::Album::Info do
   describe 'successful processing' do
     context 'when album_id given' do
       let(:output) do
-        VCR.use_cassette 'discogs/album/info/success' do
+        VCR.use_cassette 'services/discogs/album/info/success' do
           subject.call(album_id: '197163')
         end
       end
@@ -16,7 +16,7 @@ RSpec.describe Discogs::Album::Info do
 
     context 'when different artists' do
       let(:output) do
-        VCR.use_cassette 'discogs/album/info/different_artists' do
+        VCR.use_cassette 'services/discogs/album/info/different_artists' do
           subject.call(album_id: '546618')
         end
       end
@@ -26,7 +26,7 @@ RSpec.describe Discogs::Album::Info do
 
     context 'when multiple artists' do
       let(:output) do
-        VCR.use_cassette 'discogs/album/info/multiple_artists' do
+        VCR.use_cassette 'services/discogs/album/info/multiple_artists' do
           subject.call(album_id: '13812684')
         end
       end
@@ -44,7 +44,7 @@ RSpec.describe Discogs::Album::Info do
 
     context 'when wrong album_id' do
       let(:output) do
-        VCR.use_cassette 'discogs/album/info/wrong_id' do
+        VCR.use_cassette 'services/discogs/album/info/wrong_id' do
           subject.call(album_id: random)
         end
       end

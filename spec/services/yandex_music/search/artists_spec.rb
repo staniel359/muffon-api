@@ -6,7 +6,7 @@ RSpec.describe YandexMusic::Search::Artists do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'yandexmusic/search/artists/success' do
+        VCR.use_cassette 'services/yandexmusic/search/artists/success' do
           subject.call(query: 'a', page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe YandexMusic::Search::Artists do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'yandexmusic/search/artists/wrong_query' do
+        VCR.use_cassette 'services/yandexmusic/search/artists/wrong_query' do
           subject.call(query: random)
         end
       end

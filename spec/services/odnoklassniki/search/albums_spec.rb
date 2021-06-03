@@ -6,7 +6,7 @@ RSpec.describe Odnoklassniki::Search::Albums do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'odnoklassniki/search/albums/success' do
+        VCR.use_cassette 'services/odnoklassniki/search/albums/success' do
           subject.call(query: 'kate bush', limit: 5, page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Odnoklassniki::Search::Albums do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'odnoklassniki/search/albums/wrong_query' do
+        VCR.use_cassette 'services/odnoklassniki/search/albums/wrong_query' do
           subject.call(query: random)
         end
       end

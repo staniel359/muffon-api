@@ -6,7 +6,7 @@ RSpec.describe Discogs::Label::Info do
   describe 'successful processing' do
     context 'when label_id given' do
       let(:output) do
-        VCR.use_cassette 'discogs/label/info/success' do
+        VCR.use_cassette 'services/discogs/label/info/success' do
           subject.call(label_id: '26126')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Discogs::Label::Info do
 
     context 'when wrong label_id' do
       let(:output) do
-        VCR.use_cassette 'discogs/label/info/wrong_id' do
+        VCR.use_cassette 'services/discogs/label/info/wrong_id' do
           subject.call(label_id: random)
         end
       end

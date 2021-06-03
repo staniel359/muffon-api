@@ -6,7 +6,7 @@ RSpec.describe LastFM::Album::Tags do
   describe 'successful processing' do
     context 'when album exists' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/tags/success' do
+        VCR.use_cassette 'services/lastfm/album/tags/success' do
           subject.call(artist: 'wild nothing', album: 'nocturne')
         end
       end
@@ -30,7 +30,7 @@ RSpec.describe LastFM::Album::Tags do
 
     context 'when wrong artist name' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/tags/wrong_artist' do
+        VCR.use_cassette 'services/lastfm/album/tags/wrong_artist' do
           subject.call(artist: random, album: 'nocturne')
         end
       end
@@ -40,7 +40,7 @@ RSpec.describe LastFM::Album::Tags do
 
     context 'when wrong album title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/tags/wrong_title' do
+        VCR.use_cassette 'services/lastfm/album/tags/wrong_title' do
           subject.call(artist: 'wild nothing', album: random)
         end
       end

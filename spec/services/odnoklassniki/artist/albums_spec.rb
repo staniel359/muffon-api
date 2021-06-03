@@ -6,7 +6,7 @@ RSpec.describe Odnoklassniki::Artist::Albums do
   describe 'successful processing' do
     context 'when artist_id present' do
       let(:output) do
-        VCR.use_cassette 'odnoklassniki/artist/albums/success' do
+        VCR.use_cassette 'services/odnoklassniki/artist/albums/success' do
           subject.call(
             artist_id: '122882931409564', limit: 5, page: 2
           )
@@ -26,7 +26,7 @@ RSpec.describe Odnoklassniki::Artist::Albums do
 
     context 'when wrong artist_id' do
       let(:output) do
-        VCR.use_cassette 'odnoklassniki/artist/albums/wrong_id' do
+        VCR.use_cassette 'services/odnoklassniki/artist/albums/wrong_id' do
           subject.call(artist_id: random)
         end
       end

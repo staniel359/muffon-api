@@ -6,7 +6,7 @@ RSpec.describe SoundCloud::Album::Tags do
   describe 'successful processing' do
     context 'when album_id present' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/album/tags/success' do
+        VCR.use_cassette 'services/soundcloud/album/tags/success' do
           subject.call(album_id: '1092365263')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe SoundCloud::Album::Tags do
 
     context 'when wrong album_id' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/album/tags/wrong_id' do
+        VCR.use_cassette 'services/soundcloud/album/tags/wrong_id' do
           subject.call(album_id: random)
         end
       end

@@ -6,7 +6,7 @@ RSpec.describe Discogs::Search::Groups do
   describe 'successful processing' do
     context 'when query string given' do
       let(:output) do
-        VCR.use_cassette 'discogs/search/groups/success' do
+        VCR.use_cassette 'services/discogs/search/groups/success' do
           subject.call(query: 'kate bush', limit: 5, page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Discogs::Search::Groups do
 
     context 'when wrong query string' do
       let(:output) do
-        VCR.use_cassette 'discogs/search/groups/wrong_query' do
+        VCR.use_cassette 'services/discogs/search/groups/wrong_query' do
           subject.call(query: random)
         end
       end

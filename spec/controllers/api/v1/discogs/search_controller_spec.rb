@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe API::V1::Discogs::SearchController, type: :controller do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/discogs/search/artists/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/artists/success' do
         get :artists, params: { query: 'kate bush' }
       end
 
@@ -17,7 +17,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/discogs/search/artists/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/artists/wrong_query' do
         get :artists, params: { query: random }
       end
 
@@ -27,7 +27,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
 
   describe 'GET :labels' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/discogs/search/labels/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/labels/success' do
         get :labels, params: { query: 'kate bush' }
       end
 
@@ -41,7 +41,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/discogs/search/labels/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/labels/wrong_query' do
         get :labels, params: { query: random }
       end
 
@@ -51,7 +51,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
 
   describe 'GET :groups' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/discogs/search/groups/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/groups/success' do
         get :groups, params: { query: 'kate bush' }
       end
 
@@ -65,7 +65,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/discogs/search/groups/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/groups/wrong_query' do
         get :groups, params: { query: random }
       end
 
@@ -75,7 +75,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
 
   describe 'GET :albums' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'api/v1/discogs/search/albums/success' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/albums/success' do
         get :albums, params: { query: 'kate bush' }
       end
 
@@ -89,7 +89,7 @@ RSpec.describe API::V1::Discogs::SearchController, type: :controller do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'api/v1/discogs/search/albums/wrong_query' do
+      VCR.use_cassette 'controllers/api/v1/discogs/search/albums/wrong_query' do
         get :albums, params: { query: random }
       end
 

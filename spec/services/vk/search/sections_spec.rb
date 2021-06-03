@@ -6,7 +6,7 @@ RSpec.describe VK::Search::Sections do
   describe 'successful processing' do
     context 'when query string given' do
       let(:output) do
-        VCR.use_cassette 'vk/search/sections/success' do
+        VCR.use_cassette 'services/vk/search/sections/success' do
           subject.call(query: 'wild nothing')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe VK::Search::Sections do
 
     context 'when wrong query string' do
       let(:output) do
-        VCR.use_cassette 'vk/search/sections/wrong_query' do
+        VCR.use_cassette 'services/vk/search/sections/wrong_query' do
           subject.call(query: random)
         end
       end

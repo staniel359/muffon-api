@@ -6,7 +6,7 @@ RSpec.describe SoundCloud::Search::Tracks do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/search/tracks/success' do
+        VCR.use_cassette 'services/soundcloud/search/tracks/success' do
           subject.call(query: 'saint pepsi', limit: 10, page: 2)
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe SoundCloud::Search::Tracks do
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'soundcloud/search/tracks/wrong_query' do
+        VCR.use_cassette 'services/soundcloud/search/tracks/wrong_query' do
           subject.call(query: random)
         end
       end

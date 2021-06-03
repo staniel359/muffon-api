@@ -6,7 +6,7 @@ RSpec.describe LastFM::Top::Tracks do
   describe 'successful processing' do
     context 'when no primary args' do
       let(:output) do
-        VCR.use_cassette 'lastfm/top/tracks/success' do
+        VCR.use_cassette 'services/lastfm/top/tracks/success' do
           subject.call(limit: 5, page: 2)
         end
       end

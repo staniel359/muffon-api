@@ -6,7 +6,7 @@ RSpec.describe LastFM::Album::ListenersCount do
   describe 'successful processing' do
     context 'when artist and album exists' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/listeners_count/success' do
+        VCR.use_cassette 'services/lastfm/album/listeners_count/success' do
           subject.call(artist: 'wild nothing', album: 'nocturne')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe LastFM::Album::ListenersCount do
 
     context 'when wrong album title' do
       let(:output) do
-        VCR.use_cassette 'lastfm/album/listeners_count/wrong_title' do
+        VCR.use_cassette 'services/lastfm/album/listeners_count/wrong_title' do
           subject.call(artist: 'wild nothing', album: random)
         end
       end

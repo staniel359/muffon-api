@@ -6,7 +6,7 @@ RSpec.describe Genius::Album::Info do
   describe 'successful processing' do
     context 'when id present' do
       let(:output) do
-        VCR.use_cassette 'genius/album/info/success' do
+        VCR.use_cassette 'services/genius/album/info/success' do
           subject.call(album_id: '168168')
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Genius::Album::Info do
 
     context 'when wrong id' do
       let(:output) do
-        VCR.use_cassette 'genius/album/info/wrong_id' do
+        VCR.use_cassette 'services/genius/album/info/wrong_id' do
           subject.call(album_id: random)
         end
       end
