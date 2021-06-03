@@ -1,16 +1,9 @@
 class ApplicationController < ActionController::API
-  def not_found
-    render(
-      {
-        json: not_found_handler,
-        status: :not_found
-      }
-    )
+  def no_content
+    head :no_content
   end
 
-  private
-
-  def not_found_handler
-    Muffon::Utils::Errors.handlers[:not_found]
+  def not_found
+    head :not_found
   end
 end

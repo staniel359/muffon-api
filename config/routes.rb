@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'application#no_content'
+
   scope :api, module: :api do
     scope :v1, module: :v1 do
 
