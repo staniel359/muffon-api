@@ -10,13 +10,13 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Content-Length:
       - '39'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=669c300e597100a9981a1e27b798f476b845dfd91384da364ee4b8fd82f5d
+      - remixsid=<VK_SESSION_ID>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,31 +29,31 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sat, 12 Dec 2020 21:49:27 GMT
+      - Fri, 04 Jun 2021 19:24:03 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '208'
+      - '215'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.105335
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Thu, 23 Dec 2021 19:05:10 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Sun, 05 Jun 2022 01:54:36 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Fri, 03 Jun 2022 07:28:11 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Fri, 10 Dec 2021 18:35:54 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
-      - front204306
+      - front623307
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":["8",["\"no_audios\"","false","\"74898130\""]],"statsMeta":{"platform":"web2","st":false,"time":1607809767,"hash":"fHSK91OUPASZ4TshNBSiUoXQScuGDSZSz9RSAdtZ1wH"},"loaderVersion":"15773978","langVersion":"7051"}
-  recorded_at: Sat, 12 Dec 2020 21:49:25 GMT
+      string: <!--{"payload":["8",["\"no_audios\"","false","\"75977816\""]],"statsMeta":{"platform":"web2","st":false,"time":1622834643,"hash":"ZdP6G9ZZx5xkQzEuz3ZwFczeoAMEaTyVh4133PY8ZJX"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:24:03 GMT
 recorded_with: VCR 6.0.0

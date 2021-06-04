@@ -29,25 +29,25 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:25 GMT
+      - Fri, 04 Jun 2021 19:26:34 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '734'
+      - '735'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Fri, 27 May 2022 13:23:03 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Sat, 04 Jun 2022 09:09:50 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Wed, 15 Jun 2022 00:11:20 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Mon, 06 Jun 2022 07:11:19 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
       X-Frontend:
-      - front605106
+      - front226206
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
@@ -62,8 +62,8 @@ http_interactions:
         src=\"\/images\/svg_icons\/audio\/audio_note_64.svg\" alt=\"\" class=\"Placeholder__icon\">\n  <\/div>\n  \n    <div
         class=\"Placeholder__text\">No tracks matching <strong>wejlhg239gh23<\/strong>
         were found<\/div>\n  \n<\/div><\/div><\/div><\/div>",{"playlist":null,"playlists":[],"next_from":"","nextFrom":"","search_query":"wejlhg239gh23","hints":[],"searchParams":{"globalQuery":"wejlhg239gh23"},"title":"Search
-        results","sectionId":"PUldVA8NR0RzSVNUagdSRGpJUFQPBUdEfklTRAcHWVV1X11CGRZcRHxJHhNfWAMBdFhQEV0GWEQ7","blockIds":["PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk"],"isBlockPagination":false,"qid":null}]],"statsMeta":{"platform":"web2","st":false,"time":1622645185,"hash":"mHmjzkK0UhTHbiXuFrOLXABrHbaxZCiFeKHzn3FMFGk"},"loaderVersion":"7288387","pageviewCandidate":true,"langPack":3,"langVersion":"4580"}
-  recorded_at: Wed, 02 Jun 2021 14:46:24 GMT
+        results","sectionId":"PUldVA8NR0RzSVNUagdSRGpJUFQPBUdEfklTRAcHWVV1X11CGRZcRHxJHhNfWAMBdFhQEV0GWEQ7","blockIds":["PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk"],"isBlockPagination":false,"qid":null}]],"statsMeta":{"platform":"web2","st":false,"time":1622834794,"hash":"IUYKsAzfx8ptqxgT2RRPutejWDGWlFY1MH7IUtuGKb8"},"loaderVersion":"9885287","pageviewCandidate":true,"langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:26:34 GMT
 - request:
     method: post
     uri: https://vk.com/al_audio.php
@@ -93,20 +93,20 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:25 GMT
+      - Fri, 04 Jun 2021 19:26:34 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '192'
+      - '194'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Thu, 02 Jun 2022 14:31:02 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Fri, 03 Jun 2022 11:22:26 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Mon, 30 May 2022 05:57:27 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Sun, 12 Jun 2022 15:59:53 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
@@ -118,6 +118,6 @@ http_interactions:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":[0,[false,[],[]]],"statsMeta":{"platform":"web2","st":false,"time":1622645185,"hash":"mHmjzkK0UhTHbiXuFrOLXABrHbaxZCiFeKHzn3FMFGk"},"loaderVersion":"7288387","langPack":3,"langVersion":"4580"}
-  recorded_at: Wed, 02 Jun 2021 14:46:24 GMT
+      string: <!--{"payload":[0,[false,[],[]]],"statsMeta":{"platform":"web2","st":false,"time":1622834794,"hash":"IUYKsAzfx8ptqxgT2RRPutejWDGWlFY1MH7IUtuGKb8"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:26:34 GMT
 recorded_with: VCR 6.0.0

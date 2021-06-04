@@ -29,31 +29,31 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:44 GMT
+      - Fri, 04 Jun 2021 19:26:44 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '213'
+      - '218'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Mon, 23 May 2022 20:41:47 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Sun, 05 Jun 2022 10:17:56 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Tue, 07 Jun 2022 16:05:52 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Sun, 05 Jun 2022 11:27:10 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
       X-Frontend:
-      - front605106
+      - front225204
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":["8",["\"no_audios\"","false","\"75960217\""]],"statsMeta":{"platform":"web2","st":false,"time":1622645204,"hash":"ja8TkZr956oSFUyBbjUuiMswzx2jdWwDBrx2jZQJsdg"},"loaderVersion":"7288387","langPack":3,"langVersion":"4580"}
-  recorded_at: Wed, 02 Jun 2021 14:46:43 GMT
+      string: <!--{"payload":["8",["\"no_audios\"","false","\"75977816\""]],"statsMeta":{"platform":"web2","st":false,"time":1622834804,"hash":"LOKLmiFh8QPznwCTsZFpYgRvDZdXlR41x6LKjdXUAoT"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:26:44 GMT
 recorded_with: VCR 6.0.0

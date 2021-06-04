@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:20 GMT
+      - Fri, 04 Jun 2021 19:26:30 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
@@ -37,12 +37,12 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Mon, 23 May 2022 16:30:48 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Sat, 28 May 2022 15:26:20 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Mon, 06 Jun 2022 06:31:02 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Fri, 27 May 2022 09:02:42 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
@@ -55,6 +55,6 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '<!--{"payload":["8",["\"ERR_103: Invalid user id, in al_audio.php?act=load_section,
-        code #75960409\"","false","\"75960410\""]],"statsMeta":{"platform":"web2","st":false,"time":1622645180,"hash":"OumFgdRNjzn6j1WuzueuFLPVn7j7HYwj6ICYzGe0Eso"},"loaderVersion":"7288387","langPack":3,"langVersion":"4580"}'
-  recorded_at: Wed, 02 Jun 2021 14:46:19 GMT
+        code #75978064\"","false","\"75978065\""]],"statsMeta":{"platform":"web2","st":false,"time":1622834790,"hash":"LT5DvZeCdzSY2IqjK5wEoiDCgqEzexZ4XV3eu5XzmTk"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}'
+  recorded_at: Fri, 04 Jun 2021 19:26:30 GMT
 recorded_with: VCR 6.0.0

@@ -5,14 +5,14 @@ http_interactions:
     uri: https://vk.com/al_audio.php
     body:
       encoding: UTF-8
-      string: act=reload_audio&al=1&ids=138599796_182630240_9314db2562bf4eefc4_dfb16ffb70b38a510b
+      string: act=reload_audio&al=1&ids=-400921_90392497_a11e43c96aba9c3335_11b443938410e06e4b
     headers:
       Accept:
       - "*/*"
       User-Agent:
       - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Content-Length:
-      - '83'
+      - '80'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
@@ -29,36 +29,36 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:43 GMT
+      - Fri, 04 Jun 2021 19:26:42 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '1151'
+      - '1153'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Sun, 29 May 2022 10:26:55 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Mon, 30 May 2022 08:13:24 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Sat, 11 Jun 2022 08:55:36 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Wed, 08 Jun 2022 13:25:32 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
       X-Frontend:
-      - front605106
+      - front220007
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":[0,[[[182630240,138599796,"https:\/\/vk.com\/mp3\/audio_api_unavailable.mp3?extra=z1LSDfjOz2vWA19NBJvYEwnUluWXywq5swn6q3vmtu1Ztw1UCY1zl2D4DdfKBMj3u2zUAfzmtgfJBxm2Axz4vguUyuPclwTvuZ1AytLRyI9XwunSrM1yz2nNDMC4lZy1x2eOCY9ptJfsuxbHAvDymxbLAvyUptfUztnTsxvmzuSZAZPOogXTCw94thzPmerMmw9ODwqYAwi1n2nimwjltZb5zOfFBLDztKiXDeLHyZDOmuDMq3j1wxqTBhzyp3uWnKHgl25HmZDhsM5yvgK5zJfOAe5IyKPVode5lMW5tfPiBYzYog1tmJb4l1u3AeLIEgrsC3PdB3a#AqS3mJC","&#12450;&#12523;&#12511;&#12490;","Nightmare",306,0,0,"",0,2,"","[]","9d0b82bb902c745fae\/\/9314db2562bf4eefc4\/\/\/dfb16ffb70b38a510b\/","",{"duration":306,"content_id":"138599796_182630240","puid22":11,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"","","",false,"be7aca3egKqnGODyiCNoHW9DfL1lrgIb-nwDVQ",0,0,true,"9d0c029a963cc5a1cb",false]],false,"c6ec6d0910af808fde",[]]],"statsMeta":{"platform":"web2","st":false,"time":1622645203,"hash":"appOe5kkm0dkdWl5gSiiDJiTyhDSBOcxJhZ62hAhbZg"},"loaderVersion":"7288387","langPack":3,"langVersion":"4580","langKeys":{"global":[],"local":{"audio_delete_audio":"Delete
+      string: <!--{"payload":[0,[[[90392497,-400921,"https:\/\/vk.com\/mp3\/audio_api_unavailable.mp3?extra=AgrVy1iXAs55y2fimuXoEJfNu3bXCg03DNe1vZ01nNrMqLr4DxvHl2DPmKz1sJjOze1UtdbRrxuTCNnUnfvSDY9OrvfenJLtrZLWEejSu1zJB2HwzNmZzI9swLrZtwuXrd1ZuuHZnc5YDNvtofjXmc1cmIzju2eWsxqWztGOz2HyBLe5lZm\/txzVyw5NBxf4zf9bCgW1Dvfoz2COCZe5zgflBL0VpxnfsvHOte8ZmhLAAvfFnMHRzfvpzeCUAhuVtwiZsNjhBJzVzwPosuuWx3P0mwvblwvJmefXzfeZq1v3DgXbwJeOqtGZx2vJnevPyMPp#AqS4odi","Alumina","&#12490;&#12452;&#12488;&#12513;&#12450;",299,8939724,0,"",0,34,"","[]","7f88a24d486fcc4cc2\/\/a11e43c96aba9c3335\/\/\/11b443938410e06e4b\/","",{"duration":299,"content_id":"-400921_90392497","puid22":11,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"","","",false,"e35815b6OyuY9e5Lrja7NNyIc1jU-pFthF3kUg",0,0,true,"8880864483f77cf311",false]],false,"79c11d95d735d145ff",[]]],"statsMeta":{"platform":"web2","st":false,"time":1622834802,"hash":"mejkJgDhzYqgBfUjIsYheuRsblw8XN5dHAy3MiYemKs"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591","langKeys":{"global":[],"local":{"audio_delete_audio":"Delete
         track","audio_dont_show":"Stop suggesting","audio_performers_only":"by artist","audio_open_album":"Open
         album","audio_titles_search":"by title","audio_global_search_found":["","%s
         audio file found","%s audio files found"],"audio_site_rules_violation_warning":"{audio}
         has been removed from public access for violating the VK Terms of Service.","audio_site_rules_violation_header":"Prohibited
         audio file"}},"templates":{"_":"_","audio_bits_to_cls":"{\"1\":\"audio_has_lyrics\",\"2\":\"audio_can_add\",\"4\":\"audio_claimed\",\"8\":\"audio_from_queue\",\"16\":\"audio_hq\",\"1024\":\"audio_explicit\",\"32\":\"audio_lpb\",\"64\":\"audio_has_thumb\",\"256\":\"audio_moder_claimed\",\"2048\":\"audio_focus\",\"4096\":\"audio_module_wide\"}"}}
-  recorded_at: Wed, 02 Jun 2021 14:46:43 GMT
+  recorded_at: Fri, 04 Jun 2021 19:26:42 GMT
 recorded_with: VCR 6.0.0

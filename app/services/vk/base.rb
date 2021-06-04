@@ -49,7 +49,13 @@ module VK
     end
 
     def session_id
+      return test_session_id if Rails.env.test?
+
       get_global_value('vk_session_id')
+    end
+
+    def test_session_id
+      secrets.vk[:session_id]
     end
 
     def global_value

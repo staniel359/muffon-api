@@ -29,20 +29,20 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:28 GMT
+      - Fri, 04 Jun 2021 19:26:37 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '733'
+      - '735'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Sun, 12 Jun 2022 23:03:53 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Thu, 26 May 2022 02:27:35 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Fri, 27 May 2022 00:44:57 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Fri, 03 Jun 2022 22:29:49 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
@@ -62,6 +62,6 @@ http_interactions:
         src=\"\/images\/svg_icons\/audio\/audio_note_64.svg\" alt=\"\" class=\"Placeholder__icon\">\n  <\/div>\n  \n    <div
         class=\"Placeholder__text\">No tracks matching <strong>wejlhg239gh23<\/strong>
         were found<\/div>\n  \n<\/div><\/div><\/div><\/div>",{"playlist":null,"playlists":[],"next_from":"","nextFrom":"","search_query":"wejlhg239gh23","hints":[],"searchParams":{"globalQuery":"wejlhg239gh23"},"title":"Search
-        results","sectionId":"PUldVA8NR0RzSVNUagdSRGpJUFQPBUdEfklTRAcHWVV1X11CGRZcRHxJHhNfWAMBdFhQEV0GWEQ7","blockIds":["PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk"],"isBlockPagination":false,"qid":null}]],"statsMeta":{"platform":"web2","st":false,"time":1622645188,"hash":"CwdVsbtrXY22FwqJZWOW7Z4F0zP2unWUz2mW85gDXgw"},"loaderVersion":"7288387","pageviewCandidate":true,"langPack":3,"langVersion":"4580"}
-  recorded_at: Wed, 02 Jun 2021 14:46:27 GMT
+        results","sectionId":"PUldVA8NR0RzSVNUagdSRGpJUFQPBUdEfklTRAcHWVV1X11CGRZcRHxJHhNfWAMBdFhQEV0GWEQ7","blockIds":["PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk"],"isBlockPagination":false,"qid":null}]],"statsMeta":{"platform":"web2","st":false,"time":1622834797,"hash":"DclWSmUby7HG7CQ6HCmAkwsK9M4cDE51O5UvQrFZIlP"},"loaderVersion":"9885287","pageviewCandidate":true,"langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:26:37 GMT
 recorded_with: VCR 6.0.0

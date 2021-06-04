@@ -10,13 +10,13 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Content-Length:
       - '51'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=b24749e98fa2e3f16c655147ce3a2e7749f26bf70f3d4802e8fa9416af964
+      - remixsid=<VK_SESSION_ID>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,21 +29,21 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Tue, 19 Jan 2021 17:42:19 GMT
+      - Fri, 04 Jun 2021 19:24:01 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '739'
+      - '735'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.105718
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Fri, 14 Jan 2022 19:56:35 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Wed, 01 Jun 2022 03:25:37 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Fri, 03 Jun 2022 05:41:32 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Sun, 23 Jan 2022 05:52:14 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
@@ -54,9 +54,16 @@ http_interactions:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        PCEtLXsicGF5bG9hZCI6WzAsWyI8ZGl2IGNsYXNzPSdDYXRhbG9nU2VjdGlvbiBDYXRhbG9nU2VjdGlvbi0tZGl2aWRlZCBDYXRhbG9nU2VjdGlvbl9fc2VhcmNoX3Jlc3VsdHMnPjxkaXYgY2xhc3M9J0NhdGFsb2dCbG9jayBDYXRhbG9nQmxvY2stLWRpdmlkZWQnPiAgPGRpdiBjbGFzcz1cIkNhdGFsb2dCbG9ja19fY29udGVudCBDYXRhbG9nQmxvY2tfX3BsYWNlaG9sZGVyX2VtcHR5X3NlYXJjaCBDYXRhbG9nQmxvY2tfX2xheW91dC0tcGxhY2Vob2xkZXJcIiBkYXRhLXR5cGU9J3BsYWNlaG9sZGVyJyBkYXRhLWlkPSdQVWxRVkE4R1IwUjNXMHRNRjBRSEJ5VU9BUmxaVUE0VUdRNEVCa0ZOTkJVakNoc1ZYUlpIUkg1SlUwUUhCMWxWZFY5ZFFoa1dYRVI4U1I0VFgxZ0RBWFJZVUJGZEJsaEVha2xkVkE4TlIwUjNYa3RNQkVrJyAgID48ZGl2IGNsYXNzPVwiUGxhY2Vob2xkZXJcIj5cbiAgICA8ZGl2IGNsYXNzPVwiUGxhY2Vob2xkZXJfX2ljb25Db250YWluZXJcIj5cbiAgICAgIDxpbWcgc3JjPVwiXC9pbWFnZXNcL3N2Z19pY29uc1wvYXVkaW9cL2F1ZGlvX25vdGVfNjQuc3ZnXCIgYWx0PVwiXCIgY2xhc3M9XCJQbGFjZWhvbGRlcl9faWNvblwiPlxuICA8XC9kaXY+XG4gIFxuICAgIDxkaXYgY2xhc3M9XCJQbGFjZWhvbGRlcl9fdGV4dFwiPs/uIOfg7/Du8fMgPHN0cm9uZz53ZWpsaGcyMzlnaDIzPFwvc3Ryb25nPiDt5SDt4Onk5e3uIO3oIO7k7e7pIODz5Oju5+Dv6PHoPFwvZGl2PlxuICBcbjxcL2Rpdj48XC9kaXY+PFwvZGl2PjxcL2Rpdj4iLHsicGxheWxpc3QiOmZhbHNlLCJwbGF5bGlzdHMiOltdLCJuZXh0X2Zyb20iOiIiLCJuZXh0RnJvbSI6IiIsInNlYXJjaF9xdWVyeSI6IndlamxoZzIzOWdoMjMiLCJoaW50cyI6W10sInNlYXJjaFBhcmFtcyI6eyJnbG9iYWxRdWVyeSI6IndlamxoZzIzOWdoMjMifSwic2VjdGlvbklkIjoiUFVsZFZBOE5SMFJ6U1ZOVWFnZFNSR3BKVUZRUEJVZEVma2xUUkFjSFdWVjFYMTFDR1JaY1JIeEpIaE5mV0FNQmRGaFFFVjBHV0VRNyIsImJsb2NrSWRzIjpbIlBVbFFWQThHUjBSM1cwdE1GMFFIQnlVT0FSbFpVQTRVR1E0RUJrRk5OQlVqQ2hzVlhSWkhSSDVKVTBRSEIxbFZkVjlkUWhrV1hFUjhTUjRUWDFnREFYUllVQkZkQmxoRWFrbGRWQThOUjBSM1hrdE1CRWsiXSwiaXNCbG9ja1BhZ2luYXRpb24iOmZhbHNlfV1dLCJzdGF0c01ldGEiOnsicGxhdGZvcm0iOiJ3ZWIyIiwic3QiOmZhbHNlLCJ0aW1lIjoxNjExMDc4MTM5LCJoYXNoIjoic0J1cXpOVm5VQ3JVWThqN0ZXSTFJQno1YlB6OXBzVWtab1kzN3RIZHFMZyJ9LCJsb2FkZXJWZXJzaW9uIjoiMzI1MDEwIiwicGFnZXZpZXdDYW5kaWRhdGUiOnRydWUsImxhbmdWZXJzaW9uIjoiNzA1MSJ9
-  recorded_at: Tue, 19 Jan 2021 17:42:17 GMT
+      string: <!--{"payload":[0,["<div class='CatalogSection CatalogSection--divided
+        CatalogSection__search_results'><div class='CatalogBlock CatalogBlock--divided'>  <div
+        class=\"CatalogBlock__content CatalogBlock__placeholder_empty_search CatalogBlock__layout--placeholder\"
+        data-type='placeholder' data-id='PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk'   ><div
+        class=\"Placeholder\">\n    <div class=\"Placeholder__iconContainer\">\n      <img
+        src=\"\/images\/svg_icons\/audio\/audio_note_64.svg\" alt=\"\" class=\"Placeholder__icon\">\n  <\/div>\n  \n    <div
+        class=\"Placeholder__text\">No tracks matching <strong>wejlhg239gh23<\/strong>
+        were found<\/div>\n  \n<\/div><\/div><\/div><\/div>",{"playlist":null,"playlists":[],"next_from":"","nextFrom":"","search_query":"wejlhg239gh23","hints":[],"searchParams":{"globalQuery":"wejlhg239gh23"},"title":"Search
+        results","sectionId":"PUldVA8NR0RzSVNUagdSRGpJUFQPBUdEfklTRAcHWVV1X11CGRZcRHxJHhNfWAMBdFhQEV0GWEQ7","blockIds":["PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk"],"isBlockPagination":false,"qid":null}]],"statsMeta":{"platform":"web2","st":false,"time":1622834641,"hash":"NLPZxSkZXvPi1zqATELvvzczF2tc9zMfdOKZWYckFGL"},"loaderVersion":"9885287","pageviewCandidate":true,"langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:24:01 GMT
 - request:
     method: post
     uri: https://vk.com/al_audio.php
@@ -67,13 +74,13 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Content-Length:
       - '70'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
-      - remixsid=b24749e98fa2e3f16c655147ce3a2e7749f26bf70f3d4802e8fa9416af964
+      - remixsid=<VK_SESSION_ID>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -86,31 +93,31 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Tue, 19 Jan 2021 17:42:19 GMT
+      - Fri, 04 Jun 2021 19:24:01 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '184'
+      - '194'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.105718
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Fri, 21 Jan 2022 17:01:11 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Sat, 04 Jun 2022 17:09:40 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Sun, 12 Jun 2022 20:41:45 GMT; path=/; domain=.vk.com;
         secure
-      - remixlang=114; expires=Sat, 22 Jan 2022 15:15:08 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
       X-Frontend:
-      - front204302
+      - front224206
       Strict-Transport-Security:
       - max-age=15768000
       Access-Control-Expose-Headers:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":[0,[false,[],[]]],"statsMeta":{"platform":"web2","st":false,"time":1611078139,"hash":"sBuqzNVnUCrUY8j7FWI1IBz5bPz9psUkZoY37tHdqLg"},"loaderVersion":"325010","langVersion":"7051"}
-  recorded_at: Tue, 19 Jan 2021 17:42:17 GMT
+      string: <!--{"payload":[0,[false,[],[]]],"statsMeta":{"platform":"web2","st":false,"time":1622834641,"hash":"NLPZxSkZXvPi1zqATELvvzczF2tc9zMfdOKZWYckFGL"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}
+  recorded_at: Fri, 04 Jun 2021 19:24:01 GMT
 recorded_with: VCR 6.0.0

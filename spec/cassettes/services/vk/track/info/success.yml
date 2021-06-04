@@ -5,14 +5,14 @@ http_interactions:
     uri: https://vk.com/al_audio.php
     body:
       encoding: UTF-8
-      string: act=reload_audio&al=1&ids=-2001935215_33935215_515e9a129c1ccabc26_610cb5f471b607f5b3
+      string: act=reload_audio&al=1&ids=371745443_456465176_6e46a45bb6be1e67e6_698622eb5a2c8a0616
     headers:
       Accept:
       - "*/*"
       User-Agent:
       - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Content-Length:
-      - '84'
+      - '83'
       Content-Type:
       - application/x-www-form-urlencoded
       Cookie:
@@ -29,20 +29,20 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 02 Jun 2021 14:46:43 GMT
+      - Fri, 04 Jun 2021 19:26:42 GMT
       Content-Type:
       - text/html; charset=windows-1251
       Content-Length:
-      - '1361'
+      - '1353'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107360
+      - KPHP/7.4.107399
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Thu, 26 May 2022 09:24:25 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Thu, 26 May 2022 15:00:30 GMT; path=/; domain=.vk.com;
+      - remixlang=114; expires=Mon, 13 Jun 2022 06:22:10 GMT; path=/; domain=.vk.com
+      - remixlang=3; expires=Sun, 05 Jun 2022 02:19:40 GMT; path=/; domain=.vk.com;
         secure
       Cache-Control:
       - no-store
@@ -54,13 +54,13 @@ http_interactions:
       - X-Frontend
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":[0,[[[33935215,-2001935215,"https:\/\/vk.com\/mp3\/audio_api_unavailable.mp3?extra=AfPWzezkvLfstwvmyJDZAZverM56pZfmz2zTwvDkzJbKmfDQos4YAwvHz2vWrLvlsgH4rhC5tvjsmej4t2rRtNLgtwCXmwL4mfP1zMTPogLFvKzlyxn3AwLZzwnPng0UCwDIDOfOuuvZvI8OrKe4BM1tDejJqI8TmIy3zfr1AdrWzhHjz2LSnwe4y284suXQAOT1ohqYztH0Dc54Atz1mdrHrxD4yJnxn3HUvs1xlvj1DeTSAw9PufDkyxrADMTAyOS5mJzLyvL6EfPQCM5Moxb4zg5Oy2DzltHLl1PZwfjSn2eZl3vHsd0VsZ1dmv9IBLzfCY9YvuDVpxuUAKXJzxjKnJe#AqS2otG","The
-        Queen Is Dead","The Smiths",384,-1,0,"",0,66,"","[]","3159fffbae91faaabb\/\/515e9a129c1ccabc26\/\/\/610cb5f471b607f5b3\/","https:\/\/sun9-67.userapi.com\/impf\/c851436\/v851436580\/51ac2\/d_xzbz1Ic5M.jpg?size=80x80&quality=96&sign=3f4352f2dea2ca4c5d7767d0d3b9bf14&type=audio,https:\/\/sun9-67.userapi.com\/impf\/c851436\/v851436580\/51ac2\/d_xzbz1Ic5M.jpg?size=150x150&quality=96&sign=22f650c9242226587e2c43d2faf047d7&type=audio",{"duration":384,"content_id":"-2001935215_33935215","puid22":14,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"2017
-        Master",[{"id":"9214677642685687515","name":"The Smiths"}],"",[-2000916168,1916168,"43c15929fe11506130"],"9873e738uvSR49Q_MwZSDHpNY30QBktdJz1EYg",0,0,true,"db790948fa45e26eb7",false]],false,"c6ec6d0910af808fde",[]]],"statsMeta":{"platform":"web2","st":false,"time":1622645203,"hash":"appOe5kkm0dkdWl5gSiiDJiTyhDSBOcxJhZ62hAhbZg"},"loaderVersion":"7288387","langPack":3,"langVersion":"4580","langKeys":{"global":[],"local":{"audio_delete_audio":"Delete
+      string: <!--{"payload":[0,[[[456465176,371745443,"https:\/\/vk.com\/mp3\/audio_api_unavailable.mp3?extra=AgHtnNu4Bg9VwxnLvY85nMjHlM9Jrs1MmY91DwXitY9dtM9LueqYCeTAzw44AZDRB3vIzLr4EhzhnOGVowTHvtPPzc9mrMrFpZrqCgvQnt1ImKzqsdf0vtr1nNjJmxa9DhGZwL9OwwjsDMv6AMzFCI15BLr6mMDcshf1m2C1vNfHAgOZwNLwntvOsxuTzwPltO0WCMvVwdvRv2CYtMyWl25elNKXne1HzeeZBJu2s2PSwJq2y2Ljx3LIzu9SlxvZmxa1AvHZyNjZz2PwEh02nwO4y2nOvfbPn2uMzwvxyMfIBLLMCOvzBdbAlwDLlM5Jn3yXrKLJDa#AqS4mZm","The
+        Queen Is Dead","The Smiths",384,0,0,"",0,66,"","[]","62d7919aa3b043976a\/\/6e46a45bb6be1e67e6\/\/\/698622eb5a2c8a0616\/","https:\/\/sun9-67.userapi.com\/impf\/c851436\/v851436580\/51ac2\/d_xzbz1Ic5M.jpg?size=80x80&quality=96&sign=3f4352f2dea2ca4c5d7767d0d3b9bf14&type=audio,https:\/\/sun9-67.userapi.com\/impf\/c851436\/v851436580\/51ac2\/d_xzbz1Ic5M.jpg?size=150x150&quality=96&sign=22f650c9242226587e2c43d2faf047d7&type=audio",{"duration":384,"content_id":"371745443_456465176","puid22":14,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"2017
+        Master",[{"id":"9214677642685687515","name":"The Smiths"}],"",[-2000916168,1916168,"43c15929fe11506130"],"82263390baWuBr8KazV8QwN7Ujr0gk-XTl8MOQ",0,0,true,"3c0d297377cd75a95a",false]],false,"79c11d95d735d145ff",[]]],"statsMeta":{"platform":"web2","st":false,"time":1622834802,"hash":"mejkJgDhzYqgBfUjIsYheuRsblw8XN5dHAy3MiYemKs"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591","langKeys":{"global":[],"local":{"audio_delete_audio":"Delete
         track","audio_dont_show":"Stop suggesting","audio_performers_only":"by artist","audio_open_album":"Open
         album","audio_titles_search":"by title","audio_global_search_found":["","%s
         audio file found","%s audio files found"],"audio_site_rules_violation_warning":"{audio}
         has been removed from public access for violating the VK Terms of Service.","audio_site_rules_violation_header":"Prohibited
         audio file"}},"templates":{"_":"_","audio_bits_to_cls":"{\"1\":\"audio_has_lyrics\",\"2\":\"audio_can_add\",\"4\":\"audio_claimed\",\"8\":\"audio_from_queue\",\"16\":\"audio_hq\",\"1024\":\"audio_explicit\",\"32\":\"audio_lpb\",\"64\":\"audio_has_thumb\",\"256\":\"audio_moder_claimed\",\"2048\":\"audio_focus\",\"4096\":\"audio_module_wide\"}"}}
-  recorded_at: Wed, 02 Jun 2021 14:46:42 GMT
+  recorded_at: Fri, 04 Jun 2021 19:26:42 GMT
 recorded_with: VCR 6.0.0
