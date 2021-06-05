@@ -15,11 +15,7 @@ module VK
     private
 
     def auth_failed?
-      response_code == '3'
-    end
-
-    def response_code
-      @response_code ||= response_data[0]
+      response_data[0] == '3'
     end
 
     def response_data
@@ -59,19 +55,22 @@ module VK
     end
 
     def global_value
-      VK::Utils::SessionId.call
+      @global_value ||= VK::Utils::SessionId.call
     end
 
     def retry_with_new_session_id
-      @response_data = nil
+      return if global_value.nil?
 
       update_global_value('vk_session_id')
+
+      @response_data = nil
+      @global_value = nil
 
       call
     end
 
     def no_data?
-      response_code == '8'
+      response_data[0] == '8'
     end
 
     def artist_data_formatted(data)
