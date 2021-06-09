@@ -43,9 +43,24 @@ module RateYourMusic
       secrets.rateyourmusic[:session_id]
     end
 
-    def image_data_formatted(image_data, model)
+    def artist_data_formatted(artist)
+      {
+        name: artist_name(artist),
+        rateyourmusic_id: artist_rateyourmusic_id(artist)
+      }
+    end
+
+    def artist_name(artist)
+      artist.text
+    end
+
+    def artist_rateyourmusic_id(artist)
+      artist['title'].scan(/\d+/)[0].to_i
+    end
+
+    def image_data_formatted(image, model)
       RateYourMusic::Utils::Image.call(
-        image_data: image_data, model: model
+        image: image, model: model
       )
     end
   end

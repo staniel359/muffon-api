@@ -45,23 +45,22 @@ module RateYourMusic
           )
         end
 
-        def artist_data_formatted(artist)
-          {
-            name: artist.text,
-            rateyourmusic_id: artist_rateyourmusic_id(artist)
-          }
-        end
-
-        def artist_rateyourmusic_id(artist)
-          artist['title'].scan(/\d/).join.to_i
-        end
-
         def image_data
           image_data_formatted(image, 'album')
         end
 
         def image
-          @args.album.css('.image_release')[0]
+          return if raw_image.blank?
+
+          raw_image.match(
+            %r{//e.snmc.io[\w/]+}
+          )[0]
+        end
+
+        def raw_image
+          @raw_image ||= @args.album.css(
+            '.image_release'
+          )[0]['data-tiptip']
         end
 
         def release_date

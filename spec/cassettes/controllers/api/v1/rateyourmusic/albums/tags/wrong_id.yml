@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rateyourmusic.com/wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Cookie:
+      - sec_bs=<RATEYOURMUSIC_SEC_BS>; sec_id=<RATEYOURMUSIC_SEC_ID>; sec_ts=<RATEYOURMUSIC_SEC_TS>;
+        ulv=<RATEYOURMUSIC_SESSION_ID>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - rateyourmusic.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 09 Jun 2021 05:38:05 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '28'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=60
+      Set-Cookie:
+      - is_logged_in=1; Expires=Tue, 01-Jan-2030 01:00:00 GMT; Path=/; HttpOnly;
+      - sec_bs=2aeda705f202bfec41867623edb5159e; Expires=Wed, 09-Jun-2021 13:00:26
+        GMT; Path=/; secure; HttpOnly;
+      - sec_id=772bd4f7a9960e23947320d214e40e7d; Expires=Wed, 09-Jun-2021 13:00:26
+        GMT; Path=/; secure; HttpOnly;
+      - sec_ts=1623242126; Expires=Wed, 09-Jun-2021 13:00:26 GMT; Path=/; secure;
+        HttpOnly;
+      Mime-Version:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: "<h1>404: File not found</h1>"
+  recorded_at: Wed, 09 Jun 2021 12:35:26 GMT
+recorded_with: VCR 6.0.0

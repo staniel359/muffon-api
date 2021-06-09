@@ -367,6 +367,13 @@ Rails.application.routes.draw do
             get 'albums'
           end
         end
+
+        namespace :albums, as: :album do
+          scope ':album' do
+            get '', action: :info
+            get 'tags'
+          end
+        end
       end
     end
   end
