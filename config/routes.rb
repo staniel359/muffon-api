@@ -78,8 +78,9 @@ Rails.application.routes.draw do
         end
 
         namespace :search do
-          get 'tracks'
+          get 'artists'
           get 'albums'
+          get 'tracks'
         end
       end
 

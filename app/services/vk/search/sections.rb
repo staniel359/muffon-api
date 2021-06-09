@@ -4,7 +4,7 @@ module VK
       private
 
       def no_data?
-        super || section_ids_list.blank?
+        section_ids_list.blank?
       end
 
       def params
