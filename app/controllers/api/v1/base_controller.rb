@@ -20,6 +20,7 @@ module API
         tag
         track
         track_id
+        video_id
       ].freeze
 
       private

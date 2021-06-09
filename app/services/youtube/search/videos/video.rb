@@ -13,7 +13,7 @@ module YouTube
             title: title,
             youtube_id: youtube_id,
             channel: channel_data,
-            image: image_data,
+            image: image_data_formatted,
             publish_date: publish_date,
             description: description
           }
@@ -36,20 +36,6 @@ module YouTube
             title: snippet['channelTitle'],
             youtube_id: snippet['channelId']
           }
-        end
-
-        def image_data
-          {
-            large: image_resized('high'),
-            medium: image_resized('medium'),
-            small: image_resized('default')
-          }
-        end
-
-        def image_resized(size)
-          snippet.dig(
-            'thumbnails', size, 'url'
-          )
         end
 
         def publish_date

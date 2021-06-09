@@ -297,6 +297,14 @@ Rails.application.routes.draw do
         namespace :search do
           get 'videos'
         end
+
+        namespace :videos, as: :video do
+          scope ':video_id' do
+            get '', action: :info
+            get 'description'
+            get 'tags'
+          end
+        end
       end
 
       # Odnoklassniki

@@ -1,6 +1,6 @@
 module YouTube
   module Search
-    class Videos < YouTube::Base
+    class Videos < YouTube::Search::Base
       private
 
       def no_data?
