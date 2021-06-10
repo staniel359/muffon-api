@@ -118,4 +118,28 @@ RSpec.describe API::V1::LastFM::TagsController, type: :controller do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :images' do
+    it 'returns 200 if any images' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/tags/images/success' do
+        get :images, params: { tag: 'dream pop' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no tag name' do
+      get :images, params: { tag: ' ' }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 400 if wrong tag name' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/tags/images/wrong_tag' do
+        get :images, params: { tag: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

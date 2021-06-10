@@ -25,6 +25,10 @@ module API
         def similar
           render_data_with_status
         end
+
+        def images
+          render_data_with_status
+        end
       end
     end
   end

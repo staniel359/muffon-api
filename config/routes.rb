@@ -53,6 +53,7 @@ Rails.application.routes.draw do
             get 'albums'
             get 'tracks'
             get 'similar'
+            get 'images'
           end
         end
 
