@@ -1,13 +1,9 @@
 module YouTube
-  module Search
-    class Videos < YouTube::Search::Base
+  module Playlist
+    class Videos < YouTube::Playlist::Base
       private
 
-      def no_data?
-        videos_list.blank?
-      end
-
-      def search_data
+      def playlist_data
         {
           next_page: next_page,
           videos: videos
@@ -15,7 +11,7 @@ module YouTube
       end
 
       def video_data_formatted(video)
-        YouTube::Search::Videos::Video.call(
+        YouTube::Playlist::Videos::Video.call(
           video: video
         )
       end

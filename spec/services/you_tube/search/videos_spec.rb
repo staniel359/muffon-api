@@ -7,11 +7,7 @@ RSpec.describe YouTube::Search::Videos do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/youtube/search/videos/success' do
-          subject.call(
-            query: 'wild nothing chinatown',
-            limit: 5,
-            next_page: 'CAUQAA'
-          )
+          subject.call(query: 'wild nothing chinatown', limit: 5, next_page: 'CAUQAA')
         end
       end
 

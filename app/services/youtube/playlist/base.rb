@@ -1,34 +1,33 @@
 module YouTube
-  module Search
+  module Playlist
     class Base < YouTube::Base
       include YouTube::Utils::Pagination
 
       private
 
       def primary_args
-        [@args.query]
+        [@args.playlist_id]
       end
 
       def link
-        "#{BASE_LINK}/search"
+        "#{BASE_LINK}/playlistItems"
       end
 
       def params
-        super.merge(search_params)
+        super.merge(playlist_params)
       end
 
-      def search_params
+      def playlist_params
         {
-          q: @args.query,
-          type: 'video',
+          playlistId: @args.playlist_id,
           part: 'snippet',
           maxResults: limit,
           pageToken: @args.next_page
-        }.compact
+        }
       end
 
       def data
-        { search: search_data }
+        { playlist: playlist_data }
       end
     end
   end

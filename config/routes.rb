@@ -298,6 +298,12 @@ Rails.application.routes.draw do
           get 'videos'
         end
 
+        namespace :channels, as: :channel do
+          scope ':channel_id' do
+            get 'videos'
+          end
+        end
+
         namespace :videos, as: :video do
           scope ':video_id' do
             get '', action: :info

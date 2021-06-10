@@ -1,6 +1,8 @@
 module YouTube
   module Video
     class Base < YouTube::Base
+      include YouTube::Utils::Video
+
       private
 
       def primary_args
@@ -8,13 +10,7 @@ module YouTube
       end
 
       def no_data?
-        video.blank?
-      end
-
-      def video
-        @video ||= response_data.dig(
-          'items', 0
-        )
+        videos_list.blank?
       end
 
       def link
@@ -28,7 +24,7 @@ module YouTube
       def video_params
         {
           id: @args.video_id,
-          part: 'id,snippet,statistics'
+          part: 'snippet,statistics'
         }
       end
 
@@ -36,12 +32,14 @@ module YouTube
         { video: video_data }
       end
 
-      def description
-        snippet['description']
+      def video
+        @video ||= videos_list[0]
       end
 
-      def snippet
-        @snippet ||= video['snippet']
+      def description
+        CGI.unescapeHTML(
+          snippet['description']
+        )
       end
 
       def tags_list

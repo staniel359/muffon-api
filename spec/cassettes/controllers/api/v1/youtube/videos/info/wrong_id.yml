@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?id=wejlhg239gh23&key=<YOUTUBE_API_KEY>&part=id,snippet,statistics
+    uri: https://www.googleapis.com/youtube/v3/videos?id=wejlhg239gh23&key=<YOUTUBE_API_KEY>&part=snippet,statistics
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 09 Jun 2021 18:36:47 GMT
+      - Wed, 09 Jun 2021 20:38:59 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -39,9 +39,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443";
-        ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443";
-        ma=2592000; v="46,43"
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -56,5 +55,5 @@ http_interactions:
             "resultsPerPage": 0
           }
         }
-  recorded_at: Wed, 09 Jun 2021 18:36:47 GMT
+  recorded_at: Wed, 09 Jun 2021 20:38:59 GMT
 recorded_with: VCR 6.0.0

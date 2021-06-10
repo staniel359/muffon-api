@@ -5,6 +5,10 @@ module YouTube
 
     private
 
+    def no_data?
+      response_data.blank?
+    end
+
     def response_data
       @response_data ||= JSON.parse(response)
     end
@@ -25,16 +29,14 @@ module YouTube
       secrets.youtube[:api_key]
     end
 
-    def image_data_formatted
-      YouTube::Utils::Image.call(
-        image: image
-      )
+    def videos
+      videos_list.map do |v|
+        video_data_formatted(v)
+      end
     end
 
-    def image
-      snippet.dig(
-        'thumbnails', 'default', 'url'
-      )
+    def videos_list
+      @videos_list ||= response_data['items']
     end
   end
 end

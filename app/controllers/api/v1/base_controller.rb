@@ -8,6 +8,7 @@ module API
         album_type
         artist
         artist_id
+        channel_id
         group_id
         label
         label_id

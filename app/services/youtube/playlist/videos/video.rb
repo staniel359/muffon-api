@@ -1,7 +1,7 @@
 module YouTube
-  module Search
+  module Playlist
     class Videos
-      class Video < YouTube::Search::Videos
+      class Video < YouTube::Playlist::Videos
         include YouTube::Utils::Video
 
         def call
@@ -14,7 +14,6 @@ module YouTube
           {
             title: title,
             youtube_id: youtube_id,
-            channel: channel_data,
             image: image_data_formatted,
             publish_date: publish_date
           }
@@ -25,7 +24,9 @@ module YouTube
         end
 
         def youtube_id
-          video.dig('id', 'videoId')
+          snippet.dig(
+            'resourceId', 'videoId'
+          )
         end
       end
     end

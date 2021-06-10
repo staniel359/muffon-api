@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=20&part=snippet&q=wejlhg239gh23&type=video
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&maxResults=20&pageToken&part=snippet&playlistId=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -17,17 +17,17 @@ http_interactions:
       - www.googleapis.com
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Vary:
       - Origin
       - Referer
       - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
       Date:
-      - Wed, 09 Jun 2021 20:51:41 GMT
+      - Thu, 10 Jun 2021 09:09:07 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -47,14 +47,19 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-          "kind": "youtube#searchListResponse",
-          "etag": "fMycYpE4ktsKS4sNPKWemDv204w",
-          "regionCode": "BY",
-          "pageInfo": {
-            "totalResults": 0,
-            "resultsPerPage": 0
-          },
-          "items": []
+          "error": {
+            "code": 404,
+            "message": "The playlist identified with the request's \u003ccode\u003eplaylistId\u003c/code\u003e parameter cannot be found.",
+            "errors": [
+              {
+                "message": "The playlist identified with the request's \u003ccode\u003eplaylistId\u003c/code\u003e parameter cannot be found.",
+                "domain": "youtube.playlistItem",
+                "reason": "playlistNotFound",
+                "location": "playlistId",
+                "locationType": "parameter"
+              }
+            ]
+          }
         }
-  recorded_at: Wed, 09 Jun 2021 20:51:41 GMT
+  recorded_at: Thu, 10 Jun 2021 09:09:07 GMT
 recorded_with: VCR 6.0.0
