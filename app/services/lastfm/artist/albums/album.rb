@@ -13,12 +13,17 @@ module LastFM
         def data
           {
             title: title,
-            image: image_data
+            image: image_data,
+            listeners_count: listeners_count
           }
         end
 
         def album
           @album ||= @args.album
+        end
+
+        def artist_name
+          album.dig('artist', 'name')
         end
       end
     end

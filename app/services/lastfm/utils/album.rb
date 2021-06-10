@@ -8,7 +8,11 @@ module LastFM
       end
 
       def artist_data_formatted
-        { name: album['artist'] }
+        { name: artist_name }
+      end
+
+      def artist_name
+        album['artist']
       end
 
       def image_data
@@ -17,6 +21,12 @@ module LastFM
 
       def image
         album.dig('image', -1, '#text')
+      end
+
+      def listeners_count
+        ::Album.with_artist_title(
+          artist_name, title
+        ).listeners_count
       end
     end
   end

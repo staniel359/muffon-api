@@ -11,7 +11,7 @@ module RateYourMusic
         def data
           {
             title: title,
-            artist: artist_names_formatted,
+            artist: artist_formatted,
             artists: artists,
             duration: duration
           }

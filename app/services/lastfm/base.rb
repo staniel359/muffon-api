@@ -85,10 +85,6 @@ module LastFM
         tags_list.length >= 5
     end
 
-    def artist_image_data_formatted(artist)
-      ::Artist.with_name(artist).image
-    end
-
     def description_formatted(data)
       return '' if data.blank?
 

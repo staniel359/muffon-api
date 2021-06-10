@@ -6,9 +6,9 @@ class Track < ApplicationRecord
   class << self
     def with_artist_title(artist_name, title)
       artist_id = ::Artist.with_name(artist_name).id
-      artists = with_artist_id_title(artist_id, title)
+      tracks = with_artist_id_title(artist_id, title)
 
-      artists.first_or_create!(
+      tracks.first_or_create!(
         artist_id: artist_id,
         title: title,
         player_id: player_id

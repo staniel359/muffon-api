@@ -16,6 +16,7 @@ module API
 
         def images
           update_artist_image
+
           render_data_with_status
         end
 
@@ -34,7 +35,9 @@ module API
         private
 
         def update_artist_image
-          Muffon::Updater::Artist::Image.call(data: data)
+          Muffon::Updater::Artist::Image.call(
+            artist: data[:artist]
+          )
         end
       end
     end

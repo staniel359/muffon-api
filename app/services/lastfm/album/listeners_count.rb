@@ -4,7 +4,11 @@ module LastFM
       private
 
       def album_data
-        { listeners_count: listeners_count }
+        {
+          title: title,
+          artist: artist_formatted,
+          listeners_count: listeners_count
+        }
       end
     end
   end

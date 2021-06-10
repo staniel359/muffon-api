@@ -11,7 +11,7 @@ module Helpers
         end
 
         def listeners_count_data
-          {:album=>{:listeners_count=>258069}}
+          {:album=>{:artist=>{:name=>"Wild Nothing"}, :listeners_count=>258069, :title=>"Nocturne"}}
         end
 
         def tags_data

@@ -13,7 +13,7 @@ module RateYourMusic
         {
           title: title,
           rateyourmusic_id: rateyourmusic_id,
-          artist: artist_names_formatted,
+          artist: artist_formatted,
           artists: artists
         }
       end
@@ -30,7 +30,7 @@ module RateYourMusic
         )[0]['value'].scan(/\d+/)[0].to_i
       end
 
-      def artist_names_formatted
+      def artist_formatted
         { name: artist_names }
       end
 

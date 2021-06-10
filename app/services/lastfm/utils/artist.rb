@@ -8,7 +8,7 @@ module LastFM
       end
 
       def image_data
-        artist_image_data_formatted(name)
+        ::Artist.with_name(name).image
       end
 
       def listeners_count

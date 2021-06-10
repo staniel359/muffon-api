@@ -3,17 +3,19 @@ module Muffon
     module Artist
       class Image < Muffon::Base
         def call
-          return if artist_name.blank?
+          return if not_all_args?
 
           update_artist_image
         end
 
         private
 
+        def not_all_args?
+          artist_name.blank?
+        end
+
         def artist_name
-          @artist_name ||= @args.data.dig(
-            :artist, :name
-          )
+          @artist_name ||= @args.artist[:name]
         end
 
         def update_artist_image
@@ -29,8 +31,8 @@ module Muffon
         end
 
         def data_image_url
-          @args.data.dig(
-            :artist, :images, 0, :medium
+          @args.artist.dig(
+            :images, 0, :medium
           )
         end
 
