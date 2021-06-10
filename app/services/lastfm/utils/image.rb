@@ -6,6 +6,7 @@ module LastFM
         album: 'c6f59c1e5e7240a4c0d427abd71f3dbb',
         track: '4128a6eb29f94943c9d206c08e625904'
       }.freeze
+      YOUTUBE_PLACEHOLDER = 'https://i.ytimg.com'.freeze
 
       def call
         data
@@ -35,6 +36,8 @@ module LastFM
       end
 
       def default_image
+        return YOUTUBE_PLACEHOLDER if @args.model == 'video'
+
         'https://lastfm.freetls.fastly.net'\
           "/i/u/300x300/#{model_hash}.png"
       end
