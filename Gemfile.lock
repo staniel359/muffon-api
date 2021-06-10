@@ -92,12 +92,6 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
-    database_cleaner (2.0.1)
-      database_cleaner-active_record (~> 2.0.0)
-    database_cleaner-active_record (2.0.1)
-      activerecord (>= 5.a)
-      database_cleaner-core (~> 2.0.0)
-    database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -299,7 +293,6 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capistrano3-puma
-  database_cleaner
   listen
   nokogiri
   pg

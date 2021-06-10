@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe SoundCloud::Album::Tags do
   subject { described_class }
 

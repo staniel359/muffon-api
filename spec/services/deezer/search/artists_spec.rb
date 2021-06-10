@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Deezer::Search::Artists do
   subject { described_class }
 

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Genius::Search::Tracks do
   subject { described_class }
 

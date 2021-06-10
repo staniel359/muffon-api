@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe API::V1::RateYourMusic::ArtistsController, type: :controller do
   describe 'GET :albums' do
     it 'returns 200 if artist present' do

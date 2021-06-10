@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe LastFM::Artist::Images do
   subject { described_class }
 

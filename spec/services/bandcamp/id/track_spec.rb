@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Bandcamp::Id::Track do
   subject { described_class }
 

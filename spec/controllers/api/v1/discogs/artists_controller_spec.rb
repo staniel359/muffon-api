@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe API::V1::Discogs::ArtistsController, type: :controller do
   describe 'GET :albums' do
     it 'returns 200 if artist_id present' do

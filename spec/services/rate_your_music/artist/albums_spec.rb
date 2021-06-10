@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe RateYourMusic::Artist::Albums do
   subject { described_class }
 

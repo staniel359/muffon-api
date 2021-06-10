@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe SoundCloud::Track::Info do
   subject { described_class }
 

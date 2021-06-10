@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe YouTube::Video::Tags do
   subject { described_class }
 

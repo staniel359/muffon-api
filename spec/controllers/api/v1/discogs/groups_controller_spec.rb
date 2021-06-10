@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe API::V1::Discogs::GroupsController, type: :controller do
   describe 'GET :info' do
     it 'returns 200 if group_id present' do

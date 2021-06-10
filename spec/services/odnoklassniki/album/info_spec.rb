@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Odnoklassniki::Album::Info do
   subject { described_class }
 

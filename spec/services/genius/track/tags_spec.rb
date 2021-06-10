@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Genius::Track::Tags do
   subject { described_class }
 

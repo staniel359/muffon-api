@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe API::V1::Bandcamp::IdController, type: :controller do
   describe 'GET :artist' do
     it 'returns 200 if artist present' do

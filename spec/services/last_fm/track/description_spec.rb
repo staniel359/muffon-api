@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe LastFM::Track::Description do
   subject { described_class }
 

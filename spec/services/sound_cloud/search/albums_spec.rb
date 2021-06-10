@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe SoundCloud::Search::Albums do
   subject { described_class }
 

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe YandexMusic::Search::Artists do
   subject { described_class }
 

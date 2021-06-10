@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Deezer::Track::Info do
   subject { described_class }
 

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Discogs::Search::Labels do
   subject { described_class }
 

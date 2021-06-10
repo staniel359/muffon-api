@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe YouTube::Search::Videos do
   subject { described_class }
 

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe API::V1::LastFM::TopController, type: :controller do
   describe 'GET :artists' do
     it 'returns 200' do

@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe RateYourMusic::Album::Tags do
   subject { described_class }
 

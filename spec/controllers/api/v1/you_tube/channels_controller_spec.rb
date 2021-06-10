@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe API::V1::YouTube::ChannelsController, type: :controller do
   describe 'GET :videos' do
     it 'returns 200 if channel present' do

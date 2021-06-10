@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Discogs::Group::Description do
   subject { described_class }
 

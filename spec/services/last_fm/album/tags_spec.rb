@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe LastFM::Album::Tags do
   subject { described_class }
 

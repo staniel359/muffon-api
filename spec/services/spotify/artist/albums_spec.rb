@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Spotify::Artist::Albums do
   subject { described_class }
 

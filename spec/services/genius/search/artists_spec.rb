@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Genius::Search::Artists do
   subject { described_class }
 

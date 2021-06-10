@@ -31,7 +31,6 @@ group :development do
 end
 
 group :test do
-  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'vcr'
   gem 'webmock'

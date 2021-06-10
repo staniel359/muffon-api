@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe Discogs::Album::Info do
   subject { described_class }
 

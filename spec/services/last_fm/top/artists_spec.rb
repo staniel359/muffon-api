@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 RSpec.describe LastFM::Top::Artists do
   subject { described_class }
 
