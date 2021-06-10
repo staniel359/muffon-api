@@ -2,6 +2,7 @@ module LastFM
   module Artist
     class Base < LastFM::Base
       API_METHOD = 'artist.getInfo'.freeze
+      include LastFM::Utils::Artist
 
       private
 
@@ -23,12 +24,6 @@ module LastFM
 
       def data
         { artist: artist_data }
-      end
-
-      def name
-        artist['name'] || artist.dig(
-          '@attr', 'artist'
-        )
       end
 
       def description

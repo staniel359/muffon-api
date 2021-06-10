@@ -7,7 +7,7 @@ module Helpers
         end
 
         def artists_data
-          {:search=>{:artists=>[{:listeners_count=>132, :name=>"Wild Nothing /"}, {:listeners_count=>1, :name=>"??? ??(Wild Nothing)"}, {:listeners_count=>4, :name=>"와일드 낫띵(Wild Nothing)"}, {:listeners_count=>82, :name=>"Beach Fossils, Wild Nothing"}, {:listeners_count=>341, :name=>"Beach Fossils & Wild Nothing"}], :page=>2, :total_pages=>40}}
+          {:search=>{:artists=>[{:name=>"Wild Nothing /"}, {:name=>"??? ??(Wild Nothing)"}, {:name=>"와일드 낫띵(Wild Nothing)"}, {:name=>"Beach Fossils, Wild Nothing"}, {:name=>"Beach Fossils & Wild Nothing"}], :page=>2, :total_pages=>40}}
         end
 
         def tags_data

@@ -2,8 +2,6 @@ module LastFM
   module Artist
     class Similar
       class Artist < LastFM::Artist::Similar
-        include LastFM::Utils::Artist
-
         def call
           data
         end
@@ -13,7 +11,8 @@ module LastFM
         def data
           {
             name: name,
-            image: image_data
+            image: image_data,
+            listeners_count: listeners_count
           }.compact
         end
 

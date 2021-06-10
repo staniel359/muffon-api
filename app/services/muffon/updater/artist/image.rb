@@ -1,29 +1,13 @@
 module Muffon
   module Updater
     module Artist
-      class Image < Muffon::Base
-        def call
-          return if not_all_args?
-
-          update_artist_image
-        end
-
+      class Image < Muffon::Updater::Artist::Base
         private
 
-        def not_all_args?
-          artist_name.blank?
-        end
-
-        def artist_name
-          @artist_name ||= @args.artist[:name]
-        end
-
-        def update_artist_image
-          artist.update(image_url: image_url)
-        end
-
-        def artist
-          ::Artist.with_name(artist_name)
+        def update_artist
+          artist.update(
+            image_url: image_url
+          )
         end
 
         def image_url

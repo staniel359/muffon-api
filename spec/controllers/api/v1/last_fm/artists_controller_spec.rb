@@ -121,6 +121,30 @@ RSpec.describe API::V1::LastFM::ArtistsController, type: :controller do
     end
   end
 
+  describe 'GET :listeners_count' do
+    it 'returns 200 if artist exists' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/listeners_count/success' do
+        get :listeners_count, params: { artist: 'Wild Nothing' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no artist name' do
+      get :listeners_count, params: { artist: ' ' }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'controllers/api/v1/lastfm/artists/listeners_count/wrong_name' do
+        get :listeners_count, params: { artist: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   describe 'GET :albums' do
     it 'returns 200 if artist exists' do
       VCR.use_cassette 'controllers/api/v1/lastfm/artists/albums/success' do

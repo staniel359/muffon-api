@@ -3,7 +3,7 @@ module Helpers
     module Top
       class << self
         def artists_data
-          {:top=>{:artists=>[{:listeners_count=>1709570, :name=>"Ariana Grande"}, {:listeners_count=>2810444, :name=>"Taylor Swift"}, {:listeners_count=>3913116, :name=>"Drake"}, {:listeners_count=>480677, :name=>"Olivia Rodrigo"}, {:listeners_count=>1968765, :name=>"Kendrick Lamar"}], :page=>2, :total_pages=>2000}}
+          {:top=>{:artists=>[{:name=>"Ariana Grande"}, {:name=>"Taylor Swift"}, {:name=>"Drake"}, {:name=>"Olivia Rodrigo"}, {:name=>"Kendrick Lamar"}], :page=>2, :total_pages=>2000}}
         end
 
         def tags_data

@@ -18,6 +18,10 @@ module Helpers
           {:artist=>{:description=>"Wild Nothing is the solo project of Virginia-born Jack Tatum. Tatum began recording under the moniker Wild Nothing in the summer of 2009 in Blacksburg, Virginia. Upon gathering attention in indie music circles, he was signed with the Captured Tracks record label and began touring with a band. His debut full-length, \"Gemini,\" was released in spring 2010 to acclaim from Pitchfork Media and the mu...", :listeners_count=>566069, :name=>"Wild Nothing", :plays_count=>19514960, :tags=>[{:name=>"dream pop"}, {:name=>"shoegaze"}, {:name=>"indie pop"}, {:name=>"indie"}, {:name=>"seen live"}], :with_more=>{:description=>true, :tags=>true}}}
         end
 
+        def listeners_count_data
+          {:artist=>{:listeners_count=>567713, :name=>"Wild Nothing"}}
+        end
+
         def similar_data
           {:artist=>{:page=>2, :similar=>[{:name=>"Small Black"}, {:name=>"Seapony"}, {:name=>"Blouse"}, {:name=>"Day Wave"}, {:name=>"The Radio Dept."}], :total_pages=>40}}
         end

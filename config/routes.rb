@@ -16,6 +16,7 @@ Rails.application.routes.draw do
             get 'similar'
             get 'albums'
             get 'tracks'
+            get 'listeners_count'
 
             namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
               scope ':album' do

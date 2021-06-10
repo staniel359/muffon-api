@@ -12,7 +12,9 @@ module LastFM
       end
 
       def listeners_count
-        artist['listeners'].to_i
+        ::Artist.with_name(
+          name
+        ).listeners_count
       end
     end
   end

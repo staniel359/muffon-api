@@ -3,6 +3,8 @@ module API
     module LastFM
       class ArtistsController < API::V1::BaseController
         def info
+          update_artist_listeners_count
+
           render_data_with_status
         end
 
@@ -32,10 +34,22 @@ module API
           render_data_with_status
         end
 
+        def listeners_count
+          update_artist_listeners_count
+
+          render_data_with_status
+        end
+
         private
 
         def update_artist_image
           Muffon::Updater::Artist::Image.call(
+            artist: data[:artist]
+          )
+        end
+
+        def update_artist_listeners_count
+          Muffon::Updater::Artist::ListenersCount.call(
             artist: data[:artist]
           )
         end

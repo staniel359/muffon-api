@@ -10,6 +10,8 @@ class Artist < ApplicationRecord
   def image
     return if image_url.blank?
 
-    LastFM::Utils::Image.call(image: image_url)
+    LastFM::Utils::Image.call(
+      image: image_url
+    )
   end
 end
