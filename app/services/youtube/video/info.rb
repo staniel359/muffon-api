@@ -56,7 +56,7 @@ module YouTube
       end
 
       def tags_list
-        snippet['tags']
+        snippet['tags'] || []
       end
     end
   end
