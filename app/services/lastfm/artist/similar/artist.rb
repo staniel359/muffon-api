@@ -2,6 +2,8 @@ module LastFM
   module Artist
     class Similar
       class Artist < LastFM::Artist::Similar
+        prepend LastFM::Utils::Artist
+
         def call
           data
         end

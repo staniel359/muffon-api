@@ -25,12 +25,6 @@ module LastFM
       def data
         { artist: artist_data }
       end
-
-      def description
-        description_formatted(
-          artist.dig('bio', 'content')
-        )
-      end
     end
   end
 end

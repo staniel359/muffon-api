@@ -35,6 +35,10 @@ module SoundCloud
         )
       end
 
+      def description
+        track['description'] || ''
+      end
+
       def tags_list
         [track['genre']].compact
       end

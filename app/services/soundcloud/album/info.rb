@@ -41,6 +41,25 @@ module SoundCloud
         ).compact
       end
 
+      def description
+        album['description'] || ''
+      end
+
+      def tags_list
+        [
+          raw_genres,
+          raw_tags
+        ].flatten.reject(&:blank?)
+      end
+
+      def raw_genres
+        album['genre']
+      end
+
+      def raw_tags
+        album['tags'].split(/\s?"\s?/)
+      end
+
       def tracks
         tracks_list.map do |t|
           track_data_formatted(t)

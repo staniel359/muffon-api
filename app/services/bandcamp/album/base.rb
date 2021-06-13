@@ -47,14 +47,6 @@ module Bandcamp
         @artist ||= response_data['band']
       end
 
-      def description
-        response_data['about'] || ''
-      end
-
-      def tags_list
-        response_data['tags']
-      end
-
       alias link album_track_link
     end
   end

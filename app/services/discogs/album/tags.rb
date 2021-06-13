@@ -1,6 +1,6 @@
 module Discogs
   module Album
-    class Tags < Discogs::Album::Base
+    class Tags < Discogs::Album::Info
       private
 
       def album_data

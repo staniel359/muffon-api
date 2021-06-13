@@ -21,10 +21,6 @@ module SoundCloud
         )
       end
 
-      def description
-        track['description'] || ''
-      end
-
       def audio_data
         {
           present: audio_present?,

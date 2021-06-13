@@ -18,7 +18,7 @@ module YouTube
       def channel_params
         {
           id: @args.channel_id,
-          part: 'contentDetails'
+          part: 'snippet,contentDetails'
         }
       end
 

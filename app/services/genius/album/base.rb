@@ -26,10 +26,6 @@ module Genius
       def data
         { album: album_data }
       end
-
-      def description
-        album['description_preview']
-      end
     end
   end
 end

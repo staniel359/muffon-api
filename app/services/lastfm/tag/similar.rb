@@ -5,6 +5,10 @@ module LastFM
 
       private
 
+      def tag_data
+        { similar: tags }
+      end
+
       def similar_list
         response_data.css(
           '.tags-list .tag'
@@ -12,7 +16,6 @@ module LastFM
       end
 
       alias link base_link
-      alias collection tags
       alias tags_list similar_list
     end
   end

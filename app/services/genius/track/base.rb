@@ -32,20 +32,6 @@ module Genius
           'primary_artist', 'featured_artists'
         ).flatten.compact
       end
-
-      def description
-        track['description_preview']
-      end
-
-      def tags_list
-        track['tags']
-      end
-
-      def lyrics
-        Genius::Track::Info::Lyrics.call(
-          track_slug: track['path']
-        )[:lyrics]
-      end
     end
   end
 end

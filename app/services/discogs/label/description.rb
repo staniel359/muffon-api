@@ -1,6 +1,6 @@
 module Discogs
   module Label
-    class Description < Discogs::Label::Base
+    class Description < Discogs::Label::Info
       private
 
       def label_data

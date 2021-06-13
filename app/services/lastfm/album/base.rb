@@ -28,16 +28,6 @@ module LastFM
       def data
         { album: album_data }
       end
-
-      def listeners_count
-        album['listeners'].to_i
-      end
-
-      def description
-        description_formatted(
-          album.dig('wiki', 'content')
-        )
-      end
     end
   end
 end

@@ -28,12 +28,6 @@ module LastFM
       def data
         { track: track_data }
       end
-
-      def description
-        description_formatted(
-          track.dig('wiki', 'content')
-        )
-      end
     end
   end
 end

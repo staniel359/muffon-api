@@ -16,6 +16,14 @@ module Discogs
           description: description_truncated
         }
       end
+
+      def name
+        artist['name']
+      end
+
+      def description
+        artist['profile']
+      end
     end
   end
 end

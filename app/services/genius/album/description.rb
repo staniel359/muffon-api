@@ -1,6 +1,6 @@
 module Genius
   module Album
-    class Description < Genius::Album::Base
+    class Description < Genius::Album::Info
       private
 
       def album_data

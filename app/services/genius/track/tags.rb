@@ -1,6 +1,6 @@
 module Genius
   module Track
-    class Tags < Genius::Track::Base
+    class Tags < Genius::Track::Info
       private
 
       def track_data

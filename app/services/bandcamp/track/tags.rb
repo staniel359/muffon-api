@@ -1,6 +1,6 @@
 module Bandcamp
   module Track
-    class Tags < Bandcamp::Track::Base
+    class Tags < Bandcamp::Track::Info
       private
 
       def track_data

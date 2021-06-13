@@ -28,16 +28,6 @@ module LastFM
       def data
         { tag: tag_data }
       end
-
-      def name
-        tag['name']
-      end
-
-      def description
-        description_formatted(
-          tag.dig('wiki', 'content')
-        )
-      end
     end
   end
 end

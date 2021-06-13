@@ -1,6 +1,6 @@
 module SoundCloud
   module Album
-    class Description < SoundCloud::Album::Base
+    class Description < SoundCloud::Album::Info
       private
 
       def album_data

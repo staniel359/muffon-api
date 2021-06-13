@@ -1,6 +1,6 @@
 module LastFM
   module Tag
-    class Description < LastFM::Tag::Base
+    class Description < LastFM::Tag::Info
       private
 
       def tag_data

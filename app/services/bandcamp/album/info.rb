@@ -41,6 +41,14 @@ module Bandcamp
         )
       end
 
+      def description
+        response_data['about'] || ''
+      end
+
+      def tags_list
+        response_data['tags']
+      end
+
       def tracks
         tracks_list.map do |t|
           track_data_formatted(t)

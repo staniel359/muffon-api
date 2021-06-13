@@ -28,6 +28,10 @@ module Odnoklassniki
         }
       end
 
+      def tags_list
+        album['genres']
+      end
+
       def tracks
         tracks_list.map do |t|
           track_data_formatted(t)

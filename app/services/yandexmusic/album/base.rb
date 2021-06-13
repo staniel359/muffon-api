@@ -32,10 +32,6 @@ module YandexMusic
       def data
         { album: album_data }
       end
-
-      def tags_list
-        [album['genre']]
-      end
     end
   end
 end

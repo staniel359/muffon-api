@@ -1,6 +1,6 @@
 module YouTube
   module Video
-    class Tags < YouTube::Video::Base
+    class Tags < YouTube::Video::Info
       private
 
       def video_data

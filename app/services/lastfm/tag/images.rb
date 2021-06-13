@@ -5,10 +5,6 @@ module LastFM
 
       private
 
-      def data
-        { tag: tag_data }
-      end
-
       def tag_data
         { images: collection }
       end

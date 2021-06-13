@@ -48,6 +48,16 @@ module YouTube
       def dislikes_count
         statistics['dislikeCount'].to_i
       end
+
+      def description
+        CGI.unescapeHTML(
+          snippet['description']
+        )
+      end
+
+      def tags_list
+        snippet['tags']
+      end
     end
   end
 end

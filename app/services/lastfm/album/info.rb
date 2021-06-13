@@ -29,8 +29,18 @@ module LastFM
         }
       end
 
+      def listeners_count
+        album['listeners'].to_i
+      end
+
       def plays_count
         album['playcount'].to_i
+      end
+
+      def description
+        description_formatted(
+          album.dig('wiki', 'content')
+        )
       end
 
       def tags_list

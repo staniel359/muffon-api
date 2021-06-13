@@ -20,14 +20,6 @@ module Discogs
       def artist
         @artist ||= response_data
       end
-
-      def name
-        artist['name']
-      end
-
-      def description
-        artist['profile']
-      end
     end
   end
 end

@@ -1,6 +1,6 @@
 module LastFM
   module Track
-    class Description < LastFM::Track::Base
+    class Description < LastFM::Track::Info
       private
 
       def track_data

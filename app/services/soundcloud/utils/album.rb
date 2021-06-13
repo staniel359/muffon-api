@@ -20,10 +20,6 @@ module SoundCloud
           album['artwork_url'], 'album'
         )
       end
-
-      def description
-        album['description'] || ''
-      end
     end
   end
 end

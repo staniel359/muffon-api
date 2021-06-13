@@ -1,6 +1,6 @@
 module Bandcamp
   module Track
-    class Description < Bandcamp::Track::Base
+    class Description < Bandcamp::Track::Info
       private
 
       def track_data

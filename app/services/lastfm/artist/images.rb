@@ -20,14 +20,16 @@ module LastFM
         "#{base_link}/+images"
       end
 
+      def artist_data
+        { name: name }.merge(
+          paginated_data
+        )
+      end
+
       def collection_item_data_formatted(image)
         image_data_formatted(
           image['src'], 'artist'
         )
-      end
-
-      def artist_data
-        { name: name }.merge(paginated_data)
       end
     end
   end

@@ -23,6 +23,18 @@ module YouTube
       end
 
       def channel_data
+        { title: title }.merge(
+          uploads_playlist_data
+        )
+      end
+
+      def title
+        response_data.dig(
+          'items', 0, 'snippet', 'title'
+        )
+      end
+
+      def uploads_playlist_data
         uploads_playlist.slice(
           :next_page, :videos
         )

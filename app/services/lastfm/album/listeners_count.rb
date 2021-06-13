@@ -1,6 +1,6 @@
 module LastFM
   module Album
-    class ListenersCount < LastFM::Album::Base
+    class ListenersCount < LastFM::Album::Info
       private
 
       def album_data

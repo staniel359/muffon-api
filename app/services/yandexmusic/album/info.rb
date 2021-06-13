@@ -44,6 +44,10 @@ module YandexMusic
         { name: label['name'] }
       end
 
+      def tags_list
+        [album['genre']]
+      end
+
       def tracks
         tracks_list.map do |t|
           track_data_formatted(t)

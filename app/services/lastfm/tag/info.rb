@@ -17,12 +17,22 @@ module LastFM
         }
       end
 
+      def name
+        tag['name']
+      end
+
       def taggings_count
         tag['total']
       end
 
       def taggers_count
         tag['reach']
+      end
+
+      def description
+        description_formatted(
+          tag.dig('wiki', 'content')
+        )
       end
     end
   end

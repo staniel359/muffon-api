@@ -25,10 +25,6 @@ module Odnoklassniki
       def album
         @album ||= response_data['album']
       end
-
-      def tags_list
-        album['genres']
-      end
     end
   end
 end

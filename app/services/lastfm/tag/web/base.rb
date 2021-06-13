@@ -37,7 +37,7 @@ module LastFM
         end
 
         def data
-          { tag: paginated_data }
+          { tag: tag_data }
         end
 
         def artist_data_formatted

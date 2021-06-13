@@ -32,13 +32,6 @@ module RateYourMusic
       def data
         { album: album_data }
       end
-
-      def tags_list
-        album
-          .css('.release_genres .genre')
-          .map(&:text)
-          .reject(&:blank?)
-      end
     end
   end
 end

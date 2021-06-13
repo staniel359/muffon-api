@@ -11,7 +11,7 @@ module Helpers
         end
 
         def similar_data
-          {:track=>{:page=>2, :similar=>[{:artist=>{:name=>"Beach House"}, :artists=>[{:name=>"Beach House"}], :duration=>"04:15", :player_id=>"1", :title=>"Myth"}, {:artist=>{:name=>"DIIV"}, :artists=>[{:name=>"DIIV"}], :duration=>"02:57", :player_id=>"1", :title=>"Human"}, {:artist=>{:name=>"Craft Spells"}, :artists=>[{:name=>"Craft Spells"}], :duration=>"04:00", :player_id=>"1", :title=>"After the Moment"}, {:artist=>{:name=>"Slowdive"}, :artists=>[{:name=>"Slowdive"}], :duration=>"03:51", :player_id=>"1", :title=>"Alison"}, {:artist=>{:name=>"Beach House"}, :artists=>[{:name=>"Beach House"}], :duration=>"00:00", :player_id=>"1", :title=>"Space Song"}], :total_pages=>40}}
+          {:track=>{:artist=>{:name=>"Wild Nothing"}, :page=>2, :similar=>[{:artist=>{:name=>"Beach House"}, :artists=>[{:name=>"Beach House"}], :duration=>"04:15", :player_id=>"1", :title=>"Myth"}, {:artist=>{:name=>"DIIV"}, :artists=>[{:name=>"DIIV"}], :duration=>"02:57", :player_id=>"1", :title=>"Human"}, {:artist=>{:name=>"Craft Spells"}, :artists=>[{:name=>"Craft Spells"}], :duration=>"04:00", :player_id=>"1", :title=>"After the Moment"}, {:artist=>{:name=>"Slowdive"}, :artists=>[{:name=>"Slowdive"}], :duration=>"03:51", :player_id=>"1", :title=>"Alison"}, {:artist=>{:name=>"Beach House"}, :artists=>[{:name=>"Beach House"}], :duration=>"00:00", :player_id=>"1", :title=>"Space Song"}], :title=>"Chinatown", :total_pages=>40}}
         end
 
         def tags_data

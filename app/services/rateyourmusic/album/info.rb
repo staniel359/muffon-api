@@ -77,6 +77,13 @@ module RateYourMusic
         )[0].next_element.text.strip
       end
 
+      def tags_list
+        album
+          .css('.release_genres .genre')
+          .map(&:text)
+          .reject(&:blank?)
+      end
+
       def tracks
         tracks_list.map do |t|
           track_data_formatted(t)

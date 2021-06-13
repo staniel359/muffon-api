@@ -27,6 +27,10 @@ module Genius
         }
       end
 
+      def description
+        album['description_preview']
+      end
+
       def tracks
         Genius::Album::Info::Tracks.call(
           album_id: @args.album_id

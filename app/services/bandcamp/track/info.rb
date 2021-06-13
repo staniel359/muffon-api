@@ -58,6 +58,14 @@ module Bandcamp
         )
       end
 
+      def description
+        response_data['about'] || ''
+      end
+
+      def tags_list
+        response_data['tags']
+      end
+
       def audio_data
         {
           present: audio_link.present?,

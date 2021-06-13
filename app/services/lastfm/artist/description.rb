@@ -1,6 +1,6 @@
 module LastFM
   module Artist
-    class Description < LastFM::Artist::Base
+    class Description < LastFM::Artist::Info
       private
 
       def artist_data

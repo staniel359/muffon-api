@@ -67,6 +67,12 @@ module LastFM
         )
       end
 
+      def description
+        description_formatted(
+          track.dig('wiki', 'content')
+        )
+      end
+
       def tags_list
         track.dig('toptags', 'tag')
       end

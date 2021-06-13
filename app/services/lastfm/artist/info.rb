@@ -30,6 +30,12 @@ module LastFM
         ).to_i
       end
 
+      def description
+        description_formatted(
+          artist.dig('bio', 'content')
+        )
+      end
+
       def tags_list
         artist.dig('tags', 'tag')
       end

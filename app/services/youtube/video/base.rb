@@ -35,16 +35,6 @@ module YouTube
       def video
         @video ||= videos_list[0]
       end
-
-      def description
-        CGI.unescapeHTML(
-          snippet['description']
-        )
-      end
-
-      def tags_list
-        snippet['tags']
-      end
     end
   end
 end
