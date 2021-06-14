@@ -11,7 +11,7 @@ module YouTube
         @uploads_playlist ||= YouTube::Playlist::Videos.call(
           playlist_id: uploads_playlist_id,
           limit: @args.limit,
-          next_page: @args.next_page
+          page: @args.page
         )[:playlist]
       end
 
@@ -36,7 +36,7 @@ module YouTube
 
       def uploads_playlist_data
         uploads_playlist.slice(
-          :next_page, :videos
+          :prev_page, :next_page, :videos
         )
       end
     end

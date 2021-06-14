@@ -22,7 +22,7 @@ module YouTube
           playlistId: @args.playlist_id,
           part: 'snippet',
           maxResults: limit,
-          pageToken: @args.next_page
+          pageToken: @args.page
         }
       end
 

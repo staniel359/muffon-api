@@ -23,7 +23,7 @@ module YouTube
           type: 'video',
           part: 'snippet',
           maxResults: limit,
-          pageToken: @args.next_page
+          pageToken: @args.page
         }.compact
       end
 

@@ -5,7 +5,7 @@ RSpec.describe YouTube::Playlist::Videos do
     context 'when playlist present' do
       let(:output) do
         VCR.use_cassette 'services/youtube/playlist/videos/success' do
-          subject.call(playlist_id: 'UUZBXFjbyp1gezLRsDbG2hKQ', limit: 5, next_page: 'CAUQAA')
+          subject.call(playlist_id: 'UUZBXFjbyp1gezLRsDbG2hKQ', limit: 5, page: 'CAUQAA')
         end
       end
 

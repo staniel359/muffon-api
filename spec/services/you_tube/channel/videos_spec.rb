@@ -5,7 +5,7 @@ RSpec.describe YouTube::Channel::Videos do
     context 'when channel present' do
       let(:output) do
         VCR.use_cassette 'services/youtube/channel/videos/success' do
-          subject.call(channel_id: 'UCZBXFjbyp1gezLRsDbG2hKQ', limit: 5, next_page: 'CAUQAA')
+          subject.call(channel_id: 'UCZBXFjbyp1gezLRsDbG2hKQ', limit: 5, page: 'CAUQAA')
         end
       end
 
