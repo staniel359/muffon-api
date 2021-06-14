@@ -4,7 +4,166 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
 
-      # LastFM
+# Bandcamp
+
+      namespace :bandcamp do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+        end
+
+        namespace :id do
+          scope ':artist' do
+            get '', action: :artist
+
+            scope :albums do
+              scope ':album' do
+                get '', action: :album
+              end
+            end
+
+            scope :tracks do
+              scope ':track' do
+                get '', action: :track
+              end
+            end
+          end
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+
+            namespace :albums, as: :album do
+              scope ':album_id' do
+                get '', action: :info
+                get 'description'
+                get 'tags'
+              end
+            end
+
+            namespace :tracks, as: :track do
+              scope ':track_id' do
+                get '', action: :info
+                get 'description'
+                get 'tags'
+              end
+            end
+          end
+        end
+
+        namespace :labels, as: :label do
+          scope ':label_id' do
+            get 'artists'
+            get 'albums'
+          end
+        end
+      end
+
+# Deezer
+
+      namespace :deezer do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
+      end
+
+# Discogs
+
+      namespace :discogs do
+        namespace :search do
+          get 'artists'
+          get 'labels'
+          get 'groups'
+          get 'albums'
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
+        namespace :labels, as: :label do
+          scope ':label_id' do
+            get '', action: :info
+            get 'description'
+            get 'albums'
+          end
+        end
+
+        namespace :groups, as: :group do
+          scope ':group_id' do
+            get '', action: :info
+            get 'description'
+            get 'tags'
+            get 'albums'
+          end
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'description'
+            get 'tags'
+          end
+        end
+      end
+
+# Genius
+
+      namespace :genius do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'description'
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+            get 'description'
+            get 'tags'
+            get 'lyrics'
+          end
+        end
+      end
+
+# LastFM
 
       namespace :lastfm do
         namespace :artists, as: :artist, constraints: { artist: /[^\/]+/ } do
@@ -64,259 +223,7 @@ Rails.application.routes.draw do
         end
       end
 
-      # VK
-
-      namespace :vk do
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
-
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-          get 'videos'
-        end
-      end
-
-      # Bandcamp
-
-      namespace :bandcamp do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :id do
-          scope ':artist' do
-            get '', action: :artist
-
-            scope :albums do
-              scope ':album' do
-                get '', action: :album
-              end
-            end
-
-            scope :tracks do
-              scope ':track' do
-                get '', action: :track
-              end
-            end
-          end
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-
-            namespace :albums, as: :album do
-              scope ':album_id' do
-                get '', action: :info
-                get 'description'
-                get 'tags'
-              end
-            end
-
-            namespace :tracks, as: :track do
-              scope ':track_id' do
-                get '', action: :info
-                get 'description'
-                get 'tags'
-              end
-            end
-          end
-        end
-
-        namespace :labels, as: :label do
-          scope ':label_id' do
-            get 'artists'
-            get 'albums'
-          end
-        end
-      end
-
-      # Discogs
-
-      namespace :discogs do
-        namespace :search do
-          get 'artists'
-          get 'labels'
-          get 'groups'
-          get 'albums'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :labels, as: :label do
-          scope ':label_id' do
-            get '', action: :info
-            get 'description'
-            get 'albums'
-          end
-        end
-
-        namespace :groups, as: :group do
-          scope ':group_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-          end
-        end
-      end
-
-      # Spotify
-
-      namespace :spotify do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
-      end
-
-      # SoundCloud
-
-      namespace :soundcloud do
-        namespace :search do
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
-      end
-
-      # Deezer
-
-      namespace :deezer do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
-      end
-
-      # Yandex Music
-
-      namespace :yandexmusic do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'tags'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
-      end
-
-      # YouTube
-
-      namespace :youtube do
-        namespace :search do
-          get 'videos'
-        end
-
-        namespace :channels, as: :channel do
-          scope ':channel_id' do
-            get 'videos'
-          end
-        end
-
-        namespace :videos, as: :video do
-          scope ':video_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-          end
-        end
-      end
-
-      # Odnoklassniki
+# Odnoklassniki
 
       namespace :odnoklassniki do
         namespace :search do
@@ -345,9 +252,56 @@ Rails.application.routes.draw do
         end
       end
 
-      # Genius
+# Rate Your Music
 
-      namespace :genius do
+      namespace :rateyourmusic do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'albums_various'
+          get 'labels'
+        end
+
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
+        namespace :albums, as: :album do
+          scope ':album' do
+            get '', action: :info
+            get 'tags'
+          end
+        end
+      end
+
+# SoundCloud
+
+      namespace :soundcloud do
+        namespace :search do
+          get 'albums'
+          get 'tracks'
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'description'
+            get 'tags'
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
+      end
+
+# Spotify
+
+      namespace :spotify do
         namespace :search do
           get 'artists'
           get 'albums'
@@ -363,23 +317,48 @@ Rails.application.routes.draw do
         namespace :albums, as: :album do
           scope ':album_id' do
             get '', action: :info
-            get 'description'
           end
         end
 
         namespace :tracks, as: :track do
           scope ':track_id' do
             get '', action: :info
-            get 'description'
-            get 'tags'
-            get 'lyrics'
           end
         end
       end
 
-      # Rate Your Music
+# VK
 
-      namespace :rateyourmusic do
+      namespace :vk do
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
+
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+          get 'videos'
+        end
+      end
+
+# Yandex Music
+
+      namespace :yandexmusic do
+        namespace :search do
+          get 'artists'
+          get 'albums'
+          get 'tracks'
+        end
+
         namespace :artists, as: :artist do
           scope ':artist_id' do
             get 'albums'
@@ -387,14 +366,42 @@ Rails.application.routes.draw do
         end
 
         namespace :albums, as: :album do
-          scope ':album' do
+          scope ':album_id' do
             get '', action: :info
+            get 'tags'
+          end
+        end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+          end
+        end
+      end
+
+# YouTube
+
+      namespace :youtube do
+        namespace :search do
+          get 'videos'
+        end
+
+        namespace :channels, as: :channel do
+          scope ':channel_id' do
+            get 'videos'
+          end
+        end
+
+        namespace :videos, as: :video do
+          scope ':video_id' do
+            get '', action: :info
+            get 'description'
             get 'tags'
           end
         end
       end
     end
   end
-
-  match '*path', :to => 'application#not_found', via: :all
+# 
+  match '*path', to: 'application#not_found', via: :all
 end

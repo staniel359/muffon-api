@@ -8,9 +8,17 @@ module RateYourMusic
       private
 
       def data
-        return image_data if @args.image.present?
+        return image_data if image_present?
 
         default_image_data(@args.model)
+      end
+
+      def image_present?
+        @args.image.present? && !placeholder?
+      end
+
+      def placeholder?
+        @args.image.end_with?('blockeds.png')
       end
 
       def image_data
