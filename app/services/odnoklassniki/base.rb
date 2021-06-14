@@ -37,7 +37,9 @@ module Odnoklassniki
     def session_id
       return test_session_id if Rails.env.test?
 
-      get_global_value('odnoklassniki_session_id')
+      get_global_value(
+        'odnoklassniki_session_id'
+      )
     end
 
     def test_session_id
@@ -45,7 +47,8 @@ module Odnoklassniki
     end
 
     def global_value
-      Odnoklassniki::Utils::SessionId.call
+      @global_value ||=
+        Odnoklassniki::Utils::SessionId.call
     end
 
     def headers
@@ -57,9 +60,13 @@ module Odnoklassniki
     end
 
     def retry_with_new_session_id
+      return if global_value.blank?
+
       @response_data = nil
 
-      update_global_value('odnoklassniki_session_id')
+      update_global_value(
+        'odnoklassniki_session_id'
+      )
 
       call
     end

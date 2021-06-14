@@ -59,7 +59,8 @@ module YandexMusic
         end
 
         def global_value
-          @global_value ||= YandexMusic::Utils::SessionId.call
+          @global_value ||=
+            YandexMusic::Utils::SessionId.call
         end
 
         def retry_with_new_session_id

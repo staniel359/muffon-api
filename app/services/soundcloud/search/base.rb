@@ -42,7 +42,8 @@ module SoundCloud
       end
 
       def global_value
-        SoundCloud::Utils::ClientId.call
+        @global_value ||=
+          SoundCloud::Utils::ClientId.call
       end
 
       def params
@@ -58,6 +59,8 @@ module SoundCloud
       end
 
       def retry_with_new_client_id
+        return if global_value.blank?
+
         update_global_value(
           'soundcloud_v2_client_id'
         )

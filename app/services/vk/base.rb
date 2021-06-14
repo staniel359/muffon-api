@@ -59,7 +59,7 @@ module VK
     end
 
     def retry_with_new_session_id
-      return if global_value.nil?
+      return if global_value.blank?
 
       update_global_value('vk_session_id')
 

@@ -42,10 +42,12 @@ module Spotify
     end
 
     def global_value
-      Spotify::Utils::Token.call
+      @global_value ||= Spotify::Utils::Token.call
     end
 
     def retry_with_new_spotify_token
+      return if global_value.blank?
+
       update_global_value('spotify_token')
 
       call
