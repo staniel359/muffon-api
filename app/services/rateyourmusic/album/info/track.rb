@@ -19,7 +19,7 @@ module RateYourMusic
 
         def title
           full_title.children[-1].text.match(
-            /( - )?(.+)/
+            /(\s+-\s+)?(.+)/
           )[2]
         end
 
