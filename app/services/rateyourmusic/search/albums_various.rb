@@ -1,7 +1,7 @@
 module RateYourMusic
   module Search
     class AlbumsVarious < RateYourMusic::Search::Base
-      COLLECTION_NAME = 'albums'.freeze
+      COLLECTION_NAME = 'albums_various'.freeze
       SEARCH_TYPE = 'y'.freeze
 
       private
