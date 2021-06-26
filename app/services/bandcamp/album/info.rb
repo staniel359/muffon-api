@@ -29,18 +29,6 @@ module Bandcamp
         }
       end
 
-      def image_data
-        image_data_formatted(
-          image(response_data)
-        )
-      end
-
-      def release_date
-        date_formatted(
-          response_data['release_date']
-        )
-      end
-
       def description
         response_data['about'] || ''
       end

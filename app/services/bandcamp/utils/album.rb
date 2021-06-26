@@ -28,7 +28,7 @@ module Bandcamp
 
       def image_data
         image_data_formatted(
-          image(album)
+          image(album), 'album'
         )
       end
 

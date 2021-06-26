@@ -26,7 +26,9 @@ module Bandcamp
         end
 
         def image_data
-          image_data_formatted(image)
+          image_data_formatted(
+            image, 'artist'
+          )
         end
 
         def image

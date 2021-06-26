@@ -8,6 +8,12 @@ module Bandcamp
       private
 
       def data
+        return image_data if @args.image.present?
+
+        default_image_data(@args.model)
+      end
+
+      def image_data
         {
           original: image_resized('_10'),
           large: image_resized('_5'),

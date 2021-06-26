@@ -70,7 +70,7 @@ module Bandcamp
 
         def image_data
           image_data_formatted(
-            @args.track[:image]
+            @args.track[:image], 'track'
           )
         end
 

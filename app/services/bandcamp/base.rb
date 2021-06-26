@@ -34,9 +34,9 @@ module Bandcamp
       {}
     end
 
-    def image_data_formatted(image)
+    def image_data_formatted(image, model)
       Bandcamp::Utils::Image.call(
-        image: image
+        image: image, model: model
       )
     end
 
