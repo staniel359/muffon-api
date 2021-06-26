@@ -29,10 +29,18 @@ module RateYourMusic
           @album ||= @args.album
         end
 
+        def release_date
+          return '' if raw_release_date.blank?
+
+          date_formatted(
+            raw_release_date.css('td')[0].text
+          )
+        end
+
         def raw_release_date
-          album.css(
+          @raw_release_date ||= album.css(
             '.mbgen tr'
-          )[1].css('td')[0].text
+          )[1]
         end
       end
     end
