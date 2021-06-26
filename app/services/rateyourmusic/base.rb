@@ -55,6 +55,8 @@ module RateYourMusic
     end
 
     def artist_rateyourmusic_id(artist)
+      return '' if artist['title'].blank?
+
       artist['title'].scan(/\d+/)[0].to_i
     end
 
