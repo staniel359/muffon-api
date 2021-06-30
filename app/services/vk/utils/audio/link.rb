@@ -3,7 +3,8 @@ module VK
     module Audio
       class Link < VK::Base
         STRING = 'abcdefghijklmnopqrstuvwxyz'\
-          'ABCDEFGHIJKLMN0PQRSTUVWXYZO123456789+/='.freeze
+                 'ABCDEFGHIJKLMN0PQRSTUVWXYZ'\
+                 'O123456789+/='.freeze
 
         def call
           data

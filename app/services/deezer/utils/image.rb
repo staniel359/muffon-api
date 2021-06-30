@@ -35,8 +35,8 @@ module Deezer
 
       def image
         @image ||= 'https://cdns-images.dzcdn.net'\
-          "/images/#{image_model}/#{@args.image_id}"\
-          '/1000x1000-000000-80-0-0.jpg'
+                   "/images/#{image_model}/#{@args.image_id}"\
+                   '/1000x1000-000000-80-0-0.jpg'
       end
 
       def image_model
