@@ -37,6 +37,8 @@ module LastFM
       end
 
       def tags_list
+        return [] if artist['tags'].blank?
+
         artist.dig('tags', 'tag')
       end
     end
