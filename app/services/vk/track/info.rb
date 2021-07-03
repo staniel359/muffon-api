@@ -12,11 +12,12 @@ module VK
       def track_base_data
         {
           title: title,
+          extra_title: extra_title,
           vk_id: vk_id,
           player_id: player_id,
           artist: artist_formatted,
           artists: artists
-        }
+        }.compact
       end
 
       def track_extra_data
