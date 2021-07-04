@@ -13,13 +13,14 @@ module Deezer
         def data
           {
             title: title,
+            extra_title: extra_title,
             deezer_id: deezer_id,
             player_id: player_id,
             artist: artist_formatted,
             artists: artists,
             duration: duration,
             audio: audio_data
-          }
+          }.compact
         end
 
         def track

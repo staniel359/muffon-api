@@ -7,6 +7,14 @@ module Deezer
         track['SNG_TITLE']
       end
 
+      def extra_title
+        return if track['VERSION'].blank?
+
+        track['VERSION'].match(
+          /\((.+)\)/
+        )[1]
+      end
+
       def deezer_id
         track['SNG_ID'].to_i
       end
