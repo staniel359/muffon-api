@@ -46,7 +46,9 @@ module LastFM
       def tags_list
         return [] if album['tags'].blank?
 
-        album.dig('tags', 'tag')
+        [
+          album.dig('tags', 'tag')
+        ].flatten
       end
 
       def tracks

@@ -74,7 +74,11 @@ module LastFM
       end
 
       def tags_list
-        track.dig('toptags', 'tag')
+        return [] if track['toptags'].blank?
+
+        [
+          track.dig('toptags', 'tag')
+        ].flatten
       end
     end
   end
