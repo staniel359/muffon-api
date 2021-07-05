@@ -2,27 +2,34 @@ module Genius
   module Track
     class Info
       class Lyrics < Genius::Track::Info
-        private
-
-        def primary_args
-          [@args.track_slug]
+        def call
+          data
         end
 
-        def no_data?
-          lyrics.blank?
+        private
+
+        def data
+          { lyrics: lyrics }
         end
 
         def lyrics
-          @lyrics ||=
-            lyrics_original.presence || lyrics_alternative
+          return '' if @args.track_slug.blank?
+
+          lyrics_original.presence ||
+            lyrics_alternative.presence ||
+            ''
         end
 
         def lyrics_original
-          response_data.css('.lyrics p').text
+          response_data.css(
+            '.lyrics p'
+          ).text
         end
 
         def response_data
-          @response_data ||= Nokogiri::HTML.parse(response)
+          @response_data ||= Nokogiri::HTML.parse(
+            response
+          )
         end
 
         def link
@@ -32,7 +39,9 @@ module Genius
         def lyrics_alternative
           nodes = xpath_data('Lyrics__Container')
 
-          nodes.css('br').each { |br| br.replace("\n") }
+          nodes.css('br').each do |br|
+            br.replace("\n")
+          end
 
           nodes.text
         end
@@ -41,10 +50,6 @@ module Genius
           response_data.xpath(
             "//*[contains(@class, '#{class_name}')]"
           )
-        end
-
-        def data
-          { lyrics: lyrics }
         end
       end
     end
