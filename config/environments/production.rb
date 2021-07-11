@@ -17,7 +17,7 @@ Rails.application.configure do
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
-  config.log_level = :debug
+  config.log_level = :info
 
   config.log_tags = [:request_id]
 
