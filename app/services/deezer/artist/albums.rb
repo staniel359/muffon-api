@@ -1,6 +1,6 @@
 module Deezer
   module Artist
-    class Albums < Deezer::Base
+    class Albums < Deezer::Artist::Base
       API_METHOD = 'album.getDiscography'.freeze
       ALBUM_TYPE_IDS = {
         album: '1',
@@ -38,8 +38,14 @@ module Deezer
         }.to_json
       end
 
-      def data
-        { artist: paginated_data }
+      def artist_data
+        super.merge(paginated_data)
+      end
+
+      def name
+        Deezer::Artist::Info.call(
+          artist_id: @args.artist_id
+        ).dig(:artist, :name)
       end
 
       def total_items_count

@@ -25,6 +25,16 @@ module YandexMusic
         }
       end
 
+      def artist_data
+        super.merge(paginated_data)
+      end
+
+      def name
+        response_data.dig(
+          'artist', 'name'
+        )
+      end
+
       def collection_list
         collection_paginated(albums_list)
       end
@@ -38,8 +48,6 @@ module YandexMusic
           album: album
         )
       end
-
-      alias artist_data paginated_data
     end
   end
 end

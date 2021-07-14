@@ -5,6 +5,16 @@ module Bandcamp
 
       private
 
+      def artist_data
+        { name: name }.merge(
+          paginated_data
+        )
+      end
+
+      def name
+        response_data['name']
+      end
+
       def total_items_count
         albums_list.size
       end
@@ -22,8 +32,6 @@ module Bandcamp
           album: album
         )
       end
-
-      alias artist_data paginated_data
     end
   end
 end

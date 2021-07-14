@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/artists/wejlhg239gh23/albums?include_groups=album&limit=20&offset=0
+    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?include_groups&limit=20&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -19,13 +19,13 @@ http_interactions:
       - api.spotify.com
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - private, max-age=0
+      - public, max-age=76139
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -44,7 +44,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Wed, 14 Jul 2021 10:44:36 GMT
+      - Wed, 14 Jul 2021 10:44:45 GMT
       Server:
       - envoy
       Via:
@@ -57,10 +57,13 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "error" : {
-            "status" : 400,
-            "message" : "invalid id"
-          }
+          "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=0&limit=20&include_groups=",
+          "items" : [ ],
+          "limit" : 20,
+          "next" : null,
+          "offset" : 0,
+          "previous" : null,
+          "total" : 0
         }
-  recorded_at: Wed, 14 Jul 2021 10:44:37 GMT
+  recorded_at: Wed, 14 Jul 2021 10:44:46 GMT
 recorded_with: VCR 6.0.0

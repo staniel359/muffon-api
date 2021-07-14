@@ -24,6 +24,10 @@ module YandexMusic
       def data
         { artist: artist_data }
       end
+
+      def artist_data
+        { name: name }
+      end
     end
   end
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/artists/wejlhg239gh23/albums?limit=20&offset=0
+    uri: https://api.spotify.com/v1/artists/wejlhg239gh23/albums?include_groups=album&limit=20&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Authorization:
       - Bearer <SPOTIFY_TOKEN>
       Accept-Encoding:
@@ -44,7 +44,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 30 Jan 2021 07:14:23 GMT
+      - Wed, 14 Jul 2021 10:44:45 GMT
       Server:
       - envoy
       Via:
@@ -62,5 +62,5 @@ http_interactions:
             "message" : "invalid id"
           }
         }
-  recorded_at: Sat, 30 Jan 2021 07:14:23 GMT
+  recorded_at: Wed, 14 Jul 2021 10:44:45 GMT
 recorded_with: VCR 6.0.0

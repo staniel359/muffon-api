@@ -6,10 +6,6 @@ module Genius
 
       private
 
-      def primary_args
-        [@args.artist_id]
-      end
-
       def no_data?
         collection_list.blank?
       end
@@ -37,7 +33,15 @@ module Genius
         )
       end
 
-      alias artist_data paginated_data
+      def artist_data
+        super.merge(paginated_data)
+      end
+
+      def name
+        Genius::Artist::Info.call(
+          artist_id: @args.artist_id
+        ).dig(:artist, :name)
+      end
     end
   end
 end

@@ -6,7 +6,7 @@ RSpec.describe Spotify::Artist::Albums do
       let(:output) do
         VCR.use_cassette 'services/spotify/artist/albums/success' do
           subject.call(
-            artist_id: '1aSxMhuvixZ8h9dK9jIDwL', limit: 5, page: 2
+            artist_id: '1aSxMhuvixZ8h9dK9jIDwL', album_type: 'album', limit: 5, page: 2
           )
         end
       end
@@ -19,11 +19,21 @@ RSpec.describe Spotify::Artist::Albums do
     context 'when wrong artist_id' do
       let(:output) do
         VCR.use_cassette 'services/spotify/artist/albums/wrong_id' do
-          subject.call(artist_id: random)
+          subject.call(artist_id: random, album_type: 'album')
         end
       end
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+
+    context 'when wrong album type' do
+      let(:output) do
+        VCR.use_cassette 'services/spotify/artist/albums/wrong_type' do
+          subject.call(artist_id: '1aSxMhuvixZ8h9dK9jIDwL', album_type: random)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

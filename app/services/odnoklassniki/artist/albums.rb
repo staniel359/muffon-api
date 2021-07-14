@@ -14,6 +14,16 @@ module Odnoklassniki
         @albums_list ||= response_data['masterAlbums']
       end
 
+      def artist_data
+        super.merge(paginated_data)
+      end
+
+      def name
+        response_data.dig(
+          'artist', 'name'
+        )
+      end
+
       def total_items_count
         albums_list.size
       end
@@ -27,8 +37,6 @@ module Odnoklassniki
           album: album
         )
       end
-
-      alias artist_data paginated_data
     end
   end
 end

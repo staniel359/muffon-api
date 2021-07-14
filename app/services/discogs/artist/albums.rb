@@ -1,6 +1,6 @@
 module Discogs
   module Artist
-    class Albums < Discogs::Base
+    class Albums < Discogs::Artist::Base
       ALBUM_TYPES_DATA = {
         album: 'Albums',
         single_ep: 'Singles-EPs',
@@ -21,17 +21,6 @@ module Discogs
         ]
       end
 
-      def response_data
-        @response_data ||= Nokogiri::HTML.parse(
-          response
-        )
-      end
-
-      def link
-        'https://www.discogs.com'\
-          "/artist/#{@args.artist_id}"
-      end
-
       def params
         {
           type: 'Releases',
@@ -46,8 +35,14 @@ module Discogs
         ]
       end
 
-      def data
-        { artist: paginated_data }
+      def artist_data
+        super.merge(paginated_data)
+      end
+
+      def name
+        response_data.css(
+          'meta[property="og:title"]'
+        )[0]['content']
       end
 
       def total_items_count

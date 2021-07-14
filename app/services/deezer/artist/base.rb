@@ -1,11 +1,7 @@
-module Spotify
+module Deezer
   module Artist
-    class Base < Spotify::Base
+    class Base < Deezer::Base
       private
-
-      def link
-        "#{BASE_LINK}/artists/#{@args.artist_id}"
-      end
 
       def data
         { artist: artist_data }
