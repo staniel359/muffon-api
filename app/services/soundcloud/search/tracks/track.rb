@@ -17,6 +17,7 @@ module SoundCloud
             player_id: player_id,
             artist: artist_formatted,
             artists: artists,
+            image: image_data,
             duration: duration,
             audio: audio_data
           }

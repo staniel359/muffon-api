@@ -15,6 +15,12 @@ module SoundCloud
         @artist ||= track['user']
       end
 
+      def image_data
+        image_data_formatted(
+          track['artwork_url'], 'track'
+        )
+      end
+
       def duration
         duration_formatted(
           track['duration'] / 1_000
