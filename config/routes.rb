@@ -280,6 +280,7 @@ Rails.application.routes.draw do
 
       namespace :soundcloud do
         namespace :search do
+          get 'artists'
           get 'albums'
           get 'tracks'
         end

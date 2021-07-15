@@ -22,7 +22,8 @@ module SoundCloud
       end
 
       def collection_list
-        @collection_list ||= response_data['collection']
+        @collection_list ||=
+          response_data['collection']
       end
 
       def link
