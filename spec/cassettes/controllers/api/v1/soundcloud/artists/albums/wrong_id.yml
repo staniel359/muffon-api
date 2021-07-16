@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/users/346758273629/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=20&offset=0
+    uri: https://api-v2.soundcloud.com/users/346758273629/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=200
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 16 Jul 2021 09:49:26 GMT
+      - Fri, 16 Jul 2021 16:21:48 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -47,13 +47,13 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 7cd2262b9bb2f116de2e74d9d97ab5d1.cloudfront.net (CloudFront)
+      - 1.1 8822a8093b840a9d17780dab53d8eee1.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - WAW50-C1
+      - HEL50-C2
       X-Amz-Cf-Id:
-      - szDBGk-Lb0J02OEuWG77pFwB-9GlJq3srwAO-wtWs1nS_f0JhD7Q7Q==
+      - Sl9RQQUk_RGJq9azah5Qb1skal_Ej9RLHmq9QamnjYTi8mD6MFMxqQ==
     body:
       encoding: ASCII-8BIT
       string: '{"error":"Unexpected response when getting list of playlists"}'
-  recorded_at: Fri, 16 Jul 2021 09:49:26 GMT
+  recorded_at: Fri, 16 Jul 2021 16:21:48 GMT
 recorded_with: VCR 6.0.0

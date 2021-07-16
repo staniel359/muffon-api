@@ -2,16 +2,18 @@ module Genius
   module Artist
     class Albums < Genius::Artist::Base
       COLLECTION_NAME = 'albums'.freeze
+      LIMIT = 50
       include Muffon::Utils::Pagination
 
       private
 
       def no_data?
-        collection_list.blank?
+        albums_list.blank? ||
+          collection_list.blank?
       end
 
-      def collection_list
-        @collection_list ||= response_data.dig(
+      def albums_list
+        @albums_list ||= response_data.dig(
           'response', 'albums'
         )
       end
@@ -21,15 +23,16 @@ module Genius
       end
 
       def params
-        {
-          page: page,
-          per_page: limit
-        }
+        super.merge(albums_params)
       end
 
-      def collection_item_data_formatted(album)
-        Genius::Artist::Albums::Album.call(
-          album: album
+      def albums_params
+        { per_page: LIMIT }
+      end
+
+      def collection_list
+        collection_paginated(
+          albums_list
         )
       end
 
@@ -37,10 +40,20 @@ module Genius
         super.merge(paginated_data)
       end
 
+      def total_items_count
+        albums_list.size
+      end
+
       def name
         Genius::Artist::Info.call(
           artist_id: @args.artist_id
         ).dig(:artist, :name)
+      end
+
+      def collection_item_data_formatted(album)
+        Genius::Artist::Albums::Album.call(
+          album: album
+        )
       end
     end
   end
