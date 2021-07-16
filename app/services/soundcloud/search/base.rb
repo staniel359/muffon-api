@@ -1,15 +1,7 @@
 module SoundCloud
   module Search
-    class Base < SoundCloud::Base
-      BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
-      include Muffon::Utils::Global
+    class Base < SoundCloud::API::V2::Base
       include Muffon::Utils::Pagination
-
-      def call
-        super
-      rescue RestClient::Unauthorized
-        retry_with_new_client_id
-      end
 
       private
 
@@ -30,23 +22,6 @@ module SoundCloud
         "#{BASE_LINK}/search/#{collection_name}"
       end
 
-      def client_id
-        return test_client_id if Rails.env.test?
-
-        get_global_value(
-          'soundcloud_v2_client_id'
-        )
-      end
-
-      def test_client_id
-        secrets.soundcloud[:test_v2_client_id]
-      end
-
-      def global_value
-        @global_value ||=
-          SoundCloud::Utils::ClientId.call
-      end
-
       def params
         super.merge(search_params)
       end
@@ -57,16 +32,6 @@ module SoundCloud
           limit: limit,
           offset: offset
         }
-      end
-
-      def retry_with_new_client_id
-        return if global_value.blank?
-
-        update_global_value(
-          'soundcloud_v2_client_id'
-        )
-
-        call
       end
 
       def data

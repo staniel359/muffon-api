@@ -1,6 +1,5 @@
 module SoundCloud
   class Base < Muffon::Base
-    BASE_LINK = 'https://api.soundcloud.com'.freeze
     SOURCE_ID = 'soundcloud'.freeze
 
     private
@@ -21,10 +20,6 @@ module SoundCloud
 
     def params
       { client_id: client_id }
-    end
-
-    def client_id
-      secrets.soundcloud[:api_key]
     end
 
     def artists

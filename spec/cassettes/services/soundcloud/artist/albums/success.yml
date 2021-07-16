@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-v2.soundcloud.com/users/3820545/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=5&offset=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api-v2.soundcloud.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1807'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 16 Jul 2021 09:49:34 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 184f5b3ebeb6aa0f7b93900fc50720c4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - WQJu-WbBKkcETwsGoU4Xp1w0ABWRs_1Dy7syyst52Ef6jhLX7Vn0bQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb2xsZWN0aW9uIjpbeyJhcnR3b3JrX3VybCI6Imh0dHBzOi8vaTEuc25kY2RuLmNvbS9hcnR3b3Jrcy02MjU3OWQ4OC1mMzhhLTQ4YzMtOTg4YS0yZDMwNDk2ZDEwNmItMC1sYXJnZS5qcGciLCJjcmVhdGVkX2F0IjoiMjAxOS0xMS0xM1QxMDozNjo0M1oiLCJkZXNjcmlwdGlvbiI6bnVsbCwiZHVyYXRpb24iOjM5Njg4OCwiZW1iZWRkYWJsZV9ieSI6ImFsbCIsImdlbnJlIjoiQWx0ZXJuYXRpdmUiLCJpZCI6OTIzMTgzMDMyLCJraW5kIjoicGxheWxpc3QiLCJsYWJlbF9uYW1lIjpudWxsLCJsYXN0X21vZGlmaWVkIjoiMjAxOS0xMS0xM1QxMDozNjo0M1oiLCJsaWNlbnNlIjoiYWxsLXJpZ2h0cy1yZXNlcnZlZCIsImxpa2VzX2NvdW50IjozLCJtYW5hZ2VkX2J5X2ZlZWRzIjp0cnVlLCJwZXJtYWxpbmsiOiJub3doZXJlLTEwNjQ1ODk5IiwicGVybWFsaW5rX3VybCI6Imh0dHBzOi8vc291bmRjbG91ZC5jb20vd2lsZG5vdGhpbmcvc2V0cy9ub3doZXJlLTEwNjQ1ODk5IiwicHVibGljIjp0cnVlLCJwdXJjaGFzZV90aXRsZSI6bnVsbCwicHVyY2hhc2VfdXJsIjpudWxsLCJyZWxlYXNlX2RhdGUiOiIyMDEyLTAyLTA0VDAwOjAwOjAwWiIsInJlcG9zdHNfY291bnQiOjAsInNlY3JldF90b2tlbiI6bnVsbCwic2hhcmluZyI6InB1YmxpYyIsInRhZ19saXN0IjoiIiwidGl0bGUiOiJOb3doZXJlIiwidXJpIjoiaHR0cHM6Ly9hcGkuc291bmRjbG91ZC5jb20vcGxheWxpc3RzLzkyMzE4MzAzMiIsInVzZXJfaWQiOjM4MjA1NDUsInNldF90eXBlIjoic2luZ2xlIiwiaXNfYWxidW0iOnRydWUsInB1Ymxpc2hlZF9hdCI6IjIwMTItMDItMDRUMDA6MDA6MDBaIiwiZGlzcGxheV9kYXRlIjoiMjAxMi0wMi0wNFQwMDowMDowMFoiLCJ1c2VyIjp7ImF2YXRhcl91cmwiOiJodHRwczovL2kxLnNuZGNkbi5jb20vYXZhdGFycy0wMDAxOTQ2NjUyNDctMHU5aGUzLWxhcmdlLmpwZyIsImZpcnN0X25hbWUiOiJXSWxkIE5vdGhpbmciLCJmb2xsb3dlcnNfY291bnQiOjE3NzE4LCJmdWxsX25hbWUiOiJXSWxkIE5vdGhpbmciLCJpZCI6MzgyMDU0NSwia2luZCI6InVzZXIiLCJsYXN0X21vZGlmaWVkIjoiMjAyMC0xMS0xOVQxNjoxMjo0MVoiLCJsYXN0X25hbWUiOiIiLCJwZXJtYWxpbmsiOiJ3aWxkbm90aGluZyIsInBlcm1hbGlua191cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL3dpbGRub3RoaW5nIiwidXJpIjoiaHR0cHM6Ly9hcGkuc291bmRjbG91ZC5jb20vdXNlcnMvMzgyMDU0NSIsInVybiI6InNvdW5kY2xvdWQ6dXNlcnM6MzgyMDU0NSIsInVzZXJuYW1lIjoiV2lsZF9Ob3RoaW5nIiwidmVyaWZpZWQiOnRydWUsImNpdHkiOiJOZXcgWW9yayIsImNvdW50cnlfY29kZSI6IlVTIiwiYmFkZ2VzIjp7InBybyI6ZmFsc2UsInByb191bmxpbWl0ZWQiOmZhbHNlLCJ2ZXJpZmllZCI6dHJ1ZX0sInN0YXRpb25fdXJuIjoic291bmRjbG91ZDpzeXN0ZW0tcGxheWxpc3RzOmFydGlzdC1zdGF0aW9uczozODIwNTQ1Iiwic3RhdGlvbl9wZXJtYWxpbmsiOiJhcnRpc3Qtc3RhdGlvbnM6MzgyMDU0NSJ9LCJ0cmFja3MiOlt7ImFydHdvcmtfdXJsIjoiaHR0cHM6Ly9pMS5zbmRjZG4uY29tL2FydHdvcmtzLWpkT3c5UjVyMUJyZS0wLWxhcmdlLmpwZyIsImNhcHRpb24iOm51bGwsImNvbW1lbnRhYmxlIjp0cnVlLCJjb21tZW50X2NvdW50IjoxLCJjcmVhdGVkX2F0IjoiMjAxNi0wNy0yNVQxMjozOTo1M1oiLCJkZXNjcmlwdGlvbiI6bnVsbCwiZG93bmxvYWRhYmxlIjpmYWxzZSwiZG93bmxvYWRfY291bnQiOjAsImR1cmF0aW9uIjozMDAwMCwiZnVsbF9kdXJhdGlvbiI6MjI1MTE4LCJlbWJlZGRhYmxlX2J5IjoiYWxsIiwiZ2VucmUiOiJBbHRlcm5hdGl2ZSIsImhhc19kb3dubG9hZHNfbGVmdCI6ZmFsc2UsImlkIjoyNzUyNjYyOTQsImtpbmQiOiJ0cmFjayIsImxhYmVsX25hbWUiOiJDYXB0dXJlZCBUcmFja3MiLCJsYXN0X21vZGlmaWVkIjoiMjAxOS0wOC0wNVQxNDoxNTo0MFoiLCJsaWNlbnNlIjoiYWxsLXJpZ2h0cy1yZXNlcnZlZCIsImxpa2VzX2NvdW50IjoxNCwicGVybWFsaW5rIjoibm93aGVyZSIsInBlcm1hbGlua191cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL3dpbGRub3RoaW5nL25vd2hlcmUiLCJwbGF5YmFja19jb3VudCI6ODMwLCJwdWJsaWMiOnRydWUsInB1Ymxpc2hlcl9tZXRhZGF0YSI6eyJpZCI6Mjc1MjY2Mjk0LCJ1cm4iOiJzb3VuZGNsb3VkOnRyYWNrczoyNzUyNjYyOTQiLCJhcnRpc3QiOiJXaWxkIE5vdGhpbmciLCJhbGJ1bV90aXRsZSI6Ik5vd2hlcmUiLCJjb250YWluc19tdXNpYyI6dHJ1ZSwidXBjX29yX2VhbiI6IjgxNzk0OTAxMTM3NiIsImlzcmMiOiJVUzhZQTEyMDAwMDMiLCJleHBsaWNpdCI6ZmFsc2UsInBfbGluZSI6IjIwMTIgQ2FwdHVyZWQgVHJhY2tzIiwicF9saW5lX2Zvcl9kaXNwbGF5Ijoi4oSXIDIwMTIgQ2FwdHVyZWQgVHJhY2tzIiwiY19saW5lIjoiMjAxMiAyMDEyIENhcHR1cmVkIFRyYWNrcyIsImNfbGluZV9mb3JfZGlzcGxheSI6IsKpIDIwMTIgMjAxMiBDYXB0dXJlZCBUcmFja3MiLCJyZWxlYXNlX3RpdGxlIjoiTm93aGVyZSJ9LCJwdXJjaGFzZV90aXRsZSI6bnVsbCwicHVyY2hhc2VfdXJsIjpudWxsLCJyZWxlYXNlX2RhdGUiOiIyMDEyLTAyLTA0VDAwOjAwOjAwWiIsInJlcG9zdHNfY291bnQiOjAsInNlY3JldF90b2tlbiI6bnVsbCwic2hhcmluZyI6InB1YmxpYyIsInN0YXRlIjoiZmluaXNoZWQiLCJzdHJlYW1hYmxlIjp0cnVlLCJ0YWdfbGlzdCI6IlJvY2siLCJ0aXRsZSI6Ik5vd2hlcmUiLCJ0cmFja19mb3JtYXQiOiJzaW5nbGUtdHJhY2siLCJ1cmkiOiJodHRwczovL2FwaS5zb3VuZGNsb3VkLmNvbS90cmFja3MvMjc1MjY2Mjk0IiwidXJuIjoic291bmRjbG91ZDp0cmFja3M6Mjc1MjY2Mjk0IiwidXNlcl9pZCI6MzgyMDU0NSwidmlzdWFscyI6bnVsbCwid2F2ZWZvcm1fdXJsIjoiaHR0cHM6Ly93YXZlLnNuZGNkbi5jb20vNmNQbVVBWFdIUlo2X20uanNvbiIsImRpc3BsYXlfZGF0ZSI6IjIwMTItMDItMDRUMDA6MDA6MDBaIiwibWVkaWEiOnsidHJhbnNjb2RpbmdzIjpbeyJ1cmwiOiJodHRwczovL2FwaS12Mi5zb3VuZGNsb3VkLmNvbS9tZWRpYS9zb3VuZGNsb3VkOnRyYWNrczoyNzUyNjYyOTQvMmY5MmFiYTgtNWNjOC00NjYzLTlkY2EtYWMxYmVhYTA3OTRjL3ByZXZpZXcvaGxzIiwicHJlc2V0IjoibXAzXzBfMCIsImR1cmF0aW9uIjozMDAwMCwic25pcHBlZCI6dHJ1ZSwiZm9ybWF0Ijp7InByb3RvY29sIjoiaGxzIiwibWltZV90eXBlIjoiYXVkaW8vbXBlZyJ9LCJxdWFsaXR5Ijoic3EifSx7InVybCI6Imh0dHBzOi8vYXBpLXYyLnNvdW5kY2xvdWQuY29tL21lZGlhL3NvdW5kY2xvdWQ6dHJhY2tzOjI3NTI2NjI5NC8yZjkyYWJhOC01Y2M4LTQ2NjMtOWRjYS1hYzFiZWFhMDc5NGMvcHJldmlldy9wcm9ncmVzc2l2ZSIsInByZXNldCI6Im1wM18wXzAiLCJkdXJhdGlvbiI6MzAwMDAsInNuaXBwZWQiOnRydWUsImZvcm1hdCI6eyJwcm90b2NvbCI6InByb2dyZXNzaXZlIiwibWltZV90eXBlIjoiYXVkaW8vbXBlZyJ9LCJxdWFsaXR5Ijoic3EifV19LCJzdGF0aW9uX3VybiI6InNvdW5kY2xvdWQ6c3lzdGVtLXBsYXlsaXN0czp0cmFjay1zdGF0aW9uczoyNzUyNjYyOTQiLCJzdGF0aW9uX3Blcm1hbGluayI6InRyYWNrLXN0YXRpb25zOjI3NTI2NjI5NCIsInRyYWNrX2F1dGhvcml6YXRpb24iOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKblpXOGlPaUpDV1NJc0luTjFZaUk2SWlJc0luSnBaQ0k2SWpJMU5qZzJPVEptTFRVNE1HVXRORFF5WmkwNU4yWmpMVGRqWWpnMVpqTXpPVEF6WWlJc0ltbGhkQ0k2TVRZeU5qUXlPRGszTkgwLmpRZjZmSC11NG9VLVE3YVh2TVR4WFV1TExjUmQ0RHdGaVhsam1DSV9FTDgiLCJtb25ldGl6YXRpb25fbW9kZWwiOiJOT1RfQVBQTElDQUJMRSIsInBvbGljeSI6IlNOSVAiLCJ1c2VyIjp7ImF2YXRhcl91cmwiOiJodHRwczovL2kxLnNuZGNkbi5jb20vYXZhdGFycy0wMDAxOTQ2NjUyNDctMHU5aGUzLWxhcmdlLmpwZyIsImZpcnN0X25hbWUiOiJXSWxkIE5vdGhpbmciLCJmb2xsb3dlcnNfY291bnQiOjE3NzE4LCJmdWxsX25hbWUiOiJXSWxkIE5vdGhpbmciLCJpZCI6MzgyMDU0NSwia2luZCI6InVzZXIiLCJsYXN0X21vZGlmaWVkIjoiMjAyMC0xMS0xOVQxNjoxMjo0MVoiLCJsYXN0X25hbWUiOiIiLCJwZXJtYWxpbmsiOiJ3aWxkbm90aGluZyIsInBlcm1hbGlua191cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL3dpbGRub3RoaW5nIiwidXJpIjoiaHR0cHM6Ly9hcGkuc291bmRjbG91ZC5jb20vdXNlcnMvMzgyMDU0NSIsInVybiI6InNvdW5kY2xvdWQ6dXNlcnM6MzgyMDU0NSIsInVzZXJuYW1lIjoiV2lsZF9Ob3RoaW5nIiwidmVyaWZpZWQiOnRydWUsImNpdHkiOiJOZXcgWW9yayIsImNvdW50cnlfY29kZSI6IlVTIiwiYmFkZ2VzIjp7InBybyI6ZmFsc2UsInByb191bmxpbWl0ZWQiOmZhbHNlLCJ2ZXJpZmllZCI6dHJ1ZX0sInN0YXRpb25fdXJuIjoic291bmRjbG91ZDpzeXN0ZW0tcGxheWxpc3RzOmFydGlzdC1zdGF0aW9uczozODIwNTQ1Iiwic3RhdGlvbl9wZXJtYWxpbmsiOiJhcnRpc3Qtc3RhdGlvbnM6MzgyMDU0NSJ9fSx7ImFydHdvcmtfdXJsIjoiaHR0cHM6Ly9pMS5zbmRjZG4uY29tL2FydHdvcmtzLU5hOGpqUlM2Z2gxOS0wLWxhcmdlLmpwZyIsImNhcHRpb24iOm51bGwsImNvbW1lbnRhYmxlIjp0cnVlLCJjb21tZW50X2NvdW50IjowLCJjcmVhdGVkX2F0IjoiMjAxNi0wNy0yNVQxMjozMjo1OFoiLCJkZXNjcmlwdGlvbiI6bnVsbCwiZG93bmxvYWRhYmxlIjpmYWxzZSwiZG93bmxvYWRfY291bnQiOjAsImR1cmF0aW9uIjozMDAwMCwiZnVsbF9kdXJhdGlvbiI6MTcxNzcwLCJlbWJlZGRhYmxlX2J5IjoiYWxsIiwiZ2VucmUiOiJBbHRlcm5hdGl2ZSIsImhhc19kb3dubG9hZHNfbGVmdCI6ZmFsc2UsImlkIjoyNzUyNjQ3MjEsImtpbmQiOiJ0cmFjayIsImxhYmVsX25hbWUiOiJDYXB0dXJlZCBUcmFja3MiLCJsYXN0X21vZGlmaWVkIjoiMjAxOS0wOC0wNVQxODowMzo0MFoiLCJsaWNlbnNlIjoiYWxsLXJpZ2h0cy1yZXNlcnZlZCIsImxpa2VzX2NvdW50IjoxNiwicGVybWFsaW5rIjoid2FpdCIsInBlcm1hbGlua191cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL3dpbGRub3RoaW5nL3dhaXQiLCJwbGF5YmFja19jb3VudCI6NDUzLCJwdWJsaWMiOnRydWUsInB1Ymxpc2hlcl9tZXRhZGF0YSI6eyJpZCI6Mjc1MjY0NzIxLCJ1cm4iOiJzb3VuZGNsb3VkOnRyYWNrczoyNzUyNjQ3MjEiLCJhcnRpc3QiOiJXaWxkIE5vdGhpbmciLCJhbGJ1bV90aXRsZSI6Ik5vd2hlcmUiLCJjb250YWluc19tdXNpYyI6dHJ1ZSwidXBjX29yX2VhbiI6IjgxNzk0OTAxMTM3NiIsImlzcmMiOiJVUzhZQTEyMDAwMDQiLCJleHBsaWNpdCI6ZmFsc2UsInBfbGluZSI6IjIwMTIgQ2FwdHVyZWQgVHJhY2tzIiwicF9saW5lX2Zvcl9kaXNwbGF5Ijoi4oSXIDIwMTIgQ2FwdHVyZWQgVHJhY2tzIiwiY19saW5lIjoiMjAxMiAyMDEyIENhcHR1cmVkIFRyYWNrcyIsImNfbGluZV9mb3JfZGlzcGxheSI6IsKpIDIwMTIgMjAxMiBDYXB0dXJlZCBUcmFja3MiLCJyZWxlYXNlX3RpdGxlIjoiV2FpdCJ9LCJwdXJjaGFzZV90aXRsZSI6bnVsbCwicHVyY2hhc2VfdXJsIjpudWxsLCJyZWxlYXNlX2RhdGUiOiIyMDEyLTAyLTA0VDAwOjAwOjAwWiIsInJlcG9zdHNfY291bnQiOjAsInNlY3JldF90b2tlbiI6bnVsbCwic2hhcmluZyI6InB1YmxpYyIsInN0YXRlIjoiZmluaXNoZWQiLCJzdHJlYW1hYmxlIjp0cnVlLCJ0YWdfbGlzdCI6IlJvY2siLCJ0aXRsZSI6IldhaXQiLCJ0cmFja19mb3JtYXQiOiJzaW5nbGUtdHJhY2siLCJ1cmkiOiJodHRwczovL2FwaS5zb3VuZGNsb3VkLmNvbS90cmFja3MvMjc1MjY0NzIxIiwidXJuIjoic291bmRjbG91ZDp0cmFja3M6Mjc1MjY0NzIxIiwidXNlcl9pZCI6MzgyMDU0NSwidmlzdWFscyI6bnVsbCwid2F2ZWZvcm1fdXJsIjoiaHR0cHM6Ly93YXZlLnNuZGNkbi5jb20vNFprVHIzcmtCNnMwX20uanNvbiIsImRpc3BsYXlfZGF0ZSI6IjIwMTItMDItMDRUMDA6MDA6MDBaIiwibWVkaWEiOnsidHJhbnNjb2RpbmdzIjpbeyJ1cmwiOiJodHRwczovL2FwaS12Mi5zb3VuZGNsb3VkLmNvbS9tZWRpYS9zb3VuZGNsb3VkOnRyYWNrczoyNzUyNjQ3MjEvMTBlMjg4ODUtMzQ2ZC00ZWJlLTg2NzQtNzliZWFhMzY1N2RiL3ByZXZpZXcvaGxzIiwicHJlc2V0IjoibXAzXzBfMCIsImR1cmF0aW9uIjozMDAwMCwic25pcHBlZCI6dHJ1ZSwiZm9ybWF0Ijp7InByb3RvY29sIjoiaGxzIiwibWltZV90eXBlIjoiYXVkaW8vbXBlZyJ9LCJxdWFsaXR5Ijoic3EifSx7InVybCI6Imh0dHBzOi8vYXBpLXYyLnNvdW5kY2xvdWQuY29tL21lZGlhL3NvdW5kY2xvdWQ6dHJhY2tzOjI3NTI2NDcyMS8xMGUyODg4NS0zNDZkLTRlYmUtODY3NC03OWJlYWEzNjU3ZGIvcHJldmlldy9wcm9ncmVzc2l2ZSIsInByZXNldCI6Im1wM18wXzAiLCJkdXJhdGlvbiI6MzAwMDAsInNuaXBwZWQiOnRydWUsImZvcm1hdCI6eyJwcm90b2NvbCI6InByb2dyZXNzaXZlIiwibWltZV90eXBlIjoiYXVkaW8vbXBlZyJ9LCJxdWFsaXR5Ijoic3EifV19LCJzdGF0aW9uX3VybiI6InNvdW5kY2xvdWQ6c3lzdGVtLXBsYXlsaXN0czp0cmFjay1zdGF0aW9uczoyNzUyNjQ3MjEiLCJzdGF0aW9uX3Blcm1hbGluayI6InRyYWNrLXN0YXRpb25zOjI3NTI2NDcyMSIsInRyYWNrX2F1dGhvcml6YXRpb24iOiJleUowZVhBaU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuZXlKblpXOGlPaUpDV1NJc0luTjFZaUk2SWlJc0luSnBaQ0k2SW1SaE5HSTVZV0l6TFROa09XTXRORFkyWWkxaVpqWTVMV0l6WkRZMU9XRm1ZakEyTXlJc0ltbGhkQ0k2TVRZeU5qUXlPRGszTkgwLlVFZFduMHQtUjQtdVVIVElITGQxSWdxelozcHNUMWxJRmxrWnpKZkZzekUiLCJtb25ldGl6YXRpb25fbW9kZWwiOiJOT1RfQVBQTElDQUJMRSIsInBvbGljeSI6IlNOSVAiLCJ1c2VyIjp7ImF2YXRhcl91cmwiOiJodHRwczovL2kxLnNuZGNkbi5jb20vYXZhdGFycy0wMDAxOTQ2NjUyNDctMHU5aGUzLWxhcmdlLmpwZyIsImZpcnN0X25hbWUiOiJXSWxkIE5vdGhpbmciLCJmb2xsb3dlcnNfY291bnQiOjE3NzE4LCJmdWxsX25hbWUiOiJXSWxkIE5vdGhpbmciLCJpZCI6MzgyMDU0NSwia2luZCI6InVzZXIiLCJsYXN0X21vZGlmaWVkIjoiMjAyMC0xMS0xOVQxNjoxMjo0MVoiLCJsYXN0X25hbWUiOiIiLCJwZXJtYWxpbmsiOiJ3aWxkbm90aGluZyIsInBlcm1hbGlua191cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL3dpbGRub3RoaW5nIiwidXJpIjoiaHR0cHM6Ly9hcGkuc291bmRjbG91ZC5jb20vdXNlcnMvMzgyMDU0NSIsInVybiI6InNvdW5kY2xvdWQ6dXNlcnM6MzgyMDU0NSIsInVzZXJuYW1lIjoiV2lsZF9Ob3RoaW5nIiwidmVyaWZpZWQiOnRydWUsImNpdHkiOiJOZXcgWW9yayIsImNvdW50cnlfY29kZSI6IlVTIiwiYmFkZ2VzIjp7InBybyI6ZmFsc2UsInByb191bmxpbWl0ZWQiOmZhbHNlLCJ2ZXJpZmllZCI6dHJ1ZX0sInN0YXRpb25fdXJuIjoic291bmRjbG91ZDpzeXN0ZW0tcGxheWxpc3RzOmFydGlzdC1zdGF0aW9uczozODIwNTQ1Iiwic3RhdGlvbl9wZXJtYWxpbmsiOiJhcnRpc3Qtc3RhdGlvbnM6MzgyMDU0NSJ9fV0sInRyYWNrX2NvdW50IjoyfV0sIm5leHRfaHJlZiI6Imh0dHBzOi8vYXBpLXYyLnNvdW5kY2xvdWQuY29tL3VzZXJzLzM4MjA1NDUvYWxidW1zP29mZnNldD0xMCZsaW1pdD01IiwicXVlcnlfdXJuIjpudWxsfQ==
+  recorded_at: Fri, 16 Jul 2021 09:49:34 GMT
+- request:
+    method: get
+    uri: https://api-v2.soundcloud.com/users/3820545?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api-v2.soundcloud.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '657'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 16 Jul 2021 09:49:35 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 558f7ecd43929b77c262a9b755d6b164.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - D-mvDlnltkPAXGPBhXjSTeKP-xPRn8JMeWQPO6FYeS_ZcRPoudxIyg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","city":"New
+        York","comments_count":0,"country_code":"US","created_at":"2011-03-24T14:41:58Z","creator_subscriptions":[{"product":{"id":"free"}}],"creator_subscription":{"product":{"id":"free"}},"description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","followers_count":17718,"followings_count":0,"first_name":"WIld
+        Nothing","full_name":"WIld Nothing","groups_count":0,"id":3820545,"kind":"user","last_modified":"2020-11-19T16:12:41Z","last_name":"","likes_count":1,"playlist_likes_count":0,"permalink":"wildnothing","permalink_url":"https://soundcloud.com/wildnothing","playlist_count":15,"reposts_count":null,"track_count":113,"uri":"https://api.soundcloud.com/users/3820545","urn":"soundcloud:users:3820545","username":"Wild_Nothing","verified":true,"visuals":null,"badges":{"pro":false,"pro_unlimited":false,"verified":true},"station_urn":"soundcloud:system-playlists:artist-stations:3820545","station_permalink":"artist-stations:3820545"}'
+  recorded_at: Fri, 16 Jul 2021 09:49:35 GMT
+recorded_with: VCR 6.0.0

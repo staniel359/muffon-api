@@ -1,6 +1,6 @@
 module SoundCloud
   module Track
-    class Base < SoundCloud::Base
+    class Base < SoundCloud::API::V1::Base
       include SoundCloud::Utils::Track
 
       private

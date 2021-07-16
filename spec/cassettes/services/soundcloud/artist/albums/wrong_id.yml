@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-v2.soundcloud.com/users/7652837461927649/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=20&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api-v2.soundcloud.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '86'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 16 Jul 2021 09:49:35 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 13182ff42379bbc1098730eb0992dbae.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW50-C1
+      X-Amz-Cf-Id:
+      - 96ShLh4T7Oxz7NO0hhddO_IHOWPyJQsW0aFXi-55lH0UuLDkL_e3iQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Unexpected response when getting list of playlists"}'
+  recorded_at: Fri, 16 Jul 2021 09:49:35 GMT
+recorded_with: VCR 6.0.0
