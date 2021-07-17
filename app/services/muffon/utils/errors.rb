@@ -14,6 +14,17 @@ module Muffon
               }
             }
           },
+          forbidden: {
+            errors: [
+              RestClient::Forbidden
+            ],
+            handler: {
+              error: {
+                code: 403,
+                text: 'Forbidden'
+              }
+            }
+          },
           not_found: {
             errors: [
               RestClient::NotFound

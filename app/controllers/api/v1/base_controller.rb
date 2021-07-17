@@ -36,7 +36,9 @@ module API
       end
 
       def data
-        @data ||= data_service&.call(data_args)
+        @data ||= data_service&.call(
+          data_args
+        )
       end
 
       def data_service

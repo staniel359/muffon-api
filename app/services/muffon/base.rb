@@ -39,6 +39,10 @@ module Muffon
       ERRORS.handlers[:bad_request]
     end
 
+    def forbidden
+      ERRORS.handlers[:forbidden]
+    end
+
     def date_formatted(data)
       Muffon::Utils::Date.format(data)
     end
