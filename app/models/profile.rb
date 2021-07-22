@@ -1,6 +1,14 @@
 class Profile < ApplicationRecord
   has_secure_password
 
+  has_one_attached :avatar
+
+  enum gender: {
+    male: 0,
+    female: 1,
+    other: 2
+  }
+
   validates :email,
             presence: true,
             uniqueness: true,

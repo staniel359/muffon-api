@@ -16,7 +16,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # config.active_storage.service = :local
+  config.active_storage.service = :local
 
   config.active_support.deprecation = :log
 
@@ -27,4 +27,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.logger = ActiveSupport::Logger.new(nil)
+
+  config.log_level = :info
 end

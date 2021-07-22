@@ -6,6 +6,11 @@ module Muffon
         password
         password_confirmation
         nickname
+        avatar
+        gender
+        birthdate
+        country
+        city
       ].freeze
 
       private
@@ -30,11 +35,21 @@ module Muffon
       end
 
       def create_params
-        @args.to_h.slice(*PARAMS)
+        @args.to_h.slice(
+          *profile_params
+        )
+      end
+
+      def profile_params
+        PARAMS.reject do |p|
+          %i[avatar].include?(p)
+        end
       end
 
       def data
         return errors_data if errors?
+
+        add_avatar if @args.avatar.present?
 
         authenticate
       end
@@ -53,6 +68,18 @@ module Muffon
         profile.errors.map do |e|
           { e.attribute => e.type }
         end
+      end
+
+      def add_avatar
+        profile.avatar.attach(
+          avatar_blob
+        )
+      end
+
+      def avatar_blob
+        Muffon::Profile::Avatar.call(
+          avatar: @args.avatar
+        )
       end
 
       def authenticate

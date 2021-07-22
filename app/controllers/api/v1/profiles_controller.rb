@@ -1,6 +1,8 @@
 module API
   module V1
     class ProfilesController < API::V1::BaseController
+      include ActiveStorage::SetCurrent
+
       def create
         render_data_with_status
       end

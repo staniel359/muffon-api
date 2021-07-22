@@ -1,6 +1,15 @@
 module Muffon
   module Profile
     class Finder < Muffon::Base
+      PARAMS = %i[
+        email
+        nickname
+        gender
+        birthdate
+        country
+        city
+      ].freeze
+
       private
 
       def primary_args
@@ -22,9 +31,13 @@ module Muffon
       end
 
       def profile_data
-        profile.slice(
-          *%i[email nickname]
+        profile.slice(*PARAMS).merge(
+          avatar_data
         )
+      end
+
+      def avatar_data
+        { avatar: profile.avatar.url }
       end
     end
   end

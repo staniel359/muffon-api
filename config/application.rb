@@ -7,8 +7,8 @@ require 'active_record/railtie'
 require 'action_controller/railtie'
 require 'active_job/railtie'
 require 'action_cable/engine'
+require 'active_storage/engine'
 
-# require 'active_storage/engine'
 # require 'action_text/engine'
 
 Bundler.require(*Rails.groups)
@@ -28,5 +28,10 @@ module MuffonAPI
     end
 
     config.filter_parameters += [:password]
+
+    config.railties_order = [
+      ActiveStorage::Engine,
+      :all
+    ]
   end
 end

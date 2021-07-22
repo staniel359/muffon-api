@@ -11,7 +11,7 @@ Rails.application.configure do
 
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
-  # config.active_storage.service = :local
+  config.active_storage.service = :local
 
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'

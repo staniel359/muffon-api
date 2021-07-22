@@ -2,3 +2,4 @@ config/**/*.key
 public/temp
 log
 tmp
+storage
