@@ -1,18 +1,6 @@
 module Muffon
   module Profile
-    class Creator < Muffon::Base
-      PARAMS = %i[
-        email
-        password
-        password_confirmation
-        nickname
-        avatar
-        gender
-        birthdate
-        country
-        city
-      ].freeze
-
+    class Creator < Muffon::Profile::Base
       private
 
       def primary_args
@@ -40,46 +28,12 @@ module Muffon
         )
       end
 
-      def profile_params
-        PARAMS.reject do |p|
-          %i[avatar].include?(p)
-        end
-      end
-
       def data
         return errors_data if errors?
 
-        add_avatar if @args.avatar.present?
+        process_avatar
 
         authenticate
-      end
-
-      def errors?
-        profile.errors.any?
-      end
-
-      def errors_data
-        forbidden.merge(
-          { errors: errors }
-        )
-      end
-
-      def errors
-        profile.errors.map do |e|
-          { e.attribute => e.type }
-        end
-      end
-
-      def add_avatar
-        profile.avatar.attach(
-          avatar_blob
-        )
-      end
-
-      def avatar_blob
-        Muffon::Profile::Avatar.call(
-          avatar: @args.avatar
-        )
       end
 
       def authenticate

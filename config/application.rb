@@ -35,3 +35,11 @@ module MuffonAPI
     ]
   end
 end
+
+module ActiveStorage
+  class Analyzer
+    def self.analyze_later?
+      false
+    end
+  end
+end

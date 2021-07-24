@@ -11,6 +11,10 @@ module API
         render_data_with_status
       end
 
+      def update
+        render_data_with_status
+      end
+
       private
 
       def data
@@ -23,6 +27,8 @@ module API
           creator_data
         when 'show'
           finder_data
+        when 'update'
+          updater_data
         end
       end
 
@@ -34,13 +40,26 @@ module API
 
       def create_params
         params.slice(
-          *Muffon::Profile::Creator::PARAMS
+          *Muffon::Profile::Base::PARAMS
         )
       end
 
       def finder_data
         Muffon::Profile::Finder.call(
-          params.slice(:token)
+          params.slice(:profile_id)
+        )
+      end
+
+      def updater_data
+        Muffon::Profile::Updater.call(
+          update_params
+        )
+      end
+
+      def update_params
+        params.slice(
+          *Muffon::Profile::Base::PARAMS,
+          *%i[profile_id token]
         )
       end
     end

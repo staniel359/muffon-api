@@ -16,7 +16,8 @@ append :linked_dirs,
   'log',
   'tmp/pids',
   'tmp/sockets',
-  'public/temp/audio'
+  'public/temp/audio',
+  'storage'
 
 set :keep_releases, 2
 

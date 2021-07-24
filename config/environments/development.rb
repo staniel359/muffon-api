@@ -27,6 +27,4 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.logger = ActiveSupport::Logger.new(nil)
-
-  config.log_level = :info
 end

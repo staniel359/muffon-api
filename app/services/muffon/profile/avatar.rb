@@ -10,7 +10,7 @@ module Muffon
       private
 
       def data
-        ActiveStorage::Blob.create_after_upload!(
+        ActiveStorage::Blob.create_and_upload!(
           io: avatar_io,
           filename: avatar_filename,
           content_type: avatar_content_type

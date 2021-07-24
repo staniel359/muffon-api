@@ -38,7 +38,9 @@ module Muffon
       end
 
       def profile_data
-        { token: profile.token }
+        profile.slice(
+          *%i[id token]
+        )
       end
     end
   end
