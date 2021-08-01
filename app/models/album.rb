@@ -1,25 +1,22 @@
 class Album < ApplicationRecord
-  validates :title, presence: true
+  has_many :profile_albums, dependent: nil
 
   belongs_to :artist
 
+  validates :title,
+            presence: true,
+            uniqueness: {
+              scope: :artist_id
+            }
+
   class << self
-    def with_artist_title(artist_name, title)
-      artist_id = ::Artist.with_name(artist_name).id
-      albums = with_artist_id_title(artist_id, title)
-
-      albums.first_or_create!(
-        artist_id: artist_id,
-        title: title
-      )
-    end
-
-    private
-
-    def with_artist_id_title(artist_id, title)
+    def with_artist_title(artist_id, title)
       where(
         'artist_id = ? AND LOWER(title) = ?',
         artist_id, title.downcase
+      ).first_or_create(
+        artist_id: artist_id,
+        title: title
       )
     end
   end

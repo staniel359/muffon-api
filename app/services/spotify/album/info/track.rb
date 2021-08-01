@@ -12,6 +12,7 @@ module Spotify
 
         def data
           {
+            library_id: library_id,
             title: title,
             spotify_id: spotify_id,
             player_id: player_id,
@@ -19,7 +20,7 @@ module Spotify
             artists: artists,
             duration: duration,
             audio: audio_data
-          }
+          }.compact
         end
 
         def track

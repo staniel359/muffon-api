@@ -1,10 +1,16 @@
 module Odnoklassniki
   module Utils
     module Album
+      include Muffon::Utils::Album
+
       private
 
       def title
         album['name']
+      end
+
+      def artist_name
+        artist_names
       end
 
       def odnoklassniki_id

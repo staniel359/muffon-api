@@ -5,6 +5,7 @@ ruby '3.0.1'
 
 gem 'bootsnap', require: false
 gem 'bcrypt'
+gem 'image_processing'
 gem 'nokogiri'
 gem 'pg'
 gem 'puma'

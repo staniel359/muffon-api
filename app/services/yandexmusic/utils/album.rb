@@ -1,6 +1,8 @@
 module YandexMusic
   module Utils
     module Album
+      include Muffon::Utils::Album
+
       private
 
       def title

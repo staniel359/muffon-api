@@ -8,9 +8,5 @@ class CreateProfiles < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-
-    add_index :profiles, :email, unique: true
-    add_index :profiles, :token, unique: true
-    add_index :profiles, :nickname, unique: true
   end
 end

@@ -12,10 +12,6 @@ module Muffon
         ]
       end
 
-      def no_data?
-        false
-      end
-
       def profile
         @profile ||= ::Profile.create(
           create_params
@@ -31,7 +27,7 @@ module Muffon
       def data
         return errors_data if errors?
 
-        process_avatar
+        process_image
 
         authenticate
       end

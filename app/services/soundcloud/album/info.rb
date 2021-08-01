@@ -11,12 +11,13 @@ module SoundCloud
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           soundcloud_id: soundcloud_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }
+        }.compact
       end
 
       def album_extra_data
@@ -72,7 +73,8 @@ module SoundCloud
 
       def track_data_formatted(track)
         SoundCloud::Album::Info::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

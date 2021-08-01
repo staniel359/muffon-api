@@ -1,6 +1,8 @@
 module Discogs
   module Utils
     module Album
+      include Muffon::Utils::Album
+
       private
 
       def title
@@ -12,11 +14,15 @@ module Discogs
       end
 
       def image_data
-        image_data_formatted(image, 'album')
+        image_data_formatted(
+          image, 'album'
+        )
       end
 
       def release_date
-        date_formatted(raw_release_date)
+        date_formatted(
+          raw_release_date
+        )
       end
 
       def raw_release_date

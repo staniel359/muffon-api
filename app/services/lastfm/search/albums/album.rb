@@ -12,12 +12,13 @@ module LastFM
 
         def data
           {
+            library_id: library_id,
             title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,
             listeners_count: listeners_count
-          }
+          }.compact
         end
 
         def album

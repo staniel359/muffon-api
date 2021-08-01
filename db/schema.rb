@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_084724) do
+ActiveRecord::Schema.define(version: 2021_08_17_091704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,43 @@ ActiveRecord::Schema.define(version: 2021_07_22_084724) do
     t.integer "listeners_count"
   end
 
+  create_table "profile_albums", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "album_id", null: false
+    t.bigint "profile_artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
+    t.integer "profile_tracks_count", default: 0
+    t.index ["album_id"], name: "index_profile_albums_on_album_id"
+    t.index ["profile_artist_id"], name: "index_profile_albums_on_profile_artist_id"
+    t.index ["profile_id"], name: "index_profile_albums_on_profile_id"
+  end
+
+  create_table "profile_artists", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "profile_tracks_count", default: 0
+    t.integer "profile_albums_count", default: 0
+    t.index ["artist_id"], name: "index_profile_artists_on_artist_id"
+    t.index ["profile_id"], name: "index_profile_artists_on_profile_id"
+  end
+
+  create_table "profile_tracks", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "track_id", null: false
+    t.bigint "profile_artist_id", null: false
+    t.bigint "profile_album_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_album_id"], name: "index_profile_tracks_on_profile_album_id"
+    t.index ["profile_artist_id"], name: "index_profile_tracks_on_profile_artist_id"
+    t.index ["profile_id"], name: "index_profile_tracks_on_profile_id"
+    t.index ["track_id"], name: "index_profile_tracks_on_track_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "email"
     t.string "token"
@@ -71,9 +108,6 @@ ActiveRecord::Schema.define(version: 2021_07_22_084724) do
     t.string "birthdate"
     t.string "country"
     t.string "city"
-    t.index ["email"], name: "index_profiles_on_email", unique: true
-    t.index ["nickname"], name: "index_profiles_on_nickname", unique: true
-    t.index ["token"], name: "index_profiles_on_token", unique: true
   end
 
   create_table "tracks", force: :cascade do |t|
@@ -88,5 +122,14 @@ ActiveRecord::Schema.define(version: 2021_07_22_084724) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albums", "artists"
+  add_foreign_key "profile_albums", "albums"
+  add_foreign_key "profile_albums", "profile_artists"
+  add_foreign_key "profile_albums", "profiles"
+  add_foreign_key "profile_artists", "artists"
+  add_foreign_key "profile_artists", "profiles"
+  add_foreign_key "profile_tracks", "profile_albums"
+  add_foreign_key "profile_tracks", "profile_artists"
+  add_foreign_key "profile_tracks", "profiles"
+  add_foreign_key "profile_tracks", "tracks"
   add_foreign_key "tracks", "artists"
 end

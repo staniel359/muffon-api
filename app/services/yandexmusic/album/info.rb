@@ -11,6 +11,7 @@ module YandexMusic
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           extra_title: extra_title,
           yandex_music_id: yandex_music_id,
@@ -60,7 +61,8 @@ module YandexMusic
 
       def track_data_formatted(track)
         YandexMusic::Album::Info::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

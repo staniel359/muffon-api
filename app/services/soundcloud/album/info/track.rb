@@ -12,6 +12,7 @@ module SoundCloud
 
         def data
           {
+            library_id: library_id,
             title: title,
             soundcloud_id: soundcloud_id,
             player_id: player_id,
@@ -19,7 +20,7 @@ module SoundCloud
             artists: artists,
             duration: duration,
             audio: audio_data
-          }
+          }.compact
         end
 
         def track

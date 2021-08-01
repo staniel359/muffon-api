@@ -2,6 +2,8 @@ module Discogs
   module Album
     class Info
       class Track < Discogs::Album::Info
+        include Muffon::Utils::Track
+
         def call
           data
         end
@@ -10,12 +12,13 @@ module Discogs
 
         def data
           {
+            library_id: library_id,
             title: title,
             player_id: player_id,
             artist: artist_formatted,
             artists: artists,
             duration: duration
-          }
+          }.compact
         end
 
         def title

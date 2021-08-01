@@ -2,6 +2,8 @@ module LastFM
   module Tag
     class Tracks
       class Track < LastFM::Tag::Tracks
+        include Muffon::Utils::Track
+
         def call
           data
         end
@@ -10,11 +12,12 @@ module LastFM
 
         def data
           {
+            library_id: library_id,
             title: title,
             player_id: player_id,
             artist: artist_formatted,
             artists: artists
-          }
+          }.compact
         end
 
         def title

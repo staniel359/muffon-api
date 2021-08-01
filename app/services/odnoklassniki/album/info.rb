@@ -11,12 +11,13 @@ module Odnoklassniki
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           odnoklassniki_id: odnoklassniki_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }
+        }.compact
       end
 
       def album_extra_data
@@ -44,7 +45,8 @@ module Odnoklassniki
 
       def track_data_formatted(track)
         Odnoklassniki::Album::Info::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

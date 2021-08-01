@@ -38,7 +38,7 @@ module Discogs
       {
         name: data['name'],
         discogs_id: data['id']
-      }
+      }.compact
     end
 
     def image_data_formatted(image, model)

@@ -10,12 +10,13 @@ module LastFM
 
       def artist_base_data
         {
+          library_id: library_id,
           name: name,
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,
           tags: tags
-        }
+        }.compact
       end
 
       def listeners_count

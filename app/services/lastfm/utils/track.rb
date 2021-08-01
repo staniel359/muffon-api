@@ -1,6 +1,8 @@
 module LastFM
   module Utils
     module Track
+      include Muffon::Utils::Track
+
       private
 
       def title
@@ -8,7 +10,11 @@ module LastFM
       end
 
       def artist_data_formatted
-        { name: artist['name'] }
+        { name: artist_name }
+      end
+
+      def artist_name
+        artist['name']
       end
 
       def artist

@@ -18,21 +18,12 @@ module API
       private
 
       def data
-        @data ||= retrieve_data
+        @data ||= send(
+          "#{params[:action]}_data"
+        )
       end
 
-      def retrieve_data
-        case params[:action]
-        when 'create'
-          creator_data
-        when 'show'
-          finder_data
-        when 'update'
-          updater_data
-        end
-      end
-
-      def creator_data
+      def create_data
         Muffon::Profile::Creator.call(
           create_params
         )
@@ -44,13 +35,13 @@ module API
         )
       end
 
-      def finder_data
+      def show_data
         Muffon::Profile::Finder.call(
           params.slice(:profile_id)
         )
       end
 
-      def updater_data
+      def update_data
         Muffon::Profile::Updater.call(
           update_params
         )
@@ -58,8 +49,8 @@ module API
 
       def update_params
         params.slice(
-          *Muffon::Profile::Base::PARAMS,
-          *%i[profile_id token]
+          *%i[profile_id token],
+          *Muffon::Profile::Base::PARAMS
         )
       end
     end

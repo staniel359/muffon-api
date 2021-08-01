@@ -1,10 +1,14 @@
 module VK
   module Utils
     module Album
+      include Muffon::Utils::Album
+
       private
 
       def title
-        CGI.unescapeHTML(album['title'])
+        CGI.unescapeHTML(
+          album['title']
+        )
       end
 
       def extra_title

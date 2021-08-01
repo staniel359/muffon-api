@@ -17,6 +17,7 @@ module API
         offset
         owner_id
         page
+        profile_id
         query
         tag
         track

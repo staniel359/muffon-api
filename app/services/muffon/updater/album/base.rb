@@ -30,8 +30,14 @@ module Muffon
 
         def album
           ::Album.with_artist_title(
-            artist_name, title
+            artist_id, title
           )
+        end
+
+        def artist_id
+          ::Artist.with_name(
+            artist_name
+          ).id
         end
       end
     end

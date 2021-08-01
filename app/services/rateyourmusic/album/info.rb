@@ -1,6 +1,8 @@
 module RateYourMusic
   module Album
     class Info < RateYourMusic::Album::Base
+      include Muffon::Utils::Album
+
       private
 
       def album_data
@@ -11,11 +13,12 @@ module RateYourMusic
 
       def base_data
         {
+          library_id: library_id,
           title: title,
           rateyourmusic_id: rateyourmusic_id,
           artist: artist_formatted,
           artists: artists
-        }
+        }.compact
       end
 
       def title
@@ -28,14 +31,6 @@ module RateYourMusic
         album.css(
           '.album_title input'
         )[0]['value'].scan(/\d+/)[0].to_i
-      end
-
-      def artist_formatted
-        { name: artist_names }
-      end
-
-      def artist_names
-        artists.pluck(:name).join(', ')
       end
 
       def artists
@@ -97,7 +92,8 @@ module RateYourMusic
       def track_data_formatted(track)
         RateYourMusic::Album::Info::Track.call(
           track: track,
-          artists_list: artists_list
+          artists_list: artists_list,
+          profile_id: @args.profile_id
         )
       end
     end

@@ -12,11 +12,13 @@ module SoundCloud
 
         def data
           {
+            library_id: library_id,
             title: title,
             soundcloud_id: soundcloud_id,
             image: image_data,
-            release_date: release_date
-          }
+            release_date: release_date,
+            listeners_count: listeners_count
+          }.compact
         end
 
         def album

@@ -17,7 +17,10 @@ module Muffon
       end
 
       def limit
-        (@args.limit || page_limit).to_i
+        (
+          @args.limit ||
+            page_limit
+        ).to_i
       end
 
       def page_limit
@@ -38,13 +41,19 @@ module Muffon
       end
 
       def next_page_formatted
-        next_page if defined?(next_page)
+        next_page if defined?(
+          next_page
+        )
       end
 
       def total_pages_count
-        return unless defined?(total_items_count)
+        return unless defined?(
+          total_items_count
+        )
 
-        total_items_count.fdiv(limit).ceil
+        total_items_count
+          .fdiv(limit)
+          .ceil
       end
 
       def collection
@@ -54,7 +63,9 @@ module Muffon
       end
 
       def collection_paginated(collection)
-        collection.slice(offset, limit) || []
+        collection.slice(
+          offset, limit
+        ) || []
       end
 
       def offset

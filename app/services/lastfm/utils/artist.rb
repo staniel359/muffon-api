@@ -1,6 +1,8 @@
 module LastFM
   module Utils
     module Artist
+      include Muffon::Utils::Artist
+
       private
 
       def name
@@ -8,13 +10,11 @@ module LastFM
       end
 
       def image_data
-        ::Artist.with_name(name).image
+        find_artist.image_data
       end
 
       def listeners_count
-        ::Artist.with_name(
-          name
-        ).listeners_count
+        find_artist.listeners_count
       end
     end
   end

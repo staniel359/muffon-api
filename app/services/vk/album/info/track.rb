@@ -16,6 +16,7 @@ module VK
 
         def base_data
           {
+            library_id: library_id,
             title: title,
             extra_title: extra_title,
             vk_id: vk_id,

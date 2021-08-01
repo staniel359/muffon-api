@@ -12,11 +12,13 @@ module Spotify
 
         def data
           {
+            library_id: library_id,
             title: title,
             spotify_id: spotify_id,
             image: image_data,
-            release_date: release_date
-          }
+            release_date: release_date,
+            listeners_count: listeners_count
+          }.compact
         end
 
         def album

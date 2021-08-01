@@ -12,12 +12,14 @@ module Bandcamp
 
         def data
           {
+            library_id: library_id,
             title: title,
             bandcamp_id: bandcamp_id,
             bandcamp_model: bandcamp_model,
             image: image_data,
-            release_date: release_date
-          }
+            release_date: release_date,
+            listeners_count: listeners_count
+          }.compact
         end
 
         def album

@@ -1,6 +1,8 @@
 module Spotify
   module Utils
     module Track
+      include Muffon::Utils::Track
+
       private
 
       def title

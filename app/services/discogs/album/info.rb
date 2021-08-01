@@ -11,12 +11,13 @@ module Discogs
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           discogs_id: discogs_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }
+        }.compact
       end
 
       def album_extra_data

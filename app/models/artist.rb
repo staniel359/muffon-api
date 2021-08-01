@@ -1,17 +1,26 @@
 class Artist < ApplicationRecord
-  validates :name, presence: true
+  has_many :profile_artists, dependent: nil
 
-  def self.with_name(name)
-    where(
-      'LOWER(name) = ?', name.strip.downcase
-    ).first_or_create(name: name)
+  validates :name,
+            presence: true,
+            uniqueness: true
+
+  class << self
+    def with_name(name)
+      where(
+        'LOWER(name) = ?',
+        name.strip.downcase
+      ).first_or_create(
+        name: name
+      )
+    end
   end
 
-  def image
+  def image_data
     return if image_url.blank?
 
     LastFM::Utils::Image.call(
-      image: image_url
+      image: image_url, model: 'artist'
     )
   end
 end

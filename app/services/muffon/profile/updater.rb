@@ -11,23 +11,17 @@ module Muffon
       end
 
       def data
-        process_profile
-
-        { profile: profile_data }
-      end
-
-      def process_profile
         return forbidden if wrong_profile?
 
-        profile.update!(update_params)
+        profile.update(
+          update_params
+        )
 
         return errors_data if errors?
 
-        process_avatar
-      end
+        process_image
 
-      def wrong_profile?
-        profile.token != @args.token
+        { profile: profile_data }
       end
 
       def update_params

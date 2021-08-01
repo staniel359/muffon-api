@@ -11,12 +11,13 @@ module Deezer
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           deezer_id: deezer_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }
+        }.compact
       end
 
       def album_extra_data
@@ -51,7 +52,8 @@ module Deezer
 
       def track_data_formatted(track)
         Deezer::Album::Info::Track.call(
-          track: track['FALLBACK'] || track
+          track: track['FALLBACK'] || track,
+          profile_id: @args.profile_id
         )
       end
     end

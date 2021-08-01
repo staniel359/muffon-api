@@ -4,10 +4,52 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
 
-    resources :profiles,
-      only: %i[create show update],
-      param: :profile_id
-    resources :sessions, only: :create
+      resources :profiles,
+        only: %i[create show update],
+        param: :profile_id
+
+      namespace :profiles, as: :profile do
+        scope ':profile_id' do
+          namespace :library do
+            get '', action: :info
+
+            resources :artists,
+              only: %i[index create destroy],
+              param: :artist_id
+
+            namespace :artists, as: :artist do
+              scope ':artist_id' do
+                get '', action: :info
+                get 'albums'
+                get 'tracks'
+              end
+            end
+
+            namespace :albums, as: :album do
+              scope ':album_id' do
+                get '', action: :info
+                get 'tracks'
+              end
+            end
+
+            namespace :tracks, as: :track do
+              scope ':track_id' do
+                get '', action: :info
+              end
+            end
+
+            resources :albums,
+              only: %i[index create destroy],
+              param: :album_id
+
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :track_id
+          end
+        end
+      end
+
+      resources :sessions, only: :create
 
 # Bandcamp
 

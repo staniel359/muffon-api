@@ -11,14 +11,21 @@ module VK
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           extra_title: extra_title,
-          vk_id: vk_id,
-          vk_owner_id: vk_owner_id,
-          vk_access_hash: vk_access_hash,
+          **album_id_data,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
+        }.compact
+      end
+
+      def album_id_data
+        {
+          vk_id: vk_id,
+          vk_owner_id: vk_owner_id,
+          vk_access_hash: vk_access_hash
         }
       end
 
@@ -62,7 +69,8 @@ module VK
 
       def track_data_formatted(track)
         VK::Album::Info::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

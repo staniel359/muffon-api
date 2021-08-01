@@ -1,7 +1,11 @@
 class Profile < ApplicationRecord
   has_secure_password
 
-  has_one_attached :avatar
+  has_one_attached :image
+
+  has_many :profile_artists, dependent: nil
+  has_many :profile_albums, dependent: nil
+  has_many :profile_tracks, dependent: nil
 
   enum gender: {
     male: 0,
@@ -33,12 +37,12 @@ class Profile < ApplicationRecord
 
   before_create :set_token
 
-  def avatar_url
-    return '' if avatar.blank?
+  def image_url
+    return '' if image.blank?
 
     url_helpers.rails_blob_url(
-      avatar,
-      host: avatar_host
+      image,
+      host: host
     )
   end
 
@@ -46,13 +50,5 @@ class Profile < ApplicationRecord
 
   def set_token
     self.token = SecureRandom.uuid
-  end
-
-  def url_helpers
-    Rails.application.routes.url_helpers
-  end
-
-  def avatar_host
-    Rails.application.credentials.url
   end
 end

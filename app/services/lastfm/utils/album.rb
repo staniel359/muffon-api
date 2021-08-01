@@ -1,6 +1,8 @@
 module LastFM
   module Utils
     module Album
+      include Muffon::Utils::Album
+
       private
 
       def title
@@ -16,17 +18,13 @@ module LastFM
       end
 
       def image_data
-        image_data_formatted(image, 'album')
+        image_data_formatted(
+          image, 'album'
+        )
       end
 
       def image
         album.dig('image', -1, '#text')
-      end
-
-      def listeners_count
-        ::Album.with_artist_title(
-          artist_name, title
-        ).listeners_count
       end
     end
   end

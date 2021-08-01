@@ -12,10 +12,11 @@ module LastFM
 
         def data
           {
+            library_id: library_id,
             title: title,
             player_id: player_id,
             listeners_count: listeners_count
-          }
+          }.compact
         end
 
         def track

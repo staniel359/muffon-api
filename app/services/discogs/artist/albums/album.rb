@@ -12,12 +12,14 @@ module Discogs
 
         def data
           {
+            library_id: library_id,
             title: title,
             discogs_id: discogs_id,
             discogs_type: discogs_type,
             image: image_data,
-            release_date: release_date
-          }
+            release_date: release_date,
+            listeners_count: listeners_count
+          }.compact
         end
 
         def title
@@ -64,9 +66,15 @@ module Discogs
         end
 
         def image
-          @args.album.css(
+          return if raw_image.blank?
+
+          raw_image['data-src']
+        end
+
+        def raw_image
+          @raw_image ||= @args.album.css(
             'td.image img'
-          )[0]['data-src']
+          )[0]
         end
 
         def release_date

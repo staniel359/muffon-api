@@ -12,6 +12,7 @@ module LastFM
 
         def data
           {
+            library_id: library_id,
             name: name,
             image: image_data,
             listeners_count: listeners_count

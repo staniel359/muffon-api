@@ -12,6 +12,7 @@ module Odnoklassniki
 
         def data
           {
+            library_id: library_id,
             title: title,
             odnoklassniki_id: odnoklassniki_id,
             player_id: player_id,
@@ -19,7 +20,7 @@ module Odnoklassniki
             artists: artists,
             duration: duration,
             audio: audio_data
-          }
+          }.compact
         end
 
         def track

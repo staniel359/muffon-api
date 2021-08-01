@@ -12,11 +12,13 @@ module Odnoklassniki
 
         def data
           {
+            library_id: library_id,
             title: title,
             odnoklassniki_id: odnoklassniki_id,
             image: image_data,
-            release_date: release_date
-          }
+            release_date: release_date,
+            listeners_count: listeners_count
+          }.compact
         end
 
         def album

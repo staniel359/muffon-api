@@ -6,7 +6,7 @@ module Muffon
         password
         password_confirmation
         nickname
-        avatar
+        image
         gender
         birthdate
         country
@@ -16,7 +16,7 @@ module Muffon
         id
         email
         nickname
-        avatar_url
+        image_url
         gender
         birthdate
         country
@@ -34,14 +34,18 @@ module Muffon
       end
 
       def profile
-        @profile ||= ::Profile.find(
-          @args.profile_id
+        @profile ||= ::Profile.find_by(
+          id: @args.profile_id
         )
+      end
+
+      def wrong_profile?
+        profile.token != @args.token
       end
 
       def profile_params
         PARAMS.reject do |p|
-          %i[avatar].include?(p)
+          %i[image].include?(p)
         end
       end
 
@@ -61,28 +65,54 @@ module Muffon
         end
       end
 
-      def process_avatar
-        return if @args.avatar.blank?
+      def process_image
+        return if @args.image.blank?
 
-        remove_avatar
+        remove_image
 
-        add_avatar if @args.avatar != 'DELETED'
+        add_image if @args.image != 'DELETED'
       end
 
-      def remove_avatar
-        profile.avatar.purge
+      def remove_image
+        profile.image.purge
       end
 
-      def add_avatar
-        profile.avatar.attach(
-          avatar_blob
+      def add_image
+        profile.image.attach(
+          **image_data
         )
       end
 
-      def avatar_blob
-        Muffon::Profile::Avatar.call(
-          avatar: @args.avatar
+      def image_data
+        {
+          io: image_io,
+          filename: image_filename,
+          content_type: image_content_type
+        }
+      end
+
+      def image_io
+        StringIO.new(image_base64)
+      end
+
+      def image_base64
+        Base64.decode64(
+          @args.image.split(',')[1]
         )
+      end
+
+      def image_filename
+        "image.#{image_extension}"
+      end
+
+      def image_extension
+        @args.image.split(',')[0].match(
+          %r{image/(.+);}
+        )[1]
+      end
+
+      def image_content_type
+        "image/#{image_extension}"
       end
 
       def profile_data

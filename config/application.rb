@@ -27,7 +27,12 @@ module MuffonAPI
       c.skip_routes(true)
     end
 
-    config.filter_parameters += [:password]
+    config.filter_parameters += %i[
+      image
+      password
+      password_confirmation
+      token
+    ]
 
     config.railties_order = [
       ActiveStorage::Engine,

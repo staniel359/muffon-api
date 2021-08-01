@@ -45,13 +45,9 @@ module RateYourMusic
 
     def artist_data_formatted(artist)
       {
-        name: artist_name(artist),
+        name: artist.text,
         rateyourmusic_id: artist_rateyourmusic_id(artist)
       }
-    end
-
-    def artist_name(artist)
-      artist.text
     end
 
     def artist_rateyourmusic_id(artist)

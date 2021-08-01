@@ -2,6 +2,8 @@ module RateYourMusic
   module Artist
     class Albums
       class Album < RateYourMusic::Artist::Albums
+        include Muffon::Utils::Album
+
         def call
           data
         end
@@ -10,11 +12,13 @@ module RateYourMusic
 
         def data
           {
+            library_id: library_id,
             title: title,
             rateyourmusic_path: rateyourmusic_path,
             image: image_data,
-            release_date: release_date
-          }
+            release_date: release_date,
+            listeners_count: listeners_count
+          }.compact
         end
 
         def title
@@ -32,7 +36,7 @@ module RateYourMusic
         end
 
         def artists
-          return if artists_list.blank?
+          return [] if artists_list.blank?
 
           artists_list.map do |a|
             artist_data_formatted(a)

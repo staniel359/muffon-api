@@ -14,7 +14,8 @@ module LastFM
 
       def collection_item_data_formatted(album)
         LastFM::Tag::Albums::Album.call(
-          album: album
+          album: album,
+          profile_id: @args.profile_id
         )
       end
     end

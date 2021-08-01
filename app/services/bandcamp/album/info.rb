@@ -11,12 +11,13 @@ module Bandcamp
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           bandcamp_id: bandcamp_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }
+        }.compact
       end
 
       def album_extra_data
@@ -49,7 +50,8 @@ module Bandcamp
 
       def track_data_formatted(track)
         Bandcamp::Album::Info::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

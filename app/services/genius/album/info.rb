@@ -11,11 +11,12 @@ module Genius
 
       def album_base_data
         {
+          library_id: library_id,
           title: title,
           genius_id: genius_id,
           artist: artist_formatted,
           artists: artists
-        }
+        }.compact
       end
 
       def album_extra_data
@@ -33,7 +34,8 @@ module Genius
 
       def tracks
         Genius::Album::Info::Tracks.call(
-          album_id: @args.album_id
+          album_id: @args.album_id,
+          profile_id: @args.profile_id
         )[:tracks] || []
       end
     end
