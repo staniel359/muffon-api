@@ -20,19 +20,19 @@ class ProfileAlbum < ApplicationRecord
     return '' if image.blank?
 
     if size.present?
-      url_helpers.rails_representation_url(
-        image_resized(size),
-        host: host
-      )
+      variant_url(size)
     else
-      url_helpers.rails_blob_url(
-        image,
-        host: host
-      )
+      original_url
     end
   end
 
   private
+
+  def variant_url(size)
+    url_helpers.rails_representation_url(
+      image_resized(size), host: host
+    )
+  end
 
   def image_resized(size)
     image.variant(
