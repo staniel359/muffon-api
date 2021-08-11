@@ -4,7 +4,8 @@ module LastFM
       MODEL_HASHES = {
         artist: '2a96cbd8b46e442fc41c2b86b821562f',
         album: 'c6f59c1e5e7240a4c0d427abd71f3dbb',
-        track: '4128a6eb29f94943c9d206c08e625904'
+        track: '4128a6eb29f94943c9d206c08e625904',
+        user: '818148bf682d429dc215c1705eb27b98'
       }.freeze
       YOUTUBE_PLACEHOLDER = 'https://i.ytimg.com'.freeze
 

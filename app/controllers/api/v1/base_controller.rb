@@ -14,12 +14,14 @@ module API
         label_id
         limit
         next_page
+        nickname
         offset
         owner_id
         page
         profile_id
         query
         tag
+        token
         track
         track_id
         video_id

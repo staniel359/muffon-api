@@ -268,6 +268,18 @@ Rails.application.routes.draw do
           get 'tracks'
           get 'tags'
         end
+
+        namespace :connect do
+          get 'token'
+          get 'session'
+        end
+
+        namespace :users, as: :user do
+          scope ':nickname' do
+            get '', action: :info
+            get 'plays'
+          end
+        end
       end
 
 # Odnoklassniki

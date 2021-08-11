@@ -30,6 +30,10 @@ module Muffon
       primary_args.any?(&:blank?)
     end
 
+    def primary_args
+      []
+    end
+
     def no_data?
       false
     end

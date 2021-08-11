@@ -38,6 +38,10 @@ module LastFM
       secrets.lastfm[:api_key]
     end
 
+    def api_secret
+      secrets.lastfm[:api_secret]
+    end
+
     def artist_params
       { artist: artist_name_formatted }
     end
@@ -82,7 +86,7 @@ module LastFM
 
     def with_more_tags?
       defined?(tags_list) &&
-        tags_list.length >= 5
+        tags_list.size >= 5
     end
 
     def description_formatted(data)
