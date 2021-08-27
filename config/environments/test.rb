@@ -22,4 +22,6 @@ Rails.application.configure do
   config.active_support.deprecation = :stderr
 
   config.logger = ActiveSupport::Logger.new(nil)
+
+  config.active_job.queue_adapter = :sidekiq
 end

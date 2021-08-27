@@ -27,4 +27,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.logger = ActiveSupport::Logger.new(nil)
+
+  config.active_job.queue_adapter = :sidekiq
 end

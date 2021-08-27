@@ -1,4 +1,19 @@
+require 'sidekiq/web'
+
+Sidekiq::Web.use ActionDispatch::Cookies
+Sidekiq::Web.use ActionDispatch::Session::CookieStore,
+  key: "_interslice_session"
+
+Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+  sidekiq_secrets = Rails.application.credentials.sidekiq
+
+  username == sidekiq_secrets[:username] &&
+    password == sidekiq_secrets[:password]
+end
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+
   root to: 'application#no_content'
 
   scope :api, module: :api do
@@ -45,6 +60,14 @@ Rails.application.routes.draw do
             resources :tracks,
               only: %i[index create destroy],
               param: :track_id
+          end
+
+          resources :recommendations, only: %i[index]
+
+          namespace :recommendations do
+            scope ':recommendation_id' do
+              get 'artists'
+            end
           end
         end
       end

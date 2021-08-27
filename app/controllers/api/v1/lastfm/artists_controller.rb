@@ -44,13 +44,13 @@ module API
 
         def update_artist_image
           Muffon::Updater::Artist::Image.call(
-            artist: data[:artist]
+            data.slice(:artist)
           )
         end
 
         def update_artist_listeners_count
           Muffon::Updater::Artist::ListenersCount.call(
-            artist: data[:artist]
+            data.slice(:artist)
           )
         end
       end

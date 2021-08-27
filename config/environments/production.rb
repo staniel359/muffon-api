@@ -21,7 +21,7 @@ Rails.application.configure do
 
   config.log_tags = [:request_id]
 
-  # config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_adapter = :sidekiq
 
   config.active_support.deprecation = :notify
 

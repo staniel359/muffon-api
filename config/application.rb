@@ -5,7 +5,6 @@ require 'rails'
 require 'active_model/railtie'
 require 'active_record/railtie'
 require 'action_controller/railtie'
-require 'active_job/railtie'
 require 'action_cable/engine'
 require 'active_storage/engine'
 
@@ -38,13 +37,5 @@ module MuffonAPI
       ActiveStorage::Engine,
       :all
     ]
-  end
-end
-
-module ActiveStorage
-  class Analyzer
-    def self.analyze_later?
-      false
-    end
   end
 end

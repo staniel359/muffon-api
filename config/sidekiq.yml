@@ -1,0 +1,5 @@
+:concurrency: 25
+:queues:
+  - [default, 1]
+  - [active_storage_analysis, 1]
+  - [active_storage_purge, 1]

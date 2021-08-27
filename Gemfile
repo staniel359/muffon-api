@@ -15,12 +15,14 @@ gem 'redis'
 gem 'rest-client'
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'sidekiq'
 gem 'whenever', require: false
 
 group :development do
   gem 'capistrano', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rbenv', require: false
+  gem 'capistrano-sidekiq', require: false
   gem 'capistrano3-puma', require: false
   gem 'listen'
   gem 'pry'

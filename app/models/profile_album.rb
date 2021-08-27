@@ -1,6 +1,4 @@
 class ProfileAlbum < ApplicationRecord
-  before_destroy :destroy_image
-
   belongs_to :profile
   belongs_to :profile_artist,
              counter_cache: true
@@ -44,9 +42,5 @@ class ProfileAlbum < ApplicationRecord
     url_helpers.rails_blob_url(
       image, host: host
     )
-  end
-
-  def destroy_image
-    image.purge
   end
 end

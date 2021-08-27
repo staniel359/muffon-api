@@ -22,7 +22,8 @@ module LastFM
       def collection_item_data_formatted(artist)
         LastFM::Artist::Similar::Artist.call(
           artist: artist,
-          profile_id: @args.profile_id
+          profile_id: @args.profile_id,
+          minimal: @args.minimal
         )
       end
     end

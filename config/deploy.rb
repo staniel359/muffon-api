@@ -29,6 +29,8 @@ set :puma_workers, 2
 
 set :whenever_roles, -> { :app }
 
+set :sidekiq_service_unit_user, :system
+
 before 'deploy:check', 'creds:copy'
 
 namespace :creds do

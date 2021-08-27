@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_17_091704) do
+ActiveRecord::Schema.define(version: 2021_08_27_113143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,15 @@ ActiveRecord::Schema.define(version: 2021_08_17_091704) do
     t.string "city"
   end
 
+  create_table "recommendations", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "artist_id"
+    t.integer "profile_artist_ids", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_recommendations_on_profile_id"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.string "title"
     t.bigint "artist_id", null: false
@@ -131,5 +140,6 @@ ActiveRecord::Schema.define(version: 2021_08_17_091704) do
   add_foreign_key "profile_tracks", "profile_artists"
   add_foreign_key "profile_tracks", "profiles"
   add_foreign_key "profile_tracks", "tracks"
+  add_foreign_key "recommendations", "profiles"
   add_foreign_key "tracks", "artists"
 end

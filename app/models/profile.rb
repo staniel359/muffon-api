@@ -7,6 +7,8 @@ class Profile < ApplicationRecord
   has_many :profile_albums, dependent: nil
   has_many :profile_tracks, dependent: nil
 
+  has_many :recommendations, dependent: nil
+
   enum gender: {
     male: 0,
     female: 1,
