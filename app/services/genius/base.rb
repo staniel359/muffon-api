@@ -38,7 +38,9 @@ module Genius
     end
 
     def image_data_formatted(image)
-      Genius::Utils::Image.call(image: image)
+      Genius::Utils::Image.call(
+        image: image
+      )
     end
 
     def raw_release_date_formatted(data)

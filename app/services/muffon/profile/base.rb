@@ -16,11 +16,11 @@ module Muffon
         id
         email
         nickname
-        image_url
         gender
         birthdate
         country
         city
+        role
       ].freeze
 
       private
@@ -79,11 +79,11 @@ module Muffon
 
       def add_image
         profile.image.attach(
-          **image_data
+          **image_file_data
         )
       end
 
-      def image_data
+      def image_file_data
         {
           io: image_io,
           filename: image_filename,
@@ -116,7 +116,9 @@ module Muffon
       end
 
       def profile_data
-        profile.slice(*ATTRS)
+        profile.slice(*ATTRS).merge(
+          image: profile.image_data
+        )
       end
     end
   end

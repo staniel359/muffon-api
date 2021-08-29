@@ -3,6 +3,10 @@ module API
     class ProfilesController < API::V1::BaseController
       include ActiveStorage::SetCurrent
 
+      def index
+        render_data_with_status
+      end
+
       def create
         render_data_with_status
       end
@@ -23,6 +27,10 @@ module API
         )
       end
 
+      def index_data
+        Muffon::Profiles.call
+      end
+
       def create_data
         Muffon::Profile::Creator.call(
           create_params
@@ -36,7 +44,7 @@ module API
       end
 
       def show_data
-        Muffon::Profile::Finder.call(
+        Muffon::Profile::Info.call(
           params.slice(:profile_id)
         )
       end

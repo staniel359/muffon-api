@@ -112,7 +112,7 @@ module Muffon
 
             def add_image
               profile_album.image.attach(
-                **image_data
+                **image_file_data
               )
             end
           end

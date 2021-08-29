@@ -1,6 +1,6 @@
 module Muffon
   module Profile
-    class Finder < Muffon::Profile::Base
+    class Info < Muffon::Profile::Base
       PARAMS = %i[
         email
         nickname

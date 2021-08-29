@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     scope :v1, module: :v1 do
 
       resources :profiles,
-        only: %i[create show update],
+        only: %i[index create show update],
         param: :profile_id
 
       namespace :profiles, as: :profile do
@@ -62,7 +62,9 @@ Rails.application.routes.draw do
               param: :track_id
           end
 
-          resources :recommendations, only: %i[index]
+          resources :recommendations,
+            only: %i[index destroy],
+            param: :recommendation_id
 
           namespace :recommendations do
             scope ':recommendation_id' do

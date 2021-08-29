@@ -47,11 +47,15 @@ module LastFM
       end
 
       def image_data
-        image_data_formatted(image, 'track')
+        image_data_formatted(
+          image, 'track'
+        )
       end
 
       def image
-        track.dig('album', 'image', -1, '#text')
+        track.dig(
+          'album', 'image', -1, '#text'
+        )
       end
 
       def listeners_count

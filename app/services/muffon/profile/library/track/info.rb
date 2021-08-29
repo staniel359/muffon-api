@@ -47,26 +47,11 @@ module Muffon
           end
 
           def image_data
-            return image_url_data if no_image?
-
-            {
-              original: image,
-              large: image(600),
-              medium: image(300),
-              small: image(100),
-              extrasmall: image(50)
-            }
+            profile_album&.image_data.presence ||
+              default_image_data
           end
 
-          def no_image?
-            profile_album&.image.blank?
-          end
-
-          def image(size = nil)
-            profile_album&.stored_image_url(size)
-          end
-
-          def image_url_data
+          def default_image_data
             LastFM::Utils::Image.call(
               model: 'track',
               image: profile_album&.image_url

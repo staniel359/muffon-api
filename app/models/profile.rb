@@ -9,6 +9,11 @@ class Profile < ApplicationRecord
 
   has_many :recommendations, dependent: nil
 
+  enum role: {
+    profile: 0,
+    creator: 1
+  }
+
   enum gender: {
     male: 0,
     female: 1,
