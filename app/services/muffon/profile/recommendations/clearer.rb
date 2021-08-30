@@ -36,7 +36,9 @@ module Muffon
         def delete_empty_recommendations
           profile.recommendations.where(
             profile_artist_ids: []
-          ).delete_all
+          ).update_all(
+            deleted: true
+          )
         end
       end
     end

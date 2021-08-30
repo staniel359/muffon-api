@@ -37,7 +37,7 @@ module API
         end
 
         def destroy_data
-          Muffon::Profile::Recommendations::Recommendation::Destroyer.call(
+          Muffon::Profile::Recommendations::Recommendation::Deleter.call(
             params.slice(
               *%i[
                 profile_id token

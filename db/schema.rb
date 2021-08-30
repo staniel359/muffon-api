@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_29_131155) do
+ActiveRecord::Schema.define(version: 2021_08_31_083056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "listeners_count"
-    t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -60,6 +59,30 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.integer "listeners_count"
   end
 
+  create_table "listened_albums", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "album_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_listened_albums_on_profile_id"
+  end
+
+  create_table "listened_artists", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "artist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_listened_artists_on_profile_id"
+  end
+
+  create_table "listened_tracks", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "track_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_listened_tracks_on_profile_id"
+  end
+
   create_table "profile_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "album_id", null: false
@@ -68,7 +91,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_url"
     t.integer "profile_tracks_count", default: 0
-    t.index ["album_id"], name: "index_profile_albums_on_album_id"
     t.index ["profile_artist_id"], name: "index_profile_albums_on_profile_artist_id"
     t.index ["profile_id"], name: "index_profile_albums_on_profile_id"
   end
@@ -80,7 +102,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "profile_tracks_count", default: 0
     t.integer "profile_albums_count", default: 0
-    t.index ["artist_id"], name: "index_profile_artists_on_artist_id"
     t.index ["profile_id"], name: "index_profile_artists_on_profile_id"
   end
 
@@ -94,7 +115,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.index ["profile_album_id"], name: "index_profile_tracks_on_profile_album_id"
     t.index ["profile_artist_id"], name: "index_profile_tracks_on_profile_artist_id"
     t.index ["profile_id"], name: "index_profile_tracks_on_profile_id"
-    t.index ["track_id"], name: "index_profile_tracks_on_track_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -117,6 +137,7 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.integer "profile_artist_ids", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "deleted", default: false
     t.index ["profile_id"], name: "index_recommendations_on_profile_id"
   end
 
@@ -126,21 +147,18 @@ ActiveRecord::Schema.define(version: 2021_08_29_131155) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "player_id"
-    t.index ["artist_id"], name: "index_tracks_on_artist_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "albums", "artists"
-  add_foreign_key "profile_albums", "albums"
+  add_foreign_key "listened_albums", "profiles"
+  add_foreign_key "listened_artists", "profiles"
+  add_foreign_key "listened_tracks", "profiles"
   add_foreign_key "profile_albums", "profile_artists"
   add_foreign_key "profile_albums", "profiles"
-  add_foreign_key "profile_artists", "artists"
   add_foreign_key "profile_artists", "profiles"
   add_foreign_key "profile_tracks", "profile_albums"
   add_foreign_key "profile_tracks", "profile_artists"
   add_foreign_key "profile_tracks", "profiles"
-  add_foreign_key "profile_tracks", "tracks"
   add_foreign_key "recommendations", "profiles"
-  add_foreign_key "tracks", "artists"
 end

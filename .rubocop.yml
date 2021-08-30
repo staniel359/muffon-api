@@ -30,6 +30,9 @@ Metrics/BlockLength:
     - 'spec/**/*_spec.rb'
     - 'spec/vcr_helper.rb'
 
+Rails/SkipsModelValidations:
+  Enabled: false
+
 Rails/UniqueValidationWithoutIndex:
   Enabled: false
 

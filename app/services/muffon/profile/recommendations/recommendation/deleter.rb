@@ -2,7 +2,7 @@ module Muffon
   module Profile
     class Recommendations
       class Recommendation
-        class Destroyer < Muffon::Profile::Recommendations
+        class Deleter < Muffon::Profile::Recommendations
           def call
             destroy_recommendation
           end
@@ -12,7 +12,9 @@ module Muffon
           def destroy_recommendation
             return forbidden if wrong_profile?
 
-            recommendation&.destroy
+            recommendation&.update(
+              deleted: true
+            )
 
             { success: true }
           end

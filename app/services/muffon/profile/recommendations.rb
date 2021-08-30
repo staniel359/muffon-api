@@ -30,7 +30,9 @@ module Muffon
 
       def recommendations
         @recommendations ||=
-          profile.recommendations
+          profile.recommendations.where.not(
+            deleted: true
+          )
       end
 
       def recommendations_formatted
