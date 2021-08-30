@@ -18,6 +18,7 @@ module Muffon
             def data
               return forbidden if wrong_profile?
 
+              process_profile_artist
               process_profile_album
               process_profile_track
 
@@ -28,8 +29,31 @@ module Muffon
               { library_id: profile_track.id }
             end
 
+            def process_profile_artist
+              profile_artist.tap do |artist|
+                artist.created_at = @args.created_at if
+                    update_created_at?(artist)
+                artist.save
+              end
+            end
+
+            def profile_artist
+              @profile_artist ||=
+                profile.profile_artists.where(
+                  artist_id: find_artist.id
+                ).first_or_initialize
+            end
+
+            def find_artist
+              @find_artist ||= ::Artist.with_name(
+                @args.artist
+              )
+            end
+
             def process_profile_album
               profile_album&.tap do |album|
+                album.created_at = @args.created_at if
+                    update_created_at?(album)
                 album.image_url = @args.image_url if
                     @args.image_url.present?
                 album.save
@@ -51,23 +75,10 @@ module Muffon
               )
             end
 
-            def find_artist
-              @find_artist ||= ::Artist.with_name(
-                @args.artist
-              )
-            end
-
-            def profile_artist
-              @profile_artist ||=
-                profile.profile_artists.where(
-                  artist_id: find_artist.id
-                ).first_or_create
-            end
-
             def process_profile_track
               profile_track.tap do |track|
                 track.created_at = @args.created_at if
-                    update_created_at?
+                    update_created_at?(track)
                 track.save
               end
             end
@@ -87,12 +98,11 @@ module Muffon
               )
             end
 
-            def update_created_at?
+            def update_created_at?(model)
               return false if @args.created_at.blank?
-              return true if profile_track.created_at.blank?
+              return true if model.created_at.blank?
 
-              @args.created_at <
-                profile_track.created_at
+              @args.created_at < model.created_at
             end
 
             def errors?
