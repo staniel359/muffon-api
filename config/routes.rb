@@ -71,6 +71,20 @@ Rails.application.routes.draw do
               get 'artists'
             end
           end
+
+          namespace :listened do
+            resources :artists,
+              only: %i[create destroy],
+              param: :artist_id
+
+            resources :albums,
+              only: %i[create destroy],
+              param: :album_id
+
+            resources :tracks,
+              only: %i[create destroy],
+              param: :track_id
+          end
         end
       end
 

@@ -4,20 +4,20 @@ module SoundCloud
       private
 
       def album_data
-        album_base_data
+        muffon_data
+          .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
       end
 
       def album_base_data
         {
-          library_id: library_id,
           title: title,
           soundcloud_id: soundcloud_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }.compact
+        }
       end
 
       def album_extra_data

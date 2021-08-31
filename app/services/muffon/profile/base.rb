@@ -12,16 +12,6 @@ module Muffon
         country
         city
       ].freeze
-      ATTRS = %i[
-        id
-        email
-        nickname
-        gender
-        birthdate
-        country
-        city
-        role
-      ].freeze
 
       private
 
@@ -113,12 +103,6 @@ module Muffon
 
       def image_content_type
         "image/#{image_extension}"
-      end
-
-      def profile_data
-        profile.slice(*ATTRS).merge(
-          image: profile.image_data
-        )
       end
     end
   end

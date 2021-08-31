@@ -11,8 +11,11 @@ module Odnoklassniki
         private
 
         def data
+          muffon_data.merge(album_data)
+        end
+
+        def album_data
           {
-            library_id: library_id,
             title: title,
             odnoklassniki_id: odnoklassniki_id,
             image: image_data,

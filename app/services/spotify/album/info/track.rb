@@ -11,8 +11,11 @@ module Spotify
         private
 
         def data
+          muffon_data.merge(track_data)
+        end
+
+        def track_data
           {
-            library_id: library_id,
             title: title,
             spotify_id: spotify_id,
             player_id: player_id,
@@ -20,7 +23,7 @@ module Spotify
             artists: artists,
             duration: duration,
             audio: audio_data
-          }.compact
+          }
         end
 
         def track

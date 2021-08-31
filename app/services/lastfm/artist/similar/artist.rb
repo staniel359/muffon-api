@@ -13,12 +13,7 @@ module LastFM
         def data
           return minimal_data if @args.minimal
 
-          {
-            library_id: library_id,
-            name: name,
-            image: image_data,
-            listeners_count: listeners_count
-          }.compact
+          muffon_data.merge(artist_data)
         end
 
         def minimal_data
@@ -27,6 +22,14 @@ module LastFM
 
         def artist
           @artist ||= @args.artist
+        end
+
+        def artist_data
+          {
+            name: name,
+            image: image_data,
+            listeners_count: listeners_count
+          }.compact
         end
       end
     end

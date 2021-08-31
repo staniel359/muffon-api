@@ -1,4 +1,6 @@
 class Profile < ApplicationRecord
+  before_create :set_token
+
   has_secure_password
 
   has_one_attached :image
@@ -9,15 +11,19 @@ class Profile < ApplicationRecord
 
   has_many :recommendations, dependent: nil
 
-  enum role: {
-    profile: 0,
-    creator: 1
-  }
+  has_many :listened_artists, dependent: nil
+  has_many :listened_albums, dependent: nil
+  has_many :listened_tracks, dependent: nil
 
   enum gender: {
     male: 0,
     female: 1,
     other: 2
+  }
+
+  enum role: {
+    profile: 0,
+    creator: 1
   }
 
   validates :email,
@@ -41,17 +47,6 @@ class Profile < ApplicationRecord
             presence: true,
             uniqueness: true,
             length: { maximum: 30 }
-
-  before_create :set_token
-
-  def image_url
-    return '' if image.blank?
-
-    url_helpers.rails_blob_url(
-      image,
-      host: host
-    )
-  end
 
   private
 

@@ -37,11 +37,11 @@ module Muffon
       end
 
       def gender
-        profile.gender
+        profile.gender || ''
       end
 
       def birthdate
-        profile.birthdate
+        profile.birthdate || ''
       end
 
       def country

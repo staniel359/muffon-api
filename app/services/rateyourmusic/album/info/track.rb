@@ -11,14 +11,17 @@ module RateYourMusic
         private
 
         def data
+          muffon_data.merge(track_data)
+        end
+
+        def track_data
           {
-            library_id: library_id,
             title: title,
             player_id: player_id,
             artist: artist_formatted,
             artists: artists,
             duration: duration
-          }.compact
+          }
         end
 
         def title

@@ -12,14 +12,17 @@ module Genius
           private
 
           def data
+            muffon_data.merge(track_data)
+          end
+
+          def track_data
             {
-              library_id: library_id,
               title: title,
               genius_id: genius_id,
               player_id: player_id,
               artist: artist_formatted,
               artists: artists
-            }.compact
+            }
           end
 
           def track

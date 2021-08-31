@@ -4,19 +4,19 @@ module LastFM
       private
 
       def track_data
-        track_base_data
+        muffon_data
+          .merge(track_base_data)
           .merge(track_extra_data)
           .merge(with_more_data)
       end
 
       def track_base_data
         {
-          library_id: library_id,
           title: title,
           player_id: player_id,
           artist: artist_formatted,
           artists: artists
-        }.compact
+        }
       end
 
       def track_extra_data

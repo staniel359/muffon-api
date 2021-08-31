@@ -11,8 +11,11 @@ module RateYourMusic
         private
 
         def data
+          muffon_data.merge(album_data)
+        end
+
+        def album_data
           {
-            library_id: library_id,
             title: title,
             rateyourmusic_path: rateyourmusic_path,
             image: image_data,

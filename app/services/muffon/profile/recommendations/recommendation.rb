@@ -11,14 +11,17 @@ module Muffon
         private
 
         def data
+          muffon_data.merge(recommendation_data)
+        end
+
+        def recommendation_data
           {
             id: id,
-            library_id: library_id,
             name: name,
             image: image_data,
             profile_artists_count: profile_artists_count,
             profile_artists: profile_artists_formatted
-          }.compact
+          }
         end
 
         def id

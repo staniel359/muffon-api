@@ -6,19 +6,19 @@ module RateYourMusic
       private
 
       def album_data
-        base_data
-          .merge(extra_data)
+        muffon_data
+          .merge(album_base_data)
+          .merge(album_extra_data)
           .merge(with_more_data)
       end
 
-      def base_data
+      def album_base_data
         {
-          library_id: library_id,
           title: title,
           rateyourmusic_id: rateyourmusic_id,
           artist: artist_formatted,
           artists: artists
-        }.compact
+        }
       end
 
       def title
@@ -43,7 +43,7 @@ module RateYourMusic
         album.css('.album_info .artist')
       end
 
-      def extra_data
+      def album_extra_data
         {
           image: image_data,
           release_date: release_date,

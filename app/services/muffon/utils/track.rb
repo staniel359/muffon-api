@@ -6,10 +6,10 @@ module Muffon
       def library_id
         return if @args.profile_id.blank?
 
-        profile_track&.id
+        find_profile_track&.id
       end
 
-      def profile_track
+      def find_profile_track
         ProfileTrack.find_by(
           profile_id: @args.profile_id,
           track_id: find_track.id
@@ -25,6 +25,19 @@ module Muffon
       def find_artist
         ::Artist.with_name(
           artist_name
+        )
+      end
+
+      def listened_id
+        return if @args.profile_id.blank?
+
+        find_listened_track&.id
+      end
+
+      def find_listened_track
+        ListenedTrack.find_by(
+          profile_id: @args.profile_id,
+          track_id: find_track.id
         )
       end
 

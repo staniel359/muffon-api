@@ -21,6 +21,19 @@ module Muffon
           name
         )
       end
+
+      def listened_id
+        return if @args.profile_id.blank?
+
+        find_listened_artist&.id
+      end
+
+      def find_listened_artist
+        ListenedArtist.find_by(
+          profile_id: @args.profile_id,
+          artist_id: find_artist.id
+        )
+      end
     end
   end
 end

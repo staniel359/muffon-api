@@ -11,12 +11,13 @@ module Deezer
         private
 
         def data
-          base_data.merge(extra_data)
+          muffon_data
+            .merge(track_base_data)
+            .merge(track_extra_data)
         end
 
-        def base_data
+        def track_base_data
           {
-            library_id: library_id,
             title: title,
             extra_title: extra_title,
             deezer_id: deezer_id,
@@ -30,7 +31,7 @@ module Deezer
           @track ||= @args.track
         end
 
-        def extra_data
+        def track_extra_data
           {
             duration: duration,
             audio: audio_data

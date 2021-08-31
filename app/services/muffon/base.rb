@@ -41,5 +41,12 @@ module Muffon
     def secrets
       Rails.application.credentials
     end
+
+    def muffon_data
+      {
+        library_id: library_id,
+        listened_id: listened_id
+      }.compact
+    end
   end
 end

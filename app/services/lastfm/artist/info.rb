@@ -4,13 +4,13 @@ module LastFM
       private
 
       def artist_data
-        artist_base_data
+        muffon_data
+          .merge(base_artist_data)
           .merge(with_more_data)
       end
 
-      def artist_base_data
+      def base_artist_data
         {
-          library_id: library_id,
           name: name,
           listeners_count: listeners_count,
           plays_count: plays_count,

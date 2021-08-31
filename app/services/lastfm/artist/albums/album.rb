@@ -11,8 +11,11 @@ module LastFM
         private
 
         def data
+          muffon_data.merge(album_data)
+        end
+
+        def album_data
           {
-            library_id: library_id,
             title: title,
             image: image_data,
             listeners_count: listeners_count
