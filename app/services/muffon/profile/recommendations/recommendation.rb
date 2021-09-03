@@ -57,16 +57,10 @@ module Muffon
         end
 
         def profile_artists_associated
-          profile
-            .profile_artists
-            .where(id: profile_artists_ids_limited)
-            .includes(:artist)
-        end
-
-        def profile_artists_ids_limited
           recommendation
-            .profile_artist_ids
-            .first(5)
+            .profile_artists
+            .limit(5)
+            .includes(:artist)
         end
 
         def profile_artist_formatted(artist)

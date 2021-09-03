@@ -6,4 +6,15 @@ class Recommendation < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
+
+  def profile_artists
+    ProfileArtist.where(
+      profile_id: profile_id,
+      id: profile_artist_ids
+    ).order(
+      profile_tracks_count: :desc,
+      profile_albums_count: :desc,
+      created_at: :asc
+    )
+  end
 end
