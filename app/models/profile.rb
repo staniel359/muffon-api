@@ -15,6 +15,10 @@ class Profile < ApplicationRecord
   has_many :listened_albums, dependent: nil
   has_many :listened_tracks, dependent: nil
 
+  has_many :bookmark_artists, dependent: nil
+  has_many :bookmark_albums, dependent: nil
+  has_many :bookmark_tracks, dependent: nil
+
   enum gender: {
     male: 0,
     female: 1,

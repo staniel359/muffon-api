@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_102036) do
+ActiveRecord::Schema.define(version: 2021_09_03_080049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,33 @@ ActiveRecord::Schema.define(version: 2021_08_31_102036) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_url"
     t.integer "listeners_count"
+  end
+
+  create_table "bookmark_albums", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "album_id"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_bookmark_albums_on_profile_id"
+  end
+
+  create_table "bookmark_artists", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "artist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_bookmark_artists_on_profile_id"
+  end
+
+  create_table "bookmark_tracks", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "track_id"
+    t.integer "album_id"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_bookmark_tracks_on_profile_id"
   end
 
   create_table "listened_albums", force: :cascade do |t|
@@ -152,6 +179,9 @@ ActiveRecord::Schema.define(version: 2021_08_31_102036) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookmark_albums", "profiles"
+  add_foreign_key "bookmark_artists", "profiles"
+  add_foreign_key "bookmark_tracks", "profiles"
   add_foreign_key "listened_albums", "profiles"
   add_foreign_key "listened_artists", "profiles"
   add_foreign_key "listened_tracks", "profiles"

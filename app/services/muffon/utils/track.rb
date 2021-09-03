@@ -17,7 +17,7 @@ module Muffon
       end
 
       def find_track
-        ::Track.with_artist_title(
+        @find_track ||= ::Track.with_artist_title(
           find_artist.id, title
         )
       end
@@ -36,6 +36,19 @@ module Muffon
 
       def find_listened_track
         ListenedTrack.find_by(
+          profile_id: @args.profile_id,
+          track_id: find_track.id
+        )
+      end
+
+      def bookmark_id
+        return if @args.profile_id.blank?
+
+        find_bookmark_track&.id
+      end
+
+      def find_bookmark_track
+        BookmarkTrack.find_by(
           profile_id: @args.profile_id,
           track_id: find_track.id
         )
