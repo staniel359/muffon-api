@@ -1,26 +1,21 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://vk.com/al_audio.php
+    method: get
+    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=4b0d541e5c641772e4&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000018186&playlist_id=wejlhg239gh23&sig=35a4cb5bffd8336adfa1a1655c0be021&v=5.131
     body:
-      encoding: UTF-8
-      string: act=load_section&al=1&playlist_id=wejlhg239gh23&owner_id&access_hash&offset&type=playlist
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Content-Length:
-      - '89'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Cookie:
-      - remixsid=<VK_SESSION_ID>
+      - KateMobileAndroid/56 lite-460 (Android 4.4.2; SDK 19; x86; unknown Android
+        SDK built for x86; en)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - vk.com
+      - api.vk.com
   response:
     status:
       code: 200
@@ -29,32 +24,25 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Fri, 04 Jun 2021 19:23:54 GMT
+      - Sun, 05 Sep 2021 14:05:18 GMT
       Content-Type:
-      - text/html; charset=windows-1251
+      - application/json; charset=utf-8
       Content-Length:
-      - '262'
+      - '251'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107399
+      - KPHP/7.4.108477
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Wed, 01 Jun 2022 16:55:58 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Fri, 03 Jun 2022 21:26:44 GMT; path=/; domain=.vk.com;
-        secure
       Cache-Control:
       - no-store
-      X-Frontend:
-      - front226206
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Expose-Headers:
-      - X-Frontend
+      X-Frame-Options:
+      - DENY
     body:
       encoding: ASCII-8BIT
-      string: '<!--{"payload":["8",["\"ERR_103: Invalid user id, in al_audio.php?act=load_section,
-        code #75978064\"","false","\"75978065\""]],"statsMeta":{"platform":"web2","st":false,"time":1622834634,"hash":"ZTPDQcQ0KspZ3CX5j1b8ToSHP34G4VS9rczmOR0RUcg"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}'
-  recorded_at: Fri, 04 Jun 2021 19:23:54 GMT
+      string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
+        was missing or invalid: playlist_id not integer","request_params":[{"key":"v","value":"5.131"},{"key":"playlist_id","value":"wejlhg239gh23"},{"key":"owner_id","value":"-2000018186"},{"key":"access_key","value":"4b0d541e5c641772e4"},{"key":"lang","value":"en"},{"key":"method","value":"audio.getPlaylistById"},{"key":"oauth","value":"1"}]}}'
+  recorded_at: Sun, 05 Sep 2021 14:05:18 GMT
 recorded_with: VCR 6.0.0

@@ -13,7 +13,9 @@ module Muffon
         def save_audio_and_return_path
           create_audio_folder
 
-          audio_file.write(audio_binary_data)
+          audio_file.write(
+            audio_binary_data
+          )
 
           audio_link
         end

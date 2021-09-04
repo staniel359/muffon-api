@@ -6,15 +6,11 @@ module VK
       private
 
       def title
-        CGI.unescapeHTML(
-          album['title']
-        )
+        album['title']
       end
 
       def extra_title
-        CGI.unescapeHTML(
-          album['subTitle'] || ''
-        ).presence
+        album['subtitle']
       end
 
       def vk_id
@@ -22,20 +18,24 @@ module VK
       end
 
       def vk_owner_id
-        album['ownerId']
+        album['owner_id']
       end
 
-      def vk_access_hash
-        album['accessHash']
+      def vk_access_key
+        album['access_key']
       end
 
-      def artists
-        [artist_data_formatted(album)]
+      def artists_list
+        album['main_artists'] || [artist]
+      end
+
+      def artist
+        { 'name' => album['artist'] }
       end
 
       def image_data
         image_data_formatted(
-          album['coverUrl'], 'album'
+          album['photo'], 'album'
         )
       end
     end

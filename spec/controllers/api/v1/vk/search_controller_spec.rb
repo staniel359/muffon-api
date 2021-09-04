@@ -70,28 +70,4 @@ RSpec.describe API::V1::VK::SearchController, type: :controller do
       expect(response).to have_http_status(:not_found)
     end
   end
-
-  describe 'GET :videos' do
-    it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/v1/vk/search/videos/success' do
-        get :videos, params: { query: 'tr/st' }
-      end
-
-      expect(response).to have_http_status(:ok)
-    end
-
-    it 'returns 400 if no query' do
-      get :videos
-
-      expect(response).to have_http_status(:bad_request)
-    end
-
-    it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/v1/vk/search/videos/wrong_query' do
-        get :videos, params: { query: random }
-      end
-
-      expect(response).to have_http_status(:not_found)
-    end
-  end
 end

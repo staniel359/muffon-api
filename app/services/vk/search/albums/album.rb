@@ -16,7 +16,7 @@ module VK
             extra_title: extra_title,
             vk_id: vk_id,
             vk_owner_id: vk_owner_id,
-            vk_access_hash: vk_access_hash,
+            vk_access_key: vk_access_key,
             artist: artist_formatted,
             artists: artists,
             image: image_data

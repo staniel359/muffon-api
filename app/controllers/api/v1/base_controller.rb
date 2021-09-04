@@ -2,7 +2,7 @@ module API
   module V1
     class BaseController < ApplicationController
       PERMITTED_PARAMS = %i[
-        access_hash
+        access_key
         album
         album_id
         album_type

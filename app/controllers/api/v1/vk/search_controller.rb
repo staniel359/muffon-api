@@ -13,10 +13,6 @@ module API
         def tracks
           render_data_with_status
         end
-
-        def videos
-          render_data_with_status
-        end
       end
     end
   end

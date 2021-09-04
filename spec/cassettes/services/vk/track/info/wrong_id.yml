@@ -1,26 +1,21 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://vk.com/al_audio.php
+    method: get
+    uri: https://api.vk.com/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=wejlhg239gh23&sig=092a656944cf7182111bf8eb96f911d4&v=5.131
     body:
-      encoding: UTF-8
-      string: act=reload_audio&al=1&ids=wejlhg239gh23
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Content-Length:
-      - '39'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Cookie:
-      - remixsid=<VK_SESSION_ID>
+      - KateMobileAndroid/56 lite-460 (Android 4.4.2; SDK 19; x86; unknown Android
+        SDK built for x86; en)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - vk.com
+      - api.vk.com
   response:
     status:
       code: 200
@@ -29,31 +24,25 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Mon, 07 Jun 2021 11:40:13 GMT
+      - Sun, 05 Sep 2021 13:08:50 GMT
       Content-Type:
-      - text/html; charset=windows-1251
+      - application/json; charset=utf-8
       Content-Length:
-      - '202'
+      - '191'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107419
+      - KPHP/7.4.108477
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=0; expires=Thu, 02 Jun 2022 03:47:23 GMT; path=/; domain=.vk.com;
-        secure
-      - remixlang=114; expires=Sat, 04 Jun 2022 02:15:11 GMT; path=/; domain=.vk.com
       Cache-Control:
       - no-store
-      X-Frontend:
-      - front225204
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Expose-Headers:
-      - X-Frontend
+      X-Frame-Options:
+      - DENY
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":["8",["\"no_audios\"","false","\"75988409\""]],"statsMeta":{"platform":"web2","st":false,"time":1623066013,"hash":"2YLmyacg4dBVCnyS5oDyghgGSCLwoMwbvzzj3zZj2sT"},"loaderVersion":"15447529","langVersion":"7117"}
-  recorded_at: Mon, 07 Jun 2021 11:40:13 GMT
+      string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
+        was missing or invalid: audios is invalid","request_params":[{"key":"v","value":"5.131"},{"key":"audios","value":"wejlhg239gh23"},{"key":"method","value":"audio.getById"},{"key":"oauth","value":"1"}]}}'
+  recorded_at: Sun, 05 Sep 2021 13:08:50 GMT
 recorded_with: VCR 6.0.0

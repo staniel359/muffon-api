@@ -14,12 +14,10 @@ module VK
         end
 
         def audio_binary_data
-          RestClient.get(raw_audio_link)
-        end
-
-        def raw_audio_link
-          VK::Utils::Audio::Link.call(
-            link: @args.link
+          RestClient::Request.execute(
+            method: :get,
+            url: @args.link,
+            raw_response: true
           )
         end
       end

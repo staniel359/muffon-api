@@ -3,12 +3,9 @@ RSpec.describe VK::Track::Info do
 
   describe 'successful processing' do
     context 'when track_id given' do
-      let(:track_id) do
-        '371745443_456465176_6e46a45bb6be1e67e6_698622eb5a2c8a0616'
-      end
       let(:output) do
         VCR.use_cassette 'services/vk/track/info/success' do
-          subject.call(track_id: track_id)
+          subject.call(track_id: '-2001472560_55472560')
         end
       end
 
@@ -16,12 +13,9 @@ RSpec.describe VK::Track::Info do
     end
 
     context 'when track with no album' do
-      let(:track_id) do
-        '-400921_90392497_a11e43c96aba9c3335_11b443938410e06e4b'
-      end
       let(:output) do
         VCR.use_cassette 'services/vk/track/info/success_no_album' do
-          subject.call(track_id: track_id)
+          subject.call(track_id: '-400921_90392497')
         end
       end
 

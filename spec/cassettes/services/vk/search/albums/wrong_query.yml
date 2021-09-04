@@ -1,26 +1,21 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://vk.com/al_audio.php
+    method: get
+    uri: https://api.vk.com/method/audio.searchAlbums?access_token=<VK_ACCESS_TOKEN>&count=20&offset=0&q=wejlhg239gh23&sig=58988e4bba2b171e1070d9601e5f059b&v=5.131
     body:
-      encoding: UTF-8
-      string: act=section&al=1&owner_id=<VK_PAGE_ID>&q=wejlhg239gh23
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Content-Length:
-      - '51'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Cookie:
-      - remixsid=<VK_SESSION_ID>
+      - KateMobileAndroid/56 lite-460 (Android 4.4.2; SDK 19; x86; unknown Android
+        SDK built for x86; en)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - vk.com
+      - api.vk.com
   response:
     status:
       code: 200
@@ -29,95 +24,24 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Fri, 04 Jun 2021 19:26:34 GMT
+      - Sun, 05 Sep 2021 12:57:48 GMT
       Content-Type:
-      - text/html; charset=windows-1251
+      - application/json; charset=utf-8
       Content-Length:
-      - '735'
+      - '55'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107399
+      - KPHP/7.4.108477
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Wed, 15 Jun 2022 00:11:20 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Mon, 06 Jun 2022 07:11:19 GMT; path=/; domain=.vk.com;
-        secure
       Cache-Control:
       - no-store
-      X-Frontend:
-      - front226206
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Expose-Headers:
-      - X-Frontend
+      X-Frame-Options:
+      - DENY
     body:
       encoding: ASCII-8BIT
-      string: <!--{"payload":[0,["<div class='CatalogSection CatalogSection--divided
-        CatalogSection__search_results'><div class='CatalogBlock CatalogBlock--divided'>  <div
-        class=\"CatalogBlock__content CatalogBlock__placeholder_empty_search CatalogBlock__layout--placeholder\"
-        data-type='placeholder' data-id='PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk'   ><div
-        class=\"Placeholder\">\n    <div class=\"Placeholder__iconContainer\">\n      <img
-        src=\"\/images\/svg_icons\/audio\/audio_note_64.svg\" alt=\"\" class=\"Placeholder__icon\">\n  <\/div>\n  \n    <div
-        class=\"Placeholder__text\">No tracks matching <strong>wejlhg239gh23<\/strong>
-        were found<\/div>\n  \n<\/div><\/div><\/div><\/div>",{"playlist":null,"playlists":[],"next_from":"","nextFrom":"","search_query":"wejlhg239gh23","hints":[],"searchParams":{"globalQuery":"wejlhg239gh23"},"title":"Search
-        results","sectionId":"PUldVA8NR0RzSVNUagdSRGpJUFQPBUdEfklTRAcHWVV1X11CGRZcRHxJHhNfWAMBdFhQEV0GWEQ7","blockIds":["PUlQVA8GR0R3W0tMF0QHByUOARlZUA4UGQ4EBkFNNBUjChsVXRZHRH5JU0QHB1lVdV9dQhkWXER8SR4TX1gDAXRYUBFdBlhEakldVA8NR0R3XktMBEk"],"isBlockPagination":false,"qid":null}]],"statsMeta":{"platform":"web2","st":false,"time":1622834794,"hash":"IUYKsAzfx8ptqxgT2RRPutejWDGWlFY1MH7IUtuGKb8"},"loaderVersion":"9885287","pageviewCandidate":true,"langPack":3,"langVersion":"4591"}
-  recorded_at: Fri, 04 Jun 2021 19:26:34 GMT
-- request:
-    method: post
-    uri: https://vk.com/al_audio.php
-    body:
-      encoding: UTF-8
-      string: act=load_catalog_section&al=1&owner_id=<VK_PAGE_ID>&section_id&start_from
-    headers:
-      Accept:
-      - "*/*"
-      User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Content-Length:
-      - '70'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Cookie:
-      - remixsid=<VK_SESSION_ID>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - vk.com
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - kittenx
-      Date:
-      - Fri, 04 Jun 2021 19:26:34 GMT
-      Content-Type:
-      - text/html; charset=windows-1251
-      Content-Length:
-      - '194'
-      Connection:
-      - keep-alive
-      X-Powered-By:
-      - KPHP/7.4.107399
-      Set-Cookie:
-      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
-        secure; HttpOnly
-      - remixlang=114; expires=Mon, 30 May 2022 05:57:27 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Sun, 12 Jun 2022 15:59:53 GMT; path=/; domain=.vk.com;
-        secure
-      Cache-Control:
-      - no-store
-      X-Frontend:
-      - front623307
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Expose-Headers:
-      - X-Frontend
-    body:
-      encoding: ASCII-8BIT
-      string: <!--{"payload":[0,[false,[],[]]],"statsMeta":{"platform":"web2","st":false,"time":1622834794,"hash":"IUYKsAzfx8ptqxgT2RRPutejWDGWlFY1MH7IUtuGKb8"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591"}
-  recorded_at: Fri, 04 Jun 2021 19:26:34 GMT
+      string: '{"response":{"count":0,"items":[]}}'
+  recorded_at: Sun, 05 Sep 2021 12:57:48 GMT
 recorded_with: VCR 6.0.0

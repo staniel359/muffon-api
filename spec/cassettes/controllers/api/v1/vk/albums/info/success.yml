@@ -1,26 +1,21 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://vk.com/al_audio.php
+    method: get
+    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=4b0d541e5c641772e4&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000018186&playlist_id=1018186&sig=7cb3bc0013ddaeabaadce3aef136fb2f&v=5.131
     body:
-      encoding: UTF-8
-      string: act=load_section&al=1&playlist_id=1018186&owner_id=-2000018186&access_hash=4b0d541e5c641772e4&offset&type=playlist
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Content-Length:
-      - '114'
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Cookie:
-      - remixsid=<VK_SESSION_ID>
+      - KateMobileAndroid/56 lite-460 (Android 4.4.2; SDK 19; x86; unknown Android
+        SDK built for x86; en)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - vk.com
+      - api.vk.com
   response:
     status:
       code: 200
@@ -29,258 +24,93 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Fri, 04 Jun 2021 19:23:53 GMT
+      - Sun, 05 Sep 2021 14:01:34 GMT
       Content-Type:
-      - text/html; charset=windows-1251
+      - application/json; charset=utf-8
       Content-Length:
-      - '7030'
+      - '1050'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.107399
+      - KPHP/7.4.108477
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixlang=114; expires=Mon, 30 May 2022 11:52:23 GMT; path=/; domain=.vk.com
-      - remixlang=3; expires=Sun, 05 Jun 2022 17:03:16 GMT; path=/; domain=.vk.com;
-        secure
       Cache-Control:
       - no-store
-      X-Frontend:
-      - front226206
-      Strict-Transport-Security:
-      - max-age=15768000
-      Access-Control-Expose-Headers:
-      - X-Frontend
+      X-Frame-Options:
+      - DENY
     body:
       encoding: ASCII-8BIT
-      string: '<!--{"payload":[0,[{"type":"playlist","ownerId":-2000018186,"id":1018186,"isOfficial":1,"title":"Gemini","titleLang":3,"subTitle":null,"description":"","rawDescription":"","authorLine":"<a
-        class=\"audio_pl_snippet__artist_link\" href=\"https:\/\/vk.com\/artist\/wildnothing\">Wild
-        Nothing<\/a>","authorHref":"","authorName":"<a class=\"audio_pl_snippet__artist_link\"
-        href=\"https:\/\/vk.com\/artist\/wildnothing\">Wild Nothing<\/a>","infoLine1":"Rock,
-        Alternative<span class=\"dvd\"><\/span>2010","infoLine2":"13,985 plays<span
-        class=\"dvd\"><\/span>12 tracks","lastUpdated":1495674489,"listens":"13985","coverUrl":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=300x300&quality=96&sign=7b28ebc5f4030515d99ba1f1c4716428&type=audio","editHash":"","isFollowed":false,"followHash":"9b0303bd1641276884","accessHash":"4b0d541e5c641772e4","addClasses":"audio_pl__has_thumb
-        audio_pl__canfollow official audio_numeric audio_pl__type_main_only audio_pl__has_shuffle","gridCovers":"","isBlocked":false,"noDiscover":null,"list":[[29996702,-2001996702,"","Live
-        in Dreams","Wild Nothing",205,-1,0,"",0,66,"","[]","be1e08901f01054771\/\/e68b643e80b9da48f1\/\/\/492d27e50b3c542343\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":205,"content_id":"-2001996702_29996702","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"11d5342fg_NDYNmjthJxg-LQXMKE8kaC_sfJyHkslhByLTpOOylCANqJvtraewL3",0,1,true,"705d341ceb32dd2131",false],[29996703,-2001996703,"","Summer
-        Holiday","Wild Nothing",242,-1,0,"",0,66,"","[]","e940b577a0236fba48\/\/6055da6cb1c7263997\/\/\/c3bca437b882c10f2d\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":242,"content_id":"-2001996703_29996703","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"0479199e-nxbhUu7NuOV7YGUwu6M6FtbQx6cBWIyowBGTZ-exBU7j8JsLMJaiuaZ",0,1,true,"d9d2ed4b9c2a11b929",false],[29996704,-2001996704,"","Drifter","Wild
-        Nothing",213,-1,0,"",0,98,"","[]","56492f6fdced2f4f7c\/\/594b7304f78987e21c\/\/\/5a266b104b473cb3d5\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":213,"content_id":"-2001996704_29996704","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"1150df16KjEp8-rbdqpF60j0FVEZ15e1k2By5XeQreBAsRKnyxvrwrAajaIawzaf",0,1,true,"d1bb47d7ef9f47241c",false],[29996705,-2001996705,"","Pessimist","Wild
-        Nothing",107,-1,0,"",0,66,"","[]","9fd77fb67e5326dc0f\/\/08df9aa2aa2bc7cb62\/\/\/2f0d55d8015bcbd089\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":107,"content_id":"-2001996705_29996705","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"be3dac2ezFwV4cUyu3mV_Dd6wVd20-pwpPz-B3nJUHqg6uI11iYNr4wIokvXEOaI",0,1,true,"ffe0212552ac2d8696",false],[29996713,-2001996713,"","O
-        Lilac","Wild Nothing",182,-1,0,"",0,98,"","[]","64c05477f4f3885599\/\/48a4ae64b2b075f07f\/\/\/5b965c655797fbda1b\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":182,"content_id":"-2001996713_29996713","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"168ea35co9B62nMURZ_Xe4hJaoGzxtmJ0nFhQ7eNbsVFy28p3EliI-MzFG0p9qQP",0,1,true,"990681e19b4defefc3",false],[29996712,-2001996712,"","Bored
-        Games","Wild Nothing",240,-1,0,"",0,66,"","[]","a655d592d85bdcc2ed\/\/36a45778e8c7ee5d9e\/\/\/27173481ae69021417\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":240,"content_id":"-2001996712_29996712","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"ac83ebb98Pg_TS9LAPsJ2BXhjviFS2SSJyIH6Aemx8BBg1ZqkXUxC6akSDJsknqs",0,1,true,"b2dbea7523bf6b0056",false],[29996711,-2001996711,"","Confirmation","Wild
-        Nothing",193,-1,0,"",0,66,"","[]","3f7ec2c46d76a911c8\/\/afc8786c426ae1ae7c\/\/\/320eb8082f77010b2b\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":193,"content_id":"-2001996711_29996711","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"ace979a2-ldcsyR6U0D6y8NkmTj-gq1U0HfScQu_MopB1mfhDHk7pMVaQwM_KYm_",0,1,true,"178d12d0258c416e4b",false],[29996710,-2001996710,"","My
-        Angel Lonely","Wild Nothing",178,-1,0,"",0,66,"","[]","cf58104d5b50e32d1b\/\/17e925b82940ec3661\/\/\/10e51fa5ec11498f9b\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":178,"content_id":"-2001996710_29996710","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"46da45f3qnBa2nDim1zEKS5rTqWqNfe1oQpFfsUrZFO6De9FGKtrg8MzF5v3Nbdd",0,1,true,"750c07258a20964cf3",false],[29996709,-2001996709,"","The
-        Witching Hour","Wild Nothing",247,-1,0,"",0,66,"","[]","dcf1dc11d6040c056e\/\/89bbe8b5c166d4f827\/\/\/3030b812717bab9794\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":247,"content_id":"-2001996709_29996709","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"56898681ad26d-n9wuNttko44v-6GbUEO69KITKXjdDuOv7ASaCoLiOejoSuih7C",0,1,true,"8d707b3fb9e8061e7e",false],[29996708,-2001996708,"","Chinatown","Wild
-        Nothing",198,-1,0,"",0,66,"","[]","d4b5a90a7af68f1676\/\/901536a2aeff2cbce4\/\/\/606d4683f6bec8628b\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":198,"content_id":"-2001996708_29996708","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"bc288046VNqr9LXcfQzKOtp67_Pyi444PtJ1OxPVc43t4dXEAdiVKTId0qURZblO",0,1,true,"b4c8a869be3f797b84",false],[29996707,-2001996707,"","Our
-        Composition Book","Wild Nothing",227,-1,0,"",0,66,"","[]","5540f32ea9bbb4fd6c\/\/996a9ba19519ee2de8\/\/\/30ae73a9775eda51fe\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":227,"content_id":"-2001996707_29996707","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"ecce723fYM5j5qyPTECUx9AHzdCCNLstcVFyddbA7sXngcK9G-OhPfoPy_YgKeez",0,1,true,"c383c55573339ac8f8",false],[29996706,-2001996706,"","Gemini","Wild
-        Nothing",319,-1,0,"",0,98,"","[]","cbb6c5c870c149cf62\/\/a54b3dd4f2a8a4598a\/\/\/454b1dd36e056929a0\/","https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=68x68&quality=96&sign=3111a1156b26380ce17d2049a02b938d&type=audio,https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/c638128\/v638128447\/429c6\/ZCrBg-wiMuc.jpg?size=135x135&quality=96&sign=52505f2932796a1522b6574d1d88f62a&type=audio",{"duration":319,"content_id":"-2001996706_29996706","puid22":4,"account_age_type":3,"_SITEID":276,"vk_id":<VK_PAGE_ID>,"ver":251116},"",[{"id":"4333005440018923962","name":"Wild
-        Nothing"}],"",[-2000018186,1018186,"4b0d541e5c641772e4"],"1983a491Nt34g-yAWwVKuh_BNBdT3eXDEMqedFV4i5nW5xLMrKL3LmFqi_k3bDnO",0,1,true,"087d3a7aa530c6e63a",false]],"hasMore":0,"nextOffset":100,"blockId":false,"totalCount":12,"totalCountHash":"","permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true,"unfollow":true,"save_as_copy":false},"is_generated_playlist":false},"<div
-        class=\"audio_pl_snippet2 _audio_pl _audio_pl_%ownerId%_%id% %addCls%\"  data-title=\"%title%\"
-        data-playlist-id=\"%type%_%ownerId%_%id%\" data-access-hash=\"%accessHash%\">\n  <div
-        class=\"audio_pl_snippet__header _audio_pl_snippet__header\">\n    <div class=\"audio_pl_snippet__header_inner\">\n      <div
-        class=\"audio_pl_snippet__cover audio_pl__cover\" style=\"%coverStyle%\"><div
-        class=\"_audio_pl_grid_covers_wrap\">%gridCovers%<\/div><\/div>\n      <div
-        class=\"audio_pl_snippet__button_play\" onclick=\"getAudioPlayer().playPlaylist(%ownerId%,
-        %id%, ''%accessHash%'', ''%context%'')\">\n        <button class=\"blind_label\"
-        onclick=\"getAudioPlayer().playPlaylist(%ownerId%, %id%, ''%accessHash%'',
-        ''%context%'')\">Start playlist<\/button>\n        <div class=\"audio_pl_snippet__button_play_circle\"><\/div>\n        \n      <\/div>\n      <div
-        class=\"audio_pl_snippet__info\">\n        <div class=\"audio_pl_snippet__info_inner\">\n          <div
-        class=\"audio_pl_snippet__info_title_row\">\n            <a href=\"https:\/\/vk.com%href%\"
-        class=\"audio_pl_snippet__info_title audio_pl__title\" onmouseover=\"setTitle(this)\">\n              <span
-        class=\"audio_pl_snippet_info_maintitle\">%title%<\/span>\n              <span
-        class=\"audio_pl_snippet__info_subtitle\">%subTitle%<\/span>\n            <\/a>\n          <\/div>\n          <div
-        class=\"audio_pl_snippet__info_line_small\">%authorLine%<span class=\"dvd\"><\/span>%infoLine1%<\/div>\n          <div
-        class=\"audio_pl_snippet__info_author\">%authorLine%<\/div>\n          <div
-        class=\"audio_pl_snippet__info_line\">%infoLine1%<\/div>\n          <div class=\"audio_pl_snippet__info_author_line\"
-        onmouseover=\"setTitle(this)\">%authorLine%<span class=\"dvd\"><\/span>%infoLine1%<\/div>\n        <\/div>\n        <a
-        href=\"https:\/\/vk.com%href%\" class=\"audio_pl_snippet__info_link\"><\/a>\n        <div
-        class=\"audio_pl_snippet__actions\">\n          <button class=\"audio_pl_snippet__action_btn
-        audio_pl_snippet__action_btn_listen\" onclick=\"getAudioPlayer().playPlaylist(%ownerId%,
-        %id%, ''%accessHash%'', ''%context%'')\">\n            <span class=\"audio_pl_snippet__action_btn_listen_text\">Play<\/span>\n          <\/button><button
-        class=\"audio_pl_snippet__action_btn audio_pl_snippet__action_btn_add\"\n            data-text-followed=\"Added\"\n            data-text-follow=\"Add\"\n            data-tooltip-text=\"%followButtonText%\"\n            onclick=\"AudioUtils.followPlaylist(this,
-        %ownerId%, %id%, ''%followHash%'')\">\n            <span class=\"audio_pl_snippet__action_btn_add_text\">%followButtonText%<\/span>\n          <\/button><button\n            class=\"audio_pl_snippet__action_btn
-        audio_pl_snippet__action_btn_share\"\n            onclick=\"shareAudioPlaylist(event,
-        %ownerId%, %id%, ''%accessHash%'')\"\n          >\n            <span class=\"audio_pl_snippet__action_btn_share_text\">Share<\/span>\n          <\/button>\n          \n          <div
-        class=\"audio_pl_snippet__action_btn ui_actions_menu_wrap _ui_menu_wrap audio_pl_snippet__action_btn_more\"
-        onmouseover=\"uiActionsMenu.show(this);\" onmouseleave=\"uiActionsMenu.hide(this);\">\n            <div
-        class=\"audio_pl_actions_icons\" tabindex=\"0\" aria-label=\"\" role=\"button\"
-        onclick=\"uiActionsMenu.keyToggle(this, event);\">More<\/div>\n            <div
-        class=\"ui_actions_menu _ui_menu\">\n            <div role=\"button\" class=\"ui_actions_menu_item
-        audio_play_next_pl_menu_item\" onclick=\"return getAudioPlayer().playNextPlaylist(%ownerId%,
-        %id%, ''%accessHash%'', ''%context%'')\">Play next<\/div><div class=\"ui_actions_menu_sep
-        audio_playlist_edit_separator\"><\/div><div role=\"button\" class=\"ui_actions_menu_item
-        audio_pl_add_to_clubs\" onclick=\"return AudioUtils.addToGroupBox(%ownerId%,
-        %id%, ''%accessHash%'');\">Add to community<\/div><div role=\"button\" class=\"ui_actions_menu_item
-        audio_pl_remove_from_club\" onclick=\"return AudioUtils.removeFromGroup(%ownerId%,
-        %id%, ''%followHash%'', this);\">Delete from community<\/div><div role=\"button\"
-        class=\"ui_actions_menu_item audio_pl_copy\" onclick=\"AudioUtils.copyPlaylistLink(%ownerId%,
-        %id%, ''%accessHash%'');\">Copy link<\/div>\n            <\/div>\n          <\/div>\n    \n<\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n  <div
-        class=\"audio_pl_snippet__body\">\n    <div class=\"audio_pl_snippet__description\">%description%<\/div>\n    <button
-        class=\"audio_pl_snippet__shuffle_all audio_shuffle_all_button\" onclick=\"getAudioPlayer().playPlaylist(%ownerId%,
-        %id%, ''%accessHash%'', ''%context%'', true)\">Shuffle all<\/button>\n    <div
-        class=\"audio_pl_snippet__list _audio_pl_snippet__list\">\n      \n    <\/div>\n    <div
-        class=\"audio_pl_snippet__empty_list no_rows _audio_pl_snippet__empty_list\">\n      There
-        are no tracks in this playlist yet\n    <\/div>\n    <div class=\"audio_pl_snippet__footer\">\n      <div
-        class=\"audio_pl_snippet__stats\">%infoLine2%<\/div>\n    <\/div>\n    <a
-        href=\"https:\/\/vk.com%href%\" class=\"audio_pl_snippet__more_btn\" style=\"display:
-        none\"><\/a>\n  <\/div>\n<\/div>",{"audio_global_search_found":["","%s audio
-        file found","%s audio files found"],"audio_performers_only":"by artist","audio_search_with_text":"only
-        with lyrics","audio_search_by_length":"By duration","audio_current_playing_from":"Now
-        playing: {playlist}","audio_delete_album_title":"Delete album","audio_delete_album_button":"Delete","audio_flash_required":"Flash
-        Player is required for playing music.<br>You can install it {link}here{\/link}.","audio_need_flash_title":"Flash
-        Player is required","audio_no_rec_load_msg":"You can store all of your audio
-        files here.<br>To upload your first audio file, {link}click here{\/link}","audio_no_audio_recs_found":"We
-        could not find anything similar to this. <br>Please try a different song.","audio_no_recs_found":"We
-        suggest music based on what you listen to from <b>My audio files<\/b>.<br><br>Please
-        add and listen to some more tracks.","audio_album_no_recs":"There are no tracks
-        in this album yet.","audio_repeat_tooltip":"Repeat","audio_repeat_track_tooltip":"Repeat","audio_dont_repeat_tooltip":"Don&#39;t
-        repeat","audio_show_recommendations":"Show similar tracks","audio_set_next_audio":"Play
-        next","audio_add_to_group":"Add to community music","audio_restore_audio":"Undo","audio_restriction_title_claim":"Track
-        unavailable","audio_edit_audio":"Edit track","audio_add_to_audio":"Add to
-        my music","audio_delete_audio":"Delete track","audio_delete_all_title":"Delete
-        audio files","audio_delete_all":["","Delete all of his audio files for this
-        week","Delete all of her audio files for this week"],"global_delete":"Delete","global_cancel":"Cancel","audio_playlist_audios_count":["","{count}
-        track","{count} tracks"],"audio_edit_playlist_no_audios":"Empty playlist","audio_edit_playlist_audios_info":["","{count}
-        audio","{count} audios"],"audio_edit_playlist_global_results":"Found searching
-        all music","audio_found_your_local":["","%s track found in your audios","%s
-        tracks found in your audios"],"audio_found_your_local_playlists":["","%s playlist
-        found in your audios","%s playlists found in your audios"],"audio_found_user_local_playlists":["","%s
-        playlist found in this user&#39;s music","%s playlists found in this user&#39;s
-        music"],"audio_found_group_local_playlists":["","%s playlist found in this
-        community","%s playlists found in this community"],"audio_found_user_local":["","%s
-        track found in this user&#39;s music","%s tracks found in this user&#39;s
-        music"],"audio_found_group_local":["","%s track found in this community","%s
-        tracks found in this community"],"audio_no_group_local_results":"No tracks
-        matching {query}<br>were found in the community&#39;s music","audio_no_user_local_results":"No
-        tracks matching {query}<br>were found in this user&#39;s music","audio_no_local_results":"No
-        tracks matching {query}<br>were found in your music","audio_edit_playlist_title":"Edit
-        playlist","audio_new_playlist_title":"New playlist","audio_no_listened_info":"No
-        information on listened music yet.","audio_playlist_listens":["","%s play","%s
-        plays"],"wall_audio_playlist_updated":"updated {when}","audio_playlists_count_title":["","%s
-        playlist","%s playlists"],"audio_attach_playlist_button":"Attach playlist","global_add_media":"Attach","audio_choose_audio_title":"Attach
-        track","audio_choose_wall_to_group_audios":"Go to community music","audio_choose_wall_to_my_audios":"Go
-        to my audio files ","audio_clear_current_playlist":"Clear playlist","audio_save_playlist_button":"Save","audio_sure_delete_playlist_box_text":"Are
-        you sure you want to delete {name}?<br>The playlist will be removed for <b>all<\/b>  users
-        who have added it.","audio_sure_delete_playlist_box_title":"Delete playlist","audio_sure_delete_playlist_box_yes":"Delete","audio_playlist_btn_follow":"Add
-        to my playlists","audio_playlist_btn_followed":"Added","audio_playlist_btn_add":"Add","audio_playlist_btn_added":"Added","audio_share":"Share","audio_playlists_limit_error":["","You
-        have reached the limit of {limit} playlist. Please delete or unfollow playlists
-        and try again later.","You have reached the limit of {limit} playlists. Please
-        delete or unfollow playlists and try again later."],"audio_error_deleted_playlist_box":"Playlist
-        unavailable\/This playlist doesn&#39;t exist or has been deleted by its creator.","audio_total_dur_hours":["","%s
-        hour","%s hours"],"audio_total_dur_minutes":["","%s minute","%s minutes"],"audio_total_dur_seconds":["","%s
-        second","%s seconds"],"audio_delete_playlist":"Delete playlist","global_recent_search_history":"Recent
-        searches","audio_choose_added":"Added","audio_recoms_show_all":"Show all","audio_delete_from_current":"Remove
-        from current playlist","audio_sort_types":"by default<br>by artist<br>random<br>reverse
-        order","audio_open_album":"Open album","audio_current_playing":"Current Playlist","audio_podcast_playlist":"Podcast","audio_podcast_playing":"{name}&#39;s
-        podcast","audio_podcast_delete_episode":"Delete episode","audio_podcast_restore_episode":"Restore
-        episode","audio_podcast_edit_episode":"Edit episode","audio_podcast_listen_later":"Listen
-        later","audio_podcast_open_episode":"Open episode","audio_playlist_link_copied":"Link
-        copied to clipboard","audio_new_playlist_remove_confirm_text":"Are you sure
-        you want to discard the new playlist?","audio_edit_playlist_cancel_confirm_text":"Are
-        you sure you want to leave? All changes will be lost.","audio_edit_playlist_cancel_confirm_yes":"Leave","audio_new_playlist_remove_confirm_continue":"Discard","audio_album_part":"Part
-        {part}"},"\naddTemplates({\"_\":\"_\",\"audio_bits_to_cls\":\"{\\\"1\\\":\\\"audio_has_lyrics\\\",\\\"2\\\":\\\"audio_can_add\\\",\\\"4\\\":\\\"audio_claimed\\\",\\\"8\\\":\\\"audio_from_queue\\\",\\\"16\\\":\\\"audio_hq\\\",\\\"1024\\\":\\\"audio_explicit\\\",\\\"32\\\":\\\"audio_lpb\\\",\\\"64\\\":\\\"audio_has_thumb\\\",\\\"256\\\":\\\"audio_moder_claimed\\\",\\\"2048\\\":\\\"audio_focus\\\",\\\"4096\\\":\\\"audio_module_wide\\\"}\",\"audio_row\":\"<div   tabindex=\\\"0\\\"
-        class=\\\"audio_row audio_row_with_cover _audio_row _audio_row_%1%_%0% %cls%
-        audio_row2\\\"\\n  data-full-id=\\\"%1%_%0%\\\" onclick=\\\"return getAudioPlayer().toggleAudio(this,
-        event)\\\"\\n  data-audio=\\\"%serialized%\\\" onmouseover=\\\"AudioUtils.onRowOver(this,
-        event)\\\" onmouseleave=\\\"AudioUtils.onRowLeave(this, event)\\\">\\n  <div
-        class=\\\"audio_row_content _audio_row_content\\\">\\n    <button class=\\\"blind_label
-        _audio_row__play_btn\\\" aria-label=\\\"Play\\\" onclick=\\\"getAudioPlayer().toggleAudio(this,
-        event); return cancelEvent(event)\\\"><\\\/button>\\n\\n    <div class=\\\"audio_row__cover\\\"
-        style=\\\"%cover_style%\\\"><\\\/div>\\n    <div class=\\\"audio_row__cover_back
-        _audio_row__cover_back\\\"><\\\/div>\\n    <div class=\\\"audio_row__cover_icon
-        _audio_row__cover_icon\\\"><\\\/div>\\n    <div class=\\\"audio_row__counter\\\"><\\\/div>\\n    <div
-        class=\\\"audio_row__play_btn\\\"><\\\/div>\\n\\n    <div class=\\\"audio_row__inner\\\">\\n      <div
-        class=\\\"audio_row__chart_info\\\">\\n        %chart_info_position%\\n        %chart_info_state%\\n      <\\\/div>\\n      <div
-        class=\\\"audio_row__performer_title\\\">\\n        <div onmouseover=\\\"setTitle(this)\\\"
-        class=\\\"audio_row__performers\\\">%performers%<\\\/div>\\n        <div class=\\\"audio_row__title
-        _audio_row__title\\\" onmouseover=\\\"setTitle(this)\\\">\\n          <span
-        class=\\\"audio_row__title_inner _audio_row__title_inner\\\">%3%<\\\/span>\\n          <span
-        class=\\\"audio_row__title_inner_subtitle _audio_row__title_inner_subtitle\\\">%16%<\\\/span>\\n        <\\\/div>\\n      <\\\/div>\\n      <div
-        class=\\\"audio_row__info _audio_row__info\\\"><div class=\\\"audio_row__duration
-        audio_row__duration-%duration_mod% _audio_row__duration\\\">%duration%<\\\/div><\\\/div>\\n    <\\\/div>\\n\\n    <div
-        class=\\\"audio_player__place _audio_player__place\\\"><\\\/div>\\n  <\\\/div>\\n<\\\/div>\",\"podcast_row\":\"  <a
-        href=\\\"\\\/podcast%1%_%0%\\\"   class=\\\"audio_row audio_row_with_cover
-        _audio_row _audio_row_%1%_%0% %cls% audio_row2\\\"\\n    data-full-id=\\\"%1%_%0%\\\"
-        onclick=\\\"getAudioPlayer().toggleAudio(this, event); return cancelEvent(event)\\\"\\n    data-audio=\\\"%serialized%\\\"
-        onmouseover=\\\"AudioUtils.onRowOver(this, event)\\\" onmouseleave=\\\"AudioUtils.onRowLeave(this,
-        event)\\\">\\n    <div class=\\\"audio_row_content _audio_row_content\\\">\\n      <button
-        class=\\\"blind_label _audio_row__play_btn\\\" aria-label=\\\"Play\\\" onclick=\\\"getAudioPlayer().toggleAudio(this,
-        event); return cancelEvent(event)\\\"><\\\/button>\\n      <div class=\\\"audio_row__cover\\\"
-        style=\\\"%cover_style%\\\"><\\\/div>\\n      <div class=\\\"audio_row__cover_back
-        _audio_row__cover_back\\\"><\\\/div>\\n      <div class=\\\"audio_row__cover_icon
-        _audio_row__cover_icon\\\"><\\\/div>\\n      <div class=\\\"audio_row__counter\\\"><\\\/div>\\n      <div
-        class=\\\"audio_row__play_btn\\\"><\\\/div>\\n      <div class=\\\"audio_row__inner\\\">\\n        <div
-        class=\\\"audio_row__chart_info\\\">\\n          %chart_info_position%\\n          %chart_info_state%\\n        <\\\/div>\\n        <div
-        class=\\\"audio_row__performer_title\\\">\\n          <div onmouseover=\\\"setTitle(this)\\\"
-        class=\\\"audio_row__performers\\\">%performers%<\\\/div>\\n          <div
-        class=\\\"audio_row__title _audio_row__title\\\" onmouseover=\\\"setTitle(this)\\\">\\n            <span
-        class=\\\"audio_row__title_inner _audio_row__title_inner\\\">%3%<\\\/span>\\n            <span
-        class=\\\"audio_row__title_inner_subtitle _audio_row__title_inner_subtitle\\\">%16%<\\\/span>\\n          <\\\/div>\\n        <\\\/div>\\n        <div
-        class=\\\"audio_row__info _audio_row__info\\\"><div class=\\\"audio_row__duration
-        audio_row__duration-%duration_mod% _audio_row__duration\\\">%duration%<\\\/div><\\\/div>\\n      <\\\/div>\\n      <div
-        class=\\\"audio_player__place _audio_player__place\\\"><\\\/div>\\n    <\\\/div>\\n  <\\\/a>\",\"playlist_snippet_stub\":\"<div
-        class=\\\"audio_pl_snippet__stub\\\">\\n  <h3 class=\\\"audio_pl_snippet__stub_title\\\">Album
-        unavailable<\\\/h3>\\n  <p class=\\\"audio_pl_snippet__stub_text\\\">Try listening
-        to something else. We&#39;re sure you&#39;ll find something you like.<\\\/p>\\n  <a
-        href=\\\"\\\/music\\\" class=\\\"audio_pl_snippet__stub_button flat_button\\\">Go
-        to Recommended<\\\/a>\\n<\\\/div>\"});"]],"statsMeta":{"platform":"web2","st":false,"time":1622834633,"hash":"9uqhApzTJeNdz2tPehMer1MFuzOzjZzPGhLv6dZ4r7w"},"loaderVersion":"9885287","langPack":3,"langVersion":"4591","langKeys":{"global":[],"local":{"audio_delete_audio":"Delete
-        track","audio_dont_show":"Stop suggesting","audio_performers_only":"by artist","audio_open_album":"Open
-        album","audio_titles_search":"by title","audio_global_search_found":["","%s
-        audio file found","%s audio files found"],"audio_site_rules_violation_warning":"{audio}
-        has been removed from public access for violating the VK Terms of Service.","audio_site_rules_violation_header":"Prohibited
-        audio file"}},"templates":{"_":"_","audio_bits_to_cls":"{\"1\":\"audio_has_lyrics\",\"2\":\"audio_can_add\",\"4\":\"audio_claimed\",\"8\":\"audio_from_queue\",\"16\":\"audio_hq\",\"1024\":\"audio_explicit\",\"32\":\"audio_lpb\",\"64\":\"audio_has_thumb\",\"256\":\"audio_moder_claimed\",\"2048\":\"audio_focus\",\"4096\":\"audio_module_wide\"}","audio_row":"<div   tabindex=\"0\"
-        class=\"audio_row audio_row_with_cover _audio_row _audio_row_%1%_%0% %cls%
-        audio_row2\"\n  data-full-id=\"%1%_%0%\" onclick=\"return getAudioPlayer().toggleAudio(this,
-        event)\"\n  data-audio=\"%serialized%\" onmouseover=\"AudioUtils.onRowOver(this,
-        event)\" onmouseleave=\"AudioUtils.onRowLeave(this, event)\">\n  <div class=\"audio_row_content
-        _audio_row_content\">\n    <button class=\"blind_label _audio_row__play_btn\"
-        aria-label=\"Play\" onclick=\"getAudioPlayer().toggleAudio(this, event); return
-        cancelEvent(event)\"><\/button>\n\n    <div class=\"audio_row__cover\" style=\"%cover_style%\"><\/div>\n    <div
-        class=\"audio_row__cover_back _audio_row__cover_back\"><\/div>\n    <div class=\"audio_row__cover_icon
-        _audio_row__cover_icon\"><\/div>\n    <div class=\"audio_row__counter\"><\/div>\n    <div
-        class=\"audio_row__play_btn\"><\/div>\n\n    <div class=\"audio_row__inner\">\n      <div
-        class=\"audio_row__chart_info\">\n        %chart_info_position%\n        %chart_info_state%\n      <\/div>\n      <div
-        class=\"audio_row__performer_title\">\n        <div onmouseover=\"setTitle(this)\"
-        class=\"audio_row__performers\">%performers%<\/div>\n        <div class=\"audio_row__title
-        _audio_row__title\" onmouseover=\"setTitle(this)\">\n          <span class=\"audio_row__title_inner
-        _audio_row__title_inner\">%3%<\/span>\n          <span class=\"audio_row__title_inner_subtitle
-        _audio_row__title_inner_subtitle\">%16%<\/span>\n        <\/div>\n      <\/div>\n      <div
-        class=\"audio_row__info _audio_row__info\"><div class=\"audio_row__duration
-        audio_row__duration-%duration_mod% _audio_row__duration\">%duration%<\/div><\/div>\n    <\/div>\n\n    <div
-        class=\"audio_player__place _audio_player__place\"><\/div>\n  <\/div>\n<\/div>","podcast_row":"  <a
-        href=\"\/podcast%1%_%0%\"   class=\"audio_row audio_row_with_cover _audio_row
-        _audio_row_%1%_%0% %cls% audio_row2\"\n    data-full-id=\"%1%_%0%\" onclick=\"getAudioPlayer().toggleAudio(this,
-        event); return cancelEvent(event)\"\n    data-audio=\"%serialized%\" onmouseover=\"AudioUtils.onRowOver(this,
-        event)\" onmouseleave=\"AudioUtils.onRowLeave(this, event)\">\n    <div class=\"audio_row_content
-        _audio_row_content\">\n      <button class=\"blind_label _audio_row__play_btn\"
-        aria-label=\"Play\" onclick=\"getAudioPlayer().toggleAudio(this, event); return
-        cancelEvent(event)\"><\/button>\n      <div class=\"audio_row__cover\" style=\"%cover_style%\"><\/div>\n      <div
-        class=\"audio_row__cover_back _audio_row__cover_back\"><\/div>\n      <div
-        class=\"audio_row__cover_icon _audio_row__cover_icon\"><\/div>\n      <div
-        class=\"audio_row__counter\"><\/div>\n      <div class=\"audio_row__play_btn\"><\/div>\n      <div
-        class=\"audio_row__inner\">\n        <div class=\"audio_row__chart_info\">\n          %chart_info_position%\n          %chart_info_state%\n        <\/div>\n        <div
-        class=\"audio_row__performer_title\">\n          <div onmouseover=\"setTitle(this)\"
-        class=\"audio_row__performers\">%performers%<\/div>\n          <div class=\"audio_row__title
-        _audio_row__title\" onmouseover=\"setTitle(this)\">\n            <span class=\"audio_row__title_inner
-        _audio_row__title_inner\">%3%<\/span>\n            <span class=\"audio_row__title_inner_subtitle
-        _audio_row__title_inner_subtitle\">%16%<\/span>\n          <\/div>\n        <\/div>\n        <div
-        class=\"audio_row__info _audio_row__info\"><div class=\"audio_row__duration
-        audio_row__duration-%duration_mod% _audio_row__duration\">%duration%<\/div><\/div>\n      <\/div>\n      <div
-        class=\"audio_player__place _audio_player__place\"><\/div>\n    <\/div>\n  <\/a>","playlist_snippet_stub":"<div
-        class=\"audio_pl_snippet__stub\">\n  <h3 class=\"audio_pl_snippet__stub_title\">Album
-        unavailable<\/h3>\n  <p class=\"audio_pl_snippet__stub_text\">Try listening
-        to something else. We&#39;re sure you&#39;ll find something you like.<\/p>\n  <a
-        href=\"\/music\" class=\"audio_pl_snippet__stub_button flat_button\">Go to
-        Recommended<\/a>\n<\/div>"}}'
-  recorded_at: Fri, 04 Jun 2021 19:23:53 GMT
+      string: '{"response":{"id":1018186,"owner_id":-2000018186,"type":1,"title":"Gemini","description":"","count":12,"followers":640,"plays":14391,"create_time":1495674489,"update_time":1627523944,"genres":[{"id":2,"name":"Rock"},{"id":21,"name":"Alternative"}],"is_following":false,"year":2010,"photo":{"width":300,"height":300,"photo_34":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=34x34&quality=96&sign=7ca7a705355da95898c977542fbede24&c_uniq_tag=Sb1yeDD0HD1oE57ZljzlDGX4l2z1WNOjVMtbDU_78kU&type=audio","photo_68":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=68x68&quality=96&sign=b5536bef2e3c2f211e2c614cd67aa5de&c_uniq_tag=IDUI8oPxv2dAdpdTgqNRMVAtuI0ojpt860deMZkpAAU&type=audio","photo_135":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=135x135&quality=96&sign=f439fc40b39662d3502cd04ce0dc980a&c_uniq_tag=JJwukBzU7HDc-odMLLalYMq48tI80yEDAPiHpbpX1hs&type=audio","photo_270":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=270x270&quality=96&sign=f6029d198924f9af5e5690bac45e78bc&c_uniq_tag=HSQp0RldS3K1kfh6rBo9_VWDl8nm7GFoowF0nqzZQ4U&type=audio","photo_300":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=300x300&quality=96&sign=780df2d0f43267d0823a047745d74bee&c_uniq_tag=vCuotlb-H-xxr2HanceeBA7wA6o3YTaInV9nM5wakmQ&type=audio","photo_600":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=592x592&quality=96&sign=4471d9ae1975f96b1827917f0feb9fb4&c_uniq_tag=9KrQQh2CWDlN-PsjvwN99JFI7blIWX83iH1ru25Em5s&type=audio","photo_1200":"https:\/\/sun2.cosmostv-by-minsk.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=1184x1184&quality=96&sign=5383c4d938d99bba407ce02c26e164a4&c_uniq_tag=FCGoiyZtkuCuS8upex9Hcx2wZHpOasxh_XT6xq0scCQ&type=audio"},"permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true},"subtitle_badge":false,"play_button":false,"access_key":"4b0d541e5c641772e4","is_explicit":false,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"album_type":"main_only"}}'
+  recorded_at: Sun, 05 Sep 2021 14:01:34 GMT
+- request:
+    method: get
+    uri: https://api.vk.com/method/audio.get?access_key=4b0d541e5c641772e4&access_token=<VK_ACCESS_TOKEN>&album_id=1018186&owner_id=-2000018186&sig=c7a16bee7e4a330d1643bed9dea84b85&v=5.131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - KateMobileAndroid/56 lite-460 (Android 4.4.2; SDK 19; x86; unknown Android
+        SDK built for x86; en)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Sun, 05 Sep 2021 14:01:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '3507'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.108477
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      Cache-Control:
+      - no-store
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"count":12,"items":[{"artist":"Wild Nothing","id":93615287,"owner_id":-2001615287,"title":"Live
+        in Dreams","duration":206,"access_key":"b9edd583fbdb056601","ads":{"content_id":"-2001615287_93615287","duration":"206","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"7cb90b80LH0L3kHulqgMi6P1hkmTQ3pRyh1BhGz-ahcBUSwVSP6a7qg7Jpf6wX__","url":"https:\/\/cs3-6v4.vkuseraudio.net\/p3\/41fbaeb3fb6e6d.mp3?extra=SLKe6aE4y1Z2WgEQz4f4Mp0N4JsSkiQBEs9vXCmqbDcw6xHFQbQT7leCO-C1aGXMSqFgFIwE0eJEp7-M7mBPKFnMIOAU5caYsKdHQiQCmaUGMpYEnB0rCD_f4coY93mAdFGgoCZFxQPxF81xzHv6w0qvsIE&long_chunk=1","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615288,"owner_id":-2001615288,"title":"Summer Holiday","duration":243,"access_key":"345582466c06664535","ads":{"content_id":"-2001615288_93615288","duration":"243","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"7a33ca65k6VsibBC59RH54xbrOATZfh1ts1ai27k4VNR2SdjR1wlNs9s1zuLvTST","url":"https:\/\/cs1-64v4.vkuseraudio.net\/p15\/58b93b1515becf.mp3?extra=Uv6RJ3oqgZDRPQB3mGpeeg_RXJMKShXZ0YBKyTYtRwxJ4jATDymzTp2j0tVifLEcVwjGUIBbgyVRDiILQRvhx_kyBTyBCZ7kCrs7eSP9oaeNMpVXCJfSuXAozMjk8sVGEkmwN9awPqZgaDbjsaYSBTpwdHE&long_chunk=1","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615289,"owner_id":-2001615289,"title":"Drifter","duration":213,"access_key":"58ef84397ddcd25764","ads":{"content_id":"-2001615289_93615289","duration":"213","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"b5730b57A61sLz-UbdXPo__dLuN3wKtlx0h0FZlYEHXuss9ttdy1Ps_KWO0BvLzX","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/3S4koQNrlXXHZjvpxHreyQFqGi1ZXQtPyGskXA\/7aTDBDQjNnRFNiXms.mp3?extra=F5Vme4cRxEdH-GCWaS-P2cZDDBojHTeqKMEYDhCDyjtKGhNYzabvvyq3fg5IsMsiaNod_p2GMjdhV5qWj9k25rOhBIbahCs2yQedPbVtlS7v1aV4AG9S_tLgYX8huAAAr5Y5HuJgiqnaev03WejrqYdXvd4","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615290,"owner_id":-2001615290,"title":"Pessimist","duration":107,"access_key":"3b670deb1036d5829a","ads":{"content_id":"-2001615290_93615290","duration":"107","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"623b4e6cECb3lnNt2uTn_2op5Lyk8FcTL4OqULmybtzmHlyidv-mtVRzFBS2jZSL","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/Zz_pJcQFNJP9vdgnZ2G9g7EKj1kE3DaXzz83Eg\/d6RGxCcz5zNmxpSEo.mp3?extra=UQpvy1NAGgl7cLAVfMhfChUT74UV7ftsIMcjUUgA94IUdlJ-rOLlA69GSL_u-wv9KUy1LE_4VRHLtwhKVwdlu-iQ2Bc3pCLLb475tPuZAQXHVhbJCS4Z1Z_uLry1Hb_A7O70c-fkO5ZruT6dvArdmWO7bNI","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615291,"owner_id":-2001615291,"title":"O Lilac","duration":182,"access_key":"20d32f46d87281af3a","ads":{"content_id":"-2001615291_93615291","duration":"182","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"2dac453fNXRRGDQBM6ysVdwnprVjAa8mYnBbzdtn9R0OblwH_jSD5_L9U3hfxd8h","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/8CKQ9a2B99GE6ACczZ5M6PaZnp-LzK66c20eLA\/5dSWBRZ3k-QDxgVE4.mp3?extra=AuB3L7HvzJbArqu2S0sBF4y5jI9FZutl9YXRzCM1mhKLIBBYRz5EJXVcysmSgeJqTlob12pLfZDp6L4jInq4HLAt2vdfyGa74dOjIkCCO46Xeez09Ui4F7EzyGWdr12qnhNY0e8z947i4RQ-TIpYHalJh7s","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615292,"owner_id":-2001615292,"title":"Bored Games","duration":241,"access_key":"1517db7047255d8b73","ads":{"content_id":"-2001615292_93615292","duration":"241","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"c92b138faiZ0KxNQ6vHUU2PHiTBGX-vBIR8-GQ1cwUxJ7-HtyFLctdfOdCmGmKcn","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/UWK2q4a9TTpbTkS_-kSXQPx63FKEsxrcIDfpgQ\/b3SEJKW2hFal5vRks.mp3?extra=2W7mPpNXTPJv3fBVz-o4vQViDVa0FtopgUcVhr2o6IDknAxvKXh3r1uU52bDOOuu-22mo565W1jkj4U7FrZdt6rC7kbOTp0tHIj6iDMOqpHohHxuN59iYcnh1vZEAYW7NlpUv0QCblz6tonGr7Qy3O5RJaQ","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615293,"owner_id":-2001615293,"title":"Confirmation","duration":193,"access_key":"c019e47fc3dfff3515","ads":{"content_id":"-2001615293_93615293","duration":"193","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"16c4d3bfX_CyED-EWDRo8NY4r0MHCmGHz1qKakCjtgvTLE5T-fzpYxH1WP00XRuE","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/c_RWXhiWZf9h366b-sReA9pgHvWkZvspSC1jpw\/2fOkNTME1wa1VLejs.mp3?extra=FSGgnceEjV8mz1m784XAJNm1UgZXKgiqEoj1rUCfcY3gkDzK9B6fh9QMiYJ5zULuKpuokBIZJkTT9esjRa_roXOUh4O2SwZ-P4A9DJkCdroeKi_OFyXT2_ZlOomHUl8f6qO5B1-B8xPfQaj8PfBS1iz4jks","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615294,"owner_id":-2001615294,"title":"My Angel Lonely","duration":178,"access_key":"6c2e0f81df8b712a4f","ads":{"content_id":"-2001615294_93615294","duration":"178","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"affd381ds_LOlQS7Hu2Dxd5Ic3fwl4msI4nZkswhdUAjvsIC4eMFYW1wY8JyhPCx","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/zis1ETAOKEbzLtUh4RM5q05FWSJvmUb8iX1Z-g\/62fzd6P2lIRXFrSVQ.mp3?extra=jmaFQQDi0Z_bsicpIsKnJlOdxu2WMqfmStkcChka19Ic447vKjji57ujG1LI0tS9_paOWfTn2ICWWHiVZOb-W4Z7fwWDbhcqveuean05PtMR78-q716ITNoma5zi_8vX6R_-2ufCcC25G9VurEEBLiyl2j8","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615295,"owner_id":-2001615295,"title":"The Witching Hour","duration":247,"access_key":"421aa0437c8606d6fd","ads":{"content_id":"-2001615295_93615295","duration":"247","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"3be36ea25iwPww_m-nILSw5W_Wl_USpDY225Y1AVizKS9iD-1XpQv6wmaJ-WG3g_","url":"https:\/\/ps.vkuseraudio.net\/audio\/ee\/QwDBAl0jnzx69HIIgU1hZAqUnP08v7gIpkBoxg\/d5Q0hZej1acTc3cn0.mp3?extra=Su2MKAi3sNaSAog6Z-GoocRIeoPT4QONNA4zApHJS5PWIOcclelApzm3vNHIoe8DdECIDzQt9MlAtz8gKKoLcLeacfukxMiqAMfgJrR1662FP0HDNo2pCC563FjNKRc2mRlwtcbJIoNI96O4EcMLpLrbEAQ","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615296,"owner_id":-2001615296,"title":"Chinatown","duration":199,"access_key":"fe7c3fc5d30dc465bb","ads":{"content_id":"-2001615296_93615296","duration":"199","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"b32573afFdOIyNwiOl600NvTWE04U6y3nubuZXUNmjfPMUgMJ6mjQCstu1tWN8ek","url":"https:\/\/cs1-80v4.vkuseraudio.net\/p8\/671c86773b5972.mp3?extra=NZJRcj6I65CzI6zEth1kQxsp122NFuD9yrEr5MGFlMPlOWyz3ZVET23Wxz8U_hTJ4OFo04-Qpa4iQn5npwZswjVaqHbIzHMMX4pxFXBDe3fnm0QVxEeZZoFHgt1kG31nvMg28ZDJ8IEsWepz84JXJiZ24HE&long_chunk=1","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615297,"owner_id":-2001615297,"title":"Our Composition Book","duration":228,"access_key":"9b95e079b0defaae16","ads":{"content_id":"-2001615297_93615297","duration":"228","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"8ffbcce9Y9jXsKtxscLtOq61AoOATOUYHwyMSwsij0aBDPioWe3VS3RVzAjdq55O","url":"https:\/\/cs1-78v4.vkuseraudio.net\/p3\/782c43f71af3b4.mp3?extra=pcpCuTr1DqSUsZkLqehBefteUfYpZNwrISYAuQEGt95t4iN9UoVjK8qJnYnnLeDvchJYGZjiLCj9sIjvGEJBSaUhbJ8yZXFmV7i7MJBtQ1Yb68uG4sYBHvRmYwQ-oLW0VG1QG5jwT1kM4WxfM32Vt87SdPs&long_chunk=1","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
+        Nothing","id":93615298,"owner_id":-2001615298,"title":"Gemini","duration":319,"access_key":"47b3d3766426c13158","ads":{"content_id":"-2001615298_93615298","duration":"319","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"62c2ab87clLI2V0QkWvi5FHIlczUW5kNv5mcdMLK_OYFGVCo-8_EwWs8Omn9ApGQ","url":"https:\/\/cs1-41v4.vkuseraudio.net\/p3\/2f6fd481d3d358.mp3?extra=IYZmEaOW-5B39bc95F_3IlW5o759ut0GP_CO3j-yyRmfMCDZyD2dVBWYpx8xBz58o3taxIHAzY9UoRoRrwwFCDJW7Wm3ePNFkUBKbq3o7hjEmdfEZ27Jvch-P1k14lJbUzdomHIcx4_A4WAeHWjVzRrOq80&long_chunk=1","date":1627523944,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false}]}}'
+  recorded_at: Sun, 05 Sep 2021 14:01:34 GMT
 recorded_with: VCR 6.0.0

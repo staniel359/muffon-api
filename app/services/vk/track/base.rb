@@ -1,6 +1,7 @@
 module VK
   module Track
     class Base < VK::Base
+      API_METHOD = 'audio.getById'.freeze
       include VK::Utils::Track
 
       private
@@ -10,21 +11,27 @@ module VK
       end
 
       def no_data?
-        super || track.blank?
+        track.blank?
       end
 
       def track
-        @track ||= response_data.dig(
-          1, 0, 0
-        )
+        @track ||= response_data.try(:[], 0)
       end
 
       def params
-        {
-          act: 'reload_audio',
-          al: 1,
-          ids: @args.track_id
-        }
+        super.merge(track_params)
+      end
+
+      def track_params
+        { audios: @args.track_id }
+      end
+
+      def signature
+        "/method/#{API_METHOD}"\
+          "?access_token=#{access_token}"\
+          '&v=5.131'\
+          "&audios=#{@args.track_id}"\
+          "#{api_secret}"
       end
 
       def data

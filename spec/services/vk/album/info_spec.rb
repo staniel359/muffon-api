@@ -7,7 +7,7 @@ RSpec.describe VK::Album::Info do
         VCR.use_cassette 'services/vk/album/info/success' do
           subject.call(
             album_id: '1916168', owner_id: '-2000916168',
-            access_hash: '43c15929fe11506130'
+            access_key: '43c15929fe11506130'
           )
         end
       end
@@ -26,7 +26,10 @@ RSpec.describe VK::Album::Info do
     context 'when wrong album_id' do
       let(:output) do
         VCR.use_cassette 'services/vk/album/info/wrong_id' do
-          subject.call(album_id: random)
+          subject.call(
+            album_id: random, owner_id: '-2000916168',
+            access_key: '43c15929fe11506130'
+          )
         end
       end
 

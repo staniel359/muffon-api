@@ -14,18 +14,9 @@ module VK
         {
           title: title,
           extra_title: extra_title,
-          **album_id_data,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID
-        }
-      end
-
-      def album_id_data
-        {
-          vk_id: vk_id,
-          vk_owner_id: vk_owner_id,
-          vk_access_hash: vk_access_hash
         }
       end
 
@@ -40,38 +31,27 @@ module VK
       end
 
       def release_date
-        info_split[-1]
-      end
-
-      def info_split
-        @info_split ||= album['infoLine1'].split(
-          '<span class="dvd"></span>'
+        date_formatted(
+          album['create_time']
         )
       end
 
       def plays_count
-        album['listens'].to_i
+        album['plays']
       end
 
       def tags_list
-        info_split[0].split(', ')
-      end
-
-      def tracks_data
-        tracks_list.map do |t|
-          track_data_formatted(t)
+        album['genres'].map do |g|
+          g['name']
         end
       end
 
-      def tracks_list
-        album['list']
-      end
-
-      def track_data_formatted(track)
-        VK::Album::Info::Track.call(
-          track: track,
-          profile_id: @args.profile_id
-        )
+      def tracks_data
+        VK::Album::Tracks.call(
+          album_id: @args.album_id,
+          owner_id: @args.owner_id,
+          access_key: @args.access_key
+        ).dig(:album, :tracks) || []
       end
     end
   end
