@@ -21,15 +21,15 @@ module Muffon
     end
 
     def profiles_formatted
-      profiles_sorted.map do |p|
+      profiles_paginated.map do |p|
         profile_formatted(p)
       end
     end
 
-    def profiles_sorted
-      profiles.order(
-        created_at: :asc
-      )
+    def profiles_paginated
+      profiles
+        .limit(limit)
+        .offset(offset)
     end
 
     def profiles

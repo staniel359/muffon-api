@@ -28,7 +28,9 @@ module API
       end
 
       def index_data
-        Muffon::Profiles.call
+        Muffon::Profiles.call(
+          params.slice(*%i[page limit])
+        )
       end
 
       def create_data
