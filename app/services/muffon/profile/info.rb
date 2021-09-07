@@ -9,7 +9,8 @@ module Muffon
 
       def profile_data
         Muffon::Profiles::Profile.call(
-          profile: profile
+          profile: profile,
+          token: @args.token
         )
       end
     end

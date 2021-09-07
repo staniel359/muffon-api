@@ -47,7 +47,9 @@ module API
 
       def show_data
         Muffon::Profile::Info.call(
-          params.slice(:profile_id)
+          params.slice(
+            *%i[profile_id token]
+          )
         )
       end
 

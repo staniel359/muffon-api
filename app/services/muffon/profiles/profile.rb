@@ -1,6 +1,6 @@
 module Muffon
   class Profiles
-    class Profile < Muffon::Profiles
+    class Profile < Muffon::Profile::Base
       def call
         data
       end
@@ -8,16 +8,16 @@ module Muffon
       private
 
       def data
+        profile_base_data
+          .merge(profile_extra_data)
+      end
+
+      def profile_base_data
         {
           id: id,
           nickname: nickname,
-          image: image_data,
-          gender: gender,
-          birthdate: birthdate,
-          country: country,
-          city: city,
-          role: role
-        }
+          email: email
+        }.compact
       end
 
       def id
@@ -30,6 +30,23 @@ module Muffon
 
       def nickname
         profile.nickname
+      end
+
+      def email
+        return if wrong_profile?
+
+        profile.email
+      end
+
+      def profile_extra_data
+        {
+          image: image_data,
+          gender: gender,
+          birthdate: birthdate,
+          country: country,
+          city: city,
+          role: role
+        }
       end
 
       def image_data

@@ -27,6 +27,7 @@ module MuffonAPI
     end
 
     config.filter_parameters += %i[
+      email
       image
       password
       password_confirmation
