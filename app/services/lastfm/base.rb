@@ -56,22 +56,22 @@ module LastFM
 
     def album_params
       {
-        album: album_title_formatted
+        album: param_formatted(@args.album)
       }.merge(artist_params)
-    end
-
-    def album_title_formatted
-      param_formatted(@args.album)
     end
 
     def track_params
       {
-        track: track_title_formatted
+        track: param_formatted(@args.track)
       }.merge(artist_params)
     end
 
-    def track_title_formatted
-      param_formatted(@args.track)
+    def tag_params
+      { tag: param_formatted(@args.tag) }
+    end
+
+    def lang_params
+      { lang: @args.lang }.compact
     end
 
     def artists

@@ -3,6 +3,10 @@ module LastFM
     class Info < LastFM::Tag::Base
       private
 
+      def params
+        super.merge(lang_params)
+      end
+
       def tag_data
         tag_base_data
           .merge(with_more_data)

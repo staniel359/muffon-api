@@ -21,10 +21,6 @@ module LastFM
         super.merge(tag_params)
       end
 
-      def tag_params
-        { tag: param_formatted(@args.tag) }
-      end
-
       def data
         { tag: tag_data }
       end

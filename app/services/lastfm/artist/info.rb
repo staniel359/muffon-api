@@ -3,6 +3,10 @@ module LastFM
     class Info < LastFM::Artist::Base
       private
 
+      def params
+        super.merge(lang_params)
+      end
+
       def artist_data
         muffon_data
           .merge(base_artist_data)

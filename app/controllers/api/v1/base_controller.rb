@@ -12,6 +12,7 @@ module API
         group_id
         label
         label_id
+        lang
         limit
         next_page
         nickname
