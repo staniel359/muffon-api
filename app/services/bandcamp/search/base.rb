@@ -63,6 +63,8 @@ module Bandcamp
       end
 
       def link_data(link)
+        return {} if link.blank?
+
         artist, model, title =
           link.scan(link_regexp).flatten
 

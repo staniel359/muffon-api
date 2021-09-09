@@ -58,6 +58,7 @@ module Muffon
               RestClient::RequestFailed,
               RestClient::ServerBrokeConnection,
               RestClient::ServiceUnavailable,
+              RestClient::SSLCertificateNotVerified,
               SocketError
             ],
             handler: {

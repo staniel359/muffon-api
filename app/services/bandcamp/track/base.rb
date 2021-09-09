@@ -12,6 +12,16 @@ module Bandcamp
         ]
       end
 
+      def no_data?
+        track.blank?
+      end
+
+      def track
+        @track ||= response_data.dig(
+          'tracks', 0
+        )
+      end
+
       def params
         {
           band_id: @args.artist_id,
@@ -22,12 +32,6 @@ module Bandcamp
 
       def data
         { track: track_data }
-      end
-
-      def track
-        @track ||= response_data.dig(
-          'tracks', 0
-        )
       end
 
       alias link album_track_link
