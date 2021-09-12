@@ -35,7 +35,7 @@ module Muffon
 
           def tracks_sorted
             tracks_associated.order(
-              created_at: :asc
+              created_at: :desc
             )
           end
 

@@ -27,7 +27,7 @@ module Muffon
           end
 
           def tracks_paginated
-            tracks_associated
+            tracks_sorted
               .limit(limit)
               .offset(offset)
           end
