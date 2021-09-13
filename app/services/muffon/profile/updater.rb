@@ -29,6 +29,13 @@ module Muffon
           *profile_params
         )
       end
+
+      def profile_data
+        Muffon::Profiles::Profile.call(
+          profile: profile,
+          token: @args.token
+        )
+      end
     end
   end
 end
