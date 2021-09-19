@@ -9,7 +9,8 @@ module Bandcamp
 
       def model_response
         @model_response ||=
-          response_data[3]['data-band']
+          response_data[3]['data-band'] ||
+          response_data[4]['data-band']
       end
 
       def id_data

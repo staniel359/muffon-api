@@ -4,7 +4,10 @@ module Bandcamp
       private
 
       def primary_args
-        [@args.artist, @args.track]
+        [
+          @args.artist,
+          @args.track
+        ]
       end
 
       def link

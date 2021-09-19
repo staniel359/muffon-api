@@ -6,7 +6,8 @@ module Bandcamp
 
         def model_response
           @model_response ||=
-            response_data[4]['data-tralbum']
+            response_data[4]['data-tralbum'] ||
+            response_data[5]['data-tralbum']
         end
 
         def id_data
@@ -41,7 +42,8 @@ module Bandcamp
 
         def artist
           @artist ||= JSON.parse(
-            response_data[4]['data-band']
+            response_data[4]['data-band'] ||
+              response_data[5]['data-band']
           )
         end
       end

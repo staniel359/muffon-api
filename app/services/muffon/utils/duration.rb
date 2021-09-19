@@ -30,7 +30,7 @@ module Muffon
           data
             .split(':')
             .map(&:to_i)
-            .inject(0) { |a, b| a * 60 + b }
+            .inject(0) { |a, b| (a * 60) + b }
         end
 
         def duration_format(seconds)

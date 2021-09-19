@@ -18,7 +18,7 @@ module Odnoklassniki
 
         def client_hash
           first.map.with_index do |n, i|
-            (sum - third[i] * third[i + 1] * n).abs
+            (sum - (third[i] * third[i + 1] * n)).abs
           end.join
         end
 
