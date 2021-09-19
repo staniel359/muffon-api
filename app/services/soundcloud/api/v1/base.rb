@@ -4,6 +4,12 @@ module SoundCloud
       class Base < SoundCloud::Base
         BASE_LINK = 'https://api.soundcloud.com'.freeze
 
+        def call
+          super
+        rescue RestClient::Unauthorized
+          call
+        end
+
         private
 
         def client_id

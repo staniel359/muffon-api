@@ -40,9 +40,20 @@ module SoundCloud
       def audio_data
         {
           present: audio_present?,
-          link: audio_link,
+          link: redirect_audio_link,
           source_id: SOURCE_ID
         }
+      end
+
+      def redirect_audio_link
+        return unless audio_present?
+
+        RestClient.get(audio_link) do |response|
+          return redirect_audio_link if
+              response.code == 401
+
+          response.headers[:location]
+        end
       end
 
       def audio_link
