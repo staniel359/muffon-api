@@ -12,9 +12,11 @@ module Deezer
       def extra_title
         return if track['VERSION'].blank?
 
-        track['VERSION'].match(
-          /\((.+)\)/
-        )[1]
+        extra = track['VERSION']
+        extra = extra[1..] if extra.start_with?('(')
+        extra = extra[0..-2] if extra.end_with?(')')
+
+        extra
       end
 
       def deezer_id
