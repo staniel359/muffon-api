@@ -50,7 +50,7 @@ module Muffon
               return if @args.album.blank?
 
               ::Album.with_artist_title(
-                artist_name, @args.album
+                find_artist.id, @args.album
               )
             end
 
