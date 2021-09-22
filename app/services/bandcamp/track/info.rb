@@ -68,10 +68,18 @@ module Bandcamp
 
       def audio_data
         {
-          present: audio_link.present?,
-          link: audio_link,
+          present: audio_present?,
+          link: redirect_audio_link,
           source_id: self.class::SOURCE_ID
         }
+      end
+
+      def redirect_audio_link
+        return unless audio_present?
+
+        RestClient.get(audio_link) do |response|
+          response.headers[:location]
+        end
       end
     end
   end

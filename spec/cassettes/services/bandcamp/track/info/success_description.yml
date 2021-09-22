@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -29,21 +29,21 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Set-Cookie:
-      - BACKENDID=bender26-6; path=/; domain=.bandcamp.com
+      - BACKENDID=bender19-3; path=/; Secure
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 10 Feb 2021 13:18:38 GMT
+      - Wed, 22 Sep 2021 18:57:54 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-hhn4027-HHN
+      - cache-hhn4069-HHN
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1612963118.905401,VS0,VE142
+      - S1632337074.973120,VS0,VE169
       Vary:
       - Accept-Encoding
       Transfer-Encoding:
@@ -51,6 +51,64 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpc19wcmVvcmRlciI6ZmFsc2UsImFsYnVtX2lkIjpudWxsLCJ0eXBlIjoidCIsInN0cmVhbWluZ19saW1pdCI6MywibnVtX2Rvd25sb2FkYWJsZV90cmFja3MiOjEsInRyYWNrcyI6W3siYmFuZF9pZCI6MjIyODA0MDIzNSwiYWxidW1faWQiOm51bGwsInN0cmVhbWluZ191cmwiOnsibXAzLTEyOCI6Imh0dHBzOi8vYmFuZGNhbXAuY29tL3N0cmVhbV9yZWRpcmVjdD9lbmM9bXAzLTEyOCZ0cmFja19pZD0xNzA5OTU4MDg1JnRzPTE2MTI4MjEwMjcmdD0wZjRiNGFmMGRiMzQyYjE2MzYwMjUzMmY1OTYwNmE5ZDVmMjNmMzZjIn0sInRyYWNrX251bSI6bnVsbCwibGFiZWwiOiJDYXB0dXJlZCBUcmFja3MiLCJpc19wdXJjaGFzYWJsZSI6dHJ1ZSwiYmFuZF9uYW1lIjoiV2lsZCBOb3RoaW5nIiwiY3VycmVuY3kiOiJVU0QiLCJwcmljZSI6MS4wLCJpc19zdHJlYW1hYmxlIjp0cnVlLCJ0cmFja19saWNlbnNlX2lkIjpudWxsLCJoYXNfZGlnaXRhbF9kb3dubG9hZCI6dHJ1ZSwiaXNfc2V0X3ByaWNlIjpmYWxzZSwibGFiZWxfaWQiOjIzMDQxOTkyMTIsInJlcXVpcmVfZW1haWwiOmZhbHNlLCJtZXJjaF9pZHMiOm51bGwsInRpdGxlIjoiQmx1ZSBXaW5ncyIsImFsYnVtX3RpdGxlIjpudWxsLCJ0cmFja19pZCI6MTcwOTk1ODA4NSwibWVyY2hfc29sZF9vdXQiOm51bGwsImhhc19seXJpY3MiOmZhbHNlLCJhcnRfaWQiOm51bGwsImVuY29kaW5nc19pZCI6MzI1Mjg2MTQwNCwiZHVyYXRpb24iOjIyNS44OTN9XSwicGFja2FnZV9hcnQiOltdLCJhYm91dCI6IkZyb20gSmFjayBUYXR1bTog4oCcVGhlcmUgd2VyZSBhIG51bWJlciBvZiBzb25ncyB0aGF0IHdlcmUga2lja2luZyB3aGVuIEkgd2FzIGZpbmlzaGluZyBJbmRpZ28gYW5kIOKAmEJsdWUgV2luZ3PigJkgd2FzIHZlcnkgbmVhcmx5IGluY2x1ZGVkLiBJIGhhZCBzZW50IHRoZSBhbGJ1bSBvZmYgdG8gbWFzdGVyaW5nLCBidXQgdGhlIHNvbmcgZGlkbid0IHNpdCByaWdodCB3aXRoIG1lIGFuZCBJIGRlY2lkZWQsIGF0IHRoZSBsYXN0IHBvc3NpYmxlIG1vbWVudCwgdG8gbGVhdmUgaXQgb2ZmIHRoZSBhbGJ1bS4gSXQncyBpbnRlbnRpb25hbGx5IGEgdmVyeSBiaXR0ZXJzd2VldCBzb3VuZGluZyBzb25nLiBJIGFza2VkIEJlbiBUYWxtaSB3aG8gZGlkIHRoZSBzdHJpbmcgYXJyYW5nZW1lbnRzIG9uIOKAmFNoYWRvd+KAmSB0byBoZWxwIG91dCB3aXRoIHRoaXMgdmVyeSBzaW1wbGUgZGlzc29uYW50IHN0cmluZyBwYXJ0IEkgd2FzIGhlYXJpbmcgaW4gbXkgaGVhZCB3aGljaCBpcyBub3cgbXkgZmF2b3JpdGUgZWxlbWVudCBpbiB0aGUgdHJhY2suIEl0J3MgYSBzb25nIGFib3V0IHdhbGtpbmcgdGhyb3VnaCB0byB0aGUgb3RoZXIgc2lkZSBvZiBjcmlwcGxpbmcgc2VsZi1kb3VidCB3aXRoIHRoZSBoZWxwIG9mIHNvbWVvbmUgeW91IGxvdmUuIEl0J3MgYSByZW1pbmRlciB0byBteXNlbGYgbm90IHRvIGxldCB0aGluZ3Mgc3BpcmFsLCBoYXJkIGFzIGl0IG1heSBiZSBhdCB0aW1lcy7igJ0iLCJ0cmFsYnVtX2FydGlzdCI6IldpbGQgTm90aGluZyIsImJhbmQiOnsiYmFuZF9pZCI6MjIyODA0MDIzNSwiYmlvIjoiQXNrIEphY2sgVGF0dW0gd2hhdCDigJhXaWxkIE5vdGhpbmfigJkgbWVhbnMgYW5kIGhl4oCZbGwgYW5zd2VyOiDigJhhIGNvbnRyYWRpY3Rpb27igJkuIEluIDIwMTAsIDIxIHllYXIgb2xkIFRhdHVtIHJlbGVhc2VkIG9uZSBvZiB0aGUgZmluZXN0IGN1bHQgcG9wIHJlY29yZHMgb2YgdGhlIHN1bW1lciB3aGlsc3QgZW5zY29uY2VkIGluIGhpcyBzZW5pb3IgeWVhciBvZiBjb2xsZWdlIGluIEJsYWNrc2J1cmcsIFZBLCBhIHNtYWxsIG1pZC1hdGxhbnRpYyB0b3duIGJldHRlciBrbm93biBmb3IgcHJvZHVjaW5nIGZvb3RiYWxsIGZhbnMgYW5kIGVuZ2luZWVycyB0aGFuIG11c2ljaWFucy4gVGF0dW0gbGl2ZXMgaW4gY29udHJhZGljdGlvbnMuIiwibG9jYXRpb24iOiJCbGFja3NidXJnLCBWaXJnaW5pYSIsImltYWdlX2lkIjoxODQ1NTI0MCwibmFtZSI6IldpbGQgTm90aGluZyJ9LCJsYWJlbCI6IkNhcHR1cmVkIFRyYWNrcyIsImlzX3B1cmNoYXNhYmxlIjp0cnVlLCJmZWF0dXJlZF90cmFja19pZCI6MTcwOTk1ODA4NSwiY3JlZGl0cyI6bnVsbCwicHJpY2UiOjEuMCwiY3VycmVuY3kiOiJVU0QiLCJ0YWdzIjpbeyJub3JtX25hbWUiOiJyb2NrIiwibG9jX2lkIjpudWxsLCJpc2xvYyI6ZmFsc2UsInVybCI6Ii90YWcvcm9jayIsIm5hbWUiOiJSb2NrIiwiZ2VvbmFtZSI6bnVsbH0seyJub3JtX25hbWUiOiJpbmRpZSIsImxvY19pZCI6bnVsbCwiaXNsb2MiOmZhbHNlLCJ1cmwiOiIvdGFnL2luZGllIiwibmFtZSI6ImluZGllIiwiZ2VvbmFtZSI6bnVsbH0seyJub3JtX25hbWUiOiJpbmRpZS1wb3AiLCJsb2NfaWQiOm51bGwsImlzbG9jIjpmYWxzZSwidXJsIjoiL3RhZy9pbmRpZS1wb3AiLCJuYW1lIjoiaW5kaWUgcG9wIiwiZ2VvbmFtZSI6bnVsbH0seyJub3JtX25hbWUiOiJibGFja3NidXJnIiwibG9jX2lkIjoxNTc1MDI5NDEyLCJpc2xvYyI6dHJ1ZSwidXJsIjoiL3RhZy9ibGFja3NidXJnIiwibmFtZSI6IkJsYWNrc2J1cmciLCJnZW9uYW1lIjp7ImZ1bGxuYW1lIjoiQmxhY2tzYnVyZywgVmlyZ2luaWEiLCJuYW1lIjoiQmxhY2tzYnVyZyIsImlkIjo0NzQ3ODI2fX1dLCJmcmVlX2Rvd25sb2FkIjpmYWxzZSwicmVsZWFzZV9kYXRlIjoxNTQ3NTk2ODAwLCJiYW5kY2FtcF91cmwiOiJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL2JsdWUtd2luZ3MiLCJoYXNfZGlnaXRhbF9kb3dubG9hZCI6dHJ1ZSwiaXNfc2V0X3ByaWNlIjpmYWxzZSwibGFiZWxfaWQiOjIzMDQxOTkyMTIsInJlcXVpcmVfZW1haWwiOmZhbHNlLCJwYWNrYWdlX2RldGFpbHNfbGl0ZSI6e30sInRpdGxlIjoiQmx1ZSBXaW5ncyIsImFsYnVtX3RpdGxlIjpudWxsLCJpZCI6MTcwOTk1ODA4NSwibWVyY2hfc29sZF9vdXQiOm51bGwsImFydF9pZCI6Mzg2MTE4MTY1OH0=
-  recorded_at: Wed, 10 Feb 2021 13:18:37 GMT
+        eyJ0eXBlIjoidCIsIm1lcmNoX3NvbGRfb3V0IjpudWxsLCJjdXJyZW5jeSI6IlVTRCIsInJlcXVpcmVfZW1haWwiOmZhbHNlLCJpc19zZXRfcHJpY2UiOmZhbHNlLCJpc19wcmVvcmRlciI6ZmFsc2UsIm51bV9kb3dubG9hZGFibGVfdHJhY2tzIjoxLCJsYWJlbCI6IkNhcHR1cmVkIFRyYWNrcyIsInRyYWxidW1fYXJ0aXN0IjoiV2lsZCBOb3RoaW5nIiwidGFncyI6W3siaXNsb2MiOmZhbHNlLCJnZW9uYW1lIjpudWxsLCJsb2NfaWQiOm51bGwsIm5vcm1fbmFtZSI6InJvY2siLCJuYW1lIjoiUm9jayIsInVybCI6Ii90YWcvcm9jayJ9LHsiaXNsb2MiOmZhbHNlLCJnZW9uYW1lIjpudWxsLCJsb2NfaWQiOm51bGwsIm5vcm1fbmFtZSI6ImluZGllIiwibmFtZSI6ImluZGllIiwidXJsIjoiL3RhZy9pbmRpZSJ9LHsiaXNsb2MiOmZhbHNlLCJnZW9uYW1lIjpudWxsLCJsb2NfaWQiOm51bGwsIm5vcm1fbmFtZSI6ImluZGllLXBvcCIsIm5hbWUiOiJpbmRpZSBwb3AiLCJ1cmwiOiIvdGFnL2luZGllLXBvcCJ9LHsiaXNsb2MiOnRydWUsImdlb25hbWUiOnsiZnVsbG5hbWUiOiJCbGFja3NidXJnLCBWaXJnaW5pYSIsIm5hbWUiOiJCbGFja3NidXJnIiwiaWQiOjQ3NDc4MjZ9LCJsb2NfaWQiOjE1NzUwMjk0MTIsIm5vcm1fbmFtZSI6ImJsYWNrc2J1cmciLCJuYW1lIjoiQmxhY2tzYnVyZyIsInVybCI6Ii90YWcvYmxhY2tzYnVyZyJ9XSwiZnJlZV9kb3dubG9hZCI6ZmFsc2UsImFsYnVtX3RpdGxlIjpudWxsLCJ0cmFja3MiOlt7Imhhc19seXJpY3MiOmZhbHNlLCJkdXJhdGlvbiI6MjI1Ljg5MywiY3VycmVuY3kiOiJVU0QiLCJtZXJjaF9zb2xkX291dCI6bnVsbCwidHJhY2tfbGljZW5zZV9pZCI6bnVsbCwicmVxdWlyZV9lbWFpbCI6ZmFsc2UsImlzX3NldF9wcmljZSI6ZmFsc2UsInRyYWNrX2lkIjoxNzA5OTU4MDg1LCJsYWJlbCI6IkNhcHR1cmVkIFRyYWNrcyIsImVuY29kaW5nc19pZCI6MzI1Mjg2MTQwNCwidHJhY2tfbnVtIjpudWxsLCJhbGJ1bV90aXRsZSI6bnVsbCwiaXNfcHVyY2hhc2FibGUiOnRydWUsImxhYmVsX2lkIjoyMzA0MTk5MjEyLCJhbGJ1bV9pZCI6bnVsbCwiaXNfc3RyZWFtYWJsZSI6dHJ1ZSwiYXJ0X2lkIjpudWxsLCJiYW5kX25hbWUiOiJXaWxkIE5vdGhpbmciLCJiYW5kX2lkIjoyMjI4MDQwMjM1LCJoYXNfZGlnaXRhbF9kb3dubG9hZCI6dHJ1ZSwicHJpY2UiOjEuMCwic3RyZWFtaW5nX3VybCI6eyJtcDMtMTI4IjoiaHR0cHM6Ly9iYW5kY2FtcC5jb20vc3RyZWFtX3JlZGlyZWN0P2VuYz1tcDMtMTI4JnRyYWNrX2lkPTE3MDk5NTgwODUmdHM9MTYzMjMzNzA3NCZ0PWNkYzFhZGE3ZjFlNjg5OTgwYWZkYzk5NjA0MDk0MzdkZDNiZDU4MjgifSwidGl0bGUiOiJCbHVlIFdpbmdzIiwibWVyY2hfaWRzIjpudWxsfV0sImlzX3B1cmNoYXNhYmxlIjp0cnVlLCJhYm91dCI6IkZyb20gSmFjayBUYXR1bTog4oCcVGhlcmUgd2VyZSBhIG51bWJlciBvZiBzb25ncyB0aGF0IHdlcmUga2lja2luZyB3aGVuIEkgd2FzIGZpbmlzaGluZyBJbmRpZ28gYW5kIOKAmEJsdWUgV2luZ3PigJkgd2FzIHZlcnkgbmVhcmx5IGluY2x1ZGVkLiBJIGhhZCBzZW50IHRoZSBhbGJ1bSBvZmYgdG8gbWFzdGVyaW5nLCBidXQgdGhlIHNvbmcgZGlkbid0IHNpdCByaWdodCB3aXRoIG1lIGFuZCBJIGRlY2lkZWQsIGF0IHRoZSBsYXN0IHBvc3NpYmxlIG1vbWVudCwgdG8gbGVhdmUgaXQgb2ZmIHRoZSBhbGJ1bS4gSXQncyBpbnRlbnRpb25hbGx5IGEgdmVyeSBiaXR0ZXJzd2VldCBzb3VuZGluZyBzb25nLiBJIGFza2VkIEJlbiBUYWxtaSB3aG8gZGlkIHRoZSBzdHJpbmcgYXJyYW5nZW1lbnRzIG9uIOKAmFNoYWRvd+KAmSB0byBoZWxwIG91dCB3aXRoIHRoaXMgdmVyeSBzaW1wbGUgZGlzc29uYW50IHN0cmluZyBwYXJ0IEkgd2FzIGhlYXJpbmcgaW4gbXkgaGVhZCB3aGljaCBpcyBub3cgbXkgZmF2b3JpdGUgZWxlbWVudCBpbiB0aGUgdHJhY2suIEl0J3MgYSBzb25nIGFib3V0IHdhbGtpbmcgdGhyb3VnaCB0byB0aGUgb3RoZXIgc2lkZSBvZiBjcmlwcGxpbmcgc2VsZi1kb3VidCB3aXRoIHRoZSBoZWxwIG9mIHNvbWVvbmUgeW91IGxvdmUuIEl0J3MgYSByZW1pbmRlciB0byBteXNlbGYgbm90IHRvIGxldCB0aGluZ3Mgc3BpcmFsLCBoYXJkIGFzIGl0IG1heSBiZSBhdCB0aW1lcy7igJ0iLCJmZWF0dXJlZF90cmFja19pZCI6MTcwOTk1ODA4NSwibGFiZWxfaWQiOjIzMDQxOTkyMTIsImFsYnVtX2lkIjpudWxsLCJiYW5kIjp7ImltYWdlX2lkIjoxODQ1NTI0MCwibG9jYXRpb24iOiJCbGFja3NidXJnLCBWaXJnaW5pYSIsImJpbyI6IkFzayBKYWNrIFRhdHVtIHdoYXQg4oCYV2lsZCBOb3RoaW5n4oCZIG1lYW5zIGFuZCBoZeKAmWxsIGFuc3dlcjog4oCYYSBjb250cmFkaWN0aW9u4oCZLiBJbiAyMDEwLCAyMSB5ZWFyIG9sZCBUYXR1bSByZWxlYXNlZCBvbmUgb2YgdGhlIGZpbmVzdCBjdWx0IHBvcCByZWNvcmRzIG9mIHRoZSBzdW1tZXIgd2hpbHN0IGVuc2NvbmNlZCBpbiBoaXMgc2VuaW9yIHllYXIgb2YgY29sbGVnZSBpbiBCbGFja3NidXJnLCBWQSwgYSBzbWFsbCBtaWQtYXRsYW50aWMgdG93biBiZXR0ZXIga25vd24gZm9yIHByb2R1Y2luZyBmb290YmFsbCBmYW5zIGFuZCBlbmdpbmVlcnMgdGhhbiBtdXNpY2lhbnMuIFRhdHVtIGxpdmVzIGluIGNvbnRyYWRpY3Rpb25zLiIsIm5hbWUiOiJXaWxkIE5vdGhpbmciLCJiYW5kX2lkIjoyMjI4MDQwMjM1fSwiY3JlZGl0cyI6bnVsbCwiYXJ0X2lkIjozODYxMTgxNjU4LCJiYW5kY2FtcF91cmwiOiJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL2JsdWUtd2luZ3MiLCJoYXNfZGlnaXRhbF9kb3dubG9hZCI6dHJ1ZSwicHJpY2UiOjEuMCwicmVsZWFzZV9kYXRlIjoxNTQ3NTk2ODAwLCJ0aXRsZSI6IkJsdWUgV2luZ3MiLCJwYWNrYWdlX2FydCI6W10sImlkIjoxNzA5OTU4MDg1LCJzdHJlYW1pbmdfbGltaXQiOjMsInBhY2thZ2VfZGV0YWlsc19saXRlIjp7fX0=
+  recorded_at: Wed, 22 Sep 2021 18:57:54 GMT
+- request:
+    method: get
+    uri: https://bandcamp.com/stream_redirect?enc=mp3-128&t=cdc1ada7f1e689980afdc9960409437dd3bd5828&track_id=1709958085&ts=1632337074
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - bandcamp.com
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Content-Security-Policy:
+      - 'base-uri ''none''; object-src ''none''; report-uri https://bandcamp.com/api/cspreport/1/violation;
+        script-src http: https: ''nonce-ShHnhdRMaAwFlJI8qK+H8g=='' ''report-sample''
+        ''strict-dynamic'' ''unsafe-eval'' ''unsafe-inline'''
+      Set-Cookie:
+      - BACKENDID=bender30-3; path=/; Secure
+      - client_id=005EE2F5D1FC3C10B725A0878A822BC21D965846C5A931CE06BE1A303F24A867;
+        domain=.bandcamp.com; path=/; expires=Mon, 22 Sep 2031 18:57:54 -0000; secure;
+        HttpOnly; SameSite=None
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Location:
+      - https://t4.bcbits.com/stream/e148a637678a280c923db13ea133ab73/mp3-128/1709958085?p=0&ts=1632423475&t=71de7c1a2fe2915850e480fcf2167c20e2f8b179&token=1632423475_16ecb6be4d66a6d489aaff72ccb602014700504d
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Wed, 22 Sep 2021 18:57:55 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4024-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1632337075.906457,VS0,VE479
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: 'You are being redirected, please follow <a href="https://t4.bcbits.com/stream/e148a637678a280c923db13ea133ab73/mp3-128/1709958085?p=0&ts=1632423475&t=71de7c1a2fe2915850e480fcf2167c20e2f8b179&token=1632423475_16ecb6be4d66a6d489aaff72ccb602014700504d">this
+        link to: https://t4.bcbits.com/stream/e148a637678a280c923db13ea133ab73/mp3-128/1709958085?p=0&ts=1632423475&t=71de7c1a2fe2915850e480fcf2167c20e2f8b179&token=1632423475_16ecb6be4d66a6d489aaff72ccb602014700504d</a>!'
+  recorded_at: Wed, 22 Sep 2021 18:57:55 GMT
 recorded_with: VCR 6.0.0

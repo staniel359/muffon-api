@@ -34,13 +34,8 @@ module Bandcamp
         )
       end
 
-      def audio_data
-        {
-          present: audio_link.present?,
-          track_id: bandcamp_id,
-          artist_id: artist_bandcamp_id,
-          source_id: self.class::SOURCE_ID
-        }
+      def audio_present?
+        audio_link.present?
       end
 
       def audio_link

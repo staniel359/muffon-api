@@ -29,6 +29,15 @@ module Bandcamp
         def track
           @track ||= @args.track
         end
+
+        def audio_data
+          {
+            present: audio_present?,
+            track_id: bandcamp_id,
+            artist_id: artist_bandcamp_id,
+            source_id: self.class::SOURCE_ID
+          }
+        end
       end
     end
   end
