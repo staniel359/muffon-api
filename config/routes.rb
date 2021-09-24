@@ -99,6 +99,20 @@ Rails.application.routes.draw do
               only: %i[index create destroy],
               param: :track_id
           end
+
+          namespace :favorites do
+            resources :artists,
+              only: %i[index create destroy],
+              param: :artist_id
+
+            resources :albums,
+              only: %i[index create destroy],
+              param: :album_id
+
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :track_id
+          end
         end
       end
 

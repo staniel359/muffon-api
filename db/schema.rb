@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_080049) do
+ActiveRecord::Schema.define(version: 2021_09_23_095522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,33 @@ ActiveRecord::Schema.define(version: 2021_09_03_080049) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["profile_id"], name: "index_bookmark_tracks_on_profile_id"
+  end
+
+  create_table "favorite_albums", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "album_id"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_favorite_albums_on_profile_id"
+  end
+
+  create_table "favorite_artists", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "artist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_favorite_artists_on_profile_id"
+  end
+
+  create_table "favorite_tracks", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "track_id"
+    t.integer "album_id"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_favorite_tracks_on_profile_id"
   end
 
   create_table "listened_albums", force: :cascade do |t|
@@ -182,6 +209,9 @@ ActiveRecord::Schema.define(version: 2021_09_03_080049) do
   add_foreign_key "bookmark_albums", "profiles"
   add_foreign_key "bookmark_artists", "profiles"
   add_foreign_key "bookmark_tracks", "profiles"
+  add_foreign_key "favorite_albums", "profiles"
+  add_foreign_key "favorite_artists", "profiles"
+  add_foreign_key "favorite_tracks", "profiles"
   add_foreign_key "listened_albums", "profiles"
   add_foreign_key "listened_artists", "profiles"
   add_foreign_key "listened_tracks", "profiles"

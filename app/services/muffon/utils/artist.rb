@@ -47,6 +47,19 @@ module Muffon
           artist_id: find_artist.id
         )
       end
+
+      def favorite_id
+        return if @args.profile_id.blank?
+
+        find_favorite_artist&.id
+      end
+
+      def find_favorite_artist
+        FavoriteArtist.find_by(
+          profile_id: @args.profile_id,
+          artist_id: find_artist.id
+        )
+      end
     end
   end
 end
