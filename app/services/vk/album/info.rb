@@ -30,12 +30,6 @@ module VK
         }
       end
 
-      def release_date
-        date_formatted(
-          album['create_time']
-        )
-      end
-
       def plays_count
         album['plays']
       end

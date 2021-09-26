@@ -38,6 +38,12 @@ module VK
           album['photo'], 'album'
         )
       end
+
+      def release_date
+        date_formatted(
+          album['create_time']
+        )
+      end
     end
   end
 end
