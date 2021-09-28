@@ -11,6 +11,10 @@ module LastFM
         private
 
         def data
+          muffon_data.merge(artist_data)
+        end
+
+        def artist_data
           {
             name: name,
             image: image_data,

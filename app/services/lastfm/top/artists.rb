@@ -13,7 +13,8 @@ module LastFM
 
       def collection_item_data_formatted(artist)
         LastFM::Top::Artists::Artist.call(
-          artist: artist
+          artist: artist,
+          profile_id: @args.profile_id
         )
       end
     end
