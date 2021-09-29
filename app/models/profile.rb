@@ -23,6 +23,8 @@ class Profile < ApplicationRecord
   has_many :favorite_albums, dependent: nil
   has_many :favorite_tracks, dependent: nil
 
+  has_many :playlists, dependent: nil
+
   enum gender: {
     male: 0,
     female: 1,

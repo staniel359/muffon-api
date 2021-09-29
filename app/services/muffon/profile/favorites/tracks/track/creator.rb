@@ -46,14 +46,6 @@ module Muffon
               @args.artist
             end
 
-            def find_album
-              return if @args.album.blank?
-
-              ::Album.with_artist_title(
-                find_artist.id, @args.album
-              )
-            end
-
             def errors?
               favorite_track.errors.any?
             end

@@ -28,6 +28,14 @@ module Muffon
         )
       end
 
+      def find_album
+        return if @args.album.blank?
+
+        ::Album.with_artist_title(
+          find_artist.id, @args.album
+        )
+      end
+
       def listened_id
         return if @args.profile_id.blank?
 

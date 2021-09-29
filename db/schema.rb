@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_23_095522) do
+ActiveRecord::Schema.define(version: 2021_09_29_072234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -138,6 +138,25 @@ ActiveRecord::Schema.define(version: 2021_09_23_095522) do
     t.index ["profile_id"], name: "index_listened_tracks_on_profile_id"
   end
 
+  create_table "playlist_tracks", force: :cascade do |t|
+    t.bigint "playlist_id", null: false
+    t.integer "track_id"
+    t.integer "artist_id"
+    t.integer "album_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["playlist_id"], name: "index_playlist_tracks_on_playlist_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "title"
+    t.integer "playlist_tracks_count", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_playlists_on_profile_id"
+  end
+
   create_table "profile_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "album_id", null: false
@@ -215,6 +234,8 @@ ActiveRecord::Schema.define(version: 2021_09_23_095522) do
   add_foreign_key "listened_albums", "profiles"
   add_foreign_key "listened_artists", "profiles"
   add_foreign_key "listened_tracks", "profiles"
+  add_foreign_key "playlist_tracks", "playlists"
+  add_foreign_key "playlists", "profiles"
   add_foreign_key "profile_albums", "profile_artists"
   add_foreign_key "profile_albums", "profiles"
   add_foreign_key "profile_artists", "profiles"
