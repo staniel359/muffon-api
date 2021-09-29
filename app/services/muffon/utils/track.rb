@@ -10,7 +10,7 @@ module Muffon
       end
 
       def find_profile_track
-        ProfileTrack.find_by(
+        @find_profile_track ||= ProfileTrack.find_by(
           profile_id: @args.profile_id,
           track_id: find_track.id
         )
@@ -23,8 +23,16 @@ module Muffon
       end
 
       def find_artist
-        ::Artist.with_name(
+        @find_artist ||= ::Artist.with_name(
           artist_name
+        )
+      end
+
+      def find_album
+        return if @args.album.blank?
+
+        @find_album ||= ::Album.with_artist_title(
+          find_artist.id, @args.album
         )
       end
 

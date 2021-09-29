@@ -113,6 +113,18 @@ Rails.application.routes.draw do
               only: %i[index create destroy],
               param: :track_id
           end
+
+          resources :playlists,
+            only: %i[index create show update destroy],
+            param: :playlist_id
+
+          namespace :playlists, as: :playlist do
+            scope ':playlist_id' do
+              resources :tracks,
+                only: %i[index create destroy],
+                param: :track_id
+            end
+          end
         end
       end
 
