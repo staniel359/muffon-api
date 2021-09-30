@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/artist.jsx?artist=wejlhg239gh23&lang=en&sort=year&what=albums
+    uri: https://api.music.yandex.net/artists/wejlhg239gh23?lang=en
     body:
       encoding: US-ASCII
       string: ''
@@ -10,45 +10,31 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - music.yandex.ru
+      - api.music.yandex.net
   response:
     status:
       code: 400
       message: Bad Request
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Date:
-      - Tue, 13 Apr 2021 10:42:58 GMT
-      Nel:
-      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
-        "failure_fraction": 0.1}'
-      Report-To:
-      - '{"group": "network-errors", "max_age": 86400, "endpoints": [ { "url": "https://dr.yandex.net/muz_nel"}]}'
+      - Thu, 30 Sep 2021 20:14:58 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
-      X-Compat:
-      - '5'
       X-Content-Type-Options:
       - nosniff
-      X-Powered-By:
-      - Express
       X-Xss-Protection:
       - 1; mode=block
-      Set-Cookie:
-      - i=cBDE9lcL2gEiOZ8ge1cXkI/0rhLFKTvP2oUVdpVSAtVpASd573Cg0GOkchd5VWOI0r8HM6taX0FWimBDFhsNt4HmpAQ=;
-        Expires=Thu, 13-Apr-2023 10:42:58 GMT; Domain=.yandex.ru; Path=/; Secure;
-        HttpOnly
-      - yandexuid=5262849431618310578; path=/; domain=.yandex.ru; expires=Sun, 13
-        Apr 2031 10:42:58 GMT; max-age=315360000
     body:
       encoding: UTF-8
-      string: '{"message":"Bad Request"}'
-  recorded_at: Tue, 13 Apr 2021 10:42:57 GMT
+      string: '{"invocationInfo":{"req-id":"1633032898021066-2239264706803312563","hostname":"music-stable-back-man-17.man.yp-c.yandex.net"},"error":{"name":"validate","message":"Parameters
+        requirements are not met"}}'
+  recorded_at: Thu, 30 Sep 2021 20:14:58 GMT
 recorded_with: VCR 6.0.0

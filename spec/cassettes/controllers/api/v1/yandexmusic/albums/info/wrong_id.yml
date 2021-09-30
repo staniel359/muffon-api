@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/album.jsx?album=wejlhg239gh23&lang=en
+    uri: https://api.music.yandex.net/albums/wejlhg239gh23/with-tracks?lang=en
     body:
       encoding: US-ASCII
       string: ''
@@ -10,45 +10,31 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - music.yandex.ru
+      - api.music.yandex.net
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Date:
-      - Tue, 13 Apr 2021 10:42:54 GMT
-      Nel:
-      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
-        "failure_fraction": 0.1}'
-      Report-To:
-      - '{"group": "network-errors", "max_age": 86400, "endpoints": [ { "url": "https://dr.yandex.net/muz_nel"}]}'
+      - Thu, 30 Sep 2021 20:14:56 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
-      X-Compat:
-      - '5'
       X-Content-Type-Options:
       - nosniff
-      X-Powered-By:
-      - Express
       X-Xss-Protection:
       - 1; mode=block
-      Set-Cookie:
-      - i=bmhXj0CmORySjHKW9bnPV9FcIWBXOUj2HIyeoO3SDeQElAxV6wjup2QsHUXMSS7VlEewCOGfY1Wm15YwUHAJ4ukeyc4=;
-        Expires=Thu, 13-Apr-2023 10:42:54 GMT; Domain=.yandex.ru; Path=/; Secure;
-        HttpOnly
-      - yandexuid=7230987741618310574; path=/; domain=.yandex.ru; expires=Sun, 13
-        Apr 2031 10:42:54 GMT; max-age=315360000
     body:
       encoding: ASCII-8BIT
-      string: '{"message":"Not Found"}'
-  recorded_at: Tue, 13 Apr 2021 10:42:53 GMT
+      string: '{"invocationInfo":{"req-id":"1633032896890614-17252911958218308219","hostname":"music-stable-back-sas-37.sas.yp-c.yandex.net"},"error":{"name":"not-found","message":"Requested
+        action for /albums/wejlhg239gh23/with-tracks was not found"}}'
+  recorded_at: Thu, 30 Sep 2021 20:14:56 GMT
 recorded_with: VCR 6.0.0

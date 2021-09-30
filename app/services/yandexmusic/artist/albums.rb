@@ -7,32 +7,15 @@ module YandexMusic
       private
 
       def no_data?
-        albums_list.blank?
+        super || albums_list.blank?
       end
 
       def albums_list
-        @albums_list ||= response_data['albums']
-      end
-
-      def params
-        super.merge(albums_params)
-      end
-
-      def albums_params
-        {
-          what: 'albums',
-          sort: 'year'
-        }
+        @albums_list ||= artist['albums']
       end
 
       def artist_data
         super.merge(paginated_data)
-      end
-
-      def name
-        response_data.dig(
-          'artist', 'name'
-        )
       end
 
       def collection_list

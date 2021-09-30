@@ -9,16 +9,16 @@ module YandexMusic
         [@args.artist_id]
       end
 
+      def no_data?
+        artist.blank?
+      end
+
+      def artist
+        @artist ||= response_data['result']
+      end
+
       def link
-        "#{BASE_LINK}/artist.jsx"
-      end
-
-      def params
-        super.merge(artist_params)
-      end
-
-      def artist_params
-        { artist: @args.artist_id }
+        "#{BASE_LINK}/artists/#{@args.artist_id}"
       end
 
       def data
@@ -27,6 +27,12 @@ module YandexMusic
 
       def artist_data
         { name: name }
+      end
+
+      def name
+        artist.dig(
+          'artist', 'name'
+        )
       end
     end
   end

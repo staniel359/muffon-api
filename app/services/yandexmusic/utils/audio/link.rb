@@ -9,6 +9,8 @@ module YandexMusic
           return retry_with_new_session_id if wrong_session_id?
 
           data
+        rescue StandardError
+          call
         end
 
         private
