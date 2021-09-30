@@ -1,6 +1,6 @@
 module YandexMusic
   class Base < Muffon::Base
-    BASE_LINK = 'https://music.yandex.ru/handlers'.freeze
+    BASE_LINK = 'https://api.music.yandex.net'.freeze
     SOURCE_ID = 'yandexmusic'.freeze
 
     private

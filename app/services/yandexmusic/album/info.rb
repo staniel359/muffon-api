@@ -38,7 +38,7 @@ module YandexMusic
       end
 
       def labels_list
-        response_data['labels']
+        album['labels']
       end
 
       def label_data_formatted(label)
@@ -56,7 +56,7 @@ module YandexMusic
       end
 
       def tracks_list
-        response_data['volumes'].flatten
+        album['volumes'].flatten
       end
 
       def track_data_formatted(track)

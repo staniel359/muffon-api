@@ -15,7 +15,7 @@ module YandexMusic
 
       def collection_list
         @collection_list ||= response_data.dig(
-          collection_name, 'items'
+          'result', collection_name, 'results'
         )
       end
 
@@ -24,7 +24,7 @@ module YandexMusic
       end
 
       def link
-        "#{BASE_LINK}/music-search.jsx"
+        "#{BASE_LINK}/search"
       end
 
       def params
@@ -34,9 +34,13 @@ module YandexMusic
       def search_params
         {
           text: @args.query,
-          type: collection_name,
+          type: collection_type,
           page: page - 1
         }
+      end
+
+      def collection_type
+        self.class::COLLECTION_TYPE
       end
 
       def data
@@ -45,13 +49,13 @@ module YandexMusic
 
       def total_items_count
         response_data.dig(
-          'pager', 'total'
+          'result', collection_name, 'total'
         )
       end
 
       def limit
         response_data.dig(
-          'pager', 'perPage'
+          'result', collection_name, 'perPage'
         )
       end
     end

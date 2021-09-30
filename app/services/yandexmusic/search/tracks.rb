@@ -1,6 +1,7 @@
 module YandexMusic
   module Search
     class Tracks < YandexMusic::Search::Base
+      COLLECTION_TYPE = 'track'.freeze
       COLLECTION_NAME = 'tracks'.freeze
 
       private

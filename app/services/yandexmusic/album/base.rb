@@ -10,23 +10,15 @@ module YandexMusic
       end
 
       def no_data?
-        yandex_music_id.blank?
+        album.blank?
       end
 
       def album
-        @album ||= response_data
+        @album ||= response_data['result']
       end
 
       def link
-        "#{BASE_LINK}/album.jsx"
-      end
-
-      def params
-        super.merge(album_params)
-      end
-
-      def album_params
-        { album: @args.album_id }
+        "#{BASE_LINK}/albums/#{@args.album_id}/with-tracks"
       end
 
       def data
