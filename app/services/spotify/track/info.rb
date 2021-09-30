@@ -28,6 +28,39 @@ module Spotify
           audio: audio_data
         }
       end
+
+      def audio_data
+        {
+          present: true,
+          link: audio_link,
+          source_id: self.class::SOURCE_ID
+        }
+      end
+
+      def audio_link
+        "#{secrets[:files_url]}/#{audio_path}"
+      end
+
+      def audio_path
+        return 'test.mp3' if Rails.env.test?
+
+        `#{python_command} public/spotify.py \
+          #{email} '#{password}' #{spotify_id}`
+      end
+
+      def python_command
+        return 'python3.7' if Rails.env.production?
+
+        'python'
+      end
+
+      def email
+        secrets.spotify[:email]
+      end
+
+      def password
+        secrets.spotify[:password]
+      end
     end
   end
 end
