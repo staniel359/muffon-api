@@ -2,7 +2,6 @@ module SoundCloud
   module Utils
     class ClientId < SoundCloud::Base
       BASE_LINK = 'https://soundcloud.com'.freeze
-      SCRIPT_LINK = 'https://a-v2.sndcdn.com/assets/49'.freeze
 
       def call
         data
@@ -21,13 +20,19 @@ module SoundCloud
       end
 
       def script_link
-        matched_script['src']
+        soundcloud_scripts[-1]['src']
       end
 
-      def matched_script
-        scripts.find do |s|
+      def soundcloud_scripts
+        scripts.select do |s|
           matched_script?(s)
         end
+      end
+
+      def matched_script?(script)
+        script['src']&.match(
+          'https://a-v2.sndcdn.com/assets'
+        ).present?
       end
 
       def scripts
@@ -44,12 +49,6 @@ module SoundCloud
 
       def scripts_response
         RestClient.get(BASE_LINK)
-      end
-
-      def matched_script?(script)
-        script['src']&.match(
-          SCRIPT_LINK
-        ).present?
       end
     end
   end
