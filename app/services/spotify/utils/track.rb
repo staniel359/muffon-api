@@ -33,7 +33,7 @@ module Spotify
 
       def audio_data
         {
-          present: false,
+          present: true,
           track_id: spotify_id,
           source_id: self.class::SOURCE_ID
         }
