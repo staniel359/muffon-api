@@ -10,7 +10,9 @@ module Deezer
     end
 
     def response
-      RestClient.post(link, payload, headers)
+      RestClient.post(
+        link, payload, headers
+      )
     end
 
     def link
@@ -41,7 +43,12 @@ module Deezer
     end
 
     def api_token
-      Deezer::Utils::Token::User.call[:api_token]
+      user_tokens[:api_token]
+    end
+
+    def user_tokens
+      @user_tokens ||=
+        Deezer::Utils::Token::User.call
     end
 
     def cookies
@@ -56,10 +63,6 @@ module Deezer
       Deezer::Utils::Image.call(
         image_id: image_id, model: model
       )
-    end
-
-    def user_tokens
-      @user_tokens ||= Deezer::Utils::Token::User.call
     end
 
     def artists
