@@ -3,7 +3,7 @@ module LastFM
     class Albums < LastFM::Artist::Base
       API_METHOD = 'artist.getTopAlbums'.freeze
       COLLECTION_NAME = 'albums'.freeze
-      TOTAL_LIMIT = 300
+      TOTAL_LIMIT = 500
       LIMIT = 200
       include LastFM::Artist::Utils::Pagination
 
