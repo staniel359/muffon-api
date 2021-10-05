@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.soundcloud.com/tracks/296774474?client_id=<SOUNDCLOUD_API_KEY>
+    uri: https://api.soundcloud.com/tracks/296774474
     body:
       encoding: US-ASCII
       string: ''
@@ -11,65 +11,8 @@ http_interactions:
       - "*/*"
       User-Agent:
       - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.soundcloud.com
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '226'
-      Connection:
-      - keep-alive
-      Date:
-      - Sun, 19 Sep 2021 08:49:27 GMT
-      X-Robots-Tag:
-      - noindex
-      Cache-Control:
-      - private, max-age=0
-      Referrer-Policy:
-      - no-referrer
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      Server:
-      - am/2
-      Vary:
-      - Origin
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 3fcabc15a7f22952dcacfedd3d2b6a15.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - HEL50-C2
-      X-Amz-Cf-Id:
-      - 5hYipPgKwCsbDmV_hE6rShZoFpC5Cd39bh6iNZ2kObgj0LQhZXnf3g==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"code":401,"message":"A request must contain the Authorization header.
-        For details please refer to https://developers.soundcloud.com/blog/security-updates-api.","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"401
-        - Unauthorized","errors":[{"error_message":"A request must contain the Authorization
-        header. For details please refer to https://developers.soundcloud.com/blog/security-updates-api."}],"error":null}'
-  recorded_at: Sun, 19 Sep 2021 08:49:27 GMT
-- request:
-    method: get
-    uri: https://api.soundcloud.com/tracks/296774474?client_id=<SOUNDCLOUD_API_KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Authorization:
+      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -82,11 +25,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '908'
+      - '909'
       Connection:
       - keep-alive
       Date:
-      - Sun, 19 Sep 2021 08:49:27 GMT
+      - Tue, 05 Oct 2021 06:23:04 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -106,23 +49,23 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 db89633bf3348e057f316c437d2aee7a.cloudfront.net (CloudFront)
+      - 1.1 b917bd54ec6565658d9d65cbf075f677.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - HEL50-C2
       X-Amz-Cf-Id:
-      - sbcgUkeGPYdq6s_TwiXgrOAnr-ZdWxsf5mxJX8n6J8CTKyFD_yaLPg==
+      - qy5_TAoCPP4fyVMqz_SvqZBpuckKIuGFX5nhAIXv6Ati1ANrgwWHeQ==
     body:
       encoding: ASCII-8BIT
-      string: '{"kind":"track","id":296774474,"created_at":"2016/12/08 02:53:46 +0000","duration":46267,"commentable":true,"comment_count":37,"sharing":"public","tag_list":"
+      string: '{"kind":"track","id":296774474,"created_at":"2016/12/08 02:53:46 +0000","duration":46267,"commentable":true,"comment_count":38,"sharing":"public","tag_list":"
         vaporwave","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"V
         A P O R W A V E","title":"LUXURY ELITE - ALL NIGHT","description":"Luxury
         Elite''s All Night\nLate Night Delight (c) Luxury Elite","label_name":null,"release":null,"key_signature":null,"isrc":null,"bpm":null,"release_year":null,"release_month":null,"release_day":null,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/296774474","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000485875731-se22vc-large.jpg","id":247403880,"kind":"user","permalink_url":"https://soundcloud.com/that-gay-lmao","uri":"https://api.soundcloud.com/users/247403880","username":"scubb","permalink":"that-gay-lmao","created_at":"2016/08/14
         19:36:22 +0000","last_modified":"2021/03/01 15:57:45 +0000","first_name":"lawson","last_name":"s","full_name":"lawson
-        s","city":"nowhere","description":"","country":"Jersey","track_count":18,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":null,"discogs_name":null,"website_title":null,"website":null,"comments_count":70,"online":false,"likes_count":0,"playlist_count":8,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/that-gay-lmao/luxury-elite-all-night","artwork_url":"https://i1.sndcdn.com/artworks-000197371808-7uwudi-large.jpg","stream_url":"https://api.soundcloud.com/tracks/296774474/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/y3cxJMT8ueg3_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":69350,"download_count":0,"favoritings_count":1209,"reposts_count":52,"downloadable":false,"access":"playable","policy":null,"monetization_model":null}'
-  recorded_at: Sun, 19 Sep 2021 08:49:27 GMT
+        s","city":"nowhere","description":"","country":"Jersey","track_count":18,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":null,"discogs_name":null,"website_title":null,"website":null,"comments_count":70,"online":false,"likes_count":0,"playlist_count":8,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/that-gay-lmao/luxury-elite-all-night","artwork_url":"https://i1.sndcdn.com/artworks-000197371808-7uwudi-large.jpg","stream_url":"https://api.soundcloud.com/tracks/296774474/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/y3cxJMT8ueg3_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":69775,"download_count":0,"favoritings_count":1218,"reposts_count":52,"downloadable":false,"access":"playable","policy":null,"monetization_model":null}'
+  recorded_at: Tue, 05 Oct 2021 06:23:04 GMT
 - request:
     method: get
-    uri: https://api.soundcloud.com/tracks/296774474/stream?client_id=<SOUNDCLOUD_API_KEY>
+    uri: https://api.soundcloud.com/tracks/296774474/streams
     body:
       encoding: US-ASCII
       string: ''
@@ -131,84 +74,25 @@ http_interactions:
       - "*/*"
       User-Agent:
       - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Authorization:
+      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
       - api.soundcloud.com
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '226'
+      - '1246'
       Connection:
       - keep-alive
       Date:
-      - Sun, 19 Sep 2021 08:49:28 GMT
-      X-Robots-Tag:
-      - noindex
-      Cache-Control:
-      - private, max-age=0
-      Referrer-Policy:
-      - no-referrer
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      Server:
-      - am/2
-      Vary:
-      - Origin
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 20e9cd7a84a4b4e0dce285f587c43f9b.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - HEL50-C2
-      X-Amz-Cf-Id:
-      - I40CafbwW57SG7yfB5KHC7Vngem6sSipOeGSAnNG8FA_i5yLFK35ew==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"code":401,"message":"A request must contain the Authorization header.
-        For details please refer to https://developers.soundcloud.com/blog/security-updates-api.","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"401
-        - Unauthorized","errors":[{"error_message":"A request must contain the Authorization
-        header. For details please refer to https://developers.soundcloud.com/blog/security-updates-api."}],"error":null}'
-  recorded_at: Sun, 19 Sep 2021 08:49:28 GMT
-- request:
-    method: get
-    uri: https://api.soundcloud.com/tracks/296774474/stream?client_id=<SOUNDCLOUD_API_KEY>
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.soundcloud.com
-  response:
-    status:
-      code: 302
-      message: Moved Temporarily
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '571'
-      Connection:
-      - keep-alive
-      Date:
-      - Sun, 19 Sep 2021 08:49:28 GMT
-      Location:
-      - https://cf-media.sndcdn.com/y3cxJMT8ueg3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20veTNjeEpNVDh1ZWczLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMyMDQxNTM0fX19XX0_&Signature=ew272UTYGSRK-IoFf16xry9ijc4VcQ62BKzlljk5-gE0o4qGv2RArMdBw4HJjpRAfHJhGB~avFCFfu7eNQH2JkxvCP6P6FaZuFmdOwoMgzU1QG9v9KYfG4RgcxYYtxdAt35vZOp5sRPETv8TaVjfpnUF1C9fJlSlx6to49nZFm5g5pdxH3e5qdeItqfSN7oHgzn0MKSPu11pmElTmHC8wWTO552pwcxPkcUjuJaBbWco645l7-Atn9p6~Me-6ZkApNkZQK27bA87cnx2gQnKFAgf5Is9H0eYGaqoC4M5Viv4uHQdJ0upn7Y4dfIXgpRP5UeFy7Nn9FTGK9wlWt1OKw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ
+      - Tue, 05 Oct 2021 06:23:05 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -228,13 +112,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 20e9cd7a84a4b4e0dce285f587c43f9b.cloudfront.net (CloudFront)
+      - 1.1 547726f52324ef3a0c4ac01a3354e36a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - HEL50-C2
       X-Amz-Cf-Id:
-      - a2DLoqJ4ZzTHYyAYd6kfKFL3kMEDB6kFdSyuF_Ja4yYwh9t11tJHHg==
+      - lZavfRi0yJtgtXCZ9n8LOolUVHA-jNYvj-5qxmwQZbAMxiTN1wgHqw==
     body:
       encoding: ASCII-8BIT
-      string: '{"status":"302 - Found","location":"https://cf-media.sndcdn.com/y3cxJMT8ueg3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20veTNjeEpNVDh1ZWczLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMyMDQxNTM0fX19XX0_&Signature=ew272UTYGSRK-IoFf16xry9ijc4VcQ62BKzlljk5-gE0o4qGv2RArMdBw4HJjpRAfHJhGB~avFCFfu7eNQH2JkxvCP6P6FaZuFmdOwoMgzU1QG9v9KYfG4RgcxYYtxdAt35vZOp5sRPETv8TaVjfpnUF1C9fJlSlx6to49nZFm5g5pdxH3e5qdeItqfSN7oHgzn0MKSPu11pmElTmHC8wWTO552pwcxPkcUjuJaBbWco645l7-Atn9p6~Me-6ZkApNkZQK27bA87cnx2gQnKFAgf5Is9H0eYGaqoC4M5Viv4uHQdJ0upn7Y4dfIXgpRP5UeFy7Nn9FTGK9wlWt1OKw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ"}'
-  recorded_at: Sun, 19 Sep 2021 08:49:28 GMT
+      string: '{"http_mp3_128_url":"https://cf-media.sndcdn.com/y3cxJMT8ueg3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20veTNjeEpNVDh1ZWczLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMzNDE1MTUxfX19XX0_&Signature=LhCh5KK4ZzmOro~Q4tn4PICB48w6ahodfCkCkISVDSpR8Du-koTRZ7IcrS7Uv0HWMJEy5XSjoQagiVnLZ-qoGlIwMd6JH9BqP5FDlCCdxwgi-Ydqg27DnJ0scCiXufoQoYu0eaP0hkz4~6PEhxjUjivaOgrzsGj94IHQV~YSD9QV7KnVSU674FRk40J3qlfCueoX4L90kHJ8xcVQ6gGSDdn~u8it0fHKlvqihh-aD0A9zXQDxnhSfCI6fKJaPbXUtH3kRquSdTYhL9UFH5S3dUzmdFcKfrSX2-Q8SBqUrJAufUHb8wlXUpdAxHdeEQxwB5PsxNsfIYCAiPRPkwmHFw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ","hls_mp3_128_url":"https://cf-hls-media.sndcdn.com/playlist/y3cxJMT8ueg3.128.mp3/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL3BsYXlsaXN0L3kzY3hKTVQ4dWVnMy4xMjgubXAzL3BsYXlsaXN0Lm0zdTgqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMzNDE1MTUxfX19XX0_&Signature=U4JJAO~8uFcKTfj8mBQLFd42JNYeHbacepZjUZdxIc-bJPNnVYqmCOpnMrUzVPjrx~Nbsuyz3Lb9jir8nVTHNWDROsiBfh62WSvA6UNDdMdNmxiJe97xdVohwBD8Lr5mHWLwN0AfgwVwKgiscf90ne5sEu~98nWa1mJSwRwYFhtSV7jbM14J7ZB7iXIZiFlqhLL0wbWsxbtn3S3tpTp1SJZv4JExiXSo~bySY52Pfne1vVtP0UV0r5AmVQ-EEU0O2NyeA3e-BGngUb-g3JFDEwxaz0jwCQAIBMjpBpOIVvLKuxadRx27nftz0yYl78xrqzcmBKnQdsnlnOENxSx91A__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ","preview_mp3_128_url":"https://cf-preview-media.sndcdn.com/preview/0/30/y3cxJMT8ueg3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLXByZXZpZXctbWVkaWEuc25kY2RuLmNvbS9wcmV2aWV3LzAvMzAveTNjeEpNVDh1ZWczLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMzNDE1MTUxfX19XX0_&Signature=d1ZMLAMy9novtgJ6RNZcQSc~VzA0jMaBUEa8UUCMf9kmM7VbiF95wQbOKIEQaimLCvH~v~jgRrXamfEsKYNvAtYk7QnTtkmJuR5aYs9jOyeGdpSpz6cFxXvbmjdgyzic3AQkfvhgZHWZbBcYClISf-cRTzcQ8p-O6a~bvwfZk3j~u82TMIlyQBj-W-pwzHqBYBK63L~hwRBoQAXXOMa3ULpY9rnqImXsYLga2ZaisWhUJKMXHBvjihMEIZIZ4xnxXnurba6tKe8S9V-p7b4UE6Pamk8Md2puRHsthSLJ3ey2qbMwyho-~ZRIr3~NeOYkhPYMu1bn2cyGjTix0BaSMQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ"}'
+  recorded_at: Tue, 05 Oct 2021 06:23:05 GMT
 recorded_with: VCR 6.0.0

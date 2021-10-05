@@ -18,6 +18,7 @@ SECRET_KEYS = [
   %i[rateyourmusic sec_ts],
   %i[rateyourmusic session_id],
   %i[soundcloud api_key],
+  %i[soundcloud test_access_token],
   %i[soundcloud test_v2_client_id],
   %i[vk access_token],
   %i[yandex_music csrf_token],

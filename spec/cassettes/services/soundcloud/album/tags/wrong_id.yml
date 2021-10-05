@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.soundcloud.com/playlists/wejlhg239gh23?client_id=<SOUNDCLOUD_API_KEY>
+    uri: https://api.soundcloud.com/playlists/wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,9 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.7.2p137
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      Authorization:
+      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 09 Feb 2021 10:31:56 GMT
+      - Tue, 05 Oct 2021 06:23:03 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -38,6 +40,8 @@ http_interactions:
       - DENY
       X-Content-Type-Options:
       - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
       Server:
       - am/2
       Vary:
@@ -45,16 +49,14 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 dc9d5fb590feb014dd1f5a3b4ef43278.cloudfront.net (CloudFront)
+      - 1.1 db89633bf3348e057f316c437d2aee7a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - HEL50-C2
       X-Amz-Cf-Id:
-      - LB3rEGiZ3IUQ5p1SDmIYkHo38ez1CcdGiKlEAG3clZoQ0l-15nWtLw==
-      Age:
-      - '4'
+      - 9kU5wn7Cz6Gmq5PVnBA_3GsjJA8kGnSZFzMjTDd6lspXgF4yNLF1oA==
     body:
       encoding: ASCII-8BIT
       string: '{"code":400,"message":"Invalid playlist id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
         - Bad Request","errors":[{"error_message":"Invalid playlist id: ''wejlhg239gh23''"}],"error":null}'
-  recorded_at: Tue, 09 Feb 2021 10:32:01 GMT
+  recorded_at: Tue, 05 Oct 2021 06:23:03 GMT
 recorded_with: VCR 6.0.0
