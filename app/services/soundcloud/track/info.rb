@@ -39,25 +39,34 @@ module SoundCloud
 
       def audio_data
         {
-          present: audio_present?,
-          link: redirect_audio_link,
+          present: audio_link.present?,
+          link: audio_link,
           source_id: SOURCE_ID
         }
       end
 
-      def redirect_audio_link
+      def audio_link
         return unless audio_present?
 
-        RestClient.get(audio_link) do |response|
-          return redirect_audio_link if
-              response.code == 401
-
-          response.headers[:location]
-        end
+        @audio_link ||= streams_response_data[
+          'http_mp3_128_url'
+        ]
+      rescue RestClient::Forbidden
+        nil
       end
 
-      def audio_link
-        "#{link}/stream?client_id=#{client_id}"
+      def streams_response_data
+        JSON.parse(streams_response)
+      end
+
+      def streams_response
+        @streams_response ||= RestClient.get(
+          streams_link, headers
+        )
+      end
+
+      def streams_link
+        "#{link}/streams"
       end
     end
   end
