@@ -21,6 +21,7 @@ SECRET_KEYS = [
   %i[soundcloud test_access_token],
   %i[soundcloud test_v2_client_id],
   %i[vk access_token],
+  %i[vk access_token_kate],
   %i[yandex_music csrf_token],
   %i[yandex_music email],
   %i[yandex_music password],

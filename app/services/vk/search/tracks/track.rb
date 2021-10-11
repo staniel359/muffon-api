@@ -31,10 +31,12 @@ module VK
 
         def extra_data
           {
+            album: album_formatted,
+            albums: albums,
             image: image_data,
             duration: duration,
             audio: audio_data
-          }
+          }.compact
         end
       end
     end

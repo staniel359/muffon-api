@@ -8,8 +8,8 @@ module VK
 
         def primary_args
           [
-            @args.link,
-            @args.track_id
+            @args.track_id,
+            @args.link
           ]
         end
 

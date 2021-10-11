@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=4b0d541e5c641772e4&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000018186&playlist_id=wejlhg239gh23&sig=35a4cb5bffd8336adfa1a1655c0be021&v=5.131
+    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=4b0d541e5c641772e4&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000018186&playlist_id=wejlhg239gh23&sig=e2d080ac5d72ecf5975ecb5edd99b7ce&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -10,8 +10,8 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - KateMobileAndroid/56 lite-460 (Android 4.4.2; SDK 19; x86; unknown Android
-        SDK built for x86; en)
+      - VKAndroidApp/5.52-4543 (Android 5.1.1; SDK 22; x86_64; unknown Android SDK
+        built for x86_64; en; 320x240
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -24,7 +24,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sun, 05 Sep 2021 14:05:18 GMT
+      - Mon, 11 Oct 2021 11:02:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -32,7 +32,7 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.108477
+      - KPHP/7.4.108873
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
@@ -44,5 +44,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
         was missing or invalid: playlist_id not integer","request_params":[{"key":"v","value":"5.131"},{"key":"playlist_id","value":"wejlhg239gh23"},{"key":"owner_id","value":"-2000018186"},{"key":"access_key","value":"4b0d541e5c641772e4"},{"key":"lang","value":"en"},{"key":"method","value":"audio.getPlaylistById"},{"key":"oauth","value":"1"}]}}'
-  recorded_at: Sun, 05 Sep 2021 14:05:18 GMT
+  recorded_at: Mon, 11 Oct 2021 11:02:20 GMT
 recorded_with: VCR 6.0.0
