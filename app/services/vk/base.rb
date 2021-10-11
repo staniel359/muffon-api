@@ -33,9 +33,7 @@ module VK
     end
 
     def user_agent
-      'KateMobileAndroid/56 lite-460'\
-        ' (Android 4.4.2; SDK 19; x86;'\
-        ' unknown Android SDK built for x86; en)'
+      secrets.vk[:user_agent]
     end
 
     def params

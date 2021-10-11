@@ -25,10 +25,33 @@ module VK
         "#{track['owner_id']}_#{track['id']}"
       end
 
+      def albums
+        [album_data_formatted].compact
+      end
+
+      def album_data_formatted
+        return if album.blank?
+
+        {
+          title: album['title'],
+          vk_id: album['id'],
+          vk_owner_id: album['owner_id'],
+          vk_access_key: album['access_key']
+        }
+      end
+
+      def album
+        @album ||= track['album']
+      end
+
       def image_data
         image_data_formatted(
-          track['photo'], 'track'
+          album_image_data, 'track'
         )
+      end
+
+      def album_image_data
+        album.try(:[], 'thumb')
       end
 
       def duration

@@ -21,40 +21,12 @@ module VK
 
       def track_extra_data
         {
+          album: album_formatted,
           albums: albums,
           image: image_data,
           duration: duration,
           audio: audio_data
         }
-      end
-
-      def albums
-        [album_data_formatted].compact
-      end
-
-      def album_data_formatted
-        return if album.blank?
-
-        {
-          title: album['title'],
-          vk_id: album['id'],
-          vk_owner_id: album['owner_id'],
-          vk_access_key: album['access_key']
-        }
-      end
-
-      def album
-        @album ||= track['album']
-      end
-
-      def image_data
-        image_data_formatted(
-          album_image_data, 'track'
-        )
-      end
-
-      def album_image_data
-        album.try(:[], 'thumb')
       end
 
       def audio_data
@@ -67,7 +39,13 @@ module VK
 
       def audio_link
         @audio_link ||= VK::Utils::Audio::File.call(
-          link: track['url'],
+          track_id: @args.track_id,
+          link: raw_audio_link
+        )
+      end
+
+      def raw_audio_link
+        VK::Track::AudioLink.call(
           track_id: @args.track_id
         )
       end
