@@ -3,10 +3,13 @@ module Muffon
     module Library
       module Artist
         class Info < Muffon::Profile::Library::Artist::Base
+          include Muffon::Utils::Artist
+
           private
 
           def artist_data
             {
+              favorite_id: favorite_id,
               name: name,
               image: image_data,
               tracks_count: tracks_count,

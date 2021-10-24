@@ -3,6 +3,8 @@ module Muffon
     module Library
       class Artists
         class Artist < Muffon::Profile::Library::Artists
+          include Muffon::Utils::Artist
+
           def call
             data
           end
@@ -12,6 +14,7 @@ module Muffon
           def data
             {
               id: id,
+              favorite_id: favorite_id,
               name: name,
               image: image_data,
               albums_count: albums_count,

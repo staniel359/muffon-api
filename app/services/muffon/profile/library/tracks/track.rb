@@ -3,6 +3,8 @@ module Muffon
     module Library
       class Tracks
         class Track < Muffon::Profile::Library::Tracks
+          include Muffon::Utils::Track
+
           def call
             data
           end
@@ -12,6 +14,7 @@ module Muffon
           def data
             {
               id: id,
+              favorite_id: favorite_id,
               player_id: player_id,
               title: title,
               artist: artist_data,

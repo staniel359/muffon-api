@@ -42,7 +42,7 @@ module Muffon
             profile_artist
               .profile_tracks
               .includes(
-                :track,
+                [track: :artist],
                 [profile_album: :album],
                 [profile_album: [
                   image_attachment: :blob
@@ -52,7 +52,8 @@ module Muffon
 
           def track_data_formatted(track)
             Muffon::Profile::Library::Artist::Tracks::Track.call(
-              track: track
+              track: track,
+              profile_id: @args.profile_id
             )
           end
         end

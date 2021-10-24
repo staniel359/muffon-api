@@ -42,12 +42,15 @@ module Muffon
           def tracks_associated
             profile_album
               .profile_tracks
-              .includes(:track)
+              .includes(
+                [track: :artist]
+              )
           end
 
           def track_data_formatted(track)
             Muffon::Profile::Library::Album::Tracks::Track.call(
-              track: track
+              track: track,
+              profile_id: @args.profile_id
             )
           end
         end

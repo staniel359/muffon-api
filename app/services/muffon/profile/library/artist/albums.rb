@@ -43,14 +43,15 @@ module Muffon
             profile_artist
               .profile_albums
               .includes(
-                :album,
+                [album: :artist],
                 [image_attachment: :blob]
               )
           end
 
           def album_data_formatted(album)
             Muffon::Profile::Library::Artist::Albums::Album.call(
-              album: album
+              album: album,
+              profile_id: @args.profile_id
             )
           end
         end

@@ -3,10 +3,13 @@ module Muffon
     module Library
       module Track
         class Info < Muffon::Profile::Library::Track::Base
+          include Muffon::Utils::Track
+
           private
 
           def track_data
             {
+              favorite_id: favorite_id,
               title: title,
               player_id: player_id,
               artist: artist_data,
@@ -14,6 +17,13 @@ module Muffon
               image: image_data,
               created: created
             }
+          end
+
+          def artist_name
+            profile_track
+              .track
+              .artist
+              .name
           end
 
           def player_id

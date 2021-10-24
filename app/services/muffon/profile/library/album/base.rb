@@ -46,7 +46,7 @@ module Muffon
 
           def artist_name
             profile_album
-              .profile_artist
+              .album
               .artist
               .name
           end

@@ -29,7 +29,7 @@ module Muffon
 
               def find_artist
                 @find_artist ||= ::Artist.with_name(
-                  @args.track['artist']
+                  @args.track.dig('artist', 'name')
                 )
               end
 

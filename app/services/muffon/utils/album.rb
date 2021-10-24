@@ -10,7 +10,7 @@ module Muffon
       end
 
       def find_profile_album
-        ProfileAlbum.find_by(
+        @find_profile_album ||= ProfileAlbum.find_by(
           profile_id: @args.profile_id,
           album_id: find_album.id
         )
@@ -23,7 +23,7 @@ module Muffon
       end
 
       def find_artist
-        ::Artist.with_name(
+        @find_artist ||= ::Artist.with_name(
           artist_name
         )
       end

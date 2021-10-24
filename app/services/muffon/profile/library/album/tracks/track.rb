@@ -4,6 +4,8 @@ module Muffon
       module Album
         class Tracks
           class Track < Muffon::Profile::Library::Album::Tracks
+            include Muffon::Utils::Track
+
             def call
               data
             end
@@ -13,6 +15,7 @@ module Muffon
             def data
               {
                 id: id,
+                favorite_id: favorite_id,
                 player_id: player_id,
                 title: title,
                 created: created
@@ -25,6 +28,13 @@ module Muffon
 
             def profile_track
               @profile_track ||= @args.track
+            end
+
+            def artist_name
+              profile_track
+                .track
+                .artist
+                .name
             end
 
             def player_id
