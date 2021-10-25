@@ -53,6 +53,12 @@ Rails.application.routes.draw do
               end
             end
 
+            namespace :search do
+              get 'artists'
+              get 'albums'
+              get 'tracks'
+            end
+
             resources :albums,
               only: %i[index create destroy],
               param: :library_id
