@@ -4,16 +4,13 @@ module Muffon
       class Tracks
         class Track
           class Creator < Muffon::Profile::Base
-            include Muffon::Utils::Track
-
             private
 
             def primary_args
               [
                 @args.profile_id,
                 @args.token,
-                @args.title,
-                @args.artist
+                @args.track_id
               ]
             end
 
@@ -21,8 +18,8 @@ module Muffon
               return forbidden if wrong_profile?
 
               bookmark_track.tap do |track|
-                track.image_url = @args.image_url
                 track.album_id = find_album&.id
+                track.image_url = @args.image_url
                 track.save
               end
 
@@ -34,16 +31,16 @@ module Muffon
             def bookmark_track
               @bookmark_track ||=
                 profile.bookmark_tracks.where(
-                  track_id: find_track.id
+                  track_id: @args.track_id
                 ).first_or_create
             end
 
-            def title
-              @args.title
-            end
+            def find_album
+              return if @args.album.blank?
 
-            def artist_name
-              @args.artist
+              ::Album.with_artist_title(
+                @args.artist_id, @args.album
+              )
             end
 
             def errors?

@@ -12,7 +12,7 @@ module Muffon
                   @args.profile_id,
                   @args.token,
                   @args.playlist_id,
-                  @args.track_id
+                  @args.playlist_track_id
                 ]
               end
 
@@ -26,7 +26,7 @@ module Muffon
 
               def playlist_track
                 playlist.playlist_tracks.find_by(
-                  id: @args.track_id
+                  id: @args.playlist_track_id
                 )
               end
             end

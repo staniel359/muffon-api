@@ -10,7 +10,7 @@ module Muffon
               [
                 @args.profile_id,
                 @args.token,
-                @args.track_id
+                @args.library_id
               ]
             end
 
@@ -27,7 +27,7 @@ module Muffon
             def profile_track
               @profile_track ||=
                 profile.profile_tracks.find_by(
-                  id: @args.track_id
+                  id: @args.library_id
                 )
             end
 

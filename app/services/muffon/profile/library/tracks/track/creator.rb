@@ -10,8 +10,7 @@ module Muffon
               [
                 @args.profile_id,
                 @args.token,
-                @args.title,
-                @args.artist
+                @args.track_id
               ]
             end
 
@@ -40,22 +39,22 @@ module Muffon
             def profile_artist
               @profile_artist ||=
                 profile.profile_artists.where(
-                  artist_id: find_artist.id
+                  artist_id: find_track.artist_id
                 ).first_or_initialize
             end
 
-            def find_artist
-              @find_artist ||= ::Artist.with_name(
-                @args.artist
+            def find_track
+              @find_track ||= ::Track.find_by(
+                id: @args.track_id
               )
             end
 
             def process_profile_album
               profile_album&.tap do |album|
-                album.created_at = @args.created_at if
-                    update_created_at?(album)
                 album.image_url = @args.image_url if
                     @args.image_url.present?
+                album.created_at = @args.created_at if
+                    update_created_at?(album)
                 album.save
               end
             end
@@ -71,7 +70,7 @@ module Muffon
 
             def find_album
               ::Album.with_artist_title(
-                find_artist.id, @args.album
+                find_track.artist_id, @args.album
               )
             end
 
@@ -86,16 +85,10 @@ module Muffon
             def profile_track
               @profile_track ||=
                 profile.profile_tracks.where(
-                  track_id: find_track.id,
+                  track_id: @args.track_id,
                   profile_artist_id: profile_artist.id,
                   profile_album_id: profile_album&.id
                 ).first_or_initialize
-            end
-
-            def find_track
-              ::Track.with_artist_title(
-                find_artist.id, @args.title
-              )
             end
 
             def update_created_at?(model)

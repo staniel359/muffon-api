@@ -26,9 +26,9 @@ module Muffon
           end
 
           def playlist
-            @playlist ||= profile.playlists.create(
+            @playlist ||= profile.playlists.where(
               title: @args.title
-            )
+            ).first_or_create
           end
         end
       end

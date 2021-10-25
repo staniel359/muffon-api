@@ -10,7 +10,7 @@ module Muffon
               [
                 @args.profile_id,
                 @args.token,
-                @args.album_id
+                @args.library_id
               ]
             end
 
@@ -27,7 +27,7 @@ module Muffon
             def profile_album
               @profile_album ||=
                 profile.profile_albums.find_by(
-                  id: @args.album_id
+                  id: @args.library_id
                 )
             end
 

@@ -31,24 +31,19 @@ module API
 
           def create_data
             Muffon::Profile::Library::Tracks::Track::Creator.call(
-              create_params
-            )
-          end
-
-          def create_params
-            params.slice(
-              *%i[
-                profile_id token title
-                artist album image
-                image_url created_at
-              ]
+              params.slice(
+                *%i[
+                  profile_id token track_id
+                  album image image_url created_at
+                ]
+              )
             )
           end
 
           def info_data
             Muffon::Profile::Library::Track::Info.call(
               params.slice(
-                *%i[profile_id track_id]
+                *%i[profile_id library_id]
               )
             )
           end
@@ -56,7 +51,7 @@ module API
           def destroy_data
             Muffon::Profile::Library::Tracks::Track::Destroyer.call(
               params.slice(
-                *%i[profile_id token track_id]
+                *%i[profile_id token library_id]
               )
             )
           end

@@ -28,7 +28,7 @@ module API
           def create_data
             Muffon::Profile::Bookmarks::Artists::Artist::Creator.call(
               params.slice(
-                *%i[profile_id token artist]
+                *%i[profile_id token artist_id]
               )
             )
           end
@@ -36,7 +36,7 @@ module API
           def destroy_data
             Muffon::Profile::Bookmarks::Artists::Artist::Destroyer.call(
               params.slice(
-                *%i[profile_id token artist_id]
+                *%i[profile_id token bookmark_id]
               )
             )
           end

@@ -4,16 +4,13 @@ module Muffon
       module Tracks
         module Track
           class Creator < Muffon::Profile::Base
-            include Muffon::Utils::Track
-
             private
 
             def primary_args
               [
                 @args.profile_id,
                 @args.token,
-                @args.title,
-                @args.artist
+                @args.track_id
               ]
             end
 
@@ -30,16 +27,8 @@ module Muffon
             def listened_track
               @listened_track ||=
                 profile.listened_tracks.where(
-                  track_id: find_track.id
+                  track_id: @args.track_id
                 ).first_or_create
-            end
-
-            def title
-              @args.title
-            end
-
-            def artist_name
-              @args.artist
             end
 
             def errors?

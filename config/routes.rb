@@ -30,10 +30,10 @@ Rails.application.routes.draw do
 
             resources :artists,
               only: %i[index create destroy],
-              param: :artist_id
+              param: :library_id
 
             namespace :artists, as: :artist do
-              scope ':artist_id' do
+              scope ':library_id' do
                 get '', action: :info
                 get 'albums'
                 get 'tracks'
@@ -41,25 +41,25 @@ Rails.application.routes.draw do
             end
 
             namespace :albums, as: :album do
-              scope ':album_id' do
+              scope ':library_id' do
                 get '', action: :info
                 get 'tracks'
               end
             end
 
             namespace :tracks, as: :track do
-              scope ':track_id' do
+              scope ':library_id' do
                 get '', action: :info
               end
             end
 
             resources :albums,
               only: %i[index create destroy],
-              param: :album_id
+              param: :library_id
 
             resources :tracks,
               only: %i[index create destroy],
-              param: :track_id
+              param: :library_id
           end
 
           resources :recommendations,
@@ -75,43 +75,43 @@ Rails.application.routes.draw do
           namespace :listened do
             resources :artists,
               only: %i[create destroy],
-              param: :artist_id
+              param: :listened_id
 
             resources :albums,
               only: %i[create destroy],
-              param: :album_id
+              param: :listened_id
 
             resources :tracks,
               only: %i[create destroy],
-              param: :track_id
+              param: :listened_id
           end
 
           namespace :bookmarks do
             resources :artists,
               only: %i[index create destroy],
-              param: :artist_id
+              param: :bookmark_id
 
             resources :albums,
               only: %i[index create destroy],
-              param: :album_id
+              param: :bookmark_id
 
             resources :tracks,
               only: %i[index create destroy],
-              param: :track_id
+              param: :bookmark_id
           end
 
           namespace :favorites do
             resources :artists,
               only: %i[index create destroy],
-              param: :artist_id
+              param: :favorite_id
 
             resources :albums,
               only: %i[index create destroy],
-              param: :album_id
+              param: :favorite_id
 
             resources :tracks,
               only: %i[index create destroy],
-              param: :track_id
+              param: :favorite_id
           end
 
           resources :playlists,
@@ -122,7 +122,7 @@ Rails.application.routes.draw do
             scope ':playlist_id' do
               resources :tracks,
                 only: %i[index create destroy],
-                param: :track_id
+                param: :playlist_track_id
             end
           end
         end

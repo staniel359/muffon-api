@@ -10,7 +10,7 @@ module Muffon
               [
                 @args.profile_id,
                 @args.token,
-                @args.track_id
+                @args.listened_id
               ]
             end
 
@@ -27,7 +27,7 @@ module Muffon
             def listened_track
               @listened_track ||=
                 profile.listened_tracks.find_by(
-                  id: @args.track_id
+                  id: @args.listened_id
                 )
             end
 

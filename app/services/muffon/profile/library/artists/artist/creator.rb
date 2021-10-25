@@ -10,7 +10,7 @@ module Muffon
               [
                 @args.profile_id,
                 @args.token,
-                @args.artist
+                @args.artist_id
               ]
             end
 
@@ -27,14 +27,8 @@ module Muffon
             def profile_artist
               @profile_artist ||=
                 profile.profile_artists.where(
-                  artist_id: find_artist.id
+                  artist_id: @args.artist_id
                 ).first_or_create
-            end
-
-            def find_artist
-              ::Artist.with_name(
-                @args.artist
-              )
             end
 
             def errors?
