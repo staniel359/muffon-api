@@ -9,6 +9,7 @@ module Muffon
 
           def artist_data
             {
+              artist_id: id,
               favorite_id: favorite_id,
               name: name,
               image: image_data,

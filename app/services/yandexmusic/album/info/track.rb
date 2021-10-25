@@ -18,10 +18,11 @@ module YandexMusic
 
         def track_base_data
           {
+            id: id,
+            player_id: player_id,
+            yandex_music_id: yandex_music_id,
             title: title,
             extra_title: extra_title,
-            yandex_music_id: yandex_music_id,
-            player_id: player_id,
             artist: artist_formatted,
             artists: artists
           }.compact

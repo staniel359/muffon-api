@@ -12,9 +12,10 @@ module Genius
 
         def data
           {
-            title: title,
-            genius_id: genius_id,
+            id: id,
             player_id: player_id,
+            genius_id: genius_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data

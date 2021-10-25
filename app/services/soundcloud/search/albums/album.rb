@@ -12,8 +12,9 @@ module SoundCloud
 
         def data
           {
-            title: title,
+            id: id,
             soundcloud_id: soundcloud_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data

@@ -65,18 +65,6 @@ module Muffon
           tag.text
         end
       end
-
-      def player_id
-        ::Track.with_artist_title(
-          artist_id, title
-        ).player_id
-      end
-
-      def artist_id
-        ::Artist.with_name(
-          artist_names
-        ).id
-      end
     end
   end
 end

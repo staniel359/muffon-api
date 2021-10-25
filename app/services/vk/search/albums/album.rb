@@ -11,20 +11,31 @@ module VK
         private
 
         def data
+          album_id_data
+            .merge(album_base_data)
+        end
+
+        def album_id_data
           {
-            title: title,
-            extra_title: extra_title,
+            id: id,
             vk_id: vk_id,
             vk_owner_id: vk_owner_id,
-            vk_access_key: vk_access_key,
-            artist: artist_formatted,
-            artists: artists,
-            image: image_data
-          }.compact
+            vk_access_key: vk_access_key
+          }
         end
 
         def album
           @album ||= @args.album
+        end
+
+        def album_base_data
+          {
+            title: title,
+            extra_title: extra_title,
+            artist: artist_formatted,
+            artists: artists,
+            image: image_data
+          }.compact
         end
       end
     end

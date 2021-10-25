@@ -16,9 +16,10 @@ module Spotify
 
         def base_data
           {
-            title: title,
-            spotify_id: spotify_id,
+            id: id,
             player_id: player_id,
+            spotify_id: spotify_id,
+            title: title,
             artist: artist_formatted,
             artists: artists
           }

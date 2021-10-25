@@ -16,10 +16,11 @@ module VK
 
         def base_data
           {
+            id: id,
+            player_id: player_id,
+            vk_id: vk_id,
             title: title,
             extra_title: extra_title,
-            vk_id: vk_id,
-            player_id: player_id,
             artist: artist_formatted,
             artists: artists
           }.compact

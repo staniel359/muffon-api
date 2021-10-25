@@ -12,8 +12,9 @@ module Discogs
 
         def data
           {
-            title: title,
+            id: id,
             discogs_id: discogs_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

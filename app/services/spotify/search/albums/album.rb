@@ -12,8 +12,9 @@ module Spotify
 
         def data
           {
-            title: title,
+            id: id,
             spotify_id: spotify_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

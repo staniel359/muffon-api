@@ -16,9 +16,10 @@ module Odnoklassniki
 
         def track_data
           {
-            title: title,
-            odnoklassniki_id: odnoklassniki_id,
+            id: id,
             player_id: player_id,
+            odnoklassniki_id: odnoklassniki_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             duration: duration,

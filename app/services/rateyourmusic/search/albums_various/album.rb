@@ -12,8 +12,9 @@ module RateYourMusic
 
         def data
           {
-            title: title,
+            id: id,
             rateyourmusic_slug: rateyourmusic_slug,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

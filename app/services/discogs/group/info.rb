@@ -13,7 +13,6 @@ module Discogs
       def group_base_data
         {
           title: title,
-          discogs_id: discogs_id,
           artist: artist_formatted,
           artists: artists,
           source_id: SOURCE_ID

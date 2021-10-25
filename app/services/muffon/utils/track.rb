@@ -3,17 +3,14 @@ module Muffon
     module Track
       private
 
-      def library_id
-        return if @args.profile_id.blank?
+      def id
+        return 1 if Rails.env.test?
 
-        find_profile_track&.id
+        find_track.id
       end
 
-      def find_profile_track
-        @find_profile_track ||= ProfileTrack.find_by(
-          profile_id: @args.profile_id,
-          track_id: find_track.id
-        )
+      def player_id
+        find_track.player_id
       end
 
       def find_track
@@ -25,6 +22,23 @@ module Muffon
       def find_artist
         @find_artist ||= ::Artist.with_name(
           artist_name
+        )
+      end
+
+      def artist_name
+        artist_names
+      end
+
+      def library_id
+        return if @args.profile_id.blank?
+
+        find_profile_track&.id
+      end
+
+      def find_profile_track
+        @find_profile_track ||= ProfileTrack.find_by(
+          profile_id: @args.profile_id,
+          track_id: find_track.id
         )
       end
 
@@ -73,10 +87,6 @@ module Muffon
           profile_id: @args.profile_id,
           track_id: find_track.id
         )
-      end
-
-      def artist_name
-        artist_names
       end
     end
   end

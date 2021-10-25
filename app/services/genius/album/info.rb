@@ -12,8 +12,8 @@ module Genius
 
       def album_base_data
         {
+          id: id,
           title: title,
-          genius_id: genius_id,
           artist: artist_formatted,
           artists: artists
         }

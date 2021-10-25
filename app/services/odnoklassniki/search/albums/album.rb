@@ -12,8 +12,9 @@ module Odnoklassniki
 
         def data
           {
-            title: title,
+            id: id,
             odnoklassniki_id: odnoklassniki_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

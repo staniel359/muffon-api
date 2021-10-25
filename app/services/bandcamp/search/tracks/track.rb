@@ -2,6 +2,8 @@ module Bandcamp
   module Search
     class Tracks
       class Track < Bandcamp::Search::Tracks
+        include Muffon::Utils::Track
+
         def call
           data
         end
@@ -14,10 +16,11 @@ module Bandcamp
 
         def base_data
           {
+            id: id,
+            player_id: player_id,
             title: title,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
-            player_id: player_id,
             artist: artist_formatted,
             artists: artists
           }

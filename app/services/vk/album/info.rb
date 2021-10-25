@@ -12,6 +12,7 @@ module VK
 
       def album_base_data
         {
+          id: id,
           title: title,
           extra_title: extra_title,
           artist: artist_formatted,

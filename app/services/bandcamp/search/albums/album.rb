@@ -2,6 +2,8 @@ module Bandcamp
   module Search
     class Albums
       class Album < Bandcamp::Search::Albums
+        include Muffon::Utils::Album
+
         def call
           data
         end
@@ -10,9 +12,10 @@ module Bandcamp
 
         def data
           {
-            title: title,
+            id: id,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data

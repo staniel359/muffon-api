@@ -16,9 +16,10 @@ module Bandcamp
 
         def track_data
           {
-            title: title,
-            bandcamp_id: bandcamp_id,
+            id: id,
             player_id: player_id,
+            bandcamp_id: bandcamp_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             duration: duration,

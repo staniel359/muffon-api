@@ -14,8 +14,8 @@ module RateYourMusic
 
       def album_base_data
         {
+          id: id,
           title: title,
-          rateyourmusic_id: rateyourmusic_id,
           artist: artist_formatted,
           artists: artists
         }

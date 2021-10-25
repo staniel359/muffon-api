@@ -18,7 +18,7 @@ module Bandcamp
         end
 
         def name
-          artist_name(@args.artist)
+          bandcamp_artist_name(@args.artist)
         end
 
         def bandcamp_slug

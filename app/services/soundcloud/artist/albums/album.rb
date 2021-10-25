@@ -16,8 +16,9 @@ module SoundCloud
 
         def album_data
           {
-            title: title,
+            id: id,
             soundcloud_id: soundcloud_id,
+            title: title,
             image: image_data,
             release_date: release_date,
             listeners_count: listeners_count

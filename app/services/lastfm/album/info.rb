@@ -16,6 +16,7 @@ module LastFM
 
       def album_base_data
         {
+          id: id,
           title: title,
           artist: artist_formatted,
           artists: artists,

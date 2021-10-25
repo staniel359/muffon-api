@@ -16,8 +16,9 @@ module Deezer
 
         def album_data
           {
-            title: title,
+            id: id,
             deezer_id: deezer_id,
+            title: title,
             image: image_data,
             release_date: release_date,
             listeners_count: listeners_count

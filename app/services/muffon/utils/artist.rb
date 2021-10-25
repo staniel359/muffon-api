@@ -3,6 +3,18 @@ module Muffon
     module Artist
       private
 
+      def id
+        return 1 if Rails.env.test?
+
+        find_artist.id
+      end
+
+      def find_artist
+        @find_artist ||= ::Artist.with_name(
+          name
+        )
+      end
+
       def library_id
         return if @args.profile_id.blank?
 
@@ -13,12 +25,6 @@ module Muffon
         ProfileArtist.find_by(
           profile_id: @args.profile_id,
           artist_id: find_artist.id
-        )
-      end
-
-      def find_artist
-        @find_artist ||= ::Artist.with_name(
-          name
         )
       end
 

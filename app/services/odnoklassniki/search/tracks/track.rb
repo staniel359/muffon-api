@@ -16,9 +16,10 @@ module Odnoklassniki
 
         def base_data
           {
-            title: title,
-            odnoklassniki_id: odnoklassniki_id,
+            id: id,
             player_id: player_id,
+            odnoklassniki_id: odnoklassniki_id,
+            title: title,
             artist: artist_formatted,
             artists: artists
           }
@@ -57,7 +58,7 @@ module Odnoklassniki
         end
 
         def album_data_formatted
-          { id: track['albumId'] }
+          { odnoklassniki_id: track['albumId'] }
         end
       end
     end

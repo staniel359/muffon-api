@@ -11,20 +11,31 @@ module SoundCloud
         private
 
         def data
+          track_base_data
+            .merge(track_extra_data)
+        end
+
+        def track_base_data
           {
-            title: title,
-            soundcloud_id: soundcloud_id,
+            id: id,
             player_id: player_id,
+            soundcloud_id: soundcloud_id,
+            title: title,
             artist: artist_formatted,
-            artists: artists,
-            image: image_data,
-            duration: duration,
-            audio: audio_data
+            artists: artists
           }
         end
 
         def track
           @track ||= @args.track
+        end
+
+        def track_extra_data
+          {
+            image: image_data,
+            duration: duration,
+            audio: audio_data
+          }
         end
       end
     end

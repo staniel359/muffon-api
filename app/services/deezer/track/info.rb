@@ -10,10 +10,10 @@ module Deezer
 
       def track_base_data
         {
+          id: id,
+          player_id: player_id,
           title: title,
           extra_title: extra_title,
-          deezer_id: deezer_id,
-          player_id: player_id,
           artist: artist_formatted,
           artists: artists
         }.compact

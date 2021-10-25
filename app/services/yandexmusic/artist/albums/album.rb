@@ -16,9 +16,10 @@ module YandexMusic
 
         def album_data
           {
+            id: id,
+            yandex_music_id: yandex_music_id,
             title: title,
             extra_title: extra_title,
-            yandex_music_id: yandex_music_id,
             image: image_data,
             release_date: release_date,
             listeners_count: listeners_count

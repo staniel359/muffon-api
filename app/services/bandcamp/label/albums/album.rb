@@ -12,9 +12,10 @@ module Bandcamp
 
         def data
           {
-            title: title,
+            id: id,
             bandcamp_id: bandcamp_id,
             bandcamp_model: bandcamp_model,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

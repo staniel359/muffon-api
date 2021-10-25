@@ -16,9 +16,10 @@ module Discogs
 
         def album_data
           {
-            title: title,
+            id: id,
             discogs_id: discogs_id,
             discogs_type: discogs_type,
+            title: title,
             image: image_data,
             release_date: release_date,
             listeners_count: listeners_count

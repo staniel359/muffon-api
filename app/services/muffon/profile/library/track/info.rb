@@ -9,9 +9,10 @@ module Muffon
 
           def track_data
             {
+              track_id: id,
               favorite_id: favorite_id,
-              title: title,
               player_id: player_id,
+              title: title,
               artist: artist_data,
               album: album_data,
               image: image_data,

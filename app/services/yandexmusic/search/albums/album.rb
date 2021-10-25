@@ -12,9 +12,10 @@ module YandexMusic
 
         def data
           {
+            id: id,
+            yandex_music_id: yandex_music_id,
             title: title,
             extra_title: extra_title,
-            yandex_music_id: yandex_music_id,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

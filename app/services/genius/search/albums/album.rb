@@ -12,8 +12,9 @@ module Genius
 
         def data
           {
-            title: title,
+            id: id,
             genius_id: genius_id,
+            title: title,
             artist: artist_formatted,
             artists: artists,
             image: image_data,

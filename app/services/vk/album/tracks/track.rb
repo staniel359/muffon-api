@@ -18,9 +18,11 @@ module VK
 
         def track_base_data
           {
+            id: id,
+            player_id: player_id,
+            vk_id: vk_id,
             title: title,
             extra_title: extra_title,
-            player_id: player_id,
             artist: artist_formatted,
             artists: artists
           }

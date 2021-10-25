@@ -17,11 +17,12 @@ module VK
 
         def album_base_data
           {
-            title: title,
-            extra_title: extra_title,
+            id: id,
             vk_id: vk_id,
             vk_owner_id: vk_owner_id,
             vk_access_key: vk_access_key,
+            title: title,
+            extra_title: extra_title,
             artist: artist_formatted,
             artists: artists
           }.compact

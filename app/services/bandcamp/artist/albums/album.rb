@@ -16,9 +16,10 @@ module Bandcamp
 
         def album_data
           {
-            title: title,
+            id: id,
             bandcamp_id: bandcamp_id,
             bandcamp_model: bandcamp_model,
+            title: title,
             image: image_data,
             release_date: release_date,
             listeners_count: listeners_count

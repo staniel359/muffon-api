@@ -3,17 +3,10 @@ module Muffon
     module Album
       private
 
-      def library_id
-        return if @args.profile_id.blank?
+      def id
+        return 1 if Rails.env.test?
 
-        find_profile_album&.id
-      end
-
-      def find_profile_album
-        @find_profile_album ||= ProfileAlbum.find_by(
-          profile_id: @args.profile_id,
-          album_id: find_album.id
-        )
+        find_album.id
       end
 
       def find_album
@@ -25,6 +18,23 @@ module Muffon
       def find_artist
         @find_artist ||= ::Artist.with_name(
           artist_name
+        )
+      end
+
+      def artist_name
+        artist_names
+      end
+
+      def library_id
+        return if @args.profile_id.blank?
+
+        find_profile_album&.id
+      end
+
+      def find_profile_album
+        @find_profile_album ||= ProfileAlbum.find_by(
+          profile_id: @args.profile_id,
+          album_id: find_album.id
         )
       end
 
@@ -65,10 +75,6 @@ module Muffon
           profile_id: @args.profile_id,
           album_id: find_album.id
         )
-      end
-
-      def artist_name
-        artist_names
       end
 
       def listeners_count
