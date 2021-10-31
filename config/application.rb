@@ -32,6 +32,8 @@ module MuffonAPI
       password
       password_confirmation
       token
+      lastfm_token
+      lastfm_session_key
     ]
 
     config.railties_order = [

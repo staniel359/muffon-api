@@ -131,6 +131,13 @@ Rails.application.routes.draw do
                 param: :playlist_track_id
             end
           end
+
+          namespace :lastfm do
+            namespace :scrobbler do
+              post 'play'
+              post 'save'
+            end
+          end
         end
       end
 

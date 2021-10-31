@@ -23,12 +23,6 @@ module Muffon
         profile.blank?
       end
 
-      def profile
-        @profile ||= ::Profile.find_by(
-          id: @args.profile_id
-        )
-      end
-
       def wrong_profile?
         profile.token != @args.token
       end

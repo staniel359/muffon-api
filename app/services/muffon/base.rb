@@ -50,5 +50,11 @@ module Muffon
         favorite_id: favorite_id
       }.compact
     end
+
+    def profile
+      @profile ||= ::Profile.find_by(
+        id: @args.profile_id
+      )
+    end
   end
 end

@@ -44,7 +44,7 @@ module Muffon
           end
 
           def image_data
-            LastFM::Utils::Image.call(
+            ::LastFM::Utils::Image.call(
               model: 'album',
               image: favorite_album.image_url
             )

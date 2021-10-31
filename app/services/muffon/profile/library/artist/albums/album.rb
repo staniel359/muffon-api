@@ -50,7 +50,7 @@ module Muffon
             end
 
             def default_image_data
-              LastFM::Utils::Image.call(
+              ::LastFM::Utils::Image.call(
                 model: 'album',
                 image: profile_album.image_url
               )

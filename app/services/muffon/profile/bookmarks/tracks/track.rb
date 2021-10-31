@@ -67,7 +67,7 @@ module Muffon
           end
 
           def image_data
-            LastFM::Utils::Image.call(
+            ::LastFM::Utils::Image.call(
               model: 'track',
               image: bookmark_track.image_url
             )

@@ -37,7 +37,7 @@ module Muffon
         end
 
         def similar
-          @similar ||= LastFM::Artist::Similar.call(
+          @similar ||= ::LastFM::Artist::Similar.call(
             artist: artist_name,
             limit: 200,
             minimal: true

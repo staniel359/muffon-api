@@ -45,7 +45,8 @@ module Muffon
           birthdate: birthdate,
           country: country,
           city: city,
-          role: role
+          role: role,
+          lastfm_session_key: lastfm_session_key
         }
       end
 
@@ -71,6 +72,12 @@ module Muffon
 
       def role
         profile.role
+      end
+
+      def lastfm_session_key
+        return if wrong_profile?
+
+        profile.lastfm_session_key
       end
     end
   end
