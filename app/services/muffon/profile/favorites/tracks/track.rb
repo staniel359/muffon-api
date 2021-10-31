@@ -12,6 +12,7 @@ module Muffon
           def data
             {
               id: id,
+              track_id: track_id,
               player_id: player_id,
               title: title,
               artist: artist_data,
@@ -26,6 +27,10 @@ module Muffon
 
           def favorite_track
             @favorite_track ||= @args.track
+          end
+
+          def track_id
+            favorite_track.track_id
           end
 
           def player_id
