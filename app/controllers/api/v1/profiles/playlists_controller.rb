@@ -27,7 +27,7 @@ module API
         def index_data
           Muffon::Profile::Playlists.call(
             params.slice(
-              *%i[profile_id track_id]
+              *%i[profile_id track_id page limit]
             )
           )
         end
