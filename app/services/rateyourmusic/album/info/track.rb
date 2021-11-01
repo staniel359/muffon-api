@@ -21,7 +21,8 @@ module RateYourMusic
             title: title,
             artist: artist_formatted,
             artists: artists,
-            duration: duration
+            duration: duration,
+            duration_seconds: duration_seconds
           }
         end
 
@@ -45,11 +46,7 @@ module RateYourMusic
           full_title.css('.artist').presence
         end
 
-        def duration
-          duration_formatted(raw_duration)
-        end
-
-        def raw_duration
+        def duration_seconds
           @args.track.css(
             '.tracklist_duration'
           )[0]['data-inseconds'].to_i

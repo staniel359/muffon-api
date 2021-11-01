@@ -28,10 +28,8 @@ module Bandcamp
         track['band_id']
       end
 
-      def duration
-        duration_formatted(
-          track['duration']
-        )
+      def duration_seconds
+        track['duration'].to_i
       end
 
       def audio_present?

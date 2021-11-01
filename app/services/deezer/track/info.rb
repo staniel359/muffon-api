@@ -25,6 +25,7 @@ module Deezer
           albums: albums,
           image: image_data,
           duration: duration,
+          duration_seconds: duration_seconds,
           release_date: release_date,
           audio: audio_data
         }

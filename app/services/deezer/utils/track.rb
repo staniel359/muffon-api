@@ -37,10 +37,8 @@ module Deezer
         )
       end
 
-      def duration
-        duration_formatted(
-          track['DURATION']
-        )
+      def duration_seconds
+        track['DURATION'].to_i
       end
 
       def audio_data

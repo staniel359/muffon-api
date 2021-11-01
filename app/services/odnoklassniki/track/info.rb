@@ -24,6 +24,7 @@ module Odnoklassniki
           albums: albums,
           image: image_data,
           duration: duration,
+          duration_seconds: duration_seconds,
           audio: audio_data
         }
       end

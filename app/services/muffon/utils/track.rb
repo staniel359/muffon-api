@@ -88,6 +88,12 @@ module Muffon
           track_id: find_track.id
         )
       end
+
+      def duration
+        duration_formatted(
+          duration_seconds
+        )
+      end
     end
   end
 end

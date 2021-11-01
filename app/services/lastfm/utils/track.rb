@@ -21,10 +21,8 @@ module LastFM
         track['artist']
       end
 
-      def duration
-        duration_formatted(
-          track['duration'].to_i
-        )
+      def duration_seconds
+        track['duration'].to_i
       end
 
       def listeners_count

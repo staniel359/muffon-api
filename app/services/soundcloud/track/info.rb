@@ -23,6 +23,7 @@ module SoundCloud
         {
           image: image_data,
           duration: duration,
+          duration_seconds: duration_seconds,
           description: description_truncated,
           tags: tags.first(5),
           audio: audio_data

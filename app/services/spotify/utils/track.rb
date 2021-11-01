@@ -25,10 +25,10 @@ module Spotify
         @album ||= track['album']
       end
 
-      def duration
-        duration_formatted(
-          track['duration_ms'].fdiv(1_000).ceil
-        )
+      def duration_seconds
+        track['duration_ms'].fdiv(
+          1_000
+        ).ceil
       end
 
       def audio_data

@@ -17,10 +17,8 @@ module Odnoklassniki
         image_data_formatted(image, 'track')
       end
 
-      def duration
-        duration_formatted(
-          track['duration']
-        )
+      def duration_seconds
+        track['duration']
       end
 
       def audio_data

@@ -23,10 +23,8 @@ module SoundCloud
         )
       end
 
-      def duration
-        duration_formatted(
-          track['duration'] / 1_000
-        )
+      def duration_seconds
+        track['duration'] / 1_000
       end
 
       def audio_data

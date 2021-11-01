@@ -11,6 +11,7 @@ module LastFM
         muffon_data
           .merge(track_base_data)
           .merge(track_extra_data)
+          .merge(track_description_tags_data)
           .merge(with_more_data)
       end
 
@@ -32,13 +33,14 @@ module LastFM
           listeners_count: listeners_count,
           plays_count: plays_count,
           duration: duration,
-          description: description_truncated,
-          tags: tags
+          duration_seconds: duration_seconds
         }
       end
 
       def albums
-        @albums ||= [album_data_formatted].compact
+        @albums ||= [
+          album_data_formatted
+        ].compact
       end
 
       def album_data_formatted
@@ -71,15 +73,22 @@ module LastFM
         track['playcount'].to_i
       end
 
-      def duration
-        duration_formatted(
-          track['duration'].to_i / 1_000
-        )
+      def duration_seconds
+        track['duration'].to_i / 1_000
+      end
+
+      def track_description_tags_data
+        {
+          description: description_truncated,
+          tags: tags
+        }
       end
 
       def description
         description_formatted(
-          track.dig('wiki', 'content')
+          track.dig(
+            'wiki', 'content'
+          )
         )
       end
 

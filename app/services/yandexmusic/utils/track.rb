@@ -43,10 +43,8 @@ module YandexMusic
         image_data_formatted(track, 'track')
       end
 
-      def duration
-        duration_formatted(
-          track['durationMs'] / 1_000
-        )
+      def duration_seconds
+        track['durationMs'] / 1_000
       end
 
       def audio_data
