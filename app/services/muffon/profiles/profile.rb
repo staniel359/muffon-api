@@ -10,6 +10,7 @@ module Muffon
       def data
         profile_base_data
           .merge(profile_extra_data)
+          .merge(profile_lastfm_data)
       end
 
       def profile_base_data
@@ -45,8 +46,7 @@ module Muffon
           birthdate: birthdate,
           country: country,
           city: city,
-          role: role,
-          lastfm_session_key: lastfm_session_key
+          role: role
         }
       end
 
@@ -74,9 +74,20 @@ module Muffon
         profile.role
       end
 
-      def lastfm_session_key
-        return if wrong_profile?
+      def profile_lastfm_data
+        return {} if wrong_profile?
 
+        {
+          lastfm_nickname: lastfm_nickname,
+          lastfm_session_key: lastfm_session_key
+        }.compact
+      end
+
+      def lastfm_nickname
+        profile.lastfm_nickname
+      end
+
+      def lastfm_session_key
         profile.lastfm_session_key
       end
     end

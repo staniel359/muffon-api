@@ -36,14 +36,21 @@ module LastFM
       def data
         connect_profile
 
-        { session: session_data }
+        { profile: profile_data }
       end
 
       def connect_profile
         return if profile.blank?
 
         profile.update(
+          lastfm_nickname: nickname,
           lastfm_session_key: session_key
+        )
+      end
+
+      def nickname
+        response_data.dig(
+          'session', 'name'
         )
       end
 
@@ -53,16 +60,10 @@ module LastFM
         )
       end
 
-      def session_data
-        {
-          nickname: nickname,
-          session_key: session_key
-        }
-      end
-
-      def nickname
-        response_data.dig(
-          'session', 'name'
+      def profile_data
+        profile.slice(
+          :lastfm_nickname,
+          :lastfm_session_key
         )
       end
     end

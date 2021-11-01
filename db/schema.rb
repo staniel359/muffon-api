@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_31_135242) do
+ActiveRecord::Schema.define(version: 2021_11_01_060105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -205,6 +205,7 @@ ActiveRecord::Schema.define(version: 2021_10_31_135242) do
     t.string "city"
     t.integer "role", default: 0
     t.string "lastfm_session_key"
+    t.string "lastfm_nickname"
   end
 
   create_table "recommendations", force: :cascade do |t|
