@@ -38,6 +38,7 @@ module Bandcamp
         {
           source_id: SOURCE_ID,
           bandcamp_id: album_bandcamp_id,
+          artists: artists,
           title: album_title
         }
       end

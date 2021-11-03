@@ -20,7 +20,9 @@ module Bandcamp
       end
 
       def albums_list
-        @albums_list ||= response_data['discography']
+        @albums_list ||= response_data[
+          'discography'
+        ]
       end
 
       def collection_list
