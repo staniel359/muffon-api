@@ -48,30 +48,9 @@ module Bandcamp
 
         def extra_data
           {
-            album: album_formatted,
-            albums: albums,
             image: image_data,
             audio: audio_data
           }
-        end
-
-        def album_data_formatted
-          return if album_title.blank?
-
-          {
-            source_id: SOURCE_ID,
-            title: album_title
-          }
-        end
-
-        def album_title
-          @album_title ||= description.match(
-            /from the album (.+)/
-          ).try(:[], 1)
-        end
-
-        def description
-          track[:description]
         end
 
         def image_data
