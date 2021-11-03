@@ -33,9 +33,10 @@ module YandexMusic
 
       def album_data_formatted(album)
         {
+          source_id: self.class::SOURCE_ID,
+          yandex_music_id: album['id'],
           title: album['title'],
-          extra_title: album['version'],
-          yandex_music_id: album['id']
+          extra_title: album['version']
         }.compact
       end
 

@@ -27,19 +27,23 @@ module Bandcamp
         end
 
         def title
-          model_title(@args.track)
+          model_title(track)
+        end
+
+        def track
+          @track ||= @args.track
         end
 
         def bandcamp_slug
-          bandcamp_title_slug(@args.track)
+          bandcamp_title_slug(track)
         end
 
         def bandcamp_model
-          bandcamp_model_name(@args.track)
+          bandcamp_model_name(track)
         end
 
         def artists
-          [artist_data_formatted(@args.track)]
+          [artist_data_formatted(track)]
         end
 
         def extra_data
@@ -51,14 +55,13 @@ module Bandcamp
           }
         end
 
-        def albums
-          @albums ||= [album_data_formatted].compact
-        end
-
         def album_data_formatted
           return if album_title.blank?
 
-          { title: album_title }
+          {
+            source_id: SOURCE_ID,
+            title: album_title
+          }
         end
 
         def album_title
@@ -68,12 +71,12 @@ module Bandcamp
         end
 
         def description
-          @args.track[:description]
+          track[:description]
         end
 
         def image_data
           image_data_formatted(
-            @args.track[:image], 'track'
+            track[:image], 'track'
           )
         end
 

@@ -34,6 +34,12 @@ module Bandcamp
       {}
     end
 
+    def albums
+      @albums ||= [
+        album_data_formatted
+      ].compact
+    end
+
     def image_data_formatted(image, model)
       Bandcamp::Utils::Image.call(
         image: image, model: model

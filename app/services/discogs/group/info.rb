@@ -12,10 +12,10 @@ module Discogs
 
       def group_base_data
         {
+          source_id: SOURCE_ID,
           title: title,
           artist: artist_formatted,
-          artists: artists,
-          source_id: SOURCE_ID
+          artists: artists
         }
       end
 

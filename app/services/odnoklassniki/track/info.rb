@@ -41,8 +41,9 @@ module Odnoklassniki
 
       def album_data_formatted(album)
         {
-          title: album['name'],
-          odnoklassniki_id: album['id']
+          source_id: SOURCE_ID,
+          odnoklassniki_id: album['id'],
+          title: album['name']
         }
       end
 

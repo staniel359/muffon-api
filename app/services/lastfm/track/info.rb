@@ -46,7 +46,10 @@ module LastFM
       def album_data_formatted
         return if album.blank?
 
-        { title: album['title'] }
+        {
+          source_id: SOURCE_ID,
+          title: album['title']
+        }
       end
 
       def album

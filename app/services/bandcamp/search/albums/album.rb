@@ -13,6 +13,7 @@ module Bandcamp
         def data
           {
             id: id,
+            source_id: SOURCE_ID,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
             title: title,

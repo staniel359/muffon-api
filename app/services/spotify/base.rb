@@ -66,17 +66,6 @@ module Spotify
       }
     end
 
-    def albums
-      @albums ||= [album_data_formatted]
-    end
-
-    def album_data_formatted
-      {
-        title: album['name'],
-        spotify_id: album['id']
-      }
-    end
-
     def image_data_formatted(data, model)
       Spotify::Utils::Image.call(
         data: data, model: model

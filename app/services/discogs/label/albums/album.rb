@@ -13,6 +13,7 @@ module Discogs
         def data
           {
             id: id,
+            source_id: SOURCE_ID,
             discogs_id: discogs_id,
             title: title,
             artists: artists,

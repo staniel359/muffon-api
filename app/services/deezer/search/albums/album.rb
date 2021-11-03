@@ -13,6 +13,7 @@ module Deezer
         def data
           {
             id: id,
+            source_id: SOURCE_ID,
             deezer_id: deezer_id,
             title: title,
             artist: artist_formatted,

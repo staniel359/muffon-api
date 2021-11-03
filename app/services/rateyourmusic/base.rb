@@ -1,5 +1,7 @@
 module RateYourMusic
   class Base < Muffon::Base
+    SOURCE_ID = 'rateyourmusic'.freeze
+
     private
 
     def response

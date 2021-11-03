@@ -15,6 +15,7 @@ module RateYourMusic
       def album_base_data
         {
           id: id,
+          source_id: SOURCE_ID,
           title: title,
           artist: artist_formatted,
           artists: artists

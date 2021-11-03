@@ -13,6 +13,7 @@ module Spotify
         def data
           {
             id: id,
+            source_id: SOURCE_ID,
             spotify_id: spotify_id,
             title: title,
             artist: artist_formatted,

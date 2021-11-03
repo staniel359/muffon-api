@@ -60,7 +60,10 @@ module Odnoklassniki
         end
 
         def album_data_formatted
-          { odnoklassniki_id: track['albumId'] }
+          {
+            source_id: SOURCE_ID,
+            odnoklassniki_id: track['albumId']
+          }
         end
       end
     end

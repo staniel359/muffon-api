@@ -33,10 +33,11 @@ module VK
         return if album.blank?
 
         {
-          title: album['title'],
+          source_id: self.class::SOURCE_ID,
           vk_id: album['id'],
           vk_owner_id: album['owner_id'],
-          vk_access_key: album['access_key']
+          vk_access_key: album['access_key'],
+          title: album['title']
         }
       end
 

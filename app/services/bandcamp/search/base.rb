@@ -44,7 +44,9 @@ module Bandcamp
       end
 
       def model_title(item)
-        item[:title].split(', by ')[0]
+        item[:title].split(
+          ', by '
+        )[0]
       end
 
       def artist_data_formatted(item)
@@ -59,14 +61,17 @@ module Bandcamp
       end
 
       def bandcamp_artist_slug(item)
-        link_data(item[:link])[:artist]
+        link_data(
+          item[:link]
+        )[:artist]
       end
 
       def link_data(link)
         return {} if link.blank?
 
-        artist, model, title =
-          link.scan(link_regexp).flatten
+        artist, model, title = link.scan(
+          link_regexp
+        ).flatten
 
         {
           artist: artist.to_s,
@@ -81,11 +86,15 @@ module Bandcamp
       end
 
       def bandcamp_model_name(item)
-        link_data(item[:link])[:model]
+        link_data(
+          item[:link]
+        )[:model]
       end
 
       def bandcamp_title_slug(item)
-        link_data(item[:link])[:title]
+        link_data(
+          item[:link]
+        )[:title]
       end
     end
   end

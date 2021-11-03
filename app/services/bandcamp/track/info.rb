@@ -32,21 +32,19 @@ module Bandcamp
         }
       end
 
-      def albums
-        @albums ||= [album_data_formatted].compact
-      end
-
       def album_data_formatted
         return if album_title.blank?
 
         {
-          title: album_title,
-          bandcamp_id: album_bandcamp_id
+          source_id: SOURCE_ID,
+          bandcamp_id: album_bandcamp_id,
+          title: album_title
         }
       end
 
       def album_title
-        @album_title ||= response_data['album_title']
+        @album_title ||=
+          response_data['album_title']
       end
 
       def album_bandcamp_id

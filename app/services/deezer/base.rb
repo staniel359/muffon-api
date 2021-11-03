@@ -77,14 +77,5 @@ module Deezer
         deezer_id: data['ART_ID'].to_i
       }
     end
-
-    def album_data_formatted(data)
-      return {} if data['ALB_TITLE'].blank?
-
-      {
-        title: data['ALB_TITLE'],
-        deezer_id: data['ALB_ID'].to_i
-      }
-    end
   end
 end

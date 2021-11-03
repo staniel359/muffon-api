@@ -17,12 +17,26 @@ module Spotify
         track['artists']
       end
 
-      def image_data
-        image_data_formatted(album, 'track')
+      def albums
+        @albums ||= [album_data_formatted]
+      end
+
+      def album_data_formatted
+        {
+          source_id: self.class::SOURCE_ID,
+          spotify_id: album['id'],
+          title: album['name']
+        }
       end
 
       def album
         @album ||= track['album']
+      end
+
+      def image_data
+        image_data_formatted(
+          album, 'track'
+        )
       end
 
       def duration_seconds

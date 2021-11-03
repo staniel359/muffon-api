@@ -13,6 +13,7 @@ module RateYourMusic
         def data
           {
             id: id,
+            source_id: SOURCE_ID,
             rateyourmusic_slug: rateyourmusic_slug,
             title: title,
             artist: artist_formatted,

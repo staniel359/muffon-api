@@ -13,6 +13,7 @@ module SoundCloud
         def data
           {
             id: id,
+            source_id: SOURCE_ID,
             soundcloud_id: soundcloud_id,
             title: title,
             artist: artist_formatted,

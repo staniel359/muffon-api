@@ -28,7 +28,19 @@ module Deezer
       end
 
       def albums
-        @albums ||= [album_data_formatted(track)]
+        @albums ||= [
+          album_data_formatted
+        ]
+      end
+
+      def album_data_formatted
+        return {} if track['ALB_TITLE'].blank?
+
+        {
+          source_id: self.class::SOURCE_ID,
+          deezer_id: track['ALB_ID'].to_i,
+          title: track['ALB_TITLE']
+        }
       end
 
       def image_data

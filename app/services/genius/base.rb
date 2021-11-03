@@ -1,6 +1,7 @@
 module Genius
   class Base < Muffon::Base
     BASE_LINK = 'https://genius.com/api'.freeze
+    SOURCE_ID = 'genius'.freeze
 
     private
 
