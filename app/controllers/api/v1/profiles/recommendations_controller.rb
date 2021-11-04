@@ -19,7 +19,7 @@ module API
         def index_data
           Muffon::Profile::Recommendations.call(
             params.slice(
-              *%i[profile_id token limit page]
+              *%i[profile_id token limit page filter filter_value]
             )
           )
         end
@@ -27,11 +27,7 @@ module API
         def artists_data
           Muffon::Profile::Recommendations::Recommendation::Artists.call(
             params.slice(
-              *%i[
-                profile_id token
-                recommendation_id
-                limit page
-              ]
+              *%i[profile_id token recommendation_id limit page]
             )
           )
         end
@@ -39,10 +35,7 @@ module API
         def destroy_data
           Muffon::Profile::Recommendations::Recommendation::Deleter.call(
             params.slice(
-              *%i[
-                profile_id token
-                recommendation_id
-              ]
+              *%i[profile_id token recommendation_id]
             )
           )
         end

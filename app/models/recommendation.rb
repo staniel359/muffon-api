@@ -7,6 +7,8 @@ class Recommendation < ApplicationRecord
               scope: :profile_id
             }
 
+  scope :not_deleted, -> { where.not(deleted: true) }
+
   def profile_artists
     ProfileArtist.where(
       profile_id: profile_id,

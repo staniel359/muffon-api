@@ -25,14 +25,40 @@ module Muffon
       end
 
       def total_items_count
-        recommendations.size
+        recommendations_filtered.size
+      end
+
+      def recommendations_filtered
+        case @args.filter
+        when 'artists'
+          recommendations_artists_filtered
+        else
+          recommendations_associated
+        end
+      end
+
+      def recommendations_artists_filtered
+        @recommendations_artists_filtered ||=
+          recommendations_associated.where(
+            'profile_artist_ids @> ARRAY[?]',
+            profile_artist_ids
+          )
+      end
+
+      def recommendations_associated
+        recommendations.includes(
+          :artist
+        )
       end
 
       def recommendations
-        @recommendations ||=
-          profile.recommendations.where.not(
-            deleted: true
-          )
+        profile
+          .recommendations
+          .not_deleted
+      end
+
+      def profile_artist_ids
+        @args.filter_value.map(&:to_i)
       end
 
       def recommendations_formatted
@@ -48,19 +74,14 @@ module Muffon
       end
 
       def recommendations_sorted
-        recommendations_associated
+        recommendations_filtered
           .select(
             '*, ARRAY_LENGTH(profile_artist_ids, 1)'\
-            'as profile_artist_ids_size'
+            ' as profile_artist_ids_size'
           )
           .order(
-            'profile_artist_ids_size DESC, id DESC'
+            'profile_artist_ids_size DESC, id ASC'
           )
-      end
-
-      def recommendations_associated
-        recommendations
-          .includes(:artist)
       end
 
       def recommendation_formatted(recommendation)

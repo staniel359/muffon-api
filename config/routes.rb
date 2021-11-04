@@ -72,7 +72,7 @@ Rails.application.routes.draw do
             only: %i[index destroy],
             param: :recommendation_id
 
-          namespace :recommendations do
+          namespace :recommendations, as: :recommendation do
             scope ':recommendation_id' do
               get 'artists'
             end
