@@ -2,6 +2,8 @@ module Spotify
   module Search
     class Artists
       class Artist < Spotify::Search::Artists
+        include Muffon::Utils::Artist
+
         def call
           data
         end
@@ -10,8 +12,9 @@ module Spotify
 
         def data
           {
-            name: name,
+            id: id,
             spotify_id: spotify_id,
+            name: name,
             image: image_data
           }
         end

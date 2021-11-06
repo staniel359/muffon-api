@@ -11,15 +11,19 @@ module Discogs
         private
 
         def data
+          group_base_data
+            .merge(group_extra_data)
+        end
+
+        def group_base_data
           {
             id: id,
             source_id: SOURCE_ID,
             discogs_id: discogs_id,
+            discogs_type: 'group',
             title: title,
             artist: artist_formatted,
-            artists: artists,
-            image: image_data,
-            release_date: release_date
+            artists: artists
           }
         end
 
@@ -43,6 +47,13 @@ module Discogs
 
         def discogs_id
           album['master_id']
+        end
+
+        def group_extra_data
+          {
+            image: image_data,
+            release_date: release_date
+          }
         end
 
         def image

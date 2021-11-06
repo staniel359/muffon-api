@@ -57,7 +57,7 @@ module Bandcamp
       end
 
       def bandcamp_artist_name(item)
-        item[:site_name]
+        item[:site_name] || 'Bandcamp'
       end
 
       def bandcamp_artist_slug(item)

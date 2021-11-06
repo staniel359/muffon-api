@@ -1,6 +1,8 @@
 module Discogs
   module Utils
     module Artist
+      include Muffon::Utils::Artist
+
       private
 
       def name

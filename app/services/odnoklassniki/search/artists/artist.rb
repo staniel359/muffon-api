@@ -2,6 +2,7 @@ module Odnoklassniki
   module Search
     class Artists
       class Artist < Odnoklassniki::Search::Artists
+        include Muffon::Utils::Artist
         def call
           data
         end
@@ -10,8 +11,9 @@ module Odnoklassniki
 
         def data
           {
-            name: name,
+            id: id,
             odnoklassniki_id: odnoklassniki_id,
+            name: name,
             image: image_data
           }
         end

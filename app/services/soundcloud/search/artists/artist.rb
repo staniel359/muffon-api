@@ -2,6 +2,8 @@ module SoundCloud
   module Search
     class Artists
       class Artist < SoundCloud::Search::Artists
+        include Muffon::Utils::Artist
+
         def call
           data
         end
@@ -10,8 +12,9 @@ module SoundCloud
 
         def data
           {
-            name: name,
+            id: id,
             soundcloud_id: soundcloud_id,
+            name: name,
             image: image_data
           }
         end

@@ -2,6 +2,8 @@ module YandexMusic
   module Search
     class Artists
       class Artist < YandexMusic::Search::Artists
+        include Muffon::Utils::Artist
+
         def call
           data
         end
@@ -10,8 +12,9 @@ module YandexMusic
 
         def data
           {
-            name: name,
+            id: id,
             yandex_music_id: yandex_music_id,
+            name: name,
             image: image_data
           }
         end

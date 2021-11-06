@@ -2,6 +2,8 @@ module Genius
   module Search
     class Artists
       class Artist < Genius::Search::Artists
+        include Muffon::Utils::Artist
+
         def call
           data
         end
@@ -10,13 +12,14 @@ module Genius
 
         def data
           {
-            name: title,
+            id: id,
             genius_id: genius_id,
+            name: name,
             image: image_data
           }
         end
 
-        def title
+        def name
           @args.artist['name']
         end
 

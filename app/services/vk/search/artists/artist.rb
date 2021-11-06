@@ -2,6 +2,8 @@ module VK
   module Search
     class Artists
       class Artist < VK::Search::Artists
+        include Muffon::Utils::Artist
+
         def call
           data
         end
@@ -10,8 +12,9 @@ module VK
 
         def data
           {
-            name: name,
+            id: id,
             vk_id: vk_id,
+            name: name,
             image: image_data
           }
         end

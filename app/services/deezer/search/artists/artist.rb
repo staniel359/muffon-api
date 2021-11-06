@@ -2,6 +2,8 @@ module Deezer
   module Search
     class Artists
       class Artist < Deezer::Search::Artists
+        include Muffon::Utils::Artist
+
         def call
           data
         end
@@ -10,8 +12,9 @@ module Deezer
 
         def data
           {
-            name: name,
+            id: id,
             deezer_id: deezer_id,
+            name: name,
             image: image_data,
             listeners_count: listeners_count
           }
