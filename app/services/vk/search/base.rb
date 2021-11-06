@@ -1,6 +1,7 @@
 module VK
   module Search
     class Base < VK::Base
+      TOTAL_LIMIT = 300
       include Muffon::Utils::Pagination
 
       private
@@ -10,11 +11,13 @@ module VK
       end
 
       def no_data?
-        collection_list.blank?
+        response_data.blank? ||
+          results_list.blank?
       end
 
-      def collection_list
-        @collection_list ||= response_data['items']
+      def results_list
+        @results_list ||=
+          response_data['items']
       end
 
       def params
@@ -26,38 +29,33 @@ module VK
           "?access_token=#{access_token}"\
           '&v=5.131'\
           "&q=#{@args.query}"\
-          "&count=#{limit}"\
-          "&offset=#{offset}"\
+          "&count=#{TOTAL_LIMIT}"\
           "#{api_secret}"
       end
 
       def search_params
         {
           q: @args.query,
-          count: limit,
-          offset: offset
+          count: TOTAL_LIMIT
         }
       end
 
       def data
-        { search: search_data }
+        { search: paginated_data }
       end
 
-      def search_data
-        {
-          page: page,
-          collection_name => collection_formatted
-        }
+      def total_items_count
+        results_list.size
       end
 
       def collection_name
-        self.class::COLLECTION_NAME.to_sym
+        self.class::COLLECTION_NAME
       end
 
-      def collection_formatted
-        collection_list.map do |a|
-          collection_item_data_formatted(a)
-        end
+      def collection_list
+        collection_paginated(
+          results_list
+        )
       end
     end
   end
