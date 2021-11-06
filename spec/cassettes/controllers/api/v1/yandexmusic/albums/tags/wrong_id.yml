@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/albums/wejlhg239gh23/with-tracks?lang=en
+    uri: https://api.music.yandex.net/albums/wejlhg239gh23/with-tracks?language=en
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 30 Sep 2021 20:14:57 GMT
+      - Sat, 06 Nov 2021 06:59:32 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
@@ -34,7 +34,7 @@ http_interactions:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"invocationInfo":{"req-id":"1633032897321293-7177572785701929368","hostname":"music-stable-back-man-27.man.yp-c.yandex.net"},"error":{"name":"not-found","message":"Requested
+      string: '{"invocationInfo":{"req-id":"1636181972036013-712683072223862816","hostname":"music-stable-back-sas-32.sas.yp-c.yandex.net"},"error":{"name":"not-found","message":"Requested
         action for /albums/wejlhg239gh23/with-tracks was not found"}}'
-  recorded_at: Thu, 30 Sep 2021 20:14:57 GMT
+  recorded_at: Sat, 06 Nov 2021 06:59:32 GMT
 recorded_with: VCR 6.0.0

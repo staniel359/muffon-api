@@ -18,7 +18,7 @@ module YandexMusic
     end
 
     def params
-      { lang: 'en' }
+      { language: 'en' }
     end
 
     def artists

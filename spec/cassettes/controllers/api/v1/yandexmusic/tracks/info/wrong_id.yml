@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/tracks/wejlhg239gh23?lang=en
+    uri: https://api.music.yandex.net/tracks/wejlhg239gh23?language=en
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 30 Sep 2021 20:15:01 GMT
+      - Sat, 06 Nov 2021 06:59:36 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
@@ -34,7 +34,7 @@ http_interactions:
       - 1; mode=block
     body:
       encoding: UTF-8
-      string: '{"invocationInfo":{"req-id":"1633032901656234-4484636465089512331","hostname":"music-stable-back-man-22.man.yp-c.yandex.net"},"error":{"name":"validate","message":"Parameters
+      string: '{"invocationInfo":{"req-id":"1636181976363522-97146248967608458","hostname":"music-stable-back-sas-23.sas.yp-c.yandex.net"},"error":{"name":"validate","message":"Parameters
         requirements are not met"}}'
-  recorded_at: Thu, 30 Sep 2021 20:15:01 GMT
+  recorded_at: Sat, 06 Nov 2021 06:59:36 GMT
 recorded_with: VCR 6.0.0

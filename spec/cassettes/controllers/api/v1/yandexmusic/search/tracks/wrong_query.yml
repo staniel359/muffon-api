@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/search?lang=en&page=0&text=wejlhg239gh23&type=track
+    uri: https://api.music.yandex.net/search?language=en&page=0&text=wejlhg239gh23&type=track
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 30 Sep 2021 20:15:00 GMT
+      - Sat, 06 Nov 2021 06:59:35 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
@@ -36,6 +36,6 @@ http_interactions:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"invocationInfo":{"hostname":"music-stable-back-man-31.man.yp-c.yandex.net","req-id":"1633032900307763-16363355369297251831","exec-duration-millis":"91"},"result":{"type":"track","page":0,"perPage":20,"text":"wejlhg239gh23","searchRequestId":"music-stable-back-man-31.man.yp-c.yandex.net-1633032900307763-16363355369297251831-1633032900337"}}'
-  recorded_at: Thu, 30 Sep 2021 20:15:00 GMT
+      string: '{"invocationInfo":{"hostname":"music-stable-back-vla-40.vla.yp-c.yandex.net","req-id":"1636181975304038-6577541675281916750","exec-duration-millis":"50"},"result":{"type":"track","page":0,"perPage":20,"text":"wejlhg239gh23","searchRequestId":"music-stable-back-vla-40.vla.yp-c.yandex.net-1636181975304038-6577541675281916750-1636181975313"}}'
+  recorded_at: Sat, 06 Nov 2021 06:59:35 GMT
 recorded_with: VCR 6.0.0

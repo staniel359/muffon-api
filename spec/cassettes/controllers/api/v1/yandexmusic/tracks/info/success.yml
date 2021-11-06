@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/tracks/2203363?lang=en
+    uri: https://api.music.yandex.net/tracks/2203363?language=en
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 30 Sep 2021 20:15:00 GMT
+      - Sat, 06 Nov 2021 06:59:35 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
@@ -36,9 +36,18 @@ http_interactions:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpbnZvY2F0aW9uSW5mbyI6eyJyZXEtaWQiOiIxNjMzMDMyOTAwNjg2MDI1LTQwMzU4MTY2MDgwOTU2NjkzNDkiLCJob3N0bmFtZSI6Im11c2ljLXN0YWJsZS1iYWNrLXNhcy0yNi5zYXMueXAtYy55YW5kZXgubmV0IiwiZXhlYy1kdXJhdGlvbi1taWxsaXMiOjJ9LCJyZXN1bHQiOlt7ImlkIjoiMjIwMzM2MyIsInJlYWxJZCI6IjIyMDMzNjMiLCJ0aXRsZSI6IlJ1bm5pbmcgVXAgVGhhdCBIaWxsIChBIERlYWwgV2l0aCBHb2QpIiwibWFqb3IiOnsiaWQiOjQsIm5hbWUiOiJXQVJORVIifSwiYXZhaWxhYmxlIjp0cnVlLCJhdmFpbGFibGVGb3JQcmVtaXVtVXNlcnMiOnRydWUsImF2YWlsYWJsZUZ1bGxXaXRob3V0UGVybWlzc2lvbiI6ZmFsc2UsInN0b3JhZ2VEaXIiOiIiLCJkdXJhdGlvbk1zIjoyOTg5MzAsImZpbGVTaXplIjowLCJub3JtYWxpemF0aW9uIjp7ImdhaW4iOi0zLjUyLCJwZWFrIjozMjc2Nn0sInIxMjgiOnsiaSI6LTE1LjYzLCJ0cCI6MC4xN30sInByZXZpZXdEdXJhdGlvbk1zIjozMDAwMCwiYXJ0aXN0cyI6W3siaWQiOjE1NDQ2LCJuYW1lIjoiS2F0ZSBCdXNoIiwidmFyaW91cyI6ZmFsc2UsImNvbXBvc2VyIjpmYWxzZSwiY292ZXIiOnsidHlwZSI6ImZyb20tYWxidW0tY292ZXIiLCJ1cmkiOiJhdmF0YXJzLnlhbmRleC5uZXQvZ2V0LW11c2ljLWNvbnRlbnQvMzgwNDQvOGVlZmY0YWIuYS4yMTgyNjItMS8lJSIsInByZWZpeCI6IjhlZWZmNGFiLmEuMjE4MjYyLTEifSwiZ2VucmVzIjpbXX1dLCJhbGJ1bXMiOlt7ImlkIjoyMTgyNjIsInRpdGxlIjoiVGhlIFdob2xlIFN0b3J5IiwibWV0YVR5cGUiOiJtdXNpYyIsInllYXIiOjE5ODYsInJlbGVhc2VEYXRlIjoiMTk4Ni0xMS0xMFQwMDowMDowMCswMzowMCIsImNvdmVyVXJpIjoiYXZhdGFycy55YW5kZXgubmV0L2dldC1tdXNpYy1jb250ZW50LzM4MDQ0LzhlZWZmNGFiLmEuMjE4MjYyLTEvJSUiLCJvZ0ltYWdlIjoiYXZhdGFycy55YW5kZXgubmV0L2dldC1tdXNpYy1jb250ZW50LzM4MDQ0LzhlZWZmNGFiLmEuMjE4MjYyLTEvJSUiLCJnZW5yZSI6InBvcCIsImJ1eSI6W10sInRyYWNrQ291bnQiOjEyLCJsaWtlc0NvdW50IjoxMjQsInJlY2VudCI6ZmFsc2UsInZlcnlJbXBvcnRhbnQiOmZhbHNlLCJhcnRpc3RzIjpbeyJpZCI6MTU0NDYsIm5hbWUiOiJLYXRlIEJ1c2giLCJ2YXJpb3VzIjpmYWxzZSwiY29tcG9zZXIiOmZhbHNlLCJjb3ZlciI6eyJ0eXBlIjoiZnJvbS1hbGJ1bS1jb3ZlciIsInVyaSI6ImF2YXRhcnMueWFuZGV4Lm5ldC9nZXQtbXVzaWMtY29udGVudC8zODA0NC84ZWVmZjRhYi5hLjIxODI2Mi0xLyUlIiwicHJlZml4IjoiOGVlZmY0YWIuYS4yMTgyNjItMSJ9LCJnZW5yZXMiOltdfV0sImxhYmVscyI6W3siaWQiOjQwNTkzLCJuYW1lIjoiUGFybG9waG9uZSJ9XSwiYXZhaWxhYmxlIjp0cnVlLCJhdmFpbGFibGVGb3JQcmVtaXVtVXNlcnMiOnRydWUsImF2YWlsYWJsZUZvck1vYmlsZSI6dHJ1ZSwiYXZhaWxhYmxlUGFydGlhbGx5IjpmYWxzZSwiYmVzdHMiOlsyMjAzMzYzLDM0MTc0NjA3LDI0MDUyN10sInRyYWNrUG9zaXRpb24iOnsidm9sdW1lIjoxLCJpbmRleCI6N319LHsiaWQiOjI4ODE0OSwidGl0bGUiOiJIb3VuZHMgT2YgTG92ZSIsIm1ldGFUeXBlIjoibXVzaWMiLCJ5ZWFyIjoxOTg1LCJyZWxlYXNlRGF0ZSI6IjIwMTEtMDUtMTZUMDA6MDA6MDArMDQ6MDAiLCJjb3ZlclVyaSI6ImF2YXRhcnMueWFuZGV4Lm5ldC9nZXQtbXVzaWMtY29udGVudC80MTI4OC84MTI0NTNmOC5hLjI4ODE0OS0yLyUlIiwib2dJbWFnZSI6ImF2YXRhcnMueWFuZGV4Lm5ldC9nZXQtbXVzaWMtY29udGVudC80MTI4OC84MTI0NTNmOC5hLjI4ODE0OS0yLyUlIiwiZ2VucmUiOiJwb3AiLCJidXkiOltdLCJ0cmFja0NvdW50IjoxMiwibGlrZXNDb3VudCI6MTEzLCJyZWNlbnQiOmZhbHNlLCJ2ZXJ5SW1wb3J0YW50IjpmYWxzZSwiYXJ0aXN0cyI6W3siaWQiOjE1NDQ2LCJuYW1lIjoiS2F0ZSBCdXNoIiwidmFyaW91cyI6ZmFsc2UsImNvbXBvc2VyIjpmYWxzZSwiY292ZXIiOnsidHlwZSI6ImZyb20tYWxidW0tY292ZXIiLCJ1cmkiOiJhdmF0YXJzLnlhbmRleC5uZXQvZ2V0LW11c2ljLWNvbnRlbnQvMzgwNDQvOGVlZmY0YWIuYS4yMTgyNjItMS8lJSIsInByZWZpeCI6IjhlZWZmNGFiLmEuMjE4MjYyLTEifSwiZ2VucmVzIjpbXX1dLCJsYWJlbHMiOlt7ImlkIjo1ODk2NDAsIm5hbWUiOiJOb2JsZSBBbmQgQnJpdGUifV0sImF2YWlsYWJsZSI6dHJ1ZSwiYXZhaWxhYmxlRm9yUHJlbWl1bVVzZXJzIjp0cnVlLCJhdmFpbGFibGVGb3JNb2JpbGUiOnRydWUsImF2YWlsYWJsZVBhcnRpYWxseSI6ZmFsc2UsImJlc3RzIjpbMjIwMzM2MSwyMjAzMzYzLDIyMDMzNjJdLCJ0cmFja1Bvc2l0aW9uIjp7InZvbHVtZSI6MSwiaW5kZXgiOjF9fSx7ImlkIjoyNjg4MTc4LCJ0aXRsZSI6IkNpcmtlbG4iLCJ0eXBlIjoiY29tcGlsYXRpb24iLCJtZXRhVHlwZSI6Im11c2ljIiwidmVyc2lvbiI6Ik9mZmljaWFsIE1vdGlvbiBQaWN0dXJlIFNvdW5kdHJhY2siLCJ5ZWFyIjoyMDE1LCJyZWxlYXNlRGF0ZSI6IjIwMTUtMDMtMDRUMDA6MDA6MDArMDM6MDAiLCJjb3ZlclVyaSI6ImF2YXRhcnMueWFuZGV4Lm5ldC9nZXQtbXVzaWMtY29udGVudC8zNDEzMS9kMzAxOGE4My5hLjI2ODgxNzgtMS8lJSIsIm9nSW1hZ2UiOiJhdmF0YXJzLnlhbmRleC5uZXQvZ2V0LW11c2ljLWNvbnRlbnQvMzQxMzEvZDMwMThhODMuYS4yNjg4MTc4LTEvJSUiLCJnZW5yZSI6InNvdW5kdHJhY2siLCJidXkiOltdLCJ0cmFja0NvdW50IjozOSwibGlrZXNDb3VudCI6NCwicmVjZW50IjpmYWxzZSwidmVyeUltcG9ydGFudCI6ZmFsc2UsImFydGlzdHMiOlt7ImlkIjoxNzEsIm5hbWUiOiLRgdCx0L7RgNC90LjQuiIsInZhcmlvdXMiOnRydWUsImNvbXBvc2VyIjpmYWxzZSwiY292ZXIiOnsidHlwZSI6ImZyb20tYWxidW0tY292ZXIiLCJ1cmkiOiJhdmF0YXJzLnlhbmRleC5uZXQvZ2V0LW11c2ljLWNvbnRlbnQvMjc4OTQwMi9mMzJkYmVlMy5hLjEyNjg5MzQxLTEvJSUiLCJwcmVmaXgiOiJmMzJkYmVlMy5hLjEyNjg5MzQxLTEifSwiZ2VucmVzIjpbXX1dLCJsYWJlbHMiOlt7ImlkIjo0NTA1MzIsIm5hbWUiOiJSTVYgR3JhbW1vZm9uIn1dLCJhdmFpbGFibGUiOnRydWUsImF2YWlsYWJsZUZvclByZW1pdW1Vc2VycyI6dHJ1ZSwiYXZhaWxhYmxlRm9yTW9iaWxlIjp0cnVlLCJhdmFpbGFibGVQYXJ0aWFsbHkiOnRydWUsImJlc3RzIjpbMjIwMzM2MywyMzM0MDM1MiwyMzM0MDM2N10sInRyYWNrUG9zaXRpb24iOnsidm9sdW1lIjoxLCJpbmRleCI6MTB9fV0sImNvdmVyVXJpIjoiYXZhdGFycy55YW5kZXgubmV0L2dldC1tdXNpYy1jb250ZW50LzM4MDQ0LzhlZWZmNGFiLmEuMjE4MjYyLTEvJSUiLCJvZ0ltYWdlIjoiYXZhdGFycy55YW5kZXgubmV0L2dldC1tdXNpYy1jb250ZW50LzM4MDQ0LzhlZWZmNGFiLmEuMjE4MjYyLTEvJSUiLCJseXJpY3NBdmFpbGFibGUiOnRydWUsInR5cGUiOiJtdXNpYyIsInJlbWVtYmVyUG9zaXRpb24iOmZhbHNlLCJ0cmFja1NoYXJpbmdGbGFnIjoiQ09WRVJfT05MWSJ9XX0=
-  recorded_at: Thu, 30 Sep 2021 20:15:00 GMT
+      string: '{"invocationInfo":{"req-id":"1636181975544365-15198683039792748390","hostname":"music-stable-back-man-26.man.yp-c.yandex.net","exec-duration-millis":4},"result":[{"id":"2203363","realId":"2203363","title":"Running
+        up That Hill (A Deal with God)","major":{"id":4,"name":"WARNER"},"available":true,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"storageDir":"","durationMs":298930,"fileSize":0,"normalization":{"gain":-3.52,"peak":32766},"r128":{"i":-15.63,"tp":0.17},"previewDurationMs":30000,"artists":[{"id":15446,"name":"Kate
+        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","prefix":"8eeff4ab.a.218262-1"},"genres":[]}],"albums":[{"id":218262,"title":"The
+        Whole Story","metaType":"music","year":1986,"releaseDate":"1986-11-10T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","ogImage":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","genre":"pop","buy":[],"trackCount":12,"likesCount":132,"recent":false,"veryImportant":false,"artists":[{"id":15446,"name":"Kate
+        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","prefix":"8eeff4ab.a.218262-1"},"genres":[]}],"labels":[{"id":40593,"name":"Parlophone"}],"available":true,"availableForPremiumUsers":true,"availableForMobile":true,"availablePartially":false,"bests":[2203363,34174607,240527],"trackPosition":{"volume":1,"index":7}},{"id":288149,"title":"Hounds
+        Of Love","metaType":"music","year":1985,"releaseDate":"2011-05-16T00:00:00+04:00","coverUri":"avatars.yandex.net/get-music-content/41288/812453f8.a.288149-2/%%","ogImage":"avatars.yandex.net/get-music-content/41288/812453f8.a.288149-2/%%","genre":"pop","buy":[],"trackCount":12,"likesCount":118,"recent":false,"veryImportant":false,"artists":[{"id":15446,"name":"Kate
+        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","prefix":"8eeff4ab.a.218262-1"},"genres":[]}],"labels":[{"id":589640,"name":"Noble
+        And Brite"}],"available":true,"availableForPremiumUsers":true,"availableForMobile":true,"availablePartially":false,"bests":[2203361,2203363,2203362],"trackPosition":{"volume":1,"index":1}},{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","buy":[],"trackCount":38,"likesCount":4,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/4468850/da39e4dd.a.18731883-1/%%","prefix":"da39e4dd.a.18731883-1"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"availableForMobile":true,"availablePartially":true,"bests":[2203363,23340352,23340367],"trackPosition":{"volume":1,"index":9}}],"coverUri":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","ogImage":"avatars.yandex.net/get-music-content/38044/8eeff4ab.a.218262-1/%%","lyricsAvailable":true,"type":"music","rememberPosition":false,"trackSharingFlag":"COVER_ONLY"}]}'
+  recorded_at: Sat, 06 Nov 2021 06:59:35 GMT
 - request:
     method: get
     uri: https://music.yandex.ru/api/v2.1/handlers/track/2203363/web-album_track-track-track-main/download/m
@@ -63,12 +72,18 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - https://music.yandex.ru
+      Access-Control-Expose-Headers:
+      - X-Compat, X-Request-Id, X-Auth-Session
       Content-Disposition:
       - attachment; filename=json.txt
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 30 Sep 2021 20:15:00 GMT
+      - Sat, 06 Nov 2021 06:59:35 GMT
       Nel:
       - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
         "failure_fraction": 0.1}'
@@ -80,6 +95,8 @@ http_interactions:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
+      X-Auth-Session:
+      - Need reset
       X-Compat:
       - '5'
       X-Content-Type-Options:
@@ -89,18 +106,18 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - i=hfhkH69wFgyxFM7RvwO5IxZYbs3BoxqRLmeNRk4kpRdG8m/3fHOm00GIC5AKdm/U1ZP3JN8StN3boXTQGaNgroXhzpE=;
-        Expires=Sat, 30-Sep-2023 20:15:00 GMT; Domain=.yandex.ru; Path=/; Secure;
+      - i=W5D9yQxnepfPVIqYmaRfUjPQAXPO2Yve783VJ1K9Cc6D/KR1mBJlR0MncTzYAifNiG3wkoosmHEE1339COsUXXj09U8=;
+        Expires=Mon, 06-Nov-2023 06:59:35 GMT; Domain=.yandex.ru; Path=/; Secure;
         HttpOnly
-      - yandexuid=3611229801633032900; path=/; domain=.yandex.ru; expires=Tue, 30
-        Sep 2031 20:15:00 GMT; max-age=315360000
+      - yandexuid=2440132751636181975; path=/; domain=.yandex.ru; expires=Thu, 06
+        Nov 2031 06:59:35 GMT; max-age=315360000
     body:
       encoding: ASCII-8BIT
-      string: '{"codec":"mp3","bitrate":192,"src":"//storage.mds.yandex.net/file-download-info/1750849_f7e70bd0.2877831.5.2203363/2?sign=005083327dc14e404bd50c233907a5cfd8ccf5c347870339a691c92bdc4a2a25&ts=61561b00&offset=46551","gain":false,"preview":false}'
-  recorded_at: Thu, 30 Sep 2021 20:15:00 GMT
+      string: '{"codec":"mp3","bitrate":192,"src":"//storage.mds.yandex.net/file-download-info/1750849_f7e70bd0.2877831.5.2203363/2?sign=03d0574c3857efc7a8c7e3458d0d987395b6ba1ad33dba71dd547e120b397c50&ts=61862813&offset=46551","gain":false,"preview":false}'
+  recorded_at: Sat, 06 Nov 2021 06:59:35 GMT
 - request:
     method: get
-    uri: https://storage.mds.yandex.net/file-download-info/1750849_f7e70bd0.2877831.5.2203363/2?format=json&offset=46551&sign=005083327dc14e404bd50c233907a5cfd8ccf5c347870339a691c92bdc4a2a25&ts=61561b00
+    uri: https://storage.mds.yandex.net/file-download-info/1750849_f7e70bd0.2877831.5.2203363/2?format=json&offset=46551&sign=03d0574c3857efc7a8c7e3458d0d987395b6ba1ad33dba71dd547e120b397c50&ts=61862813
     body:
       encoding: US-ASCII
       string: ''
@@ -121,7 +138,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 30 Sep 2021 20:15:01 GMT
+      - Sat, 06 Nov 2021 06:59:36 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -131,7 +148,7 @@ http_interactions:
       Keep-Alive:
       - timeout=60
       X-Mds-Request-Id:
-      - 199d271b51f5d9e8
+      - 54d8e9e8d7cfaf8e
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
@@ -145,6 +162,6 @@ http_interactions:
       - '{"group": "network-errors", "max_age": 600, "endpoints": [ { "url": "https://dr.yandex.net/s3_nel"}]}'
     body:
       encoding: ASCII-8BIT
-      string: '{"s":"d2996b487692fec1da61627e6374109bfbe17fb7578bfb3e6379dabfa09e93f1","ts":"0005cd3cf08ead1b","path":"/rmusic/U2FsdGVkX1_cOQwn_ia9_TPyV17fyzMyEV0sGVR31QwG1tv6bNzZ6QCbc07KqrJxQhg3hGCYzVFQXOD1JOcg__KyrbIZwooEBnwWvS1K_dg/d2996b487692fec1da61627e6374109bfbe17fb7578bfb3e6379dabfa09e93f1/46551","host":"s206vla.storage.yandex.net"}'
-  recorded_at: Thu, 30 Sep 2021 20:15:01 GMT
+      string: '{"s":"7ce8b4756d136ad0982eb68d6d60419722c5925209347bc32fe2f295745f7f1f","ts":"0005d01a240db1a1","path":"/rmusic/U2FsdGVkX18N2L6RniHB-VzAooPqzdqgbZgwPxnqfV5rzSysyVw9sGZhhMR86cmiyWMQs23zsNFtHRuTT2Yu-SrIqCveS0BOuQT4X8GHMqA/7ce8b4756d136ad0982eb68d6d60419722c5925209347bc32fe2f295745f7f1f/46551","host":"s58iva.storage.yandex.net"}'
+  recorded_at: Sat, 06 Nov 2021 06:59:36 GMT
 recorded_with: VCR 6.0.0
