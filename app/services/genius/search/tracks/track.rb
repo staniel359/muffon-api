@@ -11,6 +11,11 @@ module Genius
         private
 
         def data
+          muffon_data
+            .merge(track_data)
+        end
+
+        def track_data
           {
             id: id,
             player_id: player_id,

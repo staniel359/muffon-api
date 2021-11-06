@@ -10,6 +10,11 @@ module Odnoklassniki
         private
 
         def data
+          muffon_data
+            .merge(artist_data)
+        end
+
+        def artist_data
           {
             id: id,
             odnoklassniki_id: odnoklassniki_id,

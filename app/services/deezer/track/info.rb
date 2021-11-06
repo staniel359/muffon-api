@@ -4,7 +4,8 @@ module Deezer
       private
 
       def track_data
-        track_base_data
+        muffon_data
+          .merge(track_base_data)
           .merge(track_extra_data)
       end
 

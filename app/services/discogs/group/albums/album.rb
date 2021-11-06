@@ -11,6 +11,11 @@ module Discogs
         private
 
         def data
+          muffon_data
+            .merge(album_data)
+        end
+
+        def album_data
           {
             source_id: SOURCE_ID,
             discogs_id: discogs_id,

@@ -7,7 +7,8 @@ module SoundCloud
 
       def collection_item_data_formatted(track)
         SoundCloud::Search::Tracks::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

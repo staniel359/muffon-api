@@ -11,6 +11,11 @@ module Spotify
         private
 
         def data
+          muffon_data
+            .merge(artist_data)
+        end
+
+        def artist_data
           {
             id: id,
             spotify_id: spotify_id,

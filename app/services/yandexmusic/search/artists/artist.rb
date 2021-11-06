@@ -11,6 +11,11 @@ module YandexMusic
         private
 
         def data
+          muffon_data
+            .merge(artist_data)
+        end
+
+        def artist_data
           {
             id: id,
             yandex_music_id: yandex_music_id,

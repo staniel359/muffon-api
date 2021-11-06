@@ -11,7 +11,8 @@ module VK
         private
 
         def data
-          album_id_data
+          muffon_data
+            .merge(album_id_data)
             .merge(album_base_data)
             .merge(album_extra_data)
         end

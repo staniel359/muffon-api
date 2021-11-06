@@ -11,6 +11,11 @@ module Deezer
         private
 
         def data
+          muffon_data
+            .merge(artist_data)
+        end
+
+        def artist_data
           {
             id: id,
             deezer_id: deezer_id,

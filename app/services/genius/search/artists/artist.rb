@@ -11,6 +11,11 @@ module Genius
         private
 
         def data
+          muffon_data
+            .merge(artist_data)
+        end
+
+        def artist_data
           {
             id: id,
             genius_id: genius_id,

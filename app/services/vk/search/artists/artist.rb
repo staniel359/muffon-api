@@ -11,6 +11,11 @@ module VK
         private
 
         def data
+          muffon_data
+            .merge(artist_data)
+        end
+
+        def artist_data
           {
             id: id,
             vk_id: vk_id,

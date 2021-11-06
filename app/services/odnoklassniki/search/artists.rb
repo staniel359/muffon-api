@@ -22,7 +22,8 @@ module Odnoklassniki
 
       def collection_item_data_formatted(artist)
         Odnoklassniki::Search::Artists::Artist.call(
-          artist: artist
+          artist: artist,
+          profile_id: @args.profile_id
         )
       end
     end

@@ -11,7 +11,8 @@ module YandexMusic
         private
 
         def data
-          album_base_data
+          muffon_data
+            .merge(album_base_data)
             .merge(album_extra_data)
         end
 

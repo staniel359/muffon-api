@@ -11,7 +11,8 @@ module Discogs
         private
 
         def data
-          muffon_data.merge(album_data)
+          muffon_data
+            .merge(album_data)
         end
 
         def album_data

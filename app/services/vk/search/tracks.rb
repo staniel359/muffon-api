@@ -8,7 +8,8 @@ module VK
 
       def collection_item_data_formatted(track)
         VK::Search::Tracks::Track.call(
-          track: track
+          track: track,
+          profile_id: @args.profile_id
         )
       end
     end

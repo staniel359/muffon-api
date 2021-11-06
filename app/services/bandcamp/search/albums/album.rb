@@ -11,6 +11,11 @@ module Bandcamp
         private
 
         def data
+          muffon_data
+            .merge(album_data)
+        end
+
+        def album_data
           {
             id: id,
             source_id: SOURCE_ID,

@@ -8,7 +8,8 @@ module Genius
 
       def collection_item_data_formatted(album)
         Genius::Search::Albums::Album.call(
-          album: album['result']
+          album: album['result'],
+          profile_id: @args.profile_id
         )
       end
     end

@@ -8,7 +8,8 @@ module Genius
 
       def collection_item_data_formatted(track)
         Genius::Search::Tracks::Track.call(
-          track: track['result']
+          track: track['result'],
+          profile_id: @args.profile_id
         )
       end
     end

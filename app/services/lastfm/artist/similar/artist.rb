@@ -13,7 +13,8 @@ module LastFM
         def data
           return minimal_data if @args.minimal
 
-          muffon_data.merge(artist_data)
+          muffon_data
+            .merge(artist_data)
         end
 
         def minimal_data

@@ -11,7 +11,8 @@ module Muffon
         private
 
         def data
-          muffon_data.merge(recommendation_data)
+          muffon_data
+            .merge(recommendation_data)
         end
 
         def recommendation_data
