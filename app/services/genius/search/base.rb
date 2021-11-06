@@ -38,6 +38,10 @@ module Genius
       def data
         { search: paginated_data }
       end
+
+      def total_items_count
+        1_000
+      end
     end
   end
 end
