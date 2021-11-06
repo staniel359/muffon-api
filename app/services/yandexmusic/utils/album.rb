@@ -18,15 +18,27 @@ module YandexMusic
       end
 
       def artists_list
-        album['artists']
+        album['artists'].presence ||
+          [default_artist_data]
+      end
+
+      def default_artist_data
+        {
+          'id' => 171,
+          'name' => 'Various artists'
+        }
       end
 
       def image_data
-        image_data_formatted(album, 'album')
+        image_data_formatted(
+          album, 'album'
+        )
       end
 
       def release_date
-        date_formatted(album['year'].to_s)
+        date_formatted(
+          album['year'].to_s
+        )
       end
     end
   end
