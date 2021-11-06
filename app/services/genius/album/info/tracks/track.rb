@@ -19,6 +19,7 @@ module Genius
             {
               id: id,
               player_id: player_id,
+              source_id: SOURCE_ID,
               genius_id: genius_id,
               title: title,
               artist: artist_formatted,

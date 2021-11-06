@@ -20,6 +20,7 @@ module YandexMusic
           {
             id: id,
             player_id: player_id,
+            source_id: SOURCE_ID,
             yandex_music_id: yandex_music_id,
             title: title,
             extra_title: extra_title,

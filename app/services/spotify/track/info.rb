@@ -13,6 +13,8 @@ module Spotify
         {
           id: id,
           player_id: player_id,
+          source_id: SOURCE_ID,
+          spotify_id: spotify_id,
           title: title,
           artist: artist_formatted,
           artists: artists
@@ -34,7 +36,7 @@ module Spotify
         {
           present: true,
           link: audio_link,
-          source_id: self.class::SOURCE_ID
+          source_id: SOURCE_ID
         }
       end
 

@@ -13,6 +13,8 @@ module Bandcamp
         {
           id: id,
           player_id: player_id,
+          source_id: SOURCE_ID,
+          bandcamp_id: bandcamp_id,
           title: title,
           artist: artist_formatted,
           artists: artists
@@ -70,7 +72,7 @@ module Bandcamp
         {
           present: audio_present?,
           link: redirect_audio_link,
-          source_id: self.class::SOURCE_ID
+          source_id: SOURCE_ID
         }
       end
 

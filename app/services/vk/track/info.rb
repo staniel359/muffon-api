@@ -13,6 +13,8 @@ module VK
         {
           id: id,
           player_id: player_id,
+          source_id: SOURCE_ID,
+          vk_id: vk_id,
           title: title,
           extra_title: extra_title,
           artist: artist_formatted,

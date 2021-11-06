@@ -11,13 +11,15 @@ module Spotify
         private
 
         def data
-          base_data.merge(extra_data)
+          track_base_data
+            .merge(track_extra_data)
         end
 
-        def base_data
+        def track_base_data
           {
             id: id,
             player_id: player_id,
+            source_id: SOURCE_ID,
             spotify_id: spotify_id,
             title: title,
             artist: artist_formatted,
@@ -29,7 +31,7 @@ module Spotify
           @track ||= @args.track
         end
 
-        def extra_data
+        def track_extra_data
           {
             album: album_formatted,
             albums: albums,

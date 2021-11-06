@@ -12,6 +12,8 @@ module Deezer
         {
           id: id,
           player_id: player_id,
+          source_id: SOURCE_ID,
+          deezer_id: deezer_id,
           title: title,
           extra_title: extra_title,
           artist: artist_formatted,

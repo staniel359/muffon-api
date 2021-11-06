@@ -31,7 +31,7 @@ module Helpers
         end
 
         def tracks_data
-          {:artist=>{:name=>"Wild Nothing", :page=>2, :total_pages=>100, :tracks=>[{:id=>1, :listeners_count=>125754, :player_id=>"1", :title=>"Paradise"}, {:id=>1, :listeners_count=>110497, :player_id=>"1", :title=>"Drifter"}, {:id=>1, :listeners_count=>108934, :player_id=>"1", :title=>"Only Heather"}, {:id=>1, :listeners_count=>106610, :player_id=>"1", :title=>"Midnight Song"}, {:id=>1, :listeners_count=>102214, :player_id=>"1", :title=>"Pessimist"}]}}
+          {:artist=>{:name=>"Wild Nothing", :page=>2, :total_pages=>100, :tracks=>[{:id=>1, :listeners_count=>125754, :player_id=>"1", :source_id=>"lastfm", :title=>"Paradise"}, {:id=>1, :listeners_count=>110497, :player_id=>"1", :source_id=>"lastfm", :title=>"Drifter"}, {:id=>1, :listeners_count=>108934, :player_id=>"1", :source_id=>"lastfm", :title=>"Only Heather"}, {:id=>1, :listeners_count=>106610, :player_id=>"1", :source_id=>"lastfm", :title=>"Midnight Song"}, {:id=>1, :listeners_count=>102214, :player_id=>"1", :source_id=>"lastfm", :title=>"Pessimist"}]}}
         end
       end
     end

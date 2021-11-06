@@ -11,13 +11,15 @@ module Odnoklassniki
         private
 
         def data
-          base_data.merge(extra_data)
+          track_base_data
+            .merge(track_extra_data)
         end
 
-        def base_data
+        def track_base_data
           {
             id: id,
             player_id: player_id,
+            source_id: SOURCE_ID,
             odnoklassniki_id: odnoklassniki_id,
             title: title,
             artist: artist_formatted,
@@ -40,7 +42,7 @@ module Odnoklassniki
           }
         end
 
-        def extra_data
+        def track_extra_data
           {
             album: {},
             albums: albums,

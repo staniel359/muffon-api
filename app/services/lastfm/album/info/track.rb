@@ -18,6 +18,7 @@ module LastFM
           {
             id: id,
             player_id: player_id,
+            source_id: SOURCE_ID,
             title: title,
             artist: artist_formatted,
             artists: artists,

@@ -15,7 +15,7 @@ module Helpers
         end
 
         def tracks_data
-          {:search=>{:page=>2, :total_pages=>38, :tracks=>[{:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :title=>"Gemini - Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :title=>"Chinatown (Live from Brooklyn Steel)"}, {:artist=>{:name=>"Wild_Nothing"}, :artists=>[{:name=>"Wild_Nothing"}], :id=>1, :player_id=>"1", :title=>"Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :title=>"10 Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :title=>"\"Chinatown\" from the album Gemini (Captured Tracks) - Wild N"}]}}
+          {:search=>{:page=>2, :total_pages=>38, :tracks=>[{:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :source_id=>"lastfm", :title=>"Gemini - Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :source_id=>"lastfm", :title=>"Chinatown (Live from Brooklyn Steel)"}, {:artist=>{:name=>"Wild_Nothing"}, :artists=>[{:name=>"Wild_Nothing"}], :id=>1, :player_id=>"1", :source_id=>"lastfm", :title=>"Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :source_id=>"lastfm", :title=>"10 Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :id=>1, :player_id=>"1", :source_id=>"lastfm", :title=>"\"Chinatown\" from the album Gemini (Captured Tracks) - Wild N"}]}}
         end
       end
     end

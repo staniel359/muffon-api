@@ -11,13 +11,15 @@ module Bandcamp
         private
 
         def data
-          base_data.merge(extra_data)
+          track_base_data
+            .merge(track_extra_data)
         end
 
-        def base_data
+        def track_base_data
           {
             id: id,
             player_id: player_id,
+            source_id: SOURCE_ID,
             title: title,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
@@ -46,7 +48,7 @@ module Bandcamp
           [artist_data_formatted(track)]
         end
 
-        def extra_data
+        def track_extra_data
           {
             image: image_data,
             audio: audio_data
