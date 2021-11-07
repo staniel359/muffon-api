@@ -8,16 +8,27 @@ module Muffon
           private
 
           def track_data
+            track_base_data
+              .merge(track_extra_data)
+          end
+
+          def track_base_data
             {
-              track_id: id,
+              id: id,
+              track_id: track_id,
               favorite_id: favorite_id,
               player_id: player_id,
               title: title,
-              artist: artist_data,
-              album: album_data,
-              image: image_data,
-              created: created
+              artist: artist_data
             }
+          end
+
+          def id
+            profile_track.id
+          end
+
+          def track_id
+            profile_track.track_id
           end
 
           def artist_name
@@ -31,6 +42,14 @@ module Muffon
             profile_track
               .track
               .player_id
+          end
+
+          def track_extra_data
+            {
+              album: album_data,
+              image: image_data,
+              created: created
+            }
           end
 
           def album_data

@@ -9,7 +9,8 @@ module Muffon
 
           def album_data
             {
-              album_id: id,
+              id: id,
+              album_id: album_id,
               favorite_id: favorite_id,
               title: title,
               artist: artist_data,
@@ -17,6 +18,14 @@ module Muffon
               tracks_count: tracks_count,
               created: created
             }
+          end
+
+          def id
+            profile_album.id
+          end
+
+          def album_id
+            profile_album.album_id
           end
 
           def artist_name

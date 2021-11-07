@@ -27,14 +27,6 @@ module Muffon
             }.compact
           end
 
-          def track_extra_data
-            {
-              album: album_data,
-              image: image_data,
-              created: created_at
-            }
-          end
-
           def id
             profile_track.id
           end
@@ -75,6 +67,14 @@ module Muffon
               .profile_artist
               .artist
               .name
+          end
+
+          def track_extra_data
+            {
+              album: album_data,
+              image: image_data,
+              created: created_at
+            }
           end
 
           def album_data
