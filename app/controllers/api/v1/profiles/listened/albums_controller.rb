@@ -16,7 +16,7 @@ module API
           def create_data
             Muffon::Profile::Listened::Albums::Album::Creator.call(
               params.slice(
-                *%i[profile_id token album_id image_url]
+                *%i[profile_id token title artist_name image_url]
               )
             )
           end

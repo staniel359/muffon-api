@@ -3,12 +3,6 @@ module Muffon
     module Album
       private
 
-      def id
-        return 1 if Rails.env.test?
-
-        find_album.id
-      end
-
       def find_album
         @find_album ||= ::Album.with_artist_title(
           find_artist.id, title

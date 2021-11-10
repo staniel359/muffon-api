@@ -17,7 +17,6 @@ module SoundCloud
 
         def artist_data
           {
-            id: id,
             soundcloud_id: soundcloud_id,
             name: name,
             image: image_data

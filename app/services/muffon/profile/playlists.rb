@@ -2,6 +2,7 @@ module Muffon
   module Profile
     class Playlists < Muffon::Profile::Base
       include Muffon::Utils::Pagination
+      include Muffon::Utils::Track
 
       private
 
@@ -51,8 +52,27 @@ module Muffon
       def playlist_formatted(playlist)
         Muffon::Profile::Playlists::Playlist.call(
           playlist: playlist,
-          track_id: @args.track_id
+          track_id: track_id
         )
+      end
+
+      def track_id
+        find_track.id if find_track?
+      end
+
+      def find_track?
+        [
+          @args.track_title,
+          @args.artist_name
+        ].all?(&:present?)
+      end
+
+      def title
+        @args.track_title
+      end
+
+      def artist_name
+        @args.artist_name
       end
     end
   end

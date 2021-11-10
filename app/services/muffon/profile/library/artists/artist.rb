@@ -14,7 +14,6 @@ module Muffon
           def data
             {
               id: id,
-              artist_id: artist_id,
               favorite_id: favorite_id,
               name: name,
               image: image_data,
@@ -29,10 +28,6 @@ module Muffon
 
           def profile_artist
             @profile_artist ||= @args.artist
-          end
-
-          def artist_id
-            profile_artist.artist_id
           end
 
           def name

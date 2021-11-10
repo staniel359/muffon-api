@@ -17,7 +17,6 @@ module VK
 
         def artist_data
           {
-            id: id,
             vk_id: vk_id,
             name: name,
             image: image_data

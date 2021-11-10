@@ -18,7 +18,6 @@ module Bandcamp
 
         def track_base_data
           {
-            id: id,
             player_id: player_id,
             source_id: SOURCE_ID,
             title: title,

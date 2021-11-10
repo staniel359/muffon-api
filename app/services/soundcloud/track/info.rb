@@ -12,7 +12,6 @@ module SoundCloud
 
       def track_base_data
         {
-          id: id,
           player_id: player_id,
           source_id: SOURCE_ID,
           soundcloud_id: soundcloud_id,

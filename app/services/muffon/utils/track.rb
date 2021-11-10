@@ -3,12 +3,6 @@ module Muffon
     module Track
       private
 
-      def id
-        return 1 if Rails.env.test?
-
-        find_track.id
-      end
-
       def player_id
         find_track.player_id
       end
@@ -43,10 +37,10 @@ module Muffon
       end
 
       def find_album
-        return if @args.album.blank?
+        return if album_title.blank?
 
         @find_album ||= ::Album.with_artist_title(
-          find_artist.id, @args.album
+          find_artist.id, album_title
         )
       end
 

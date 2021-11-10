@@ -18,7 +18,6 @@ module VK
 
         def album_id_data
           {
-            id: id,
             source_id: SOURCE_ID,
             vk_id: vk_id,
             vk_owner_id: vk_owner_id,

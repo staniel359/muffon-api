@@ -10,7 +10,6 @@ module Muffon
           def artist_data
             {
               id: id,
-              artist_id: artist_id,
               favorite_id: favorite_id,
               name: name,
               image: image_data,
@@ -22,10 +21,6 @@ module Muffon
 
           def id
             profile_artist.id
-          end
-
-          def artist_id
-            profile_artist.artist_id
           end
 
           def image_data

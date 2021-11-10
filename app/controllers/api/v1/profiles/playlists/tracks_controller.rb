@@ -29,8 +29,8 @@ module API
             Muffon::Profile::Playlists::Playlist::Tracks::Track::Creator.call(
               params.slice(
                 *%i[
-                  profile_id token playlist_id
-                  track_id album image_url
+                  profile_id token playlist_id title
+                  artist_name album_title image_url
                 ]
               )
             )

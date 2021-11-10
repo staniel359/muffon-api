@@ -7,10 +7,9 @@ module Muffon
 
           def payload_base_data
             {
-              artist: @args.artist,
-              track: @args.title,
-              album: @args.album,
-              duration: @args.duration,
+              track: title,
+              artist: artist_name,
+              album: album_title,
               timestamp: timestamp,
               method: 'track.scrobble',
               format: 'json'
@@ -19,14 +18,13 @@ module Muffon
 
           def api_sig_raw
             [
-              ("album#{@args.album}" if @args.album.present?),
+              ("album#{album_title}" if album_title.present?),
               "api_key#{api_key}",
-              "artist#{@args.artist}",
-              "duration#{@args.duration}",
+              "artist#{artist_name}",
               'methodtrack.scrobble',
               "sk#{session_key}",
               "timestamp#{timestamp}",
-              "track#{@args.title}"
+              "track#{title}"
             ].compact.join
           end
 

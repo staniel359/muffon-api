@@ -40,7 +40,7 @@ module API
           def create_data
             Muffon::Profile::Library::Artists::Artist::Creator.call(
               params.slice(
-                *%i[profile_id token artist_id]
+                *%i[profile_id token name]
               )
             )
           end

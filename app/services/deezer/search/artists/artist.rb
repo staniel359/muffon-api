@@ -17,7 +17,6 @@ module Deezer
 
         def artist_data
           {
-            id: id,
             deezer_id: deezer_id,
             name: name,
             image: image_data,

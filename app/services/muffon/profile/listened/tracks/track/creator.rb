@@ -10,7 +10,8 @@ module Muffon
               [
                 @args.profile_id,
                 @args.token,
-                @args.track_id
+                @args.title,
+                @args.artist_name
               ]
             end
 
@@ -27,8 +28,16 @@ module Muffon
             def listened_track
               @listened_track ||=
                 profile.listened_tracks.where(
-                  track_id: @args.track_id
+                  track_id: find_track.id
                 ).first_or_create
+            end
+
+            def title
+              @args.title
+            end
+
+            def artist_name
+              @args.artist_name
             end
 
             def errors?

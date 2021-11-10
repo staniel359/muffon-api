@@ -17,7 +17,6 @@ module Bandcamp
 
         def artist_data
           {
-            id: id,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
             name: name,

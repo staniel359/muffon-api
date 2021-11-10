@@ -4,13 +4,15 @@ module Muffon
       class Artists
         class Artist
           class Creator < Muffon::Profile::Base
+            include Muffon::Utils::Artist
+
             private
 
             def primary_args
               [
                 @args.profile_id,
                 @args.token,
-                @args.artist_id
+                @args.name
               ]
             end
 
@@ -27,8 +29,12 @@ module Muffon
             def favorite_artist
               @favorite_artist ||=
                 profile.favorite_artists.where(
-                  artist_id: @args.artist_id
+                  artist_id: find_artist.id
                 ).first_or_create
+            end
+
+            def name
+              @args.name
             end
 
             def errors?

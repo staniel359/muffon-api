@@ -18,7 +18,6 @@ module Bandcamp
 
         def album_base_data
           {
-            id: id,
             source_id: SOURCE_ID,
             bandcamp_id: bandcamp_id,
             bandcamp_model: bandcamp_model,

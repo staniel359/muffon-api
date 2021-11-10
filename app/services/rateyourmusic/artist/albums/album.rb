@@ -17,7 +17,6 @@ module RateYourMusic
 
         def album_data
           {
-            id: id,
             source_id: SOURCE_ID,
             rateyourmusic_path: rateyourmusic_path,
             title: title,

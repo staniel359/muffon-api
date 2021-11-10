@@ -4,13 +4,16 @@ module Muffon
       class Albums
         class Album
           class Creator < Muffon::Profile::Base
+            include Muffon::Utils::Album
+
             private
 
             def primary_args
               [
                 @args.profile_id,
                 @args.token,
-                @args.album_id
+                @args.title,
+                @args.artist_name
               ]
             end
 
@@ -34,8 +37,16 @@ module Muffon
             def favorite_album
               @favorite_album ||=
                 profile.favorite_albums.where(
-                  album_id: @args.album_id
+                  album_id: find_album.id
                 ).first_or_initialize
+            end
+
+            def title
+              @args.title
+            end
+
+            def artist_name
+              @args.artist_name
             end
 
             def errors?

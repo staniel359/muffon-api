@@ -16,7 +16,7 @@ module API
           def create_data
             Muffon::Profile::Listened::Tracks::Track::Creator.call(
               params.slice(
-                *%i[profile_id token track_id]
+                *%i[profile_id token title artist_name]
               )
             )
           end

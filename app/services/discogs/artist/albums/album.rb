@@ -17,7 +17,6 @@ module Discogs
 
         def album_data
           {
-            id: id,
             source_id: SOURCE_ID,
             discogs_id: discogs_id,
             discogs_type: discogs_type,

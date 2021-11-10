@@ -3,12 +3,6 @@ module Muffon
     module Artist
       private
 
-      def id
-        return 1 if Rails.env.test?
-
-        find_artist.id
-      end
-
       def find_artist
         @find_artist ||= ::Artist.with_name(
           name

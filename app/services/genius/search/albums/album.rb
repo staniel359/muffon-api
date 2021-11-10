@@ -17,7 +17,6 @@ module Genius
 
         def album_data
           {
-            id: id,
             source_id: SOURCE_ID,
             genius_id: genius_id,
             title: title,

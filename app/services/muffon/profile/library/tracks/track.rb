@@ -19,7 +19,6 @@ module Muffon
           def track_base_data
             {
               id: id,
-              track_id: track_id,
               favorite_id: favorite_id,
               player_id: player_id,
               title: title,
@@ -33,10 +32,6 @@ module Muffon
 
           def profile_track
             @profile_track ||= @args.track
-          end
-
-          def track_id
-            profile_track.track_id
           end
 
           def player_id

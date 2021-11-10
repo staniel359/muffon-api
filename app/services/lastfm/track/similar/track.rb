@@ -17,7 +17,6 @@ module LastFM
 
         def track_data
           {
-            id: id,
             player_id: player_id,
             title: title,
             artist: artist_formatted,

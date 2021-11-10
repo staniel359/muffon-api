@@ -17,7 +17,6 @@ module YandexMusic
 
         def album_data
           {
-            id: id,
             source_id: SOURCE_ID,
             yandex_music_id: yandex_music_id,
             title: title,

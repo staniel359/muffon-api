@@ -18,7 +18,6 @@ module YandexMusic
 
         def album_base_data
           {
-            id: id,
             source_id: SOURCE_ID,
             yandex_music_id: yandex_music_id,
             title: title,

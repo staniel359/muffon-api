@@ -4,13 +4,16 @@ module Muffon
       class Albums
         class Album
           class Creator < Muffon::Profile::Library::Base
+            include Muffon::Utils::Album
+
             private
 
             def primary_args
               [
                 @args.profile_id,
                 @args.token,
-                @args.album_id
+                @args.title,
+                @args.artist_name
               ]
             end
 
@@ -24,7 +27,7 @@ module Muffon
 
               return errors_data if errors?
 
-              process_tracks
+              process_tracks if @args.tracks.present?
 
               { library_id: profile_album.id }
             end
@@ -32,9 +35,17 @@ module Muffon
             def profile_album
               @profile_album ||=
                 profile.profile_albums.where(
-                  album_id: @args.album_id,
+                  album_id: find_album.id,
                   profile_artist_id: profile_artist.id
                 ).first_or_initialize
+            end
+
+            def title
+              @args.title
+            end
+
+            def artist_name
+              @args.artist_name
             end
 
             def profile_artist
@@ -43,19 +54,11 @@ module Muffon
               ).first_or_create
             end
 
-            def find_album
-              ::Album.find_by(
-                id: @args.album_id
-              )
-            end
-
             def errors?
               profile_album.errors.any?
             end
 
             def process_tracks
-              return if @args.tracks.blank?
-
               @args.tracks.each do |t|
                 process_track(t)
               end

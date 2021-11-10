@@ -17,7 +17,6 @@ module Discogs
 
         def track_data
           {
-            id: id,
             player_id: player_id,
             source_id: 'lastfm',
             title: title,

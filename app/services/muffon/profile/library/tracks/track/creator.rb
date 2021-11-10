@@ -4,13 +4,16 @@ module Muffon
       class Tracks
         class Track
           class Creator < Muffon::Profile::Library::Base
+            include Muffon::Utils::Track
+
             private
 
             def primary_args
               [
                 @args.profile_id,
                 @args.token,
-                @args.track_id
+                @args.title,
+                @args.artist_name
               ]
             end
 
@@ -39,18 +42,18 @@ module Muffon
             def profile_artist
               @profile_artist ||=
                 profile.profile_artists.where(
-                  artist_id: find_track.artist_id
+                  artist_id: find_artist.id
                 ).first_or_initialize
             end
 
-            def find_track
-              @find_track ||= ::Track.find_by(
-                id: @args.track_id
-              )
+            def artist_name
+              @args.artist_name
             end
 
             def process_profile_album
-              profile_album&.tap do |album|
+              return if profile_album.blank?
+
+              profile_album.tap do |album|
                 album.image_url = @args.image_url if
                     @args.image_url.present?
                 album.created_at = @args.created_at if
@@ -60,7 +63,7 @@ module Muffon
             end
 
             def profile_album
-              return if @args.album.blank?
+              return if album_title.blank?
 
               @profile_album ||= profile.profile_albums.where(
                 album_id: find_album.id,
@@ -68,10 +71,8 @@ module Muffon
               ).first_or_initialize
             end
 
-            def find_album
-              ::Album.with_artist_title(
-                find_track.artist_id, @args.album
-              )
+            def album_title
+              @args.album_title
             end
 
             def process_profile_track
@@ -85,10 +86,14 @@ module Muffon
             def profile_track
               @profile_track ||=
                 profile.profile_tracks.where(
-                  track_id: @args.track_id,
+                  track_id: find_track.id,
                   profile_artist_id: profile_artist.id,
                   profile_album_id: profile_album&.id
                 ).first_or_initialize
+            end
+
+            def title
+              @args.title
             end
 
             def update_created_at?(model)

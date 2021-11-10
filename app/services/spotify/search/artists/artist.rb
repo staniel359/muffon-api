@@ -17,7 +17,6 @@ module Spotify
 
         def artist_data
           {
-            id: id,
             spotify_id: spotify_id,
             name: name,
             image: image_data

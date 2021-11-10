@@ -14,7 +14,8 @@ module Muffon
                   @args.profile_id,
                   @args.token,
                   @args.playlist_id,
-                  @args.track_id
+                  @args.title,
+                  @args.artist_name
                 ]
               end
 
@@ -30,7 +31,7 @@ module Muffon
 
               def process_playlist_track
                 playlist_track.tap do |track|
-                  track.artist_id = find_track.artist_id
+                  track.artist_id = find_artist.id
                   track.album_id = find_album&.id
                   track.image_url = @args.image_url
                   track.save
@@ -39,22 +40,20 @@ module Muffon
 
               def playlist_track
                 @playlist_track ||= playlist.playlist_tracks.where(
-                  track_id: @args.track_id
+                  track_id: find_track.id
                 ).first_or_initialize
               end
 
-              def find_track
-                @find_track ||= ::Track.find_by(
-                  id: @args.track_id
-                )
+              def title
+                @args.title
               end
 
-              def find_album
-                return if @args.album.blank?
+              def artist_name
+                @args.artist_name
+              end
 
-                ::Album.with_artist_title(
-                  find_track.artist_id, @args.album
-                )
+              def album_title
+                @args.album_title
               end
 
               def errors?

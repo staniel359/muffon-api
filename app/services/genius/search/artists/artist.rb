@@ -17,7 +17,6 @@ module Genius
 
         def artist_data
           {
-            id: id,
             genius_id: genius_id,
             name: name,
             image: image_data

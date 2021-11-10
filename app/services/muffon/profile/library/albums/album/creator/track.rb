@@ -5,6 +5,8 @@ module Muffon
         class Album
           class Creator
             class Track < Muffon::Profile::Library::Albums::Album::Creator
+              include Muffon::Utils::Track
+
               def call
                 process_track
               end
@@ -20,16 +22,13 @@ module Muffon
                 )
               end
 
-              def find_track
-                ::Track.with_artist_title(
-                  find_artist.id,
-                  @args.track['title']
-                )
+              def title
+                @args.track['title']
               end
 
-              def find_artist
-                @find_artist ||= ::Artist.with_name(
-                  @args.track.dig('artist', 'name')
+              def artist_name
+                @args.track.dig(
+                  'artist', 'name'
                 )
               end
 
