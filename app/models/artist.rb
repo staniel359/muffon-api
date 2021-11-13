@@ -1,4 +1,6 @@
 class Artist < ApplicationRecord
+  after_create_commit :add_tags
+
   has_many :profile_artists, dependent: nil
 
   validates :name,
@@ -21,6 +23,14 @@ class Artist < ApplicationRecord
 
     LastFM::Utils::Image.call(
       image: image_url, model: 'artist'
+    )
+  end
+
+  private
+
+  def add_tags
+    Artist::TagsUpdaterWorker.perform_async(
+      artist_id: id
     )
   end
 end
