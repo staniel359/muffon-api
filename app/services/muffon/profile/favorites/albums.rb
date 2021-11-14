@@ -36,7 +36,7 @@ module Muffon
 
         def albums_sorted
           albums_associated.order(
-            created_at: :desc
+            created_at: :asc
           )
         end
 

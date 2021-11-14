@@ -80,7 +80,7 @@ module Muffon
             ' as profile_artist_ids_size'
           )
           .order(
-            'profile_artist_ids_size DESC, id ASC'
+            'profile_artist_ids_size DESC, created_at ASC'
           )
       end
 
