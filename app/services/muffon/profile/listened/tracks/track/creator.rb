@@ -4,6 +4,8 @@ module Muffon
       module Tracks
         module Track
           class Creator < Muffon::Profile::Base
+            include Muffon::Utils::Track
+
             private
 
             def primary_args
