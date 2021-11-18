@@ -7,17 +7,21 @@ module LastFM
 
       def primary_args
         [
-          @args.token,
-          @args.profile_id
+          @args[:token],
+          @args[:profile_id]
         ]
       end
 
       def link
         "#{super}?method=#{api_method}"\
           "&api_key=#{api_key}"\
-          "&token=#{@args.token}"\
+          "&token=#{token}"\
           "&api_sig=#{api_signature}"\
           '&format=json'
+      end
+
+      def token
+        @args[:token]
       end
 
       def headers
@@ -28,7 +32,7 @@ module LastFM
         Digest::MD5.hexdigest(
           "api_key#{api_key}"\
           'methodauth.getSession'\
-          "token#{@args.token}"\
+          "token#{token}"\
           "#{api_secret}"
         )
       end

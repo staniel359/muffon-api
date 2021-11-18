@@ -10,24 +10,32 @@ module Discogs
       def data
         return image_data if image_present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def image_present?
-        @args.image.present? && !placeholder?
+        image.present? && !placeholder?
+      end
+
+      def image
+        @args[:image]
       end
 
       def placeholder?
-        @args.image.end_with?('/spacer.gif')
+        image.end_with?(
+          '/spacer.gif'
+        )
       end
 
       def image_data
         {
-          original: @args.image,
-          large: @args.image,
-          medium: @args.image,
-          small: @args.image,
-          extrasmall: @args.image
+          original: image,
+          large: image,
+          medium: image,
+          small: image,
+          extrasmall: image
         }
       end
     end

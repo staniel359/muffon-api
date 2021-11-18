@@ -6,7 +6,7 @@ module Genius
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -29,7 +29,7 @@ module Genius
 
       def params
         {
-          q: @args.query,
+          q: @args[:query],
           page: page,
           per_page: limit
         }

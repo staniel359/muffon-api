@@ -24,7 +24,7 @@ module Muffon
         end
 
         def playlist
-          @playlist ||= @args.playlist
+          @args[:playlist]
         end
 
         def playlist_track_id
@@ -32,10 +32,10 @@ module Muffon
         end
 
         def playlist_track
-          return if @args.track_id.blank?
+          return if @args[:track_id].blank?
 
           playlist.playlist_tracks.find_by(
-            track_id: @args.track_id
+            track_id: @args[:track_id]
           )
         end
 

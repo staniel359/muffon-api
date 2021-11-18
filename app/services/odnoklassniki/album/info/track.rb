@@ -28,7 +28,7 @@ module Odnoklassniki
         end
 
         def track
-          @track ||= @args.track
+          @args[:track]
         end
 
         def artists_list

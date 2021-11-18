@@ -15,7 +15,7 @@ module Deezer
         end
 
         def track_token
-          return '' if @args.track_id.blank?
+          return '' if @args[:track_id].blank?
 
           response_data.dig(
             'results', 'data', 0, 'TRACK_TOKEN'
@@ -23,7 +23,9 @@ module Deezer
         end
 
         def payload
-          { sng_ids: [@args.track_id] }.to_json
+          {
+            sng_ids: [@args[:track_id]]
+          }.to_json
         end
 
         def api_token

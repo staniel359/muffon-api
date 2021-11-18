@@ -50,7 +50,7 @@ module Muffon
         def album_formatted(album)
           Muffon::Profile::Library::Albums::Album.call(
             album: album,
-            profile_id: @args.profile_id
+            profile_id: @args[:profile_id]
           )
         end
       end

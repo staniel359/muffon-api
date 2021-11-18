@@ -10,8 +10,8 @@ module YouTube
       def uploads_playlist
         @uploads_playlist ||= YouTube::Playlist::Videos.call(
           playlist_id: uploads_playlist_id,
-          limit: @args.limit,
-          page: @args.page
+          limit: @args[:limit],
+          page: @args[:page]
         )[:playlist]
       end
 

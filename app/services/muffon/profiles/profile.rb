@@ -26,7 +26,7 @@ module Muffon
       end
 
       def profile
-        @profile ||= @args.profile
+        @args[:profile]
       end
 
       def nickname

@@ -6,7 +6,7 @@ module LastFM
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -21,9 +21,9 @@ module LastFM
 
       def params
         {
-          query: @args.query,
+          query: @args[:query],
           scope: 'lastfm_tags',
-          page: @args.page
+          page: @args[:page]
         }
       end
 

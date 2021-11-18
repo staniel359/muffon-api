@@ -14,8 +14,8 @@ module Spotify
 
       def primary_args
         [
-          @args.artist_id,
-          @args.album_type
+          @args[:artist_id],
+          @args[:album_type]
         ]
       end
 
@@ -41,7 +41,7 @@ module Spotify
 
       def album_type
         ALBUM_TYPES[
-          @args.album_type.to_sym
+          @args[:album_type].to_sym
         ]
       end
 
@@ -51,7 +51,7 @@ module Spotify
 
       def name
         Spotify::Artist::Info.call(
-          artist_id: @args.artist_id
+          artist_id: @args[:artist_id]
         ).dig(:artist, :name)
       end
 
@@ -62,7 +62,7 @@ module Spotify
       def collection_item_data_formatted(album)
         Spotify::Artist::Albums::Album.call(
           album: album,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

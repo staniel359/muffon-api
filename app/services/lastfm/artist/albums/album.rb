@@ -25,11 +25,13 @@ module LastFM
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def artist_name
-          album.dig('artist', 'name')
+          album.dig(
+            'artist', 'name'
+          )
         end
       end
     end

@@ -7,9 +7,9 @@ module Muffon
 
           def primary_args
             [
-              @args.profile_id,
-              @args.token,
-              @args.playlist_id
+              @args[:profile_id],
+              @args[:token],
+              @args[:playlist_id]
             ]
           end
 
@@ -28,7 +28,9 @@ module Muffon
           end
 
           def update_params
-            @args.to_h.slice(:title)
+            @args.permit!.slice(
+              :title
+            )
           end
 
           def playlist_data

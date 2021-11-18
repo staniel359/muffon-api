@@ -21,7 +21,7 @@ module Muffon
 
           def recommendation
             profile.recommendations.find_by(
-              id: @args.recommendation_id
+              id: @args[:recommendation_id]
             )
           end
         end

@@ -7,9 +7,9 @@ module VK
 
       def primary_args
         [
-          @args.album_id,
-          @args.owner_id,
-          @args.access_key
+          @args[:album_id],
+          @args[:owner_id],
+          @args[:access_key]
         ]
       end
 
@@ -23,9 +23,9 @@ module VK
 
       def album_params
         {
-          album_id: @args.album_id,
-          owner_id: @args.owner_id,
-          access_key: @args.access_key
+          album_id: album_id,
+          owner_id: owner_id,
+          access_key: access_key
         }
       end
 
@@ -33,9 +33,9 @@ module VK
         "/method/#{API_METHOD}"\
           "?access_token=#{access_token}"\
           '&v=5.131'\
-          "&album_id=#{@args.album_id}"\
-          "&owner_id=#{@args.owner_id}"\
-          "&access_key=#{@args.access_key}"\
+          "&album_id=#{album_id}"\
+          "&owner_id=#{owner_id}"\
+          "&access_key=#{access_key}"\
           "#{api_secret}"
       end
 
@@ -52,7 +52,7 @@ module VK
       def track_data_formatted(track)
         VK::Album::Tracks::Track.call(
           track: track,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

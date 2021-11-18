@@ -27,7 +27,7 @@ module SoundCloud
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def release_date

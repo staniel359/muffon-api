@@ -26,7 +26,7 @@ module LastFM
         end
 
         def track
-          @track ||= @args.track
+          @args[:track]
         end
 
         def artist_name

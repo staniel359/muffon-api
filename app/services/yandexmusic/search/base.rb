@@ -6,7 +6,7 @@ module YandexMusic
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -33,7 +33,7 @@ module YandexMusic
 
       def search_params
         {
-          text: @args.query,
+          text: @args[:query],
           type: collection_type,
           page: page - 1
         }

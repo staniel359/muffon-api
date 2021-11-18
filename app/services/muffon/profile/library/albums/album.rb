@@ -27,7 +27,7 @@ module Muffon
           end
 
           def profile_album
-            @profile_album ||= @args.album
+            @args[:album]
           end
 
           def title

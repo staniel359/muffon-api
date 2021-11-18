@@ -10,10 +10,10 @@ module Muffon
 
           def primary_args
             [
-              @args.profile_id,
-              @args.token,
-              @args.title,
-              @args.artist_name
+              @args[:profile_id],
+              @args[:token],
+              @args[:title],
+              @args[:artist_name]
             ]
           end
 
@@ -37,19 +37,19 @@ module Muffon
           end
 
           def title
-            @args.title
+            @args[:title]
           end
 
           def artist_name
-            @args.artist_name
+            @args[:artist_name]
           end
 
           def album_title
-            @args.album_title
+            @args[:album_title]
           end
 
           def duration
-            @args.duration
+            @args[:duration]
           end
 
           def payload_auth_data

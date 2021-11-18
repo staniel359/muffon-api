@@ -29,7 +29,7 @@ module Muffon
             end
 
             def profile_track
-              @profile_track ||= @args.track
+              @args[:track]
             end
 
             def artist_name

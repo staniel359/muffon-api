@@ -3,7 +3,7 @@ module Muffon
     module Artist
       class Tags < Muffon::Updater::Artist::Base
         def call
-          return if @args.artist_id.blank?
+          return if @args[:artist_id].blank?
           return if tags_list.blank?
 
           update_artist
@@ -19,18 +19,18 @@ module Muffon
 
         def artist_data
           LastFM::Artist::Tags.call(
-            artist: artist.name
+            artist: find_artist.name
           )
         end
 
-        def artist
-          @artist ||= ::Artist.find_by(
-            id: @args.artist_id
+        def find_artist
+          @find_artist ||= ::Artist.find_by(
+            id: @args[:artist_id]
           )
         end
 
         def update_artist
-          artist.update(
+          find_artist.update(
             tag_ids: tag_ids
           )
         end

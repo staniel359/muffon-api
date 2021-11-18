@@ -10,10 +10,10 @@ module Muffon
 
             def primary_args
               [
-                @args.profile_id,
-                @args.token,
-                @args.title,
-                @args.artist_name
+                @args[:profile_id],
+                @args[:token],
+                @args[:title],
+                @args[:artist_name]
               ]
             end
 
@@ -35,11 +35,11 @@ module Muffon
             end
 
             def title
-              @args.title
+              @args[:title]
             end
 
             def artist_name
-              @args.artist_name
+              @args[:artist_name]
             end
 
             def errors?

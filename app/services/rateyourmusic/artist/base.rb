@@ -10,8 +10,8 @@ module RateYourMusic
       private
 
       def wrong_artist_id?
-        @args.artist_id.to_i.to_s !=
-          @args.artist_id
+        @args[:artist_id].to_i.to_s !=
+          @args[:artist_id]
       end
 
       def data

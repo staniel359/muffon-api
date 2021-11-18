@@ -62,17 +62,17 @@ module Muffon
 
       def find_track?
         [
-          @args.track_title,
-          @args.artist_name
+          @args[:track_title],
+          @args[:artist_name]
         ].all?(&:present?)
       end
 
       def title
-        @args.track_title
+        @args[:track_title]
       end
 
       def artist_name
-        @args.artist_name
+        @args[:artist_name]
       end
     end
   end

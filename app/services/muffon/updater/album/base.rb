@@ -2,6 +2,8 @@ module Muffon
   module Updater
     module Album
       class Base < Muffon::Base
+        include Muffon::Utils::Album
+
         def call
           return if no_album? || not_all_args?
 
@@ -11,33 +13,28 @@ module Muffon
         private
 
         def no_album?
-          @args.album.blank?
-        end
-
-        def not_all_args?
-          [title, artist_name].any?(&:blank?)
-        end
-
-        def title
-          @title ||= @args.album[:title]
-        end
-
-        def artist_name
-          @artist_name ||= @args.album.dig(
-            :artist, :name
-          )
+          album.blank?
         end
 
         def album
-          ::Album.with_artist_title(
-            artist_id, title
-          )
+          @args[:album]
         end
 
-        def artist_id
-          ::Artist.with_name(
+        def not_all_args?
+          [
+            title,
             artist_name
-          ).id
+          ].any?(&:blank?)
+        end
+
+        def title
+          album[:title]
+        end
+
+        def artist_name
+          album.dig(
+            :artist, :name
+          )
         end
       end
     end

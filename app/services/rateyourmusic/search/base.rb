@@ -6,7 +6,7 @@ module RateYourMusic
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -40,7 +40,7 @@ module RateYourMusic
 
       def params
         {
-          searchterm: @args.query,
+          searchterm: @args[:query],
           searchtype: search_type,
           page: page
         }

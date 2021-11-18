@@ -13,8 +13,8 @@ module Deezer
 
       def primary_args
         [
-          @args.artist_id,
-          @args.album_type
+          @args[:artist_id],
+          @args[:album_type]
         ]
       end
 
@@ -30,7 +30,7 @@ module Deezer
 
       def payload
         {
-          art_id: @args.artist_id,
+          art_id: @args[:artist_id],
           discography_mode: 'all',
           filter_role_id: ['0'],
           lang: 'en',
@@ -44,7 +44,7 @@ module Deezer
 
       def name
         Deezer::Artist::Info.call(
-          artist_id: @args.artist_id
+          artist_id: @args[:artist_id]
         ).dig(:artist, :name)
       end
 
@@ -67,7 +67,7 @@ module Deezer
 
       def album_type_id
         ALBUM_TYPE_IDS[
-          @args.album_type.to_sym
+          @args[:album_type].to_sym
         ]
       end
 
@@ -80,7 +80,7 @@ module Deezer
       def collection_item_data_formatted(album)
         Deezer::Artist::Albums::Album.call(
           album: album,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

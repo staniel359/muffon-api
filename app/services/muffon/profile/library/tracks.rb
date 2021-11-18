@@ -51,7 +51,7 @@ module Muffon
         def track_formatted(track)
           Muffon::Profile::Library::Tracks::Track.call(
             track: track,
-            profile_id: @args.profile_id
+            profile_id: @args[:profile_id]
           )
         end
       end

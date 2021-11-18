@@ -9,9 +9,9 @@ module Muffon
 
           def primary_args
             [
-              @args.profile_id,
-              @args.token,
-              @args.recommendation_id
+              @args[:profile_id],
+              @args[:token],
+              @args[:recommendation_id]
             ]
           end
 
@@ -22,7 +22,7 @@ module Muffon
           def recommendation
             @recommendation ||=
               profile.recommendations.find_by(
-                id: @args.recommendation_id
+                id: @args[:recommendation_id]
               )
           end
 
@@ -67,7 +67,7 @@ module Muffon
           def profile_artist_formatted(artist)
             Muffon::Profile::Recommendations::Recommendation::Artist.call(
               artist: artist,
-              profile_id: @args.profile_id
+              profile_id: @args[:profile_id]
             )
           end
         end

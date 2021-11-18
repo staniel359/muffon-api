@@ -29,7 +29,7 @@ module YandexMusic
         end
 
         def track
-          @track ||= @args.track
+          @args[:track]
         end
 
         def track_extra_data

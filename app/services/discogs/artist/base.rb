@@ -11,7 +11,7 @@ module Discogs
 
       def link
         'https://www.discogs.com'\
-          "/artist/#{@args.artist_id}"
+          "/artist/#{@args[:artist_id]}"
       end
 
       def data

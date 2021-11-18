@@ -18,9 +18,13 @@ module YouTube
       end
 
       def image_resized(size)
-        @args.image.sub(
+        image.sub(
           'default', "#{size}default"
         )
+      end
+
+      def image
+        @args[:image]
       end
     end
   end

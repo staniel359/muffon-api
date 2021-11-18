@@ -19,7 +19,7 @@ module Discogs
         end
 
         def artist
-          @artist ||= @args.label
+          @args[:label]
         end
 
         def image

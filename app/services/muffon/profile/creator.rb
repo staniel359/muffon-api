@@ -5,10 +5,10 @@ module Muffon
 
       def primary_args
         [
-          @args.email,
-          @args.password,
-          @args.password_confirmation,
-          @args.nickname
+          @args[:email],
+          @args[:password],
+          @args[:password_confirmation],
+          @args[:nickname]
         ]
       end
 
@@ -19,7 +19,7 @@ module Muffon
       end
 
       def create_params
-        @args.to_h.slice(
+        @args.permit!.slice(
           *profile_params
         )
       end

@@ -6,11 +6,11 @@ module Discogs
       private
 
       def primary_args
-        [@args.label_id]
+        [@args[:label_id]]
       end
 
       def link
-        "#{BASE_LINK}/labels/#{@args.label_id}"
+        "#{BASE_LINK}/labels/#{@args[:label_id]}"
       end
 
       def data

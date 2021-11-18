@@ -6,7 +6,7 @@ module Bandcamp
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def response_data
@@ -17,9 +17,9 @@ module Bandcamp
 
       def params
         {
-          query: @args.query,
+          query: @args[:query],
           scope: scope,
-          page: @args.page
+          page: @args[:page]
         }
       end
 

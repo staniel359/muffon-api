@@ -5,7 +5,7 @@ module Muffon
         private
 
         def update_artist
-          artist.update(
+          find_artist.update(
             image_url: image_url
           )
         end
@@ -15,7 +15,7 @@ module Muffon
         end
 
         def data_image_url
-          @args.artist.dig(
+          artist.dig(
             :images, 0, :medium
           )
         end

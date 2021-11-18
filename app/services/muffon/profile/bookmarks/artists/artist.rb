@@ -22,7 +22,7 @@ module Muffon
           end
 
           def bookmark_artist
-            @bookmark_artist ||= @args.artist
+            @args[:artist]
           end
 
           def name

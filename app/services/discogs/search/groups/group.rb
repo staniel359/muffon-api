@@ -32,7 +32,7 @@ module Discogs
         end
 
         def album
-          @album ||= @args.group
+          @args[:group]
         end
 
         def full_title

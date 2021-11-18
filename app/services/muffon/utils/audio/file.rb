@@ -38,7 +38,7 @@ module Muffon
 
         def audio_path
           @audio_path ||=
-            "#{audio_folder}/#{@args.track_id}.mp3"
+            "#{audio_folder}/#{@args[:track_id]}.mp3"
         end
 
         def audio_link

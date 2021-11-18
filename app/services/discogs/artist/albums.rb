@@ -16,8 +16,8 @@ module Discogs
 
       def primary_args
         [
-          @args.artist_id,
-          @args.album_type
+          @args[:artist_id],
+          @args[:album_type]
         ]
       end
 
@@ -32,7 +32,7 @@ module Discogs
 
       def album_type
         ALBUM_TYPES_DATA[
-          @args.album_type.to_sym
+          @args[:album_type].to_sym
         ]
       end
 
@@ -69,7 +69,7 @@ module Discogs
       def collection_item_data_formatted(album)
         Discogs::Artist::Albums::Album.call(
           album: album,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

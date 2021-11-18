@@ -9,7 +9,7 @@ module Spotify
       def collection_item_data_formatted(track)
         Spotify::Search::Tracks::Track.call(
           track: track,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

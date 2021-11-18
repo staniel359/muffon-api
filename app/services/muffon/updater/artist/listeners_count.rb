@@ -5,13 +5,13 @@ module Muffon
         private
 
         def update_artist
-          artist.update(
+          find_artist.update(
             listeners_count: listeners_count
           )
         end
 
         def listeners_count
-          @args.artist[:listeners_count]
+          artist[:listeners_count]
         end
       end
     end

@@ -25,20 +25,30 @@ module Bandcamp
         end
 
         def name
-          bandcamp_artist_name(@args.artist)
+          bandcamp_artist_name(
+            artist
+          )
+        end
+
+        def artist
+          @args[:artist]
         end
 
         def bandcamp_slug
-          bandcamp_artist_slug(@args.artist)
+          bandcamp_artist_slug(
+            artist
+          )
         end
 
         def bandcamp_model
-          bandcamp_model_name(@args.artist)
+          bandcamp_model_name(
+            artist
+          )
         end
 
         def image_data
           image_data_formatted(
-            @args.artist[:image], 'artist'
+            artist[:image], 'artist'
           )
         end
       end

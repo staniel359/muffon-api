@@ -6,7 +6,7 @@ module YouTube
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def link
@@ -19,11 +19,11 @@ module YouTube
 
       def search_params
         {
-          q: @args.query,
+          q: @args[:query],
           type: 'video',
           part: 'snippet',
           maxResults: limit,
-          pageToken: @args.page
+          pageToken: @args[:page]
         }.compact
       end
 

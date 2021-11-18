@@ -13,7 +13,7 @@ module Genius
         end
 
         def lyrics
-          return '' if @args.track_slug.blank?
+          return '' if @args[:track_slug].blank?
 
           lyrics_original.presence ||
             lyrics_alternative.presence ||
@@ -33,7 +33,7 @@ module Genius
         end
 
         def link
-          "https://genius.com#{@args.track_slug}"
+          "https://genius.com#{@args[:track_slug]}"
         end
 
         def lyrics_alternative

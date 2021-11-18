@@ -4,7 +4,7 @@ module Genius
       private
 
       def primary_args
-        [@args.artist_id]
+        [@args[:artist_id]]
       end
 
       def no_data?

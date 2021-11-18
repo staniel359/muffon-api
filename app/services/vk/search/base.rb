@@ -7,7 +7,7 @@ module VK
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -28,14 +28,18 @@ module VK
         "/method/#{api_method}"\
           "?access_token=#{access_token}"\
           '&v=5.131'\
-          "&q=#{@args.query}"\
+          "&q=#{query}"\
           "&count=#{TOTAL_LIMIT}"\
           "#{api_secret}"
       end
 
+      def query
+        @args[:query]
+      end
+
       def search_params
         {
-          q: @args.query,
+          q: query,
           count: TOTAL_LIMIT
         }
       end

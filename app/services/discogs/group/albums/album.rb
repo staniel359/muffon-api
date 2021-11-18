@@ -26,7 +26,7 @@ module Discogs
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def image

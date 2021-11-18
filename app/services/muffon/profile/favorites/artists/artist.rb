@@ -22,7 +22,7 @@ module Muffon
           end
 
           def favorite_artist
-            @favorite_artist ||= @args.artist
+            @args[:artist]
           end
 
           def name

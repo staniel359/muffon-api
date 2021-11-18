@@ -10,15 +10,17 @@ module YandexMusic
       def data
         return image_data if image.present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def image
-        return if @args.data.blank?
+        return if @args[:data].blank?
 
-        @image ||= @args.data.dig(
+        @image ||= @args[:data].dig(
           'cover', 'uri'
-        ) || @args.data['coverUri']
+        ) || @args[:data]['coverUri']
       end
 
       def image_data
@@ -36,7 +38,9 @@ module YandexMusic
       end
 
       def image_resized(size)
-        image.sub('%%', "#{size}x#{size}")
+        image.sub(
+          '%%', "#{size}x#{size}"
+        )
       end
     end
   end

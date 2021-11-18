@@ -4,7 +4,7 @@ module Spotify
       private
 
       def link
-        "#{BASE_LINK}/artists/#{@args.artist_id}"
+        "#{BASE_LINK}/artists/#{@args[:artist_id]}"
       end
 
       def data

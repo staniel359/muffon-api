@@ -15,7 +15,7 @@ module Bandcamp
       end
 
       def base_link
-        "https://#{@args.artist}.bandcamp.com"
+        "https://#{@args[:artist]}.bandcamp.com"
       end
 
       def model_response_data

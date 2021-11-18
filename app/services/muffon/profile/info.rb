@@ -6,7 +6,7 @@ module Muffon
       def profile_data
         Muffon::Profiles::Profile.call(
           profile: profile,
-          token: @args.token
+          token: @args[:token]
         )
       end
     end

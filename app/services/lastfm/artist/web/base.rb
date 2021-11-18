@@ -5,7 +5,7 @@ module LastFM
         private
 
         def primary_args
-          [@args.artist]
+          [@args[:artist]]
         end
 
         def base_link

@@ -27,14 +27,18 @@ module LastFM
         end
 
         def title
-          @args.album.css(
+          album.css(
             '.resource-list--'\
             'release-list-item-name a'
           )[0].text
         end
 
+        def album
+          @args[:album]
+        end
+
         def artist_name
-          @args.album.css(
+          album.css(
             '.resource-list--'\
             'release-list-item-artist a'
           )[0].text
@@ -47,7 +51,7 @@ module LastFM
         end
 
         def image
-          @args.album.css(
+          album.css(
             '.resource-list--'\
             'release-list-item-image img'
           )[0]['src']

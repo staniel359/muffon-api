@@ -14,7 +14,7 @@ module LastFM
       def collection_item_data_formatted(track)
         LastFM::Top::Tracks::Track.call(
           track: track,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

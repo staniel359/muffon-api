@@ -23,7 +23,7 @@ module RateYourMusic
         end
 
         def artist
-          @artist ||= @args.artist
+          @args[:artist]
         end
 
         def rateyourmusic_id
@@ -45,7 +45,9 @@ module RateYourMusic
         end
 
         def image
-          raw_image.try(:[], 'data-src')
+          raw_image.try(
+            :[], 'data-src'
+          )
         end
 
         def raw_image

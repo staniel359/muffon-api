@@ -18,7 +18,7 @@ module Muffon
         private
 
         def data
-          "#{folder_name}/#{@args.action}"
+          "#{folder_name}/#{@args[:action]}"
             .camelize
             .safe_constantize
         end
@@ -28,9 +28,11 @@ module Muffon
         end
 
         def controller_name
-          @args.controller.remove(
-            'api/v1/'
-          ).split('/').map(&:singularize).join('/')
+          @args[:controller]
+            .remove('api/v1/')
+            .split('/')
+            .map(&:singularize)
+            .join('/')
         end
       end
     end

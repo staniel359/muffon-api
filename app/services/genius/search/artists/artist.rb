@@ -24,16 +24,20 @@ module Genius
         end
 
         def name
-          @args.artist['name']
+          artist['name']
+        end
+
+        def artist
+          @args[:artist]
         end
 
         def genius_id
-          @args.artist['id']
+          artist['id']
         end
 
         def image_data
           image_data_formatted(
-            @args.artist['image_url']
+            artist['image_url']
           )
         end
       end

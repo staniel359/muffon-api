@@ -4,7 +4,7 @@ module SoundCloud
       private
 
       def primary_args
-        [@args.artist_id]
+        [@args[:artist_id]]
       end
 
       def no_data?
@@ -12,7 +12,7 @@ module SoundCloud
       end
 
       def link
-        "#{BASE_LINK}/users/#{@args.artist_id}"
+        "#{BASE_LINK}/users/#{@args[:artist_id]}"
       end
 
       def data
@@ -25,7 +25,7 @@ module SoundCloud
 
       def name
         SoundCloud::Artist::Info.call(
-          artist_id: @args.artist_id
+          artist_id: @args[:artist_id]
         ).dig(:artist, :name)
       end
     end

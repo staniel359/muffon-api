@@ -23,7 +23,7 @@ module Muffon
           end
 
           def bookmark_album
-            @bookmark_album ||= @args.album
+            @args[:album]
           end
 
           def title

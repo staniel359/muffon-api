@@ -24,7 +24,7 @@ module Muffon
           end
 
           def profile_artist
-            @profile_artist ||= @args.artist
+            @args[:artist]
           end
 
           def name

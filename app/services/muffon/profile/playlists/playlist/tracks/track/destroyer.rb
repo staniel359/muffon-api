@@ -9,10 +9,10 @@ module Muffon
 
               def primary_args
                 [
-                  @args.profile_id,
-                  @args.token,
-                  @args.playlist_id,
-                  @args.playlist_track_id
+                  @args[:profile_id],
+                  @args[:token],
+                  @args[:playlist_id],
+                  @args[:playlist_track_id]
                 ]
               end
 
@@ -26,7 +26,7 @@ module Muffon
 
               def playlist_track
                 playlist.playlist_tracks.find_by(
-                  id: @args.playlist_track_id
+                  id: @args[:playlist_track_id]
                 )
               end
             end

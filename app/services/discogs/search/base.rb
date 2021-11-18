@@ -6,7 +6,7 @@ module Discogs
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -27,7 +27,7 @@ module Discogs
 
       def search_params
         {
-          query: @args.query,
+          query: @args[:query],
           type: collection_type
         }
       end

@@ -21,7 +21,7 @@ module Muffon
             @artists ||=
               artists_joined.where(
                 'LOWER(artists.name) LIKE :query',
-                query: "%#{@args.query.downcase}%"
+                query: "%#{@args[:query].downcase}%"
               )
           end
 
@@ -60,7 +60,7 @@ module Muffon
           def artist_formatted(artist)
             Muffon::Profile::Library::Artists::Artist.call(
               artist: artist,
-              profile_id: @args.profile_id
+              profile_id: @args[:profile_id]
             )
           end
         end

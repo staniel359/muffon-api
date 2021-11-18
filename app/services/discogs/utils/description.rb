@@ -15,10 +15,12 @@ module Discogs
       private
 
       def data
-        description = @args.description || ''
+        description = @args[:description] || ''
 
         DESCRIPTION_RULES.each do |regexp, rule|
-          description = description.gsub(regexp, rule)
+          description = description.gsub(
+            regexp, rule
+          )
         end
 
         description

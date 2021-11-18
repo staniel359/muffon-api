@@ -6,7 +6,7 @@ module LastFM
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -32,7 +32,7 @@ module LastFM
       end
 
       def search_params
-        { model_name.to_sym => @args.query }
+        { model_name.to_sym => @args[:query] }
       end
 
       def data

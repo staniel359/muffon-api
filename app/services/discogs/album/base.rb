@@ -6,11 +6,11 @@ module Discogs
       private
 
       def primary_args
-        [@args.album_id]
+        [@args[:album_id]]
       end
 
       def link
-        "#{BASE_LINK}/releases/#{@args.album_id}"
+        "#{BASE_LINK}/releases/#{@args[:album_id]}"
       end
 
       def data
@@ -46,7 +46,7 @@ module Discogs
 
         Discogs::Album::Info::Track.call(
           track: track,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
 

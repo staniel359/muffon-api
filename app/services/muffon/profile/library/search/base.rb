@@ -9,8 +9,8 @@ module Muffon
 
           def primary_args
             [
-              @args.profile_id,
-              @args.query
+              @args[:profile_id],
+              @args[:query]
             ]
           end
         end

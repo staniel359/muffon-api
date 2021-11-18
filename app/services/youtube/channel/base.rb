@@ -4,7 +4,7 @@ module YouTube
       private
 
       def primary_args
-        [@args.channel_id]
+        [@args[:channel_id]]
       end
 
       def link
@@ -17,7 +17,7 @@ module YouTube
 
       def channel_params
         {
-          id: @args.channel_id,
+          id: @args[:channel_id],
           part: 'snippet,contentDetails'
         }
       end

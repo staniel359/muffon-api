@@ -7,9 +7,9 @@ module Muffon
 
           def primary_args
             [
-              @args.profile_id,
-              @args.token,
-              @args.title
+              @args[:profile_id],
+              @args[:token],
+              @args[:title]
             ]
           end
 
@@ -27,7 +27,7 @@ module Muffon
 
           def playlist
             @playlist ||= profile.playlists.where(
-              title: @args.title
+              title: @args[:title]
             ).first_or_create
           end
         end

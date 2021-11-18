@@ -4,7 +4,7 @@ module RateYourMusic
       private
 
       def primary_args
-        [@args.album]
+        [@args[:album]]
       end
 
       def no_data?
@@ -26,7 +26,7 @@ module RateYourMusic
       end
 
       def link
-        "https://rateyourmusic.com/#{@args.album}"
+        "https://rateyourmusic.com/#{@args[:album]}"
       end
 
       def data

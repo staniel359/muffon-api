@@ -31,7 +31,7 @@ module Genius
         def track_data_formatted(track)
           Genius::Album::Info::Tracks::Track.call(
             track: track['song'],
-            profile_id: @args.profile_id
+            profile_id: @args[:profile_id]
           )
         end
       end

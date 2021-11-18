@@ -28,13 +28,17 @@ module Discogs
         end
 
         def title
-          @args.album.css(
+          album.css(
             'td.title > a'
           )[0].text
         end
 
+        def album
+          @args[:album]
+        end
+
         def discogs_id
-          @args.album['data-object-id'].to_i
+          album['data-object-id'].to_i
         end
 
         def discogs_type
@@ -42,7 +46,7 @@ module Discogs
         end
 
         def group?
-          @args.album[
+          album[
             'data-object-type'
           ].include?('master')
         end
@@ -59,7 +63,7 @@ module Discogs
         end
 
         def artist_node
-          @artist_node ||= @args.album.css(
+          @artist_node ||= album.css(
             'td.artist'
           )
         end
@@ -77,7 +81,7 @@ module Discogs
         end
 
         def raw_image
-          @raw_image ||= @args.album.css(
+          @raw_image ||= album.css(
             'td.image img'
           )[0]
         end
@@ -91,7 +95,7 @@ module Discogs
         end
 
         def release_date_node
-          @release_date_node ||= @args.album.css(
+          @release_date_node ||= album.css(
             'td.year'
           )
         end

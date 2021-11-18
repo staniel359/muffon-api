@@ -6,7 +6,7 @@ module YandexMusic
       private
 
       def primary_args
-        [@args.album_id]
+        [@args[:album_id]]
       end
 
       def no_data?
@@ -18,7 +18,8 @@ module YandexMusic
       end
 
       def link
-        "#{BASE_LINK}/albums/#{@args.album_id}/with-tracks"
+        "#{BASE_LINK}/albums"\
+          "/#{@args[:album_id]}/with-tracks"
       end
 
       def data

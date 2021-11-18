@@ -10,10 +10,10 @@ module Muffon
 
             def primary_args
               [
-                @args.profile_id,
-                @args.token,
-                @args.title,
-                @args.artist_name
+                @args[:profile_id],
+                @args[:token],
+                @args[:title],
+                @args[:artist_name]
               ]
             end
 
@@ -33,7 +33,7 @@ module Muffon
 
             def process_profile_artist
               profile_artist.tap do |artist|
-                artist.created_at = @args.created_at if
+                artist.created_at = @args[:created_at] if
                     update_created_at?(artist)
                 artist.save
               end
@@ -47,16 +47,16 @@ module Muffon
             end
 
             def artist_name
-              @args.artist_name
+              @args[:artist_name]
             end
 
             def process_profile_album
               return if profile_album.blank?
 
               profile_album.tap do |album|
-                album.image_url = @args.image_url if
-                    @args.image_url.present?
-                album.created_at = @args.created_at if
+                album.image_url = @args[:image_url] if
+                    @args[:image_url].present?
+                album.created_at = @args[:created_at] if
                     update_created_at?(album)
                 album.save
               end
@@ -72,12 +72,12 @@ module Muffon
             end
 
             def album_title
-              @args.album_title
+              @args[:album_title]
             end
 
             def process_profile_track
               profile_track.tap do |track|
-                track.created_at = @args.created_at if
+                track.created_at = @args[:created_at] if
                     update_created_at?(track)
                 track.save
               end
@@ -93,14 +93,14 @@ module Muffon
             end
 
             def title
-              @args.title
+              @args[:title]
             end
 
             def update_created_at?(model)
-              return false if @args.created_at.blank?
+              return false if @args[:created_at].blank?
               return true if model.created_at.blank?
 
-              @args.created_at < model.created_at
+              @args[:created_at] < model.created_at
             end
 
             def errors?
@@ -109,7 +109,7 @@ module Muffon
 
             def process_track_image
               return if profile_album.blank?
-              return remove_image if @args.image.blank?
+              return remove_image if @args[:image].blank?
 
               add_image
             end

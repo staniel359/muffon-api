@@ -6,7 +6,7 @@ module Spotify
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -35,7 +35,7 @@ module Spotify
 
       def search_params
         {
-          q: @args.query,
+          q: @args[:query],
           type: collection_type
         }
       end

@@ -26,8 +26,8 @@ module RateYourMusic
 
       def primary_args
         [
-          @args.artist_id,
-          @args.album_type
+          @args[:artist_id],
+          @args[:album_type]
         ]
       end
 
@@ -42,9 +42,9 @@ module RateYourMusic
       end
 
       def album_type_formatted
-        return if @args.album_type.blank?
+        return if @args[:album_type].blank?
 
-        @args.album_type.downcase.strip.to_sym
+        @args[:album_type].downcase.strip.to_sym
       end
 
       def no_data?
@@ -60,7 +60,7 @@ module RateYourMusic
 
       def payload
         {
-          artist_id: @args.artist_id,
+          artist_id: @args[:artist_id],
           action: ACTION,
           type: album_type,
           sort: 'release_date.a',
@@ -95,7 +95,7 @@ module RateYourMusic
       def collection_item_data_formatted(album)
         RateYourMusic::Artist::Albums::Album.call(
           album: album,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
 

@@ -27,16 +27,20 @@ module Discogs
         end
 
         def title
-          @args.track['title']
+          track['title']
+        end
+
+        def track
+          @args[:track]
         end
 
         def artists_list
-          @args.track['artists']
+          track['artists']
         end
 
         def duration
           duration_formatted(
-            @args.track['duration']
+            track['duration']
           )
         end
       end

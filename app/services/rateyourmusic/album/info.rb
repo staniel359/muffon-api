@@ -93,7 +93,7 @@ module RateYourMusic
         RateYourMusic::Album::Info::Track.call(
           track: track,
           artists_list: artists_list,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

@@ -25,7 +25,7 @@ module Muffon
           end
 
           def favorite_track
-            @favorite_track ||= @args.track
+            @args[:track]
           end
 
           def player_id

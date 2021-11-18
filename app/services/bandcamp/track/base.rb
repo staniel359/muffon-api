@@ -7,8 +7,8 @@ module Bandcamp
 
       def primary_args
         [
-          @args.artist_id,
-          @args.track_id
+          @args[:artist_id],
+          @args[:track_id]
         ]
       end
 
@@ -24,8 +24,8 @@ module Bandcamp
 
       def params
         {
-          band_id: @args.artist_id,
-          tralbum_id: @args.track_id,
+          band_id: @args[:artist_id],
+          tralbum_id: @args[:track_id],
           tralbum_type: 't'
         }
       end

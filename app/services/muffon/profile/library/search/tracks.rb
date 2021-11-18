@@ -22,7 +22,7 @@ module Muffon
               tracks_joined.where(
                 'LOWER(tracks.title) LIKE :query '\
                 'OR LOWER(artists.name) LIKE :query',
-                query: "%#{@args.query.downcase}%"
+                query: "%#{@args[:query].downcase}%"
               )
           end
 
@@ -65,7 +65,7 @@ module Muffon
           def track_formatted(track)
             Muffon::Profile::Library::Tracks::Track.call(
               track: track,
-              profile_id: @args.profile_id
+              profile_id: @args[:profile_id]
             )
           end
         end

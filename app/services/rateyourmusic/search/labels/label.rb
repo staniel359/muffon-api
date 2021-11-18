@@ -17,11 +17,13 @@ module RateYourMusic
         end
 
         def name
-          label.css('.label')[0].text
+          label.css(
+            '.label'
+          )[0].text
         end
 
         def label
-          @label ||= @args.label
+          @args[:label]
         end
 
         def rateyourmusic_slug
@@ -31,7 +33,9 @@ module RateYourMusic
         end
 
         def raw_rateyourmusic_slug
-          label.css('.label')[0]['href']
+          label.css(
+            '.label'
+          )[0]['href']
         end
 
         def image_data
@@ -41,7 +45,9 @@ module RateYourMusic
         end
 
         def image
-          raw_image.try(:[], 'data-src')
+          raw_image.try(
+            :[], 'data-src'
+          )
         end
 
         def raw_image

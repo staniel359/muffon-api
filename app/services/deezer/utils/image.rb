@@ -14,9 +14,11 @@ module Deezer
       private
 
       def data
-        return image_data if @args.image_id.present?
+        return image_data if @args[:image_id].present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def image_data
@@ -30,18 +32,22 @@ module Deezer
       end
 
       def image_resized(size)
-        image.sub('1000x1000', size)
+        image.sub(
+          '1000x1000', size
+        )
       end
 
       def image
-        @image ||= 'https://cdns-images.dzcdn.net'\
-                   "/images/#{image_model}/#{@args.image_id}"\
-                   '/1000x1000-000000-80-0-0.jpg'
+        @image ||=
+          'https://cdns-images.dzcdn.net'\
+          "/images/#{image_model}/"\
+          "#{@args[:image_id]}"\
+          '/1000x1000-000000-80-0-0.jpg'
       end
 
       def image_model
         @image_model ||= IMAGE_MODELS[
-          @args.model.to_sym
+          @args[:model].to_sym
         ]
       end
     end

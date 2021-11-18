@@ -15,7 +15,7 @@ module Deezer
 
         def raw_audio_link
           @raw_audio_link ||= Deezer::Utils::Audio::Link.call(
-            track_id: @args.track_id
+            track_id: @args[:track_id]
           )
         end
 
@@ -67,7 +67,7 @@ module Deezer
         def blowfish
           @blowfish ||=
             Deezer::Utils::Audio::Decoder::Blowfish.new(
-              track_id: @args.track_id
+              track_id: @args[:track_id]
             )
         end
       end

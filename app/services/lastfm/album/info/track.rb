@@ -28,7 +28,7 @@ module LastFM
         end
 
         def track
-          @track ||= @args.track
+          @args[:track]
         end
       end
     end

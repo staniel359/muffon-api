@@ -10,9 +10,9 @@ module Muffon
 
             def primary_args
               [
-                @args.profile_id,
-                @args.token,
-                @args.name
+                @args[:profile_id],
+                @args[:token],
+                @args[:name]
               ]
             end
 
@@ -34,7 +34,7 @@ module Muffon
             end
 
             def name
-              @args.name
+              @args[:name]
             end
 
             def errors?

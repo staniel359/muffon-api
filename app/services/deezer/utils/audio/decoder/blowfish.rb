@@ -20,7 +20,7 @@ module Deezer
 
           def cipher_key
             Deezer::Utils::Audio::Decoder::Key.call(
-              track_id: @args.track_id
+              track_id: @args[:track_id]
             )
           end
 

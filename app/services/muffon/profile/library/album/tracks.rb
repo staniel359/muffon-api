@@ -50,7 +50,7 @@ module Muffon
           def track_data_formatted(track)
             Muffon::Profile::Library::Album::Tracks::Track.call(
               track: track,
-              profile_id: @args.profile_id
+              profile_id: @args[:profile_id]
             )
           end
         end

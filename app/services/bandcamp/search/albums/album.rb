@@ -28,24 +28,38 @@ module Bandcamp
         end
 
         def title
-          model_title(@args.album)
+          model_title(album)
+        end
+
+        def album
+          @args[:album]
         end
 
         def bandcamp_slug
-          bandcamp_title_slug(@args.album)
+          bandcamp_title_slug(
+            album
+          )
         end
 
         def bandcamp_model
-          bandcamp_model_name(@args.album)
+          bandcamp_model_name(
+            album
+          )
         end
 
         def artists
-          [artist_data_formatted(@args.album)]
+          [artist]
+        end
+
+        def artist
+          artist_data_formatted(
+            album
+          )
         end
 
         def image_data
           image_data_formatted(
-            @args.album[:image], 'album'
+            album[:image], 'album'
           )
         end
       end

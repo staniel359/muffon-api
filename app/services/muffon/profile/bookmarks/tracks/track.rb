@@ -25,7 +25,7 @@ module Muffon
           end
 
           def bookmark_track
-            @bookmark_track ||= @args.track
+            @args[:track]
           end
 
           def player_id

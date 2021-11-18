@@ -24,9 +24,13 @@ module LastFM
         end
 
         def name
-          @args.artist.css(
+          artist.css(
             '.big-artist-list-title'
           )[0].text
+        end
+
+        def artist
+          @args[:artist]
         end
       end
     end

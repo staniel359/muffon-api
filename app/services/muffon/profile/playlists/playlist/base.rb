@@ -7,8 +7,8 @@ module Muffon
 
           def primary_args
             [
-              @args.profile_id,
-              @args.playlist_id
+              @args[:profile_id],
+              @args[:playlist_id]
             ]
           end
 
@@ -18,7 +18,7 @@ module Muffon
 
           def playlist
             @playlist ||= profile.playlists.find_by(
-              id: @args.playlist_id
+              id: @args[:playlist_id]
             )
           end
 

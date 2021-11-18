@@ -20,7 +20,7 @@ module YouTube
         end
 
         def video
-          @video ||= @args.video
+          @args[:video]
         end
 
         def youtube_id

@@ -8,9 +8,15 @@ module SoundCloud
       private
 
       def data
-        return image_data if @args.image.present?
+        return image_data if image.present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
+      end
+
+      def image
+        @args[:image]
       end
 
       def image_data
@@ -24,7 +30,7 @@ module SoundCloud
       end
 
       def image_resized(size)
-        @args.image.sub('large', size)
+        image.sub('large', size)
       end
     end
   end

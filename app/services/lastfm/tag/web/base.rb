@@ -7,11 +7,12 @@ module LastFM
         private
 
         def primary_args
-          [@args.tag]
+          [@args[:tag]]
         end
 
         def no_data?
-          collection_list.blank? || page_out_of_bounds?
+          collection_list.blank? ||
+            page_out_of_bounds?
         end
 
         def collection_list
@@ -29,11 +30,15 @@ module LastFM
         end
 
         def tag_name
-          param_formatted(@args.tag)
+          param_formatted(
+            @args[:tag]
+          )
         end
 
         def params
-          super.merge(pagination_params)
+          super.merge(
+            pagination_params
+          )
         end
 
         def data

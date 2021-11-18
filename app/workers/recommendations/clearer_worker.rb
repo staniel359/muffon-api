@@ -4,7 +4,7 @@ module Recommendations
 
     def perform(args)
       Muffon::Profile::Recommendations::Clearer.call(
-        args
+        args.deep_symbolize_keys
       )
     end
   end

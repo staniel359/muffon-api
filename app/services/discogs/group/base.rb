@@ -6,11 +6,11 @@ module Discogs
       private
 
       def primary_args
-        [@args.group_id]
+        [@args[:group_id]]
       end
 
       def link
-        "#{BASE_LINK}/masters/#{@args.group_id}"
+        "#{BASE_LINK}/masters/#{@args[:group_id]}"
       end
 
       def data

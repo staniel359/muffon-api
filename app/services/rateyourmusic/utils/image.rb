@@ -10,15 +10,23 @@ module RateYourMusic
       def data
         return image_data if image_present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def image_present?
-        @args.image.present? && !placeholder?
+        image.present? && !placeholder?
+      end
+
+      def image
+        @args[:image]
       end
 
       def placeholder?
-        @args.image.end_with?('blockeds.png')
+        image.end_with?(
+          'blockeds.png'
+        )
       end
 
       def image_data
@@ -32,7 +40,7 @@ module RateYourMusic
       end
 
       def image_formatted
-        "https:#{@args.image}"
+        "https:#{image}"
       end
     end
   end

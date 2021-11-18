@@ -20,53 +20,53 @@ module Muffon
       end
 
       def library_id
-        return if @args.profile_id.blank?
+        return if @args[:profile_id].blank?
 
         find_profile_album&.id
       end
 
       def find_profile_album
-        @find_profile_album ||= ProfileAlbum.find_by(
-          profile_id: @args.profile_id,
+        ProfileAlbum.find_by(
+          profile_id: @args[:profile_id],
           album_id: find_album.id
         )
       end
 
       def listened_id
-        return if @args.profile_id.blank?
+        return if @args[:profile_id].blank?
 
         find_listened_album&.id
       end
 
       def find_listened_album
         ListenedAlbum.find_by(
-          profile_id: @args.profile_id,
+          profile_id: @args[:profile_id],
           album_id: find_album.id
         )
       end
 
       def bookmark_id
-        return if @args.profile_id.blank?
+        return if @args[:profile_id].blank?
 
         find_bookmark_album&.id
       end
 
       def find_bookmark_album
         BookmarkAlbum.find_by(
-          profile_id: @args.profile_id,
+          profile_id: @args[:profile_id],
           album_id: find_album.id
         )
       end
 
       def favorite_id
-        return if @args.profile_id.blank?
+        return if @args[:profile_id].blank?
 
         find_favorite_album&.id
       end
 
       def find_favorite_album
         FavoriteAlbum.find_by(
-          profile_id: @args.profile_id,
+          profile_id: @args[:profile_id],
           album_id: find_album.id
         )
       end

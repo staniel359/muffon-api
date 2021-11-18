@@ -10,11 +10,13 @@ module Spotify
       def data
         return image_data if images_list.present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def images_list
-        @images_list ||= @args.data['images']
+        @images_list ||= @args[:data]['images']
       end
 
       def image_data

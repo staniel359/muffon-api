@@ -6,7 +6,7 @@ module SoundCloud
       private
 
       def primary_args
-        [@args.album_id]
+        [@args[:album_id]]
       end
 
       def no_data?
@@ -18,7 +18,7 @@ module SoundCloud
       end
 
       def link
-        "#{BASE_LINK}/playlists/#{@args.album_id}"
+        "#{BASE_LINK}/playlists/#{@args[:album_id]}"
       end
 
       def data

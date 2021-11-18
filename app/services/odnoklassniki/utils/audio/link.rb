@@ -5,20 +5,24 @@ module Odnoklassniki
         STRING = '43561287293571488343173598143728'.freeze
 
         def call
-          return '' if @args.link.blank?
-
           data
         end
 
         private
 
         def data
-          "#{@args.link}&clientHash=#{client_hash}"
+          return '' if @args[:link].blank?
+
+          "#{@args[:link]}&clientHash=#{client_hash}"
         end
 
         def client_hash
           first.map.with_index do |n, i|
-            (sum - (third[i] * third[i + 1] * n)).abs
+            (
+              sum - (
+                third[i] * third[i + 1] * n
+              )
+            ).abs
           end.join
         end
 
@@ -44,12 +48,15 @@ module Odnoklassniki
 
         def md5
           @md5 ||= Rack::Utils.parse_nested_query(
-            @args.link
+            @args[:link]
           )['md5']
         end
 
         def third
-          @third ||= [second, second.last].flatten
+          @third ||= [
+            second,
+            second.last
+          ].flatten
         end
       end
     end

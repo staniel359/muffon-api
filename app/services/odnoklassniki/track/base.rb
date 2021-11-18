@@ -7,7 +7,7 @@ module Odnoklassniki
       private
 
       def primary_args
-        [@args.track_id]
+        [@args[:track_id]]
       end
 
       def params
@@ -15,7 +15,7 @@ module Odnoklassniki
       end
 
       def track_params
-        { tid: @args.track_id }
+        { tid: @args[:track_id] }
       end
 
       def data

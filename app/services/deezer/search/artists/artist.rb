@@ -25,21 +25,25 @@ module Deezer
         end
 
         def name
-          @args.artist['ART_NAME']
+          artist['ART_NAME']
+        end
+
+        def artist
+          @args[:artist]
         end
 
         def deezer_id
-          @args.artist['ART_ID'].to_i
+          artist['ART_ID'].to_i
         end
 
         def image_data
           image_data_formatted(
-            @args.artist['ART_PICTURE'], 'artist'
+            artist['ART_PICTURE'], 'artist'
           )
         end
 
         def listeners_count
-          @args.artist['NB_FAN']
+          artist['NB_FAN']
         end
       end
     end

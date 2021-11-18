@@ -1,8 +1,6 @@
-module Bandcamp
+module VK
   module Artist
-    class Base < Bandcamp::Base
-      include Muffon::Utils::Pagination
-
+    class Base < VK::Base
       private
 
       def primary_args
@@ -10,14 +8,16 @@ module Bandcamp
       end
 
       def params
-        { band_id: @args[:artist_id] }
+        super.merge(artist_params)
+      end
+
+      def artist_id
+        @args[:artist_id]
       end
 
       def data
         { artist: artist_data }
       end
-
-      alias link artist_label_link
     end
   end
 end

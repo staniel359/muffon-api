@@ -18,11 +18,15 @@ module Bandcamp
         end
 
         def name
-          @args.artist['name']
+          artist['name']
+        end
+
+        def artist
+          @args[:artist]
         end
 
         def bandcamp_id
-          @args.artist['id']
+          artist['id']
         end
 
         def image_data
@@ -37,7 +41,7 @@ module Bandcamp
         end
 
         def image_id
-          @args.artist['image_id']
+          artist['image_id']
         end
       end
     end

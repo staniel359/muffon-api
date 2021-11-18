@@ -6,7 +6,7 @@ module Odnoklassniki
       private
 
       def primary_args
-        [@args.artist_id]
+        [@args[:artist_id]]
       end
 
       def params
@@ -14,7 +14,7 @@ module Odnoklassniki
       end
 
       def artist_params
-        { artistId: @args.artist_id }
+        { artistId: @args[:artist_id] }
       end
 
       def data

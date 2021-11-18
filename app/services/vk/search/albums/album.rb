@@ -26,7 +26,7 @@ module VK
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def album_base_data

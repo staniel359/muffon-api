@@ -27,14 +27,16 @@ module RateYourMusic
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def release_date
           return '' if raw_release_date.blank?
 
           date_formatted(
-            raw_release_date.css('td')[0].text
+            raw_release_date.css(
+              'td'
+            )[0].text
           )
         end
 

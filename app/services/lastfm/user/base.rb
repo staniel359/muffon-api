@@ -4,7 +4,7 @@ module LastFM
       private
 
       def primary_args
-        [@args.nickname]
+        [@args[:nickname]]
       end
 
       def params
@@ -12,7 +12,7 @@ module LastFM
       end
 
       def user_params
-        { user: @args.nickname }
+        { user: @args[:nickname] }
       end
 
       def data

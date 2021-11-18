@@ -47,7 +47,9 @@ module LastFM
     end
 
     def artist_name_formatted
-      param_formatted(@args.artist)
+      param_formatted(
+        @args[:artist]
+      )
     end
 
     def param_formatted(data)
@@ -56,22 +58,30 @@ module LastFM
 
     def album_params
       {
-        album: param_formatted(@args.album)
+        album: param_formatted(
+          @args[:album]
+        )
       }.merge(artist_params)
     end
 
     def track_params
       {
-        track: param_formatted(@args.track)
+        track: param_formatted(
+          @args[:track]
+        )
       }.merge(artist_params)
     end
 
     def tag_params
-      { tag: param_formatted(@args.tag) }
+      {
+        tag: param_formatted(
+          @args[:tag]
+        )
+      }
     end
 
     def lang_params
-      { lang: @args.lang }.compact
+      { lang: @args[:lang] }.compact
     end
 
     def artists

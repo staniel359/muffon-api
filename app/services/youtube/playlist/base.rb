@@ -6,7 +6,7 @@ module YouTube
       private
 
       def primary_args
-        [@args.playlist_id]
+        [@args[:playlist_id]]
       end
 
       def link
@@ -19,10 +19,10 @@ module YouTube
 
       def playlist_params
         {
-          playlistId: @args.playlist_id,
+          playlistId: @args[:playlist_id],
           part: 'snippet',
           maxResults: limit,
-          pageToken: @args.page
+          pageToken: @args[:page]
         }
       end
 

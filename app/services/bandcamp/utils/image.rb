@@ -8,9 +8,11 @@ module Bandcamp
       private
 
       def data
-        return image_data if @args.image.present?
+        return image_data if @args[:image].present?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def image_data
@@ -24,7 +26,7 @@ module Bandcamp
       end
 
       def image_resized(size)
-        @args.image.sub(
+        @args[:image].sub(
           /_23|_2|_5|_10/, size
         )
       end

@@ -10,10 +10,10 @@ module Muffon
 
             def primary_args
               [
-                @args.profile_id,
-                @args.token,
-                @args.title,
-                @args.artist_name
+                @args[:profile_id],
+                @args[:token],
+                @args[:title],
+                @args[:artist_name]
               ]
             end
 
@@ -21,13 +21,13 @@ module Muffon
               return forbidden if wrong_profile?
 
               profile_album.tap do |album|
-                album.image_url = @args.image_url
+                album.image_url = @args[:image_url]
                 album.save
               end
 
               return errors_data if errors?
 
-              process_tracks if @args.tracks.present?
+              process_tracks if @args[:tracks].present?
 
               { library_id: profile_album.id }
             end
@@ -41,11 +41,11 @@ module Muffon
             end
 
             def title
-              @args.title
+              @args[:title]
             end
 
             def artist_name
-              @args.artist_name
+              @args[:artist_name]
             end
 
             def profile_artist
@@ -59,7 +59,7 @@ module Muffon
             end
 
             def process_tracks
-              @args.tracks.each do |t|
+              @args[:tracks].each do |t|
                 process_track(t)
               end
             end
@@ -67,7 +67,7 @@ module Muffon
             def process_track(track)
               Muffon::Profile::Library::Albums::Album::Creator::Track.call(
                 track: track,
-                profile_id: @args.profile_id,
+                profile_id: @args[:profile_id],
                 profile_album_id: profile_album.id
               )
             end

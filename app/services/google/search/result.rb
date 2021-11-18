@@ -22,9 +22,13 @@ module Google
       end
 
       def opengraph_data(name)
-        @args.result.dig(
+        result.dig(
           'pagemap', 'metatags', 0, "og:#{name}"
         )
+      end
+
+      def result
+        @args[:result]
       end
 
       def title
@@ -36,7 +40,7 @@ module Google
       end
 
       def image_data
-        @args.result.dig(
+        result.dig(
           'pagemap', 'cse_image', 0, 'src'
         )
       end

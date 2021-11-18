@@ -8,9 +8,9 @@ module Muffon
 
             def primary_args
               [
-                @args.profile_id,
-                @args.token,
-                @args.bookmark_id
+                @args[:profile_id],
+                @args[:token],
+                @args[:bookmark_id]
               ]
             end
 
@@ -27,7 +27,7 @@ module Muffon
             def bookmark_album
               @bookmark_album ||=
                 profile.bookmark_albums.find_by(
-                  id: @args.bookmark_id
+                  id: @args[:bookmark_id]
                 )
             end
 

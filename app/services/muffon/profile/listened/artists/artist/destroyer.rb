@@ -8,9 +8,9 @@ module Muffon
 
             def primary_args
               [
-                @args.profile_id,
-                @args.token,
-                @args.listened_id
+                @args[:profile_id],
+                @args[:token],
+                @args[:listened_id]
               ]
             end
 
@@ -27,7 +27,7 @@ module Muffon
             def listened_artist
               @listened_artist ||=
                 profile.listened_artists.find_by(
-                  id: @args.listened_id
+                  id: @args[:listened_id]
                 )
             end
 

@@ -45,7 +45,7 @@ module Odnoklassniki
       def track_data_formatted(track)
         Odnoklassniki::Album::Info::Track.call(
           track: track,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

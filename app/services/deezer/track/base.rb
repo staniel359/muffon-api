@@ -7,7 +7,7 @@ module Deezer
       private
 
       def primary_args
-        [@args.track_id]
+        [@args[:track_id]]
       end
 
       def no_data?
@@ -21,7 +21,9 @@ module Deezer
       end
 
       def payload
-        { sng_ids: [@args.track_id] }.to_json
+        {
+          sng_ids: [@args[:track_id]]
+        }.to_json
       end
 
       def data

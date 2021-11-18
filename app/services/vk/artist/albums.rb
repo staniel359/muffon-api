@@ -1,14 +1,10 @@
 module VK
   module Artist
-    class Albums < VK::Base
+    class Albums < VK::Artist::Base
       API_METHOD = 'audio.getAlbumsByArtist'.freeze
       include Muffon::Utils::Pagination
 
       private
-
-      def primary_args
-        [@args.artist_id]
-      end
 
       def no_data?
         albums_list.blank?
@@ -18,15 +14,11 @@ module VK
         @albums_list ||= response_data['items']
       end
 
-      def params
-        super.merge(artist_params)
-      end
-
       def signature
         "/method/#{api_method}"\
           "?access_token=#{access_token}"\
           '&v=5.131'\
-          "&artist_id=#{@args.artist_id}"\
+          "&artist_id=#{artist_id}"\
           "&count=#{limit}"\
           "&offset=#{offset}"\
           "#{api_secret}"
@@ -34,14 +26,10 @@ module VK
 
       def artist_params
         {
-          artist_id: @args.artist_id,
+          artist_id: artist_id,
           count: limit,
           offset: offset
         }
-      end
-
-      def data
-        { artist: artist_data }
       end
 
       def artist_data
@@ -55,7 +43,7 @@ module VK
 
       def name
         VK::Artist::Info.call(
-          artist_id: @args.artist_id
+          artist_id: artist_id
         ).dig(:artist, :name)
       end
 

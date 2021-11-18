@@ -5,7 +5,7 @@ module YandexMusic
         include Muffon::Utils::Global
 
         def call
-          return '' if @args.track_id.blank?
+          return '' if @args[:track_id].blank?
           return retry_with_new_session_id if wrong_session_id?
 
           data
@@ -32,9 +32,11 @@ module YandexMusic
         end
 
         def track_data_link
-          'https://music.yandex.ru/api/v2.1'\
-            "/handlers/track/#{@args.track_id}"\
-            '/web-album_track-track-track-main/download/m'
+          'https://music.yandex.ru'\
+            '/api/v2.1/handlers/track'\
+            "/#{@args[:track_id]}"\
+            '/web-album_track-track-track-main'\
+            '/download/m'
         end
 
         def track_data_headers
@@ -76,9 +78,10 @@ module YandexMusic
         end
 
         def data
-          host, ts, path = audio_data_response_data.values_at(
-            'host', 'ts', 'path'
-          )
+          host, ts, path =
+            audio_data_response_data.values_at(
+              'host', 'ts', 'path'
+            )
 
           "https://#{host}/get-mp3/0/#{ts}#{path}"
         end

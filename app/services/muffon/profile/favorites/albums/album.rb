@@ -23,7 +23,7 @@ module Muffon
           end
 
           def favorite_album
-            @favorite_album ||= @args.album
+            @args[:album]
           end
 
           def title

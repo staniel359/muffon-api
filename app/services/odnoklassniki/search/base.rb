@@ -6,7 +6,7 @@ module Odnoklassniki
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -24,7 +24,7 @@ module Odnoklassniki
 
       def search_params
         {
-          q: @args.query,
+          q: @args[:query],
           start: offset,
           count: limit
         }

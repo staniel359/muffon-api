@@ -29,7 +29,7 @@ module Muffon
       end
 
       def recommendations_filtered
-        case @args.filter
+        case @args[:filter]
         when 'artists'
           recommendations_artists_filtered
         else
@@ -58,7 +58,7 @@ module Muffon
       end
 
       def profile_artist_ids
-        @args.filter_value.map(&:to_i)
+        @args[:filter_value].map(&:to_i)
       end
 
       def recommendations_formatted
@@ -87,7 +87,7 @@ module Muffon
       def recommendation_formatted(recommendation)
         Muffon::Profile::Recommendations::Recommendation.call(
           recommendation: recommendation,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

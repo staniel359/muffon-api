@@ -7,7 +7,7 @@ module LastFM
       private
 
       def primary_args
-        [@args.artist]
+        [@args[:artist]]
       end
     end
   end

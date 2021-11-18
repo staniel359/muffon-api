@@ -16,7 +16,7 @@ module Muffon
       private
 
       def primary_args
-        [@args.profile_id]
+        [@args[:profile_id]]
       end
 
       def no_data?
@@ -24,7 +24,7 @@ module Muffon
       end
 
       def wrong_profile?
-        profile.token != @args.token
+        profile.token != @args[:token]
       end
 
       def profile_params
@@ -50,11 +50,11 @@ module Muffon
       end
 
       def process_image
-        return if @args.image.blank?
+        return if @args[:image].blank?
 
         remove_image
 
-        add_image if @args.image != 'DELETED'
+        add_image if @args[:image] != 'DELETED'
       end
 
       def remove_image
@@ -69,7 +69,7 @@ module Muffon
 
       def image_file_data
         Muffon::Utils::Image.call(
-          image: @args.image
+          image: @args[:image]
         )
       end
 

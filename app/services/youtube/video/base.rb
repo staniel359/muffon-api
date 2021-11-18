@@ -6,7 +6,7 @@ module YouTube
       private
 
       def primary_args
-        [@args.video_id]
+        [@args[:video_id]]
       end
 
       def no_data?
@@ -23,7 +23,7 @@ module YouTube
 
       def video_params
         {
-          id: @args.video_id,
+          id: @args[:video_id],
           part: 'snippet,statistics'
         }
       end

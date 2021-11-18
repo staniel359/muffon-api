@@ -6,7 +6,7 @@ module SoundCloud
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -28,7 +28,7 @@ module SoundCloud
 
       def search_params
         {
-          q: @args.query,
+          q: @args[:query],
           limit: limit,
           offset: offset
         }

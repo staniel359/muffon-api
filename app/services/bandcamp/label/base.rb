@@ -6,11 +6,11 @@ module Bandcamp
       private
 
       def primary_args
-        [@args.label_id]
+        [@args[:label_id]]
       end
 
       def params
-        { band_id: @args.label_id }
+        { band_id: @args[:label_id] }
       end
 
       def data

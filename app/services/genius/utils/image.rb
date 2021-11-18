@@ -19,7 +19,7 @@ module Genius
 
       def image_resized(size)
         'https://t2.genius.com/unsafe'\
-          "/#{size}x0/#{@args.image}"
+          "/#{size}x0/#{@args[:image]}"
       end
     end
   end

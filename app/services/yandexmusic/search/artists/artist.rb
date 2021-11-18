@@ -24,16 +24,20 @@ module YandexMusic
         end
 
         def name
-          @args.artist['name']
+          artist['name']
+        end
+
+        def artist
+          @args[:artist]
         end
 
         def yandex_music_id
-          @args.artist['id']
+          artist['id']
         end
 
         def image_data
           image_data_formatted(
-            @args.artist, 'artist'
+            artist, 'artist'
           )
         end
       end

@@ -26,13 +26,17 @@ module LastFM
         end
 
         def title
-          @args.track.css(
+          track.css(
             '.chartlist-name a'
           )[0].text
         end
 
+        def track
+          @args[:track]
+        end
+
         def artist_name
-          @args.track.css(
+          track.css(
             '.chartlist-artist a'
           )[0].text
         end

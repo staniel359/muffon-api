@@ -4,7 +4,7 @@ class Artist
 
     def perform(args)
       Muffon::Updater::Artist::Tags.call(
-        args
+        args.deep_symbolize_keys
       )
     end
   end

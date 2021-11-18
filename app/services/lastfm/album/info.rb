@@ -71,7 +71,7 @@ module LastFM
       def track_data_formatted(track)
         LastFM::Album::Info::Track.call(
           track: track,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

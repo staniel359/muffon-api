@@ -30,8 +30,8 @@ module Google
 
     def primary_args
       [
-        @args.query,
-        @args.scope
+        @args[:query],
+        @args[:scope]
       ]
     end
 
@@ -62,7 +62,7 @@ module Google
     def params
       {
         key: api_key,
-        q: @args.query,
+        q: @args[:query],
         cx: scope_id,
         start: offset,
         fields: fields_formatted
@@ -75,7 +75,7 @@ module Google
 
     def scope_id
       secrets.google.dig(
-        :scopes, @args.scope.to_sym
+        :scopes, @args[:scope].to_sym
       )
     end
 

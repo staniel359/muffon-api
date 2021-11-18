@@ -5,8 +5,8 @@ module Muffon
 
       def primary_args
         [
-          @args.profile_id,
-          @args.token
+          @args[:profile_id],
+          @args[:token]
         ]
       end
 
@@ -25,7 +25,7 @@ module Muffon
       end
 
       def update_params
-        @args.to_h.slice(
+        @args.permit!.slice(
           *profile_params
         )
       end
@@ -33,7 +33,7 @@ module Muffon
       def profile_data
         Muffon::Profiles::Profile.call(
           profile: profile,
-          token: @args.token
+          token: @args[:token]
         )
       end
     end

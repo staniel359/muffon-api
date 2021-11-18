@@ -23,7 +23,7 @@ module LastFM
         end
 
         def play
-          @play ||= @args.play
+          @args[:play]
         end
 
         def artist_data

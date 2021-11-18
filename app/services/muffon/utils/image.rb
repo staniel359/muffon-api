@@ -21,8 +21,12 @@ module Muffon
 
       def image_base64
         Base64.decode64(
-          @args.image.split(',')[1]
+          image.split(',')[1]
         )
+      end
+
+      def image
+        @args[:image]
       end
 
       def image_filename
@@ -30,7 +34,7 @@ module Muffon
       end
 
       def image_extension
-        @args.image.split(',')[0].match(
+        image.split(',')[0].match(
           %r{image/(.+);}
         )[1]
       end

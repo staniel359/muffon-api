@@ -8,8 +8,8 @@ module LastFM
 
       def primary_args
         [
-          @args.artist,
-          @args.album
+          @args[:artist],
+          @args[:album]
         ]
       end
     end

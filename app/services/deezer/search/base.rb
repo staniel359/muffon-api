@@ -7,7 +7,7 @@ module Deezer
       private
 
       def primary_args
-        [@args.query]
+        [@args[:query]]
       end
 
       def no_data?
@@ -25,7 +25,7 @@ module Deezer
           filter: 'all',
           nb: limit,
           output: output,
-          query: @args.query,
+          query: @args[:query],
           start: offset
         }.to_json
       end

@@ -5,13 +5,13 @@ module Muffon
         private
 
         def update_album
-          album.update(
+          find_album.update(
             listeners_count: listeners_count
           )
         end
 
         def listeners_count
-          @args.album[:listeners_count]
+          album[:listeners_count]
         end
       end
     end

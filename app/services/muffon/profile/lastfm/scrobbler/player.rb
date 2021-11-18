@@ -6,7 +6,7 @@ module Muffon
           private
 
           def primary_args
-            super << @args.duration
+            super << @args[:duration]
           end
 
           def payload_base_data

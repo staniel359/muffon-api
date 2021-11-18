@@ -10,8 +10,8 @@ module Muffon
 
       def primary_args
         [
-          @args.email,
-          @args.password
+          @args[:email],
+          @args[:password]
         ]
       end
 
@@ -21,7 +21,7 @@ module Muffon
 
       def profile
         @profile ||= ::Profile.find_by(
-          email: @args.email
+          email: @args[:email]
         )
       end
 
@@ -33,7 +33,7 @@ module Muffon
 
       def authenticated?
         !!profile.authenticate(
-          @args.password
+          @args[:password]
         )
       end
 

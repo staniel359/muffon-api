@@ -3,14 +3,14 @@ module Deezer
     module Audio
       class Link < Deezer::Base
         def call
-          return '' if @args.track_id.blank?
-
           data
         end
 
         private
 
         def data
+          return '' if @args[:track_id].blank?
+
           response_data.dig(
             'data', 0, 'media', 0,
             'sources', 0, 'url'
@@ -69,7 +69,7 @@ module Deezer
 
         def track_token
           Deezer::Utils::Token::Track.call(
-            track_id: @args.track_id
+            track_id: @args[:track_id]
           )[:track_token]
         end
       end

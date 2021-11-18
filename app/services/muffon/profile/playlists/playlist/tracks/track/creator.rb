@@ -11,11 +11,11 @@ module Muffon
 
               def primary_args
                 [
-                  @args.profile_id,
-                  @args.token,
-                  @args.playlist_id,
-                  @args.title,
-                  @args.artist_name
+                  @args[:profile_id],
+                  @args[:token],
+                  @args[:playlist_id],
+                  @args[:title],
+                  @args[:artist_name]
                 ]
               end
 
@@ -33,7 +33,7 @@ module Muffon
                 playlist_track.tap do |track|
                   track.artist_id = find_artist.id
                   track.album_id = find_album&.id
-                  track.image_url = @args.image_url
+                  track.image_url = @args[:image_url]
                   track.save
                 end
               end
@@ -45,15 +45,15 @@ module Muffon
               end
 
               def title
-                @args.title
+                @args[:title]
               end
 
               def artist_name
-                @args.artist_name
+                @args[:artist_name]
               end
 
               def album_title
-                @args.album_title
+                @args[:album_title]
               end
 
               def errors?

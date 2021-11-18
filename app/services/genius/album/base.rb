@@ -6,7 +6,7 @@ module Genius
       private
 
       def primary_args
-        [@args.album_id]
+        [@args[:album_id]]
       end
 
       def no_data?
@@ -20,7 +20,7 @@ module Genius
       end
 
       def link
-        "#{BASE_LINK}/albums/#{@args.album_id}"
+        "#{BASE_LINK}/albums/#{@args[:album_id]}"
       end
 
       def data

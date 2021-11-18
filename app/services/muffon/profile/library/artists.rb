@@ -77,7 +77,7 @@ module Muffon
         def artist_formatted(artist)
           Muffon::Profile::Library::Artists::Artist.call(
             artist: artist,
-            profile_id: @args.profile_id
+            profile_id: @args[:profile_id]
           )
         end
       end

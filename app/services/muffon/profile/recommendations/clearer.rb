@@ -13,15 +13,15 @@ module Muffon
 
         def primary_args
           [
-            @args.profile_id,
-            @args.profile_artist_id
+            @args[:profile_id],
+            @args[:profile_artist_id]
           ]
         end
 
         def update_recommendations
           recommendations.find_each do |rec|
             rec.profile_artist_ids -=
-              [@args.profile_artist_id]
+              [@args[:profile_artist_id]]
             rec.save
           end
         end
@@ -29,7 +29,7 @@ module Muffon
         def recommendations
           profile.recommendations.where(
             '? = ANY(ARRAY[profile_artist_ids])',
-            @args.profile_artist_id
+            @args[:profile_artist_id]
           )
         end
 

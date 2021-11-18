@@ -9,7 +9,7 @@ module Genius
       def collection_item_data_formatted(artist)
         Genius::Search::Artists::Artist.call(
           artist: artist['result'],
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

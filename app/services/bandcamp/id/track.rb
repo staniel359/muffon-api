@@ -5,13 +5,13 @@ module Bandcamp
 
       def primary_args
         [
-          @args.artist,
-          @args.track
+          @args[:artist],
+          @args[:track]
         ]
       end
 
       def link
-        "#{base_link}/track/#{@args.track}"
+        "#{base_link}/track/#{@args[:track]}"
       end
     end
   end

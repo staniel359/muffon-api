@@ -4,7 +4,7 @@ module Bandcamp
       private
 
       def primary_args
-        [@args.artist]
+        [@args[:artist]]
       end
 
       def model_response

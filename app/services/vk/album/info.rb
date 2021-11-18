@@ -42,10 +42,10 @@ module VK
 
       def tracks_data
         VK::Album::Tracks.call(
-          album_id: @args.album_id,
-          owner_id: @args.owner_id,
-          access_key: @args.access_key,
-          profile_id: @args.profile_id
+          album_id: @args[:album_id],
+          owner_id: @args[:owner_id],
+          access_key: @args[:access_key],
+          profile_id: @args[:profile_id]
         ).dig(:album, :tracks) || []
       end
     end

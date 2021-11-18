@@ -27,7 +27,7 @@ module Genius
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
       end
     end

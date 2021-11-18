@@ -10,24 +10,32 @@ module Odnoklassniki
       def data
         return image_data if image?
 
-        default_image_data(@args.model)
+        default_image_data(
+          @args[:model]
+        )
       end
 
       def image?
-        @args.image.present? && !placeholder?
+        image.present? && !placeholder?
+      end
+
+      def image
+        @args[:image]
       end
 
       def placeholder?
-        @args.image.end_with?('stub_album.png')
+        image.end_with?(
+          'stub_album.png'
+        )
       end
 
       def image_data
         {
-          original: @args.image,
-          large: @args.image,
-          medium: @args.image,
-          small: @args.image,
-          extrasmall: @args.image
+          original: image,
+          large: image,
+          medium: image,
+          small: image,
+          extrasmall: image
         }
       end
     end

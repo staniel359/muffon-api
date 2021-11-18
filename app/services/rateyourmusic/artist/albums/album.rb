@@ -31,9 +31,13 @@ module RateYourMusic
         end
 
         def album_block
-          @album_block ||= @args.album.css(
+          @album_block ||= album.css(
             '.album'
           )[0]
+        end
+
+        def album
+          @args[:album]
         end
 
         def rateyourmusic_path
@@ -49,7 +53,7 @@ module RateYourMusic
         end
 
         def artists_list
-          @artists_list ||= @args.album.css(
+          @artists_list ||= album.css(
             '.disco_sub_artist'
           )
         end
@@ -67,7 +71,7 @@ module RateYourMusic
         end
 
         def raw_image
-          @raw_image ||= @args.album.css(
+          @raw_image ||= album.css(
             '.image_release'
           )[0]['data-tiptip']
         end
@@ -77,7 +81,7 @@ module RateYourMusic
         end
 
         def raw_release_date
-          @args.album.css(
+          album.css(
             '[class^="disco_year_"]'
           )[0]['title'].strip
         end

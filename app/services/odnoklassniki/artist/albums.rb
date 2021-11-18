@@ -35,7 +35,7 @@ module Odnoklassniki
       def collection_item_data_formatted(album)
         Odnoklassniki::Artist::Albums::Album.call(
           album: album,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

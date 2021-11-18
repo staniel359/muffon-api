@@ -46,14 +46,14 @@ module Genius
 
       def name
         Genius::Artist::Info.call(
-          artist_id: @args.artist_id
+          artist_id: @args[:artist_id]
         ).dig(:artist, :name)
       end
 
       def collection_item_data_formatted(album)
         Genius::Artist::Albums::Album.call(
           album: album,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

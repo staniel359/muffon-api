@@ -28,7 +28,7 @@ module Genius
         end
 
         def track
-          @track ||= @args.track
+          @args[:track]
         end
       end
     end

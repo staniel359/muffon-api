@@ -23,16 +23,20 @@ module Odnoklassniki
         end
 
         def name
-          @args.artist['name']
+          artist['name']
+        end
+
+        def artist
+          @args[:artist]
         end
 
         def odnoklassniki_id
-          @args.artist['id']
+          artist['id']
         end
 
         def image_data
           image_data_formatted(
-            @args.artist['image'], 'artist'
+            artist['image'], 'artist'
           )
         end
       end

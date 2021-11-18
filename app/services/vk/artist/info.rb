@@ -1,32 +1,20 @@
 module VK
   module Artist
-    class Info < VK::Base
+    class Info < VK::Artist::Base
       API_METHOD = 'audio.getArtistById'.freeze
 
       private
-
-      def primary_args
-        [@args.artist_id]
-      end
-
-      def params
-        super.merge(artist_params)
-      end
 
       def signature
         "/method/#{api_method}"\
           "?access_token=#{access_token}"\
           '&v=5.131'\
-          "&artist_id=#{@args.artist_id}"\
+          "&artist_id=#{artist_id}"\
           "#{api_secret}"
       end
 
       def artist_params
-        { artist_id: @args.artist_id }
-      end
-
-      def data
-        { artist: artist_data }
+        { artist_id: artist_id }
       end
 
       def artist_data

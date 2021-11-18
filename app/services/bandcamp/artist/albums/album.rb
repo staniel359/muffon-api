@@ -27,7 +27,7 @@ module Bandcamp
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def album_extra_data

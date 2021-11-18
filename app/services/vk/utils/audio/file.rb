@@ -8,8 +8,8 @@ module VK
 
         def primary_args
           [
-            @args.track_id,
-            @args.link
+            @args[:track_id],
+            @args[:link]
           ]
         end
 
@@ -36,7 +36,7 @@ module VK
         end
 
         def file_path
-          "public/#{audio_folder}/#{@args.track_id}"
+          "public/#{audio_folder}/#{@args[:track_id]}"
         end
 
         def ts_data
@@ -62,7 +62,7 @@ module VK
 
         def response_data
           @response_data ||= RestClient.get(
-            @args.link
+            @args[:link]
           ).body
         end
 
@@ -112,7 +112,7 @@ module VK
         end
 
         def base_link
-          @base_link ||= @args.link.match(
+          @base_link ||= @args[:link].match(
             /(.+)index.m3u8/
           )[1]
         end

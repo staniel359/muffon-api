@@ -14,7 +14,7 @@ module Muffon
     end
 
     def initialize(args = {})
-      @args = OpenStruct.new(args)
+      @args = args
     end
 
     def call
@@ -53,7 +53,7 @@ module Muffon
 
     def profile
       @profile ||= ::Profile.find_by(
-        id: @args.profile_id
+        id: @args[:profile_id]
       )
     end
   end

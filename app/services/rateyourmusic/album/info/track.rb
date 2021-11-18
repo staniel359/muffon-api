@@ -33,21 +33,28 @@ module RateYourMusic
         end
 
         def full_title
-          @full_title ||= @args.track.css(
+          @full_title ||= track.css(
             '.rendered_text'
           )
         end
 
+        def track
+          @args[:track]
+        end
+
         def artists_list
-          track_artists_list || @args.artists_list
+          track_artists_list ||
+            @args[:artists_list]
         end
 
         def track_artists_list
-          full_title.css('.artist').presence
+          full_title.css(
+            '.artist'
+          ).presence
         end
 
         def duration_seconds
-          @args.track.css(
+          track.css(
             '.tracklist_duration'
           )[0]['data-inseconds'].to_i
         end

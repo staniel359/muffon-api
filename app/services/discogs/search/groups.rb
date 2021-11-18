@@ -9,7 +9,7 @@ module Discogs
       def collection_item_data_formatted(group)
         Discogs::Search::Groups::Group.call(
           group: group,
-          profile_id: @args.profile_id
+          profile_id: @args[:profile_id]
         )
       end
     end

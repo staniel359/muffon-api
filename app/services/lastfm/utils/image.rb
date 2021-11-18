@@ -33,11 +33,12 @@ module LastFM
       end
 
       def image
-        @args.image.presence || default_image
+        @args[:image].presence || default_image
       end
 
       def default_image
-        return YOUTUBE_PLACEHOLDER if @args.model == 'video'
+        return YOUTUBE_PLACEHOLDER if
+            @args[:model] == 'video'
 
         'https://lastfm.freetls.fastly.net'\
           "/i/u/300x300/#{model_hash}.png"
@@ -48,7 +49,9 @@ module LastFM
       end
 
       def model_key
-        (@args.model || 'artist').to_sym
+        (
+          @args[:model] || 'artist'
+        ).to_sym
       end
     end
   end

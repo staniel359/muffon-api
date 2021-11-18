@@ -28,7 +28,7 @@ module VK
         end
 
         def artist
-          @artist ||= @args.artist
+          @args[:artist]
         end
 
         def vk_id

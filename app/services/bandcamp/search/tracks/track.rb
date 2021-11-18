@@ -33,7 +33,7 @@ module Bandcamp
         end
 
         def track
-          @track ||= @args.track
+          @args[:track]
         end
 
         def bandcamp_slug

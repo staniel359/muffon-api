@@ -12,8 +12,8 @@ module Muffon
 
         def primary_args
           [
-            @args.profile_id,
-            @args.profile_artist_id
+            @args[:profile_id],
+            @args[:profile_artist_id]
           ]
         end
 
@@ -26,7 +26,7 @@ module Muffon
         def find_profile_artist
           @find_profile_artist ||=
             profile.profile_artists.find_by(
-              id: @args.profile_artist_id
+              id: @args[:profile_artist_id]
             )
         end
 
@@ -53,8 +53,8 @@ module Muffon
         def process_recommendation(similar)
           Muffon::Profile::Recommendations::Creator::Recommendation.call(
             artist_name: similar[:name],
-            profile_id: @args.profile_id,
-            profile_artist_id: @args.profile_artist_id
+            profile_id: @args[:profile_id],
+            profile_artist_id: @args[:profile_artist_id]
           )
         end
       end

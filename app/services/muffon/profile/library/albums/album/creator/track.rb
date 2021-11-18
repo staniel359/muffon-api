@@ -14,20 +14,29 @@ module Muffon
               private
 
               def process_track
+                profile_track.tap do |track|
+                  track.profile_artist_id = profile_artist.id
+                  track.profile_album_id = @args[:profile_album_id]
+                  track.save
+                end
+              end
+
+              def profile_track
                 profile.profile_tracks.where(
                   track_id: find_track.id
-                ).first_or_create(
-                  profile_artist_id: profile_artist.id,
-                  profile_album_id: @args.profile_album_id
-                )
+                ).first_or_initialize
               end
 
               def title
-                @args.track['title']
+                track['title']
+              end
+
+              def track
+                @args[:track]
               end
 
               def artist_name
-                @args.track.dig(
+                track.dig(
                   'artist', 'name'
                 )
               end

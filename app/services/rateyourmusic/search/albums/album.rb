@@ -27,7 +27,7 @@ module RateYourMusic
         end
 
         def album
-          @album ||= @args.album
+          @args[:album]
         end
 
         def raw_release_date

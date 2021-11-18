@@ -27,7 +27,7 @@ module Muffon
             end
 
             def playlist_track
-              @playlist_track ||= @args.track
+              @args[:track]
             end
 
             def player_id

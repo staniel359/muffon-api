@@ -34,8 +34,8 @@ module Genius
 
       def tracks
         Genius::Album::Info::Tracks.call(
-          album_id: @args.album_id,
-          profile_id: @args.profile_id
+          album_id: @args[:album_id],
+          profile_id: @args[:profile_id]
         )[:tracks] || []
       end
     end
