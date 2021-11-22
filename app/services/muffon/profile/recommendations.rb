@@ -29,20 +29,22 @@ module Muffon
       end
 
       def recommendations_filtered
-        case @args[:filter]
-        when 'artists'
-          recommendations_artists_filtered
-        else
-          recommendations_associated
-        end
+        @recommendations_filtered ||=
+          case @args[:filter]
+          when 'artists'
+            recommendations_artists_filtered
+          when 'tags'
+            recommendations_tags_filtered
+          else
+            recommendations_associated
+          end
       end
 
       def recommendations_artists_filtered
-        @recommendations_artists_filtered ||=
-          recommendations_associated.where(
-            'profile_artist_ids @> ARRAY[?]',
-            profile_artist_ids
-          )
+        recommendations_associated.where(
+          'profile_artist_ids @> ARRAY[?]',
+          filter_ids
+        )
       end
 
       def recommendations_associated
@@ -57,8 +59,17 @@ module Muffon
           .not_deleted
       end
 
-      def profile_artist_ids
+      def filter_ids
         @args[:filter_value].map(&:to_i)
+      end
+
+      def recommendations_tags_filtered
+        recommendations_associated
+          .joins(:artist)
+          .where(
+            'artists.tag_ids @> ARRAY[?]',
+            filter_ids
+          )
       end
 
       def recommendations_formatted
@@ -80,7 +91,8 @@ module Muffon
             ' as profile_artist_ids_size'
           )
           .order(
-            'profile_artist_ids_size DESC, created_at ASC'
+            'profile_artist_ids_size DESC,'\
+            ' recommendations.created_at ASC'
           )
       end
 
