@@ -11,7 +11,7 @@ module Helpers
         end
 
         def tags_data
-          {:search=>{:page=>2, :tags=>[{:name=>"ambient pop"}, {:name=>"teen pop"}, {:name=>"80s pop"}, {:name=>"dark pop"}, {:name=>"death pop"}, {:name=>"gothic pop"}, {:name=>"emo-pop"}, {:name=>"doom pop"}, {:name=>"weed pop"}, {:name=>"hk-pop"}], :total_pages=>10}}
+          {:search=>{:page=>2, :tags=>[{:id=>1, :name=>"ambient pop"}, {:id=>1, :name=>"teen pop"}, {:id=>1, :name=>"80s pop"}, {:id=>1, :name=>"dark pop"}, {:id=>1, :name=>"death pop"}, {:id=>1, :name=>"gothic pop"}, {:id=>1, :name=>"emo-pop"}, {:id=>1, :name=>"doom pop"}, {:id=>1, :name=>"weed pop"}, {:id=>1, :name=>"hk-pop"}], :total_pages=>10}}
         end
 
         def tracks_data

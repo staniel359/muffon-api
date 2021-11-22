@@ -35,17 +35,15 @@ module LastFM
         response_data[:total_pages]
       end
 
-      def tags_list
+      def collection_list
         response_data[:results]
       end
 
-      def tag_name_formatted(tag)
-        tag[:title].match(
-          /(.+) music | Last.fm/
-        )[1].downcase
+      def collection_item_data_formatted(tag)
+        LastFM::Search::Tags::Tag.call(
+          tag: tag
+        )
       end
-
-      alias collection tags
     end
   end
 end
