@@ -146,6 +146,24 @@ Rails.application.routes.draw do
         end
 
         resources :sessions, only: :create
+
+        namespace :radio do
+          namespace :tag do
+            scope ':tag' do
+              get 'artists'
+              get 'tracks'
+            end
+          end
+        end
+
+        namespace :radio do
+          namespace :artist do
+            scope ':artist' do
+              get 'tracks'
+              get 'similar'
+            end
+          end
+        end
       end
 
 # Bandcamp

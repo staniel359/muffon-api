@@ -7,7 +7,20 @@ module LastFM
       private
 
       def tracks_list
-        response_data.css('.chartlist-row')
+        return [sample_track].compact if @args[:sample]
+
+        raw_trackslist
+      end
+
+      def sample_track
+        raw_trackslist.to_a.sample
+      end
+
+      def raw_trackslist
+        @raw_trackslist ||=
+          response_data.css(
+            '.chartlist-row'
+          )
       end
 
       def collection_item_data_formatted(track)

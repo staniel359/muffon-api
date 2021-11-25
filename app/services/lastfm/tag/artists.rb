@@ -7,9 +7,20 @@ module LastFM
       private
 
       def artists_list
-        response_data.css(
-          '.big-artist-list-item'
-        )
+        return [sample_artist].compact if @args[:sample]
+
+        raw_artists_list
+      end
+
+      def sample_artist
+        raw_artists_list.to_a.sample
+      end
+
+      def raw_artists_list
+        @raw_artists_list ||=
+          response_data.css(
+            '.big-artist-list-item'
+          )
       end
 
       def collection_item_data_formatted(artist)
