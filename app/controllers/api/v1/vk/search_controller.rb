@@ -13,6 +13,32 @@ module API
         def tracks
           render_data_with_status
         end
+
+        private
+
+        def artists_data
+          ::VK::Search::Artists.call(
+            params.slice(
+              *%i[query profile_id page limit]
+            )
+          )
+        end
+
+        def albums_data
+          ::VK::Search::Albums.call(
+            params.slice(
+              *%i[query profile_id page limit]
+            )
+          )
+        end
+
+        def tracks_data
+          ::VK::Search::Tracks.call(
+            params.slice(
+              *%i[query profile_id page limit]
+            )
+          )
+        end
       end
     end
   end

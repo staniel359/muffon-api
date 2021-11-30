@@ -22,129 +22,131 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope :v1, module: :v1 do
 
-      resources :profiles,
-        only: %i[index create show update],
-        param: :profile_id
+      scope module: :muffon do
+        resources :profiles,
+          only: %i[index create show update],
+          param: :profile_id
 
-      namespace :profiles, as: :profile do
-        scope ':profile_id' do
-          namespace :library do
-            get '', action: :info
+        namespace :profiles, as: :profile do
+          scope ':profile_id' do
+            namespace :library do
+              get '', action: :info
 
-            resources :artists,
-              only: %i[index create destroy],
-              param: :library_id
+              resources :artists,
+                only: %i[index create destroy],
+                param: :library_id
 
-            namespace :artists, as: :artist do
-              scope ':library_id' do
-                get '', action: :info
+              namespace :artists, as: :artist do
+                scope ':library_id' do
+                  get '', action: :info
+                  get 'albums'
+                  get 'tracks'
+                end
+              end
+
+              namespace :albums, as: :album do
+                scope ':library_id' do
+                  get '', action: :info
+                  get 'tracks'
+                end
+              end
+
+              namespace :tracks, as: :track do
+                scope ':library_id' do
+                  get '', action: :info
+                end
+              end
+
+              namespace :search do
+                get 'artists'
                 get 'albums'
                 get 'tracks'
               end
-            end
 
-            namespace :albums, as: :album do
-              scope ':library_id' do
-                get '', action: :info
-                get 'tracks'
-              end
-            end
+              resources :albums,
+                only: %i[index create destroy],
+                param: :library_id
 
-            namespace :tracks, as: :track do
-              scope ':library_id' do
-                get '', action: :info
-              end
-            end
-
-            namespace :search do
-              get 'artists'
-              get 'albums'
-              get 'tracks'
-            end
-
-            resources :albums,
-              only: %i[index create destroy],
-              param: :library_id
-
-            resources :tracks,
-              only: %i[index create destroy],
-              param: :library_id
-          end
-
-          resources :recommendations,
-            only: %i[index destroy],
-            param: :recommendation_id
-
-          namespace :recommendations, as: :recommendation do
-            scope ':recommendation_id' do
-              get 'artists'
-            end
-          end
-
-          namespace :listened do
-            resources :artists,
-              only: %i[create destroy],
-              param: :listened_id
-
-            resources :albums,
-              only: %i[create destroy],
-              param: :listened_id
-
-            resources :tracks,
-              only: %i[create destroy],
-              param: :listened_id
-          end
-
-          namespace :bookmarks do
-            resources :artists,
-              only: %i[index create destroy],
-              param: :bookmark_id
-
-            resources :albums,
-              only: %i[index create destroy],
-              param: :bookmark_id
-
-            resources :tracks,
-              only: %i[index create destroy],
-              param: :bookmark_id
-          end
-
-          namespace :favorites do
-            resources :artists,
-              only: %i[index create destroy],
-              param: :favorite_id
-
-            resources :albums,
-              only: %i[index create destroy],
-              param: :favorite_id
-
-            resources :tracks,
-              only: %i[index create destroy],
-              param: :favorite_id
-          end
-
-          resources :playlists,
-            only: %i[index create show update destroy],
-            param: :playlist_id
-
-          namespace :playlists, as: :playlist do
-            scope ':playlist_id' do
               resources :tracks,
                 only: %i[index create destroy],
-                param: :playlist_track_id
+                param: :library_id
             end
-          end
 
-          namespace :lastfm do
-            namespace :scrobbler do
-              post 'play'
-              post 'save'
+            resources :recommendations,
+              only: %i[index destroy],
+              param: :recommendation_id
+
+            namespace :recommendations, as: :recommendation do
+              scope ':recommendation_id' do
+                get 'artists'
+              end
+            end
+
+            namespace :listened do
+              resources :artists,
+                only: %i[create destroy],
+                param: :listened_id
+
+              resources :albums,
+                only: %i[create destroy],
+                param: :listened_id
+
+              resources :tracks,
+                only: %i[create destroy],
+                param: :listened_id
+            end
+
+            namespace :bookmarks do
+              resources :artists,
+                only: %i[index create destroy],
+                param: :bookmark_id
+
+              resources :albums,
+                only: %i[index create destroy],
+                param: :bookmark_id
+
+              resources :tracks,
+                only: %i[index create destroy],
+                param: :bookmark_id
+            end
+
+            namespace :favorites do
+              resources :artists,
+                only: %i[index create destroy],
+                param: :favorite_id
+
+              resources :albums,
+                only: %i[index create destroy],
+                param: :favorite_id
+
+              resources :tracks,
+                only: %i[index create destroy],
+                param: :favorite_id
+            end
+
+            resources :playlists,
+              only: %i[index create show update destroy],
+              param: :playlist_id
+
+            namespace :playlists, as: :playlist do
+              scope ':playlist_id' do
+                resources :tracks,
+                  only: %i[index create destroy],
+                  param: :playlist_track_id
+              end
+            end
+
+            namespace :lastfm do
+              namespace :scrobbler do
+                post 'play'
+                post 'save'
+              end
             end
           end
         end
-      end
 
-      resources :sessions, only: :create
+        resources :sessions, only: :create
+      end
 
 # Bandcamp
 

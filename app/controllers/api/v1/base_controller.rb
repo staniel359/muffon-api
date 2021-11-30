@@ -1,33 +1,6 @@
 module API
   module V1
     class BaseController < ApplicationController
-      PERMITTED_PARAMS = %i[
-        access_key
-        album
-        album_id
-        album_type
-        artist
-        artist_id
-        channel_id
-        group_id
-        label
-        label_id
-        lang
-        limit
-        next_page
-        nickname
-        offset
-        owner_id
-        page
-        profile_id
-        query
-        tag
-        token
-        track
-        track_id
-        video_id
-      ].freeze
-
       private
 
       def render_data_with_status
@@ -40,19 +13,9 @@ module API
       end
 
       def data
-        @data ||= data_service&.call(
-          data_args
+        @data ||= send(
+          "#{params[:action]}_data"
         )
-      end
-
-      def data_service
-        Muffon::Utils::API::Service.call(
-          params.slice(:controller, :action)
-        )
-      end
-
-      def data_args
-        params.slice(*PERMITTED_PARAMS)
       end
 
       def status

@@ -17,6 +17,40 @@ module API
         def labels
           render_data_with_status
         end
+
+        private
+
+        def artists_data
+          ::RateYourMusic::Search::Artists.call(
+            params.slice(
+              *%i[query profile_id page limit]
+            )
+          )
+        end
+
+        def albums_data
+          ::RateYourMusic::Search::Albums.call(
+            params.slice(
+              *%i[query profile_id page limit]
+            )
+          )
+        end
+
+        def albums_various_data
+          ::RateYourMusic::Search::AlbumsVarious.call(
+            params.slice(
+              *%i[query profile_id page limit]
+            )
+          )
+        end
+
+        def labels_data
+          ::RateYourMusic::Search::Labels.call(
+            params.slice(
+              *%i[query page limit]
+            )
+          )
+        end
       end
     end
   end
