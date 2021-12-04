@@ -5,10 +5,9 @@ module Muffon
         private
 
         def primary_args
-          [
-            @args[:profile_id],
-            @args[:token],
-            @args[:playlist_id]
+          super + [
+            @args[:playlist_id],
+            @args[:title]
           ]
         end
 

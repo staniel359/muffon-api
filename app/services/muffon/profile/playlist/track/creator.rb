@@ -59,9 +59,7 @@ module Muffon
           end
 
           def errors
-            playlist_track.errors.map do |e|
-              { e.attribute => e.type }
-            end
+            playlist_track.errors_formatted
           end
         end
       end

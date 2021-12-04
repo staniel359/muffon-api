@@ -44,37 +44,21 @@ module Muffon
       end
 
       def errors
-        profile.errors.map do |e|
-          { e.attribute => e.type }
-        end
+        profile.errors_formatted
       end
 
       def process_image
-        return if @args[:image].blank?
-
-        remove_image
-
-        add_image if @args[:image] != 'DELETED'
-      end
-
-      def remove_image
-        profile.image.purge
-      end
-
-      def add_image
-        profile.image.attach(
-          **image_file_data
-        )
-      end
-
-      def image_file_data
-        Muffon::Utils::Image.call(
-          image: @args[:image]
+        profile.process_image(
+          @args[:image]
         )
       end
 
       def data
         { profile: profile_data }
+      end
+
+      def nickname
+        profile.nickname
       end
     end
   end

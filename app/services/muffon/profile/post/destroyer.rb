@@ -1,17 +1,17 @@
 module Muffon
   module Profile
-    module Playlist
-      class Destroyer < Muffon::Profile::Playlist::Base
+    module Post
+      class Destroyer < Muffon::Profile::Post::Base
         private
 
         def primary_args
-          super << @args[:playlist_id]
+          super << @args[:post_id]
         end
 
         def data
           return forbidden if wrong_profile?
 
-          playlist&.destroy
+          post&.destroy
 
           { success: true }
         end

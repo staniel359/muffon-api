@@ -25,6 +25,14 @@ class Profile < ApplicationRecord
 
   has_many :playlists, dependent: nil
 
+  has_many :profile_posts, dependent: nil
+
+  has_many :posts,
+           foreign_key: 'other_profile_id',
+           class_name: 'ProfilePost',
+           inverse_of: :other_profile,
+           dependent: nil
+
   enum gender: {
     male: 0,
     female: 1,

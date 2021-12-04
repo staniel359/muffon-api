@@ -142,6 +142,10 @@ Rails.application.routes.draw do
                 post 'save'
               end
             end
+
+            resources :posts,
+              only: %i[index create update destroy],
+              param: :post_id
           end
         end
 

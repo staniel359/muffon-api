@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_081332) do
+ActiveRecord::Schema.define(version: 2021_12_05_152645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,6 +181,17 @@ ActiveRecord::Schema.define(version: 2021_11_13_081332) do
     t.index ["profile_id"], name: "index_profile_artists_on_profile_id"
   end
 
+  create_table "profile_posts", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "other_profile_id", null: false
+    t.text "content"
+    t.integer "track_ids", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["other_profile_id"], name: "index_profile_posts_on_other_profile_id"
+    t.index ["profile_id"], name: "index_profile_posts_on_profile_id"
+  end
+
   create_table "profile_tracks", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "track_id", null: false
@@ -249,6 +260,8 @@ ActiveRecord::Schema.define(version: 2021_11_13_081332) do
   add_foreign_key "profile_albums", "profile_artists"
   add_foreign_key "profile_albums", "profiles"
   add_foreign_key "profile_artists", "profiles"
+  add_foreign_key "profile_posts", "profiles"
+  add_foreign_key "profile_posts", "profiles", column: "other_profile_id"
   add_foreign_key "profile_tracks", "profile_albums"
   add_foreign_key "profile_tracks", "profile_artists"
   add_foreign_key "profile_tracks", "profiles"

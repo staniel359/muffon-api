@@ -1,14 +1,10 @@
 require_relative 'boot'
-
 require 'rails'
-
 require 'active_model/railtie'
 require 'active_record/railtie'
 require 'action_controller/railtie'
-require 'action_cable/engine'
 require 'active_storage/engine'
-
-# require 'action_text/engine'
+# require 'action_cable/engine'
 
 Bundler.require(*Rails.groups)
 
@@ -18,7 +14,9 @@ module MuffonAPI
 
     config.api_only = true
 
-    config.autoload_paths << Rails.root.join('app/services/')
+    config.autoload_paths << Rails.root.join(
+      'app/services/'
+    )
 
     config.generators do |c|
       c.request_specs(false)

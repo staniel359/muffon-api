@@ -29,10 +29,6 @@ module Muffon
         @args[:profile]
       end
 
-      def nickname
-        profile.nickname
-      end
-
       def email
         return if wrong_profile?
 
@@ -47,7 +43,7 @@ module Muffon
           country: country,
           city: city,
           role: role
-        }
+        }.compact
       end
 
       def image_data
@@ -55,19 +51,19 @@ module Muffon
       end
 
       def gender
-        profile.gender || ''
+        profile.gender
       end
 
       def birthdate
-        profile.birthdate || ''
+        profile.birthdate
       end
 
       def country
-        profile.country
+        profile.country.presence
       end
 
       def city
-        profile.city
+        profile.city.presence
       end
 
       def role

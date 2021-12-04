@@ -8,39 +8,37 @@ module Muffon
       private
 
       def data
+        return {} if image.blank?
+
         {
-          io: image_io,
-          filename: image_filename,
-          content_type: image_content_type
+          original: original_url,
+          large: variant_url(600),
+          medium: variant_url(300),
+          small: variant_url(100),
+          extrasmall: variant_url(50)
         }
-      end
-
-      def image_io
-        StringIO.new(image_base64)
-      end
-
-      def image_base64
-        Base64.decode64(
-          image.split(',')[1]
-        )
       end
 
       def image
         @args[:image]
       end
 
-      def image_filename
-        "image.#{image_extension}"
+      def original_url
+        ActiveStorage::Current.set(host: host) do
+          image.url
+        end
       end
 
-      def image_extension
-        image.split(',')[0].match(
-          %r{image/(.+);}
-        )[1]
+      def host
+        Rails.application.credentials.url
       end
 
-      def image_content_type
-        "image/#{image_extension}"
+      def variant_url(size)
+        ActiveStorage::Current.set(host: host) do
+          image.variant(
+            resize_to_limit: [size, size]
+          ).processed.url
+        end
       end
     end
   end

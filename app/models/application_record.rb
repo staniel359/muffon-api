@@ -2,34 +2,40 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   def image_data
-    return {} if image.blank?
+    image_data_formatted(image)
+  end
 
-    {
-      original: original_url,
-      large: variant_url(600),
-      medium: variant_url(300),
-      small: variant_url(100),
-      extrasmall: variant_url(50)
-    }
+  def process_image(image_file)
+    return if image_file.blank?
+
+    image.purge
+
+    return if image_file == 'DELETED'
+
+    image.attach(
+      **image_file_data_formatted(
+        image_file
+      )
+    )
+  end
+
+  def errors_formatted
+    errors.map do |e|
+      { e.attribute => e.type }
+    end
   end
 
   private
 
-  def original_url
-    ActiveStorage::Current.set(host: host) do
-      image.url
-    end
+  def image_data_formatted(image)
+    Muffon::Utils::Image.call(
+      image: image
+    )
   end
 
-  def host
-    Rails.application.credentials.url
-  end
-
-  def variant_url(size)
-    ActiveStorage::Current.set(host: host) do
-      image.variant(
-        resize_to_limit: [size, size]
-      ).processed.url
-    end
+  def image_file_data_formatted(image_file)
+    Muffon::Utils::ImageFile.call(
+      image: image_file
+    )
   end
 end

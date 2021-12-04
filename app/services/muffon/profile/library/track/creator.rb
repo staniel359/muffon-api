@@ -25,7 +25,7 @@ module Muffon
 
             return errors_data if errors?
 
-            process_track_image
+            process_image
 
             { library_id: profile_track.id }
           end
@@ -106,20 +106,9 @@ module Muffon
             profile_track.errors.any?
           end
 
-          def process_track_image
-            return if profile_album.blank?
-            return remove_image if @args[:image].blank?
-
-            add_image
-          end
-
-          def remove_image
-            profile_album.image.purge
-          end
-
-          def add_image
-            profile_album.image.attach(
-              **image_file_data
+          def process_image
+            profile_album&.process_image(
+              @args[:image]
             )
           end
         end

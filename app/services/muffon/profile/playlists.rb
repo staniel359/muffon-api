@@ -19,10 +19,6 @@ module Muffon
         }
       end
 
-      def nickname
-        profile.nickname
-      end
-
       def total_items_count
         playlists.size
       end

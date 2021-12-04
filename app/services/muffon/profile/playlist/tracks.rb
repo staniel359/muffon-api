@@ -6,6 +6,10 @@ module Muffon
 
         private
 
+        def primary_args
+          [@args[:playlist_id]]
+        end
+
         def playlist_data
           {
             page: page,

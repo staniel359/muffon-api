@@ -20,10 +20,6 @@ module Muffon
         }
       end
 
-      def nickname
-        profile.nickname
-      end
-
       def total_items_count
         recommendations_filtered.size
       end

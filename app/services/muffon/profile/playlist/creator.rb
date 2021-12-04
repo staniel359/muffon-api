@@ -5,11 +5,11 @@ module Muffon
         private
 
         def primary_args
-          [
-            @args[:profile_id],
-            @args[:token],
-            @args[:title]
-          ]
+          super << @args[:title]
+        end
+
+        def no_data?
+          profile.blank?
         end
 
         def data
