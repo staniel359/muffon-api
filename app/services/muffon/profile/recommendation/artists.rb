@@ -2,6 +2,7 @@ module Muffon
   module Profile
     module Recommendation
       class Artists < Muffon::Profile::Base
+        COLLECTION_NAME = 'profile_artists'.freeze
         include Muffon::Utils::Pagination
 
         private
@@ -28,15 +29,7 @@ module Muffon
         def data
           return forbidden if wrong_profile?
 
-          { recommendation: recommendation_data }
-        end
-
-        def recommendation_data
-          {
-            page: page,
-            total_pages: total_pages_count,
-            profile_artists: profile_artists_formatted
-          }.compact
+          { recommendation: paginated_data }
         end
 
         def total_items_count
@@ -45,13 +38,7 @@ module Muffon
             .size
         end
 
-        def profile_artists_formatted
-          profile_artists_paginated.map do |a|
-            profile_artist_formatted(a)
-          end
-        end
-
-        def profile_artists_paginated
+        def collection
           profile_artists_associated
             .limit(limit)
             .offset(offset)
@@ -63,10 +50,9 @@ module Muffon
             .includes(:artist)
         end
 
-        def profile_artist_formatted(artist)
+        def collection_item_data_formatted(profile_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            artist: artist,
-            profile_id: @args[:profile_id]
+            profile_artist: profile_artist
           )
         end
       end

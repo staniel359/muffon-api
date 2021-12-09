@@ -64,10 +64,9 @@ module Muffon
             .includes(:artist)
         end
 
-        def profile_artist_formatted(artist)
+        def profile_artist_formatted(profile_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            artist: artist,
-            profile_id: @args[:profile_id]
+            profile_artist: profile_artist
           )
         end
       end

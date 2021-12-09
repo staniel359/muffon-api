@@ -33,7 +33,7 @@ module API
             def index_data
               ::Muffon::Profile::Library::Artists.call(
                 params.slice(
-                  *%i[profile_id limit page]
+                  *%i[profile_id page limit]
                 )
               )
             end

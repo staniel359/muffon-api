@@ -70,6 +70,13 @@ Rails.application.routes.draw do
               resources :tracks,
                 only: %i[index create destroy],
                 param: :library_id
+
+              namespace :compatibility do
+                get '', action: :info
+                get 'artists'
+                get 'albums'
+                get 'tracks'
+              end
             end
 
             resources :recommendations,
