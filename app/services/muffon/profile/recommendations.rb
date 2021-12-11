@@ -61,7 +61,7 @@ module Muffon
 
       def recommendations_tags_filtered
         recommendations_associated
-          .joins(:artist)
+          .left_joins(:artist)
           .where(
             'artists.tag_ids @> ARRAY[?]',
             filter_ids
@@ -83,7 +83,8 @@ module Muffon
       def recommendations_sorted
         recommendations_filtered
           .select(
-            '*, ARRAY_LENGTH(profile_artist_ids, 1)'\
+            'recommendations.*,'\
+            ' ARRAY_LENGTH(profile_artist_ids, 1)'\
             ' as profile_artist_ids_size'
           )
           .order(
