@@ -4,7 +4,7 @@ require 'active_model/railtie'
 require 'active_record/railtie'
 require 'action_controller/railtie'
 require 'active_storage/engine'
-# require 'action_cable/engine'
+require 'action_cable/engine'
 
 Bundler.require(*Rails.groups)
 
