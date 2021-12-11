@@ -2,7 +2,7 @@ module Muffon
   module Profile
     module Recommendation
       class Artists
-        class Artist < Muffon::Profile::Base
+        class Artist < Muffon::Profile::Recommendation::Artists
           def call
             data
           end

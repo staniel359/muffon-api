@@ -38,7 +38,7 @@ module Muffon
             .size
         end
 
-        def collection
+        def collection_list
           profile_artists_associated
             .limit(limit)
             .offset(offset)
