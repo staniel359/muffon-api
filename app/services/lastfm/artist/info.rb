@@ -19,7 +19,8 @@ module LastFM
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,
-          tags: tags
+          tags: tags,
+          recommendation: recommendation_data
         }.compact
       end
 
@@ -47,6 +48,13 @@ module LastFM
         [
           artist.dig('tags', 'tag')
         ].flatten
+      end
+
+      def recommendation_data
+        LastFM::Artist::Info::Recommendation.call(
+          profile_id: @args[:profile_id],
+          artist_name: name
+        )
       end
     end
   end
