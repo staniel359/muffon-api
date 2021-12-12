@@ -24,11 +24,13 @@ Rails.application.routes.draw do
 
       scope module: :muffon do
         resources :profiles,
-          only: %i[index create show update],
+          only: %i[index create update],
           param: :profile_id
 
         namespace :profiles, as: :profile do
           scope ':profile_id' do
+            get '', action: :info
+
             namespace :library do
               get '', action: :info
 
@@ -154,6 +156,12 @@ Rails.application.routes.draw do
             resources :posts,
               only: %i[index create update destroy],
               param: :post_id
+
+            resources :followers,
+              only: %i[index create destroy],
+              param: :other_profile_id
+
+            resources :following, only: :index
           end
         end
 

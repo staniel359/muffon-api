@@ -33,6 +33,25 @@ class Profile < ApplicationRecord
            inverse_of: :other_profile,
            dependent: nil
 
+  has_many :active_relationships,
+           class_name: 'Relationship',
+           inverse_of: :profile,
+           dependent: nil
+
+  has_many :following_profiles,
+           through: :active_relationships,
+           source: :other_profile
+
+  has_many :passive_relationships,
+           foreign_key: 'other_profile_id',
+           class_name: 'Relationship',
+           inverse_of: :other_profile,
+           dependent: nil
+
+  has_many :follower_profiles,
+           through: :passive_relationships,
+           source: :profile
+
   enum gender: {
     male: 0,
     female: 1,

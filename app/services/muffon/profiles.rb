@@ -40,7 +40,8 @@ module Muffon
 
     def profile_formatted(profile)
       Muffon::Profiles::Profile.call(
-        profile: profile
+        profile: profile,
+        other_profile_id: @args[:other_profile_id]
       )
     end
   end

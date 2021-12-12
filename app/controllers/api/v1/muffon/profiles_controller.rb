@@ -12,7 +12,7 @@ module API
           render_data_with_status
         end
 
-        def show
+        def info
           render_data_with_status
         end
 
@@ -24,7 +24,9 @@ module API
 
         def index_data
           ::Muffon::Profiles.call(
-            params.slice(*%i[page limit])
+            params.slice(
+              *%i[other_profile_id page limit]
+            )
           )
         end
 
@@ -40,10 +42,10 @@ module API
           )
         end
 
-        def show_data
+        def info_data
           ::Muffon::Profile::Info.call(
             params.slice(
-              *%i[profile_id token]
+              *%i[profile_id token other_profile_id]
             )
           )
         end

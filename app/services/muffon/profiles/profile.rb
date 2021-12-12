@@ -10,6 +10,7 @@ module Muffon
       def data
         profile_base_data
           .merge(profile_extra_data)
+          .merge(profile_relationships_data)
           .merge(profile_lastfm_data)
       end
 
@@ -42,7 +43,8 @@ module Muffon
           birthdate: birthdate,
           country: country,
           city: city,
-          role: role
+          role: role,
+          other_profile: other_profile_data
         }.compact
       end
 
@@ -68,6 +70,42 @@ module Muffon
 
       def role
         profile.role
+      end
+
+      def profile_relationships_data
+        {
+          follower_profiles_count: profile_follower_profiles_count,
+          following_profiles_count: profile_following_profiles_count
+        }
+      end
+
+      def profile_follower_profiles_count
+        profile.follower_profiles.size
+      end
+
+      def profile_following_profiles_count
+        profile.following_profiles.size
+      end
+
+      def other_profile_data
+        return if @args[:other_profile_id].blank?
+
+        {
+          follower_of_profile: follower_of_profile?,
+          followed_by_profile: followed_by_profile?
+        }
+      end
+
+      def follower_of_profile?
+        profile.follower_profiles.find_by(
+          id: @args[:other_profile_id]
+        ).present?
+      end
+
+      def followed_by_profile?
+        profile.following_profiles.find_by(
+          id: @args[:other_profile_id]
+        ).present?
       end
 
       def profile_lastfm_data
