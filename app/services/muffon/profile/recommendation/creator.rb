@@ -18,10 +18,10 @@ module Muffon
         end
 
         def recommendation
-          @recommendation ||= ::Recommendation.where(
-            profile_id: @args[:profile_id],
-            artist_id: find_artist.id
-          ).first_or_initialize
+          @recommendation ||=
+            profile.recommendations.where(
+              artist_id: find_artist.id
+            ).first_or_initialize
         end
 
         def find_artist

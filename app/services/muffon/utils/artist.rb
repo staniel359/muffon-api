@@ -16,8 +16,7 @@ module Muffon
       end
 
       def find_profile_artist
-        ProfileArtist.find_by(
-          profile_id: @args[:profile_id],
+        profile.profile_artists.find_by(
           artist_id: find_artist.id
         )
       end
@@ -29,8 +28,7 @@ module Muffon
       end
 
       def find_listened_artist
-        ListenedArtist.find_by(
-          profile_id: @args[:profile_id],
+        profile.listened_artists.find_by(
           artist_id: find_artist.id
         )
       end
@@ -42,8 +40,7 @@ module Muffon
       end
 
       def find_bookmark_artist
-        BookmarkArtist.find_by(
-          profile_id: @args[:profile_id],
+        profile.bookmark_artists.find_by(
           artist_id: find_artist.id
         )
       end
@@ -55,8 +52,7 @@ module Muffon
       end
 
       def find_favorite_artist
-        FavoriteArtist.find_by(
-          profile_id: @args[:profile_id],
+        profile.favorite_artists.find_by(
           artist_id: find_artist.id
         )
       end

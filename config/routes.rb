@@ -85,6 +85,7 @@ Rails.application.routes.draw do
 
             namespace :recommendations, as: :recommendation do
               scope ':recommendation_id' do
+                get '', action: :info
                 get 'artists'
               end
             end

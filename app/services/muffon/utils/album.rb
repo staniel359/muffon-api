@@ -26,8 +26,7 @@ module Muffon
       end
 
       def find_profile_album
-        ProfileAlbum.find_by(
-          profile_id: @args[:profile_id],
+        profile.profile_albums.find_by(
           album_id: find_album.id
         )
       end
@@ -39,8 +38,7 @@ module Muffon
       end
 
       def find_listened_album
-        ListenedAlbum.find_by(
-          profile_id: @args[:profile_id],
+        profile.listened_albums.find_by(
           album_id: find_album.id
         )
       end
@@ -52,8 +50,7 @@ module Muffon
       end
 
       def find_bookmark_album
-        BookmarkAlbum.find_by(
-          profile_id: @args[:profile_id],
+        profile.bookmark_albums.find_by(
           album_id: find_album.id
         )
       end
@@ -65,8 +62,7 @@ module Muffon
       end
 
       def find_favorite_album
-        FavoriteAlbum.find_by(
-          profile_id: @args[:profile_id],
+        profile.favorite_albums.find_by(
           album_id: find_album.id
         )
       end

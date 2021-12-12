@@ -7,6 +7,10 @@ module API
             render_data_with_status
           end
 
+          def info
+            render_data_with_status
+          end
+
           def artists
             render_data_with_status
           end
@@ -21,6 +25,14 @@ module API
             ::Muffon::Profile::Recommendations.call(
               params.slice(
                 *%i[profile_id token page limit filter filter_value]
+              )
+            )
+          end
+
+          def info_data
+            ::Muffon::Profile::Recommendation::Info.call(
+              params.slice(
+                *%i[profile_id token recommendation_id]
               )
             )
           end

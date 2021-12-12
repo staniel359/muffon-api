@@ -1,36 +1,11 @@
 module Muffon
   module Profile
     module Recommendation
-      class Artists < Muffon::Profile::Base
+      class Artists < Muffon::Profile::Recommendation::Base
         COLLECTION_NAME = 'profile_artists'.freeze
         include Muffon::Utils::Pagination
 
         private
-
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token],
-            @args[:recommendation_id]
-          ]
-        end
-
-        def no_data?
-          recommendation.blank?
-        end
-
-        def recommendation
-          @recommendation ||=
-            profile.recommendations.find_by(
-              id: @args[:recommendation_id]
-            )
-        end
-
-        def data
-          return forbidden if wrong_profile?
-
-          { recommendation: paginated_data }
-        end
 
         def total_items_count
           recommendation
@@ -55,6 +30,8 @@ module Muffon
             profile_artist: profile_artist
           )
         end
+
+        alias recommendation_data paginated_data
       end
     end
   end
