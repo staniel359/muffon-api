@@ -6,10 +6,6 @@ module Muffon
 
       private
 
-      def data
-        { profile: profile_data }
-      end
-
       def profile_data
         {
           nickname: nickname,

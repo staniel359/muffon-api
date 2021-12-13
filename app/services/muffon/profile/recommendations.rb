@@ -8,7 +8,7 @@ module Muffon
       def data
         return forbidden if wrong_profile?
 
-        { profile: profile_data }
+        super
       end
 
       def profile_data

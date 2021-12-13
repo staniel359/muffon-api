@@ -162,6 +162,10 @@ Rails.application.routes.draw do
               param: :other_profile_id
 
             resources :following, only: :index
+
+            namespace :feed do
+              get '', action: :index
+            end
           end
         end
 

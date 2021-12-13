@@ -4,6 +4,10 @@ class ProfilePost < ApplicationRecord
 
   has_many_attached :images
 
+  scope :for_feed, lambda {
+    where('profile_id = other_profile_id')
+  }
+
   def process_images(image_files)
     return if image_files.blank?
 

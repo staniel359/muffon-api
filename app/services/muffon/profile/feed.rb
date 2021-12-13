@@ -1,6 +1,6 @@
 module Muffon
   module Profile
-    class Posts < Muffon::Profile::Base
+    class Feed < Muffon::Profile::Base
       include Muffon::Utils::Pagination
 
       private
@@ -10,7 +10,7 @@ module Muffon
           nickname: nickname,
           page: page,
           total_pages: total_pages_count,
-          posts: posts_formatted
+          feed: posts_formatted
         }
       end
 
@@ -19,7 +19,13 @@ module Muffon
       end
 
       def posts
-        @posts ||= profile.posts
+        @posts ||= ProfilePost.for_feed.where(
+          profile_id: following_ids
+        )
+      end
+
+      def following_ids
+        profile.following_profile_ids
       end
 
       def posts_formatted
