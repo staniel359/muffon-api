@@ -24,9 +24,15 @@ module Muffon
       end
 
       def original_url
-        ActiveStorage::Current.set(host: host) do
+        ActiveStorage::Current.set(
+          url_options: url_options
+        ) do
           image.url
         end
+      end
+
+      def url_options
+        { host: host }
       end
 
       def host
@@ -34,7 +40,9 @@ module Muffon
       end
 
       def variant_url(size)
-        ActiveStorage::Current.set(host: host) do
+        ActiveStorage::Current.set(
+          url_options: url_options
+        ) do
           image.variant(
             resize_to_limit: [size, size]
           ).processed.url
