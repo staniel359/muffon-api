@@ -1,6 +1,7 @@
 module Muffon
   module Profile
     class Recommendations < Muffon::Profile::Base
+      COLLECTION_NAME = 'recommendations'.freeze
       include Muffon::Utils::Pagination
 
       private
@@ -12,12 +13,12 @@ module Muffon
       end
 
       def profile_data
-        {
-          nickname: nickname,
-          page: page,
-          total_pages: total_pages_count,
-          recommendations: recommendations_formatted
-        }
+        profile_base_data
+          .merge(paginated_data)
+      end
+
+      def profile_base_data
+        { nickname: nickname }
       end
 
       def total_items_count
@@ -68,7 +69,7 @@ module Muffon
           )
       end
 
-      def recommendations_formatted
+      def collection
         recommendations_paginated.map do |r|
           recommendation_formatted(r)
         end

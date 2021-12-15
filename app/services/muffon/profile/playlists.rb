@@ -1,18 +1,19 @@
 module Muffon
   module Profile
     class Playlists < Muffon::Profile::Base
+      COLLECTION_NAME = 'playlists'.freeze
       include Muffon::Utils::Pagination
       include Muffon::Utils::Track
 
       private
 
       def profile_data
-        {
-          nickname: nickname,
-          page: page,
-          total_pages: total_pages_count,
-          playlists: playlists_formatted
-        }
+        profile_base_data
+          .merge(paginated_data)
+      end
+
+      def profile_base_data
+        { nickname: nickname }
       end
 
       def total_items_count
@@ -23,7 +24,7 @@ module Muffon
         @playlists ||= profile.playlists
       end
 
-      def playlists_formatted
+      def collection
         playlists_paginated.map do |t|
           playlist_formatted(t)
         end

@@ -33,8 +33,8 @@ module API
             ::Muffon::Profile::Post::Creator.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token content tracks images
+                  profile_id token other_profile_id
+                  content tracks images
                 ]
               )
             )
@@ -43,7 +43,10 @@ module API
           def update_data
             ::Muffon::Profile::Post::Updater.call(
               params.slice(
-                *%i[profile_id token post_id content tracks images]
+                *%i[
+                  profile_id token post_id
+                  content tracks images
+                ]
               )
             )
           end

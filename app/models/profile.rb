@@ -52,6 +52,8 @@ class Profile < ApplicationRecord
            through: :passive_relationships,
            source: :profile
 
+  has_many :messages, dependent: nil
+
   enum gender: {
     male: 0,
     female: 1,
@@ -84,6 +86,13 @@ class Profile < ApplicationRecord
             presence: true,
             uniqueness: true,
             length: { maximum: 30 }
+
+  def conversations
+    Conversation.where(
+      'profile_id = :id OR other_profile_id = :id',
+      id: id
+    )
+  end
 
   private
 

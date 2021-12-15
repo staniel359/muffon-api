@@ -2,23 +2,16 @@ module Muffon
   module Profile
     module Library
       class Albums < Muffon::Profile::Library::Base
+        COLLECTION_NAME = 'albums'.freeze
         include Muffon::Utils::Pagination
 
         private
-
-        def library_data
-          {
-            page: page,
-            total_pages: total_pages_count,
-            albums: albums_formatted
-          }
-        end
 
         def total_items_count
           albums.size
         end
 
-        def albums_formatted
+        def collection
           albums_paginated.map do |a|
             album_formatted(a)
           end
@@ -53,6 +46,8 @@ module Muffon
             profile_id: @args[:profile_id]
           )
         end
+
+        alias library_data paginated_data
       end
     end
   end

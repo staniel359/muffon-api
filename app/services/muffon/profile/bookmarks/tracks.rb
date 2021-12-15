@@ -2,17 +2,10 @@ module Muffon
   module Profile
     module Bookmarks
       class Tracks < Muffon::Profile::Bookmarks::Base
+        COLLECTION_NAME = 'tracks'.freeze
         include Muffon::Utils::Pagination
 
         private
-
-        def bookmarks_data
-          {
-            page: page,
-            total_pages: total_pages_count,
-            tracks: tracks_formatted
-          }
-        end
 
         def total_items_count
           tracks.size
@@ -22,7 +15,7 @@ module Muffon
           @tracks ||= profile.bookmark_tracks
         end
 
-        def tracks_formatted
+        def collection
           tracks_paginated.map do |t|
             track_formatted(t)
           end

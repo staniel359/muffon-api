@@ -2,6 +2,7 @@ module Muffon
   module Profile
     module Playlist
       class Tracks < Muffon::Profile::Playlist::Base
+        COLLECTION_NAME = 'tracks'.freeze
         include Muffon::Utils::Pagination
 
         private
@@ -10,19 +11,11 @@ module Muffon
           [@args[:playlist_id]]
         end
 
-        def playlist_data
-          {
-            page: page,
-            total_pages: total_pages_count,
-            tracks: tracks_formatted
-          }
-        end
-
         def total_items_count
           playlist.playlist_tracks_count
         end
 
-        def tracks_formatted
+        def collection
           tracks_paginated.map do |t|
             track_formatted(t)
           end
@@ -52,6 +45,8 @@ module Muffon
             track: track
           )
         end
+
+        alias playlist_data paginated_data
       end
     end
   end

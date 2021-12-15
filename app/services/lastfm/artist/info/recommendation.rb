@@ -9,7 +9,7 @@ module LastFM
         private
 
         def data
-          return {} if no_recommendation?
+          return if no_recommendation?
 
           {
             id: recommendation_id,

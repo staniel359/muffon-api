@@ -2,6 +2,7 @@ module LastFM
   module User
     class Plays < LastFM::User::Base
       API_METHOD = 'user.getRecentTracks'.freeze
+      COLLECTION_NAME = 'plays'.freeze
       include LastFM::Utils::Pagination
 
       private
@@ -14,12 +15,14 @@ module LastFM
       end
 
       def user_data
+        user_base_data
+          .merge(paginated_data)
+      end
+
+      def user_base_data
         {
           nickname: nickname,
-          page: page,
-          total_pages: total_pages_count,
-          plays_count: plays_count,
-          plays: plays
+          plays_count: plays_count
         }
       end
 
@@ -44,7 +47,7 @@ module LastFM
         plays_extra_data['total'].to_i
       end
 
-      def plays
+      def collection
         plays_list.map do |p|
           play_formatted(p)
         end

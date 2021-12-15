@@ -1,17 +1,18 @@
 module Muffon
   module Profile
     class Posts < Muffon::Profile::Base
+      COLLECTION_NAME = 'posts'.freeze
       include Muffon::Utils::Pagination
 
       private
 
       def profile_data
-        {
-          nickname: nickname,
-          page: page,
-          total_pages: total_pages_count,
-          posts: posts_formatted
-        }
+        profile_base_data
+          .merge(paginated_data)
+      end
+
+      def profile_base_data
+        { nickname: nickname }
       end
 
       def total_items_count
@@ -22,7 +23,7 @@ module Muffon
         @posts ||= profile.posts
       end
 
-      def posts_formatted
+      def collection
         posts_paginated.map do |p|
           post_formatted(p)
         end

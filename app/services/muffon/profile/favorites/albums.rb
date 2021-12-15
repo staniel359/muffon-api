@@ -2,17 +2,10 @@ module Muffon
   module Profile
     module Favorites
       class Albums < Muffon::Profile::Favorites::Base
+        COLLECTION_NAME = 'albums'.freeze
         include Muffon::Utils::Pagination
 
         private
-
-        def favorites_data
-          {
-            page: page,
-            total_pages: total_pages_count,
-            albums: albums_formatted
-          }
-        end
 
         def total_items_count
           albums.size
@@ -22,7 +15,7 @@ module Muffon
           @albums ||= profile.favorite_albums
         end
 
-        def albums_formatted
+        def collection
           albums_paginated.map do |a|
             album_formatted(a)
           end

@@ -30,7 +30,7 @@ module Muffon
       def paginated_data
         {
           page: page,
-          next_page: next_page_formatted,
+          next_page: next_page,
           total_pages: total_pages_count,
           collection_name.to_sym => collection
         }.compact
@@ -40,10 +40,8 @@ module Muffon
         self.class::COLLECTION_NAME
       end
 
-      def next_page_formatted
-        next_page if defined?(
-          next_page
-        )
+      def next_page
+        nil
       end
 
       def total_pages_count

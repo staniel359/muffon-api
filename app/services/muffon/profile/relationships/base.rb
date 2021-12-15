@@ -11,23 +11,19 @@ module Muffon
         end
 
         def profile_data
-          {
-            nickname: nickname,
-            page: page,
-            total_pages: total_pages_count,
-            collection_name => profiles_formatted
-          }
+          profile_base_data
+            .merge(paginated_data)
+        end
+
+        def profile_base_data
+          { nickname: nickname }
         end
 
         def total_items_count
           profiles.size
         end
 
-        def collection_name
-          self.class::COLLECTION_NAME
-        end
-
-        def profiles_formatted
+        def collection
           profiles_paginated.map do |f|
             profile_formatted(f)
           end

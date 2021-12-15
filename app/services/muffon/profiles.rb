@@ -1,26 +1,19 @@
 module Muffon
   class Profiles < Muffon::Base
+    COLLECTION_NAME = 'profiles'.freeze
     include Muffon::Utils::Pagination
 
     private
 
     def data
-      { profiles: profiles_data }
-    end
-
-    def profiles_data
-      {
-        page: page,
-        total_pages: total_pages_count,
-        profiles: profiles_formatted
-      }
+      { profiles: paginated_data }
     end
 
     def total_items_count
       profiles.size
     end
 
-    def profiles_formatted
+    def collection
       profiles_paginated.map do |p|
         profile_formatted(p)
       end

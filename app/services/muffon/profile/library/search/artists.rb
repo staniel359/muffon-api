@@ -3,15 +3,9 @@ module Muffon
     module Library
       module Search
         class Artists < Muffon::Profile::Library::Search::Base
-          private
+          COLLECTION_NAME = 'artists'.freeze
 
-          def library_data
-            {
-              page: page,
-              total_pages: total_pages_count,
-              artists: artists_formatted
-            }
-          end
+          private
 
           def total_items_count
             artists.size
@@ -31,7 +25,7 @@ module Muffon
               .left_joins(:artist)
           end
 
-          def artists_formatted
+          def collection
             artists_paginated.map do |a|
               artist_formatted(a)
             end

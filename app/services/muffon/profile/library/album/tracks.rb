@@ -3,17 +3,20 @@ module Muffon
     module Library
       module Album
         class Tracks < Muffon::Profile::Library::Album::Base
+          COLLECTION_NAME = 'tracks'.freeze
           include Muffon::Utils::Pagination
 
           private
 
           def album_data
+            album_base_data
+              .merge(paginated_data)
+          end
+
+          def album_base_data
             {
               title: title,
-              artist: artist_data,
-              page: page,
-              total_pages: total_pages_count,
-              tracks: tracks_formatted
+              artist: artist_data
             }
           end
 
@@ -21,7 +24,7 @@ module Muffon
             profile_album.profile_tracks_count
           end
 
-          def tracks_formatted
+          def collection
             tracks_paginated.map do |t|
               track_data_formatted(t)
             end

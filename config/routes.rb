@@ -163,9 +163,18 @@ Rails.application.routes.draw do
 
             resources :following, only: :index
 
-            namespace :feed do
-              get '', action: :index
+            resources :feed, only: :index
+
+            resources :conversations, only: :index
+
+            namespace :conversations, as: :conversation do
+              scope ':conversation_id' do
+                get '', action: :info
+                get 'messages'
+              end
             end
+
+            resources :messages, only: :create
           end
         end
 

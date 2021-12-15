@@ -1,7 +1,7 @@
 module Muffon
   module Profile
-    class Posts
-      class Post < Muffon::Profile::Posts
+    module Messages
+      class Message < Muffon::Profile::Base
         def call
           data
         end
@@ -10,80 +10,79 @@ module Muffon
 
         def data
           {
-            id: id,
-            profile: profile_data,
             content: content,
+            profile: profile_data,
             images: images,
             tracks: tracks,
             created: created
           }.compact
         end
 
-        def id
-          post.id
+        def content
+          message.content
+        end
+
+        def message
+          @args[:message]
         end
 
         def profile_data
           {
-            id: profile_id,
-            nickname: nickname,
-            image: profile_image_data
+            id: message_profile_id,
+            nickname: message_profile_nickname,
+            image: message_profile_image_data
           }
         end
 
-        def profile_id
-          profile.id
+        def message_profile_id
+          message_profile.id
         end
 
-        def profile
-          @profile ||= post.profile
+        def message_profile
+          @message_profile ||= message.profile
         end
 
-        def profile_image_data
-          profile.image_data
+        def message_profile_nickname
+          message_profile.nickname
         end
 
-        def post
-          @args[:post]
-        end
-
-        def content
-          post.content
+        def message_profile_image_data
+          message_profile.image_data
         end
 
         def images
-          post
+          message
             .images_data
             .presence
         end
 
         def tracks
-          return if post_tracks.blank?
+          return if message_tracks.blank?
 
           tracks_associated.map do |t|
             track_data_formatted(t)
           end
         end
 
-        def post_tracks
-          @post_tracks ||= post.tracks
+        def message_tracks
+          @message_tracks ||= message.tracks
         end
 
         def tracks_associated
-          post_tracks.includes(
+          message_tracks.includes(
             :artist
           )
         end
 
         def track_data_formatted(track)
-          Muffon::Profile::Posts::Post::Track.call(
+          Muffon::Profile::Messages::Message::Track.call(
             track: track
           )
         end
 
         def created
           datetime_formatted(
-            post.created_at
+            message.created_at
           )
         end
       end

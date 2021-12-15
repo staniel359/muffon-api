@@ -2,17 +2,20 @@ module Muffon
   module Profile
     module Library
       class Artists < Muffon::Profile::Library::Base
+        COLLECTION_NAME = 'artists'.freeze
         include Muffon::Utils::Pagination
 
         private
 
         def library_data
+          artist_data
+            .merge(paginated_data)
+        end
+
+        def artist_data
           {
-            page: page,
-            total_pages: total_pages_count,
             top_tracks_count: top_tracks_count,
-            top_albums_count: top_albums_count,
-            artists: artists_formatted
+            top_albums_count: top_albums_count
           }
         end
 
@@ -48,7 +51,7 @@ module Muffon
           artists.size
         end
 
-        def artists_formatted
+        def collection
           artists_paginated.map do |a|
             artist_formatted(a)
           end

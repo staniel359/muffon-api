@@ -11,7 +11,7 @@ module Muffon
         def profile_data
           {
             nickname: profile.nickname,
-            favorites: favorites_data
+            favorites: paginated_data
           }
         end
       end

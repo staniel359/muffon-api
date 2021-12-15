@@ -2,6 +2,7 @@ module VK
   module Artist
     class Albums < VK::Artist::Base
       API_METHOD = 'audio.getAlbumsByArtist'.freeze
+      COLLECTION_NAME = 'albums'.freeze
       include Muffon::Utils::Pagination
 
       private
@@ -33,12 +34,12 @@ module VK
       end
 
       def artist_data
-        {
-          name: name,
-          page: page,
-          total_pages: total_pages_count,
-          albums: albums_formatted
-        }
+        artist_base_data
+          .merge(paginated_data)
+      end
+
+      def artist_base_data
+        { name: name }
       end
 
       def name
@@ -51,7 +52,7 @@ module VK
         response_data['count'].to_i
       end
 
-      def albums_formatted
+      def collection
         albums_list.map do |a|
           album_formatted(a)
         end
