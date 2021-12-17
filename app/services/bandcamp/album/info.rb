@@ -26,7 +26,7 @@ module Bandcamp
           description: description_truncated,
           tags: tags.first(5),
           tracks: tracks
-        }
+        }.compact
       end
 
       def description

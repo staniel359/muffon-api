@@ -77,6 +77,8 @@ module API
         end
 
         def update_artist_image
+          return if Rails.env.test?
+
           ::Muffon::Updater::Artist::Image.call(
             data.slice(:artist)
           )

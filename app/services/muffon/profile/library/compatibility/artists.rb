@@ -12,26 +12,18 @@ module Muffon
           end
 
           def collection_list
-            other_profile_artists_sorted
+            other_profile_artists
+              .profile_tracks_count_desc_ordered
+              .created_asc_ordered
               .limit(limit)
               .offset(offset)
-          end
-
-          def other_profile_artists_sorted
-            other_profile_artists_associated.order(
-              profile_tracks_count: :desc,
-              created_at: :asc
-            )
-          end
-
-          def other_profile_artists_associated
-            other_profile_artists.includes(
-              :artist
-            )
+              .associated
           end
 
           def other_profile_artists
-            profile_artists(@args[:other_profile_id]).where(
+            profile_artists(
+              @args[:other_profile_id]
+            ).where(
               artist_id: common_artist_ids
             )
           end

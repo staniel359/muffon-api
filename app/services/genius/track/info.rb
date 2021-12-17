@@ -30,7 +30,7 @@ module Genius
           description: description_truncated,
           tags: tags.first(5),
           lyrics: lyrics_truncated
-        }
+        }.compact
       end
 
       def albums

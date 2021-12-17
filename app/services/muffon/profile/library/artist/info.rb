@@ -16,7 +16,7 @@ module Muffon
               tracks_count: tracks_count,
               albums_count: albums_count,
               created: created
-            }
+            }.compact
           end
 
           def id

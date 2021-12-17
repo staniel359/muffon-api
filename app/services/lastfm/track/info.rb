@@ -34,7 +34,7 @@ module LastFM
           plays_count: plays_count,
           duration: duration,
           duration_seconds: duration_seconds
-        }
+        }.compact
       end
 
       def albums

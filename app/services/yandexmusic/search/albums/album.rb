@@ -35,7 +35,7 @@ module YandexMusic
           {
             image: image_data,
             release_date: release_date
-          }
+          }.compact
         end
       end
     end

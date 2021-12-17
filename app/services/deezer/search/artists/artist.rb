@@ -21,7 +21,7 @@ module Deezer
             name: name,
             image: image_data,
             listeners_count: listeners_count
-          }
+          }.compact
         end
 
         def name

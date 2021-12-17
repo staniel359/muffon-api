@@ -24,33 +24,19 @@ module Muffon
             profile_album.profile_tracks_count
           end
 
-          def collection
-            tracks_paginated.map do |t|
-              track_data_formatted(t)
-            end
-          end
-
-          def tracks_paginated
-            tracks_sorted
+          def collection_list
+            tracks
+              .created_desc_ordered
               .limit(limit)
               .offset(offset)
+              .album_associated
           end
 
-          def tracks_sorted
-            tracks_associated.order(
-              created_at: :desc
-            )
+          def tracks
+            profile_album.profile_tracks
           end
 
-          def tracks_associated
-            profile_album
-              .profile_tracks
-              .includes(
-                [track: :artist]
-              )
-          end
-
-          def track_data_formatted(track)
+          def collection_item_data_formatted(track)
             Muffon::Profile::Library::Album::Tracks::Track.call(
               track: track,
               profile_id: @args[:profile_id]

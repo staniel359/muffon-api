@@ -27,7 +27,7 @@ module Discogs
           labels: labels,
           tags: tags.first(5),
           tracks: tracks
-        }
+        }.compact
       end
 
       def raw_release_date

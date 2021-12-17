@@ -29,7 +29,7 @@ module SoundCloud
           description: description_truncated,
           tags: tags.first(5),
           audio: audio_data
-        }
+        }.compact
       end
 
       def description

@@ -87,6 +87,20 @@ class Profile < ApplicationRecord
             uniqueness: true,
             length: { maximum: 30 }
 
+  class << self
+    def relationship_created_desc_ordered
+      order(
+        'relationships.created_at DESC'
+      )
+    end
+
+    def associated
+      includes(
+        image_association
+      )
+    end
+  end
+
   def conversations
     Conversation.where(
       'profile_id = :id OR other_profile_id = :id',

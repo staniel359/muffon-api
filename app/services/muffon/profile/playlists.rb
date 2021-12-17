@@ -24,25 +24,15 @@ module Muffon
         @playlists ||= profile.playlists
       end
 
-      def collection
-        playlists_paginated.map do |t|
-          playlist_formatted(t)
-        end
-      end
-
-      def playlists_paginated
-        playlists_sorted
+      def collection_list
+        playlists
+          .created_desc_ordered
           .limit(limit)
           .offset(offset)
+          .associated
       end
 
-      def playlists_sorted
-        playlists.order(
-          created_at: :asc
-        )
-      end
-
-      def playlist_formatted(playlist)
+      def collection_item_data_formatted(playlist)
         Muffon::Profile::Playlists::Playlist.call(
           playlist: playlist,
           track_id: track_id

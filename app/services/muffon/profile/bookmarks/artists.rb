@@ -15,31 +15,15 @@ module Muffon
           @artists ||= profile.bookmark_artists
         end
 
-        def collection
-          artists_paginated.map do |a|
-            artist_formatted(a)
-          end
-        end
-
-        def artists_paginated
-          artists_sorted
+        def collection_list
+          artists
+            .created_desc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def artists_sorted
-          artists_associated.order(
-            created_at: :asc
-          )
-        end
-
-        def artists_associated
-          artists.includes(
-            :artist
-          )
-        end
-
-        def artist_formatted(artist)
+        def collection_item_data_formatted(artist)
           Muffon::Profile::Bookmarks::Artists::Artist.call(
             artist: artist
           )

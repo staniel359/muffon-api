@@ -10,4 +10,12 @@ class Playlist < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
+
+  class << self
+    def associated
+      includes(
+        image_association
+      )
+    end
+  end
 end

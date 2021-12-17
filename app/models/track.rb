@@ -26,6 +26,10 @@ class Track < ApplicationRecord
       )
     end
 
+    def associated
+      includes(:artist)
+    end
+
     private
 
     def player_id

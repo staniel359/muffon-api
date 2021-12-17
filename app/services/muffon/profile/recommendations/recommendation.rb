@@ -22,7 +22,7 @@ module Muffon
             image: image_data,
             profile_artists_count: profile_artists_count,
             profile_artists: profile_artists_formatted
-          }
+          }.compact
         end
 
         def id
@@ -52,16 +52,19 @@ module Muffon
         end
 
         def profile_artists_formatted
-          profile_artists_associated.map do |a|
+          profile_artists.map do |a|
             profile_artist_formatted(a)
           end
         end
 
-        def profile_artists_associated
+        def profile_artists
           recommendation
             .profile_artists
+            .profile_tracks_count_desc_ordered
+            .profile_albums_count_desc_ordered
+            .created_asc_ordered
             .limit(5)
-            .includes(:artist)
+            .associated
         end
 
         def profile_artist_formatted(profile_artist)

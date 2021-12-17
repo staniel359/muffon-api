@@ -40,7 +40,7 @@ module Deezer
             duration: duration,
             duration_seconds: duration_seconds,
             audio: audio_data
-          }
+          }.compact
         end
       end
     end

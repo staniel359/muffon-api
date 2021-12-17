@@ -20,7 +20,9 @@ module Muffon
             return forbidden if wrong_profile?
 
             process_profile_artist
+
             process_profile_album
+
             process_profile_track
 
             return errors_data if errors?
@@ -53,8 +55,6 @@ module Muffon
             return if profile_album.blank?
 
             profile_album.tap do |album|
-              album.image_url = @args[:image_url] if
-                  @args[:image_url].present?
               album.created_at = @args[:created_at] if
                   update_created_at?(album)
               album.save
@@ -108,7 +108,7 @@ module Muffon
 
           def process_image
             profile_album&.process_image(
-              @args[:image]
+              @args[:image_url] || @args[:image]
             )
           end
         end

@@ -31,7 +31,7 @@ module LastFM
           description: description_truncated,
           tags: tags,
           tracks: tracks
-        }
+        }.compact
       end
 
       def listeners_count

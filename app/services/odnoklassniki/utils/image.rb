@@ -8,14 +8,12 @@ module Odnoklassniki
       private
 
       def data
-        return image_data if image?
+        return unless image_present?
 
-        default_image_data(
-          @args[:model]
-        )
+        image_data
       end
 
-      def image?
+      def image_present?
         image.present? && !placeholder?
       end
 

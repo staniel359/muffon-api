@@ -20,7 +20,7 @@ module VK
             vk_id: vk_id,
             name: name,
             image: image_data
-          }
+          }.compact
         end
 
         def name

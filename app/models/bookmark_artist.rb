@@ -6,4 +6,12 @@ class BookmarkArtist < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
+
+  class << self
+    def associated
+      includes(
+        artist: image_association
+      )
+    end
+  end
 end

@@ -27,7 +27,7 @@ module YandexMusic
           labels: labels,
           tags: tags.first(5),
           tracks: tracks
-        }
+        }.compact
       end
 
       def labels

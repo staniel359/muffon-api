@@ -59,19 +59,13 @@ module Muffon
         def tracks
           return if message_tracks.blank?
 
-          tracks_associated.map do |t|
+          message_tracks.map do |t|
             track_data_formatted(t)
           end
         end
 
         def message_tracks
           @message_tracks ||= message.tracks
-        end
-
-        def tracks_associated
-          message_tracks.includes(
-            :artist
-          )
         end
 
         def track_data_formatted(track)

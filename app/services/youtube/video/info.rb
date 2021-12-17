@@ -30,7 +30,7 @@ module YouTube
           publish_date: publish_date,
           description: description_truncated,
           tags: tags.first(5)
-        }
+        }.compact
       end
 
       def views_count

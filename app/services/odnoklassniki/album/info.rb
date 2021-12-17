@@ -25,7 +25,7 @@ module Odnoklassniki
           release_date: release_date,
           tags: tags.first(5),
           tracks: tracks
-        }
+        }.compact
       end
 
       def tags_list

@@ -13,4 +13,13 @@ class ProfileAlbum < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
+
+  class << self
+    def associated
+      includes(
+        [album: :artist],
+        image_association
+      )
+    end
+  end
 end

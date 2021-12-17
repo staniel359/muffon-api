@@ -20,7 +20,7 @@ module SoundCloud
             soundcloud_id: soundcloud_id,
             name: name,
             image: image_data
-          }
+          }.compact
         end
 
         def artist

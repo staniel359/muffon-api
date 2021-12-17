@@ -19,15 +19,20 @@ module Muffon
           def data
             return forbidden if wrong_profile?
 
-            favorite_track.tap do |track|
-              track.album_id = find_album&.id
-              track.image_url = @args[:image_url]
-              track.save
-            end
+            process_favorite_track
 
             return errors_data if errors?
 
-            { favorite_id: favorite_track.id }
+            process_image
+
+            { favorite_id: favorite_id }
+          end
+
+          def process_favorite_track
+            favorite_track.tap do |track|
+              track.album_id = find_album&.id
+              track.save
+            end
           end
 
           def favorite_track
@@ -51,6 +56,16 @@ module Muffon
 
           def errors?
             favorite_track.errors.any?
+          end
+
+          def process_image
+            favorite_track.process_image(
+              @args[:image_url]
+            )
+          end
+
+          def favorite_id
+            favorite_track.id
           end
         end
       end

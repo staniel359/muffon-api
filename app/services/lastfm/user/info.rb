@@ -10,7 +10,7 @@ module LastFM
           nickname: nickname,
           image: image_data,
           plays_count: plays_count
-        }
+        }.compact
       end
 
       def nickname

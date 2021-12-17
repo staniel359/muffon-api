@@ -3,6 +3,8 @@ class Artist < ApplicationRecord
 
   has_many :profile_artists, dependent: nil
 
+  has_one_attached :image
+
   validates :name,
             presence: true,
             uniqueness: true
@@ -16,14 +18,6 @@ class Artist < ApplicationRecord
         name: name
       )
     end
-  end
-
-  def image_data
-    return if image_url.blank?
-
-    LastFM::Utils::Image.call(
-      image: image_url, model: 'artist'
-    )
   end
 
   private

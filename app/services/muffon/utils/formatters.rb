@@ -19,12 +19,6 @@ module Muffon
         description.truncate(400)
       end
 
-      def default_image_data(model)
-        LastFM::Utils::Image.call(
-          model: model
-        )
-      end
-
       def artist_formatted
         { name: artist_names }
       end

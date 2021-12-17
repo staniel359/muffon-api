@@ -14,7 +14,7 @@ module Bandcamp
             bandcamp_id: bandcamp_id,
             bandcamp_model: 'artist',
             image: image_data
-          }
+          }.compact
         end
 
         def name

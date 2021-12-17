@@ -26,7 +26,7 @@ module Deezer
           release_date: release_date,
           labels: labels,
           tracks: tracks
-        }
+        }.compact
       end
 
       def listeners_count

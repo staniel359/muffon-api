@@ -24,7 +24,7 @@ module Discogs
             artists: artists,
             image: image_data,
             release_date: release_date
-          }
+          }.compact
         end
 
         def title

@@ -45,20 +45,11 @@ module Muffon
             end
 
             def image_data
-              profile_album&.image_data.presence ||
-                default_image_data
+              profile_album&.image_data
             end
 
             def profile_album
-              @profile_album ||=
-                profile_track.profile_album
-            end
-
-            def default_image_data
-              ::LastFM::Utils::Image.call(
-                model: 'track',
-                image: profile_album&.image_url
-              )
+              profile_track.profile_album
             end
           end
         end

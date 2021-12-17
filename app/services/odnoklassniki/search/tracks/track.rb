@@ -50,7 +50,7 @@ module Odnoklassniki
             duration: duration,
             duration_seconds: duration_seconds,
             audio: audio_data
-          }
+          }.compact
         end
 
         def albums

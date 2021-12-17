@@ -13,8 +13,6 @@ module Muffon
               @args[:query]
             ]
           end
-
-          alias library_data paginated_data
         end
       end
     end

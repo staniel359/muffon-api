@@ -33,20 +33,14 @@ module Muffon
           when 'tags'
             recommendations_tags_filtered
           else
-            recommendations_associated
+            recommendations
           end
       end
 
       def recommendations_artists_filtered
-        recommendations_associated.where(
+        recommendations.where(
           'profile_artist_ids @> ARRAY[?]',
           filter_ids
-        )
-      end
-
-      def recommendations_associated
-        recommendations.includes(
-          :artist
         )
       end
 
@@ -61,7 +55,7 @@ module Muffon
       end
 
       def recommendations_tags_filtered
-        recommendations_associated
+        recommendations
           .left_joins(:artist)
           .where(
             'artists.tag_ids @> ARRAY[?]',
@@ -69,32 +63,15 @@ module Muffon
           )
       end
 
-      def collection
-        recommendations_paginated.map do |r|
-          recommendation_formatted(r)
-        end
-      end
-
-      def recommendations_paginated
-        recommendations_sorted
+      def collection_list
+        recommendations_filtered
+          .profile_artists_count_desc_ordered
           .limit(limit)
           .offset(offset)
+          .associated
       end
 
-      def recommendations_sorted
-        recommendations_filtered
-          .select(
-            'recommendations.*,'\
-            ' ARRAY_LENGTH(profile_artist_ids, 1)'\
-            ' as profile_artist_ids_size'
-          )
-          .order(
-            'profile_artist_ids_size DESC,'\
-            ' recommendations.created_at ASC'
-          )
-      end
-
-      def recommendation_formatted(recommendation)
+      def collection_item_data_formatted(recommendation)
         Muffon::Profile::Recommendations::Recommendation.call(
           recommendation: recommendation,
           profile_id: @args[:profile_id]

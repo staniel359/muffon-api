@@ -19,25 +19,20 @@ module Muffon
           def data
             return forbidden if wrong_profile?
 
-            process_bookmark_album
+            bookmark_album
 
             return errors_data if errors?
 
-            { bookmark_id: bookmark_album.id }
-          end
+            process_image
 
-          def process_bookmark_album
-            bookmark_album.tap do |album|
-              album.image_url = @args[:image_url]
-              album.save
-            end
+            { bookmark_id: bookmark_id }
           end
 
           def bookmark_album
             @bookmark_album ||=
               profile.bookmark_albums.where(
                 album_id: find_album.id
-              ).first_or_initialize
+              ).first_or_create
           end
 
           def artist_name
@@ -50,6 +45,16 @@ module Muffon
 
           def errors?
             bookmark_album.errors.any?
+          end
+
+          def process_image
+            bookmark_album.process_image(
+              @args[:image_url]
+            )
+          end
+
+          def bookmark_id
+            bookmark_album.id
           end
         end
       end

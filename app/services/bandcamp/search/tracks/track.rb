@@ -52,7 +52,7 @@ module Bandcamp
           {
             image: image_data,
             audio: audio_data
-          }
+          }.compact
         end
 
         def image_data

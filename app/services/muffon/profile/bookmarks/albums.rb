@@ -15,32 +15,15 @@ module Muffon
           @albums ||= profile.bookmark_albums
         end
 
-        def collection
-          albums_paginated.map do |a|
-            album_formatted(a)
-          end
-        end
-
-        def albums_paginated
-          albums_sorted
+        def collection_list
+          albums
+            .created_desc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def albums_sorted
-          albums_associated.order(
-            created_at: :asc
-          )
-        end
-
-        def albums_associated
-          albums.includes(
-            :album,
-            [album: :artist]
-          )
-        end
-
-        def album_formatted(album)
+        def collection_item_data_formatted(album)
           Muffon::Profile::Bookmarks::Albums::Album.call(
             album: album
           )

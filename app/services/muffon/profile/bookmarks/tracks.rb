@@ -15,34 +15,15 @@ module Muffon
           @tracks ||= profile.bookmark_tracks
         end
 
-        def collection
-          tracks_paginated.map do |t|
-            track_formatted(t)
-          end
-        end
-
-        def tracks_paginated
-          tracks_sorted
+        def collection_list
+          tracks
+            .created_desc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def tracks_sorted
-          tracks_associated.order(
-            created_at: :asc
-          )
-        end
-
-        def tracks_associated
-          tracks
-            .includes(
-              :track,
-              [track: :artist],
-              :album
-            )
-        end
-
-        def track_formatted(track)
+        def collection_item_data_formatted(track)
           Muffon::Profile::Bookmarks::Tracks::Track.call(
             track: track
           )

@@ -17,7 +17,7 @@ module YouTube
             channel: channel_data,
             image: image_data_formatted,
             publish_date: publish_date
-          }
+          }.compact
         end
 
         def video

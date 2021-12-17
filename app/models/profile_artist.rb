@@ -15,6 +15,20 @@ class ProfileArtist < ApplicationRecord
               scope: :profile_id
             }
 
+  class << self
+    def profile_albums_count_desc_ordered
+      order(
+        profile_albums_count: :desc
+      )
+    end
+
+    def associated
+      includes(
+        artist: image_association
+      )
+    end
+  end
+
   private
 
   def create_recommendations

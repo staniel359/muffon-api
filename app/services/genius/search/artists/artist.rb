@@ -20,7 +20,7 @@ module Genius
             genius_id: genius_id,
             name: name,
             image: image_data
-          }
+          }.compact
         end
 
         def name

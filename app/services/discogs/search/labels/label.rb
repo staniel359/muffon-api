@@ -15,7 +15,7 @@ module Discogs
             name: name,
             discogs_id: discogs_id,
             image: image_data
-          }
+          }.compact
         end
 
         def artist

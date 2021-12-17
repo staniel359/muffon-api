@@ -25,7 +25,7 @@ module Genius
           release_date: release_date,
           description: description_truncated,
           tracks: tracks
-        }
+        }.compact
       end
 
       def description

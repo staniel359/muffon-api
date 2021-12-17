@@ -21,35 +21,20 @@ module Muffon
             profile_artist.profile_albums_count
           end
 
-          def collection
-            albums_paginated.map do |a|
-              album_data_formatted(a)
-            end
-          end
-
-          def albums_paginated
-            albums_sorted
+          def collection_list
+            albums
+              .profile_tracks_count_desc_ordered
+              .created_asc_ordered
               .limit(limit)
               .offset(offset)
+              .associated
           end
 
-          def albums_sorted
-            albums_associated.order(
-              profile_tracks_count: :desc,
-              created_at: :asc
-            )
+          def albums
+            profile_artist.profile_albums
           end
 
-          def albums_associated
-            profile_artist
-              .profile_albums
-              .includes(
-                [album: :artist],
-                [image_attachment: :blob]
-              )
-          end
-
-          def album_data_formatted(album)
+          def collection_item_data_formatted(album)
             Muffon::Profile::Library::Artist::Albums::Album.call(
               album: album,
               profile_id: @args[:profile_id]

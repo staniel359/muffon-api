@@ -25,7 +25,7 @@ module Spotify
           release_date: release_date,
           labels: labels,
           tracks: tracks
-        }
+        }.compact
       end
 
       def labels

@@ -24,22 +24,24 @@ module Muffon
 
             return errors_data if errors?
 
-            { playlist_track_id: playlist_track.id }
+            process_image
+
+            { playlist_track_id: playlist_track_id }
           end
 
           def process_playlist_track
             playlist_track.tap do |track|
               track.artist_id = find_artist.id
               track.album_id = find_album&.id
-              track.image_url = @args[:image_url]
               track.save
             end
           end
 
           def playlist_track
-            @playlist_track ||= playlist.playlist_tracks.where(
-              track_id: find_track.id
-            ).first_or_initialize
+            @playlist_track ||=
+              playlist.playlist_tracks.where(
+                track_id: find_track.id
+              ).first_or_initialize
           end
 
           def title
@@ -55,11 +57,23 @@ module Muffon
           end
 
           def errors?
-            playlist_track.errors.any?
+            playlist_track
+              .errors
+              .any?
           end
 
           def errors
             playlist_track.errors_formatted
+          end
+
+          def process_image
+            playlist_track.process_image(
+              @args[:image_url]
+            )
+          end
+
+          def playlist_track_id
+            playlist_track.id
           end
         end
       end

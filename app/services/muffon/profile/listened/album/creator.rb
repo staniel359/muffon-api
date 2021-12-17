@@ -19,25 +19,20 @@ module Muffon
           def data
             return forbidden if wrong_profile?
 
-            process_listened_album
+            listened_album
 
             return errors_data if errors?
 
-            { listened_id: listened_album.id }
-          end
+            process_image
 
-          def process_listened_album
-            listened_album.tap do |album|
-              album.image_url = @args[:image_url]
-              album.save
-            end
+            { listened_id: listened_id }
           end
 
           def listened_album
             @listened_album ||=
               profile.listened_albums.where(
                 album_id: find_album.id
-              ).first_or_initialize
+              ).first_or_create
           end
 
           def title
@@ -50,6 +45,16 @@ module Muffon
 
           def errors?
             listened_album.errors.any?
+          end
+
+          def process_image
+            listened_album.process_image(
+              @args[:image_url]
+            )
+          end
+
+          def listened_id
+            listened_album.id
           end
         end
       end

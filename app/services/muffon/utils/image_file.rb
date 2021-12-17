@@ -1,3 +1,5 @@
+require 'open-uri'
+
 module Muffon
   module Utils
     class ImageFile < Muffon::Base
@@ -16,31 +18,60 @@ module Muffon
       end
 
       def image_io
-        StringIO.new(image_base64)
+        link_image? ? link_image : file_image
       end
 
-      def image_base64
-        Base64.decode64(
-          image.split(',')[1]
+      def link_image?
+        @args[:image].match(
+          %r{https?://}
         )
       end
 
-      def image
-        @args[:image]
+      def link_image
+        @link_image ||= URI.parse(
+          @args[:image]
+        ).open
+      end
+
+      def file_image
+        StringIO.new(
+          base64_image
+        )
+      end
+
+      def base64_image
+        Base64.decode64(
+          @args[:image].split(
+            ','
+          )[1]
+        )
       end
 
       def image_filename
-        "image.#{image_extension}"
-      end
-
-      def image_extension
-        image.split(',')[0].match(
-          %r{image/(.+);}
-        )[1]
+        image_content_type.sub(
+          '/', '.'
+        )
       end
 
       def image_content_type
-        "image/#{image_extension}"
+        @image_content_type ||=
+          retrieve_image_content_type
+      end
+
+      def retrieve_image_content_type
+        return link_image_content_type if link_image?
+
+        file_image_content_type
+      end
+
+      def link_image_content_type
+        link_image.content_type
+      end
+
+      def file_image_content_type
+        @args[:image].match(
+          %r{(image/.+);}
+        )[1]
       end
     end
   end

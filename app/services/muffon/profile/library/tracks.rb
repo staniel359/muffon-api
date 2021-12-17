@@ -11,37 +11,15 @@ module Muffon
           tracks.size
         end
 
-        def collection
-          tracks_paginated.map do |t|
-            track_formatted(t)
-          end
-        end
-
-        def tracks_paginated
-          tracks_sorted
+        def collection_list
+          tracks
+            .created_desc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def tracks_sorted
-          tracks_associated.order(
-            created_at: :desc
-          )
-        end
-
-        def tracks_associated
-          tracks
-            .includes(
-              :track,
-              [profile_artist: :artist],
-              [profile_album: :album],
-              [profile_album: [
-                image_attachment: :blob
-              ]]
-            )
-        end
-
-        def track_formatted(track)
+        def collection_item_data_formatted(track)
           Muffon::Profile::Library::Tracks::Track.call(
             track: track,
             profile_id: @args[:profile_id]

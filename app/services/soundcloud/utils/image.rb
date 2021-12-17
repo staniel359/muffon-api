@@ -8,11 +8,9 @@ module SoundCloud
       private
 
       def data
-        return image_data if image.present?
+        return if image.blank?
 
-        default_image_data(
-          @args[:model]
-        )
+        image_data
       end
 
       def image

@@ -13,7 +13,7 @@ module RateYourMusic
             name: name,
             rateyourmusic_id: rateyourmusic_id,
             image: image_data
-          }
+          }.compact
         end
 
         def name

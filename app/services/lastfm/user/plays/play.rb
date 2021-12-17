@@ -15,7 +15,7 @@ module LastFM
             album: album_data,
             image: image_data,
             created: created
-          }
+          }.compact
         end
 
         def title

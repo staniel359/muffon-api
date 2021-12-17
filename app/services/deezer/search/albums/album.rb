@@ -23,7 +23,7 @@ module Deezer
             artist: artist_formatted,
             artists: artists,
             image: image_data
-          }
+          }.compact
         end
 
         def album

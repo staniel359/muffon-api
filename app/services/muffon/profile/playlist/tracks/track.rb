@@ -17,7 +17,7 @@ module Muffon
               artist: artist_data,
               album: album_data,
               image: image_data,
-              created: created_at
+              created: created
             }.compact
           end
 
@@ -80,13 +80,10 @@ module Muffon
           end
 
           def image_data
-            ::LastFM::Utils::Image.call(
-              model: 'track',
-              image: playlist_track.image_url
-            )
+            playlist_track.image_data
           end
 
-          def created_at
+          def created
             datetime_formatted(
               playlist_track.created_at
             )

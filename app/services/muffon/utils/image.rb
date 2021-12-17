@@ -8,7 +8,7 @@ module Muffon
       private
 
       def data
-        return {} if image.blank?
+        return if image.blank?
 
         {
           original: original_url,

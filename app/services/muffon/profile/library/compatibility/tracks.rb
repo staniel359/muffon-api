@@ -12,26 +12,17 @@ module Muffon
           end
 
           def collection_list
-            other_profile_tracks_sorted
+            other_profile_tracks
+              .created_desc_ordered
               .limit(limit)
               .offset(offset)
-          end
-
-          def other_profile_tracks_sorted
-            other_profile_tracks_associated.order(
-              created_at: :asc
-            )
-          end
-
-          def other_profile_tracks_associated
-            other_profile_tracks.includes(
-              :track,
-              :profile_album
-            )
+              .associated
           end
 
           def other_profile_tracks
-            profile_tracks(@args[:other_profile_id]).where(
+            profile_tracks(
+              @args[:other_profile_id]
+            ).where(
               track_id: common_track_ids
             )
           end

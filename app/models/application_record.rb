@@ -1,8 +1,50 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
+  class << self
+    def created_desc_ordered
+      order(
+        created_at: :desc
+      )
+    end
+
+    def created_asc_ordered
+      order(
+        created_at: :asc
+      )
+    end
+
+    def profile_tracks_count_desc_ordered
+      order(
+        profile_tracks_count: :desc
+      )
+    end
+
+    def image_association
+      { image_attachment: image_attachment_association }
+    end
+
+    def images_association
+      { images_attachments: image_attachment_association }
+    end
+
+    private
+
+    def image_attachment_association
+      {
+        blob: {
+          variant_records: {
+            image_attachment: :blob
+          }
+        }
+      }
+    end
+  end
+
   def image_data
-    image_data_formatted(image)
+    image_data_formatted(
+      image
+    )
   end
 
   def images_data
@@ -23,6 +65,8 @@ class ApplicationRecord < ActiveRecord::Base
         image_file
       )
     )
+  rescue OpenURI::HTTPError
+    nil
   end
 
   def process_images(image_files)
@@ -37,12 +81,14 @@ class ApplicationRecord < ActiveRecord::Base
         **image_file_data_formatted(i)
       )
     end
+  rescue OpenURI::HTTPError
+    nil
   end
 
   def tracks
     Track.where(
       id: track_ids
-    )
+    ).associated
   end
 
   def errors_formatted

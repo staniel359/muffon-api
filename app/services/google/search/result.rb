@@ -14,7 +14,7 @@ module Google
           link: link,
           image: image_data,
           description: description
-        }
+        }.compact
       end
 
       def site_name

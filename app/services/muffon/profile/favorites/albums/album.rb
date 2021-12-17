@@ -15,7 +15,7 @@ module Muffon
               title: title,
               artist: artist_data,
               image: image_data
-            }
+            }.compact
           end
 
           def id
@@ -44,10 +44,7 @@ module Muffon
           end
 
           def image_data
-            ::LastFM::Utils::Image.call(
-              model: 'album',
-              image: favorite_album.image_url
-            )
+            favorite_album.image_data
           end
         end
       end

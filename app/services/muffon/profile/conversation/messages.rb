@@ -15,31 +15,15 @@ module Muffon
           @messages ||= conversation.messages
         end
 
-        def collection
-          messages_paginated.map do |m|
-            message_formatted(m)
-          end
-        end
-
-        def messages_paginated
-          messages_associated
+        def collection_list
+          messages
+            .created_desc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def messages_associated
-          messaged_sorted.includes(
-            :profile
-          )
-        end
-
-        def messaged_sorted
-          messages.order(
-            created_at: :desc
-          )
-        end
-
-        def message_formatted(message)
+        def collection_item_data_formatted(message)
           Muffon::Profile::Messages::Message.call(
             message: message
           )

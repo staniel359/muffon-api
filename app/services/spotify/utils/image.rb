@@ -8,11 +8,9 @@ module Spotify
       private
 
       def data
-        return image_data if images_list.present?
+        return if images_list.blank?
 
-        default_image_data(
-          @args[:model]
-        )
+        image_data
       end
 
       def images_list

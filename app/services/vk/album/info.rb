@@ -27,7 +27,7 @@ module VK
           plays_count: plays_count,
           tags: tags,
           tracks: tracks_data
-        }
+        }.compact
       end
 
       def plays_count

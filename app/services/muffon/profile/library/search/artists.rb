@@ -7,6 +7,18 @@ module Muffon
 
           private
 
+          def library_data
+            artist_data
+              .merge(paginated_data)
+          end
+
+          def artist_data
+            {
+              top_tracks_count: top_tracks_count,
+              top_albums_count: top_albums_count
+            }
+          end
+
           def total_items_count
             artists.size
           end
@@ -25,33 +37,16 @@ module Muffon
               .left_joins(:artist)
           end
 
-          def collection
-            artists_paginated.map do |a|
-              artist_formatted(a)
-            end
-          end
-
-          def artists_paginated
-            artists_sorted
+          def collection_list
+            artists
+              .profile_tracks_count_desc_ordered
+              .created_asc_ordered
               .limit(limit)
               .offset(offset)
+              .associated
           end
 
-          def artists_sorted
-            artists_associated
-              .order(
-                profile_tracks_count: :desc,
-                created_at: :asc
-              )
-          end
-
-          def artists_associated
-            artists.includes(
-              :artist
-            )
-          end
-
-          def artist_formatted(artist)
+          def collection_item_data_formatted(artist)
             Muffon::Profile::Library::Artists::Artist.call(
               artist: artist,
               profile_id: @args[:profile_id]

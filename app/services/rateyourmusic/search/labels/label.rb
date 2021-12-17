@@ -13,7 +13,7 @@ module RateYourMusic
             name: name,
             rateyourmusic_slug: rateyourmusic_slug,
             image: image_data
-          }
+          }.compact
         end
 
         def name

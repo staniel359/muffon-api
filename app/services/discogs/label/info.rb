@@ -14,7 +14,7 @@ module Discogs
           discogs_id: discogs_id,
           image: image_data,
           description: description_truncated
-        }
+        }.compact
       end
 
       def name

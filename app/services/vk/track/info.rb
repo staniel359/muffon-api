@@ -30,7 +30,7 @@ module VK
           duration: duration,
           duration_seconds: duration_seconds,
           audio: audio_data
-        }
+        }.compact
       end
 
       def audio_data

@@ -77,9 +77,10 @@ module Muffon
 
         def last_message
           @last_message ||=
-            conversation.messages.order(
-              created_at: :desc
-            ).first
+            conversation
+            .messages
+            .created_desc_ordered
+            .first
         end
 
         def last_message_profile_nickname

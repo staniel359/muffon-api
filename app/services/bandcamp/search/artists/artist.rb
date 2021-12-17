@@ -21,7 +21,7 @@ module Bandcamp
             bandcamp_model: bandcamp_model,
             name: name,
             image: image_data
-          }
+          }.compact
         end
 
         def name

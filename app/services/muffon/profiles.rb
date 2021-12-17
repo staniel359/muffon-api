@@ -10,28 +10,18 @@ module Muffon
     end
 
     def total_items_count
-      profiles.size
+      ::Profile.count
     end
 
-    def collection
-      profiles_paginated.map do |p|
-        profile_formatted(p)
-      end
-    end
-
-    def profiles_paginated
-      profiles
+    def collection_list
+      ::Profile
+        .created_desc_ordered
         .limit(limit)
         .offset(offset)
+        .associated
     end
 
-    def profiles
-      @profiles ||= ::Profile.order(
-        created_at: :desc
-      )
-    end
-
-    def profile_formatted(profile)
+    def collection_item_data_formatted(profile)
       Muffon::Profiles::Profile.call(
         profile: profile,
         other_profile_id: @args[:other_profile_id]

@@ -15,32 +15,19 @@ module Muffon
           playlist.playlist_tracks_count
         end
 
-        def collection
-          tracks_paginated.map do |t|
-            track_formatted(t)
-          end
-        end
-
-        def tracks_paginated
-          tracks_associated
+        def collection_list
+          tracks
+            .created_asc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def tracks_associated
-          tracks_sorted.includes(
-            :track,
-            :artist
-          )
+        def tracks
+          playlist.playlist_tracks
         end
 
-        def tracks_sorted
-          playlist.playlist_tracks.order(
-            created_at: :asc
-          )
-        end
-
-        def track_formatted(track)
+        def collection_item_data_formatted(track)
           Muffon::Profile::Playlist::Tracks::Track.call(
             track: track
           )

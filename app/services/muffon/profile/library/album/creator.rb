@@ -19,16 +19,14 @@ module Muffon
           def data
             return forbidden if wrong_profile?
 
-            profile_album.tap do |album|
-              album.image_url = @args[:image_url]
-              album.save
-            end
+            profile_album
 
             return errors_data if errors?
 
-            process_tracks if @args[:tracks].present?
+            process_tracks
+            process_image
 
-            { library_id: profile_album.id }
+            { library_id: library_id }
           end
 
           def profile_album
@@ -36,7 +34,7 @@ module Muffon
               profile.profile_albums.where(
                 album_id: find_album.id,
                 profile_artist_id: profile_artist.id
-              ).first_or_initialize
+              ).first_or_create
           end
 
           def title
@@ -58,6 +56,8 @@ module Muffon
           end
 
           def process_tracks
+            return if @args[:tracks].blank?
+
             @args[:tracks].each do |t|
               process_track(t)
             end
@@ -69,6 +69,16 @@ module Muffon
               profile_id: @args[:profile_id],
               profile_album_id: profile_album.id
             )
+          end
+
+          def process_image
+            profile_album.process_image(
+              @args[:image_url]
+            )
+          end
+
+          def library_id
+            profile_album.id
           end
         end
       end

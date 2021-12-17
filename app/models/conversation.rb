@@ -4,6 +4,14 @@ class Conversation < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
+  class << self
+    def associated
+      includes(
+        other_profile: image_association
+      )
+    end
+  end
+
   def find_other_profile(profile_id)
     starter?(profile_id) ? other_profile : profile
   end

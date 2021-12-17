@@ -20,7 +20,7 @@ module YandexMusic
             yandex_music_id: yandex_music_id,
             name: name,
             image: image_data
-          }
+          }.compact
         end
 
         def name

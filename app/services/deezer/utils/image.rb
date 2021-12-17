@@ -14,11 +14,13 @@ module Deezer
       private
 
       def data
-        return image_data if @args[:image_id].present?
+        return if image_id.blank?
 
-        default_image_data(
-          @args[:model]
-        )
+        image_data
+      end
+
+      def image_id
+        @args[:image_id]
       end
 
       def image_data
@@ -40,8 +42,7 @@ module Deezer
       def image
         @image ||=
           'https://cdns-images.dzcdn.net'\
-          "/images/#{image_model}/"\
-          "#{@args[:image_id]}"\
+          "/images/#{image_model}/#{image_id}"\
           '/1000x1000-000000-80-0-0.jpg'
       end
 

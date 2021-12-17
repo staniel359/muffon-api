@@ -23,25 +23,15 @@ module Muffon
           profiles.size
         end
 
-        def collection
-          profiles_paginated.map do |f|
-            profile_formatted(f)
-          end
-        end
-
-        def profiles_paginated
-          profiles_sorted
+        def collection_list
+          profiles
+            .relationship_created_desc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def profiles_sorted
-          profiles.order(
-            'relationships.created_at DESC'
-          )
-        end
-
-        def profile_formatted(profile)
+        def collection_item_data_formatted(profile)
           Muffon::Profiles::Profile.call(
             profile: profile,
             other_profile_id: @args[:other_profile_id]

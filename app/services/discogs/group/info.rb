@@ -26,7 +26,7 @@ module Discogs
           description: description_truncated,
           tags: tags.first(5),
           tracks: tracks
-        }
+        }.compact
       end
     end
   end

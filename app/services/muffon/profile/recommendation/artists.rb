@@ -14,15 +14,17 @@ module Muffon
         end
 
         def collection_list
-          profile_artists_associated
+          profile_artists
+            .profile_tracks_count_desc_ordered
+            .profile_albums_count_desc_ordered
+            .created_asc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def profile_artists_associated
-          recommendation
-            .profile_artists
-            .includes(:artist)
+        def profile_artists
+          recommendation.profile_artists
         end
 
         def collection_item_data_formatted(profile_artist)

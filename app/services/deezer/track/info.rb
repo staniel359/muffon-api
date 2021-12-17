@@ -30,7 +30,7 @@ module Deezer
           duration_seconds: duration_seconds,
           release_date: release_date,
           audio: audio_data
-        }
+        }.compact
       end
 
       def release_date

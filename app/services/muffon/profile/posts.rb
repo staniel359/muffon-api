@@ -23,25 +23,15 @@ module Muffon
         @posts ||= profile.posts
       end
 
-      def collection
-        posts_paginated.map do |p|
-          post_formatted(p)
-        end
-      end
-
-      def posts_paginated
-        posts_sorted
+      def collection_list
+        posts
+          .created_desc_ordered
           .limit(limit)
           .offset(offset)
+          .associated
       end
 
-      def posts_sorted
-        posts.order(
-          created_at: :desc
-        )
-      end
-
-      def post_formatted(post)
+      def collection_item_data_formatted(post)
         Muffon::Profile::Posts::Post.call(
           post: post
         )

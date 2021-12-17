@@ -11,36 +11,16 @@ module Muffon
           albums.size
         end
 
-        def collection
-          albums_paginated.map do |a|
-            album_formatted(a)
-          end
-        end
-
-        def albums_paginated
-          albums_sorted
+        def collection_list
+          albums
+            .profile_tracks_count_desc_ordered
+            .created_asc_ordered
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
-        def albums_sorted
-          albums_associated
-            .order(
-              profile_tracks_count: :desc,
-              created_at: :asc
-            )
-        end
-
-        def albums_associated
-          albums
-            .includes(
-              :album,
-              [profile_artist: :artist],
-              [image_attachment: :blob]
-            )
-        end
-
-        def album_formatted(album)
+        def collection_item_data_formatted(album)
           Muffon::Profile::Library::Albums::Album.call(
             album: album,
             profile_id: @args[:profile_id]

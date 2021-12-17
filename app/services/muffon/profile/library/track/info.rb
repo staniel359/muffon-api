@@ -44,15 +44,15 @@ module Muffon
               album: album_data,
               image: image_data,
               created: created
-            }
+            }.compact
           end
 
           def album_data
             return {} if profile_album.blank?
 
             {
-              id: album_id,
-              title: album_title
+              id: profile_album_id,
+              title: profile_album_title
             }
           end
 
@@ -61,26 +61,18 @@ module Muffon
               profile_track.profile_album
           end
 
-          def album_id
-            profile_track.profile_album_id
+          def profile_album_id
+            profile_album.id
           end
 
-          def album_title
+          def profile_album_title
             profile_album
               .album
               .title
           end
 
           def image_data
-            profile_album&.image_data.presence ||
-              default_image_data
-          end
-
-          def default_image_data
-            ::LastFM::Utils::Image.call(
-              model: 'track',
-              image: profile_album&.image_url
-            )
+            profile_album&.image_data
           end
 
           def created

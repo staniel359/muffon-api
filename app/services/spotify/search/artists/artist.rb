@@ -20,7 +20,7 @@ module Spotify
             spotify_id: spotify_id,
             name: name,
             image: image_data
-          }
+          }.compact
         end
 
         def name

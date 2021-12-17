@@ -29,25 +29,15 @@ module Muffon
         @conversations ||= profile.conversations
       end
 
-      def collection
-        conversations_paginated.map do |p|
-          conversation_formatted(p)
-        end
-      end
-
-      def conversations_paginated
-        conversations_sorted
+      def collection_list
+        conversations
+          .created_desc_ordered
           .limit(limit)
           .offset(offset)
+          .associated
       end
 
-      def conversations_sorted
-        conversations.order(
-          created_at: :desc
-        )
-      end
-
-      def conversation_formatted(conversation)
+      def collection_item_data_formatted(conversation)
         Muffon::Profile::Conversations::Conversation.call(
           conversation: conversation
         )
