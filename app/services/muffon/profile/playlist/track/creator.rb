@@ -2,16 +2,13 @@ module Muffon
   module Profile
     module Playlist
       module Track
-        class Creator < Muffon::Profile::Playlist::Base
+        class Creator < Muffon::Profile::Playlist::Track::Base
           include Muffon::Utils::Track
 
           private
 
           def primary_args
-            [
-              @args[:profile_id],
-              @args[:token],
-              @args[:playlist_id],
+            super + [
               @args[:title],
               @args[:artist_name]
             ]
@@ -26,7 +23,10 @@ module Muffon
 
             process_image
 
-            { playlist_track_id: playlist_track_id }
+            {
+              playlist_track_id: playlist_track_id,
+              playlist_tracks_count: playlist_tracks_count
+            }
           end
 
           def process_playlist_track

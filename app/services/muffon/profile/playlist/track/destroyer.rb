@@ -2,16 +2,11 @@ module Muffon
   module Profile
     module Playlist
       module Track
-        class Destroyer < Muffon::Profile::Playlist::Base
+        class Destroyer < Muffon::Profile::Playlist::Track::Base
           private
 
           def primary_args
-            [
-              @args[:profile_id],
-              @args[:token],
-              @args[:playlist_id],
-              @args[:playlist_track_id]
-            ]
+            super << @args[:playlist_track_id]
           end
 
           def data
@@ -19,7 +14,7 @@ module Muffon
 
             playlist_track&.destroy
 
-            { success: true }
+            { playlist_tracks_count: playlist_tracks_count }
           end
 
           def playlist_track
