@@ -80,11 +80,11 @@ module Muffon
       end
 
       def profile_follower_profiles_count
-        profile.follower_profiles.size
+        profile.follower_profiles_count
       end
 
       def profile_following_profiles_count
-        profile.following_profiles.size
+        profile.following_profiles_count
       end
 
       def other_profile_data
