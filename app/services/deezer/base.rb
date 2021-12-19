@@ -5,29 +5,12 @@ module Deezer
 
     private
 
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.post(
-        link, payload, headers
-      )
-    end
-
     def link
       BASE_LINK
     end
 
     def payload
       {}
-    end
-
-    def headers
-      {
-        params: params,
-        cookies: cookies
-      }
     end
 
     def params
@@ -77,5 +60,7 @@ module Deezer
         deezer_id: data['ART_ID'].to_i
       }
     end
+
+    alias response post_response
   end
 end

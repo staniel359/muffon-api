@@ -7,15 +7,19 @@ module Odnoklassniki
       private
 
       def no_data?
-        albums_list.blank? || page_out_of_bounds?
+        albums_list.blank? ||
+          page_out_of_bounds?
       end
 
       def albums_list
-        @albums_list ||= response_data['masterAlbums']
+        @albums_list ||=
+          response_data['masterAlbums']
       end
 
       def artist_data
-        super.merge(paginated_data)
+        super.merge(
+          paginated_data
+        )
       end
 
       def name
@@ -29,7 +33,9 @@ module Odnoklassniki
       end
 
       def collection_list
-        collection_paginated(albums_list)
+        collection_paginated(
+          albums_list
+        )
       end
 
       def collection_item_data_formatted(album)

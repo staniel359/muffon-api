@@ -55,15 +55,18 @@ module VK
         end
 
         def fragments_paths
-          response_data.scan(
+          response_body.scan(
             /([\w\-]+\.ts[?\w\-=&]*)/
           ).flatten
         end
 
-        def response_data
-          @response_data ||= RestClient.get(
-            @args[:link]
-          ).body
+        def response_body
+          @response_body ||=
+            RestClient.get(link).body
+        end
+
+        def link
+          @args[:link]
         end
 
         def process_fragment(path, index)
@@ -86,7 +89,7 @@ module VK
 
           cipher.update(
             fragment_response_data(path)
-          ) + cipher.final
+          ) << cipher.final
         end
 
         def key
@@ -96,7 +99,7 @@ module VK
         end
 
         def key_link
-          response_data.match(
+          response_body.match(
             /#EXT-X-KEY:METHOD=AES-128,URI="(.+)"/
           )[1]
         end

@@ -11,7 +11,9 @@ module Odnoklassniki
       end
 
       def params
-        super.merge(album_params)
+        super.merge(
+          album_params
+        )
       end
 
       def album_params
@@ -23,7 +25,8 @@ module Odnoklassniki
       end
 
       def album
-        @album ||= response_data['album']
+        @album ||=
+          response_data['album']
       end
     end
   end

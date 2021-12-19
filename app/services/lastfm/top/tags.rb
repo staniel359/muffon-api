@@ -18,7 +18,9 @@ module LastFM
       end
 
       def collection_list
-        collection_paginated(super)
+        collection_paginated(
+          super
+        )
       end
 
       def collection_item_data_formatted(tag)

@@ -18,7 +18,9 @@ module Spotify
       end
 
       def image_data
-        image_data_formatted(album, 'album')
+        image_data_formatted(
+          album, 'album'
+        )
       end
 
       def release_date

@@ -35,7 +35,13 @@ module LastFM
 
       def description
         description_formatted(
-          tag.dig('wiki', 'content')
+          raw_description
+        )
+      end
+
+      def raw_description
+        tag.dig(
+          'wiki', 'content'
         )
       end
     end

@@ -19,7 +19,9 @@ module Odnoklassniki
       end
 
       def params
-        super.merge(search_params)
+        super.merge(
+          search_params
+        )
       end
 
       def search_params
@@ -36,7 +38,8 @@ module Odnoklassniki
 
       def total_items_count
         response_data.dig(
-          'relevantCounts', collection_name
+          'relevantCounts',
+          collection_name
         )
       end
     end

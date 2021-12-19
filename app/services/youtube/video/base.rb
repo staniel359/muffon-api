@@ -18,7 +18,9 @@ module YouTube
       end
 
       def params
-        super.merge(video_params)
+        super.merge(
+          video_params
+        )
       end
 
       def video_params

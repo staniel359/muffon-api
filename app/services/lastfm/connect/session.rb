@@ -24,10 +24,6 @@ module LastFM
         @args[:token]
       end
 
-      def headers
-        {}
-      end
-
       def api_signature
         Digest::MD5.hexdigest(
           "api_key#{api_key}"\

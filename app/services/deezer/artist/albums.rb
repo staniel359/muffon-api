@@ -39,7 +39,9 @@ module Deezer
       end
 
       def artist_data
-        super.merge(paginated_data)
+        super.merge(
+          paginated_data
+        )
       end
 
       def name

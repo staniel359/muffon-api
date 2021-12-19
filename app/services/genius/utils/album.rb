@@ -24,7 +24,9 @@ module Genius
       end
 
       def release_date
-        raw_release_date_formatted(album)
+        raw_release_date_formatted(
+          album
+        )
       end
     end
   end

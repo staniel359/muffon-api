@@ -24,7 +24,9 @@ module LastFM
       end
 
       def image
-        album.dig('image', -1, '#text')
+        album.dig(
+          'image', -1, '#text'
+        )
       end
     end
   end

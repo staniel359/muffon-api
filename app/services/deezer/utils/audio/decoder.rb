@@ -14,15 +14,18 @@ module Deezer
         private
 
         def raw_audio_link
-          @raw_audio_link ||= Deezer::Utils::Audio::Link.call(
-            track_id: @args[:track_id]
-          )
+          @raw_audio_link ||=
+            Deezer::Utils::Audio::Link.call(
+              track_id: @args[:track_id]
+            )
         end
 
         def data
-          chunks_count.times.each_with_object('') do |i, memo|
-            process_chunk(i, memo)
-          end
+          chunks_count
+            .times
+            .each_with_object('') do |i, memo|
+              process_chunk(i, memo)
+            end
         end
 
         def chunks_count
@@ -50,7 +53,8 @@ module Deezer
           used_chunks_size = CHUNK_SIZE * index
           current_chunk_size = [
             CHUNK_SIZE,
-            raw_binary_data.size - used_chunks_size
+            raw_binary_data.size -
+              used_chunks_size
           ].min
 
           raw_binary_data[

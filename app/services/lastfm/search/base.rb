@@ -10,15 +10,17 @@ module LastFM
       end
 
       def no_data?
-        results_list.blank? || page_out_of_bounds?
+        results_list.blank? ||
+          page_out_of_bounds?
       end
 
       def results_list
-        @results_list ||= response_data.dig(
-          'results',
-          "#{model_name}matches",
-          model_name
-        )
+        @results_list ||=
+          response_data.dig(
+            'results',
+            "#{model_name}matches",
+            model_name
+          )
       end
 
       def model_name

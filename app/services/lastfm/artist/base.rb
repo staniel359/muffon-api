@@ -15,11 +15,14 @@ module LastFM
       end
 
       def artist
-        @artist ||= response_data['artist']
+        @artist ||=
+          response_data['artist']
       end
 
       def params
-        super.merge(artist_params)
+        super.merge(
+          artist_params
+        )
       end
 
       def data

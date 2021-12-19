@@ -20,6 +20,10 @@ module API
           render_data_with_status
         end
 
+        def online
+          render_data_with_status
+        end
+
         private
 
         def index_data
@@ -60,6 +64,14 @@ module API
           params.slice(
             *%i[profile_id token],
             *::Muffon::Profile::Base::PARAMS
+          )
+        end
+
+        def online_data
+          ::Muffon::Profile::Online.call(
+            params.slice(
+              *%i[profile_id token online]
+            )
           )
         end
       end

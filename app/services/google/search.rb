@@ -40,23 +40,12 @@ module Google
     end
 
     def collection_list
-      @collection_list ||= response_data['items']
-    end
-
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
+      @collection_list ||=
+        response_data['items']
     end
 
     def link
       BASE_LINK
-    end
-
-    def headers
-      { params: params }
     end
 
     def params
@@ -75,7 +64,8 @@ module Google
 
     def scope_id
       secrets.google.dig(
-        :scopes, @args[:scope].to_sym
+        :scopes,
+        @args[:scope].to_sym
       )
     end
 
@@ -93,7 +83,8 @@ module Google
 
     def total_items_count
       response_data.dig(
-        'queries', 'request', 0, 'totalResults'
+        'queries', 'request',
+        0, 'totalResults'
       ).to_i
     end
 

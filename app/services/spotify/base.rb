@@ -12,14 +12,6 @@ module Spotify
 
     private
 
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
     def headers
       {
         params: params,
@@ -27,14 +19,13 @@ module Spotify
       }
     end
 
-    def params
-      {}
-    end
-
     def spotify_token
-      return test_token if Rails.env.test?
+      return test_token if
+          Rails.env.test?
 
-      get_global_value('spotify_token')
+      get_global_value(
+        'spotify_token'
+      )
     end
 
     def test_token
@@ -42,13 +33,16 @@ module Spotify
     end
 
     def global_value
-      @global_value ||= Spotify::Utils::Token.call
+      @global_value ||=
+        Spotify::Utils::Token.call
     end
 
     def retry_with_new_spotify_token
       return if global_value.blank?
 
-      update_global_value('spotify_token')
+      update_global_value(
+        'spotify_token'
+      )
 
       call
     end

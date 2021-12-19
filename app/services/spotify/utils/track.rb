@@ -18,7 +18,8 @@ module Spotify
       end
 
       def albums
-        @albums ||= [album_data_formatted]
+        @albums ||=
+          [album_data_formatted]
       end
 
       def album_data_formatted

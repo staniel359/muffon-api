@@ -13,7 +13,8 @@ module LastFM
 
           {
             id: recommendation_id,
-            profile_artists_count: recommendation_profile_artists_count
+            profile_artists_count:
+              recommendation_profile_artists_count
           }
         end
 

@@ -31,7 +31,8 @@ module LastFM
       end
 
       def plays_extra_data
-        @plays_extra_data ||= plays_data['@attr']
+        @plays_extra_data ||=
+          plays_data['@attr']
       end
 
       def plays_data

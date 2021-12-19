@@ -26,7 +26,8 @@ module VK
       end
 
       def artists_list
-        album['main_artists'] || [artist]
+        album['main_artists'] ||
+          [artist]
       end
 
       def artist

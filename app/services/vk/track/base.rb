@@ -15,13 +15,14 @@ module VK
       end
 
       def track
-        @track ||= response_data.try(
-          :[], 0
-        )
+        @track ||=
+          response_data.try(:[], 0)
       end
 
       def params
-        super.merge(track_params)
+        super.merge(
+          track_params
+        )
       end
 
       def track_params

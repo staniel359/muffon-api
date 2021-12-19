@@ -49,8 +49,6 @@ module LastFM
         end
 
         def image_data
-          return {} if image.blank?
-
           LastFM::Utils::Image.call(
             image: image
           )

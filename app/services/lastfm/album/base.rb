@@ -18,11 +18,14 @@ module LastFM
       end
 
       def album
-        @album ||= response_data['album']
+        @album ||=
+          response_data['album']
       end
 
       def params
-        super.merge(album_params)
+        super.merge(
+          album_params
+        )
       end
 
       def data

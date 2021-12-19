@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_132946) do
+ActiveRecord::Schema.define(version: 2021_12_19_173033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -240,6 +240,7 @@ ActiveRecord::Schema.define(version: 2021_12_18_132946) do
     t.string "lastfm_nickname"
     t.integer "following_profiles_count", default: 0
     t.integer "follower_profiles_count", default: 0
+    t.boolean "online", default: false
   end
 
   create_table "recommendations", force: :cascade do |t|

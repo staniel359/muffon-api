@@ -14,7 +14,9 @@ module YouTube
       end
 
       def params
-        super.merge(playlist_params)
+        super.merge(
+          playlist_params
+        )
       end
 
       def playlist_params

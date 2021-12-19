@@ -40,7 +40,9 @@ module RateYourMusic
       end
 
       def artists_list
-        album.css('.album_info .artist')
+        album.css(
+          '.album_info .artist'
+        )
       end
 
       def album_extra_data
@@ -53,7 +55,9 @@ module RateYourMusic
       end
 
       def image_data
-        image_data_formatted(image, 'album')
+        image_data_formatted(
+          image, 'album'
+        )
       end
 
       def image
@@ -63,7 +67,9 @@ module RateYourMusic
       end
 
       def release_date
-        date_formatted(raw_release_date)
+        date_formatted(
+          raw_release_date
+        )
       end
 
       def raw_release_date
@@ -86,7 +92,9 @@ module RateYourMusic
       end
 
       def tracks_list
-        album.css('#tracks .tracklist_line')
+        album.css(
+          '#tracks .tracklist_line'
+        )
       end
 
       def track_data_formatted(track)

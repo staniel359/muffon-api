@@ -6,15 +6,7 @@ module VK
     private
 
     def response_data
-      @response_data ||= JSON.parse(
-        response
-      )['response']
-    end
-
-    def response
-      RestClient.get(
-        link, headers
-      )
+      super['response']
     end
 
     def link

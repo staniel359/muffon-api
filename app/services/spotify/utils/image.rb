@@ -14,7 +14,8 @@ module Spotify
       end
 
       def images_list
-        @images_list ||= @args[:data]['images']
+        @images_list ||=
+          @args[:data]['images']
       end
 
       def image_data
@@ -28,7 +29,9 @@ module Spotify
       end
 
       def image(index)
-        images_list.dig(index, 'url')
+        images_list.dig(
+          index, 'url'
+        )
       end
     end
   end

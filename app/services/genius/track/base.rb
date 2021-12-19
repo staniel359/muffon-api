@@ -29,7 +29,8 @@ module Genius
 
       def artists_list
         track.values_at(
-          'primary_artist', 'featured_artists'
+          'primary_artist',
+          'featured_artists'
         ).flatten.compact
       end
     end

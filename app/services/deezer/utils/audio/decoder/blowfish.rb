@@ -37,7 +37,9 @@ module Deezer
           end
 
           def cipher
-            @cipher ||= OpenSSL::Cipher.new('bf-cbc').decrypt
+            @cipher ||= OpenSSL::Cipher.new(
+              'bf-cbc'
+            ).decrypt
           end
         end
       end

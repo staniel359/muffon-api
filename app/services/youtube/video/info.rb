@@ -38,7 +38,8 @@ module YouTube
       end
 
       def statistics
-        @statistics ||= video['statistics']
+        @statistics ||=
+          video['statistics']
       end
 
       def likes_count

@@ -14,7 +14,8 @@ module Discogs
       end
 
       def collection_list
-        @collection_list ||= response_data['results']
+        @collection_list ||=
+          response_data['results']
       end
 
       def link

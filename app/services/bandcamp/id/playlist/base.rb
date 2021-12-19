@@ -26,7 +26,9 @@ module Bandcamp
         end
 
         def model_type
-          model_response_data['item_type']
+          model_response_data[
+            'item_type'
+          ]
         end
 
         def artists

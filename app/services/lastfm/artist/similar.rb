@@ -8,11 +8,13 @@ module LastFM
       private
 
       def artist
-        @artist ||= response_data['similarartists']
+        @artist ||=
+          response_data['similarartists']
       end
 
       def raw_collection_list
-        @raw_collection_list ||= artist['artist']
+        @raw_collection_list ||=
+          artist['artist']
       end
 
       def total_items_count

@@ -36,9 +36,10 @@ module Discogs
         end
 
         def full_title
-          @full_title ||= album['title'].match(
-            /(.+) - (.+)/
-          )
+          @full_title ||=
+            album['title'].match(
+              /(.+) - (.+)/
+            )
         end
 
         def artists_list

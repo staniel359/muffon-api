@@ -24,7 +24,8 @@ module Spotify
       end
 
       def collection_list
-        @collection_list ||= response_data['items']
+        @collection_list ||=
+          response_data['items']
       end
 
       def link
@@ -32,7 +33,9 @@ module Spotify
       end
 
       def params
-        super.merge(albums_params)
+        super.merge(
+          albums_params
+        )
       end
 
       def albums_params
@@ -46,7 +49,9 @@ module Spotify
       end
 
       def artist_data
-        super.merge(paginated_data)
+        super.merge(
+          paginated_data
+        )
       end
 
       def name

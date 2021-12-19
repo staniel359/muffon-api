@@ -18,7 +18,8 @@ module Deezer
           return '' if @args[:track_id].blank?
 
           response_data.dig(
-            'results', 'data', 0, 'TRACK_TOKEN'
+            'results', 'data',
+            0, 'TRACK_TOKEN'
           )
         end
 

@@ -8,6 +8,16 @@ module Genius
       private
 
       def data
+        return if image.blank?
+
+        image_data
+      end
+
+      def image
+        @args[:image]
+      end
+
+      def image_data
         {
           original: image_resized('1000'),
           large: image_resized('600'),

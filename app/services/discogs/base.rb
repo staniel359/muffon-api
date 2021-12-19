@@ -9,18 +9,6 @@ module Discogs
       response_data.blank?
     end
 
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
-    def headers
-      { params: params }
-    end
-
     def params
       {
         key: secrets.discogs[:api_key],

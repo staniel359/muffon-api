@@ -32,9 +32,10 @@ module Odnoklassniki
       end
 
       def albums
-        @albums ||= albums_list.map do |a|
-          album_data_formatted(a)
-        end
+        @albums ||=
+          albums_list.map do |a|
+            album_data_formatted(a)
+          end
       end
 
       def albums_list

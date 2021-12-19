@@ -10,7 +10,8 @@ module LastFM
       end
 
       def no_data?
-        tag.blank? || tag['total'].zero?
+        tag.blank? ||
+          tag['total'].zero?
       end
 
       def tag
@@ -18,7 +19,9 @@ module LastFM
       end
 
       def params
-        super.merge(tag_params)
+        super.merge(
+          tag_params
+        )
       end
 
       def data

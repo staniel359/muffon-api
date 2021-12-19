@@ -12,18 +12,14 @@ module Spotify
       private
 
       def data
-        JSON.parse(response)['access_token']
-      end
-
-      def response
-        RestClient.post(link, params, headers)
+        response_data['access_token']
       end
 
       def link
         BASE_LINK
       end
 
-      def params
+      def payload
         { grant_type: 'client_credentials' }
       end
 
@@ -32,7 +28,9 @@ module Spotify
       end
 
       def auth_token
-        Base64.strict_encode64(raw_token)
+        Base64.strict_encode64(
+          raw_token
+        )
       end
 
       def raw_token
@@ -46,6 +44,8 @@ module Spotify
       def client_secret
         secrets.spotify[:api_secret]
       end
+
+      alias response post_response
     end
   end
 end

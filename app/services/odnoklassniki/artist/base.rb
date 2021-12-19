@@ -10,7 +10,9 @@ module Odnoklassniki
       end
 
       def params
-        super.merge(artist_params)
+        super.merge(
+          artist_params
+        )
       end
 
       def artist_params

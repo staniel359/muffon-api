@@ -14,9 +14,10 @@ module Spotify
       end
 
       def collection_list
-        @collection_list ||= response_data.dig(
-          collection_name, 'items'
-        )
+        @collection_list ||=
+          response_data.dig(
+            collection_name, 'items'
+          )
       end
 
       def collection_name

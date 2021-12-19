@@ -10,28 +10,12 @@ module Bandcamp
         response_data['error']
     end
 
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
     def album_track_link
       "#{BASE_LINK}/tralbum_details"
     end
 
     def artist_label_link
       "#{BASE_LINK}/band_details"
-    end
-
-    def headers
-      { params: params }
-    end
-
-    def params
-      {}
     end
 
     def albums
@@ -42,7 +26,8 @@ module Bandcamp
 
     def image_data_formatted(image, model)
       Bandcamp::Utils::Image.call(
-        image: image, model: model
+        image: image,
+        model: model
       )
     end
 

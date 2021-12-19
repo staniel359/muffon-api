@@ -19,7 +19,8 @@ module SoundCloud
 
       def image_data
         image_data_formatted(
-          album['artwork_url'], 'album'
+          album['artwork_url'],
+          'album'
         )
       end
     end

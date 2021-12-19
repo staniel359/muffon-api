@@ -30,7 +30,9 @@ module SoundCloud
       end
 
       def release_date
-        date_formatted(raw_release_date)
+        date_formatted(
+          raw_release_date
+        )
       end
 
       def raw_release_date
@@ -57,7 +59,9 @@ module SoundCloud
       end
 
       def raw_tags
-        album['tags'].split(/\s?"\s?/)
+        album['tags'].split(
+          /\s?"\s?/
+        )
       end
 
       def tracks

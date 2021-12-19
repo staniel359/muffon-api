@@ -16,9 +16,18 @@ module YandexMusic
       def image
         return if @args[:data].blank?
 
-        @image ||= @args[:data].dig(
+        @image ||=
+          image_url || image_url_alternative
+      end
+
+      def image_url
+        @args[:data].dig(
           'cover', 'uri'
-        ) || @args[:data]['coverUri']
+        )
+      end
+
+      def image_url_alternative
+        @args[:data]['coverUri']
       end
 
       def image_data

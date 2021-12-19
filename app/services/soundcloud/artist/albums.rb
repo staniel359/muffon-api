@@ -23,7 +23,9 @@ module SoundCloud
       end
 
       def params
-        super.merge(albums_params)
+        super.merge(
+          albums_params
+        )
       end
 
       def albums_params
@@ -37,7 +39,9 @@ module SoundCloud
       end
 
       def artist_data
-        super.merge(paginated_data)
+        super.merge(
+          paginated_data
+        )
       end
 
       def total_items_count

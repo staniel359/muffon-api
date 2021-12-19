@@ -8,7 +8,9 @@ module LastFM
       end
 
       def params
-        super.merge(user_params)
+        super.merge(
+          user_params
+        )
       end
 
       def user_params

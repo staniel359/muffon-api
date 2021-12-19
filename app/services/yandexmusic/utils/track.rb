@@ -22,9 +22,10 @@ module YandexMusic
       end
 
       def albums
-        @albums ||= albums_list.map do |a|
-          album_data_formatted(a)
-        end
+        @albums ||=
+          albums_list.map do |a|
+            album_data_formatted(a)
+          end
       end
 
       def albums_list
@@ -41,7 +42,9 @@ module YandexMusic
       end
 
       def image_data
-        image_data_formatted(track, 'track')
+        image_data_formatted(
+          track, 'track'
+        )
       end
 
       def duration_seconds

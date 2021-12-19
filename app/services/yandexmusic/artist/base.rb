@@ -14,7 +14,8 @@ module YandexMusic
       end
 
       def artist
-        @artist ||= response_data['result']
+        @artist ||=
+          response_data['result']
       end
 
       def link

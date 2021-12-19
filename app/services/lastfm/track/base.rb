@@ -18,11 +18,14 @@ module LastFM
       end
 
       def track
-        @track ||= response_data['track']
+        @track ||=
+          response_data['track']
       end
 
       def params
-        super.merge(track_params)
+        super.merge(
+          track_params
+        )
       end
 
       def data

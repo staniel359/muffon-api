@@ -14,15 +14,8 @@ module Odnoklassniki
     private
 
     def auth_failed?
-      response_data['error'] == 'error.notloggedin'
-    end
-
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
+      response_data['error'] ==
+        'error.notloggedin'
     end
 
     def link
@@ -35,7 +28,8 @@ module Odnoklassniki
     end
 
     def session_id
-      return test_session_id if Rails.env.test?
+      return test_session_id if
+          Rails.env.test?
 
       get_global_value(
         'odnoklassniki_session_id'
@@ -43,16 +37,14 @@ module Odnoklassniki
     end
 
     def test_session_id
-      secrets.odnoklassniki[:test_session_id]
+      secrets.odnoklassniki[
+        :test_session_id
+    ]
     end
 
     def global_value
       @global_value ||=
         Odnoklassniki::Utils::SessionId.call
-    end
-
-    def headers
-      { params: params }
     end
 
     def params

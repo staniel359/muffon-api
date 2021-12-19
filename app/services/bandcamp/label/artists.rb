@@ -10,11 +10,15 @@ module Bandcamp
       end
 
       def artists_list
-        @artists_list ||= response_data['artists']
+        @artists_list ||= response_data[
+          'artists'
+        ]
       end
 
       def collection_list
-        collection_paginated(artists_list)
+        collection_paginated(
+          artists_list
+        )
       end
 
       def collection_item_data_formatted(artist)

@@ -7,13 +7,15 @@ module LastFM
       private
 
       def no_data?
-        collection_list.blank? || page_out_of_bounds?
+        collection_list.blank? ||
+          page_out_of_bounds?
       end
 
       def collection_list
-        @collection_list ||= response_data.css(
-          '.image-list-item img'
-        )
+        @collection_list ||=
+          response_data.css(
+            '.image-list-item img'
+          )
       end
 
       def link

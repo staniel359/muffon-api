@@ -14,9 +14,10 @@ module LastFM
       end
 
       def response_data
-        @response_data ||= Google::Search.call(
-          params
-        )[:search]
+        @response_data ||=
+          Google::Search.call(
+            params
+          )[:search]
       end
 
       def params

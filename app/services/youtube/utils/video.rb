@@ -36,7 +36,9 @@ module YouTube
 
       def image
         snippet.dig(
-          'thumbnails', 'default', 'url'
+          'thumbnails',
+          'default',
+          'url'
         )
       end
 

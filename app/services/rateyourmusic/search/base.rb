@@ -14,28 +14,26 @@ module RateYourMusic
       end
 
       def collection_list
-        @collection_list ||= response_data.css(
-          '.infobox'
-        )
+        @collection_list ||=
+          response_data.css(
+            '.infobox'
+          )
       end
 
       def response_data
-        Nokogiri::HTML.parse(response)
+        Nokogiri::HTML.parse(
+          response
+        )
       end
 
       def response
-        RestClient.get(link, headers)
+        RestClient.get(
+          link, headers
+        )
       end
 
       def link
         'https://rateyourmusic.com/search'
-      end
-
-      def headers
-        {
-          params: params,
-          cookies: cookies
-        }
       end
 
       def params

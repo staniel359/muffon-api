@@ -11,10 +11,6 @@ module Odnoklassniki
 
       private
 
-      def response
-        RestClient.post(link, payload, headers)
-      end
-
       def link
         BASE_LINK
       end
@@ -36,23 +32,26 @@ module Odnoklassniki
         secrets.odnoklassniki[:password]
       end
 
-      def headers
-        { params: params }
-      end
-
       def params
         { cmd: 'AnonymLogin' }
       end
 
       def session_id(redirect)
-        return '' unless successful_login?(redirect)
+        return '' unless
+            successful_login?(redirect)
 
-        redirect.response.cookies['JSESSIONID']
+        redirect.response.cookies[
+          'JSESSIONID'
+        ]
       end
 
       def successful_login?(redirect)
-        redirect.response.headers[:location] == '/'
+        redirect
+          .response
+          .headers[:location] == '/'
       end
+
+      alias response post_response
     end
   end
 end

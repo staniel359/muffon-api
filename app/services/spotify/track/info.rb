@@ -52,7 +52,8 @@ module Spotify
       end
 
       def python_command
-        return 'python3.7' if Rails.env.production?
+        return 'python3.7' if
+            Rails.env.production?
 
         'python'
       end

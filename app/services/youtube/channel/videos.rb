@@ -8,11 +8,12 @@ module YouTube
       end
 
       def uploads_playlist
-        @uploads_playlist ||= YouTube::Playlist::Videos.call(
-          playlist_id: uploads_playlist_id,
-          limit: @args[:limit],
-          page: @args[:page]
-        )[:playlist]
+        @uploads_playlist ||=
+          YouTube::Playlist::Videos.call(
+            playlist_id: uploads_playlist_id,
+            limit: @args[:limit],
+            page: @args[:page]
+          )[:playlist]
       end
 
       def uploads_playlist_id
@@ -23,20 +24,26 @@ module YouTube
       end
 
       def channel_data
-        { title: title }.merge(
-          uploads_playlist_data
-        )
+        base_channel_data
+          .merge(uploads_playlist_data)
+      end
+
+      def base_channel_data
+        { title: title }
       end
 
       def title
         response_data.dig(
-          'items', 0, 'snippet', 'title'
+          'items', 0,
+          'snippet', 'title'
         )
       end
 
       def uploads_playlist_data
         uploads_playlist.slice(
-          :prev_page, :next_page, :videos
+          :prev_page,
+          :next_page,
+          :videos
         )
       end
     end

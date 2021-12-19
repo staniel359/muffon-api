@@ -47,9 +47,10 @@ module Odnoklassniki
         end
 
         def md5
-          @md5 ||= Rack::Utils.parse_nested_query(
-            @args[:link]
-          )['md5']
+          @md5 ||=
+            Rack::Utils.parse_nested_query(
+              @args[:link]
+            )['md5']
         end
 
         def third

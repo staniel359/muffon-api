@@ -25,7 +25,9 @@ module YouTube
         end
 
         def youtube_id
-          video.dig('id', 'videoId')
+          video.dig(
+            'id', 'videoId'
+          )
         end
       end
     end

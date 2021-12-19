@@ -4,20 +4,12 @@ module RateYourMusic
 
     private
 
-    def response
-      RestClient.post(link, payload, headers)
-    end
-
     def link
       "https://rateyourmusic.com/httprequest/#{action}"
     end
 
     def action
       self.class::ACTION
-    end
-
-    def headers
-      { cookies: cookies }
     end
 
     def cookies
@@ -48,14 +40,17 @@ module RateYourMusic
     def artist_data_formatted(artist)
       {
         name: artist.text,
-        rateyourmusic_id: artist_rateyourmusic_id(artist)
+        rateyourmusic_id:
+          artist_rateyourmusic_id(artist)
       }
     end
 
     def artist_rateyourmusic_id(artist)
       return '' if artist['title'].blank?
 
-      artist['title'].scan(/\d+/)[0].to_i
+      artist['title'].scan(
+        /\d+/
+      )[0].to_i
     end
 
     def image_data_formatted(image, model)
@@ -63,5 +58,7 @@ module RateYourMusic
         image: image, model: model
       )
     end
+
+    alias response post_response
   end
 end

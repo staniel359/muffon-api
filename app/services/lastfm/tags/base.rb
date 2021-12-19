@@ -4,15 +4,19 @@ module LastFM
       private
 
       def no_data?
-        model.blank? || tags_list.blank?
+        model.blank? ||
+          tags_list.blank?
       end
 
       def model
-        @model ||= response_data['toptags']
+        @model ||=
+          response_data['toptags']
       end
 
       def params
-        super.merge(model_params)
+        super.merge(
+          model_params
+        )
       end
 
       def model_params

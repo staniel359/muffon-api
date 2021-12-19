@@ -11,7 +11,9 @@ module Odnoklassniki
       end
 
       def params
-        super.merge(track_params)
+        super.merge(
+          track_params
+        )
       end
 
       def track_params
@@ -23,7 +25,8 @@ module Odnoklassniki
       end
 
       def track
-        @track ||= response_data['track']
+        @track ||=
+          response_data['track']
       end
 
       def artists
@@ -32,9 +35,17 @@ module Odnoklassniki
 
       def artist_data_formatted
         {
-          name: track['ensemble'],
-          odnoklassniki_id: track['masterArtistId']
+          name: artist_name,
+          odnoklassniki_id: artist_odnoklassniki_id
         }
+      end
+
+      def artist_name
+        track['ensemble']
+      end
+
+      def artist_odnoklassniki_id
+        track['masterArtistId']
       end
     end
   end

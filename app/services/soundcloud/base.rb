@@ -5,17 +5,9 @@ module SoundCloud
     private
 
     def response_data
-      @response_data ||= JSON.parse(response)
+      super
     rescue RestClient::BadRequest
       nil
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
-    def headers
-      { params: params }
     end
 
     def params

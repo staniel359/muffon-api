@@ -14,11 +14,14 @@ module Deezer
           def data
             return '' if @args[:track_id].blank?
 
-            first, second = track_id_hash.scan(/.{16}/)
+            first, second =
+              track_id_hash.scan(/.{16}/)
 
             16.times.each_with_object('') do |i, memo|
               memo << (
-                first[i].ord ^ second[i].ord ^ SALT[i].ord
+                first[i].ord ^
+                  second[i].ord ^
+                  SALT[i].ord
               ).chr
             end
           end

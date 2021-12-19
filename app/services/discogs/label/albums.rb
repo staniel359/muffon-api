@@ -11,7 +11,9 @@ module Discogs
       end
 
       def params
-        super.merge(sort_params)
+        super.merge(
+          sort_params
+        )
       end
 
       def sort_params

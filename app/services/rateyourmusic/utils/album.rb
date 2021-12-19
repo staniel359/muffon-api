@@ -43,7 +43,9 @@ module RateYourMusic
       end
 
       def image
-        raw_image.try(:[], 'data-src')
+        raw_image.try(
+          :[], 'data-src'
+        )
       end
 
       def raw_image

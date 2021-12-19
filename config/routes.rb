@@ -30,6 +30,7 @@ Rails.application.routes.draw do
         namespace :profiles, as: :profile do
           scope ':profile_id' do
             get '', action: :info
+            patch 'online'
 
             namespace :library do
               get '', action: :info

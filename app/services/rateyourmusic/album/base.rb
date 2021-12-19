@@ -18,11 +18,15 @@ module RateYourMusic
       end
 
       def response_data
-        Nokogiri::HTML.parse(response)
+        Nokogiri::HTML.parse(
+          response
+        )
       end
 
       def response
-        RestClient.get(link, headers)
+        RestClient.get(
+          link, headers
+        )
       end
 
       def link

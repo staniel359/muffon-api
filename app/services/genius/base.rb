@@ -5,22 +5,6 @@ module Genius
 
     private
 
-    def response_data
-      JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
-    def headers
-      { params: params }
-    end
-
-    def params
-      {}
-    end
-
     def artists
       artists_list.map do |a|
         artist_data_formatted(a)

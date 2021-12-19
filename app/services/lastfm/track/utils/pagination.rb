@@ -7,11 +7,14 @@ module LastFM
         private
 
         def no_data?
-          super || raw_collection_list.blank?
+          super ||
+            raw_collection_list.blank?
         end
 
         def params
-          super.merge(pagination_params)
+          super.merge(
+            pagination_params
+          )
         end
 
         def track_data

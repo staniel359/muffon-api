@@ -8,12 +8,16 @@ module YandexMusic
       private
 
       def data
-        password_response.cookies['Session_id']
+        password_response.cookies[
+          'Session_id'
+        ]
       end
 
       def password_response
         RestClient.post(
-          password_link, password_payload, headers
+          password_link,
+          password_payload,
+          headers
         )
       end
 
@@ -32,12 +36,16 @@ module YandexMusic
       end
 
       def track_id
-        JSON.parse(email_response)['track_id']
+        JSON.parse(
+          email_response
+        )['track_id']
       end
 
       def email_response
         RestClient.post(
-          email_link, email_payload, headers
+          email_link,
+          email_payload,
+          headers
         )
       end
 
@@ -60,10 +68,6 @@ module YandexMusic
 
       def email
         secrets.yandex_music[:email]
-      end
-
-      def headers
-        { cookies: cookies }
       end
 
       def cookies

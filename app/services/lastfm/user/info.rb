@@ -18,7 +18,8 @@ module LastFM
       end
 
       def user
-        @user ||= response_data['user']
+        @user ||=
+          response_data['user']
       end
 
       def image_data
@@ -28,7 +29,9 @@ module LastFM
       end
 
       def image
-        user.dig('image', -1, '#text')
+        user.dig(
+          'image', -1, '#text'
+        )
       end
 
       def plays_count

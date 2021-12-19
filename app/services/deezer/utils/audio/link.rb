@@ -2,6 +2,8 @@ module Deezer
   module Utils
     module Audio
       class Link < Deezer::Base
+        BASE_LINK = 'https://media.deezer.com/v1/get_url'.freeze
+
         def call
           data
         end
@@ -17,16 +19,14 @@ module Deezer
           ).to_s
         end
 
-        def response_data
-          JSON.parse(response)
-        end
-
         def response
-          RestClient.post(link, payload)
+          RestClient.post(
+            link, payload
+          )
         end
 
         def link
-          'https://media.deezer.com/v1/get_url'
+          BASE_LINK
         end
 
         def payload

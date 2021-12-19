@@ -15,11 +15,15 @@ module YandexMusic
       end
 
       def artist_data
-        super.merge(paginated_data)
+        super.merge(
+          paginated_data
+        )
       end
 
       def collection_list
-        collection_paginated(albums_list)
+        collection_paginated(
+          albums_list
+        )
       end
 
       def total_items_count

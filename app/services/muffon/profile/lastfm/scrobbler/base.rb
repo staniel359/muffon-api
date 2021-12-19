@@ -20,15 +20,13 @@ module Muffon
           def data
             return if wrong_profile?
 
-            post_track_data
+            post_response
 
             { success: true }
           end
 
-          def post_track_data
-            RestClient.post(
-              BASE_LINK, payload
-            )
+          def link
+            BASE_LINK
           end
 
           def payload

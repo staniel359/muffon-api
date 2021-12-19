@@ -14,9 +14,12 @@ module YandexMusic
       end
 
       def collection_list
-        @collection_list ||= response_data.dig(
-          'result', collection_name, 'results'
-        )
+        @collection_list ||=
+          response_data.dig(
+            'result',
+            collection_name,
+            'results'
+          )
       end
 
       def collection_name
@@ -28,7 +31,9 @@ module YandexMusic
       end
 
       def params
-        super.merge(search_params)
+        super.merge(
+          search_params
+        )
       end
 
       def search_params
@@ -49,13 +54,17 @@ module YandexMusic
 
       def total_items_count
         response_data.dig(
-          'result', collection_name, 'total'
+          'result',
+          collection_name,
+          'total'
         )
       end
 
       def limit
         response_data.dig(
-          'result', collection_name, 'perPage'
+          'result',
+          collection_name,
+          'perPage'
         )
       end
     end

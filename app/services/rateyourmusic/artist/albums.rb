@@ -53,9 +53,10 @@ module RateYourMusic
       end
 
       def response_matched_data
-        @response_matched_data ||= response.match(
-          matched_block_regexp
-        ).try(:[], 1)
+        @response_matched_data ||=
+          response.match(
+            matched_block_regexp
+          ).try(:[], 1)
       end
 
       def payload
@@ -89,7 +90,9 @@ module RateYourMusic
       end
 
       def collection_list
-        collection_paginated(albums_list)
+        collection_paginated(
+          albums_list
+        )
       end
 
       def collection_item_data_formatted(album)

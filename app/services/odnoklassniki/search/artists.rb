@@ -15,9 +15,10 @@ module Odnoklassniki
       end
 
       def first_artist
-        @first_artist ||= response_data.dig(
-          'bestMatch', 'artist'
-        )
+        @first_artist ||=
+          response_data.dig(
+            'bestMatch', 'artist'
+          )
       end
 
       def collection_item_data_formatted(artist)

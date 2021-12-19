@@ -38,6 +38,39 @@ module Muffon
       false
     end
 
+    def response_data
+      @response_data ||= JSON.parse(
+        response
+      )
+    end
+
+    def response
+      RestClient.get(
+        link, headers
+      )
+    end
+
+    def post_response
+      RestClient.post(
+        link, payload, headers
+      )
+    end
+
+    def headers
+      {
+        params: params,
+        cookies: cookies
+      }
+    end
+
+    def params
+      {}
+    end
+
+    def cookies
+      {}
+    end
+
     def secrets
       Rails.application.credentials
     end

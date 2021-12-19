@@ -30,6 +30,8 @@ module Muffon
         process_image
 
         authenticate
+
+        set_online
       end
 
       def authenticate
@@ -42,6 +44,22 @@ module Muffon
         profile.slice(
           *Muffon::Profile::Authenticator::PARAMS
         )
+      end
+
+      def set_online
+        ::Muffon::Profile::Online.call(
+          profile_id: profile_id,
+          token: profile_token,
+          online: true
+        )
+      end
+
+      def profile_id
+        profile.id
+      end
+
+      def profile_token
+        profile.token
       end
     end
   end

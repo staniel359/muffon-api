@@ -37,7 +37,9 @@ module Genius
         end
 
         def lyrics_alternative
-          nodes = xpath_data('Lyrics__Container')
+          nodes = xpath_data(
+            'Lyrics__Container'
+          )
 
           nodes.css('br').each do |br|
             br.replace("\n")

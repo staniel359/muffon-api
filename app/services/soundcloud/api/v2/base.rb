@@ -14,7 +14,8 @@ module SoundCloud
         private
 
         def client_id
-          return test_client_id if Rails.env.test?
+          return test_client_id if
+              Rails.env.test?
 
           get_global_value(
             'soundcloud_v2_client_id'
@@ -22,7 +23,9 @@ module SoundCloud
         end
 
         def test_client_id
-          secrets.soundcloud[:test_v2_client_id]
+          secrets.soundcloud[
+            :test_v2_client_id
+        ]
         end
 
         def global_value

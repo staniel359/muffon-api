@@ -5,20 +5,8 @@ module LastFM
 
     private
 
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
     def link
       BASE_LINK
-    end
-
-    def headers
-      { params: params }
     end
 
     def params

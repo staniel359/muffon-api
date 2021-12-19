@@ -10,11 +10,14 @@ module Odnoklassniki
       end
 
       def odnoklassniki_id
-        track['idForDownload'] || track['id']
+        track['idForDownload'] ||
+          track['id']
       end
 
       def image_data
-        image_data_formatted(image, 'track')
+        image_data_formatted(
+          image, 'track'
+        )
       end
 
       def duration_seconds

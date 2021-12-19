@@ -10,20 +10,17 @@ module Muffon
       def data
         profile_base_data
           .merge(profile_extra_data)
+          .merge(profile_other_profile_data)
           .merge(profile_relationships_data)
           .merge(profile_lastfm_data)
       end
 
       def profile_base_data
         {
-          id: id,
+          id: profile.id,
           nickname: nickname,
           email: email
         }.compact
-      end
-
-      def id
-        profile.id
       end
 
       def profile
@@ -38,58 +35,35 @@ module Muffon
 
       def profile_extra_data
         {
-          image: image_data,
-          gender: gender,
-          birthdate: birthdate,
+          image: profile.image_data,
+          gender: profile.gender,
+          birthdate: profile.birthdate,
           country: country,
           city: city,
-          role: role,
-          other_profile: other_profile_data
+          role: profile.role,
+          online: profile.online
         }.compact
       end
 
-      def image_data
-        profile.image_data
-      end
-
-      def gender
-        profile.gender
-      end
-
-      def birthdate
-        profile.birthdate
-      end
-
       def country
-        profile.country.presence
+        profile
+          .country
+          .presence
       end
 
       def city
-        profile.city.presence
+        profile
+          .city
+          .presence
       end
 
-      def role
-        profile.role
-      end
+      def profile_other_profile_data
+        return {} if @args[:other_profile_id].blank?
 
-      def profile_relationships_data
-        {
-          follower_profiles_count: profile_follower_profiles_count,
-          following_profiles_count: profile_following_profiles_count
-        }
-      end
-
-      def profile_follower_profiles_count
-        profile.follower_profiles_count
-      end
-
-      def profile_following_profiles_count
-        profile.following_profiles_count
+        { other_profile: other_profile_data }
       end
 
       def other_profile_data
-        return if @args[:other_profile_id].blank?
-
         {
           follower_of_profile: follower_of_profile?,
           followed_by_profile: followed_by_profile?
@@ -106,6 +80,21 @@ module Muffon
         profile.following_profiles.find_by(
           id: @args[:other_profile_id]
         ).present?
+      end
+
+      def profile_relationships_data
+        {
+          follower_profiles_count: profile_follower_profiles_count,
+          following_profiles_count: profile_following_profiles_count
+        }
+      end
+
+      def profile_follower_profiles_count
+        profile.follower_profiles_count
+      end
+
+      def profile_following_profiles_count
+        profile.following_profiles_count
       end
 
       def profile_lastfm_data

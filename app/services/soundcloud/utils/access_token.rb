@@ -15,10 +15,8 @@ module SoundCloud
         response_data['access_token']
       end
 
-      def response
-        RestClient.post(
-          BASE_LINK, payload
-        )
+      def link
+        BASE_LINK
       end
 
       def payload
@@ -30,12 +28,18 @@ module SoundCloud
       end
 
       def client_id
-        secrets.soundcloud[:client_id]
+        secrets.soundcloud[
+          :client_id
+        ]
       end
 
       def client_secret
-        secrets.soundcloud[:client_secret]
+        secrets.soundcloud[
+          :client_secret
+        ]
       end
+
+      alias response post_response
     end
   end
 end

@@ -5,13 +5,18 @@ module LastFM
         private
 
         def tag_data
-          { name: name }.merge(
-            paginated_data
-          )
+          tag_base_data
+            .merge(paginated_data)
+        end
+
+        def tag_base_data
+          { name: name }
         end
 
         def name
-          raw_name.match(/(.+) music/)[1]
+          raw_name.match(
+            /(.+) music/
+          )[1]
         end
 
         def raw_name

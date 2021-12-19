@@ -16,7 +16,9 @@ module SoundCloud
       end
 
       def response
-        RestClient.get(script_link)
+        RestClient.get(
+          script_link
+        )
       end
 
       def script_link
@@ -43,12 +45,12 @@ module SoundCloud
 
       def scripts_response_data
         Nokogiri::HTML.parse(
-          scripts_response
+          response
         )
       end
 
-      def scripts_response
-        RestClient.get(BASE_LINK)
+      def link
+        BASE_LINK
       end
     end
   end

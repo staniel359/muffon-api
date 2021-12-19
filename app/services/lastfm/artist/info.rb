@@ -4,7 +4,9 @@ module LastFM
       private
 
       def params
-        super.merge(lang_params)
+        super.merge(
+          lang_params
+        )
       end
 
       def artist_data
@@ -38,16 +40,26 @@ module LastFM
 
       def description
         description_formatted(
-          artist.dig('bio', 'content')
+          raw_description
+        )
+      end
+
+      def raw_description
+        artist.dig(
+          'bio', 'content'
         )
       end
 
       def tags_list
         return [] if artist['tags'].blank?
 
-        [
-          artist.dig('tags', 'tag')
-        ].flatten
+        [raw_tags].flatten
+      end
+
+      def raw_tags
+        artist.dig(
+          'tags', 'tag'
+        )
       end
 
       def recommendation_data

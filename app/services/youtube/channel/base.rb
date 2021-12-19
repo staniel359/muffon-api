@@ -12,7 +12,9 @@ module YouTube
       end
 
       def params
-        super.merge(channel_params)
+        super.merge(
+          channel_params
+        )
       end
 
       def channel_params

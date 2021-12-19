@@ -37,7 +37,9 @@ module SoundCloud
       end
 
       def tags_list
-        [track['genre'].presence].compact
+        [
+          track['genre'].presence
+        ].compact
       end
 
       def audio_data
@@ -51,15 +53,18 @@ module SoundCloud
       def audio_link
         return unless audio_present?
 
-        @audio_link ||= streams_response_data[
-          'http_mp3_128_url'
-        ]
+        @audio_link ||=
+          streams_response_data[
+            'http_mp3_128_url'
+          ]
       rescue RestClient::Forbidden
         nil
       end
 
       def streams_response_data
-        JSON.parse(streams_response)
+        JSON.parse(
+          streams_response
+        )
       end
 
       def streams_response

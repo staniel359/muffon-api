@@ -38,9 +38,8 @@ module LastFM
       end
 
       def albums
-        @albums ||= [
-          album_data_formatted
-        ].compact
+        @albums ||=
+          [album_data_formatted].compact
       end
 
       def album_data_formatted
@@ -89,18 +88,26 @@ module LastFM
 
       def description
         description_formatted(
-          track.dig(
-            'wiki', 'content'
-          )
+          raw_description
+        )
+      end
+
+      def raw_description
+        track.dig(
+          'wiki', 'content'
         )
       end
 
       def tags_list
         return [] if track['toptags'].blank?
 
-        [
-          track.dig('toptags', 'tag')
-        ].flatten
+        [raw_tags].flatten
+      end
+
+      def raw_tags
+        track.dig(
+          'toptags', 'tag'
+        )
       end
     end
   end

@@ -21,7 +21,9 @@ module VK
       end
 
       def params
-        super.merge(search_params)
+        super.merge(
+          search_params
+        )
       end
 
       def signature

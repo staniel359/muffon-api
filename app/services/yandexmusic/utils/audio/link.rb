@@ -20,14 +20,16 @@ module YandexMusic
         end
 
         def track_data_response_data
-          @track_data_response_data ||= JSON.parse(
-            track_data_response
-          )
+          @track_data_response_data ||=
+            JSON.parse(
+              track_data_response
+            )
         end
 
         def track_data_response
           RestClient.get(
-            track_data_link, track_data_headers
+            track_data_link,
+            track_data_headers
           )
         end
 
@@ -51,7 +53,8 @@ module YandexMusic
         end
 
         def session_id
-          return test_session_id if Rails.env.test?
+          return test_session_id if
+              Rails.env.test?
 
           get_global_value(
             'yandex_music_session_id'
@@ -59,7 +62,9 @@ module YandexMusic
         end
 
         def test_session_id
-          secrets.yandex_music[:test_session_id]
+          secrets.yandex_music[
+            :test_session_id
+          ]
         end
 
         def global_value
@@ -87,12 +92,15 @@ module YandexMusic
         end
 
         def audio_data_response_data
-          JSON.parse(audio_data_response)
+          JSON.parse(
+            audio_data_response
+          )
         end
 
         def audio_data_response
           RestClient.get(
-            audio_data_link, audio_data_headers
+            audio_data_link,
+            audio_data_headers
           )
         end
 

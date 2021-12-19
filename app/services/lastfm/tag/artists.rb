@@ -7,12 +7,16 @@ module LastFM
       private
 
       def artists_list
-        return [sample_artist].compact if @args[:sample]
+        return sample_artist if @args[:sample]
 
         raw_artists_list
       end
 
       def sample_artist
+        [raw_sample_artist].compact
+      end
+
+      def raw_sample_artist
         raw_artists_list.to_a.sample
       end
 

@@ -9,18 +9,6 @@ module YouTube
       response_data.blank?
     end
 
-    def response_data
-      @response_data ||= JSON.parse(response)
-    end
-
-    def response
-      RestClient.get(link, headers)
-    end
-
-    def headers
-      { params: params }
-    end
-
     def params
       { key: api_key }
     end
@@ -36,7 +24,8 @@ module YouTube
     end
 
     def videos_list
-      @videos_list ||= response_data['items']
+      @videos_list ||=
+        response_data['items']
     end
   end
 end

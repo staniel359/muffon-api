@@ -39,7 +39,9 @@ module Spotify
       end
 
       def tracks_list
-        album.dig('tracks', 'items')
+        album.dig(
+          'tracks', 'items'
+        )
       end
 
       def track_data_formatted(track)
