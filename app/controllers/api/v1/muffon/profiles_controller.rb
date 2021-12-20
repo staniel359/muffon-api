@@ -35,7 +35,7 @@ module API
         end
 
         def create_data
-          ::Muffon::Profile::Creator.call(
+          ::Muffon::Processor::Profile::Creator.call(
             create_params
           )
         end
@@ -55,7 +55,7 @@ module API
         end
 
         def update_data
-          ::Muffon::Profile::Updater.call(
+          ::Muffon::Processor::Profile::Updater.call(
             update_params
           )
         end
@@ -68,7 +68,7 @@ module API
         end
 
         def online_data
-          ::Muffon::Profile::Online.call(
+          ::Muffon::Processor::Profile::Online::Updater.call(
             params.slice(
               *%i[profile_id token online]
             )

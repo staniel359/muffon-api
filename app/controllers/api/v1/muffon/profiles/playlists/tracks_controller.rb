@@ -27,7 +27,7 @@ module API
             end
 
             def create_data
-              ::Muffon::Profile::Playlist::Track::Creator.call(
+              ::Muffon::Processor::Profile::Playlist::Track::Creator.call(
                 params.slice(
                   *%i[
                     profile_id token playlist_id title
@@ -38,7 +38,7 @@ module API
             end
 
             def destroy_data
-              ::Muffon::Profile::Playlist::Track::Destroyer.call(
+              ::Muffon::Processor::Profile::Playlist::Track::Destroyer.call(
                 params.slice(
                   *%i[profile_id token playlist_id playlist_track_id]
                 )

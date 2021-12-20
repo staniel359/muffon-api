@@ -20,9 +20,10 @@ module Muffon
       end
 
       def posts
-        @posts ||= ProfilePost.for_feed.where(
-          profile_id: following_ids
-        )
+        @posts ||=
+          ProfilePost.where(
+            profile_id: following_ids
+          ).for_feed
       end
 
       def following_ids

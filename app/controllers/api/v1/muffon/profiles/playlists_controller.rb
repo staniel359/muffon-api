@@ -34,7 +34,7 @@ module API
           end
 
           def create_data
-            ::Muffon::Profile::Playlist::Creator.call(
+            ::Muffon::Processor::Profile::Playlist::Creator.call(
               params.slice(
                 *%i[profile_id token title image]
               )
@@ -50,7 +50,7 @@ module API
           end
 
           def update_data
-            ::Muffon::Profile::Playlist::Updater.call(
+            ::Muffon::Processor::Profile::Playlist::Updater.call(
               params.slice(
                 *%i[profile_id token playlist_id title image]
               )
@@ -58,7 +58,7 @@ module API
           end
 
           def destroy_data
-            ::Muffon::Profile::Playlist::Destroyer.call(
+            ::Muffon::Processor::Profile::Playlist::Destroyer.call(
               params.slice(
                 *%i[profile_id token playlist_id]
               )

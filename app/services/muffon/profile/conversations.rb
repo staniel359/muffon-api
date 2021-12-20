@@ -26,7 +26,8 @@ module Muffon
       end
 
       def conversations
-        @conversations ||= profile.conversations
+        @conversations ||=
+          profile.conversations
       end
 
       def collection_list

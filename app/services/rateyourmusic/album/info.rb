@@ -1,7 +1,7 @@
 module RateYourMusic
   module Album
     class Info < RateYourMusic::Album::Base
-      include Muffon::Utils::Album
+      include RateYourMusic::Utils::Album
 
       private
 

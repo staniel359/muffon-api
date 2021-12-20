@@ -23,9 +23,9 @@ module Muffon
             .associated
         end
 
-        def collection_item_data_formatted(artist)
+        def collection_item_data_formatted(favorite_artist)
           Muffon::Profile::Favorites::Artists::Artist.call(
-            artist: artist
+            favorite_artist: favorite_artist
           )
         end
       end

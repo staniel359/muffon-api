@@ -17,6 +17,10 @@ module Bandcamp
         album['item_type']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists
         [artist_data_formatted]
       end

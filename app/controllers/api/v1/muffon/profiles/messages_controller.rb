@@ -10,7 +10,7 @@ module API
           private
 
           def create_data
-            ::Muffon::Profile::Message::Creator.call(
+            ::Muffon::Processor::Profile::Message::Creator.call(
               params.slice(
                 *%i[
                   profile_id token other_profile_id

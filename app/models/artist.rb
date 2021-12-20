@@ -1,8 +1,6 @@
 class Artist < ApplicationRecord
   after_create_commit :add_tags
 
-  has_many :profile_artists, dependent: nil
-
   has_one_attached :image
 
   validates :name,
@@ -23,8 +21,8 @@ class Artist < ApplicationRecord
   private
 
   def add_tags
-    Artist::TagsUpdaterWorker.perform_async(
-      artist_id: id
+    Artist::Tags::UpdaterWorker.perform_async(
+      name: name
     )
   end
 end

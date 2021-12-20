@@ -51,7 +51,9 @@ module Muffon
       end
 
       def filter_ids
-        @args[:filter_value].map(&:to_i)
+        @args[:filter_value].map(
+          &:to_i
+        )
       end
 
       def recommendations_tags_filtered

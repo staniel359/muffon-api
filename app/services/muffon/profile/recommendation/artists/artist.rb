@@ -11,40 +11,20 @@ module Muffon
 
           def data
             {
-              id: id,
-              name: name,
-              image: image_data,
-              tracks_count: tracks_count,
-              albums_count: albums_count
+              id: profile_artist.id,
+              name: artist.name,
+              image: artist.image_data,
+              tracks_count: profile_artist.profile_tracks_count,
+              albums_count: profile_artist.profile_albums_count
             }.compact
-          end
-
-          def id
-            profile_artist.id
           end
 
           def profile_artist
             @args[:profile_artist]
           end
 
-          def name
-            profile_artist
-              .artist
-              .name
-          end
-
-          def image_data
-            profile_artist
-              .artist
-              .image_data
-          end
-
-          def tracks_count
-            profile_artist.profile_tracks_count
-          end
-
-          def albums_count
-            profile_artist.profile_albums_count
+          def artist
+            @artist ||= profile_artist.artist
           end
         end
       end

@@ -13,6 +13,10 @@ module VK
         track['subtitle']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists_list
         track['main_artists'] ||
           [artist]
@@ -27,7 +31,9 @@ module VK
       end
 
       def albums
-        [album_data_formatted].compact
+        [
+          album_data_formatted
+        ].compact.presence
       end
 
       def album_data_formatted

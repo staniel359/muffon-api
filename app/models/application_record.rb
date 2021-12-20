@@ -1,4 +1,5 @@
 class ApplicationRecord < ActiveRecord::Base
+  include Muffon::Utils::ErrorHandlers
   self.abstract_class = true
 
   class << self
@@ -91,10 +92,14 @@ class ApplicationRecord < ActiveRecord::Base
     ).associated
   end
 
-  def errors_formatted
-    errors.map do |e|
-      { e.attribute => e.type }
-    end
+  def errors?
+    errors.present?
+  end
+
+  def errors_data
+    forbidden.merge(
+      { errors: errors_formatted }
+    )
   end
 
   private
@@ -109,5 +114,11 @@ class ApplicationRecord < ActiveRecord::Base
     Muffon::Utils::ImageFile.call(
       image: image_file
     )
+  end
+
+  def errors_formatted
+    errors.map do |e|
+      { e.attribute => e.type }
+    end
   end
 end

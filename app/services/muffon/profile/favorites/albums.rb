@@ -23,9 +23,9 @@ module Muffon
             .associated
         end
 
-        def collection_item_data_formatted(album)
+        def collection_item_data_formatted(favorite_album)
           Muffon::Profile::Favorites::Albums::Album.call(
-            album: album
+            favorite_album: favorite_album
           )
         end
       end

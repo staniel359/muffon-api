@@ -30,7 +30,7 @@ module Muffon
       end
 
       def album_formatted
-        return {} if albums.blank?
+        return if albums.blank?
 
         { title: album_title }
       end

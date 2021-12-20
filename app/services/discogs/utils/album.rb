@@ -13,6 +13,10 @@ module Discogs
         album['id']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def image_data
         image_data_formatted(
           image, 'album'

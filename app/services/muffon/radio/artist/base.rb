@@ -9,7 +9,8 @@ module Muffon
         end
 
         def no_data?
-          total_pages.blank? || artist_data.blank?
+          total_pages.blank? ||
+            artist_data.blank?
         end
 
         def total_pages
@@ -26,9 +27,10 @@ module Muffon
         end
 
         def artist_data
-          @artist_data ||= retrieve_artist_data(
-            random_page
-          )
+          @artist_data ||=
+            retrieve_artist_data(
+              random_page
+            )
         end
 
         def random_page

@@ -13,6 +13,10 @@ module Deezer
         album['ALB_ID'].to_i
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists_list
         album['ARTISTS']
       end

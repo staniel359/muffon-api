@@ -75,6 +75,12 @@ module Muffon
           def session_key
             profile.lastfm_session_key
           end
+
+          def album_title_string
+            return if album_title.blank?
+
+            "album#{album_title}"
+          end
         end
       end
     end

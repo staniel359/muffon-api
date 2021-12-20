@@ -6,7 +6,9 @@ module Muffon
           private
 
           def primary_args
-            super << @args[:duration]
+            super + [
+              @args[:duration]
+            ]
           end
 
           def payload_base_data
@@ -22,7 +24,7 @@ module Muffon
 
           def api_sig_raw
             [
-              ("album#{album_title}" if album_title.present?),
+              album_title_string,
               "api_key#{api_key}",
               "artist#{artist_name}",
               "duration#{duration}",

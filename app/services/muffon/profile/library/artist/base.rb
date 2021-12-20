@@ -3,6 +3,8 @@ module Muffon
     module Library
       module Artist
         class Base < Muffon::Profile::Library::Base
+          include Muffon::Utils::Library::Artist
+
           private
 
           def primary_args
@@ -25,12 +27,6 @@ module Muffon
 
           def library_data
             { artist: artist_data }
-          end
-
-          def name
-            profile_artist
-              .artist
-              .name
           end
         end
       end

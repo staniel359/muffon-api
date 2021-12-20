@@ -9,6 +9,10 @@ module Odnoklassniki
         track['name']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def odnoklassniki_id
         track['idForDownload'] ||
           track['id']

@@ -17,7 +17,8 @@ class ProfileAlbum < ApplicationRecord
   class << self
     def associated
       includes(
-        [album: :artist],
+        :album,
+        [profile_artist: :artist],
         image_association
       )
     end

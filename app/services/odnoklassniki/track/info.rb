@@ -32,6 +32,8 @@ module Odnoklassniki
       end
 
       def albums
+        return if albums_list.blank?
+
         @albums ||=
           albums_list.map do |a|
             album_data_formatted(a)

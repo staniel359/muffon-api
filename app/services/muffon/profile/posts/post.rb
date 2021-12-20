@@ -10,45 +10,29 @@ module Muffon
 
         def data
           {
-            id: id,
+            id: post.id,
             profile: profile_data,
-            content: content,
+            content: post.content,
             images: images,
             tracks: tracks,
-            created: created
+            created: created_formatted
           }.compact
-        end
-
-        def id
-          post.id
-        end
-
-        def profile_data
-          {
-            id: profile_id,
-            nickname: nickname,
-            image: profile_image_data
-          }
-        end
-
-        def profile_id
-          profile.id
-        end
-
-        def profile
-          @profile ||= post.profile
-        end
-
-        def profile_image_data
-          profile.image_data
         end
 
         def post
           @args[:post]
         end
 
-        def content
-          post.content
+        def profile_data
+          {
+            id: profile.id,
+            nickname: nickname,
+            image: profile.image_data
+          }
+        end
+
+        def profile
+          @profile ||= post.profile
         end
 
         def images
@@ -75,7 +59,7 @@ module Muffon
           )
         end
 
-        def created
+        def created_formatted
           datetime_formatted(
             post.created_at
           )

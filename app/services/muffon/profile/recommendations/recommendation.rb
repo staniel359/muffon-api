@@ -17,16 +17,12 @@ module Muffon
 
         def recommendation_data
           {
-            id: id,
+            id: recommendation.id,
             name: name,
-            image: image_data,
+            image: artist.image_data,
             profile_artists_count: profile_artists_count,
             profile_artists: profile_artists_formatted
           }.compact
-        end
-
-        def id
-          recommendation.id
         end
 
         def recommendation
@@ -34,15 +30,11 @@ module Muffon
         end
 
         def name
-          recommendation
-            .artist
-            .name
+          artist.name
         end
 
-        def image_data
-          recommendation
-            .artist
-            .image_data
+        def artist
+          @artist ||= recommendation.artist
         end
 
         def profile_artists_count

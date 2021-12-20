@@ -23,9 +23,9 @@ module Muffon
             .associated
         end
 
-        def collection_item_data_formatted(track)
+        def collection_item_data_formatted(bookmark_track)
           Muffon::Profile::Bookmarks::Tracks::Track.call(
-            track: track
+            bookmark_track: bookmark_track
           )
         end
       end

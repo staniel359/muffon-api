@@ -89,5 +89,11 @@ module Muffon
         id: @args[:profile_id]
       )
     end
+
+    def other_profile
+      @other_profile ||= ::Profile.find_by(
+        id: @args[:other_profile_id]
+      )
+    end
   end
 end

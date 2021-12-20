@@ -7,7 +7,7 @@ module Helpers
         end
 
         def info_no_album_data
-          {:track=>{:album=>{}, :albums=>[], :artist=>{:name=>"ナイトメア"}, :artists=>[{:name=>"ナイトメア"}], :audio=>{:link=>"http://localhost:4001/temp/audio/vk/-400921_90392497.mp3", :present=>true, :source_id=>"vk"}, :duration=>"04:59", :duration_seconds=>299, :player_id=>"1", :source_id=>"vk", :title=>"Alumina", :vk_id=>"-400921_90392497", :with_more=>{}}}
+          {:track=>{:artist=>{:name=>"ナイトメア"}, :artists=>[{:name=>"ナイトメア"}], :audio=>{:link=>"http://localhost:4001/temp/audio/vk/-400921_90392497.mp3", :present=>true, :source_id=>"vk"}, :duration=>"04:59", :duration_seconds=>299, :player_id=>"1", :source_id=>"vk", :title=>"Alumina", :vk_id=>"-400921_90392497", :with_more=>{}}}
         end
       end
     end

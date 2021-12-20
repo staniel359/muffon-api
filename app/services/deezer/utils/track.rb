@@ -23,6 +23,10 @@ module Deezer
         track['SNG_ID'].to_i
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists_list
         track['ARTISTS']
       end
@@ -30,11 +34,11 @@ module Deezer
       def albums
         @albums ||= [
           album_data_formatted
-        ]
+        ].presence
       end
 
       def album_data_formatted
-        return {} if track['ALB_TITLE'].blank?
+        return if track['ALB_TITLE'].blank?
 
         {
           source_id: self.class::SOURCE_ID,

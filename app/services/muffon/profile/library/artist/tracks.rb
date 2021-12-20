@@ -14,7 +14,7 @@ module Muffon
           end
 
           def artist_base_data
-            { name: name }
+            { name: artist.name }
           end
 
           def total_items_count
@@ -33,9 +33,9 @@ module Muffon
             profile_artist.profile_tracks
           end
 
-          def collection_item_data_formatted(track)
+          def collection_item_data_formatted(profile_track)
             Muffon::Profile::Library::Artist::Tracks::Track.call(
-              track: track,
+              profile_track: profile_track,
               profile_id: @args[:profile_id]
             )
           end

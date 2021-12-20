@@ -11,59 +11,41 @@ module Muffon
 
           def data
             {
-              id: id,
-              player_id: player_id,
-              title: title,
+              id: playlist_track.id,
+              player_id: track.player_id,
+              title: track.title,
               artist: artist_data,
               album: album_data,
-              image: image_data,
-              created: created
+              image: playlist_track.image_data,
+              created: created_formatted
             }.compact
           end
 
-          def id
-            playlist_track.id
-          end
-
           def playlist_track
-            @args[:track]
+            @args[:playlist_track]
           end
 
-          def player_id
-            playlist_track
-              .track
-              .player_id
-          end
-
-          def title
-            playlist_track
-              .track
-              .title
+          def track
+            @track ||= playlist_track.track
           end
 
           def artist_data
             {
-              id: artist_id,
-              name: artist_name
+              id: artist.id,
+              name: artist.name
             }
           end
 
-          def artist_id
-            playlist_track.artist_id
-          end
-
-          def artist_name
-            playlist_track
-              .artist
-              .name
+          def artist
+            @artist ||= playlist_track.artist
           end
 
           def album_data
             return if album.blank?
 
             {
-              id: album_id,
-              title: album_title
+              id: album.id,
+              title: album.title
             }
           end
 
@@ -71,19 +53,7 @@ module Muffon
             @album ||= playlist_track.album
           end
 
-          def album_id
-            playlist_track.album_id
-          end
-
-          def album_title
-            album.title
-          end
-
-          def image_data
-            playlist_track.image_data
-          end
-
-          def created
+          def created_formatted
             datetime_formatted(
               playlist_track.created_at
             )

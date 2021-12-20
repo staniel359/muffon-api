@@ -3,42 +3,22 @@ module Muffon
     module Library
       module Album
         class Info < Muffon::Profile::Library::Album::Base
-          include Muffon::Utils::Album
-
           private
 
           def album_data
             {
-              id: id,
+              id: profile_album.id,
               favorite_id: favorite_id,
-              title: title,
+              title: album.title,
               artist: artist_data,
-              image: image_data,
-              tracks_count: tracks_count,
-              created: created
+              image: profile_album.image_data,
+              tracks_count:
+                profile_album.profile_tracks_count,
+              created: created_formatted
             }.compact
           end
 
-          def id
-            profile_album.id
-          end
-
-          def artist_name
-            profile_album
-              .album
-              .artist
-              .name
-          end
-
-          def image_data
-            profile_album.image_data
-          end
-
-          def tracks_count
-            profile_album.profile_tracks_count
-          end
-
-          def created
+          def created_formatted
             datetime_formatted(
               profile_album.created_at
             )

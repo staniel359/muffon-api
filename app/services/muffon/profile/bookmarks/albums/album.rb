@@ -11,40 +11,27 @@ module Muffon
 
           def data
             {
-              id: id,
-              title: title,
+              id: bookmark_album.id,
+              title: album.title,
               artist: artist_data,
-              image: image_data
+              image: bookmark_album.image_data
             }.compact
           end
 
-          def id
-            bookmark_album.id
-          end
-
           def bookmark_album
-            @args[:album]
+            @args[:bookmark_album]
           end
 
-          def title
-            bookmark_album
-              .album
-              .title
+          def album
+            @album ||= bookmark_album.album
           end
 
           def artist_data
-            { name: artist_name }
+            { name: artist.name }
           end
 
-          def artist_name
-            bookmark_album
-              .album
-              .artist
-              .name
-          end
-
-          def image_data
-            bookmark_album.image_data
+          def artist
+            @artist ||= album.artist
           end
         end
       end

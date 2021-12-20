@@ -7,7 +7,8 @@ module Muffon
         Muffon::Profiles::Profile.call(
           profile: profile,
           token: @args[:token],
-          other_profile_id: @args[:other_profile_id]
+          other_profile_id:
+            @args[:other_profile_id]
         )
       end
     end

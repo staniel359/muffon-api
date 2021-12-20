@@ -10,25 +10,17 @@ module Muffon
 
         def data
           {
-            id: id,
-            playlist_track_id: playlist_track_id,
-            title: title,
-            image: image_data,
-            tracks_count: tracks_count,
-            created: created
+            id: playlist.id,
+            playlist_track_id: playlist_track&.id,
+            title: playlist.title,
+            image: playlist.image_data,
+            tracks_count: playlist.playlist_tracks_count,
+            created: created_formatted
           }.compact
-        end
-
-        def id
-          playlist.id
         end
 
         def playlist
           @args[:playlist]
-        end
-
-        def playlist_track_id
-          playlist_track&.id
         end
 
         def playlist_track
@@ -39,19 +31,7 @@ module Muffon
           )
         end
 
-        def title
-          playlist.title
-        end
-
-        def image_data
-          playlist.image_data
-        end
-
-        def tracks_count
-          playlist.playlist_tracks_count
-        end
-
-        def created
+        def created_formatted
           datetime_formatted(
             playlist.created_at
           )

@@ -17,6 +17,10 @@ module YandexMusic
         album['id']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists_list
         album['artists'].presence ||
           [default_artist_data]

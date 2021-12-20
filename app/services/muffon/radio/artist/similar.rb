@@ -29,7 +29,8 @@ module Muffon
         end
 
         def tracks
-          @tracks ||= similar_artist_data[:tracks]
+          @tracks ||=
+            similar_artist_data[:tracks]
         end
 
         def track

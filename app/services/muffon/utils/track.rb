@@ -8,74 +8,81 @@ module Muffon
       end
 
       def find_track
-        @find_track ||= ::Track.with_artist_title(
-          find_artist.id, title
-        )
+        @find_track ||=
+          ::Track.with_artist_title(
+            find_artist.id, title
+          )
       end
 
       def find_artist
-        @find_artist ||= ::Artist.with_name(
-          artist_name
-        )
-      end
-
-      def artist_name
-        artist_names
-      end
-
-      def library_id
-        return if @args[:profile_id].blank?
-
-        find_profile_track&.id
-      end
-
-      def find_profile_track
-        profile.profile_tracks.find_by(
-          track_id: find_track.id
-        )
+        @find_artist ||=
+          ::Artist.with_name(
+            artist_name
+          )
       end
 
       def find_album
         return if album_title.blank?
 
-        @find_album ||= ::Album.with_artist_title(
-          find_artist.id, album_title
-        )
+        @find_album ||=
+          ::Album.with_artist_title(
+            find_artist.id, album_title
+          )
       end
 
-      def listened_id
+      def library_id
+        find_profile_track&.id
+      end
+
+      def find_profile_track
         return if @args[:profile_id].blank?
 
-        find_listened_track&.id
-      end
-
-      def find_listened_track
-        profile.listened_tracks.find_by(
-          track_id: find_track.id
+        ProfileTrack.find_by(
+          profile_id: @args[:profile_id],
+          track_id: track_id
         )
       end
 
-      def bookmark_id
-        return if @args[:profile_id].blank?
-
-        find_bookmark_track&.id
-      end
-
-      def find_bookmark_track
-        profile.bookmark_tracks.find_by(
-          track_id: find_track.id
-        )
+      def track_id
+        find_track.id
       end
 
       def favorite_id
-        return if @args[:profile_id].blank?
-
         find_favorite_track&.id
       end
 
       def find_favorite_track
-        profile.favorite_tracks.find_by(
-          track_id: find_track.id
+        return if @args[:profile_id].blank?
+
+        FavoriteTrack.find_by(
+          profile_id: @args[:profile_id],
+          track_id: track_id
+        )
+      end
+
+      def bookmark_id
+        find_bookmark_track&.id
+      end
+
+      def find_bookmark_track
+        return if @args[:profile_id].blank?
+
+        BookmarkTrack.find_by(
+          profile_id: @args[:profile_id],
+          track_id: track_id
+        )
+      end
+
+      def listened_id
+        find_listened_track&.id
+      end
+
+      def find_listened_track
+        return if @args[:profile_id].blank?
+
+        ListenedTrack.find_by(
+          profile_id: @args[:profile_id],
+          track_id: track_id
         )
       end
 

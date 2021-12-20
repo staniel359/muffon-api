@@ -17,6 +17,10 @@ module RateYourMusic
         )[0]['href']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists
         artists_list.map do |a|
           artist_data_formatted(a)

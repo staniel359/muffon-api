@@ -13,6 +13,10 @@ module SoundCloud
         track['id']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artist
         @artist ||= track['user']
       end

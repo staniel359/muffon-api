@@ -54,7 +54,9 @@ module Odnoklassniki
         end
 
         def albums
-          [album_data_formatted]
+          [
+            album_data_formatted
+          ].compact.presence
         end
 
         def image
@@ -62,6 +64,8 @@ module Odnoklassniki
         end
 
         def album_data_formatted
+          return if track['albumId'].blank?
+
           {
             source_id: SOURCE_ID,
             odnoklassniki_id: track['albumId']

@@ -2,7 +2,7 @@ module RateYourMusic
   module Artist
     class Albums
       class Album < RateYourMusic::Artist::Albums
-        include Muffon::Utils::Album
+        include RateYourMusic::Utils::Album
 
         def call
           data

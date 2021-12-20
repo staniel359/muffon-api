@@ -10,16 +10,12 @@ module Muffon
 
         def data
           {
-            content: content,
+            content: message.content,
             profile: profile_data,
             images: images,
             tracks: tracks,
-            created: created
+            created: created_formatted
           }.compact
-        end
-
-        def content
-          message.content
         end
 
         def message
@@ -28,26 +24,14 @@ module Muffon
 
         def profile_data
           {
-            id: message_profile_id,
-            nickname: message_profile_nickname,
-            image: message_profile_image_data
+            id: message_profile.id,
+            nickname: message_profile.nickname,
+            image: message_profile.image_data
           }
-        end
-
-        def message_profile_id
-          message_profile.id
         end
 
         def message_profile
           @message_profile ||= message.profile
-        end
-
-        def message_profile_nickname
-          message_profile.nickname
-        end
-
-        def message_profile_image_data
-          message_profile.image_data
         end
 
         def images
@@ -74,7 +58,7 @@ module Muffon
           )
         end
 
-        def created
+        def created_formatted
           datetime_formatted(
             message.created_at
           )

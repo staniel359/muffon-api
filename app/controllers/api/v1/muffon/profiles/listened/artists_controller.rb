@@ -15,7 +15,7 @@ module API
             private
 
             def create_data
-              ::Muffon::Profile::Listened::Artist::Creator.call(
+              ::Muffon::Processor::Profile::Listened::Artist::Creator.call(
                 params.slice(
                   *%i[profile_id token name]
                 )
@@ -23,7 +23,7 @@ module API
             end
 
             def destroy_data
-              ::Muffon::Profile::Listened::Artist::Destroyer.call(
+              ::Muffon::Processor::Profile::Listened::Artist::Destroyer.call(
                 params.slice(
                   *%i[profile_id token listened_id]
                 )

@@ -3,6 +3,8 @@ module Muffon
     module Library
       module Track
         class Base < Muffon::Profile::Library::Base
+          include Muffon::Utils::Library::Track
+
           private
 
           def primary_args
@@ -25,30 +27,6 @@ module Muffon
 
           def library_data
             { track: track_data }
-          end
-
-          def title
-            profile_track
-              .track
-              .title
-          end
-
-          def artist_data
-            {
-              id: artist_id,
-              name: artist_name
-            }
-          end
-
-          def artist_id
-            profile_track.profile_artist_id
-          end
-
-          def artist_name
-            profile_track
-              .profile_artist
-              .artist
-              .name
           end
         end
       end

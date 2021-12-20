@@ -49,7 +49,7 @@ module Bandcamp
         )[0]
       end
 
-      def artist_data_formatted(item)
+      def bandcamp_artist_data_formatted(item)
         {
           name: bandcamp_artist_name(item),
           bandcamp_slug: bandcamp_artist_slug(item)

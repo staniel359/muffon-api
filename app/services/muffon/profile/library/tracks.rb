@@ -19,9 +19,9 @@ module Muffon
             .associated
         end
 
-        def collection_item_data_formatted(track)
+        def collection_item_data_formatted(profile_track)
           Muffon::Profile::Library::Tracks::Track.call(
-            track: track,
+            profile_track: profile_track,
             profile_id: @args[:profile_id]
           )
         end

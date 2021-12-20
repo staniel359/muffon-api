@@ -30,7 +30,7 @@ module API
           end
 
           def create_data
-            ::Muffon::Profile::Post::Creator.call(
+            ::Muffon::Processor::Profile::Post::Creator.call(
               params.slice(
                 *%i[
                   profile_id token other_profile_id
@@ -41,7 +41,7 @@ module API
           end
 
           def update_data
-            ::Muffon::Profile::Post::Updater.call(
+            ::Muffon::Processor::Profile::Post::Updater.call(
               params.slice(
                 *%i[
                   profile_id token post_id
@@ -52,7 +52,7 @@ module API
           end
 
           def destroy_data
-            ::Muffon::Profile::Post::Destroyer.call(
+            ::Muffon::Processor::Profile::Post::Destroyer.call(
               params.slice(
                 *%i[profile_id token post_id]
               )

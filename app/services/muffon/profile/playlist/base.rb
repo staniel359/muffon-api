@@ -16,23 +16,10 @@ module Muffon
         end
 
         def playlist
-          @playlist ||= profile.playlists.find_by(
-            id: @args[:playlist_id]
-          )
-        end
-
-        def errors?
-          playlist.errors.any?
-        end
-
-        def errors
-          playlist.errors_formatted
-        end
-
-        def process_image
-          playlist.process_image(
-            @args[:image]
-          )
+          @playlist ||=
+            profile.playlists.find_by(
+              id: @args[:playlist_id]
+            )
         end
 
         def profile_data

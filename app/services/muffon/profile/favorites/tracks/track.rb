@@ -11,63 +11,39 @@ module Muffon
 
           def data
             {
-              id: id,
-              player_id: player_id,
-              title: title,
+              id: favorite_track.id,
+              player_id: track.player_id,
+              title: track.title,
               artist: artist_data,
               album: album_data,
-              image: image_data
+              image: favorite_track.image_data
             }.compact
           end
 
-          def id
-            favorite_track.id
-          end
-
           def favorite_track
-            @args[:track]
+            @args[:favorite_track]
           end
 
-          def player_id
-            favorite_track
-              .track
-              .player_id
-          end
-
-          def title
-            favorite_track
-              .track
-              .title
+          def track
+            @track ||= favorite_track.track
           end
 
           def artist_data
-            { name: artist_name }
+            { name: artist.name }
           end
 
-          def artist_name
-            favorite_track
-              .track
-              .artist
-              .name
+          def artist
+            @artist ||= track.artist
           end
 
           def album_data
-            return if favorite_track_album.blank?
+            return if album.blank?
 
-            { title: album_title }
+            { title: album.title }
           end
 
-          def favorite_track_album
-            @favorite_track_album ||=
-              favorite_track.album
-          end
-
-          def album_title
-            favorite_track_album.title
-          end
-
-          def image_data
-            favorite_track.image_data
+          def album
+            @album ||= favorite_track.album
           end
         end
       end

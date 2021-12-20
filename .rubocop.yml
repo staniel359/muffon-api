@@ -22,16 +22,10 @@ Layout/LineLength:
   Max: 80
   Exclude:
     - 'spec/**/*_spec.rb'
-Layout/EndOfLine:
-  Enabled: false
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
-    - 'spec/vcr_helper.rb'
-
-Rails/SkipsModelValidations:
-  Enabled: false
 
 Rails/UniqueValidationWithoutIndex:
   Enabled: false

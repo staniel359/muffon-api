@@ -21,7 +21,7 @@ module Bandcamp
     def albums
       @albums ||= [
         album_data_formatted
-      ].compact
+      ].compact.presence
     end
 
     def image_data_formatted(image, model)

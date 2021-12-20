@@ -32,9 +32,9 @@ module Muffon
             .associated
         end
 
-        def collection_item_data_formatted(artist)
+        def collection_item_data_formatted(profile_artist)
           Muffon::Profile::Library::Artists::Artist.call(
-            artist: artist,
+            profile_artist: profile_artist,
             profile_id: @args[:profile_id]
           )
         end

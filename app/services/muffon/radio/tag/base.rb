@@ -9,7 +9,8 @@ module Muffon
         end
 
         def no_data?
-          total_pages.blank? || tag_data.blank?
+          total_pages.blank? ||
+            tag_data.blank?
         end
 
         def total_pages
@@ -26,9 +27,10 @@ module Muffon
         end
 
         def tag_data
-          @tag_data ||= retrieve_tag_data(
-            random_page
-          )
+          @tag_data ||=
+            retrieve_tag_data(
+              random_page
+            )
         end
 
         def random_page

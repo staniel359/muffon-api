@@ -6,25 +6,17 @@ module Muffon
 
         def conversation_data
           {
-            id: conversation_id,
+            id: conversation.id,
             profile: conversation_other_profile_data
           }
         end
 
-        def conversation_id
-          conversation.id
-        end
-
         def conversation_other_profile_data
           {
-            id: conversation_other_profile_id,
-            nickname: conversation_other_profile_nickname,
-            image: conversation_other_profile_image_data
+            id: conversation_other_profile.id,
+            nickname: conversation_other_profile.nickname,
+            image: conversation_other_profile.image_data
           }
-        end
-
-        def conversation_other_profile_id
-          conversation_other_profile.id
         end
 
         def conversation_other_profile
@@ -32,14 +24,6 @@ module Muffon
             conversation.find_other_profile(
               @args[:profile_id]
             )
-        end
-
-        def conversation_other_profile_nickname
-          conversation_other_profile.nickname
-        end
-
-        def conversation_other_profile_image_data
-          conversation_other_profile.image_data
         end
       end
     end

@@ -3,41 +3,33 @@ module Muffon
     module Library
       module Artist
         class Info < Muffon::Profile::Library::Artist::Base
-          include Muffon::Utils::Artist
-
           private
 
           def artist_data
+            artist_base_data
+              .merge(artist_extra_data)
+          end
+
+          def artist_base_data
             {
-              id: id,
+              id: profile_artist.id,
               favorite_id: favorite_id,
-              name: name,
-              image: image_data,
-              tracks_count: tracks_count,
-              albums_count: albums_count,
-              created: created
+              name: artist.name
             }.compact
           end
 
-          def id
-            profile_artist.id
+          def artist_extra_data
+            {
+              image: artist.image_data,
+              tracks_count:
+                profile_artist.profile_tracks_count,
+              albums_count:
+                profile_artist.profile_albums_count,
+              created: created_formatted
+            }.compact
           end
 
-          def image_data
-            profile_artist
-              .artist
-              .image_data
-          end
-
-          def tracks_count
-            profile_artist.profile_tracks_count
-          end
-
-          def albums_count
-            profile_artist.profile_albums_count
-          end
-
-          def created
+          def created_formatted
             datetime_formatted(
               profile_artist.created_at
             )

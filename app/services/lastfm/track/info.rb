@@ -38,8 +38,9 @@ module LastFM
       end
 
       def albums
-        @albums ||=
-          [album_data_formatted].compact
+        @albums ||= [
+          album_data_formatted
+        ].compact.presence
       end
 
       def album_data_formatted

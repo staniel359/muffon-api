@@ -15,7 +15,7 @@ module Muffon
 
           def album_base_data
             {
-              title: title,
+              title: album.title,
               artist: artist_data
             }
           end
@@ -36,9 +36,9 @@ module Muffon
             profile_album.profile_tracks
           end
 
-          def collection_item_data_formatted(track)
+          def collection_item_data_formatted(profile_track)
             Muffon::Profile::Library::Album::Tracks::Track.call(
-              track: track,
+              profile_track: profile_track,
               profile_id: @args[:profile_id]
             )
           end

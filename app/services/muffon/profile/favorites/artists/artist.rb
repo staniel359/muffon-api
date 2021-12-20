@@ -11,30 +11,19 @@ module Muffon
 
           def data
             {
-              id: id,
-              name: name,
-              image: image_data
+              id: favorite_artist.id,
+              name: artist.name,
+              image: artist.image_data
             }.compact
           end
 
-          def id
-            favorite_artist.id
-          end
-
           def favorite_artist
-            @args[:artist]
+            @args[:favorite_artist]
           end
 
-          def name
-            favorite_artist
-              .artist
-              .name
-          end
-
-          def image_data
-            favorite_artist
-              .artist
-              .image_data
+          def artist
+            @artist ||=
+              favorite_artist.artist
           end
         end
       end

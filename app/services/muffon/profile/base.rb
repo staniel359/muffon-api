@@ -33,20 +33,6 @@ module Muffon
         end
       end
 
-      def errors?
-        profile.errors.any?
-      end
-
-      def errors_data
-        forbidden.merge(
-          { errors: errors }
-        )
-      end
-
-      def errors
-        profile.errors_formatted
-      end
-
       def process_image
         profile.process_image(
           @args[:image]

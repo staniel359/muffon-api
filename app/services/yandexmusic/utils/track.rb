@@ -17,11 +17,17 @@ module YandexMusic
         track['id'].to_i
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists_list
         track['artists']
       end
 
       def albums
+        return if albums_list.blank?
+
         @albums ||=
           albums_list.map do |a|
             album_data_formatted(a)

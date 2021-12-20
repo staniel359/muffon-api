@@ -15,13 +15,8 @@ module Muffon
           end
 
           def no_data?
-            profile.blank? || other_profile.blank?
-          end
-
-          def other_profile
-            @other_profile ||= ::Profile.find_by(
-              id: @args[:other_profile_id]
-            )
+            profile.blank? ||
+              other_profile.blank?
           end
 
           def data
@@ -47,7 +42,8 @@ module Muffon
           end
 
           def artists_count
-            @artists_count ||= common_artist_ids.size
+            @artists_count ||=
+              common_artist_ids.size
           end
 
           def common_album_ids
@@ -69,7 +65,8 @@ module Muffon
           end
 
           def albums_count
-            @albums_count ||= common_album_ids.size
+            @albums_count ||=
+              common_album_ids.size
           end
 
           def common_track_ids
@@ -91,14 +88,8 @@ module Muffon
           end
 
           def tracks_count
-            @tracks_count ||= common_track_ids.size
-          end
-
-          def artist_data
-            {
-              id: artist_id,
-              name: artist_name
-            }
+            @tracks_count ||=
+              common_track_ids.size
           end
 
           alias compatibility_data paginated_data

@@ -56,9 +56,18 @@ module API
           end
 
           def update_album_listeners_count
-            ::Muffon::Updater::Album::ListenersCount.call(
-              data.slice(:album)
+            ::Muffon::Processor::Album::ListenersCount::Updater.call(
+              title: album_data[:title],
+              artist_name: album_data.dig(
+                :artist, :name
+              ),
+              listeners_count:
+                album_data[:listeners_count]
             )
+          end
+
+          def album_data
+            data[:album] || {}
           end
         end
       end

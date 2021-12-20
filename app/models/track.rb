@@ -1,6 +1,4 @@
 class Track < ApplicationRecord
-  has_many :profile_tracks, dependent: nil
-
   belongs_to :artist
 
   validates :title,

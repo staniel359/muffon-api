@@ -27,7 +27,7 @@ module API
             end
 
             def create_data
-              ::Muffon::Profile::Bookmarks::Track::Creator.call(
+              ::Muffon::Processor::Profile::Bookmarks::Track::Creator.call(
                 params.slice(
                   *%i[
                     profile_id token title
@@ -38,7 +38,7 @@ module API
             end
 
             def destroy_data
-              ::Muffon::Profile::Bookmarks::Track::Destroyer.call(
+              ::Muffon::Processor::Profile::Bookmarks::Track::Destroyer.call(
                 params.slice(
                   *%i[profile_id token bookmark_id]
                 )

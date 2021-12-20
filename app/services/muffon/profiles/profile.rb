@@ -65,8 +65,10 @@ module Muffon
 
       def other_profile_data
         {
-          follower_of_profile: follower_of_profile?,
-          followed_by_profile: followed_by_profile?
+          follower_of_profile:
+            follower_of_profile?,
+          followed_by_profile:
+            followed_by_profile?
         }
       end
 
@@ -84,34 +86,22 @@ module Muffon
 
       def profile_relationships_data
         {
-          follower_profiles_count: profile_follower_profiles_count,
-          following_profiles_count: profile_following_profiles_count
+          follower_profiles_count:
+            profile.follower_profiles_count,
+          following_profiles_count:
+            profile.following_profiles_count
         }
-      end
-
-      def profile_follower_profiles_count
-        profile.follower_profiles_count
-      end
-
-      def profile_following_profiles_count
-        profile.following_profiles_count
       end
 
       def profile_lastfm_data
         return {} if wrong_profile?
 
         {
-          lastfm_nickname: lastfm_nickname,
-          lastfm_session_key: lastfm_session_key
+          lastfm_nickname:
+            profile.lastfm_nickname,
+          lastfm_session_key:
+            profile.lastfm_session_key
         }.compact
-      end
-
-      def lastfm_nickname
-        profile.lastfm_nickname
-      end
-
-      def lastfm_session_key
-        profile.lastfm_session_key
       end
     end
   end

@@ -2,7 +2,7 @@ module Bandcamp
   module Search
     class Tracks
       class Track < Bandcamp::Search::Tracks
-        include Muffon::Utils::Track
+        include Bandcamp::Utils::Track
 
         def call
           data
@@ -45,7 +45,7 @@ module Bandcamp
         end
 
         def artists
-          [artist_data_formatted(track)]
+          [bandcamp_artist_data_formatted(track)]
         end
 
         def track_extra_data

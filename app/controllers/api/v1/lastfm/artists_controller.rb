@@ -51,9 +51,15 @@ module API
         end
 
         def update_artist_listeners_count
-          ::Muffon::Updater::Artist::ListenersCount.call(
-            data.slice(:artist)
+          ::Muffon::Processor::Artist::ListenersCount::Updater.call(
+            name: artist_data[:name],
+            listeners_count:
+              artist_data[:listeners_count]
           )
+        end
+
+        def artist_data
+          data[:artist] || {}
         end
 
         def description_data
@@ -79,8 +85,11 @@ module API
         def update_artist_image
           return if Rails.env.test?
 
-          ::Muffon::Updater::Artist::Image.call(
-            data.slice(:artist)
+          ::Muffon::Processor::Artist::Image::Updater.call(
+            name: artist_data[:name],
+            image_url: artist_data.dig(
+              :images, 0, :original
+            )
           )
         end
 

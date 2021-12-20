@@ -3,7 +3,7 @@ module Muffon
     module Library
       class Artists
         class Artist < Muffon::Profile::Library::Artists
-          include Muffon::Utils::Artist
+          include Muffon::Utils::Library::Artist
 
           def call
             data
@@ -13,41 +13,19 @@ module Muffon
 
           def data
             {
-              id: id,
+              id: profile_artist.id,
               favorite_id: favorite_id,
-              name: name,
-              image: image_data,
-              albums_count: albums_count,
-              tracks_count: tracks_count
+              name: artist.name,
+              image: artist.image_data,
+              albums_count:
+                profile_artist.profile_albums_count,
+              tracks_count:
+                profile_artist.profile_tracks_count
             }.compact
           end
 
-          def id
-            profile_artist.id
-          end
-
           def profile_artist
-            @args[:artist]
-          end
-
-          def name
-            profile_artist
-              .artist
-              .name
-          end
-
-          def image_data
-            profile_artist
-              .artist
-              .image_data
-          end
-
-          def albums_count
-            profile_artist.profile_albums_count
-          end
-
-          def tracks_count
-            profile_artist.profile_tracks_count
+            @args[:profile_artist]
           end
         end
       end

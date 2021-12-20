@@ -31,7 +31,7 @@ module API
             end
 
             def create_data
-              ::Muffon::Profile::Library::Track::Creator.call(
+              ::Muffon::Processor::Profile::Library::Track::Creator.call(
                 params.slice(
                   *%i[
                     profile_id token title artist_name
@@ -50,7 +50,7 @@ module API
             end
 
             def destroy_data
-              ::Muffon::Profile::Library::Track::Destroyer.call(
+              ::Muffon::Processor::Profile::Library::Track::Destroyer.call(
                 params.slice(
                   *%i[profile_id token library_id]
                 )

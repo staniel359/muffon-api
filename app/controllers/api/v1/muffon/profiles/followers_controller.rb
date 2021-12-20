@@ -26,7 +26,7 @@ module API
           end
 
           def create_data
-            ::Muffon::Profile::Follower::Creator.call(
+            ::Muffon::Processor::Profile::Follower::Creator.call(
               params.slice(
                 *%i[profile_id token other_profile_id]
               )
@@ -34,7 +34,7 @@ module API
           end
 
           def destroy_data
-            ::Muffon::Profile::Follower::Destroyer.call(
+            ::Muffon::Processor::Profile::Follower::Destroyer.call(
               params.slice(
                 *%i[profile_id token other_profile_id]
               )

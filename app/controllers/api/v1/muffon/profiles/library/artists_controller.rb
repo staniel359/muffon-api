@@ -39,7 +39,7 @@ module API
             end
 
             def create_data
-              ::Muffon::Profile::Library::Artist::Creator.call(
+              ::Muffon::Processor::Profile::Library::Artist::Creator.call(
                 params.slice(
                   *%i[profile_id token name]
                 )
@@ -71,7 +71,7 @@ module API
             end
 
             def destroy_data
-              ::Muffon::Profile::Library::Artist::Destroyer.call(
+              ::Muffon::Processor::Profile::Library::Artist::Destroyer.call(
                 params.slice(
                   *%i[profile_id token library_id]
                 )

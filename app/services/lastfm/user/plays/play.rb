@@ -37,7 +37,7 @@ module LastFM
         end
 
         def album_data
-          return {} if album_title.blank?
+          return if album_title.blank?
 
           { title: album_title }
         end

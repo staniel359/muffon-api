@@ -2,7 +2,7 @@ module Bandcamp
   module Search
     class Albums
       class Album < Bandcamp::Search::Albums
-        include Muffon::Utils::Album
+        include Bandcamp::Utils::Album
 
         def call
           data
@@ -52,7 +52,7 @@ module Bandcamp
         end
 
         def artist
-          artist_data_formatted(
+          bandcamp_artist_data_formatted(
             album
           )
         end

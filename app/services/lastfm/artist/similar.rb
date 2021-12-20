@@ -13,8 +13,7 @@ module LastFM
       end
 
       def raw_collection_list
-        @raw_collection_list ||=
-          artist['artist']
+        @raw_collection_list ||= artist['artist']
       end
 
       def total_items_count

@@ -10,7 +10,8 @@ class ProfileTrack < ApplicationRecord
   class << self
     def associated
       includes(
-        track: :artist,
+        :track,
+        profile_artist: :artist,
         profile_album: [
           :album,
           image_association

@@ -13,6 +13,10 @@ module Spotify
         album['id']
       end
 
+      def artist_name
+        artist_names
+      end
+
       def artists_list
         album['artists']
       end

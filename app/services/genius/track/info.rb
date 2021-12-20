@@ -34,24 +34,26 @@ module Genius
       end
 
       def albums
+        return if albums_list.blank?
+
         @albums ||= albums_list.map do |a|
           album_data_formatted(a)
         end
       end
 
-      def release_date
-        raw_release_date_formatted(
-          track
-        )
-      end
-
       def albums_list
-        track['albums']
+        track['albums'].presence
       end
 
       def album_data_formatted(album)
         Genius::Track::Info::Album.call(
           album: album
+        )
+      end
+
+      def release_date
+        raw_release_date_formatted(
+          track
         )
       end
 

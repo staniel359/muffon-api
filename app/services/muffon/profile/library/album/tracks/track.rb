@@ -4,7 +4,7 @@ module Muffon
       module Album
         class Tracks
           class Track < Muffon::Profile::Library::Album::Tracks
-            include Muffon::Utils::Track
+            include Muffon::Utils::Library::Track
 
             def call
               data
@@ -14,45 +14,16 @@ module Muffon
 
             def data
               {
-                id: id,
+                id: profile_track.id,
                 favorite_id: favorite_id,
-                player_id: player_id,
-                title: title,
-                created: created
+                player_id: track.player_id,
+                title: track.title,
+                created: created_formatted
               }
             end
 
-            def id
-              profile_track.id
-            end
-
             def profile_track
-              @args[:track]
-            end
-
-            def artist_name
-              profile_track
-                .track
-                .artist
-                .name
-            end
-
-            def player_id
-              profile_track
-                .track
-                .player_id
-            end
-
-            def title
-              profile_track
-                .track
-                .title
-            end
-
-            def created
-              datetime_formatted(
-                profile_track.created_at
-              )
+              @args[:profile_track]
             end
           end
         end

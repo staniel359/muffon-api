@@ -15,8 +15,7 @@ module LastFM
       end
 
       def raw_collection_list
-        @raw_collection_list ||=
-          artist['track']
+        @raw_collection_list ||= artist['track']
       end
 
       def collection_item_data_formatted(track)
