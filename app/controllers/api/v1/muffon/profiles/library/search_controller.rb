@@ -37,7 +37,7 @@ module API
             def tracks_data
               ::Muffon::Profile::Library::Search::Tracks.call(
                 params.slice(
-                  *%i[profile_id query page limit]
+                  *%i[profile_id query playlist_id page limit]
                 )
               )
             end

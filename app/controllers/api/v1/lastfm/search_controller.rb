@@ -39,7 +39,7 @@ module API
         def tracks_data
           ::LastFM::Search::Tracks.call(
             params.slice(
-              *%i[query profile_id page limit]
+              *%i[query profile_id playlist_id page limit]
             )
           )
         end

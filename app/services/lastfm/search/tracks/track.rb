@@ -19,10 +19,11 @@ module LastFM
           {
             player_id: player_id,
             source_id: SOURCE_ID,
+            playlist_track_id: playlist_track_id,
             title: title,
             artist: artist_formatted,
             artists: artists
-          }
+          }.compact
         end
 
         def track
