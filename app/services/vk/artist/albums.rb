@@ -20,7 +20,7 @@ module VK
         "/method/#{api_method}"\
           "?access_token=#{access_token}"\
           '&v=5.131'\
-          "&artist_id=#{artist_id}"\
+          "&artist_id=#{vk_artist_id}"\
           "&count=#{limit}"\
           "&offset=#{offset}"\
           "#{api_secret}"
@@ -28,7 +28,7 @@ module VK
 
       def artist_params
         {
-          artist_id: artist_id,
+          artist_id: vk_artist_id,
           count: limit,
           offset: offset
         }
@@ -45,7 +45,7 @@ module VK
 
       def name
         VK::Artist::Info.call(
-          artist_id: artist_id
+          artist_id: vk_artist_id
         ).dig(:artist, :name)
       end
 
@@ -61,7 +61,8 @@ module VK
 
       def album_formatted(album)
         VK::Artist::Albums::Album.call(
-          album: album
+          album: album,
+          profile_id: @args[:profile_id]
         )
       end
     end

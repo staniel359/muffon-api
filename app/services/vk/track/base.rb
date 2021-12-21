@@ -26,10 +26,10 @@ module VK
       end
 
       def track_params
-        { audios: track_id }
+        { audios: vk_track_id }
       end
 
-      def track_id
+      def vk_track_id
         @args[:track_id]
       end
 
@@ -37,7 +37,7 @@ module VK
         "/method/#{API_METHOD}"\
           "?access_token=#{access_token}"\
           '&v=5.131'\
-          "&audios=#{track_id}"\
+          "&audios=#{vk_track_id}"\
           "#{api_secret}"
       end
 

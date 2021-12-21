@@ -13,7 +13,7 @@ module VK
         )
       end
 
-      def artist_id
+      def vk_artist_id
         @args[:artist_id]
       end
 
