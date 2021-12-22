@@ -4,6 +4,11 @@ class Conversation < ApplicationRecord
 
   has_many :messages, dependent: :destroy
 
+  validates :other_profile_id,
+            uniqueness: {
+              scope: :profile_id
+            }
+
   class << self
     def associated
       includes(

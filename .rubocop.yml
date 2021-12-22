@@ -27,9 +27,6 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
 
-Rails/UniqueValidationWithoutIndex:
-  Enabled: false
-
 Style/Documentation:
   Enabled: false
 

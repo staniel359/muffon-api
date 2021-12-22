@@ -1,14 +1,13 @@
 class ProfileArtist < ApplicationRecord
   after_create_commit :create_recommendations
+
   before_destroy :clear_recommendations
 
   belongs_to :profile
   belongs_to :artist
 
-  has_many :profile_albums,
-           dependent: :destroy
-  has_many :profile_tracks,
-           dependent: :destroy
+  has_many :profile_albums, dependent: :destroy
+  has_many :profile_tracks, dependent: :destroy
 
   validates :artist_id,
             uniqueness: {
