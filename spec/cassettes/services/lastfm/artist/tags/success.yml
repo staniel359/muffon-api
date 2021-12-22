@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=artist.getTopTags
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=0&format=json&method=artist.getTopTags
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,9 +21,9 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - openresty/1.9.15.1
+      - openresty/1.13.6.2
       Date:
-      - Wed, 26 May 2021 10:37:27 GMT
+      - Wed, 22 Dec 2021 12:27:35 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -54,5 +54,5 @@ http_interactions:
         revival","url":"https://www.last.fm/tag/Post-punk+revival"},{"count":1,"name":"hazy
         beach","url":"https://www.last.fm/tag/hazy+beach"}],"@attr":{"artist":"Wild
         Nothing"}}}'
-  recorded_at: Wed, 26 May 2021 10:37:28 GMT
+  recorded_at: Wed, 22 Dec 2021 12:27:36 GMT
 recorded_with: VCR 6.0.0

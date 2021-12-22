@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?album=Nocturne&api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=1&format=json&method=album.getInfo
+    uri: https://ws.audioscrobbler.com/2.0?album=Nocturne&api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&method=album.getInfo
     body:
       encoding: US-ASCII
       string: ''
@@ -10,24 +10,24 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
       - ws.audioscrobbler.com
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Server:
-      - openresty/1.9.15.1
+      - openresty/1.13.6.2
       Date:
-      - Thu, 03 Jun 2021 06:12:33 GMT
+      - Wed, 22 Dec 2021 12:27:00 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '50'
+      - '39'
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -40,6 +40,6 @@ http_interactions:
       - clear
     body:
       encoding: UTF-8
-      string: '{"error":6,"message":"Album not found","links":[]}'
-  recorded_at: Thu, 03 Jun 2021 06:12:33 GMT
+      string: '{"message":"Album not found","error":6}'
+  recorded_at: Wed, 22 Dec 2021 12:27:00 GMT
 recorded_with: VCR 6.0.0

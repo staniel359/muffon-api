@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=1&format=json&limit=200&method=album.search
+    uri: https://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=200&method=album.search
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,9 +21,9 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - openresty/1.9.15.1
+      - openresty/1.13.6.2
       Date:
-      - Thu, 27 May 2021 13:56:21 GMT
+      - Wed, 22 Dec 2021 12:27:38 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"200","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Thu, 27 May 2021 13:56:21 GMT
+  recorded_at: Wed, 22 Dec 2021 12:27:38 GMT
 recorded_with: VCR 6.0.0

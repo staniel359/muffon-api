@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=1&format=json&method=track.getTopTags&track=chinatown
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wild%20nothing&autocorrect=0&format=json&method=track.getTopTags&track=chinatown
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,9 +21,9 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - openresty/1.9.15.1
+      - openresty/1.13.6.2
       Date:
-      - Thu, 27 May 2021 15:08:50 GMT
+      - Wed, 22 Dec 2021 12:27:54 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -75,5 +75,5 @@ http_interactions:
         of 2015","url":"https://www.last.fm/tag/song+of+2015"},{"count":5,"name":"to
         all the boys ive loved before","url":"https://www.last.fm/tag/to+all+the+boys+ive+loved+before"}],"@attr":{"artist":"Wild
         Nothing","track":"Chinatown"}}}'
-  recorded_at: Thu, 27 May 2021 15:08:51 GMT
+  recorded_at: Wed, 22 Dec 2021 12:27:54 GMT
 recorded_with: VCR 6.0.0

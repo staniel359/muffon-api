@@ -14,7 +14,7 @@ module LastFM
         method: api_method,
         api_key: api_key,
         format: 'json',
-        autocorrect: '1'
+        autocorrect: 0
       }
     end
 
