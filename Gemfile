@@ -25,8 +25,8 @@ group :development do
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-sidekiq', require: false
   gem 'capistrano3-puma', require: false
+  gem 'debug'
   gem 'listen'
-  gem 'pry'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
