@@ -20,7 +20,7 @@ module Muffon
         end
 
         def create_params
-          @args.slice(
+          @args.permit!.slice(
             *profile_params
           )
         end
