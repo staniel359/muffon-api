@@ -11,6 +11,8 @@ module YouTube
         private
 
         def data
+          return if snippet.blank?
+
           {
             title: title,
             youtube_id: youtube_id,

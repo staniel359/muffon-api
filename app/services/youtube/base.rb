@@ -14,7 +14,7 @@ module YouTube
     end
 
     def api_key
-      secrets.youtube[:api_key]
+      secrets.google[:api_key]
     end
 
     def videos

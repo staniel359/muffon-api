@@ -24,8 +24,7 @@ SECRET_KEYS = [
   %i[vk access_token_kate],
   %i[yandex_music csrf_token],
   %i[yandex_music email],
-  %i[yandex_music password],
-  %i[youtube api_key]
+  %i[yandex_music password]
 ].freeze
 
 VCR.configure do |config|

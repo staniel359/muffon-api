@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&maxResults=5&pageToken=CAUQAA&part=snippet&playlistId=UUZBXFjbyp1gezLRsDbG2hKQ
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<GOOGLE_API_KEY>&maxResults=5&pageToken=CAUQAA&part=snippet&playlistId=UUZBXFjbyp1gezLRsDbG2hKQ
     body:
       encoding: US-ASCII
       string: ''

@@ -11,7 +11,7 @@ module YouTube
         {
           prev_page: prev_page,
           next_page: next_page,
-          videos: videos
+          videos: videos.compact
         }
       end
 

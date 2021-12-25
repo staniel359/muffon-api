@@ -617,6 +617,7 @@ Rails.application.routes.draw do
             get '', action: :info
             get 'description'
             get 'tags'
+            get 'related'
           end
         end
       end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/channels?id=UCZBXFjbyp1gezLRsDbG2hKQ&key=<YOUTUBE_API_KEY>&part=snippet,contentDetails
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UCZBXFjbyp1gezLRsDbG2hKQ&key=<GOOGLE_API_KEY>&part=snippet,contentDetails
     body:
       encoding: US-ASCII
       string: ''
@@ -51,7 +51,7 @@ http_interactions:
   recorded_at: Sun, 13 Jun 2021 11:32:52 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<YOUTUBE_API_KEY>&maxResults=20&pageToken&part=snippet&playlistId=UUZBXFjbyp1gezLRsDbG2hKQ
+    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<GOOGLE_API_KEY>&maxResults=20&pageToken&part=snippet&playlistId=UUZBXFjbyp1gezLRsDbG2hKQ
     body:
       encoding: US-ASCII
       string: ''

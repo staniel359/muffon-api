@@ -34,6 +34,18 @@ module YouTube
         { video: video_data }
       end
 
+      def video_base_data
+        {
+          title: title,
+          youtube_id: youtube_id,
+          channel: channel_data
+        }
+      end
+
+      def youtube_id
+        video['id']
+      end
+
       def video
         @video ||= videos_list[0]
       end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=5&pageToken=CAUQAA&part=snippet&q=wild%20nothing%20chinatown&type=video
+    uri: https://www.googleapis.com/youtube/v3/search?key=<GOOGLE_API_KEY>&maxResults=5&pageToken=CAUQAA&part=snippet&q=wild%20nothing%20chinatown&type=video
     body:
       encoding: US-ASCII
       string: ''

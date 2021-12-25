@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/playlistItems?key=<GOOGLE_API_KEY>&maxResults=20&pageToken&part=snippet&playlistId=wejlhg239gh23
+    uri: https://www.googleapis.com/youtube/v3/search?key=<GOOGLE_API_KEY>&maxResults=20&part=snippet&relatedToVideoId=wejlhg239gh23&type=video
     body:
       encoding: US-ASCII
       string: ''
@@ -10,15 +10,15 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
       - www.googleapis.com
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 400
+      message: Bad Request
     headers:
       Vary:
       - Origin
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 10 Jun 2021 09:09:07 GMT
+      - Sat, 25 Dec 2021 17:06:17 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -39,7 +39,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
         ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
@@ -48,18 +48,17 @@ http_interactions:
       string: |
         {
           "error": {
-            "code": 404,
-            "message": "The playlist identified with the request's \u003ccode\u003eplaylistId\u003c/code\u003e parameter cannot be found.",
+            "code": 400,
+            "message": "Request contains an invalid argument.",
             "errors": [
               {
-                "message": "The playlist identified with the request's \u003ccode\u003eplaylistId\u003c/code\u003e parameter cannot be found.",
-                "domain": "youtube.playlistItem",
-                "reason": "playlistNotFound",
-                "location": "playlistId",
-                "locationType": "parameter"
+                "message": "Request contains an invalid argument.",
+                "domain": "global",
+                "reason": "badRequest"
               }
-            ]
+            ],
+            "status": "INVALID_ARGUMENT"
           }
         }
-  recorded_at: Thu, 10 Jun 2021 09:09:07 GMT
+  recorded_at: Sat, 25 Dec 2021 17:06:17 GMT
 recorded_with: VCR 6.0.0

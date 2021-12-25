@@ -6,7 +6,10 @@ module YouTube
       private
 
       def primary_args
-        [@args[:query]]
+        [
+          @args[:query] ||
+            @args[:video_id]
+        ]
       end
 
       def link
@@ -25,7 +28,9 @@ module YouTube
           type: 'video',
           part: 'snippet',
           maxResults: limit,
-          pageToken: @args[:page]
+          pageToken: @args[:page],
+          relatedToVideoId:
+            @args[:video_id]
         }.compact
       end
 

@@ -4,24 +4,12 @@ module YouTube
       private
 
       def video_data
-        base_data
-          .merge(extra_data)
+        video_base_data
+          .merge(video_extra_data)
           .merge(with_more_data)
       end
 
-      def base_data
-        {
-          title: title,
-          youtube_id: youtube_id,
-          channel: channel_data
-        }
-      end
-
-      def youtube_id
-        video['id']
-      end
-
-      def extra_data
+      def video_extra_data
         {
           image: image_data_formatted,
           views_count: views_count,

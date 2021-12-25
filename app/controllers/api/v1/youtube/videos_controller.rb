@@ -14,6 +14,10 @@ module API
           render_data_with_status
         end
 
+        def related
+          render_data_with_status
+        end
+
         private
 
         def info_data
@@ -31,6 +35,14 @@ module API
         def tags_data
           ::YouTube::Video::Tags.call(
             params.slice(:video_id)
+          )
+        end
+
+        def related_data
+          ::YouTube::Video::Related.call(
+            params.slice(
+              *%i[video_id page limit]
+            )
           )
         end
       end

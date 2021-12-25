@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<YOUTUBE_API_KEY>&maxResults=20&part=snippet&q=wejlhg239gh23&type=video
+    uri: https://www.googleapis.com/youtube/v3/search?key=<GOOGLE_API_KEY>&maxResults=20&part=snippet&q=wejlhg239gh23&type=video
     body:
       encoding: US-ASCII
       string: ''
