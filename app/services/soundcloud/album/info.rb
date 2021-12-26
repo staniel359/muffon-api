@@ -51,7 +51,7 @@ module SoundCloud
         [
           raw_genres,
           raw_tags
-        ].flatten.reject(&:blank?)
+        ].flatten.compact_blank
       end
 
       def raw_genres

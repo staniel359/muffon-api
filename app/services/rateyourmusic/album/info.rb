@@ -82,7 +82,7 @@ module RateYourMusic
         album
           .css('.release_genres .genre')
           .map(&:text)
-          .reject(&:blank?)
+          .compact_blank
       end
 
       def tracks
