@@ -19,7 +19,6 @@ module LastFM
           {
             source_id: SOURCE_ID,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data,
             listeners_count: listeners_count

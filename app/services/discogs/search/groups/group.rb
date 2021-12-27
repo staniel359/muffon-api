@@ -22,7 +22,6 @@ module Discogs
             discogs_id: discogs_id,
             discogs_type: 'group',
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end

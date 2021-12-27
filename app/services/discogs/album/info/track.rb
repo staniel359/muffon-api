@@ -20,7 +20,6 @@ module Discogs
             player_id: player_id,
             source_id: 'lastfm',
             title: title,
-            artist: artist_formatted,
             artists: artists,
             duration: duration
           }

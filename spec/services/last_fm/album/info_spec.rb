@@ -5,7 +5,7 @@ RSpec.describe LastFM::Album::Info do
     context 'when artist and album exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/album/info/success' do
-          subject.call(artist: 'wild nothing', album: 'nocturne')
+          subject.call(artist: 'wild nothing', album: 'nocturne', profile_id: 1)
         end
       end
 

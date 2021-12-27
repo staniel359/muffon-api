@@ -14,7 +14,6 @@ module Deezer
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -35,12 +34,6 @@ module Deezer
 
       def labels
         album['LABEL_NAME'].split('/')
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

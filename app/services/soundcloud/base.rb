@@ -15,14 +15,22 @@ module SoundCloud
     end
 
     def artists
-      [artist_data_formatted]
+      [artist_data]
     end
 
-    def artist_data_formatted
+    def artist_data
       {
-        name: artist['username'],
-        soundcloud_id: artist['id']
+        name: artist_name,
+        soundcloud_id: artist_soundcloud_id
       }
+    end
+
+    def artist_name
+      artist['username']
+    end
+
+    def artist_soundcloud_id
+      artist['id']
     end
 
     def image_data_formatted(image, model)

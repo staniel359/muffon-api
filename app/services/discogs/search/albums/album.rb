@@ -20,7 +20,6 @@ module Discogs
             source_id: SOURCE_ID,
             discogs_id: discogs_id,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data,
             release_date: release_date
@@ -43,7 +42,11 @@ module Discogs
         end
 
         def artists_list
-          [{ 'name' => full_title[1] }]
+          [artist_data]
+        end
+
+        def artist_data
+          { 'name' => full_title[1] }
         end
 
         def image

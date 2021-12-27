@@ -15,7 +15,6 @@ module RateYourMusic
             source_id: SOURCE_ID,
             rateyourmusic_slug: rateyourmusic_slug,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data,
             release_date: release_date

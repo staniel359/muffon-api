@@ -21,10 +21,14 @@ module Muffon
         def artist_data
           @artist_data ||=
             LastFM::Artist::Tracks.call(
-              artist: artist_names,
+              artist: tag_artist_name,
               limit: 1,
               page: rand(1..20)
             )[:artist]
+        end
+
+        def tag_artist_name
+          artists.dig(0, :name)
         end
 
         def tracks
@@ -43,10 +47,7 @@ module Muffon
         end
 
         def track_artist_data
-          {
-            artist: artist_formatted,
-            artists: artists
-          }
+          { artists: artists }
         end
       end
     end

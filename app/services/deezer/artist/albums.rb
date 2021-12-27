@@ -45,9 +45,15 @@ module Deezer
       end
 
       def name
+        artist_info_data.dig(
+          :artist, :name
+        )
+      end
+
+      def artist_info_data
         Deezer::Artist::Info.call(
           artist_id: @args[:artist_id]
-        ).dig(:artist, :name)
+        )
       end
 
       def total_items_count

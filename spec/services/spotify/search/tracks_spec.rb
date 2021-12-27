@@ -5,7 +5,7 @@ RSpec.describe Spotify::Search::Tracks do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/spotify/search/tracks/success' do
-          subject.call(query: 'a', limit: 5, page: 2)
+          subject.call(query: 'a', limit: 5, page: 2, profile_id: 1)
         end
       end
 

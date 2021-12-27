@@ -23,9 +23,7 @@ module SoundCloud
         end
 
         def test_client_id
-          secrets.soundcloud[
-            :test_v2_client_id
-        ]
+          secrets.soundcloud[:test_v2_client_id]
         end
 
         def global_value

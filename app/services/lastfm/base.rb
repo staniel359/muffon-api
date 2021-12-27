@@ -73,7 +73,11 @@ module LastFM
     end
 
     def artists
-      [artist_data_formatted]
+      [artist_data]
+    end
+
+    def artist_data
+      { name: artist_name }
     end
 
     def image_data_formatted(image, model)
@@ -83,8 +87,7 @@ module LastFM
     end
 
     def with_more_tags?
-      defined?(tags_list) &&
-        tags_list.size >= 5
+      tags_list.size >= 5
     end
 
     def description_formatted(data)

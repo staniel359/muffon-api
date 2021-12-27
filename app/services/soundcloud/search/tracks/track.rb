@@ -22,7 +22,6 @@ module SoundCloud
             source_id: SOURCE_ID,
             soundcloud_id: soundcloud_id,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end

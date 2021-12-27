@@ -52,12 +52,7 @@ module RateYourMusic
         { search: search_data }
       end
 
-      def search_data
-        {
-          page: page,
-          collection_name.to_sym => collection
-        }
-      end
+      alias search_data paginated_data
     end
   end
 end

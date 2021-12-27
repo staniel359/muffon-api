@@ -23,7 +23,6 @@ module YandexMusic
             yandex_music_id: yandex_music_id,
             title: title,
             extra_title: extra_title,
-            artist: artist_formatted,
             artists: artists
           }.compact
         end

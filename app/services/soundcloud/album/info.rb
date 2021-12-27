@@ -14,7 +14,6 @@ module SoundCloud
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -24,7 +23,7 @@ module SoundCloud
           image: image_data,
           release_date: release_date,
           description: description_truncated,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
       end
@@ -44,7 +43,7 @@ module SoundCloud
       end
 
       def description
-        album['description'] || ''
+        album['description']
       end
 
       def tags_list
@@ -62,12 +61,6 @@ module SoundCloud
         album['tags'].split(
           /\s?"\s?/
         )
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

@@ -21,7 +21,7 @@ module LastFM
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,
-          tags: tags,
+          tags: tags&.first(5),
           recommendation: recommendation_data
         }.compact
       end
@@ -63,6 +63,8 @@ module LastFM
       end
 
       def recommendation_data
+        return if Rails.env.test?
+
         LastFM::Artist::Info::Recommendation.call(
           profile_id: @args[:profile_id],
           artist_name: name

@@ -5,7 +5,7 @@ RSpec.describe LastFM::Search::Artists do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/search/artists/success' do
-          subject.call(query: 'wild nothing', limit: 5, page: 2)
+          subject.call(query: 'wild nothing', limit: 5, page: 2, profile_id: 1)
         end
       end
 

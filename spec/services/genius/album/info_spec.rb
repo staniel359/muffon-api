@@ -5,7 +5,7 @@ RSpec.describe Genius::Album::Info do
     context 'when id present' do
       let(:output) do
         VCR.use_cassette 'services/genius/album/info/success' do
-          subject.call(album_id: '168168')
+          subject.call(album_id: '168168', profile_id: 1)
         end
       end
 

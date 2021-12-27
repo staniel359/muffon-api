@@ -17,12 +17,12 @@ module Muffon
 
           def tags_list
             @tags_list ||=
-              artist_data.dig(
+              artist_tags_data.dig(
                 :artist, :tags
               )
           end
 
-          def artist_data
+          def artist_tags_data
             LastFM::Artist::Tags.call(
               artist: find_artist.name
             )

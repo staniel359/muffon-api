@@ -44,27 +44,29 @@ module VK
       end
 
       def name
+        artist_info_data.dig(
+          :artist, :name
+        )
+      end
+
+      def artist_info_data
         VK::Artist::Info.call(
           artist_id: vk_artist_id
-        ).dig(:artist, :name)
+        )
       end
 
       def total_items_count
         response_data['count'].to_i
       end
 
-      def collection
-        albums_list.map do |a|
-          album_formatted(a)
-        end
-      end
-
-      def album_formatted(album)
+      def album_data_formatted(album)
         VK::Artist::Albums::Album.call(
           album: album,
           profile_id: @args[:profile_id]
         )
       end
+
+      alias collection albums
     end
   end
 end

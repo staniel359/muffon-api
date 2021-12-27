@@ -23,28 +23,26 @@ module Deezer
         track['SNG_ID'].to_i
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists_list
         track['ARTISTS']
       end
 
-      def albums
-        @albums ||= [
-          album_data_formatted
-        ].presence
-      end
-
-      def album_data_formatted
-        return if track['ALB_TITLE'].blank?
+      def album_data
+        return if album_title.blank?
 
         {
-          source_id: self.class::SOURCE_ID,
-          deezer_id: track['ALB_ID'].to_i,
-          title: track['ALB_TITLE']
+          source_id: source_id,
+          deezer_id: album_deezer_id,
+          title: album_title
         }
+      end
+
+      def album_title
+        track['ALB_TITLE']
+      end
+
+      def album_deezer_id
+        track['ALB_ID'].to_i
       end
 
       def image_data
@@ -61,7 +59,7 @@ module Deezer
         {
           present: audio_file_present?,
           track_id: deezer_id,
-          source_id: self.class::SOURCE_ID
+          source_id: source_id
         }
       end
 

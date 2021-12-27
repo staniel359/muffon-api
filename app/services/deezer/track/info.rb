@@ -16,15 +16,13 @@ module Deezer
           deezer_id: deezer_id,
           title: title,
           extra_title: extra_title,
-          artist: artist_formatted,
           artists: artists
         }.compact
       end
 
       def track_extra_data
         {
-          album: album_formatted,
-          albums: albums,
+          album: album_data,
           image: image_data,
           duration: duration,
           duration_seconds: duration_seconds,
@@ -48,9 +46,10 @@ module Deezer
       end
 
       def audio_link
-        @audio_link ||= Deezer::Utils::Audio::File.call(
-          track_id: deezer_id
-        )
+        @audio_link ||=
+          Deezer::Utils::Audio::File.call(
+            track_id: deezer_id
+          )
       end
     end
   end

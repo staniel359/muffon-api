@@ -13,32 +13,30 @@ module Spotify
         track['id']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists_list
         track['artists']
       end
 
-      def albums
-        @albums ||= [
-          album_data_formatted
-        ].compact.presence
-      end
-
-      def album_data_formatted
-        return if album['id'].blank?
+      def album_data
+        return if album.blank?
 
         {
-          source_id: self.class::SOURCE_ID,
-          spotify_id: album['id'],
-          title: album['name']
+          source_id: source_id,
+          spotify_id: album_id,
+          title: album_title
         }
       end
 
       def album
-        @album ||= track['album']
+        track['album']
+      end
+
+      def album_id
+        album['id']
+      end
+
+      def album_title
+        album['name']
       end
 
       def image_data
@@ -57,7 +55,7 @@ module Spotify
         {
           present: true,
           track_id: spotify_id,
-          source_id: self.class::SOURCE_ID
+          source_id: source_id
         }
       end
     end

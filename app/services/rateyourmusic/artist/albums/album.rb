@@ -20,10 +20,15 @@ module RateYourMusic
             source_id: SOURCE_ID,
             rateyourmusic_path: rateyourmusic_path,
             title: title,
+            artists: artists,
             image: image_data,
             release_date: release_date,
             listeners_count: listeners_count
           }.compact
+        end
+
+        def artist_name
+          'Various Artists'
         end
 
         def title
@@ -44,16 +49,8 @@ module RateYourMusic
           album_block['href']
         end
 
-        def artists
-          return [] if artists_list.blank?
-
-          artists_list.map do |a|
-            artist_data_formatted(a)
-          end
-        end
-
         def artists_list
-          @artists_list ||= album.css(
+          album.css(
             '.disco_sub_artist'
           )
         end

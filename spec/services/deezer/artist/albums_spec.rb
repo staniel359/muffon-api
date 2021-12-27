@@ -5,7 +5,7 @@ RSpec.describe Deezer::Artist::Albums do
     context 'when artist_id present' do
       let(:output) do
         VCR.use_cassette 'services/deezer/artist/albums/success' do
-          subject.call(artist_id: '1049', album_type: 'album', limit: 5, page: 2)
+          subject.call(artist_id: '1049', album_type: 'album', limit: 5, page: 2, profile_id: 1)
         end
       end
 

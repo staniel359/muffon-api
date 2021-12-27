@@ -5,9 +5,7 @@ RSpec.describe Odnoklassniki::Artist::Albums do
     context 'when artist_id present' do
       let(:output) do
         VCR.use_cassette 'services/odnoklassniki/artist/albums/success' do
-          subject.call(
-            artist_id: '122882931409564', limit: 5, page: 2
-          )
+          subject.call(artist_id: '122882931409564', limit: 5, page: 2, profile_id: 1)
         end
       end
 

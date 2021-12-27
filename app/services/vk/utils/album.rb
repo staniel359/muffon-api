@@ -25,13 +25,8 @@ module VK
         album['access_key']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists_list
-        album['main_artists'] ||
-          [artist]
+        album['main_artists'] || [artist]
       end
 
       def artist

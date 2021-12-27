@@ -5,7 +5,7 @@ RSpec.describe Deezer::Search::Albums do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/deezer/search/albums/success' do
-          subject.call(query: 'a', limit: 5, page: 2)
+          subject.call(query: 'a', limit: 5, page: 2, profile_id: 1)
         end
       end
 

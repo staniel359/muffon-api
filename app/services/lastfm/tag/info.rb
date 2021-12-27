@@ -4,7 +4,9 @@ module LastFM
       private
 
       def params
-        super.merge(lang_params)
+        super.merge(
+          lang_params
+        )
       end
 
       def tag_data

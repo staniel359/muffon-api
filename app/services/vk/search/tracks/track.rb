@@ -23,7 +23,6 @@ module VK
             vk_id: vk_id,
             title: title,
             extra_title: extra_title,
-            artist: artist_formatted,
             artists: artists
           }.compact
         end
@@ -34,8 +33,7 @@ module VK
 
         def track_extra_data
           {
-            album: album_formatted,
-            albums: albums,
+            album: album_data,
             image: image_data,
             duration: duration,
             duration_seconds: duration_seconds,

@@ -5,7 +5,7 @@ RSpec.describe YandexMusic::Album::Info do
     context 'when album_id present' do
       let(:output) do
         VCR.use_cassette 'services/yandexmusic/album/info/success' do
-          subject.call(album_id: '7375624')
+          subject.call(album_id: '7375624', profile_id: 1)
         end
       end
 

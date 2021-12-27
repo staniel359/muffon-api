@@ -14,7 +14,6 @@ module Odnoklassniki
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -23,19 +22,13 @@ module Odnoklassniki
         {
           image: image_data,
           release_date: release_date,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
       end
 
       def tags_list
         album['genres']
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

@@ -5,7 +5,7 @@ RSpec.describe Odnoklassniki::Album::Info do
     context 'when album_id present' do
       let(:output) do
         VCR.use_cassette 'services/odnoklassniki/album/info/success' do
-          subject.call(album_id: '122881922573186')
+          subject.call(album_id: '122881922573186', profile_id: 1)
         end
       end
 

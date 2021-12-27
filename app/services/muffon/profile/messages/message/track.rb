@@ -13,8 +13,7 @@ module Muffon
             {
               title: track.title,
               player_id: track.player_id,
-              artist: artist_formatted,
-              artists: artists
+              artist: artist_data
             }
           end
 
@@ -22,14 +21,12 @@ module Muffon
             @args[:track]
           end
 
-          def artists
-            [artist_data_formatted]
+          def artist_data
+            { name: artist.name }
           end
 
-          def artist_data_formatted
-            track.artist.slice(
-              :name
-            )
+          def artist
+            @artist ||= track.artist
           end
         end
       end

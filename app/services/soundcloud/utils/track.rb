@@ -13,12 +13,8 @@ module SoundCloud
         track['id']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artist
-        @artist ||= track['user']
+        track['user']
       end
 
       def image_data
@@ -36,7 +32,7 @@ module SoundCloud
         {
           present: audio_present?,
           track_id: soundcloud_id,
-          source_id: self.class::SOURCE_ID
+          source_id: source_id
         }
       end
 

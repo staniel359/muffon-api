@@ -3,7 +3,7 @@ module Helpers
     module Search
       class << self
         def albums_data
-          {:search=>{:albums=>[{:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Nocturne - mu-sique.com"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Nocturne [+CD] Disc 1"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Nocturne (2012)"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Wild Nothing - Nocturne (2012)"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"2012 - Nocturne"}], :page=>2, :total_pages=>20}}
+          {:search=>{:albums=>[{:artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Nocturne - mu-sique.com"}, {:artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Nocturne [+CD] Disc 1"}, {:artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Nocturne (2012)"}, {:artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"Wild Nothing - Nocturne (2012)"}, {:artists=>[{:name=>"Wild Nothing"}], :source_id=>"lastfm", :title=>"2012 - Nocturne"}], :page=>2, :total_pages=>20}}
         end
 
         def artists_data
@@ -15,7 +15,7 @@ module Helpers
         end
 
         def tracks_data
-          {:search=>{:page=>2, :total_pages=>39, :tracks=>[{:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"Gemini - Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"Chinatown (Live from Brooklyn Steel)"}, {:artist=>{:name=>"Wild_Nothing"}, :artists=>[{:name=>"Wild_Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"10 Chinatown"}, {:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"\"Chinatown\" from the album Gemini (Captured Tracks) - Wild N"}]}}
+          {:search=>{:page=>2, :total_pages=>39, :tracks=>[{:artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"Gemini - Chinatown"}, {:artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"Chinatown (Live from Brooklyn Steel)"}, {:artists=>[{:name=>"Wild_Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"Chinatown"}, {:artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"10 Chinatown"}, {:artists=>[{:name=>"Wild Nothing"}], :player_id=>"1", :source_id=>"lastfm", :title=>"\"Chinatown\" from the album Gemini (Captured Tracks) - Wild N"}]}}
         end
       end
     end

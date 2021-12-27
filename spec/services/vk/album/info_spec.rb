@@ -5,10 +5,7 @@ RSpec.describe VK::Album::Info do
     context 'when album_id given' do
       let(:output) do
         VCR.use_cassette 'services/vk/album/info/success' do
-          subject.call(
-            album_id: '1916168', owner_id: '-2000916168',
-            access_key: '43c15929fe11506130'
-          )
+          subject.call(album_id: '1916168', owner_id: '-2000916168', access_key: '43c15929fe11506130', profile_id: 1)
         end
       end
 

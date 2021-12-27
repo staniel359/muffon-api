@@ -5,9 +5,7 @@ RSpec.describe Spotify::Artist::Albums do
     context 'when artist_id present' do
       let(:output) do
         VCR.use_cassette 'services/spotify/artist/albums/success' do
-          subject.call(
-            artist_id: '1aSxMhuvixZ8h9dK9jIDwL', album_type: 'album', limit: 5, page: 2
-          )
+          subject.call(artist_id: '1aSxMhuvixZ8h9dK9jIDwL', album_type: 'album', limit: 5, page: 2, profile_id: 1)
         end
       end
 

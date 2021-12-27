@@ -10,9 +10,8 @@ module Bandcamp
       end
 
       def artists_list
-        @artists_list ||= response_data[
-          'artists'
-        ]
+        @artists_list ||=
+          response_data['artists']
       end
 
       def collection_list

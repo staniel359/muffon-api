@@ -17,21 +17,8 @@ module YandexMusic
         track['id'].to_i
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists_list
         track['artists']
-      end
-
-      def albums
-        return if albums_list.blank?
-
-        @albums ||=
-          albums_list.map do |a|
-            album_data_formatted(a)
-          end
       end
 
       def albums_list
@@ -40,7 +27,7 @@ module YandexMusic
 
       def album_data_formatted(album)
         {
-          source_id: self.class::SOURCE_ID,
+          source_id: source_id,
           yandex_music_id: album['id'],
           title: album['title'],
           extra_title: album['version']
@@ -59,10 +46,14 @@ module YandexMusic
 
       def audio_data
         {
-          present: track['available'],
+          present: track_present?,
           track_id: yandex_music_id,
-          source_id: self.class::SOURCE_ID
+          source_id: source_id
         }
+      end
+
+      def track_present?
+        track['available']
       end
     end
   end

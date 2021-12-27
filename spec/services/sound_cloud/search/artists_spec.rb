@@ -5,7 +5,7 @@ RSpec.describe SoundCloud::Search::Artists do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/soundcloud/search/artists/success' do
-          subject.call(query: 'wild nothing', limit: 10, page: 2)
+          subject.call(query: 'wild nothing', limit: 10, page: 2, profile_id: 1)
         end
       end
 

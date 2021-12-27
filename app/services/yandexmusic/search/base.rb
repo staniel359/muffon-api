@@ -14,12 +14,15 @@ module YandexMusic
       end
 
       def collection_list
-        @collection_list ||=
+        collection_data['results']
+      end
+
+      def collection_data
+        @collection_data ||=
           response_data.dig(
             'result',
-            collection_name,
-            'results'
-          )
+            collection_name
+          ) || {}
       end
 
       def collection_name
@@ -53,19 +56,11 @@ module YandexMusic
       end
 
       def total_items_count
-        response_data.dig(
-          'result',
-          collection_name,
-          'total'
-        )
+        collection_data['total']
       end
 
       def limit
-        response_data.dig(
-          'result',
-          collection_name,
-          'perPage'
-        )
+        collection_data['perPage']
       end
     end
   end

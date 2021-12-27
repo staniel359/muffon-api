@@ -16,15 +16,13 @@ module Spotify
           source_id: SOURCE_ID,
           spotify_id: spotify_id,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
 
       def track_extra_data
         {
-          album: album_formatted,
-          albums: albums,
+          album: album_data,
           image: image_data,
           duration: duration,
           duration_seconds: duration_seconds,

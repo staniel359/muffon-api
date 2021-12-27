@@ -67,10 +67,8 @@ module Odnoklassniki
       response_data['error'].present?
     end
 
-    def artists
-      artists_list.map do |a|
-        artist_data_formatted(a)
-      end
+    def artist_name
+      artist_names
     end
 
     def artist_data_formatted(artist)

@@ -48,16 +48,14 @@ module Deezer
       )
     end
 
-    def artists
-      artists_list.map do |a|
-        artist_data_formatted(a)
-      end
+    def artist_name
+      artist_names
     end
 
-    def artist_data_formatted(data)
+    def artist_data_formatted(artist)
       {
-        name: data['ART_NAME'],
-        deezer_id: data['ART_ID'].to_i
+        name: artist['ART_NAME'],
+        deezer_id: artist['ART_ID'].to_i
       }
     end
 

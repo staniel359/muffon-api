@@ -13,19 +13,19 @@ module Bandcamp
         track['track_id']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists
-        [artist_data_formatted]
+        [artist_data]
       end
 
-      def artist_data_formatted
+      def artist_data
         {
-          name: track['band_name'],
+          name: artist_name,
           bandcamp_id: artist_bandcamp_id
         }
+      end
+
+      def artist_name
+        track['band_name'] || 'Bandcamp'
       end
 
       def artist_bandcamp_id

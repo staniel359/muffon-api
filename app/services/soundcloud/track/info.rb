@@ -16,7 +16,6 @@ module SoundCloud
           source_id: SOURCE_ID,
           soundcloud_id: soundcloud_id,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -27,13 +26,13 @@ module SoundCloud
           duration: duration,
           duration_seconds: duration_seconds,
           description: description_truncated,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           audio: audio_data
         }.compact
       end
 
       def description
-        track['description'] || ''
+        track['description']
       end
 
       def tags_list
@@ -68,9 +67,10 @@ module SoundCloud
       end
 
       def streams_response
-        @streams_response ||= RestClient.get(
-          streams_link, headers
-        )
+        @streams_response ||=
+          RestClient.get(
+            streams_link, headers
+          )
       end
 
       def streams_link

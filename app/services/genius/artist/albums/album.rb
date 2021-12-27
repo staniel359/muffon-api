@@ -21,8 +21,7 @@ module Genius
             genius_id: genius_id,
             title: title,
             image: image_data,
-            release_date: release_date,
-            listeners_count: listeners_count
+            release_date: release_date
           }.compact
         end
 

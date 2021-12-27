@@ -18,16 +18,9 @@ module Bandcamp
       "#{BASE_LINK}/band_details"
     end
 
-    def albums
-      @albums ||= [
-        album_data_formatted
-      ].compact.presence
-    end
-
-    def image_data_formatted(image, model)
+    def image_data_formatted(image)
       Bandcamp::Utils::Image.call(
-        image: image,
-        model: model
+        image: image
       )
     end
 

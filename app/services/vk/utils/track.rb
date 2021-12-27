@@ -13,13 +13,8 @@ module VK
         track['subtitle']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists_list
-        track['main_artists'] ||
-          [artist]
+        track['main_artists'] || [artist]
       end
 
       def artist
@@ -30,26 +25,36 @@ module VK
         "#{track['owner_id']}_#{track['id']}"
       end
 
-      def albums
-        [
-          album_data_formatted
-        ].compact.presence
-      end
-
-      def album_data_formatted
+      def album_data
         return if album.blank?
 
         {
-          source_id: self.class::SOURCE_ID,
-          vk_id: album['id'],
-          vk_owner_id: album['owner_id'],
-          vk_access_key: album['access_key'],
-          title: album['title']
+          source_id: source_id,
+          vk_id: album_id,
+          vk_owner_id: album_owner_id,
+          vk_access_key: album_access_key,
+          title: album_title
         }
       end
 
       def album
-        @album ||= track['album']
+        track['album']
+      end
+
+      def album_id
+        album['id']
+      end
+
+      def album_owner_id
+        album['owner_id']
+      end
+
+      def album_access_key
+        album['access_key']
+      end
+
+      def album_title
+        album['title']
       end
 
       def image_data
@@ -70,7 +75,7 @@ module VK
         {
           present: vk_id.present?,
           track_id: vk_id,
-          source_id: self.class::SOURCE_ID
+          source_id: source_id
         }
       end
     end

@@ -15,9 +15,10 @@ module Deezer
       end
 
       def collection_list
-        @collection_list ||= response_data.dig(
-          'results', 'data'
-        )
+        @collection_list ||=
+          response_data.dig(
+            'results', 'data'
+          )
       end
 
       def payload

@@ -15,10 +15,14 @@ module Bandcamp
 
       def id_data
         {
-          name: model_response_data['name'],
+          name: name,
           bandcamp_id: bandcamp_id,
           bandcamp_model: model_type
         }
+      end
+
+      def name
+        model_response_data['name']
       end
 
       def model_type

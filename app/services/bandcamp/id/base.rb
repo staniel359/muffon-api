@@ -9,9 +9,10 @@ module Bandcamp
       end
 
       def response_data
-        @response_data ||= Nokogiri::HTML.parse(
-          response
-        ).css('script')
+        @response_data ||=
+          Nokogiri::HTML.parse(
+            response
+          ).css('script')
       end
 
       def base_link
@@ -19,9 +20,10 @@ module Bandcamp
       end
 
       def model_response_data
-        @model_response_data ||= JSON.parse(
-          model_response
-        )
+        @model_response_data ||=
+          JSON.parse(
+            model_response
+          )
       end
 
       def data

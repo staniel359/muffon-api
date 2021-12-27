@@ -17,24 +17,28 @@ module Bandcamp
         album['item_type']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artists
-        [artist_data_formatted]
+        [artist_data]
       end
 
-      def artist_data_formatted
+      def artist_data
         {
-          name: album['band_name'],
-          bandcamp_id: album['band_id']
+          name: artist_name,
+          bandcamp_id: artist_bandcamp_id
         }
+      end
+
+      def artist_name
+        album['band_name']
+      end
+
+      def artist_bandcamp_id
+        album['band_id']
       end
 
       def image_data
         image_data_formatted(
-          image(album), 'album'
+          image(album)
         )
       end
 

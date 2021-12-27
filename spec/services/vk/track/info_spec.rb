@@ -5,7 +5,7 @@ RSpec.describe VK::Track::Info do
     context 'when track_id given' do
       let(:output) do
         VCR.use_cassette 'services/vk/track/info/success' do
-          subject.call(track_id: '-2001472560_55472560')
+          subject.call(track_id: '-2001472560_55472560', profile_id: 1)
         end
       end
 
@@ -15,7 +15,7 @@ RSpec.describe VK::Track::Info do
     context 'when track with no album' do
       let(:output) do
         VCR.use_cassette 'services/vk/track/info/success_no_album' do
-          subject.call(track_id: '-400921_90392497')
+          subject.call(track_id: '-400921_90392497', profile_id: 1)
         end
       end
 

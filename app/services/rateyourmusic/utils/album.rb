@@ -21,19 +21,6 @@ module RateYourMusic
         artist_names
       end
 
-      def artists
-        artists_list.map do |a|
-          artist_data_formatted(a)
-        end
-      end
-
-      def artist_data_formatted(artist)
-        {
-          name: artist.text,
-          rateyourmusic_id: artist_rateyourmusic_id(artist)
-        }
-      end
-
       def artist_rateyourmusic_id(artist)
         artist['title'].scan(
           /\d/

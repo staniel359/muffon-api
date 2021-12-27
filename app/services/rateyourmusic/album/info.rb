@@ -16,7 +16,6 @@ module RateYourMusic
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -33,12 +32,6 @@ module RateYourMusic
         )[0]['value'].scan(/\d+/)[0].to_i
       end
 
-      def artists
-        @artists ||= artists_list.map do |a|
-          artist_data_formatted(a)
-        end
-      end
-
       def artists_list
         album.css(
           '.album_info .artist'
@@ -49,7 +42,7 @@ module RateYourMusic
         {
           image: image_data,
           release_date: release_date,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
       end
@@ -83,12 +76,6 @@ module RateYourMusic
           .css('.release_genres .genre')
           .map(&:text)
           .compact_blank
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

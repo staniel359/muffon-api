@@ -44,10 +44,6 @@ module LastFM
         def data
           { tag: tag_data }
         end
-
-        def artist_data_formatted
-          { name: artist_name }
-        end
       end
     end
   end

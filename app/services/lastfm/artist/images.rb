@@ -23,9 +23,12 @@ module LastFM
       end
 
       def artist_data
-        { name: name }.merge(
-          paginated_data
-        )
+        artist_base_data
+          .merge(paginated_data)
+      end
+
+      def artist_base_data
+        { name: name }
       end
 
       def collection_item_data_formatted(image)

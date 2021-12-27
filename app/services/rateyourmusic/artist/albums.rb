@@ -44,7 +44,10 @@ module RateYourMusic
       def album_type_formatted
         return if @args[:album_type].blank?
 
-        @args[:album_type].downcase.strip.to_sym
+        @args[:album_type]
+          .downcase
+          .strip
+          .to_sym
       end
 
       def no_data?
@@ -78,9 +81,10 @@ module RateYourMusic
       end
 
       def albums_list
-        @albums_list ||= response_data.css(
-          '.disco_release'
-        )
+        @albums_list ||=
+          response_data.css(
+            '.disco_release'
+          )
       end
 
       def response_data

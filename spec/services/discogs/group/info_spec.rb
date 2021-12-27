@@ -5,7 +5,7 @@ RSpec.describe Discogs::Group::Info do
     context 'when group_id given' do
       let(:output) do
         VCR.use_cassette 'services/discogs/group/info/success' do
-          subject.call(group_id: '5319')
+          subject.call(group_id: '5319', profile_id: 1)
         end
       end
 
@@ -15,7 +15,7 @@ RSpec.describe Discogs::Group::Info do
     context 'when different artists' do
       let(:output) do
         VCR.use_cassette 'services/discogs/group/info/different_artists' do
-          subject.call(group_id: '992584')
+          subject.call(group_id: '992584', profile_id: 1)
         end
       end
 
@@ -25,7 +25,7 @@ RSpec.describe Discogs::Group::Info do
     context 'when multiple artists' do
       let(:output) do
         VCR.use_cassette 'services/discogs/group/info/multiple_artists' do
-          subject.call(group_id: '1531968')
+          subject.call(group_id: '1531968', profile_id: 1)
         end
       end
 

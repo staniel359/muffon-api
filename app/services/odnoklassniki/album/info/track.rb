@@ -22,17 +22,12 @@ module Odnoklassniki
             source_id: SOURCE_ID,
             odnoklassniki_id: odnoklassniki_id,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end
 
         def track
           @args[:track]
-        end
-
-        def artists_list
-          track['allArtists']
         end
 
         def track_extra_data

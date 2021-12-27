@@ -25,7 +25,7 @@ module Bandcamp
         end
 
         def name
-          bandcamp_artist_name(
+          model_artist_name(
             artist
           )
         end
@@ -35,20 +35,20 @@ module Bandcamp
         end
 
         def bandcamp_slug
-          bandcamp_artist_slug(
+          model_artist_slug(
             artist
           )
         end
 
         def bandcamp_model
-          bandcamp_model_name(
+          model_name(
             artist
           )
         end
 
         def image_data
           image_data_formatted(
-            artist[:image], 'artist'
+            artist[:image]
           )
         end
       end

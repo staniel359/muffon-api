@@ -6,20 +6,22 @@ module Genius
     private
 
     def artists
-      artists_list.map do |a|
-        artist_data_formatted(a)
-      end
+      [artist_data]
     end
 
-    def artists_list
-      [artist]
-    end
-
-    def artist_data_formatted(artist)
+    def artist_data
       {
-        name: artist['name'],
-        genius_id: artist['id']
+        name: artist_name,
+        genius_id: artist_genius_id
       }
+    end
+
+    def artist_name
+      artist['name']
+    end
+
+    def artist_genius_id
+      artist['id']
     end
 
     def image_data_formatted(image)

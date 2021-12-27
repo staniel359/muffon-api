@@ -4,7 +4,9 @@ module LastFM
       private
 
       def params
-        super.merge(lang_params)
+        super.merge(
+          lang_params
+        )
       end
 
       def album_data
@@ -18,7 +20,6 @@ module LastFM
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -29,7 +30,7 @@ module LastFM
           listeners_count: listeners_count,
           plays_count: plays_count,
           description: description_truncated,
-          tags: tags,
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
       end
@@ -64,12 +65,6 @@ module LastFM
         album.dig(
           'tags', 'tag'
         )
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

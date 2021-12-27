@@ -14,7 +14,6 @@ module Discogs
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -25,19 +24,13 @@ module Discogs
           release_date: release_date,
           description: description_truncated,
           labels: labels,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
       end
 
       def raw_release_date
         album['released']
-      end
-
-      def labels
-        labels_list.map do |l|
-          label_data_formatted(l)
-        end.uniq
       end
 
       def labels_list

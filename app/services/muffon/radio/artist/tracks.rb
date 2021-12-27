@@ -27,18 +27,7 @@ module Muffon
         end
 
         def track_artist_data
-          {
-            artist: artist_formatted,
-            artists: artists
-          }
-        end
-
-        def artists
-          [artist_data_formatted]
-        end
-
-        def artist_data_formatted
-          artist_data.slice(:name)
+          { artist: artist_data.slice(:name) }
         end
       end
     end

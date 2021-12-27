@@ -16,15 +16,13 @@ module YandexMusic
           yandex_music_id: yandex_music_id,
           title: title,
           extra_title: extra_title,
-          artist: artist_formatted,
           artists: artists
         }.compact
       end
 
       def track_extra_data
         {
-          album: album_formatted,
-          albums: albums,
+          album: albums&.first,
           image: image_data,
           duration: duration,
           duration_seconds: duration_seconds,
@@ -41,9 +39,10 @@ module YandexMusic
       end
 
       def audio_link
-        @audio_link ||= YandexMusic::Utils::Audio::Link.call(
-          track_id: yandex_music_id
-        )
+        @audio_link ||=
+          YandexMusic::Utils::Audio::Link.call(
+            track_id: yandex_music_id
+          )
       end
     end
   end

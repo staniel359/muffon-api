@@ -1,8 +1,8 @@
-module LastFM
+module Genius
   module Album
-    class Info
-      class Track < LastFM::Album::Info
-        include LastFM::Utils::Track
+    class Tracks
+      class Track < Genius::Album::Tracks
+        include Genius::Utils::Track
 
         def call
           data
@@ -19,10 +19,9 @@ module LastFM
           {
             player_id: player_id,
             source_id: SOURCE_ID,
+            genius_id: genius_id,
             title: title,
-            artists: artists,
-            duration: duration,
-            duration_seconds: duration_seconds
+            artists: artists
           }
         end
 

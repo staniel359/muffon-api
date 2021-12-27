@@ -9,8 +9,16 @@ module Odnoklassniki
         track['name']
       end
 
-      def artist_name
-        artist_names
+      def artists_list
+        track['allArtists'].presence ||
+          [artist_data]
+      end
+
+      def artist_data
+        {
+          'name' => track['ensemble'],
+          'id' => track['masterArtistId']
+        }
       end
 
       def odnoklassniki_id
@@ -32,7 +40,7 @@ module Odnoklassniki
         {
           present: audio_present?,
           track_id: odnoklassniki_id,
-          source_id: self.class::SOURCE_ID
+          source_id: source_id
         }
       end
 

@@ -5,7 +5,7 @@ RSpec.describe RateYourMusic::Album::Info do
     context 'when album given' do
       let(:output) do
         VCR.use_cassette 'services/rateyourmusic/album/info/success' do
-          subject.call(album: 'release/album/sparks/in-outer-space/')
+          subject.call(album: 'release/album/sparks/in-outer-space/', profile_id: 1)
         end
       end
 
@@ -15,7 +15,7 @@ RSpec.describe RateYourMusic::Album::Info do
     context 'when different artists' do
       let(:output) do
         VCR.use_cassette 'services/rateyourmusic/album/info/different_artists' do
-          subject.call(album: 'release/comp/various-artists/i-love-disco-diamonds-vol_6/')
+          subject.call(album: 'release/comp/various-artists/i-love-disco-diamonds-vol_6/', profile_id: 1)
         end
       end
 
@@ -25,7 +25,7 @@ RSpec.describe RateYourMusic::Album::Info do
     context 'when multiple artists' do
       let(:output) do
         VCR.use_cassette 'services/rateyourmusic/album/info/multiple_artists' do
-          subject.call(album: 'release/album/lsd/labrinth-sia-and-diplo-present-lsd/')
+          subject.call(album: 'release/album/lsd/labrinth-sia-and-diplo-present-lsd/', profile_id: 1)
         end
       end
 

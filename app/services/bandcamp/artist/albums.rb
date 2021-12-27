@@ -6,13 +6,16 @@ module Bandcamp
       private
 
       def artist_data
-        { name: name }.merge(
-          paginated_data
-        )
+        artist_base_data
+          .merge(paginated_data)
+      end
+
+      def artist_base_data
+        { name: name }
       end
 
       def name
-        response_data['name']
+        artist['name']
       end
 
       def total_items_count
@@ -21,7 +24,7 @@ module Bandcamp
 
       def albums_list
         @albums_list ||=
-          response_data['discography']
+          artist['discography']
       end
 
       def collection_list
@@ -36,6 +39,8 @@ module Bandcamp
           profile_id: @args[:profile_id]
         )
       end
+
+      alias artist response_data
     end
   end
 end

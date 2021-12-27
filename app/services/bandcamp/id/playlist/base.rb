@@ -32,14 +32,18 @@ module Bandcamp
         end
 
         def artists
-          [artist_data_formatted]
+          [artist_data]
         end
 
-        def artist_data_formatted
+        def artist_data
           {
-            name: artist['name'],
-            bandcamp_id: artist['id']
+            name: artist_name,
+            bandcamp_id: artist_bandcamp_id
           }
+        end
+
+        def artist_name
+          artist['name']
         end
 
         def artist
@@ -47,6 +51,10 @@ module Bandcamp
             response_data[4]['data-band'] ||
               response_data[5]['data-band']
           )
+        end
+
+        def artist_bandcamp_id
+          artist['id']
         end
       end
     end

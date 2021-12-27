@@ -22,7 +22,6 @@ module Bandcamp
             source_id: SOURCE_ID,
             bandcamp_id: bandcamp_id,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end

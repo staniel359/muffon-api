@@ -19,7 +19,6 @@ module LastFM
           {
             player_id: player_id,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             duration: duration,
             duration_seconds: duration_seconds

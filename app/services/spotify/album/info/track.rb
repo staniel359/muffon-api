@@ -22,7 +22,6 @@ module Spotify
             source_id: SOURCE_ID,
             spotify_id: spotify_id,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end

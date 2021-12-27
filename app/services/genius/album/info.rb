@@ -14,7 +14,6 @@ module Genius
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -33,10 +32,14 @@ module Genius
       end
 
       def tracks
-        Genius::Album::Info::Tracks.call(
+        tracks_data[:tracks] || []
+      end
+
+      def tracks_data
+        Genius::Album::Tracks.call(
           album_id: @args[:album_id],
           profile_id: @args[:profile_id]
-        )[:tracks] || []
+        )
       end
     end
   end

@@ -18,8 +18,7 @@ module LastFM
       end
 
       def album
-        @album ||=
-          response_data['album']
+        @album ||= response_data['album']
       end
 
       def params

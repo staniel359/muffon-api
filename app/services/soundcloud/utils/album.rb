@@ -13,12 +13,8 @@ module SoundCloud
         album['id']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def artist
-        @artist ||= album['user']
+        album['user']
       end
 
       def image_data

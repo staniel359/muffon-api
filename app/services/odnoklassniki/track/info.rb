@@ -15,29 +15,18 @@ module Odnoklassniki
           source_id: SOURCE_ID,
           odnoklassniki_id: odnoklassniki_id,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
 
       def track_extra_data
         {
-          album: album_formatted,
           albums: albums,
           image: image_data,
           duration: duration,
           duration_seconds: duration_seconds,
           audio: audio_data
         }.compact
-      end
-
-      def albums
-        return if albums_list.blank?
-
-        @albums ||=
-          albums_list.map do |a|
-            album_data_formatted(a)
-          end
       end
 
       def albums_list

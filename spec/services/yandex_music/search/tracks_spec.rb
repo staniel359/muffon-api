@@ -5,7 +5,7 @@ RSpec.describe YandexMusic::Search::Tracks do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/yandexmusic/search/tracks/success' do
-          subject.call(query: 'a', page: 2)
+          subject.call(query: 'a', page: 2, profile_id: 1)
         end
       end
 

@@ -20,7 +20,7 @@ module API
           def info_data
             ::Bandcamp::Album::Info.call(
               params.slice(
-                *%i[artist_id album_id profile_id]
+                *%i[artist_id album_id album_type profile_id]
               )
             )
           end
@@ -28,7 +28,7 @@ module API
           def description_data
             ::Bandcamp::Album::Description.call(
               params.slice(
-                *%i[artist_id album_id]
+                *%i[artist_id album_id album_type]
               )
             )
           end
@@ -36,7 +36,7 @@ module API
           def tags_data
             ::Bandcamp::Album::Tags.call(
               params.slice(
-                *%i[artist_id album_id]
+                *%i[artist_id album_id album_type]
               )
             )
           end

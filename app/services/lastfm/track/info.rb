@@ -20,15 +20,13 @@ module LastFM
           player_id: player_id,
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
 
       def track_extra_data
         {
-          album: album_formatted,
-          albums: albums,
+          album: album_data,
           image: image_data,
           listeners_count: listeners_count,
           plays_count: plays_count,
@@ -37,13 +35,7 @@ module LastFM
         }.compact
       end
 
-      def albums
-        @albums ||= [
-          album_data_formatted
-        ].compact.presence
-      end
-
-      def album_data_formatted
+      def album_data
         return if album.blank?
 
         {
@@ -83,7 +75,7 @@ module LastFM
       def track_description_tags_data
         {
           description: description_truncated,
-          tags: tags
+          tags: tags&.first(5)
         }
       end
 

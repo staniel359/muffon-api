@@ -14,9 +14,10 @@ module Genius
       end
 
       def collection_list
-        @collection_list ||= response_data.dig(
-          'response', 'sections', 0, 'hits'
-        )
+        @collection_list ||=
+          response_data.dig(
+            'response', 'sections', 0, 'hits'
+          )
       end
 
       def link

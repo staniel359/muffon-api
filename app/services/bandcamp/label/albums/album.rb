@@ -21,7 +21,6 @@ module Bandcamp
             bandcamp_id: bandcamp_id,
             bandcamp_model: bandcamp_model,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end

@@ -41,13 +41,7 @@ module VK
       end
 
       def album_data
-        { tracks: tracks_formatted }
-      end
-
-      def tracks_formatted
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
+        { tracks: tracks }
       end
 
       def track_data_formatted(track)

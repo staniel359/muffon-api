@@ -13,9 +13,10 @@ module Genius
       end
 
       def albums_list
-        @albums_list ||= response_data.dig(
-          'response', 'albums'
-        )
+        @albums_list ||=
+          response_data.dig(
+            'response', 'albums'
+          )
       end
 
       def link
@@ -49,9 +50,15 @@ module Genius
       end
 
       def name
+        artist_info_data.dig(
+          :artist, :name
+        )
+      end
+
+      def artist_info_data
         Genius::Artist::Info.call(
           artist_id: @args[:artist_id]
-        ).dig(:artist, :name)
+        )
       end
 
       def collection_item_data_formatted(album)

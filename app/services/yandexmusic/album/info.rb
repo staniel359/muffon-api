@@ -15,7 +15,6 @@ module YandexMusic
           source_id: SOURCE_ID,
           title: title,
           extra_title: extra_title,
-          artist: artist_formatted,
           artists: artists
         }.compact
       end
@@ -25,15 +24,9 @@ module YandexMusic
           image: image_data,
           release_date: release_date,
           labels: labels,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
-      end
-
-      def labels
-        labels_list.map do |l|
-          label_data_formatted(l)
-        end
       end
 
       def labels_list
@@ -46,12 +39,6 @@ module YandexMusic
 
       def tags_list
         [album['genre']]
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

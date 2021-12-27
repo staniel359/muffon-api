@@ -23,7 +23,6 @@ module Bandcamp
             title: title,
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
-            artist: artist_formatted,
             artists: artists
           }
         end
@@ -37,27 +36,44 @@ module Bandcamp
         end
 
         def bandcamp_slug
-          bandcamp_title_slug(track)
+          model_title_slug(track)
         end
 
         def bandcamp_model
-          bandcamp_model_name(track)
+          model_name(track)
         end
 
         def artists
-          [bandcamp_artist_data_formatted(track)]
+          [model_artist_data(track)]
         end
 
         def track_extra_data
           {
+            album: album_data,
             image: image_data,
             audio: audio_data
           }.compact
         end
 
+        def album_data
+          return if album_title.blank?
+
+          {
+            source_id: 'lastfm',
+            title: album_title
+          }
+        end
+
+        def album_title
+          @album_title ||=
+            track[:description].match(
+              /from the album (.+)/
+            ).try(:[], 1)
+        end
+
         def image_data
           image_data_formatted(
-            track[:image], 'track'
+            track[:image]
           )
         end
 

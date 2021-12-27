@@ -5,7 +5,7 @@ RSpec.describe Discogs::Search::Albums do
     context 'when query string given' do
       let(:output) do
         VCR.use_cassette 'services/discogs/search/albums/success' do
-          subject.call(query: 'kate bush', limit: 5, page: 2)
+          subject.call(query: 'kate bush', limit: 5, page: 2, profile_id: 1)
         end
       end
 

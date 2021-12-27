@@ -16,33 +16,23 @@ module Genius
           source_id: SOURCE_ID,
           genius_id: genius_id,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
 
       def track_extra_data
         {
-          album: album_formatted,
-          albums: albums,
+          album: albums&.first,
           image: image_data,
           release_date: release_date,
           description: description_truncated,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           lyrics: lyrics_truncated
         }.compact
       end
 
-      def albums
-        return if albums_list.blank?
-
-        @albums ||= albums_list.map do |a|
-          album_data_formatted(a)
-        end
-      end
-
       def albums_list
-        track['albums'].presence
+        track['albums']
       end
 
       def album_data_formatted(album)

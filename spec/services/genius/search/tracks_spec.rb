@@ -5,7 +5,7 @@ RSpec.describe Genius::Search::Tracks do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/genius/search/tracks/success' do
-          subject.call(query: 'molly nilsson', limit: 5, page: 2)
+          subject.call(query: 'molly nilsson', limit: 5, page: 2, profile_id: 1)
         end
       end
 

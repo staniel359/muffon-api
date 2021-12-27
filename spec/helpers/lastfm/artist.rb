@@ -19,7 +19,7 @@ module Helpers
         end
 
         def listeners_count_data
-          {:artist=>{:listeners_count=>589804, :name=>"Wild Nothing"}}
+          {:artist=>{:listeners_count=>589804}}
         end
 
         def similar_data

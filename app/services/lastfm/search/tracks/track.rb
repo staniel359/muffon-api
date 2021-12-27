@@ -21,7 +21,6 @@ module LastFM
             source_id: SOURCE_ID,
             playlist_track_id: playlist_track_id,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }.compact
         end
@@ -32,10 +31,6 @@ module LastFM
 
         def artist_name
           track['artist']
-        end
-
-        def artist_data_formatted
-          { name: artist_name }
         end
       end
     end

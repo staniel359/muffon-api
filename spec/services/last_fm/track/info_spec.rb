@@ -5,9 +5,7 @@ RSpec.describe LastFM::Track::Info do
     context 'when artist and track exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/info/success' do
-          subject.call(
-            artist: 'kate bush', track: 'hounds of love'
-          )
+          subject.call(artist: 'kate bush', track: 'hounds of love', profile_id: 1)
         end
       end
 

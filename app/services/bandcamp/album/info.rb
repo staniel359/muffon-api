@@ -14,9 +14,20 @@ module Bandcamp
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
+      end
+
+      def artist_name
+        artist['name']
+      end
+
+      def artist
+        album['band']
+      end
+
+      def artist_bandcamp_id
+        artist['band_id']
       end
 
       def album_extra_data
@@ -24,27 +35,21 @@ module Bandcamp
           image: image_data,
           release_date: release_date,
           description: description_truncated,
-          tags: tags.first(5),
+          tags: tags&.first(5),
           tracks: tracks
         }.compact
       end
 
       def description
-        response_data['about'] || ''
+        album['about']
       end
 
       def tags_list
-        response_data['tags']
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
+        album['tags']
       end
 
       def tracks_list
-        response_data['tracks']
+        album['tracks']
       end
 
       def track_data_formatted(track)
@@ -53,6 +58,8 @@ module Bandcamp
           profile_id: @args[:profile_id]
         )
       end
+
+      alias album response_data
     end
   end
 end

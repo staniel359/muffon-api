@@ -22,7 +22,6 @@ module Odnoklassniki
             source_id: SOURCE_ID,
             odnoklassniki_id: odnoklassniki_id,
             title: title,
-            artist: artist_formatted,
             artists: artists
           }
         end
@@ -31,21 +30,9 @@ module Odnoklassniki
           @args[:track]
         end
 
-        def artists
-          [artist_data_formatted]
-        end
-
-        def artist_data_formatted
-          {
-            name: track['ensemble'],
-            odnoklassniki_id: track['masterArtistId']
-          }
-        end
-
         def track_extra_data
           {
-            album: {},
-            albums: albums,
+            album: album_data,
             image: image_data,
             duration: duration,
             duration_seconds: duration_seconds,
@@ -53,23 +40,17 @@ module Odnoklassniki
           }.compact
         end
 
-        def albums
-          [
-            album_data_formatted
-          ].compact.presence
-        end
-
-        def image
-          track['imageUrl']
-        end
-
-        def album_data_formatted
+        def album_data
           return if track['albumId'].blank?
 
           {
             source_id: SOURCE_ID,
             odnoklassniki_id: track['albumId']
           }
+        end
+
+        def image
+          track['imageUrl']
         end
       end
     end

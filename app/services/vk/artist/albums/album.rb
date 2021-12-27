@@ -14,7 +14,6 @@ module VK
           muffon_data
             .merge(album_id_data)
             .merge(album_base_data)
-            .merge(album_extra_data)
         end
 
         def album_id_data
@@ -34,13 +33,7 @@ module VK
           {
             title: title,
             extra_title: extra_title,
-            artist: artist_formatted,
-            artists: artists
-          }.compact
-        end
-
-        def album_extra_data
-          {
+            artists: artists,
             image: image_data,
             release_date: release_date
           }.compact

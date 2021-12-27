@@ -9,10 +9,6 @@ module LastFM
         album['name']
       end
 
-      def artist_data_formatted
-        { name: artist_name }
-      end
-
       def artist_name
         album['artist']
       end

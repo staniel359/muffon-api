@@ -5,7 +5,7 @@ RSpec.describe Genius::Track::Info do
     context 'when id present' do
       let(:output) do
         VCR.use_cassette 'services/genius/track/info/success' do
-          subject.call(track_id: '344944')
+          subject.call(track_id: '344944', profile_id: 1)
         end
       end
 

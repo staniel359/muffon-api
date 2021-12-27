@@ -23,7 +23,7 @@ module Muffon
             artist: @args[:artist],
             limit: 1,
             page: page
-          )[:artist]
+          )[:artist] || {}
         end
 
         def artist_data

@@ -31,11 +31,17 @@ module Discogs
         end
 
         def artists
-          [artist_data_formatted]
+          [artist_data]
         end
 
-        def artist_data_formatted
-          { name: album['artist'] }
+        def artist_data
+          { name: artist_name }
+        end
+
+        def artist_name
+          artist_name_formatted(
+            album['artist']
+          )
         end
 
         def image

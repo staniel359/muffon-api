@@ -24,9 +24,15 @@ module SoundCloud
       end
 
       def name
+        artist_info_data.dig(
+          :artist, :name
+        )
+      end
+
+      def artist_info_data
         SoundCloud::Artist::Info.call(
           artist_id: @args[:artist_id]
-        ).dig(:artist, :name)
+        )
       end
     end
   end

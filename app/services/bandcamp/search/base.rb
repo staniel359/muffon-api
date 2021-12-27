@@ -10,9 +10,10 @@ module Bandcamp
       end
 
       def response_data
-        @response_data ||= Google::Search.call(
-          params
-        )[:search]
+        @response_data ||=
+          Google::Search.call(
+            params
+          )[:search]
       end
 
       def params
@@ -49,18 +50,18 @@ module Bandcamp
         )[0]
       end
 
-      def bandcamp_artist_data_formatted(item)
+      def model_artist_data(item)
         {
-          name: bandcamp_artist_name(item),
-          bandcamp_slug: bandcamp_artist_slug(item)
+          name: model_artist_name(item),
+          bandcamp_slug: model_artist_slug(item)
         }
       end
 
-      def bandcamp_artist_name(item)
+      def model_artist_name(item)
         item[:site_name] || 'Bandcamp'
       end
 
-      def bandcamp_artist_slug(item)
+      def model_artist_slug(item)
         link_data(
           item[:link]
         )[:artist]
@@ -81,17 +82,21 @@ module Bandcamp
       end
 
       def link_regexp
-        %r{(?=https?://)?([\w-]+).bandcamp.com
-          (?:(?:/(album|track))(?:/([\w\-]+))?)?}x
+        %r{
+          (?=https?://)?
+          ([\w-]+).bandcamp.com
+          (?:(?:/(album|track))
+          (?:/([\w\-]+))?)?
+        }x
       end
 
-      def bandcamp_model_name(item)
+      def model_name(item)
         link_data(
           item[:link]
         )[:model]
       end
 
-      def bandcamp_title_slug(item)
+      def model_title_slug(item)
         link_data(
           item[:link]
         )[:title]

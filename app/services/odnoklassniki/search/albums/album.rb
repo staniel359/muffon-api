@@ -20,7 +20,6 @@ module Odnoklassniki
             source_id: SOURCE_ID,
             odnoklassniki_id: odnoklassniki_id,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data,
             release_date: release_date

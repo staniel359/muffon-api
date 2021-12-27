@@ -11,22 +11,30 @@ module Discogs
 
     def params
       {
-        key: secrets.discogs[:api_key],
-        secret: secrets.discogs[:api_secret]
+        key: api_key,
+        secret: api_secret
       }
     end
 
-    def artists
-      artists_list.map do |a|
-        artist_data_formatted(a)
-      end
+    def api_key
+      secrets.discogs[:api_key]
     end
 
-    def artist_data_formatted(data)
+    def api_secret
+      secrets.discogs[:api_secret]
+    end
+
+    def artist_data_formatted(artist)
       {
-        name: data['name'],
-        discogs_id: data['id']
+        name: artist_name_formatted(artist['name']),
+        discogs_id: artist['id']
       }.compact
+    end
+
+    def artist_name_formatted(name)
+      name.split(
+        / \(\d+\)$/
+      )[0]
     end
 
     def image_data_formatted(image, model)
@@ -37,7 +45,8 @@ module Discogs
 
     def image
       (
-        primary_image || images_list[0]
+        primary_image ||
+          images_list[0]
       ).try(:[], 'uri')
     end
 

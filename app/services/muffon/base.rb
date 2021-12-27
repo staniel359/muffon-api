@@ -95,5 +95,9 @@ module Muffon
         id: @args[:other_profile_id]
       )
     end
+
+    def source_id
+      self.class::SOURCE_ID
+    end
   end
 end

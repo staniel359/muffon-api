@@ -8,19 +8,27 @@ module Muffon
           with_more: {
             description: with_more_description?,
             tags: with_more_tags?
-          }.compact
-        }
+          }.compact_blank
+        }.compact_blank
       end
 
       def with_more_description?
-        defined?(description) &&
+        description.present? && (
           description.size >
             description_truncated.size
+        )
+      end
+
+      def description
+        ''
       end
 
       def with_more_tags?
-        defined?(tags_list) &&
-          tags_list.size > 5
+        tags_list.size > 5
+      end
+
+      def tags_list
+        []
       end
     end
   end

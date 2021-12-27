@@ -15,9 +15,15 @@ module Muffon
           end
 
           def percent
+            compatibility_percent_data.dig(
+              :compatibility, :percent
+            )
+          end
+
+          def compatibility_percent_data
             Muffon::Profile::Library::Compatibility::Percent.call(
               percent_args
-            ).dig(:compatibility, :percent)
+            )
           end
 
           def percent_args

@@ -27,7 +27,7 @@ module Muffon
         end
 
         def audio_folder
-          "temp/audio/#{self.class::SOURCE_ID}"
+          "temp/audio/#{source_id}"
         end
 
         def audio_file

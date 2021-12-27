@@ -21,10 +21,20 @@ module Bandcamp
             bandcamp_slug: bandcamp_slug,
             bandcamp_model: bandcamp_model,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data
           }.compact
+        end
+
+        def artist_name
+          artist_data[:name]
+        end
+
+        def artist_data
+          @artist_data ||=
+            model_artist_data(
+              album
+            )
         end
 
         def title
@@ -36,30 +46,22 @@ module Bandcamp
         end
 
         def bandcamp_slug
-          bandcamp_title_slug(
+          model_title_slug(
             album
           )
         end
 
         def bandcamp_model
-          bandcamp_model_name(
-            album
-          )
+          model_name(album)
         end
 
         def artists
-          [artist]
-        end
-
-        def artist
-          bandcamp_artist_data_formatted(
-            album
-          )
+          [artist_data]
         end
 
         def image_data
           image_data_formatted(
-            album[:image], 'album'
+            album[:image]
           )
         end
       end

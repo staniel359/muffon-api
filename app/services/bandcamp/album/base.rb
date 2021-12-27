@@ -30,25 +30,6 @@ module Bandcamp
         { album: album_data }
       end
 
-      def bandcamp_id
-        album['id']
-      end
-
-      def album
-        @album ||= response_data
-      end
-
-      def artist_data_formatted
-        {
-          name: artist['name'],
-          bandcamp_id: artist['band_id']
-        }
-      end
-
-      def artist
-        @artist ||= response_data['band']
-      end
-
       alias link album_track_link
     end
   end

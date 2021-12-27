@@ -15,8 +15,7 @@ module LastFM
       end
 
       def artist
-        @artist ||=
-          response_data['artist']
+        @artist ||= response_data['artist']
       end
 
       def params

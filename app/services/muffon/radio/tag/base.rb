@@ -23,7 +23,7 @@ module Muffon
             tag: @args[:tag],
             page: page,
             sample: true
-          )[:tag]
+          )[:tag] || {}
         end
 
         def tag_data

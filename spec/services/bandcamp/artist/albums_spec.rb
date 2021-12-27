@@ -5,7 +5,7 @@ RSpec.describe Bandcamp::Artist::Albums do
     context 'when artist present' do
       let(:output) do
         VCR.use_cassette 'services/bandcamp/artist/albums/success' do
-          subject.call(artist_id: '2707934946', limit: 5, page: 2)
+          subject.call(artist_id: '2707934946', limit: 5, page: 2, profile_id: 1)
         end
       end
 

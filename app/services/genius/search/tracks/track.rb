@@ -21,7 +21,6 @@ module Genius
             source_id: SOURCE_ID,
             genius_id: genius_id,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data
           }.compact

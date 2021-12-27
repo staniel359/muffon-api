@@ -14,7 +14,6 @@ module Spotify
         {
           source_id: SOURCE_ID,
           title: title,
-          artist: artist_formatted,
           artists: artists
         }
       end
@@ -30,12 +29,6 @@ module Spotify
 
       def labels
         [album['label']]
-      end
-
-      def tracks
-        tracks_list.map do |t|
-          track_data_formatted(t)
-        end
       end
 
       def tracks_list

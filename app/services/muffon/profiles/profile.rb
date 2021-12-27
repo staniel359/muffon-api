@@ -40,7 +40,7 @@ module Muffon
           birthdate: profile.birthdate,
           country: country,
           city: city,
-          role: profile.role,
+          role: role,
           online: profile.online
         }.compact
       end
@@ -55,6 +55,12 @@ module Muffon
         profile
           .city
           .presence
+      end
+
+      def role
+        return if profile.role == 'profile'
+
+        profile.role
       end
 
       def profile_other_profile_data

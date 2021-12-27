@@ -5,7 +5,7 @@ RSpec.describe Odnoklassniki::Search::Albums do
     context 'when query present' do
       let(:output) do
         VCR.use_cassette 'services/odnoklassniki/search/albums/success' do
-          subject.call(query: 'kate bush', limit: 5, page: 2)
+          subject.call(query: 'kate bush', limit: 5, page: 2, profile_id: 1)
         end
       end
 

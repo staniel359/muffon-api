@@ -15,7 +15,6 @@ module RateYourMusic
             source_id: SOURCE_ID,
             rateyourmusic_slug: rateyourmusic_slug,
             title: title,
-            artist: artist_formatted,
             artists: artists,
             image: image_data,
             release_date: release_date
@@ -23,7 +22,11 @@ module RateYourMusic
         end
 
         def artists_list
-          [album.css('.artist')[0]]
+          [artist_data]
+        end
+
+        def artist_data
+          album.css('.artist')[0]
         end
 
         def album

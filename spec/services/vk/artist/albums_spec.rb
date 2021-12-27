@@ -5,7 +5,7 @@ RSpec.describe VK::Artist::Albums do
     context 'when artist_id present' do
       let(:output) do
         VCR.use_cassette 'services/vk/artist/albums/success' do
-          subject.call(artist_id: '4333005440018923962', limit: 5, page: 2)
+          subject.call(artist_id: '4333005440018923962', limit: 5, page: 2, profile_id: 1)
         end
       end
 
