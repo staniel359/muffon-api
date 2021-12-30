@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_22_120208) do
+ActiveRecord::Schema.define(version: 2021_12_30_205226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_url"
     t.integer "listeners_count"
     t.integer "tag_ids", default: [], array: true
     t.index ["name"], name: "index_artists_on_name", unique: true
@@ -65,7 +64,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
   create_table "bookmark_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.integer "album_id"
-    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["album_id", "profile_id"], name: "index_bookmark_albums_on_album_id_and_profile_id", unique: true
@@ -85,7 +83,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
     t.bigint "profile_id", null: false
     t.integer "track_id"
     t.integer "album_id"
-    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["profile_id"], name: "index_bookmark_tracks_on_profile_id"
@@ -105,7 +102,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
   create_table "favorite_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.integer "album_id"
-    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["album_id", "profile_id"], name: "index_favorite_albums_on_album_id_and_profile_id", unique: true
@@ -125,7 +121,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
     t.bigint "profile_id", null: false
     t.integer "track_id"
     t.integer "album_id"
-    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["profile_id"], name: "index_favorite_tracks_on_profile_id"
@@ -137,7 +132,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
     t.integer "album_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_url"
     t.index ["album_id", "profile_id"], name: "index_listened_albums_on_album_id_and_profile_id", unique: true
     t.index ["profile_id"], name: "index_listened_albums_on_profile_id"
   end
@@ -178,7 +172,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
     t.integer "album_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_url"
     t.index ["playlist_id"], name: "index_playlist_tracks_on_playlist_id"
     t.index ["track_id", "playlist_id"], name: "index_playlist_tracks_on_track_id_and_playlist_id", unique: true
   end
@@ -199,7 +192,6 @@ ActiveRecord::Schema.define(version: 2021_12_22_120208) do
     t.bigint "profile_artist_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_url"
     t.integer "profile_tracks_count", default: 0
     t.index ["album_id", "profile_id"], name: "index_profile_albums_on_album_id_and_profile_id", unique: true
     t.index ["profile_artist_id"], name: "index_profile_albums_on_profile_artist_id"
