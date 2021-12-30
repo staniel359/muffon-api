@@ -30,9 +30,11 @@ module VK
         end
 
         def ts_file
-          ::File.open(
-            "#{file_path}.ts", 'wb'
-          )
+          ::File.open(ts_file_name, 'wb')
+        end
+
+        def ts_file_name
+          "#{file_path}.ts"
         end
 
         def file_path
@@ -62,11 +64,7 @@ module VK
 
         def response_body
           @response_body ||=
-            RestClient.get(link).body
-        end
-
-        def link
-          @args[:link]
+            RestClient.get(@args[:link]).body
         end
 
         def process_fragment(path, index)
@@ -112,12 +110,15 @@ module VK
           RestClient.get(
             "#{base_link}#{path}"
           ).body
+        rescue StandardError
+          fragment_response_data(path)
         end
 
         def base_link
-          @base_link ||= @args[:link].match(
-            /(.+)index.m3u8/
-          )[1]
+          @base_link ||=
+            @args[:link].match(
+              /(.+)index.m3u8/
+            )[1]
         end
 
         def convert_ts_file_to_mp3
@@ -128,9 +129,9 @@ module VK
         end
 
         def delete_ts_file
-          ::File.delete(
-            "#{file_path}.ts"
-          )
+          return unless ::File.exist?(ts_file_name)
+
+          ::File.delete(ts_file_name)
         end
       end
     end
