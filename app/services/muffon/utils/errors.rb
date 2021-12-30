@@ -50,6 +50,7 @@ module Muffon
           bad_gateway: {
             errors: [
               Errno::ECONNREFUSED,
+              Errno::ECONNRESET,
               Errno::EHOSTUNREACH,
               Errno::ENETUNREACH,
               JSON::ParserError,
