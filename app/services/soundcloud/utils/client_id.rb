@@ -10,12 +10,12 @@ module SoundCloud
       private
 
       def data
-        response.match(
+        script_response.match(
           /client_id:"([\w\-]+)"/
         )[1]
       end
 
-      def response
+      def script_response
         RestClient.get(
           script_link
         )
@@ -47,6 +47,10 @@ module SoundCloud
         Nokogiri::HTML.parse(
           response
         )
+      end
+
+      def params
+        {}
       end
 
       def link
