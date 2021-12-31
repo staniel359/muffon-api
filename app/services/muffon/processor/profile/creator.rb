@@ -31,9 +31,9 @@ module Muffon
 
           process_image
 
-          authenticate
-
           set_online
+
+          authenticate
         end
 
         def authenticate
