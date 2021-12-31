@@ -30,7 +30,9 @@ module Muffon
 
         def other_profile
           @other_profile ||=
-            conversation.other_profile
+            conversation.find_other_profile(
+              @args[:profile_id]
+            )
         end
 
         def last_message_data
