@@ -36,7 +36,7 @@ module LastFM
       end
 
       def model_data
-        { tags: tags }
+        { tags: }
       end
     end
   end

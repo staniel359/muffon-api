@@ -16,8 +16,8 @@ module Odnoklassniki
 
         def artist_data
           {
-            odnoklassniki_id: odnoklassniki_id,
-            name: name,
+            odnoklassniki_id:,
+            name:,
             image: image_data
           }.compact
         end

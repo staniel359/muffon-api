@@ -21,7 +21,7 @@ module Muffon
 
         def collection_item_data_formatted(tag)
           Muffon::Profile::Library::Tags::Tag.call(
-            tag: tag
+            tag:
           )
         end
 

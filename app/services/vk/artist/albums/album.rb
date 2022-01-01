@@ -31,11 +31,11 @@ module VK
 
         def album_base_data
           {
-            title: title,
-            extra_title: extra_title,
-            artists: artists,
+            title:,
+            extra_title:,
+            artists:,
             image: image_data,
-            release_date: release_date
+            release_date:
           }.compact
         end
       end

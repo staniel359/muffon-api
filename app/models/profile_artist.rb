@@ -32,14 +32,14 @@ class ProfileArtist < ApplicationRecord
 
   def create_recommendations
     Profile::Recommendations::CreatorWorker.perform_async(
-      profile_id: profile_id,
+      profile_id:,
       profile_artist_id: id
     )
   end
 
   def clear_recommendations
     Profile::Recommendations::ClearerWorker.perform_async(
-      profile_id: profile_id,
+      profile_id:,
       profile_artist_id: id
     )
   end

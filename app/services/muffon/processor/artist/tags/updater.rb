@@ -11,7 +11,7 @@ module Muffon
             return if tags_list.blank?
 
             find_artist.update(
-              tag_ids: tag_ids
+              tag_ids:
             )
           end
 

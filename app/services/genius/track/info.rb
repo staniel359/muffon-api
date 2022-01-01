@@ -24,7 +24,7 @@ module Genius
         {
           album: albums&.first,
           image: image_data,
-          release_date: release_date,
+          release_date:,
           description: description_truncated,
           tags: tags&.first(5),
           lyrics: lyrics_truncated
@@ -37,7 +37,7 @@ module Genius
 
       def album_data_formatted(album)
         Genius::Track::Info::Album.call(
-          album: album
+          album:
         )
       end
 

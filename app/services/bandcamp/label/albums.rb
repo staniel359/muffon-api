@@ -22,7 +22,7 @@ module Bandcamp
 
       def collection_item_data_formatted(album)
         Bandcamp::Label::Albums::Album.call(
-          album: album
+          album:
         )
       end
     end

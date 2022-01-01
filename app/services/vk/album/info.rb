@@ -22,10 +22,10 @@ module VK
       def album_extra_data
         {
           image: image_data,
-          release_date: release_date,
-          plays_count: plays_count,
+          release_date:,
+          plays_count:,
           tags: tags&.first(5),
-          tracks: tracks
+          tracks:
         }.compact
       end
 

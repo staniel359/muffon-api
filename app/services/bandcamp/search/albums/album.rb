@@ -18,10 +18,10 @@ module Bandcamp
         def album_data
           {
             source_id: SOURCE_ID,
-            bandcamp_slug: bandcamp_slug,
-            bandcamp_model: bandcamp_model,
-            title: title,
-            artists: artists,
+            bandcamp_slug:,
+            bandcamp_model:,
+            title:,
+            artists:,
             image: image_data
           }.compact
         end

@@ -9,7 +9,7 @@ class Tag < ApplicationRecord
         'LOWER(name) = ?',
         name.strip.downcase
       ).first_or_create(
-        name: name
+        name:
       )
     end
   end

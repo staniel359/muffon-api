@@ -7,7 +7,7 @@ module API
         render(
           {
             json: data,
-            status: status
+            status:
           }
         )
       end

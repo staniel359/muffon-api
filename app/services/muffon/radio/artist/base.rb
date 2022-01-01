@@ -22,7 +22,7 @@ module Muffon
           artist_service.call(
             artist: @args[:artist],
             limit: 1,
-            page: page
+            page:
           )[:artist] || {}
         end
 

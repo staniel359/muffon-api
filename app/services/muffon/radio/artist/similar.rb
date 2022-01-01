@@ -49,7 +49,7 @@ module Muffon
         end
 
         def track_artist_data
-          { artists: artists }
+          { artists: }
         end
       end
     end

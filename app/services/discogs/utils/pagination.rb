@@ -13,7 +13,7 @@ module Discogs
 
       def pagination_params
         {
-          page: page,
+          page:,
           per_page: limit
         }
       end

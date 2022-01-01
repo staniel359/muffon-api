@@ -17,9 +17,9 @@ module LastFM
 
       def base_artist_data
         {
-          name: name,
-          listeners_count: listeners_count,
-          plays_count: plays_count,
+          name:,
+          listeners_count:,
+          plays_count:,
           description: description_truncated,
           tags: tags&.first(5),
           recommendation: recommendation_data

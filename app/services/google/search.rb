@@ -94,7 +94,7 @@ module Google
 
     def collection_item_data_formatted(result)
       Google::Search::Result.call(
-        result: result
+        result:
       )
     end
   end

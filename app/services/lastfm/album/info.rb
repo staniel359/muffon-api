@@ -27,11 +27,11 @@ module LastFM
       def album_extra_data
         {
           image: image_data,
-          listeners_count: listeners_count,
-          plays_count: plays_count,
+          listeners_count:,
+          plays_count:,
           description: description_truncated,
           tags: tags&.first(5),
-          tracks: tracks
+          tracks:
         }.compact
       end
 
@@ -79,7 +79,7 @@ module LastFM
 
       def track_data_formatted(track)
         LastFM::Album::Info::Track.call(
-          track: track,
+          track:,
           profile_id: @args[:profile_id]
         )
       end

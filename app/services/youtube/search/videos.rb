@@ -17,7 +17,7 @@ module YouTube
 
       def video_data_formatted(video)
         YouTube::Search::Videos::Video.call(
-          video: video
+          video:
         )
       end
     end

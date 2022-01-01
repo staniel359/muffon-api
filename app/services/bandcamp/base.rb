@@ -20,7 +20,7 @@ module Bandcamp
 
     def image_data_formatted(image)
       Bandcamp::Utils::Image.call(
-        image: image
+        image:
       )
     end
 

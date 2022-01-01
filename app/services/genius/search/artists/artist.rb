@@ -17,8 +17,8 @@ module Genius
 
         def artist_data
           {
-            genius_id: genius_id,
-            name: name,
+            genius_id:,
+            name:,
             image: image_data
           }.compact
         end

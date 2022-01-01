@@ -26,7 +26,7 @@ module Muffon
 
         ProfileAlbum.find_by(
           profile_id: @args[:profile_id],
-          album_id: album_id
+          album_id:
         )
       end
 
@@ -43,7 +43,7 @@ module Muffon
 
         FavoriteAlbum.find_by(
           profile_id: @args[:profile_id],
-          album_id: album_id
+          album_id:
         )
       end
 
@@ -56,7 +56,7 @@ module Muffon
 
         BookmarkAlbum.find_by(
           profile_id: @args[:profile_id],
-          album_id: album_id
+          album_id:
         )
       end
 
@@ -69,7 +69,7 @@ module Muffon
 
         ListenedAlbum.find_by(
           profile_id: @args[:profile_id],
-          album_id: album_id
+          album_id:
         )
       end
 

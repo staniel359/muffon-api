@@ -4,7 +4,7 @@ module Bandcamp
       private
 
       def album_data
-        { tags: tags }
+        { tags: }
       end
     end
   end

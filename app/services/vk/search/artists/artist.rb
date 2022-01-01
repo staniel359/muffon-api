@@ -17,8 +17,8 @@ module VK
 
         def artist_data
           {
-            vk_id: vk_id,
-            name: name,
+            vk_id:,
+            name:,
             image: image_data
           }.compact
         end

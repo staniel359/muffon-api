@@ -10,8 +10,8 @@ module Bandcamp
 
         def data
           {
-            name: name,
-            bandcamp_id: bandcamp_id,
+            name:,
+            bandcamp_id:,
             bandcamp_model: 'artist',
             image: image_data
           }.compact

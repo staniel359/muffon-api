@@ -34,7 +34,7 @@ class Recommendation < ApplicationRecord
 
   def profile_artists
     ProfileArtist.where(
-      profile_id: profile_id,
+      profile_id:,
       id: profile_artist_ids
     )
   end

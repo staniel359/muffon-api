@@ -12,10 +12,10 @@ module YouTube
       def video_extra_data
         {
           image: image_data_formatted,
-          views_count: views_count,
-          likes_count: likes_count,
-          dislikes_count: dislikes_count,
-          publish_date: publish_date,
+          views_count:,
+          likes_count:,
+          dislikes_count:,
+          publish_date:,
           description: description_truncated,
           tags: tags&.first(5)
         }.compact

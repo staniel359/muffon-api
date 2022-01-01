@@ -28,7 +28,7 @@ module Bandcamp
         def album_extra_data
           {
             image: image_data,
-            release_date: release_date
+            release_date:
           }.compact
         end
 

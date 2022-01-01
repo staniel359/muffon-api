@@ -60,7 +60,7 @@ module Spotify
 
     def image_data_formatted(data, model)
       Spotify::Utils::Image.call(
-        data: data, model: model
+        data:, model:
       )
     end
   end

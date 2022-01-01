@@ -21,10 +21,10 @@ module Odnoklassniki
 
       def track_extra_data
         {
-          albums: albums,
+          albums:,
           image: image_data,
-          duration: duration,
-          duration_seconds: duration_seconds,
+          duration:,
+          duration_seconds:,
           audio: audio_data
         }.compact
       end

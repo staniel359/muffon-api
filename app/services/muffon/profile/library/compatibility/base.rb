@@ -37,7 +37,7 @@ module Muffon
 
           def profile_artists(profile_id)
             ::ProfileArtist.where(
-              profile_id: profile_id
+              profile_id:
             )
           end
 
@@ -60,7 +60,7 @@ module Muffon
 
           def profile_albums(profile_id)
             ::ProfileAlbum.where(
-              profile_id: profile_id
+              profile_id:
             )
           end
 
@@ -83,7 +83,7 @@ module Muffon
 
           def profile_tracks(profile_id)
             ::ProfileTrack.where(
-              profile_id: profile_id
+              profile_id:
             )
           end
 

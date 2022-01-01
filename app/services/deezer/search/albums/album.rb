@@ -18,9 +18,9 @@ module Deezer
         def album_data
           {
             source_id: SOURCE_ID,
-            deezer_id: deezer_id,
-            title: title,
-            artists: artists,
+            deezer_id:,
+            title:,
+            artists:,
             image: image_data
           }.compact
         end

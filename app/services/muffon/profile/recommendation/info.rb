@@ -6,7 +6,7 @@ module Muffon
 
         def recommendation_data
           Muffon::Profile::Recommendations::Recommendation.call(
-            recommendation: recommendation
+            recommendation:
           )
         end
       end

@@ -13,11 +13,11 @@ module RateYourMusic
         def data
           {
             source_id: SOURCE_ID,
-            rateyourmusic_slug: rateyourmusic_slug,
-            title: title,
-            artists: artists,
+            rateyourmusic_slug:,
+            title:,
+            artists:,
             image: image_data,
-            release_date: release_date
+            release_date:
           }.compact
         end
 

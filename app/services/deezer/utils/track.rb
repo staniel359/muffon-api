@@ -31,7 +31,7 @@ module Deezer
         return if album_title.blank?
 
         {
-          source_id: source_id,
+          source_id:,
           deezer_id: album_deezer_id,
           title: album_title
         }

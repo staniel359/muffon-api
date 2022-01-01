@@ -29,7 +29,7 @@ module VK
         return if album.blank?
 
         {
-          source_id: source_id,
+          source_id:,
           vk_id: album_id,
           vk_owner_id: album_owner_id,
           vk_access_key: album_access_key,
@@ -75,7 +75,7 @@ module VK
         {
           present: vk_id.present?,
           track_id: vk_id,
-          source_id: source_id
+          source_id:
         }
       end
     end

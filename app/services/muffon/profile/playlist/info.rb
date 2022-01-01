@@ -10,7 +10,7 @@ module Muffon
 
         def playlist_data
           Muffon::Profile::Playlists::Playlist.call(
-            playlist: playlist
+            playlist:
           )
         end
       end

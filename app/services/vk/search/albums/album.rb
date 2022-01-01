@@ -31,9 +31,9 @@ module VK
 
         def album_base_data
           {
-            title: title,
-            extra_title: extra_title,
-            artists: artists,
+            title:,
+            extra_title:,
+            artists:,
             image: image_data
           }.compact
         end

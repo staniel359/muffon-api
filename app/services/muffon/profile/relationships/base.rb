@@ -29,7 +29,7 @@ module Muffon
 
         def collection_item_data_formatted(profile)
           Muffon::Profiles::Profile.call(
-            profile: profile,
+            profile:,
             other_profile_id: @args[:other_profile_id]
           )
         end

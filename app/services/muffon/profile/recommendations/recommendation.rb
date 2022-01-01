@@ -18,9 +18,9 @@ module Muffon
         def recommendation_data
           {
             id: recommendation.id,
-            name: name,
+            name:,
             image: artist.image_data,
-            profile_artists_count: profile_artists_count,
+            profile_artists_count:,
             profile_artists: profile_artists_formatted
           }.compact
         end
@@ -61,7 +61,7 @@ module Muffon
 
         def profile_artist_formatted(profile_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            profile_artist: profile_artist
+            profile_artist:
           )
         end
       end

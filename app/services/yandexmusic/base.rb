@@ -22,7 +22,7 @@ module YandexMusic
 
     def image_data_formatted(data, model)
       YandexMusic::Utils::Image.call(
-        data: data, model: model
+        data:, model:
       )
     end
   end

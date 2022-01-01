@@ -59,7 +59,7 @@ module Muffon
 
             def process_track(track)
               Muffon::Processor::Profile::Library::Album::Creator::Track.call(
-                track: track,
+                track:,
                 profile_id: @args[:profile_id],
                 profile_album_id: profile_album.id
               )

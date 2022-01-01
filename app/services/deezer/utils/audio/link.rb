@@ -31,9 +31,9 @@ module Deezer
 
         def payload
           {
-            license_token: license_token,
-            media: media,
-            track_tokens: track_tokens
+            license_token:,
+            media:,
+            track_tokens:
           }.to_json
         end
 

@@ -34,8 +34,8 @@ module Muffon
 
       def collection_item_data_formatted(playlist)
         Muffon::Profile::Playlists::Playlist.call(
-          playlist: playlist,
-          track_id: track_id
+          playlist:,
+          track_id:
         )
       end
 

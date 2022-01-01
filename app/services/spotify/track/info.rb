@@ -24,8 +24,8 @@ module Spotify
         {
           album: album_data,
           image: image_data,
-          duration: duration,
-          duration_seconds: duration_seconds,
+          duration:,
+          duration_seconds:,
           audio: audio_data
         }.compact
       end

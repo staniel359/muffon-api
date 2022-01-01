@@ -35,7 +35,7 @@ module SoundCloud
 
     def image_data_formatted(image, model)
       SoundCloud::Utils::Image.call(
-        image: image, model: model
+        image:, model:
       )
     end
   end

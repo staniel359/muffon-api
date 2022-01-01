@@ -4,7 +4,7 @@ module Discogs
       private
 
       def group_data
-        { tags: tags }
+        { tags: }
       end
     end
   end

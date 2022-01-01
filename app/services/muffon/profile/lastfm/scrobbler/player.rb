@@ -16,7 +16,7 @@ module Muffon
               track: title,
               artist: artist_name,
               album: album_title,
-              duration: duration,
+              duration:,
               method: 'track.updateNowPlaying',
               format: 'json'
             }.compact

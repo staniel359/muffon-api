@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
+git_source(:github) do |repo|
+  "https://github.com/#{repo}.git"
+end
 
-ruby '3.0.3'
+ruby File.read(
+  '.ruby-version'
+).strip
 
 gem 'bootsnap', require: false
 gem 'bcrypt'
@@ -37,7 +41,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'vcr'
+  gem 'vcr', github: 'vcr/vcr'
   gem 'webmock'
 end
 

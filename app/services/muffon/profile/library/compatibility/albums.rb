@@ -30,7 +30,7 @@ module Muffon
 
           def collection_item_data_formatted(profile_album)
             Muffon::Profile::Library::Compatibility::Albums::Album.call(
-              profile_album: profile_album
+              profile_album:
             )
           end
 

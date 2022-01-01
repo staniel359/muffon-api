@@ -42,7 +42,7 @@ module LastFM
 
       def collection_item_data_formatted(tag)
         LastFM::Search::Tags::Tag.call(
-          tag: tag
+          tag:
         )
       end
     end

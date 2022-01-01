@@ -13,7 +13,7 @@ module Muffon
           def artist_base_data
             {
               id: profile_artist.id,
-              favorite_id: favorite_id,
+              favorite_id:,
               name: artist.name
             }.compact
           end

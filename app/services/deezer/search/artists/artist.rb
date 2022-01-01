@@ -17,10 +17,10 @@ module Deezer
 
         def artist_data
           {
-            deezer_id: deezer_id,
-            name: name,
+            deezer_id:,
+            name:,
             image: image_data,
-            listeners_count: listeners_count
+            listeners_count:
           }.compact
         end
 

@@ -13,7 +13,7 @@ module YouTube
 
       def video_data_formatted(video)
         YouTube::Playlist::Videos::Video.call(
-          video: video
+          video:
         )
       end
     end

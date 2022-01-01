@@ -18,12 +18,12 @@ module Discogs
         def album_data
           {
             source_id: SOURCE_ID,
-            discogs_id: discogs_id,
-            discogs_type: discogs_type,
-            title: title,
+            discogs_id:,
+            discogs_type:,
+            title:,
             image: image_data,
-            release_date: release_date,
-            listeners_count: listeners_count
+            release_date:,
+            listeners_count:
           }.compact
         end
 

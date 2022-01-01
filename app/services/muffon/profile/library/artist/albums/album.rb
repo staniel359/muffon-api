@@ -15,7 +15,7 @@ module Muffon
             def data
               {
                 id: profile_album.id,
-                favorite_id: favorite_id,
+                favorite_id:,
                 title: album.title,
                 image: profile_album.image_data,
                 tracks_count:

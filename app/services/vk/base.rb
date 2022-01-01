@@ -63,7 +63,7 @@ module VK
 
     def image_data_formatted(image, model)
       VK::Utils::Image.call(
-        image: image, model: model
+        image:, model:
       )
     end
   end

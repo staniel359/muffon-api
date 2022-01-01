@@ -29,8 +29,8 @@ module Muffon
 
       def paginated_data
         {
-          page: page,
-          next_page: next_page,
+          page:,
+          next_page:,
           total_pages: total_pages_count,
           collection_name.to_sym => collection
         }.compact

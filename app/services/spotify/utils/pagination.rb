@@ -11,8 +11,8 @@ module Spotify
 
       def pagination_params
         {
-          limit: limit,
-          offset: offset
+          limit:,
+          offset:
         }
       end
     end

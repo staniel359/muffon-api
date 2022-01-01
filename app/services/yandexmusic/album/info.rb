@@ -13,19 +13,19 @@ module YandexMusic
       def album_base_data
         {
           source_id: SOURCE_ID,
-          title: title,
-          extra_title: extra_title,
-          artists: artists
+          title:,
+          extra_title:,
+          artists:
         }.compact
       end
 
       def album_extra_data
         {
           image: image_data,
-          release_date: release_date,
-          labels: labels,
+          release_date:,
+          labels:,
           tags: tags&.first(5),
-          tracks: tracks
+          tracks:
         }.compact
       end
 
@@ -47,7 +47,7 @@ module YandexMusic
 
       def track_data_formatted(track)
         YandexMusic::Album::Info::Track.call(
-          track: track,
+          track:,
           profile_id: @args[:profile_id]
         )
       end

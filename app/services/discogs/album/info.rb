@@ -21,11 +21,11 @@ module Discogs
       def album_extra_data
         {
           image: image_data,
-          release_date: release_date,
+          release_date:,
           description: description_truncated,
-          labels: labels,
+          labels:,
           tags: tags&.first(5),
-          tracks: tracks
+          tracks:
         }.compact
       end
 

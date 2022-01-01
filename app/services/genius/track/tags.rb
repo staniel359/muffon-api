@@ -4,7 +4,7 @@ module Genius
       private
 
       def track_data
-        { tags: tags }
+        { tags: }
       end
     end
   end

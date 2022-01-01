@@ -27,7 +27,7 @@ module YandexMusic
 
       def album_data_formatted(album)
         {
-          source_id: source_id,
+          source_id:,
           yandex_music_id: album['id'],
           title: album['title'],
           extra_title: album['version']

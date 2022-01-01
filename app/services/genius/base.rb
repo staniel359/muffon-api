@@ -26,7 +26,7 @@ module Genius
 
     def image_data_formatted(image)
       Genius::Utils::Image.call(
-        image: image
+        image:
       )
     end
 

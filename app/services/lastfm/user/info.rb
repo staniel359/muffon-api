@@ -7,9 +7,9 @@ module LastFM
 
       def user_data
         {
-          nickname: nickname,
+          nickname:,
           image: image_data,
-          plays_count: plays_count
+          plays_count:
         }.compact
       end
 
@@ -24,7 +24,7 @@ module LastFM
 
       def image_data
         LastFM::Utils::Image.call(
-          image: image, model: 'user'
+          image:, model: 'user'
         )
       end
 

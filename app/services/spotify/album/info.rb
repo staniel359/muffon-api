@@ -21,9 +21,9 @@ module Spotify
       def album_extra_data
         {
           image: image_data,
-          release_date: release_date,
-          labels: labels,
-          tracks: tracks
+          release_date:,
+          labels:,
+          tracks:
         }.compact
       end
 
@@ -39,7 +39,7 @@ module Spotify
 
       def track_data_formatted(track)
         Spotify::Album::Info::Track.call(
-          track: track,
+          track:,
           profile_id: @args[:profile_id]
         )
       end

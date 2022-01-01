@@ -25,7 +25,7 @@ module Muffon
 
         def collection_item_data_formatted(bookmark_album)
           Muffon::Profile::Bookmarks::Albums::Album.call(
-            bookmark_album: bookmark_album
+            bookmark_album:
           )
         end
       end

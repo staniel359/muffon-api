@@ -4,7 +4,7 @@ module LastFM
       private
 
       def tag_data
-        { description: description }
+        { description: }
       end
     end
   end

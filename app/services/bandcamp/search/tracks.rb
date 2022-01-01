@@ -7,7 +7,7 @@ module Bandcamp
 
       def collection_item_data_formatted(track)
         Bandcamp::Search::Tracks::Track.call(
-          track: track,
+          track:,
           profile_id: @args[:profile_id]
         )
       end

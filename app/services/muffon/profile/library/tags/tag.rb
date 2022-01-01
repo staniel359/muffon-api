@@ -30,7 +30,7 @@ module Muffon
           end
 
           def find_tag
-            ::Tag.find_by(id: id)
+            ::Tag.find_by(id:)
           end
 
           def count

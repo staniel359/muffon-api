@@ -21,7 +21,7 @@ module Spotify
         return if album.blank?
 
         {
-          source_id: source_id,
+          source_id:,
           spotify_id: album_id,
           title: album_title
         }
@@ -55,7 +55,7 @@ module Spotify
         {
           present: true,
           track_id: spotify_id,
-          source_id: source_id
+          source_id:
         }
       end
     end

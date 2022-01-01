@@ -17,8 +17,8 @@ module YandexMusic
 
         def artist_data
           {
-            yandex_music_id: yandex_music_id,
-            name: name,
+            yandex_music_id:,
+            name:,
             image: image_data
           }.compact
         end

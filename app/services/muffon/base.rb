@@ -77,10 +77,10 @@ module Muffon
 
     def muffon_data
       {
-        library_id: library_id,
-        listened_id: listened_id,
-        bookmark_id: bookmark_id,
-        favorite_id: favorite_id
+        library_id:,
+        listened_id:,
+        bookmark_id:,
+        favorite_id:
       }.compact
     end
 

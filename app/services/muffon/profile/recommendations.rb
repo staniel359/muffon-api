@@ -75,7 +75,7 @@ module Muffon
 
       def collection_item_data_formatted(recommendation)
         Muffon::Profile::Recommendations::Recommendation.call(
-          recommendation: recommendation,
+          recommendation:,
           profile_id: @args[:profile_id]
         )
       end

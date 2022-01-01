@@ -29,7 +29,7 @@ module Muffon
 
         def collection_item_data_formatted(profile_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            profile_artist: profile_artist
+            profile_artist:
           )
         end
 

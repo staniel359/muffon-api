@@ -23,8 +23,8 @@ module SoundCloud
       def track_extra_data
         {
           image: image_data,
-          duration: duration,
-          duration_seconds: duration_seconds,
+          duration:,
+          duration_seconds:,
           description: description_truncated,
           tags: tags&.first(5),
           audio: audio_data

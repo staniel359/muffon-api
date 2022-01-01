@@ -10,7 +10,7 @@ module Muffon
               track: title,
               artist: artist_name,
               album: album_title,
-              timestamp: timestamp,
+              timestamp:,
               method: 'track.scrobble',
               format: 'json'
             }.compact

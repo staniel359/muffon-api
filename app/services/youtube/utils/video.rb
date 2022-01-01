@@ -30,7 +30,7 @@ module YouTube
 
       def image_data_formatted
         YouTube::Utils::Image.call(
-          image: image
+          image:
         )
       end
 

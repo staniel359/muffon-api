@@ -12,10 +12,10 @@ module YouTube
 
         def data
           {
-            title: title,
-            youtube_id: youtube_id,
+            title:,
+            youtube_id:,
             image: image_data_formatted,
-            publish_date: publish_date
+            publish_date:
           }.compact
         end
 

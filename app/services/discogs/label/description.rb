@@ -4,7 +4,7 @@ module Discogs
       private
 
       def label_data
-        { description: description }
+        { description: }
       end
     end
   end

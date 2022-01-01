@@ -21,10 +21,10 @@ module Deezer
       def album_extra_data
         {
           image: image_data,
-          listeners_count: listeners_count,
-          release_date: release_date,
-          labels: labels,
-          tracks: tracks
+          listeners_count:,
+          release_date:,
+          labels:,
+          tracks:
         }.compact
       end
 

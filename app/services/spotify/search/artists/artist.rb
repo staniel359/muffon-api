@@ -17,8 +17,8 @@ module Spotify
 
         def artist_data
           {
-            spotify_id: spotify_id,
-            name: name,
+            spotify_id:,
+            name:,
             image: image_data
           }.compact
         end

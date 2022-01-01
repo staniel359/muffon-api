@@ -106,7 +106,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   def image_data_formatted(image)
     Muffon::Utils::Image.call(
-      image: image
+      image:
     )
   end
 

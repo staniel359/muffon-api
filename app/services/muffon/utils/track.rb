@@ -39,7 +39,7 @@ module Muffon
 
         ProfileTrack.find_by(
           profile_id: @args[:profile_id],
-          track_id: track_id
+          track_id:
         )
       end
 
@@ -56,7 +56,7 @@ module Muffon
 
         FavoriteTrack.find_by(
           profile_id: @args[:profile_id],
-          track_id: track_id
+          track_id:
         )
       end
 
@@ -69,7 +69,7 @@ module Muffon
 
         BookmarkTrack.find_by(
           profile_id: @args[:profile_id],
-          track_id: track_id
+          track_id:
         )
       end
 
@@ -82,7 +82,7 @@ module Muffon
 
         ListenedTrack.find_by(
           profile_id: @args[:profile_id],
-          track_id: track_id
+          track_id:
         )
       end
 
@@ -95,7 +95,7 @@ module Muffon
 
         PlaylistTrack.find_by(
           playlist_id: @args[:playlist_id],
-          track_id: track_id
+          track_id:
         )
       end
 

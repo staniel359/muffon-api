@@ -21,7 +21,7 @@ module Muffon
         def retrieve_tag_data(page = nil)
           tag_service.call(
             tag: @args[:tag],
-            page: page,
+            page:,
             sample: true
           )[:tag] || {}
         end

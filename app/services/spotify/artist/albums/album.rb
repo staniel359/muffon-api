@@ -18,11 +18,11 @@ module Spotify
         def album_data
           {
             source_id: SOURCE_ID,
-            spotify_id: spotify_id,
-            title: title,
+            spotify_id:,
+            title:,
             image: image_data,
-            release_date: release_date,
-            listeners_count: listeners_count
+            release_date:,
+            listeners_count:
           }.compact
         end
 

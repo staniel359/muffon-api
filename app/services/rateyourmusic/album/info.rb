@@ -41,9 +41,9 @@ module RateYourMusic
       def album_extra_data
         {
           image: image_data,
-          release_date: release_date,
+          release_date:,
           tags: tags&.first(5),
-          tracks: tracks
+          tracks:
         }.compact
       end
 
@@ -86,8 +86,8 @@ module RateYourMusic
 
       def track_data_formatted(track)
         RateYourMusic::Album::Info::Track.call(
-          track: track,
-          artists_list: artists_list,
+          track:,
+          artists_list:,
           profile_id: @args[:profile_id]
         )
       end

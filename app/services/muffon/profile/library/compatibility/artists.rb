@@ -31,7 +31,7 @@ module Muffon
 
           def collection_item_data_formatted(profile_artist)
             Muffon::Profile::Library::Compatibility::Artists::Artist.call(
-              profile_artist: profile_artist
+              profile_artist:
             )
           end
 

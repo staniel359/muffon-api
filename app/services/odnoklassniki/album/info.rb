@@ -21,9 +21,9 @@ module Odnoklassniki
       def album_extra_data
         {
           image: image_data,
-          release_date: release_date,
+          release_date:,
           tags: tags&.first(5),
-          tracks: tracks
+          tracks:
         }.compact
       end
 
@@ -37,7 +37,7 @@ module Odnoklassniki
 
       def track_data_formatted(track)
         Odnoklassniki::Album::Info::Track.call(
-          track: track,
+          track:,
           profile_id: @args[:profile_id]
         )
       end

@@ -60,7 +60,7 @@ module LastFM
 
       def play_formatted(play)
         LastFM::User::Plays::Play.call(
-          play: play
+          play:
         )
       end
     end

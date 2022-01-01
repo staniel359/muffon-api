@@ -4,7 +4,7 @@ module SoundCloud
       private
 
       def album_data
-        { description: description }
+        { description: }
       end
     end
   end

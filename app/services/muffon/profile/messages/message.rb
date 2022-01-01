@@ -12,8 +12,8 @@ module Muffon
           {
             content: message.content,
             profile: profile_data,
-            images: images,
-            tracks: tracks,
+            images:,
+            tracks:,
             created: created_formatted
           }.compact
         end
@@ -54,7 +54,7 @@ module Muffon
 
         def track_data_formatted(track)
           Muffon::Profile::Messages::Message::Track.call(
-            track: track
+            track:
           )
         end
 

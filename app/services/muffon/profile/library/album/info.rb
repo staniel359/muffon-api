@@ -8,7 +8,7 @@ module Muffon
           def album_data
             {
               id: profile_album.id,
-              favorite_id: favorite_id,
+              favorite_id:,
               title: album.title,
               artist: artist_data,
               image: profile_album.image_data,

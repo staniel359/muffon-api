@@ -44,7 +44,7 @@ module Deezer
 
     def image_data_formatted(image_id, model)
       Deezer::Utils::Image.call(
-        image_id: image_id, model: model
+        image_id:, model:
       )
     end
 

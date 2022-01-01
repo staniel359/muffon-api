@@ -4,7 +4,7 @@ module YouTube
       private
 
       def video_data
-        { tags: tags }
+        { tags: }
       end
     end
   end

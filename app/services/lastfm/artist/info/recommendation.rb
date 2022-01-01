@@ -27,7 +27,7 @@ module LastFM
         def find_recommendation
           @find_recommendation ||=
             profile.recommendations.find_by(
-              artist_id: artist_id
+              artist_id:
             )
         end
 

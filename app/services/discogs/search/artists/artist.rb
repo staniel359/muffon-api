@@ -17,8 +17,8 @@ module Discogs
 
         def artist_data
           {
-            discogs_id: discogs_id,
-            name: name,
+            discogs_id:,
+            name:,
             image: image_data
           }.compact
         end

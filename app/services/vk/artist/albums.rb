@@ -61,7 +61,7 @@ module VK
 
       def album_data_formatted(album)
         VK::Artist::Albums::Album.call(
-          album: album,
+          album:,
           profile_id: @args[:profile_id]
         )
       end

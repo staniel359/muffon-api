@@ -24,7 +24,7 @@ module Odnoklassniki
       end
 
       def artist_data
-        { name: name }
+        { name: }
       end
     end
   end

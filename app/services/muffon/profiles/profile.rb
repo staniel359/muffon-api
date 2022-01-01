@@ -18,8 +18,8 @@ module Muffon
       def profile_base_data
         {
           id: profile.id,
-          nickname: nickname,
-          email: email
+          nickname:,
+          email:
         }.compact
       end
 
@@ -38,9 +38,9 @@ module Muffon
           image: profile.image_data,
           gender: profile.gender,
           birthdate: profile.birthdate,
-          country: country,
-          city: city,
-          role: role,
+          country:,
+          city:,
+          role:,
           online: profile.online
         }.compact
       end

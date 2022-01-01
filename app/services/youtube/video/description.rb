@@ -4,7 +4,7 @@ module YouTube
       private
 
       def video_data
-        { description: description }
+        { description: }
       end
     end
   end

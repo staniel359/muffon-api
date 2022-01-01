@@ -13,7 +13,7 @@ class Artist < ApplicationRecord
         'LOWER(name) = ?',
         name.strip.downcase
       ).first_or_create(
-        name: name
+        name:
       )
     end
   end
@@ -22,7 +22,7 @@ class Artist < ApplicationRecord
 
   def add_tags
     Artist::Tags::UpdaterWorker.perform_async(
-      name: name
+      name:
     )
   end
 end

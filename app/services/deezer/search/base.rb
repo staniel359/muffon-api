@@ -25,7 +25,7 @@ module Deezer
         {
           filter: 'all',
           nb: limit,
-          output: output,
+          output:,
           query: @args[:query],
           start: offset
         }.to_json

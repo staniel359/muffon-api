@@ -39,7 +39,7 @@ module Discogs
 
     def image_data_formatted(image, model)
       Discogs::Utils::Image.call(
-        image: image, model: model
+        image:, model:
       )
     end
 

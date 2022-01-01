@@ -10,8 +10,8 @@ module RateYourMusic
 
         def data
           {
-            name: name,
-            rateyourmusic_slug: rateyourmusic_slug,
+            name:,
+            rateyourmusic_slug:,
             image: image_data
           }.compact
         end

@@ -15,8 +15,8 @@ class Album < ApplicationRecord
         'artist_id = ? AND LOWER(title) = ?',
         artist_id, title.downcase
       ).first_or_create(
-        artist_id: artist_id,
-        title: title
+        artist_id:,
+        title:
       )
     end
   end

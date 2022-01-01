@@ -40,7 +40,7 @@ module Muffon
 
       def collection_item_data_formatted(conversation)
         Muffon::Profile::Conversations::Conversation.call(
-          conversation: conversation,
+          conversation:,
           profile_id: @args[:profile_id]
         )
       end

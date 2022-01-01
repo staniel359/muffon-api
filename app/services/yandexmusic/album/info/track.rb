@@ -18,12 +18,12 @@ module YandexMusic
 
         def track_base_data
           {
-            player_id: player_id,
+            player_id:,
             source_id: SOURCE_ID,
-            yandex_music_id: yandex_music_id,
-            title: title,
-            extra_title: extra_title,
-            artists: artists
+            yandex_music_id:,
+            title:,
+            extra_title:,
+            artists:
           }.compact
         end
 
@@ -33,8 +33,8 @@ module YandexMusic
 
         def track_extra_data
           {
-            duration: duration,
-            duration_seconds: duration_seconds,
+            duration:,
+            duration_seconds:,
             audio: audio_data
           }
         end

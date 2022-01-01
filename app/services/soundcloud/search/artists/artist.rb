@@ -17,8 +17,8 @@ module SoundCloud
 
         def artist_data
           {
-            soundcloud_id: soundcloud_id,
-            name: name,
+            soundcloud_id:,
+            name:,
             image: image_data
           }.compact
         end

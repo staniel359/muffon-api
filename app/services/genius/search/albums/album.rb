@@ -18,11 +18,11 @@ module Genius
         def album_data
           {
             source_id: SOURCE_ID,
-            genius_id: genius_id,
-            title: title,
-            artists: artists,
+            genius_id:,
+            title:,
+            artists:,
             image: image_data,
-            release_date: release_date
+            release_date:
           }.compact
         end
 

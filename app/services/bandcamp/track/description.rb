@@ -4,7 +4,7 @@ module Bandcamp
       private
 
       def track_data
-        { description: description }
+        { description: }
       end
     end
   end

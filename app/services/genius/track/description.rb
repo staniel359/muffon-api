@@ -4,7 +4,7 @@ module Genius
       private
 
       def track_data
-        { description: description }
+        { description: }
       end
     end
   end

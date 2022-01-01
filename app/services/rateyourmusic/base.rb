@@ -55,7 +55,7 @@ module RateYourMusic
 
     def image_data_formatted(image, model)
       RateYourMusic::Utils::Image.call(
-        image: image, model: model
+        image:, model:
       )
     end
 

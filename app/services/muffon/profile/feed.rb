@@ -40,7 +40,7 @@ module Muffon
 
       def collection_item_data_formatted(post)
         Muffon::Profile::Posts::Post.call(
-          post: post
+          post:
         )
       end
     end

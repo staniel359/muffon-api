@@ -25,7 +25,7 @@ module Muffon
 
         def collection_item_data_formatted(favorite_track)
           Muffon::Profile::Favorites::Tracks::Track.call(
-            favorite_track: favorite_track
+            favorite_track:
           )
         end
       end

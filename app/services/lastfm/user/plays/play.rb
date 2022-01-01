@@ -10,11 +10,11 @@ module LastFM
 
         def data
           {
-            title: title,
+            title:,
             artist: artist_data,
             album: album_data,
             image: image_data,
-            created: created
+            created:
           }.compact
         end
 
@@ -50,7 +50,7 @@ module LastFM
 
         def image_data
           LastFM::Utils::Image.call(
-            image: image
+            image:
           )
         end
 

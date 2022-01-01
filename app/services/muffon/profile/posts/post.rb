@@ -13,8 +13,8 @@ module Muffon
             id: post.id,
             profile: profile_data,
             content: post.content,
-            images: images,
-            tracks: tracks,
+            images:,
+            tracks:,
             created: created_formatted
           }.compact
         end
@@ -55,7 +55,7 @@ module Muffon
 
         def track_data_formatted(track)
           Muffon::Profile::Posts::Post::Track.call(
-            track: track
+            track:
           )
         end
 

@@ -14,11 +14,11 @@ module YouTube
           return if snippet.blank?
 
           {
-            title: title,
-            youtube_id: youtube_id,
+            title:,
+            youtube_id:,
             channel: channel_data,
             image: image_data_formatted,
-            publish_date: publish_date
+            publish_date:
           }.compact
         end
 

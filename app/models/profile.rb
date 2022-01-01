@@ -104,7 +104,7 @@ class Profile < ApplicationRecord
   def conversations
     Conversation.where(
       'profile_id = :id OR other_profile_id = :id',
-      id: id
+      id:
     )
   end
 

@@ -18,11 +18,11 @@ module Odnoklassniki
         def album_data
           {
             source_id: SOURCE_ID,
-            odnoklassniki_id: odnoklassniki_id,
-            title: title,
+            odnoklassniki_id:,
+            title:,
             image: image_data,
-            release_date: release_date,
-            listeners_count: listeners_count
+            release_date:,
+            listeners_count:
           }.compact
         end
 

@@ -38,7 +38,7 @@ module Muffon
 
           def collection_item_data_formatted(profile_track)
             Muffon::Profile::Library::Album::Tracks::Track.call(
-              profile_track: profile_track,
+              profile_track:,
               profile_id: @args[:profile_id]
             )
           end

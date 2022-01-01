@@ -25,7 +25,7 @@ module Muffon
 
       def original_url
         ActiveStorage::Current.set(
-          url_options: url_options
+          url_options:
         ) do
           image.url
         end
@@ -41,7 +41,7 @@ module Muffon
 
       def variant_url(size)
         ActiveStorage::Current.set(
-          url_options: url_options
+          url_options:
         ) do
           image.variant(
             loader: { page: nil },

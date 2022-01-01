@@ -8,7 +8,7 @@ module RateYourMusic
 
       def collection_item_data_formatted(album)
         RateYourMusic::Search::Albums::Album.call(
-          album: album
+          album:
         )
       end
     end

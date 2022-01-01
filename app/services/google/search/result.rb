@@ -9,11 +9,11 @@ module Google
 
       def data
         {
-          site_name: site_name,
-          title: title,
-          link: link,
+          site_name:,
+          title:,
+          link:,
           image: image_data,
-          description: description
+          description:
         }.compact
       end
 

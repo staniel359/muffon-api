@@ -22,7 +22,7 @@ module Discogs
 
       def collection_item_data_formatted(album)
         Discogs::Group::Albums::Album.call(
-          album: album
+          album:
         )
       end
 

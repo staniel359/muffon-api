@@ -29,7 +29,7 @@ module Muffon
 
         def collection_item_data_formatted(playlist_track)
           Muffon::Profile::Playlist::Tracks::Track.call(
-            playlist_track: playlist_track
+            playlist_track:
           )
         end
 

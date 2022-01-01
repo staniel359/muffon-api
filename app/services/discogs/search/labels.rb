@@ -8,7 +8,7 @@ module Discogs
 
       def collection_item_data_formatted(label)
         Discogs::Search::Labels::Label.call(
-          label: label
+          label:
         )
       end
     end

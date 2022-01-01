@@ -28,10 +28,10 @@ module LastFM
         {
           album: album_data,
           image: image_data,
-          listeners_count: listeners_count,
-          plays_count: plays_count,
-          duration: duration,
-          duration_seconds: duration_seconds
+          listeners_count:,
+          plays_count:,
+          duration:,
+          duration_seconds:
         }.compact
       end
 

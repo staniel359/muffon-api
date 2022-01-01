@@ -50,7 +50,7 @@ module Muffon
 
           def process_track(track)
             Muffon::Processor::Profile::Post::Creator::Track.call(
-              track: track
+              track:
             )
           end
 
