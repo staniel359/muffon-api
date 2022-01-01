@@ -44,6 +44,7 @@ module Muffon
           url_options: url_options
         ) do
           image.variant(
+            loader: { page: nil },
             resize_to_limit: [size, size]
           ).processed.url
         end
