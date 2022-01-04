@@ -18,14 +18,13 @@ module LastFM
         end
 
         def track_data
-          track_info_data.merge(
-            paginated_data
-          )
+          track_info_data
+            .merge(paginated_data)
         end
 
         def track_info_data
           raw_track_info_data.slice(
-            :title, :artist
+            :title, :artists
           )
         end
 

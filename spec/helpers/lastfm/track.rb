@@ -11,7 +11,7 @@ module Helpers
         end
 
         def similar_data
-          {:track=>{:page=>2, :similar=>[{:artists=>[{:name=>"Beach House"}], :duration=>"04:33", :duration_seconds=>273, :player_id=>"1", :title=>"Silver Soul"}, {:artists=>[{:name=>"Galaxie 500"}], :duration=>"03:54", :duration_seconds=>234, :player_id=>"1", :title=>"Tugboat"}, {:artists=>[{:name=>"Alvvays"}], :duration=>"00:00", :duration_seconds=>0, :player_id=>"1", :title=>"Dreams Tonite"}, {:artists=>[{:name=>"Washed Out"}], :duration=>"03:15", :duration_seconds=>195, :player_id=>"1", :title=>"Feel It All Around"}, {:artists=>[{:name=>"Craft Spells"}], :duration=>"04:00", :duration_seconds=>240, :player_id=>"1", :title=>"After the Moment"}], :title=>"Chinatown", :total_pages=>40}}
+          {:track=>{:artists=>[{:name=>"Wild Nothing"}], :page=>2, :similar=>[{:artists=>[{:name=>"Beach House"}], :duration=>"04:33", :duration_seconds=>273, :player_id=>"1", :title=>"Silver Soul"}, {:artists=>[{:name=>"Galaxie 500"}], :duration=>"03:54", :duration_seconds=>234, :player_id=>"1", :title=>"Tugboat"}, {:artists=>[{:name=>"Alvvays"}], :duration=>"00:00", :duration_seconds=>0, :player_id=>"1", :title=>"Dreams Tonite"}, {:artists=>[{:name=>"Washed Out"}], :duration=>"03:15", :duration_seconds=>195, :player_id=>"1", :title=>"Feel It All Around"}, {:artists=>[{:name=>"Craft Spells"}], :duration=>"04:00", :duration_seconds=>240, :player_id=>"1", :title=>"After the Moment"}], :title=>"Chinatown", :total_pages=>40}}
         end
 
         def tags_data
