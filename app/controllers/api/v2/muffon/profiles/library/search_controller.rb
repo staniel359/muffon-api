@@ -16,6 +16,10 @@ module API
               render_data_with_status
             end
 
+            def tags
+              render_data_with_status
+            end
+
             private
 
             def artists_data
@@ -38,6 +42,14 @@ module API
               ::Muffon::Profile::Library::Search::Tracks.call(
                 params.slice(
                   *%i[profile_id query playlist_id page limit]
+                )
+              )
+            end
+
+            def tags_data
+              ::Muffon::Profile::Library::Search::Tags.call(
+                params.slice(
+                  *%i[profile_id query page limit]
                 )
               )
             end

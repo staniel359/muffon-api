@@ -1,15 +1,21 @@
 module Muffon
   module Profile
     module Library
-      module Search
-        class Artists < Muffon::Profile::Library::Search::Base
+      module Tag
+        class Artists < Muffon::Profile::Library::Tag::Base
           COLLECTION_NAME = 'artists'.freeze
+          include Muffon::Utils::Pagination
 
           private
 
-          def library_data
-            library_base_data
+          def tag_data
+            tag_base_data
+              .merge(library_base_data)
               .merge(paginated_data)
+          end
+
+          def tag_base_data
+            { name: tag.name }
           end
 
           def library_base_data
@@ -20,25 +26,11 @@ module Muffon
           end
 
           def total_items_count
-            artists.size
-          end
-
-          def artists
-            @artists ||=
-              artists_joined.where(
-                'LOWER(artists.name) LIKE :query',
-                query: "%#{@args[:query].downcase}%"
-              )
-          end
-
-          def artists_joined
-            profile
-              .profile_artists
-              .left_joins(:artist)
+            profile_artists.count
           end
 
           def collection_list
-            artists
+            profile_artists
               .profile_tracks_count_desc_ordered
               .profile_albums_count_desc_ordered
               .created_asc_ordered

@@ -39,6 +39,16 @@ Rails.application.routes.draw do
                 only: %i[index create destroy],
                 param: :library_id
 
+              resources :albums,
+                only: %i[index create destroy],
+                param: :library_id
+
+              resources :tracks,
+                only: %i[index create destroy],
+                param: :library_id
+
+              resources :tags, only: :index
+
               namespace :artists, as: :artist do
                 scope ':library_id' do
                   get '', action: :info
@@ -60,19 +70,19 @@ Rails.application.routes.draw do
                 end
               end
 
+              namespace :tags, as: :tag do
+                scope ':tag_id' do
+                  get '', action: :info
+                  get 'artists'
+                end
+              end
+
               namespace :search do
                 get 'artists'
                 get 'albums'
                 get 'tracks'
+                get 'tags'
               end
-
-              resources :albums,
-                only: %i[index create destroy],
-                param: :library_id
-
-              resources :tracks,
-                only: %i[index create destroy],
-                param: :library_id
 
               namespace :compatibility do
                 get '', action: :info

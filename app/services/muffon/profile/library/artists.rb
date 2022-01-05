@@ -8,11 +8,11 @@ module Muffon
         private
 
         def library_data
-          artist_data
+          library_base_data
             .merge(paginated_data)
         end
 
-        def artist_data
+        def library_base_data
           {
             top_tracks_count: top_tracks_count,
             top_albums_count: top_albums_count
@@ -26,6 +26,7 @@ module Muffon
         def collection_list
           artists
             .profile_tracks_count_desc_ordered
+            .profile_albums_count_desc_ordered
             .created_asc_ordered
             .limit(limit)
             .offset(offset)

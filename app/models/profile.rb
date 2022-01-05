@@ -108,6 +108,17 @@ class Profile < ApplicationRecord
     )
   end
 
+  def tags
+    profile_artists
+      .left_joins(:artist)
+      .pluck(:tag_ids)
+      .flatten
+      .compact
+      .tally
+      .sort_by(&:second)
+      .reverse
+  end
+
   private
 
   def set_token
