@@ -88,7 +88,7 @@ module API
           ::Muffon::Processor::Artist::Image::Updater.call(
             name: artist_data[:name],
             image_url: artist_data.dig(
-              :images, 0, :original
+              :images, 0, :medium
             )
           )
         end
