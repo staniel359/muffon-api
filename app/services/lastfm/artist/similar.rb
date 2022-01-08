@@ -3,6 +3,7 @@ module LastFM
     class Similar < LastFM::Artist::Base
       API_METHOD = 'artist.getSimilar'.freeze
       COLLECTION_NAME = 'similar'.freeze
+      TOTAL_LIMIT = 250
       include LastFM::Artist::Utils::Pagination
 
       private

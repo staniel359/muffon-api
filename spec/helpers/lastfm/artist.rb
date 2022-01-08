@@ -23,7 +23,7 @@ module Helpers
         end
 
         def similar_data
-          {:artist=>{:name=>"Wild Nothing", :page=>2, :similar=>[{:name=>"Small Black"}, {:name=>"Blouse"}, {:name=>"Minks"}, {:name=>"Seapony"}, {:name=>"Washed Out"}], :total_pages=>40}}
+          {:artist=>{:name=>"Wild Nothing", :page=>2, :similar=>[{:name=>"Small Black"}, {:name=>"Blouse"}, {:name=>"Lotus Plaza"}, {:name=>"Washed Out"}, {:name=>"Minks"}], :total_pages=>50}}
         end
 
         def tags_data
