@@ -3,6 +3,7 @@ module LastFM
     class Images < LastFM::Artist::Web::Base
       COLLECTION_NAME = 'images'.freeze
       include LastFM::Utils::Web::Pagination
+      include Muffon::Utils::Artist
 
       private
 
@@ -28,7 +29,10 @@ module LastFM
       end
 
       def artist_base_data
-        { name: name }
+        {
+          name:,
+          image: find_artist.image_data
+        }.compact
       end
 
       def collection_item_data_formatted(image)
