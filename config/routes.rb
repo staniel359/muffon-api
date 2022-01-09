@@ -198,9 +198,7 @@ Rails.application.routes.draw do
               get 'tracks'
             end
           end
-        end
 
-        namespace :radio do
           namespace :artist do
             scope ':artist' do
               get 'tracks'
@@ -208,6 +206,8 @@ Rails.application.routes.draw do
             end
           end
         end
+
+        resources :playlists, only: :index
       end
 
 # Bandcamp

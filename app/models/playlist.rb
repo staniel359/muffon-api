@@ -14,7 +14,8 @@ class Playlist < ApplicationRecord
   class << self
     def associated
       includes(
-        image_association
+        image_association,
+        profile: image_association
       )
     end
   end

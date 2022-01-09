@@ -13,6 +13,7 @@ module Muffon
             id: playlist.id,
             playlist_track_id: playlist_track&.id,
             title: playlist.title,
+            profile: profile_data,
             image: playlist.image_data,
             tracks_count: playlist.playlist_tracks_count,
             created: created_formatted
@@ -29,6 +30,18 @@ module Muffon
           playlist.playlist_tracks.find_by(
             track_id: @args[:track_id]
           )
+        end
+
+        def profile_data
+          {
+            id: profile.id,
+            nickname: profile.nickname,
+            image: profile.image_data
+          }.compact
+        end
+
+        def profile
+          @profile ||= playlist.profile
         end
 
         def created_formatted
