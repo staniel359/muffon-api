@@ -1,6 +1,8 @@
 module Muffon
   module Utils
     module Track
+      include Muffon::Utils::Base
+
       private
 
       def player_id
@@ -31,16 +33,9 @@ module Muffon
       end
 
       def library_id
-        find_profile_track&.id
-      end
-
-      def find_profile_track
-        return if @args[:profile_id].blank?
-
-        ProfileTrack.find_by(
-          profile_id: @args[:profile_id],
-          track_id:
-        )
+        self_data('track')[
+          :profile_track_id
+        ]
       end
 
       def track_id
@@ -48,42 +43,21 @@ module Muffon
       end
 
       def favorite_id
-        find_favorite_track&.id
-      end
-
-      def find_favorite_track
-        return if @args[:profile_id].blank?
-
-        FavoriteTrack.find_by(
-          profile_id: @args[:profile_id],
-          track_id:
-        )
+        self_data('track')[
+          :favorite_track_id
+        ]
       end
 
       def bookmark_id
-        find_bookmark_track&.id
-      end
-
-      def find_bookmark_track
-        return if @args[:profile_id].blank?
-
-        BookmarkTrack.find_by(
-          profile_id: @args[:profile_id],
-          track_id:
-        )
+        self_data('track')[
+          :bookmark_track_id
+        ]
       end
 
       def listened_id
-        find_listened_track&.id
-      end
-
-      def find_listened_track
-        return if @args[:profile_id].blank?
-
-        ListenedTrack.find_by(
-          profile_id: @args[:profile_id],
-          track_id:
-        )
+        self_data('track')[
+          :listened_track_id
+        ]
       end
 
       def playlist_track_id

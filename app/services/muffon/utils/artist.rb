@@ -1,6 +1,8 @@
 module Muffon
   module Utils
     module Artist
+      include Muffon::Utils::Base
+
       private
 
       def find_artist
@@ -11,16 +13,9 @@ module Muffon
       end
 
       def library_id
-        find_profile_artist&.id
-      end
-
-      def find_profile_artist
-        return if @args[:profile_id].blank?
-
-        ProfileArtist.find_by(
-          profile_id: @args[:profile_id],
-          artist_id:
-        )
+        self_data('artist')[
+          :profile_artist_id
+        ]
       end
 
       def artist_id
@@ -28,42 +23,21 @@ module Muffon
       end
 
       def favorite_id
-        find_favorite_artist&.id
-      end
-
-      def find_favorite_artist
-        return if @args[:profile_id].blank?
-
-        FavoriteArtist.find_by(
-          profile_id: @args[:profile_id],
-          artist_id:
-        )
+        self_data('artist')[
+          :favorite_artist_id
+        ]
       end
 
       def bookmark_id
-        find_bookmark_artist&.id
-      end
-
-      def find_bookmark_artist
-        return if @args[:profile_id].blank?
-
-        BookmarkArtist.find_by(
-          profile_id: @args[:profile_id],
-          artist_id:
-        )
+        self_data('artist')[
+          :bookmark_artist_id
+        ]
       end
 
       def listened_id
-        find_listened_artist&.id
-      end
-
-      def find_listened_artist
-        return if @args[:profile_id].blank?
-
-        ListenedArtist.find_by(
-          profile_id: @args[:profile_id],
-          artist_id:
-        )
+        self_data('artist')[
+          :listened_artist_id
+        ]
       end
     end
   end

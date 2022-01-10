@@ -1,6 +1,8 @@
 module Muffon
   module Utils
     module Album
+      include Muffon::Utils::Base
+
       private
 
       def find_album
@@ -18,16 +20,9 @@ module Muffon
       end
 
       def library_id
-        find_profile_album&.id
-      end
-
-      def find_profile_album
-        return if @args[:profile_id].blank?
-
-        ProfileAlbum.find_by(
-          profile_id: @args[:profile_id],
-          album_id:
-        )
+        self_data('album')[
+          :profile_album_id
+        ]
       end
 
       def album_id
@@ -35,42 +30,21 @@ module Muffon
       end
 
       def favorite_id
-        find_favorite_album&.id
-      end
-
-      def find_favorite_album
-        return if @args[:profile_id].blank?
-
-        FavoriteAlbum.find_by(
-          profile_id: @args[:profile_id],
-          album_id:
-        )
+        self_data('album')[
+          :favorite_album_id
+        ]
       end
 
       def bookmark_id
-        find_bookmark_album&.id
-      end
-
-      def find_bookmark_album
-        return if @args[:profile_id].blank?
-
-        BookmarkAlbum.find_by(
-          profile_id: @args[:profile_id],
-          album_id:
-        )
+        self_data('album')[
+          :bookmark_album_id
+        ]
       end
 
       def listened_id
-        find_listened_album&.id
-      end
-
-      def find_listened_album
-        return if @args[:profile_id].blank?
-
-        ListenedAlbum.find_by(
-          profile_id: @args[:profile_id],
-          album_id:
-        )
+        self_data('album')[
+          :listened_album_id
+        ]
       end
 
       def listeners_count
