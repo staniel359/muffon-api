@@ -45,7 +45,7 @@ module Muffon
         ) do
           image.variant(
             loader: { page: nil },
-            resize_to_limit: [size, size]
+            resize_to_fill: [size, size]
           ).processed.url
         end
       end
