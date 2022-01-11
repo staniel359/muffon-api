@@ -7,10 +7,6 @@ module Muffon
 
         private
 
-        def primary_args
-          [@args[:playlist_id]]
-        end
-
         def total_items_count
           playlist.playlist_tracks_count
         end

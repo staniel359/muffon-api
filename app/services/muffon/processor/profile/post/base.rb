@@ -18,17 +18,21 @@ module Muffon
               @args[:images].presence
           end
 
-          def data
-            return forbidden if wrong_profile?
-
-            process_post
+          def no_data?
+            post.blank?
           end
 
           def post
             @post ||=
-              profile.profile_posts.find_by(
+              profile.own_posts.find_by(
                 id: @args[:post_id]
               )
+          end
+
+          def data
+            return forbidden if wrong_profile?
+
+            process_post
           end
 
           def post_params

@@ -12,10 +12,8 @@ module Muffon
             ]
           end
 
-          def data
-            return forbidden if wrong_profile?
-
-            process_playlist
+          def no_data?
+            playlist.blank?
           end
 
           def playlist
@@ -23,6 +21,12 @@ module Muffon
               profile.playlists.find_by(
                 id: @args[:playlist_id]
               )
+          end
+
+          def data
+            return forbidden if wrong_profile?
+
+            process_playlist
           end
 
           def process_image

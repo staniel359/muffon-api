@@ -11,7 +11,7 @@ module API
             render_data_with_status
           end
 
-          def show
+          def info
             render_data_with_status
           end
 
@@ -41,7 +41,7 @@ module API
             )
           end
 
-          def show_data
+          def info_data
             ::Muffon::Profile::Playlist::Info.call(
               params.slice(
                 *%i[profile_id playlist_id]

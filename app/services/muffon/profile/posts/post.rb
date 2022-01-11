@@ -11,8 +11,8 @@ module Muffon
         def data
           {
             id: post.id,
-            profile: profile_data,
             content: post.content,
+            profile: profile_data,
             images:,
             tracks:,
             created: created_formatted

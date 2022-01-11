@@ -25,11 +25,10 @@ class Profile < ApplicationRecord
 
   has_many :playlists, dependent: nil
 
-  has_many :profile_posts, dependent: nil
+  has_many :own_posts, class_name: 'Post', dependent: nil
 
   has_many :posts,
            foreign_key: 'other_profile_id',
-           class_name: 'ProfilePost',
            inverse_of: :other_profile,
            dependent: nil
 
@@ -53,6 +52,12 @@ class Profile < ApplicationRecord
            source: :profile
 
   has_many :messages, dependent: nil
+
+  has_many :own_communities, class_name: 'Community', dependent: nil
+
+  has_many :memberships, dependent: nil
+
+  has_many :communities, through: :memberships
 
   enum gender: {
     male: 0,

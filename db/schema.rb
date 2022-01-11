@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_30_205226) do
+ActiveRecord::Schema.define(version: 2022_01_10_173252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,17 @@ ActiveRecord::Schema.define(version: 2021_12_30_205226) do
     t.index ["track_id", "profile_id"], name: "index_bookmark_tracks_on_track_id_and_profile_id", unique: true
   end
 
+  create_table "communities", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "title"
+    t.text "description"
+    t.integer "members_count", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["profile_id"], name: "index_communities_on_profile_id"
+    t.index ["title"], name: "index_communities_on_title", unique: true
+  end
+
   create_table "conversations", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "other_profile_id", null: false
@@ -154,6 +165,16 @@ ActiveRecord::Schema.define(version: 2021_12_30_205226) do
     t.index ["track_id", "profile_id"], name: "index_listened_tracks_on_track_id_and_profile_id", unique: true
   end
 
+  create_table "memberships", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "community_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id", "profile_id"], name: "index_memberships_on_community_id_and_profile_id", unique: true
+    t.index ["community_id"], name: "index_memberships_on_community_id"
+    t.index ["profile_id"], name: "index_memberships_on_profile_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.bigint "conversation_id", null: false
     t.bigint "profile_id", null: false
@@ -186,6 +207,19 @@ ActiveRecord::Schema.define(version: 2021_12_30_205226) do
     t.index ["title", "profile_id"], name: "index_playlists_on_title_and_profile_id", unique: true
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "other_profile_id"
+    t.text "content"
+    t.integer "track_ids", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "community_id"
+    t.index ["community_id"], name: "index_posts_on_community_id"
+    t.index ["other_profile_id"], name: "index_posts_on_other_profile_id"
+    t.index ["profile_id"], name: "index_posts_on_profile_id"
+  end
+
   create_table "profile_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "album_id", null: false
@@ -207,17 +241,6 @@ ActiveRecord::Schema.define(version: 2021_12_30_205226) do
     t.integer "profile_albums_count", default: 0
     t.index ["artist_id", "profile_id"], name: "index_profile_artists_on_artist_id_and_profile_id", unique: true
     t.index ["profile_id"], name: "index_profile_artists_on_profile_id"
-  end
-
-  create_table "profile_posts", force: :cascade do |t|
-    t.bigint "profile_id", null: false
-    t.bigint "other_profile_id", null: false
-    t.text "content"
-    t.integer "track_ids", default: [], array: true
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["other_profile_id"], name: "index_profile_posts_on_other_profile_id"
-    t.index ["profile_id"], name: "index_profile_posts_on_profile_id"
   end
 
   create_table "profile_tracks", force: :cascade do |t|
@@ -295,6 +318,7 @@ ActiveRecord::Schema.define(version: 2021_12_30_205226) do
   add_foreign_key "bookmark_albums", "profiles"
   add_foreign_key "bookmark_artists", "profiles"
   add_foreign_key "bookmark_tracks", "profiles"
+  add_foreign_key "communities", "profiles"
   add_foreign_key "conversations", "profiles"
   add_foreign_key "conversations", "profiles", column: "other_profile_id"
   add_foreign_key "favorite_albums", "profiles"
@@ -303,15 +327,18 @@ ActiveRecord::Schema.define(version: 2021_12_30_205226) do
   add_foreign_key "listened_albums", "profiles"
   add_foreign_key "listened_artists", "profiles"
   add_foreign_key "listened_tracks", "profiles"
+  add_foreign_key "memberships", "communities"
+  add_foreign_key "memberships", "profiles"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "profiles"
   add_foreign_key "playlist_tracks", "playlists"
   add_foreign_key "playlists", "profiles"
+  add_foreign_key "posts", "communities"
+  add_foreign_key "posts", "profiles"
+  add_foreign_key "posts", "profiles", column: "other_profile_id"
   add_foreign_key "profile_albums", "profile_artists"
   add_foreign_key "profile_albums", "profiles"
   add_foreign_key "profile_artists", "profiles"
-  add_foreign_key "profile_posts", "profiles"
-  add_foreign_key "profile_posts", "profiles", column: "other_profile_id"
   add_foreign_key "profile_tracks", "profile_albums"
   add_foreign_key "profile_tracks", "profile_artists"
   add_foreign_key "profile_tracks", "profiles"

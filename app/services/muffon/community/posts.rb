@@ -1,33 +1,22 @@
 module Muffon
-  module Profile
-    class Feed < Muffon::Profile::Base
-      COLLECTION_NAME = 'feed'.freeze
+  module Community
+    class Posts < Muffon::Community::Base
+      COLLECTION_NAME = 'posts'.freeze
       include Muffon::Utils::Pagination
 
       private
 
-      def profile_data
-        profile_base_data
+      def community_data
+        community_base_data
           .merge(paginated_data)
       end
 
-      def profile_base_data
-        { nickname: nickname }
-      end
-
       def total_items_count
-        posts.size
+        posts.count
       end
 
       def posts
-        @posts ||=
-          Post.where(
-            profile_id: following_ids
-          ).from_own_page
-      end
-
-      def following_ids
-        profile.following_profile_ids
+        @posts ||= community.posts
       end
 
       def collection_list

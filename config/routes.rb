@@ -146,11 +146,13 @@ Rails.application.routes.draw do
             end
 
             resources :playlists,
-              only: %i[index create show update destroy],
+              only: %i[index create update destroy],
               param: :playlist_id
 
             namespace :playlists, as: :playlist do
               scope ':playlist_id' do
+                get '', action: :info
+
                 resources :tracks,
                   only: %i[index create destroy],
                   param: :playlist_track_id
@@ -186,6 +188,8 @@ Rails.application.routes.draw do
             end
 
             resources :messages, only: :create
+
+            resources :communities, only: :index
           end
         end
 
@@ -208,6 +212,21 @@ Rails.application.routes.draw do
         end
 
         resources :playlists, only: :index
+
+        resources :communities,
+          only: %i[index create update destroy],
+          param: :community_id
+
+        namespace :communities, as: :community do
+          scope ':community_id' do
+            get '', action: :info
+            get 'posts'
+
+            resources :members,
+              only: %i[index create destroy],
+              param: :profile_id
+          end
+        end
       end
 
 # Bandcamp

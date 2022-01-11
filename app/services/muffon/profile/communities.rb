@@ -1,7 +1,7 @@
 module Muffon
   module Profile
-    class Feed < Muffon::Profile::Base
-      COLLECTION_NAME = 'feed'.freeze
+    class Communities < Muffon::Profile::Base
+      COLLECTION_NAME = 'communities'.freeze
       include Muffon::Utils::Pagination
 
       private
@@ -16,31 +16,24 @@ module Muffon
       end
 
       def total_items_count
-        posts.size
+        communities.size
       end
 
-      def posts
-        @posts ||=
-          Post.where(
-            profile_id: following_ids
-          ).from_own_page
-      end
-
-      def following_ids
-        profile.following_profile_ids
+      def communities
+        @communities ||= profile.communities
       end
 
       def collection_list
-        posts
+        communities
           .created_desc_ordered
           .limit(limit)
           .offset(offset)
           .associated
       end
 
-      def collection_item_data_formatted(post)
-        Muffon::Profile::Posts::Post.call(
-          post:
+      def collection_item_data_formatted(community)
+        Muffon::Communities::Community.call(
+          community:
         )
       end
     end

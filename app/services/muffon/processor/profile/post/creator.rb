@@ -25,7 +25,7 @@ module Muffon
 
           def post
             @post ||=
-              profile.profile_posts.create(
+              profile.own_posts.create(
                 post_params
               )
           end
