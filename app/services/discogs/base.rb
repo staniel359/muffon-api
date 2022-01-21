@@ -26,7 +26,9 @@ module Discogs
 
     def artist_data_formatted(artist)
       {
-        name: artist_name_formatted(artist['name']),
+        name: artist_name_formatted(
+          artist['name']
+        ),
         discogs_id: artist['id']
       }.compact
     end
@@ -57,7 +59,7 @@ module Discogs
     end
 
     def images_list
-      response_data['images']
+      response_data['images'] || []
     end
 
     def description
