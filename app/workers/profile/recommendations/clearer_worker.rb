@@ -1,21 +1,20 @@
 class Profile
   module Recommendations
-    class ClearerWorker
-      include Sidekiq::Worker
+    class ClearerWorker < Worker::Base
       include Sidekiq::Throttled::Worker
 
-      sidekiq_options queue: :recommendations_clearer
+      sidekiq_options queue: :profile
 
       sidekiq_throttle(
         concurrency: {
           limit: 1,
-          key_suffix: ->(args) { args['profile_id'] }
+          key_suffix: ->(args) { JSON.parse(args)['profile_id'] }
         }
       )
 
       def perform(args)
         Muffon::Processor::Profile::Recommendations::Clearer.call(
-          args.deep_symbolize_keys
+          args_formatted(args)
         )
       end
     end

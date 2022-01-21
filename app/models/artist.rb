@@ -22,7 +22,11 @@ class Artist < ApplicationRecord
 
   def add_tags
     Artist::Tags::UpdaterWorker.perform_async(
-      name:
+      tag_worker_args
     )
+  end
+
+  def tag_worker_args
+    { name: }.to_json
   end
 end

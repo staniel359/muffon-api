@@ -1,6 +1,5 @@
 :concurrency: 25
 :queues:
   - [default, 1]
-  - [artist_tags_updater, 1]
-  - [recommendations_creator, 1]
-  - [recommendations_clearer, 1]
+  - [artist, 1]
+  - [profile, 1]
