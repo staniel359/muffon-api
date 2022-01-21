@@ -86,10 +86,14 @@ module API
           return if Rails.env.test?
 
           ::Muffon::Processor::Artist::Image::Updater.call(
-            name: artist_data[:name],
-            image_url: artist_data.dig(
-              :images, 0, :medium
-            )
+            name: params[:artist],
+            image_url:
+          )
+        end
+
+        def image_url
+          artist_data.dig(
+            :images, 0, :medium
           )
         end
 
