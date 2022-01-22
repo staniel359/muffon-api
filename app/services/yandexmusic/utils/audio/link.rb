@@ -10,7 +10,7 @@ module YandexMusic
 
           data
         rescue StandardError
-          call
+          nil
         end
 
         private
