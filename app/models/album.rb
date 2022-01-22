@@ -15,9 +15,12 @@ class Album < ApplicationRecord
         'artist_id = ? AND LOWER(title) = ?',
         artist_id, title.downcase
       ).first_or_create(
-        artist_id:,
-        title:
+        artist_id:, title:
       )
+    rescue ActiveRecord::RecordNotUnique
+      clear_cache
+
+      retry
     end
   end
 end

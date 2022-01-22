@@ -15,6 +15,10 @@ class Artist < ApplicationRecord
       ).first_or_create(
         name:
       )
+    rescue ActiveRecord::RecordNotUnique
+      clear_cache
+
+      retry
     end
   end
 

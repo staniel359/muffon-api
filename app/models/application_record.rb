@@ -4,21 +4,15 @@ class ApplicationRecord < ActiveRecord::Base
 
   class << self
     def created_desc_ordered
-      order(
-        created_at: :desc
-      )
+      order(created_at: :desc)
     end
 
     def created_asc_ordered
-      order(
-        created_at: :asc
-      )
+      order(created_at: :asc)
     end
 
     def profile_tracks_count_desc_ordered
-      order(
-        profile_tracks_count: :desc
-      )
+      order(profile_tracks_count: :desc)
     end
 
     def image_association
@@ -40,12 +34,16 @@ class ApplicationRecord < ActiveRecord::Base
         }
       }
     end
+
+    def clear_cache
+      ActiveRecord::Base
+        .connection
+        .clear_query_cache
+    end
   end
 
   def image_data
-    image_data_formatted(
-      image
-    )
+    image_data_formatted(image)
   end
 
   def images_data
