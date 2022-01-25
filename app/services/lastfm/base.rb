@@ -12,7 +12,7 @@ module LastFM
     def params
       {
         method: api_method,
-        api_key: api_key,
+        api_key:,
         format: 'json',
         autocorrect: 0
       }

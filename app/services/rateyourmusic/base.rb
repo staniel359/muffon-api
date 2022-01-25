@@ -14,9 +14,9 @@ module RateYourMusic
 
     def cookies
       {
-        sec_bs: sec_bs,
-        sec_id: sec_id,
-        sec_ts: sec_ts,
+        sec_bs:,
+        sec_id:,
+        sec_ts:,
         ulv: session_id
       }
     end

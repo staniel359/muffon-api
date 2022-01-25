@@ -5,9 +5,9 @@ module YouTube
 
       def playlist_data
         {
-          prev_page: prev_page,
-          next_page: next_page,
-          videos: videos
+          prev_page:,
+          next_page:,
+          videos:
         }
       end
 

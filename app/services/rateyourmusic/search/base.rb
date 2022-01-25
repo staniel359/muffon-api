@@ -40,7 +40,7 @@ module RateYourMusic
         {
           searchterm: @args[:query],
           searchtype: search_type,
-          page: page
+          page:
         }
       end
 

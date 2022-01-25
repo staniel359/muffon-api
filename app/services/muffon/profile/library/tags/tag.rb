@@ -11,9 +11,9 @@ module Muffon
 
           def data
             {
-              id: id,
-              name: name,
-              count: count
+              id:,
+              name:,
+              count:
             }
           end
 

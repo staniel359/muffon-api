@@ -19,7 +19,7 @@ module Genius
       end
 
       def data
-        { tracks: tracks }
+        { tracks: }
       end
 
       def track_data_formatted(track)

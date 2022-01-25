@@ -18,11 +18,11 @@ module Odnoklassniki
 
         def track_base_data
           {
-            player_id: player_id,
+            player_id:,
             source_id: SOURCE_ID,
-            odnoklassniki_id: odnoklassniki_id,
-            title: title,
-            artists: artists
+            odnoklassniki_id:,
+            title:,
+            artists:
           }
         end
 

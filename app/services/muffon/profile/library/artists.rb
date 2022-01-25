@@ -14,8 +14,8 @@ module Muffon
 
         def library_base_data
           {
-            top_tracks_count: top_tracks_count,
-            top_albums_count: top_albums_count
+            top_tracks_count:,
+            top_albums_count:
           }
         end
 

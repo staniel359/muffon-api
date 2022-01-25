@@ -32,7 +32,7 @@ module Muffon
       end
 
       def url_options
-        { host: host }
+        { host: }
       end
 
       def host

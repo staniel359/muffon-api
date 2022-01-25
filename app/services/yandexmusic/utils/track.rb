@@ -48,7 +48,7 @@ module YandexMusic
         {
           present: track_present?,
           track_id: yandex_music_id,
-          source_id: source_id
+          source_id:
         }
       end
 

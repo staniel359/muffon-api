@@ -58,8 +58,8 @@ module Muffon
 
     def headers
       {
-        params: params,
-        cookies: cookies
+        params:,
+        cookies:
       }
     end
 

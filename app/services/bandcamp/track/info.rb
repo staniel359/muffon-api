@@ -12,11 +12,11 @@ module Bandcamp
 
       def track_base_data
         {
-          player_id: player_id,
+          player_id:,
           source_id: SOURCE_ID,
-          bandcamp_id: bandcamp_id,
-          title: title,
-          artists: artists
+          bandcamp_id:,
+          title:,
+          artists:
         }
       end
 

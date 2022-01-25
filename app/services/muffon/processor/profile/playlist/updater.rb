@@ -31,7 +31,7 @@ module Muffon
 
           def profile_data
             {
-              nickname: nickname,
+              nickname:,
               playlist: playlist_data
             }
           end

@@ -13,9 +13,9 @@ module VK
       def album_base_data
         {
           source_id: SOURCE_ID,
-          title: title,
-          extra_title: extra_title,
-          artists: artists
+          title:,
+          extra_title:,
+          artists:
         }
       end
 

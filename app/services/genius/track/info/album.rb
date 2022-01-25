@@ -13,8 +13,8 @@ module Genius
         def data
           {
             source_id: SOURCE_ID,
-            genius_id: genius_id,
-            title: title
+            genius_id:,
+            title:
           }
         end
 

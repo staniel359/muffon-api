@@ -18,7 +18,7 @@ module VK
       end
 
       def artist_data
-        { name: name }
+        { name: }
       end
 
       def name

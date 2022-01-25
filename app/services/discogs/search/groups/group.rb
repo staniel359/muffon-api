@@ -19,10 +19,10 @@ module Discogs
         def group_base_data
           {
             source_id: SOURCE_ID,
-            discogs_id: discogs_id,
+            discogs_id:,
             discogs_type: 'group',
-            title: title,
-            artists: artists
+            title:,
+            artists:
           }
         end
 

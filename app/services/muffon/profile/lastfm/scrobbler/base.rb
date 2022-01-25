@@ -52,8 +52,8 @@ module Muffon
 
           def payload_auth_data
             {
-              api_key: api_key,
-              api_sig: api_sig,
+              api_key:,
+              api_sig:,
               sk: session_key
             }
           end

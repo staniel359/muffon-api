@@ -13,8 +13,8 @@ module Spotify
       def album_base_data
         {
           source_id: SOURCE_ID,
-          title: title,
-          artists: artists
+          title:,
+          artists:
         }
       end
 
