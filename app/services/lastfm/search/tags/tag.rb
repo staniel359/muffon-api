@@ -10,8 +10,8 @@ module LastFM
 
         def data
           {
-            id: id,
-            name: name
+            id:,
+            name:
           }
         end
 

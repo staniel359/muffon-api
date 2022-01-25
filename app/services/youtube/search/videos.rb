@@ -9,8 +9,8 @@ module YouTube
 
       def search_data
         {
-          prev_page: prev_page,
-          next_page: next_page,
+          prev_page:,
+          next_page:,
           videos: videos.compact
         }
       end

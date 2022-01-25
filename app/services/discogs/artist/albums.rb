@@ -25,7 +25,7 @@ module Discogs
         {
           type: 'Releases',
           subtype: album_type,
-          page: page,
+          page:,
           sort: 'year,desc'
         }
       end

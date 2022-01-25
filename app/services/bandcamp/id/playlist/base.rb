@@ -12,10 +12,10 @@ module Bandcamp
 
         def id_data
           {
-            title: title,
-            bandcamp_id: bandcamp_id,
+            title:,
+            bandcamp_id:,
             bandcamp_model: model_type,
-            artists: artists
+            artists:
           }
         end
 

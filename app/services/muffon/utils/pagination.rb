@@ -7,8 +7,8 @@ module Muffon
 
       def pagination_params
         {
-          page: page,
-          limit: limit
+          page:,
+          limit:
         }
       end
 

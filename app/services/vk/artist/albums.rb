@@ -30,7 +30,7 @@ module VK
         {
           artist_id: vk_artist_id,
           count: limit,
-          offset: offset
+          offset:
         }
       end
 
@@ -40,7 +40,7 @@ module VK
       end
 
       def artist_base_data
-        { name: name }
+        { name: }
       end
 
       def name

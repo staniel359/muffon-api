@@ -9,7 +9,7 @@ module Genius
         private
 
         def data
-          { lyrics: lyrics }
+          { lyrics: }
         end
 
         def lyrics

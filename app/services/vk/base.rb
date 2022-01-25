@@ -20,7 +20,7 @@ module VK
     def headers
       {
         'User-Agent' => user_agent,
-        params: params
+        params:
       }
     end
 
@@ -30,7 +30,7 @@ module VK
 
     def params
       {
-        access_token: access_token,
+        access_token:,
         v: '5.131',
         sig: md5_signature
       }

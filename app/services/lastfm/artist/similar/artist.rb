@@ -18,7 +18,7 @@ module LastFM
         end
 
         def minimal_data
-          { name: name }
+          { name: }
         end
 
         def artist

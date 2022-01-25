@@ -12,11 +12,11 @@ module Genius
 
       def track_base_data
         {
-          player_id: player_id,
+          player_id:,
           source_id: SOURCE_ID,
-          genius_id: genius_id,
-          title: title,
-          artists: artists
+          genius_id:,
+          title:,
+          artists:
         }
       end
 

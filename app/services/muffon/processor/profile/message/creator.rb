@@ -48,7 +48,7 @@ module Muffon
             {
               conversation_id: conversation.id,
               content: @args[:content],
-              track_ids: track_ids
+              track_ids:
             }
           end
 

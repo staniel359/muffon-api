@@ -12,7 +12,7 @@ module Deezer
 
         def data
           {
-            license_token: license_token,
+            license_token:,
             api_token: response_api_token
           }
         end

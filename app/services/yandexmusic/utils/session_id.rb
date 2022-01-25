@@ -29,9 +29,9 @@ module YandexMusic
 
       def password_payload
         {
-          track_id: track_id,
-          csrf_token: csrf_token,
-          password: password
+          track_id:,
+          csrf_token:,
+          password:
         }
       end
 
@@ -57,7 +57,7 @@ module YandexMusic
 
       def email_payload
         {
-          csrf_token: csrf_token,
+          csrf_token:,
           login: email
         }
       end

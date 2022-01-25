@@ -17,11 +17,11 @@ module Discogs
 
         def track_data
           {
-            player_id: player_id,
+            player_id:,
             source_id: 'lastfm',
-            title: title,
-            artists: artists,
-            duration: duration
+            title:,
+            artists:,
+            duration:
           }
         end
 

@@ -38,7 +38,7 @@ module Muffon
           def post_params
             {
               content: @args[:content],
-              track_ids: track_ids
+              track_ids:
             }
           end
 

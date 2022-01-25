@@ -6,7 +6,7 @@ module Muffon
           private
 
           def compatibility_data
-            { percent: percent }
+            { percent: }
           end
 
           def percent
