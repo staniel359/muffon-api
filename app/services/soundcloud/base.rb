@@ -11,7 +11,7 @@ module SoundCloud
     end
 
     def params
-      { client_id: client_id }
+      { client_id: }
     end
 
     def artists

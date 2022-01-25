@@ -7,7 +7,7 @@ module LastFM
         private
 
         def pagination_params
-          { page: page }
+          { page: }
         end
 
         def total_pages_count

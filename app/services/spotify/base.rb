@@ -14,7 +14,7 @@ module Spotify
 
     def headers
       {
-        params: params,
+        params:,
         'Authorization' => "Bearer #{spotify_token}"
       }
     end

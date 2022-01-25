@@ -11,7 +11,7 @@ module LastFM
 
       def connect_data
         {
-          token: token,
+          token:,
           link: connect_link
         }
       end

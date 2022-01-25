@@ -7,10 +7,10 @@ module Muffon
 
           def compatibility_data
             {
-              percent: percent,
-              artists_count: artists_count,
-              albums_count: albums_count,
-              tracks_count: tracks_count
+              percent:,
+              artists_count:,
+              albums_count:,
+              tracks_count:
             }
           end
 

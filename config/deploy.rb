@@ -1,4 +1,4 @@
-lock '~> 3.16.0'
+lock '~> 3.17.0'
 
 set :application, 'muffon-api'
 set :repo_url, 'git@github.com:staniel359/muffon-api.git'

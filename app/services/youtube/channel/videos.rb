@@ -29,7 +29,7 @@ module YouTube
       end
 
       def base_channel_data
-        { title: title }
+        { title: }
       end
 
       def title

@@ -62,7 +62,7 @@ module Muffon
         def radio_data
           {
             artist: artist_data[:name],
-            track: track
+            track:
           }
         end
 

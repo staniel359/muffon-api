@@ -13,7 +13,7 @@ module Muffon
           def track_base_data
             {
               id: profile_track.id,
-              favorite_id: favorite_id,
+              favorite_id:,
               player_id: track.player_id,
               title: track.title,
               artist: artist_data

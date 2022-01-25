@@ -109,7 +109,7 @@ module YandexMusic
         end
 
         def audio_data_headers
-          { params: params }
+          { params: }
         end
 
         def params

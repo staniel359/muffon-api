@@ -29,8 +29,8 @@ module SoundCloud
       def search_params
         {
           q: @args[:query],
-          limit: limit,
-          offset: offset
+          limit:,
+          offset:
         }
       end
 

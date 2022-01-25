@@ -54,7 +54,7 @@ module Muffon
         def radio_data
           {
             tag: tag_data[:name],
-            track: track
+            track:
           }
         end
 

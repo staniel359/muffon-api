@@ -9,7 +9,7 @@ module LastFM
 
       def pagination_params
         {
-          page: page,
+          page:,
           limit: 500
         }
       end
@@ -21,8 +21,8 @@ module LastFM
 
       def user_base_data
         {
-          nickname: nickname,
-          plays_count: plays_count
+          nickname:,
+          plays_count:
         }
       end
 

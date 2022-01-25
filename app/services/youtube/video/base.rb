@@ -36,8 +36,8 @@ module YouTube
 
       def video_base_data
         {
-          title: title,
-          youtube_id: youtube_id,
+          title:,
+          youtube_id:,
           channel: channel_data
         }
       end

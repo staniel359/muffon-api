@@ -17,12 +17,12 @@ module LastFM
 
         def track_data
           {
-            player_id: player_id,
+            player_id:,
             source_id: SOURCE_ID,
-            title: title,
-            artists: artists,
-            duration: duration,
-            duration_seconds: duration_seconds
+            title:,
+            artists:,
+            duration:,
+            duration_seconds:
           }
         end
 
