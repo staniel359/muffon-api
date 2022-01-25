@@ -11,7 +11,7 @@ module Bandcamp
       end
 
       def artist_base_data
-        { name: name }
+        { name: }
       end
 
       def name

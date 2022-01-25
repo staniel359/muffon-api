@@ -21,8 +21,8 @@ module SoundCloud
 
       def payload
         {
-          client_id: client_id,
-          client_secret: client_secret,
+          client_id:,
+          client_secret:,
           grant_type: 'client_credentials'
         }
       end

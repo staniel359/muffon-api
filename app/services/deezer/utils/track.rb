@@ -59,7 +59,7 @@ module Deezer
         {
           present: audio_file_present?,
           track_id: deezer_id,
-          source_id: source_id
+          source_id:
         }
       end
 

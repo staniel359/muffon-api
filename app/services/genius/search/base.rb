@@ -31,7 +31,7 @@ module Genius
       def params
         {
           q: @args[:query],
-          page: page,
+          page:,
           per_page: limit
         }
       end

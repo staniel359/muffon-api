@@ -41,7 +41,7 @@ module VK
       end
 
       def album_data
-        { tracks: tracks }
+        { tracks: }
       end
 
       def track_data_formatted(track)

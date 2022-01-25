@@ -15,8 +15,8 @@ module Bandcamp
 
       def id_data
         {
-          name: name,
-          bandcamp_id: bandcamp_id,
+          name:,
+          bandcamp_id:,
           bandcamp_model: model_type
         }
       end

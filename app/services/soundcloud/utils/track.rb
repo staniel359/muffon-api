@@ -32,7 +32,7 @@ module SoundCloud
         {
           present: audio_present?,
           track_id: soundcloud_id,
-          source_id: source_id
+          source_id:
         }
       end
 

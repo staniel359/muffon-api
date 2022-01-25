@@ -40,7 +40,7 @@ module Odnoklassniki
         {
           present: audio_present?,
           track_id: odnoklassniki_id,
-          source_id: source_id
+          source_id:
         }
       end
 

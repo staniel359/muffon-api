@@ -12,7 +12,7 @@ module Muffon
       end
 
       def profile_base_data
-        { nickname: nickname }
+        { nickname: }
       end
 
       def total_items_count

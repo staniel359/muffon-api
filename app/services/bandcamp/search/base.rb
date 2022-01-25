@@ -19,7 +19,7 @@ module Bandcamp
       def params
         {
           query: @args[:query],
-          scope: scope,
+          scope:,
           page: @args[:page]
         }
       end

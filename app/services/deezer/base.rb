@@ -17,7 +17,7 @@ module Deezer
       {
         method: api_method,
         api_version: '1.0',
-        api_token: api_token
+        api_token:
       }
     end
 

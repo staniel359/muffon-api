@@ -11,7 +11,7 @@ module Deezer
         private
 
         def data
-          { track_token: track_token }
+          { track_token: }
         end
 
         def track_token

@@ -10,7 +10,7 @@ module LastFM
         end
 
         def tag_base_data
-          { name: name }
+          { name: }
         end
 
         def name

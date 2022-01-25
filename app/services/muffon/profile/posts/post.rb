@@ -26,7 +26,7 @@ module Muffon
         def profile_data
           {
             id: profile.id,
-            nickname: nickname,
+            nickname:,
             image: profile.image_data
           }
         end
