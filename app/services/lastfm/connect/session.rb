@@ -33,6 +33,10 @@ module LastFM
         )
       end
 
+      def headers
+        {}
+      end
+
       def data
         connect_profile
 
