@@ -447,6 +447,10 @@ Rails.application.routes.draw do
           get 'tags'
         end
 
+        namespace :multitag do
+          get 'artists'
+        end
+
         namespace :connect do
           get 'token'
           get 'session'

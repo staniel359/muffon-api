@@ -26,6 +26,7 @@ module LastFM
       def image_resized(size)
         image
           .sub('/avatar170s', size)
+          .sub('/174s', size)
           .sub('/270x205', size)
           .sub('/300x300', size)
       end
