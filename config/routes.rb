@@ -451,6 +451,11 @@ Rails.application.routes.draw do
           get 'artists'
         end
 
+        namespace :releases do
+          get 'new'
+          get 'upcoming'
+        end
+
         namespace :connect do
           get 'token'
           get 'session'
