@@ -132,6 +132,8 @@ Rails.application.routes.draw do
             end
 
             namespace :favorites do
+              get '', action: :info
+
               resources :artists,
                 only: %i[index create destroy],
                 param: :favorite_id

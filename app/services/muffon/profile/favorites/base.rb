@@ -7,8 +7,20 @@ module Muffon
         def profile_data
           {
             nickname: profile.nickname,
-            favorites: paginated_data
+            favorites: favorites_data
           }
+        end
+
+        def artists
+          @artists ||= profile.favorite_artists
+        end
+
+        def albums
+          @albums ||= profile.favorite_albums
+        end
+
+        def tracks
+          @tracks ||= profile.favorite_tracks
         end
       end
     end

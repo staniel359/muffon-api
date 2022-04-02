@@ -11,10 +11,6 @@ module Muffon
           artists.size
         end
 
-        def artists
-          @artists ||= profile.favorite_artists
-        end
-
         def collection_list
           artists
             .created_desc_ordered
@@ -28,6 +24,8 @@ module Muffon
             favorite_artist:
           )
         end
+
+        alias favorites_data paginated_data
       end
     end
   end
