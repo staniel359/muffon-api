@@ -7,8 +7,20 @@ module Muffon
         def profile_data
           {
             nickname: profile.nickname,
-            bookmarks: paginated_data
+            bookmarks: bookmarks_data
           }
+        end
+
+        def artists
+          @artists ||= profile.bookmark_artists
+        end
+
+        def albums
+          @albums ||= profile.bookmark_albums
+        end
+
+        def tracks
+          @tracks ||= profile.bookmark_tracks
         end
       end
     end

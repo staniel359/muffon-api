@@ -11,10 +11,6 @@ module Muffon
           tracks.size
         end
 
-        def tracks
-          @tracks ||= profile.bookmark_tracks
-        end
-
         def collection_list
           tracks
             .created_desc_ordered
@@ -28,6 +24,8 @@ module Muffon
             bookmark_track:
           )
         end
+
+        alias bookmarks_data paginated_data
       end
     end
   end

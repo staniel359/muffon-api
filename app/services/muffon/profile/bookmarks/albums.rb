@@ -11,10 +11,6 @@ module Muffon
           albums.size
         end
 
-        def albums
-          @albums ||= profile.bookmark_albums
-        end
-
         def collection_list
           albums
             .created_desc_ordered
@@ -28,6 +24,8 @@ module Muffon
             bookmark_album:
           )
         end
+
+        alias bookmarks_data paginated_data
       end
     end
   end
