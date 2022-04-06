@@ -12,6 +12,17 @@ module Muffon
             ]
           end
 
+          def no_data?
+            super || playlist.blank?
+          end
+
+          def playlist
+            @playlist ||=
+              profile.playlists.find_by(
+                id: @args[:playlist_id]
+              )
+          end
+
           def process_playlist
             update_playlist
 

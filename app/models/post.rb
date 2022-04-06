@@ -6,12 +6,6 @@ class Post < ApplicationRecord
   has_many_attached :images
 
   class << self
-    def from_own_page
-      where(
-        'profile_id = other_profile_id'
-      )
-    end
-
     def associated
       includes(
         [profile: image_association],

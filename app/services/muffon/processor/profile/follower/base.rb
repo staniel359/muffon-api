@@ -13,6 +13,10 @@ module Muffon
             ]
           end
 
+          def no_data?
+            super || other_profile.blank?
+          end
+
           def data
             return forbidden if wrong_profile?
 

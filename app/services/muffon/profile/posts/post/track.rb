@@ -11,14 +11,22 @@ module Muffon
 
           def data
             {
-              title: track.title,
-              player_id: track.player_id,
-              artist: artist_data
+              title:,
+              player_id:,
+              artist:
             }
+          end
+
+          def title
+            track.title
           end
 
           def track
             @args[:track]
+          end
+
+          def player_id
+            track.player_id
           end
 
           def artist_data

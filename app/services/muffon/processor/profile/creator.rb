@@ -36,6 +36,14 @@ module Muffon
           authenticate
         end
 
+        def set_online
+          ::Muffon::Processor::Profile::Online::Updater.call(
+            profile_id: profile.id,
+            token: profile.token,
+            online: true
+          )
+        end
+
         def authenticate
           Muffon::Profile::Authenticator.call(
             authenticate_params
@@ -45,14 +53,6 @@ module Muffon
         def authenticate_params
           profile.slice(
             *Muffon::Profile::Authenticator::PARAMS
-          )
-        end
-
-        def set_online
-          ::Muffon::Processor::Profile::Online::Updater.call(
-            profile_id: profile.id,
-            token: profile.token,
-            online: true
           )
         end
       end
