@@ -13,6 +13,8 @@ module Muffon
             id: post.id,
             content: post.content,
             profile: profile_data,
+            by_community: by_community?,
+            community: community_data,
             images:,
             tracks:,
             created: created_formatted
@@ -33,6 +35,23 @@ module Muffon
 
         def profile
           @profile ||= post.profile
+        end
+
+        def by_community?
+          post.by_community?
+        end
+
+        def community_data
+          return unless by_community?
+
+          {
+            title: community.title,
+            image: community.image_data
+          }
+        end
+
+        def community
+          @community ||= post.community
         end
 
         def images

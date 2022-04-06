@@ -69,13 +69,9 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def process_images(image_files)
-    return if image_files.blank?
-
     images.purge
 
-    return if image_files == 'DELETED'
-
-    image_files.each do |i|
+    image_files&.each do |i|
       images.attach(
         **image_file_data_formatted(i)
       )

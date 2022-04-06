@@ -2,19 +2,17 @@ module Muffon
   module Processor
     module Profile
       module Post
-        class Destroyer < Muffon::Processor::Profile::Post::Base
+        class Destroyer < Muffon::Processor::Post::Destroyer
           private
 
-          def primary_args
-            super + [
-              @args[:post_id]
-            ]
+          def rights?
+            post_creator? ||
+              page_owner?
           end
 
-          def process_post
-            post&.destroy
-
-            { success: true }
+          def page_owner?
+            post.other_profile_id ==
+              @args[:profile_id].to_i
           end
         end
       end

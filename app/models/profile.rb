@@ -25,7 +25,9 @@ class Profile < ApplicationRecord
 
   has_many :playlists, dependent: nil
 
-  has_many :own_posts, class_name: 'Post', dependent: nil
+  has_many :own_posts,
+           class_name: 'Post',
+           dependent: nil
 
   has_many :posts,
            foreign_key: 'other_profile_id',
@@ -53,7 +55,9 @@ class Profile < ApplicationRecord
 
   has_many :messages, dependent: nil
 
-  has_many :own_communities, class_name: 'Community', dependent: nil
+  has_many :own_communities,
+           class_name: 'Community',
+           dependent: nil
 
   has_many :memberships, dependent: nil
 
@@ -110,6 +114,26 @@ class Profile < ApplicationRecord
     Conversation.where(
       'profile_id = :id OR other_profile_id = :id',
       id:
+    )
+  end
+
+  def feed_posts
+    following_profiles_posts
+      .or(communities_posts)
+  end
+
+  def following_profiles_posts
+    Post.where(
+      profile_id: following_profile_ids
+    ).where(
+      'profile_id = other_profile_id'
+    )
+  end
+
+  def communities_posts
+    Post.where(
+      community_id: community_ids,
+      by_community: true
     )
   end
 

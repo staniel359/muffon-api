@@ -11,6 +11,12 @@ module Muffon
           .merge(paginated_data)
       end
 
+      def community_base_data
+        Muffon::Communities::Community.call(
+          community:
+        )
+      end
+
       def total_items_count
         posts.count
       end

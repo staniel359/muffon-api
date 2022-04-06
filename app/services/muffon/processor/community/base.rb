@@ -12,14 +12,7 @@ module Muffon
         end
 
         def no_data?
-          community.blank?
-        end
-
-        def community
-          @community ||=
-            profile.own_communities.find_by(
-              id: @args[:community_id]
-            )
+          super || community.blank?
         end
 
         def data

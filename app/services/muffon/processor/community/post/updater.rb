@@ -1,35 +1,32 @@
 module Muffon
   module Processor
-    module Profile
+    module Community
       module Post
-        class Creator < Muffon::Processor::Post::Creator
+        class Updater < Muffon::Processor::Post::Updater
           private
 
           def primary_args
             super + [
-              @args[:other_profile_id]
+              @args[:community_id]
             ]
           end
 
           def no_data?
-            super || other_profile.blank?
+            super || community.blank?
           end
 
           def rights?
-            true
+            post_creator?
           end
 
           def post_params
             super.merge(
-              other_profile_params
+              community_params
             )
           end
 
-          def other_profile_params
-            {
-              other_profile_id:
-                @args[:other_profile_id]
-            }
+          def community_params
+            { by_community: by_community? }
           end
         end
       end

@@ -20,14 +20,7 @@ module Muffon
       end
 
       def posts
-        @posts ||=
-          Post.where(
-            profile_id: following_ids
-          ).from_own_page
-      end
-
-      def following_ids
-        profile.following_profile_ids
+        @posts ||= profile.feed_posts
       end
 
       def collection_list
