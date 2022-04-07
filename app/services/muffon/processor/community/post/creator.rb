@@ -29,7 +29,8 @@ module Muffon
             {
               community_id:
                 @args[:community_id],
-              by_community: by_community?
+              by_community: by_community?,
+              post_type: 'community'
             }
           end
 

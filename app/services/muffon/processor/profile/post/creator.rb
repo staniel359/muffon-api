@@ -28,7 +28,8 @@ module Muffon
           def other_profile_params
             {
               other_profile_id:
-                @args[:other_profile_id]
+                @args[:other_profile_id],
+              post_type: 'profile'
             }
           end
         end

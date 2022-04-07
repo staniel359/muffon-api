@@ -25,12 +25,20 @@ module ProfileDecorator
   end
 
   def feed_posts
-    following_profiles_posts
+    page_posts
+      .or(following_profiles_posts)
       .or(communities_posts)
   end
 
+  def page_posts
+    Post.with_profile_type.where(
+      profile_id: id,
+      other_profile_id: id
+    )
+  end
+
   def following_profiles_posts
-    Post.where(
+    Post.with_profile_type.where(
       profile_id: following_profile_ids
     ).where(
       'profile_id = other_profile_id'
@@ -38,7 +46,7 @@ module ProfileDecorator
   end
 
   def communities_posts
-    Post.where(
+    Post.with_community_type.where(
       community_id: community_ids,
       by_community: true
     )
