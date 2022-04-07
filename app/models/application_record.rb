@@ -1,29 +1,17 @@
 class ApplicationRecord < ActiveRecord::Base
   include Muffon::Utils::ErrorHandlers
+  include ApplicationRecordDecorator
   self.abstract_class = true
 
   class << self
-    def created_desc_ordered
-      order(created_at: :desc)
-    end
-
-    def created_asc_ordered
-      order(created_at: :asc)
-    end
-
-    def profile_tracks_count_desc_ordered
-      order(profile_tracks_count: :desc)
-    end
+    private
 
     def image_association
-      { image_attachment: image_attachment_association }
+      {
+        image_attachment:
+          image_attachment_association
+      }
     end
-
-    def images_association
-      { images_attachments: image_attachment_association }
-    end
-
-    private
 
     def image_attachment_association
       {
@@ -35,20 +23,17 @@ class ApplicationRecord < ActiveRecord::Base
       }
     end
 
+    def images_association
+      {
+        images_attachments:
+          image_attachment_association
+      }
+    end
+
     def clear_cache
       ActiveRecord::Base
         .connection
         .clear_query_cache
-    end
-  end
-
-  def image_data
-    image_data_formatted(image)
-  end
-
-  def images_data
-    images.map do |i|
-      image_data_formatted(i)
     end
   end
 
@@ -80,39 +65,11 @@ class ApplicationRecord < ActiveRecord::Base
     nil
   end
 
-  def tracks
-    Track.where(
-      id: track_ids
-    ).associated
-  end
-
-  def errors?
-    errors.present?
-  end
-
-  def errors_data
-    forbidden.merge(
-      { errors: errors_formatted }
-    )
-  end
-
   private
-
-  def image_data_formatted(image)
-    Muffon::Utils::Image.call(
-      image:
-    )
-  end
 
   def image_file_data_formatted(image_file)
     Muffon::Utils::ImageFile.call(
       image: image_file
     )
-  end
-
-  def errors_formatted
-    errors.map do |e|
-      { e.attribute => e.type }
-    end
   end
 end

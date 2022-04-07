@@ -1,4 +1,6 @@
 class Artist < ApplicationRecord
+  include ArtistDecorator
+
   after_create_commit :add_tags
 
   has_one_attached :image
@@ -6,21 +8,6 @@ class Artist < ApplicationRecord
   validates :name,
             presence: true,
             uniqueness: true
-
-  class << self
-    def with_name(name)
-      where(
-        'LOWER(name) = ?',
-        name.strip.downcase
-      ).first_or_create(
-        name:
-      )
-    rescue ActiveRecord::RecordNotUnique
-      clear_cache
-
-      retry
-    end
-  end
 
   private
 

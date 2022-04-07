@@ -1,4 +1,6 @@
 class FavoriteArtist < ApplicationRecord
+  include FavoriteArtistDecorator
+
   belongs_to :profile
   belongs_to :artist
 
@@ -6,12 +8,4 @@ class FavoriteArtist < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
-
-  class << self
-    def associated
-      includes(
-        artist: image_association
-      )
-    end
-  end
 end
