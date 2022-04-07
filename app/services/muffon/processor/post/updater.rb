@@ -33,7 +33,7 @@ module Muffon
         end
 
         def post_data
-          Muffon::Profile::Posts::Post.call(
+          Muffon::Posts::Post.call(
             post:
           )
         end
