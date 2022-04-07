@@ -1,4 +1,6 @@
 class ProfileArtist < ApplicationRecord
+  include ProfileArtistDecorator
+
   after_create_commit :create_recommendations
 
   before_destroy :clear_recommendations
@@ -13,20 +15,6 @@ class ProfileArtist < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
-
-  class << self
-    def profile_albums_count_desc_ordered
-      order(
-        profile_albums_count: :desc
-      )
-    end
-
-    def associated
-      includes(
-        artist: image_association
-      )
-    end
-  end
 
   private
 

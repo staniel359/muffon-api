@@ -1,8 +1,8 @@
 class ListenedAlbum < ApplicationRecord
+  has_one_attached :image
+
   belongs_to :profile
   belongs_to :album
-
-  has_one_attached :image
 
   validates :album_id,
             uniqueness: {

@@ -1,15 +1,8 @@
 class Message < ApplicationRecord
-  belongs_to :conversation
-  belongs_to :profile
+  include MessageDecorator
 
   has_many_attached :images
 
-  class << self
-    def associated
-      includes(
-        [profile: image_association],
-        images_association
-      )
-    end
-  end
+  belongs_to :conversation
+  belongs_to :profile
 end

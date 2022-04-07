@@ -1,4 +1,6 @@
 class Conversation < ApplicationRecord
+  include ConversationDecorator
+
   belongs_to :profile
   belongs_to :other_profile, class_name: 'Profile'
 
@@ -9,21 +11,18 @@ class Conversation < ApplicationRecord
               scope: :profile_id
             }
 
-  class << self
-    def associated
-      includes(
-        other_profile: image_association
-      )
-    end
-  end
-
   def find_other_profile(profile_id)
-    starter?(profile_id) ? other_profile : profile
+    if starter?(profile_id)
+      other_profile
+    else
+      profile
+    end
   end
 
   private
 
   def starter?(profile_id)
-    profile_id.to_i == self.profile_id
+    profile_id.to_i ==
+      self.profile_id
   end
 end

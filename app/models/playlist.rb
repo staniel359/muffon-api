@@ -1,7 +1,9 @@
 class Playlist < ApplicationRecord
-  belongs_to :profile
+  include PlaylistDecorator
 
   has_one_attached :image
+
+  belongs_to :profile
 
   has_many :playlist_tracks, dependent: :destroy
 
@@ -10,13 +12,4 @@ class Playlist < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
-
-  class << self
-    def associated
-      includes(
-        image_association,
-        profile: image_association
-      )
-    end
-  end
 end
