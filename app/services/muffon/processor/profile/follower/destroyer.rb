@@ -8,10 +8,7 @@ module Muffon
           def process_relationship
             relationship&.destroy
 
-            {
-              other_profile_follower_profiles_count:
-                other_profile.follower_profiles_count
-            }
+            { other_profile_follower_profiles_count: }
           end
 
           def relationship
@@ -20,6 +17,12 @@ module Muffon
                 other_profile_id:
                   @args[:other_profile_id]
               )
+          end
+
+          def other_profile_follower_profiles_count
+            other_profile
+              .reload
+              .follower_profiles_count
           end
         end
       end
