@@ -4,7 +4,14 @@ module LastFM
       private
 
       def album_data
-        { listeners_count: }
+        find_album.update(
+          listeners_count:
+        )
+
+        {
+          listeners_count:
+            find_album.listeners_count
+        }
       end
     end
   end

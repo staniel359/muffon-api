@@ -3,8 +3,6 @@ module API
     module LastFM
       class ArtistsController < API::V2::BaseController
         def info
-          update_artist_listeners_count
-
           render_data_with_status
         end
 
@@ -16,9 +14,11 @@ module API
           render_data_with_status
         end
 
-        def images
-          update_artist_image
+        def image
+          render_data_with_status
+        end
 
+        def images
           render_data_with_status
         end
 
@@ -35,8 +35,6 @@ module API
         end
 
         def listeners_count
-          update_artist_listeners_count
-
           render_data_with_status
         end
 
@@ -48,18 +46,6 @@ module API
               *%i[artist profile_id]
             )
           )
-        end
-
-        def update_artist_listeners_count
-          ::Muffon::Processor::Artist::ListenersCount::Updater.call(
-            name: artist_data[:name],
-            listeners_count:
-              artist_data[:listeners_count]
-          )
-        end
-
-        def artist_data
-          data[:artist] || {}
         end
 
         def description_data
@@ -74,26 +60,19 @@ module API
           )
         end
 
+        def image_data
+          ::LastFM::Artist::Image.call(
+            params.slice(
+              *%i[artist]
+            )
+          )
+        end
+
         def images_data
           ::LastFM::Artist::Images.call(
             params.slice(
               *%i[artist page limit]
             )
-          )
-        end
-
-        def update_artist_image
-          return if Rails.env.test?
-
-          ::Muffon::Processor::Artist::Image::Updater.call(
-            name: params[:artist],
-            image_url:
-          )
-        end
-
-        def image_url
-          artist_data.dig(
-            :images, 0, :medium
           )
         end
 

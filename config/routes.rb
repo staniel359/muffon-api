@@ -401,6 +401,7 @@ Rails.application.routes.draw do
             get '', action: :info
             get 'description'
             get 'tags'
+            get 'image'
             get 'images'
             get 'similar'
             get 'albums'

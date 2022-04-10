@@ -10,11 +10,6 @@ module LastFM
           [@args[:tag]]
         end
 
-        def no_data?
-          collection_list.blank? ||
-            page_out_of_bounds?
-        end
-
         def collection_list
           @collection_list ||= send(
             "#{collection_name}_list"

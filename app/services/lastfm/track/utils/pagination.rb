@@ -8,7 +8,8 @@ module LastFM
 
         def no_data?
           super ||
-            raw_collection_list.blank?
+            raw_collection_list.blank? ||
+            page_out_of_bounds?
         end
 
         def params

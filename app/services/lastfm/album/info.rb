@@ -10,10 +10,18 @@ module LastFM
       end
 
       def album_data
+        find_album.update(
+          listeners_count:
+        )
+
         muffon_data
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
+      end
+
+      def listeners_count
+        album['listeners'].to_i
       end
 
       def album_base_data
@@ -27,16 +35,13 @@ module LastFM
       def album_extra_data
         {
           image: image_data,
-          listeners_count:,
+          listeners_count:
+            find_album.listeners_count,
           plays_count:,
           description: description_truncated,
           tags: tags&.first(5),
           tracks:
         }.compact
-      end
-
-      def listeners_count
-        album['listeners'].to_i
       end
 
       def plays_count

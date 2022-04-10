@@ -8,11 +8,8 @@ module LastFM
 
         def no_data?
           super ||
-            raw_collection_list.blank?
-        end
-
-        def total_limit
-          self.class::TOTAL_LIMIT
+            raw_collection_list.blank? ||
+            page_out_of_bounds?
         end
 
         def artist_data
@@ -28,6 +25,10 @@ module LastFM
           artist.dig(
             '@attr', 'artist'
           )
+        end
+
+        def total_limit
+          self.class::TOTAL_LIMIT
         end
 
         def total_items_count
