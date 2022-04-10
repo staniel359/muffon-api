@@ -33,7 +33,8 @@ module Muffon
 
       def collection_item_data_formatted(community)
         Muffon::Communities::Community.call(
-          community:
+          community:,
+          profile_id: @args[:profile_id]
         )
       end
     end

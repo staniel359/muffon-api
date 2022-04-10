@@ -11,8 +11,7 @@ module Muffon
             return membership.errors_data if
                 membership.errors?
 
-            { community_members_count:
-              community.members_count }
+            { community_members_count: }
           end
 
           def membership
@@ -21,6 +20,12 @@ module Muffon
                 community_id:
                   @args[:community_id]
               ).first_or_create
+          end
+
+          def community_members_count
+            community
+              .reload
+              .members_count
           end
         end
       end

@@ -5,7 +5,8 @@ module Muffon
 
       def community_data
         Muffon::Communities::Community.call(
-          community:
+          community:,
+          profile_id: @args[:profile_id]
         )
       end
     end

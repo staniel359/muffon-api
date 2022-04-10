@@ -31,6 +31,7 @@ module Muffon
           creator: creator_data,
           members_count:
             community.members_count,
+          profile: profile_data,
           created: created_formatted
         }.compact
       end
@@ -45,6 +46,21 @@ module Muffon
 
       def creator
         @creator ||= community.creator
+      end
+
+      def profile_data
+        return if @args[:profile_id].blank?
+
+        {
+          member_of_community:
+            member_of_community?
+        }
+      end
+
+      def member_of_community?
+        community.members.find_by(
+          id: @args[:profile_id]
+        ).present?
       end
 
       def created_formatted
