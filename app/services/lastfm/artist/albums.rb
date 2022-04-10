@@ -15,19 +15,10 @@ module LastFM
       end
 
       def raw_collection_list
-        @raw_collection_list ||= artist['album']
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_collection_list_filtered
-        )
-      end
-
-      def raw_collection_list_filtered
-        raw_collection_list.reject do |a|
-          a['name'] == '(null)'
-        end
+        @raw_collection_list ||=
+          artist['album'].reject do |a|
+            a['name'] == '(null)'
+          end
       end
 
       def collection_item_data_formatted(album)

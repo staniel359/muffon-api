@@ -17,6 +17,10 @@ module LastFM
           { artist: artist_data }
         end
 
+        def artist_base_data
+          { name: }
+        end
+
         def name
           response_data.css(
             '.header-new-title'

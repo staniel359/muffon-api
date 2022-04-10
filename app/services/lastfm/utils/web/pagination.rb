@@ -6,6 +6,11 @@ module LastFM
 
         private
 
+        def no_data?
+          collection_list.blank? ||
+            page_out_of_bounds?
+        end
+
         def pagination_params
           { page: }
         end

@@ -36,22 +36,24 @@ module Muffon
         }.compact
       end
 
-      def collection_name
-        self.class::COLLECTION_NAME
-      end
-
       def next_page
         nil
       end
 
       def total_pages_count
-        return unless defined?(
-          total_items_count
-        )
+        return if total_items_count.zero?
 
         total_items_count
           .fdiv(limit)
           .ceil
+      end
+
+      def total_items_count
+        0
+      end
+
+      def collection_name
+        self.class::COLLECTION_NAME
       end
 
       def collection
@@ -71,6 +73,8 @@ module Muffon
       end
 
       def page_out_of_bounds?
+        return false if total_pages_count.nil?
+
         page < 1 ||
           page > total_pages_count
       end

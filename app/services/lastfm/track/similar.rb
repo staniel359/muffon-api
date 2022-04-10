@@ -7,14 +7,8 @@ module LastFM
 
       private
 
-      def no_data?
-        super ||
-          raw_collection_list.blank?
-      end
-
       def raw_collection_list
-        @raw_collection_list ||=
-          track['track']
+        @raw_collection_list ||= track['track']
       end
 
       def track

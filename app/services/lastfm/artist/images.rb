@@ -7,9 +7,23 @@ module LastFM
 
       private
 
-      def no_data?
-        collection_list.blank? ||
-          page_out_of_bounds?
+      def artist_data
+        artist_base_data
+          .merge(paginated_data)
+      end
+
+      def artist_base_data
+        super.merge(
+          artist_image_data
+        )
+      end
+
+      def artist_image_data
+        { image: first_image }
+      end
+
+      def first_image
+        collection[0]
       end
 
       def collection_list
@@ -21,18 +35,6 @@ module LastFM
 
       def link
         "#{base_link}/+images"
-      end
-
-      def artist_data
-        artist_base_data
-          .merge(paginated_data)
-      end
-
-      def artist_base_data
-        {
-          name:,
-          image: find_artist.image_data
-        }.compact
       end
 
       def collection_item_data_formatted(image)

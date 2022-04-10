@@ -1,5 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
   include Muffon::Utils::ErrorHandlers
+  include Muffon::Utils::ImageProcessing
   include ApplicationRecordDecorator
   self.abstract_class = true
 
@@ -35,41 +36,5 @@ class ApplicationRecord < ActiveRecord::Base
         .connection
         .clear_query_cache
     end
-  end
-
-  def process_image(image_file)
-    return if image_file.blank?
-
-    image.purge
-
-    return if image_file == 'DELETED'
-
-    image.attach(
-      **image_file_data_formatted(
-        image_file
-      )
-    )
-  rescue OpenURI::HTTPError
-    nil
-  end
-
-  def process_images(image_files)
-    images.purge
-
-    image_files&.each do |i|
-      images.attach(
-        **image_file_data_formatted(i)
-      )
-    end
-  rescue OpenURI::HTTPError
-    nil
-  end
-
-  private
-
-  def image_file_data_formatted(image_file)
-    Muffon::Utils::ImageFile.call(
-      image: image_file
-    )
   end
 end
