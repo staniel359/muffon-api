@@ -27,7 +27,7 @@ module API
         def index_data
           ::Muffon::Communities.call(
             params.slice(
-              *%i[page limit]
+              *%i[profile_id page limit]
             )
           )
         end
@@ -46,7 +46,7 @@ module API
         def info_data
           ::Muffon::Community::Info.call(
             params.slice(
-              *%i[community_id]
+              *%i[community_id profile_id]
             )
           )
         end

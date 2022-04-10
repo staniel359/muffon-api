@@ -8,8 +8,7 @@ module Muffon
           def process_membership
             membership&.destroy
 
-            { community_members_count:
-              community.members_count }
+            { community_members_count: }
           end
 
           def membership
@@ -18,6 +17,12 @@ module Muffon
                 community_id:
                   @args[:community_id]
               )
+          end
+
+          def community_members_count
+            community
+              .reload
+              .members_count
           end
         end
       end

@@ -20,7 +20,7 @@ module API
           def index_data
             ::Muffon::Community::Members.call(
               params.slice(
-                *%i[community_id page limit other_profile_id]
+                *%i[community_id page limit profile_id]
               )
             )
           end
