@@ -16,7 +16,7 @@ module Muffon
         end
 
         def collection_list
-          tags[offset, limit]
+          tags[offset, limit] || []
         end
 
         def collection_item_data_formatted(tag)
