@@ -6,11 +6,6 @@ module Odnoklassniki
 
       private
 
-      def no_data?
-        albums_list.blank? ||
-          page_out_of_bounds?
-      end
-
       def albums_list
         @albums_list ||=
           response_data['masterAlbums']

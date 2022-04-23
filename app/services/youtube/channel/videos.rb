@@ -24,12 +24,8 @@ module YouTube
       end
 
       def channel_data
-        base_channel_data
-          .merge(uploads_playlist_data)
-      end
-
-      def base_channel_data
-        { title: }
+        channel_base_data
+          .merge(channel_videos_data)
       end
 
       def title
@@ -39,12 +35,24 @@ module YouTube
         )
       end
 
-      def uploads_playlist_data
-        uploads_playlist.slice(
-          :prev_page,
-          :next_page,
-          :videos
-        )
+      def channel_videos_data
+        {
+          prev_page:,
+          next_page:,
+          videos:
+        }.compact
+      end
+
+      def prev_page
+        uploads_playlist[:prev_page]
+      end
+
+      def next_page
+        uploads_playlist[:next_page]
+      end
+
+      def videos
+        uploads_playlist[:videos] || []
       end
     end
   end

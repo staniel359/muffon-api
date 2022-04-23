@@ -19,7 +19,9 @@ module LastFM
       end
 
       def artist_image_data
-        { image: first_image }
+        {
+          image: first_image
+        }.compact
       end
 
       def first_image

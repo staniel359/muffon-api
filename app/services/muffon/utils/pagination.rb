@@ -71,13 +71,6 @@ module Muffon
       def offset
         (page - 1) * limit
       end
-
-      def page_out_of_bounds?
-        return false if total_pages_count.nil?
-
-        page < 1 ||
-          page > total_pages_count
-      end
     end
   end
 end

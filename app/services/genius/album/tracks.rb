@@ -4,7 +4,7 @@ module Genius
       private
 
       def no_data?
-        tracks_list.blank?
+        false
       end
 
       def tracks_list

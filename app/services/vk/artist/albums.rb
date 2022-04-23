@@ -8,7 +8,14 @@ module VK
       private
 
       def no_data?
-        albums_list.blank?
+        artist_info_data.blank?
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          VK::Artist::Info.call(
+            artist_id: vk_artist_id
+          )[:artist]
       end
 
       def albums_list
@@ -44,15 +51,7 @@ module VK
       end
 
       def name
-        artist_info_data.dig(
-          :artist, :name
-        )
-      end
-
-      def artist_info_data
-        VK::Artist::Info.call(
-          artist_id: vk_artist_id
-        )
+        artist_info_data[:name]
       end
 
       def total_items_count

@@ -5,15 +5,11 @@ module LastFM
 
       private
 
-      def no_data?
-        images_list.blank?
-      end
-
       def images_list
         @images_list ||=
           artist_images_data.dig(
             :artist, :images
-          )
+          ) || []
       end
 
       def artist_images_data

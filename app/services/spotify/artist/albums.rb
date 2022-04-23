@@ -12,15 +12,22 @@ module Spotify
 
       private
 
+      def no_data?
+        artist_info_data.blank?
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          Spotify::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )[:artist]
+      end
+
       def primary_args
         [
           @args[:artist_id],
           @args[:album_type]
         ]
-      end
-
-      def no_data?
-        collection_list.blank?
       end
 
       def collection_list
@@ -55,15 +62,7 @@ module Spotify
       end
 
       def name
-        artist_info_data.dig(
-          :artist, :name
-        )
-      end
-
-      def artist_info_data
-        Spotify::Artist::Info.call(
-          artist_id: @args[:artist_id]
-        )
+        artist_info_data[:name]
       end
 
       def total_items_count

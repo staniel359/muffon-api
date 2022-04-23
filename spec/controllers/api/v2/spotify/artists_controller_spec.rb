@@ -8,12 +8,12 @@ RSpec.describe API::V2::Spotify::ArtistsController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong artist_id' do
+    it 'returns 404 if wrong artist_id' do
       VCR.use_cassette 'controllers/api/v2/spotify/artists/albums/wrong_id' do
         get :albums, params: { artist_id: random, album_type: 'album' }
       end
 
-      expect(response).to have_http_status(:bad_request)
+      expect(response).to have_http_status(:not_found)
     end
 
     it 'returns 400 if no album type' do

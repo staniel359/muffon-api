@@ -50,11 +50,6 @@ module RateYourMusic
           .to_sym
       end
 
-      def no_data?
-        response_matched_data.blank? ||
-          page_out_of_bounds?
-      end
-
       def response_matched_data
         @response_matched_data ||=
           response.match(

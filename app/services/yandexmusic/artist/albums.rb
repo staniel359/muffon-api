@@ -6,10 +6,6 @@ module YandexMusic
 
       private
 
-      def no_data?
-        super || albums_list.blank?
-      end
-
       def albums_list
         @albums_list ||= artist['albums']
       end

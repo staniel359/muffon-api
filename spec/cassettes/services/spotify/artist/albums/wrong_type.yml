@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?include_groups&limit=20&offset=0
+    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.1p18
       Authorization:
       - Bearer <SPOTIFY_TOKEN>
       Accept-Encoding:
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=76139
+      - public, max-age=74383
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -44,13 +44,99 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Wed, 14 Jul 2021 10:44:45 GMT
+      - Sat, 23 Apr 2022 18:40:35 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+          },
+          "followers" : {
+            "href" : null,
+            "total" : 885873
+          },
+          "genres" : [ "art pop", "art rock", "baroque pop", "new wave pop", "permanent wave", "piano rock", "singer-songwriter" ],
+          "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+          "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+          "images" : [ {
+            "height" : 930,
+            "url" : "https://i.scdn.co/image/3b2db6840f31b367518f97b1a5d6bea653ea56ae",
+            "width" : 620
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/b8e74146831af09bd16bf5b7c77cbe92e86355db",
+            "width" : 200
+          }, {
+            "height" : 96,
+            "url" : "https://i.scdn.co/image/08ec46ff35f3c5b2085ac0d3d3f8ba0f77086a8f",
+            "width" : 64
+          } ],
+          "name" : "Kate Bush",
+          "popularity" : 66,
+          "type" : "artist",
+          "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+        }
+  recorded_at: Sat, 23 Apr 2022 18:40:35 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?include_groups&limit=20&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.1p18
+      Authorization:
+      - Bearer <SPOTIFY_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=77018
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sat, 23 Apr 2022 18:40:35 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
@@ -65,5 +151,5 @@ http_interactions:
           "previous" : null,
           "total" : 0
         }
-  recorded_at: Wed, 14 Jul 2021 10:44:46 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sat, 23 Apr 2022 18:40:35 GMT
+recorded_with: VCR 6.1.0

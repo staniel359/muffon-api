@@ -19,7 +19,14 @@ module Deezer
       end
 
       def no_data?
-        albums_list.blank?
+        artist_info_data.blank?
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          Deezer::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )[:artist]
       end
 
       def albums_list
@@ -45,15 +52,7 @@ module Deezer
       end
 
       def name
-        artist_info_data.dig(
-          :artist, :name
-        )
-      end
-
-      def artist_info_data
-        Deezer::Artist::Info.call(
-          artist_id: @args[:artist_id]
-        )
+        artist_info_data[:name]
       end
 
       def total_items_count

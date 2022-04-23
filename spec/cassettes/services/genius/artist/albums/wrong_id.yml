@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://genius.com/api/artists/wejlhg239gh23/albums?per_page=50
+    uri: https://genius.com/api/artists/wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.1p18
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -21,7 +21,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Fri, 16 Jul 2021 16:21:58 GMT
+      - Sat, 23 Apr 2022 18:43:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,11 +29,12 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 66fc910dbb8e5024-WAW
+      - 7008be694e721e9d-AMS
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _genius_ab_test_cohort=54; Max-Age=2147483647; Path=/
+      - _genius_ab_test_cohort=94; Max-Age=2147483647; Path=/
+      - _genius_ab_test_primis_mobile=control; Max-Age=2147483647; Path=/
       Vary:
       - Accept-Encoding
       Via:
@@ -45,11 +46,11 @@ http_interactions:
       Status:
       - 404 Not Found
       X-Runtime:
-      - '15'
+      - '13'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
       string: '{"meta":{"status":404,"message":"404 Not Found"}}'
-  recorded_at: Fri, 16 Jul 2021 16:21:58 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sat, 23 Apr 2022 18:43:16 GMT
+recorded_with: VCR 6.1.0

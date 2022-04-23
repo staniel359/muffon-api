@@ -6,10 +6,6 @@ module LastFM
 
       private
 
-      def no_data?
-        page_out_of_bounds?
-      end
-
       def link
         "https://www.last.fm/music/+releases/#{scope}/popular"
       end

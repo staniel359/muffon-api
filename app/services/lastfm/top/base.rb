@@ -10,10 +10,6 @@ module LastFM
         []
       end
 
-      def no_data?
-        page_out_of_bounds?
-      end
-
       def params
         super.merge(
           pagination_params

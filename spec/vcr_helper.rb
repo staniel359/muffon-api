@@ -20,6 +20,7 @@ SECRET_KEYS = [
   %i[soundcloud api_key],
   %i[soundcloud test_access_token],
   %i[soundcloud test_v2_client_id],
+  %i[spotify token],
   %i[vk access_token],
   %i[vk access_token_kate],
   %i[yandex_music csrf_token],

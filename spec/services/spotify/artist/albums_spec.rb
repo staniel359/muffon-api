@@ -21,7 +21,7 @@ RSpec.describe Spotify::Artist::Albums do
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
 
     context 'when wrong album type' do
@@ -31,7 +31,7 @@ RSpec.describe Spotify::Artist::Albums do
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect(output).to eq(Helpers::Spotify::Artist.no_albums_data) }
     end
   end
 end

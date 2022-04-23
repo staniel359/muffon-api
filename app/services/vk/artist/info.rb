@@ -5,6 +5,14 @@ module VK
 
       private
 
+      def no_data?
+        name.blank?
+      end
+
+      def name
+        @name ||= response_data['name']
+      end
+
       def signature
         "/method/#{api_method}"\
           "?access_token=#{access_token}"\
@@ -19,10 +27,6 @@ module VK
 
       def artist_data
         { name: }
-      end
-
-      def name
-        response_data['name']
       end
     end
   end

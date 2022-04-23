@@ -7,12 +7,6 @@ module SoundCloud
 
       private
 
-      def no_data?
-        super ||
-          albums_list.blank? ||
-          collection_list.blank?
-      end
-
       def albums_list
         @albums_list ||=
           response_data['collection']

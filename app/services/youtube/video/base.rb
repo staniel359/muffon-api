@@ -10,7 +10,11 @@ module YouTube
       end
 
       def no_data?
-        videos_list.blank?
+        video.blank?
+      end
+
+      def video
+        @video ||= videos_list[0]
       end
 
       def link
@@ -44,10 +48,6 @@ module YouTube
 
       def youtube_id
         video['id']
-      end
-
-      def video
-        @video ||= videos_list[0]
       end
     end
   end

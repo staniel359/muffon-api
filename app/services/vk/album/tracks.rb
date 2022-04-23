@@ -13,10 +13,6 @@ module VK
         ]
       end
 
-      def no_data?
-        tracks_list.blank?
-      end
-
       def tracks_list
         @tracks_list ||=
           response_data['items']

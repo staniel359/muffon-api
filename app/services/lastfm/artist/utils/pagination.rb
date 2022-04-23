@@ -6,12 +6,6 @@ module LastFM
 
         private
 
-        def no_data?
-          super ||
-            raw_collection_list.blank? ||
-            page_out_of_bounds?
-        end
-
         def artist_data
           artist_base_data
             .merge(paginated_data)

@@ -21,14 +21,14 @@ module LastFM
       end
 
       def no_data?
-        artists_list.blank? ||
-          page_out_of_bounds?
+        artists_list.blank?
       end
 
       def artists_list
-        @artists_list ||= response_data.dig(
-          'results', 'artist'
-        )
+        @artists_list ||=
+          response_data.dig(
+            'results', 'artist'
+          )
       end
 
       def link

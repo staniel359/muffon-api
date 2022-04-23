@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=<GOOGLE_API_KEY>&maxResults=20&part=snippet&relatedToVideoId=wejlhg239gh23&type=video
+    uri: https://www.googleapis.com/youtube/v3/videos?id=wejlhg239gh23&key=<GOOGLE_API_KEY>&part=snippet,statistics
     body:
       encoding: US-ASCII
       string: ''
@@ -10,24 +10,24 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.1p18
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
       - www.googleapis.com
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
+      Content-Type:
+      - application/json; charset=UTF-8
       Vary:
       - Origin
       - Referer
       - X-Origin
-      Content-Type:
-      - application/json; charset=UTF-8
       Date:
-      - Sat, 25 Dec 2021 17:06:40 GMT
+      - Sat, 23 Apr 2022 19:03:43 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -47,18 +47,13 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-          "error": {
-            "code": 400,
-            "message": "Request contains an invalid argument.",
-            "errors": [
-              {
-                "message": "Request contains an invalid argument.",
-                "domain": "global",
-                "reason": "badRequest"
-              }
-            ],
-            "status": "INVALID_ARGUMENT"
+          "kind": "youtube#videoListResponse",
+          "etag": "YIUPVpqNjppyCWOZfL-19bLb7uk",
+          "items": [],
+          "pageInfo": {
+            "totalResults": 0,
+            "resultsPerPage": 0
           }
         }
-  recorded_at: Sat, 25 Dec 2021 17:06:40 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sat, 23 Apr 2022 19:03:43 GMT
+recorded_with: VCR 6.1.0

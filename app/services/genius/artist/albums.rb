@@ -8,8 +8,14 @@ module Genius
       private
 
       def no_data?
-        albums_list.blank? ||
-          collection_list.blank?
+        artist_info_data.blank?
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          Genius::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )[:artist]
       end
 
       def albums_list
@@ -50,15 +56,7 @@ module Genius
       end
 
       def name
-        artist_info_data.dig(
-          :artist, :name
-        )
-      end
-
-      def artist_info_data
-        Genius::Artist::Info.call(
-          artist_id: @args[:artist_id]
-        )
+        artist_info_data[:name]
       end
 
       def collection_item_data_formatted(album)

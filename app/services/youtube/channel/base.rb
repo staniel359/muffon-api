@@ -27,6 +27,10 @@ module YouTube
       def data
         { channel: channel_data }
       end
+
+      def channel_base_data
+        { title: }
+      end
     end
   end
 end

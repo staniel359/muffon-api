@@ -10,8 +10,7 @@ module LastFM
       end
 
       def no_data?
-        results_list.blank? ||
-          page_out_of_bounds?
+        results_list.blank?
       end
 
       def results_list
