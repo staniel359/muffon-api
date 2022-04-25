@@ -5,7 +5,7 @@ module LastFM
 
       def params
         super.merge(
-          lang_params
+          language_params
         )
       end
 

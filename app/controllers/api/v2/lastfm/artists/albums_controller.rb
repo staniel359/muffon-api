@@ -24,7 +24,7 @@ module API
           def info_data
             ::LastFM::Album::Info.call(
               params.slice(
-                *%i[artist album profile_id]
+                *%i[artist album profile_id language]
               )
             )
           end
@@ -32,7 +32,7 @@ module API
           def description_data
             ::LastFM::Album::Description.call(
               params.slice(
-                *%i[artist album]
+                *%i[artist album language]
               )
             )
           end

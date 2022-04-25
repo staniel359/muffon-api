@@ -34,13 +34,17 @@ module API
 
         def info_data
           ::LastFM::Tag::Info.call(
-            params.slice(:tag)
+            params.slice(
+              *%i[tag language]
+            )
           )
         end
 
         def description_data
           ::LastFM::Tag::Description.call(
-            params.slice(:tag)
+            params.slice(
+              *%i[tag language]
+            )
           )
         end
 

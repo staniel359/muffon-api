@@ -68,8 +68,10 @@ module LastFM
       }
     end
 
-    def lang_params
-      { lang: @args[:lang] }.compact
+    def language_params
+      {
+        lang: @args[:language]
+      }.compact
     end
 
     def artists
