@@ -6,6 +6,12 @@ module Muffon
 
       private
 
+      def data
+        return forbidden if wrong_profile?
+
+        super
+      end
+
       def profile_data
         profile_base_data
           .merge(paginated_data)
