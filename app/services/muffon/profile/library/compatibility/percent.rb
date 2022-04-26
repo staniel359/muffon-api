@@ -18,7 +18,7 @@ module Muffon
           end
 
           def artists_percent
-            return 100 if artists_average_count.zero?
+            return 0 if artists_average_count.zero?
 
             artists_count.fdiv(
               artists_average_count
@@ -43,7 +43,7 @@ module Muffon
           end
 
           def albums_percent
-            return 100 if albums_average_count.zero?
+            return 0 if albums_average_count.zero?
 
             albums_count.fdiv(
               albums_average_count
@@ -68,7 +68,7 @@ module Muffon
           end
 
           def tracks_percent
-            return 100 if tracks_average_count.zero?
+            return 0 if tracks_average_count.zero?
 
             tracks_count.fdiv(
               tracks_average_count
