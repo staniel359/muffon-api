@@ -29,6 +29,10 @@ set :whenever_roles, -> { :app }
 
 set :sidekiq_service_unit_user, :system
 
+set :rbenv_ruby, File.read(
+  '.ruby-version'
+).strip
+
 before 'deploy:check', 'creds:copy'
 
 namespace :creds do
