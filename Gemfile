@@ -11,7 +11,7 @@ gem 'bootsnap', require: false
 gem 'bcrypt'
 gem 'image_processing'
 gem 'nokogiri'
-gem 'pg', '1.2.3'
+gem 'pg'
 gem 'puma'
 gem 'rack-cors'
 gem 'rails'
