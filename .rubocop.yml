@@ -11,7 +11,7 @@ AllCops:
   Exclude:
     - 'config/**/*'
     - 'db/**/*'
-    - 'public/temp/**/*'
+    - 'public/files/**/*'
     - 'spec/helpers/**/*'
     - 'spec/spec_helper.rb'
     - 'Gemfile'

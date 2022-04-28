@@ -27,7 +27,7 @@ module Muffon
         end
 
         def audio_folder
-          "temp/audio/#{source_id}"
+          "files/audio/#{source_id}"
         end
 
         def audio_file
@@ -42,7 +42,7 @@ module Muffon
         end
 
         def audio_link
-          "#{secrets[:files_url]}/#{audio_path}"
+          "#{secrets[:url]}/#{audio_path}"
         end
       end
     end

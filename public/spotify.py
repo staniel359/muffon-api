@@ -25,7 +25,7 @@ stream = session.content_feeder().load(
   track_id_object, quality, False, None
 )
 
-folder_path = 'temp/audio/spotify'
+folder_path = 'files/audio/spotify'
 folder_public_path = 'public/%s' % folder_path
 
 if not os.path.exists(folder_public_path):

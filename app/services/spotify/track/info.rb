@@ -39,7 +39,7 @@ module Spotify
       end
 
       def audio_link
-        "#{secrets[:files_url]}/#{audio_path}"
+        "#{secrets[:url]}/#{audio_path}"
       end
 
       def audio_path

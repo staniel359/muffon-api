@@ -1,5 +1,5 @@
 config/**/*.key
-public/temp
+public/files
 log
 tmp
 storage
