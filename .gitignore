@@ -1,4 +1,5 @@
 config/**/*.key
+config/deploy/templates
 public/files
 log
 tmp

@@ -1,4 +1,3 @@
-server '91.215.176.119',
+server '213.52.129.63',
   user: 'root',
-  port: 2244,
   roles: %w[app db web]
