@@ -45,15 +45,8 @@ module Spotify
       def audio_path
         return 'test.mp3' if Rails.env.test?
 
-        `#{python_command} public/spotify.py \
+        `python3.10 public/spotify.py \
           #{email} '#{password}' #{spotify_id}`
-      end
-
-      def python_command
-        return 'python3.7' if
-            Rails.env.production?
-
-        'python'
       end
 
       def email
