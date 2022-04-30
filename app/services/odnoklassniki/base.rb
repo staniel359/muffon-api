@@ -39,7 +39,7 @@ module Odnoklassniki
     def test_session_id
       secrets.odnoklassniki[
         :test_session_id
-    ]
+      ]
     end
 
     def global_value
