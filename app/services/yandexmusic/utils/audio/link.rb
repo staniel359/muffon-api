@@ -34,27 +34,32 @@ module YandexMusic
         end
 
         def track_data_link
-          'https://music.yandex.ru'\
-            '/api/v2.1/handlers/track'\
-            "/#{@args[:track_id]}"\
+          'https://music.yandex.ru/api/v2.1'\
+            "/handlers/track/#{@args[:track_id]}"\
             '/web-album_track-track-track-main'\
             '/download/m'
         end
 
         def track_data_headers
           {
-            cookies: track_data_cookies,
-            'X-Retpath-Y' => 'https://music.yandex.ru/'
+            'X-Retpath-Y' => 'https://music.yandex.ru/',
+            cookies: track_data_cookies
           }
         end
 
         def track_data_cookies
-          { 'Session_id' => session_id }
+          {
+            'i' => i_cookie,
+            'Session_id' => session_id
+          }
+        end
+
+        def i_cookie
+          secrets.yandex_music[:i]
         end
 
         def session_id
-          return test_session_id if
-              Rails.env.test?
+          return test_session_id if Rails.env.test?
 
           get_global_value(
             'yandex_music_session_id'

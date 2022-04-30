@@ -71,11 +71,18 @@ module YandexMusic
       end
 
       def cookies
-        { uniqueuid: unique_uid }
+        {
+          uniqueuid: unique_uid,
+          i: i_cookie
+        }
       end
 
       def unique_uid
         secrets.yandex_music[:unique_uid]
+      end
+
+      def i_cookie
+        secrets.yandex_music[:i]
       end
 
       def password
