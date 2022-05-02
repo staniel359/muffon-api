@@ -13,18 +13,20 @@ module Genius
       }
     end
 
-    def cookies
-      {
-        'cf_clearance' =>
-          'usFCFw4JKLhTVsVJLF3r4R0VtuDwi'\
-          'E2HnR2mFA4N6cg-1651338214-0-250'
-      }
-    end
-
     def user_agent
       'Mozilla/5.0 (X11; Linux x86_64)'\
         ' AppleWebKit/537.36 (KHTML, like Gecko)'\
         ' Chrome/101.0.4951.41 Safari/537.36'
+    end
+
+    def cookies
+      { 'cf_clearance' => cf_clearance }
+    end
+
+    def cf_clearance
+      secrets.genius.try(
+        :[], :cf_clearance
+      )
     end
 
     def artists
