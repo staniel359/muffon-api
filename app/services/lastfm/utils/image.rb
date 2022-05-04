@@ -13,6 +13,10 @@ module LastFM
         image_data
       end
 
+      def image
+        @args[:image].presence
+      end
+
       def image_data
         {
           original: image_resized(''),
@@ -29,10 +33,6 @@ module LastFM
           .sub('/174s', size)
           .sub('/270x205', size)
           .sub('/300x300', size)
-      end
-
-      def image
-        @args[:image].presence
       end
     end
   end

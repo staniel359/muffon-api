@@ -28,6 +28,10 @@ module LastFM
         def track
           @args[:track]
         end
+
+        def artist_name
+          track['artist']
+        end
       end
     end
   end

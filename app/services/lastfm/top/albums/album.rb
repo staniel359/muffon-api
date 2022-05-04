@@ -1,8 +1,8 @@
 module LastFM
   module Top
-    class Artists
-      class Artist < LastFM::Top::Artists
-        include LastFM::Utils::Artist
+    class Albums
+      class Album < LastFM::Top::Albums
+        include LastFM::Utils::Album
 
         def call
           data
@@ -14,35 +14,35 @@ module LastFM
           update_listeners_count
 
           muffon_data
-            .merge(artist_data)
+            .merge(album_data)
         end
 
         def update_listeners_count
-          find_artist.update(
+          find_album.update(
             listeners_count:
           )
         end
 
         def listeners_count
-          artist['listeners'].to_i
+          album[:listeners_count].to_i
         end
 
-        def artist
-          @args[:artist]
+        def album
+          @args[:album]
         end
 
-        def artist_data
+        def album_data
           {
-            name:,
+            source_id: SOURCE_ID,
+            title:,
+            artists:,
             image: image_data,
             listeners_count:
           }.compact
         end
 
-        def image_data
-          image_data_formatted(
-            artist['image']
-          )
+        def image
+          album['image']
         end
       end
     end

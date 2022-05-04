@@ -82,9 +82,9 @@ module LastFM
       { name: artist_name }
     end
 
-    def image_data_formatted(image, model)
+    def image_data_formatted(image)
       LastFM::Utils::Image.call(
-        image:, model:
+        image:
       )
     end
 

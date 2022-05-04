@@ -15,7 +15,7 @@ module LastFM
 
       def image_data
         image_data_formatted(
-          image, 'album'
+          image
         )
       end
 

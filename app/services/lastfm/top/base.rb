@@ -1,19 +1,27 @@
 module LastFM
   module Top
-    class Base < LastFM::Base
-      TOTAL_ITEMS_COUNT = 10_000
+    class Base < LastFM::Kerve::Base
       include Muffon::Utils::Pagination
 
       private
 
-      def primary_args
-        []
+      def link
+        charts_link
       end
 
       def params
-        super.merge(
-          pagination_params
-        )
+        {
+          type: model_name,
+          nr: total_limit
+        }
+      end
+
+      def model_name
+        self.class::MODEL_NAME
+      end
+
+      def total_limit
+        self.class::TOTAL_LIMIT
       end
 
       def data
@@ -21,17 +29,20 @@ module LastFM
       end
 
       def total_items_count
-        TOTAL_ITEMS_COUNT
+        raw_collection_list.size
+      end
+
+      def raw_collection_list
+        @raw_collection_list ||=
+          response_data.dig(
+            'results', model_name
+          )
       end
 
       def collection_list
-        response_data.dig(
-          collection_name, model_name
+        collection_paginated(
+          raw_collection_list
         )
-      end
-
-      def model_name
-        self.class::MODEL_NAME
       end
     end
   end

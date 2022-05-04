@@ -8,6 +8,15 @@ RSpec.describe API::V2::LastFM::TopController, type: :controller do
     end
   end
 
+  describe 'GET :albums' do
+    it 'returns 200' do
+      VCR.use_cassette 'controllers/api/v2/lastfm/top/albums/success' do
+        get :albums
+        expect(response).to have_http_status(:ok)
+      end
+    end
+  end
+
   describe 'GET :tracks' do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/v2/lastfm/top/tracks/success' do

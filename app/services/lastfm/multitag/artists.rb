@@ -1,9 +1,8 @@
 module LastFM
   module Multitag
-    class Artists < LastFM::Base
-      BASE_LINK = 'https://kerve.last.fm/kerve/charts'.freeze
-      TOTAL_LIMIT = 1_000
+    class Artists < LastFM::Kerve::Base
       COLLECTION_NAME = 'artists'.freeze
+      TOTAL_LIMIT = 1_000
       include Muffon::Utils::Pagination
 
       private
@@ -32,7 +31,7 @@ module LastFM
       end
 
       def link
-        BASE_LINK
+        charts_link
       end
 
       def params

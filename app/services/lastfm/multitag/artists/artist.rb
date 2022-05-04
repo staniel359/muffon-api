@@ -38,7 +38,7 @@ module LastFM
 
         def image_data
           image_data_formatted(
-            artist['image'], 'artist'
+            artist['image']
           )
         end
       end

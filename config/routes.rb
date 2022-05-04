@@ -449,6 +449,7 @@ Rails.application.routes.draw do
 
         namespace :top do
           get 'artists'
+          get 'albums'
           get 'tracks'
           get 'tags'
         end

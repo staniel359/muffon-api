@@ -7,7 +7,7 @@ module Helpers
         end
 
         def artists_data
-          {:tag=>{:artists=>[{:name=>"Sigur Rós"}, {:name=>"Pale Saints"}, {:name=>"Memoryhouse"}, {:name=>"The Sundays"}, {:name=>"The xx"}, {:name=>"The Radio Dept."}, {:name=>"Julee Cruise"}, {:name=>"Hope Sandoval & The Warm Inventions"}, {:name=>"Trespassers William"}, {:name=>"Mew"}, {:name=>"DIIV"}, {:name=>"Halou"}, {:name=>"Twin Shadow"}, {:name=>"The Daysleepers"}, {:name=>"Craft Spells"}, {:name=>"Airiel"}, {:name=>"Lana Del Rey"}, {:name=>"Autumn's Grey Solace"}, {:name=>"Memory Tapes"}, {:name=>"This Mortal Coil"}, {:name=>"Still Corners"}], :name=>"Dream pop", :page=>2, :total_pages=>48}}
+          {:tag=>{:artists=>[{:name=>"Sigur Rós"}, {:name=>"Pale Saints"}, {:name=>"Memoryhouse"}, {:name=>"The Sundays"}, {:name=>"The xx"}, {:name=>"The Radio Dept."}, {:name=>"Julee Cruise"}, {:name=>"Hope Sandoval & The Warm Inventions"}, {:name=>"Trespassers William"}, {:name=>"Mew"}, {:name=>"DIIV"}, {:name=>"Halou"}, {:name=>"Twin Shadow"}, {:name=>"The Daysleepers"}, {:name=>"Craft Spells"}, {:name=>"Airiel"}, {:listeners_count=>2766516, :name=>"Lana Del Rey"}, {:name=>"Autumn's Grey Solace"}, {:name=>"Memory Tapes"}, {:name=>"This Mortal Coil"}, {:name=>"Still Corners"}], :name=>"Dream pop", :page=>2, :total_pages=>48}}
         end
 
         def description_data
