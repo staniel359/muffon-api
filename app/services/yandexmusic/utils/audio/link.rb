@@ -9,7 +9,7 @@ module YandexMusic
           return retry_with_new_session_id if wrong_session_id?
 
           data
-        rescue StandardError
+        rescue JSON::ParserError
           nil
         end
 
@@ -43,6 +43,7 @@ module YandexMusic
         def track_data_headers
           {
             'X-Retpath-Y' => 'https://music.yandex.ru/',
+            'User-Agent' => user_agent,
             cookies: track_data_cookies
           }
         end
@@ -50,12 +51,17 @@ module YandexMusic
         def track_data_cookies
           {
             'i' => i_cookie,
+            'spravka' => spravka_cookie,
             'Session_id' => session_id
           }
         end
 
         def i_cookie
           secrets.yandex_music[:i]
+        end
+
+        def spravka_cookie
+          secrets.yandex_music[:spravka]
         end
 
         def session_id
