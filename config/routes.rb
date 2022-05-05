@@ -465,7 +465,10 @@ Rails.application.routes.draw do
 
         namespace :connect do
           get 'token'
-          get 'session'
+
+          resources :sessions,
+            only: %i[create destroy],
+            param: :profile_id
         end
 
         namespace :users, as: :user do
