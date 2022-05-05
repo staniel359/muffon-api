@@ -34,14 +34,10 @@ module Muffon
         end
 
         def update_community
-          community.title = @args[:title]
-
-          if @args[:description].present?
-            community.description =
-              @args[:description]
-          end
-
-          community.save
+          community.update(
+            title: @args[:title],
+            description: @args[:description]
+          )
         end
 
         def community_data
