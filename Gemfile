@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 git_source(:github) do |repo|
   "https://github.com/#{repo}.git"
 end
@@ -41,7 +42,7 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'vcr', github: 'vcr/vcr'
+  gem 'vcr'
   gem 'webmock'
 end
 
