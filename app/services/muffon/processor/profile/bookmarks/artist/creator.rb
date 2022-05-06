@@ -20,7 +20,7 @@ module Muffon
               return bookmark_artist.errors_data if
                   bookmark_artist.errors?
 
-              { bookmark_id: bookmark_artist.id }
+              { bookmark_artist: bookmark_artist_data }
             end
 
             def bookmark_artist
@@ -32,6 +32,10 @@ module Muffon
 
             def name
               @args[:name]
+            end
+
+            def bookmark_artist_data
+              { id: bookmark_artist.id }
             end
           end
         end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_07_172912) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_06_104518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -199,7 +199,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_172912) do
   create_table "playlists", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.string "title"
-    t.integer "playlist_tracks_count", default: 0
+    t.integer "tracks_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_playlists_on_profile_id"
@@ -270,8 +270,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_172912) do
     t.integer "role", default: 0
     t.string "lastfm_session_key"
     t.string "lastfm_nickname"
-    t.integer "following_profiles_count", default: 0
-    t.integer "follower_profiles_count", default: 0
+    t.integer "following_count", default: 0
+    t.integer "followers_count", default: 0
     t.boolean "online", default: false
     t.index ["email"], name: "index_profiles_on_email", unique: true
     t.index ["nickname"], name: "index_profiles_on_nickname", unique: true
@@ -280,7 +280,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_07_172912) do
   create_table "recommendations", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.integer "artist_id"
-    t.integer "profile_artist_ids", default: [], array: true
+    t.integer "library_artist_ids", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "deleted", default: false

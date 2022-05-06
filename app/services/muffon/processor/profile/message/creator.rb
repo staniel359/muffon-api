@@ -34,7 +34,7 @@ module Muffon
 
             process_images
 
-            { conversation_id: conversation.id }
+            { conversation: conversation_data }
           end
 
           def message
@@ -94,6 +94,10 @@ module Muffon
             message.process_images(
               @args[:images]
             )
+          end
+
+          def conversation_data
+            { id: conversation.id }
           end
         end
       end

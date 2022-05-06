@@ -8,7 +8,7 @@ module Muffon
         private
 
         def total_items_count
-          playlist.playlist_tracks_count
+          playlist.tracks_count
         end
 
         def collection_list

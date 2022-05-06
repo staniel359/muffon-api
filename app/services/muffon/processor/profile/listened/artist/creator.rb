@@ -20,7 +20,7 @@ module Muffon
               return listened_artist.errors_data if
                   listened_artist.errors?
 
-              { listened_id: listened_artist.id }
+              { listened_artist: listened_artist_data }
             end
 
             def listened_artist
@@ -32,6 +32,10 @@ module Muffon
 
             def name
               @args[:name]
+            end
+
+            def listened_artist_data
+              { id: listened_artist.id }
             end
           end
         end

@@ -18,7 +18,7 @@ module Muffon
 
           process_image
 
-          { community_id: community.id }
+          { community: community_data }
         end
 
         def community
@@ -28,6 +28,10 @@ module Muffon
             ).create(
               description: @args[:description]
             )
+        end
+
+        def community_data
+          { id: community.id }
         end
       end
     end

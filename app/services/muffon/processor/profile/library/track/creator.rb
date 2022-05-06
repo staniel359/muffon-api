@@ -27,7 +27,7 @@ module Muffon
 
               process_image
 
-              { library_id: profile_track.id }
+              { library_track: library_track_data }
             end
 
             def update_profile_artist
@@ -106,6 +106,10 @@ module Muffon
                 @args[:image_url] ||
                   @args[:image]
               )
+            end
+
+            def library_track_data
+              { id: profile_track.id }
             end
           end
         end

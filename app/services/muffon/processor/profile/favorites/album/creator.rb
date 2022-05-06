@@ -23,7 +23,7 @@ module Muffon
 
               process_image
 
-              { favorite_id: favorite_album.id }
+              { favorite_album: favorite_album_data }
             end
 
             def favorite_album
@@ -45,6 +45,10 @@ module Muffon
               favorite_album.process_image(
                 @args[:image_url]
               )
+            end
+
+            def favorite_album_data
+              { id: favorite_album.id }
             end
           end
         end

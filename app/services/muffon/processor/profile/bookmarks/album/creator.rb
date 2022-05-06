@@ -23,7 +23,7 @@ module Muffon
 
               process_image
 
-              { bookmark_id: bookmark_album.id }
+              { bookmark_album: bookmark_album_data }
             end
 
             def bookmark_album
@@ -45,6 +45,10 @@ module Muffon
               bookmark_album.process_image(
                 @args[:image_url]
               )
+            end
+
+            def bookmark_album_data
+              { id: bookmark_album.id }
             end
           end
         end

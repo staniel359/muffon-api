@@ -19,7 +19,7 @@ module Muffon
 
             process_image
 
-            { playlist_id: playlist.id }
+            { playlist: playlist_data }
           end
 
           def playlist
@@ -27,6 +27,10 @@ module Muffon
               profile.playlists.where(
                 title: @args[:title]
               ).create
+          end
+
+          def playlist_data
+            { id: playlist.id }
           end
         end
       end

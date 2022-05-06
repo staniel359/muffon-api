@@ -2,7 +2,7 @@ module Muffon
   module Profile
     module Recommendation
       class Artists < Muffon::Profile::Recommendation::Base
-        COLLECTION_NAME = 'profile_artists'.freeze
+        COLLECTION_NAME = 'artists'.freeze
         include Muffon::Utils::Pagination
 
         private
@@ -14,7 +14,8 @@ module Muffon
         end
 
         def collection_list
-          profile_artists
+          recommendation
+            .library_artists
             .profile_tracks_count_desc_ordered
             .profile_albums_count_desc_ordered
             .created_asc_ordered
@@ -23,13 +24,9 @@ module Muffon
             .associated
         end
 
-        def profile_artists
-          recommendation.profile_artists
-        end
-
-        def collection_item_data_formatted(profile_artist)
+        def collection_item_data_formatted(library_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            profile_artist:
+            library_artist:
           )
         end
 

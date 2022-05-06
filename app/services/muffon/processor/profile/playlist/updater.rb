@@ -31,20 +31,13 @@ module Muffon
 
             process_image
 
-            { profile: profile_data }
+            { playlist: playlist_data }
           end
 
           def update_playlist
             playlist.update(
               title: @args[:title]
             )
-          end
-
-          def profile_data
-            {
-              nickname:,
-              playlist: playlist_data
-            }
           end
 
           def playlist_data

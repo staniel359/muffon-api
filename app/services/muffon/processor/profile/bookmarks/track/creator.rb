@@ -23,7 +23,7 @@ module Muffon
 
               process_image
 
-              { bookmark_id: bookmark_track.id }
+              { bookmark_track: bookmark_track_data }
             end
 
             def bookmark_track
@@ -51,6 +51,10 @@ module Muffon
               bookmark_track.process_image(
                 @args[:image_url]
               )
+            end
+
+            def bookmark_track_data
+              { id: bookmark_track.id }
             end
           end
         end

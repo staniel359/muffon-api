@@ -92,10 +92,8 @@ module Muffon
 
       def profile_relationships_data
         {
-          follower_profiles_count:
-            profile.follower_profiles_count,
-          following_profiles_count:
-            profile.following_profiles_count
+          followers_count: profile.followers_count,
+          following_count: profile.following_count
         }
       end
 

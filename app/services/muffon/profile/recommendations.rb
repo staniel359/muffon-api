@@ -67,7 +67,7 @@ module Muffon
 
       def collection_list
         recommendations_filtered
-          .profile_artists_count_desc_ordered
+          .library_artists_count_desc_ordered
           .limit(limit)
           .offset(offset)
           .associated

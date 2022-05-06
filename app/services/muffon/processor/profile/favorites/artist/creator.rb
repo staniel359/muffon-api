@@ -20,7 +20,7 @@ module Muffon
               return favorite_artist.errors_data if
                   favorite_artist.errors?
 
-              { favorite_id: favorite_artist.id }
+              { favorite_artist: favorite_artist_data }
             end
 
             def favorite_artist
@@ -32,6 +32,10 @@ module Muffon
 
             def name
               @args[:name]
+            end
+
+            def favorite_artist_data
+              { id: favorite_artist.id }
             end
           end
         end

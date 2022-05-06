@@ -20,7 +20,7 @@ module Muffon
               return profile_artist.errors_data if
                   profile_artist.errors?
 
-              { library_id: profile_artist.id }
+              { library_artist: library_artist_data }
             end
 
             def profile_artist
@@ -32,6 +32,10 @@ module Muffon
 
             def name
               @args[:name]
+            end
+
+            def library_artist_data
+              { id: profile_artist.id }
             end
           end
         end

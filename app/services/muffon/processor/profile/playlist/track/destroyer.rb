@@ -15,10 +15,7 @@ module Muffon
             def process_playlist_track
               playlist_track&.destroy
 
-              {
-                playlist_tracks_count:
-                  playlist.playlist_tracks_count
-              }
+              { playlist: playlist_data }
             end
 
             def playlist_track

@@ -23,7 +23,7 @@ module Muffon
 
               process_image
 
-              { listened_id: listened_album.id }
+              { listened_album: listened_album_data }
             end
 
             def listened_album
@@ -45,6 +45,10 @@ module Muffon
               listened_album.process_image(
                 @args[:image_url]
               )
+            end
+
+            def listened_album_data
+              { id: listened_album.id }
             end
           end
         end

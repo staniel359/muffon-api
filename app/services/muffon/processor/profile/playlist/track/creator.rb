@@ -24,9 +24,8 @@ module Muffon
               process_image
 
               {
-                playlist_track_id: playlist_track.id,
-                playlist_tracks_count:
-                  playlist.playlist_tracks_count
+                playlist: playlist_data,
+                playlist_track: playlist_track_data
               }
             end
 
@@ -56,6 +55,10 @@ module Muffon
               playlist_track.process_image(
                 @args[:image_url]
               )
+            end
+
+            def playlist_track_data
+              { id: playlist_track.id }
             end
           end
         end

@@ -20,8 +20,8 @@ module Muffon
             id: recommendation.id,
             name:,
             image: artist.image_data,
-            profile_artists_count:,
-            profile_artists: profile_artists_formatted
+            artists_count:,
+            artists: library_artists_formatted
           }.compact
         end
 
@@ -37,21 +37,21 @@ module Muffon
           @artist ||= recommendation.artist
         end
 
-        def profile_artists_count
+        def artists_count
           recommendation
-            .profile_artist_ids
+            .library_artist_ids
             .size
         end
 
-        def profile_artists_formatted
-          profile_artists.map do |a|
-            profile_artist_formatted(a)
+        def library_artists_formatted
+          library_artists.map do |a|
+            library_artist_formatted(a)
           end
         end
 
-        def profile_artists
+        def library_artists
           recommendation
-            .profile_artists
+            .library_artists
             .profile_tracks_count_desc_ordered
             .profile_albums_count_desc_ordered
             .created_asc_ordered
@@ -59,9 +59,9 @@ module Muffon
             .associated
         end
 
-        def profile_artist_formatted(profile_artist)
+        def library_artist_formatted(library_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            profile_artist:
+            library_artist:
           )
         end
       end

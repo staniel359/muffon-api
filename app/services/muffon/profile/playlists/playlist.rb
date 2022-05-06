@@ -15,7 +15,7 @@ module Muffon
             title: playlist.title,
             profile: profile_data,
             image: playlist.image_data,
-            tracks_count: playlist.playlist_tracks_count,
+            tracks_count: playlist.tracks_count,
             created: created_formatted
           }.compact
         end

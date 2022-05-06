@@ -29,6 +29,16 @@ module Muffon
 
             process_membership
           end
+
+          def community_data
+            { members_count: }
+          end
+
+          def members_count
+            community
+              .reload
+              .members_count
+          end
         end
       end
     end

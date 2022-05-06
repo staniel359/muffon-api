@@ -24,7 +24,7 @@ module Muffon
               process_tracks
               process_image
 
-              { library_id: profile_album.id }
+              { library_album: library_album_data }
             end
 
             def profile_album
@@ -69,6 +69,10 @@ module Muffon
               profile_album.process_image(
                 @args[:image_url]
               )
+            end
+
+            def library_album_data
+              { id: profile_album.id }
             end
           end
         end
