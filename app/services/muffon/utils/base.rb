@@ -2,7 +2,7 @@ module Muffon
   module Utils
     module Base
       SELF_PREFIXES = %w[
-        profile favorite bookmark listened
+        library favorite bookmark listened
       ].freeze
 
       private

@@ -9,15 +9,15 @@ module Muffon
 
         def total_items_count
           recommendation
-            .profile_artist_ids
+            .library_artist_ids
             .size
         end
 
         def collection_list
           recommendation
             .library_artists
-            .profile_tracks_count_desc_ordered
-            .profile_albums_count_desc_ordered
+            .library_tracks_count_desc_ordered
+            .library_albums_count_desc_ordered
             .created_asc_ordered
             .limit(limit)
             .offset(offset)

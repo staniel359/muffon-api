@@ -14,7 +14,7 @@ module Muffon
           def primary_args
             [
               @args[:profile_id],
-              @args[:profile_artist_id]
+              @args[:library_artist_id]
             ]
           end
         end

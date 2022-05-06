@@ -12,24 +12,24 @@ module Muffon
           end
 
           def collection_list
-            other_profile_tracks
+            other_profile_library_tracks
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
               .associated
           end
 
-          def other_profile_tracks
-            profile_tracks(
+          def other_profile_library_tracks
+            library_tracks(
               @args[:other_profile_id]
             ).where(
               track_id: common_track_ids
             )
           end
 
-          def collection_item_data_formatted(profile_track)
+          def collection_item_data_formatted(library_track)
             Muffon::Profile::Library::Compatibility::Tracks::Track.call(
-              profile_track:
+              library_track:
             )
           end
 

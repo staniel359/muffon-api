@@ -11,7 +11,7 @@ module Muffon
         end
 
         def artist
-          @artist ||= profile_artist.artist
+          @artist ||= library_artist.artist
         end
       end
     end

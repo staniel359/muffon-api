@@ -12,7 +12,7 @@ module Muffon
 
           def artist_base_data
             {
-              id: profile_artist.id,
+              id: library_artist.id,
               favorite_id:,
               name: artist.name
             }.compact
@@ -22,16 +22,16 @@ module Muffon
             {
               image: artist.image_data,
               tracks_count:
-                profile_artist.profile_tracks_count,
+                library_artist.library_tracks_count,
               albums_count:
-                profile_artist.profile_albums_count,
+                library_artist.library_albums_count,
               created: created_formatted
             }.compact
           end
 
           def created_formatted
             datetime_formatted(
-              profile_artist.created_at
+              library_artist.created_at
             )
           end
         end

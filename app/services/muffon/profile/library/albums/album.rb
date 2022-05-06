@@ -13,18 +13,18 @@ module Muffon
 
           def data
             {
-              id: profile_album.id,
+              id: library_album.id,
               favorite_id:,
               title: album.title,
               artist: artist_data,
-              image: profile_album.image_data,
+              image: library_album.image_data,
               tracks_count:
-                profile_album.profile_tracks_count
+                library_album.library_tracks_count
             }.compact
           end
 
-          def profile_album
-            @args[:profile_album]
+          def library_album
+            @args[:library_album]
           end
         end
       end

@@ -15,12 +15,12 @@ module Muffon
           end
 
           def no_data?
-            super || profile_artist.blank?
+            super || library_artist.blank?
           end
 
-          def profile_artist
-            @profile_artist ||=
-              profile.profile_artists.find_by(
+          def library_artist
+            @library_artist ||=
+              library_artists.find_by(
                 id: @args[:library_id]
               )
           end

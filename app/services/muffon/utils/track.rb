@@ -34,7 +34,7 @@ module Muffon
 
       def library_id
         self_data('track')[
-          :profile_track_id
+          :library_track_id
         ]
       end
 

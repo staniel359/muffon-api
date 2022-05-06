@@ -12,15 +12,15 @@ module Muffon
               ]
             end
 
-            def process_profile_track
-              profile_track&.destroy
+            def process_library_track
+              library_track&.destroy
 
               { success: true }
             end
 
-            def profile_track
-              @profile_track ||=
-                profile.profile_tracks.find_by(
+            def library_track
+              @library_track ||=
+                profile.library_tracks.find_by(
                   id: @args[:library_id]
                 )
             end

@@ -16,7 +16,7 @@ module Muffon
             def data
               return forbidden if wrong_profile?
 
-              process_profile_track
+              process_library_track
             end
           end
         end

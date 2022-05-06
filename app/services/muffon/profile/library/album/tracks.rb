@@ -21,24 +21,21 @@ module Muffon
           end
 
           def total_items_count
-            profile_album.profile_tracks_count
+            library_album.library_tracks_count
           end
 
           def collection_list
-            tracks
+            library_album
+              .library_tracks
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
               .album_associated
           end
 
-          def tracks
-            profile_album.profile_tracks
-          end
-
-          def collection_item_data_formatted(profile_track)
+          def collection_item_data_formatted(library_track)
             Muffon::Profile::Library::Album::Tracks::Track.call(
-              profile_track:,
+              library_track:,
               profile_id: @args[:profile_id]
             )
           end

@@ -12,15 +12,15 @@ module Muffon
               ]
             end
 
-            def process_profile_album
-              profile_album&.destroy
+            def process_library_album
+              library_album&.destroy
 
               { success: true }
             end
 
-            def profile_album
-              @profile_album ||=
-                profile.profile_albums.find_by(
+            def library_album
+              @library_album ||=
+                profile.library_albums.find_by(
                   id: @args[:library_id]
                 )
             end

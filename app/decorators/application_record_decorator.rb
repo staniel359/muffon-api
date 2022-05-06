@@ -12,9 +12,9 @@ module ApplicationRecordDecorator
       )
     end
 
-    def profile_tracks_count_desc_ordered
+    def library_tracks_count_desc_ordered
       order(
-        profile_tracks_count: :desc
+        library_tracks_count: :desc
       )
     end
   end

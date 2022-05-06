@@ -14,18 +14,18 @@ module Muffon
               ]
             end
 
-            def process_profile_artist
-              profile_artist
+            def process_library_artist
+              library_artist
 
-              return profile_artist.errors_data if
-                  profile_artist.errors?
+              return library_artist.errors_data if
+                  library_artist.errors?
 
               { library_artist: library_artist_data }
             end
 
-            def profile_artist
-              @profile_artist ||=
-                profile.profile_artists.where(
+            def library_artist
+              @library_artist ||=
+                profile.library_artists.where(
                   artist_id: find_artist.id
                 ).first_or_create
             end
@@ -35,7 +35,7 @@ module Muffon
             end
 
             def library_artist_data
-              { id: profile_artist.id }
+              { id: library_artist.id }
             end
           end
         end

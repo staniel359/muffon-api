@@ -15,32 +15,32 @@ module Muffon
               ]
             end
 
-            def process_profile_track
+            def process_library_track
               return forbidden if wrong_profile?
 
-              update_profile_artist
-              update_profile_album
-              update_profile_track
+              update_library_artist
+              update_library_album
+              update_library_track
 
-              return profile_track.errors_data if
-                  profile_track.errors?
+              return library_track.errors_data if
+                  library_track.errors?
 
               process_image
 
               { library_track: library_track_data }
             end
 
-            def update_profile_artist
-              profile_artist.tap do |artist|
+            def update_library_artist
+              library_artist.tap do |artist|
                 artist.created_at = @args[:created_at] if
                     update_created_at?(artist)
                 artist.save
               end
             end
 
-            def profile_artist
-              @profile_artist ||=
-                profile.profile_artists.where(
+            def library_artist
+              @library_artist ||=
+                profile.library_artists.where(
                   artist_id: find_artist.id
                 ).first_or_initialize
             end
@@ -56,23 +56,23 @@ module Muffon
               @args[:created_at] < model.created_at
             end
 
-            def update_profile_album
-              return if profile_album.blank?
+            def update_library_album
+              return if library_album.blank?
 
-              profile_album.tap do |album|
+              library_album.tap do |album|
                 album.created_at = @args[:created_at] if
                     update_created_at?(album)
                 album.save
               end
             end
 
-            def profile_album
+            def library_album
               return if album_title.blank?
 
-              @profile_album ||=
-                profile.profile_albums.where(
+              @library_album ||=
+                profile.library_albums.where(
                   album_id: find_album.id,
-                  profile_artist_id: profile_artist.id
+                  library_artist_id: library_artist.id
                 ).first_or_initialize
             end
 
@@ -80,20 +80,20 @@ module Muffon
               @args[:album_title]
             end
 
-            def update_profile_track
-              profile_track.tap do |track|
+            def update_library_track
+              library_track.tap do |track|
                 track.created_at = @args[:created_at] if
                     update_created_at?(track)
                 track.save
               end
             end
 
-            def profile_track
-              @profile_track ||=
-                profile.profile_tracks.where(
+            def library_track
+              @library_track ||=
+                profile.library_tracks.where(
                   track_id: find_track.id,
-                  profile_artist_id: profile_artist.id,
-                  profile_album_id: profile_album&.id
+                  library_artist_id: library_artist.id,
+                  library_album_id: library_album&.id
                 ).first_or_initialize
             end
 
@@ -102,14 +102,14 @@ module Muffon
             end
 
             def process_image
-              profile_album&.process_image(
+              library_album&.process_image(
                 @args[:image_url] ||
                   @args[:image]
               )
             end
 
             def library_track_data
-              { id: profile_track.id }
+              { id: library_track.id }
             end
           end
         end

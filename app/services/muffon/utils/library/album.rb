@@ -11,23 +11,23 @@ module Muffon
         end
 
         def album
-          @album ||= profile_album.album
+          @album ||= library_album.album
         end
 
         def artist_data
           {
-            id: profile_artist.id,
+            id: library_artist.id,
             name: artist.name
           }
         end
 
-        def profile_artist
-          @profile_artist ||=
-            profile_album.profile_artist
+        def library_artist
+          @library_artist ||=
+            library_album.library_artist
         end
 
         def artist
-          @artist ||= profile_artist.artist
+          @artist ||= library_artist.artist
         end
       end
     end

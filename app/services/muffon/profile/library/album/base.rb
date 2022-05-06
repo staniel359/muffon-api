@@ -15,12 +15,12 @@ module Muffon
           end
 
           def no_data?
-            super || profile_album.blank?
+            super || library_album.blank?
           end
 
-          def profile_album
-            @profile_album ||=
-              profile.profile_albums.find_by(
+          def library_album
+            @library_album ||=
+              library_albums.find_by(
                 id: @args[:library_id]
               )
           end

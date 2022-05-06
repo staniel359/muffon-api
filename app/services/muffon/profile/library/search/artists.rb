@@ -20,36 +20,36 @@ module Muffon
           end
 
           def total_items_count
-            artists.size
+            search_library_artists.size
           end
 
-          def artists
-            @artists ||=
-              artists_joined.where(
+          def search_library_artists
+            @search_library_artists ||=
+              library_artists_joined.where(
                 'LOWER(artists.name) LIKE :query',
-                query: "%#{@args[:query].downcase}%"
+                query: query_formatted
               )
           end
 
-          def artists_joined
-            profile
-              .profile_artists
-              .left_joins(:artist)
+          def library_artists_joined
+            library_artists.left_joins(
+              :artist
+            )
           end
 
           def collection_list
-            artists
-              .profile_tracks_count_desc_ordered
-              .profile_albums_count_desc_ordered
+            search_library_artists
+              .library_tracks_count_desc_ordered
+              .library_albums_count_desc_ordered
               .created_asc_ordered
               .limit(limit)
               .offset(offset)
               .associated
           end
 
-          def collection_item_data_formatted(profile_artist)
+          def collection_item_data_formatted(library_artist)
             Muffon::Profile::Library::Artists::Artist.call(
-              profile_artist:,
+              library_artist:,
               profile_id: @args[:profile_id]
             )
           end

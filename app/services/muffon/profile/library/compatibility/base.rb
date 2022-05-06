@@ -30,13 +30,15 @@ module Muffon
           end
 
           def artist_ids(profile_id)
-            profile_artists(profile_id).pluck(
+            library_artists(
+              profile_id
+            ).pluck(
               :artist_id
             )
           end
 
-          def profile_artists(profile_id)
-            ::ProfileArtist.where(
+          def library_artists(profile_id)
+            ::LibraryArtist.where(
               profile_id:
             )
           end
@@ -53,13 +55,13 @@ module Muffon
           end
 
           def album_ids(profile_id)
-            profile_albums(profile_id).pluck(
+            library_albums(profile_id).pluck(
               :album_id
             )
           end
 
-          def profile_albums(profile_id)
-            ::ProfileAlbum.where(
+          def library_albums(profile_id)
+            ::LibraryAlbum.where(
               profile_id:
             )
           end
@@ -76,13 +78,13 @@ module Muffon
           end
 
           def track_ids(profile_id)
-            profile_tracks(profile_id).pluck(
+            library_tracks(profile_id).pluck(
               :track_id
             )
           end
 
-          def profile_tracks(profile_id)
-            ::ProfileTrack.where(
+          def library_tracks(profile_id)
+            ::LibraryTrack.where(
               profile_id:
             )
           end

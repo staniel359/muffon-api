@@ -15,11 +15,11 @@ module Muffon
               ]
             end
 
-            def process_profile_album
-              profile_album
+            def process_library_album
+              library_album
 
-              return profile_album.errors_data if
-                  profile_album.errors?
+              return library_album.errors_data if
+                  library_album.errors?
 
               process_tracks
               process_image
@@ -27,11 +27,11 @@ module Muffon
               { library_album: library_album_data }
             end
 
-            def profile_album
-              @profile_album ||=
-                profile.profile_albums.where(
+            def library_album
+              @library_album ||=
+                profile.library_albums.where(
                   album_id: find_album.id,
-                  profile_artist_id: profile_artist.id
+                  library_artist_id: library_artist.id
                 ).first_or_create
             end
 
@@ -43,8 +43,8 @@ module Muffon
               @args[:artist_name]
             end
 
-            def profile_artist
-              profile.profile_artists.where(
+            def library_artist
+              profile.library_artists.where(
                 artist_id: find_album.artist_id
               ).first_or_create
             end
@@ -61,18 +61,18 @@ module Muffon
               Muffon::Processor::Profile::Library::Album::Creator::Track.call(
                 track:,
                 profile_id: @args[:profile_id],
-                profile_album_id: profile_album.id
+                library_album_id: library_album.id
               )
             end
 
             def process_image
-              profile_album.process_image(
+              library_album.process_image(
                 @args[:image_url]
               )
             end
 
             def library_album_data
-              { id: profile_album.id }
+              { id: library_album.id }
             end
           end
         end

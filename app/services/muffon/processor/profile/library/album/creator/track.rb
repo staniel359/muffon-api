@@ -8,17 +8,17 @@ module Muffon
               include Muffon::Utils::Track
 
               def call
-                profile_track
+                library_track
               end
 
               private
 
-              def profile_track
-                profile.profile_tracks.where(
+              def library_track
+                profile.library_tracks.where(
                   track_id: find_track.id
                 ).first_or_create(
-                  profile_artist_id: profile_artist.id,
-                  profile_album_id: @args[:profile_album_id]
+                  library_artist_id: library_artist.id,
+                  library_album_id: @args[:library_album_id]
                 )
               end
 
@@ -30,8 +30,8 @@ module Muffon
                 @args[:track]
               end
 
-              def profile_artist
-                profile.profile_artists.where(
+              def library_artist
+                profile.library_artists.where(
                   artist_id: find_artist.id
                 ).first_or_create
               end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_06_104518) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_06_112827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -137,6 +137,41 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_104518) do
     t.index ["track_id", "profile_id"], name: "index_favorite_tracks_on_track_id_and_profile_id", unique: true
   end
 
+  create_table "library_albums", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "album_id", null: false
+    t.bigint "library_artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "library_tracks_count", default: 0
+    t.index ["album_id", "profile_id"], name: "index_library_albums_on_album_id_and_profile_id", unique: true
+    t.index ["library_artist_id"], name: "index_library_albums_on_library_artist_id"
+    t.index ["profile_id"], name: "index_library_albums_on_profile_id"
+  end
+
+  create_table "library_artists", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "library_tracks_count", default: 0
+    t.integer "library_albums_count", default: 0
+    t.index ["artist_id", "profile_id"], name: "index_library_artists_on_artist_id_and_profile_id", unique: true
+    t.index ["profile_id"], name: "index_library_artists_on_profile_id"
+  end
+
+  create_table "library_tracks", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "track_id", null: false
+    t.bigint "library_artist_id", null: false
+    t.bigint "library_album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["library_album_id"], name: "index_library_tracks_on_library_album_id"
+    t.index ["library_artist_id"], name: "index_library_tracks_on_library_artist_id"
+    t.index ["profile_id"], name: "index_library_tracks_on_profile_id"
+  end
+
   create_table "listened_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.integer "album_id"
@@ -221,41 +256,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_104518) do
     t.index ["profile_id"], name: "index_posts_on_profile_id"
   end
 
-  create_table "profile_albums", force: :cascade do |t|
-    t.bigint "profile_id", null: false
-    t.bigint "album_id", null: false
-    t.bigint "profile_artist_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "profile_tracks_count", default: 0
-    t.index ["album_id", "profile_id"], name: "index_profile_albums_on_album_id_and_profile_id", unique: true
-    t.index ["profile_artist_id"], name: "index_profile_albums_on_profile_artist_id"
-    t.index ["profile_id"], name: "index_profile_albums_on_profile_id"
-  end
-
-  create_table "profile_artists", force: :cascade do |t|
-    t.bigint "profile_id", null: false
-    t.bigint "artist_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "profile_tracks_count", default: 0
-    t.integer "profile_albums_count", default: 0
-    t.index ["artist_id", "profile_id"], name: "index_profile_artists_on_artist_id_and_profile_id", unique: true
-    t.index ["profile_id"], name: "index_profile_artists_on_profile_id"
-  end
-
-  create_table "profile_tracks", force: :cascade do |t|
-    t.bigint "profile_id", null: false
-    t.bigint "track_id", null: false
-    t.bigint "profile_artist_id", null: false
-    t.bigint "profile_album_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["profile_album_id"], name: "index_profile_tracks_on_profile_album_id"
-    t.index ["profile_artist_id"], name: "index_profile_tracks_on_profile_artist_id"
-    t.index ["profile_id"], name: "index_profile_tracks_on_profile_id"
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.string "email"
     t.string "token"
@@ -325,6 +325,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_104518) do
   add_foreign_key "favorite_albums", "profiles"
   add_foreign_key "favorite_artists", "profiles"
   add_foreign_key "favorite_tracks", "profiles"
+  add_foreign_key "library_albums", "library_artists"
+  add_foreign_key "library_albums", "profiles"
+  add_foreign_key "library_artists", "profiles"
+  add_foreign_key "library_tracks", "library_albums"
+  add_foreign_key "library_tracks", "library_artists"
+  add_foreign_key "library_tracks", "profiles"
   add_foreign_key "listened_albums", "profiles"
   add_foreign_key "listened_artists", "profiles"
   add_foreign_key "listened_tracks", "profiles"
@@ -337,12 +343,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_06_104518) do
   add_foreign_key "posts", "communities"
   add_foreign_key "posts", "profiles"
   add_foreign_key "posts", "profiles", column: "other_profile_id"
-  add_foreign_key "profile_albums", "profile_artists"
-  add_foreign_key "profile_albums", "profiles"
-  add_foreign_key "profile_artists", "profiles"
-  add_foreign_key "profile_tracks", "profile_albums"
-  add_foreign_key "profile_tracks", "profile_artists"
-  add_foreign_key "profile_tracks", "profiles"
   add_foreign_key "recommendations", "profiles"
   add_foreign_key "relationships", "profiles"
   add_foreign_key "relationships", "profiles", column: "other_profile_id"

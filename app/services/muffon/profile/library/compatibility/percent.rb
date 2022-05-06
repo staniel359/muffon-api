@@ -27,17 +27,17 @@ module Muffon
 
           def artists_average_count
             @artists_average_count ||= [
-              profile_artists_count(
+              library_artists_count(
                 @args[:profile_id]
               ),
-              profile_artists_count(
+              library_artists_count(
                 @args[:other_profile_id]
               )
             ].sum / 2
           end
 
-          def profile_artists_count(profile_id)
-            profile_artists(
+          def library_artists_count(profile_id)
+            library_artists(
               profile_id
             ).size
           end
@@ -52,17 +52,17 @@ module Muffon
 
           def albums_average_count
             @albums_average_count ||= [
-              profile_albums_count(
+              library_albums_count(
                 @args[:profile_id]
               ),
-              profile_albums_count(
+              library_albums_count(
                 @args[:other_profile_id]
               )
             ].sum / 2
           end
 
-          def profile_albums_count(profile_id)
-            profile_albums(
+          def library_albums_count(profile_id)
+            library_albums(
               profile_id
             ).size
           end
@@ -77,17 +77,17 @@ module Muffon
 
           def tracks_average_count
             @tracks_average_count ||= [
-              profile_tracks_count(
+              library_tracks_count(
                 @args[:profile_id]
               ),
-              profile_tracks_count(
+              library_tracks_count(
                 @args[:other_profile_id]
               )
             ].sum / 2
           end
 
-          def profile_tracks_count(profile_id)
-            profile_tracks(
+          def library_tracks_count(profile_id)
+            library_tracks(
               profile_id
             ).size
           end

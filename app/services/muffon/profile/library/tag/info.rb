@@ -10,7 +10,7 @@ module Muffon
               id: tag.id,
               name: tag.name,
               artists_count:
-                profile_artists.count
+                tag_library_artists.size
             }
           end
         end

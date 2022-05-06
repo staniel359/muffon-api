@@ -13,6 +13,10 @@ module Muffon
               @args[:query]
             ]
           end
+
+          def query_formatted
+            "%#{@args[:query].downcase}%"
+          end
         end
       end
     end

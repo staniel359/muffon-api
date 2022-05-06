@@ -1,10 +1,10 @@
-module ProfileTrackDecorator
+module LibraryTrackDecorator
   module ClassMethods
     def associated
       includes(
         :track,
-        profile_artist: :artist,
-        profile_album: [
+        library_artist: :artist,
+        library_album: [
           :album,
           image_association
         ]

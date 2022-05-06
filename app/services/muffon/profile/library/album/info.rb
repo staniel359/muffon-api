@@ -7,20 +7,20 @@ module Muffon
 
           def album_data
             {
-              id: profile_album.id,
+              id: library_album.id,
               favorite_id:,
               title: album.title,
               artist: artist_data,
-              image: profile_album.image_data,
+              image: library_album.image_data,
               tracks_count:
-                profile_album.profile_tracks_count,
+                library_album.library_tracks_count,
               created: created_formatted
             }.compact
           end
 
           def created_formatted
             datetime_formatted(
-              profile_album.created_at
+              library_album.created_at
             )
           end
         end

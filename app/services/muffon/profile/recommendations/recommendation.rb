@@ -52,8 +52,8 @@ module Muffon
         def library_artists
           recommendation
             .library_artists
-            .profile_tracks_count_desc_ordered
-            .profile_albums_count_desc_ordered
+            .library_tracks_count_desc_ordered
+            .library_albums_count_desc_ordered
             .created_asc_ordered
             .limit(5)
             .associated

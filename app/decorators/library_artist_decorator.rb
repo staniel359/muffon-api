@@ -1,8 +1,8 @@
-module ProfileArtistDecorator
+module LibraryArtistDecorator
   module ClassMethods
-    def profile_albums_count_desc_ordered
+    def library_albums_count_desc_ordered
       order(
-        profile_albums_count: :desc
+        library_albums_count: :desc
       )
     end
 

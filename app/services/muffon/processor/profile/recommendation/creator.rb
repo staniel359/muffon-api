@@ -12,7 +12,7 @@ module Muffon
           def process_recommendation
             recommendation
 
-            add_profile_artist
+            add_library_artist
 
             recommendation.save
           end
@@ -30,16 +30,16 @@ module Muffon
             )
           end
 
-          def add_profile_artist
-            return if profile_artist_present?
+          def add_library_artist
+            return if library_artist_present?
 
-            recommendation.profile_artist_ids <<
-              @args[:profile_artist_id]
+            recommendation.library_artist_ids <<
+              @args[:library_artist_id]
           end
 
-          def profile_artist_present?
-            @args[:profile_artist_id].in?(
-              recommendation.profile_artist_ids
+          def library_artist_present?
+            @args[:library_artist_id].in?(
+              recommendation.library_artist_ids
             )
           end
         end

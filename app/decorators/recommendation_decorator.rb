@@ -27,7 +27,7 @@ module RecommendationDecorator
   end
 
   def library_artists
-    ProfileArtist.where(
+    LibraryArtist.where(
       profile_id:,
       id: library_artist_ids
     )

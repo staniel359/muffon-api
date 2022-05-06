@@ -15,12 +15,12 @@ module Muffon
           end
 
           def no_data?
-            super || profile_track.blank?
+            super || library_track.blank?
           end
 
-          def profile_track
-            @profile_track ||=
-              profile.profile_tracks.find_by(
+          def library_track
+            @library_track ||=
+              library_tracks.find_by(
                 id: @args[:library_id]
               )
           end

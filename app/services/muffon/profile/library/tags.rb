@@ -8,15 +8,15 @@ module Muffon
         private
 
         def total_items_count
-          tags.size
+          library_tags.size
         end
 
-        def tags
-          @tags ||= profile.tags
+        def library_tags
+          @library_tags ||= profile.library_tags
         end
 
         def collection_list
-          tags[offset, limit] || []
+          library_tags[offset, limit] || []
         end
 
         def collection_item_data_formatted(tag)

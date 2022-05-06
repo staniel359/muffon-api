@@ -12,15 +12,15 @@ module Muffon
               ]
             end
 
-            def process_profile_artist
-              profile_artist&.destroy
+            def process_library_artist
+              library_artist&.destroy
 
               { success: true }
             end
 
-            def profile_artist
-              @profile_artist ||=
-                profile.profile_artists.find_by(
+            def library_artist
+              @library_artist ||=
+                profile.library_artists.find_by(
                   id: @args[:library_id]
                 )
             end

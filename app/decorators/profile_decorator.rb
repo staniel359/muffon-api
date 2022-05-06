@@ -52,8 +52,8 @@ module ProfileDecorator
     )
   end
 
-  def tags
-    profile_artists
+  def library_tags
+    library_artists
       .left_joins(:artist)
       .pluck(:tag_ids)
       .flatten

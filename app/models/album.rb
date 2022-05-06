@@ -1,7 +1,7 @@
 class Album < ApplicationRecord
   include AlbumDecorator
 
-  has_many :profile_albums, dependent: nil
+  has_many :library_albums, dependent: nil
 
   belongs_to :artist
 

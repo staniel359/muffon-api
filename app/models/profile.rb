@@ -7,9 +7,9 @@ class Profile < ApplicationRecord
 
   has_one_attached :image
 
-  has_many :profile_artists, dependent: nil
-  has_many :profile_albums, dependent: nil
-  has_many :profile_tracks, dependent: nil
+  has_many :library_artists, dependent: nil
+  has_many :library_albums, dependent: nil
+  has_many :library_tracks, dependent: nil
 
   has_many :recommendations, dependent: nil
 

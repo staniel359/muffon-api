@@ -11,34 +11,34 @@ module Muffon
           }
         end
 
-        def artists
-          @artists ||= profile.profile_artists
+        def library_artists
+          @library_artists ||= profile.library_artists
         end
 
-        def albums
-          @albums ||= profile.profile_albums
+        def library_albums
+          @library_albums ||= profile.library_albums
         end
 
-        def tracks
-          @tracks ||= profile.profile_tracks
+        def library_tracks
+          @library_tracks ||= profile.library_tracks
         end
 
         def top_tracks_count
-          return 0 if artists.blank?
+          return 0 if library_artists.blank?
 
-          artists
-            .profile_tracks_count_desc_ordered
+          library_artists
+            .library_tracks_count_desc_ordered
             .first
-            .profile_tracks_count
+            .library_tracks_count
         end
 
         def top_albums_count
-          return 0 if artists.blank?
+          return 0 if library_artists.blank?
 
-          artists
-            .profile_albums_count_desc_ordered
+          library_artists
+            .library_albums_count_desc_ordered
             .first
-            .profile_albums_count
+            .library_albums_count
         end
       end
     end

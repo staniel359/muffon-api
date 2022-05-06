@@ -11,46 +11,46 @@ module Muffon
         end
 
         def track
-          @track ||= profile_track.track
+          @track ||= library_track.track
         end
 
         def artist_data
           {
-            id: profile_artist.id,
+            id: library_artist.id,
             name: artist.name
           }
         end
 
-        def profile_artist
-          @profile_artist ||=
-            profile_track.profile_artist
+        def library_artist
+          @library_artist ||=
+            library_track.library_artist
         end
 
         def artist
-          @artist ||= profile_artist.artist
+          @artist ||= library_artist.artist
         end
 
         def album_data
-          return if profile_album.blank?
+          return if library_album.blank?
 
           {
-            id: profile_album.id,
+            id: library_album.id,
             title: album.title
           }
         end
 
-        def profile_album
-          @profile_album ||=
-            profile_track.profile_album
+        def library_album
+          @library_album ||=
+            library_track.library_album
         end
 
         def album
-          @album ||= profile_album.album
+          @album ||= library_album.album
         end
 
         def created_formatted
           datetime_formatted(
-            profile_track.created_at
+            library_track.created_at
           )
         end
       end

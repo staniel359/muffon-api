@@ -12,7 +12,7 @@ module Muffon
 
           def track_base_data
             {
-              id: profile_track.id,
+              id: library_track.id,
               favorite_id:,
               player_id: track.player_id,
               title: track.title,
@@ -23,7 +23,7 @@ module Muffon
           def track_extra_data
             {
               album: album_data,
-              image: profile_album&.image_data,
+              image: library_album&.image_data,
               created: created_formatted
             }.compact
           end

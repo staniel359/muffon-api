@@ -14,15 +14,15 @@ module Muffon
 
             def data
               {
-                id: profile_album.id,
+                id: library_album.id,
                 title: album.title,
                 artist: artist_data,
-                image: profile_album.image_data
+                image: library_album.image_data
               }.compact
             end
 
-            def profile_album
-              @args[:profile_album]
+            def library_album
+              @args[:library_album]
             end
           end
         end

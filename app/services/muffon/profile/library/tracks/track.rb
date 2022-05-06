@@ -18,7 +18,7 @@ module Muffon
 
           def track_base_data
             {
-              id: profile_track.id,
+              id: library_track.id,
               favorite_id:,
               playlist_track_id:,
               player_id: track.player_id,
@@ -27,14 +27,14 @@ module Muffon
             }.compact
           end
 
-          def profile_track
-            @args[:profile_track]
+          def library_track
+            @args[:library_track]
           end
 
           def track_extra_data
             {
               album: album_data,
-              image: profile_album&.image_data,
+              image: library_album&.image_data,
               created: created_formatted
             }.compact
           end

@@ -39,7 +39,7 @@ module Muffon
 
       def recommendations_artists_filtered
         recommendations.where(
-          'profile_artist_ids @> ARRAY[?]',
+          'library_artist_ids @> ARRAY[?]',
           filter_ids
         )
       end

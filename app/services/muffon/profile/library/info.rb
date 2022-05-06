@@ -6,9 +6,9 @@ module Muffon
 
         def library_data
           {
-            artists_count: artists.size,
-            albums_count: albums.size,
-            tracks_count: tracks.size
+            artists_count: library_artists.size,
+            albums_count: library_albums.size,
+            tracks_count: library_tracks.size
           }
         end
       end

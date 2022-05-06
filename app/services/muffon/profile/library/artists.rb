@@ -20,22 +20,22 @@ module Muffon
         end
 
         def total_items_count
-          artists.size
+          library_artists.size
         end
 
         def collection_list
-          artists
-            .profile_tracks_count_desc_ordered
-            .profile_albums_count_desc_ordered
+          library_artists
+            .library_tracks_count_desc_ordered
+            .library_albums_count_desc_ordered
             .created_asc_ordered
             .limit(limit)
             .offset(offset)
             .associated
         end
 
-        def collection_item_data_formatted(profile_artist)
+        def collection_item_data_formatted(library_artist)
           Muffon::Profile::Library::Artists::Artist.call(
-            profile_artist:,
+            library_artist:,
             profile_id: @args[:profile_id]
           )
         end

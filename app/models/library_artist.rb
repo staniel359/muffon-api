@@ -1,5 +1,5 @@
-class ProfileArtist < ApplicationRecord
-  include ProfileArtistDecorator
+class LibraryArtist < ApplicationRecord
+  include LibraryArtistDecorator
 
   after_create_commit :create_recommendations
 
@@ -8,8 +8,8 @@ class ProfileArtist < ApplicationRecord
   belongs_to :profile
   belongs_to :artist
 
-  has_many :profile_albums, dependent: :destroy
-  has_many :profile_tracks, dependent: :destroy
+  has_many :library_albums, dependent: :destroy
+  has_many :library_tracks, dependent: :destroy
 
   validates :artist_id,
             uniqueness: {
@@ -27,7 +27,7 @@ class ProfileArtist < ApplicationRecord
   def recomendation_worker_args
     {
       profile_id:,
-      profile_artist_id: id
+      library_artist_id: id
     }.to_json
   end
 

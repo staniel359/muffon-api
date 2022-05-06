@@ -14,7 +14,7 @@ module Muffon
 
       def library_id
         self_data('artist')[
-          :profile_artist_id
+          :library_artist_id
         ]
       end
 

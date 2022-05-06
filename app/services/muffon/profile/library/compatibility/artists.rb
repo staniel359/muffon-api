@@ -12,26 +12,26 @@ module Muffon
           end
 
           def collection_list
-            other_profile_artists
-              .profile_tracks_count_desc_ordered
-              .profile_albums_count_desc_ordered
+            other_profile_library_artists
+              .library_tracks_count_desc_ordered
+              .library_albums_count_desc_ordered
               .created_asc_ordered
               .limit(limit)
               .offset(offset)
               .associated
           end
 
-          def other_profile_artists
-            profile_artists(
+          def other_profile_library_artists
+            library_artists(
               @args[:other_profile_id]
             ).where(
               artist_id: common_artist_ids
             )
           end
 
-          def collection_item_data_formatted(profile_artist)
+          def collection_item_data_formatted(library_artist)
             Muffon::Profile::Library::Compatibility::Artists::Artist.call(
-              profile_artist:
+              library_artist:
             )
           end
 

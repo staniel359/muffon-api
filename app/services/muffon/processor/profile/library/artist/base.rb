@@ -16,7 +16,7 @@ module Muffon
             def data
               return forbidden if wrong_profile?
 
-              process_profile_artist
+              process_library_artist
             end
           end
         end

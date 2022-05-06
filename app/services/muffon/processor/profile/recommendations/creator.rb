@@ -6,17 +6,17 @@ module Muffon
           private
 
           def process_recommendations
-            return if profile_artist.blank?
+            return if library_artist.blank?
 
             similar_artists.each do |s|
               process_recommendation(s)
             end
           end
 
-          def profile_artist
-            @profile_artist ||=
-              profile.profile_artists.find_by(
-                id: @args[:profile_artist_id]
+          def library_artist
+            @library_artist ||=
+              profile.library_artists.find_by(
+                id: @args[:library_artist_id]
               )
           end
 
@@ -35,15 +35,15 @@ module Muffon
           end
 
           def artist
-            @artist ||= profile_artist.artist
+            @artist ||= library_artist.artist
           end
 
           def process_recommendation(similar_artist)
             Muffon::Processor::Profile::Recommendation::Creator.call(
               artist_name: similar_artist[:name],
               profile_id: @args[:profile_id],
-              profile_artist_id:
-                @args[:profile_artist_id]
+              library_artist_id:
+                @args[:library_artist_id]
             )
           end
         end

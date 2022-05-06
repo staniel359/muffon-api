@@ -1,9 +1,9 @@
-module ProfileAlbumDecorator
+module LibraryAlbumDecorator
   module ClassMethods
     def associated
       includes(
         :album,
-        [profile_artist: :artist],
+        [library_artist: :artist],
         image_association
       )
     end

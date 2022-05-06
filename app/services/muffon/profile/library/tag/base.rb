@@ -26,10 +26,9 @@ module Muffon
             { tag: tag_data }
           end
 
-          def profile_artists
-            @profile_artists ||=
-              profile
-              .profile_artists
+          def tag_library_artists
+            @tag_library_artists ||=
+              library_artists
               .left_joins(:artist)
               .where(
                 '? = ANY(artists.tag_ids)',

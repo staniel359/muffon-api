@@ -8,35 +8,35 @@ module Muffon
           private
 
           def total_items_count
-            tracks.size
+            search_library_tracks.size
           end
 
-          def tracks
-            @tracks ||=
-              tracks_joined.where(
+          def search_library_tracks
+            @search_library_tracks ||=
+              library_tracks_joined.where(
                 'LOWER(tracks.title) LIKE :query '\
                 'OR LOWER(artists.name) LIKE :query',
-                query: "%#{@args[:query].downcase}%"
+                query: query_formatted
               )
           end
 
-          def tracks_joined
-            profile
-              .profile_tracks
-              .left_joins(track: :artist)
+          def library_tracks_joined
+            library_tracks.left_joins(
+              track: :artist
+            )
           end
 
           def collection_list
-            tracks
+            search_library_tracks
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
               .associated
           end
 
-          def collection_item_data_formatted(profile_track)
+          def collection_item_data_formatted(library_track)
             Muffon::Profile::Library::Tracks::Track.call(
-              profile_track:,
+              library_track:,
               profile_id: @args[:profile_id],
               playlist_id: @args[:playlist_id]
             )

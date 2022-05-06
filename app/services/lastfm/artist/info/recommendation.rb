@@ -13,8 +13,8 @@ module LastFM
 
           {
             id: recommendation_id,
-            profile_artists_count:
-              recommendation_profile_artists_count
+            artists_count:
+              recommendation_library_artists_count
           }
         end
 
@@ -43,9 +43,9 @@ module LastFM
           find_recommendation.id
         end
 
-        def recommendation_profile_artists_count
+        def recommendation_library_artists_count
           find_recommendation
-            .profile_artist_ids
+            .library_artist_ids
             .size
         end
       end
