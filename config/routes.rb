@@ -197,6 +197,11 @@ Rails.application.routes.draw do
 
         resources :sessions, only: :create
 
+        namespace :passwords do
+          post 'reset'
+          patch 'update'
+        end
+
         namespace :radio do
           namespace :tag do
             scope ':tag' do

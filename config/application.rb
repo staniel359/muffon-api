@@ -7,7 +7,7 @@ require "active_model/railtie"
 require "active_record/railtie"
 require "active_storage/engine"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
+require "action_mailer/railtie"
 # require "action_mailbox/engine"
 # require "action_text/engine"
 # require "action_view/railtie"
@@ -40,5 +40,16 @@ module MuffonAPI
       ActiveStorage::Engine,
       :all
     ]
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'gmail.com',
+      user_name: ENV['MUFFON_API_MAILER_EMAIL'],
+      password: ENV['MUFFON_API_MAILER_PASSWORD'],
+      authentication: :login,
+      openssl_verify_mode: 'none'
+    }
   end
 end
