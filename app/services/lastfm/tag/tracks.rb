@@ -7,16 +7,16 @@ module LastFM
       private
 
       def tracks_list
-        return sample_track if @args[:sample]
+        return random_track if @args[:random]
 
         raw_tracks_list
       end
 
-      def sample_track
-        [raw_sample_track].compact
+      def random_track
+        [raw_random_track].compact
       end
 
-      def raw_sample_track
+      def raw_random_track
         raw_tracks_list.to_a.sample
       end
 

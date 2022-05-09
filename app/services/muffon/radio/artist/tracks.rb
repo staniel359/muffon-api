@@ -2,19 +2,27 @@ module Muffon
   module Radio
     module Artist
       class Tracks < Muffon::Radio::Artist::Base
-        COLLECTION_NAME = 'tracks'.freeze
-        TOTAL_LIMIT = 100
+        TRACKS_LIMIT = 50
 
         private
 
+        def artist_info_data
+          @artist_info_data ||=
+            LastFM::Artist::Tracks.call(
+              artist: @args[:artist],
+              limit: 1,
+              page: random_track_number
+            )[:artist]
+        end
+
         def radio_track_data
-          radio_artist_data.dig(
+          artist_info_data.dig(
             :tracks, 0
           )
         end
 
         def artist_name
-          radio_artist_data[:name]
+          artist_info_data[:name]
         end
       end
     end

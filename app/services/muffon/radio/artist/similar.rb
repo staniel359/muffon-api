@@ -2,31 +2,43 @@ module Muffon
   module Radio
     module Artist
       class Similar < Muffon::Radio::Artist::Base
-        COLLECTION_NAME = 'similar'.freeze
-        TOTAL_LIMIT = 200
+        SIMILAR_ARTISTS_LIMIT = 50
+        TRACKS_LIMIT = 20
 
         private
 
-        def radio_track_data
-          similar_artist_data.dig(
-            :tracks, 0
-          )
-        end
-
-        def similar_artist_data
-          @similar_artist_data ||=
-            LastFM::Artist::Tracks.call(
-              artist: artist_name,
-              limit: 1,
-              page: rand(1..20)
+        def artist_info_data
+          @artist_info_data ||=
+            LastFM::Artist::Similar.call(
+              artist: @args[:artist],
+              limit: SIMILAR_ARTISTS_LIMIT,
+              random: random?,
+              minimal: true
             )[:artist]
         end
 
-        def artist_name
-          radio_artist_data.dig(
+        def radio_track_data
+          @radio_track_data ||=
+            similar_artist_info_data.dig(
+              :tracks, 0
+            )
+        end
+
+        def similar_artist_info_data
+          LastFM::Artist::Tracks.call(
+            artist: similar_artist_name,
+            limit: 1,
+            page: random_track_number
+          )[:artist]
+        end
+
+        def similar_artist_name
+          artist_info_data.dig(
             :similar, 0, :name
           )
         end
+
+        alias artist_name similar_artist_name
       end
     end
   end

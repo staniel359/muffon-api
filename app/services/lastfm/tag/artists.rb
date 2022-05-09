@@ -7,16 +7,16 @@ module LastFM
       private
 
       def artists_list
-        return sample_artist if @args[:sample]
+        return random_artist if @args[:random]
 
         raw_artists_list
       end
 
-      def sample_artist
-        [raw_sample_artist].compact
+      def random_artist
+        [raw_random_artist].compact
       end
 
-      def raw_sample_artist
+      def raw_random_artist
         raw_artists_list.to_a.sample
       end
 
@@ -29,7 +29,8 @@ module LastFM
       def collection_item_data_formatted(artist)
         LastFM::Tag::Artists::Artist.call(
           artist:,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          minimal: @args[:minimal]
         )
       end
     end

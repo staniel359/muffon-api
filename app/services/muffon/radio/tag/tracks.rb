@@ -2,21 +2,33 @@ module Muffon
   module Radio
     module Tag
       class Tracks < Muffon::Radio::Tag::Base
-        COLLECTION_NAME = 'tracks'.freeze
+        TRACKS_LIMIT = 500
+        TAG_TRACKS_LIMIT = 50
 
         private
 
-        def no_track?
-          tracks.blank?
+        def tag_info_data
+          @tag_info_data ||=
+            LastFM::Tag::Tracks.call(
+              tag: @args[:tag],
+              page: tag_random_page,
+              random: random?
+            )[:tag]
         end
 
-        def tracks
-          @tracks ||= tag_data[:tracks]
+        def pages_count
+          TRACKS_LIMIT.fdiv(
+            TAG_TRACKS_LIMIT
+          ).ceil
         end
 
-        def track
-          random_track
+        def radio_track_data
+          tag_info_data.dig(
+            :tracks, 0
+          )
         end
+
+        alias track_data radio_track_data
       end
     end
   end
