@@ -14,19 +14,15 @@ module SoundCloud
       { client_id: }
     end
 
-    def artists
-      [artist_data]
+    def artists_list
+      [artist]
     end
 
-    def artist_data
+    def artist_data_formatted(artist)
       {
-        name: artist_name,
+        name: artist['username'],
         soundcloud_id: artist['id']
       }
-    end
-
-    def artist_name
-      artist['username']
     end
 
     def image_data_formatted(image)

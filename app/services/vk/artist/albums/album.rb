@@ -33,6 +33,8 @@ module VK
           {
             title:,
             extra_title:,
+            artist: artist_names_data,
+            artists:,
             image: image_data,
             release_date:
           }.compact

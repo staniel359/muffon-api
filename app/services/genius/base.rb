@@ -23,19 +23,15 @@ module Genius
       )
     end
 
-    def artists
-      [artist_data]
+    def artists_list
+      [artist]
     end
 
-    def artist_data
+    def artist_data_formatted(artist)
       {
-        name: artist_name,
+        name: artist['name'],
         genius_id: artist['id']
       }
-    end
-
-    def artist_name
-      artist['name']
     end
 
     def image_data_formatted(image)

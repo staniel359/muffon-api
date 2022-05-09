@@ -20,6 +20,8 @@ module Genius
             source_id:,
             genius_id:,
             title:,
+            artist: artist_names_data,
+            artists:,
             image: image_data,
             release_date:
           }.compact

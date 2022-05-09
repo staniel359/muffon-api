@@ -20,6 +20,8 @@ module Deezer
             source_id:,
             deezer_id:,
             title:,
+            artist: artist_names_data,
+            artists:,
             image: image_data,
             release_date:,
             listeners_count:

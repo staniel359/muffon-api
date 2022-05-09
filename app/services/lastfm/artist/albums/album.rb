@@ -19,9 +19,15 @@ module LastFM
           {
             source_id:,
             title:,
+            artist: artist_names_data,
+            artists:,
             image: image_data,
             listeners_count:
           }.compact
+        end
+
+        def artist_data
+          { name: artist_name }
         end
 
         def artist_name

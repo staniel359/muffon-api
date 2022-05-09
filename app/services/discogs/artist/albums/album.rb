@@ -12,18 +12,18 @@ module Discogs
 
         def data
           muffon_data
-            .merge(album_data)
+            .merge(album_base_data)
+            .merge(album_extra_data)
         end
 
-        def album_data
+        def album_base_data
           {
             source_id:,
             discogs_id:,
             discogs_type:,
             title:,
-            image: image_data,
-            release_date:,
-            listeners_count:
+            artist: artist_names_data,
+            artists:
           }.compact
         end
 
@@ -73,6 +73,14 @@ module Discogs
           artist['href'].match(
             %r{/(\d+)-}
           )[1].to_i
+        end
+
+        def album_extra_data
+          {
+            image: image_data,
+            release_date:,
+            listeners_count:
+          }.compact
         end
 
         def image

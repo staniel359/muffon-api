@@ -13,6 +13,10 @@ module Genius
         album['id']
       end
 
+      def artist_name
+        artist['name']
+      end
+
       def artist
         album['artist']
       end

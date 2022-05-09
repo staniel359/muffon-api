@@ -13,6 +13,10 @@ module Genius
         track['id']
       end
 
+      def artist_name
+        artist['name']
+      end
+
       def artist
         track['primary_artist']
       end

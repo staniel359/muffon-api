@@ -13,6 +13,10 @@ module SoundCloud
         album['id']
       end
 
+      def artist_name
+        artist['username']
+      end
+
       def artist
         album['user']
       end
