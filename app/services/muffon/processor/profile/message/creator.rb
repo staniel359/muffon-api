@@ -3,6 +3,8 @@ module Muffon
     module Profile
       module Message
         class Creator < Muffon::Profile::Base
+          include Muffon::Utils::Sendable
+
           private
 
           def primary_args
@@ -12,12 +14,6 @@ module Muffon
               @args[:other_profile_id],
               content_arg
             ]
-          end
-
-          def content_arg
-            @args[:content].presence ||
-              @args[:tracks].presence ||
-              @args[:images].presence
           end
 
           def data
@@ -47,8 +43,8 @@ module Muffon
           def message_params
             {
               conversation_id: conversation.id,
-              content: @args[:content],
-              track_ids:
+              content:,
+              tracks:
             }
           end
 
@@ -69,24 +65,6 @@ module Muffon
           def conversation_params
             @args.permit!.slice(
               *%i[profile_id other_profile_id]
-            )
-          end
-
-          def track_ids
-            return [] if @args[:tracks].blank?
-
-            tracks.pluck(:id)
-          end
-
-          def tracks
-            @args[:tracks].map do |t|
-              process_track(t)
-            end
-          end
-
-          def process_track(track)
-            Muffon::Processor::Profile::Message::Creator::Track.call(
-              track:
             )
           end
 

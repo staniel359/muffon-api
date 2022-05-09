@@ -41,19 +41,13 @@ module Muffon
         end
 
         def tracks
-          return if message_tracks.blank?
-
-          message_tracks.map do |t|
+          message.tracks.map do |t|
             track_data_formatted(t)
           end
         end
 
-        def message_tracks
-          @message_tracks ||= message.tracks
-        end
-
         def track_data_formatted(track)
-          Muffon::Profile::Messages::Message::Track.call(
+          Muffon::Sendable::Track.call(
             track:
           )
         end

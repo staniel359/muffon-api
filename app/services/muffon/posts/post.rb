@@ -68,19 +68,13 @@ module Muffon
       end
 
       def tracks
-        return if post_tracks.blank?
-
-        post_tracks.map do |t|
+        post.tracks.map do |t|
           track_data_formatted(t)
         end
       end
 
-      def post_tracks
-        @post_tracks ||= post.tracks
-      end
-
       def track_data_formatted(track)
-        Muffon::Posts::Post::Track.call(
+        Muffon::Sendable::Track.call(
           track:
         )
       end

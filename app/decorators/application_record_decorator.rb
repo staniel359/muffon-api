@@ -35,12 +35,6 @@ module ApplicationRecordDecorator
     end
   end
 
-  def tracks
-    Track.where(
-      id: track_ids
-    ).associated
-  end
-
   def errors?
     errors.present?
   end

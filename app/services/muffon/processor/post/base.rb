@@ -2,6 +2,8 @@ module Muffon
   module Processor
     module Post
       class Base < Muffon::Profile::Base
+        include Muffon::Utils::Sendable
+
         private
 
         def primary_args
@@ -9,12 +11,6 @@ module Muffon
             @args[:profile_id],
             @args[:token]
           ]
-        end
-
-        def content_arg
-          @args[:content].presence ||
-            @args[:tracks].presence ||
-            @args[:images].presence
         end
 
         def community
@@ -49,32 +45,14 @@ module Muffon
 
         def post_params
           {
-            content: @args[:content],
-            track_ids:
+            content:,
+            tracks:
           }
         end
 
         def by_community?
           @args[:by_community].present? &&
             community_owner?
-        end
-
-        def track_ids
-          return [] if @args[:tracks].blank?
-
-          tracks.pluck(:id)
-        end
-
-        def tracks
-          @args[:tracks].map do |t|
-            process_track(t)
-          end
-        end
-
-        def process_track(track)
-          Muffon::Processor::Post::Creator::Track.call(
-            track:
-          )
         end
 
         def process_images
