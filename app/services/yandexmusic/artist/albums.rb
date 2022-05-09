@@ -7,7 +7,7 @@ module YandexMusic
       private
 
       def albums_list
-        @albums_list ||= artist['albums']
+        artist['albums']
       end
 
       def artist_data

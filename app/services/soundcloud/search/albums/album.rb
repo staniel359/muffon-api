@@ -17,9 +17,10 @@ module SoundCloud
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             soundcloud_id:,
             title:,
+            artist: artist_names_data,
             artists:,
             image: image_data
           }.compact

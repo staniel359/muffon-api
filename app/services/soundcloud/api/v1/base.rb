@@ -14,7 +14,10 @@ module SoundCloud
         private
 
         def headers
-          { 'Authorization' => "OAuth #{access_token}" }
+          {
+            'Authorization' =>
+              "OAuth #{access_token}"
+          }
         end
 
         def access_token

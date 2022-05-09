@@ -14,7 +14,7 @@ module Deezer
       end
 
       def artist
-        @artist ||= response_data.dig(
+        response_data.dig(
           'results', 'DATA'
         )
       end
@@ -22,7 +22,7 @@ module Deezer
       def payload
         {
           art_id: @args[:artist_id],
-          lang: 'en'
+          lang: language
         }.to_json
       end
 

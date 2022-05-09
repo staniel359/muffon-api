@@ -12,10 +12,11 @@ module Genius
 
       def track_base_data
         {
+          source_id:,
           player_id:,
-          source_id: SOURCE_ID,
           genius_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -25,8 +26,9 @@ module Genius
           album: albums&.first,
           image: image_data,
           release_date:,
-          description: description_truncated,
-          tags: tags&.first(5),
+          description:
+            description_truncated,
+          tags: tags_truncated,
           lyrics: lyrics_truncated
         }.compact
       end

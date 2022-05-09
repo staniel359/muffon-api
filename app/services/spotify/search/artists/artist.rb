@@ -17,7 +17,7 @@ module Spotify
 
         def artist_data
           {
-            spotify_id:,
+            spotify_id: artist['id'],
             name:,
             image: image_data
           }.compact
@@ -31,13 +31,9 @@ module Spotify
           @args[:artist]
         end
 
-        def spotify_id
-          artist['id']
-        end
-
         def image_data
           image_data_formatted(
-            artist, 'artist'
+            artist['images']
           )
         end
       end

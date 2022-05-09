@@ -11,7 +11,7 @@ module API
         def info_data
           ::Deezer::Album::Info.call(
             params.slice(
-              *%i[album_id profile_id]
+              *%i[album_id profile_id language]
             )
           )
         end

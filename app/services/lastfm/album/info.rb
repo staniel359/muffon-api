@@ -10,9 +10,7 @@ module LastFM
       end
 
       def album_data
-        find_album.update(
-          listeners_count:
-        )
+        update_listeners_count
 
         muffon_data
           .merge(album_base_data)
@@ -20,14 +18,18 @@ module LastFM
           .merge(with_more_data)
       end
 
-      def listeners_count
-        album['listeners'].to_i
+      def update_listeners_count
+        find_album.update(
+          listeners_count:
+            album['listeners'].to_i
+        )
       end
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -35,17 +37,14 @@ module LastFM
       def album_extra_data
         {
           image: image_data,
-          listeners_count:
-            find_album.listeners_count,
-          plays_count:,
-          description: description_truncated,
-          tags: tags&.first(5),
+          listeners_count:,
+          plays_count:
+            album['playcount'].to_i,
+          description:
+            description_truncated,
+          tags: tags_truncated,
           tracks:
         }.compact
-      end
-
-      def plays_count
-        album['playcount'].to_i
       end
 
       def description
@@ -63,20 +62,22 @@ module LastFM
       def tags_list
         return [] if album['tags'].blank?
 
-        [raw_tags].flatten
+        [raw_tags_list].flatten
       end
 
-      def raw_tags
+      def raw_tags_list
         album.dig(
           'tags', 'tag'
         )
       end
 
       def tracks_list
-        [raw_tracks].flatten.compact
+        [
+          raw_tracks_list
+        ].flatten.compact
       end
 
-      def raw_tracks
+      def raw_tracks_list
         album.dig(
           'tracks', 'track'
         )

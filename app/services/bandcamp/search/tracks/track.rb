@@ -18,12 +18,13 @@ module Bandcamp
 
         def track_base_data
           {
+            source_id:,
             player_id:,
-            source_id: SOURCE_ID,
             title:,
+            artist: artist_names_data,
+            artists:,
             bandcamp_slug:,
-            bandcamp_model:,
-            artists:
+            bandcamp_model:
           }
         end
 
@@ -43,8 +44,8 @@ module Bandcamp
           model_name(track)
         end
 
-        def artists
-          [model_artist_data(track)]
+        def artist_data
+          model_artist_data(track)
         end
 
         def track_extra_data
@@ -78,7 +79,7 @@ module Bandcamp
         end
 
         def audio_data
-          { source_id: SOURCE_ID }
+          { source_id: }
         end
       end
     end

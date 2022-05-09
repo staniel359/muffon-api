@@ -15,8 +15,10 @@ module Muffon
 
           def album_base_data
             {
-              title: album.title,
-              artist: artist_data
+              library: library_album_data,
+              title:,
+              artist: artist_names_data,
+              artists:
             }
           end
 

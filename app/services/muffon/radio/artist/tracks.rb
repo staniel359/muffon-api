@@ -7,27 +7,14 @@ module Muffon
 
         private
 
-        def no_track?
-          tracks.blank?
-        end
-
-        def tracks
-          @tracks ||= artist_data[:tracks]
-        end
-
-        def track
-          track_base_data
-            .merge(track_artist_data)
-        end
-
-        def track_base_data
-          random_track.slice(
-            *%i[player_id source_id title]
+        def radio_track_data
+          radio_artist_data.dig(
+            :tracks, 0
           )
         end
 
-        def track_artist_data
-          { artist: artist_data.slice(:name) }
+        def artist_name
+          radio_artist_data[:name]
         end
       end
     end

@@ -31,7 +31,10 @@ module LastFM
     end
 
     def artist_params
-      { artist: artist_name_formatted }
+      {
+        artist:
+          artist_name_formatted
+      }
     end
 
     def artist_name_formatted
@@ -70,7 +73,7 @@ module LastFM
 
     def language_params
       {
-        lang: @args[:language]
+        lang: language
       }.compact
     end
 

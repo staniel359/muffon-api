@@ -16,8 +16,7 @@ module YandexMusic
       def image
         return if @args[:data].blank?
 
-        @image ||=
-          image_url || image_url_alternative
+        image_url || image_url_alternative
       end
 
       def image_url

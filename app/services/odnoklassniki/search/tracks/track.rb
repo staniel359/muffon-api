@@ -18,10 +18,11 @@ module Odnoklassniki
 
         def track_base_data
           {
+            source_id:,
             player_id:,
-            source_id: SOURCE_ID,
             odnoklassniki_id:,
             title:,
+            artist: artist_names_data,
             artists:
           }
         end
@@ -44,8 +45,9 @@ module Odnoklassniki
           return if track['albumId'].blank?
 
           {
-            source_id: SOURCE_ID,
-            odnoklassniki_id: track['albumId']
+            source_id:,
+            odnoklassniki_id:
+              track['albumId']
           }
         end
 

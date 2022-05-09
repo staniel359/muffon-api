@@ -14,12 +14,12 @@ module Muffon
 
             def data
               {
-                id: library_track.id,
+                library: library_track_data,
                 favorite_id:,
                 player_id: track.player_id,
-                title: track.title,
+                title:,
                 album: album_data,
-                image: library_album&.image_data,
+                image: image_data,
                 created: created_formatted
               }.compact
             end

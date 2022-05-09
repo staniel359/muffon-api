@@ -17,7 +17,7 @@ module Genius
 
         def artist_data
           {
-            genius_id:,
+            genius_id: artist['id'],
             name:,
             image: image_data
           }.compact
@@ -29,10 +29,6 @@ module Genius
 
         def artist
           @args[:artist]
-        end
-
-        def genius_id
-          artist['id']
         end
 
         def image_data

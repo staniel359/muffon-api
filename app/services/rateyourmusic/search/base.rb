@@ -1,6 +1,8 @@
 module RateYourMusic
   module Search
     class Base < RateYourMusic::Base
+      BASE_LINK =
+        'https://rateyourmusic.com/search'.freeze
       include Muffon::Utils::Pagination
 
       private
@@ -14,16 +16,16 @@ module RateYourMusic
       end
 
       def collection_list
-        @collection_list ||=
-          response_data.css(
-            '.infobox'
-          )
+        response_data.css(
+          '.infobox'
+        )
       end
 
       def response_data
-        Nokogiri::HTML.parse(
-          response
-        )
+        @response_data ||=
+          Nokogiri::HTML.parse(
+            response
+          )
       end
 
       def response
@@ -33,7 +35,7 @@ module RateYourMusic
       end
 
       def link
-        'https://rateyourmusic.com/search'
+        BASE_LINK
       end
 
       def params

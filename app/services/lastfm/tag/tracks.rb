@@ -9,7 +9,7 @@ module LastFM
       def tracks_list
         return sample_track if @args[:sample]
 
-        raw_trackslist
+        raw_tracks_list
       end
 
       def sample_track
@@ -17,14 +17,13 @@ module LastFM
       end
 
       def raw_sample_track
-        raw_trackslist.to_a.sample
+        raw_tracks_list.to_a.sample
       end
 
-      def raw_trackslist
-        @raw_trackslist ||=
-          response_data.css(
-            '.chartlist-row'
-          )
+      def raw_tracks_list
+        response_data.css(
+          '.chartlist-row'
+        )
       end
 
       def collection_item_data_formatted(track)

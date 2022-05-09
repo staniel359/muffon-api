@@ -11,7 +11,10 @@ module API
         def albums_data
           ::Deezer::Artist::Albums.call(
             params.slice(
-              *%i[artist_id album_type profile_id page limit]
+              *%i[
+                artist_id album_type profile_id
+                page limit language
+              ]
             )
           )
         end

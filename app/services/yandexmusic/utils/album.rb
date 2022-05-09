@@ -31,7 +31,7 @@ module YandexMusic
 
       def image_data
         image_data_formatted(
-          album, 'album'
+          album
         )
       end
 

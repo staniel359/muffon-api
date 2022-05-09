@@ -8,14 +8,13 @@ module Spotify
       private
 
       def data
-        return if images_list.blank?
+        return if images.blank?
 
         image_data
       end
 
-      def images_list
-        @images_list ||=
-          @args[:data]['images']
+      def images
+        @args[:images]
       end
 
       def image_data
@@ -29,7 +28,7 @@ module Spotify
       end
 
       def image(index)
-        images_list.dig(
+        images.dig(
           index, 'url'
         )
       end

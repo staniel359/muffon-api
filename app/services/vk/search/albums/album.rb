@@ -18,7 +18,7 @@ module VK
 
         def album_id_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             vk_id:,
             vk_owner_id:,
             vk_access_key:
@@ -33,6 +33,7 @@ module VK
           {
             title:,
             extra_title:,
+            artist: artist_names_data,
             artists:,
             image: image_data
           }.compact

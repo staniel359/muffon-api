@@ -14,7 +14,7 @@ module Genius
       end
 
       def album
-        @album ||= response_data.dig(
+        response_data.dig(
           'response', 'album'
         )
       end

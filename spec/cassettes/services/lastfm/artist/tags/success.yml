@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Wed, 22 Dec 2021 12:27:35 GMT
+      - Sun, 08 May 2022 11:57:27 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -40,10 +40,10 @@ http_interactions:
       Via:
       - 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"toptags":{"tag":[{"count":100,"name":"dream pop","url":"https://www.last.fm/tag/dream+pop"},{"count":76,"name":"shoegaze","url":"https://www.last.fm/tag/shoegaze"},{"count":56,"name":"indie
+      string: '{"toptags":{"tag":[{"count":100,"name":"dream pop","url":"https://www.last.fm/tag/dream+pop"},{"count":77,"name":"shoegaze","url":"https://www.last.fm/tag/shoegaze"},{"count":56,"name":"indie
         pop","url":"https://www.last.fm/tag/indie+pop"},{"count":45,"name":"indie","url":"https://www.last.fm/tag/indie"},{"count":31,"name":"seen
         live","url":"https://www.last.fm/tag/seen+live"},{"count":21,"name":"tweegaze","url":"https://www.last.fm/tag/tweegaze"},{"count":8,"name":"Lo-Fi","url":"https://www.last.fm/tag/Lo-Fi"},{"count":8,"name":"american","url":"https://www.last.fm/tag/american"},{"count":7,"name":"chillwave","url":"https://www.last.fm/tag/chillwave"},{"count":4,"name":"indie
         rock","url":"https://www.last.fm/tag/indie+rock"},{"count":4,"name":"pop","url":"https://www.last.fm/tag/pop"},{"count":4,"name":"twee","url":"https://www.last.fm/tag/twee"},{"count":4,"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"count":3,"name":"new
@@ -54,5 +54,5 @@ http_interactions:
         revival","url":"https://www.last.fm/tag/Post-punk+revival"},{"count":1,"name":"hazy
         beach","url":"https://www.last.fm/tag/hazy+beach"}],"@attr":{"artist":"Wild
         Nothing"}}}'
-  recorded_at: Wed, 22 Dec 2021 12:27:36 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 08 May 2022 11:57:28 GMT
+recorded_with: VCR 6.1.0

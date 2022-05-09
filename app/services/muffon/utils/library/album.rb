@@ -6,28 +6,43 @@ module Muffon
 
         private
 
-        def album_id
-          album.id
+        def library_album_data
+          {
+            id: library_album.id,
+            artist: library_artist_data
+          }
+        end
+
+        def library_artist_data
+          { id: library_artist.id }
+        end
+
+        def library_artist
+          library_album.library_artist
+        end
+
+        def title
+          album.title
         end
 
         def album
           @album ||= library_album.album
         end
 
-        def artist_data
-          {
-            id: library_artist.id,
-            name: artist.name
-          }
+        def artists
+          [artist_data]
         end
 
-        def library_artist
-          @library_artist ||=
-            library_album.library_artist
+        def artist_data
+          { name: artist_name }
+        end
+
+        def artist_name
+          artist.name
         end
 
         def artist
-          @artist ||= library_artist.artist
+          library_artist.artist
         end
       end
     end

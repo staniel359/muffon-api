@@ -30,9 +30,10 @@ module Deezer
       end
 
       def albums_list
-        @albums_list ||= response_data.dig(
-          'results', 'data'
-        )
+        @albums_list ||=
+          response_data.dig(
+            'results', 'data'
+          )
       end
 
       def payload
@@ -40,7 +41,7 @@ module Deezer
           art_id: @args[:artist_id],
           discography_mode: 'all',
           filter_role_id: ['0'],
-          lang: 'en',
+          lang: language,
           nb: '200'
         }.to_json
       end

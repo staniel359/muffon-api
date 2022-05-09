@@ -45,7 +45,7 @@ module Muffon
           ProfileMailer.with(
             email: profile.email,
             code: profile.password_reset_code,
-            language: @args[:language]
+            language:
           )
         end
       end

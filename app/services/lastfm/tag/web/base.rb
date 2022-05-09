@@ -11,7 +11,7 @@ module LastFM
         end
 
         def collection_list
-          @collection_list ||= send(
+          send(
             "#{collection_name}_list"
           )
         end

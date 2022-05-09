@@ -12,15 +12,16 @@ module RateYourMusic
       end
 
       def album
-        @album ||= response_data.css(
+        response_data.css(
           '.release_page'
         )
       end
 
       def response_data
-        Nokogiri::HTML.parse(
-          response
-        )
+        @response_data ||=
+          Nokogiri::HTML.parse(
+            response
+          )
       end
 
       def response

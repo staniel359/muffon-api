@@ -11,13 +11,13 @@ module Odnoklassniki
 
       def artists_list
         track['allArtists'].presence ||
-          [artist_data]
+          [artist]
       end
 
-      def artist_data
+      def artist
         {
-          'name' => track['ensemble'],
-          'id' => track['masterArtistId']
+          'id' => track['masterArtistId'],
+          'name' => track['ensemble']
         }
       end
 
@@ -28,7 +28,7 @@ module Odnoklassniki
 
       def image_data
         image_data_formatted(
-          image, 'track'
+          image
         )
       end
 
@@ -38,9 +38,9 @@ module Odnoklassniki
 
       def audio_data
         {
+          source_id:,
           present: audio_present?,
-          track_id: odnoklassniki_id,
-          source_id:
+          track_id: odnoklassniki_id
         }
       end
 

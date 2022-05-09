@@ -17,6 +17,7 @@ module LastFM
       def album_data
         {
           title:,
+          artist: artist_names_data,
           artists:,
           image: image_data,
           release_date:

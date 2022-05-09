@@ -8,12 +8,11 @@ module LastFM
       private
 
       def raw_collection_list
-        @raw_collection_list ||= track['track']
+        track['track']
       end
 
       def track
-        @track ||=
-          response_data['similartracks']
+        response_data['similartracks']
       end
 
       def collection_item_data_formatted(track)

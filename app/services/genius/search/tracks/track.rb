@@ -17,10 +17,11 @@ module Genius
 
         def track_data
           {
+            source_id:,
             player_id:,
-            source_id: SOURCE_ID,
             genius_id:,
             title:,
+            artist: artist_names_data,
             artists:,
             image: image_data
           }.compact

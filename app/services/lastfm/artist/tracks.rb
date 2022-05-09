@@ -10,12 +10,11 @@ module LastFM
       private
 
       def artist
-        @artist ||=
-          response_data['toptracks']
+        response_data['toptracks']
       end
 
       def raw_collection_list
-        @raw_collection_list ||= artist['track']
+        artist['track']
       end
 
       def collection_item_data_formatted(track)

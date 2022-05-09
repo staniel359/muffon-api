@@ -20,7 +20,10 @@ module Muffon
               return listened_artist.errors_data if
                   listened_artist.errors?
 
-              { listened_artist: listened_artist_data }
+              {
+                listened_artist:
+                  listened_artist_data
+              }
             end
 
             def listened_artist

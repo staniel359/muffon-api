@@ -6,7 +6,7 @@ module YandexMusic
     private
 
     def params
-      { language: 'en' }
+      { language: }
     end
 
     def artist_name
@@ -20,9 +20,9 @@ module YandexMusic
       }
     end
 
-    def image_data_formatted(data, model)
+    def image_data_formatted(data)
       YandexMusic::Utils::Image.call(
-        data:, model:
+        data:
       )
     end
   end

@@ -37,7 +37,9 @@ module Discogs
       end
 
       def artist_data
-        super.merge(paginated_data)
+        super.merge(
+          paginated_data
+        )
       end
 
       def name
@@ -63,7 +65,9 @@ module Discogs
       end
 
       def collection_list
-        response_data.css('.card')
+        response_data.css(
+          '.card'
+        )
       end
 
       def collection_item_data_formatted(album)

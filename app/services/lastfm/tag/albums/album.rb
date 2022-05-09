@@ -17,8 +17,9 @@ module LastFM
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             title:,
+            artist: artist_names_data,
             artists:,
             image: image_data,
             listeners_count:

@@ -12,10 +12,11 @@ module Spotify
 
       def track_base_data
         {
+          source_id:,
           player_id:,
-          source_id: SOURCE_ID,
           spotify_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -32,17 +33,16 @@ module Spotify
 
       def audio_data
         {
+          source_id:,
           present: audio_link.present?,
-          link: audio_link,
-          source_id: SOURCE_ID
+          link: audio_link
         }
       end
 
       def audio_link
         return if audio_path.blank?
 
-        @audio_link ||=
-          "#{secrets[:url]}/#{audio_path}"
+        "#{secrets[:url]}/#{audio_path}"
       end
 
       def audio_path

@@ -17,7 +17,7 @@ module Odnoklassniki
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             odnoklassniki_id:,
             title:,
             image: image_data,

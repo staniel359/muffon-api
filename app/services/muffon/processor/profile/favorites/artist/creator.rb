@@ -20,7 +20,10 @@ module Muffon
               return favorite_artist.errors_data if
                   favorite_artist.errors?
 
-              { favorite_artist: favorite_artist_data }
+              {
+                favorite_artist:
+                  favorite_artist_data
+              }
             end
 
             def favorite_artist

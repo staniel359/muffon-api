@@ -20,7 +20,10 @@ module Muffon
               return library_artist.errors_data if
                   library_artist.errors?
 
-              { library_artist: library_artist_data }
+              {
+                library_artist:
+                  library_artist_data
+              }
             end
 
             def library_artist

@@ -35,15 +35,17 @@ module Odnoklassniki
         end
 
         def second
-          @second ||= digest.chars.map do |c|
-            c.to_i(16)
-          end
+          @second ||=
+            digest.chars.map do |c|
+              c.to_i(16)
+            end
         end
 
         def digest
-          @digest ||= Digest::MD5.hexdigest(
-            "#{md5}secret"
-          )
+          @digest ||=
+            Digest::MD5.hexdigest(
+              "#{md5}secret"
+            )
         end
 
         def md5

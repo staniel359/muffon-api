@@ -10,23 +10,15 @@ module Bandcamp
 
         def data
           {
-            name:,
-            bandcamp_id:,
+            name: artist['name'],
+            bandcamp_id: artist['id'],
             bandcamp_model: 'artist',
             image: image_data
           }.compact
         end
 
-        def name
-          artist['name']
-        end
-
         def artist
           @args[:artist]
-        end
-
-        def bandcamp_id
-          artist['id']
         end
 
         def image_data

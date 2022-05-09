@@ -11,17 +11,18 @@ module Odnoklassniki
 
       def track_base_data
         {
+          source_id:,
           player_id:,
-          source_id: SOURCE_ID,
           odnoklassniki_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
 
       def track_extra_data
         {
-          albums:,
+          album: album_data,
           image: image_data,
           duration:,
           duration_seconds:,
@@ -29,16 +30,18 @@ module Odnoklassniki
         }.compact
       end
 
-      def albums_list
-        response_data['albums']
-      end
-
-      def album_data_formatted(album)
+      def album_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           odnoklassniki_id: album['id'],
           title: album['name']
         }
+      end
+
+      def album
+        response_data.dig(
+          'albums', 0
+        )
       end
 
       def image
@@ -47,9 +50,9 @@ module Odnoklassniki
 
       def audio_data
         {
+          source_id:,
           present: audio_present?,
-          link: audio_link,
-          source_id: SOURCE_ID
+          link: audio_link
         }
       end
 

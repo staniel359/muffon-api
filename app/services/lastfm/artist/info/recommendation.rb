@@ -12,7 +12,7 @@ module LastFM
           return if no_recommendation?
 
           {
-            id: recommendation_id,
+            id: find_recommendation.id,
             artists_count:
               recommendation_library_artists_count
           }
@@ -27,20 +27,12 @@ module LastFM
         def find_recommendation
           @find_recommendation ||=
             profile.recommendations.find_by(
-              artist_id:
+              artist_id: find_artist.id
             )
-        end
-
-        def artist_id
-          find_artist.id
         end
 
         def name
           @args[:artist_name]
-        end
-
-        def recommendation_id
-          find_recommendation.id
         end
 
         def recommendation_library_artists_count

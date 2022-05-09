@@ -6,14 +6,10 @@ module YouTube
       def search_data
         @search_data ||=
           YouTube::Search::Videos.call(
-            search_args
+            video_id: @args[:video_id],
+            limit: @args[:limit],
+            page: @args[:page]
           )[:search] || {}
-      end
-
-      def search_args
-        @args.slice(
-          *%i[video_id limit page]
-        )
       end
 
       def video_data
@@ -23,18 +19,12 @@ module YouTube
 
       def video_related_data
         {
-          prev_page:,
-          next_page:,
+          prev_page:
+            search_data[:prev_page],
+          next_page:
+            search_data[:next_page],
           related:
         }.compact
-      end
-
-      def prev_page
-        search_data[:prev_page]
-      end
-
-      def next_page
-        search_data[:next_page]
       end
 
       def related

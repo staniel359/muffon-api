@@ -11,7 +11,8 @@ module LastFM
         def data
           {
             title:,
-            artist: artist_data,
+            artist: artist_names_data,
+            artists:,
             album: album_data,
             image: image_data,
             created:
@@ -24,10 +25,6 @@ module LastFM
 
         def play
           @args[:play]
-        end
-
-        def artist_data
-          { name: artist_name }
         end
 
         def artist_name
@@ -43,7 +40,7 @@ module LastFM
         end
 
         def album_title
-          @album_title ||= play.dig(
+          play.dig(
             'album', '#text'
           )
         end

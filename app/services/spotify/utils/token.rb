@@ -20,11 +20,17 @@ module Spotify
       end
 
       def payload
-        { grant_type: 'client_credentials' }
+        {
+          grant_type:
+            'client_credentials'
+        }
       end
 
       def headers
-        { 'Authorization' => "Basic #{auth_token}" }
+        {
+          'Authorization' =>
+            "Basic #{auth_token}"
+        }
       end
 
       def auth_token

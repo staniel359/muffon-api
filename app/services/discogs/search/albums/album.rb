@@ -17,9 +17,10 @@ module Discogs
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             discogs_id:,
             title:,
+            artist: artist_names_data,
             artists:,
             image: image_data,
             release_date:
@@ -41,12 +42,12 @@ module Discogs
           @args[:album]
         end
 
-        def artists_list
+        def artists
           [artist_data]
         end
 
         def artist_data
-          { 'name' => full_title[1] }
+          { name: full_title[1] }
         end
 
         def image

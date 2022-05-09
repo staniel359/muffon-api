@@ -12,8 +12,9 @@ module Odnoklassniki
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -22,7 +23,7 @@ module Odnoklassniki
         {
           image: image_data,
           release_date:,
-          tags: tags&.first(5),
+          tags: tags_truncated,
           tracks:
         }.compact
       end

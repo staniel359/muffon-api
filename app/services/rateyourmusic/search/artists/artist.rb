@@ -40,7 +40,7 @@ module RateYourMusic
 
         def image_data
           image_data_formatted(
-            image, 'artist'
+            image
           )
         end
 
@@ -51,7 +51,7 @@ module RateYourMusic
         end
 
         def raw_image
-          @raw_image ||= artist.css(
+          artist.css(
             '.page_search_img'
           )[0]
         end

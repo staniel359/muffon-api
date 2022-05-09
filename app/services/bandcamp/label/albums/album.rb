@@ -17,12 +17,17 @@ module Bandcamp
 
         def album_base_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             bandcamp_id:,
             bandcamp_model:,
             title:,
+            artist: artist_names_data,
             artists:
           }
+        end
+
+        def album
+          @args[:album]
         end
 
         def album_extra_data
@@ -30,10 +35,6 @@ module Bandcamp
             image: image_data,
             release_date:
           }.compact
-        end
-
-        def album
-          @args[:album]
         end
       end
     end

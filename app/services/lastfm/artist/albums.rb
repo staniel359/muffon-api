@@ -10,8 +10,7 @@ module LastFM
       private
 
       def artist
-        @artist ||=
-          response_data['topalbums']
+        response_data['topalbums']
       end
 
       def raw_collection_list

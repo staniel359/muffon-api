@@ -8,8 +8,7 @@ module SoundCloud
       private
 
       def albums_list
-        @albums_list ||=
-          response_data['collection']
+        response_data['collection']
       end
 
       def link

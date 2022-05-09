@@ -6,8 +6,12 @@ module Muffon
 
         private
 
-        def artist_id
-          artist.id
+        def library_artist_data
+          { id: library_artist.id }
+        end
+
+        def name
+          artist.name
         end
 
         def artist

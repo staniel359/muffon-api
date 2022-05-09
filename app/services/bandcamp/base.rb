@@ -18,6 +18,10 @@ module Bandcamp
       "#{BASE_LINK}/band_details"
     end
 
+    def artists
+      [artist_data]
+    end
+
     def image_data_formatted(image)
       Bandcamp::Utils::Image.call(
         image:

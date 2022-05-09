@@ -18,10 +18,11 @@ module SoundCloud
 
         def track_base_data
           {
+            source_id:,
             player_id:,
-            source_id: SOURCE_ID,
             soundcloud_id:,
             title:,
+            artist: artist_names_data,
             artists:
           }
         end

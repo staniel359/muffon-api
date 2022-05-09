@@ -11,7 +11,10 @@ module API
         def info_data
           ::VK::Album::Info.call(
             params.slice(
-              *%i[album_id owner_id access_key profile_id]
+              *%i[
+                album_id owner_id access_key
+                profile_id language
+              ]
             )
           )
         end

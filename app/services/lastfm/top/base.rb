@@ -33,10 +33,9 @@ module LastFM
       end
 
       def raw_collection_list
-        @raw_collection_list ||=
-          response_data.dig(
-            'results', model_name
-          )
+        response_data.dig(
+          'results', model_name
+        )
       end
 
       def collection_list

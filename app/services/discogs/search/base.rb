@@ -23,7 +23,9 @@ module Discogs
       end
 
       def params
-        super.merge(search_params)
+        super.merge(
+          search_params
+        )
       end
 
       def search_params

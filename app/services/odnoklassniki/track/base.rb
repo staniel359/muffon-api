@@ -25,7 +25,7 @@ module Odnoklassniki
       end
 
       def track
-        @track ||= response_data['track']
+        response_data['track']
       end
     end
   end

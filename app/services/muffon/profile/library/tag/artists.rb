@@ -15,7 +15,10 @@ module Muffon
           end
 
           def tag_base_data
-            { name: tag.name }
+            {
+              library: library_tag_data,
+              name: tag.name
+            }
           end
 
           def library_base_data

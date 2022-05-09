@@ -17,7 +17,7 @@ module Spotify
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             spotify_id:,
             title:,
             image: image_data,

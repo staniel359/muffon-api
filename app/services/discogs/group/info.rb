@@ -12,8 +12,9 @@ module Discogs
 
       def group_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -22,8 +23,9 @@ module Discogs
         {
           image: image_data,
           release_date:,
-          description: description_truncated,
-          tags: tags&.first(5),
+          description:
+            description_truncated,
+          tags: tags_truncated,
           tracks:
         }.compact
       end

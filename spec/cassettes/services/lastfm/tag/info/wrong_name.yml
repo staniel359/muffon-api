@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&method=tag.getInfo&tag=wejlhg239gh23
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&lang=en&method=tag.getInfo&tag=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Wed, 22 Dec 2021 12:27:46 GMT
+      - Sun, 08 May 2022 11:57:36 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -40,10 +40,10 @@ http_interactions:
       Via:
       - 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
       string: '{"tag":{"name":"wejlhg239gh23","total":0,"reach":0,"wiki":{"summary":"
         <a href=\"http://www.last.fm/tag/wejlhg239gh23\">Read more on Last.fm</a>.","content":""}}}'
-  recorded_at: Wed, 22 Dec 2021 12:27:46 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 08 May 2022 11:57:36 GMT
+recorded_with: VCR 6.1.0

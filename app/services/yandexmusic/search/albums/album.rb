@@ -18,10 +18,11 @@ module YandexMusic
 
         def album_base_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             yandex_music_id:,
             title:,
             extra_title:,
+            artist: artist_names_data,
             artists:
           }.compact
         end

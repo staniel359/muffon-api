@@ -7,7 +7,7 @@ module Muffon
 
           def tag_data
             {
-              id: tag.id,
+              library: library_tag_data,
               name: tag.name,
               artists_count:
                 tag_library_artists.size

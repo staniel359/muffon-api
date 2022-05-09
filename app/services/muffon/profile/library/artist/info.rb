@@ -12,9 +12,9 @@ module Muffon
 
           def artist_base_data
             {
-              id: library_artist.id,
+              library: library_artist_data,
               favorite_id:,
-              name: artist.name
+              name:
             }.compact
           end
 

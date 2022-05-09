@@ -10,22 +10,14 @@ module YouTube
       end
 
       def snippet
-        @snippet ||= video['snippet']
+        video['snippet']
       end
 
       def channel_data
         {
-          title: channel_title,
-          youtube_id: channel_youtube_id
+          title: snippet['channelTitle'],
+          youtube_id: snippet['channelId']
         }
-      end
-
-      def channel_title
-        snippet['channelTitle']
-      end
-
-      def channel_youtube_id
-        snippet['channelId']
       end
 
       def image_data_formatted

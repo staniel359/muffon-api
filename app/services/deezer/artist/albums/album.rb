@@ -17,7 +17,7 @@ module Deezer
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             deezer_id:,
             title:,
             image: image_data,

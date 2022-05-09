@@ -5,37 +5,34 @@ module YouTube
 
       def video_data
         video_base_data
+          .merge(video_statistics_data)
           .merge(video_extra_data)
           .merge(with_more_data)
+      end
+
+      def video_statistics_data
+        {
+          views_count:
+            statistics['viewCount'].to_i,
+          likes_count:
+            statistics['likeCount'].to_i,
+          dislikes_count:
+            statistics['dislikeCount'].to_i
+        }
+      end
+
+      def statistics
+        video['statistics']
       end
 
       def video_extra_data
         {
           image: image_data_formatted,
-          views_count:,
-          likes_count:,
-          dislikes_count:,
           publish_date:,
-          description: description_truncated,
-          tags: tags&.first(5)
+          description:
+            description_truncated,
+          tags: tags_truncated
         }.compact
-      end
-
-      def views_count
-        statistics['viewCount'].to_i
-      end
-
-      def statistics
-        @statistics ||=
-          video['statistics']
-      end
-
-      def likes_count
-        statistics['likeCount'].to_i
-      end
-
-      def dislikes_count
-        statistics['dislikeCount'].to_i
       end
 
       def description

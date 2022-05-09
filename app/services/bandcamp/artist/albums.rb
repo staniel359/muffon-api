@@ -11,11 +11,7 @@ module Bandcamp
       end
 
       def artist_base_data
-        { name: }
-      end
-
-      def name
-        artist['name']
+        { name: artist['name'] }
       end
 
       def total_items_count

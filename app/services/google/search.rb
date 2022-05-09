@@ -78,7 +78,10 @@ module Google
     end
 
     def total_pages_count
-      [super, PAGES_LIMIT].min
+      [
+        super,
+        PAGES_LIMIT
+      ].min
     end
 
     def total_items_count

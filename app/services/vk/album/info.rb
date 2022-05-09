@@ -12,9 +12,10 @@ module VK
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
           extra_title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -23,14 +24,10 @@ module VK
         {
           image: image_data,
           release_date:,
-          plays_count:,
-          tags: tags&.first(5),
+          plays_count: album['plays'],
+          tags: tags_truncated,
           tracks:
         }.compact
-      end
-
-      def plays_count
-        album['plays']
       end
 
       def tags_list
@@ -40,12 +37,12 @@ module VK
       end
 
       def tracks
-        album_tracks_data.dig(
+        album_tracks.dig(
           :album, :tracks
         )
       end
 
-      def album_tracks_data
+      def album_tracks
         VK::Album::Tracks.call(
           album_id: vk_album_id,
           owner_id: vk_owner_id,

@@ -19,6 +19,7 @@ module RateYourMusic
           {
             player_id:,
             title:,
+            artist: artist_names_data,
             artists:,
             duration:,
             duration_seconds:

@@ -12,8 +12,9 @@ module SoundCloud
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -22,8 +23,9 @@ module SoundCloud
         {
           image: image_data,
           release_date:,
-          description: description_truncated,
-          tags: tags&.first(5),
+          description:
+            description_truncated,
+          tags: tags_truncated,
           tracks:
         }.compact
       end
@@ -48,16 +50,16 @@ module SoundCloud
 
       def tags_list
         [
-          raw_genres,
-          raw_tags
+          raw_genres_list,
+          raw_tags_list
         ].flatten.compact_blank
       end
 
-      def raw_genres
+      def raw_genres_list
         album['genre']
       end
 
-      def raw_tags
+      def raw_tags_list
         album['tags'].split(
           /\s?"\s?/
         )

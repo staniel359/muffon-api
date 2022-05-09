@@ -17,7 +17,7 @@ module LastFM
         end
 
         def last_page
-          @last_page ||= response_data.css(
+          response_data.css(
             '.pagination-page'
           )[-1]
         end

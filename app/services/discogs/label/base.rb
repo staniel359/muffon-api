@@ -17,9 +17,7 @@ module Discogs
         { label: label_data }
       end
 
-      def artist
-        @artist ||= response_data
-      end
+      alias artist response_data
     end
   end
 end

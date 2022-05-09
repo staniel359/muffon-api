@@ -20,7 +20,10 @@ module Muffon
             end
 
             def playlist_data
-              { tracks_count: playlist.tracks_count }
+              {
+                tracks_count:
+                  playlist.tracks_count
+              }
             end
           end
         end

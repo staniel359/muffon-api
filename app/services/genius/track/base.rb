@@ -14,7 +14,7 @@ module Genius
       end
 
       def track
-        @track ||= response_data.dig(
+        response_data.dig(
           'response', 'song'
         )
       end

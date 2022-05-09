@@ -18,10 +18,11 @@ module Discogs
 
         def group_base_data
           {
-            source_id: SOURCE_ID,
-            discogs_id:,
+            source_id:,
+            discogs_id: album['master_id'],
             discogs_type: 'group',
             title:,
+            artist: artist_names_data,
             artists:
           }
         end
@@ -41,12 +42,12 @@ module Discogs
             )
         end
 
-        def artists_list
-          [{ 'name' => full_title[1] }]
+        def artists
+          [artist_data]
         end
 
-        def discogs_id
-          album['master_id']
+        def artist_data
+          { name: full_title[1] }
         end
 
         def group_extra_data

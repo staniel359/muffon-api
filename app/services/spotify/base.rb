@@ -14,14 +14,14 @@ module Spotify
 
     def headers
       {
-        params:,
-        'Authorization' => "Bearer #{spotify_token}"
+        'Authorization' =>
+          "Bearer #{spotify_token}",
+        params:
       }
     end
 
     def spotify_token
-      return test_token if
-          Rails.env.test?
+      return test_token if Rails.env.test?
 
       get_global_value(
         'spotify_token'
@@ -58,9 +58,9 @@ module Spotify
       }
     end
 
-    def image_data_formatted(data, model)
+    def image_data_formatted(images)
       Spotify::Utils::Image.call(
-        data:, model:
+        images:
       )
     end
   end

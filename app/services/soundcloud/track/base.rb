@@ -13,10 +13,6 @@ module SoundCloud
         track.blank?
       end
 
-      def track
-        @track ||= response_data
-      end
-
       def link
         "#{BASE_LINK}/tracks/#{@args[:track_id]}"
       end
@@ -24,6 +20,8 @@ module SoundCloud
       def data
         { track: track_data }
       end
+
+      alias track response_data
     end
   end
 end

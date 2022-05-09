@@ -30,16 +30,12 @@ module Genius
     def artist_data
       {
         name: artist_name,
-        genius_id: artist_genius_id
+        genius_id: artist['id']
       }
     end
 
     def artist_name
       artist['name']
-    end
-
-    def artist_genius_id
-      artist['id']
     end
 
     def image_data_formatted(image)
@@ -56,7 +52,9 @@ module Genius
 
     def raw_release_date(data)
       (
-        data['release_date_components'] || {}
+        data[
+          'release_date_components'
+        ] || {}
       ).values.compact
     end
   end

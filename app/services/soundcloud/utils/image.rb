@@ -28,7 +28,9 @@ module SoundCloud
       end
 
       def image_resized(size)
-        image.sub('large', size)
+        image.sub(
+          'large', size
+        )
       end
     end
   end

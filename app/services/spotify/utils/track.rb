@@ -41,7 +41,7 @@ module Spotify
 
       def image_data
         image_data_formatted(
-          album, 'track'
+          album['images']
         )
       end
 
@@ -53,9 +53,9 @@ module Spotify
 
       def audio_data
         {
+          source_id:,
           present: true,
-          track_id: spotify_id,
-          source_id:
+          track_id: spotify_id
         }
       end
     end

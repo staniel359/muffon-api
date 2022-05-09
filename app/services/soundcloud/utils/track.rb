@@ -19,8 +19,7 @@ module SoundCloud
 
       def image_data
         image_data_formatted(
-          track['artwork_url'],
-          'track'
+          track['artwork_url']
         )
       end
 
@@ -30,9 +29,9 @@ module SoundCloud
 
       def audio_data
         {
+          source_id:,
           present: audio_present?,
-          track_id: soundcloud_id,
-          source_id:
+          track_id: soundcloud_id
         }
       end
 

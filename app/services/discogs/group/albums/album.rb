@@ -17,7 +17,7 @@ module Discogs
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             discogs_id:,
             title:,
             image: image_data,

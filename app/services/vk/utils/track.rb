@@ -73,9 +73,9 @@ module VK
 
       def audio_data
         {
+          source_id:,
           present: vk_id.present?,
-          track_id: vk_id,
-          source_id:
+          track_id: vk_id
         }
       end
     end

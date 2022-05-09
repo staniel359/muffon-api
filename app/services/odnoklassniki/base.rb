@@ -78,9 +78,9 @@ module Odnoklassniki
       }
     end
 
-    def image_data_formatted(image, model)
+    def image_data_formatted(image)
       Odnoklassniki::Utils::Image.call(
-        image:, model:
+        image:
       )
     end
   end

@@ -74,7 +74,7 @@ module Muffon
 
         def last_message_with_tracks?
           last_message
-            .track_ids
+            .tracks
             .present?
         end
 

@@ -17,7 +17,7 @@ module LastFM
       end
 
       def token
-        @token ||= response_data['token']
+        response_data['token']
       end
 
       def connect_link

@@ -12,9 +12,10 @@ module RateYourMusic
 
         def data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             rateyourmusic_slug:,
             title:,
+            artist: artist_names_data,
             artists:,
             image: image_data,
             release_date:

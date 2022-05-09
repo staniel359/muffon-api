@@ -17,7 +17,7 @@ module VK
 
         def artist_data
           {
-            vk_id:,
+            vk_id: artist['id'],
             name:,
             image: image_data
           }.compact
@@ -29,10 +29,6 @@ module VK
 
         def artist
           @args[:artist]
-        end
-
-        def vk_id
-          artist['id']
         end
 
         def image_data

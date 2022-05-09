@@ -9,16 +9,16 @@ module Odnoklassniki
       def collection_list
         return super if first_artist.blank?
 
-        @collection_list ||= super.prepend(
-          first_artist
-        )
+        @collection_list ||=
+          super.prepend(
+            first_artist
+          )
       end
 
       def first_artist
-        @first_artist ||=
-          response_data.dig(
-            'bestMatch', 'artist'
-          )
+        response_data.dig(
+          'bestMatch', 'artist'
+        )
       end
 
       def collection_item_data_formatted(artist)

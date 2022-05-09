@@ -14,10 +14,10 @@ module Muffon
 
             def data
               {
-                id: library_track.id,
+                library: library_track_data,
                 favorite_id:,
                 player_id: track.player_id,
-                title: track.title,
+                title:,
                 created: created_formatted
               }
             end

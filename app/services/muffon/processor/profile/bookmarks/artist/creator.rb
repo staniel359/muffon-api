@@ -20,7 +20,10 @@ module Muffon
               return bookmark_artist.errors_data if
                   bookmark_artist.errors?
 
-              { bookmark_artist: bookmark_artist_data }
+              {
+                bookmark_artist:
+                  bookmark_artist_data
+              }
             end
 
             def bookmark_artist

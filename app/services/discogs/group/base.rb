@@ -17,9 +17,7 @@ module Discogs
         { group: group_data }
       end
 
-      def album
-        @album ||= response_data
-      end
+      alias album response_data
     end
   end
 end

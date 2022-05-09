@@ -16,23 +16,12 @@ module LastFM
 
       def tag_base_data
         {
-          name:,
-          taggings_count:,
-          taggers_count:,
-          description: description_truncated
+          name: tag['name'],
+          taggings_count: tag['total'],
+          taggers_count: tag['reach'],
+          description:
+            description_truncated
         }
-      end
-
-      def name
-        tag['name']
-      end
-
-      def taggings_count
-        tag['total']
-      end
-
-      def taggers_count
-        tag['reach']
       end
 
       def description

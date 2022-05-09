@@ -35,9 +35,10 @@ module Deezer
         end
 
         def raw_binary_data
-          @raw_binary_data ||= RestClient.get(
-            raw_audio_link
-          )
+          @raw_binary_data ||=
+            RestClient.get(
+              raw_audio_link
+            )
         end
 
         def process_chunk(index, memo)

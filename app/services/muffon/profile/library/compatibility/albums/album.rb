@@ -14,9 +14,10 @@ module Muffon
 
             def data
               {
-                id: library_album.id,
-                title: album.title,
-                artist: artist_data,
+                library: library_album_data,
+                title:,
+                artist: artist_names_data,
+                artists:,
                 image: library_album.image_data
               }.compact
             end

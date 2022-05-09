@@ -9,8 +9,7 @@ module LastFM
       end
 
       def model
-        @model ||=
-          response_data['toptags']
+        response_data['toptags']
       end
 
       def params
@@ -20,7 +19,9 @@ module LastFM
       end
 
       def model_params
-        send("#{model_name}_params")
+        send(
+          "#{model_name}_params"
+        )
       end
 
       def model_name
@@ -28,11 +29,14 @@ module LastFM
       end
 
       def tags_list
-        @tags_list ||= model['tag']
+        model['tag']
       end
 
       def data
-        { model_name.to_sym => model_data }
+        {
+          model_name.to_sym =>
+            model_data
+        }
       end
 
       def model_data

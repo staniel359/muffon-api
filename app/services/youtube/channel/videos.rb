@@ -37,18 +37,12 @@ module YouTube
 
       def channel_videos_data
         {
-          prev_page:,
-          next_page:,
+          prev_page:
+            uploads_playlist[:prev_page],
+          next_page:
+            uploads_playlist[:next_page],
           videos:
         }.compact
-      end
-
-      def prev_page
-        uploads_playlist[:prev_page]
-      end
-
-      def next_page
-        uploads_playlist[:next_page]
       end
 
       def videos

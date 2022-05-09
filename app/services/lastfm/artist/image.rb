@@ -5,19 +5,6 @@ module LastFM
 
       private
 
-      def images_list
-        @images_list ||=
-          artist_images_data.dig(
-            :artist, :images
-          ) || []
-      end
-
-      def artist_images_data
-        LastFM::Artist::Images.call(
-          artist: @args[:artist]
-        )
-      end
-
       def artist_data
         find_artist.process_image(
           image
@@ -29,6 +16,18 @@ module LastFM
       def image
         images_list.dig(
           0, :original
+        )
+      end
+
+      def images_list
+        artist_images_data.dig(
+          :artist, :images
+        ) || []
+      end
+
+      def artist_images_data
+        LastFM::Artist::Images.call(
+          artist: @args[:artist]
         )
       end
     end

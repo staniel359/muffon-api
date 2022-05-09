@@ -17,10 +17,10 @@ module Deezer
 
         def artist_data
           {
-            deezer_id:,
+            deezer_id: artist['ART_ID'].to_i,
             name:,
             image: image_data,
-            listeners_count:
+            listeners_count: artist['NB_FAN']
           }.compact
         end
 
@@ -32,18 +32,10 @@ module Deezer
           @args[:artist]
         end
 
-        def deezer_id
-          artist['ART_ID'].to_i
-        end
-
         def image_data
           image_data_formatted(
             artist['ART_PICTURE'], 'artist'
           )
-        end
-
-        def listeners_count
-          artist['NB_FAN']
         end
       end
     end

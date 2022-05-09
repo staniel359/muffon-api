@@ -39,9 +39,9 @@ module Discogs
       )[0]
     end
 
-    def image_data_formatted(image, model)
+    def image_data_formatted(image)
       Discogs::Utils::Image.call(
-        image:, model:
+        image:
       )
     end
 

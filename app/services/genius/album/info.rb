@@ -12,8 +12,9 @@ module Genius
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -22,7 +23,8 @@ module Genius
         {
           image: image_data,
           release_date:,
-          description: description_truncated,
+          description:
+            description_truncated,
           tracks:
         }.compact
       end

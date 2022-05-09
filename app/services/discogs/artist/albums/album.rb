@@ -17,7 +17,7 @@ module Discogs
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             discogs_id:,
             discogs_type:,
             title:,
@@ -58,7 +58,8 @@ module Discogs
         def artist_data_formatted(artist)
           {
             name: artist.text,
-            discogs_id: artist_discogs_id(artist)
+            discogs_id:
+              artist_discogs_id(artist)
           }
         end
 

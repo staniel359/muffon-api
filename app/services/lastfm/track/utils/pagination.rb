@@ -19,7 +19,7 @@ module LastFM
 
         def track_info_data
           raw_track_info_data.slice(
-            :title, :artists
+            :title, :artist, :artists
           )
         end
 

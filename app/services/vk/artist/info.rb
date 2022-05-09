@@ -10,7 +10,7 @@ module VK
       end
 
       def name
-        @name ||= response_data['name']
+        response_data['name']
       end
 
       def signature

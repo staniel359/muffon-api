@@ -15,7 +15,7 @@ module Deezer
       end
 
       def track
-        @track ||= response_data.dig(
+        response_data.dig(
           'results', 'data'
         ).try(:[], 0)
       end

@@ -18,11 +18,10 @@ module YandexMusic
       end
 
       def collection_data
-        @collection_data ||=
-          response_data.dig(
-            'result',
-            collection_name
-          ) || {}
+        response_data.dig(
+          'result',
+          collection_name
+        ) || {}
       end
 
       def collection_name

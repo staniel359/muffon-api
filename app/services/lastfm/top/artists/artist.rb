@@ -20,11 +20,8 @@ module LastFM
         def update_listeners_count
           find_artist.update(
             listeners_count:
+              artist['listeners'].to_i
           )
-        end
-
-        def listeners_count
-          artist['listeners'].to_i
         end
 
         def artist

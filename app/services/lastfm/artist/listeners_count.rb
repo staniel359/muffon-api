@@ -4,14 +4,9 @@ module LastFM
       private
 
       def artist_data
-        find_artist.update(
-          listeners_count:
-        )
+        update_listeners_count
 
-        {
-          listeners_count:
-            find_artist.listeners_count
-        }
+        { listeners_count: }
       end
     end
   end

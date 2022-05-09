@@ -9,14 +9,17 @@ module Muffon
         private
 
         def data
+          playlist_base_data
+            .merge(playlist_extra_data)
+        end
+
+        def playlist_base_data
           {
             id: playlist.id,
-            playlist_track_id: playlist_track&.id,
+            playlist_track_id:
+              playlist_track&.id,
             title: playlist.title,
-            profile: profile_data,
-            image: playlist.image_data,
-            tracks_count: playlist.tracks_count,
-            created: created_formatted
+            profile: profile_data
           }.compact
         end
 
@@ -42,6 +45,15 @@ module Muffon
 
         def profile
           @profile ||= playlist.profile
+        end
+
+        def playlist_extra_data
+          {
+            image: playlist.image_data,
+            tracks_count:
+              playlist.tracks_count,
+            created: created_formatted
+          }.compact
         end
 
         def created_formatted

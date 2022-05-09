@@ -18,11 +18,12 @@ module VK
 
         def track_base_data
           {
+            source_id:,
             player_id:,
-            source_id: SOURCE_ID,
             vk_id:,
             title:,
             extra_title:,
+            artist: artist_names_data,
             artists:
           }
         end

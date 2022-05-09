@@ -15,6 +15,7 @@ module Bandcamp
             title:,
             bandcamp_id:,
             bandcamp_model: model_type,
+            artist: artist_names_data,
             artists:
           }
         end
@@ -29,10 +30,6 @@ module Bandcamp
           model_response_data[
             'item_type'
           ]
-        end
-
-        def artists
-          [artist_data]
         end
 
         def artist_data

@@ -15,7 +15,7 @@ module LastFM
       end
 
       def tag
-        @tag ||= response_data['tag']
+        response_data['tag']
       end
 
       def params

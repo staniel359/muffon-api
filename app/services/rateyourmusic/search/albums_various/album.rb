@@ -12,7 +12,7 @@ module RateYourMusic
 
         def data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             rateyourmusic_slug:,
             title:,
             artists:,

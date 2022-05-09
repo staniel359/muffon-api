@@ -35,7 +35,9 @@ module Google
       end
 
       def title
-        opengraph_data('title') || ''
+        opengraph_data(
+          'title'
+        ) || ''
       end
 
       def link

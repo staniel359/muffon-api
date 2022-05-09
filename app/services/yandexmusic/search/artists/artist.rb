@@ -17,7 +17,7 @@ module YandexMusic
 
         def artist_data
           {
-            yandex_music_id:,
+            yandex_music_id: artist['id'],
             name:,
             image: image_data
           }.compact
@@ -31,13 +31,9 @@ module YandexMusic
           @args[:artist]
         end
 
-        def yandex_music_id
-          artist['id']
-        end
-
         def image_data
           image_data_formatted(
-            artist, 'artist'
+            artist
           )
         end
       end

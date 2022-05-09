@@ -7,49 +7,25 @@ module Muffon
 
         private
 
-        def no_track?
-          [
-            artists,
-            similar_artist_data,
-            tracks
-          ].any?(&:blank?)
-        end
-
-        def artists
-          @artists ||= artist_data[:similar]
+        def radio_track_data
+          similar_artist_data.dig(
+            :tracks, 0
+          )
         end
 
         def similar_artist_data
           @similar_artist_data ||=
             LastFM::Artist::Tracks.call(
-              artist: similar_artist_name,
+              artist: artist_name,
               limit: 1,
               page: rand(1..20)
             )[:artist]
         end
 
-        def similar_artist_name
-          artists.dig(0, :name)
-        end
-
-        def tracks
-          @tracks ||=
-            similar_artist_data[:tracks]
-        end
-
-        def track
-          track_base_data
-            .merge(track_artist_data)
-        end
-
-        def track_base_data
-          random_track.slice(
-            *%i[player_id source_id title]
+        def artist_name
+          radio_artist_data.dig(
+            :similar, 0, :name
           )
-        end
-
-        def track_artist_data
-          { artists: }
         end
       end
     end

@@ -14,8 +14,7 @@ module SoundCloud
       end
 
       def collection_list
-        @collection_list ||=
-          response_data['collection']
+        response_data['collection']
       end
 
       def link
@@ -23,7 +22,9 @@ module SoundCloud
       end
 
       def params
-        super.merge(search_params)
+        super.merge(
+          search_params
+        )
       end
 
       def search_params

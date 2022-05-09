@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Wed, 22 Dec 2021 12:27:54 GMT
+      - Sun, 08 May 2022 11:57:44 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -40,7 +40,7 @@ http_interactions:
       Via:
       - 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
       string: '{"toptags":{"tag":[{"count":100,"name":"dream pop","url":"https://www.last.fm/tag/dream+pop"},{"count":46,"name":"indie","url":"https://www.last.fm/tag/indie"},{"count":46,"name":"chillwave","url":"https://www.last.fm/tag/chillwave"},{"count":42,"name":"shoegaze","url":"https://www.last.fm/tag/shoegaze"},{"count":13,"name":"electronica","url":"https://www.last.fm/tag/electronica"},{"count":13,"name":"indie
@@ -75,5 +75,5 @@ http_interactions:
         of 2015","url":"https://www.last.fm/tag/song+of+2015"},{"count":5,"name":"to
         all the boys ive loved before","url":"https://www.last.fm/tag/to+all+the+boys+ive+loved+before"}],"@attr":{"artist":"Wild
         Nothing","track":"Chinatown"}}}'
-  recorded_at: Wed, 22 Dec 2021 12:27:54 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 08 May 2022 11:57:44 GMT
+recorded_with: VCR 6.1.0

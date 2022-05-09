@@ -40,7 +40,7 @@ module RateYourMusic
 
         def image_data
           image_data_formatted(
-            image, 'artist'
+            image
           )
         end
 

@@ -14,12 +14,11 @@ module LastFM
       end
 
       def results_list
-        @results_list ||=
-          response_data.dig(
-            'results',
-            "#{model_name}matches",
-            model_name
-          )
+        response_data.dig(
+          'results',
+          "#{model_name}matches",
+          model_name
+        )
       end
 
       def model_name
@@ -33,7 +32,10 @@ module LastFM
       end
 
       def search_params
-        { model_name.to_sym => @args[:query] }
+        {
+          model_name.to_sym =>
+            @args[:query]
+        }
       end
 
       def data

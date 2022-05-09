@@ -13,10 +13,6 @@ module Bandcamp
         track['track_id']
       end
 
-      def artists
-        [artist_data]
-      end
-
       def artist_data
         {
           name: artist_name,

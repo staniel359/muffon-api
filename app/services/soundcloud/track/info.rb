@@ -12,10 +12,11 @@ module SoundCloud
 
       def track_base_data
         {
+          source_id:,
           player_id:,
-          source_id: SOURCE_ID,
           soundcloud_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -25,8 +26,9 @@ module SoundCloud
           image: image_data,
           duration:,
           duration_seconds:,
-          description: description_truncated,
-          tags: tags&.first(5),
+          description:
+            description_truncated,
+          tags: tags_truncated,
           audio: audio_data
         }.compact
       end
@@ -43,9 +45,9 @@ module SoundCloud
 
       def audio_data
         {
+          source_id:,
           present: audio_link.present?,
-          link: audio_link,
-          source_id: SOURCE_ID
+          link: audio_link
         }
       end
 
@@ -67,10 +69,9 @@ module SoundCloud
       end
 
       def streams_response
-        @streams_response ||=
-          RestClient.get(
-            streams_link, headers
-          )
+        RestClient.get(
+          streams_link, headers
+        )
       end
 
       def streams_link

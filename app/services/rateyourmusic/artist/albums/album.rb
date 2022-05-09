@@ -17,10 +17,10 @@ module RateYourMusic
 
         def album_data
           {
-            source_id: SOURCE_ID,
-            rateyourmusic_path:,
+            source_id:,
+            rateyourmusic_path:
+              album_block['href'],
             title:,
-            artists:,
             image: image_data,
             release_date:,
             listeners_count:
@@ -45,10 +45,6 @@ module RateYourMusic
           @args[:album]
         end
 
-        def rateyourmusic_path
-          album_block['href']
-        end
-
         def artists_list
           album.css(
             '.disco_sub_artist'
@@ -57,7 +53,7 @@ module RateYourMusic
 
         def image_data
           image_data_formatted(
-            image, 'album'
+            image
           )
         end
 

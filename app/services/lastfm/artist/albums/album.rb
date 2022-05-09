@@ -17,21 +17,21 @@ module LastFM
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
             title:,
             image: image_data,
             listeners_count:
           }.compact
         end
 
-        def album
-          @args[:album]
-        end
-
         def artist_name
           album.dig(
             'artist', 'name'
           )
+        end
+
+        def album
+          @args[:album]
         end
       end
     end

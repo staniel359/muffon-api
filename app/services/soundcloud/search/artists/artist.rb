@@ -17,7 +17,7 @@ module SoundCloud
 
         def artist_data
           {
-            soundcloud_id:,
+            soundcloud_id: artist['id'],
             name:,
             image: image_data
           }.compact
@@ -31,14 +31,9 @@ module SoundCloud
           artist['username']
         end
 
-        def soundcloud_id
-          artist['id']
-        end
-
         def image_data
           image_data_formatted(
-            artist['avatar_url'],
-            'artist'
+            artist['avatar_url']
           )
         end
       end

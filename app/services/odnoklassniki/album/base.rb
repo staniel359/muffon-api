@@ -25,7 +25,7 @@ module Odnoklassniki
       end
 
       def album
-        @album ||= response_data['album']
+        response_data['album']
       end
     end
   end

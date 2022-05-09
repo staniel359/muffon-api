@@ -2,6 +2,7 @@ module RateYourMusic
   module Artist
     class Albums < RateYourMusic::Artist::Base
       ACTION = 'ExpandDiscographySection'.freeze
+      COLLECTION_NAME = 'albums'.freeze
       ALBUM_TYPES = {
         album: 's',
         ep: 'e',
@@ -13,7 +14,6 @@ module RateYourMusic
         various: 'v',
         video: 'd'
       }.freeze
-      COLLECTION_NAME = 'albums'.freeze
       include Muffon::Utils::Pagination
 
       def call
@@ -36,7 +36,7 @@ module RateYourMusic
       end
 
       def album_type
-        @album_type ||= ALBUM_TYPES[
+        ALBUM_TYPES[
           album_type_formatted
         ]
       end
@@ -50,13 +50,6 @@ module RateYourMusic
           .to_sym
       end
 
-      def response_matched_data
-        @response_matched_data ||=
-          response.match(
-            matched_block_regexp
-          ).try(:[], 1)
-      end
-
       def payload
         {
           artist_id: @args[:artist_id],
@@ -67,25 +60,21 @@ module RateYourMusic
         }
       end
 
-      def matched_block_regexp
-        %r{<div id="disco_type_#{album_type}">(.+)</div>}
-      end
-
       def total_items_count
         albums_list.size
       end
 
       def albums_list
-        @albums_list ||=
-          response_data.css(
-            '.disco_release'
-          )
+        response_data.css(
+          '.disco_release'
+        )
       end
 
       def response_data
-        Nokogiri::HTML.parse(
-          response_matched_data
-        )
+        @response_data ||=
+          Nokogiri::HTML.parse(
+            response
+          )
       end
 
       def collection_list

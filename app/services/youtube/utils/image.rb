@@ -19,7 +19,8 @@ module YouTube
 
       def image_resized(size)
         image.sub(
-          'default', "#{size}default"
+          'default',
+          "#{size}default"
         )
       end
 

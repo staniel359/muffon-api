@@ -17,7 +17,7 @@ module Bandcamp
       end
 
       def track
-        @track ||= response_data.dig(
+        response_data.dig(
           'tracks', 0
         )
       end

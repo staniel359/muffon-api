@@ -1,6 +1,7 @@
 module Deezer
   class Base < Muffon::Base
-    BASE_LINK = 'https://www.deezer.com/ajax/gw-light.php'.freeze
+    BASE_LINK =
+      'https://www.deezer.com/ajax/gw-light.php'.freeze
     SOURCE_ID = 'deezer'.freeze
 
     private

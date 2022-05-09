@@ -19,13 +19,9 @@ module Bandcamp
       def params
         {
           query: @args[:query],
-          scope:,
+          scope: "bandcamp_#{collection_name}",
           page: @args[:page]
         }
-      end
-
-      def scope
-        "bandcamp_#{collection_name}"
       end
 
       def data

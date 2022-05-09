@@ -11,10 +11,14 @@ module Muffon
 
           def data
             {
-              id:,
+              library: library_tag_data,
               name:,
               count:
             }
+          end
+
+          def library_tag_data
+            { id: }
           end
 
           def id

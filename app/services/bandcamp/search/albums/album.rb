@@ -17,13 +17,22 @@ module Bandcamp
 
         def album_data
           {
-            source_id: SOURCE_ID,
+            source_id:,
+            title:,
+            artist: artist_names_data,
+            artists:,
             bandcamp_slug:,
             bandcamp_model:,
-            title:,
-            artists:,
             image: image_data
           }.compact
+        end
+
+        def title
+          model_title(album)
+        end
+
+        def album
+          @args[:album]
         end
 
         def artist_name
@@ -37,14 +46,6 @@ module Bandcamp
             )
         end
 
-        def title
-          model_title(album)
-        end
-
-        def album
-          @args[:album]
-        end
-
         def bandcamp_slug
           model_title_slug(
             album
@@ -53,10 +54,6 @@ module Bandcamp
 
         def bandcamp_model
           model_name(album)
-        end
-
-        def artists
-          [artist_data]
         end
 
         def image_data

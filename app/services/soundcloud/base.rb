@@ -21,7 +21,7 @@ module SoundCloud
     def artist_data
       {
         name: artist_name,
-        soundcloud_id: artist_soundcloud_id
+        soundcloud_id: artist['id']
       }
     end
 
@@ -29,13 +29,9 @@ module SoundCloud
       artist['username']
     end
 
-    def artist_soundcloud_id
-      artist['id']
-    end
-
-    def image_data_formatted(image, model)
+    def image_data_formatted(image)
       SoundCloud::Utils::Image.call(
-        image:, model:
+        image:
       )
     end
   end

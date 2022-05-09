@@ -10,15 +10,17 @@ module Muffon
 
         def no_data?
           total_pages.blank? ||
-            artist_data.blank?
+            radio_artist_data.blank?
         end
 
         def total_pages
           @total_pages ||=
-            retrieve_artist_data[:total_pages]
+            retrieve_radio_artist_data[
+              :total_pages
+            ]
         end
 
-        def retrieve_artist_data(page = nil)
+        def retrieve_radio_artist_data(page = nil)
           artist_service.call(
             artist: @args[:artist],
             limit: 1,
@@ -26,9 +28,9 @@ module Muffon
           )[:artist] || {}
         end
 
-        def artist_data
-          @artist_data ||=
-            retrieve_artist_data(
+        def radio_artist_data
+          @radio_artist_data ||=
+            retrieve_radio_artist_data(
               random_page
             )
         end
@@ -38,7 +40,10 @@ module Muffon
         end
 
         def max_page
-          [total_pages, total_limit].min
+          [
+            total_pages,
+            total_limit
+          ].min
         end
 
         def total_limit
@@ -59,15 +64,37 @@ module Muffon
           { radio: radio_data }
         end
 
+        def no_track?
+          radio_track_data.blank?
+        end
+
         def radio_data
+          { track: track_data }
+        end
+
+        def track_data
+          radio_track_data.merge(
+            radio_track_artists_data
+          )
+        end
+
+        def radio_track_artists_data
           {
-            artist: artist_data[:name],
-            track:
+            artist: artist_names_data,
+            artists:
           }
         end
 
-        def random_track
-          tracks.first
+        def artists
+          [artist_data]
+        end
+
+        def artist_data
+          { name: artist_name }
+        end
+
+        def artist_name
+          artist_data[:name]
         end
       end
     end

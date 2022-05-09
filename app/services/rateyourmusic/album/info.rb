@@ -14,8 +14,9 @@ module RateYourMusic
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -42,14 +43,14 @@ module RateYourMusic
         {
           image: image_data,
           release_date:,
-          tags: tags&.first(5),
+          tags: tags_truncated,
           tracks:
         }.compact
       end
 
       def image_data
         image_data_formatted(
-          image, 'album'
+          image
         )
       end
 

@@ -31,29 +31,18 @@ module Deezer
 
         def payload
           {
-            license_token:,
-            media:,
-            track_tokens:
+            license_token:
+              user_tokens[:license_token],
+            media: [audio_data],
+            track_tokens: [track_token]
           }.to_json
-        end
-
-        def license_token
-          user_tokens[:license_token]
-        end
-
-        def media
-          [audio_data]
         end
 
         def audio_data
           {
             type: 'FULL',
-            formats: audio_formats
+            formats: [audio_format]
           }
-        end
-
-        def audio_formats
-          [audio_format]
         end
 
         def audio_format
@@ -61,10 +50,6 @@ module Deezer
             cipher: 'BF_CBC_STRIPE',
             format: 'MP3_128'
           }
-        end
-
-        def track_tokens
-          [track_token]
         end
 
         def track_token

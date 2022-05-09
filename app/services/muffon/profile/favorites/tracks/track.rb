@@ -14,7 +14,8 @@ module Muffon
               id: favorite_track.id,
               player_id: track.player_id,
               title: track.title,
-              artist: artist_data,
+              artist: artist_names_data,
+              artists:,
               album: album_data,
               image: favorite_track.image_data
             }.compact
@@ -28,12 +29,16 @@ module Muffon
             @track ||= favorite_track.track
           end
 
+          def artists
+            [artist_data]
+          end
+
           def artist_data
             { name: artist.name }
           end
 
           def artist
-            @artist ||= track.artist
+            track.artist
           end
 
           def album_data

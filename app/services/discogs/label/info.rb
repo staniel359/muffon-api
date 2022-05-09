@@ -10,15 +10,12 @@ module Discogs
 
       def label_base_data
         {
-          name:,
+          name: artist['name'],
           discogs_id:,
           image: image_data,
-          description: description_truncated
+          description:
+            description_truncated
         }.compact
-      end
-
-      def name
-        artist['name']
       end
 
       def description

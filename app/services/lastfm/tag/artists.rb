@@ -21,10 +21,9 @@ module LastFM
       end
 
       def raw_artists_list
-        @raw_artists_list ||=
-          response_data.css(
-            '.big-artist-list-item'
-          )
+        response_data.css(
+          '.big-artist-list-item'
+        )
       end
 
       def collection_item_data_formatted(artist)

@@ -19,8 +19,7 @@ module VK
       end
 
       def albums_list
-        @albums_list ||=
-          response_data['items']
+        response_data['items']
       end
 
       def signature

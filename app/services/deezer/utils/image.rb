@@ -47,7 +47,7 @@ module Deezer
       end
 
       def image_model
-        @image_model ||= IMAGE_MODELS[
+        IMAGE_MODELS[
           @args[:model].to_sym
         ]
       end

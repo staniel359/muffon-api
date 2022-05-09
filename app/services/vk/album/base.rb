@@ -18,10 +18,6 @@ module VK
         album.blank?
       end
 
-      def album
-        @album ||= response_data
-      end
-
       def params
         super.merge(
           album_params
@@ -33,7 +29,7 @@ module VK
           playlist_id: vk_album_id,
           owner_id: vk_owner_id,
           access_key: vk_access_key,
-          lang: 'en'
+          lang: language
         }
       end
 
@@ -56,13 +52,15 @@ module VK
           "&playlist_id=#{vk_album_id}"\
           "&owner_id=#{vk_owner_id}"\
           "&access_key=#{vk_access_key}"\
-          '&lang=en'\
+          "&lang=#{language}"\
           "#{api_secret}"
       end
 
       def data
         { album: album_data }
       end
+
+      alias album response_data
     end
   end
 end

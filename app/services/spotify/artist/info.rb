@@ -11,13 +11,11 @@ module Spotify
         artist.blank?
       end
 
-      def artist
-        @artist ||= response_data
-      end
-
       def name
         artist['name']
       end
+
+      alias artist response_data
     end
   end
 end

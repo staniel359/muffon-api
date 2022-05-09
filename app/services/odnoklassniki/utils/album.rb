@@ -19,7 +19,7 @@ module Odnoklassniki
 
       def image_data
         image_data_formatted(
-          album['image'], 'album'
+          album['image']
         )
       end
 

@@ -14,7 +14,7 @@ module YouTube
       end
 
       def video
-        @video ||= videos_list[0]
+        videos_list[0]
       end
 
       def link
@@ -41,13 +41,9 @@ module YouTube
       def video_base_data
         {
           title:,
-          youtube_id:,
+          youtube_id: video['id'],
           channel: channel_data
         }
-      end
-
-      def youtube_id
-        video['id']
       end
     end
   end

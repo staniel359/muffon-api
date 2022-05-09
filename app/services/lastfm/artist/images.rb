@@ -20,19 +20,14 @@ module LastFM
 
       def artist_image_data
         {
-          image: first_image
+          image: collection[0]
         }.compact
       end
 
-      def first_image
-        collection[0]
-      end
-
       def collection_list
-        @collection_list ||=
-          response_data.css(
-            '.image-list-item img'
-          )
+        response_data.css(
+          '.image-list-item img'
+        )
       end
 
       def link

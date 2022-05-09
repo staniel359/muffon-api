@@ -11,11 +11,12 @@ module Deezer
 
       def track_base_data
         {
+          source_id:,
           player_id:,
-          source_id: SOURCE_ID,
           deezer_id:,
           title:,
           extra_title:,
+          artist: artist_names_data,
           artists:
         }.compact
       end
@@ -39,9 +40,9 @@ module Deezer
 
       def audio_data
         {
+          source_id:,
           present: audio_link.present?,
-          link: audio_link,
-          source_id: SOURCE_ID
+          link: audio_link
         }
       end
 

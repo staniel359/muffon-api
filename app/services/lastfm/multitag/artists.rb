@@ -24,10 +24,9 @@ module LastFM
       end
 
       def artists_list
-        @artists_list ||=
-          response_data.dig(
-            'results', 'artist'
-          )
+        response_data.dig(
+          'results', 'artist'
+        )
       end
 
       def link

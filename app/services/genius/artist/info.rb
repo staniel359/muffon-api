@@ -12,7 +12,7 @@ module Genius
       end
 
       def artist
-        @artist ||= response_data.dig(
+        response_data.dig(
           'response', 'artist'
         )
       end

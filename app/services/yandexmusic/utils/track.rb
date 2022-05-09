@@ -36,7 +36,7 @@ module YandexMusic
 
       def image_data
         image_data_formatted(
-          track, 'track'
+          track
         )
       end
 
@@ -46,9 +46,9 @@ module YandexMusic
 
       def audio_data
         {
+          source_id:,
           present: track_present?,
-          track_id: yandex_music_id,
-          source_id:
+          track_id: yandex_music_id
         }
       end
 

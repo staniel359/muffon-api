@@ -3,6 +3,8 @@ module Muffon
     module Recommendation
       class Artists
         class Artist < Muffon::Profile::Recommendation::Artists
+          include Muffon::Utils::Library::Artist
+
           def call
             data
           end
@@ -11,8 +13,8 @@ module Muffon
 
           def data
             {
-              id: library_artist.id,
-              name: artist.name,
+              library: library_artist_data,
+              name:,
               image: artist.image_data,
               tracks_count:
                 library_artist.library_tracks_count,
@@ -23,10 +25,6 @@ module Muffon
 
           def library_artist
             @args[:library_artist]
-          end
-
-          def artist
-            @artist ||= library_artist.artist
           end
         end
       end

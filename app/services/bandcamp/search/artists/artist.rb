@@ -17,10 +17,10 @@ module Bandcamp
 
         def artist_data
           {
-            bandcamp_slug:,
-            bandcamp_model:,
             name:,
-            image: image_data
+            image: image_data,
+            bandcamp_slug:,
+            bandcamp_model:
           }.compact
         end
 

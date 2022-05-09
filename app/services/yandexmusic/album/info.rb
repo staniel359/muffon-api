@@ -12,9 +12,10 @@ module YandexMusic
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
           extra_title:,
+          artist: artist_names_data,
           artists:
         }.compact
       end
@@ -24,7 +25,7 @@ module YandexMusic
           image: image_data,
           release_date:,
           labels:,
-          tags: tags&.first(5),
+          tags: tags_truncated,
           tracks:
         }.compact
       end

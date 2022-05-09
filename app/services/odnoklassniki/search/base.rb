@@ -14,8 +14,9 @@ module Odnoklassniki
       end
 
       def collection_list
-        @collection_list ||=
-          response_data[collection_name]
+        response_data[
+          collection_name
+        ]
       end
 
       def params

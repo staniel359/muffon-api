@@ -4,33 +4,48 @@ module Muffon
       private
 
       def artists
-        artists_list.map do |a|
-          artist_data_formatted(a)
-        end.presence
+        @artists ||=
+          artists_list.map do |a|
+            artist_data_formatted(a)
+          end
+      end
+
+      def artist_names_data
+        { name: artist_names }
+      end
+
+      def artist_names
+        artists.pluck(
+          :name
+        ).join(', ')
       end
 
       def albums
         albums_list.map do |a|
           album_data_formatted(a)
-        end.presence
+        end
       end
 
       def tracks
         tracks_list.map do |t|
           track_data_formatted(t)
-        end.presence
+        end
       end
 
       def labels
         labels_list.map do |l|
           label_data_formatted(l)
-        end.uniq.presence
+        end.uniq
+      end
+
+      def tags_truncated
+        tags.first(5)
       end
 
       def tags
         tags_list.map do |t|
           tag_data_formatted(t)
-        end.presence
+        end
       end
 
       def tag_data_formatted(tag)
@@ -61,15 +76,7 @@ module Muffon
       end
 
       def description_truncated
-        description
-          &.truncate(400)
-          .presence
-      end
-
-      def artist_names
-        artists.pluck(
-          :name
-        ).join(', ')
+        description&.truncate(400).presence
       end
     end
   end

@@ -14,7 +14,10 @@ module Muffon
           end
 
           def artist_base_data
-            { name: artist.name }
+            {
+              library: library_artist_data,
+              name:
+            }
           end
 
           def total_items_count

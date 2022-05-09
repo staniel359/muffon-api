@@ -18,22 +18,16 @@ module LastFM
         def artist_data
           {
             name:,
-            listeners_count:,
-            plays_count:,
+            listeners_count:
+              artist['listeners'].to_i,
+            plays_count:
+              artist['scrobbles'].to_i,
             image: image_data
           }.compact
         end
 
         def artist
           @args[:artist]
-        end
-
-        def listeners_count
-          artist['listeners'].to_i
-        end
-
-        def plays_count
-          artist['scrobbles'].to_i
         end
 
         def image_data

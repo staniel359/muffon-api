@@ -16,8 +16,7 @@ module VK
       end
 
       def results_list
-        @results_list ||=
-          response_data['items']
+        response_data['items']
       end
 
       def params

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=kate%20bush&autocorrect=0&format=json&method=track.getInfo&track=hounds%20of%20love
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=kate%20bush&autocorrect=0&format=json&lang=en&method=track.getInfo&track=hounds%20of%20love
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.3p157
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Wed, 22 Dec 2021 12:27:50 GMT
+      - Sun, 08 May 2022 11:57:40 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -37,10 +37,10 @@ http_interactions:
       Via:
       - 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"track":{"name":"Hounds of Love","mbid":"984deb15-92f3-4917-9929-c0e930dc8a54","url":"https://www.last.fm/music/Kate+Bush/_/Hounds+of+Love","duration":"182000","streamable":{"#text":"0","fulltrack":"0"},"listeners":"304801","playcount":"2072003","artist":{"name":"Kate
+      string: '{"track":{"name":"Hounds of Love","mbid":"984deb15-92f3-4917-9929-c0e930dc8a54","url":"https://www.last.fm/music/Kate+Bush/_/Hounds+of+Love","duration":"183000","streamable":{"#text":"0","fulltrack":"0"},"listeners":"313304","playcount":"2157839","artist":{"name":"Kate
         Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396","url":"https://www.last.fm/music/Kate+Bush"},"album":{"artist":"Kate
         Bush","title":"Hounds of Love","mbid":"778c8867-ee94-366a-bcd8-e140cfbf1b67","url":"https://www.last.fm/music/Kate+Bush/Hounds+of+Love","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/391be121643ab50801b7955b0ac5b50c.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/391be121643ab50801b7955b0ac5b50c.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/391be121643ab50801b7955b0ac5b50c.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/391be121643ab50801b7955b0ac5b50c.png","size":"extralarge"}],"@attr":{"position":"1"}},"toptags":{"tag":[{"name":"80s","url":"https://www.last.fm/tag/80s"},{"name":"female
         vocalists","url":"https://www.last.fm/tag/female+vocalists"},{"name":"pop","url":"https://www.last.fm/tag/pop"},{"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"name":"singer-songwriter","url":"https://www.last.fm/tag/singer-songwriter"}]},"wiki":{"published":"31
@@ -71,5 +71,5 @@ http_interactions:
         scoring a UK top 10 hit with it.\n\n <a href=\"http://www.last.fm/music/Kate+Bush/_/Hounds+of+Love\">Read
         more on Last.fm</a>. User-contributed text is available under the Creative
         Commons By-SA License; additional terms may apply."}}}'
-  recorded_at: Wed, 22 Dec 2021 12:27:51 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 08 May 2022 11:57:40 GMT
+recorded_with: VCR 6.1.0

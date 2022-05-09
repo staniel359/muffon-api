@@ -19,9 +19,10 @@ module LastFM
 
       def track_base_data
         {
+          source_id:,
           player_id:,
-          source_id: SOURCE_ID,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -30,8 +31,10 @@ module LastFM
         {
           album: album_data,
           image: image_data,
-          listeners_count:,
-          plays_count:,
+          listeners_count:
+            track['listeners'].to_i,
+          plays_count:
+            track['playcount'].to_i,
           duration:,
           duration_seconds:
         }.compact
@@ -41,13 +44,13 @@ module LastFM
         return if album.blank?
 
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title: album['title']
         }
       end
 
       def album
-        @album ||= track['album']
+        track['album']
       end
 
       def image_data
@@ -58,16 +61,9 @@ module LastFM
 
       def image
         track.dig(
-          'album', 'image', -1, '#text'
+          'album', 'image',
+          -1, '#text'
         )
-      end
-
-      def listeners_count
-        track['listeners'].to_i
-      end
-
-      def plays_count
-        track['playcount'].to_i
       end
 
       def duration_seconds
@@ -76,8 +72,9 @@ module LastFM
 
       def track_description_tags_data
         {
-          description: description_truncated,
-          tags: tags&.first(5)
+          description:
+            description_truncated,
+          tags: tags_truncated
         }
       end
 
@@ -96,10 +93,10 @@ module LastFM
       def tags_list
         return [] if track['toptags'].blank?
 
-        [raw_tags].flatten
+        [raw_tags_list].flatten
       end
 
-      def raw_tags
+      def raw_tags_list
         track.dig(
           'toptags', 'tag'
         )

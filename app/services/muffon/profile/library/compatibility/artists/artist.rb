@@ -14,8 +14,8 @@ module Muffon
 
             def data
               {
-                id: library_artist.id,
-                name: artist.name,
+                library: library_artist_data,
+                name:,
                 image: artist.image_data
               }.compact
             end

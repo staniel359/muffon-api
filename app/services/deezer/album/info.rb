@@ -12,8 +12,9 @@ module Deezer
 
       def album_base_data
         {
-          source_id: SOURCE_ID,
+          source_id:,
           title:,
+          artist: artist_names_data,
           artists:
         }
       end
@@ -21,15 +22,12 @@ module Deezer
       def album_extra_data
         {
           image: image_data,
-          listeners_count:,
+          listeners_count:
+            album['NB_FAN'],
           release_date:,
           labels:,
           tracks:
         }.compact
-      end
-
-      def listeners_count
-        album['NB_FAN']
       end
 
       def labels

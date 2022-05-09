@@ -24,8 +24,7 @@ module YouTube
     end
 
     def videos_list
-      @videos_list ||=
-        response_data['items']
+      response_data['items']
     end
   end
 end

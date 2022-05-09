@@ -13,7 +13,8 @@ module Muffon
             {
               id: bookmark_album.id,
               title: album.title,
-              artist: artist_data,
+              artist: artist_names_data,
+              artists:,
               image: bookmark_album.image_data
             }.compact
           end
@@ -26,12 +27,16 @@ module Muffon
             @album ||= bookmark_album.album
           end
 
+          def artists
+            [artist_data]
+          end
+
           def artist_data
             { name: artist.name }
           end
 
           def artist
-            @artist ||= album.artist
+            album.artist
           end
         end
       end

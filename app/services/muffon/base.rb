@@ -39,9 +39,10 @@ module Muffon
     end
 
     def response_data
-      @response_data ||= JSON.parse(
-        response
-      )
+      @response_data ||=
+        JSON.parse(
+          response
+        )
     end
 
     def response
@@ -73,6 +74,10 @@ module Muffon
 
     def secrets
       Rails.application.credentials
+    end
+
+    def language
+      @args[:language] || 'en'
     end
 
     def muffon_data

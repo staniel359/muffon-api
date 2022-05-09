@@ -35,6 +35,10 @@ module Muffon
                 @args[:tag_id]
               )
           end
+
+          def library_tag_data
+            { id: tag.id }
+          end
         end
       end
     end

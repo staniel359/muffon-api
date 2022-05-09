@@ -31,8 +31,7 @@ module Spotify
       end
 
       def collection_list
-        @collection_list ||=
-          response_data['items']
+        response_data['items']
       end
 
       def link

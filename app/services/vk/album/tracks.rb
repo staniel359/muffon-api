@@ -14,8 +14,7 @@ module VK
       end
 
       def tracks_list
-        @tracks_list ||=
-          response_data['items']
+        response_data['items']
       end
 
       def album_params

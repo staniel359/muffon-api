@@ -17,28 +17,14 @@ module Discogs
         { album: album_data }
       end
 
-      def album
-        @album ||= response_data
-      end
-
       def artists_list
         album['artists']
       end
 
-      def tracks
-        tracks_filtered.map do |t|
-          track_data_formatted(t)
-        end
-      end
-
-      def tracks_filtered
-        tracks_list.select do |t|
+      def tracks_list
+        album['tracklist'].select do |t|
           t['type_'] == 'track'
         end
-      end
-
-      def tracks_list
-        album['tracklist']
       end
 
       def track_data_formatted(track)
@@ -55,6 +41,8 @@ module Discogs
           'genres', 'styles'
         ).flatten.compact.uniq
       end
+
+      alias album response_data
     end
   end
 end

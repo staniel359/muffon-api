@@ -13,10 +13,6 @@ module Spotify
         album.blank?
       end
 
-      def album
-        @album ||= response_data
-      end
-
       def link
         "#{BASE_LINK}/albums/#{@args[:album_id]}"
       end
@@ -24,6 +20,8 @@ module Spotify
       def data
         { album: album_data }
       end
+
+      alias album response_data
     end
   end
 end
