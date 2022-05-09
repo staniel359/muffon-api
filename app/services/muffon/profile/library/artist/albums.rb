@@ -28,7 +28,7 @@ module Muffon
             library_artist
               .library_albums
               .library_tracks_count_desc_ordered
-              .created_asc_ordered
+              .created_desc_ordered
               .limit(limit)
               .offset(offset)
               .associated
