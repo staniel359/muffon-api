@@ -39,8 +39,10 @@ module Muffon
           {
             profile: last_message_profile_data,
             content: last_message.content,
-            with_images: last_message_with_images?,
+            with_artists: last_message_with_artists?,
+            with_albums: last_message_with_albums?,
             with_tracks: last_message_with_tracks?,
+            with_images: last_message_with_images?,
             created: last_message_created
           }
         end
@@ -66,15 +68,27 @@ module Muffon
             .first
         end
 
-        def last_message_with_images?
+        def last_message_with_artists?
           last_message
-            .images
+            .artists
+            .present?
+        end
+
+        def last_message_with_albums?
+          last_message
+            .albums
             .present?
         end
 
         def last_message_with_tracks?
           last_message
             .tracks
+            .present?
+        end
+
+        def last_message_with_images?
+          last_message
+            .images
             .present?
         end
 

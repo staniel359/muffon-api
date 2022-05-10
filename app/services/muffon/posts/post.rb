@@ -56,21 +56,39 @@ module Muffon
       def post_extra_data
         {
           images:,
+          artists:,
+          albums:,
           tracks:,
           created: created_formatted
         }.compact
       end
 
       def images
-        post
-          .images_data
-          .presence
+        post.images_data
       end
 
-      def tracks
-        post.tracks.map do |t|
-          track_data_formatted(t)
-        end
+      def artists_list
+        post.artists
+      end
+
+      def artist_data_formatted(artist)
+        Muffon::Sendable::Artist.call(
+          artist:
+        )
+      end
+
+      def albums_list
+        post.albums
+      end
+
+      def album_data_formatted(album)
+        Muffon::Sendable::Album.call(
+          album:
+        )
+      end
+
+      def tracks_list
+        post.tracks
       end
 
       def track_data_formatted(track)

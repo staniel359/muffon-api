@@ -43,13 +43,6 @@ module Muffon
           )
         end
 
-        def post_params
-          {
-            content:,
-            tracks:
-          }
-        end
-
         def by_community?
           @args[:by_community].present? &&
             community_owner?
@@ -60,6 +53,8 @@ module Muffon
             @args[:images]
           )
         end
+
+        alias post_params sendable_params
       end
     end
   end

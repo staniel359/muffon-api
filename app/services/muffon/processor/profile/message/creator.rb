@@ -41,10 +41,14 @@ module Muffon
           end
 
           def message_params
+            message_conversation_params
+              .merge(sendable_params)
+          end
+
+          def message_conversation_params
             {
-              conversation_id: conversation.id,
-              content:,
-              tracks:
+              conversation_id:
+                conversation.id
             }
           end
 

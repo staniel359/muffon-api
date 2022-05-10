@@ -13,6 +13,8 @@ module Muffon
             content: message.content,
             profile: profile_data,
             images:,
+            artists:,
+            albums:,
             tracks:,
             created: created_formatted
           }.compact
@@ -35,15 +37,31 @@ module Muffon
         end
 
         def images
-          message
-            .images_data
-            .presence
+          message.images_data
         end
 
-        def tracks
-          message.tracks.map do |t|
-            track_data_formatted(t)
-          end
+        def artists_list
+          message.artists
+        end
+
+        def artist_data_formatted(artist)
+          Muffon::Sendable::Artist.call(
+            artist:
+          )
+        end
+
+        def albums_list
+          message.albums
+        end
+
+        def album_data_formatted(album)
+          Muffon::Sendable::Album.call(
+            album:
+          )
+        end
+
+        def tracks_list
+          message.tracks
         end
 
         def track_data_formatted(track)
