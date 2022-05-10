@@ -12,10 +12,8 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Message::Creator.call(
               params.slice(
-                *%i[
-                  profile_id token other_profile_id
-                  content tracks images
-                ]
+                *%i[profile_id token other_profile_id text],
+                *sendable_attachment_types
               )
             )
           end

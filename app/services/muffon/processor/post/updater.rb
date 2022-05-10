@@ -5,10 +5,9 @@ module Muffon
         private
 
         def primary_args
-          super + [
-            @args[:post_id],
-            content_arg
-          ]
+          super +
+            [@args[:post_id]] +
+            content_args
         end
 
         def no_data?

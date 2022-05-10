@@ -32,10 +32,8 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Post::Creator.call(
               params.slice(
-                *%i[
-                  profile_id token other_profile_id
-                  content tracks images
-                ]
+                *%i[profile_id token other_profile_id text],
+                *sendable_attachment_types
               )
             )
           end
@@ -43,10 +41,8 @@ module API
           def update_data
             ::Muffon::Processor::Profile::Post::Updater.call(
               params.slice(
-                *%i[
-                  profile_id token post_id
-                  content tracks images
-                ]
+                *%i[profile_id token post_id text],
+                *sendable_attachment_types
               )
             )
           end

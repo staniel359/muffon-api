@@ -23,6 +23,10 @@ module API
 
         data.dig(:error, :code) || 200
       end
+
+      def sendable_attachment_types
+        ::Muffon::Utils::Sendable::ATTACHMENT_TYPES
+      end
     end
   end
 end

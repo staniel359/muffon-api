@@ -36,13 +36,9 @@ module API
 
         def create_data
           ::Muffon::Processor::Profile::Creator.call(
-            create_params
-          )
-        end
-
-        def create_params
-          params.slice(
-            *::Muffon::Profile::Base::PARAMS
+            params.slice(
+              *::Muffon::Profile::Base::PARAMS
+            )
           )
         end
 
@@ -56,14 +52,10 @@ module API
 
         def update_data
           ::Muffon::Processor::Profile::Updater.call(
-            update_params
-          )
-        end
-
-        def update_params
-          params.slice(
-            *%i[profile_id token],
-            *::Muffon::Profile::Base::PARAMS
+            params.slice(
+              *%i[profile_id token],
+              *::Muffon::Profile::Base::PARAMS
+            )
           )
         end
 

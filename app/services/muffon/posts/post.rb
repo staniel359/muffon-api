@@ -8,18 +8,15 @@ module Muffon
       private
 
       def data
-        post_base_data
-          .merge(post_extra_data)
-      end
-
-      def post_base_data
         {
           id: post.id,
           profile: profile_data,
           by_community: post.by_community?,
           community: community_data,
           post_type: post.post_type,
-          content: post.content
+          text: post.text,
+          created: created_formatted,
+          attachments: post.attachments_data
         }.compact
       end
 
@@ -32,7 +29,7 @@ module Muffon
           id: profile.id,
           nickname: profile.nickname,
           image: profile.image_data
-        }
+        }.compact
       end
 
       def profile
@@ -46,55 +43,11 @@ module Muffon
           id: community.id,
           title: community.title,
           image: community.image_data
-        }
+        }.compact
       end
 
       def community
         @community ||= post.community
-      end
-
-      def post_extra_data
-        {
-          images:,
-          artists:,
-          albums:,
-          tracks:,
-          created: created_formatted
-        }.compact
-      end
-
-      def images
-        post.images_data
-      end
-
-      def artists_list
-        post.artists
-      end
-
-      def artist_data_formatted(artist)
-        Muffon::Sendable::Artist.call(
-          artist:
-        )
-      end
-
-      def albums_list
-        post.albums
-      end
-
-      def album_data_formatted(album)
-        Muffon::Sendable::Album.call(
-          album:
-        )
-      end
-
-      def tracks_list
-        post.tracks
-      end
-
-      def track_data_formatted(track)
-        Muffon::Sendable::Track.call(
-          track:
-        )
       end
 
       def created_formatted

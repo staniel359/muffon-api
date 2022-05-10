@@ -9,17 +9,17 @@ module Muffon
 
       def data
         {
-          title: track['title'],
-          player_id: track['player_id'],
-          artist: track['artist'],
-          artists: track['artists'],
-          album: track['album'],
-          image: track['image']
-        }
+          title: track[:title],
+          player_id: track[:player_id],
+          artist: track[:artist],
+          artists: track[:artists],
+          album: track[:album],
+          image: track[:image]
+        }.compact
       end
 
       def track
-        @args[:track]
+        @args[:track].deep_symbolize_keys
       end
     end
   end

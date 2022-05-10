@@ -33,9 +33,10 @@ module API
             ::Muffon::Processor::Community::Post::Creator.call(
               params.slice(
                 *%i[
-                  community_id profile_id token
-                  by_community content tracks images
-                ]
+                  community_id profile_id
+                  token by_community text
+                ],
+                *sendable_attachment_types
               )
             )
           end
@@ -44,9 +45,10 @@ module API
             ::Muffon::Processor::Community::Post::Updater.call(
               params.slice(
                 *%i[
-                  community_id post_id profile_id token
-                  by_community content tracks images
-                ]
+                  community_id post_id profile_id
+                  token by_community text
+                ],
+                *sendable_attachment_types
               )
             )
           end

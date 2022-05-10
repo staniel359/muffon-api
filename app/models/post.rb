@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   include PostDecorator
+  include SendableDecorator
 
   has_many_attached :images
 

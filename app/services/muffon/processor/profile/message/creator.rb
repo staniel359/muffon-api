@@ -11,9 +11,8 @@ module Muffon
             [
               @args[:profile_id],
               @args[:token],
-              @args[:other_profile_id],
-              content_arg
-            ]
+              @args[:other_profile_id]
+            ] + content_args
           end
 
           def data

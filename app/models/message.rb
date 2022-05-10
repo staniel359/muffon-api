@@ -1,5 +1,6 @@
 class Message < ApplicationRecord
   include MessageDecorator
+  include SendableDecorator
 
   has_many_attached :images
 

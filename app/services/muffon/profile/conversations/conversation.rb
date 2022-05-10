@@ -25,7 +25,7 @@ module Muffon
             id: other_profile.id,
             nickname: other_profile.nickname,
             image: other_profile.image_data
-          }
+          }.compact
         end
 
         def other_profile
@@ -38,13 +38,11 @@ module Muffon
         def last_message_data
           {
             profile: last_message_profile_data,
-            content: last_message.content,
-            with_artists: last_message_with_artists?,
-            with_albums: last_message_with_albums?,
-            with_tracks: last_message_with_tracks?,
-            with_images: last_message_with_images?,
-            created: last_message_created
-          }
+            text: last_message.text,
+            created: last_message_created,
+            attachments:
+              last_message.attachments_minimal_data,
+          }.compact
         end
 
         def last_message_profile_data
@@ -52,7 +50,7 @@ module Muffon
             id: last_message_profile.id,
             nickname: last_message_profile.nickname,
             image: last_message_profile.image_data
-          }
+          }.compact
         end
 
         def last_message_profile
@@ -66,30 +64,6 @@ module Muffon
             .messages
             .created_desc_ordered
             .first
-        end
-
-        def last_message_with_artists?
-          last_message
-            .artists
-            .present?
-        end
-
-        def last_message_with_albums?
-          last_message
-            .albums
-            .present?
-        end
-
-        def last_message_with_tracks?
-          last_message
-            .tracks
-            .present?
-        end
-
-        def last_message_with_images?
-          last_message
-            .images
-            .present?
         end
 
         def last_message_created

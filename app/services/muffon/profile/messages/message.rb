@@ -10,18 +10,12 @@ module Muffon
 
         def data
           {
-            content: message.content,
             profile: profile_data,
-            images:,
-            artists:,
-            albums:,
-            tracks:,
-            created: created_formatted
+            text: message.text,
+            created: created_formatted,
+            attachments:
+              message.attachments_data
           }.compact
-        end
-
-        def message
-          @args[:message]
         end
 
         def profile_data
@@ -29,45 +23,15 @@ module Muffon
             id: message_profile.id,
             nickname: message_profile.nickname,
             image: message_profile.image_data
-          }
+          }.compact
         end
 
         def message_profile
           @message_profile ||= message.profile
         end
 
-        def images
-          message.images_data
-        end
-
-        def artists_list
-          message.artists
-        end
-
-        def artist_data_formatted(artist)
-          Muffon::Sendable::Artist.call(
-            artist:
-          )
-        end
-
-        def albums_list
-          message.albums
-        end
-
-        def album_data_formatted(album)
-          Muffon::Sendable::Album.call(
-            album:
-          )
-        end
-
-        def tracks_list
-          message.tracks
-        end
-
-        def track_data_formatted(track)
-          Muffon::Sendable::Track.call(
-            track:
-          )
+        def message
+          @args[:message]
         end
 
         def created_formatted

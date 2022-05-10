@@ -5,9 +5,7 @@ module Muffon
         private
 
         def primary_args
-          super + [
-            content_arg
-          ]
+          super + content_args
         end
 
         def process_post
