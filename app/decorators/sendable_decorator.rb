@@ -63,12 +63,15 @@ module SendableDecorator
     )
   end
 
-  def attachments_minimal_data
-    attachment_types.map do |t|
-      [
-        "with_#{t}",
-        send(t).present?
-      ]
-    end.to_h.compact_blank
+  def playlists_formatted
+    playlists.map do |p|
+      playlist_data_formatted(p)
+    end
+  end
+
+  def playlist_data_formatted(playlist)
+    Muffon::Sendable::Playlist.call(
+      playlist:
+    )
   end
 end
