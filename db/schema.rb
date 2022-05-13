@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_13_071854) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_13_092438) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -213,7 +213,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_13_071854) do
     t.bigint "conversation_id", null: false
     t.bigint "profile_id", null: false
     t.text "text"
-    t.integer "track_ids", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "tracks", default: [], array: true
@@ -255,7 +254,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_13_071854) do
     t.bigint "community_id"
     t.boolean "by_community", default: false
     t.integer "post_type"
-    t.integer "track_ids", default: [], array: true
     t.jsonb "tracks", default: [], array: true
     t.jsonb "albums", default: [], array: true
     t.jsonb "artists", default: [], array: true
