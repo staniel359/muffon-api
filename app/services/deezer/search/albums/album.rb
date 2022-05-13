@@ -15,19 +15,18 @@ module Deezer
             .merge(album_data)
         end
 
+        def album
+          @args[:album]
+        end
+
         def album_data
           {
-            source_id:,
-            deezer_id:,
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:,
             image: image_data
           }.compact
-        end
-
-        def album
-          @args[:album]
         end
       end
     end

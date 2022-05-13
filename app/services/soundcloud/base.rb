@@ -1,6 +1,6 @@
 module SoundCloud
   class Base < Muffon::Base
-    SOURCE_ID = 'soundcloud'.freeze
+    SOURCE_NAME = 'soundcloud'.freeze
 
     private
 
@@ -20,8 +20,16 @@ module SoundCloud
 
     def artist_data_formatted(artist)
       {
-        name: artist['username'],
-        soundcloud_id: artist['id']
+        source:
+          artist_source_data(artist),
+        name: artist['username']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
       }
     end
 

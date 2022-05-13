@@ -11,9 +11,8 @@ module Deezer
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          deezer_id:,
           title:,
           extra_title:,
           artist: artist_names_data,
@@ -40,7 +39,6 @@ module Deezer
 
       def audio_data
         {
-          source_id:,
           present: audio_link.present?,
           link: audio_link
         }
@@ -49,7 +47,7 @@ module Deezer
       def audio_link
         @audio_link ||=
           Deezer::Utils::Audio::File.call(
-            track_id: deezer_id
+            track_id: @args[:track_id]
           )
       end
     end

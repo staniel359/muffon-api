@@ -12,9 +12,8 @@ module Genius
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          genius_id:,
           title:,
           artist: artist_names_data,
           artists:
@@ -23,7 +22,7 @@ module Genius
 
       def track_extra_data
         {
-          album: albums&.first,
+          album: album_data,
           image: image_data,
           release_date:,
           description:
@@ -31,16 +30,6 @@ module Genius
           tags: tags_truncated,
           lyrics: lyrics_truncated
         }.compact
-      end
-
-      def albums_list
-        track['albums']
-      end
-
-      def album_data_formatted(album)
-        Genius::Track::Info::Album.call(
-          album:
-        )
       end
 
       def release_date

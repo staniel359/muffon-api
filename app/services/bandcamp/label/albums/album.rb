@@ -11,23 +11,22 @@ module Bandcamp
         private
 
         def data
-          album_base_data
+          muffon_data
+            .merge(album_base_data)
             .merge(album_extra_data)
-        end
-
-        def album_base_data
-          {
-            source_id:,
-            bandcamp_id:,
-            bandcamp_model:,
-            title:,
-            artist: artist_names_data,
-            artists:
-          }
         end
 
         def album
           @args[:album]
+        end
+
+        def album_base_data
+          {
+            source: source_data,
+            title:,
+            artist: artist_names_data,
+            artists:
+          }
         end
 
         def album_extra_data

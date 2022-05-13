@@ -22,7 +22,9 @@ module Deezer
 
       def payload
         {
-          sng_ids: [@args[:track_id]]
+          sng_ids: [
+            @args[:track_id]
+          ]
         }.to_json
       end
 

@@ -28,10 +28,9 @@ module Discogs
       end
 
       def track_data_formatted(track)
-        track['artists'] ||= artists_list
-
         Discogs::Album::Info::Track.call(
           track:,
+          artists: artists_list,
           profile_id: @args[:profile_id]
         )
       end

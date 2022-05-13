@@ -40,10 +40,14 @@ module YouTube
 
       def video_base_data
         {
+          source: source_data,
           title:,
-          youtube_id: video['id'],
           channel: channel_data
         }
+      end
+
+      def youtube_id
+        video['id']
       end
     end
   end

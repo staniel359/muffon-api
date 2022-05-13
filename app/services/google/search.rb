@@ -1,9 +1,11 @@
 module Google
   class Search < Muffon::Base
+    COLLECTION_NAME = 'results'.freeze
+    PAGE_LIMIT = 10
+    PAGES_LIMIT = 10
     BASE_LINK =
       'https://www.googleapis.com'\
       '/customsearch/v1/siterestrict'.freeze
-    COLLECTION_NAME = 'results'.freeze
     FIELDS = <<~FIELDS.freeze
       items(
         pagemap(
@@ -22,8 +24,6 @@ module Google
         )
       )
     FIELDS
-    PAGE_LIMIT = 10
-    PAGES_LIMIT = 10
     include Muffon::Utils::Pagination
 
     private
@@ -40,8 +40,7 @@ module Google
     end
 
     def collection_list
-      @collection_list ||=
-        response_data['items']
+      response_data['items']
     end
 
     def link

@@ -15,10 +15,13 @@ module Odnoklassniki
             .merge(album_data)
         end
 
+        def album
+          @args[:album]
+        end
+
         def album_data
           {
-            source_id:,
-            odnoklassniki_id:,
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:,
@@ -26,10 +29,6 @@ module Odnoklassniki
             release_date:,
             listeners_count:
           }.compact
-        end
-
-        def album
-          @args[:album]
         end
       end
     end

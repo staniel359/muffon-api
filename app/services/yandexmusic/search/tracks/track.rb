@@ -16,11 +16,14 @@ module YandexMusic
             .merge(track_extra_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_base_data
           {
-            source_id:,
+            source: source_data,
             player_id:,
-            yandex_music_id:,
             title:,
             extra_title:,
             artist: artist_names_data,
@@ -28,13 +31,9 @@ module YandexMusic
           }.compact
         end
 
-        def track
-          @args[:track]
-        end
-
         def track_extra_data
           {
-            album: albums&.first,
+            album: album_data,
             image: image_data,
             duration:,
             duration_seconds:,

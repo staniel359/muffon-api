@@ -2,7 +2,8 @@ module Odnoklassniki
   module Search
     class Artists
       class Artist < Odnoklassniki::Search::Artists
-        include Muffon::Utils::Artist
+        include Odnoklassniki::Utils::Artist
+
         def call
           data
         end
@@ -14,24 +15,16 @@ module Odnoklassniki
             .merge(artist_data)
         end
 
-        def artist_data
-          {
-            odnoklassniki_id:,
-            name:,
-            image: image_data
-          }.compact
-        end
-
-        def name
-          artist['name']
-        end
-
         def artist
           @args[:artist]
         end
 
-        def odnoklassniki_id
-          artist['id']
+        def artist_data
+          {
+            source: source_data,
+            name:,
+            image: image_data
+          }.compact
         end
 
         def image_data

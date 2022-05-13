@@ -1,7 +1,8 @@
 module LastFM
   class Base < Muffon::Base
-    BASE_LINK = 'https://ws.audioscrobbler.com/2.0'.freeze
-    SOURCE_ID = 'lastfm'.freeze
+    BASE_LINK =
+      'https://ws.audioscrobbler.com/2.0'.freeze
+    SOURCE_NAME = 'lastfm'.freeze
 
     private
 
@@ -82,7 +83,14 @@ module LastFM
     end
 
     def artist_data
-      { name: artist_name }
+      {
+        source: artist_source_data,
+        name: artist_name
+      }
+    end
+
+    def artist_source_data
+      { name: source_name }
     end
 
     def image_data_formatted(image)

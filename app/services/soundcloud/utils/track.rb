@@ -9,16 +9,19 @@ module SoundCloud
         track['title']
       end
 
-      def soundcloud_id
-        track['id']
-      end
-
       def artist_name
         artist['username']
       end
 
       def artist
         track['user']
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: track['id']
+        }
       end
 
       def image_data
@@ -32,11 +35,7 @@ module SoundCloud
       end
 
       def audio_data
-        {
-          source_id:,
-          present: audio_present?,
-          track_id: soundcloud_id
-        }
+        { present: audio_present? }
       end
 
       def audio_present?

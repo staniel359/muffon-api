@@ -12,25 +12,16 @@ module VK
 
         def data
           muffon_data
-            .merge(album_id_data)
-            .merge(album_base_data)
-        end
-
-        def album_id_data
-          {
-            source_id:,
-            vk_id:,
-            vk_owner_id:,
-            vk_access_key:
-          }
+            .merge(album_data)
         end
 
         def album
           @args[:album]
         end
 
-        def album_base_data
+        def album_data
           {
+            source: source_data,
             title:,
             extra_title:,
             artist: artist_names_data,

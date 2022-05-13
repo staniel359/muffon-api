@@ -2,6 +2,8 @@ module Bandcamp
   module Label
     class Artists
       class Artist < Bandcamp::Label::Artists
+        include Bandcamp::Utils::Artist
+
         def call
           data
         end
@@ -9,31 +11,20 @@ module Bandcamp
         private
 
         def data
-          {
-            name: artist['name'],
-            bandcamp_id: artist['id'],
-            bandcamp_model: 'artist',
-            image: image_data
-          }.compact
+          muffon_data
+            .merge(artist_data)
         end
 
         def artist
           @args[:artist]
         end
 
-        def image_data
-          image_data_formatted(
-            image
-          )
-        end
-
-        def image
-          'https://f4.bcbits.com/img'\
-            "/00#{image_id}_10.jpg"
-        end
-
-        def image_id
-          artist['image_id']
+        def artist_data
+          {
+            source: source_data,
+            name:,
+            image: image_data
+          }.compact
         end
       end
     end

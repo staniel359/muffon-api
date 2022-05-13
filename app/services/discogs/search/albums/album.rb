@@ -15,10 +15,13 @@ module Discogs
             .merge(album_data)
         end
 
+        def album
+          @args[:album]
+        end
+
         def album_data
           {
-            source_id:,
-            discogs_id:,
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:,
@@ -36,10 +39,6 @@ module Discogs
             album['title'].match(
               /(.+) - (.+)/
             )
-        end
-
-        def album
-          @args[:album]
         end
 
         def artists

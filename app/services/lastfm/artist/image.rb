@@ -6,11 +6,15 @@ module LastFM
       private
 
       def artist_data
+        update_image
+
+        { image: find_artist.image_data }
+      end
+
+      def update_image
         find_artist.process_image(
           image
         )
-
-        { image: find_artist.image_data }
       end
 
       def image

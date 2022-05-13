@@ -1,16 +1,23 @@
 module Spotify
   module Artist
     class Albums < Spotify::Artist::Base
+      COLLECTION_NAME = 'albums'.freeze
       ALBUM_TYPES = {
         album: 'album',
         single: 'single',
         compilation: 'compilation',
         appearance: 'appears_on'
       }.freeze
-      COLLECTION_NAME = 'albums'.freeze
       include Spotify::Utils::Pagination
 
       private
+
+      def primary_args
+        [
+          @args[:artist_id],
+          @args[:album_type]
+        ]
+      end
 
       def no_data?
         artist_info_data.blank?
@@ -21,13 +28,6 @@ module Spotify
           Spotify::Artist::Info.call(
             artist_id: @args[:artist_id]
           )[:artist]
-      end
-
-      def primary_args
-        [
-          @args[:artist_id],
-          @args[:album_type]
-        ]
       end
 
       def collection_list

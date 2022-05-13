@@ -2,7 +2,7 @@ module Deezer
   module Artist
     class Albums < Deezer::Artist::Base
       API_METHOD = 'album.getDiscography'.freeze
-      ALBUM_TYPE_IDS = {
+      ALBUM_TYPES = {
         album: '1',
         single: '0'
       }.freeze
@@ -30,10 +30,9 @@ module Deezer
       end
 
       def albums_list
-        @albums_list ||=
-          response_data.dig(
-            'results', 'data'
-          )
+        response_data.dig(
+          'results', 'data'
+        )
       end
 
       def payload
@@ -74,7 +73,7 @@ module Deezer
       end
 
       def album_type_id
-        ALBUM_TYPE_IDS[
+        ALBUM_TYPES[
           @args[:album_type].to_sym
         ]
       end

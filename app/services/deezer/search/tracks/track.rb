@@ -16,20 +16,19 @@ module Deezer
             .merge(track_extra_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_base_data
           {
-            source_id:,
+            source: source_data,
             player_id:,
-            deezer_id:,
             title:,
             extra_title:,
             artist: artist_names_data,
             artists:
           }.compact
-        end
-
-        def track
-          @args[:track]
         end
 
         def track_extra_data

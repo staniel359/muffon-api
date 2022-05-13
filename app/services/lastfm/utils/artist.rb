@@ -8,6 +8,10 @@ module LastFM
       def name
         artist['name']
       end
+
+      def source_data
+        { name: source_name }
+      end
     end
   end
 end

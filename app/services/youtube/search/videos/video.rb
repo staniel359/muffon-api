@@ -14,8 +14,8 @@ module YouTube
           return if snippet.blank?
 
           {
+            source: source_data,
             title:,
-            youtube_id:,
             channel: channel_data,
             image: image_data_formatted,
             publish_date:

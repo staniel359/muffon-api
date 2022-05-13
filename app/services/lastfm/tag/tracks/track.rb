@@ -2,7 +2,7 @@ module LastFM
   module Tag
     class Tracks
       class Track < LastFM::Tag::Tracks
-        include Muffon::Utils::Track
+        include LastFM::Utils::Track
 
         def call
           data
@@ -13,16 +13,6 @@ module LastFM
         def data
           muffon_data
             .merge(track_data)
-        end
-
-        def track_data
-          {
-            source_id:,
-            player_id:,
-            title:,
-            artist: artist_names_data,
-            artists:
-          }
         end
 
         def title
@@ -39,6 +29,16 @@ module LastFM
           track.css(
             '.chartlist-artist a'
           )[0].text
+        end
+
+        def track_data
+          {
+            source: source_data,
+            player_id:,
+            title:,
+            artist: artist_names_data,
+            artists:
+          }
         end
       end
     end

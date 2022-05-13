@@ -2,7 +2,7 @@ module VK
   module Search
     class Artists
       class Artist < VK::Search::Artists
-        include Muffon::Utils::Artist
+        include VK::Utils::Artist
 
         def call
           data
@@ -15,26 +15,16 @@ module VK
             .merge(artist_data)
         end
 
-        def artist_data
-          {
-            vk_id: artist['id'],
-            name:,
-            image: image_data
-          }.compact
-        end
-
-        def name
-          artist['name']
-        end
-
         def artist
           @args[:artist]
         end
 
-        def image_data
-          image_data_formatted(
-            artist['photo'], 'artist'
-          )
+        def artist_data
+          {
+            source: source_data,
+            name:,
+            image: image_data
+          }.compact
         end
       end
     end

@@ -12,7 +12,7 @@ module Discogs
 
       def album_base_data
         {
-          source_id:,
+          source: source_data,
           title:,
           artist: artist_names_data,
           artists:
@@ -41,8 +41,16 @@ module Discogs
 
       def label_data_formatted(label)
         {
-          name: label['name'],
-          discogs_id: label['id']
+          source:
+            label_source_data(label),
+          name: label['name']
+        }
+      end
+
+      def label_source_data(label)
+        {
+          name: source_name,
+          id: label['id']
         }
       end
     end

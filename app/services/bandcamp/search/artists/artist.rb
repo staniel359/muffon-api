@@ -2,7 +2,7 @@ module Bandcamp
   module Search
     class Artists
       class Artist < Bandcamp::Search::Artists
-        include Muffon::Utils::Artist
+        include Bandcamp::Utils::Artist
 
         def call
           data
@@ -15,15 +15,6 @@ module Bandcamp
             .merge(artist_data)
         end
 
-        def artist_data
-          {
-            name:,
-            image: image_data,
-            bandcamp_slug:,
-            bandcamp_model:
-          }.compact
-        end
-
         def name
           model_artist_name(
             artist
@@ -32,6 +23,22 @@ module Bandcamp
 
         def artist
           @args[:artist]
+        end
+
+        def artist_data
+          {
+            source: source_data,
+            name:,
+            image: image_data
+          }.compact
+        end
+
+        def source_data
+          {
+            name: source_name,
+            slug: bandcamp_slug,
+            model: bandcamp_model
+          }
         end
 
         def bandcamp_slug
@@ -46,10 +53,8 @@ module Bandcamp
           )
         end
 
-        def image_data
-          image_data_formatted(
-            artist[:image]
-          )
+        def image
+          artist[:image]
         end
       end
     end

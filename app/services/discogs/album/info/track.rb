@@ -15,17 +15,6 @@ module Discogs
             .merge(track_data)
         end
 
-        def track_data
-          {
-            source_id: 'lastfm',
-            player_id:,
-            title:,
-            artist: artist_names_data,
-            artists:,
-            duration:
-          }
-        end
-
         def title
           track['title']
         end
@@ -34,8 +23,24 @@ module Discogs
           @args[:track]
         end
 
+        def track_data
+          {
+            source: source_data,
+            player_id:,
+            title:,
+            artist: artist_names_data,
+            artists:,
+            duration:
+          }
+        end
+
+        def source_data
+          { name: 'lastfm' }
+        end
+
         def artists_list
-          track['artists']
+          track['artists'] ||
+            @args[:artists]
         end
 
         def duration

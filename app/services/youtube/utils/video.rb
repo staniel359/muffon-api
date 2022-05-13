@@ -13,10 +13,24 @@ module YouTube
         video['snippet']
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: youtube_id
+        }
+      end
+
       def channel_data
         {
-          title: snippet['channelTitle'],
-          youtube_id: snippet['channelId']
+          source: channel_source_data,
+          title: snippet['channelTitle']
+        }
+      end
+
+      def channel_source_data
+        {
+          name: source_name,
+          id: snippet['channelId']
         }
       end
 

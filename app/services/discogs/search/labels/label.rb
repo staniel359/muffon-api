@@ -12,8 +12,8 @@ module Discogs
 
         def data
           {
+            source: source_data,
             name:,
-            discogs_id:,
             image: image_data
           }.compact
         end

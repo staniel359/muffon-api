@@ -2,7 +2,7 @@ module Deezer
   class Base < Muffon::Base
     BASE_LINK =
       'https://www.deezer.com/ajax/gw-light.php'.freeze
-    SOURCE_ID = 'deezer'.freeze
+    SOURCE_NAME = 'deezer'.freeze
 
     private
 
@@ -49,17 +49,22 @@ module Deezer
       )
     end
 
-    def artist_name
-      artist_names
-    end
-
     def artist_data_formatted(artist)
       {
-        name: artist['ART_NAME'],
-        deezer_id: artist['ART_ID'].to_i
+        source:
+          artist_source_data(artist),
+        name: artist['ART_NAME']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['ART_ID'].to_i
       }
     end
 
     alias response post_response
+    alias artist_name artist_names
   end
 end

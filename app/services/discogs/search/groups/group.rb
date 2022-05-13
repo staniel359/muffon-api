@@ -16,23 +16,29 @@ module Discogs
             .merge(group_extra_data)
         end
 
+        def album
+          @args[:group]
+        end
+
         def group_base_data
           {
-            source_id:,
-            discogs_id: album['master_id'],
-            discogs_type: 'group',
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:
           }
         end
 
-        def title
-          full_title[2]
+        def discogs_id
+          album['master_id']
         end
 
-        def album
-          @args[:group]
+        def discogs_model
+          'group'
+        end
+
+        def title
+          full_title[2]
         end
 
         def full_title

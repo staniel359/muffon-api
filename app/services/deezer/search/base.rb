@@ -15,24 +15,23 @@ module Deezer
       end
 
       def collection_list
-        @collection_list ||=
-          response_data.dig(
-            'results', 'data'
-          )
+        response_data.dig(
+          'results', 'data'
+        )
       end
 
       def payload
         {
           filter: 'all',
           nb: limit,
-          output:,
+          output: model_name.upcase,
           query: @args[:query],
           start: offset
         }.to_json
       end
 
-      def output
-        self.class::MODEL_NAME.upcase
+      def model_name
+        self.class::MODEL_NAME
       end
 
       def data

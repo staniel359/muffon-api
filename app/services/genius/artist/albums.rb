@@ -19,10 +19,9 @@ module Genius
       end
 
       def albums_list
-        @albums_list ||=
-          response_data.dig(
-            'response', 'albums'
-          )
+        response_data.dig(
+          'response', 'albums'
+        )
       end
 
       def link

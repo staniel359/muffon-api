@@ -9,21 +9,23 @@ module Spotify
         track['name']
       end
 
-      def spotify_id
-        track['id']
-      end
-
       def artists_list
         track['artists']
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: track['id']
+        }
       end
 
       def album_data
         return if album.blank?
 
         {
-          source_id:,
-          spotify_id: album_id,
-          title: album_title
+          source: album_source_data,
+          title: album['name']
         }
       end
 
@@ -31,12 +33,11 @@ module Spotify
         track['album']
       end
 
-      def album_id
-        album['id']
-      end
-
-      def album_title
-        album['name']
+      def album_source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data
@@ -52,11 +53,13 @@ module Spotify
       end
 
       def audio_data
-        {
-          source_id:,
-          present: true,
-          track_id: spotify_id
-        }
+        { present: audio_present? }
+      end
+
+      def audio_present?
+        track[
+          'available_markets'
+        ].include?('BY')
       end
     end
   end

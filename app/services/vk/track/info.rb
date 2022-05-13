@@ -12,9 +12,8 @@ module VK
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          vk_id:,
           title:,
           extra_title:,
           artist: artist_names_data,
@@ -34,7 +33,6 @@ module VK
 
       def audio_data
         {
-          source_id:,
           present: audio_link.present?,
           link: audio_link
         }

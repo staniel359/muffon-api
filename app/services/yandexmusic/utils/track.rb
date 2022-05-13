@@ -9,29 +9,42 @@ module YandexMusic
         track['title']
       end
 
-      def extra_title
-        track['version']
-      end
-
-      def yandex_music_id
-        track['id'].to_i
-      end
-
       def artists_list
         track['artists']
       end
 
-      def albums_list
-        track['albums']
+      def source_data
+        {
+          name: source_name,
+          id: track['id'].to_i
+        }
       end
 
-      def album_data_formatted(album)
+      def extra_title
+        track['version']
+      end
+
+      def album_data
+        return if album.blank?
+
         {
-          source_id:,
-          yandex_music_id: album['id'],
+          source: album_source_data,
           title: album['title'],
           extra_title: album['version']
         }.compact
+      end
+
+      def album
+        track.dig(
+          'albums', 0
+        )
+      end
+
+      def album_source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data
@@ -45,14 +58,10 @@ module YandexMusic
       end
 
       def audio_data
-        {
-          source_id:,
-          present: track_present?,
-          track_id: yandex_music_id
-        }
+        { present: audio_present? }
       end
 
-      def track_present?
+      def audio_present?
         track['available']
       end
     end

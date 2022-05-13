@@ -41,7 +41,9 @@ module Google
       end
 
       def link
-        opengraph_data('url')
+        opengraph_data(
+          'url'
+        )
       end
 
       def image_data

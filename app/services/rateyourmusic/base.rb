@@ -1,6 +1,6 @@
 module RateYourMusic
   class Base < Muffon::Base
-    SOURCE_ID = 'rateyourmusic'.freeze
+    SOURCE_NAME = 'rateyourmusic'.freeze
 
     private
 
@@ -60,5 +60,6 @@ module RateYourMusic
     end
 
     alias response post_response
+    alias source_id source_name
   end
 end

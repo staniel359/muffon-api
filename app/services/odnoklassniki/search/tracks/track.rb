@@ -16,19 +16,18 @@ module Odnoklassniki
             .merge(track_extra_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_base_data
           {
-            source_id:,
+            source: source_data,
             player_id:,
-            odnoklassniki_id:,
             title:,
             artist: artist_names_data,
             artists:
           }
-        end
-
-        def track
-          @args[:track]
         end
 
         def track_extra_data
@@ -42,12 +41,19 @@ module Odnoklassniki
         end
 
         def album_data
-          return if track['albumId'].blank?
+          return if album_id.blank?
 
+          { source: album_source_data }
+        end
+
+        def album_id
+          track['albumId']
+        end
+
+        def album_source_data
           {
-            source_id:,
-            odnoklassniki_id:
-              track['albumId']
+            name: source_name,
+            id: album_id
           }
         end
 

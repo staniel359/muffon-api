@@ -9,12 +9,15 @@ module Odnoklassniki
         album['name']
       end
 
-      def odnoklassniki_id
-        album['id']
-      end
-
       def artists_list
         album['allArtists']
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data

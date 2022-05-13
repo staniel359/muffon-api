@@ -15,20 +15,19 @@ module Spotify
             .merge(album_data)
         end
 
+        def album
+          @args[:album]
+        end
+
         def album_data
           {
-            source_id:,
-            spotify_id:,
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:,
             image: image_data,
             release_date:
           }.compact
-        end
-
-        def album
-          @args[:album]
         end
       end
     end

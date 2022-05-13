@@ -1,6 +1,12 @@
 module Bandcamp
   module Search
     class Base < Bandcamp::Base
+      LINK_REGEX = %r{
+        (?=https?://)?
+        ([\w-]+).bandcamp.com
+        (?:(?:/(album|track))
+        (?:/([\w\-]+))?)?
+      }x
       include Muffon::Utils::Pagination
 
       private
@@ -19,7 +25,8 @@ module Bandcamp
       def params
         {
           query: @args[:query],
-          scope: "bandcamp_#{collection_name}",
+          scope:
+            "bandcamp_#{collection_name}",
           page: @args[:page]
         }
       end
@@ -48,13 +55,17 @@ module Bandcamp
 
       def model_artist_data(item)
         {
-          name: model_artist_name(item),
-          bandcamp_slug: model_artist_slug(item)
+          source:
+            model_artist_source_data(item),
+          name: model_artist_name(item)
         }
       end
 
-      def model_artist_name(item)
-        item[:site_name] || 'Bandcamp'
+      def model_artist_source_data(item)
+        {
+          name: source_name,
+          slug: model_artist_slug(item)
+        }
       end
 
       def model_artist_slug(item)
@@ -66,9 +77,10 @@ module Bandcamp
       def link_data(link)
         return {} if link.blank?
 
-        artist, model, title = link.scan(
-          link_regexp
-        ).flatten
+        artist, model, title =
+          link.scan(
+            LINK_REGEX
+          ).flatten
 
         {
           artist: artist.to_s,
@@ -77,13 +89,9 @@ module Bandcamp
         }
       end
 
-      def link_regexp
-        %r{
-          (?=https?://)?
-          ([\w-]+).bandcamp.com
-          (?:(?:/(album|track))
-          (?:/([\w\-]+))?)?
-        }x
+      def model_artist_name(item)
+        item[:site_name] ||
+          'Various Artists'
       end
 
       def model_name(item)

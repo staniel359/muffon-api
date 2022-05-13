@@ -9,24 +9,27 @@ module YandexMusic
         album['title']
       end
 
-      def extra_title
-        album['version']
-      end
-
-      def yandex_music_id
-        album['id']
-      end
-
       def artists_list
         album['artists'].presence ||
-          [artist_data]
+          [artist]
       end
 
-      def artist_data
+      def artist
         {
           'id' => 171,
           'name' => 'Various artists'
         }
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
+      end
+
+      def extra_title
+        album['version']
       end
 
       def image_data

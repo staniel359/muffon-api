@@ -14,16 +14,6 @@ module LastFM
           .merge(album_data)
       end
 
-      def album_data
-        {
-          title:,
-          artist: artist_names_data,
-          artists:,
-          image: image_data,
-          release_date:
-        }.compact
-      end
-
       def title
         album.css(
           '.resource-list--release-list-item-name'
@@ -38,6 +28,17 @@ module LastFM
         album.css(
           '.resource-list--release-list-item-artist'
         ).text.strip
+      end
+
+      def album_data
+        {
+          source: source_data,
+          title:,
+          artist: artist_names_data,
+          artists:,
+          image: image_data,
+          release_date:
+        }.compact
       end
 
       def image

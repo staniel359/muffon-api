@@ -1,6 +1,8 @@
 module Bandcamp
   module Id
     class Artist < Bandcamp::Id::Base
+      include Bandcamp::Utils::Artist
+
       private
 
       def primary_args
@@ -15,13 +17,17 @@ module Bandcamp
 
       def id_data
         {
-          name: model_response_data['name'],
-          bandcamp_id:,
-          bandcamp_model: model_type
+          source: source_data,
+          name:
+            model_response_data['name']
         }
       end
 
-      def model_type
+      def bandcamp_id
+        model_response_data['id']
+      end
+
+      def bandcamp_model
         label? ? 'label' : 'artist'
       end
 

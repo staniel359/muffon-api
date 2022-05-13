@@ -12,9 +12,8 @@ module SoundCloud
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          soundcloud_id:,
           title:,
           artist: artist_names_data,
           artists:
@@ -45,7 +44,6 @@ module SoundCloud
 
       def audio_data
         {
-          source_id:,
           present: audio_link.present?,
           link: audio_link
         }
@@ -55,27 +53,9 @@ module SoundCloud
         return unless audio_present?
 
         @audio_link ||=
-          streams_response_data[
-            'http_mp3_128_url'
-          ]
-      rescue RestClient::Forbidden
-        nil
-      end
-
-      def streams_response_data
-        JSON.parse(
-          streams_response
-        )
-      end
-
-      def streams_response
-        RestClient.get(
-          streams_link, headers
-        )
-      end
-
-      def streams_link
-        "#{link}/streams"
+          SoundCloud::Utils::Audio::Link.call(
+            track_id: @args[:track_id]
+          )
       end
     end
   end

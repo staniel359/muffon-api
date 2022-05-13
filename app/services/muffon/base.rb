@@ -102,8 +102,8 @@ module Muffon
         )
     end
 
-    def source_id
-      self.class::SOURCE_ID
+    def source_name
+      self.class::SOURCE_NAME
     end
 
     def user_agent

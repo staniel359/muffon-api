@@ -1,7 +1,7 @@
 module Discogs
   class Base < Muffon::Base
     BASE_LINK = 'https://api.discogs.com'.freeze
-    SOURCE_ID = 'discogs'.freeze
+    SOURCE_NAME = 'discogs'.freeze
 
     private
 
@@ -26,11 +26,19 @@ module Discogs
 
     def artist_data_formatted(artist)
       {
+        source:
+          artist_source_data(artist),
         name: artist_name_formatted(
           artist['name']
-        ),
-        discogs_id: artist['id']
-      }.compact
+        )
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
+      }
     end
 
     def artist_name_formatted(name)

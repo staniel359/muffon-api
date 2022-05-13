@@ -8,10 +8,9 @@ module Genius
       end
 
       def tracks_list
-        @tracks_list ||=
-          response_data.dig(
-            'response', 'tracks'
-          )
+        response_data.dig(
+          'response', 'tracks'
+        )
       end
 
       def link
@@ -25,7 +24,8 @@ module Genius
       def track_data_formatted(track)
         Genius::Album::Tracks::Track.call(
           track: track['song'],
-          profile_id: @args[:profile_id]
+          profile_id:
+            @args[:profile_id]
         )
       end
     end

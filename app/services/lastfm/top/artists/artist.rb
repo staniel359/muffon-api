@@ -30,6 +30,7 @@ module LastFM
 
         def artist_data
           {
+            source: source_data,
             name:,
             image: image_data,
             listeners_count:

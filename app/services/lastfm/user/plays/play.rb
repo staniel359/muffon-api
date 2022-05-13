@@ -2,6 +2,8 @@ module LastFM
   module User
     class Plays
       class Play < LastFM::User::Plays
+        include LastFM::Utils::Track
+
         def call
           data
         end
@@ -10,12 +12,13 @@ module LastFM
 
         def data
           {
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:,
             album: album_data,
             image: image_data,
-            created:
+            created: created_formatted
           }.compact
         end
 
@@ -36,13 +39,20 @@ module LastFM
         def album_data
           return if album_title.blank?
 
-          { title: album_title }
+          {
+            source: album_source_data,
+            title: album_title
+          }
         end
 
         def album_title
           play.dig(
             'album', '#text'
           )
+        end
+
+        def album_source_data
+          { name: source_name }
         end
 
         def image_data
@@ -57,7 +67,13 @@ module LastFM
           )
         end
 
-        def created
+        def created_formatted
+          datetime_formatted(
+            raw_created
+          )
+        end
+
+        def raw_created
           play.dig(
             'date', '#text'
           ).to_datetime

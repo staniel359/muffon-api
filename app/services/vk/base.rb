@@ -1,7 +1,7 @@
 module VK
   class Base < Muffon::Base
     BASE_LINK = 'https://api.vk.com'.freeze
-    SOURCE_ID = 'vk'.freeze
+    SOURCE_NAME = 'vk'.freeze
 
     private
 
@@ -50,14 +50,18 @@ module VK
       secrets.vk[:api_secret]
     end
 
-    def artist_name
-      artist_names
-    end
-
     def artist_data_formatted(artist)
       {
-        vk_id: artist['id'],
+        source:
+          artist_source_data(artist),
         name: artist['name']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
       }.compact
     end
 
@@ -66,5 +70,7 @@ module VK
         image:, model:
       )
     end
+
+    alias artist_name artist_names
   end
 end

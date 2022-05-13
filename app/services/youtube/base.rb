@@ -1,5 +1,6 @@
 module YouTube
   class Base < Muffon::Base
+    SOURCE_NAME = 'youtube'.freeze
     BASE_LINK =
       'https://www.googleapis.com/youtube/v3'.freeze
 

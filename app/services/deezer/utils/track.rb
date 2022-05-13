@@ -9,6 +9,13 @@ module Deezer
         track['SNG_TITLE']
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: track['SNG_ID'].to_i
+        }
+      end
+
       def extra_title
         return if track['VERSION'].blank?
 
@@ -19,10 +26,6 @@ module Deezer
         extra
       end
 
-      def deezer_id
-        track['SNG_ID'].to_i
-      end
-
       def artists_list
         track['ARTISTS']
       end
@@ -31,8 +34,7 @@ module Deezer
         return if album_title.blank?
 
         {
-          source_id:,
-          deezer_id: album_deezer_id,
+          source: album_source_data,
           title: album_title
         }
       end
@@ -41,13 +43,17 @@ module Deezer
         track['ALB_TITLE']
       end
 
-      def album_deezer_id
-        track['ALB_ID'].to_i
+      def album_source_data
+        {
+          name: source_name,
+          id: track['ALB_ID'].to_i
+        }
       end
 
       def image_data
         image_data_formatted(
-          track['ALB_PICTURE'], 'track'
+          track['ALB_PICTURE'],
+          'track'
         )
       end
 
@@ -56,14 +62,10 @@ module Deezer
       end
 
       def audio_data
-        {
-          source_id:,
-          present: audio_file_present?,
-          track_id: deezer_id
-        }
+        { present: audio_present? }
       end
 
-      def audio_file_present?
+      def audio_present?
         track['FILESIZE'].to_i.positive?
       end
     end

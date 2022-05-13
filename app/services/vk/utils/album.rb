@@ -9,28 +9,25 @@ module VK
         album['title']
       end
 
-      def extra_title
-        album['subtitle']
-      end
-
-      def vk_id
-        album['id']
-      end
-
-      def vk_owner_id
-        album['owner_id']
-      end
-
-      def vk_access_key
-        album['access_key']
-      end
-
       def artists_list
         album['main_artists'] || [artist]
       end
 
       def artist
         { 'name' => album['artist'] }
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: album['id'],
+          owner_id: album['owner_id'],
+          access_key: album['access_key']
+        }
+      end
+
+      def extra_title
+        album['subtitle']
       end
 
       def image_data

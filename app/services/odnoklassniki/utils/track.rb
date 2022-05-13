@@ -21,6 +21,13 @@ module Odnoklassniki
         }
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: odnoklassniki_id
+        }
+      end
+
       def odnoklassniki_id
         track['idForDownload'] ||
           track['id']
@@ -37,11 +44,7 @@ module Odnoklassniki
       end
 
       def audio_data
-        {
-          source_id:,
-          present: audio_present?,
-          track_id: odnoklassniki_id
-        }
+        { present: audio_present? }
       end
 
       def audio_present?

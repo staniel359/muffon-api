@@ -9,16 +9,19 @@ module Genius
         album['name']
       end
 
-      def genius_id
-        album['id']
-      end
-
       def artist_name
         artist['name']
       end
 
       def artist
         album['artist']
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data

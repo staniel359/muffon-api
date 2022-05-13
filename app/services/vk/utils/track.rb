@@ -9,10 +9,6 @@ module VK
         track['title']
       end
 
-      def extra_title
-        track['subtitle']
-      end
-
       def artists_list
         track['main_artists'] || [artist]
       end
@@ -21,18 +17,26 @@ module VK
         { 'name' => track['artist'] }
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: vk_id
+        }
+      end
+
       def vk_id
         "#{track['owner_id']}_#{track['id']}"
+      end
+
+      def extra_title
+        track['subtitle']
       end
 
       def album_data
         return if album.blank?
 
         {
-          source_id:,
-          vk_id: album_id,
-          vk_owner_id: album_owner_id,
-          vk_access_key: album_access_key,
+          source: album_source_data,
           title: album_title
         }
       end
@@ -41,16 +45,13 @@ module VK
         track['album']
       end
 
-      def album_id
-        album['id']
-      end
-
-      def album_owner_id
-        album['owner_id']
-      end
-
-      def album_access_key
-        album['access_key']
+      def album_source_data
+        {
+          name: source_name,
+          id: album['id'],
+          owner_id: album['owner_id'],
+          access_key: album['access_key']
+        }
       end
 
       def album_title
@@ -72,11 +73,7 @@ module VK
       end
 
       def audio_data
-        {
-          source_id:,
-          present: vk_id.present?,
-          track_id: vk_id
-        }
+        { present: true }
       end
     end
   end

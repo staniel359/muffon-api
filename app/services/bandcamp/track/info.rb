@@ -12,9 +12,8 @@ module Bandcamp
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          bandcamp_id:,
           title:,
           artist: artist_names_data,
           artists:
@@ -38,17 +37,24 @@ module Bandcamp
         return if album_title.blank?
 
         {
-          source_id:,
-          bandcamp_id: album_bandcamp_id,
+          source: album_source_data,
+          title: album_title,
           artist: artist_names_data,
-          artists:,
-          title: album_title
+          artists:
+        }
+      end
+
+      def album_source_data
+        {
+          name: source_name,
+          id: album_bandcamp_id,
+          artist_id:
+            artist_bandcamp_id
         }
       end
 
       def album_title
-        @album_title ||=
-          response_data['album_title']
+        response_data['album_title']
       end
 
       def album_bandcamp_id
@@ -73,7 +79,6 @@ module Bandcamp
 
       def audio_data
         {
-          source_id:,
           present: audio_present?,
           link: redirect_audio_link
         }

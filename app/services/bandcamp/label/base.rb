@@ -17,6 +17,16 @@ module Bandcamp
         { label: paginated_data }
       end
 
+      def total_items_count
+        raw_collection_list.size
+      end
+
+      def collection_list
+        collection_paginated(
+          raw_collection_list
+        )
+      end
+
       alias link artist_label_link
     end
   end

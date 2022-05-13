@@ -12,9 +12,8 @@ module Spotify
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          spotify_id:,
           title:,
           artist: artist_names_data,
           artists:
@@ -33,14 +32,13 @@ module Spotify
 
       def audio_data
         {
-          source_id:,
-          present: audio_link.present?,
+          present: audio_present?,
           link: audio_link
         }
       end
 
       def audio_link
-        return if audio_path.blank?
+        return unless audio_present?
 
         "#{secrets[:url]}/#{audio_path}"
       end
@@ -48,9 +46,8 @@ module Spotify
       def audio_path
         return 'test.mp3' if Rails.env.test?
 
-        @audio_path ||=
-          `python3.10 public/spotify.py \
-          #{email} '#{password}' #{spotify_id}`
+        `python3.10 public/spotify.py \
+          #{email} '#{password}' #{@args[:track_id]}`
       end
 
       def email

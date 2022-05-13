@@ -1,7 +1,6 @@
 module Spotify
   module Search
     class Tracks < Spotify::Search::Base
-      COLLECTION_NAME = 'tracks'.freeze
       COLLECTION_TYPE = 'track'.freeze
 
       private

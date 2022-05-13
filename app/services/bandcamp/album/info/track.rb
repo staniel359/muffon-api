@@ -16,19 +16,18 @@ module Bandcamp
             .merge(track_extra_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_base_data
           {
-            source_id:,
+            source: source_data,
             player_id:,
-            bandcamp_id:,
             title:,
             artist: artist_names_data,
             artists:
           }
-        end
-
-        def track
-          @args[:track]
         end
 
         def track_extra_data
@@ -40,12 +39,7 @@ module Bandcamp
         end
 
         def audio_data
-          {
-            source_id:,
-            present: audio_present?,
-            track_id: bandcamp_id,
-            artist_id: artist_bandcamp_id
-          }
+          { present: audio_present? }
         end
       end
     end

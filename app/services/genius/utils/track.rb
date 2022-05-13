@@ -9,8 +9,11 @@ module Genius
         track['title_with_featured']
       end
 
-      def genius_id
-        track['id']
+      def source_data
+        {
+          name: source_name,
+          id: track['id']
+        }
       end
 
       def artist_name
@@ -19,6 +22,28 @@ module Genius
 
       def artist
         track['primary_artist']
+      end
+
+      def album_data
+        return if album.blank?
+
+        {
+          source: album_source_data,
+          title: album['name']
+        }
+      end
+
+      def album
+        track.dig(
+          'albums', 0
+        )
+      end
+
+      def album_source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data

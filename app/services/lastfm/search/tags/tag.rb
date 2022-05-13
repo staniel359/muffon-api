@@ -9,20 +9,11 @@ module LastFM
         private
 
         def data
-          {
-            id:,
-            name:
-          }
-        end
-
-        def id
-          return 1 if Rails.env.test?
-
-          ::Tag.with_name(name).id
+          { name: }
         end
 
         def name
-          @name ||= tag[:title].match(
+          tag[:title].match(
             /(.+) music | Last.fm/
           )[1].downcase
         end

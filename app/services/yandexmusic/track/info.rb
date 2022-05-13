@@ -11,9 +11,8 @@ module YandexMusic
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          yandex_music_id:,
           title:,
           extra_title:,
           artist: artist_names_data,
@@ -23,7 +22,7 @@ module YandexMusic
 
       def track_extra_data
         {
-          album: albums&.first,
+          album: album_data,
           image: image_data,
           duration:,
           duration_seconds:,
@@ -33,7 +32,6 @@ module YandexMusic
 
       def audio_data
         {
-          source_id:,
           present: audio_link.present?,
           link: audio_link
         }
@@ -42,7 +40,7 @@ module YandexMusic
       def audio_link
         @audio_link ||=
           YandexMusic::Utils::Audio::Link.call(
-            track_id: yandex_music_id
+            track_id: @args[:track_id]
           )
       end
     end

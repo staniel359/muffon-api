@@ -12,8 +12,8 @@ module YouTube
 
         def data
           {
+            source: source_data,
             title:,
-            youtube_id:,
             image: image_data_formatted,
             publish_date:
           }.compact

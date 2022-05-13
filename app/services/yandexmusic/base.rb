@@ -1,7 +1,7 @@
 module YandexMusic
   class Base < Muffon::Base
     BASE_LINK = 'https://api.music.yandex.net'.freeze
-    SOURCE_ID = 'yandexmusic'.freeze
+    SOURCE_NAME = 'yandexmusic'.freeze
 
     private
 
@@ -9,14 +9,18 @@ module YandexMusic
       { language: }
     end
 
-    def artist_name
-      artist_names
-    end
-
     def artist_data_formatted(artist)
       {
-        name: artist['name'],
-        yandex_music_id: artist['id']
+        source:
+          artist_source_data(artist),
+        name: artist['name']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
       }
     end
 
@@ -25,5 +29,7 @@ module YandexMusic
         data:
       )
     end
+
+    alias artist_name artist_names
   end
 end

@@ -16,19 +16,17 @@ module Bandcamp
             .merge(album_extra_data)
         end
 
+        def album
+          @args[:album]
+        end
+
         def album_base_data
           {
-            source_id:,
-            bandcamp_id:,
-            bandcamp_model:,
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:
           }
-        end
-
-        def album
-          @args[:album]
         end
 
         def album_extra_data

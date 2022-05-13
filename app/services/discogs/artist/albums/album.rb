@@ -16,17 +16,6 @@ module Discogs
             .merge(album_extra_data)
         end
 
-        def album_base_data
-          {
-            source_id:,
-            discogs_id:,
-            discogs_type:,
-            title:,
-            artist: artist_names_data,
-            artists:
-          }.compact
-        end
-
         def title
           album.css(
             'td.title > a'
@@ -37,11 +26,20 @@ module Discogs
           @args[:album]
         end
 
+        def album_base_data
+          {
+            source: source_data,
+            title:,
+            artist: artist_names_data,
+            artists:
+          }.compact
+        end
+
         def discogs_id
           album['data-object-id'].to_i
         end
 
-        def discogs_type
+        def discogs_model
           group? ? 'group' : 'album'
         end
 
@@ -52,21 +50,24 @@ module Discogs
         end
 
         def artists_list
-          artist_node.css('a')
+          album.css(
+            'td.artist a'
+          )
         end
 
         def artist_data_formatted(artist)
           {
-            name: artist.text,
-            discogs_id:
-              artist_discogs_id(artist)
+            source:
+              artist_source_data(artist),
+            name: artist.text
           }
         end
 
-        def artist_node
-          @artist_node ||= album.css(
-            'td.artist'
-          )
+        def artist_source_data(artist)
+          {
+            name: source_name,
+            id: artist_discogs_id(artist)
+          }
         end
 
         def artist_discogs_id(artist)
@@ -84,13 +85,13 @@ module Discogs
         end
 
         def image
-          return if raw_image.blank?
-
-          raw_image['data-src']
+          raw_image.try(
+            :[], 'data-src'
+          )
         end
 
         def raw_image
-          @raw_image ||= album.css(
+          album.css(
             'td.image img'
           )[0]
         end
@@ -104,7 +105,7 @@ module Discogs
         end
 
         def release_date_node
-          @release_date_node ||= album.css(
+          album.css(
             'td.year'
           )
         end

@@ -16,19 +16,18 @@ module Odnoklassniki
             .merge(track_extra_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_base_data
           {
-            source_id:,
+            source: source_data,
             player_id:,
-            odnoklassniki_id:,
             title:,
             artist: artist_names_data,
             artists:
           }
-        end
-
-        def track
-          @args[:track]
         end
 
         def track_extra_data

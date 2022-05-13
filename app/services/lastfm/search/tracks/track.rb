@@ -15,23 +15,23 @@ module LastFM
             .merge(track_data)
         end
 
-        def track_data
-          {
-            source_id:,
-            player_id:,
-            playlist_track_id:,
-            title:,
-            artist: artist_names_data,
-            artists:
-          }.compact
-        end
-
         def track
           @args[:track]
         end
 
         def artist_name
           track['artist']
+        end
+
+        def track_data
+          {
+            source: source_data,
+            player_id:,
+            playlist_track_id:,
+            title:,
+            artist: artist_names_data,
+            artists:
+          }.compact
         end
       end
     end

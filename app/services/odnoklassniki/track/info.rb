@@ -11,9 +11,8 @@ module Odnoklassniki
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
-          odnoklassniki_id:,
           title:,
           artist: artist_names_data,
           artists:
@@ -31,9 +30,10 @@ module Odnoklassniki
       end
 
       def album_data
+        return if album.blank?
+
         {
-          source_id:,
-          odnoklassniki_id: album['id'],
+          source: album_source_data,
           title: album['name']
         }
       end
@@ -44,13 +44,19 @@ module Odnoklassniki
         )
       end
 
+      def album_source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
+      end
+
       def image
         response_data['image']
       end
 
       def audio_data
         {
-          source_id:,
           present: audio_present?,
           link: audio_link
         }

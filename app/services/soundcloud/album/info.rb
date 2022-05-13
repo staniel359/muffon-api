@@ -12,7 +12,7 @@ module SoundCloud
 
       def album_base_data
         {
-          source_id:,
+          source: source_data,
           title:,
           artist: artist_names_data,
           artists:

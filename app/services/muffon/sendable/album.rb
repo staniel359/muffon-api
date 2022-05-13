@@ -11,6 +11,7 @@ module Muffon
 
       def data
         {
+          source: album[:source],
           title:,
           artist: album[:artist],
           artists: album[:artists],

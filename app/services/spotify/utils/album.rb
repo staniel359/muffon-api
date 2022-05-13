@@ -9,12 +9,15 @@ module Spotify
         album['name']
       end
 
-      def spotify_id
-        album['id']
-      end
-
       def artists_list
         album['artists']
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data

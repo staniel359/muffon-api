@@ -9,8 +9,11 @@ module Deezer
         album['ALB_TITLE']
       end
 
-      def deezer_id
-        album['ALB_ID'].to_i
+      def source_data
+        {
+          name: source_name,
+          id: album['ALB_ID'].to_i
+        }
       end
 
       def artists_list

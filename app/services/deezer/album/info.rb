@@ -12,7 +12,7 @@ module Deezer
 
       def album_base_data
         {
-          source_id:,
+          source: source_data,
           title:,
           artist: artist_names_data,
           artists:
@@ -22,8 +22,7 @@ module Deezer
       def album_extra_data
         {
           image: image_data,
-          listeners_count:
-            album['NB_FAN'],
+          listeners_count: album['NB_FAN'],
           release_date:,
           labels:,
           tracks:

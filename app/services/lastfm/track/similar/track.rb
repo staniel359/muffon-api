@@ -15,8 +15,13 @@ module LastFM
             .merge(track_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_data
           {
+            source: source_data,
             player_id:,
             title:,
             artist: artist_names_data,
@@ -24,10 +29,6 @@ module LastFM
             duration:,
             duration_seconds:
           }
-        end
-
-        def track
-          @args[:track]
         end
       end
     end

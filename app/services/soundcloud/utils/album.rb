@@ -9,16 +9,19 @@ module SoundCloud
         album['title']
       end
 
-      def soundcloud_id
-        album['id']
-      end
-
       def artist_name
         artist['username']
       end
 
       def artist
         album['user']
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: album['id']
+        }
       end
 
       def image_data

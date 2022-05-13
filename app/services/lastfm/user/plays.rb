@@ -3,15 +3,19 @@ module LastFM
     class Plays < LastFM::User::Base
       API_METHOD = 'user.getRecentTracks'.freeze
       COLLECTION_NAME = 'plays'.freeze
-      include LastFM::Utils::Pagination
+      LIMIT = 500
+      include Muffon::Utils::Pagination
 
       private
 
-      def pagination_params
-        {
-          page:,
-          limit: 500
-        }
+      def params
+        super.merge(
+          pagination_params
+        )
+      end
+
+      def page_limit
+        LIMIT
       end
 
       def user_data

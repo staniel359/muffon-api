@@ -2,7 +2,7 @@ module Genius
   module Search
     class Artists
       class Artist < Genius::Search::Artists
-        include Muffon::Utils::Artist
+        include Genius::Utils::Artist
 
         def call
           data
@@ -15,20 +15,16 @@ module Genius
             .merge(artist_data)
         end
 
+        def artist
+          @args[:artist]
+        end
+
         def artist_data
           {
-            genius_id: artist['id'],
+            source: source_data,
             name:,
             image: image_data
           }.compact
-        end
-
-        def name
-          artist['name']
-        end
-
-        def artist
-          @args[:artist]
         end
 
         def image_data

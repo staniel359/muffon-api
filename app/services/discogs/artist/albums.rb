@@ -1,7 +1,7 @@
 module Discogs
   module Artist
     class Albums < Discogs::Artist::Base
-      ALBUM_TYPES_DATA = {
+      ALBUM_TYPES = {
         album: 'Albums',
         single_ep: 'Singles-EPs',
         compilation: 'Compilations',
@@ -31,7 +31,7 @@ module Discogs
       end
 
       def album_type
-        ALBUM_TYPES_DATA[
+        ALBUM_TYPES[
           @args[:album_type].to_sym
         ]
       end

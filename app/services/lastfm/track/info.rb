@@ -19,7 +19,7 @@ module LastFM
 
       def track_base_data
         {
-          source_id:,
+          source: source_data,
           player_id:,
           title:,
           artist: artist_names_data,
@@ -44,13 +44,17 @@ module LastFM
         return if album.blank?
 
         {
-          source_id:,
+          source: album_source_data,
           title: album['title']
         }
       end
 
       def album
         track['album']
+      end
+
+      def album_source_data
+        { name: source_name }
       end
 
       def image_data

@@ -11,14 +11,14 @@ module RateYourMusic
         )[0].text
       end
 
+      def artist_name
+        artist_names
+      end
+
       def rateyourmusic_slug
         album.css(
           '.searchpage'
         )[0]['href']
-      end
-
-      def artist_name
-        artist_names
       end
 
       def artist_rateyourmusic_id(artist)

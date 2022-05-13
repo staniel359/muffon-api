@@ -15,7 +15,9 @@ module VK
       end
 
       def track
-        response_data.try(:[], 0)
+        response_data.try(
+          :[], 0
+        )
       end
 
       def params

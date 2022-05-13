@@ -9,6 +9,15 @@ module Bandcamp
         album['title']
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: bandcamp_id,
+          artist_id: artist_bandcamp_id,
+          model: bandcamp_model
+        }
+      end
+
       def bandcamp_id
         album['item_id']
       end
@@ -19,17 +28,24 @@ module Bandcamp
 
       def artist_data
         {
-          name: artist_name,
-          bandcamp_id: artist_bandcamp_id
+          source: artist_source_data,
+          name: artist_name
         }
       end
 
-      def artist_name
-        album['band_name']
+      def artist_source_data
+        {
+          name: source_name,
+          id: artist_bandcamp_id
+        }
       end
 
       def artist_bandcamp_id
         album['band_id']
+      end
+
+      def artist_name
+        album['band_name']
       end
 
       def image_data

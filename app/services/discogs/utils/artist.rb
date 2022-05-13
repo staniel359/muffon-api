@@ -9,6 +9,13 @@ module Discogs
         artist['title']
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: discogs_id
+        }
+      end
+
       def discogs_id
         artist['id']
       end

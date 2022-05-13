@@ -29,10 +29,6 @@ module LastFM
         )
       end
 
-      def link
-        charts_link
-      end
-
       def params
         RestClient::ParamsArray.new(
           raw_params
@@ -74,6 +70,8 @@ module LastFM
           profile_id: @args[:profile_id]
         )
       end
+
+      alias link charts_link
     end
   end
 end

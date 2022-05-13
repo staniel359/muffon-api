@@ -13,7 +13,8 @@ module LastFM
         update_listeners_count
 
         muffon_data
-          .merge(base_artist_data)
+          .merge(artist_base_data)
+          .merge(artist_extra_data)
           .merge(with_more_data)
       end
 
@@ -25,9 +26,15 @@ module LastFM
         )
       end
 
-      def base_artist_data
+      def artist_base_data
         {
-          name:,
+          source: source_data,
+          name:
+        }
+      end
+
+      def artist_extra_data
+        {
           listeners_count:,
           plays_count:,
           description:

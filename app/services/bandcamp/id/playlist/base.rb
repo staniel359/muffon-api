@@ -2,6 +2,8 @@ module Bandcamp
   module Id
     module Playlist
       class Base < Bandcamp::Id::Base
+        include Bandcamp::Utils::Album
+
         private
 
         def model_response
@@ -12,12 +14,36 @@ module Bandcamp
 
         def id_data
           {
+            source: source_data,
             title:,
-            bandcamp_id:,
-            bandcamp_model: model_type,
             artist: artist_names_data,
             artists:
           }
+        end
+
+        def bandcamp_id
+          model_response_data['id']
+        end
+
+        def artist_bandcamp_id
+          artist['id']
+        end
+
+        def artist
+          @artist ||= JSON.parse(
+            raw_artist
+          )
+        end
+
+        def raw_artist
+          response_data[4]['data-band'] ||
+            response_data[5]['data-band']
+        end
+
+        def bandcamp_model
+          model_response_data[
+            'item_type'
+          ]
         end
 
         def title
@@ -26,32 +52,22 @@ module Bandcamp
           )
         end
 
-        def model_type
-          model_response_data[
-            'item_type'
-          ]
-        end
-
         def artist_data
           {
-            name: artist_name,
-            bandcamp_id: artist_bandcamp_id
+            source: artist_source_data,
+            name: artist_name
+          }
+        end
+
+        def artist_source_data
+          {
+            name: source_name,
+            id: artist_bandcamp_id
           }
         end
 
         def artist_name
           artist['name']
-        end
-
-        def artist
-          @artist ||= JSON.parse(
-            response_data[4]['data-band'] ||
-              response_data[5]['data-band']
-          )
-        end
-
-        def artist_bandcamp_id
-          artist['id']
         end
       end
     end

@@ -13,6 +13,10 @@ module LastFM
         album['artist']
       end
 
+      def source_data
+        { name: source_name }
+      end
+
       def image_data
         image_data_formatted(
           image

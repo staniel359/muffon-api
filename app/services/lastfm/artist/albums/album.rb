@@ -15,9 +15,19 @@ module LastFM
             .merge(album_data)
         end
 
+        def album
+          @args[:album]
+        end
+
+        def artist_name
+          album.dig(
+            'artist', 'name'
+          )
+        end
+
         def album_data
           {
-            source_id:,
+            source: source_data,
             title:,
             artist: artist_names_data,
             artists:,
@@ -27,17 +37,10 @@ module LastFM
         end
 
         def artist_data
-          { name: artist_name }
-        end
-
-        def artist_name
-          album.dig(
-            'artist', 'name'
-          )
-        end
-
-        def album
-          @args[:album]
+          {
+            source: artist_source_data,
+            name: artist_name
+          }
         end
       end
     end

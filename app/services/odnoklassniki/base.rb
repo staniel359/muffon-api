@@ -1,6 +1,6 @@
 module Odnoklassniki
   class Base < Muffon::Base
-    SOURCE_ID = 'odnoklassniki'.freeze
+    SOURCE_NAME = 'odnoklassniki'.freeze
     include Muffon::Utils::Global
 
     def call
@@ -67,14 +67,18 @@ module Odnoklassniki
       response_data['error'].present?
     end
 
-    def artist_name
-      artist_names
-    end
-
     def artist_data_formatted(artist)
       {
-        name: artist['name'],
-        odnoklassniki_id: artist['id']
+        source:
+          artist_source_data(artist),
+        name: artist['name']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
       }
     end
 
@@ -83,5 +87,7 @@ module Odnoklassniki
         image:
       )
     end
+
+    alias artist_name artist_names
   end
 end

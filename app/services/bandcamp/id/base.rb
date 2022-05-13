@@ -29,10 +29,6 @@ module Bandcamp
       def data
         { id: id_data }
       end
-
-      def bandcamp_id
-        model_response_data['id']
-      end
     end
   end
 end

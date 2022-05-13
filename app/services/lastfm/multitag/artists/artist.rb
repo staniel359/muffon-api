@@ -15,8 +15,13 @@ module LastFM
             .merge(artist_data)
         end
 
+        def artist
+          @args[:artist]
+        end
+
         def artist_data
           {
+            source: source_data,
             name:,
             listeners_count:
               artist['listeners'].to_i,
@@ -24,10 +29,6 @@ module LastFM
               artist['scrobbles'].to_i,
             image: image_data
           }.compact
-        end
-
-        def artist
-          @args[:artist]
         end
 
         def image_data

@@ -2,7 +2,7 @@ module SoundCloud
   module Search
     class Artists
       class Artist < SoundCloud::Search::Artists
-        include Muffon::Utils::Artist
+        include SoundCloud::Utils::Artist
 
         def call
           data
@@ -15,26 +15,16 @@ module SoundCloud
             .merge(artist_data)
         end
 
-        def artist_data
-          {
-            soundcloud_id: artist['id'],
-            name:,
-            image: image_data
-          }.compact
-        end
-
         def artist
           @args[:artist]
         end
 
-        def name
-          artist['username']
-        end
-
-        def image_data
-          image_data_formatted(
-            artist['avatar_url']
-          )
+        def artist_data
+          {
+            source: source_data,
+            name:,
+            image: image_data
+          }.compact
         end
       end
     end

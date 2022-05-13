@@ -9,23 +9,40 @@ module Bandcamp
         track['title']
       end
 
+      def source_data
+        {
+          name: source_name,
+          id: bandcamp_id,
+          artist_id: artist_bandcamp_id,
+          model: 'track'
+        }
+      end
+
       def bandcamp_id
         track['track_id']
       end
 
       def artist_data
         {
-          name: artist_name,
-          bandcamp_id: artist_bandcamp_id
+          source: artist_source_data,
+          name: artist_name
         }
       end
 
-      def artist_name
-        track['band_name'] || 'Bandcamp'
+      def artist_source_data
+        {
+          name: source_name,
+          id: artist_bandcamp_id
+        }
       end
 
       def artist_bandcamp_id
         track['band_id']
+      end
+
+      def artist_name
+        track['band_name'] ||
+          'Various Artists'
       end
 
       def duration_seconds
@@ -37,7 +54,7 @@ module Bandcamp
       end
 
       def audio_link
-        @audio_link ||= track.dig(
+        track.dig(
           'streaming_url', 'mp3-128'
         )
       end

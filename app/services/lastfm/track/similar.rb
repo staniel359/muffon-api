@@ -12,7 +12,9 @@ module LastFM
       end
 
       def track
-        response_data['similartracks']
+        response_data[
+          'similartracks'
+        ]
       end
 
       def collection_item_data_formatted(track)

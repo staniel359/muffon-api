@@ -15,20 +15,19 @@ module Genius
             .merge(track_data)
         end
 
+        def track
+          @args[:track]
+        end
+
         def track_data
           {
-            source_id:,
+            source: source_data,
             player_id:,
-            genius_id:,
             title:,
             artist: artist_names_data,
             artists:,
             image: image_data
           }.compact
-        end
-
-        def track
-          @args[:track]
         end
       end
     end

@@ -9,12 +9,24 @@ module Discogs
         album['title']
       end
 
+      def artist_name
+        artist_names
+      end
+
+      def source_data
+        {
+          name: source_name,
+          id: discogs_id,
+          model: discogs_model
+        }
+      end
+
       def discogs_id
         album['id']
       end
 
-      def artist_name
-        artist_names
+      def discogs_model
+        'album'
       end
 
       def image_data

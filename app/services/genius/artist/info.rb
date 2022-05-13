@@ -1,6 +1,8 @@
 module Genius
   module Artist
     class Info < Genius::Artist::Base
+      include Genius::Utils::Artist
+
       private
 
       def primary_args
@@ -15,10 +17,6 @@ module Genius
         response_data.dig(
           'response', 'artist'
         )
-      end
-
-      def name
-        artist['name']
       end
     end
   end

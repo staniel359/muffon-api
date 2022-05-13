@@ -5,19 +5,8 @@ module Bandcamp
 
       private
 
-      def total_items_count
-        albums_list.size
-      end
-
-      def albums_list
-        @albums_list ||=
-          response_data['discography']
-      end
-
-      def collection_list
-        collection_paginated(
-          albums_list
-        )
+      def raw_collection_list
+        response_data['discography']
       end
 
       def collection_item_data_formatted(album)

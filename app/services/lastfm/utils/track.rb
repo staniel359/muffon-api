@@ -17,6 +17,10 @@ module LastFM
         track['artist']
       end
 
+      def source_data
+        { name: source_name }
+      end
+
       def duration_seconds
         track['duration'].to_i
       end

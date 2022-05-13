@@ -1,7 +1,7 @@
 module Spotify
   class Base < Muffon::Base
     BASE_LINK = 'https://api.spotify.com/v1'.freeze
-    SOURCE_ID = 'spotify'.freeze
+    SOURCE_NAME = 'spotify'.freeze
     include Muffon::Utils::Global
 
     def call
@@ -47,14 +47,18 @@ module Spotify
       call
     end
 
-    def artist_name
-      artist_names
-    end
-
     def artist_data_formatted(artist)
       {
-        name: artist['name'],
-        spotify_id: artist['id']
+        source:
+          artist_source_data(artist),
+        name: artist['name']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
       }
     end
 
@@ -63,5 +67,7 @@ module Spotify
         images:
       )
     end
+
+    alias artist_name artist_names
   end
 end

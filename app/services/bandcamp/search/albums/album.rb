@@ -15,20 +15,10 @@ module Bandcamp
             .merge(album_data)
         end
 
-        def album_data
-          {
-            source_id:,
-            title:,
-            artist: artist_names_data,
-            artists:,
-            bandcamp_slug:,
-            bandcamp_model:,
-            image: image_data
-          }.compact
-        end
-
         def title
-          model_title(album)
+          model_title(
+            album
+          )
         end
 
         def album
@@ -40,10 +30,28 @@ module Bandcamp
         end
 
         def artist_data
-          @artist_data ||=
-            model_artist_data(
-              album
-            )
+          model_artist_data(
+            album
+          )
+        end
+
+        def album_data
+          {
+            source: source_data,
+            title:,
+            artist: artist_names_data,
+            artists:,
+            image: image_data
+          }.compact
+        end
+
+        def source_data
+          {
+            name: source_name,
+            slug: bandcamp_slug,
+            artist_slug: artist_bandcamp_slug,
+            model: bandcamp_model
+          }
         end
 
         def bandcamp_slug
@@ -52,8 +60,16 @@ module Bandcamp
           )
         end
 
+        def artist_bandcamp_slug
+          artist_data.dig(
+            :source, :slug
+          )
+        end
+
         def bandcamp_model
-          model_name(album)
+          model_name(
+            album
+          )
         end
 
         def image_data

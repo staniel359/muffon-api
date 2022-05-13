@@ -1,7 +1,7 @@
 module Genius
   class Base < Muffon::Base
     BASE_LINK = 'https://genius.com/api'.freeze
-    SOURCE_ID = 'genius'.freeze
+    SOURCE_NAME = 'genius'.freeze
 
     private
 
@@ -29,8 +29,16 @@ module Genius
 
     def artist_data_formatted(artist)
       {
-        name: artist['name'],
-        genius_id: artist['id']
+        source:
+          artist_source_data(artist),
+        name: artist['name']
+      }
+    end
+
+    def artist_source_data(artist)
+      {
+        name: source_name,
+        id: artist['id']
       }
     end
 
@@ -42,7 +50,9 @@ module Genius
 
     def raw_release_date_formatted(data)
       date_formatted(
-        raw_release_date(data)
+        raw_release_date(
+          data
+        )
       )
     end
 

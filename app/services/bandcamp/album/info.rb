@@ -1,6 +1,11 @@
 module Bandcamp
   module Album
     class Info < Bandcamp::Album::Base
+      ALBUM_TYPES = {
+        a: 'album',
+        t: 'track'
+      }.freeze
+
       private
 
       def album_data
@@ -8,15 +13,6 @@ module Bandcamp
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
-      end
-
-      def album_base_data
-        {
-          source_id:,
-          title:,
-          artist: artist_names_data,
-          artists:
-        }
       end
 
       def artist_name
@@ -27,8 +23,27 @@ module Bandcamp
         album['band']
       end
 
+      def album_base_data
+        {
+          source: source_data,
+          title:,
+          artist: artist_names_data,
+          artists:
+        }
+      end
+
+      def bandcamp_id
+        album['id']
+      end
+
       def artist_bandcamp_id
         artist['band_id']
+      end
+
+      def bandcamp_model
+        ALBUM_TYPES[
+          album['type'].to_sym
+        ]
       end
 
       def album_extra_data

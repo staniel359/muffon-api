@@ -15,16 +15,16 @@ module Discogs
             .merge(artist_data)
         end
 
+        def artist
+          @args[:artist]
+        end
+
         def artist_data
           {
-            discogs_id:,
+            source: source_data,
             name:,
             image: image_data
           }.compact
-        end
-
-        def artist
-          @args[:artist]
         end
 
         def image

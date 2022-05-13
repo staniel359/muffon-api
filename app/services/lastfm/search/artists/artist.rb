@@ -15,16 +15,17 @@ module LastFM
             .merge(artist_data)
         end
 
+        def artist
+          @args[:artist]
+        end
+
         def artist_data
           {
+            source: source_data,
             name:,
             image: image_data,
             listeners_count:
           }.compact
-        end
-
-        def artist
-          @args[:artist]
         end
       end
     end

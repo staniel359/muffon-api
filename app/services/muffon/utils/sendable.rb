@@ -39,7 +39,8 @@ module Muffon
         return if @args[:text].blank?
 
         @args[:text].gsub(
-          LINK_REGEX, ''
+          LINK_REGEX,
+          ''
         ).strip
       end
 
