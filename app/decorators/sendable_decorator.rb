@@ -1,20 +1,19 @@
 module SendableDecorator
   def attachments_data
-    attachment_types.map do |t|
-      [
-        t,
-        send("#{t}_formatted")
-      ]
-    end.to_h.compact_blank.presence
+    attachment_types.index_with do |t|
+      send(
+        "#{t}_formatted"
+      )
+    end.compact_blank.presence
   end
 
   def attachments_minimal_data
-    attachment_types.map do |t|
+    attachment_types.to_h do |t|
       [
         "with_#{t}",
         send(t).present?
       ]
-    end.to_h.compact_blank
+    end.compact_blank
   end
 
   private
@@ -72,6 +71,18 @@ module SendableDecorator
   def playlist_data_formatted(playlist)
     Muffon::Sendable::Playlist.call(
       playlist:
+    )
+  end
+
+  def communities_formatted
+    communities.map do |c|
+      community_data_formatted(c)
+    end
+  end
+
+  def community_data_formatted(community)
+    Muffon::Sendable::Community.call(
+      community:
     )
   end
 end

@@ -8,7 +8,8 @@ module Muffon
         albums
         tracks
         playlists
-      ]
+        communities
+      ].freeze
 
       private
 
@@ -43,12 +44,9 @@ module Muffon
       end
 
       def sendable_attachments_params
-        collection_attachment_types.map do |t|
-          [
-            t,
-            format_attachments(t)
-          ]
-        end.to_h
+        collection_attachment_types.index_with do |t|
+          format_attachments(t)
+        end
       end
 
       def collection_attachment_types

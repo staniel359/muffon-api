@@ -41,7 +41,7 @@ module Muffon
             text: last_message.text,
             created: last_message_created,
             attachments:
-              last_message.attachments_minimal_data,
+              last_message.attachments_minimal_data
           }.compact
         end
 
