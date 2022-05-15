@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   root to: 'application#no_content'
 
   scope :api, module: :api do
-    scope :v2, module: :v2 do
+    scope :v3 do
 
       scope module: :muffon do
         resources :profiles,
