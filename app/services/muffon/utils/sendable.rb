@@ -7,6 +7,7 @@ module Muffon
         artists
         albums
         tracks
+        videos
         playlists
         communities
       ].freeze
