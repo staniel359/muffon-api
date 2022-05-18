@@ -12,6 +12,20 @@ module Muffon
           private
 
           def data
+            return artist_minimal_data if @args[:minimal]
+
+            artist_data
+          end
+
+          def artist_minimal_data
+            { name: }
+          end
+
+          def library_artist
+            @args[:library_artist]
+          end
+
+          def artist_data
             {
               library: library_artist_data,
               favorite_id:,
@@ -22,10 +36,6 @@ module Muffon
               tracks_count:
                 library_artist.library_tracks_count
             }.compact
-          end
-
-          def library_artist
-            @args[:library_artist]
           end
         end
       end

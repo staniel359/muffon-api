@@ -8,8 +8,14 @@ module Muffon
           private
 
           def library_data
+            return library_minimal_data if @args[:minimal]
+
             library_base_data
               .merge(paginated_data)
+          end
+
+          def library_minimal_data
+            { artists: collection }
           end
 
           def library_base_data
@@ -38,6 +44,18 @@ module Muffon
           end
 
           def collection_list
+            return minimal_collection_list if @args[:minimal]
+
+            full_collection_list
+          end
+
+          def minimal_collection_list
+            search_library_artists
+              .limit(limit)
+              .includes(:artist)
+          end
+
+          def full_collection_list
             search_library_artists
               .library_tracks_count_desc_ordered
               .library_albums_count_desc_ordered
@@ -50,7 +68,8 @@ module Muffon
           def collection_item_data_formatted(library_artist)
             Muffon::Profile::Library::Artists::Artist.call(
               library_artist:,
-              profile_id: @args[:profile_id]
+              profile_id: @args[:profile_id],
+              minimal: @args[:minimal]
             )
           end
         end

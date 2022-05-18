@@ -24,7 +24,7 @@ module API
           def artists_data
             ::Muffon::Profile::Library::Search::Artists.call(
               params.slice(
-                *%i[profile_id query page limit]
+                *%i[profile_id query page limit minimal]
               )
             )
           end
