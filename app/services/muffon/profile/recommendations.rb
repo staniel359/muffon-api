@@ -40,7 +40,7 @@ module Muffon
       def recommendations_artists_filtered
         recommendations.where(
           'library_artist_ids @> ARRAY[?]',
-          filter_ids
+          library_artist_ids
         )
       end
 
@@ -50,10 +50,21 @@ module Muffon
           .not_deleted
       end
 
-      def filter_ids
-        @args[:filter_value].map(
-          &:to_i
-        )
+      def library_artist_ids
+        profile
+          .library_artists
+          .where(artist_id: artist_ids)
+          .pluck(:id)
+      end
+
+      def artist_ids
+        @args[:filter_value].map do |name|
+          artist_id(name)
+        end.compact
+      end
+
+      def artist_id(name)
+        Artist.with_name(name)&.id
       end
 
       def recommendations_tags_filtered
@@ -61,8 +72,18 @@ module Muffon
           .left_joins(:artist)
           .where(
             'artists.tag_ids @> ARRAY[?]',
-            filter_ids
+            tag_ids
           )
+      end
+
+      def tag_ids
+        @args[:filter_value].map do |name|
+          tag_id(name)
+        end.compact
+      end
+
+      def tag_id(name)
+        Tag.with_name(name)&.id
       end
 
       def collection_list
