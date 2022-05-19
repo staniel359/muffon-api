@@ -13,6 +13,8 @@ module Muffon
             image_file
           )
         )
+      rescue OpenURI::HTTPError
+        nil
       end
 
       def process_images(image_files)
@@ -23,6 +25,8 @@ module Muffon
             **image_file_data_formatted(i)
           )
         end
+      rescue OpenURI::HTTPError
+        nil
       end
 
       private

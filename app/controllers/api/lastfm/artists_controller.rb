@@ -72,7 +72,7 @@ module API
       def images_data
         ::LastFM::Artist::Images.call(
           params.slice(
-            *%i[artist page limit]
+            *%i[artist page limit update]
           )
         )
       end

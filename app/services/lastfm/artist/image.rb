@@ -6,21 +6,38 @@ module LastFM
       private
 
       def artist_data
-        update_image
+        if image_present?
+          { image: image_data }
+        else
+          update_image
 
-        { image: find_artist.image_data }
+          { image: first_image_data }
+        end
+      end
+
+      def image_present?
+        find_artist
+          .image
+          .attached?
       end
 
       def update_image
-        find_artist.process_image(
-          image
+        return if first_image_data.blank?
+
+        ::Artist::Image::UpdaterWorker.perform_async(
+          artist_image_worker_args
         )
       end
 
-      def image
-        images_list.dig(
-          0, :original
-        )
+      def first_image_data
+        @first_image_data ||= images_list[0]
+      end
+
+      def artist_image_worker_args
+        {
+          name: find_artist.name,
+          image: first_image_data[:large]
+        }.to_json
       end
 
       def images_list

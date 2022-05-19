@@ -12,6 +12,12 @@ module ArtistDecorator
 
       retry
     end
+
+    def associated
+      includes(
+        image_association
+      )
+    end
   end
 
   def self.included(base)
