@@ -37,4 +37,18 @@ class ApplicationRecord < ActiveRecord::Base
         .clear_query_cache
     end
   end
+
+  private
+
+  def add_artist_tags
+    Artist::Tags::UpdaterWorker.perform_async(
+      artist_tags_worker_args
+    )
+  end
+
+  def artist_tags_worker_args
+    {
+      name: artist.name
+    }.to_json
+  end
 end
