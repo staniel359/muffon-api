@@ -46,8 +46,8 @@ module MuffonAPI
       address: 'smtp.gmail.com',
       port: 587,
       domain: 'gmail.com',
-      user_name: ENV['MUFFON_API_MAILER_EMAIL'],
-      password: ENV['MUFFON_API_MAILER_PASSWORD'],
+      user_name: credentials.mailer[:email],
+      password: credentials.mailer[:password],
       authentication: :login,
       openssl_verify_mode: 'none'
     }

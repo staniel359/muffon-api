@@ -5,8 +5,10 @@ class ApplicationMailer < ActionMailer::Base
   private
 
   def from_email
-    ENV.fetch(
-      'MUFFON_API_MAILER_EMAIL'
-    )
+    secrets.mailer[:email]
+  end
+
+  def secrets
+    Rails.application.credentials
   end
 end

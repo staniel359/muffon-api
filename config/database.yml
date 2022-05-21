@@ -2,23 +2,17 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 40
+  database: <%= Rails.application.credentials.database[:username] %>
+  username: <%= Rails.application.credentials.database[:username] %>
+  password: <%= Rails.application.credentials.database[:password] %>
 
 development:
   <<: *default
-  database: muffon_api
-  username: muffon_api
-  password: muffon_api
   host: localhost
 
 test:
   <<: *default
-  database: muffon_api_test
-  username: muffon_api_test
-  password: muffon_api_test
   host: localhost
 
 production:
   <<: *default
-  database: muffon_api
-  username: muffon_api
-  password: <%= ENV['MUFFON_API_DATABASE_PASSWORD'] %>
