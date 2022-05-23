@@ -1,7 +1,15 @@
 class Artist
   module Tags
     class UpdaterWorker < Worker::Base
-      sidekiq_options queue: :artist
+      include Sidekiq::Throttled::Worker
+
+      sidekiq_options queue: :artist_tags
+
+      sidekiq_throttle(
+        concurrency: {
+          limit: 1
+        }
+      )
 
       def perform(args)
         Muffon::Processor::Artist::Tags::Updater.call(
