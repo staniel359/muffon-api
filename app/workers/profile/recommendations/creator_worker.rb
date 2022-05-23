@@ -3,7 +3,7 @@ class Profile
     class CreatorWorker < Worker::Base
       include Sidekiq::Throttled::Worker
 
-      sidekiq_options queue: :profile
+      sidekiq_options queue: :profile_recommendations
 
       sidekiq_throttle(
         concurrency: {

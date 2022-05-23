@@ -1,7 +1,6 @@
-:concurrency: 10
+:concurrency: 25
 :queues:
   - [default, 1]
-  - [artist, 1]
   - [artist_tags, 1]
   - [artist_image, 1]
-  - [profile, 1]
+  - [profile_recommendations, 1]

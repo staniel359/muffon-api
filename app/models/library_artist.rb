@@ -21,11 +21,11 @@ class LibraryArtist < ApplicationRecord
 
   def create_recommendations
     Profile::Recommendations::CreatorWorker.perform_async(
-      recomendation_worker_args
+      recomendations_worker_args
     )
   end
 
-  def recomendation_worker_args
+  def recomendations_worker_args
     {
       profile_id:,
       library_artist_id: id
@@ -34,7 +34,7 @@ class LibraryArtist < ApplicationRecord
 
   def clear_recommendations
     Profile::Recommendations::ClearerWorker.perform_async(
-      recomendation_worker_args
+      recomendations_worker_args
     )
   end
 end

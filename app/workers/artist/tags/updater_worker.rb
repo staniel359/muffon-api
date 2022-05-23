@@ -7,7 +7,7 @@ class Artist
 
       sidekiq_throttle(
         concurrency: {
-          limit: 1
+          limit: 5
         }
       )
 
