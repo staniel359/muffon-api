@@ -12,33 +12,17 @@ module Muffon
           def data
             {
               library: library_tag_data,
-              name:,
-              count:
+              name: tag[:name],
+              count: tag[:count]
             }
           end
 
           def library_tag_data
-            { id: }
-          end
-
-          def id
-            tag[0]
+            { id: tag[:id] }
           end
 
           def tag
             @args[:tag]
-          end
-
-          def name
-            find_tag&.name || ''
-          end
-
-          def find_tag
-            ::Tag.find_by(id:)
-          end
-
-          def count
-            tag[1]
           end
         end
       end

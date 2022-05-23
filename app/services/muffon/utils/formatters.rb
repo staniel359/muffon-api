@@ -78,6 +78,28 @@ module Muffon
       def description_truncated
         description&.truncate(400).presence
       end
+
+      def library_tags_formatted(library_tags)
+        tags = Tag.where(
+          id: library_tags.pluck(:id)
+        )
+
+        library_tags.map do |t|
+          format_library_tag(
+            t, tags
+          )
+        end
+      end
+
+      def format_library_tag(library_tag, tags)
+        tag = tags.find do |t|
+          t.id == library_tag[:id]
+        end
+
+        library_tag.tap do |t|
+          t[:name] = tag.name
+        end
+      end
     end
   end
 end

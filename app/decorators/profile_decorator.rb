@@ -61,5 +61,17 @@ module ProfileDecorator
       .tally
       .sort_by(&:second)
       .reverse
+      .map { |t| format_library_tag(t) }
+  end
+
+  private
+
+  def format_library_tag(tag)
+    id, count = tag
+
+    {
+      id:,
+      count:
+    }
   end
 end

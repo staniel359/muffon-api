@@ -14,7 +14,7 @@ module Muffon
           def library_tags
             @library_tags ||=
               profile.library_tags.select do |t|
-                t[0].in?(matched_tag_ids)
+                t[:id].in?(matched_tag_ids)
               end
           end
 
@@ -31,7 +31,9 @@ module Muffon
           end
 
           def collection_list
-            library_tags[offset, limit]
+            library_tags_formatted(
+              library_tags[offset, limit] || []
+            )
           end
 
           def collection_item_data_formatted(tag)
