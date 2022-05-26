@@ -10,6 +10,7 @@ ruby File.read(
 
 gem 'bootsnap', require: false
 gem 'bcrypt'
+gem 'mini_magick'
 gem 'image_processing'
 gem 'nokogiri'
 gem 'pg'

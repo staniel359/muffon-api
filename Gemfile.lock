@@ -321,6 +321,7 @@ DEPENDENCIES
   debug
   image_processing
   listen
+  mini_magick
   nokogiri
   pg
   puma
