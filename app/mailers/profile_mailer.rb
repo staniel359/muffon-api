@@ -1,23 +1,29 @@
 class ProfileMailer < ApplicationMailer
   def password_reset_email
-    @text = text
+    @text = password_reset_text
 
     mail(
       to: email,
-      subject:
+      subject: password_reset_subject
+    )
+  end
+
+  def new_version_email
+    @text = new_version_text
+
+    mail(
+      bcc: emails,
+      subject: new_version_subject
     )
   end
 
   private
 
-  def email
-    params[:email]
-  end
-
-  def subject
+  def password_reset_text
     I18n.with_locale(locale) do
       I18n.t(
-        'mailer.passwordReset.subject'
+        'mailer.passwordReset.text',
+        code: params[:code]
       )
     end
   end
@@ -26,11 +32,34 @@ class ProfileMailer < ApplicationMailer
     params[:language]
   end
 
-  def text
+  def email
+    params[:email]
+  end
+
+  def password_reset_subject
     I18n.with_locale(locale) do
       I18n.t(
-        'mailer.passwordReset.text',
-        code: params[:code]
+        'mailer.passwordReset.subject'
+      )
+    end
+  end
+
+  def emails
+    params[:emails]
+  end
+
+  def new_version_text
+    I18n.with_locale('en') do
+      I18n.t(
+        'mailer.newVersion.text'
+      )
+    end
+  end
+
+  def new_version_subject
+    I18n.with_locale('en') do
+      I18n.t(
+        'mailer.newVersion.subject'
       )
     end
   end
