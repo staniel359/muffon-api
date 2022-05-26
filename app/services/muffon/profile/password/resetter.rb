@@ -38,7 +38,7 @@ module Muffon
         def send_password_reset_code_email
           mailer
             .password_reset_email
-            .deliver_now
+            .deliver_later
         end
 
         def mailer
