@@ -5,22 +5,21 @@ module Genius
 
     private
 
-    def headers
-      {
-        'User-Agent' => user_agent,
-        cookies:,
-        params:
-      }
-    end
-
-    def cookies
-      { 'cf_clearance' => cf_clearance }
-    end
-
-    def cf_clearance
-      secrets.genius.try(
-        :[], :cf_clearance
+    def response
+      RestClient::Request.execute(
+        method: :get,
+        url: link,
+        headers:,
+        proxy:
       )
+    end
+
+    def headers
+      { params: }
+    end
+
+    def proxy
+      secrets.proxy[:ru]
     end
 
     def artists_list
