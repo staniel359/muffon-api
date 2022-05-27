@@ -59,7 +59,7 @@ module Spotify
       def audio_present?
         track[
           'available_markets'
-        ].include?('BY')
+        ].include?('GB')
       end
     end
   end
