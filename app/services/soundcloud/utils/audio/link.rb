@@ -1,9 +1,7 @@
 module SoundCloud
   module Utils
     module Audio
-      class Link < SoundCloud::Base
-        BASE_LINK = 'https://api.soundcloud.com'.freeze
-
+      class Link < SoundCloud::API::V1::Base
         private
 
         def primary_args
