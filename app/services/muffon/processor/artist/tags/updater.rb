@@ -29,15 +29,54 @@ module Muffon
           end
 
           def tag_ids
-            tags_list.map do |tag|
-              tag_id(tag[:name])
-            end
+            existing_tag_ids + new_tag_ids
           end
 
-          def tag_id(name)
-            ::Tag.with_name(
-              name
-            ).id
+          def existing_tag_ids
+            existing_tags.map(&:id)
+          end
+
+          def existing_tags
+            @existing_tags ||=
+              Tag.where(
+                'lower(name) = any(array[?])',
+                tag_names.map(&:downcase)
+              )
+          end
+
+          def tag_names
+            @tag_names ||=
+              tags_list.pluck(:name)
+          end
+
+          def new_tag_ids
+            return [] if new_tags.blank?
+
+            Tag.insert_all(
+              new_tags_formatted
+            ).pluck('id')
+          end
+
+          def new_tags
+            @new_tags ||=
+              tag_names.reject do |n|
+                n.downcase.in?(
+                  existing_tag_names
+                )
+              end
+          end
+
+          def existing_tag_names
+            @existing_tag_names ||=
+              existing_tags.map do |t|
+                t[:name].downcase
+              end
+          end
+
+          def new_tags_formatted
+            new_tags.map do |name|
+              { name: }
+            end
           end
         end
       end
