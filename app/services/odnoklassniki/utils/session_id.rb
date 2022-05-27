@@ -4,12 +4,22 @@ module Odnoklassniki
       BASE_LINK = 'https://ok.ru/dk'.freeze
 
       def call
-        response
+        post_response
       rescue RestClient::Found => e
         session_id(e)
       end
 
       private
+
+      def post_response
+        RestClient::Request.execute(
+          method: :post,
+          url: link,
+          payload:,
+          headers:,
+          proxy:
+        )
+      end
 
       def link
         BASE_LINK
@@ -57,8 +67,6 @@ module Odnoklassniki
           .response
           .headers[:location] == '/'
       end
-
-      alias response post_response
     end
   end
 end

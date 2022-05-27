@@ -18,6 +18,15 @@ module Odnoklassniki
         'error.notloggedin'
     end
 
+    def response
+      RestClient::Request.execute(
+        method: :get,
+        url: link,
+        headers:,
+        proxy:
+      )
+    end
+
     def link
       "https://wmf.ok.ru/#{endpoint_name};"\
         "jsessionid=#{session_id}"
@@ -49,6 +58,10 @@ module Odnoklassniki
 
     def params
       { imgfmt: 'base' }
+    end
+
+    def proxy
+      secrets.proxy[:ru]
     end
 
     def retry_with_new_session_id
