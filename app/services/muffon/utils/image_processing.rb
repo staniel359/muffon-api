@@ -4,7 +4,7 @@ module Muffon
       def process_image(image_file)
         return if image_file.blank?
 
-        image.purge
+        image.purge_later
 
         return if image_file == 'DELETED'
 
@@ -18,7 +18,7 @@ module Muffon
       end
 
       def process_images(image_files)
-        images.purge
+        images.purge_later
 
         image_files&.each do |i|
           images.attach(
