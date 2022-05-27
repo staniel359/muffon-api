@@ -5,8 +5,21 @@ module YandexMusic
 
     private
 
+    def response
+      RestClient::Request.execute(
+        method: :get,
+        url: link,
+        headers:,
+        proxy:
+      )
+    end
+
     def params
       { language: }
+    end
+
+    def proxy
+      secrets.proxy[:ru]
     end
 
     def artist_data_formatted(artist)

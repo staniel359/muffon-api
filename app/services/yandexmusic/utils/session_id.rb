@@ -14,10 +14,12 @@ module YandexMusic
       end
 
       def password_response
-        RestClient.post(
-          password_link,
-          password_payload,
-          headers
+        RestClient::Request.execute(
+          method: :post,
+          url: password_link,
+          payload: password_payload,
+          headers:,
+          proxy:
         )
       end
 
@@ -42,10 +44,12 @@ module YandexMusic
       end
 
       def email_response
-        RestClient.post(
-          email_link,
-          email_payload,
-          headers
+        RestClient::Request.execute(
+          method: :post,
+          url: email_link,
+          payload: email_payload,
+          headers:,
+          proxy:
         )
       end
 
