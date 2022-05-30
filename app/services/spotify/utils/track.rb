@@ -59,7 +59,13 @@ module Spotify
       def audio_present?
         track[
           'available_markets'
-        ].include?('GB')
+        ].include?(
+          country_code
+        )
+      end
+
+      def country_code
+        self.class::COUNTRY_CODE
       end
     end
   end

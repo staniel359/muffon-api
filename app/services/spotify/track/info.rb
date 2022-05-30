@@ -40,22 +40,9 @@ module Spotify
       def audio_link
         return unless audio_present?
 
-        "#{secrets[:url]}/#{audio_path}"
-      end
-
-      def audio_path
-        return 'test.mp3' if Rails.env.test?
-
-        `python3.10 public/spotify.py \
-          #{email} '#{password}' #{@args[:track_id]}`
-      end
-
-      def email
-        secrets.spotify[:email]
-      end
-
-      def password
-        secrets.spotify[:password]
+        Spotify::Utils::Audio::Link.call(
+          track_id: @args[:track_id]
+        )
       end
     end
   end
