@@ -12,8 +12,9 @@ module LastFM
       def params
         {
           type: model_name,
-          nr: total_limit
-        }
+          nr: total_limit,
+          f: country_param
+        }.compact
       end
 
       def model_name
@@ -22,6 +23,12 @@ module LastFM
 
       def total_limit
         self.class::TOTAL_LIMIT
+      end
+
+      def country_param
+        return if @args[:country].blank?
+
+        "geo:#{@args[:country]}"
       end
 
       def data
