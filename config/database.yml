@@ -16,3 +16,5 @@ test:
 
 production:
   <<: *default
+  port: 6432
+  prepared_statements: false
