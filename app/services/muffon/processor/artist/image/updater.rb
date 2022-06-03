@@ -23,10 +23,6 @@ module Muffon
             find_artist.process_image(
               @args[:image]
             )
-
-            find_artist
-              .reload
-              .image_data
           end
         end
       end

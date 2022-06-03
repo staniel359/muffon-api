@@ -48,8 +48,6 @@ module Muffon
             resize_to_fill: [size, size]
           ).processed.url
         end
-      rescue ActiveStorage::FileNotFoundError
-        nil
       end
     end
   end

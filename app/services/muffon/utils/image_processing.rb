@@ -9,10 +9,10 @@ module Muffon
         return if image_file == 'DELETED'
 
         image.attach(
-          **image_file_data_formatted(
-            image_file
-          )
+          **image_file_data_formatted(image_file)
         )
+
+        reload.image_data
       rescue OpenURI::HTTPError
         nil
       end
@@ -25,6 +25,8 @@ module Muffon
             **image_file_data_formatted(i)
           )
         end
+
+        reload.images_data
       rescue OpenURI::HTTPError
         nil
       end
