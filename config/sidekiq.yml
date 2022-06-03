@@ -1,6 +1,9 @@
 :concurrency: 25
+:dynamic: true
+:limits:
+  artist_tags: 3
+  artist_images: 3
 :queues:
   - [default, 1]
   - [artist_tags, 1]
   - [artist_image, 1]
-  - [profile_recommendations, 1]

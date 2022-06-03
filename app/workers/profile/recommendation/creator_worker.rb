@@ -1,8 +1,8 @@
 class Profile
-  module Recommendations
+  module Recommendation
     class CreatorWorker < Worker::Base
       def perform(args)
-        Muffon::Processor::Profile::Recommendations::Creator.call(
+        Muffon::Processor::Profile::Recommendation::Creator.call(
           args_formatted(args)
         )
       end

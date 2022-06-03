@@ -22,7 +22,7 @@ gem 'rest-client'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sidekiq'
-gem 'sidekiq-throttled'
+gem 'sidekiq-limit_fetch'
 gem 'whenever', require: false
 
 group :development do

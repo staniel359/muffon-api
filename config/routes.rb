@@ -1,5 +1,4 @@
 require 'sidekiq/web'
-require 'sidekiq/throttled/web'
 
 Sidekiq::Web.use ActionDispatch::Cookies
 Sidekiq::Web.use ActionDispatch::Session::CookieStore,
@@ -11,8 +10,6 @@ Sidekiq::Web.use Rack::Auth::Basic do |username, password|
   username == sidekiq_secrets[:username] &&
     password == sidekiq_secrets[:password]
 end
-
-Sidekiq::Throttled::Web.enhance_queues_tab!
 
 Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'

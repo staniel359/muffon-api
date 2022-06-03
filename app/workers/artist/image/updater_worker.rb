@@ -1,15 +1,7 @@
 class Artist
   module Image
     class UpdaterWorker < Worker::Base
-      include Sidekiq::Throttled::Worker
-
       sidekiq_options queue: :artist_image
-
-      sidekiq_throttle(
-        concurrency: {
-          limit: 5
-        }
-      )
 
       def perform(args)
         Muffon::Processor::Artist::Image::Updater.call(

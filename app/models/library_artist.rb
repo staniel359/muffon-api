@@ -20,21 +20,16 @@ class LibraryArtist < ApplicationRecord
   private
 
   def create_recommendations
-    Profile::Recommendations::CreatorWorker.perform_async(
-      recomendations_worker_args
+    Muffon::Worker::Profile::Recommendations::Creator.call(
+      profile_id:,
+      library_artist_id: id
     )
   end
 
-  def recomendations_worker_args
-    {
+  def clear_recommendations
+    Muffon::Worker::Profile::Recommendations::Clearer.call(
       profile_id:,
       library_artist_id: id
-    }.to_json
-  end
-
-  def clear_recommendations
-    Profile::Recommendations::ClearerWorker.perform_async(
-      recomendations_worker_args
     )
   end
 end

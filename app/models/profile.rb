@@ -11,7 +11,9 @@ class Profile < ApplicationRecord
   has_many :library_albums, dependent: nil
   has_many :library_tracks, dependent: nil
 
-  has_many :recommendations, dependent: nil
+  has_many :recommendations,
+           class_name: '::Recommendation',
+           dependent: nil
 
   has_many :listened_artists, dependent: nil
   has_many :listened_albums, dependent: nil

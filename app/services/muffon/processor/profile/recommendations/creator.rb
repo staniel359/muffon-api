@@ -39,21 +39,12 @@ module Muffon
           end
 
           def process_recommendation(similar_artist)
-            ::Profile::Recommendations::Recommendation::CreatorWorker
-              .perform_async(
-                recomendation_worker_args(
-                  similar_artist
-                )
-              )
-          end
-
-          def recomendation_worker_args(similar_artist)
-            {
+            Muffon::Worker::Profile::Recommendation::Creator.call(
               artist_name: similar_artist[:name],
               profile_id: @args[:profile_id],
               library_artist_id:
                 @args[:library_artist_id]
-            }.to_json
+            )
           end
         end
       end
