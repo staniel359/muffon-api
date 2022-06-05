@@ -58,11 +58,11 @@ module Muffon
           end
 
           def conversations_with_other_profile
-            profile.conversations.where(
-              'profile_id = :other_profile_id'\
-              ' OR other_profile_id = :other_profile_id',
-              other_profile_id: @args[:other_profile_id]
-            )
+            profile
+              .conversations
+              .with_or_of_profile(
+                @args[:other_profile_id]
+              )
           end
 
           def conversation_params

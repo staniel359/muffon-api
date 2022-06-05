@@ -18,10 +18,7 @@ module ProfileDecorator
   end
 
   def conversations
-    Conversation.where(
-      'profile_id = :id OR other_profile_id = :id',
-      id:
-    )
+    Conversation.with_or_of_profile(id)
   end
 
   def feed_posts

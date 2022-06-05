@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_05_090603) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_05_100007) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -106,8 +106,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_090603) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["other_profile_id", "profile_id"], name: "index_conversations_on_other_profile_id_and_profile_id", unique: true
-    t.index ["other_profile_id"], name: "index_conversations_on_other_profile_id"
-    t.index ["profile_id"], name: "index_conversations_on_profile_id"
   end
 
   create_table "favorite_albums", force: :cascade do |t|
