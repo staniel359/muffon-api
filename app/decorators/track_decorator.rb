@@ -21,7 +21,7 @@ module TrackDecorator
     private
 
     def player_id
-      return '1' if Rails.env.test?
+      return if Rails.env.test?
 
       SecureRandom.uuid
     end
