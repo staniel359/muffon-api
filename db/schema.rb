@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_05_122329) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_05_122814) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -220,7 +220,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_122329) do
     t.jsonb "communities", default: [], array: true
     t.jsonb "videos", default: [], array: true
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["profile_id"], name: "index_messages_on_profile_id"
   end
 
   create_table "playlist_tracks", force: :cascade do |t|

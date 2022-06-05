@@ -34,27 +34,16 @@ module Muffon
 
           def message
             @message ||=
-              profile.messages.create(
+              conversation.messages.create(
                 message_params
               )
           end
 
-          def message_params
-            message_conversation_params
-              .merge(sendable_params)
-          end
-
-          def message_conversation_params
-            {
-              conversation_id:
-                conversation.id
-            }
-          end
-
           def conversation
-            conversations_with_other_profile.first_or_create(
-              conversation_params
-            )
+            @conversation ||=
+              conversations_with_other_profile.first_or_create(
+                conversation_params
+              )
           end
 
           def conversations_with_other_profile
@@ -69,6 +58,15 @@ module Muffon
             @args.permit!.slice(
               *%i[profile_id other_profile_id]
             )
+          end
+
+          def message_params
+            message_profile_params
+              .merge(sendable_params)
+          end
+
+          def message_profile_params
+            { profile_id: profile.id }
           end
 
           def process_images

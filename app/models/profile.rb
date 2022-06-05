@@ -57,8 +57,6 @@ class Profile < ApplicationRecord
            through: :passive_relationships,
            source: :profile
 
-  has_many :messages, dependent: nil
-
   has_many :own_communities,
            class_name: 'Community',
            dependent: nil
