@@ -2,10 +2,9 @@ module TagDecorator
   module ClassMethods
     def with_name(name)
       where(
-        'LOWER(name) = ?',
-        name.strip.downcase
+        name_downcase: name.strip.downcase
       ).first_or_create(
-        name:
+        name: name.strip
       )
     rescue ActiveRecord::RecordNotUnique
       clear_cache

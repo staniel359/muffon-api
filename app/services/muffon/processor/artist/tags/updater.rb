@@ -39,26 +39,28 @@ module Muffon
           def existing_tags
             @existing_tags ||=
               Tag.where(
-                'lower(name) = any(array[?])',
-                tag_names.map(&:downcase)
+                name_downcase:
+                  tag_names.map(&:downcase)
               )
           end
 
           def tag_names
             @tag_names ||=
-              tags_list.pluck(:name)
+              tags_list.map do |t|
+                t[:name].strip
+              end
           end
 
           def new_tag_ids
-            return [] if new_tags.blank?
+            return [] if new_tag_names.blank?
 
             Tag.insert_all(
               new_tags_formatted
             ).pluck('id')
           end
 
-          def new_tags
-            @new_tags ||=
+          def new_tag_names
+            @new_tag_names ||=
               tag_names.reject do |n|
                 n.downcase.in?(
                   existing_tag_names
@@ -68,14 +70,17 @@ module Muffon
 
           def existing_tag_names
             @existing_tag_names ||=
-              existing_tags.map do |t|
-                t[:name].downcase
-              end
+              existing_tags.map(
+                &:name_downcase
+              )
           end
 
           def new_tags_formatted
-            new_tags.map do |name|
-              { name: }
+            new_tag_names.map do |name|
+              {
+                name:,
+                name_downcase: name.downcase
+              }
             end
           end
         end
