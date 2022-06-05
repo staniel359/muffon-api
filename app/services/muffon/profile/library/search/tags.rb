@@ -25,7 +25,7 @@ module Muffon
 
           def matched_tags
             ::Tag.where(
-              'LOWER(name) LIKE ?',
+              'name_downcase LIKE ?',
               query_formatted
             )
           end

@@ -14,8 +14,8 @@ module Muffon
           def search_library_albums
             @search_library_albums ||=
               library_albums_joined.where(
-                'LOWER(albums.title) LIKE :query '\
-                'OR LOWER(artists.name) LIKE :query',
+                'albums.title_downcase LIKE :query '\
+                'OR artists.name_downcase LIKE :query',
                 query: query_formatted
               )
           end

@@ -32,7 +32,7 @@ module Muffon
           def search_library_artists
             @search_library_artists ||=
               library_artists_joined.where(
-                'LOWER(artists.name) LIKE :query',
+                'artists.name_downcase LIKE :query',
                 query: query_formatted
               )
           end
