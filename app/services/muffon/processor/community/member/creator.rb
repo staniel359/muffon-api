@@ -16,9 +16,9 @@ module Muffon
 
           def membership
             @membership ||=
-              profile.memberships.where(
-                community_id:
-                  @args[:community_id]
+              community.memberships.where(
+                profile_id:
+                  @args[:profile_id]
               ).first_or_create
           end
         end

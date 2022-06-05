@@ -13,9 +13,9 @@ module Muffon
 
           def membership
             @membership ||=
-              profile.memberships.find_by(
-                community_id:
-                  @args[:community_id]
+              community.memberships.find_by(
+                profile_id:
+                  @args[:profile_id]
               )
           end
         end
