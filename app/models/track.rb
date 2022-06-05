@@ -4,6 +4,9 @@ class Track < ApplicationRecord
   belongs_to :artist
 
   validates :title,
+            presence: true
+
+  validates :title_downcase,
             presence: true,
             uniqueness: {
               scope: :artist_id
