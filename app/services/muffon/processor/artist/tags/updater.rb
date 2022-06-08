@@ -29,19 +29,16 @@ module Muffon
           end
 
           def tag_ids
-            existing_tag_ids + new_tag_ids
+            (
+              existing_tag_ids + new_tag_ids
+            ).sort
           end
 
           def existing_tag_ids
-            existing_tags.map(&:id)
-          end
-
-          def existing_tags
-            @existing_tags ||=
-              Tag.where(
-                name_downcase:
-                  tag_names.map(&:downcase)
-              )
+            Tag.where(
+              name_downcase:
+                tag_names.map(&:downcase)
+            ).pluck(:id)
           end
 
           def tag_names
@@ -52,36 +49,22 @@ module Muffon
           end
 
           def new_tag_ids
-            return [] if new_tag_names.blank?
-
             Tag.insert_all(
               new_tags_formatted
             ).pluck('id')
           end
 
-          def new_tag_names
-            @new_tag_names ||=
-              tag_names.reject do |n|
-                n.downcase.in?(
-                  existing_tag_names
-                )
-              end
-          end
-
-          def existing_tag_names
-            @existing_tag_names ||=
-              existing_tags.map(
-                &:name_downcase
-              )
-          end
-
           def new_tags_formatted
-            new_tag_names.map do |name|
-              {
-                name:,
-                name_downcase: name.downcase
-              }
+            tag_names.map do |name|
+              format_tag(name)
             end
+          end
+
+          def format_tag(name)
+            {
+              name:,
+              name_downcase: name.downcase
+            }
           end
         end
       end
