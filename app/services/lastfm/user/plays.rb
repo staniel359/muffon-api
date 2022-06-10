@@ -51,7 +51,11 @@ module LastFM
       end
 
       def plays_list
-        plays_data['track']
+        plays_data['track'].reject do |t|
+          t.dig(
+            '@attr', 'nowplaying'
+          ) == 'true'
+        end
       end
 
       def play_formatted(play)
