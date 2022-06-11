@@ -9,6 +9,15 @@ module VK
       super['response']
     end
 
+    def response
+      RestClient::Request.execute(
+        method: :get,
+        url: link,
+        headers:,
+        proxy:
+      )
+    end
+
     def link
       "#{BASE_LINK}/method/#{api_method}"
     end
@@ -44,6 +53,10 @@ module VK
       Digest::MD5.hexdigest(
         signature
       )
+    end
+
+    def proxy
+      secrets.proxy[:ru]
     end
 
     def api_secret
