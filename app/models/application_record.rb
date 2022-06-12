@@ -40,15 +40,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   private
 
-  def add_artist_tags
-    Artist::Tags::UpdaterWorker.perform_async(
-      artist_tags_worker_args
-    )
-  end
-
-  def artist_tags_worker_args
-    {
-      name: artist.name
-    }.to_json
+  def update_artist_tags
+    artist.update_tags
   end
 end

@@ -1,7 +1,7 @@
 class LibraryArtist < ApplicationRecord
   include LibraryArtistDecorator
 
-  after_create_commit :add_artist_tags
+  after_create_commit :update_artist_tags
   after_create_commit :create_recommendations
 
   before_destroy :clear_recommendations
