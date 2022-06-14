@@ -19,6 +19,7 @@ module Muffon
                 title:,
                 artist: artist_names_data,
                 artists:,
+                album: album_data,
                 image: image_data
               }.compact
             end
