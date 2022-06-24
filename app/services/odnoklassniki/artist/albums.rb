@@ -7,7 +7,7 @@ module Odnoklassniki
       private
 
       def albums_list
-        response_data['masterAlbums']
+        response_data['masterAlbums'] || []
       end
 
       def artist_data
