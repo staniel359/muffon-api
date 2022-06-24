@@ -2,9 +2,15 @@ module LastFM
   module Utils
     module Web
       module Pagination
-        include LastFM::Utils::Pagination
+        include Muffon::Utils::Pagination
 
         private
+
+        def params
+          super.merge(
+            pagination_params
+          )
+        end
 
         def pagination_params
           { page: }

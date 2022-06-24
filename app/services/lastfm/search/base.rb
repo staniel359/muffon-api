@@ -1,7 +1,7 @@
 module LastFM
   module Search
     class Base < LastFM::Base
-      include LastFM::Utils::Pagination
+      include Muffon::Utils::Pagination
 
       private
 
@@ -32,10 +32,7 @@ module LastFM
       end
 
       def search_params
-        {
-          model_name.to_sym =>
-            @args[:query]
-        }
+        { model_name.to_sym => @args[:query] }
       end
 
       def data
@@ -43,20 +40,20 @@ module LastFM
       end
 
       def total_items_count
-        results_list_filtered.size
-      end
-
-      def results_list_filtered
-        @results_list_filtered ||=
-          results_list.reject do |r|
-            r['name'] == '(null)'
-          end
+        response_data.dig(
+          'results',
+          'opensearch:totalResults'
+        ).to_i
       end
 
       def collection_list
-        collection_paginated(
-          results_list_filtered
-        )
+        results_list_filtered.last(limit)
+      end
+
+      def results_list_filtered
+        results_list.reject do |r|
+          r['name'] == '(null)'
+        end
       end
     end
   end

@@ -2,9 +2,15 @@ module LastFM
   module Artist
     module Utils
       module Pagination
-        include LastFM::Utils::Pagination
+        include Muffon::Utils::Pagination
 
         private
+
+        def params
+          super.merge(
+            pagination_params
+          )
+        end
 
         def artist_data
           artist_base_data
@@ -21,15 +27,21 @@ module LastFM
           )
         end
 
+        def total_items_count
+          [
+            collection_count,
+            total_limit
+          ].min
+        end
+
         def total_limit
           self.class::TOTAL_LIMIT
         end
 
-        def total_items_count
-          [
-            raw_collection_list.size,
-            self.class::LIMIT
-          ].min
+        def collection_count
+          artist.dig(
+            '@attr', 'total'
+          ).to_i
         end
 
         def collection_list

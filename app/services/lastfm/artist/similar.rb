@@ -14,6 +14,10 @@ module LastFM
         ]
       end
 
+      def pagination_params
+        { limit: TOTAL_LIMIT }
+      end
+
       def raw_collection_list
         return random_artist if @args[:random]
 
@@ -30,6 +34,12 @@ module LastFM
 
       def similar_artists_list
         artist['artist']
+      end
+
+      def collection_list
+        collection_paginated(
+          raw_collection_list
+        )
       end
 
       def total_items_count

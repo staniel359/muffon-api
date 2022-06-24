@@ -3,8 +3,7 @@ module LastFM
     class Tracks < LastFM::Artist::Base
       API_METHOD = 'artist.getTopTracks'.freeze
       COLLECTION_NAME = 'tracks'.freeze
-      TOTAL_LIMIT = 750
-      LIMIT = 500
+      TOTAL_LIMIT = 500
       include LastFM::Artist::Utils::Pagination
 
       private
@@ -13,8 +12,8 @@ module LastFM
         response_data['toptracks']
       end
 
-      def raw_collection_list
-        artist['track']
+      def collection_list
+        artist['track'].last(limit)
       end
 
       def collection_item_data_formatted(track)

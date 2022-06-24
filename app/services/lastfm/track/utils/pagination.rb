@@ -2,7 +2,7 @@ module LastFM
   module Track
     module Utils
       module Pagination
-        include LastFM::Utils::Pagination
+        include Muffon::Utils::Pagination
 
         private
 

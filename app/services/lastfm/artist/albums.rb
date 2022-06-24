@@ -3,8 +3,7 @@ module LastFM
     class Albums < LastFM::Artist::Base
       API_METHOD = 'artist.getTopAlbums'.freeze
       COLLECTION_NAME = 'albums'.freeze
-      TOTAL_LIMIT = 500
-      LIMIT = 200
+      TOTAL_LIMIT = 200
       include LastFM::Artist::Utils::Pagination
 
       private
@@ -13,11 +12,14 @@ module LastFM
         response_data['topalbums']
       end
 
-      def raw_collection_list
-        @raw_collection_list ||=
-          artist['album'].reject do |a|
-            a['name'] == '(null)'
-          end
+      def collection_list
+        collection_list_filtered.last(limit)
+      end
+
+      def collection_list_filtered
+        artist['album'].reject do |a|
+          a['name'] == '(null)'
+        end
       end
 
       def collection_item_data_formatted(album)
