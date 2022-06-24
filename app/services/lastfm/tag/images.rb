@@ -1,7 +1,9 @@
 module LastFM
   module Tag
-    class Images < LastFM::Tag::Web::Base
+    class Images < LastFM::Tag::Kerve::Base
       COLLECTION_NAME = 'artists'.freeze
+      MODEL_NAME = 'artist'.freeze
+      TOTAL_LIMIT = 15
 
       private
 
@@ -9,16 +11,8 @@ module LastFM
         { images: collection }
       end
 
-      def collection_list
-        response_data.css(
-          '.big-artist-list-avatar-desktop img'
-        ).first(15)
-      end
-
-      def collection_item_data_formatted(image)
-        image['src'].sub(
-          '/270x205', '/174s'
-        )
+      def collection_item_data_formatted(artist)
+        artist['image']
       end
     end
   end

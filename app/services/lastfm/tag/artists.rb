@@ -1,29 +1,16 @@
 module LastFM
   module Tag
-    class Artists < LastFM::Tag::Web::Base
+    class Artists < LastFM::Tag::Kerve::Base
       COLLECTION_NAME = 'artists'.freeze
-      include LastFM::Tag::Utils::Pagination
+      MODEL_NAME = 'artist'.freeze
+      TOTAL_LIMIT = 1_000
 
       private
 
-      def artists_list
-        return random_artist if @args[:random]
+      def collection_list
+        return random_item if @args[:random]
 
-        raw_artists_list
-      end
-
-      def random_artist
-        [raw_random_artist].compact
-      end
-
-      def raw_random_artist
-        raw_artists_list.to_a.sample
-      end
-
-      def raw_artists_list
-        response_data.css(
-          '.big-artist-list-item'
-        )
+        super
       end
 
       def collection_item_data_formatted(artist)

@@ -16,10 +16,7 @@ module LastFM
         end
 
         def title
-          album.css(
-            '.resource-list--'\
-            'release-list-item-name a'
-          )[0].text
+          album['name']
         end
 
         def album
@@ -27,10 +24,7 @@ module LastFM
         end
 
         def artist_name
-          album.css(
-            '.resource-list--'\
-            'release-list-item-artist a'
-          )[0].text
+          album['artist']
         end
 
         def album_data
@@ -51,10 +45,7 @@ module LastFM
         end
 
         def image
-          album.css(
-            '.resource-list--'\
-            'release-list-item-image img'
-          )[0]['src']
+          album['image']
         end
       end
     end

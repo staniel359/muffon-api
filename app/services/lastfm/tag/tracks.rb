@@ -1,29 +1,16 @@
 module LastFM
   module Tag
-    class Tracks < LastFM::Tag::Web::Base
+    class Tracks < LastFM::Tag::Kerve::Base
       COLLECTION_NAME = 'tracks'.freeze
-      include LastFM::Tag::Utils::Pagination
+      MODEL_NAME = 'track'.freeze
+      TOTAL_LIMIT = 2_500
 
       private
 
-      def tracks_list
-        return random_track if @args[:random]
+      def collection_list
+        return random_item if @args[:random]
 
-        raw_tracks_list
-      end
-
-      def random_track
-        [raw_random_track].compact
-      end
-
-      def raw_random_track
-        raw_tracks_list.to_a.sample
-      end
-
-      def raw_tracks_list
-        response_data.css(
-          '.chartlist-row'
-        )
+        super
       end
 
       def collection_item_data_formatted(track)

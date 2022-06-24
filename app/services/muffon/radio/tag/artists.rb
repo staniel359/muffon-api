@@ -3,7 +3,6 @@ module Muffon
     module Tag
       class Artists < Muffon::Radio::Tag::Base
         ARTISTS_LIMIT = 100
-        TAG_ARTISTS_LIMIT = 21
         TRACKS_LIMIT = 20
 
         private
@@ -12,21 +11,15 @@ module Muffon
           @tag_info_data ||=
             LastFM::Tag::Artists.call(
               tag: @args[:tag],
-              page: tag_random_page,
+              limit: ARTISTS_LIMIT,
               random: random?,
               minimal: true
             )[:tag]
         end
 
-        def pages_count
-          ARTISTS_LIMIT.fdiv(
-            TAG_ARTISTS_LIMIT
-          ).ceil
-        end
-
         def radio_track_data
           @radio_track_data ||=
-            tag_artist_info_data.dig(
+            tag_artist_info_data&.dig(
               :tracks, 0
             )
         end

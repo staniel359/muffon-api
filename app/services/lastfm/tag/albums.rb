@@ -1,16 +1,11 @@
 module LastFM
   module Tag
-    class Albums < LastFM::Tag::Web::Base
+    class Albums < LastFM::Tag::Kerve::Base
       COLLECTION_NAME = 'albums'.freeze
-      include LastFM::Tag::Utils::Pagination
+      MODEL_NAME = 'album'.freeze
+      TOTAL_LIMIT = 1_000
 
       private
-
-      def albums_list
-        response_data.css(
-          '.resource-list--release-list-item'
-        )
-      end
 
       def collection_item_data_formatted(album)
         LastFM::Tag::Albums::Album.call(

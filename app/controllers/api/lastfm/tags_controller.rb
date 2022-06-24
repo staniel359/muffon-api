@@ -50,7 +50,7 @@ module API
       def artists_data
         ::LastFM::Tag::Artists.call(
           params.slice(
-            *%i[tag profile_id page]
+            *%i[tag profile_id page limit]
           )
         )
       end
@@ -58,7 +58,7 @@ module API
       def albums_data
         ::LastFM::Tag::Albums.call(
           params.slice(
-            *%i[tag profile_id page]
+            *%i[tag profile_id page limit]
           )
         )
       end
@@ -66,7 +66,7 @@ module API
       def tracks_data
         ::LastFM::Tag::Tracks.call(
           params.slice(
-            *%i[tag profile_id page]
+            *%i[tag profile_id page limit]
           )
         )
       end

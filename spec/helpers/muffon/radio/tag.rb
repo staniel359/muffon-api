@@ -4,11 +4,11 @@ module Helpers
       module Tag
         class << self
           def artists_data
-            {:radio=>{:track=>{:artist=>{:name=>"Depeche Mode"}, :artists=>[{:name=>"Depeche Mode"}], :listeners_count=>1075248, :player_id=>"1", :source=>{:name=>"lastfm"}, :title=>"Enjoy the Silence"}}}
+            {:radio=>{:track=>{:artist=>{:name=>"Kate Bush"}, :artists=>[{:name=>"Kate Bush"}], :listeners_count=>739995, :player_id=>"1", :source=>{:name=>"lastfm"}, :title=>"Running Up That Hill (A Deal With God)"}}}
           end
 
           def tracks_data
-            {:radio=>{:track=>{:artist=>{:name=>"Syo"}, :artists=>[{:name=>"Syo", :source=>{:name=>"lastfm"}}], :player_id=>"1", :source=>{:name=>"lastfm"}, :title=>"Ching a Ling Heroes (Home Demo)"}}}
+            {:radio=>{:track=>{:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing", :source=>{:name=>"lastfm"}}], :player_id=>"1", :source=>{:name=>"lastfm"}, :title=>"My Angel Lonely"}}}
           end
         end
       end

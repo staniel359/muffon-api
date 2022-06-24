@@ -110,5 +110,13 @@ module LastFM
         %r{(.+)<a href="http(s?)://www.last.fm}m
       )[1].strip
     end
+
+    def random_item
+      [
+        raw_collection_list[
+          0...limit
+        ].sample
+      ]
+    end
   end
 end

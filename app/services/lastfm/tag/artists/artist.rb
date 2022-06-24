@@ -22,9 +22,7 @@ module LastFM
         end
 
         def name
-          artist.css(
-            '.big-artist-list-title'
-          )[0].text
+          artist['name']
         end
 
         def artist
@@ -38,6 +36,20 @@ module LastFM
             image: image_data,
             listeners_count:
           }.compact
+        end
+
+        def image_data
+          image_data_formatted(
+            image
+          )
+        end
+
+        def image
+          artist['image']
+        end
+
+        def listeners_count
+          artist['listeners'].to_i
         end
       end
     end

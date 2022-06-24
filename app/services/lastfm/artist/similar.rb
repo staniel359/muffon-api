@@ -4,6 +4,7 @@ module LastFM
       API_METHOD = 'artist.getSimilar'.freeze
       COLLECTION_NAME = 'similar'.freeze
       TOTAL_LIMIT = 250
+      LIMIT = 250
       include LastFM::Artist::Utils::Pagination
 
       private
@@ -14,26 +15,14 @@ module LastFM
         ]
       end
 
+      def collection_list
+        return random_item if @args[:random]
+
+        super
+      end
+
       def raw_collection_list
-        return random_artist if @args[:random]
-
-        similar_artists_list
-      end
-
-      def random_artist
-        [
-          similar_artists_list[
-            0...limit
-          ].sample
-        ]
-      end
-
-      def similar_artists_list
         artist['artist']
-      end
-
-      def total_items_count
-        raw_collection_list.size
       end
 
       def collection_item_data_formatted(artist)
