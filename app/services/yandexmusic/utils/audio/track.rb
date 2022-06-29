@@ -20,9 +20,9 @@ module YandexMusic
         end
 
         def link
-          'https://music.yandex.ru/api/v2.1'\
-            "/handlers/track/#{@args[:track_id]}"\
-            '/web-album_track-track-track-main'\
+          'https://music.yandex.ru/api/v2.1' \
+            "/handlers/track/#{@args[:track_id]}" \
+            '/web-album_track-track-track-main' \
             '/download/m'
         end
 

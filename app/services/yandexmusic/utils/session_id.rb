@@ -24,8 +24,8 @@ module YandexMusic
       end
 
       def password_link
-        'https://passport.yandex.ru'\
-          '/registration-validations'\
+        'https://passport.yandex.ru' \
+          '/registration-validations' \
           '/auth/multi_step/commit_password'
       end
 
@@ -54,8 +54,8 @@ module YandexMusic
       end
 
       def email_link
-        'https://passport.yandex.ru'\
-          '/registration-validations'\
+        'https://passport.yandex.ru' \
+          '/registration-validations' \
           '/auth/multi_step/start'
       end
 

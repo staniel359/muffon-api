@@ -28,7 +28,7 @@ module Odnoklassniki
     end
 
     def link
-      "https://wmf.ok.ru/#{endpoint_name};"\
+      "https://wmf.ok.ru/#{endpoint_name};" \
         "jsessionid=#{session_id}"
     end
 

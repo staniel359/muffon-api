@@ -18,7 +18,7 @@ module YandexMusic
       end
 
       def link
-        "#{BASE_LINK}/albums"\
+        "#{BASE_LINK}/albums" \
           "/#{@args[:album_id]}/with-tracks"
       end
 

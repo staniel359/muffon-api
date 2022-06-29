@@ -13,10 +13,10 @@ module LastFM
         end
 
         def link
-          "#{super}?method=#{api_method}"\
-            "&api_key=#{api_key}"\
-            "&token=#{token}"\
-            "&api_sig=#{api_signature}"\
+          "#{super}?method=#{api_method}" \
+            "&api_key=#{api_key}" \
+            "&token=#{token}" \
+            "&api_sig=#{api_signature}" \
             '&format=json'
         end
 
@@ -26,9 +26,9 @@ module LastFM
 
         def api_signature
           Digest::MD5.hexdigest(
-            "api_key#{api_key}"\
-            'methodauth.getSession'\
-            "token#{token}"\
+            "api_key#{api_key}" \
+            'methodauth.getSession' \
+            "token#{token}" \
             "#{api_secret}"
           )
         end

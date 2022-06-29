@@ -6,12 +6,12 @@ module RecommendationDecorator
 
     def library_artists_count_desc_ordered
       select(
-        'recommendations.*,'\
-        ' ARRAY_LENGTH(library_artist_ids, 1)'\
-        ' as library_artist_ids_size'
+        'recommendations.*, ' \
+        'ARRAY_LENGTH(library_artist_ids, 1) ' \
+        'as library_artist_ids_size'
       ).order(
-        'library_artist_ids_size DESC,'\
-        ' recommendations.created_at ASC'
+        'library_artist_ids_size DESC, ' \
+        'recommendations.created_at ASC'
       )
     end
 

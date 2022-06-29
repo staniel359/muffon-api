@@ -35,10 +35,10 @@ module VK
       end
 
       def signature
-        "/method/#{API_METHOD}"\
-          "?access_token=#{access_token}"\
-          '&v=5.131'\
-          "&audios=#{vk_track_id}"\
+        "/method/#{API_METHOD}" \
+          "?access_token=#{access_token}" \
+          '&v=5.131' \
+          "&audios=#{vk_track_id}" \
           "#{api_secret}"
       end
 

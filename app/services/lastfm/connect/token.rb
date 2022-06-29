@@ -21,7 +21,7 @@ module LastFM
       end
 
       def connect_link
-        'https://www.last.fm/api/auth'\
+        'https://www.last.fm/api/auth' \
           "?api_key=#{api_key}&token=#{token}"
       end
     end

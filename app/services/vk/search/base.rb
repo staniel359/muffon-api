@@ -26,11 +26,11 @@ module VK
       end
 
       def signature
-        "/method/#{api_method}"\
-          "?access_token=#{access_token}"\
-          '&v=5.131'\
-          "&q=#{query}"\
-          "&count=#{TOTAL_LIMIT}"\
+        "/method/#{api_method}" \
+          "?access_token=#{access_token}" \
+          '&v=5.131' \
+          "&q=#{query}" \
+          "&count=#{TOTAL_LIMIT}" \
           "#{api_secret}"
       end
 

@@ -46,13 +46,13 @@ module VK
       end
 
       def signature
-        "/method/#{API_METHOD}"\
-          "?access_token=#{access_token}"\
-          '&v=5.131'\
-          "&playlist_id=#{vk_album_id}"\
-          "&owner_id=#{vk_owner_id}"\
-          "&access_key=#{vk_access_key}"\
-          "&lang=#{language}"\
+        "/method/#{API_METHOD}" \
+          "?access_token=#{access_token}" \
+          '&v=5.131' \
+          "&playlist_id=#{vk_album_id}" \
+          "&owner_id=#{vk_owner_id}" \
+          "&access_key=#{vk_access_key}" \
+          "&lang=#{language}" \
           "#{api_secret}"
       end
 

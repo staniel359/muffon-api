@@ -14,10 +14,10 @@ module VK
       end
 
       def signature
-        "/method/#{api_method}"\
-          "?access_token=#{access_token}"\
-          '&v=5.131'\
-          "&artist_id=#{vk_artist_id}"\
+        "/method/#{api_method}" \
+          "?access_token=#{access_token}" \
+          '&v=5.131' \
+          "&artist_id=#{vk_artist_id}" \
           "#{api_secret}"
       end
 

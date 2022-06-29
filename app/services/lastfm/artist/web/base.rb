@@ -9,7 +9,7 @@ module LastFM
         end
 
         def base_link
-          'https://www.last.fm/music'\
+          'https://www.last.fm/music' \
             "/#{artist_name_formatted}"
         end
 

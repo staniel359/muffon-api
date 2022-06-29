@@ -23,12 +23,12 @@ module VK
       end
 
       def signature
-        "/method/#{api_method}"\
-          "?access_token=#{access_token}"\
-          '&v=5.131'\
-          "&artist_id=#{vk_artist_id}"\
-          "&count=#{limit}"\
-          "&offset=#{offset}"\
+        "/method/#{api_method}" \
+          "?access_token=#{access_token}" \
+          '&v=5.131' \
+          "&artist_id=#{vk_artist_id}" \
+          "&count=#{limit}" \
+          "&offset=#{offset}" \
           "#{api_secret}"
       end
 

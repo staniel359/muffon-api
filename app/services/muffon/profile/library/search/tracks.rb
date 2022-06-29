@@ -14,7 +14,7 @@ module Muffon
           def search_library_tracks
             @search_library_tracks ||=
               library_tracks_joined.where(
-                'tracks.title_downcase LIKE :query '\
+                'tracks.title_downcase LIKE :query ' \
                 'OR artists.name_downcase LIKE :query',
                 query: query_formatted
               )

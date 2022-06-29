@@ -29,7 +29,7 @@ module Bandcamp
     end
 
     def image(data)
-      'https://f4.bcbits.com/img'\
+      'https://f4.bcbits.com/img' \
         "/a#{data['art_id']}_10.jpg"
     end
   end

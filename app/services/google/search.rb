@@ -4,7 +4,7 @@ module Google
     PAGE_LIMIT = 10
     PAGES_LIMIT = 10
     BASE_LINK =
-      'https://www.googleapis.com'\
+      'https://www.googleapis.com' \
       '/customsearch/v1/siterestrict'.freeze
     FIELDS = <<~FIELDS.freeze
       items(

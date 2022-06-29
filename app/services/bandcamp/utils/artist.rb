@@ -32,7 +32,7 @@ module Bandcamp
       end
 
       def image
-        'https://f4.bcbits.com/img'\
+        'https://f4.bcbits.com/img' \
           "/00#{image_id}_10.jpg"
       end
 
