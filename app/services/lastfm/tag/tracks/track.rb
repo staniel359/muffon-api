@@ -36,7 +36,7 @@ module LastFM
             source: source_data,
             player_id:,
             title:,
-            artist: artist_names_data,
+            artist: track_artist_data,
             artists:
           }
         end

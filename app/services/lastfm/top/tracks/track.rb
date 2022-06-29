@@ -28,10 +28,16 @@ module LastFM
             source: source_data,
             player_id:,
             title:,
-            artist: artist_names_data,
+            artist: track_artist_data,
             artists:,
             listeners_count:
           }
+        end
+
+        def artist_image_data
+          image_data_formatted(
+            track['image']
+          )
         end
       end
     end

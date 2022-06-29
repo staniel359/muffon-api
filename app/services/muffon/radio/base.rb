@@ -1,6 +1,8 @@
 module Muffon
   module Radio
     class Base < Muffon::Base
+      include Muffon::Utils::Track
+
       private
 
       def no_data?
@@ -36,7 +38,7 @@ module Muffon
 
       def artists_data
         {
-          artist: artist_names_data,
+          artist: track_artist_data,
           artists:
         }
       end
