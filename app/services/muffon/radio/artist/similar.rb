@@ -2,7 +2,7 @@ module Muffon
   module Radio
     module Artist
       class Similar < Muffon::Radio::Artist::Base
-        SIMILAR_ARTISTS_LIMIT = 50
+        ARTISTS_LIMIT = 100
         TRACKS_LIMIT = 20
 
         private
@@ -11,15 +11,21 @@ module Muffon
           @artist_info_data ||=
             LastFM::Artist::Similar.call(
               artist: @args[:artist],
-              limit: SIMILAR_ARTISTS_LIMIT,
-              random: random?,
+              limit: 1,
+              page: random_artist_number,
               minimal: true
             )[:artist]
         end
 
+        def random_artist_number
+          return 1 if Rails.env.test?
+
+          rand(1..ARTISTS_LIMIT)
+        end
+
         def radio_track_data
           @radio_track_data ||=
-            similar_artist_info_data.dig(
+            similar_artist_info_data&.dig(
               :tracks, 0
             )
         end

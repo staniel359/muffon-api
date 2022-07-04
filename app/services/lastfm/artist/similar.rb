@@ -19,27 +19,7 @@ module LastFM
       end
 
       def raw_collection_list
-        return random_artist if @args[:random]
-
-        similar_artists_list
-      end
-
-      def random_artist
-        [
-          similar_artists_list[
-            0...limit
-          ].sample
-        ]
-      end
-
-      def similar_artists_list
         artist['artist']
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_collection_list
-        )
       end
 
       def total_items_count

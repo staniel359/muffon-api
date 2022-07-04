@@ -2,7 +2,7 @@ module Muffon
   module Radio
     module Artist
       class Tracks < Muffon::Radio::Artist::Base
-        TRACKS_LIMIT = 50
+        TRACKS_LIMIT = 100
 
         private
 

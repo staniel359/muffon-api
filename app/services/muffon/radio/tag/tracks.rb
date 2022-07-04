@@ -2,7 +2,7 @@ module Muffon
   module Radio
     module Tag
       class Tracks < Muffon::Radio::Tag::Base
-        TRACKS_LIMIT = 500
+        TRACKS_LIMIT = 1_000
         TAG_TRACKS_LIMIT = 50
 
         private

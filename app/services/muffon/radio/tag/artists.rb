@@ -2,7 +2,7 @@ module Muffon
   module Radio
     module Tag
       class Artists < Muffon::Radio::Tag::Base
-        ARTISTS_LIMIT = 100
+        ARTISTS_LIMIT = 200
         TAG_ARTISTS_LIMIT = 21
         TRACKS_LIMIT = 20
 
@@ -26,7 +26,7 @@ module Muffon
 
         def radio_track_data
           @radio_track_data ||=
-            tag_artist_info_data.dig(
+            tag_artist_info_data&.dig(
               :tracks, 0
             )
         end
