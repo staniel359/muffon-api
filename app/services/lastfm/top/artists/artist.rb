@@ -11,17 +11,8 @@ module LastFM
         private
 
         def data
-          update_listeners_count
-
           muffon_data
             .merge(artist_data)
-        end
-
-        def update_listeners_count
-          find_artist.update(
-            listeners_count:
-              artist['listeners'].to_i
-          )
         end
 
         def artist
