@@ -39,6 +39,18 @@ module LastFM
             listeners_count:
           }.compact
         end
+
+        def image_data
+          image_data_formatted(
+            image
+          )
+        end
+
+        def image
+          artist.css(
+            '.big-artist-list-avatar-desktop img'
+          )[0]['src']
+        end
       end
     end
   end
