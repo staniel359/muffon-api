@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&limit=250&method=artist.getSimilar
+    uri: https://kerve.last.fm/kerve/similarartists?artist=wejlhg239gh23&limit=250
     body:
       encoding: US-ASCII
       string: ''
@@ -14,32 +14,36 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - ws.audioscrobbler.com
+      - kerve.last.fm
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: artist param invalid
     headers:
-      Server:
-      - openresty/1.13.6.2
-      Date:
-      - Mon, 09 May 2022 12:04:29 GMT
+      X-Raw-Content-Length:
+      - '2'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '77'
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS
+      - POST, GET, OPTIONS, PUT
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Max-Age:
-      - '86400'
+      Date:
+      - Mon, 04 Jul 2022 15:13:42 GMT
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: UTF-8
-      string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
-  recorded_at: Mon, 09 May 2022 12:04:29 GMT
+      encoding: ASCII-8BIT
+      string: "{}"
+  recorded_at: Mon, 04 Jul 2022 15:13:42 GMT
 recorded_with: VCR 6.1.0

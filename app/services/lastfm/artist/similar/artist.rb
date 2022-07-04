@@ -2,7 +2,7 @@ module LastFM
   module Artist
     class Similar
       class Artist < LastFM::Artist::Similar
-        prepend LastFM::Utils::Artist
+        include LastFM::Utils::Artist
 
         def call
           data
@@ -32,6 +32,12 @@ module LastFM
             image: image_data,
             listeners_count:
           }.compact
+        end
+
+        def image_data
+          image_data_formatted(
+            artist['image']
+          )
         end
       end
     end

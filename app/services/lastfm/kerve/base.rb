@@ -10,6 +10,10 @@ module LastFM
         "#{BASE_LINK}/charts"
       end
 
+      def similar_artists_link
+        "#{BASE_LINK}/similarartists"
+      end
+
       def params
         {
           type: model_name,
