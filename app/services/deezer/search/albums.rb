@@ -3,6 +3,7 @@ module Deezer
     class Albums < Deezer::Search::Base
       COLLECTION_NAME = 'albums'.freeze
       MODEL_NAME = 'album'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

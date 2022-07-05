@@ -49,7 +49,14 @@ module Muffon
       end
 
       def total_items_count
-        0
+        [
+          collection_count,
+          total_limit
+        ].min
+      end
+
+      def total_limit
+        self.class::TOTAL_LIMIT
       end
 
       def collection_name

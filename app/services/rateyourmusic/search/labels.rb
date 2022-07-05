@@ -3,6 +3,7 @@ module RateYourMusic
     class Labels < RateYourMusic::Search::Base
       COLLECTION_NAME = 'labels'.freeze
       SEARCH_TYPE = 'b'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

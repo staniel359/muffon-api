@@ -40,9 +40,7 @@ module Genius
         { search: paginated_data }
       end
 
-      def total_items_count
-        1_000
-      end
+      alias total_items_count total_limit
     end
   end
 end

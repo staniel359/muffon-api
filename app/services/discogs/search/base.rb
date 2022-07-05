@@ -42,7 +42,7 @@ module Discogs
         { search: paginated_data }
       end
 
-      def total_pages_count
+      def collection_count
         response_data.dig(
           'pagination', 'pages'
         )

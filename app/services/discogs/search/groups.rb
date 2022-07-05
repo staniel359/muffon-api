@@ -3,6 +3,7 @@ module Discogs
     class Groups < Discogs::Search::Base
       COLLECTION_NAME = 'groups'.freeze
       COLLECTION_TYPE = 'master'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

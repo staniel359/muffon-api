@@ -3,6 +3,7 @@ module RateYourMusic
     class Artists < RateYourMusic::Search::Base
       COLLECTION_NAME = 'artists'.freeze
       SEARCH_TYPE = 'a'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

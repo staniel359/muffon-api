@@ -3,6 +3,7 @@ module Discogs
     class Artists < Discogs::Search::Base
       COLLECTION_NAME = 'artists'.freeze
       COLLECTION_TYPE = 'artist'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

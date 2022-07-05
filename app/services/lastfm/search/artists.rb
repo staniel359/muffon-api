@@ -3,6 +3,7 @@ module LastFM
     class Artists < LastFM::Search::Base
       COLLECTION_NAME = 'artists'.freeze
       MODEL_NAME = 'artist'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

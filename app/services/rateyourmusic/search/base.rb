@@ -55,6 +55,7 @@ module RateYourMusic
       end
 
       alias search_data paginated_data
+      alias total_items_count total_limit
     end
   end
 end

@@ -3,6 +3,7 @@ module YandexMusic
     class Tracks < YandexMusic::Search::Base
       COLLECTION_TYPE = 'track'.freeze
       COLLECTION_NAME = 'tracks'.freeze
+      TOTAL_LIMIT = 500
 
       private
 

@@ -54,7 +54,7 @@ module YandexMusic
         { search: paginated_data }
       end
 
-      def total_items_count
+      def collection_count
         collection_data['total']
       end
 

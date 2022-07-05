@@ -49,7 +49,7 @@ module VK
         { search: paginated_data }
       end
 
-      def total_items_count
+      def collection_count
         results_list.size
       end
 

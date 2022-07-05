@@ -2,6 +2,7 @@ module SoundCloud
   module Search
     class Artists < SoundCloud::Search::Base
       COLLECTION_NAME = 'artists'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

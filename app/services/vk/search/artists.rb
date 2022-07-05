@@ -3,6 +3,7 @@ module VK
     class Artists < VK::Search::Base
       API_METHOD = 'audio.searchArtists'.freeze
       COLLECTION_NAME = 'artists'.freeze
+      TOTAL_LIMIT = 200
 
       private
 

@@ -42,6 +42,13 @@ module LastFM
       end
 
       def total_items_count
+        [
+          collection_count,
+          self.class::TOTAL_LIMIT
+        ].min
+      end
+
+      def collection_count
         response_data.dig(
           'results',
           "total#{collection_name.capitalize}"
