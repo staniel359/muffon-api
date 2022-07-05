@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?album=wejlhg239gh23&api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=20&method=album.search&page=1
+    uri: https://kerve.last.fm/kerve/search?limit=20&page=1&q=wejlhg239gh23&type=album
     body:
       encoding: US-ASCII
       string: ''
@@ -14,35 +14,36 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - ws.audioscrobbler.com
+      - kerve.last.fm
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - openresty/1.13.6.2
-      Date:
-      - Fri, 24 Jun 2022 16:52:14 GMT
+      X-Raw-Content-Length:
+      - '178'
       Content-Type:
       - application/json; charset=UTF-8
-      Content-Length:
-      - '257'
+      Access-Control-Allow-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS
+      - POST, GET, OPTIONS, PUT
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Max-Age:
-      - '86400'
+      Date:
+      - Tue, 05 Jul 2022 19:02:54 GMT
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"20","albummatches":{"album":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Fri, 24 Jun 2022 16:52:14 GMT
+      encoding: ASCII-8BIT
+      string: '{"results":{"query":"wejlhg239gh23","totalArtists":"0","totalAlbums":"0","totalTracks":"0","artistmatches":{"artist":[]},"albummatches":{"album":[]},"trackmatches":{"track":[]}}}'
+  recorded_at: Tue, 05 Jul 2022 19:02:54 GMT
 recorded_with: VCR 6.1.0

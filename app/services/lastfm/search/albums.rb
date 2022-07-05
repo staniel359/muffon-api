@@ -1,7 +1,6 @@
 module LastFM
   module Search
     class Albums < LastFM::Search::Base
-      API_METHOD = 'album.search'.freeze
       COLLECTION_NAME = 'albums'.freeze
       MODEL_NAME = 'album'.freeze
 

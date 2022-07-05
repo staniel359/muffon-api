@@ -1,6 +1,6 @@
 module LastFM
   module Search
-    class Base < LastFM::Base
+    class Base < LastFM::Kerve::Base
       include Muffon::Utils::Pagination
 
       private
@@ -26,13 +26,15 @@ module LastFM
       end
 
       def params
-        super
-          .merge(search_params)
+        search_params
           .merge(pagination_params)
       end
 
       def search_params
-        { model_name.to_sym => @args[:query] }
+        {
+          q: @args[:query],
+          type: model_name
+        }
       end
 
       def data
@@ -42,7 +44,7 @@ module LastFM
       def total_items_count
         response_data.dig(
           'results',
-          'opensearch:totalResults'
+          "total#{collection_name.capitalize}"
         ).to_i
       end
 
@@ -55,6 +57,8 @@ module LastFM
           r['name'] == '(null)'
         end
       end
+
+      alias link search_link
     end
   end
 end

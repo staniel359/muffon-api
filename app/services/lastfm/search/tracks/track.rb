@@ -29,9 +29,15 @@ module LastFM
             player_id:,
             playlist_track_id:,
             title:,
-            artist: artist_names_data,
+            artist: track_artist_data,
             artists:
           }.compact
+        end
+
+        def artist_image_data
+          image_data_formatted(
+            track['image']
+          )
         end
       end
     end

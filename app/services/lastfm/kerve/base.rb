@@ -14,6 +14,10 @@ module LastFM
         "#{BASE_LINK}/similarartists"
       end
 
+      def search_link
+        "#{BASE_LINK}/search"
+      end
+
       def params
         {
           type: model_name,

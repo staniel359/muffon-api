@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=5&method=track.search&page=2&track=wild%20nothing%20chinatown
+    uri: https://kerve.last.fm/kerve/search?limit=5&page=2&q=wild%20nothing%20chinatown&type=track
     body:
       encoding: US-ASCII
       string: ''
@@ -14,36 +14,40 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - ws.audioscrobbler.com
+      - kerve.last.fm
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - openresty/1.13.6.2
-      Date:
-      - Fri, 24 Jun 2022 16:52:15 GMT
+      X-Raw-Content-Length:
+      - '2343'
       Content-Type:
-      - application/json
-      Content-Length:
-      - '3065'
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS
+      - POST, GET, OPTIONS, PUT
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Max-Age:
-      - '86400'
+      Date:
+      - Tue, 05 Jul 2022 18:34:59 GMT
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","startPage":"2"},"opensearch:totalResults":"196","opensearch:startIndex":"5","opensearch:itemsPerPage":"5","trackmatches":{"track":[{"name":"Chinatown
-        (Live from Brooklyn Steel)","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown+(Live+from+Brooklyn+Steel)","streamable":"FIXME","listeners":"130","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"Gemini
-        - Chinatown","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Gemini+-+Chinatown","streamable":"FIXME","listeners":"121","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"Chinatown","artist":"Wild_Nothing","url":"https://www.last.fm/music/Wild_Nothing/_/Chinatown","streamable":"FIXME","listeners":"219","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"mbid":""},{"name":"10
-        Chinatown","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/10+Chinatown","streamable":"FIXME","listeners":"134","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""},{"name":"\"Chinatown\"
-        from the album Gemini (Captured Tracks) - Wild N","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/%22Chinatown%22+from+the+album+Gemini+(Captured+Tracks)+-+Wild+N","streamable":"FIXME","listeners":"101","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":""}]},"@attr":{}}}'
-  recorded_at: Fri, 24 Jun 2022 16:52:15 GMT
+      encoding: ASCII-8BIT
+      string: '{"results":{"query":"wild nothing chinatown","totalArtists":"0","totalAlbums":"0","totalTracks":"196","artistmatches":{"artist":[]},"albummatches":{"album":[]},"trackmatches":{"track":[{"name":"Chinatown
+        (Live from Brooklyn Steel)","artist":"Wild Nothing","listeners":"130","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown+(Live+from+Brooklyn+Steel)","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":215,"w2":0,"qw":22.9200000000000017,"fw":"4960","sw":"3572","md5":"7805516144181770232","w":"0xFFFFFFFFFFFFEC9F|0xFFFFFFFFFFFFF20B|0x6C52C393E687F7F8"}},{"name":"Gemini
+        - Chinatown","artist":"Wild Nothing","listeners":"121","url":"https://www.last.fm/music/Wild+Nothing/_/Gemini+-+Chinatown","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":243,"w2":0,"qw":20.2199999999999989,"fw":"4939","sw":"4564","md5":"8803040629245605880","w":"0xFFFFFFFFFFFFECB4|0xFFFFFFFFFFFFEE2B|0x7A2AAECFD183F7F8"}},{"name":"Chinatown","artist":"Wild_Nothing","listeners":"219","url":"https://www.last.fm/music/Wild_Nothing/_/Chinatown","image":"","sr":{"artist_id":"17121284426753708024","w1":198,"w2":0,"qw":22.9200000000000017,"fw":"4580","sw":"3100","md5":"11408611379622121464","w":"0xFFFFFFFFFFFFEE1B|0xFFFFFFFFFFFFF3E3|0x9E53879AB6DB0FF8"}},{"name":"10
+        Chinatown","artist":"Wild Nothing","listeners":"134","url":"https://www.last.fm/music/Wild+Nothing/_/10+Chinatown","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":191,"w2":0,"qw":20.2199999999999989,"fw":"3884","sw":"3098","md5":"11410149892114610168","w":"0xFFFFFFFFFFFFF0D3|0xFFFFFFFFFFFFF3E5|0x9E58FEDF9173F7F8"}},{"name":"\"Chinatown\"
+        from the album Gemini (Captured Tracks) - Wild N","artist":"Wild Nothing","listeners":"101","url":"https://www.last.fm/music/Wild+Nothing/_/%22Chinatown%22+from+the+album+Gemini+(Captured+Tracks)+-+Wild+N","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":109,"w2":0,"qw":24.4899999999999984,"fw":"2701","sw":"1267","md5":"9720023114628724728","w":"0xFFFFFFFFFFFFF572|0xFFFFFFFFFFFFFB0C|0x86E475861C07F7F8"}}]}}}'
+  recorded_at: Tue, 05 Jul 2022 18:34:58 GMT
 recorded_with: VCR 6.1.0

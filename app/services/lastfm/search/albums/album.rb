@@ -29,6 +29,14 @@ module LastFM
             listeners_count:
           }.compact
         end
+
+        def image
+          album['image']
+        end
+
+        def listeners_count
+          album['listeners'].to_i
+        end
       end
     end
   end

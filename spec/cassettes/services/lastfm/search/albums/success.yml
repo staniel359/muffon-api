@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?album=wild%20nothing%20nocturne&api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=5&method=album.search&page=2
+    uri: https://kerve.last.fm/kerve/search?limit=5&page=2&q=a&type=album
     body:
       encoding: US-ASCII
       string: ''
@@ -14,42 +14,40 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - ws.audioscrobbler.com
+      - kerve.last.fm
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - openresty/1.13.6.2
-      Date:
-      - Fri, 24 Jun 2022 16:52:14 GMT
+      X-Raw-Content-Length:
+      - '2445'
       Content-Type:
       - application/json; charset=UTF-8
-      Content-Length:
-      - '1684'
+      Access-Control-Allow-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS
+      - POST, GET, OPTIONS, PUT
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Max-Age:
-      - '86400'
+      Date:
+      - Tue, 05 Jul 2022 19:02:53 GMT
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: UTF-8
-      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wild
-        nothing nocturne","startPage":"2"},"opensearch:totalResults":"104","opensearch:startIndex":"5","opensearch:itemsPerPage":"5","albummatches":{"album":[{"name":"Nocturne
-        - mu-sique.com","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/Nocturne+-+mu-sique.com","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Nocturne
-        [+CD] Disc 1","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/Nocturne+%5B%252BCD%5D+Disc+1","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Nocturne
-        (2012)","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/Nocturne+(2012)","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Wild
-        Nothing - Nocturne (2012)","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/Wild+Nothing+-+Nocturne+(2012)","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"2012
-        - Nocturne","artist":"Wild Nothing","url":"https://www.last.fm/music/Wild+Nothing/2012+-+Nocturne","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"streamable":"0","mbid":""}]},"@attr":{"for":"wild
-        nothing nocturne"}}}'
-  recorded_at: Fri, 24 Jun 2022 16:52:14 GMT
+      encoding: ASCII-8BIT
+      string: '{"results":{"query":"a","totalArtists":"0","totalAlbums":"102145821","totalTracks":"0","artistmatches":{"artist":[]},"albummatches":{"album":[{"name":"Absolution","artist":"Muse","listeners":"2146143","url":"https://www.last.fm/music/Muse/Absolution","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/09a7dd691dba9ed475f1b5c1bef0074a.png","sr":{"artist_id":"4306015308686641900","w1":396523,"w2":0,"qw":12.0,"fw":"4758299","sw":"399822705","md5":"10226407771481197292","w":"0xFFFFFFFFFFB764E4|0xFFFFFFFFE82B308E|0x8DEB7FAFB36E4AEC"}},{"name":"A
+        Fever You Can''t Sweat Out","artist":"Panic! at the Disco","listeners":"1599310","url":"https://www.last.fm/music/Panic%21+at+the+Disco/A+Fever+You+Can%27t+Sweat+Out","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/249a926fbef4487eb39bbb93d4a0618d.png","sr":{"artist_id":"12311805662367439525","w1":341451,"w2":0,"qw":13.8699999999999992,"fw":"4736631","sw":"309865584","md5":"2486547571407248037","w":"0xFFFFFFFFFFB7B988|0xFFFFFFFFED87D38F|0x2281FDD786D6DAA5"}},{"name":"when
+        we all fall asleep, where do we go?","artist":"Billie Eilish","listeners":"1205205","url":"https://www.last.fm/music/Billie+Eilish/when+we+all+fall+asleep,+where+do+we+go%3F","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/ee8173de0f04cbbb282fc62a5583fda9.png","sr":{"artist_id":"901216531582379301","w1":553043,"w2":0,"qw":8.4000000000000004,"fw":"4645572","sw":"649254995","md5":"1773917906562082085","w":"0xFFFFFFFFFFB91D3B|0xFFFFFFFFD94D27AC|0x189E38EFF9566525"}},{"name":"ARTPOP","artist":"Lady
+        Gaga","listeners":"628335","url":"https://www.last.fm/music/Lady+Gaga/ARTPOP","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/15ef1c034e1f6a71d0d69d3b6f5c534f.png","sr":{"artist_id":"10992807719782908954","w1":377505,"w2":0,"qw":12.0,"fw":"4530077","sw":"368300314","md5":"7372677264028075034","w":"0xFFFFFFFFFFBAE062|0xFFFFFFFFEA0C2EE5|0x665102E8D5FE041A"}},{"name":"At.Long.Last.A$AP","artist":"A$AP
+        Rocky","listeners":"692545","url":"https://www.last.fm/music/A$AP+Rocky/At.Long.Last.A$AP","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/5184e16c4f2964ebb3e4b68b3ccb849e.png","sr":{"artist_id":"13709067655428264261","w1":306054,"w2":0,"qw":14.1600000000000001,"fw":"4333747","sw":"254274700","md5":"15083664103131205957","w":"0xFFFFFFFFFFBDDF4C|0xFFFFFFFFF0D81373|0xD153F095CA725145"}}]},"trackmatches":{"track":[]}}}'
+  recorded_at: Tue, 05 Jul 2022 19:02:53 GMT
 recorded_with: VCR 6.1.0
