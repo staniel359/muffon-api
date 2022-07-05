@@ -15,7 +15,9 @@ module Muffon
         def tag_random_page
           return 1 if Rails.env.test?
 
-          rand(1..pages_count)
+          rand(
+            1..pages_count
+          )
         end
       end
     end

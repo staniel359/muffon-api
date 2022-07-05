@@ -11,8 +11,14 @@ module LastFM
         private
 
         def data
+          return artist_minimal_data if @args[:minimal]
+
           muffon_data
             .merge(artist_data)
+        end
+
+        def artist_minimal_data
+          { name: }
         end
 
         def artist

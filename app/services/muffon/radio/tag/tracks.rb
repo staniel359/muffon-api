@@ -23,12 +23,17 @@ module Muffon
         end
 
         def radio_track_data
-          tag_info_data.dig(
-            :tracks, 0
-          )
+          @radio_track_data ||=
+            tag_info_data.dig(
+              :tracks, 0
+            )
         end
 
-        alias track_data radio_track_data
+        def artist_name
+          radio_track_data.dig(
+            :artist, :name
+          )
+        end
       end
     end
   end

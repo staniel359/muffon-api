@@ -17,12 +17,6 @@ module Muffon
             )[:artist]
         end
 
-        def random_artist_number
-          return 1 if Rails.env.test?
-
-          rand(1..ARTISTS_LIMIT)
-        end
-
         def radio_track_data
           @radio_track_data ||=
             similar_artist_info_data&.dig(

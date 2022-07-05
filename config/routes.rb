@@ -213,6 +213,11 @@ Rails.application.routes.draw do
               get 'similar'
             end
           end
+
+          namespace :top do
+            get 'artists'
+            get 'tracks'
+          end
         end
 
         resources :playlists, only: :index

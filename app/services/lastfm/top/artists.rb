@@ -10,7 +10,8 @@ module LastFM
       def collection_item_data_formatted(artist)
         LastFM::Top::Artists::Artist.call(
           artist:,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          minimal: @args[:minimal]
         )
       end
     end

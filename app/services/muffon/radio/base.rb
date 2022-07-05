@@ -16,11 +16,25 @@ module Muffon
       def random_track_number
         return 1 if Rails.env.test?
 
-        rand(1..tracks_limit)
+        rand(
+          1..tracks_limit
+        )
       end
 
       def tracks_limit
         self.class::TRACKS_LIMIT
+      end
+
+      def random_artist_number
+        return 1 if Rails.env.test?
+
+        rand(
+          1..artists_limit
+        )
+      end
+
+      def artists_limit
+        self.class::ARTISTS_LIMIT
       end
 
       def data
@@ -32,12 +46,13 @@ module Muffon
       end
 
       def track_data
-        radio_track_data
-          .merge(artists_data)
-      end
-
-      def artists_data
         {
+          player_id:
+            radio_track_data[:player_id],
+          source:
+            radio_track_data[:source],
+          title:
+            radio_track_data[:title],
           artist: track_artist_data,
           artists:
         }
