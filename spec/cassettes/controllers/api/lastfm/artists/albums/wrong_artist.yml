@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&limit=20&method=artist.getTopAlbums&page=1
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&limit=300&method=artist.getTopAlbums
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Fri, 24 Jun 2022 16:25:06 GMT
+      - Wed, 06 Jul 2022 18:47:04 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
-  recorded_at: Fri, 24 Jun 2022 16:25:06 GMT
+  recorded_at: Wed, 06 Jul 2022 18:47:05 GMT
 recorded_with: VCR 6.1.0

@@ -12,11 +12,17 @@ module LastFM
         response_data['topalbums']
       end
 
-      def collection_list
-        collection_list_filtered.last(limit)
+      def pagination_params
+        { limit: 300 }
       end
 
-      def collection_list_filtered
+      def collection_list
+        collection_paginated(
+          raw_collection_list
+        )
+      end
+
+      def raw_collection_list
         artist['album'].reject do |a|
           a['name'] == '(null)'
         end
