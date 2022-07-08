@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/channels?id=wejlhg239gh23&key=<GOOGLE_API_KEY>&part=snippet,contentDetails
+    uri: https://www.googleapis.com/youtube/v3/channels?id=wejlhg239gh23&key=<GOOGLE_API_KEY>&part=snippet,contentDetails,statistics
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Sun, 13 Jun 2021 11:32:53 GMT
+      - Fri, 08 Jul 2022 14:56:26 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -39,9 +39,8 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443";
-        ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443";
-        ma=2592000; v="46,43"
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
       Transfer-Encoding:
       - chunked
     body:
@@ -55,5 +54,5 @@ http_interactions:
             "resultsPerPage": 5
           }
         }
-  recorded_at: Sun, 13 Jun 2021 11:32:53 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Fri, 08 Jul 2022 14:56:26 GMT
+recorded_with: VCR 6.1.0

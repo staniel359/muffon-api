@@ -17,7 +17,7 @@ module YouTube
             source: source_data,
             title:,
             channel: channel_data,
-            image: image_data_formatted,
+            image: image_data,
             publish_date:
           }.compact
         end

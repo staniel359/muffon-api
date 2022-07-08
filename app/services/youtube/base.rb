@@ -7,7 +7,12 @@ module YouTube
     private
 
     def no_data?
-      response_data.blank?
+      response_data.blank? ||
+        items_list.blank?
+    end
+
+    def items_list
+      response_data['items']
     end
 
     def params
@@ -19,13 +24,15 @@ module YouTube
     end
 
     def videos
-      videos_list.map do |v|
+      items_list.map do |v|
         video_data_formatted(v)
       end
     end
 
-    def videos_list
-      response_data['items']
+    def image_data_formatted(image)
+      YouTube::Utils::Image.call(
+        image:
+      )
     end
   end
 end

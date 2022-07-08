@@ -27,7 +27,7 @@ module YouTube
 
       def video_extra_data
         {
-          image: image_data_formatted,
+          image: image_data,
           publish_date:,
           description:
             description_truncated,

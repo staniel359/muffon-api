@@ -663,6 +663,7 @@ Rails.application.routes.draw do
 
         namespace :channels, as: :channel do
           scope ':channel_id' do
+            get '', action: :info
             get 'videos'
           end
         end

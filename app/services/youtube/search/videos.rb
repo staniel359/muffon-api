@@ -3,10 +3,6 @@ module YouTube
     class Videos < YouTube::Search::Base
       private
 
-      def no_data?
-        videos_list.blank?
-      end
-
       def search_data
         {
           prev_page:,

@@ -1,15 +1,15 @@
-RSpec.describe YouTube::Channel::Videos do
+RSpec.describe YouTube::Channel::Info do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when channel present' do
       let(:output) do
-        VCR.use_cassette 'services/youtube/channel/videos/success' do
-          subject.call(channel_id: 'UCZBXFjbyp1gezLRsDbG2hKQ', limit: 5, page: 'EAAaBlBUOkNBVQ')
+        VCR.use_cassette 'services/youtube/channel/info/success' do
+          subject.call(channel_id: 'UCZBXFjbyp1gezLRsDbG2hKQ')
         end
       end
 
-      it { expect(output).to eq(Helpers::YouTube::Channel.videos_data) }
+      it { expect(output).to eq(Helpers::YouTube::Channel.info_data) }
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe YouTube::Channel::Videos do
 
     context 'when wrong channel_id' do
       let(:output) do
-        VCR.use_cassette 'services/youtube/channel/videos/wrong_id' do
+        VCR.use_cassette 'services/youtube/channel/info/wrong_id' do
           subject.call(channel_id: random)
         end
       end

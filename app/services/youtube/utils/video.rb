@@ -20,6 +20,10 @@ module YouTube
         }
       end
 
+      def youtube_id
+        video['id']
+      end
+
       def channel_data
         {
           source: channel_source_data,
@@ -34,9 +38,9 @@ module YouTube
         }
       end
 
-      def image_data_formatted
-        YouTube::Utils::Image.call(
-          image:
+      def image_data
+        image_data_formatted(
+          image
         )
       end
 
