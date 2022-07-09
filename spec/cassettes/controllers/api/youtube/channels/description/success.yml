@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UCZBXFjbyp1gezLRsDbG2hKQ&key=<GOOGLE_API_KEY>&part=snippet,contentDetails,statistics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sat, 09 Jul 2022 10:18:21 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJraW5kIjogInlvdXR1YmUjY2hhbm5lbExpc3RSZXNwb25zZSIsCiAgImV0YWciOiAialVZa1JVa1Z6VlU1SjR6NUh4LTRrdlhMUVVRIiwKICAicGFnZUluZm8iOiB7CiAgICAidG90YWxSZXN1bHRzIjogMSwKICAgICJyZXN1bHRzUGVyUGFnZSI6IDUKICB9LAogICJpdGVtcyI6IFsKICAgIHsKICAgICAgImtpbmQiOiAieW91dHViZSNjaGFubmVsIiwKICAgICAgImV0YWciOiAiRFlLZnFFYk1aMUllaWVmd2NROHlvV1E2TC00IiwKICAgICAgImlkIjogIlVDWkJYRmpieXAxZ2V6TFJzRGJHMmhLUSIsCiAgICAgICJzbmlwcGV0IjogewogICAgICAgICJ0aXRsZSI6ICJTaGFrZTgwc0ZyZW5jaE11c2ljIiwKICAgICAgICAiZGVzY3JpcHRpb24iOiAiQ2hhaW5lIGTDqWRpw6llIGF1eCBjaGFuc29ucyBkZXMgYW5uw6llcyA4MCBleGNsdXNpdmVtZW50IGZyYW7Dp2Fpc2VzLiIsCiAgICAgICAgInB1Ymxpc2hlZEF0IjogIjIwMTEtMTEtMDlUMjA6MDY6MzVaIiwKICAgICAgICAidGh1bWJuYWlscyI6IHsKICAgICAgICAgICJkZWZhdWx0IjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8veXQzLmdncGh0LmNvbS95dGMvQUtlZE9MUy1DcklZODFOeXFTanM5NjFVUlhZNlYxUXhzR1YtZGhfRTMxQlI9czg4LWMtay1jMHgwMGZmZmZmZi1uby1yaiIsCiAgICAgICAgICAgICJ3aWR0aCI6IDg4LAogICAgICAgICAgICAiaGVpZ2h0IjogODgKICAgICAgICAgIH0sCiAgICAgICAgICAibWVkaXVtIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8veXQzLmdncGh0LmNvbS95dGMvQUtlZE9MUy1DcklZODFOeXFTanM5NjFVUlhZNlYxUXhzR1YtZGhfRTMxQlI9czI0MC1jLWstYzB4MDBmZmZmZmYtbm8tcmoiLAogICAgICAgICAgICAid2lkdGgiOiAyNDAsCiAgICAgICAgICAgICJoZWlnaHQiOiAyNDAKICAgICAgICAgIH0sCiAgICAgICAgICAiaGlnaCI6IHsKICAgICAgICAgICAgInVybCI6ICJodHRwczovL3l0My5nZ3BodC5jb20veXRjL0FLZWRPTFMtQ3JJWTgxTnlxU2pzOTYxVVJYWTZWMVF4c0dWLWRoX0UzMUJSPXM4MDAtYy1rLWMweDAwZmZmZmZmLW5vLXJqIiwKICAgICAgICAgICAgIndpZHRoIjogODAwLAogICAgICAgICAgICAiaGVpZ2h0IjogODAwCiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICAibG9jYWxpemVkIjogewogICAgICAgICAgInRpdGxlIjogIlNoYWtlODBzRnJlbmNoTXVzaWMiLAogICAgICAgICAgImRlc2NyaXB0aW9uIjogIkNoYWluZSBkw6lkacOpZSBhdXggY2hhbnNvbnMgZGVzIGFubsOpZXMgODAgZXhjbHVzaXZlbWVudCBmcmFuw6dhaXNlcy4iCiAgICAgICAgfQogICAgICB9LAogICAgICAiY29udGVudERldGFpbHMiOiB7CiAgICAgICAgInJlbGF0ZWRQbGF5bGlzdHMiOiB7CiAgICAgICAgICAibGlrZXMiOiAiIiwKICAgICAgICAgICJ1cGxvYWRzIjogIlVVWkJYRmpieXAxZ2V6TFJzRGJHMmhLUSIKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJzdGF0aXN0aWNzIjogewogICAgICAgICJ2aWV3Q291bnQiOiAiMTkxMTIxMSIsCiAgICAgICAgInN1YnNjcmliZXJDb3VudCI6ICIyMTIwIiwKICAgICAgICAiaGlkZGVuU3Vic2NyaWJlckNvdW50IjogZmFsc2UsCiAgICAgICAgInZpZGVvQ291bnQiOiAiNTAwIgogICAgICB9CiAgICB9CiAgXQp9Cg==
+  recorded_at: Sat, 09 Jul 2022 10:18:21 GMT
+recorded_with: VCR 6.1.0

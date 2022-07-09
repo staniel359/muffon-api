@@ -4,10 +4,16 @@ module YouTube
       private
 
       def channel_data
+        channel_base_data
+          .merge(with_more_data)
+      end
+
+      def channel_base_data
         {
           source: source_data,
           title:,
-          description:,
+          description:
+            description_truncated,
           image: image_data,
           statistics: statistics_data,
           created: created_formatted

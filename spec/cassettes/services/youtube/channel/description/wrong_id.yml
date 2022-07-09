@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=wejlhg239gh23&key=<GOOGLE_API_KEY>&part=snippet,contentDetails,statistics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sat, 09 Jul 2022 10:18:22 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#channelListResponse",
+          "etag": "RuuXzTIr0OoDqI4S0RU6n4FqKEM",
+          "pageInfo": {
+            "totalResults": 0,
+            "resultsPerPage": 5
+          }
+        }
+  recorded_at: Sat, 09 Jul 2022 10:18:22 GMT
+recorded_with: VCR 6.1.0

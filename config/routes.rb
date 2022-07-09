@@ -664,6 +664,7 @@ Rails.application.routes.draw do
         namespace :channels, as: :channel do
           scope ':channel_id' do
             get '', action: :info
+            get 'description'
             get 'videos'
           end
         end
