@@ -22,7 +22,8 @@ module Muffon
       end
 
       def total_items_count
-        recommendations_filtered.size
+        @total_items_count ||=
+          recommendations_filtered.size
       end
 
       def recommendations_filtered
@@ -38,52 +39,38 @@ module Muffon
       end
 
       def recommendations_artists_filtered
-        recommendations.where(
-          'library_artist_ids @> ARRAY[?]',
-          library_artist_ids
+        Muffon::Profile::Recommendations::Filter::Artists.call(
+          profile_id: @args[:profile_id],
+          filter_value: @args[:filter_value]
+        )
+      end
+
+      def recommendations_tags_filtered
+        Muffon::Profile::Recommendations::Filter::Tags.call(
+          profile_id: @args[:profile_id],
+          filter_value: @args[:filter_value]
         )
       end
 
       def recommendations
+        if @args[:hide_library_artists]
+          recommendations_library_artists_hidden
+        else
+          recommendations_not_deleted
+        end
+      end
+
+      def recommendations_library_artists_hidden
+        Muffon::Profile::Recommendations::Hide::LibraryArtists.call(
+          profile_id: @args[:profile_id],
+          tracks_count: @args[:tracks_count]
+        )
+      end
+
+      def recommendations_not_deleted
         profile
           .recommendations
           .not_deleted
-      end
-
-      def library_artist_ids
-        profile
-          .library_artists
-          .where(artist_id: artist_ids)
-          .pluck(:id)
-      end
-
-      def artist_ids
-        @args[:filter_value].map do |name|
-          artist_id(name)
-        end.compact
-      end
-
-      def artist_id(name)
-        Artist.with_name(name)&.id
-      end
-
-      def recommendations_tags_filtered
-        recommendations
-          .left_joins(:artist)
-          .where(
-            'artists.tag_ids @> ARRAY[?]',
-            tag_ids
-          )
-      end
-
-      def tag_ids
-        @args[:filter_value].map do |name|
-          tag_id(name)
-        end.compact
-      end
-
-      def tag_id(name)
-        Tag.with_name(name)&.id
       end
 
       def collection_list

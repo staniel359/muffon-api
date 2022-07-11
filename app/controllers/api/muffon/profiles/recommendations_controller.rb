@@ -23,7 +23,11 @@ module API
         def index_data
           ::Muffon::Profile::Recommendations.call(
             params.slice(
-              *%i[profile_id token page limit filter filter_value]
+              *%i[
+                profile_id token page limit
+                filter filter_value
+                hide_library_artists tracks_count
+              ]
             )
           )
         end
