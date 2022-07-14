@@ -31,6 +31,20 @@ module Muffon
         nil
       end
 
+      def process_background_image(image_file)
+        return if image_file.blank?
+
+        background_images.attach(
+          **image_file_data_formatted(
+            image_file
+          )
+        )
+
+        background_images.last
+      rescue OpenURI::HTTPError
+        nil
+      end
+
       private
 
       def image_file_data_formatted(image_file)
