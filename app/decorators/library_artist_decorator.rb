@@ -5,12 +5,6 @@ module LibraryArtistDecorator
         library_albums_count: :desc
       )
     end
-
-    def associated
-      includes(
-        artist: image_association
-      )
-    end
   end
 
   def self.included(base)

@@ -64,9 +64,10 @@ module Muffon
       end
 
       def collection
-        collection_list.map do |i|
-          collection_item_data_formatted(i)
-        end
+        @collection ||=
+          collection_list.map do |i|
+            collection_item_data_formatted(i)
+          end
       end
 
       def collection_paginated(collection)

@@ -2,8 +2,6 @@
 :dynamic: true
 :limits:
   artist_tags: 1
-  artist_images: 3
 :queues:
   - [default, 1]
   - [artist_tags, 1]
-  - [artist_image, 1]

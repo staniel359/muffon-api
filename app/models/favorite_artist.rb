@@ -1,6 +1,4 @@
 class FavoriteArtist < ApplicationRecord
-  include FavoriteArtistDecorator
-
   belongs_to :profile
   belongs_to :artist
 

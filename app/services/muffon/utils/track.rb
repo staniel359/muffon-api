@@ -11,20 +11,6 @@ module Muffon
         find_track.player_id
       end
 
-      def track_artist_data
-        {
-          name: artist_names,
-          image: artist_image_data
-        }.compact
-      end
-
-      def artist_image_data
-        ::Artist
-          .associated
-          .with_name(artist_name)
-          .image_data
-      end
-
       def find_track
         @find_track ||=
           ::Track.with_artist_title(
@@ -37,6 +23,17 @@ module Muffon
           ::Artist.with_name(
             artist_name
           )
+      end
+
+      def track_artist_data
+        {
+          name: artist_names,
+          image: artist_image_data
+        }.compact
+      end
+
+      def artist_image_data
+        find_artist.image_data
       end
 
       def find_album

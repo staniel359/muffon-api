@@ -78,7 +78,6 @@ module Muffon
           .library_artists_count_desc_ordered
           .limit(limit)
           .offset(offset)
-          .associated
       end
 
       def collection_item_data_formatted(recommendation)

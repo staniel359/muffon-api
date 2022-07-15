@@ -41,10 +41,7 @@ module Muffon
       end
 
       def image_data
-        ::Artist
-          .associated
-          .with_name(name)
-          .image_data
+        find_artist.image_data
       end
 
       def listeners_count

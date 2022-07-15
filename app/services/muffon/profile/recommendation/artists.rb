@@ -21,7 +21,6 @@ module Muffon
             .created_desc_ordered
             .limit(limit)
             .offset(offset)
-            .associated
         end
 
         def collection_item_data_formatted(library_artist)

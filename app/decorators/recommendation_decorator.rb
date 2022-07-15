@@ -14,12 +14,6 @@ module RecommendationDecorator
         'recommendations.created_at ASC'
       )
     end
-
-    def associated
-      includes(
-        artist: image_association
-      )
-    end
   end
 
   def self.included(base)

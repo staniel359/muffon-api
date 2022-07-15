@@ -56,7 +56,6 @@ module Muffon
             .library_albums_count_desc_ordered
             .created_desc_ordered
             .limit(5)
-            .associated
         end
 
         def library_artist_formatted(library_artist)

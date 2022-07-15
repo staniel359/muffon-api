@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_05_193736) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_15_123646) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_05_193736) do
     t.integer "listeners_count"
     t.integer "tag_ids", default: [], array: true
     t.string "name_downcase"
+    t.string "image_url"
     t.index ["name_downcase"], name: "index_artists_on_name_downcase", unique: true
   end
 

@@ -11,15 +11,15 @@ module ArtistDecorator
 
       retry
     end
-
-    def associated
-      includes(
-        image_association
-      )
-    end
   end
 
   def self.included(base)
     base.extend ClassMethods
+  end
+
+  def image_data
+    LastFM::Utils::Image.call(
+      image: image_url
+    )
   end
 end
