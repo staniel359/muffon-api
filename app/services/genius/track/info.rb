@@ -47,7 +47,7 @@ module Genius
       end
 
       def lyrics_truncated
-        lyrics.truncate(250)
+        lyrics.truncate(200)
       end
 
       def lyrics
