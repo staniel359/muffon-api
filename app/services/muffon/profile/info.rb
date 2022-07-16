@@ -11,6 +11,15 @@ module Muffon
             @args[:other_profile_id]
         )
       end
+
+      def profile
+        @profile ||=
+          ::Profile
+          .associated
+          .find_by(
+            id: @args[:profile_id]
+          )
+      end
     end
   end
 end
