@@ -31,7 +31,7 @@ module Muffon
                 profile.bookmark_tracks.where(
                   track_id: find_track.id
                 ).first_or_create(
-                  album_id: find_album&.id
+                  create_params
                 )
             end
 
@@ -41,6 +41,16 @@ module Muffon
 
             def artist_name
               @args[:artist_name]
+            end
+
+            def create_params
+              {
+                album_id: find_album&.id,
+                source_data: @args[:source_data],
+                audio_data: @args[:audio_data],
+                album_source_data:
+                  @args[:album_source_data]
+              }
             end
 
             def album_title

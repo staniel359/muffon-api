@@ -30,7 +30,9 @@ module Muffon
               @bookmark_album ||=
                 profile.bookmark_albums.where(
                   album_id: find_album.id
-                ).first_or_create
+                ).first_or_create(
+                  create_params
+                )
             end
 
             def artist_name
@@ -39,6 +41,10 @@ module Muffon
 
             def title
               @args[:title]
+            end
+
+            def create_params
+              { source_data: @args[:source_data] }
             end
 
             def process_image
