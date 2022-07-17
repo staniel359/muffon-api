@@ -3,6 +3,8 @@ module Muffon
     module Playlist
       class Tracks
         class Track < Muffon::Profile::Playlist::Tracks
+          include Muffon::Utils::Track
+
           def call
             data
           end
@@ -10,7 +12,8 @@ module Muffon
           private
 
           def data
-            playlist_track_base_data
+            muffon_data
+              .merge(playlist_track_base_data)
               .merge(playlist_track_extra_data)
           end
 
@@ -20,18 +23,30 @@ module Muffon
                 playlist_track.source_data,
               id: playlist_track.id,
               player_id: track.player_id,
-              title: track.title,
+              title:,
               artist: artist_names_data,
               artists:
             }.compact
           end
 
-          def playlist_track
-            @args[:playlist_track]
+          def title
+            track.title
           end
 
           def track
             @track ||= playlist_track.track
+          end
+
+          def artist_name
+            artist.name
+          end
+
+          def artist
+            playlist_track.artist
+          end
+
+          def playlist_track
+            @args[:playlist_track]
           end
 
           def artists
@@ -39,11 +54,7 @@ module Muffon
           end
 
           def artist_data
-            { name: artist.name }
-          end
-
-          def artist
-            playlist_track.artist
+            { name: artist_name }
           end
 
           def playlist_track_extra_data
