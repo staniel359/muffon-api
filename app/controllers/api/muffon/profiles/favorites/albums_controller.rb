@@ -20,7 +20,7 @@ module API
           def index_data
             ::Muffon::Profile::Favorites::Albums.call(
               params.slice(
-                *%i[profile_id page limit]
+                *%i[profile_id page limit other_profile_id]
               )
             )
           end
