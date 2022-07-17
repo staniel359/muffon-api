@@ -4,6 +4,12 @@ module Muffon
       class Base < Muffon::Profile::Base
         private
 
+        def data
+          return forbidden if wrong_profile?
+
+          super
+        end
+
         def profile_data
           {
             nickname: profile.nickname,

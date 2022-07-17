@@ -3,6 +3,8 @@ module Muffon
     module Bookmarks
       class Tracks
         class Track < Muffon::Profile::Bookmarks::Tracks
+          include Muffon::Utils::Track
+
           def call
             data
           end
@@ -10,8 +12,29 @@ module Muffon
           private
 
           def data
-            bookmark_track_base_data
+            muffon_data
+              .merge(bookmark_track_base_data)
               .merge(bookmark_track_extra_data)
+          end
+
+          def title
+            track.title
+          end
+
+          def track
+            @track ||= bookmark_track.track
+          end
+
+          def bookmark_track
+            @args[:bookmark_track]
+          end
+
+          def artist_name
+            artist.name
+          end
+
+          def artist
+            track.artist
           end
 
           def bookmark_track_base_data
@@ -20,18 +43,10 @@ module Muffon
                 bookmark_track.source_data,
               id: bookmark_track.id,
               player_id: track.player_id,
-              title: track.title,
+              title:,
               artist: artist_names_data,
               artists:
             }.compact
-          end
-
-          def bookmark_track
-            @args[:bookmark_track]
-          end
-
-          def track
-            @track ||= bookmark_track.track
           end
 
           def artists
@@ -39,11 +54,7 @@ module Muffon
           end
 
           def artist_data
-            { name: artist.name }
-          end
-
-          def artist
-            track.artist
+            { name: artist_name }
           end
 
           def bookmark_track_extra_data
