@@ -9,6 +9,16 @@ module Muffon
             playlist:
           )
         end
+
+        def playlist
+          @playlist ||=
+            profile
+            .playlists
+            .associated
+            .find_by(
+              id: @args[:playlist_id]
+            )
+        end
       end
     end
   end
