@@ -18,6 +18,10 @@ module Muffon
             }.compact
           end
 
+          def profile_id
+            @args[:other_profile_id]
+          end
+
           def artist_extra_data
             {
               image: artist.image_data,

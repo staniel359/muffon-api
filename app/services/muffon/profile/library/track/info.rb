@@ -21,6 +21,10 @@ module Muffon
             }
           end
 
+          def profile_id
+            @args[:other_profile_id]
+          end
+
           def track_extra_data
             {
               album: album_data,

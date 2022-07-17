@@ -20,6 +20,10 @@ module Muffon
             }.compact
           end
 
+          def profile_id
+            @args[:other_profile_id]
+          end
+
           def album_extra_data
             {
               image: library_album.image_data,

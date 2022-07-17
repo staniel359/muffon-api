@@ -22,7 +22,7 @@ module Muffon
         def collection_item_data_formatted(library_track)
           Muffon::Profile::Library::Tracks::Track.call(
             library_track:,
-            profile_id: @args[:profile_id]
+            profile_id: @args[:other_profile_id]
           )
         end
 

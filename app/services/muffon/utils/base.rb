@@ -8,12 +8,16 @@ module Muffon
       private
 
       def self_data(model)
-        return {} if @args[:profile_id].blank?
+        return {} if profile_id.blank?
 
         @self_data ||=
           raw_self_data(model).map do |a|
             { a['key'].to_sym => a['value'] }
           end.inject(:merge) || {}
+      end
+
+      def profile_id
+        @args[:profile_id]
       end
 
       def raw_self_data(model)
@@ -38,7 +42,7 @@ module Muffon
           .camelize
           .constantize
           .where(
-            profile_id: @args[:profile_id],
+            profile_id:,
             "#{model}_id" => send("#{model}_id")
           )
           .select("id as value, '#{scope}_id' as key")
