@@ -66,6 +66,7 @@ Rails.application.routes.draw do
               namespace :tracks, as: :track do
                 scope ':library_id' do
                   get '', action: :info
+                  get 'albums'
                   get 'playlists'
                 end
               end

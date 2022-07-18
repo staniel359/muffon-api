@@ -22,6 +22,14 @@ module LibraryTrackDecorator
     base.extend ClassMethods
   end
 
+  def library_albums
+    profile
+      .library_albums
+      .where(
+        id: library_album_ids
+      )
+  end
+
   private
 
   def playlist_ids
@@ -30,5 +38,12 @@ module LibraryTrackDecorator
       .where(track_id:)
       .pluck(:playlist_id)
       .uniq
+  end
+
+  def library_album_ids
+    profile
+      .library_tracks
+      .where(track_id:)
+      .pluck(:library_album_id)
   end
 end

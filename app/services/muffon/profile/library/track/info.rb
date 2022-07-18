@@ -19,6 +19,8 @@ module Muffon
             {
               album: album_data,
               image: image_data,
+              albums_count:
+                library_track.library_albums.count,
               playlists_count:
                 library_track.profile_playlists.count,
               created: created_formatted
