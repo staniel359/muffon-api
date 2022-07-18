@@ -12,14 +12,14 @@ module Muffon
           private
 
           def data
-            track_base_data
+            muffon_data
+              .merge(track_base_data)
               .merge(track_extra_data)
           end
 
           def track_base_data
             {
               library: library_track_data,
-              favorite_id:,
               playlist_track_id:,
               player_id: track.player_id,
               title:,

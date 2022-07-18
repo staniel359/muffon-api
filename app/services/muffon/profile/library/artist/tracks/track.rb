@@ -13,19 +13,29 @@ module Muffon
             private
 
             def data
+              muffon_data
+                .merge(track_base_data)
+                .merge(track_extra_data)
+            end
+
+            def track_base_data
               {
                 library: library_track_data,
-                favorite_id:,
                 player_id: track.player_id,
-                title:,
-                album: album_data,
-                image: image_data,
-                created: created_formatted
+                title:
               }.compact
             end
 
             def library_track
               @args[:library_track]
+            end
+
+            def track_extra_data
+              {
+                album: album_data,
+                image: image_data,
+                created: created_formatted
+              }.compact
             end
           end
         end

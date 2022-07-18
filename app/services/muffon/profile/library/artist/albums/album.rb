@@ -13,9 +13,13 @@ module Muffon
             private
 
             def data
+              muffon_data
+                .merge(album_data)
+            end
+
+            def album_data
               {
                 library: library_album_data,
-                favorite_id:,
                 title:,
                 image: library_album.image_data,
                 tracks_count:

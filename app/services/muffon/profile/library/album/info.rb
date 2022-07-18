@@ -6,22 +6,22 @@ module Muffon
           private
 
           def album_data
-            album_base_data
+            muffon_data
+              .merge(album_base_data)
               .merge(album_extra_data)
+          end
+
+          def profile_id
+            @args[:other_profile_id]
           end
 
           def album_base_data
             {
               library: library_album_data,
-              favorite_id:,
               title:,
               artist: artist_names_data,
               artists:
             }.compact
-          end
-
-          def profile_id
-            @args[:other_profile_id]
           end
 
           def album_extra_data

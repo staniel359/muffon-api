@@ -13,9 +13,13 @@ module Muffon
             private
 
             def data
+              muffon_data
+                .merge(track_data)
+            end
+
+            def track_data
               {
                 library: library_track_data,
-                favorite_id:,
                 player_id: track.player_id,
                 title:,
                 created: created_formatted

@@ -14,7 +14,8 @@ module Muffon
           def data
             return artist_minimal_data if @args[:minimal]
 
-            artist_data
+            muffon_data
+              .merge(artist_data)
           end
 
           def artist_minimal_data
@@ -28,7 +29,6 @@ module Muffon
           def artist_data
             {
               library: library_artist_data,
-              favorite_id:,
               name:,
               image: artist.image_data,
               albums_count:

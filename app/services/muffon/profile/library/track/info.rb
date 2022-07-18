@@ -6,14 +6,14 @@ module Muffon
           private
 
           def track_data
-            track_base_data
+            muffon_data
+              .merge(track_base_data)
               .merge(track_extra_data)
           end
 
           def track_base_data
             {
               library: library_track_data,
-              favorite_id:,
               player_id: track.player_id,
               title:,
               artist: artist_names_data,
