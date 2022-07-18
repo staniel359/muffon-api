@@ -45,6 +45,12 @@ module ApplicationRecordDecorator
     )
   end
 
+  def profile_playlists
+    Playlist.where(
+      id: playlist_ids
+    )
+  end
+
   private
 
   def image_data_formatted(image)

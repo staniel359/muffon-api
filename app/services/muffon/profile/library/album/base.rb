@@ -28,6 +28,15 @@ module Muffon
           def library_data
             { album: album_data }
           end
+
+          def album_base_data
+            {
+              library: library_album_data,
+              title:,
+              artist: artist_names_data,
+              artists:
+            }.compact
+          end
         end
       end
     end

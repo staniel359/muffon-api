@@ -15,20 +15,13 @@ module Muffon
             @args[:other_profile_id]
           end
 
-          def album_base_data
-            {
-              library: library_album_data,
-              title:,
-              artist: artist_names_data,
-              artists:
-            }.compact
-          end
-
           def album_extra_data
             {
               image: library_album.image_data,
               tracks_count:
                 library_album.library_tracks_count,
+              playlists_count:
+                library_album.profile_playlists.count,
               created: created_formatted
             }.compact
           end

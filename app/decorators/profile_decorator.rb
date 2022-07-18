@@ -61,6 +61,16 @@ module ProfileDecorator
       .map { |t| format_library_tag(t) }
   end
 
+  def playlist_tracks
+    PlaylistTrack
+      .joins(:playlist)
+      .where(
+        playlists: {
+          profile_id: id
+        }
+      )
+  end
+
   private
 
   def format_library_tag(tag)

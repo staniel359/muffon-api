@@ -28,6 +28,13 @@ module Muffon
           def library_data
             { artist: artist_data }
           end
+
+          def artist_base_data
+            {
+              library: library_artist_data,
+              name:
+            }.compact
+          end
         end
       end
     end

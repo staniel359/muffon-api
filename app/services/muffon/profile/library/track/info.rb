@@ -11,16 +11,6 @@ module Muffon
               .merge(track_extra_data)
           end
 
-          def track_base_data
-            {
-              library: library_track_data,
-              player_id: track.player_id,
-              title:,
-              artist: artist_names_data,
-              artists:
-            }
-          end
-
           def profile_id
             @args[:other_profile_id]
           end
@@ -29,6 +19,8 @@ module Muffon
             {
               album: album_data,
               image: image_data,
+              playlists_count:
+                library_track.profile_playlists.count,
               created: created_formatted
             }.compact
           end

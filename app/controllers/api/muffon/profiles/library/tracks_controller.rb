@@ -15,6 +15,10 @@ module API
             render_data_with_status
           end
 
+          def playlists
+            render_data_with_status
+          end
+
           def destroy
             render_data_with_status
           end
@@ -44,6 +48,14 @@ module API
             ::Muffon::Profile::Library::Track::Info.call(
               params.slice(
                 *%i[profile_id library_id other_profile_id]
+              )
+            )
+          end
+
+          def playlists_data
+            ::Muffon::Profile::Library::Track::Playlists.call(
+              params.slice(
+                *%i[profile_id library_id page limit]
               )
             )
           end

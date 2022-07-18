@@ -2,8 +2,8 @@ module Muffon
   module Profile
     module Library
       module Album
-        class Tracks < Muffon::Profile::Library::Album::Base
-          COLLECTION_NAME = 'tracks'.freeze
+        class Playlists < Muffon::Profile::Library::Album::Base
+          COLLECTION_NAME = 'playlists'.freeze
           include Muffon::Utils::Pagination
 
           private
@@ -14,22 +14,24 @@ module Muffon
           end
 
           def total_items_count
-            library_album.library_tracks_count
+            profile_playlists.count
+          end
+
+          def profile_playlists
+            @profile_playlists ||=
+              library_album.profile_playlists
           end
 
           def collection_list
-            library_album
-              .library_tracks
+            profile_playlists
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
-              .album_associated
           end
 
-          def collection_item_data_formatted(library_track)
-            Muffon::Profile::Library::Album::Tracks::Track.call(
-              library_track:,
-              profile_id: @args[:other_profile_id]
+          def collection_item_data_formatted(playlist)
+            Muffon::Profile::Playlists::Playlist.call(
+              playlist:
             )
           end
         end

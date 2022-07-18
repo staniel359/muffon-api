@@ -38,8 +38,7 @@ module Muffon
         def profile_data
           {
             id: profile.id,
-            nickname: profile.nickname,
-            image: profile.image_data
+            nickname: profile.nickname
           }.compact
         end
 

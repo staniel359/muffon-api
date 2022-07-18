@@ -19,6 +19,10 @@ module API
             render_data_with_status
           end
 
+          def playlists
+            render_data_with_status
+          end
+
           def destroy
             render_data_with_status
           end
@@ -59,6 +63,14 @@ module API
                   profile_id library_id
                   page limit other_profile_id
                 ]
+              )
+            )
+          end
+
+          def playlists_data
+            ::Muffon::Profile::Library::Album::Playlists.call(
+              params.slice(
+                *%i[profile_id library_id page limit]
               )
             )
           end

@@ -51,6 +51,7 @@ Rails.application.routes.draw do
                   get '', action: :info
                   get 'albums'
                   get 'tracks'
+                  get 'playlists'
                 end
               end
 
@@ -58,12 +59,14 @@ Rails.application.routes.draw do
                 scope ':library_id' do
                   get '', action: :info
                   get 'tracks'
+                  get 'playlists'
                 end
               end
 
               namespace :tracks, as: :track do
                 scope ':library_id' do
                   get '', action: :info
+                  get 'playlists'
                 end
               end
 

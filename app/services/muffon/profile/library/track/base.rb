@@ -28,6 +28,16 @@ module Muffon
           def library_data
             { track: track_data }
           end
+
+          def track_base_data
+            {
+              library: library_track_data,
+              player_id: track.player_id,
+              title:,
+              artist: artist_names_data,
+              artists:
+            }
+          end
         end
       end
     end
