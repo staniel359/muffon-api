@@ -15,11 +15,10 @@ module Muffon
 
               def library_track
                 profile.library_tracks.where(
-                  track_id: find_track.id
-                ).first_or_create(
+                  track_id: find_track.id,
                   library_artist_id: library_artist.id,
                   library_album_id: @args[:library_album_id]
-                )
+                ).first_or_create
               end
 
               def title
