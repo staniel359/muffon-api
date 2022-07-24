@@ -41,7 +41,8 @@ module Muffon
           country:,
           city:,
           role:,
-          online: profile.online
+          online: online?,
+          was_online: was_online_formatted
         }.compact
       end
 
@@ -61,6 +62,23 @@ module Muffon
         return if profile.role == 'profile'
 
         profile.role
+      end
+
+      def online?
+        profile.online
+      end
+
+      def was_online_formatted
+        return if online?
+
+        datetime_formatted(
+          was_online
+        )
+      end
+
+      def was_online
+        profile.online_updated_at ||
+          profile.updated_at
       end
 
       def profile_other_profile_data

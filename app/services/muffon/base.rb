@@ -111,5 +111,9 @@ module Muffon
         'AppleWebKit/537.36 (KHTML, like Gecko) ' \
         'Chrome/101.0.4951.41 Safari/537.36'
     end
+
+    def current_time
+      Time.now.utc
+    end
   end
 end

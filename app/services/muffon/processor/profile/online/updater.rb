@@ -20,11 +20,23 @@ module Muffon
           def profile_data
             return forbidden if wrong_profile?
 
-            profile.update(
-              online: @args[:online]
-            )
+            process_profile
 
             { success: true }
+          end
+
+          def process_profile
+            profile.tap do |p|
+              p.online = @args[:online]
+
+              p.online_updated_at = current_time if offline?
+
+              p.save
+            end
+          end
+
+          def offline?
+            @args[:online].zero?
           end
         end
       end
