@@ -26,6 +26,17 @@ module Muffon
             { tag: tag_data }
           end
 
+          def tag_base_data
+            {
+              library: library_tag_data,
+              name: tag.name
+            }
+          end
+
+          def library_tag_data
+            { id: tag.id }
+          end
+
           def tag_library_artists
             @tag_library_artists ||=
               library_artists
@@ -34,10 +45,6 @@ module Muffon
                 '? = ANY(artists.tag_ids)',
                 @args[:tag_id]
               )
-          end
-
-          def library_tag_data
-            { id: tag.id }
           end
         end
       end

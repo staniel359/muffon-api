@@ -6,9 +6,12 @@ module Muffon
           private
 
           def tag_data
+            tag_base_data
+              .merge(tag_extra_data)
+          end
+
+          def tag_extra_data
             {
-              library: library_tag_data,
-              name: tag.name,
               artists_count:
                 tag_library_artists.size
             }
