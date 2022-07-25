@@ -23,7 +23,10 @@ module Muffon
       end
 
       def community_base_data
-        { title: community.title }
+        {
+          id: community.id,
+          title: community.title
+        }
       end
     end
   end

@@ -9,6 +9,15 @@ module Muffon
           profile_id: @args[:profile_id]
         )
       end
+
+      def community
+        @community ||=
+          ::Community
+          .associated
+          .find_by(
+            id: @args[:community_id]
+          )
+      end
     end
   end
 end
