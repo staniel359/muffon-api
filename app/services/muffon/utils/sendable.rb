@@ -1,7 +1,7 @@
 module Muffon
   module Utils
     module Sendable
-      LINK_REGEX = %r{\[link\](.+?)\[/link\]}
+      LINK_REGEX = %r{\[link\](.*?)\[/link\]}
       ATTACHMENT_TYPES = %i[
         images
         artists
@@ -67,13 +67,15 @@ module Muffon
       def models_data
         @models_data ||=
           models.group_by do |m|
-            m['model'].pluralize.to_sym
+            m['model']&.pluralize&.to_sym
           end
       end
 
       def models
         links.map do |l|
           JSON.parse(l)
+        rescue JSON::ParserError
+          {}
         end
       end
 
