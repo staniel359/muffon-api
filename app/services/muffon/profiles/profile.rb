@@ -10,6 +10,7 @@ module Muffon
       def data
         profile_base_data
           .merge(profile_extra_data)
+          .merge(profile_online_data)
           .merge(profile_other_profile_data)
           .merge(profile_relationships_data)
           .merge(profile_lastfm_data)
@@ -28,9 +29,7 @@ module Muffon
       end
 
       def email
-        return if wrong_profile?
-
-        profile.email
+        profile.email unless wrong_profile?
       end
 
       def profile_extra_data
@@ -38,38 +37,33 @@ module Muffon
           image: profile.image_data,
           gender: profile.gender,
           birthdate: profile.birthdate,
-          country:,
-          city:,
+          country: profile.country,
+          city: profile.city,
           role:,
-          online: online?,
+          created: created_formatted
+        }.compact_blank
+      end
+
+      def role
+        profile.role unless
+            profile.role == 'profile'
+      end
+
+      def created_formatted
+        datetime_formatted(
+          profile.created_at
+        )
+      end
+
+      def profile_online_data
+        {
+          online: profile.online,
           was_online: was_online_formatted
         }.compact
       end
 
-      def country
-        profile
-          .country
-          .presence
-      end
-
-      def city
-        profile
-          .city
-          .presence
-      end
-
-      def role
-        return if profile.role == 'profile'
-
-        profile.role
-      end
-
-      def online?
-        profile.online
-      end
-
       def was_online_formatted
-        return if online?
+        return if profile.online
 
         datetime_formatted(
           was_online
@@ -89,10 +83,8 @@ module Muffon
 
       def other_profile_data
         {
-          follower_of_profile:
-            follower_of_profile?,
-          followed_by_profile:
-            followed_by_profile?
+          follower_of_profile: follower_of_profile?,
+          followed_by_profile: followed_by_profile?
         }
       end
 
@@ -119,10 +111,8 @@ module Muffon
         return {} if wrong_profile?
 
         {
-          lastfm_nickname:
-            profile.lastfm_nickname,
-          lastfm_session_key:
-            profile.lastfm_session_key
+          lastfm_nickname: profile.lastfm_nickname,
+          lastfm_session_key: profile.lastfm_session_key
         }.compact
       end
     end
