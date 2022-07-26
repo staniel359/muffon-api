@@ -54,7 +54,7 @@ module YandexMusic
       end
 
       def duration_seconds
-        track['durationMs'] / 1_000
+        track['durationMs'].to_i / 1_000
       end
 
       def audio_data
