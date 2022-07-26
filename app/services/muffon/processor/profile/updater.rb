@@ -26,6 +26,15 @@ module Muffon
           { profile: profile_data }
         end
 
+        def profile
+          @profile ||=
+            ::Profile
+            .associated
+            .find_by(
+              id: @args[:profile_id]
+            )
+        end
+
         def update_params
           @args.permit!.slice(
             *profile_params
