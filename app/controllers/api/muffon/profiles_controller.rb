@@ -23,6 +23,10 @@ module API
         render_data_with_status
       end
 
+      def playing
+        render_data_with_status
+      end
+
       private
 
       def index_data
@@ -62,6 +66,14 @@ module API
         ::Muffon::Processor::Profile::Online::Updater.call(
           params.slice(
             *%i[profile_id token online]
+          )
+        )
+      end
+
+      def playing_data
+        ::Muffon::Processor::Profile::Playing::Updater.call(
+          params.slice(
+            *%i[profile_id token playing]
           )
         )
       end

@@ -40,7 +40,8 @@ module Muffon
           country: profile.country,
           city: profile.city,
           role:,
-          created: created_formatted
+          created: created_formatted,
+          playing: profile.playing
         }.compact_blank
       end
 
