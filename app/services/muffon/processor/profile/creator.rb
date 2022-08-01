@@ -40,7 +40,7 @@ module Muffon
           ::Muffon::Processor::Profile::Online::Updater.call(
             profile_id: profile.id,
             token: profile.token,
-            online: true
+            online: 1
           )
         end
 
