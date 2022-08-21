@@ -35,18 +35,21 @@ module ProfileDecorator
   end
 
   def following_profiles_posts
-    Post.with_profile_type.where(
-      profile_id: following_profile_ids
-    ).where(
-      'profile_id = other_profile_id'
-    )
+    Post
+      .with_profile_type
+      .by_profile
+      .where(
+        profile_id: following_profile_ids
+      )
   end
 
   def communities_posts
-    Post.with_community_type.where(
-      community_id: community_ids,
-      by_community: true
-    )
+    Post
+      .with_community_type
+      .by_community
+      .where(
+        community_id: community_ids
+      )
   end
 
   def library_tags

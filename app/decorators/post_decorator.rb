@@ -12,6 +12,22 @@ module PostDecorator
       )
     end
 
+    def by_profile
+      where(
+        'profile_id = other_profile_id'
+      )
+    end
+
+    def by_community
+      where(
+        by_community: true
+      )
+    end
+
+    def global
+      by_profile.or(by_community)
+    end
+
     def associated
       includes(
         [profile: image_association],

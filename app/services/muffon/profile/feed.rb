@@ -12,21 +12,22 @@ module Muffon
         super
       end
 
-      def profile_data
-        profile_base_data
-          .merge(paginated_data)
-      end
-
-      def profile_base_data
-        { nickname: }
-      end
-
       def total_items_count
         posts.size
       end
 
       def posts
-        @posts ||= profile.feed_posts
+        @posts ||= scoped_posts
+      end
+
+      def scoped_posts
+        return Post.global if global?
+
+        profile.feed_posts
+      end
+
+      def global?
+        @args[:global].to_i == 1
       end
 
       def collection_list
@@ -42,6 +43,8 @@ module Muffon
           post:
         )
       end
+
+      alias profile_data paginated_data
     end
   end
 end
