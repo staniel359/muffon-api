@@ -36,7 +36,9 @@ module Muffon
 
           ::Date.parse(date).strftime(format)
         rescue ::Date::Error
-          date
+          date.gsub(
+            '-00', ''
+          )
         end
 
         def format_formatted(size)
