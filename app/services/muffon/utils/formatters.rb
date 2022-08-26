@@ -32,12 +32,6 @@ module Muffon
         end
       end
 
-      def labels
-        labels_list.map do |l|
-          label_data_formatted(l)
-        end.uniq
-      end
-
       def tags_truncated
         tags.first(5)
       end

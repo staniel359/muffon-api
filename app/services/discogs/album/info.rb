@@ -35,16 +35,10 @@ module Discogs
         album['released']
       end
 
-      def labels_list
-        album['labels']
-      end
-
-      def label_data_formatted(label)
-        {
-          source:
-            label_source_data(label),
-          name: label['name']
-        }
+      def labels
+        album['labels'].map do |l|
+          l['name']
+        end.uniq
       end
 
       def label_source_data(label)

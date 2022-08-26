@@ -30,12 +30,10 @@ module YandexMusic
         }.compact
       end
 
-      def labels_list
-        album['labels']
-      end
-
-      def label_data_formatted(label)
-        { name: label['name'] }
+      def labels
+        album['labels'].map do |l|
+          l['name']
+        end.uniq
       end
 
       def tags_list

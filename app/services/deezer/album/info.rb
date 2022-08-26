@@ -30,7 +30,9 @@ module Deezer
       end
 
       def labels
-        album['LABEL_NAME'].split('/')
+        album['LABEL_NAME']
+          .split('/')
+          .uniq
       end
 
       def tracks_list
