@@ -58,7 +58,9 @@ module Muffon
       end
 
       def date_formatted(data)
-        Muffon::Utils::Date.format(data)
+        Muffon::Utils::Date.call(
+          data:
+        )
       end
 
       def datetime_formatted(date)
