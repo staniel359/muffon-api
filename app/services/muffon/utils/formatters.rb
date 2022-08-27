@@ -68,7 +68,9 @@ module Muffon
       end
 
       def duration_formatted(data)
-        Muffon::Utils::Duration.format(data)
+        Muffon::Utils::Duration.call(
+          data:
+        )
       end
 
       def description_truncated

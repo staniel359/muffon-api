@@ -1,41 +1,50 @@
 module Muffon
   module Utils
     class Duration < Muffon::Base
-      class << self
-        def format(data)
-          format_duration(data)
-        end
+      def call
+        data
+      end
 
-        private
+      private
 
-        def format_duration(data)
-          seconds = seconds_formatted(data)
+      def data
+        Time
+          .at(seconds)
+          .utc
+          .strftime(duration_format)
+      end
 
-          Time.at(seconds).utc.strftime(
-            duration_format(seconds)
-          )
-        end
+      def seconds
+        @seconds ||= seconds_formatted
+      end
 
-        def seconds_formatted(data)
-          return data.to_i unless duration?(data)
+      def seconds_formatted
+        return time_formatted if duration?
 
-          time_formatted(data)
-        end
+        @args[:data].to_i
+      end
 
-        def duration?(data)
-          data.try('include?', ':')
-        end
+      def duration?
+        @args[:data].try(
+          'include?', ':'
+        )
+      end
 
-        def time_formatted(data)
-          data
-            .split(':')
-            .map(&:to_i)
-            .inject(0) { |a, b| (a * 60) + b }
-        end
+      def time_formatted
+        @args[:data]
+          .split(':')
+          .map(&:to_i)
+          .inject(0) do |a, b|
+            (a * 60) + b
+          end
+      end
 
-        def duration_format(seconds)
-          seconds >= 3600 ? '%H:%M:%S' : '%M:%S'
-        end
+      def duration_format
+        with_hours? ? '%H:%M:%S' : '%M:%S'
+      end
+
+      def with_hours?
+        seconds >= 3_600
       end
     end
   end
