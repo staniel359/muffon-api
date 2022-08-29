@@ -524,30 +524,6 @@ Rails.application.routes.draw do
         end
       end
 
-# Rate Your Music
-
-      namespace :rateyourmusic do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'albums_various'
-          get 'labels'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album' do
-            get '', action: :info
-            get 'tags'
-          end
-        end
-      end
-
 # SoundCloud
 
       namespace :soundcloud do
