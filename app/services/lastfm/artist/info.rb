@@ -14,6 +14,7 @@ module LastFM
 
         muffon_data
           .merge(artist_base_data)
+          .merge(artist_counters_data)
           .merge(artist_extra_data)
           .merge(with_more_data)
       end
@@ -33,22 +34,34 @@ module LastFM
         }
       end
 
-      def artist_extra_data
+      def artist_counters_data
         {
           listeners_count:,
           plays_count:,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          recommendation:
-            recommendation_data
+          profiles_count:
         }.compact
+      end
+
+      def profiles_count
+        find_artist
+          .library_artists
+          .size
       end
 
       def plays_count
         artist.dig(
           'stats', 'playcount'
         ).to_i
+      end
+
+      def artist_extra_data
+        {
+          description:
+            description_truncated,
+          tags: tags_truncated,
+          recommendation:
+            recommendation_data
+        }.compact
       end
 
       def description

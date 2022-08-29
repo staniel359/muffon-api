@@ -14,6 +14,7 @@ module LastFM
 
         muffon_data
           .merge(album_base_data)
+          .merge(album_counters_data)
           .merge(album_extra_data)
           .merge(with_more_data)
       end
@@ -34,12 +35,24 @@ module LastFM
         }
       end
 
-      def album_extra_data
+      def album_counters_data
         {
-          image: image_data,
           listeners_count:,
           plays_count:
             album['playcount'].to_i,
+          profiles_count:
+        }.compact
+      end
+
+      def profiles_count
+        find_album
+          .library_albums
+          .size
+      end
+
+      def album_extra_data
+        {
+          image: image_data,
           description:
             description_truncated,
           tags: tags_truncated,

@@ -3,6 +3,10 @@ class Album < ApplicationRecord
 
   has_many :library_albums, dependent: nil
 
+  has_many :profiles,
+           through: :library_albums,
+           dependent: nil
+
   belongs_to :artist
 
   validates :title,

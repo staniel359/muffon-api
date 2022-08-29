@@ -18,6 +18,10 @@ module API
           render_data_with_status
         end
 
+        def profiles
+          render_data_with_status
+        end
+
         private
 
         def info_data
@@ -48,6 +52,14 @@ module API
           ::LastFM::Album::ListenersCount.call(
             params.slice(
               *%i[artist album]
+            )
+          )
+        end
+
+        def profiles_data
+          ::LastFM::Album::Profiles.call(
+            params.slice(
+              *%i[artist album profile_id page limit]
             )
           )
         end

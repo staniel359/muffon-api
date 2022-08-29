@@ -190,4 +190,28 @@ RSpec.describe API::LastFM::ArtistsController, type: :controller do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :profiles' do
+    it 'returns 200 if artist exists' do
+      VCR.use_cassette 'controllers/api/lastfm/artists/profiles/success' do
+        get :profiles, params: { artist: 'Wild Nothing' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no artist name' do
+      get :profiles, params: { artist: ' ' }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'controllers/api/lastfm/artists/profiles/wrong_artist' do
+        get :profiles, params: { artist: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

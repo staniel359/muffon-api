@@ -12,6 +12,7 @@ module LastFM
       def track_data
         muffon_data
           .merge(track_base_data)
+          .merge(track_counters_data)
           .merge(track_extra_data)
           .merge(track_description_tags_data)
           .merge(with_more_data)
@@ -27,14 +28,26 @@ module LastFM
         }
       end
 
-      def track_extra_data
+      def track_counters_data
         {
-          album: album_data,
-          image: image_data,
           listeners_count:
             track['listeners'].to_i,
           plays_count:
             track['playcount'].to_i,
+          profiles_count:
+        }.compact
+      end
+
+      def profiles_count
+        find_track
+          .library_tracks
+          .size
+      end
+
+      def track_extra_data
+        {
+          album: album_data,
+          image: image_data,
           duration:,
           duration_seconds:
         }.compact

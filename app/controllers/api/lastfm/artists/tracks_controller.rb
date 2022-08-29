@@ -18,6 +18,10 @@ module API
           render_data_with_status
         end
 
+        def profiles
+          render_data_with_status
+        end
+
         private
 
         def info_data
@@ -46,6 +50,14 @@ module API
 
         def similar_data
           ::LastFM::Track::Similar.call(
+            params.slice(
+              *%i[artist track profile_id page limit]
+            )
+          )
+        end
+
+        def profiles_data
+          ::LastFM::Track::Profiles.call(
             params.slice(
               *%i[artist track profile_id page limit]
             )

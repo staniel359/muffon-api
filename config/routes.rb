@@ -423,6 +423,7 @@ Rails.application.routes.draw do
             get 'albums'
             get 'tracks'
             get 'listeners_count'
+            get 'profiles'
 
             namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
               scope ':album' do
@@ -430,6 +431,7 @@ Rails.application.routes.draw do
                 get 'description'
                 get 'tags'
                 get 'listeners_count'
+                get 'profiles'
               end
             end
 
@@ -439,6 +441,7 @@ Rails.application.routes.draw do
                 get 'description'
                 get 'tags'
                 get 'similar'
+                get 'profiles'
               end
             end
           end
