@@ -1,5 +1,7 @@
 module API
   class BaseController < ApplicationController
+    include ::Muffon::Utils::ErrorHandlers
+
     private
 
     def render_data_with_status
@@ -12,15 +14,27 @@ module API
     end
 
     def data
-      @data ||= send(
+      @data ||= data_conditional
+    end
+
+    def data_conditional
+      return forbidden unless allowed?
+
+      send(
         "#{params[:action]}_data"
       )
+    end
+
+    def allowed?
+      true
     end
 
     def status
       return 204 if data.blank?
 
-      data.dig(:error, :code) || 200
+      data.dig(
+        :error, :code
+      ) || 200
     end
 
     def sendable_attachment_types
