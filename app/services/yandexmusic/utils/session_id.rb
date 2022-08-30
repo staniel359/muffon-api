@@ -1,6 +1,9 @@
 module YandexMusic
   module Utils
     class SessionId < YandexMusic::Base
+      BASE_LINK =
+        'https://passport.yandex.ru'.freeze
+
       def call
         data
       end
@@ -8,89 +11,50 @@ module YandexMusic
       private
 
       def data
-        password_response.cookies[
-          'Session_id'
-        ]
+        password_data[:session_id]
       end
 
-      def password_response
-        RestClient::Request.execute(
-          method: :post,
-          url: password_link,
-          payload: password_payload,
-          headers:,
-          proxy:
-        )
-      end
-
-      def password_link
-        'https://passport.yandex.ru' \
-          '/registration-validations' \
-          '/auth/multi_step/commit_password'
-      end
-
-      def password_payload
-        {
-          track_id:,
-          csrf_token:,
-          password:
-        }
+      def password_data
+        YandexMusic::Utils::SessionId::Password.call
       end
 
       def track_id
-        JSON.parse(
-          email_response
-        )['track_id']
+        email_data[:track_id]
       end
 
-      def email_response
+      def email_data
+        YandexMusic::Utils::SessionId::Email.call
+      end
+
+      def post_response
         RestClient::Request.execute(
           method: :post,
-          url: email_link,
-          payload: email_payload,
+          url: link,
+          payload:,
           headers:,
           proxy:
         )
       end
 
-      def email_link
-        'https://passport.yandex.ru' \
-          '/registration-validations' \
-          '/auth/multi_step/start'
-      end
-
-      def email_payload
-        {
-          csrf_token:,
-          login: email
-        }
+      def login_base_link
+        "#{BASE_LINK}/registration-validations/auth/multi_step"
       end
 
       def csrf_token
-        secrets.yandex_music[:csrf_token]
+        passport_data[:csrf_token]
       end
 
-      def email
-        secrets.yandex_music[:email]
+      def passport_data
+        @passport_data ||=
+          YandexMusic::Utils::SessionId::Passport.call
       end
 
       def cookies
-        {
-          uniqueuid: unique_uid,
-          i: i_cookie
-        }
+        { uniqueuid: unique_uid }
       end
 
       def unique_uid
-        secrets.yandex_music[:unique_uid]
-      end
-
-      def i_cookie
-        secrets.yandex_music[:i]
-      end
-
-      def password
-        secrets.yandex_music[:password]
+        passport_data[:unique_uid]
       end
     end
   end

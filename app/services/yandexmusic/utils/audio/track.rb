@@ -35,19 +35,7 @@ module YandexMusic
         end
 
         def cookies
-          {
-            'i' => i_cookie,
-            'spravka' => spravka_cookie,
-            'Session_id' => session_id
-          }
-        end
-
-        def i_cookie
-          secrets.yandex_music[:i]
-        end
-
-        def spravka_cookie
-          secrets.yandex_music[:spravka]
+          { 'Session_id' => session_id }
         end
 
         def session_id
