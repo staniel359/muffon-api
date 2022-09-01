@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://kerve.last.fm/kerve/similarartists?artist=wejlhg239gh23&limit=250
+    uri: https://kerve.last.fm/kerve/similarartists?artist=wejlhg239gh23&limit=200
     body:
       encoding: US-ASCII
       string: ''
@@ -35,7 +35,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Mon, 04 Jul 2022 15:13:25 GMT
+      - Thu, 01 Sep 2022 20:17:24 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -45,5 +45,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: "{}"
-  recorded_at: Mon, 04 Jul 2022 15:13:25 GMT
+  recorded_at: Thu, 01 Sep 2022 20:17:24 GMT
 recorded_with: VCR 6.1.0

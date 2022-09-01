@@ -2,7 +2,7 @@ module LastFM
   module Artist
     class Similar < LastFM::Kerve::Base
       COLLECTION_NAME = 'similar'.freeze
-      TOTAL_LIMIT = 250
+      TOTAL_LIMIT = 200
       include LastFM::Artist::Utils::Pagination
 
       private
