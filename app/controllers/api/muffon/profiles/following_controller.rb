@@ -11,7 +11,10 @@ module API
         def index_data
           ::Muffon::Profile::Following.call(
             params.slice(
-              *%i[profile_id other_profile_id page limit]
+              *%i[
+                profile_id token page limit
+                other_profile_id
+              ]
             )
           )
         end

@@ -23,7 +23,7 @@ module API
         def index_data
           ::Muffon::Profile::Posts.call(
             params.slice(
-              *%i[profile_id page limit]
+              *%i[profile_id token page limit]
             )
           )
         end

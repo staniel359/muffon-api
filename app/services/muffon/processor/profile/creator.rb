@@ -4,6 +4,10 @@ module Muffon
       class Creator < Muffon::Profile::Base
         private
 
+        def no_rights?
+          false
+        end
+
         def primary_args
           [
             @args[:email],

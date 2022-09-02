@@ -30,8 +30,9 @@ module API
               params.slice(
                 *%i[
                   profile_id token title
-                  artist_name album_title image_url
-                  source_data audio_data album_source_data
+                  artist_name album_title
+                  image_url source_data
+                  audio_data album_source_data
                 ]
               )
             )

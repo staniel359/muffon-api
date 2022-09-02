@@ -11,9 +11,21 @@ module Muffon
         birthdate
         country
         city
+        private
       ].freeze
 
+      def call
+        return forbidden if no_rights?
+
+        super
+      end
+
       private
+
+      def no_rights?
+        profile.private &&
+          wrong_profile?
+      end
 
       def primary_args
         [@args[:profile_id]]

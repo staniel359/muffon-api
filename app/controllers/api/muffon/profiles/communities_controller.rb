@@ -11,7 +11,10 @@ module API
         def index_data
           ::Muffon::Profile::Communities.call(
             params.slice(
-              *%i[profile_id page limit other_profile_id]
+              *%i[
+                profile_id token page limit
+                other_profile_id
+              ]
             )
           )
         end

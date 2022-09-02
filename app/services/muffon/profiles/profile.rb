@@ -20,7 +20,8 @@ module Muffon
         {
           id: profile.id,
           nickname:,
-          email:
+          email:,
+          private: profile.private
         }.compact
       end
 

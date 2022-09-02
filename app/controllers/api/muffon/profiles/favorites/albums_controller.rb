@@ -20,7 +20,10 @@ module API
           def index_data
             ::Muffon::Profile::Favorites::Albums.call(
               params.slice(
-                *%i[profile_id page limit other_profile_id]
+                *%i[
+                  profile_id token page limit
+                  other_profile_id
+                ]
               )
             )
           end
@@ -28,7 +31,10 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Favorites::Album::Creator.call(
               params.slice(
-                *%i[profile_id token title artist_name image_url]
+                *%i[
+                  profile_id token title
+                  artist_name image_url
+                ]
               )
             )
           end
