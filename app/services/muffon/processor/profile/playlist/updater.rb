@@ -36,7 +36,8 @@ module Muffon
 
           def update_playlist
             playlist.update(
-              title: @args[:title]
+              title: @args[:title],
+              private: @args[:private]
             )
           end
 

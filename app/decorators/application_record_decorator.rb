@@ -17,6 +17,12 @@ module ApplicationRecordDecorator
         library_tracks_count: :desc
       )
     end
+
+    def public
+      where(
+        private: false
+      )
+    end
   end
 
   def self.included(base)

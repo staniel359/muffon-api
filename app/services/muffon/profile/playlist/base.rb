@@ -2,7 +2,18 @@ module Muffon
   module Profile
     module Playlist
       class Base < Muffon::Profile::Base
+        def call
+          return forbidden if no_rights?
+
+          super
+        end
+
         private
+
+        def no_rights?
+          playlist.private &&
+            wrong_profile?
+        end
 
         def primary_args
           [

@@ -24,9 +24,10 @@ module Muffon
 
           def playlist
             @playlist ||=
-              profile.playlists.where(
-                title: @args[:title]
-              ).create
+              profile.playlists.create(
+                title: @args[:title],
+                private: @args[:private]
+              )
           end
 
           def playlist_data

@@ -19,7 +19,8 @@ module Muffon
             playlist_track_id:
               playlist_track&.id,
             title: playlist.title,
-            profile: profile_data
+            profile: profile_data,
+            private: playlist.private
           }.compact
         end
 

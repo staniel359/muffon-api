@@ -27,7 +27,10 @@ module API
         def index_data
           ::Muffon::Profile::Playlists.call(
             params.slice(
-              *%i[profile_id track_title artist_name page limit]
+              *%i[
+                profile_id token page limit
+                track_title artist_name
+              ]
             )
           )
         end
@@ -35,7 +38,10 @@ module API
         def create_data
           ::Muffon::Processor::Profile::Playlist::Creator.call(
             params.slice(
-              *%i[profile_id token title image]
+              *%i[
+                profile_id token
+                title image private
+              ]
             )
           )
         end
@@ -43,7 +49,7 @@ module API
         def info_data
           ::Muffon::Profile::Playlist::Info.call(
             params.slice(
-              *%i[profile_id playlist_id]
+              *%i[profile_id token playlist_id]
             )
           )
         end
@@ -51,7 +57,10 @@ module API
         def update_data
           ::Muffon::Processor::Profile::Playlist::Updater.call(
             params.slice(
-              *%i[profile_id token playlist_id title image]
+              *%i[
+                profile_id token playlist_id
+                title image private
+              ]
             )
           )
         end
