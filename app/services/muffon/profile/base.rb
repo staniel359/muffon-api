@@ -23,7 +23,7 @@ module Muffon
       private
 
       def no_rights?
-        profile.private &&
+        profile&.private &&
           wrong_profile?
       end
 
