@@ -12,7 +12,8 @@ set :deploy_to, "/root/#{fetch(:application)}"
 append :linked_files,
   'config/master.key',
   'config/credentials/production.yml.enc',
-  'config/credentials/production.key'
+  'config/credentials/production.key',
+  'config/sidekiq.yml'
 
 append :linked_dirs,
   'log',
@@ -44,10 +45,10 @@ set :sidekiq_user, :root
 
 set :whenever_roles, -> { :app }
 
-before 'deploy:check:linked_files', 'creds:copy'
+before 'deploy:check:linked_files', 'config:copy'
 
-namespace :creds do
-  desc 'Copy credentials'
+namespace :config do
+  desc 'Copy config'
   task :copy do
     on roles(:all) do |host|
       # upload!(
@@ -63,6 +64,11 @@ namespace :creds do
       upload!(
         'config/credentials/production.yml.enc',
         "/root/#{fetch(:application)}/shared/config/credentials/production.yml.enc"
+      )
+
+      upload!(
+        'config/sidekiq.yml',
+        "/root/#{fetch(:application)}/shared/config/sidekiq.yml"
       )
     end
   end
