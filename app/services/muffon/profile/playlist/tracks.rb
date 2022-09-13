@@ -13,7 +13,7 @@ module Muffon
 
         def collection_list
           tracks
-            .created_asc_ordered
+            .updated_asc_ordered
             .limit(limit)
             .offset(offset)
             .associated

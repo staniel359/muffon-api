@@ -12,6 +12,12 @@ module ApplicationRecordDecorator
       )
     end
 
+    def updated_asc_ordered
+      order(
+        updated_at: :asc
+      )
+    end
+
     def library_tracks_count_desc_ordered
       order(
         library_tracks_count: :desc
