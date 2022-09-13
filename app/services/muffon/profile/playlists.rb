@@ -48,22 +48,21 @@ module Muffon
       end
 
       def track_id
-        find_track.id if find_track?
+        find_track.id if model?('track')
       end
 
-      def find_track?
-        [
-          @args[:track_title],
-          @args[:artist_name]
-        ].all?(&:present?)
+      def model?(type)
+        @args[:model]
+          &.strip
+          &.downcase == type
       end
 
       def title
-        @args[:track_title]
+        @args[:title]
       end
 
       def artist_name
-        @args[:artist_name]
+        @args[:artist]
       end
     end
   end

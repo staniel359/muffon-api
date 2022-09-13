@@ -16,8 +16,7 @@ module Muffon
         def playlist_base_data
           {
             id: playlist.id,
-            playlist_track_id:
-              playlist_track&.id,
+            playlist_track_ids:,
             title: playlist.title,
             profile: profile_data,
             private: playlist.private
@@ -28,12 +27,31 @@ module Muffon
           @args[:playlist]
         end
 
-        def playlist_track
-          return if @args[:track_id].blank?
+        def playlist_track_ids
+          return if playlist_tracks.blank?
 
-          playlist.playlist_tracks.find_by(
-            track_id: @args[:track_id]
-          )
+          playlist_tracks
+            .pluck(:id)
+            .presence
+        end
+
+        def playlist_tracks
+          @playlist_tracks ||=
+            playlist_tracks_scoped
+        end
+
+        def playlist_tracks_scoped
+          if @args[:track_id].present?
+            track_playlist_tracks
+          end
+        end
+
+        def track_playlist_tracks
+          playlist
+            .playlist_tracks
+            .where(
+              track_id: @args[:track_id]
+            )
         end
 
         def profile_data

@@ -29,7 +29,7 @@ module API
             params.slice(
               *%i[
                 profile_id token page limit
-                track_title artist_name
+                model title artist
               ]
             )
           )
