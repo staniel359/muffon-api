@@ -4,6 +4,7 @@ module Muffon
       COLLECTION_NAME = 'playlists'.freeze
       include Muffon::Utils::Pagination
       include Muffon::Utils::Track
+      include Muffon::Utils::Album
 
       private
 
@@ -43,7 +44,8 @@ module Muffon
       def collection_item_data_formatted(playlist)
         Muffon::Profile::Playlists::Playlist.call(
           playlist:,
-          track_id:
+          track_id:,
+          album_id:
         )
       end
 
@@ -63,6 +65,10 @@ module Muffon
 
       def artist_name
         @args[:artist]
+      end
+
+      def album_id
+        find_album.id if model?('album')
       end
     end
   end

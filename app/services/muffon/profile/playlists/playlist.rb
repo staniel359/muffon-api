@@ -43,6 +43,8 @@ module Muffon
         def playlist_tracks_scoped
           if @args[:track_id].present?
             track_playlist_tracks
+          elsif @args[:album_id].present?
+            album_playlist_tracks
           end
         end
 
@@ -51,6 +53,14 @@ module Muffon
             .playlist_tracks
             .where(
               track_id: @args[:track_id]
+            )
+        end
+
+        def album_playlist_tracks
+          playlist
+            .playlist_tracks
+            .where(
+              album_id: @args[:album_id]
             )
         end
 
