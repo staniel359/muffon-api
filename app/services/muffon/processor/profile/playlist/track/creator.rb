@@ -16,7 +16,9 @@ module Muffon
             end
 
             def process_playlist_track
-              playlist_track
+              playlist_track.update(
+                update_params
+              )
 
               return playlist_track.errors_data if
                   playlist_track.errors?
@@ -31,11 +33,11 @@ module Muffon
 
             def playlist_track
               @playlist_track ||=
-                playlist.playlist_tracks.where(
+                playlist
+                .playlist_tracks
+                .where(
                   track_id: find_track.id
-                ).first_or_create(
-                  create_params
-                )
+                ).first_or_initialize
             end
 
             def title
@@ -46,7 +48,7 @@ module Muffon
               @args[:artist_name]
             end
 
-            def create_params
+            def update_params
               {
                 artist_id: find_artist.id,
                 album_id: find_album&.id,
