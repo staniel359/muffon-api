@@ -28,7 +28,9 @@ module Muffon
 
             def listened_album
               @listened_album ||=
-                profile.listened_albums.where(
+                profile
+                .listened_albums
+                .where(
                   album_id: find_album.id
                 ).first_or_create
             end

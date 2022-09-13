@@ -28,7 +28,9 @@ module Muffon
 
             def bookmark_artist
               @bookmark_artist ||=
-                profile.bookmark_artists.where(
+                profile
+                .bookmark_artists
+                .where(
                   artist_id: find_artist.id
                 ).first_or_create
             end

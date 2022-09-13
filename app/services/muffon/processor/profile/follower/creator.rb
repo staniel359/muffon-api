@@ -16,7 +16,9 @@ module Muffon
 
           def relationship
             @relationship ||=
-              profile.active_relationships.where(
+              profile
+              .active_relationships
+              .where(
                 other_profile_id:
                   @args[:other_profile_id]
               ).first_or_create

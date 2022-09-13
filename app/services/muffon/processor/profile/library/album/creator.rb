@@ -29,7 +29,9 @@ module Muffon
 
             def library_album
               @library_album ||=
-                profile.library_albums.where(
+                profile
+                .library_albums
+                .where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
                 ).first_or_create
@@ -44,9 +46,12 @@ module Muffon
             end
 
             def library_artist
-              profile.library_artists.where(
-                artist_id: find_album.artist_id
-              ).first_or_create
+              profile
+                .library_artists
+                .where(
+                  artist_id:
+                    find_album.artist_id
+                ).first_or_create
             end
 
             def process_tracks

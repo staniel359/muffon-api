@@ -28,7 +28,9 @@ module Muffon
 
             def library_artist
               @library_artist ||=
-                profile.library_artists.where(
+                profile
+                .library_artists
+                .where(
                   artist_id: find_artist.id
                 ).first_or_create
             end

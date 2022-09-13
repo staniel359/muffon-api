@@ -16,7 +16,9 @@ module Muffon
             end
 
             def process_favorite
-              favorite_track
+              favorite_track.update(
+                update_params
+              )
 
               return favorite_track.errors_data if
                   favorite_track.errors?
@@ -28,11 +30,11 @@ module Muffon
 
             def favorite_track
               @favorite_track ||=
-                profile.favorite_tracks.where(
+                profile
+                .favorite_tracks
+                .where(
                   track_id: find_track.id
-                ).first_or_create(
-                  album_id: find_album&.id
-                )
+                ).first_or_initialize
             end
 
             def title
@@ -41,6 +43,10 @@ module Muffon
 
             def artist_name
               @args[:artist_name]
+            end
+
+            def update_params
+              { album_id: find_album&.id }
             end
 
             def album_title

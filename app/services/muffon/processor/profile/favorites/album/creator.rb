@@ -28,7 +28,9 @@ module Muffon
 
             def favorite_album
               @favorite_album ||=
-                profile.favorite_albums.where(
+                profile
+                .favorite_albums
+                .where(
                   album_id: find_album.id
                 ).first_or_create
             end

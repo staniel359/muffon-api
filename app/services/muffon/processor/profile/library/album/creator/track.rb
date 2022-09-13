@@ -30,9 +30,11 @@ module Muffon
               end
 
               def library_artist
-                profile.library_artists.where(
-                  artist_id: find_artist.id
-                ).first_or_create
+                profile
+                  .library_artists
+                  .where(
+                    artist_id: find_artist.id
+                  ).first_or_create
               end
 
               def artist_name

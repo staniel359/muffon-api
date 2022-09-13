@@ -16,7 +16,9 @@ module Muffon
             end
 
             def process_bookmark
-              bookmark_album
+              bookmark_album.update(
+                update_params
+              )
 
               return bookmark_album.errors_data if
                   bookmark_album.errors?
@@ -28,11 +30,11 @@ module Muffon
 
             def bookmark_album
               @bookmark_album ||=
-                profile.bookmark_albums.where(
+                profile
+                .bookmark_albums
+                .where(
                   album_id: find_album.id
-                ).first_or_create(
-                  create_params
-                )
+                ).first_or_initialize
             end
 
             def artist_name
@@ -43,7 +45,7 @@ module Muffon
               @args[:title]
             end
 
-            def create_params
+            def update_params
               { source_data: @args[:source_data] }
             end
 

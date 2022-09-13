@@ -28,7 +28,9 @@ module Muffon
 
             def listened_artist
               @listened_artist ||=
-                profile.listened_artists.where(
+                profile
+                .listened_artists
+                .where(
                   artist_id: find_artist.id
                 ).first_or_create
             end

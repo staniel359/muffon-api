@@ -41,7 +41,8 @@ module Muffon
 
           def conversation
             @conversation ||=
-              conversations_with_other_profile.first_or_create(
+              conversations_with_other_profile
+              .first_or_create(
                 conversation_params
               )
           end
