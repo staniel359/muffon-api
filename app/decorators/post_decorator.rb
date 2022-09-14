@@ -28,6 +28,15 @@ module PostDecorator
       by_profile.or(by_community)
     end
 
+    def public
+      joins(:profile)
+        .where(
+          profiles: {
+            private: false
+          }
+        )
+    end
+
     def associated
       includes(
         [profile: image_association],
