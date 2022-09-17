@@ -3,6 +3,3 @@ en:
     passwordReset:
       subject: 'muffon | Password reset'
       text: "Your password reset code is <strong>%{code}</strong>."
-    newVersion:
-      subject: 'muffon | New version'
-      text: 'Version 0.1.0 is available! <a href="https://github.com/staniel359/muffon/releases/tag/v0.1.0">Download</a>'

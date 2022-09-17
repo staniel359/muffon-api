@@ -7,12 +7,6 @@ class ProfileMailerPreview < ActionMailer::Preview
     ).password_reset_email
   end
 
-  def new_version_email
-    ProfileMailer.with(
-      email: profile.email
-    ).new_version_email
-  end
-
   private
 
   def profile
