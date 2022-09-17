@@ -1,0 +1,5 @@
+it:
+  mailer:
+    passwordReset:
+      subject: 'muffon | Reimpostazione password'
+      text: "Il tuo codice per reimpostare la password è <strong>%{code}</strong>."
