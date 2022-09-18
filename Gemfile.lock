@@ -323,6 +323,7 @@ DEPENDENCIES
   listen
   mini_magick
   nokogiri
+  parallel
   pg
   puma
   rack-cors

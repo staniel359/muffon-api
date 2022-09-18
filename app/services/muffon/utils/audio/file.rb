@@ -5,17 +5,15 @@ module Muffon
         def call
           return '' if not_all_args?
 
-          save_audio_and_return_path
+          data
         end
 
         private
 
-        def save_audio_and_return_path
+        def data
           create_audio_folder
 
-          audio_file.write(
-            audio_binary_data
-          )
+          write_audio_data_to_file
 
           audio_link
         end
@@ -28,6 +26,12 @@ module Muffon
 
         def audio_folder
           "files/audio/#{source_name}"
+        end
+
+        def write_audio_data_to_file
+          audio_file.write(
+            audio_binary_data
+          )
         end
 
         def audio_file

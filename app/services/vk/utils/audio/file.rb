@@ -13,24 +13,26 @@ module VK
           ]
         end
 
-        def save_audio_and_return_path
-          create_audio_folder
+        def write_audio_data_to_file
+          write_ts_data_to_ts_file
 
-          save_audio
-
-          audio_link
-        end
-
-        def save_audio
-          ts_file.write(ts_data)
-
-          convert_ts_file_to_mp3
+          convert_ts_file_to_mp3_file
 
           delete_ts_file
         end
 
+        def write_ts_data_to_ts_file
+          ts_file.write(
+            ts_data
+          )
+
+          ts_file.close
+        end
+
         def ts_file
-          ::File.open(ts_file_name, 'wb')
+          @ts_file ||= ::File.open(
+            ts_file_name, 'wb'
+          )
         end
 
         def ts_file_name
@@ -42,96 +44,23 @@ module VK
         end
 
         def ts_data
-          threads = []
-          data = []
-
-          fragments_paths.each.with_index do |path, index|
-            threads << Thread.new do
-              data << [index, process_fragment(path, index)]
-            end
-          end
-
-          threads.each(&:join)
-
-          data.sort.map(&:second).join
-        end
-
-        def fragments_paths
-          response_body.scan(
-            /([\w\-]+\.ts[?\w\-=&]*)/
-          ).flatten
-        end
-
-        def response_body
-          @response_body ||=
-            RestClient.get(@args[:link]).body
-        end
-
-        def process_fragment(path, index)
-          if (index % 3).zero?
-            decrypt_fragment(path)
-          else
-            fragment_response_data(path)
-          end
-        end
-
-        def decrypt_fragment(path)
-          cipher = OpenSSL::Cipher.new(
-            'aes-128-cbc'
+          VK::Utils::Audio::Decrypter.call(
+            link: @args[:link]
           )
-
-          cipher.decrypt
-
-          cipher.key = key
-          cipher.iv = iv
-
-          cipher.update(
-            fragment_response_data(path)
-          ) << cipher.final
         end
 
-        def key
-          @key ||= RestClient.get(
-            key_link
-          ).body
-        end
-
-        def key_link
-          response_body.match(
-            /#EXT-X-KEY:METHOD=AES-128,URI="(.+)"/
-          )[1]
-        end
-
-        def iv
-          @iv ||= Array.new(16, 0).pack('C*')
-        end
-
-        def fragment_response_data(path)
-          RestClient.get(
-            "#{base_link}#{path}"
-          ).body
-        rescue StandardError
-          fragment_response_data(path)
-        end
-
-        def base_link
-          @base_link ||=
-            @args[:link].match(
-              /(.+)index.m3u8/
-            )[1]
-        end
-
-        def convert_ts_file_to_mp3
+        def convert_ts_file_to_mp3_file
           return if Rails.env.test?
 
-          `ffmpeg -hide_banner -loglevel panic -y \
-            -i #{file_path}.ts -c copy #{file_path}.mp3`
+          VK::Utils::Audio::Converter.call(
+            file_path:
+          )
         end
 
         def delete_ts_file
-          return unless ::File.exist?(ts_file_name)
-
-          ::File.delete(ts_file_name)
+          VK::Utils::Audio::Deleter.call(
+            file_name: ts_file_name
+          )
         end
       end
     end
