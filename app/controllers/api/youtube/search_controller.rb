@@ -1,9 +1,7 @@
 module API
   module YouTube
     class SearchController < API::BaseController
-      def videos
-        render_data_with_status
-      end
+      def videos; end
 
       private
 

@@ -3,21 +3,13 @@ module API
     module Profiles
       module Library
         class SearchController < API::Muffon::Profiles::LibraryController
-          def artists
-            render_data_with_status
-          end
+          def artists; end
 
-          def albums
-            render_data_with_status
-          end
+          def albums; end
 
-          def tracks
-            render_data_with_status
-          end
+          def tracks; end
 
-          def tags
-            render_data_with_status
-          end
+          def tags; end
 
           private
 
@@ -35,10 +27,7 @@ module API
           def albums_data
             ::Muffon::Profile::Library::Search::Albums.call(
               params.slice(
-                *%i[
-                  profile_id token query
-                  page limit
-                ]
+                *%i[profile_id token query page limit]
               )
             )
           end
@@ -57,10 +46,7 @@ module API
           def tags_data
             ::Muffon::Profile::Library::Search::Tags.call(
               params.slice(
-                *%i[
-                  profile_id token query
-                  page limit
-                ]
+                *%i[profile_id token query page limit]
               )
             )
           end

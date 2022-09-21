@@ -3,13 +3,9 @@ module API
     module Profiles
       module Listened
         class TracksController < API::Muffon::ProfilesController
-          def create
-            render_data_with_status
-          end
+          def create; end
 
-          def destroy
-            render_data_with_status
-          end
+          def destroy; end
 
           private
 

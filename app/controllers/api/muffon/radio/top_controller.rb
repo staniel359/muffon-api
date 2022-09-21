@@ -2,13 +2,9 @@ module API
   module Muffon
     module Radio
       class TopController < API::BaseController
-        def artists
-          render_data_with_status
-        end
+        def artists; end
 
-        def tracks
-          render_data_with_status
-        end
+        def tracks; end
 
         private
 

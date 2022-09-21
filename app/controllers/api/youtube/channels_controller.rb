@@ -1,17 +1,11 @@
 module API
   module YouTube
     class ChannelsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def videos
-        render_data_with_status
-      end
+      def videos; end
 
       private
 

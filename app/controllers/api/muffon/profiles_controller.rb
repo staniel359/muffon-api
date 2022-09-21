@@ -1,31 +1,17 @@
 module API
   module Muffon
     class ProfilesController < API::BaseController
-      include ActiveStorage::SetCurrent
+      def index; end
 
-      def index
-        render_data_with_status
-      end
+      def create; end
 
-      def create
-        render_data_with_status
-      end
+      def info; end
 
-      def info
-        render_data_with_status
-      end
+      def update; end
 
-      def update
-        render_data_with_status
-      end
+      def online; end
 
-      def online
-        render_data_with_status
-      end
-
-      def playing
-        render_data_with_status
-      end
+      def playing; end
 
       private
 
@@ -40,9 +26,13 @@ module API
       def create_data
         ::Muffon::Processor::Profile::Creator.call(
           params.slice(
-            *::Muffon::Profile::Base::PARAMS
+            *profile_params
           )
         )
+      end
+
+      def profile_params
+        ::Muffon::Profile::Base::PARAMS
       end
 
       def info_data
@@ -57,7 +47,7 @@ module API
         ::Muffon::Processor::Profile::Updater.call(
           params.slice(
             *%i[profile_id token],
-            *::Muffon::Profile::Base::PARAMS
+            *profile_params
           )
         )
       end

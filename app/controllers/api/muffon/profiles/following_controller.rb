@@ -2,9 +2,7 @@ module API
   module Muffon
     module Profiles
       class FollowingController < API::Muffon::ProfilesController
-        def index
-          render_data_with_status
-        end
+        def index; end
 
         private
 

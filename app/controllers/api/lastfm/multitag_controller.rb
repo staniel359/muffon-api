@@ -1,9 +1,7 @@
 module API
   module LastFM
     class MultitagController < API::BaseController
-      def artists
-        render_data_with_status
-      end
+      def artists; end
 
       private
 

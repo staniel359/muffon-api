@@ -1,5 +1,7 @@
 module API
   class BaseController < ApplicationController
+    before_action :render_data_with_status
+
     include ::Muffon::Utils::ErrorHandlers
 
     private

@@ -1,16 +1,17 @@
 module API
   module Discogs
     class ArtistsController < API::BaseController
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
       private
 
       def albums_data
         ::Discogs::Artist::Albums.call(
           params.slice(
-            *%i[artist_id album_type profile_id page limit]
+            *%i[
+              artist_id album_type
+              profile_id page limit
+            ]
           )
         )
       end

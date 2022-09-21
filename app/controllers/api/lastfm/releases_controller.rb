@@ -1,13 +1,9 @@
 module API
   module LastFM
     class ReleasesController < API::BaseController
-      def new
-        render_data_with_status
-      end
+      def new; end
 
-      def upcoming
-        render_data_with_status
-      end
+      def upcoming; end
 
       private
 

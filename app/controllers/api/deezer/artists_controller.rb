@@ -1,9 +1,7 @@
 module API
   module Deezer
     class ArtistsController < API::BaseController
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
       private
 

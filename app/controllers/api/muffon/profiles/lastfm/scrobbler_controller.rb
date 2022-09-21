@@ -3,13 +3,9 @@ module API
     module Profiles
       module LastFM
         class ScrobblerController < API::Muffon::ProfilesController
-          def play
-            render_data_with_status
-          end
+          def play; end
 
-          def save
-            render_data_with_status
-          end
+          def save; end
 
           private
 

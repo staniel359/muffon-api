@@ -1,9 +1,7 @@
 module API
   module LastFM
     class ConnectController < API::LastFM::UsersController
-      def token
-        render_data_with_status
-      end
+      def token; end
 
       private
 

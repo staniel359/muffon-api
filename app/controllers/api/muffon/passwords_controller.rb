@@ -1,13 +1,9 @@
 module API
   module Muffon
     class PasswordsController < API::BaseController
-      def reset
-        render_data_with_status
-      end
+      def reset; end
 
-      def update
-        render_data_with_status
-      end
+      def update; end
 
       private
 

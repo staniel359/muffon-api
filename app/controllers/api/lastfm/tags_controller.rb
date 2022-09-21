@@ -1,33 +1,19 @@
 module API
   module LastFM
     class TagsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def artists
-        render_data_with_status
-      end
+      def artists; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
-      def tracks
-        render_data_with_status
-      end
+      def tracks; end
 
-      def similar
-        render_data_with_status
-      end
+      def similar; end
 
-      def images
-        render_data_with_status
-      end
+      def images; end
 
       private
 
@@ -73,7 +59,9 @@ module API
 
       def similar_data
         ::LastFM::Tag::Similar.call(
-          params.slice(:tag)
+          params.slice(
+            *%i[tag]
+          )
         )
       end
 

@@ -1,13 +1,9 @@
 module API
   module Genius
     class AlbumsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
       private
 
@@ -21,7 +17,9 @@ module API
 
       def description_data
         ::Genius::Album::Description.call(
-          params.slice(:album_id)
+          params.slice(
+            *%i[album_id]
+          )
         )
       end
     end

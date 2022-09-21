@@ -3,17 +3,11 @@ module API
     module Profiles
       module Library
         class TagsController < API::Muffon::Profiles::LibraryController
-          def index
-            render_data_with_status
-          end
+          def index; end
 
-          def info
-            render_data_with_status
-          end
+          def info; end
 
-          def artists
-            render_data_with_status
-          end
+          def artists; end
 
           private
 

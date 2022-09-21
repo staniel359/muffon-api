@@ -1,45 +1,25 @@
 module API
   module LastFM
     class ArtistsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
-      def image
-        render_data_with_status
-      end
+      def image; end
 
-      def images
-        render_data_with_status
-      end
+      def images; end
 
-      def similar
-        render_data_with_status
-      end
+      def similar; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
-      def tracks
-        render_data_with_status
-      end
+      def tracks; end
 
-      def listeners_count
-        render_data_with_status
-      end
+      def listeners_count; end
 
-      def profiles
-        render_data_with_status
-      end
+      def profiles; end
 
       private
 
@@ -61,7 +41,9 @@ module API
 
       def tags_data
         ::LastFM::Artist::Tags.call(
-          params.slice(:artist)
+          params.slice(
+            *%i[artist]
+          )
         )
       end
 
@@ -107,7 +89,9 @@ module API
 
       def listeners_count_data
         ::LastFM::Artist::ListenersCount.call(
-          params.slice(:artist)
+          params.slice(
+            *%i[artist]
+          )
         )
       end
 

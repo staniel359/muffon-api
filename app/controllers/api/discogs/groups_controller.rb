@@ -1,21 +1,13 @@
 module API
   module Discogs
     class GroupsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
       private
 
@@ -29,13 +21,17 @@ module API
 
       def description_data
         ::Discogs::Group::Description.call(
-          params.slice(:group_id)
+          params.slice(
+            *%i[group_id]
+          )
         )
       end
 
       def tags_data
         ::Discogs::Group::Tags.call(
-          params.slice(:group_id)
+          params.slice(
+            *%i[group_id]
+          )
         )
       end
 

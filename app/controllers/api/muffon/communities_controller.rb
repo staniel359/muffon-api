@@ -1,25 +1,15 @@
 module API
   module Muffon
     class CommunitiesController < API::BaseController
-      def index
-        render_data_with_status
-      end
+      def index; end
 
-      def create
-        render_data_with_status
-      end
+      def create; end
 
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def update
-        render_data_with_status
-      end
+      def update; end
 
-      def destroy
-        render_data_with_status
-      end
+      def destroy; end
 
       private
 
@@ -35,8 +25,8 @@ module API
         ::Muffon::Processor::Community::Creator.call(
           params.slice(
             *%i[
-              profile_id token
-              title description image
+              profile_id token title
+              description image
             ]
           )
         )

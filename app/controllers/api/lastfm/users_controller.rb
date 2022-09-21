@@ -1,19 +1,17 @@
 module API
   module LastFM
     class UsersController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def plays
-        render_data_with_status
-      end
+      def plays; end
 
       private
 
       def info_data
         ::LastFM::User::Info.call(
-          params.slice(:nickname)
+          params.slice(
+            *%i[nickname]
+          )
         )
       end
 

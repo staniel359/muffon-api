@@ -2,21 +2,13 @@ module API
   module Muffon
     module Profiles
       class PostsController < API::Muffon::ProfilesController
-        def index
-          render_data_with_status
-        end
+        def index; end
 
-        def create
-          render_data_with_status
-        end
+        def create; end
 
-        def update
-          render_data_with_status
-        end
+        def update; end
 
-        def destroy
-          render_data_with_status
-        end
+        def destroy; end
 
         private
 
@@ -31,7 +23,10 @@ module API
         def create_data
           ::Muffon::Processor::Profile::Post::Creator.call(
             params.slice(
-              *%i[profile_id token other_profile_id text],
+              *%i[
+                profile_id token
+                other_profile_id text
+              ],
               *sendable_attachment_types
             )
           )

@@ -1,13 +1,9 @@
 module API
   module YandexMusic
     class AlbumsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
       private
 
@@ -21,7 +17,9 @@ module API
 
       def tags_data
         ::YandexMusic::Album::Tags.call(
-          params.slice(:album_id)
+          params.slice(
+            *%i[album_id]
+          )
         )
       end
     end

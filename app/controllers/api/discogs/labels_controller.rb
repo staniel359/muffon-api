@@ -1,29 +1,27 @@
 module API
   module Discogs
     class LabelsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
       private
 
       def info_data
         ::Discogs::Label::Info.call(
-          params.slice(:label_id)
+          params.slice(
+            *%i[label_id]
+          )
         )
       end
 
       def description_data
         ::Discogs::Label::Description.call(
-          params.slice(:label_id)
+          params.slice(
+            *%i[label_id]
+          )
         )
       end
 

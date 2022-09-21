@@ -2,23 +2,14 @@ module API
   module Muffon
     module Profiles
       module Library
-        class CompatibilityController <
-            API::Muffon::Profiles::LibraryController
-          def info
-            render_data_with_status
-          end
+        class CompatibilityController < API::Muffon::Profiles::LibraryController
+          def info; end
 
-          def artists
-            render_data_with_status
-          end
+          def artists; end
 
-          def albums
-            render_data_with_status
-          end
+          def albums; end
 
-          def tracks
-            render_data_with_status
-          end
+          def tracks; end
 
           private
 

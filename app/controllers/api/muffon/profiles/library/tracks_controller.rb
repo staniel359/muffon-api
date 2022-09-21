@@ -3,29 +3,17 @@ module API
     module Profiles
       module Library
         class TracksController < API::Muffon::Profiles::LibraryController
-          def index
-            render_data_with_status
-          end
+          def index; end
 
-          def create
-            render_data_with_status
-          end
+          def create; end
 
-          def info
-            render_data_with_status
-          end
+          def info; end
 
-          def albums
-            render_data_with_status
-          end
+          def albums; end
 
-          def playlists
-            render_data_with_status
-          end
+          def playlists; end
 
-          def destroy
-            render_data_with_status
-          end
+          def destroy; end
 
           private
 

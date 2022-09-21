@@ -1,39 +1,37 @@
 module API
   module YouTube
     class VideosController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
-      def related
-        render_data_with_status
-      end
+      def related; end
 
       private
 
       def info_data
         ::YouTube::Video::Info.call(
-          params.slice(:video_id)
+          params.slice(
+            *%i[video_id]
+          )
         )
       end
 
       def description_data
         ::YouTube::Video::Description.call(
-          params.slice(:video_id)
+          params.slice(
+            *%i[video_id]
+          )
         )
       end
 
       def tags_data
         ::YouTube::Video::Tags.call(
-          params.slice(:video_id)
+          params.slice(
+            *%i[video_id]
+          )
         )
       end
 

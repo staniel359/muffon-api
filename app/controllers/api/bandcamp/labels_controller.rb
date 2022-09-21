@@ -1,13 +1,9 @@
 module API
   module Bandcamp
     class LabelsController < API::BaseController
-      def artists
-        render_data_with_status
-      end
+      def artists; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
       private
 

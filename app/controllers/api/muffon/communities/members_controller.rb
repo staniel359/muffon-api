@@ -2,17 +2,11 @@ module API
   module Muffon
     module Communities
       class MembersController < API::Muffon::CommunitiesController
-        def index
-          render_data_with_status
-        end
+        def index; end
 
-        def create
-          render_data_with_status
-        end
+        def create; end
 
-        def destroy
-          render_data_with_status
-        end
+        def destroy; end
 
         private
 

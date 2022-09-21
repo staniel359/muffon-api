@@ -1,23 +1,19 @@
 module API
   module Bandcamp
     class IdController < API::BaseController
-      def artist
-        render_data_with_status
-      end
+      def artist; end
 
-      def album
-        render_data_with_status
-      end
+      def album; end
 
-      def track
-        render_data_with_status
-      end
+      def track; end
 
       private
 
       def artist_data
         ::Bandcamp::Id::Artist.call(
-          params.slice(:artist)
+          params.slice(
+            *%i[artist]
+          )
         )
       end
 

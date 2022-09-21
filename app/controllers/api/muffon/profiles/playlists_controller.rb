@@ -2,25 +2,15 @@ module API
   module Muffon
     module Profiles
       class PlaylistsController < API::Muffon::ProfilesController
-        def index
-          render_data_with_status
-        end
+        def index; end
 
-        def create
-          render_data_with_status
-        end
+        def create; end
 
-        def info
-          render_data_with_status
-        end
+        def info; end
 
-        def update
-          render_data_with_status
-        end
+        def update; end
 
-        def destroy
-          render_data_with_status
-        end
+        def destroy; end
 
         private
 
@@ -28,8 +18,8 @@ module API
           ::Muffon::Profile::Playlists.call(
             params.slice(
               *%i[
-                profile_id token page limit
-                model title artist
+                profile_id token model
+                title artist page limit
               ]
             )
           )

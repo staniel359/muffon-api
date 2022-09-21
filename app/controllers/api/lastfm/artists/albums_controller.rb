@@ -2,25 +2,15 @@ module API
   module LastFM
     module Artists
       class AlbumsController < ArtistsController
-        def info
-          render_data_with_status
-        end
+        def info; end
 
-        def description
-          render_data_with_status
-        end
+        def description; end
 
-        def tags
-          render_data_with_status
-        end
+        def tags; end
 
-        def listeners_count
-          render_data_with_status
-        end
+        def listeners_count; end
 
-        def profiles
-          render_data_with_status
-        end
+        def profiles; end
 
         private
 

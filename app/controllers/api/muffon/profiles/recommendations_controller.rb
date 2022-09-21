@@ -2,21 +2,13 @@ module API
   module Muffon
     module Profiles
       class RecommendationsController < API::Muffon::ProfilesController
-        def index
-          render_data_with_status
-        end
+        def index; end
 
-        def info
-          render_data_with_status
-        end
+        def info; end
 
-        def artists
-          render_data_with_status
-        end
+        def artists; end
 
-        def destroy
-          render_data_with_status
-        end
+        def destroy; end
 
         private
 
@@ -24,8 +16,8 @@ module API
           ::Muffon::Profile::Recommendations.call(
             params.slice(
               *%i[
-                profile_id token page limit
-                filter filter_value
+                profile_id token filter
+                page limit filter_value
                 hide_library_artists tracks_count
               ]
             )
@@ -43,7 +35,11 @@ module API
         def artists_data
           ::Muffon::Profile::Recommendation::Artists.call(
             params.slice(
-              *%i[profile_id token recommendation_id page limit]
+              *%i[
+                profile_id token
+                recommendation_id
+                page limit
+              ]
             )
           )
         end

@@ -1,9 +1,7 @@
 module API
   module VK
     class AlbumsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
       private
 

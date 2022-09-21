@@ -1,21 +1,13 @@
 module API
   module Discogs
     class SearchController < API::BaseController
-      def artists
-        render_data_with_status
-      end
+      def artists; end
 
-      def labels
-        render_data_with_status
-      end
+      def labels; end
 
-      def groups
-        render_data_with_status
-      end
+      def groups; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
       private
 

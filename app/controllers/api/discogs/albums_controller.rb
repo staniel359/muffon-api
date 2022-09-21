@@ -1,17 +1,11 @@
 module API
   module Discogs
     class AlbumsController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
       private
 
@@ -25,13 +19,17 @@ module API
 
       def description_data
         ::Discogs::Album::Description.call(
-          params.slice(:album_id)
+          params.slice(
+            *%i[album_id]
+          )
         )
       end
 
       def tags_data
         ::Discogs::Album::Tags.call(
-          params.slice(:album_id)
+          params.slice(
+            *%i[album_id]
+          )
         )
       end
     end

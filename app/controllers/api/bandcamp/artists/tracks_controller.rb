@@ -2,17 +2,11 @@ module API
   module Bandcamp
     module Artists
       class TracksController < API::BaseController
-        def info
-          render_data_with_status
-        end
+        def info; end
 
-        def description
-          render_data_with_status
-        end
+        def description; end
 
-        def tags
-          render_data_with_status
-        end
+        def tags; end
 
         private
 

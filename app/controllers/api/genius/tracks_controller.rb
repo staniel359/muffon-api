@@ -1,21 +1,13 @@
 module API
   module Genius
     class TracksController < API::BaseController
-      def info
-        render_data_with_status
-      end
+      def info; end
 
-      def description
-        render_data_with_status
-      end
+      def description; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
-      def lyrics
-        render_data_with_status
-      end
+      def lyrics; end
 
       private
 
@@ -29,19 +21,25 @@ module API
 
       def description_data
         ::Genius::Track::Description.call(
-          params.slice(:track_id)
+          params.slice(
+            *%i[track_id]
+          )
         )
       end
 
       def tags_data
         ::Genius::Track::Tags.call(
-          params.slice(:track_id)
+          params.slice(
+            *%i[track_id]
+          )
         )
       end
 
       def lyrics_data
         ::Genius::Track::Lyrics.call(
-          params.slice(:track_id)
+          params.slice(
+            *%i[track_id]
+          )
         )
       end
     end

@@ -1,9 +1,7 @@
 module API
   module Muffon
     class PlaylistsController < API::BaseController
-      def index
-        render_data_with_status
-      end
+      def index; end
 
       private
 

@@ -1,22 +1,20 @@
 module API
   module Muffon
     class SessionsController < API::BaseController
-      def create
-        render_data_with_status
-      end
+      def create; end
 
       private
 
       def create_data
         ::Muffon::Profile::Authenticator.call(
-          authenticate_params
+          params.slice(
+            *authenticate_params
+          )
         )
       end
 
       def authenticate_params
-        params.slice(
-          *::Muffon::Profile::Authenticator::PARAMS
-        )
+        ::Muffon::Profile::Authenticator::PARAMS
       end
     end
   end

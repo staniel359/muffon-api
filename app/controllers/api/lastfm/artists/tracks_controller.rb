@@ -2,25 +2,15 @@ module API
   module LastFM
     module Artists
       class TracksController < ArtistsController
-        def info
-          render_data_with_status
-        end
+        def info; end
 
-        def description
-          render_data_with_status
-        end
+        def description; end
 
-        def tags
-          render_data_with_status
-        end
+        def tags; end
 
-        def similar
-          render_data_with_status
-        end
+        def similar; end
 
-        def profiles
-          render_data_with_status
-        end
+        def profiles; end
 
         private
 

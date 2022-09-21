@@ -2,17 +2,11 @@ module API
   module Muffon
     module Profiles
       class ConversationsController < API::Muffon::ProfilesController
-        def index
-          render_data_with_status
-        end
+        def index; end
 
-        def info
-          render_data_with_status
-        end
+        def info; end
 
-        def messages
-          render_data_with_status
-        end
+        def messages; end
 
         private
 
@@ -35,7 +29,11 @@ module API
         def messages_data
           ::Muffon::Profile::Conversation::Messages.call(
             params.slice(
-              *%i[profile_id token conversation_id page limit]
+              *%i[
+                profile_id token
+                conversation_id
+                page limit
+              ]
             )
           )
         end

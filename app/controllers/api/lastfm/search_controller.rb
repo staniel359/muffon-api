@@ -1,21 +1,13 @@
 module API
   module LastFM
     class SearchController < API::BaseController
-      def artists
-        render_data_with_status
-      end
+      def artists; end
 
-      def albums
-        render_data_with_status
-      end
+      def albums; end
 
-      def tracks
-        render_data_with_status
-      end
+      def tracks; end
 
-      def tags
-        render_data_with_status
-      end
+      def tags; end
 
       private
 
@@ -38,7 +30,10 @@ module API
       def tracks_data
         ::LastFM::Search::Tracks.call(
           params.slice(
-            *%i[query profile_id playlist_id page limit]
+            *%i[
+              query profile_id
+              playlist_id page limit
+            ]
           )
         )
       end
