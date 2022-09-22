@@ -8,29 +8,36 @@ module Muffon
       private
 
       def data
+        return profile_public_data if profile.private
+
         profile_base_data
           .merge(profile_extra_data)
-          .merge(profile_online_data)
           .merge(profile_other_profile_data)
           .merge(profile_relationships_data)
-          .merge(profile_lastfm_data)
-      end
-
-      def profile_base_data
-        {
-          id: profile.id,
-          nickname:,
-          email:,
-          private: profile.private
-        }.compact
       end
 
       def profile
         @args[:profile]
       end
 
-      def email
-        profile.email unless wrong_profile?
+      def profile_public_data
+        profile_base_data
+          .merge(profile_other_profile_data)
+      end
+
+      def profile_base_data
+        {
+          id: profile.id,
+          nickname:,
+          role:,
+          private: profile.private
+        }.compact
+      end
+
+      def role
+        return if profile.role == 'profile'
+
+        profile.role
       end
 
       def profile_extra_data
@@ -40,41 +47,8 @@ module Muffon
           birthdate: profile.birthdate,
           country: profile.country,
           city: profile.city,
-          role:,
-          created: created_formatted,
-          playing: profile.playing
+          online: profile.online
         }.compact_blank
-      end
-
-      def role
-        profile.role unless
-            profile.role == 'profile'
-      end
-
-      def created_formatted
-        datetime_formatted(
-          profile.created_at
-        )
-      end
-
-      def profile_online_data
-        {
-          online: profile.online,
-          was_online: was_online_formatted
-        }.compact
-      end
-
-      def was_online_formatted
-        return if profile.online
-
-        datetime_formatted(
-          was_online
-        )
-      end
-
-      def was_online
-        profile.online_updated_at ||
-          profile.updated_at
       end
 
       def profile_other_profile_data
@@ -91,15 +65,15 @@ module Muffon
       end
 
       def follower_of_profile?
-        profile.follower_profiles.find_by(
-          id: @args[:other_profile_id]
-        ).present?
+        profile.follower_of_profile?(
+          @args[:other_profile_id]
+        )
       end
 
       def followed_by_profile?
-        profile.following_profiles.find_by(
-          id: @args[:other_profile_id]
-        ).present?
+        profile.followed_by_profile?(
+          @args[:other_profile_id]
+        )
       end
 
       def profile_relationships_data
@@ -107,15 +81,6 @@ module Muffon
           followers_count: profile.followers_count,
           following_count: profile.following_count
         }
-      end
-
-      def profile_lastfm_data
-        return {} if wrong_profile?
-
-        {
-          lastfm_nickname: profile.lastfm_nickname,
-          lastfm_session_key: profile.lastfm_session_key
-        }.compact
       end
     end
   end

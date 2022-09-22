@@ -26,15 +26,6 @@ module Muffon
           { profile: profile_data }
         end
 
-        def profile
-          @profile ||=
-            ::Profile
-            .associated
-            .find_by(
-              id: @args[:profile_id]
-            )
-        end
-
         def update_params
           @args.permit!.slice(
             *profile_params
@@ -42,8 +33,8 @@ module Muffon
         end
 
         def profile_data
-          Muffon::Profiles::Profile.call(
-            profile:,
+          Muffon::Profile::Info.call(
+            profile_id: @args[:profile_id],
             token: @args[:token]
           )
         end

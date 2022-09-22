@@ -90,9 +90,10 @@ module Muffon
     end
 
     def profile
-      @profile ||= ::Profile.find_by(
-        id: @args[:profile_id]
-      )
+      @profile ||=
+        ::Profile.find_by(
+          id: @args[:profile_id]
+        )
     end
 
     def other_profile
