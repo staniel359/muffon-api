@@ -37,7 +37,9 @@ module LastFM
       end
 
       def collection_list
-        response_data[:results]
+        response_data[:results].reject do |t|
+          t[:title].blank?
+        end
       end
 
       def collection_item_data_formatted(tag)
