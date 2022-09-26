@@ -7,6 +7,15 @@ module Muffon
 
         private
 
+        def library_data
+          library_base_data
+            .merge(paginated_data)
+        end
+
+        def library_base_data
+          { top_tracks_count: }
+        end
+
         def total_items_count
           library_albums.size
         end
@@ -26,8 +35,6 @@ module Muffon
             profile_id: @args[:other_profile_id]
           )
         end
-
-        alias library_data paginated_data
       end
     end
   end

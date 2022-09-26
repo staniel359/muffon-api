@@ -8,16 +8,18 @@ module Muffon
 
           private
 
+          def library_data
+            library_base_data
+              .merge(super)
+          end
+
+          def library_base_data
+            { top_tracks_count: }
+          end
+
           def artist_data
             artist_base_data
               .merge(paginated_data)
-          end
-
-          def artist_base_data
-            {
-              library: library_artist_data,
-              name:
-            }
           end
 
           def total_items_count
