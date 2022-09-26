@@ -67,13 +67,13 @@ module Discogs
           {
             name: source_name,
             id: artist_discogs_id(artist)
-          }
+          }.compact
         end
 
         def artist_discogs_id(artist)
           artist['href'].match(
             %r{/(\d+)-}
-          )[1].to_i
+          ).try(:[], 1)&.to_i
         end
 
         def album_extra_data
