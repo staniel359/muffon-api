@@ -23,7 +23,8 @@ module VK
           {
             source: source_data,
             name:,
-            image: image_data
+            image: image_data,
+            listeners_count:
           }.compact
         end
       end

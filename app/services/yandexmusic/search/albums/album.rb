@@ -33,7 +33,8 @@ module YandexMusic
         def album_extra_data
           {
             image: image_data,
-            release_date:
+            release_date:,
+            listeners_count:
           }.compact
         end
       end

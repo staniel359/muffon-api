@@ -27,7 +27,8 @@ module VK
             artist: artist_names_data,
             artists:,
             image: image_data,
-            release_date:
+            release_date:,
+            listeners_count:
           }.compact
         end
       end

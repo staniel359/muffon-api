@@ -24,7 +24,7 @@ module Deezer
             source: source_data,
             name:,
             image: image_data,
-            listeners_count: artist['NB_FAN']
+            listeners_count:
           }.compact
         end
 

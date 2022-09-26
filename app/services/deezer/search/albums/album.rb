@@ -25,7 +25,8 @@ module Deezer
             title:,
             artist: artist_names_data,
             artists:,
-            image: image_data
+            image: image_data,
+            listeners_count:
           }.compact
         end
       end
