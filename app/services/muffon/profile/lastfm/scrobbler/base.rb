@@ -13,7 +13,7 @@ module Muffon
               @args[:profile_id],
               @args[:token],
               @args[:title],
-              @args[:artist_name]
+              @args[:artist]
             ]
           end
 
@@ -39,11 +39,11 @@ module Muffon
           end
 
           def artist_name
-            @args[:artist_name]
+            @args[:artist]
           end
 
           def album_title
-            @args[:album_title]
+            @args[:album]
           end
 
           def duration

@@ -12,10 +12,7 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Listened::Track::Creator.call(
               params.slice(
-                *%i[
-                  profile_id token
-                  title artist_name
-                ]
+                *%i[profile_id token title artist]
               )
             )
           end

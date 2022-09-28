@@ -27,7 +27,7 @@ module API
               params.slice(
                 *%i[
                   profile_id token title
-                  artist_name album_title image_url
+                  artist album image
                 ]
               )
             )

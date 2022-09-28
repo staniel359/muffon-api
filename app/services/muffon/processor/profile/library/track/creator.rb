@@ -11,7 +11,7 @@ module Muffon
             def primary_args
               super + [
                 @args[:title],
-                @args[:artist_name]
+                @args[:artist]
               ]
             end
 
@@ -32,7 +32,7 @@ module Muffon
 
             def update_library_artist
               library_artist.tap do |artist|
-                artist.created_at = @args[:created_at] if
+                artist.created_at = created_at if
                     update_created_at?(artist)
                 artist.save
               end
@@ -46,21 +46,25 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
+              @args[:artist]
             end
 
             def update_created_at?(model)
-              return false if @args[:created_at].blank?
+              return false if created_at.blank?
               return true if model.created_at.blank?
 
-              @args[:created_at] < model.created_at
+              created_at < model.created_at
+            end
+
+            def created_at
+              @args[:created]
             end
 
             def update_library_album
               return if library_album.blank?
 
               library_album.tap do |album|
-                album.created_at = @args[:created_at] if
+                album.created_at = created_at if
                     update_created_at?(album)
                 album.save
               end
@@ -77,12 +81,12 @@ module Muffon
             end
 
             def album_title
-              @args[:album_title]
+              @args[:album]
             end
 
             def update_library_track
               library_track.tap do |track|
-                track.created_at = @args[:created_at] if
+                track.created_at = created_at if
                     update_created_at?(track)
                 track.save
               end
@@ -103,8 +107,7 @@ module Muffon
 
             def process_image
               library_album&.process_image(
-                @args[:image_url] ||
-                  @args[:image]
+                @args[:image]
               )
             end
 

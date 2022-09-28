@@ -11,7 +11,7 @@ module Muffon
             def primary_args
               super + [
                 @args[:title],
-                @args[:artist_name]
+                @args[:artist]
               ]
             end
 
@@ -38,7 +38,7 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
+              @args[:artist]
             end
 
             def listened_track_data

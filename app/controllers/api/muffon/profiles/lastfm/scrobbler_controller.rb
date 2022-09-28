@@ -14,7 +14,7 @@ module API
               params.slice(
                 *%i[
                   profile_id token title
-                  artist_name album_title duration
+                  artist album duration
                 ]
               )
             )
@@ -25,7 +25,7 @@ module API
               params.slice(
                 *%i[
                   profile_id token title
-                  artist_name album_title duration
+                  artist album duration
                 ]
               )
             )

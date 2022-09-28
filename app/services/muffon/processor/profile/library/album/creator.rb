@@ -11,7 +11,7 @@ module Muffon
             def primary_args
               super + [
                 @args[:title],
-                @args[:artist_name]
+                @args[:artist]
               ]
             end
 
@@ -42,7 +42,7 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
+              @args[:artist]
             end
 
             def library_artist
@@ -72,7 +72,7 @@ module Muffon
 
             def process_image
               library_album.process_image(
-                @args[:image_url]
+                @args[:image]
               )
             end
 

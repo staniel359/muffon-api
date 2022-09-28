@@ -11,7 +11,7 @@ module Muffon
             def primary_args
               super + [
                 @args[:title],
-                @args[:artist_name]
+                @args[:artist]
               ]
             end
 
@@ -20,8 +20,6 @@ module Muffon
 
               return listened_album.errors_data if
                 listened_album.errors?
-
-              process_image
 
               { listened_album: listened_album_data }
             end
@@ -40,13 +38,7 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
-            end
-
-            def process_image
-              listened_album.process_image(
-                @args[:image_url]
-              )
+              @args[:artist]
             end
 
             def listened_album_data

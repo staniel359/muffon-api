@@ -11,7 +11,7 @@ module Muffon
             def primary_args
               super + [
                 @args[:title],
-                @args[:artist_name]
+                @args[:artist]
               ]
             end
 
@@ -25,7 +25,10 @@ module Muffon
 
               process_image
 
-              { bookmark_track: bookmark_track_data }
+              {
+                bookmark_track:
+                  bookmark_track_data
+              }
             end
 
             def bookmark_track
@@ -42,26 +45,26 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
+              @args[:artist]
             end
 
             def update_params
               {
                 album_id: find_album&.id,
-                source_data: @args[:source_data],
-                audio_data: @args[:audio_data],
+                source_data: @args[:source],
+                audio_data: @args[:audio],
                 album_source_data:
-                  @args[:album_source_data]
+                  @args[:album_source]
               }
             end
 
             def album_title
-              @args[:album_title]
+              @args[:album]
             end
 
             def process_image
               bookmark_track.process_image(
-                @args[:image_url]
+                @args[:image]
               )
             end
 

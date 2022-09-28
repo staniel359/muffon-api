@@ -33,7 +33,7 @@ module API
               params.slice(
                 *%i[
                   profile_id token title
-                  artist_name tracks image_url
+                  artist tracks image
                 ]
               )
             )

@@ -11,7 +11,7 @@ module Muffon
             def primary_args
               super + [
                 @args[:title],
-                @args[:artist_name]
+                @args[:artist]
               ]
             end
 
@@ -42,7 +42,7 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
+              @args[:artist]
             end
 
             def update_params
@@ -50,12 +50,12 @@ module Muffon
             end
 
             def album_title
-              @args[:album_title]
+              @args[:album]
             end
 
             def process_image
               favorite_track.process_image(
-                @args[:image_url]
+                @args[:image]
               )
             end
 
