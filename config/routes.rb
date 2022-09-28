@@ -194,10 +194,6 @@ Rails.application.routes.draw do
             resources :messages, only: :create
 
             resources :communities, only: :index
-
-            resources :background_images,
-              only: %i[create destroy],
-              param: :image_id
           end
         end
 

@@ -7,8 +7,6 @@ class Profile < ApplicationRecord
 
   has_one_attached :image
 
-  has_many_attached :background_images
-
   has_many :library_artists, dependent: nil
   has_many :library_albums, dependent: nil
   has_many :library_tracks, dependent: nil
