@@ -10,15 +10,11 @@ module Muffon
     end
 
     def total_items_count
-      playlists.size
-    end
-
-    def playlists
-      @playlists ||= ::Playlist.public
+      ::Playlist.count
     end
 
     def collection_list
-      playlists
+      ::Playlist
         .created_desc_ordered
         .limit(limit)
         .offset(offset)

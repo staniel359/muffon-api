@@ -40,7 +40,8 @@ module Muffon
         {
           id: creator.id,
           nickname: creator.nickname,
-          image: creator.image_data
+          image: creator.image_data,
+          private: creator.private
         }.compact
       end
 

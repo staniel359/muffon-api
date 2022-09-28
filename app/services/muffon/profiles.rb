@@ -10,15 +10,11 @@ module Muffon
     end
 
     def total_items_count
-      profiles.size
-    end
-
-    def profiles
-      @profiles ||= ::Profile.public
+      ::Profile.count
     end
 
     def collection_list
-      profiles
+      ::Profile
         .created_desc_ordered
         .limit(limit)
         .offset(offset)

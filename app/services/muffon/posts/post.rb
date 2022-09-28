@@ -28,7 +28,8 @@ module Muffon
         {
           id: profile.id,
           nickname: profile.nickname,
-          image: profile.image_data
+          image: profile.image_data,
+          private: profile.private
         }.compact
       end
 

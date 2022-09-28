@@ -21,17 +21,15 @@ module Muffon
       end
 
       def scoped_posts
-        return global_posts if global?
-
-        profile.feed_posts
+        if global?
+          Post.global
+        else
+          profile.feed_posts
+        end
       end
 
       def global?
         @args[:global].to_i == 1
-      end
-
-      def global_posts
-        Post.global.public
       end
 
       def collection_list

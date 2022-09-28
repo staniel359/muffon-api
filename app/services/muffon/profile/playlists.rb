@@ -22,15 +22,7 @@ module Muffon
       end
 
       def playlists
-        @playlists ||= playlists_conditional
-      end
-
-      def playlists_conditional
-        if wrong_profile?
-          profile.playlists.public
-        else
-          profile.playlists
-        end
+        @playlists ||= profile.playlists
       end
 
       def collection_list
