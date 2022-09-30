@@ -54,6 +54,7 @@ module Muffon
               Errno::EHOSTUNREACH,
               Errno::ENETUNREACH,
               JSON::ParserError,
+              Net::HTTPFatalError,
               OpenSSL::SSL::SSLError,
               RestClient::InternalServerError,
               RestClient::RequestFailed,
