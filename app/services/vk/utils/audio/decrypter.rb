@@ -3,7 +3,7 @@ module VK
     module Audio
       class Decrypter < VK::Base
         def call
-          return if not_all_args?
+          return if not_all_args? || no_data?
 
           data
         end
@@ -12,6 +12,17 @@ module VK
 
         def primary_args
           [@args[:link]]
+        end
+
+        def no_data?
+          playlist_data.blank?
+        end
+
+        def playlist_data
+          @playlist_data ||=
+            VK::Utils::Audio::Playlist.call(
+              link: @args[:link]
+            )
         end
 
         def data
@@ -33,13 +44,6 @@ module VK
 
         def fragments_paths
           playlist_data[:fragments_paths]
-        end
-
-        def playlist_data
-          @playlist_data ||=
-            VK::Utils::Audio::Playlist.call(
-              link: @args[:link]
-            )
         end
 
         def threads_count

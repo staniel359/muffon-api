@@ -3,12 +3,16 @@ module Muffon
     module Audio
       module File
         def call
-          return '' if not_all_args?
+          return if not_all_args? || no_data?
 
           data
         end
 
         private
+
+        def no_data?
+          false
+        end
 
         def data
           create_audio_folder

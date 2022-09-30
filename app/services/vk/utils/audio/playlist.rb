@@ -11,6 +11,8 @@ module VK
           return if not_all_args?
 
           data
+        rescue StandardError
+          nil
         end
 
         private

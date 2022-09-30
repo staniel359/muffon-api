@@ -13,6 +13,17 @@ module VK
           ]
         end
 
+        def no_data?
+          ts_data.blank?
+        end
+
+        def ts_data
+          @ts_data ||=
+            VK::Utils::Audio::Decrypter.call(
+              link: @args[:link]
+            )
+        end
+
         def write_audio_data_to_file
           write_ts_data_to_ts_file
 
@@ -41,12 +52,6 @@ module VK
 
         def file_path
           "public/#{audio_folder}/#{@args[:track_id]}"
-        end
-
-        def ts_data
-          VK::Utils::Audio::Decrypter.call(
-            link: @args[:link]
-          )
         end
 
         def convert_ts_file_to_mp3_file
