@@ -23,6 +23,8 @@ module VK
       def album_extra_data
         {
           image: image_data,
+          listeners_count:
+            album['followers'],
           plays_count: album['plays'],
           profiles_count:,
           release_date:,
