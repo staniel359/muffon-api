@@ -4,6 +4,7 @@ class Album < ApplicationRecord
   has_many :library_albums, dependent: nil
 
   has_many :profiles,
+           -> { distinct },
            through: :library_albums,
            dependent: nil
 
