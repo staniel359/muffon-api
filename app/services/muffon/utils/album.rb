@@ -50,6 +50,14 @@ module Muffon
       def listeners_count
         find_album.listeners_count
       end
+
+      def profiles_count
+        return if Rails.env.test?
+
+        find_album
+          .profiles
+          .size
+      end
     end
   end
 end

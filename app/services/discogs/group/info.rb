@@ -22,6 +22,7 @@ module Discogs
       def group_extra_data
         {
           image: image_data,
+          profiles_count:,
           release_date:,
           description:
             description_truncated,

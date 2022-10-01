@@ -44,12 +44,6 @@ module LastFM
         }.compact
       end
 
-      def profiles_count
-        find_album
-          .library_albums
-          .size
-      end
-
       def album_extra_data
         {
           image: image_data,

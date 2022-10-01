@@ -16,7 +16,6 @@ module LastFM
 
       def collection_list
         profiles
-          .library_tracks_count_desc_ordered
           .created_asc_ordered
           .limit(limit)
           .offset(offset)

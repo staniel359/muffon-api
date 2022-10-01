@@ -23,6 +23,7 @@ module Deezer
         {
           image: image_data,
           listeners_count: album['NB_FAN'],
+          profiles_count:,
           release_date:,
           labels:,
           tracks:

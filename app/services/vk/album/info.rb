@@ -23,8 +23,9 @@ module VK
       def album_extra_data
         {
           image: image_data,
-          release_date:,
           plays_count: album['plays'],
+          profiles_count:,
+          release_date:,
           tags: tags_truncated,
           tracks:
         }.compact

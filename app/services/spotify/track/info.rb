@@ -24,6 +24,7 @@ module Spotify
         {
           album: album_data,
           image: image_data,
+          profiles_count:,
           duration:,
           duration_seconds:,
           audio: audio_data

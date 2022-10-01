@@ -38,12 +38,6 @@ module LastFM
         }.compact
       end
 
-      def profiles_count
-        find_track
-          .library_tracks
-          .size
-      end
-
       def track_extra_data
         {
           album: album_data,

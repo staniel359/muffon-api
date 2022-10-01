@@ -23,6 +23,7 @@ module SoundCloud
       def track_extra_data
         {
           image: image_data,
+          profiles_count:,
           duration:,
           duration_seconds:,
           description:

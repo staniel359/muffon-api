@@ -24,6 +24,7 @@ module Deezer
         {
           album: album_data,
           image: image_data,
+          profiles_count:,
           duration:,
           duration_seconds:,
           release_date:,

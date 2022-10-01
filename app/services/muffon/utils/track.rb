@@ -91,6 +91,14 @@ module Muffon
           duration_seconds
         )
       end
+
+      def profiles_count
+        return if Rails.env.test?
+
+        find_track
+          .profiles
+          .size
+      end
     end
   end
 end

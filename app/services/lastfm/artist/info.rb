@@ -43,8 +43,10 @@ module LastFM
       end
 
       def profiles_count
+        return if Rails.env.test?
+
         find_artist
-          .library_artists
+          .profiles
           .size
       end
 
