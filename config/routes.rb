@@ -17,649 +17,646 @@ Rails.application.routes.draw do
   root to: 'application#no_content'
 
   scope :api, module: :api do
-    scope :v3 do
+    scope module: :muffon do
+      resources :profiles,
+        only: %i[index create update],
+        param: :profile_id
 
-      scope module: :muffon do
-        resources :profiles,
-          only: %i[index create update],
-          param: :profile_id
+      namespace :profiles, as: :profile do
+        scope ':profile_id' do
+          get '', action: :info
+          patch 'online'
+          patch 'playing'
 
-        namespace :profiles, as: :profile do
-          scope ':profile_id' do
-            get '', action: :info
-            patch 'online'
-            patch 'playing'
-
-            namespace :library do
-              get '', action: :info
-
-              resources :artists,
-                only: %i[index create destroy],
-                param: :library_id
-
-              resources :albums,
-                only: %i[index create destroy],
-                param: :library_id
-
-              resources :tracks,
-                only: %i[index create destroy],
-                param: :library_id
-
-              resources :tags, only: :index
-
-              namespace :artists, as: :artist do
-                scope ':library_id' do
-                  get '', action: :info
-                  get 'albums'
-                  get 'tracks'
-                  get 'playlists'
-                end
-              end
-
-              namespace :albums, as: :album do
-                scope ':library_id' do
-                  get '', action: :info
-                  get 'tracks'
-                  get 'playlists'
-                end
-              end
-
-              namespace :tracks, as: :track do
-                scope ':library_id' do
-                  get '', action: :info
-                  get 'albums'
-                  get 'playlists'
-                end
-              end
-
-              namespace :tags, as: :tag do
-                scope ':tag_id' do
-                  get '', action: :info
-                  get 'artists'
-                end
-              end
-
-              namespace :search do
-                get 'artists'
-                get 'albums'
-                get 'tracks'
-                get 'tags'
-              end
-
-              namespace :compatibility do
-                get '', action: :info
-                get 'artists'
-                get 'albums'
-                get 'tracks'
-              end
-            end
-
-            resources :recommendations,
-              only: %i[index destroy],
-              param: :recommendation_id
-
-            namespace :recommendations, as: :recommendation do
-              scope ':recommendation_id' do
-                get '', action: :info
-                get 'artists'
-              end
-            end
-
-            namespace :listened do
-              resources :artists,
-                only: %i[create destroy],
-                param: :listened_id
-
-              resources :albums,
-                only: %i[create destroy],
-                param: :listened_id
-
-              resources :tracks,
-                only: %i[create destroy],
-                param: :listened_id
-            end
-
-            namespace :bookmarks do
-              resources :artists,
-                only: %i[index create destroy],
-                param: :bookmark_id
-
-              resources :albums,
-                only: %i[index create destroy],
-                param: :bookmark_id
-
-              resources :tracks,
-                only: %i[index create destroy],
-                param: :bookmark_id
-            end
-
-            namespace :favorites do
-              get '', action: :info
-
-              resources :artists,
-                only: %i[index create destroy],
-                param: :favorite_id
-
-              resources :albums,
-                only: %i[index create destroy],
-                param: :favorite_id
-
-              resources :tracks,
-                only: %i[index create destroy],
-                param: :favorite_id
-            end
-
-            resources :playlists,
-              only: %i[index create update destroy],
-              param: :playlist_id
-
-            namespace :playlists, as: :playlist do
-              scope ':playlist_id' do
-                get '', action: :info
-
-                resources :tracks,
-                  only: %i[index create destroy],
-                  param: :playlist_track_id
-              end
-            end
-
-            namespace :lastfm do
-              namespace :scrobbler do
-                post 'play'
-                post 'save'
-              end
-            end
-
-            resources :posts,
-              only: %i[index create update destroy],
-              param: :post_id
-
-            resources :followers,
-              only: %i[index create destroy],
-              param: :other_profile_id
-
-            resources :following, only: :index
-
-            resources :feed, only: :index
-
-            resources :conversations, only: :index
-
-            namespace :conversations, as: :conversation do
-              scope ':conversation_id' do
-                get '', action: :info
-                get 'messages'
-              end
-            end
-
-            resources :messages, only: :create
-
-            resources :communities, only: :index
-          end
-        end
-
-        resources :sessions, only: :create
-
-        namespace :passwords do
-          post 'reset'
-          patch 'update'
-        end
-
-        namespace :radio do
-          namespace :tag do
-            scope ':tag' do
-              get 'artists'
-              get 'tracks'
-            end
-          end
-
-          namespace :artist do
-            scope ':artist' do
-              get 'tracks'
-              get 'similar'
-            end
-          end
-
-          namespace :top do
-            get 'artists'
-            get 'tracks'
-          end
-        end
-
-        resources :playlists, only: :index
-
-        resources :communities,
-          only: %i[index create update destroy],
-          param: :community_id
-
-        namespace :communities, as: :community do
-          scope ':community_id' do
+          namespace :library do
             get '', action: :info
 
-            resources :posts,
-              only: %i[index create update destroy],
-              param: :post_id
-
-            resources :members,
+            resources :artists,
               only: %i[index create destroy],
-              param: :profile_id
-          end
-        end
-      end
+              param: :library_id
 
-# Bandcamp
+            resources :albums,
+              only: %i[index create destroy],
+              param: :library_id
 
-      namespace :bandcamp do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :library_id
 
-        namespace :id do
-          scope ':artist' do
-            get '', action: :artist
+            resources :tags, only: :index
 
-            scope :albums do
-              scope ':album' do
-                get '', action: :album
+            namespace :artists, as: :artist do
+              scope ':library_id' do
+                get '', action: :info
+                get 'albums'
+                get 'tracks'
+                get 'playlists'
               end
             end
-
-            scope :tracks do
-              scope ':track' do
-                get '', action: :track
-              end
-            end
-          end
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
 
             namespace :albums, as: :album do
-              scope ':album_id' do
+              scope ':library_id' do
                 get '', action: :info
-                get 'description'
-                get 'tags'
+                get 'tracks'
+                get 'playlists'
               end
             end
 
             namespace :tracks, as: :track do
-              scope ':track_id' do
+              scope ':library_id' do
                 get '', action: :info
-                get 'description'
-                get 'tags'
-              end
-            end
-          end
-        end
-
-        namespace :labels, as: :label do
-          scope ':label_id' do
-            get 'artists'
-            get 'albums'
-          end
-        end
-      end
-
-# Deezer
-
-      namespace :deezer do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
-      end
-
-# Discogs
-
-      namespace :discogs do
-        namespace :search do
-          get 'artists'
-          get 'labels'
-          get 'groups'
-          get 'albums'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :labels, as: :label do
-          scope ':label_id' do
-            get '', action: :info
-            get 'description'
-            get 'albums'
-          end
-        end
-
-        namespace :groups, as: :group do
-          scope ':group_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-          end
-        end
-      end
-
-# Genius
-
-      namespace :genius do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'description'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-            get 'lyrics'
-          end
-        end
-      end
-
-# LastFM
-
-      namespace :lastfm do
-        namespace :artists, as: :artist, constraints: { artist: /[^\/]+/ } do
-          scope ':artist' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-            get 'image'
-            get 'images'
-            get 'similar'
-            get 'albums'
-            get 'tracks'
-            get 'listeners_count'
-            get 'profiles'
-
-            namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
-              scope ':album' do
-                get '', action: :info
-                get 'description'
-                get 'tags'
-                get 'listeners_count'
-                get 'profiles'
+                get 'albums'
+                get 'playlists'
               end
             end
 
-            namespace :tracks, as: :track, constraints: { track: /[^\/]+/ } do
-              scope ':track' do
+            namespace :tags, as: :tag do
+              scope ':tag_id' do
                 get '', action: :info
-                get 'description'
-                get 'tags'
-                get 'similar'
-                get 'profiles'
+                get 'artists'
               end
             end
+
+            namespace :search do
+              get 'artists'
+              get 'albums'
+              get 'tracks'
+              get 'tags'
+            end
+
+            namespace :compatibility do
+              get '', action: :info
+              get 'artists'
+              get 'albums'
+              get 'tracks'
+            end
           end
-        end
 
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-          get 'tags'
-        end
+          resources :recommendations,
+            only: %i[index destroy],
+            param: :recommendation_id
 
-        namespace :tags, as: :tag, constraints: { tag: /[^\/]+/ } do
+          namespace :recommendations, as: :recommendation do
+            scope ':recommendation_id' do
+              get '', action: :info
+              get 'artists'
+            end
+          end
+
+          namespace :listened do
+            resources :artists,
+              only: %i[create destroy],
+              param: :listened_id
+
+            resources :albums,
+              only: %i[create destroy],
+              param: :listened_id
+
+            resources :tracks,
+              only: %i[create destroy],
+              param: :listened_id
+          end
+
+          namespace :bookmarks do
+            resources :artists,
+              only: %i[index create destroy],
+              param: :bookmark_id
+
+            resources :albums,
+              only: %i[index create destroy],
+              param: :bookmark_id
+
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :bookmark_id
+          end
+
+          namespace :favorites do
+            get '', action: :info
+
+            resources :artists,
+              only: %i[index create destroy],
+              param: :favorite_id
+
+            resources :albums,
+              only: %i[index create destroy],
+              param: :favorite_id
+
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :favorite_id
+          end
+
+          resources :playlists,
+            only: %i[index create update destroy],
+            param: :playlist_id
+
+          namespace :playlists, as: :playlist do
+            scope ':playlist_id' do
+              get '', action: :info
+
+              resources :tracks,
+                only: %i[index create destroy],
+                param: :playlist_track_id
+            end
+          end
+
+          namespace :lastfm do
+            namespace :scrobbler do
+              post 'play'
+              post 'save'
+            end
+          end
+
+          resources :posts,
+            only: %i[index create update destroy],
+            param: :post_id
+
+          resources :followers,
+            only: %i[index create destroy],
+            param: :other_profile_id
+
+          resources :following, only: :index
+
+          resources :feed, only: :index
+
+          resources :conversations, only: :index
+
+          namespace :conversations, as: :conversation do
+            scope ':conversation_id' do
+              get '', action: :info
+              get 'messages'
+            end
+          end
+
+          resources :messages, only: :create
+
+          resources :communities, only: :index
+        end
+      end
+
+      resources :sessions, only: :create
+
+      namespace :passwords do
+        post 'reset'
+        patch 'update'
+      end
+
+      namespace :radio do
+        namespace :tag do
           scope ':tag' do
-            get '', action: :info
-            get 'description'
             get 'artists'
-            get 'albums'
+            get 'tracks'
+          end
+        end
+
+        namespace :artist do
+          scope ':artist' do
             get 'tracks'
             get 'similar'
-            get 'images'
           end
         end
 
         namespace :top do
           get 'artists'
-          get 'albums'
           get 'tracks'
-          get 'tags'
         end
+      end
 
-        namespace :multitag do
-          get 'artists'
-        end
+      resources :playlists, only: :index
 
-        namespace :releases do
-          get 'new'
-          get 'upcoming'
-        end
+      resources :communities,
+        only: %i[index create update destroy],
+        param: :community_id
 
-        namespace :connect do
-          get 'token'
+      namespace :communities, as: :community do
+        scope ':community_id' do
+          get '', action: :info
 
-          resources :sessions,
-            only: %i[create destroy],
+          resources :posts,
+            only: %i[index create update destroy],
+            param: :post_id
+
+          resources :members,
+            only: %i[index create destroy],
             param: :profile_id
         end
+      end
+    end
 
-        namespace :users, as: :user do
-          scope ':nickname' do
-            get '', action: :info
-            get 'plays'
+    # Bandcamp
+
+    namespace :bandcamp do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :id do
+        scope ':artist' do
+          get '', action: :artist
+
+          scope :albums do
+            scope ':album' do
+              get '', action: :album
+            end
+          end
+
+          scope :tracks do
+            scope ':track' do
+              get '', action: :track
+            end
           end
         end
       end
 
-# Odnoklassniki
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
 
-      namespace :odnoklassniki do
-        namespace :search do
+          namespace :albums, as: :album do
+            scope ':album_id' do
+              get '', action: :info
+              get 'description'
+              get 'tags'
+            end
+          end
+
+          namespace :tracks, as: :track do
+            scope ':track_id' do
+              get '', action: :info
+              get 'description'
+              get 'tags'
+            end
+          end
+        end
+      end
+
+      namespace :labels, as: :label do
+        scope ':label_id' do
+          get 'artists'
+          get 'albums'
+        end
+      end
+    end
+
+    # Deezer
+
+    namespace :deezer do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+        end
+      end
+
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+        end
+      end
+    end
+
+    # Discogs
+
+    namespace :discogs do
+      namespace :search do
+        get 'artists'
+        get 'labels'
+        get 'groups'
+        get 'albums'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
+
+      namespace :labels, as: :label do
+        scope ':label_id' do
+          get '', action: :info
+          get 'description'
+          get 'albums'
+        end
+      end
+
+      namespace :groups, as: :group do
+        scope ':group_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+          get 'albums'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+        end
+      end
+    end
+
+    # Genius
+
+    namespace :genius do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'description'
+        end
+      end
+
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+          get 'lyrics'
+        end
+      end
+    end
+
+    # LastFM
+
+    namespace :lastfm do
+      namespace :artists, as: :artist, constraints: { artist: /[^\/]+/ } do
+        scope ':artist' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+          get 'image'
+          get 'images'
+          get 'similar'
+          get 'albums'
+          get 'tracks'
+          get 'listeners_count'
+          get 'profiles'
+
+          namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
+            scope ':album' do
+              get '', action: :info
+              get 'description'
+              get 'tags'
+              get 'listeners_count'
+              get 'profiles'
+            end
+          end
+
+          namespace :tracks, as: :track, constraints: { track: /[^\/]+/ } do
+            scope ':track' do
+              get '', action: :info
+              get 'description'
+              get 'tags'
+              get 'similar'
+              get 'profiles'
+            end
+          end
+        end
+      end
+
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+        get 'tags'
+      end
+
+      namespace :tags, as: :tag, constraints: { tag: /[^\/]+/ } do
+        scope ':tag' do
+          get '', action: :info
+          get 'description'
           get 'artists'
           get 'albums'
           get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'tags'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
+          get 'similar'
+          get 'images'
         end
       end
 
-# SoundCloud
+      namespace :top do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+        get 'tags'
+      end
 
-      namespace :soundcloud do
-        namespace :search do
-          get 'artists'
+      namespace :multitag do
+        get 'artists'
+      end
+
+      namespace :releases do
+        get 'new'
+        get 'upcoming'
+      end
+
+      namespace :connect do
+        get 'token'
+
+        resources :sessions,
+          only: %i[create destroy],
+          param: :profile_id
+      end
+
+      namespace :users, as: :user do
+        scope ':nickname' do
+          get '', action: :info
+          get 'plays'
+        end
+      end
+    end
+
+    # Odnoklassniki
+
+    namespace :odnoklassniki do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
           get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
         end
       end
 
-# Spotify
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'tags'
+        end
+      end
 
-      namespace :spotify do
-        namespace :search do
-          get 'artists'
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+        end
+      end
+    end
+
+    # SoundCloud
+
+    namespace :soundcloud do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
           get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
         end
       end
 
-# VK
-
-      namespace :vk do
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
         end
+      end
 
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-          end
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
         end
+      end
+    end
 
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
-        end
+    # Spotify
 
-        namespace :search do
-          get 'artists'
+    namespace :spotify do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
           get 'albums'
-          get 'tracks'
         end
       end
 
-# Yandex Music
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+        end
+      end
 
-      namespace :yandexmusic do
-        namespace :search do
-          get 'artists'
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+        end
+      end
+    end
+
+    # VK
+
+    namespace :vk do
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
           get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'tags'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-          end
         end
       end
 
-# YouTube
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+        end
+      end
 
-      namespace :youtube do
-        namespace :search do
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+        end
+      end
+
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+    end
+
+    # Yandex Music
+
+    namespace :yandexmusic do
+      namespace :search do
+        get 'artists'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'tags'
+        end
+      end
+
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+        end
+      end
+    end
+
+    # YouTube
+
+    namespace :youtube do
+      namespace :search do
+        get 'videos'
+      end
+
+      namespace :channels, as: :channel do
+        scope ':channel_id' do
+          get '', action: :info
+          get 'description'
           get 'videos'
         end
+      end
 
-        namespace :channels, as: :channel do
-          scope ':channel_id' do
-            get '', action: :info
-            get 'description'
-            get 'videos'
-          end
-        end
-
-        namespace :videos, as: :video do
-          scope ':video_id' do
-            get '', action: :info
-            get 'description'
-            get 'tags'
-            get 'related'
-          end
+      namespace :videos, as: :video do
+        scope ':video_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+          get 'related'
         end
       end
     end
