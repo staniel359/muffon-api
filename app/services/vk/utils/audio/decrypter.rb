@@ -15,7 +15,8 @@ module VK
         end
 
         def no_data?
-          playlist_data.blank?
+          playlist_data.blank? ||
+            fragments_data.blank?
         end
 
         def playlist_data
@@ -25,21 +26,16 @@ module VK
             )
         end
 
-        def data
-          fragments_data.sort.map(
-            &:second
-          ).join
-        end
-
         def fragments_data
-          Parallel.map_with_index(
-            fragments_paths,
-            in_threads: threads_count
-          ) do |path, index|
-            fragment_data(
-              index, path
-            )
-          end
+          @fragments_data ||=
+            Parallel.map_with_index(
+              fragments_paths,
+              in_threads: threads_count
+            ) do |path, index|
+              fragment_data(
+                index, path
+              )
+            end
         end
 
         def fragments_paths
@@ -75,6 +71,12 @@ module VK
 
         def key
           playlist_data[:key]
+        end
+
+        def data
+          fragments_data.sort.map(
+            &:second
+          ).join
         end
       end
     end

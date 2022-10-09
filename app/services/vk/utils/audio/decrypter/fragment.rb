@@ -7,6 +7,8 @@ module VK
             return if not_all_args?
 
             data
+          rescue StandardError
+            raise Parallel::Kill
           end
 
           private
@@ -54,8 +56,6 @@ module VK
             RestClient.get(
               @args[:link]
             ).body
-          rescue StandardError
-            call
           end
 
           def cipher_final
