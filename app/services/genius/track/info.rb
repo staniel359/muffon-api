@@ -48,7 +48,13 @@ module Genius
       end
 
       def lyrics_truncated
-        lyrics.truncate(200)
+        lyrics_formatted.truncate(200)
+      end
+
+      def lyrics_formatted
+        lyrics.map do |l|
+          l.is_a?(Hash) ? l[:text] : l
+        end.flatten.join
       end
 
       def lyrics

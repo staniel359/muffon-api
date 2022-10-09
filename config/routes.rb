@@ -401,6 +401,12 @@ Rails.application.routes.draw do
           get 'lyrics'
         end
       end
+
+      namespace :annotations, as: :annotation do
+        scope ':annotation_id' do
+          get '', action: :info
+        end
+      end
     end
 
     # LastFM

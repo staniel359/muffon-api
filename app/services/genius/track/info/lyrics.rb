@@ -15,44 +15,84 @@ module Genius
         def lyrics
           return '' if @args[:track_slug].blank?
 
-          lyrics_original.presence ||
-            lyrics_alternative.presence ||
-            ''
+          format_children(
+            lyrics_nodes
+          ).compact.flatten
         end
 
-        def lyrics_original
-          response_data.css(
-            '.lyrics p'
-          ).text
+        def lyrics_nodes
+          response_data.xpath(
+            "//*[contains(@class, 'Lyrics__Container')]"
+          )
         end
 
         def response_data
-          @response_data ||=
-            Nokogiri::HTML.parse(
-              response
-            )
+          Nokogiri::HTML.parse(
+            response
+          )
         end
 
         def link
           "https://genius.com#{@args[:track_slug]}"
         end
 
-        def lyrics_alternative
-          nodes = xpath_data(
-            'Lyrics__Container'
-          )
-
-          nodes.css('br').each do |br|
-            br.replace("\n")
+        def format_children(node)
+          node.children.map do |n|
+            format_node(n)
           end
-
-          nodes.text
         end
 
-        def xpath_data(class_name)
-          response_data.xpath(
-            "//*[contains(@class, '#{class_name}')]"
+        def format_node(node)
+          if text?(node)
+            node.text
+          elsif new_line?(node)
+            "\n"
+          elsif italic?(node)
+            format_children(node)
+          elsif with_annotation?(node)
+            annotation_data(node)
+          end
+        end
+
+        def text?(node)
+          node.instance_of?(
+            Nokogiri::XML::Text
           )
+        end
+
+        def new_line?(node)
+          node.name == 'br'
+        end
+
+        def italic?(node)
+          node.name == 'i'
+        end
+
+        def with_annotation?(node)
+          node
+            .attributes['class']
+            &.value
+            &.include?(
+              'ReferentFragmentdesktop__ClickTarget'
+            )
+        end
+
+        def annotation_data(node)
+          {
+            annotation_id:
+              annotation_id(node),
+            text: format_children(
+              node.children[0]
+            )
+          }
+        end
+
+        def annotation_id(node)
+          node
+            .attributes['href']
+            .value
+            .split('/')[1]
+            .to_i
         end
       end
     end
