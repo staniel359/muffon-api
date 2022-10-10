@@ -27,7 +27,7 @@ RSpec.describe YouTube::Search::Videos do
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect(output).to eq(Helpers::Search.no_videos_data) }
     end
   end
 end

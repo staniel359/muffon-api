@@ -10,10 +10,6 @@ module Deezer
         [@args[:query]]
       end
 
-      def no_data?
-        collection_list.blank?
-      end
-
       def collection_list
         response_data.dig(
           'results', 'data'

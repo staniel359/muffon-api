@@ -9,6 +9,10 @@ module YouTube
         [@args[:video_id]]
       end
 
+      def no_data?
+        video.blank?
+      end
+
       def video
         items_list[0]
       end

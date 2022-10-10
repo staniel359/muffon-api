@@ -19,7 +19,7 @@ RSpec.describe API::Discogs::SearchController, type: :controller do
         get :artists, params: { query: random }
       end
 
-      expect(response).to have_http_status(:not_found)
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -43,7 +43,7 @@ RSpec.describe API::Discogs::SearchController, type: :controller do
         get :labels, params: { query: random }
       end
 
-      expect(response).to have_http_status(:not_found)
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -67,7 +67,7 @@ RSpec.describe API::Discogs::SearchController, type: :controller do
         get :groups, params: { query: random }
       end
 
-      expect(response).to have_http_status(:not_found)
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -91,7 +91,7 @@ RSpec.describe API::Discogs::SearchController, type: :controller do
         get :albums, params: { query: random }
       end
 
-      expect(response).to have_http_status(:not_found)
+      expect(response).to have_http_status(:ok)
     end
   end
 end

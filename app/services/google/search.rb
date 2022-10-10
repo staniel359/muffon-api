@@ -35,12 +35,8 @@ module Google
       ]
     end
 
-    def no_data?
-      collection_list.blank?
-    end
-
     def collection_list
-      response_data['items']
+      response_data['items'] || []
     end
 
     def link
@@ -77,6 +73,8 @@ module Google
     end
 
     def total_pages_count
+      return if total_items_count.zero?
+
       [
         super,
         PAGES_LIMIT

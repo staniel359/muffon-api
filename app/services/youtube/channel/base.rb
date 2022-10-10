@@ -7,6 +7,10 @@ module YouTube
         [@args[:channel_id]]
       end
 
+      def no_data?
+        channel.blank?
+      end
+
       def channel
         items_list[0]
       end

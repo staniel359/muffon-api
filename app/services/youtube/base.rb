@@ -6,13 +6,8 @@ module YouTube
 
     private
 
-    def no_data?
-      response_data.blank? ||
-        items_list.blank?
-    end
-
     def items_list
-      response_data['items']
+      response_data['items'] || []
     end
 
     def params

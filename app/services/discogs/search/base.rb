@@ -9,10 +9,6 @@ module Discogs
         [@args[:query]]
       end
 
-      def no_data?
-        collection_list.blank?
-      end
-
       def collection_list
         response_data['results']
       end
@@ -44,7 +40,7 @@ module Discogs
 
       def collection_count
         response_data.dig(
-          'pagination', 'pages'
+          'pagination', 'items'
         )
       end
     end

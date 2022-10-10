@@ -9,10 +9,6 @@ module Genius
         [@args[:query]]
       end
 
-      def no_data?
-        collection_list.empty?
-      end
-
       def collection_list
         response_data.dig(
           'response', 'sections',
@@ -40,7 +36,11 @@ module Genius
         { search: paginated_data }
       end
 
-      alias total_items_count total_limit
+      def total_items_count
+        return 0 if collection_list.blank?
+
+        total_limit
+      end
     end
   end
 end

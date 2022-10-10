@@ -8,7 +8,7 @@ module YouTube
           prev_page:,
           next_page:,
           videos: videos.compact
-        }
+        }.compact
       end
 
       def video_data_formatted(video)

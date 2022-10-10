@@ -9,10 +9,6 @@ module LastFM
         [@args[:query]]
       end
 
-      def no_data?
-        response_data.blank?
-      end
-
       def response_data
         @response_data ||=
           Google::Search.call(

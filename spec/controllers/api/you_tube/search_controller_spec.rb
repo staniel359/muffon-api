@@ -19,7 +19,7 @@ RSpec.describe API::YouTube::SearchController, type: :controller do
         get :videos, params: { query: random }
       end
 
-      expect(response).to have_http_status(:not_found)
+      expect(response).to have_http_status(:ok)
     end
   end
 end

@@ -10,11 +10,6 @@ module VK
         [@args[:query]]
       end
 
-      def no_data?
-        response_data.blank? ||
-          results_list.blank?
-      end
-
       def results_list
         response_data['items']
       end

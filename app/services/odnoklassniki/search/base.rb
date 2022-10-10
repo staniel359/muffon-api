@@ -9,14 +9,10 @@ module Odnoklassniki
         [@args[:query]]
       end
 
-      def no_data?
-        collection_list.blank?
-      end
-
       def collection_list
         response_data[
           collection_name
-        ]
+        ] || []
       end
 
       def params
@@ -41,7 +37,7 @@ module Odnoklassniki
         response_data.dig(
           'relevantCounts',
           collection_name
-        )
+        ) || 0
       end
     end
   end

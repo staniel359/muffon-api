@@ -27,7 +27,7 @@ RSpec.describe Bandcamp::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect(output).to eq(Helpers::Search.no_artists_data) }
     end
   end
 end

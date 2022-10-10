@@ -9,12 +9,8 @@ module YandexMusic
         [@args[:query]]
       end
 
-      def no_data?
-        collection_list.blank?
-      end
-
       def collection_list
-        collection_data['results']
+        collection_data['results'] || []
       end
 
       def collection_data
@@ -55,7 +51,7 @@ module YandexMusic
       end
 
       def collection_count
-        collection_data['total']
+        collection_data['total'] || 0
       end
 
       def limit
