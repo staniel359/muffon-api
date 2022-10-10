@@ -20,7 +20,6 @@ module Muffon
           def track_base_data
             {
               library: library_track_data,
-              playlist_track_id:,
               player_id: track.player_id,
               title:,
               artist: artist_names_data,

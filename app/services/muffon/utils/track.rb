@@ -73,19 +73,6 @@ module Muffon
         ]
       end
 
-      def playlist_track_id
-        find_playlist_track&.id
-      end
-
-      def find_playlist_track
-        return if @args[:playlist_id].blank?
-
-        PlaylistTrack.find_by(
-          playlist_id: @args[:playlist_id],
-          track_id:
-        )
-      end
-
       def duration
         duration_formatted(
           duration_seconds

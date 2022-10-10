@@ -27,7 +27,6 @@ module LastFM
           {
             source: source_data,
             player_id:,
-            playlist_track_id:,
             title:,
             artist: track_artist_data,
             artists:
