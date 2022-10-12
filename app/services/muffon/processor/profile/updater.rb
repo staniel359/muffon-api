@@ -23,7 +23,7 @@ module Muffon
 
           process_image
 
-          { profile: profile_data }
+          profile_data
         end
 
         def update_params
