@@ -12,6 +12,10 @@ module Muffon
           profile.blank?
         end
 
+        def no_rights?
+          false
+        end
+
         def profile
           @profile ||=
             ::Profile.find_by(
