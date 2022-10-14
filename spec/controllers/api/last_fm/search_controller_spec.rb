@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::SearchController, type: :controller do
+RSpec.describe API::LastFM::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/lastfm/search/artists/success' do

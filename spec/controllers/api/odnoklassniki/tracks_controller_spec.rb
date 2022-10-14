@@ -1,4 +1,4 @@
-RSpec.describe API::Odnoklassniki::TracksController, type: :controller do
+RSpec.describe API::Odnoklassniki::TracksController do
   describe 'GET :info' do
     it 'returns 200 if track_id present' do
       VCR.use_cassette 'controllers/api/odnoklassniki/tracks/info/success' do

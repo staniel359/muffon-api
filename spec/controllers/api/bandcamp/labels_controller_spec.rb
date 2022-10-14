@@ -1,4 +1,4 @@
-RSpec.describe API::Bandcamp::LabelsController, type: :controller do
+RSpec.describe API::Bandcamp::LabelsController do
   describe 'GET :artists' do
     it 'returns 200 if label present' do
       VCR.use_cassette 'controllers/api/bandcamp/labels/artists/success' do

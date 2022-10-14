@@ -1,4 +1,4 @@
-RSpec.describe API::Odnoklassniki::SearchController, type: :controller do
+RSpec.describe API::Odnoklassniki::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/odnoklassniki/search/artists/success' do

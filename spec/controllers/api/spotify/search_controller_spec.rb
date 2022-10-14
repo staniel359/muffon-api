@@ -1,4 +1,4 @@
-RSpec.describe API::Spotify::SearchController, type: :controller do
+RSpec.describe API::Spotify::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/spotify/search/artists/success' do

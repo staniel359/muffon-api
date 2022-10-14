@@ -22,7 +22,7 @@ gem 'redis'
 gem 'rest-client'
 gem 'sentry-rails'
 gem 'sentry-ruby'
-gem 'sidekiq'
+gem 'sidekiq', '<7'
 gem 'sidekiq-limit_fetch'
 gem 'whenever', require: false
 

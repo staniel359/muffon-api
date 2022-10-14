@@ -1,4 +1,4 @@
-RSpec.describe API::YouTube::SearchController, type: :controller do
+RSpec.describe API::YouTube::SearchController do
   describe 'GET :videos' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/youtube/search/videos/success' do

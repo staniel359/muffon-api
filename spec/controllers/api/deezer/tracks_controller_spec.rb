@@ -1,4 +1,4 @@
-RSpec.describe API::Deezer::TracksController, type: :controller do
+RSpec.describe API::Deezer::TracksController do
   describe 'GET :info' do
     it 'returns 200 if track_id present' do
       VCR.use_cassette 'controllers/api/deezer/tracks/info/success' do

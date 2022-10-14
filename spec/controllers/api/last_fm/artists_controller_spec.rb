@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::ArtistsController, type: :controller do
+RSpec.describe API::LastFM::ArtistsController do
   describe 'GET :info' do
     it 'returns 200 if artist exists' do
       VCR.use_cassette 'controllers/api/lastfm/artists/info/success' do

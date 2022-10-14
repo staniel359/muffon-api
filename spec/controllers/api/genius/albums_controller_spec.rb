@@ -1,4 +1,4 @@
-RSpec.describe API::Genius::AlbumsController, type: :controller do
+RSpec.describe API::Genius::AlbumsController do
   describe 'GET :info' do
     it 'returns 200 if id present' do
       VCR.use_cassette 'controllers/api/genius/albums/info/success' do

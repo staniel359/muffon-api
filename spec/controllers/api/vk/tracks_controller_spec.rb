@@ -1,4 +1,4 @@
-RSpec.describe API::VK::TracksController, type: :controller do
+RSpec.describe API::VK::TracksController do
   describe 'GET :info' do
     it 'returns 200 if track exists' do
       VCR.use_cassette 'controllers/api/vk/tracks/info/success' do

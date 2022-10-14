@@ -34,9 +34,9 @@ module VK
       end
 
       def tags_list
-        album['genres'].map do |g|
-          g['name']
-        end
+        album['genres'].pluck(
+          'name'
+        )
       end
 
       def tracks

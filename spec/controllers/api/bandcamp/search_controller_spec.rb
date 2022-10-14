@@ -1,4 +1,4 @@
-RSpec.describe API::Bandcamp::SearchController, type: :controller do
+RSpec.describe API::Bandcamp::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/bandcamp/search/artists/success' do

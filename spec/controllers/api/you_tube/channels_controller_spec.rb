@@ -1,4 +1,4 @@
-RSpec.describe API::YouTube::ChannelsController, type: :controller do
+RSpec.describe API::YouTube::ChannelsController do
   describe 'GET :info' do
     it 'returns 200 if channel present' do
       VCR.use_cassette 'controllers/api/youtube/channels/info/success' do

@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::TagsController, type: :controller do
+RSpec.describe API::LastFM::TagsController do
   describe 'GET :info' do
     it 'returns 200 if tag exists' do
       VCR.use_cassette 'controllers/api/lastfm/tags/info/success' do

@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::TopController, type: :controller do
+RSpec.describe API::LastFM::TopController do
   describe 'GET :artists' do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/top/artists/success' do

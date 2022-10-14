@@ -37,9 +37,9 @@ module Discogs
       end
 
       def labels
-        album['labels'].map do |l|
-          l['name']
-        end.uniq
+        album['labels'].pluck(
+          'name'
+        ).uniq
       end
 
       def label_source_data(label)

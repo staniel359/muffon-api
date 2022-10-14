@@ -1,4 +1,4 @@
-RSpec.describe API::Discogs::LabelsController, type: :controller do
+RSpec.describe API::Discogs::LabelsController do
   describe 'GET :info' do
     it 'returns 200 if label_id present' do
       VCR.use_cassette 'controllers/api/discogs/label/info/success' do

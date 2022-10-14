@@ -1,4 +1,4 @@
-RSpec.describe API::SoundCloud::ArtistsController, type: :controller do
+RSpec.describe API::SoundCloud::ArtistsController do
   describe 'GET :albums' do
     it 'returns 200 if artist present' do
       VCR.use_cassette 'controllers/api/soundcloud/artists/albums/success' do

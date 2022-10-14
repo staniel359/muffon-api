@@ -1,4 +1,4 @@
-RSpec.describe API::SoundCloud::TracksController, type: :controller do
+RSpec.describe API::SoundCloud::TracksController do
   describe 'GET :info' do
     it 'returns 200 if track_id present' do
       VCR.use_cassette 'controllers/api/soundcloud/tracks/info/success' do

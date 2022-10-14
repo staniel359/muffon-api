@@ -29,6 +29,7 @@ set :rbenv_ruby, File.read(
 ).strip
 
 set :puma_service_unit_name, fetch(:application)
+set :puma_systemctl_user, :system
 set :puma_workers, 2
 
 set :nginx_config_name, fetch(:application)

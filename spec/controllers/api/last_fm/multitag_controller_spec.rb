@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::MultitagController, type: :controller do
+RSpec.describe API::LastFM::MultitagController do
   describe 'GET :artists' do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/multitag/artists/success' do

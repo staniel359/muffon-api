@@ -1,4 +1,4 @@
-RSpec.describe API::VK::ArtistsController, type: :controller do
+RSpec.describe API::VK::ArtistsController do
   describe 'GET :albums' do
     it 'returns 200 if artist exists' do
       VCR.use_cassette 'controllers/api/vk/artists/albums/success' do

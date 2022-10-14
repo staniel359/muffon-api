@@ -1,4 +1,4 @@
-RSpec.describe API::Genius::TracksController, type: :controller do
+RSpec.describe API::Genius::TracksController do
   describe 'GET :info' do
     it 'returns 200 if id present' do
       VCR.use_cassette 'controllers/api/genius/tracks/info/success' do

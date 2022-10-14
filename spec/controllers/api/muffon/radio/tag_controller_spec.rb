@@ -1,4 +1,4 @@
-RSpec.describe API::Muffon::Radio::TagController, type: :controller do
+RSpec.describe API::Muffon::Radio::TagController do
   describe 'GET :artists' do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/muffon/radio/tag/artists/success' do

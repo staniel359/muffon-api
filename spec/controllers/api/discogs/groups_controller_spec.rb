@@ -1,4 +1,4 @@
-RSpec.describe API::Discogs::GroupsController, type: :controller do
+RSpec.describe API::Discogs::GroupsController do
   describe 'GET :info' do
     it 'returns 200 if group_id present' do
       VCR.use_cassette 'controllers/api/discogs/groups/info/success' do

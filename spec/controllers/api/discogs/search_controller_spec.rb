@@ -1,4 +1,4 @@
-RSpec.describe API::Discogs::SearchController, type: :controller do
+RSpec.describe API::Discogs::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/discogs/search/artists/success' do

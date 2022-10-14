@@ -1,4 +1,4 @@
-RSpec.describe API::Spotify::ArtistsController, type: :controller do
+RSpec.describe API::Spotify::ArtistsController do
   describe 'GET :albums' do
     it 'returns 200 if artist_id present' do
       VCR.use_cassette 'controllers/api/spotify/artists/albums/success' do

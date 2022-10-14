@@ -32,9 +32,9 @@ module YandexMusic
       end
 
       def labels
-        album['labels'].map do |l|
-          l['name']
-        end.uniq
+        album['labels'].pluck(
+          'name'
+        ).uniq
       end
 
       def tags_list

@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::ReleasesController, type: :controller do
+RSpec.describe API::LastFM::ReleasesController do
   describe 'GET :new' do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/releases/new/success' do

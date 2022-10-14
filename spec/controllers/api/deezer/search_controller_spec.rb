@@ -1,4 +1,4 @@
-RSpec.describe API::Deezer::SearchController, type: :controller do
+RSpec.describe API::Deezer::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/deezer/search/artists/success' do

@@ -1,4 +1,4 @@
-RSpec.describe API::Discogs::ArtistsController, type: :controller do
+RSpec.describe API::Discogs::ArtistsController do
   describe 'GET :albums' do
     it 'returns 200 if artist_id present' do
       VCR.use_cassette 'controllers/api/discogs/artist/albums/success' do

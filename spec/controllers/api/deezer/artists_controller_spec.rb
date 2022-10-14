@@ -1,4 +1,4 @@
-RSpec.describe API::Deezer::ArtistsController, type: :controller do
+RSpec.describe API::Deezer::ArtistsController do
   describe 'GET :albums' do
     it 'returns 200 if artist_id present' do
       VCR.use_cassette 'controllers/api/deezer/artists/albums/success' do

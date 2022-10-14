@@ -1,4 +1,4 @@
-RSpec.describe API::YouTube::VideosController, type: :controller do
+RSpec.describe API::YouTube::VideosController do
   describe 'GET :info' do
     it 'returns 200 if video_id present' do
       VCR.use_cassette 'controllers/api/youtube/videos/info/success' do

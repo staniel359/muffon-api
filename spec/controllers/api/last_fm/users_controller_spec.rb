@@ -1,4 +1,4 @@
-RSpec.describe API::LastFM::UsersController, type: :controller do
+RSpec.describe API::LastFM::UsersController do
   describe 'GET :info' do
     it 'returns 200 if user exists' do
       VCR.use_cassette 'controllers/api/lastfm/users/info/success' do

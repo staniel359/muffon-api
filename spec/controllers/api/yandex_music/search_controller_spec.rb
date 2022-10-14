@@ -1,4 +1,4 @@
-RSpec.describe API::YandexMusic::SearchController, type: :controller do
+RSpec.describe API::YandexMusic::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette 'controllers/api/yandexmusic/search/artists/success' do
