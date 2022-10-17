@@ -1,6 +1,7 @@
 module YouTube
   module Playlist
     class Base < YouTube::Base
+      include YouTube::Utils::Playlist
       include YouTube::Utils::Pagination
 
       private
@@ -10,7 +11,7 @@ module YouTube
       end
 
       def link
-        "#{BASE_LINK}/playlistItems"
+        "#{BASE_LINK}/playlists"
       end
 
       def params
@@ -21,15 +22,25 @@ module YouTube
 
       def playlist_params
         {
-          playlistId: @args[:playlist_id],
-          part: 'snippet',
-          maxResults: limit,
-          pageToken: @args[:page]
+          id: @args[:playlist_id],
+          part: 'snippet,contentDetails'
         }
       end
 
       def data
         { playlist: playlist_data }
+      end
+
+      def playlist_base_data
+        {
+          source: source_data,
+          title:,
+          channel: channel_data
+        }.compact
+      end
+
+      def playlist
+        items_list[0]
       end
     end
   end

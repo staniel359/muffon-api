@@ -74,6 +74,18 @@ module SendableDecorator
     )
   end
 
+  def video_playlists_formatted
+    video_playlists.map do |p|
+      video_playlist_data_formatted(p)
+    end
+  end
+
+  def video_playlist_data_formatted(playlist)
+    Muffon::Sendable::VideoPlaylist.call(
+      playlist:
+    )
+  end
+
   def playlists_formatted
     playlists.map do |p|
       playlist_data_formatted(p)

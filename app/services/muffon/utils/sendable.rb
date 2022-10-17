@@ -8,6 +8,7 @@ module Muffon
         albums
         tracks
         videos
+        video_playlists
         playlists
         communities
       ].freeze

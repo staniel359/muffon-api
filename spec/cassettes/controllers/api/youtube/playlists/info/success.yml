@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/playlists?id=PLrIyFAtNxiQaQwwLw2QuyTqHpZY5-lKPs&key=<GOOGLE_API_KEY>&part=snippet,contentDetails
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Mon, 17 Oct 2022 12:37:16 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#playlistListResponse",
+          "etag": "loAhUy47cAAsJ5eJl-fZWKDkGSw",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#playlist",
+              "etag": "2RPVDSIuIge11rnMH2a5rjcVQPI",
+              "id": "PLrIyFAtNxiQaQwwLw2QuyTqHpZY5-lKPs",
+              "snippet": {
+                "publishedAt": "2022-08-11T15:59:36Z",
+                "channelId": "UC7kI8WjpCfFoMSNDuRh_4lA",
+                "title": "Pitchfork Music Festival 2022",
+                "description": "",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/E-jeRcbAqR8/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/E-jeRcbAqR8/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/E-jeRcbAqR8/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  },
+                  "standard": {
+                    "url": "https://i.ytimg.com/vi/E-jeRcbAqR8/sddefault.jpg",
+                    "width": 640,
+                    "height": 480
+                  },
+                  "maxres": {
+                    "url": "https://i.ytimg.com/vi/E-jeRcbAqR8/maxresdefault.jpg",
+                    "width": 1280,
+                    "height": 720
+                  }
+                },
+                "channelTitle": "Pitchfork",
+                "localized": {
+                  "title": "Pitchfork Music Festival 2022",
+                  "description": ""
+                }
+              },
+              "contentDetails": {
+                "itemCount": 10
+              }
+            }
+          ]
+        }
+  recorded_at: Mon, 17 Oct 2022 12:37:16 GMT
+recorded_with: VCR 6.1.0

@@ -654,6 +654,7 @@ Rails.application.routes.draw do
           get '', action: :info
           get 'description'
           get 'videos'
+          get 'playlists'
         end
       end
 
@@ -663,6 +664,13 @@ Rails.application.routes.draw do
           get 'description'
           get 'tags'
           get 'related'
+        end
+      end
+
+      namespace :playlists, as: :playlist do
+        scope ':playlist_id' do
+          get '', action: :info
+          get 'videos'
         end
       end
     end

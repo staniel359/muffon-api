@@ -3,13 +3,23 @@ module YouTube
     class Videos < YouTube::Channel::Base
       private
 
-      def uploads_playlist
-        @uploads_playlist ||=
-          YouTube::Playlist::Videos.call(
-            playlist_id: uploads_playlist_id,
-            limit: @args[:limit],
-            page: @args[:page]
-          )[:playlist] || {}
+      def channel_data
+        channel_base_data
+          .merge(channel_videos_data)
+      end
+
+      def channel_videos_data
+        uploads_playlist_data.slice(
+          *%i[prev_page next_page videos]
+        )
+      end
+
+      def uploads_playlist_data
+        YouTube::Playlist::Videos.call(
+          playlist_id: uploads_playlist_id,
+          limit: @args[:limit],
+          page: @args[:page]
+        )[:playlist] || {}
       end
 
       def uploads_playlist_id
@@ -18,25 +28,6 @@ module YouTube
           'relatedPlaylists',
           'uploads'
         )
-      end
-
-      def channel_data
-        channel_base_data
-          .merge(channel_videos_data)
-      end
-
-      def channel_videos_data
-        {
-          prev_page:
-            uploads_playlist[:prev_page],
-          next_page:
-            uploads_playlist[:next_page],
-          videos:
-        }.compact
-      end
-
-      def videos
-        uploads_playlist[:videos] || []
       end
     end
   end

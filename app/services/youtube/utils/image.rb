@@ -8,6 +8,8 @@ module YouTube
       private
 
       def data
+        return if @args[:image].blank?
+
         {
           original: image_resized('maxres'),
           large: image_resized('sd'),

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/playlists?id=wejlhg239gh23&key=<GOOGLE_API_KEY>&part=snippet,contentDetails
+    uri: https://www.googleapis.com/youtube/v3/channels?id=wejlhg239gh23&key=<GOOGLE_API_KEY>&part=snippet,contentDetails,statistics
     body:
       encoding: US-ASCII
       string: ''
@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 18 Oct 2022 20:27:48 GMT
+      - Mon, 17 Oct 2022 11:23:09 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -47,13 +47,12 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-          "kind": "youtube#playlistListResponse",
+          "kind": "youtube#channelListResponse",
           "etag": "RuuXzTIr0OoDqI4S0RU6n4FqKEM",
           "pageInfo": {
             "totalResults": 0,
             "resultsPerPage": 5
-          },
-          "items": []
+          }
         }
-  recorded_at: Tue, 18 Oct 2022 20:27:48 GMT
+  recorded_at: Mon, 17 Oct 2022 11:23:09 GMT
 recorded_with: VCR 6.1.0
