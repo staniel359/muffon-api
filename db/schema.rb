@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_101955) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_20_132344) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -297,6 +297,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_101955) do
     t.boolean "private", default: false
     t.index ["email"], name: "index_profiles_on_email", unique: true
     t.index ["nickname"], name: "index_profiles_on_nickname", unique: true
+    t.index ["token"], name: "index_profiles_on_token"
   end
 
   create_table "recommendations", force: :cascade do |t|

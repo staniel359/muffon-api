@@ -5,6 +5,10 @@ module API
 
       private
 
+      def allowed_request?
+        true
+      end
+
       def create_data
         ::Muffon::Profile::Authenticator.call(
           params.slice(

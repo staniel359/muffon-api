@@ -20,15 +20,44 @@ module API
     end
 
     def data_conditional
-      return forbidden unless allowed?
+      return forbidden unless allowed_request?
 
       send(
         "#{params[:action]}_data"
       )
     end
 
-    def allowed?
-      true
+    def allowed_request?
+      test? || valid_token?
+    end
+
+    def test?
+      Rails.env.test?
+    end
+
+    def valid_token?
+      return false if token.blank?
+
+      token_profile.present? ||
+        anonymous_token?
+    end
+
+    def token
+      params[:token]
+    end
+
+    def token_profile
+      Profile.find_by(
+        token:
+      )
+    end
+
+    def anonymous_token?
+      token == secrets.anonymous[:token]
+    end
+
+    def secrets
+      Rails.application.credentials
     end
 
     def status
