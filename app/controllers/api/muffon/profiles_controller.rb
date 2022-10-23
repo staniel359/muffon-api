@@ -9,10 +9,6 @@ module API
 
       def update; end
 
-      def online; end
-
-      def playing; end
-
       private
 
       def index_data
@@ -48,22 +44,6 @@ module API
           params.slice(
             *%i[profile_id token],
             *profile_params
-          )
-        )
-      end
-
-      def online_data
-        ::Muffon::Processor::Profile::Online::Updater.call(
-          params.slice(
-            *%i[profile_id token online]
-          )
-        )
-      end
-
-      def playing_data
-        ::Muffon::Processor::Profile::Playing::Updater.call(
-          params.slice(
-            *%i[profile_id token playing]
           )
         )
       end

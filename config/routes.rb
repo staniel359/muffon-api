@@ -25,8 +25,14 @@ Rails.application.routes.draw do
       namespace :profiles, as: :profile do
         scope ':profile_id' do
           get '', action: :info
-          patch 'online'
-          patch 'playing'
+
+          namespace :online do
+            patch '', action: :update
+          end
+
+          namespace :playing do
+            patch '', action: :update
+          end
 
           namespace :library do
             get '', action: :info
