@@ -14,8 +14,6 @@ module Muffon
           def collection_list
             other_profile_library_artists
               .library_tracks_count_desc_ordered
-              .library_albums_count_desc_ordered
-              .created_desc_ordered
               .limit(limit)
               .offset(offset)
           end

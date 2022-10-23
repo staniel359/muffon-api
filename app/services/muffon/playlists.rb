@@ -1,6 +1,7 @@
 module Muffon
   class Playlists < Muffon::Base
     COLLECTION_NAME = 'playlists'.freeze
+    DEFAULT_ORDER = 'created_desc'.freeze
     include Muffon::Utils::Pagination
 
     private
@@ -10,12 +11,12 @@ module Muffon
     end
 
     def total_items_count
-      ::Playlist.count
+      @total_items_count ||= ::Playlist.count
     end
 
     def collection_list
       ::Playlist
-        .created_desc_ordered
+        .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)
         .associated

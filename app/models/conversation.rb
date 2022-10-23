@@ -1,4 +1,11 @@
 class Conversation < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+    updated_desc
+    updated_asc
+  ].freeze
+
   include ConversationDecorator
 
   belongs_to :profile

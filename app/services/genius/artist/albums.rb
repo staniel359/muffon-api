@@ -51,7 +51,7 @@ module Genius
       end
 
       def total_items_count
-        albums_list.size
+        @total_items_count ||= albums_list.size
       end
 
       def name

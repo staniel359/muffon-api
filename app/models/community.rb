@@ -1,4 +1,13 @@
 class Community < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+    joined_desc
+    joined_asc
+    members_count_desc
+    members_count_asc
+  ].freeze
+
   include CommunityDecorator
 
   has_one_attached :image

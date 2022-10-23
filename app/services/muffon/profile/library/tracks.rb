@@ -3,17 +3,19 @@ module Muffon
     module Library
       class Tracks < Muffon::Profile::Library::Base
         COLLECTION_NAME = 'tracks'.freeze
+        DEFAULT_ORDER = 'created_desc'.freeze
+
         include Muffon::Utils::Pagination
 
         private
 
         def total_items_count
-          library_tracks.size
+          profile.library_tracks_count
         end
 
         def collection_list
           library_tracks
-            .created_desc_ordered
+            .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
             .associated

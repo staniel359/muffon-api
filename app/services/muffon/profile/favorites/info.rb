@@ -6,9 +6,9 @@ module Muffon
 
         def favorites_data
           {
-            artists_count: artists.size,
-            albums_count: albums.size,
-            tracks_count: tracks.size
+            artists_count: artists.count,
+            albums_count: albums.count,
+            tracks_count: tracks.count
           }
         end
       end

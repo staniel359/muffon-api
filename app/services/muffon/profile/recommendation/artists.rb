@@ -8,7 +8,8 @@ module Muffon
         private
 
         def total_items_count
-          recommendation
+          @total_items_count ||=
+            recommendation
             .library_artist_ids
             .size
         end
@@ -17,8 +18,6 @@ module Muffon
           recommendation
             .library_artists
             .library_tracks_count_desc_ordered
-            .library_albums_count_desc_ordered
-            .created_desc_ordered
             .limit(limit)
             .offset(offset)
         end

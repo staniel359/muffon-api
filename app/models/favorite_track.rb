@@ -1,4 +1,9 @@
 class FavoriteTrack < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+  ].freeze
+
   include FavoriteTrackDecorator
 
   has_one_attached :image

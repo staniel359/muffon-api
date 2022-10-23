@@ -23,7 +23,7 @@ module Odnoklassniki
       end
 
       def total_items_count
-        albums_list.size
+        @total_items_count ||= albums_list.size
       end
 
       def collection_list

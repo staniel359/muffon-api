@@ -1,4 +1,9 @@
 class Post < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+  ].freeze
+
   include PostDecorator
   include SendableDecorator
 

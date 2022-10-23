@@ -2,6 +2,7 @@ module Muffon
   module Profile
     class Feed < Muffon::Profile::Base
       COLLECTION_NAME = 'feed'.freeze
+      DEFAULT_ORDER = 'created_desc'.freeze
       include Muffon::Utils::Pagination
 
       private
@@ -13,7 +14,7 @@ module Muffon
       end
 
       def total_items_count
-        posts.size
+        @total_items_count ||= posts.count
       end
 
       def posts
@@ -21,11 +22,9 @@ module Muffon
       end
 
       def scoped_posts
-        if global?
-          Post.global
-        else
-          profile.feed_posts
-        end
+        return Post.global if global?
+
+        profile.feed_posts
       end
 
       def global?
@@ -34,7 +33,7 @@ module Muffon
 
       def collection_list
         posts
-          .created_desc_ordered
+          .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
           .associated

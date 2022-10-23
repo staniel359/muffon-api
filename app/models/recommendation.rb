@@ -1,4 +1,9 @@
 class Recommendation < ApplicationRecord
+  ORDERS = %w[
+    library_artists_count_desc
+    library_artists_count_asc
+  ].freeze
+
   include RecommendationDecorator
 
   after_create_commit :update_artist_tags

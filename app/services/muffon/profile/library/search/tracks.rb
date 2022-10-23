@@ -8,7 +8,8 @@ module Muffon
           private
 
           def total_items_count
-            search_library_tracks.size
+            @total_items_count ||=
+              search_library_tracks.count
           end
 
           def search_library_tracks

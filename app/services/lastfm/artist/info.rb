@@ -47,7 +47,7 @@ module LastFM
 
         find_artist
           .profiles
-          .size
+          .count
       end
 
       def plays_count

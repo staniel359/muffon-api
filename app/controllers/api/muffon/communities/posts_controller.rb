@@ -15,7 +15,7 @@ module API
         def index_data
           ::Muffon::Community::Posts.call(
             params.slice(
-              *%i[community_id page limit]
+              *%i[community_id page limit order]
             )
           )
         end

@@ -1,6 +1,7 @@
 module Muffon
   class Profiles < Muffon::Base
     COLLECTION_NAME = 'profiles'.freeze
+    DEFAULT_ORDER = 'created_desc'.freeze
     include Muffon::Utils::Pagination
 
     private
@@ -10,12 +11,12 @@ module Muffon
     end
 
     def total_items_count
-      ::Profile.count
+      @total_items_count ||= ::Profile.count
     end
 
     def collection_list
       ::Profile
-        .created_desc_ordered
+        .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)
         .associated

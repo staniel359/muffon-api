@@ -2,6 +2,8 @@ module Muffon
   module Profile
     class Recommendations < Muffon::Profile::Base
       COLLECTION_NAME = 'recommendations'.freeze
+      DEFAULT_ORDER = 'library_artists_count_desc'.freeze
+
       include Muffon::Utils::Pagination
 
       private
@@ -23,7 +25,7 @@ module Muffon
 
       def total_items_count
         @total_items_count ||=
-          recommendations_filtered.size
+          recommendations_filtered.count
       end
 
       def recommendations_filtered
@@ -75,7 +77,7 @@ module Muffon
 
       def collection_list
         recommendations_filtered
-          .library_artists_count_desc_ordered
+          .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
       end

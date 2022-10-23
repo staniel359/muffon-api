@@ -7,7 +7,7 @@ module LastFM
       private
 
       def total_items_count
-        profiles.size
+        @total_items_count ||= profiles.count
       end
 
       def profiles
@@ -16,7 +16,7 @@ module LastFM
 
       def collection_list
         profiles
-          .created_asc_ordered
+          .created_desc_ordered
           .limit(limit)
           .offset(offset)
           .associated

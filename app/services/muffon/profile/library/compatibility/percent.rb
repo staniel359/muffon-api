@@ -39,7 +39,7 @@ module Muffon
           def library_artists_count(profile_id)
             library_artists(
               profile_id
-            ).size
+            ).count
           end
 
           def albums_percent
@@ -64,7 +64,7 @@ module Muffon
           def library_albums_count(profile_id)
             library_albums(
               profile_id
-            ).size
+            ).count
           end
 
           def tracks_percent
@@ -89,7 +89,7 @@ module Muffon
           def library_tracks_count(profile_id)
             library_tracks(
               profile_id
-            ).size
+            ).count
           end
         end
       end

@@ -2,6 +2,7 @@ module Muffon
   module Profile
     class Conversations < Muffon::Profile::Base
       COLLECTION_NAME = 'conversations'.freeze
+      DEFAULT_ORDER = 'updated_desc'.freeze
       include Muffon::Utils::Pagination
 
       private
@@ -22,7 +23,8 @@ module Muffon
       end
 
       def total_items_count
-        conversations.size
+        @total_items_count ||=
+          conversations.count
       end
 
       def conversations
@@ -32,7 +34,7 @@ module Muffon
 
       def collection_list
         conversations
-          .created_desc_ordered
+          .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
           .associated

@@ -16,7 +16,7 @@ module API
               params.slice(
                 *%i[
                   profile_id token playlist_id
-                  page limit other_profile_id
+                  page limit order other_profile_id
                 ]
               )
             )

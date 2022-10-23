@@ -1,5 +1,18 @@
 module ApplicationRecordDecorator
   module ClassMethods
+    def ordered(order, default_order)
+      in_orders = order.in?(
+        self::ORDERS
+      )
+
+      order_formatted =
+        in_orders ? order : default_order
+
+      send(
+        "#{order_formatted}_ordered"
+      )
+    end
+
     def created_desc_ordered
       order(
         created_at: :desc
@@ -12,15 +25,43 @@ module ApplicationRecordDecorator
       )
     end
 
+    def updated_desc_ordered
+      order(
+        updated_at: :desc
+      )
+    end
+
     def updated_asc_ordered
       order(
         updated_at: :asc
       )
     end
 
+    def library_albums_count_desc_ordered
+      order(
+        library_albums_count: :desc,
+        created_at: :asc
+      )
+    end
+
+    def library_albums_count_asc_ordered
+      order(
+        library_albums_count: :asc,
+        created_at: :asc
+      )
+    end
+
     def library_tracks_count_desc_ordered
       order(
-        library_tracks_count: :desc
+        library_tracks_count: :desc,
+        created_at: :asc
+      )
+    end
+
+    def library_tracks_count_asc_ordered
+      order(
+        library_tracks_count: :asc,
+        created_at: :asc
       )
     end
   end

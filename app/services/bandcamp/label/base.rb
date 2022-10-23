@@ -18,7 +18,8 @@ module Bandcamp
       end
 
       def total_items_count
-        raw_collection_list.size
+        @total_items_count ||=
+          raw_collection_list.size
       end
 
       def collection_list

@@ -56,7 +56,7 @@ module Muffon
 
         find_album
           .profiles
-          .size
+          .count
       end
     end
   end

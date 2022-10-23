@@ -13,7 +13,7 @@ module Muffon
           def tag_extra_data
             {
               artists_count:
-                tag_library_artists.size
+                tag_library_artists.count
             }
           end
         end

@@ -14,7 +14,6 @@ module LastFM
           {
             id: find_recommendation.id,
             artists_count:
-              recommendation_library_artists_count
           }
         end
 
@@ -35,7 +34,7 @@ module LastFM
           @args[:artist_name]
         end
 
-        def recommendation_library_artists_count
+        def artists_count
           find_recommendation
             .library_artist_ids
             .size

@@ -55,7 +55,7 @@ module LastFM
       end
 
       def total_items_count
-        artists_list.size
+        @total_items_count ||= artists_list.size
       end
 
       def collection_list

@@ -116,5 +116,9 @@ module Muffon
     def current_time
       Time.now.utc
     end
+
+    def order
+      @args[:order]
+    end
   end
 end

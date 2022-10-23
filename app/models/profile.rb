@@ -1,4 +1,17 @@
 class Profile < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+    library_artists_count_desc
+    library_artists_count_asc
+    library_albums_count_desc
+    library_albums_count_asc
+    library_tracks_count_desc
+    library_tracks_count_asc
+    followers_count_desc
+    followers_count_asc
+  ].freeze
+
   include ProfileDecorator
 
   before_create :set_token

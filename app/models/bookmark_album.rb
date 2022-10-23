@@ -1,4 +1,9 @@
 class BookmarkAlbum < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+  ].freeze
+
   include BookmarkAlbumDecorator
 
   has_one_attached :image

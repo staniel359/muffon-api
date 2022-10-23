@@ -2,6 +2,7 @@ module Muffon
   module Profile
     class Playlists < Muffon::Profile::Base
       COLLECTION_NAME = 'playlists'.freeze
+      DEFAULT_ORDER = 'created_desc'.freeze
       include Muffon::Utils::Pagination
       include Muffon::Utils::Track
       include Muffon::Utils::Album
@@ -18,7 +19,7 @@ module Muffon
       end
 
       def total_items_count
-        playlists.size
+        @total_items_count ||= playlists.count
       end
 
       def playlists
@@ -27,7 +28,7 @@ module Muffon
 
       def collection_list
         playlists
-          .created_desc_ordered
+          .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
           .associated

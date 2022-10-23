@@ -9,7 +9,10 @@ module API
         def index_data
           ::Muffon::Profile::Feed.call(
             params.slice(
-              *%i[profile_id token page limit global]
+              *%i[
+                profile_id token page
+                limit order global
+              ]
             )
           )
         end

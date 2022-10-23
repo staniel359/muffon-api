@@ -56,7 +56,8 @@ module Deezer
       end
 
       def total_items_count
-        albums_list_filtered_sorted.size
+        @total_items_count ||=
+          albums_list_filtered_sorted.size
       end
 
       def albums_list_filtered_sorted

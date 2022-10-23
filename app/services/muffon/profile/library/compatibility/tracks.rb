@@ -7,10 +7,6 @@ module Muffon
 
           private
 
-          def total_items_count
-            tracks_count
-          end
-
           def collection_list
             other_profile_library_tracks
               .created_desc_ordered
@@ -34,6 +30,7 @@ module Muffon
           end
 
           alias compatibility_data paginated_data
+          alias total_items_count tracks_count
         end
       end
     end

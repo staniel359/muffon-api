@@ -8,7 +8,8 @@ module Muffon
           private
 
           def total_items_count
-            search_library_albums.size
+            @total_items_count ||=
+              search_library_albums.count
           end
 
           def search_library_albums
@@ -29,7 +30,6 @@ module Muffon
           def collection_list
             search_library_albums
               .library_tracks_count_desc_ordered
-              .created_desc_ordered
               .limit(limit)
               .offset(offset)
               .associated

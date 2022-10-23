@@ -3,6 +3,8 @@ module Muffon
     module Playlist
       class Tracks < Muffon::Profile::Playlist::Base
         COLLECTION_NAME = 'tracks'.freeze
+        DEFAULT_ORDER = 'updated_asc'.freeze
+
         include Muffon::Utils::Pagination
 
         private
@@ -13,7 +15,7 @@ module Muffon
 
         def collection_list
           tracks
-            .updated_asc_ordered
+            .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
             .associated

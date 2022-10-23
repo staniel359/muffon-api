@@ -53,8 +53,6 @@ module Muffon
           recommendation
             .library_artists
             .library_tracks_count_desc_ordered
-            .library_albums_count_desc_ordered
-            .created_desc_ordered
             .limit(5)
         end
 

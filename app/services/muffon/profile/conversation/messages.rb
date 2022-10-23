@@ -8,7 +8,7 @@ module Muffon
         private
 
         def total_items_count
-          messages.size
+          @total_items_count ||= messages.count
         end
 
         def messages

@@ -7,14 +7,9 @@ module Muffon
 
           private
 
-          def total_items_count
-            albums_count
-          end
-
           def collection_list
             other_profile_library_albums
               .library_tracks_count_desc_ordered
-              .created_desc_ordered
               .limit(limit)
               .offset(offset)
               .associated
@@ -35,6 +30,7 @@ module Muffon
           end
 
           alias compatibility_data paginated_data
+          alias total_items_count albums_count
         end
       end
     end

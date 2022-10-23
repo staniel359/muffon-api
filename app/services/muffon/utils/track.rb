@@ -84,7 +84,7 @@ module Muffon
 
         find_track
           .profiles
-          .size
+          .count
       end
     end
   end

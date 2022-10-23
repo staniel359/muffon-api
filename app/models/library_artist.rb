@@ -1,4 +1,13 @@
 class LibraryArtist < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+    library_albums_count_desc
+    library_albums_count_asc
+    library_tracks_count_desc
+    library_tracks_count_asc
+  ].freeze
+
   include LibraryArtistDecorator
 
   after_create_commit :update_artist_tags
@@ -6,7 +15,7 @@ class LibraryArtist < ApplicationRecord
 
   before_destroy :clear_recommendations
 
-  belongs_to :profile
+  belongs_to :profile, counter_cache: true
   belongs_to :artist
 
   has_many :library_albums, dependent: :destroy

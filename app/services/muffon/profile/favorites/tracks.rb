@@ -3,17 +3,19 @@ module Muffon
     module Favorites
       class Tracks < Muffon::Profile::Favorites::Base
         COLLECTION_NAME = 'tracks'.freeze
+        DEFAULT_ORDER = 'created_desc'.freeze
+
         include Muffon::Utils::Pagination
 
         private
 
         def total_items_count
-          tracks.size
+          @total_items_count ||= tracks.count
         end
 
         def collection_list
           tracks
-            .created_desc_ordered
+            .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
             .associated

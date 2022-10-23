@@ -4,6 +4,8 @@ module Muffon
       module Tag
         class Artists < Muffon::Profile::Library::Tag::Base
           COLLECTION_NAME = 'artists'.freeze
+          DEFAULT_ORDER = 'library_tracks_count_desc'.freeze
+
           include Muffon::Utils::Pagination
 
           private
@@ -22,14 +24,13 @@ module Muffon
           end
 
           def total_items_count
-            tag_library_artists.size
+            @total_items_count ||=
+              tag_library_artists.count
           end
 
           def collection_list
             tag_library_artists
-              .library_tracks_count_desc_ordered
-              .library_albums_count_desc_ordered
-              .created_desc_ordered
+              .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
           end

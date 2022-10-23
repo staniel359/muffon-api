@@ -6,6 +6,34 @@ module ProfileDecorator
       )
     end
 
+    def library_artists_count_desc_ordered
+      order(
+        library_artists_count: :desc,
+        created_at: :asc
+      )
+    end
+
+    def library_artists_count_asc_ordered
+      order(
+        library_artists_count: :asc,
+        created_at: :asc
+      )
+    end
+
+    def followers_count_desc_ordered
+      order(
+        followers_count: :desc,
+        created_at: :asc
+      )
+    end
+
+    def followers_count_asc_ordered
+      order(
+        followers_count: :asc,
+        created_at: :asc
+      )
+    end
+
     def associated
       includes(
         image_association

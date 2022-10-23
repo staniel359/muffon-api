@@ -1,4 +1,13 @@
 class Playlist < ApplicationRecord
+  ORDERS = %w[
+    created_desc
+    created_asc
+    updated_desc
+    updated_asc
+    tracks_count_desc
+    tracks_count_asc
+  ].freeze
+
   include PlaylistDecorator
 
   has_one_attached :image

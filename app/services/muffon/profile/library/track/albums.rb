@@ -4,6 +4,8 @@ module Muffon
       module Track
         class Albums < Muffon::Profile::Library::Track::Base
           COLLECTION_NAME = 'albums'.freeze
+          DEFAULT_ORDER = 'created_desc'.freeze
+
           include Muffon::Utils::Pagination
 
           private
@@ -23,7 +25,8 @@ module Muffon
           end
 
           def total_items_count
-            library_albums.count
+            @total_items_count ||=
+              library_albums.count
           end
 
           def library_albums
@@ -33,7 +36,7 @@ module Muffon
 
           def collection_list
             library_albums
-              .created_desc_ordered
+              .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
               .associated

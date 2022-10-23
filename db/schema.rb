@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_132344) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_103502) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -295,6 +295,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_20_132344) do
     t.datetime "online_updated_at"
     t.jsonb "playing"
     t.boolean "private", default: false
+    t.integer "library_artists_count", default: 0
+    t.integer "library_albums_count", default: 0
+    t.integer "library_tracks_count", default: 0
     t.index ["email"], name: "index_profiles_on_email", unique: true
     t.index ["nickname"], name: "index_profiles_on_nickname", unique: true
     t.index ["token"], name: "index_profiles_on_token"

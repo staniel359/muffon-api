@@ -18,8 +18,8 @@ module API
           ::Muffon::Profile::Playlists.call(
             params.slice(
               *%i[
-                profile_id token model
-                title artist page limit
+                profile_id token model title
+                artist page limit order
               ]
             )
           )

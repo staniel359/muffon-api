@@ -27,6 +27,8 @@ module Muffon
             return message.errors_data if
                 message.errors?
 
+            conversation.touch
+
             process_images
 
             { conversation: conversation_data }
@@ -56,9 +58,11 @@ module Muffon
           end
 
           def conversation_params
-            @args.permit!.slice(
-              *%i[profile_id other_profile_id]
-            )
+            {
+              profile_id: @args[:profile_id],
+              other_profile_id:
+                @args[:other_profile_id]
+            }
           end
 
           def message_params

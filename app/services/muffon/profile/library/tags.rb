@@ -8,7 +8,7 @@ module Muffon
         private
 
         def total_items_count
-          library_tags.size
+          @total_items_count ||= library_tags.size
         end
 
         def library_tags

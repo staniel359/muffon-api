@@ -16,7 +16,7 @@ module Muffon
         end
 
         def total_items_count
-          profiles.size
+          @total_items_count ||= profiles.count
         end
 
         def collection_list
