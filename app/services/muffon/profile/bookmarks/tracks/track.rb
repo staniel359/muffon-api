@@ -62,6 +62,7 @@ module Muffon
               album: album_data,
               image:
                 bookmark_track.image_data,
+              created: created_formatted,
               audio:
                 bookmark_track.audio_data
             }.compact
@@ -79,6 +80,12 @@ module Muffon
 
           def album
             @album ||= bookmark_track.album
+          end
+
+          def created_formatted
+            datetime_formatted(
+              bookmark_track.created_at
+            )
           end
         end
       end

@@ -44,6 +44,12 @@ module Muffon
         def artist
           library_artist.artist
         end
+
+        def created_formatted
+          datetime_formatted(
+            library_album.created_at
+          )
+        end
       end
     end
   end

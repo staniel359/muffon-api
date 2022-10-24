@@ -38,7 +38,8 @@ module Muffon
               title:,
               artist: artist_names_data,
               artists:,
-              image: favorite_album.image_data
+              image: favorite_album.image_data,
+              created: created_formatted
             }.compact
           end
 
@@ -52,6 +53,12 @@ module Muffon
 
           def artist_data
             { name: artist_name }
+          end
+
+          def created_formatted
+            datetime_formatted(
+              favorite_album.created_at
+            )
           end
         end
       end

@@ -44,7 +44,8 @@ module Muffon
               artist: artist_names_data,
               artists:,
               album: album_data,
-              image: favorite_track.image_data
+              image: favorite_track.image_data,
+              created: created_formatted
             }.compact
           end
 
@@ -64,6 +65,12 @@ module Muffon
 
           def album
             @album ||= favorite_track.album
+          end
+
+          def created_formatted
+            datetime_formatted(
+              favorite_track.created_at
+            )
           end
         end
       end

@@ -30,7 +30,9 @@ module Muffon
           id: profile.id,
           nickname:,
           role:,
-          private: profile.private
+          private: profile.private,
+          image: profile.image_data,
+          created: created_formatted
         }.compact
       end
 
@@ -40,9 +42,14 @@ module Muffon
         profile.role
       end
 
+      def created_formatted
+        datetime_formatted(
+          profile.created_at
+        )
+      end
+
       def profile_extra_data
         {
-          image: profile.image_data,
           gender: profile.gender,
           birthdate: profile.birthdate,
           country: profile.country,

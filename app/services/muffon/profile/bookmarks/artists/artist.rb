@@ -32,8 +32,15 @@ module Muffon
             {
               id: bookmark_artist.id,
               name:,
-              image: artist.image_data
+              image: artist.image_data,
+              created: created_formatted
             }.compact
+          end
+
+          def created_formatted
+            datetime_formatted(
+              bookmark_artist.created_at
+            )
           end
         end
       end

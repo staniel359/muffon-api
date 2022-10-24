@@ -38,14 +38,13 @@ module Muffon
 
           def bookmark_album_data
             {
-              source:
-                bookmark_album.source_data,
+              source: bookmark_album.source_data,
               id: bookmark_album.id,
               title:,
               artist: artist_names_data,
               artists:,
-              image:
-                bookmark_album.image_data
+              image: bookmark_album.image_data,
+              created: created_formatted
             }.compact
           end
 
@@ -55,6 +54,12 @@ module Muffon
 
           def artist_data
             { name: artist_name }
+          end
+
+          def created_formatted
+            datetime_formatted(
+              bookmark_album.created_at
+            )
           end
         end
       end
