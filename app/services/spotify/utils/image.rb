@@ -28,9 +28,16 @@ module Spotify
       end
 
       def image(index)
-        images.dig(
+        images_sorted.dig(
           index, 'url'
         )
+      end
+
+      def images_sorted
+        @images_sorted ||=
+          images.sort_by do |i|
+            i['height']
+          end.reverse
       end
     end
   end
