@@ -46,6 +46,9 @@ module Deezer
       end
 
       def audio_link
+        return unless audio_present?
+        return 'test.mp3' if Rails.env.test?
+
         @audio_link ||=
           Deezer::Utils::Audio::File.call(
             track_id: @args[:track_id]

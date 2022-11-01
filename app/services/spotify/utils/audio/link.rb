@@ -19,8 +19,6 @@ module Spotify
         end
 
         def audio_path
-          return 'test.mp3' if Rails.env.test?
-
           response_data['path']
         rescue StandardError
           nil

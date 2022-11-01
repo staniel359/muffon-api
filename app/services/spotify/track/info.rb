@@ -33,17 +33,19 @@ module Spotify
 
       def audio_data
         {
-          present: audio_present?,
+          present: audio_link.present?,
           link: audio_link
         }
       end
 
       def audio_link
         return unless audio_present?
+        return 'test.mp3' if Rails.env.test?
 
-        Spotify::Utils::Audio::Link.call(
-          track_id: @args[:track_id]
-        )
+        @audio_link ||=
+          Spotify::Utils::Audio::Link.call(
+            track_id: @args[:track_id]
+          )
       end
     end
   end
