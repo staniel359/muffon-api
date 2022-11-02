@@ -15,10 +15,8 @@ module VK
         end
 
         def data
-          `ffmpeg -hide_banner \
-            -loglevel panic -y \
-            -i #{file_path}.ts \
-            -c copy #{file_path}.mp3`
+          `ffmpeg -loglevel panic -y \
+            -i #{file_path}.ts #{file_path}.mp3`
         end
 
         def file_path
