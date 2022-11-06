@@ -21,8 +21,8 @@ module API
             ::Muffon::Profile::Library::Tracks.call(
               params.slice(
                 *%i[
-                  profile_id token page limit
-                  order other_profile_id
+                  profile_id other_profile_id
+                  token page limit order
                 ]
               )
             )
@@ -43,8 +43,8 @@ module API
             ::Muffon::Profile::Library::Track::Info.call(
               params.slice(
                 *%i[
-                  profile_id token library_id
-                  other_profile_id
+                  profile_id other_profile_id
+                  token library_id
                 ]
               )
             )
@@ -54,8 +54,8 @@ module API
             ::Muffon::Profile::Library::Track::Albums.call(
               params.slice(
                 *%i[
-                  profile_id token library_id
-                  page limit order other_profile_id
+                  profile_id other_profile_id
+                  token library_id page limit order
                 ]
               )
             )

@@ -31,8 +31,8 @@ module API
             ::Muffon::Profile::Library::Tag::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token tag_id
-                  page limit other_profile_id
+                  profile_id other_profile_id
+                  token tag_id page limit
                 ]
               )
             )

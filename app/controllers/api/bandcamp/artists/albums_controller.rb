@@ -13,7 +13,10 @@ module API
         def info_data
           ::Bandcamp::Album::Info.call(
             params.slice(
-              *%i[artist_id album_id album_type profile_id]
+              *%i[
+                artist_id album_id album_type
+                profile_id token
+              ]
             )
           )
         end

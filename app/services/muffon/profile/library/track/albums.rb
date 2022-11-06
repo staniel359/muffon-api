@@ -45,7 +45,8 @@ module Muffon
           def collection_item_data_formatted(library_album)
             Muffon::Profile::Library::Albums::Album.call(
               library_album:,
-              profile_id: @args[:other_profile_id]
+              profile_id: @args[:other_profile_id],
+              token: @args[:token]
             )
           end
         end

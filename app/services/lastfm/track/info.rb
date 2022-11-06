@@ -10,7 +10,7 @@ module LastFM
       end
 
       def track_data
-        muffon_data
+        self_data
           .merge(track_base_data)
           .merge(track_counters_data)
           .merge(track_extra_data)

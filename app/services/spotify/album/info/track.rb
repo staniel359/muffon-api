@@ -11,7 +11,7 @@ module Spotify
         private
 
         def data
-          muffon_data
+          self_data
             .merge(track_base_data)
             .merge(track_extra_data)
         end

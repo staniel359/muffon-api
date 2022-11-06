@@ -15,8 +15,8 @@ module API
             ::Muffon::Profile::Playlist::Tracks.call(
               params.slice(
                 *%i[
-                  profile_id token playlist_id
-                  page limit order other_profile_id
+                  profile_id other_profile_id
+                  token playlist_id page limit order
                 ]
               )
             )

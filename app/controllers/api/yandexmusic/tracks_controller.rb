@@ -8,7 +8,7 @@ module API
       def info_data
         ::YandexMusic::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id language]
+            *%i[track_id profile_id token language]
           )
         )
       end

@@ -25,7 +25,8 @@ module Muffon
 
           def collection_item_data_formatted(library_track)
             Muffon::Profile::Library::Compatibility::Tracks::Track.call(
-              library_track:
+              library_track:,
+              token: @args[:token]
             )
           end
 

@@ -37,8 +37,7 @@ module API
             params.slice(
               *%i[
                 profile_id token
-                recommendation_id
-                page limit
+                recommendation_id page limit
               ]
             )
           )

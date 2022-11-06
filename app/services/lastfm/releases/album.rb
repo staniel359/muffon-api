@@ -10,7 +10,7 @@ module LastFM
       private
 
       def data
-        muffon_data
+        self_data
           .merge(album_data)
       end
 

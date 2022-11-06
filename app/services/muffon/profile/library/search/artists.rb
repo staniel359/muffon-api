@@ -67,6 +67,7 @@ module Muffon
             Muffon::Profile::Library::Artists::Artist.call(
               library_artist:,
               profile_id: @args[:profile_id],
+              token: @args[:token],
               minimal: @args[:minimal]
             )
           end

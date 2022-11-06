@@ -4,7 +4,7 @@ module Discogs
       private
 
       def group_data
-        muffon_data
+        self_data
           .merge(group_base_data)
           .merge(group_extra_data)
           .merge(with_more_data)

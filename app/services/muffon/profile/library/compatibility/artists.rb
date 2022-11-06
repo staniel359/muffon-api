@@ -28,7 +28,8 @@ module Muffon
 
           def collection_item_data_formatted(library_artist)
             Muffon::Profile::Library::Compatibility::Artists::Artist.call(
-              library_artist:
+              library_artist:,
+              token: @args[:token]
             )
           end
 

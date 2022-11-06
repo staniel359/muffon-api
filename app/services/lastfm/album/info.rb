@@ -12,7 +12,7 @@ module LastFM
       def album_data
         update_listeners_count
 
-        muffon_data
+        self_data
           .merge(album_base_data)
           .merge(album_counters_data)
           .merge(album_extra_data)
@@ -93,7 +93,8 @@ module LastFM
       def track_data_formatted(track)
         LastFM::Album::Info::Track.call(
           track:,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
     end

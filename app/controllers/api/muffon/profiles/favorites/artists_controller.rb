@@ -15,8 +15,8 @@ module API
             ::Muffon::Profile::Favorites::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token page limit
-                  order other_profile_id
+                  profile_id other_profile_id
+                  token page limit order
                 ]
               )
             )

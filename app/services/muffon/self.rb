@@ -16,12 +16,15 @@ module Muffon
     private
 
     def return?
-      not_all_args? || no_data?
+      not_all_args? ||
+        no_data? ||
+        wrong_profile?
     end
 
     def primary_args
       [
         @args[:profile_id],
+        @args[:token],
         @args[:model],
         @args[:model_id]
       ]
@@ -67,19 +70,19 @@ module Muffon
     end
 
     def format_self_query(prefix)
-      scope = "#{prefix}_#{model}"
-
       scope_model(
-        scope
+        prefix
       ).where(
         profile_id: profile.id,
         "#{model}_id" => model_id
       ).select(
-        "id as value, '#{scope}_id' as key"
+        "id as value, '#{prefix}_id' as key"
       ).to_sql
     end
 
-    def scope_model(scope)
+    def scope_model(prefix)
+      scope = "#{prefix}_#{model}"
+
       scope
         .camelize
         .constantize

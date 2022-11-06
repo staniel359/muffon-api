@@ -12,7 +12,7 @@ module Muffon
           private
 
           def data
-            muffon_data
+            self_data
               .merge(favorite_album_data)
           end
 

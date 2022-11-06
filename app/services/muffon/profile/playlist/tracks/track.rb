@@ -12,7 +12,7 @@ module Muffon
           private
 
           def data
-            muffon_data
+            self_data
               .merge(playlist_track_base_data)
               .merge(playlist_track_extra_data)
           end

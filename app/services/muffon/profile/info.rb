@@ -82,17 +82,15 @@ module Muffon
       end
 
       def profile_other_profile_data
-        return {} if @args[:other_profile_id].blank?
+        return {} if wrong_other_profile?
 
         { other_profile: other_profile_data }
       end
 
       def other_profile_data
         {
-          follower_of_profile:
-            follower_of_profile?,
-          followed_by_profile:
-            followed_by_profile?
+          follower_of_profile: follower_of_profile?,
+          followed_by_profile: followed_by_profile?
         }
       end
 
@@ -110,10 +108,8 @@ module Muffon
 
       def profile_relationships_data
         {
-          followers_count:
-            profile.followers_count,
-          following_count:
-            profile.following_count
+          followers_count: profile.followers_count,
+          following_count: profile.following_count
         }
       end
 
@@ -121,10 +117,8 @@ module Muffon
         return {} if wrong_profile?
 
         {
-          lastfm_nickname:
-            profile.lastfm_nickname,
-          lastfm_session_key:
-            profile.lastfm_session_key
+          lastfm_nickname: profile.lastfm_nickname,
+          lastfm_session_key: profile.lastfm_session_key
         }
       end
     end

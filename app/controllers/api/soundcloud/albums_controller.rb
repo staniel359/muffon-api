@@ -12,7 +12,7 @@ module API
       def info_data
         ::SoundCloud::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id]
+            *%i[album_id profile_id token]
           )
         )
       end

@@ -12,7 +12,7 @@ module LastFM
       def artist_data
         update_listeners_count
 
-        muffon_data
+        self_data
           .merge(artist_base_data)
           .merge(artist_counters_data)
           .merge(artist_extra_data)
@@ -91,10 +91,9 @@ module LastFM
       end
 
       def recommendation_data
-        return if test?
-
         LastFM::Artist::Info::Recommendation.call(
           profile_id: @args[:profile_id],
+          token: @args[:token],
           artist_name: name
         )
       end

@@ -17,7 +17,7 @@ module API
         def info_data
           ::LastFM::Track::Info.call(
             params.slice(
-              *%i[artist track profile_id language]
+              *%i[artist track profile_id token language]
             )
           )
         end
@@ -41,7 +41,7 @@ module API
         def similar_data
           ::LastFM::Track::Similar.call(
             params.slice(
-              *%i[artist track profile_id page limit]
+              *%i[artist track profile_id token page limit]
             )
           )
         end
@@ -49,7 +49,7 @@ module API
         def profiles_data
           ::LastFM::Track::Profiles.call(
             params.slice(
-              *%i[artist track profile_id page limit]
+              *%i[artist track profile_id token page limit]
             )
           )
         end

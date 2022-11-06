@@ -18,7 +18,7 @@ module Discogs
       end
 
       def artists_list
-        album['artists']
+        album['artists'] || []
       end
 
       def tracks_list
@@ -31,7 +31,8 @@ module Discogs
         Discogs::Album::Info::Track.call(
           track:,
           artists: artists_list,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
 

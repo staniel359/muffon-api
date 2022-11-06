@@ -25,7 +25,8 @@ module Muffon
 
           def collection_item_data_formatted(library_album)
             Muffon::Profile::Library::Compatibility::Albums::Album.call(
-              library_album:
+              library_album:,
+              token: @args[:token]
             )
           end
 

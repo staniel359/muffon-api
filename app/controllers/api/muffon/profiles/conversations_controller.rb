@@ -31,8 +31,7 @@ module API
             params.slice(
               *%i[
                 profile_id token
-                conversation_id
-                page limit
+                conversation_id page limit
               ]
             )
           )

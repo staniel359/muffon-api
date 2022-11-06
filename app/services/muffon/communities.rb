@@ -26,7 +26,8 @@ module Muffon
     def collection_item_data_formatted(community)
       Muffon::Communities::Community.call(
         community:,
-        profile_id: @args[:profile_id]
+        profile_id: @args[:profile_id],
+        token: @args[:token]
       )
     end
   end

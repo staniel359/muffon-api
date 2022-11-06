@@ -24,7 +24,8 @@ module Muffon
         def collection_item_data_formatted(favorite_album)
           Muffon::Profile::Favorites::Albums::Album.call(
             favorite_album:,
-            profile_id: @args[:other_profile_id]
+            profile_id: @args[:other_profile_id],
+            token: @args[:token]
           )
         end
 

@@ -19,6 +19,11 @@ module Muffon
               other_profile.blank?
           end
 
+          def forbidden?
+            wrong_profile? &&
+              wrong_other_profile?
+          end
+
           def data
             { compatibility: compatibility_data }
           end

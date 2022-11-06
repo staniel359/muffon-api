@@ -4,7 +4,7 @@ module Genius
       private
 
       def album_data
-        muffon_data
+        self_data
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
@@ -37,7 +37,8 @@ module Genius
       def tracks
         Genius::Album::Tracks.call(
           album_id: @args[:album_id],
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )[:tracks] || []
       end
     end

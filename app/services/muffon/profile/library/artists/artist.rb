@@ -14,7 +14,7 @@ module Muffon
           def data
             return artist_minimal_data if @args[:minimal]
 
-            muffon_data
+            self_data
               .merge(artist_data)
           end
 

@@ -74,7 +74,8 @@ module Discogs
       def collection_item_data_formatted(album)
         Discogs::Artist::Albums::Album.call(
           album:,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
     end

@@ -11,7 +11,7 @@ module Muffon
         private
 
         def data
-          muffon_data
+          self_data
             .merge(recommendation_data)
         end
 
@@ -58,7 +58,8 @@ module Muffon
 
         def library_artist_formatted(library_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            library_artist:
+            library_artist:,
+            token: @args[:token]
           )
         end
       end

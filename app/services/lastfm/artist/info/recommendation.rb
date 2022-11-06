@@ -3,24 +3,37 @@ module LastFM
     class Info
       class Recommendation < LastFM::Artist::Info
         def call
+          return if return?
+
           data
         end
 
         private
 
-        def data
-          return if no_recommendation?
+        def return?
+          test? ||
+            not_all_args? ||
+            no_data? ||
+            wrong_profile?
+        end
 
+        def primary_args
+          [
+            @args[:profile_id],
+            @args[:token]
+          ]
+        end
+
+        def no_data?
+          find_recommendation.blank? ||
+            find_recommendation.deleted
+        end
+
+        def data
           {
             id: find_recommendation.id,
             artists_count:
           }
-        end
-
-        def no_recommendation?
-          @args[:profile_id].blank? ||
-            find_recommendation.blank? ||
-            find_recommendation.deleted
         end
 
         def find_recommendation

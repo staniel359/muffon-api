@@ -26,7 +26,8 @@ module LastFM
       def collection_item_data_formatted(profile)
         Muffon::Profiles::Profile.call(
           profile:,
-          other_profile_id: @args[:profile_id]
+          other_profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
 

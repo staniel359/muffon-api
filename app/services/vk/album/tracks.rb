@@ -42,7 +42,8 @@ module VK
       def track_data_formatted(track)
         VK::Album::Tracks::Track.call(
           track:,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
     end

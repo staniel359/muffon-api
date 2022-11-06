@@ -4,7 +4,7 @@ module VK
       private
 
       def album_data
-        muffon_data
+        self_data
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
@@ -50,7 +50,8 @@ module VK
           album_id: vk_album_id,
           owner_id: vk_owner_id,
           access_key: vk_access_key,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
     end

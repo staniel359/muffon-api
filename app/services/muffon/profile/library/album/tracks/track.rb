@@ -13,7 +13,7 @@ module Muffon
             private
 
             def data
-              muffon_data
+              self_data
                 .merge(track_data)
             end
 

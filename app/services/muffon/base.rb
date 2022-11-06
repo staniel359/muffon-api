@@ -46,14 +46,5 @@ module Muffon
     def forbidden?
       false
     end
-
-    def muffon_data
-      {
-        library_id:,
-        listened_id:,
-        bookmark_id:,
-        favorite_id:
-      }.compact
-    end
   end
 end

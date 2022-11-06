@@ -8,7 +8,7 @@ module API
       def albums_data
         ::VK::Artist::Albums.call(
           params.slice(
-            *%i[artist_id profile_id page limit]
+            *%i[artist_id profile_id token page limit]
           )
         )
       end

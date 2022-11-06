@@ -14,8 +14,8 @@ module API
           ::Muffon::Profile::Followers.call(
             params.slice(
               *%i[
-                profile_id token page limit
-                other_profile_id
+                profile_id other_profile_id
+                token page limit
               ]
             )
           )

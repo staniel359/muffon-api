@@ -10,7 +10,7 @@ module API
           params.slice(
             *%i[
               album_id owner_id access_key
-              profile_id language
+              profile_id token language
             ]
           )
         )

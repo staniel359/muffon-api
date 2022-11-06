@@ -4,7 +4,7 @@ module Discogs
       private
 
       def album_data
-        muffon_data
+        self_data
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)

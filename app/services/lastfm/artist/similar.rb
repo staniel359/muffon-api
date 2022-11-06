@@ -52,6 +52,7 @@ module LastFM
         LastFM::Artist::Similar::Artist.call(
           artist:,
           profile_id: @args[:profile_id],
+          token: @args[:token],
           minimal: @args[:minimal]
         )
       end

@@ -28,7 +28,8 @@ module Muffon
         def collection_item_data_formatted(bookmark_track)
           Muffon::Profile::Bookmarks::Tracks::Track.call(
             bookmark_track:,
-            profile_id: @args[:profile_id]
+            profile_id: @args[:profile_id],
+            token: @args[:token]
           )
         end
       end

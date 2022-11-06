@@ -12,7 +12,7 @@ module API
       def artists_data
         ::Deezer::Search::Artists.call(
           params.slice(
-            *%i[query profile_id page limit]
+            *%i[query profile_id token page limit]
           )
         )
       end
@@ -20,7 +20,7 @@ module API
       def albums_data
         ::Deezer::Search::Albums.call(
           params.slice(
-            *%i[query profile_id page limit]
+            *%i[query profile_id token page limit]
           )
         )
       end
@@ -28,7 +28,7 @@ module API
       def tracks_data
         ::Deezer::Search::Tracks.call(
           params.slice(
-            *%i[query profile_id page limit]
+            *%i[query profile_id token page limit]
           )
         )
       end

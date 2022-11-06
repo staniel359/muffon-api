@@ -10,7 +10,7 @@ module API
       def new_data
         ::LastFM::Releases::New.call(
           params.slice(
-            *%i[page profile_id]
+            *%i[profile_id token page]
           )
         )
       end
@@ -18,7 +18,7 @@ module API
       def upcoming_data
         ::LastFM::Releases::Upcoming.call(
           params.slice(
-            *%i[page profile_id]
+            *%i[profile_id token page]
           )
         )
       end

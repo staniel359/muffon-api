@@ -10,7 +10,7 @@ module API
       def info_data
         ::YandexMusic::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id language]
+            *%i[album_id profile_id token language]
           )
         )
       end

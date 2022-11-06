@@ -6,7 +6,7 @@ module Muffon
           private
 
           def artist_data
-            muffon_data
+            self_data
               .merge(artist_base_data)
               .merge(artist_extra_data)
           end

@@ -11,7 +11,7 @@ module Bandcamp
         private
 
         def data
-          muffon_data
+          self_data
             .merge(artist_data)
         end
 

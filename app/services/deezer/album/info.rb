@@ -4,7 +4,7 @@ module Deezer
       private
 
       def album_data
-        muffon_data
+        self_data
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
@@ -45,7 +45,8 @@ module Deezer
       def track_data_formatted(track)
         Deezer::Album::Info::Track.call(
           track: track['FALLBACK'] || track,
-          profile_id: @args[:profile_id]
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
     end

@@ -8,7 +8,7 @@ module API
       def info_data
         ::Deezer::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id]
+            *%i[track_id profile_id token]
           )
         )
       end

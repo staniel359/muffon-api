@@ -14,7 +14,7 @@ module API
       def info_data
         ::Discogs::Group::Info.call(
           params.slice(
-            *%i[group_id profile_id]
+            *%i[group_id profile_id token]
           )
         )
       end
@@ -38,7 +38,7 @@ module API
       def albums_data
         ::Discogs::Group::Albums.call(
           params.slice(
-            *%i[group_id profile_id page limit]
+            *%i[group_id profile_id token page limit]
           )
         )
       end

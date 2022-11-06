@@ -22,7 +22,7 @@ module API
       def index_data
         ::Muffon::Profiles.call(
           params.slice(
-            *%i[other_profile_id page limit order]
+            *%i[other_profile_id token page limit order]
           )
         )
       end
@@ -42,7 +42,7 @@ module API
       def info_data
         ::Muffon::Profile::Info.call(
           params.slice(
-            *%i[profile_id token other_profile_id]
+            *%i[profile_id other_profile_id token]
           )
         )
       end
