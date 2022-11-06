@@ -2,6 +2,7 @@ module LastFM
   module Releases
     class Base < LastFM::Web::Base
       COLLECTION_NAME = 'albums'.freeze
+
       include Muffon::Utils::Pagination
 
       private

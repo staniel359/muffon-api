@@ -5,14 +5,12 @@ module Muffon
         class Destroyer < Muffon::Processor::Post::Destroyer
           private
 
-          def rights?
-            post_creator? ||
-              page_owner?
+          def forbidden?
+            !post_creator? && !page_owner?
           end
 
           def page_owner?
-            post.other_profile_id ==
-              @args[:profile_id].to_i
+            post.other_profile_id == profile.id
           end
         end
       end

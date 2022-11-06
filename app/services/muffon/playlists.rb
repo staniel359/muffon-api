@@ -2,6 +2,7 @@ module Muffon
   class Playlists < Muffon::Base
     COLLECTION_NAME = 'playlists'.freeze
     DEFAULT_ORDER = 'created_desc'.freeze
+
     include Muffon::Utils::Pagination
 
     private

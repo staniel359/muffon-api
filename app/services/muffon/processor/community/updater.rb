@@ -15,18 +15,14 @@ module Muffon
           super || community.blank?
         end
 
-        def community
-          @community ||=
-            profile.own_communities.find_by(
-              id: @args[:community_id]
-            )
+        def forbidden?
+          wrong_profile? || !community_creator?
         end
 
         def process_community
           update_community
 
-          return community.errors_data if
-              community.errors?
+          return community.errors_data if community.errors?
 
           process_image
 
@@ -35,9 +31,15 @@ module Muffon
 
         def update_community
           community.update(
+            community_params
+          )
+        end
+
+        def community_params
+          {
             title: @args[:title],
             description: @args[:description]
-          )
+          }
         end
 
         def community_data

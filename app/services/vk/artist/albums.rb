@@ -3,6 +3,7 @@ module VK
     class Albums < VK::Artist::Base
       API_METHOD = 'audio.getAlbumsByArtist'.freeze
       COLLECTION_NAME = 'albums'.freeze
+
       include Muffon::Utils::Pagination
 
       private

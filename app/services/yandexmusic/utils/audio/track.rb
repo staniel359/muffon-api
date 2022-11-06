@@ -39,7 +39,7 @@ module YandexMusic
         end
 
         def session_id
-          return test_session_id if Rails.env.test?
+          return test_session_id if test?
 
           get_global_value(
             'yandex_music_session_id'

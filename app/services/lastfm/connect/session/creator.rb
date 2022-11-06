@@ -15,12 +15,12 @@ module LastFM
         def link
           "#{super}?method=#{api_method}" \
             "&api_key=#{api_key}" \
-            "&token=#{token}" \
+            "&token=#{lastfm_token}" \
             "&api_sig=#{api_signature}" \
             '&format=json'
         end
 
-        def token
+        def lastfm_token
           @args[:lastfm_token]
         end
 
@@ -28,7 +28,7 @@ module LastFM
           Digest::MD5.hexdigest(
             "api_key#{api_key}" \
             'methodauth.getSession' \
-            "token#{token}" \
+            "token#{lastfm_token}" \
             "#{api_secret}"
           )
         end

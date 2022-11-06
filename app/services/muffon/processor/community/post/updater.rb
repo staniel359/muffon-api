@@ -15,8 +15,8 @@ module Muffon
             super || community.blank?
           end
 
-          def rights?
-            post_creator?
+          def forbidden?
+            super || !post_creator?
           end
 
           def post_params

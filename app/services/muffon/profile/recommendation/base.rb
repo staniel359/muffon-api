@@ -18,14 +18,18 @@ module Muffon
 
         def recommendation
           @recommendation ||=
-            profile.recommendations.find_by(
+            profile
+            .recommendations
+            .find_by(
               id: @args[:recommendation_id]
             )
         end
 
-        def data
-          return forbidden if wrong_profile?
+        def forbidden?
+          wrong_profile?
+        end
 
+        def data
           { recommendation: recommendation_data }
         end
       end

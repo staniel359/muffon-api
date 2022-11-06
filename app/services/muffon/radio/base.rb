@@ -10,11 +10,11 @@ module Muffon
       end
 
       def random?
-        !Rails.env.test?
+        !test?
       end
 
       def random_track_number
-        return 1 if Rails.env.test?
+        return 1 if test?
 
         rand(
           1..tracks_limit
@@ -26,7 +26,7 @@ module Muffon
       end
 
       def random_artist_number
-        return 1 if Rails.env.test?
+        return 1 if test?
 
         rand(
           1..artists_limit

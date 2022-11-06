@@ -3,6 +3,7 @@ module Muffon
     module Conversation
       class Messages < Muffon::Profile::Conversation::Base
         COLLECTION_NAME = 'messages'.freeze
+
         include Muffon::Utils::Pagination
 
         private

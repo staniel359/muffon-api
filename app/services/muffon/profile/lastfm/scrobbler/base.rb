@@ -17,9 +17,11 @@ module Muffon
             ]
           end
 
-          def data
-            return if wrong_profile?
+          def forbidden?
+            wrong_profile?
+          end
 
+          def data
             post_response
 
             { success: true }

@@ -2,6 +2,7 @@ module Muffon
   class Profiles < Muffon::Base
     COLLECTION_NAME = 'profiles'.freeze
     DEFAULT_ORDER = 'created_desc'.freeze
+
     include Muffon::Utils::Pagination
 
     private

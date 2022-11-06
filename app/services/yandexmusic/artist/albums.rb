@@ -2,6 +2,7 @@ module YandexMusic
   module Artist
     class Albums < YandexMusic::Artist::Base
       COLLECTION_NAME = 'albums'.freeze
+
       include Muffon::Utils::Pagination
 
       private

@@ -2,6 +2,7 @@ module Deezer
   module Search
     class Base < Deezer::Base
       API_METHOD = 'search.music'.freeze
+
       include Muffon::Utils::Pagination
 
       private

@@ -59,9 +59,9 @@ module Muffon
       end
 
       def member_of_community?
-        community.members.find_by(
-          id: @args[:profile_id]
-        ).present?
+        community.in_members?(
+          @args[:profile_id]
+        )
       end
 
       def created_formatted

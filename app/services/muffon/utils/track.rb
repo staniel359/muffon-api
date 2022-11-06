@@ -1,12 +1,10 @@
 module Muffon
   module Utils
     module Track
-      include Muffon::Utils::Base
-
       private
 
       def player_id
-        return '1' if Rails.env.test?
+        return '1' if test?
 
         find_track.player_id
       end
@@ -46,9 +44,16 @@ module Muffon
       end
 
       def library_id
-        self_data('track')[
-          :library_track_id
-        ]
+        self_data[:library_track_id]
+      end
+
+      def self_data
+        @self_data ||=
+          Muffon::Self.call(
+            profile_id: @args[:profile_id],
+            model: 'track',
+            model_id: track_id
+          )
       end
 
       def track_id
@@ -56,21 +61,15 @@ module Muffon
       end
 
       def favorite_id
-        self_data('track')[
-          :favorite_track_id
-        ]
+        self_data[:favorite_track_id]
       end
 
       def bookmark_id
-        self_data('track')[
-          :bookmark_track_id
-        ]
+        self_data[:bookmark_track_id]
       end
 
       def listened_id
-        self_data('track')[
-          :listened_track_id
-        ]
+        self_data[:listened_track_id]
       end
 
       def duration
@@ -80,7 +79,7 @@ module Muffon
       end
 
       def profiles_count
-        return if Rails.env.test?
+        return if test?
 
         find_track
           .profiles

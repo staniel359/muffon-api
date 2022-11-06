@@ -24,6 +24,7 @@ module Google
         )
       )
     FIELDS
+
     include Muffon::Utils::Pagination
 
     private

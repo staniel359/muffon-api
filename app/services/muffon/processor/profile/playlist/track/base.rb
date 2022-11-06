@@ -13,17 +13,16 @@ module Muffon
               ]
             end
 
-            def data
-              return forbidden if wrong_profile?
+            def forbidden?
+              wrong_profile?
+            end
 
+            def data
               process_playlist_track
             end
 
             def playlist_data
-              {
-                tracks_count:
-                  playlist.tracks_count
-              }
+              { tracks_count: playlist.tracks_count }
             end
           end
         end

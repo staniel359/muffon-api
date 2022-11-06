@@ -3,6 +3,7 @@ module SoundCloud
     module V1
       class Base < SoundCloud::Base
         BASE_LINK = 'https://api.soundcloud.com'.freeze
+
         include Muffon::Utils::Global
 
         def call
@@ -21,7 +22,7 @@ module SoundCloud
         end
 
         def access_token
-          return test_access_token if Rails.env.test?
+          return test_access_token if test?
 
           get_global_value(
             'soundcloud_access_token'

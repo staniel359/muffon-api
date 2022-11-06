@@ -4,6 +4,7 @@ module LastFM
       API_METHOD = 'user.getRecentTracks'.freeze
       COLLECTION_NAME = 'plays'.freeze
       LIMIT = 500
+
       include Muffon::Utils::Pagination
 
       private

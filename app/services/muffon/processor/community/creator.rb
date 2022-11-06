@@ -13,8 +13,7 @@ module Muffon
         def process_community
           community
 
-          return community.errors_data if
-              community.errors?
+          return community.errors_data if community.errors?
 
           process_image
 
@@ -23,11 +22,17 @@ module Muffon
 
         def community
           @community ||=
-            profile.own_communities.where(
+            profile
+            .own_communities
+            .where(
               title: @args[:title]
             ).create(
-              description: @args[:description]
+              community_params
             )
+        end
+
+        def community_params
+          { description: @args[:description] }
         end
 
         def community_data

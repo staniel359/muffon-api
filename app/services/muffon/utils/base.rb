@@ -1,52 +1,22 @@
 module Muffon
   module Utils
     module Base
-      SELF_PREFIXES = %w[
-        library favorite bookmark listened
-      ].freeze
-
       private
 
-      def self_data(model)
-        return {} if profile_id.blank?
-
-        @self_data ||=
-          raw_self_data(model).map do |a|
-            { a['key'].to_sym => a['value'] }
-          end.inject(:merge) || {}
+      def secrets
+        Rails.application.credentials
       end
 
-      def profile_id
-        @args[:profile_id]
+      def current_time
+        Time.now.utc
       end
 
-      def raw_self_data(model)
-        ActiveRecord::Base
-          .connection
-          .execute(
-            self_queries(model)
-          )
-          .to_a
+      def test?
+        Rails.env.test?
       end
 
-      def self_queries(model)
-        SELF_PREFIXES.map do |prefix|
-          format_self_query(
-            model, "#{prefix}_#{model}"
-          )
-        end.join(' UNION ')
-      end
-
-      def format_self_query(model, scope)
-        scope
-          .camelize
-          .constantize
-          .where(
-            profile_id:,
-            "#{model}_id" => send("#{model}_id")
-          )
-          .select("id as value, '#{scope}_id' as key")
-          .to_sql
+      def source_name
+        self.class::SOURCE_NAME
       end
     end
   end

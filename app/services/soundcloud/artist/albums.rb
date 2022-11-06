@@ -3,6 +3,7 @@ module SoundCloud
     class Albums < SoundCloud::Artist::Base
       COLLECTION_NAME = 'albums'.freeze
       LIMIT = 200
+
       include Muffon::Utils::Pagination
 
       private

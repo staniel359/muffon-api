@@ -8,6 +8,7 @@ module Spotify
         compilation: 'compilation',
         appearance: 'appears_on'
       }.freeze
+
       include Spotify::Utils::Pagination
 
       private

@@ -18,14 +18,18 @@ module Muffon
 
         def conversation
           @conversation ||=
-            profile.conversations.find_by(
+            profile
+            .conversations
+            .find_by(
               id: @args[:conversation_id]
             )
         end
 
-        def data
-          return forbidden if wrong_profile?
+        def forbidden?
+          wrong_profile?
+        end
 
+        def data
           { conversation: conversation_data }
         end
       end

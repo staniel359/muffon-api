@@ -7,6 +7,7 @@ module Bandcamp
         (?:(?:/(album|track))
         (?:/([\w\-]+))?)?
       }x
+
       include Muffon::Utils::Pagination
 
       private

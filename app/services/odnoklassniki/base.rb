@@ -1,6 +1,7 @@
 module Odnoklassniki
   class Base < Muffon::Base
     SOURCE_NAME = 'odnoklassniki'.freeze
+
     include Muffon::Utils::Global
 
     def call
@@ -37,8 +38,7 @@ module Odnoklassniki
     end
 
     def session_id
-      return test_session_id if
-          Rails.env.test?
+      return test_session_id if test?
 
       get_global_value(
         'odnoklassniki_session_id'

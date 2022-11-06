@@ -2,6 +2,7 @@ module Discogs
   module Label
     class Albums < Discogs::Label::Base
       COLLECTION_NAME = 'albums'.freeze
+
       include Discogs::Utils::Pagination
 
       private

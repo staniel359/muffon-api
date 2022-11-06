@@ -15,10 +15,6 @@ module Muffon
             super || community.blank?
           end
 
-          def rights?
-            true
-          end
-
           def post_params
             super.merge(
               community_params
@@ -27,17 +23,10 @@ module Muffon
 
           def community_params
             {
-              community_id:
-                @args[:community_id],
+              community_id: @args[:community_id],
               by_community: by_community?,
               post_type: 'community'
             }
-          end
-
-          def community_owner?
-            profile.own_community_ids.include?(
-              @args[:community_id].to_i
-            )
           end
         end
       end

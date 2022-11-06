@@ -14,18 +14,7 @@ module Muffon
         private
       ].freeze
 
-      def call
-        return forbidden if no_rights?
-
-        super
-      end
-
       private
-
-      def no_rights?
-        profile&.private &&
-          wrong_profile?
-      end
 
       def primary_args
         [@args[:profile_id]]
@@ -35,8 +24,8 @@ module Muffon
         profile.blank?
       end
 
-      def wrong_profile?
-        profile.token != @args[:token]
+      def forbidden?
+        profile.private && wrong_profile?
       end
 
       def profile_params

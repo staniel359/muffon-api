@@ -3,15 +3,13 @@ module Muffon
     module Profile
       module Recommendation
         class Deleter < Muffon::Profile::Base
-          def call
-            delete_recommendation
-          end
-
           private
 
-          def delete_recommendation
-            return forbidden if wrong_profile?
+          def forbidden?
+            wrong_profile?
+          end
 
+          def data
             recommendation&.update(
               deleted: true
             )
@@ -20,9 +18,11 @@ module Muffon
           end
 
           def recommendation
-            profile.recommendations.find_by(
-              id: @args[:recommendation_id]
-            )
+            profile
+              .recommendations
+              .find_by(
+                id: @args[:recommendation_id]
+              )
           end
         end
       end

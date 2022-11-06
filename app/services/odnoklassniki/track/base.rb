@@ -2,6 +2,7 @@ module Odnoklassniki
   module Track
     class Base < Odnoklassniki::Base
       ENDPOINT_NAME = 'play'.freeze
+
       include Odnoklassniki::Utils::Track
 
       private

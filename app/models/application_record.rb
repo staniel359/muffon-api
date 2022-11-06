@@ -1,8 +1,9 @@
 class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+
   include Muffon::Utils::ErrorHandlers
   include Muffon::Utils::ImageProcessing
   include ApplicationRecordDecorator
-  self.abstract_class = true
 
   class << self
     private

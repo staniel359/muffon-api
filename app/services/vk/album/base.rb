@@ -2,6 +2,7 @@ module VK
   module Album
     class Base < VK::Base
       API_METHOD = 'audio.getPlaylistById'.freeze
+
       include VK::Utils::Album
 
       private

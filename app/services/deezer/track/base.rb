@@ -2,6 +2,7 @@ module Deezer
   module Track
     class Base < Deezer::Base
       API_METHOD = 'song.getListData'.freeze
+
       include Deezer::Utils::Track
 
       private

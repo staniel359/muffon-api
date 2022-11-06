@@ -3,6 +3,7 @@ module Muffon
     module Recommendation
       class Artists < Muffon::Profile::Recommendation::Base
         COLLECTION_NAME = 'artists'.freeze
+
         include Muffon::Utils::Pagination
 
         private

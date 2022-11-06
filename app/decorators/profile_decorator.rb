@@ -102,18 +102,16 @@ module ProfileDecorator
       )
   end
 
-  def follower_of_profile?(other_profile_id)
+  def in_followers?(profile_id)
     follower_profiles
-      .find_by(
-        id: other_profile_id
-      ).present?
+      .find_by(id: profile_id)
+      .present?
   end
 
-  def followed_by_profile?(other_profile_id)
+  def in_following?(profile_id)
     following_profiles
-      .find_by(
-        id: other_profile_id
-      ).present?
+      .find_by(id: profile_id)
+      .present?
   end
 
   private

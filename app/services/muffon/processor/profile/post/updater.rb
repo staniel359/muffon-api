@@ -5,8 +5,8 @@ module Muffon
         class Updater < Muffon::Processor::Post::Updater
           private
 
-          def rights?
-            post_creator?
+          def forbidden?
+            !post_creator?
           end
         end
       end

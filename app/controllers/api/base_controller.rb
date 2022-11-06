@@ -36,28 +36,9 @@ module API
     end
 
     def valid_token?
-      return false if token.blank?
-
-      token_profile.present? ||
-        anonymous_token?
-    end
-
-    def token
-      params[:token]
-    end
-
-    def token_profile
-      Profile.find_by(
-        token:
+      ::Muffon::Token::Validator.call(
+        token: params[:token]
       )
-    end
-
-    def anonymous_token?
-      token == secrets.anonymous[:token]
-    end
-
-    def secrets
-      Rails.application.credentials
     end
 
     def status

@@ -2,6 +2,7 @@ module LastFM
   module Track
     class Profiles < LastFM::Track::Base
       COLLECTION_NAME = 'profiles'.freeze
+
       include Muffon::Utils::Pagination
 
       private

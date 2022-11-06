@@ -14,21 +14,22 @@ module Muffon
         end
 
         def community
-          ::Community.find_by(
-            id: @args[:community_id]
-          )
+          @community ||=
+            ::Community.find_by(
+              id: @args[:community_id]
+            )
+        end
+
+        def forbidden?
+          wrong_profile?
         end
 
         def data
-          return forbidden if
-              wrong_profile? || !rights?
-
           process_post
         end
 
         def post_creator?
-          post.profile_id ==
-            @args[:profile_id].to_i
+          post.profile_id == profile.id
         end
 
         def post
@@ -38,9 +39,7 @@ module Muffon
         end
 
         def community_owner?
-          profile.own_community_ids.include?(
-            post.community_id
-          )
+          community.profile_id == profile.id
         end
 
         def by_community?

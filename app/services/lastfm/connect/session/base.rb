@@ -15,14 +15,12 @@ module LastFM
           profile.blank?
         end
 
-        def data
-          return forbidden if wrong_profile?
-
-          process_profile
+        def forbidden?
+          wrong_profile?
         end
 
-        def wrong_profile?
-          profile.token != @args[:token]
+        def data
+          process_profile
         end
       end
     end

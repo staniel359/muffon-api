@@ -13,8 +13,6 @@ module Muffon
             end
 
             def process_bookmark
-              return forbidden if wrong_profile?
-
               bookmark_album&.destroy
 
               { success: true }
@@ -22,7 +20,9 @@ module Muffon
 
             def bookmark_album
               @bookmark_album ||=
-                profile.bookmark_albums.find_by(
+                profile
+                .bookmark_albums
+                .find_by(
                   id: @args[:bookmark_id]
                 )
             end

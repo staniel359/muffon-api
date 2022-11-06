@@ -2,6 +2,7 @@ module Odnoklassniki
   module Artist
     class Albums < Odnoklassniki::Artist::Base
       COLLECTION_NAME = 'albums'.freeze
+
       include Muffon::Utils::Pagination
 
       private

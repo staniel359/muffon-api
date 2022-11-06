@@ -2,6 +2,7 @@ module LastFM
   module Artist
     class Images < LastFM::Artist::Web::Base
       COLLECTION_NAME = 'images'.freeze
+
       include LastFM::Utils::Web::Pagination
       include Muffon::Utils::Artist
 

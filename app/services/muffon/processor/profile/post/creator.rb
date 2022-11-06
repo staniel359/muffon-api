@@ -15,10 +15,6 @@ module Muffon
             super || other_profile.blank?
           end
 
-          def rights?
-            true
-          end
-
           def post_params
             super.merge(
               other_profile_params

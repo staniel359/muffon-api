@@ -13,7 +13,7 @@ module Muffon
         end
 
         def tag_random_page
-          return 1 if Rails.env.test?
+          return 1 if test?
 
           rand(
             1..pages_count

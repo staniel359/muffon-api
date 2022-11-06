@@ -15,9 +15,11 @@ module Muffon
               ]
             end
 
-            def process_library_track
-              return forbidden if wrong_profile?
+            def forbidden?
+              wrong_profile?
+            end
 
+            def process_library_track
               update_library_artist
               update_library_album
               update_library_track
@@ -40,7 +42,9 @@ module Muffon
 
             def library_artist
               @library_artist ||=
-                profile.library_artists.where(
+                profile
+                .library_artists
+                .where(
                   artist_id: find_artist.id
                 ).first_or_initialize
             end
@@ -74,7 +78,9 @@ module Muffon
               return if album_title.blank?
 
               @library_album ||=
-                profile.library_albums.where(
+                profile
+                .library_albums
+                .where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
                 ).first_or_initialize
@@ -94,7 +100,9 @@ module Muffon
 
             def library_track
               @library_track ||=
-                profile.library_tracks.where(
+                profile
+                .library_tracks
+                .where(
                   track_id: find_track.id,
                   library_artist_id: library_artist.id,
                   library_album_id: library_album&.id

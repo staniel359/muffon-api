@@ -43,7 +43,7 @@ module LastFM
       end
 
       def profiles_count
-        return if Rails.env.test?
+        return if test?
 
         find_artist
           .profiles
@@ -91,7 +91,7 @@ module LastFM
       end
 
       def recommendation_data
-        return if Rails.env.test?
+        return if test?
 
         LastFM::Artist::Info::Recommendation.call(
           profile_id: @args[:profile_id],

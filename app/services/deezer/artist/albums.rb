@@ -7,6 +7,7 @@ module Deezer
         single: '0'
       }.freeze
       COLLECTION_NAME = 'albums'.freeze
+
       include Muffon::Utils::Pagination
 
       private

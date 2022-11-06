@@ -47,7 +47,7 @@ module Deezer
 
       def audio_link
         return unless audio_present?
-        return 'test.mp3' if Rails.env.test?
+        return 'test.mp3' if test?
 
         @audio_link ||=
           Deezer::Utils::Audio::File.call(

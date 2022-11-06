@@ -14,11 +14,8 @@ module Muffon
           super || community.blank?
         end
 
-        def community
-          @community ||=
-            profile.own_communities.find_by(
-              id: @args[:community_id]
-            )
+        def forbidden?
+          wrong_profile? || !community_creator?
         end
 
         def process_community

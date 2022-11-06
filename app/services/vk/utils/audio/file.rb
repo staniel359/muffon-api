@@ -55,7 +55,7 @@ module VK
         end
 
         def convert_ts_file_to_mp3_file
-          return if Rails.env.test?
+          return if test?
 
           VK::Utils::Audio::Converter.call(
             file_path:

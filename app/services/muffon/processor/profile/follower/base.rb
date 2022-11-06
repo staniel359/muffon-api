@@ -17,9 +17,11 @@ module Muffon
             super || other_profile.blank?
           end
 
-          def data
-            return forbidden if wrong_profile?
+          def forbidden?
+            wrong_profile?
+          end
 
+          def data
             process_relationship
           end
 

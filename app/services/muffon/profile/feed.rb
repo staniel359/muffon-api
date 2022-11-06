@@ -3,14 +3,13 @@ module Muffon
     class Feed < Muffon::Profile::Base
       COLLECTION_NAME = 'feed'.freeze
       DEFAULT_ORDER = 'created_desc'.freeze
+
       include Muffon::Utils::Pagination
 
       private
 
-      def data
-        return forbidden if wrong_profile?
-
-        super
+      def forbidden?
+        wrong_profile?
       end
 
       def total_items_count

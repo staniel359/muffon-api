@@ -3,6 +3,7 @@ module Genius
     class Albums < Genius::Artist::Base
       COLLECTION_NAME = 'albums'.freeze
       LIMIT = 50
+
       include Muffon::Utils::Pagination
 
       private

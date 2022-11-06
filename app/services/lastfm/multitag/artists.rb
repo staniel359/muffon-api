@@ -3,6 +3,7 @@ module LastFM
     class Artists < LastFM::Kerve::Base
       COLLECTION_NAME = 'artists'.freeze
       TOTAL_LIMIT = 1_000
+
       include Muffon::Utils::Pagination
 
       private

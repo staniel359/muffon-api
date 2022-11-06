@@ -1,8 +1,6 @@
 module Muffon
   module Utils
     module Artist
-      include Muffon::Utils::Base
-
       private
 
       def find_artist
@@ -13,9 +11,16 @@ module Muffon
       end
 
       def library_id
-        self_data('artist')[
-          :library_artist_id
-        ]
+        self_data[:library_artist_id]
+      end
+
+      def self_data
+        @self_data ||=
+          Muffon::Self.call(
+            profile_id: @args[:profile_id],
+            model: 'artist',
+            model_id: artist_id
+          )
       end
 
       def artist_id
@@ -23,21 +28,15 @@ module Muffon
       end
 
       def favorite_id
-        self_data('artist')[
-          :favorite_artist_id
-        ]
+        self_data[:favorite_artist_id]
       end
 
       def bookmark_id
-        self_data('artist')[
-          :bookmark_artist_id
-        ]
+        self_data[:bookmark_artist_id]
       end
 
       def listened_id
-        self_data('artist')[
-          :listened_artist_id
-        ]
+        self_data[:listened_artist_id]
       end
 
       def image_data

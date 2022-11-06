@@ -4,10 +4,8 @@ module Muffon
       class Base < Muffon::Profile::Base
         private
 
-        def data
-          return forbidden if wrong_profile?
-
-          super
+        def forbidden?
+          wrong_profile?
         end
 
         def profile_data

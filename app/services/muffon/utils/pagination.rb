@@ -79,6 +79,10 @@ module Muffon
       def offset
         (page - 1) * limit
       end
+
+      def order
+        @args[:order]
+      end
     end
   end
 end

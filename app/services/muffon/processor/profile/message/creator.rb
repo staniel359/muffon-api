@@ -15,17 +15,18 @@ module Muffon
             ] + content_args
           end
 
-          def data
-            return forbidden if wrong_profile?
+          def forbidden?
+            wrong_profile?
+          end
 
+          def data
             process_message
           end
 
           def process_message
             message
 
-            return message.errors_data if
-                message.errors?
+            return message.errors_data if message.errors?
 
             conversation.touch
 
@@ -36,7 +37,9 @@ module Muffon
 
           def message
             @message ||=
-              conversation.messages.create(
+              conversation
+              .messages
+              .create(
                 message_params
               )
           end

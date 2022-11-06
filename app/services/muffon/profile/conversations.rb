@@ -3,14 +3,13 @@ module Muffon
     class Conversations < Muffon::Profile::Base
       COLLECTION_NAME = 'conversations'.freeze
       DEFAULT_ORDER = 'updated_desc'.freeze
+
       include Muffon::Utils::Pagination
 
       private
 
-      def data
-        return forbidden if wrong_profile?
-
-        super
+      def forbidden?
+        wrong_profile?
       end
 
       def profile_data

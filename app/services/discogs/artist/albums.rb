@@ -10,6 +10,7 @@ module Discogs
       }.freeze
       COLLECTION_NAME = 'albums'.freeze
       PAGE_LIMIT = 25
+
       include Discogs::Utils::Pagination
 
       private

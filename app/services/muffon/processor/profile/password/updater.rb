@@ -25,10 +25,6 @@ module Muffon
               )
           end
 
-          def no_rights?
-            false
-          end
-
           def data
             process_profile
 

@@ -1,8 +1,6 @@
 module Muffon
   module Utils
     module Album
-      include Muffon::Utils::Base
-
       private
 
       def find_album
@@ -20,9 +18,16 @@ module Muffon
       end
 
       def library_id
-        self_data('album')[
-          :library_album_id
-        ]
+        self_data[:library_album_id]
+      end
+
+      def self_data
+        @self_data ||=
+          Muffon::Self.call(
+            profile_id: @args[:profile_id],
+            model: 'album',
+            model_id: album_id
+          )
       end
 
       def album_id
@@ -30,21 +35,15 @@ module Muffon
       end
 
       def favorite_id
-        self_data('album')[
-          :favorite_album_id
-        ]
+        self_data[:favorite_album_id]
       end
 
       def bookmark_id
-        self_data('album')[
-          :bookmark_album_id
-        ]
+        self_data[:bookmark_album_id]
       end
 
       def listened_id
-        self_data('album')[
-          :listened_album_id
-        ]
+        self_data[:listened_album_id]
       end
 
       def listeners_count
@@ -52,7 +51,7 @@ module Muffon
       end
 
       def profiles_count
-        return if Rails.env.test?
+        return if test?
 
         find_album
           .profiles

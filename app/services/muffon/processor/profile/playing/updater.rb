@@ -16,9 +16,11 @@ module Muffon
             profile.blank?
           end
 
-          def profile_data
-            return forbidden if wrong_profile?
+          def forbidden?
+            wrong_profile?
+          end
 
+          def profile_data
             process_profile
 
             { success: true }

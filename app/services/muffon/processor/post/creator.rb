@@ -11,8 +11,7 @@ module Muffon
         def process_post
           post
 
-          return post.errors_data if
-              post.errors?
+          return post.errors_data if post.errors?
 
           process_images
 
@@ -21,7 +20,9 @@ module Muffon
 
         def post
           @post ||=
-            profile.own_posts.create(
+            profile
+            .own_posts
+            .create(
               post_params
             )
         end

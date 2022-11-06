@@ -2,6 +2,7 @@ module LastFM
   module Track
     class Base < LastFM::Base
       API_METHOD = 'track.getInfo'.freeze
+
       include LastFM::Utils::Track
 
       private

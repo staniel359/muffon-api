@@ -2,6 +2,7 @@ module VK
   module Track
     class Base < VK::Base
       API_METHOD = 'audio.getById'.freeze
+
       include VK::Utils::Track
 
       private

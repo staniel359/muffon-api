@@ -3,6 +3,7 @@ module Muffon
     class Posts < Muffon::Community::Base
       COLLECTION_NAME = 'posts'.freeze
       DEFAULT_ORDER = 'created_desc'.freeze
+
       include Muffon::Utils::Pagination
 
       private

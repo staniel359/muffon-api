@@ -2,6 +2,7 @@ module Deezer
   module Album
     class Base < Deezer::Base
       API_METHOD = 'deezer.pageAlbum'.freeze
+
       include Deezer::Utils::Album
 
       private

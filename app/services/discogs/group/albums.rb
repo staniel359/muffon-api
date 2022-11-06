@@ -2,6 +2,7 @@ module Discogs
   module Group
     class Albums < Discogs::Group::Base
       COLLECTION_NAME = 'albums'.freeze
+
       include Discogs::Utils::Pagination
 
       private
@@ -22,7 +23,8 @@ module Discogs
 
       def collection_item_data_formatted(album)
         Discogs::Group::Albums::Album.call(
-          album:
+          album:,
+          profile_id: @args[:profile_id]
         )
       end
 

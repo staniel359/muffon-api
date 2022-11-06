@@ -40,7 +40,7 @@ module VK
       end
 
       def audio_link
-        return 'test.mp3' if Rails.env.test?
+        return 'test.mp3' if test?
 
         @audio_link ||=
           VK::Utils::Audio::File.call(

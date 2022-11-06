@@ -11,13 +11,8 @@ module Muffon
             ]
           end
 
-          def no_data?
-            super || community.blank?
-          end
-
-          def rights?
-            post_creator? ||
-              community_owner?
+          def forbidden?
+            super || !post_creator? || !community_owner?
           end
         end
       end

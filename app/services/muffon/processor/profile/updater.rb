@@ -11,15 +11,16 @@ module Muffon
           ]
         end
 
-        def data
-          return forbidden if wrong_profile?
+        def forbidden?
+          wrong_profile?
+        end
 
+        def data
           profile.update(
             update_params
           )
 
-          return profile.errors_data if
-              profile.errors?
+          return profile.errors_data if profile.errors?
 
           process_image
 

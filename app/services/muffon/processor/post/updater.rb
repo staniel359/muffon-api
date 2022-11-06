@@ -5,9 +5,9 @@ module Muffon
         private
 
         def primary_args
-          super +
-            [@args[:post_id]] +
-            content_args
+          super + [
+            @args[:post_id]
+          ] + content_args
         end
 
         def no_data?
@@ -17,8 +17,7 @@ module Muffon
         def process_post
           update_post
 
-          return post.errors_data if
-              post.errors?
+          return post.errors_data if post.errors?
 
           process_images
 

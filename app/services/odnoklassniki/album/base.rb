@@ -2,6 +2,7 @@ module Odnoklassniki
   module Album
     class Base < Odnoklassniki::Base
       ENDPOINT_NAME = 'album'.freeze
+
       include Odnoklassniki::Utils::Album
 
       private

@@ -35,4 +35,10 @@ module CommunityDecorator
   def self.included(base)
     base.extend ClassMethods
   end
+
+  def in_members?(profile_id)
+    members
+      .find_by(id: profile_id)
+      .present?
+  end
 end

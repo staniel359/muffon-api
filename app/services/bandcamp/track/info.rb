@@ -87,7 +87,9 @@ module Bandcamp
       def redirect_audio_link
         return unless audio_present?
 
-        RestClient.get(audio_link) do |response|
+        RestClient.get(
+          audio_link
+        ) do |response|
           response.headers[:location]
         end
       end

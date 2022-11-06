@@ -3,6 +3,7 @@ module Muffon
     class Communities < Muffon::Profile::Base
       COLLECTION_NAME = 'communities'.freeze
       DEFAULT_ORDER = 'created_desc'.freeze
+
       include Muffon::Utils::Pagination
 
       private

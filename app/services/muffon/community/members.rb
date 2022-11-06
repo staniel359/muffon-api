@@ -2,6 +2,7 @@ module Muffon
   module Community
     class Members < Muffon::Community::Base
       COLLECTION_NAME = 'members'.freeze
+
       include Muffon::Utils::Pagination
 
       private

@@ -2,6 +2,7 @@ module LastFM
   module Artist
     class Base < LastFM::Base
       API_METHOD = 'artist.getInfo'.freeze
+
       include LastFM::Utils::Artist
 
       private

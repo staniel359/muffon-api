@@ -3,6 +3,7 @@ module SoundCloud
     module V2
       class Base < SoundCloud::Base
         BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
+
         include Muffon::Utils::Global
 
         def call
@@ -14,8 +15,7 @@ module SoundCloud
         private
 
         def client_id
-          return test_client_id if
-              Rails.env.test?
+          return test_client_id if test?
 
           get_global_value(
             'soundcloud_v2_client_id'
