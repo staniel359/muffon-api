@@ -36,7 +36,6 @@ module VK
             album: album_data,
             image: image_data,
             duration:,
-            duration_seconds:,
             audio: audio_data
           }.compact
         end

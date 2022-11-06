@@ -26,8 +26,7 @@ module LastFM
             title:,
             artist: track_artist_data,
             artists:,
-            duration:,
-            duration_seconds:
+            duration:
           }
         end
       end

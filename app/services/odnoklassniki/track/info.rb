@@ -25,7 +25,6 @@ module Odnoklassniki
           image: image_data,
           profiles_count:,
           duration:,
-          duration_seconds:,
           audio: audio_data
         }.compact
       end

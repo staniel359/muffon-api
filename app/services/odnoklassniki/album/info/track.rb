@@ -33,7 +33,6 @@ module Odnoklassniki
         def track_extra_data
           {
             duration:,
-            duration_seconds:,
             audio: audio_data
           }
         end

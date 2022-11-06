@@ -67,10 +67,13 @@ module Muffon
         date.strftime('%F %T')
       end
 
-      def duration_formatted(data)
-        Muffon::Utils::Duration.call(
-          data:
-        )
+      def duration_formatted(duration)
+        duration
+          .split(':')
+          .map(&:to_i)
+          .inject(0) do |a, b|
+            (a * 60) + b
+          end
       end
 
       def description_truncated

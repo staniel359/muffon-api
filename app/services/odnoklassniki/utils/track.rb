@@ -39,7 +39,7 @@ module Odnoklassniki
         )
       end
 
-      def duration_seconds
+      def duration
         track['duration']
       end
 

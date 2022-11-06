@@ -57,7 +57,7 @@ module Deezer
         )
       end
 
-      def duration_seconds
+      def duration
         track['DURATION'].to_i
       end
 

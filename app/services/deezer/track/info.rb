@@ -26,7 +26,6 @@ module Deezer
           image: image_data,
           profiles_count:,
           duration:,
-          duration_seconds:,
           release_date:,
           audio: audio_data
         }.compact

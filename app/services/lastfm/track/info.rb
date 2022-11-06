@@ -42,8 +42,7 @@ module LastFM
         {
           album: album_data,
           image: image_data,
-          duration:,
-          duration_seconds:
+          duration:
         }.compact
       end
 
@@ -77,7 +76,7 @@ module LastFM
         )
       end
 
-      def duration_seconds
+      def duration
         track['duration'].to_i / 1_000
       end
 

@@ -56,12 +56,6 @@ module Muffon
         find_track.id
       end
 
-      def duration
-        duration_formatted(
-          duration_seconds
-        )
-      end
-
       def profiles_count
         return if test?
 

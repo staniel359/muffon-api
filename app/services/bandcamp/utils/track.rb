@@ -45,7 +45,7 @@ module Bandcamp
           'Various Artists'
       end
 
-      def duration_seconds
+      def duration
         track['duration'].to_i
       end
 

@@ -30,7 +30,7 @@ module SoundCloud
         )
       end
 
-      def duration_seconds
+      def duration
         track['duration'] / 1_000
       end
 

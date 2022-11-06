@@ -46,7 +46,7 @@ module Spotify
         )
       end
 
-      def duration_seconds
+      def duration
         track['duration_ms'].fdiv(
           1_000
         ).ceil

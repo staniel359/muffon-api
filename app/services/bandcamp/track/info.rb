@@ -26,7 +26,6 @@ module Bandcamp
           image: image_data,
           profiles_count:,
           duration:,
-          duration_seconds:,
           description: description_truncated,
           tags: tags_truncated,
           audio: audio_data

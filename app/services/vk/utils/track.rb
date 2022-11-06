@@ -68,7 +68,7 @@ module VK
         album.try(:[], 'thumb')
       end
 
-      def duration_seconds
+      def duration
         track['duration']
       end
 
