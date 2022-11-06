@@ -7,6 +7,15 @@ module Muffon
 
           private
 
+          def library_data
+            library_base_data
+              .merge(paginated_data)
+          end
+
+          def library_base_data
+            { top_tracks_count: }
+          end
+
           def total_items_count
             @total_items_count ||=
               search_library_albums.count
@@ -42,8 +51,6 @@ module Muffon
               token: @args[:token]
             )
           end
-
-          alias library_data paginated_data
         end
       end
     end
