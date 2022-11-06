@@ -206,7 +206,7 @@ GEM
       ffi (~> 1.0)
     redis (5.0.5)
       redis-client (>= 0.9.0)
-    redis-client (0.11.0)
+    redis-client (0.11.1)
       connection_pool
     regexp_parser (2.6.0)
     reline (0.3.1)
@@ -250,7 +250,7 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    rubocop-rspec (2.14.2)
+    rubocop-rspec (2.15.0)
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
     ruby-vips (2.1.4)
@@ -297,7 +297,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    zeitwerk (2.6.3)
+    zeitwerk (2.6.5)
 
 PLATFORMS
   ruby
