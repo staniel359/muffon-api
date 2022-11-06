@@ -18,10 +18,6 @@ module LastFM
         { page: }
       end
 
-      def cookies
-        { lfmanon: '0' }
-      end
-
       def data
         { releases: paginated_data }
       end

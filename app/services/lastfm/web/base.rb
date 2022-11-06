@@ -14,6 +14,10 @@ module LastFM
         {}
       end
 
+      def cookies
+        { lfmanon: '0' }
+      end
+
       def param_formatted(param)
         CGI.escape(super)
       end
