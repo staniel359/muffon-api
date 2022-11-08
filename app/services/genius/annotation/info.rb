@@ -15,7 +15,7 @@ module Genius
         response_data.dig(
           'response', 'referent',
           'annotations', 0,
-          'body', 'markdown'
+          'body', 'html'
         )
       end
 
@@ -24,7 +24,7 @@ module Genius
       end
 
       def params
-        { text_format: 'markdown' }
+        { text_format: 'html' }
       end
 
       def data

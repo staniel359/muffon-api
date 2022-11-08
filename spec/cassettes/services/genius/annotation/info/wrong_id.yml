@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://genius.com/api/referents/wejlhg239gh23?text_format=markdown
+    uri: https://genius.com/api/referents/wejlhg239gh23?text_format=html
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Sun, 09 Oct 2022 14:23:34 GMT
+      - Tue, 08 Nov 2022 14:27:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,11 +29,11 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 7577c6607d3afe4c-HEL
+      - 766efce51e90c7f3-TLL
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _genius_ab_test_cohort=76; Max-Age=2147483647; Path=/
+      - _genius_ab_test_cohort=45; Max-Age=2147483647; Path=/
       - _genius_ab_test_desktop_song_primis=inread; Max-Age=2147483647; Path=/
       Vary:
       - Accept-Encoding
@@ -44,11 +44,11 @@ http_interactions:
       Status:
       - 404 Not Found
       X-Runtime:
-      - '9'
+      - '5'
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
       string: '{"meta":{"status":404,"message":"404 Not Found"}}'
-  recorded_at: Sun, 09 Oct 2022 14:23:34 GMT
+  recorded_at: Tue, 08 Nov 2022 14:27:10 GMT
 recorded_with: VCR 6.1.0
