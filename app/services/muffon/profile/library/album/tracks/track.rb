@@ -19,10 +19,14 @@ module Muffon
 
             def track_data
               {
+                source: source_data,
                 library: library_track_data,
                 player_id: track.player_id,
                 title:,
-                created: created_formatted
+                album: album_data,
+                image: image_data,
+                created: created_formatted,
+                audio: audio_data
               }
             end
 

@@ -28,13 +28,14 @@ module Muffon
           end
 
           def process_profile
-            profile.tap do |p|
-              p.online = @args[:online]
+            profile.online = @args[:online]
 
-              p.online_updated_at = current_time if offline?
-
-              p.save
+            if offline?
+              profile.online_updated_at =
+                current_time
             end
+
+            profile.save
           end
 
           def offline?

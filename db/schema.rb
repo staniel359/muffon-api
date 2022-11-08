@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_22_135012) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_08_181704) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -172,6 +172,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_135012) do
     t.bigint "library_album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "source_data"
+    t.jsonb "audio_data"
+    t.jsonb "album_source_data"
     t.index ["library_album_id"], name: "index_library_tracks_on_library_album_id"
     t.index ["library_artist_id"], name: "index_library_tracks_on_library_artist_id"
     t.index ["profile_id"], name: "index_library_tracks_on_profile_id"

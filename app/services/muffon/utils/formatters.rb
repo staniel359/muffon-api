@@ -97,9 +97,9 @@ module Muffon
           t.id == library_tag[:id]
         end
 
-        library_tag.tap do |t|
-          t[:name] = tag.name
-        end
+        library_tag[:name] = tag.name
+
+        library_tag
       end
     end
   end

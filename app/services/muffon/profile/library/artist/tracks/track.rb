@@ -20,6 +20,7 @@ module Muffon
 
             def track_base_data
               {
+                source: source_data,
                 library: library_track_data,
                 player_id: track.player_id,
                 title:
@@ -34,7 +35,8 @@ module Muffon
               {
                 album: album_data,
                 image: image_data,
-                created: created_formatted
+                created: created_formatted,
+                audio: audio_data
               }.compact
             end
           end

@@ -49,8 +49,7 @@ module Muffon
               profile
                 .library_artists
                 .where(
-                  artist_id:
-                    find_album.artist_id
+                  artist_id: find_album.artist_id
                 ).first_or_create
             end
 
@@ -66,7 +65,8 @@ module Muffon
               Muffon::Processor::Profile::Library::Album::Creator::Track.call(
                 track:,
                 profile_id: @args[:profile_id],
-                library_album_id: library_album.id
+                library_album_id: library_album.id,
+                album_source: @args[:source]
               )
             end
 

@@ -57,7 +57,11 @@ module Muffon
         def album_data
           return if library_album.blank?
 
-          { title: album.title }
+          {
+            source:
+              library_track.album_source_data,
+            title: album.title
+          }
         end
 
         def album
@@ -72,6 +76,14 @@ module Muffon
           datetime_formatted(
             library_track.created_at
           )
+        end
+
+        def source_data
+          library_track.source_data
+        end
+
+        def audio_data
+          library_track.audio_data
         end
       end
     end

@@ -31,6 +31,7 @@ module Muffon
 
           def track_base_data
             {
+              source: source_data,
               library: library_track_data,
               player_id: track.player_id,
               title:,

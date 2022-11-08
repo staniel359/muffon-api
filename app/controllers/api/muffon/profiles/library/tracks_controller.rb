@@ -34,6 +34,7 @@ module API
                 *%i[
                   profile_id token title
                   artist album image created
+                  source audio album_source
                 ]
               )
             )

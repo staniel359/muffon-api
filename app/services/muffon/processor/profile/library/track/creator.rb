@@ -33,18 +33,14 @@ module Muffon
             end
 
             def update_library_artist
-              library_artist.tap do |artist|
-                artist.created_at = created_at if
-                    update_created_at?(artist)
-                artist.save
-              end
+              update_created_at(library_artist)
+
+              library_artist.save
             end
 
             def library_artist
               @library_artist ||=
-                profile
-                .library_artists
-                .where(
+                profile.library_artists.where(
                   artist_id: find_artist.id
                 ).first_or_initialize
             end
@@ -53,11 +49,12 @@ module Muffon
               @args[:artist]
             end
 
-            def update_created_at?(model)
-              return false if created_at.blank?
-              return true if model.created_at.blank?
+            def update_created_at(model)
+              return if created_at.blank?
+              return if model.created_at.present?
+              return if created_at >= model.created_at
 
-              created_at < model.created_at
+              model.created_at = created_at
             end
 
             def created_at
@@ -67,20 +64,16 @@ module Muffon
             def update_library_album
               return if library_album.blank?
 
-              library_album.tap do |album|
-                album.created_at = created_at if
-                    update_created_at?(album)
-                album.save
-              end
+              update_created_at(library_album)
+
+              library_album.save
             end
 
             def library_album
               return if album_title.blank?
 
               @library_album ||=
-                profile
-                .library_albums
-                .where(
+                profile.library_albums.where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
                 ).first_or_initialize
@@ -91,22 +84,37 @@ module Muffon
             end
 
             def update_library_track
-              library_track.tap do |track|
-                track.created_at = created_at if
-                    update_created_at?(track)
-                track.save
-              end
+              update_created_at(library_track)
+
+              library_track.source_data = source_data
+              library_track.audio_data = audio_data
+              library_track.album_source_data = album_source_data
+
+              library_track.save
             end
 
             def library_track
               @library_track ||=
-                profile
-                .library_tracks
-                .where(
+                profile.library_tracks.where(
                   track_id: find_track.id,
                   library_artist_id: library_artist.id,
                   library_album_id: library_album&.id
                 ).first_or_initialize
+            end
+
+            def source_data
+              @args[:source] ||
+                library_track.source_data
+            end
+
+            def audio_data
+              @args[:audio] ||
+                library_track.audio_data
+            end
+
+            def album_source_data
+              @args[:album_source] ||
+                library_track.album_source_data
             end
 
             def title

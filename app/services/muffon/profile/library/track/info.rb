@@ -19,12 +19,23 @@ module Muffon
             {
               album: album_data,
               image: image_data,
-              albums_count:
-                library_track.library_albums.count,
-              playlists_count:
-                library_track.profile_playlists.count,
-              created: created_formatted
+              albums_count:,
+              playlists_count:,
+              created: created_formatted,
+              audio: audio_data
             }.compact
+          end
+
+          def albums_count
+            library_track
+              .library_albums
+              .count
+          end
+
+          def playlists_count
+            library_track
+              .profile_playlists
+              .count
           end
         end
       end
