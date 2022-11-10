@@ -21,7 +21,6 @@ module Muffon
               return library_album.errors_data if
                   library_album.errors?
 
-              process_tracks
               process_image
 
               { library_album: library_album_data }
@@ -51,23 +50,6 @@ module Muffon
                 .where(
                   artist_id: find_album.artist_id
                 ).first_or_create
-            end
-
-            def process_tracks
-              return if @args[:tracks].blank?
-
-              @args[:tracks].each do |t|
-                process_track(t)
-              end
-            end
-
-            def process_track(track)
-              Muffon::Processor::Profile::Library::Album::Creator::Track.call(
-                track:,
-                profile_id: @args[:profile_id],
-                library_album_id: library_album.id,
-                album_source: @args[:source]
-              )
             end
 
             def process_image
