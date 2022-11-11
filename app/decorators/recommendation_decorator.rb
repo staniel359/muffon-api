@@ -6,10 +6,9 @@ module RecommendationDecorator
 
     def library_artists_count_desc_ordered
       with_library_artists_count
-        .created_asc_ordered
         .order(
           'library_artist_ids_size DESC'
-        )
+        ).created_asc_ordered
     end
 
     def with_library_artists_count
@@ -22,10 +21,9 @@ module RecommendationDecorator
 
     def library_artists_count_asc_ordered
       with_library_artists_count
-        .created_asc_ordered
         .order(
           'library_artist_ids_size ASC'
-        )
+        ).created_asc_ordered
     end
   end
 

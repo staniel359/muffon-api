@@ -18,7 +18,7 @@ module API
               params.slice(
                 *%i[
                   profile_id token query
-                  page limit minimal
+                  page limit order minimal
                 ]
               )
             )
@@ -27,7 +27,10 @@ module API
           def albums_data
             ::Muffon::Profile::Library::Search::Albums.call(
               params.slice(
-                *%i[profile_id token query page limit]
+                *%i[
+                  profile_id token query
+                  page limit order
+                ]
               )
             )
           end
@@ -35,7 +38,10 @@ module API
           def tracks_data
             ::Muffon::Profile::Library::Search::Tracks.call(
               params.slice(
-                *%i[profile_id token query page limit]
+                *%i[
+                  profile_id token query
+                  page limit order
+                ]
               )
             )
           end

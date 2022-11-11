@@ -4,6 +4,7 @@ module Muffon
       module Search
         class Artists < Muffon::Profile::Library::Search::Base
           COLLECTION_NAME = 'artists'.freeze
+          DEFAULT_ORDER = 'library_tracks_count_desc'.freeze
 
           private
 
@@ -58,7 +59,7 @@ module Muffon
 
           def full_collection_list
             search_library_artists
-              .library_tracks_count_desc_ordered
+              .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
           end

@@ -32,7 +32,7 @@ module API
               params.slice(
                 *%i[
                   profile_id other_profile_id
-                  token tag_id page limit
+                  token tag_id page limit order
                 ]
               )
             )
