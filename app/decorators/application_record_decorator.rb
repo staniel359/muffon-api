@@ -64,6 +64,12 @@ module ApplicationRecordDecorator
         created_at: :asc
       )
     end
+
+    def public
+      where(
+        private: false
+      )
+    end
   end
 
   def self.included(base)

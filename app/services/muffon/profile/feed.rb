@@ -21,9 +21,11 @@ module Muffon
       end
 
       def scoped_posts
-        return Post.global if global?
-
-        profile.feed_posts
+        if global?
+          Post.global
+        else
+          profile.feed_posts
+        end
       end
 
       def global?

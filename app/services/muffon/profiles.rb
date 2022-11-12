@@ -12,11 +12,15 @@ module Muffon
     end
 
     def total_items_count
-      @total_items_count ||= ::Profile.count
+      @total_items_count ||= profiles.count
+    end
+
+    def profiles
+      @profiles ||= ::Profile.public
     end
 
     def collection_list
-      ::Profile
+      profiles
         .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)

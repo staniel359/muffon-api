@@ -13,12 +13,18 @@ module Muffon
       end
 
       def total_items_count
-        community.members_count
+        @total_items_count ||= members.count
+      end
+
+      def members
+        @members ||=
+          community
+          .members
+          .public
       end
 
       def collection_list
-        community
-          .members
+        members
           .created_desc_ordered
           .limit(limit)
           .offset(offset)

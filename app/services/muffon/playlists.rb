@@ -12,11 +12,15 @@ module Muffon
     end
 
     def total_items_count
-      @total_items_count ||= ::Playlist.count
+      @total_items_count ||= playlists.count
+    end
+
+    def playlists
+      @playlists ||= ::Playlist.public
     end
 
     def collection_list
-      ::Playlist
+      playlists
         .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)

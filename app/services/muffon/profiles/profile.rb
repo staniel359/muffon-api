@@ -8,8 +8,6 @@ module Muffon
       private
 
       def data
-        return profile_public_data if profile.private
-
         profile_base_data
           .merge(profile_extra_data)
           .merge(profile_other_profile_data)
@@ -20,19 +18,12 @@ module Muffon
         @args[:profile]
       end
 
-      def profile_public_data
-        profile_base_data
-          .merge(profile_other_profile_data)
-      end
-
       def profile_base_data
         {
           id: profile.id,
           nickname:,
           role:,
-          private: profile.private,
-          image: profile.image_data,
-          created: created_formatted
+          private: profile.private
         }.compact
       end
 
@@ -42,20 +33,22 @@ module Muffon
         profile.role
       end
 
-      def created_formatted
-        datetime_formatted(
-          profile.created_at
-        )
-      end
-
       def profile_extra_data
         {
+          image: profile.image_data,
           gender: profile.gender,
           birthdate: profile.birthdate,
           country: profile.country,
           city: profile.city,
+          created: created_formatted,
           online: profile.online
         }.compact_blank
+      end
+
+      def created_formatted
+        datetime_formatted(
+          profile.created_at
+        )
       end
 
       def profile_other_profile_data

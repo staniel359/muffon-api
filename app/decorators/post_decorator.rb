@@ -25,7 +25,18 @@ module PostDecorator
     end
 
     def global
-      by_profile.or(by_community)
+      by_public_profile
+        .or(by_community)
+    end
+
+    def by_public_profile
+      by_profile
+        .joins(:profile)
+        .where(
+          profiles: {
+            private: false
+          }
+        )
     end
 
     def associated

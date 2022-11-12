@@ -7,7 +7,9 @@ module Muffon
 
       def profiles
         @profiles ||=
-          profile.following_profiles
+          profile
+          .following_profiles
+          .public
       end
     end
   end

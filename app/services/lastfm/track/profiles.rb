@@ -12,7 +12,10 @@ module LastFM
       end
 
       def profiles
-        @profiles ||= find_track.profiles
+        @profiles ||=
+          find_track
+          .profiles
+          .public
       end
 
       def collection_list
