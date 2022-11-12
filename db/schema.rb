@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_08_181704) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_12_192710) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -296,7 +296,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_08_181704) do
     t.integer "followers_count", default: 0
     t.boolean "online", default: false
     t.integer "password_reset_code"
-    t.datetime "online_updated_at"
+    t.datetime "was_online_at"
     t.jsonb "playing"
     t.boolean "private", default: false
     t.integer "library_artists_count", default: 0

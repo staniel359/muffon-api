@@ -77,7 +77,7 @@ module Muffon
       end
 
       def was_online
-        profile.online_updated_at ||
+        profile.was_online_at ||
           profile.updated_at
       end
 

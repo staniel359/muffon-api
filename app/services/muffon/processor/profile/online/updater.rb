@@ -31,7 +31,7 @@ module Muffon
             profile.online = @args[:online]
 
             if offline?
-              profile.online_updated_at =
+              profile.was_online_at =
                 current_time
             end
 
