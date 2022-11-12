@@ -16,7 +16,8 @@ module Muffon
           artist: album[:artist],
           artists: album[:artists],
           image: album[:image],
-          listeners_count:
+          listeners_count:,
+          release_date: album[:release_date]
         }.compact
       end
 
