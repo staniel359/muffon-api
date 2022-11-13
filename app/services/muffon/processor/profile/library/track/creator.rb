@@ -51,10 +51,15 @@ module Muffon
 
             def update_created_at(model)
               return if created_at.blank?
-              return if model.created_at.present?
-              return if created_at >= model.created_at
 
-              model.created_at = created_at
+              if model.created_at.present?
+                if created_at >= model.created_at
+                  model.created_at =
+                    created_at
+                end
+              else
+                model.created_at = created_at
+              end
             end
 
             def created_at
@@ -103,13 +108,11 @@ module Muffon
             end
 
             def source_data
-              @args[:source] ||
-                library_track.source_data
+              @args[:source] || library_track.source_data
             end
 
             def audio_data
-              @args[:audio] ||
-                library_track.audio_data
+              @args[:audio] || library_track.audio_data
             end
 
             def album_source_data
