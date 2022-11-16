@@ -5,7 +5,7 @@ module Bandcamp
         (?=https?://)?
         ([\w-]+).bandcamp.com
         (?:(?:/(album|track))
-        (?:/([\w\-]+))?)?
+        (?:/([\w-]+))?)?
       }x
 
       include Muffon::Utils::Pagination

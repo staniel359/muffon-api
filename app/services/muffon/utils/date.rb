@@ -54,7 +54,7 @@ module Muffon
 
       def date_items_count
         @args[:data].split(
-          /[\s\-]/
+          /[\s-]/
         ).size
       end
 

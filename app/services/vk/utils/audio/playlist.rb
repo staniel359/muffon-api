@@ -5,7 +5,7 @@ module VK
         KEY_LINK_REGEX =
           /#EXT-X-KEY:METHOD=AES-128,URI="(.+)"/
         BASE_LINK_REGEX = /(.+)index.m3u8/
-        FRAGMENT_PATH_REGEX = /([\w\-]+\.ts[?\w\-=&]*)/
+        FRAGMENT_PATH_REGEX = /([\w-]+\.ts[?\w\-=&]*)/
 
         def call
           return if not_all_args?

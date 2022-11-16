@@ -11,7 +11,7 @@ module SoundCloud
 
       def data
         script_response.match(
-          /client_id:"([\w\-]+)"/
+          /client_id:"([\w-]+)"/
         )[1]
       end
 
