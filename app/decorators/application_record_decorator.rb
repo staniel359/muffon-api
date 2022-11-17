@@ -70,6 +70,15 @@ module ApplicationRecordDecorator
         private: false
       )
     end
+
+    def by_public_profile
+      joins(:profile)
+        .where(
+          profiles: {
+            private: false
+          }
+        )
+    end
   end
 
   def self.included(base)

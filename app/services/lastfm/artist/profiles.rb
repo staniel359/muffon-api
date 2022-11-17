@@ -12,10 +12,17 @@ module LastFM
       end
 
       def profiles
-        @profiles ||=
+        @profiles ||= profiles_conditional
+      end
+
+      def profiles_conditional
+        if creator?
+          find_artist.profiles
+        else
           find_artist
-          .profiles
-          .public
+            .profiles
+            .public
+        end
       end
 
       def collection_list

@@ -17,10 +17,17 @@ module Muffon
       end
 
       def members
-        @members ||=
+        @members ||= members_conditional
+      end
+
+      def members_conditional
+        if creator?
+          community.members
+        else
           community
-          .members
-          .public
+            .members
+            .public
+        end
       end
 
       def collection_list

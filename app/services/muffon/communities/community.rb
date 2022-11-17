@@ -50,7 +50,7 @@ module Muffon
       end
 
       def profile_data
-        return if wrong_profile?
+        return unless valid_profile?
 
         {
           member_of_community:

@@ -32,7 +32,7 @@ module Muffon
       end
 
       def email
-        return if wrong_profile?
+        return unless valid_profile?
 
         profile.email
       end
@@ -82,7 +82,7 @@ module Muffon
       end
 
       def profile_other_profile_data
-        return {} if wrong_other_profile?
+        return {} unless valid_other_profile?
 
         { other_profile: other_profile_data }
       end
@@ -114,7 +114,7 @@ module Muffon
       end
 
       def profile_lastfm_data
-        return {} if wrong_profile?
+        return {} unless valid_profile?
 
         {
           lastfm_nickname: profile.lastfm_nickname,

@@ -25,7 +25,9 @@ module Muffon
         end
 
         def forbidden?
-          playlist.private && wrong_profile?
+          return false if creator?
+
+          playlist.private && !valid_profile?
         end
 
         def profile_data

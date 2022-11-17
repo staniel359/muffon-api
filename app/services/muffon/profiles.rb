@@ -16,7 +16,15 @@ module Muffon
     end
 
     def profiles
-      @profiles ||= ::Profile.public
+      @profiles ||= profiles_conditional
+    end
+
+    def profiles_conditional
+      if creator?
+        ::Profile
+      else
+        ::Profile.public
+      end
     end
 
     def collection_list

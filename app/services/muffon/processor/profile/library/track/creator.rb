@@ -16,7 +16,7 @@ module Muffon
             end
 
             def forbidden?
-              wrong_profile?
+              !valid_profile?
             end
 
             def process_library_track

@@ -52,7 +52,7 @@ module Muffon
       end
 
       def profile_other_profile_data
-        return {} if wrong_other_profile?
+        return {} unless valid_other_profile?
 
         { other_profile: other_profile_data }
       end

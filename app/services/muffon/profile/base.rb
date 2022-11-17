@@ -25,7 +25,9 @@ module Muffon
       end
 
       def forbidden?
-        profile.private && wrong_profile?
+        return false if creator?
+
+        profile.private && !valid_profile?
       end
 
       def profile_params

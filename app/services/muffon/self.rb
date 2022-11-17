@@ -18,7 +18,7 @@ module Muffon
     def return?
       not_all_args? ||
         no_data? ||
-        wrong_profile?
+        !valid_profile?
     end
 
     def primary_args

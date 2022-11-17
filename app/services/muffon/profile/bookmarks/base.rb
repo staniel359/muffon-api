@@ -5,7 +5,7 @@ module Muffon
         private
 
         def forbidden?
-          wrong_profile?
+          !valid_profile?
         end
 
         def profile_data

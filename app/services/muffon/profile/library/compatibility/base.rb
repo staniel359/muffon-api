@@ -20,8 +20,7 @@ module Muffon
           end
 
           def forbidden?
-            wrong_profile? &&
-              wrong_other_profile?
+            !valid_profile? && !valid_other_profile?
           end
 
           def data

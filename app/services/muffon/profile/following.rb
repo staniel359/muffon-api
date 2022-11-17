@@ -5,11 +5,14 @@ module Muffon
 
       private
 
-      def profiles
-        @profiles ||=
+      def profiles_conditional
+        if creator?
+          profile.following_profiles
+        else
           profile
-          .following_profiles
-          .public
+            .following_profiles
+            .public
+        end
       end
     end
   end

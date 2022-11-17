@@ -16,7 +16,17 @@ module Muffon
     end
 
     def playlists
-      @playlists ||= ::Playlist.public
+      @playlists ||= playlists_conditional
+    end
+
+    def playlists_conditional
+      if creator?
+        ::Playlist
+      else
+        ::Playlist
+          .by_public_profile
+          .public
+      end
     end
 
     def collection_list

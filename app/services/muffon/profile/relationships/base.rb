@@ -19,6 +19,10 @@ module Muffon
           @total_items_count ||= profiles.count
         end
 
+        def profiles
+          @profiles ||= profiles_conditional
+        end
+
         def collection_list
           profiles
             .relationship_created_desc_ordered

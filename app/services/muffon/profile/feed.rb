@@ -9,7 +9,7 @@ module Muffon
       private
 
       def forbidden?
-        wrong_profile?
+        !valid_profile?
       end
 
       def total_items_count
@@ -22,9 +22,17 @@ module Muffon
 
       def scoped_posts
         if global?
-          Post.global
+          global_posts
         else
           profile.feed_posts
+        end
+      end
+
+      def global_posts
+        if creator?
+          Post.global
+        else
+          Post.global_public
         end
       end
 

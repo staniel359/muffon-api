@@ -16,7 +16,7 @@ module Muffon
         end
 
         def forbidden?
-          wrong_profile? || !community_creator?
+          !valid_profile? || !community_creator?
         end
 
         def process_community
