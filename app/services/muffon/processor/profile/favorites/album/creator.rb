@@ -16,7 +16,9 @@ module Muffon
             end
 
             def process_favorite
-              favorite_album
+              favorite_album.update(
+                update_params
+              )
 
               return favorite_album.errors_data if
                   favorite_album.errors?
@@ -32,7 +34,7 @@ module Muffon
                 .favorite_albums
                 .where(
                   album_id: find_album.id
-                ).first_or_create
+                ).first_or_initialize
             end
 
             def title
@@ -41,6 +43,10 @@ module Muffon
 
             def artist_name
               @args[:artist]
+            end
+
+            def update_params
+              { source_data: @args[:source] }
             end
 
             def process_image

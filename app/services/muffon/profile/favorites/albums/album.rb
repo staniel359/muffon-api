@@ -33,13 +33,18 @@ module Muffon
           end
 
           def favorite_album_data
+            favorite_album_base_data
+              .merge(favorite_album_extra_data)
+          end
+
+          def favorite_album_base_data
             {
+              source:
+                favorite_album.source_data,
               id: favorite_album.id,
               title:,
               artist: artist_names_data,
-              artists:,
-              image: favorite_album.image_data,
-              created: created_formatted
+              artists:
             }.compact
           end
 
@@ -53,6 +58,14 @@ module Muffon
 
           def artist_data
             { name: artist_name }
+          end
+
+          def favorite_album_extra_data
+            {
+              image:
+                favorite_album.image_data,
+              created: created_formatted
+            }.compact
           end
 
           def created_formatted

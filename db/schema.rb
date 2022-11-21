@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_192710) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_21_135720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -119,6 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_192710) do
     t.integer "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "source_data"
     t.index ["album_id", "profile_id"], name: "index_favorite_albums_on_album_id_and_profile_id", unique: true
     t.index ["profile_id"], name: "index_favorite_albums_on_profile_id"
   end
@@ -138,6 +139,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_192710) do
     t.integer "album_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "source_data"
+    t.jsonb "audio_data"
+    t.jsonb "album_source_data"
     t.index ["profile_id"], name: "index_favorite_tracks_on_profile_id"
     t.index ["track_id", "profile_id"], name: "index_favorite_tracks_on_track_id_and_profile_id", unique: true
   end

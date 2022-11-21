@@ -25,7 +25,10 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Favorites::Album::Creator.call(
               params.slice(
-                *%i[profile_id token title artist image]
+                *%i[
+                  profile_id token title
+                  artist image source
+                ]
               )
             )
           end

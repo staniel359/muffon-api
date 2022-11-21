@@ -46,7 +46,13 @@ module Muffon
             end
 
             def update_params
-              { album_id: find_album&.id }
+              {
+                album_id: find_album&.id,
+                source_data: @args[:source],
+                audio_data: @args[:audio],
+                album_source_data:
+                  @args[:album_source]
+              }
             end
 
             def album_title

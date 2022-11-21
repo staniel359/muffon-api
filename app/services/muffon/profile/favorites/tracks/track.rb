@@ -37,15 +37,19 @@ module Muffon
           end
 
           def favorite_track_data
+            favorite_track_base_data
+              .merge(favorite_track_extra_data)
+          end
+
+          def favorite_track_base_data
             {
+              source:
+                favorite_track.source_data,
               id: favorite_track.id,
               player_id: track.player_id,
               title:,
               artist: artist_names_data,
-              artists:,
-              album: album_data,
-              image: favorite_track.image_data,
-              created: created_formatted
+              artists:
             }.compact
           end
 
@@ -57,10 +61,25 @@ module Muffon
             { name: artist_name }
           end
 
+          def favorite_track_extra_data
+            {
+              album: album_data,
+              image:
+                favorite_track.image_data,
+              created: created_formatted,
+              audio:
+                favorite_track.audio_data
+            }.compact
+          end
+
           def album_data
             return if album.blank?
 
-            { title: album.title }
+            {
+              source:
+                favorite_track.album_source_data,
+              title: album.title
+            }
           end
 
           def album
