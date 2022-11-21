@@ -7,7 +7,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:14
+        image: postgres:15
         env:
           POSTGRES_DB: muffon_api_test
           POSTGRES_USER: muffon_api_test
@@ -20,7 +20,7 @@ jobs:
 
     steps:
     - name: Set up Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
