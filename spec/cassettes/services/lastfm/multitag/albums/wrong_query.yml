@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://kerve.last.fm/kerve/charts?f=tag:wejlhg239gh23&format=json&nr=1000&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - kerve.last.fm
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Raw-Content-Length:
+      - '24'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Request-Headers:
+      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
+        X-Atmosphere-Transport, *
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Thu, 24 Nov 2022 12:42:58 GMT
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"results":{"album":[]}}'
+  recorded_at: Thu, 24 Nov 2022 12:42:58 GMT
+recorded_with: VCR 6.1.0

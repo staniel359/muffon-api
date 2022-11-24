@@ -481,6 +481,7 @@ Rails.application.routes.draw do
 
       namespace :multitag do
         get 'artists'
+        get 'albums'
       end
 
       namespace :releases do
