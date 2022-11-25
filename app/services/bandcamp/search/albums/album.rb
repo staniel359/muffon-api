@@ -2,7 +2,7 @@ module Bandcamp
   module Search
     class Albums
       class Album < Bandcamp::Search::Albums
-        include Bandcamp::Utils::Album
+        include Muffon::Utils::Album
 
         def call
           data
@@ -15,24 +15,8 @@ module Bandcamp
             .merge(album_data)
         end
 
-        def title
-          model_title(
-            album
-          )
-        end
-
         def album
           @args[:album]
-        end
-
-        def artist_name
-          artist_data[:name]
-        end
-
-        def artist_data
-          model_artist_data(
-            album
-          )
         end
 
         def album_data
@@ -46,38 +30,8 @@ module Bandcamp
           }.compact
         end
 
-        def source_data
-          {
-            name: source_name,
-            slug: bandcamp_slug,
-            artist_slug: artist_bandcamp_slug,
-            model: bandcamp_model
-          }
-        end
-
-        def bandcamp_slug
-          model_title_slug(
-            album
-          )
-        end
-
-        def artist_bandcamp_slug
-          artist_data.dig(
-            :source, :slug
-          )
-        end
-
-        def bandcamp_model
-          model_name(
-            album
-          )
-        end
-
-        def image_data
-          image_data_formatted(
-            album[:image]
-          )
-        end
+        alias model album
+        alias title name
       end
     end
   end

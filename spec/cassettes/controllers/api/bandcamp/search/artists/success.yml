@@ -1,51 +1,63 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_ARTISTS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=0
+    method: post
+    uri: https://bandcamp.com/api/bcsearch_public_api/1/autocomplete_elastic
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"search_text":"wild nothing","search_filter":"b","full_page":false}'
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '68'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - www.googleapis.com
+      - bandcamp.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Wed, 02 Jun 2021 15:17:56 GMT
+      Connection:
+      - keep-alive
       Server:
-      - ESF
+      - nginx
+      Content-Type:
+      - application/json
+      X-Bc-App-Description:
+      - lindacentral02-bc-search1
+      X-Bc-App-Id:
+      - '2580138'
       Cache-Control:
-      - private
-      X-Xss-Protection:
+      - no-cache, no-store
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 25 Nov 2022 13:14:36 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4029-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
       - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      X-Timer:
+      - S1669382076.423538,VS0,VE162
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        ewogICJxdWVyaWVzIjogewogICAgInJlcXVlc3QiOiBbCiAgICAgIHsKICAgICAgICAidG90YWxSZXN1bHRzIjogIjUiCiAgICAgIH0KICAgIF0KICB9LAogICJpdGVtcyI6IFsKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIldpbGQgTm90aGluZyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgICAib2c6ZGVzY3JpcHRpb24iOiAiQXNrIEphY2sgVGF0dW0gd2hhdCDigJhXaWxkIE5vdGhpbmfigJkgbWVhbnMgYW5kIGhl4oCZbGwgYW5zd2VyOiDigJhhIGNvbnRyYWRpY3Rpb27igJkuIEluIDIwMTAsIDIxIHllYXIgb2xkIFRhdHVtIHJlbGVhc2VkIG9uZSBvZiB0aGUgZmluZXN0IGN1bHQgcG9wIHJlY29yZHMgb2YgdGhlIHN1bW1lciB3aGlsc3QgZW5zY29uY2VkIGluIGhpcyBzZW5pb3IgeWVhciBvZiBjb2xsZWdlIGluIEJsYWNrc2J1cmcsIFZBLCBhIHNtYWxsIG1pZC1hdGxhbnRpYyB0b3duIGJldHRlciBrbm93biBmb3IgcHJvZHVjaW5nIGZvb3RiYWxsIGZhbnMgYW5kIGVuZ2luZWVycyB0aGFuIG11c2ljaWFucy4gVGF0dW0gbGl2ZXMgaW4gY29udHJhZGljdGlvbnMuIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNzZV9pbWFnZSI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgInNyYyI6ICJodHRwczovL2Y0LmJjYml0cy5jb20vaW1nLzAwMTg0NTUyNDBfMjMuanBnIgogICAgICAgICAgfQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgInBhZ2VtYXAiOiB7CiAgICAgICAgIm1ldGF0YWdzIjogWwogICAgICAgICAgewogICAgICAgICAgICAib2c6c2l0ZV9uYW1lIjogIkNhcHR1cmVkIFRyYWNrcyIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJDYXB0dXJlZCBUcmFja3MiLAogICAgICAgICAgICAib2c6ZGVzY3JpcHRpb24iOiAiRm91bmRlZCBpbiAyMDA4IHdpdGggYW4gZXZlci1wcmVzZW50IGV0aG9zIG9mIGJ1aWxkaW5nIHNvbWV0aGluZyBmcm9tIG5vdGhpbmcsIENhcHR1cmVkIFRyYWNrcyBoYXMgZ3Jvd24gaW50byBhbiB1bndhdmVyaW5nIEJyb29rbHluIGluc3RpdHV0aW9uIG9mIGluZGVwZW5kZW50IG11c2ljLiIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly9jYXB0dXJlZHRyYWNrcy5iYW5kY2FtcC5jb20iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvMDAxMzMxMjM1Ml8yMy5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiV2FybWVzdCBDaG9yZCIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJXYXJtZXN0IENob3JkIiwKICAgICAgICAgICAgIm9nOnVybCI6ICJodHRwczovL3dhcm1lc3RjaG9yZC5iYW5kY2FtcC5jb20iCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvYTMxMjA0ODc1MTlfMi5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAicGFnZW1hcCI6IHsKICAgICAgICAibWV0YXRhZ3MiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJvZzpzaXRlX25hbWUiOiAiTWlkbmlnaHQgUmlvdCIsCiAgICAgICAgICAgICJvZzp0aXRsZSI6ICJNaWRuaWdodCBSaW90IiwKICAgICAgICAgICAgIm9nOmRlc2NyaXB0aW9uIjogIk1pZG5pZ2h0IFJpb3QgUmVjb3JkcyBpcyBhIGludGVybmF0aW9uYWxseSByZW5vd25lZCAgTG9uZG9uIGJhc2VkIGluZGVwZW5kZW50IHJlY29yZCBsYWJlbC4gU3BlY2lhbGlzaW5nIGluIGRpc2NvLCBib29naWUgYW5kIHBhcnR5IG11c2ljLCBtZXJjaCwgcGFydGllcywgZGVzaWduLCBtYXJrZXRpbmcsIHJvY2tpbmcgd2Vla2x5IHJhZGlvIHNob3dzIGFuZCBhIHdvcmxkd2lkZSBtb250aGx5IHBvZGNhc3QuIEFsd2F5cyBicmluZ2luZyB0aGUgaGVhdCBzaW5jZSBkYXkgb25lISIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly9taWRuaWdodHJpb3RyZWNvcmRzLmJhbmRjYW1wLmNvbSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjc2VfaW1hZ2UiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJzcmMiOiAiaHR0cHM6Ly9mNC5iY2JpdHMuY29tL2ltZy8wMDI0MDA1NzkyXzIzLmpwZyIKICAgICAgICAgIH0KICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJwYWdlbWFwIjogewogICAgICAgICJtZXRhdGFncyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm9nOnNpdGVfbmFtZSI6ICJTdGFyIENyZWF0dXJlIFVuaXZlcnNhbCBWaWJyYXRpb25zIiwKICAgICAgICAgICAgIm9nOnRpdGxlIjogIk1lcmNoIGZyb20gU3RhciBDcmVhdHVyZSBVbml2ZXJzYWwgVmlicmF0aW9ucyIsCiAgICAgICAgICAgICJvZzp1cmwiOiAiaHR0cHM6Ly9zdGFyY3JlYXR1cmV1bml2ZXJzYWx2aWJyYXRpb25zLmNvbSIsCiAgICAgICAgICAgICJvZzpkZXNjcmlwdGlvbiI6ICJNZXJjaCBmcm9tIFN0YXIgQ3JlYXR1cmUgVW5pdmVyc2FsIFZpYnJhdGlvbnMiCiAgICAgICAgICB9CiAgICAgICAgXSwKICAgICAgICAiY3NlX2ltYWdlIjogWwogICAgICAgICAgewogICAgICAgICAgICAic3JjIjogImh0dHBzOi8vZjQuYmNiaXRzLmNvbS9pbWcvMDAxMzI0MjIxNV8yMy5qcGciCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgXQp9Cg==
-  recorded_at: Wed, 02 Jun 2021 15:17:55 GMT
-recorded_with: VCR 6.0.0
+      string: '{"auto":{"results":[{"type":"b","id":2228040235,"art_id":null,"img_id":18455240,"name":"Wild
+        Nothing","item_url_root":"https://wildnothingct.bandcamp.com","location":"Blacksburg,
+        Virginia","is_label":false,"tag_names":["Rock","indie","indie pop"],"img":"https://f4.bcbits.com/img/0018455240_23.jpg","genre_name":"Rock","stat_params":"search_item_id=2228040235&search_item_type=b&search_match_part=%3F&search_page_id=2291598592&search_page_no=0&search_rank=1"}],"stat_params_for_tag":"search_item_id=2&search_item_type=%40&search_match_part=%3F&search_page_id=2291598592&search_page_no=0&search_rank=1","time_ms":48},"tag":{},"genre":{}}'
+  recorded_at: Fri, 25 Nov 2022 13:14:36 GMT
+recorded_with: VCR 6.1.0

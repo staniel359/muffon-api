@@ -267,24 +267,6 @@ Rails.application.routes.draw do
         get 'tracks'
       end
 
-      namespace :id do
-        scope ':artist' do
-          get '', action: :artist
-
-          scope :albums do
-            scope ':album' do
-              get '', action: :album
-            end
-          end
-
-          scope :tracks do
-            scope ':track' do
-              get '', action: :track
-            end
-          end
-        end
-      end
-
       namespace :artists, as: :artist do
         scope ':artist_id' do
           get 'albums'

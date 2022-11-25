@@ -1,14 +1,18 @@
 module Bandcamp
   module Search
     class Base < Bandcamp::Base
-      LINK_REGEX = %r{
-        (?=https?://)?
-        ([\w-]+).bandcamp.com
-        (?:(?:/(album|track))
-        (?:/([\w-]+))?)?
-      }x
+      BASE_LINK =
+        'https://bandcamp.com/api' \
+        '/bcsearch_public_api/1' \
+        '/autocomplete_elastic'.freeze
+      SEARCH_TYPES = {
+        'artist' => 'b',
+        'album' => 'a',
+        'track' => 't'
+      }.freeze
 
       include Muffon::Utils::Pagination
+      include Bandcamp::Utils::Search
 
       private
 
@@ -16,96 +20,51 @@ module Bandcamp
         [@args[:query]]
       end
 
-      def response_data
-        @response_data ||=
-          Google::Search.call(
-            params
-          )[:search]
-      end
-
-      def params
-        {
-          query: @args[:query],
-          scope:
-            "bandcamp_#{collection_name}",
-          page: @args[:page]
-        }
+      def no_data?
+        false
       end
 
       def data
         { search: paginated_data }
       end
 
-      def page
-        response_data[:page]
+      def total_items_count
+        raw_collection_list.size
       end
 
-      def total_pages_count
-        response_data[:total_pages]
+      def raw_collection_list
+        response_data.dig(
+          'auto', 'results'
+        )
       end
 
       def collection_list
-        response_data[:results]
+        collection_paginated(
+          raw_collection_list
+        )
       end
 
-      def model_title(item)
-        item[:title].split(
-          ', by '
-        )[0]
+      def link
+        BASE_LINK
       end
 
-      def model_artist_data(item)
+      def payload
         {
-          source:
-            model_artist_source_data(item),
-          name: model_artist_name(item)
+          search_text: @args[:query],
+          search_filter: model_type,
+          full_page: false
         }
       end
 
-      def model_artist_source_data(item)
-        {
-          name: source_name,
-          slug: model_artist_slug(item)
-        }
+      def model_type
+        SEARCH_TYPES[model_name]
       end
 
-      def model_artist_slug(item)
-        link_data(
-          item[:link]
-        )[:artist]
+      def model_name
+        self.class::MODEL_NAME
       end
 
-      def link_data(link)
-        return {} if link.blank?
-
-        artist, model, title =
-          link.scan(
-            LINK_REGEX
-          ).flatten
-
-        {
-          artist: artist.to_s,
-          model: model || 'artist',
-          title: title.to_s
-        }
-      end
-
-      def model_artist_name(item)
-        item[:site_name] ||
-          'Various Artists'
-      end
-
-      def model_name(item)
-        link_data(
-          item[:link]
-        )[:model]
-      end
-
-      def model_title_slug(item)
-        link_data(
-          item[:link]
-        )[:title]
-      end
+      alias response post_response
     end
   end
 end

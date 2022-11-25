@@ -2,7 +2,7 @@ module Bandcamp
   module Search
     class Tracks
       class Track < Bandcamp::Search::Tracks
-        include Bandcamp::Utils::Track
+        include Muffon::Utils::Track
 
         def call
           data
@@ -16,24 +16,8 @@ module Bandcamp
             .merge(track_extra_data)
         end
 
-        def title
-          model_title(
-            track
-          )
-        end
-
         def track
           @args[:track]
-        end
-
-        def artist_name
-          artist_data[:name]
-        end
-
-        def artist_data
-          model_artist_data(
-            track
-          )
         end
 
         def track_base_data
@@ -46,38 +30,11 @@ module Bandcamp
           }
         end
 
-        def source_data
-          {
-            name: source_name,
-            slug: bandcamp_slug,
-            artist_slug:
-              artist_bandcamp_slug,
-            model: bandcamp_model
-          }
-        end
-
-        def bandcamp_slug
-          model_title_slug(
-            track
-          )
-        end
-
-        def artist_bandcamp_slug
-          artist_data.dig(
-            :source, :slug
-          )
-        end
-
-        def bandcamp_model
-          model_name(
-            track
-          )
-        end
-
         def track_extra_data
           {
             album: album_data,
-            image: image_data
+            image: image_data,
+            audio: audio_data
           }.compact
         end
 
@@ -90,22 +47,28 @@ module Bandcamp
           }
         end
 
-        def album_source_data
-          { name: 'lastfm' }
-        end
-
         def album_title
-          @album_title ||=
-            track[:description].match(
-              /from the album (.+)/
-            ).try(:[], 1)
+          track['album_name']
         end
 
-        def image_data
-          image_data_formatted(
-            track[:image]
-          )
+        def album_source_data
+          {
+            name: source_name,
+            id: album_bandcamp_id,
+            artist_id: artist_bandcamp_id
+          }
         end
+
+        def album_bandcamp_id
+          track['album_id']
+        end
+
+        def audio_data
+          { present: true }
+        end
+
+        alias model track
+        alias title name
       end
     end
   end

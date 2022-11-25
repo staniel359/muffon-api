@@ -1,231 +1,129 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_TRACKS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wild%20nothing&start=0
+    method: post
+    uri: https://bandcamp.com/api/bcsearch_public_api/1/autocomplete_elastic
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"search_text":"wild nothing","search_filter":"t","full_page":false}'
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '68'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - www.googleapis.com
+      - bandcamp.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Wed, 02 Jun 2021 15:18:01 GMT
+      Connection:
+      - keep-alive
       Server:
-      - ESF
+      - nginx
+      Content-Type:
+      - application/json
+      X-Bc-App-Description:
+      - lindacentral04-bc-search1
+      X-Bc-App-Id:
+      - '2580140'
       Cache-Control:
-      - private
-      X-Xss-Protection:
+      - no-cache, no-store
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 25 Nov 2022 13:14:39 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4064-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
       - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      X-Timer:
+      - S1669382079.071495,VS0,VE240
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: |
-        {
-          "queries": {
-            "request": [
-              {
-                "totalResults": "6740"
-              }
-            ]
-          },
-          "items": [
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "track by Wild Nothing",
-                    "og:title": "Blue Wings, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/blue-wings"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a3861181658_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "from the album Life of Pause",
-                    "og:title": "Life of Pause, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/life-of-pause"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a0301769417_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Captured Tracks",
-                    "og:title": "Wild Nothing - A Woman's Wisdom [Demo], by Captured Tracks",
-                    "og:description": "from the album Before That, This: A Demo Compilation",
-                    "og:url": "https://capturedtracks.bandcamp.com/track/wild-nothing-a-womans-wisdom-demo"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a3674503646_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "from the album Laughing Gas EP",
-                    "og:title": "Foyer, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/foyer"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a0013477499_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "from the album Indigo",
-                    "og:title": "Partners in Motion, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/partners-in-motion"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a3221996752_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Molly Burch",
-                    "og:description": "from the album Emotion",
-                    "og:title": "Emotion feat. Wild Nothing, by Molly Burch",
-                    "og:url": "https://mollyburch.bandcamp.com/track/emotion-feat-wild-nothing-2"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a3600531791_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "from the album Gemini",
-                    "og:title": "Chinatown, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/chinatown"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a4113642636_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "from the album Nocturne",
-                    "og:title": "Disappear Always, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/disappear-always"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a1612004764_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "High Highs",
-                    "og:description": "track by High Highs",
-                    "og:title": "Live In Dreams (Wild Nothing Cover), by High Highs",
-                    "og:url": "https://highhighsmusic.bandcamp.com/track/live-in-dreams-wild-nothing-cover"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a1225868145_5.jpg"
-                  }
-                ]
-              }
-            },
-            {
-              "pagemap": {
-                "metatags": [
-                  {
-                    "og:site_name": "Wild Nothing",
-                    "og:description": "from the album Nocturne",
-                    "og:title": "Paradise, by Wild Nothing",
-                    "og:url": "https://wildnothingct.bandcamp.com/track/paradise"
-                  }
-                ],
-                "cse_image": [
-                  {
-                    "src": "https://f4.bcbits.com/img/a1612004764_5.jpg"
-                  }
-                ]
-              }
-            }
-          ]
-        }
-  recorded_at: Wed, 02 Jun 2021 15:18:00 GMT
-recorded_with: VCR 6.0.0
+      string: '{"auto":{"results":[{"type":"t","id":1709958085,"art_id":3861181658,"img_id":null,"name":"Blue
+        Wings","band_id":2228040235,"band_name":"Wild Nothing","album_name":null,"item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/blue-wings","img":"https://f4.bcbits.com/img/3861181658_3.jpg","album_id":null,"stat_params":"search_item_id=1709958085&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=1"},{"type":"t","id":3619953540,"art_id":1315545409,"img_id":null,"name":"Wild
+        Nothing","band_id":4140417542,"band_name":"Moongazing Hare","album_name":"Wild
+        Nothing","item_url_root":"https://moongazinghare.bandcamp.com","item_url_path":"https://moongazinghare.bandcamp.com/track/wild-nothing-2","img":"https://f4.bcbits.com/img/1315545409_3.jpg","album_id":1128456779,"stat_params":"search_item_id=3619953540&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=2"},{"type":"t","id":2723372494,"art_id":3221996752,"img_id":null,"name":"Letting
+        Go","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/letting-go","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=2723372494&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=3"},{"type":"t","id":757260768,"art_id":1612004764,"img_id":null,"name":"Paradise","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Nocturne","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/paradise","img":"https://f4.bcbits.com/img/1612004764_3.jpg","album_id":2709478878,"stat_params":"search_item_id=757260768&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=4"},{"type":"t","id":2169624551,"art_id":1612004764,"img_id":null,"name":"Shadow","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Nocturne","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/shadow","img":"https://f4.bcbits.com/img/1612004764_3.jpg","album_id":2709478878,"stat_params":"search_item_id=2169624551&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=5"},{"type":"t","id":667207906,"art_id":1612004764,"img_id":null,"name":"Nocturne","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Nocturne","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/nocturne","img":"https://f4.bcbits.com/img/1612004764_3.jpg","album_id":2709478878,"stat_params":"search_item_id=667207906&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=6"},{"type":"t","id":755264226,"art_id":3600531791,"img_id":null,"name":"Emotion
+        feat. Wild Nothing","band_id":3906857503,"band_name":"Molly Burch","album_name":"Emotion","item_url_root":"https://mollyburch.bandcamp.com","item_url_path":"https://mollyburch.bandcamp.com/track/emotion-feat-wild-nothing-2","img":"https://f4.bcbits.com/img/3600531791_3.jpg","album_id":3620241122,"stat_params":"search_item_id=755264226&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=7"},{"type":"t","id":1832191569,"art_id":509659330,"img_id":null,"name":"Gemini
+        Wild Nothing","band_id":1235741655,"band_name":"Basin Spectra","album_name":"Gemini
+        Wild Nothing EP","item_url_root":"https://basinspectra.bandcamp.com","item_url_path":"https://basinspectra.bandcamp.com/track/gemini-wild-nothing","img":"https://f4.bcbits.com/img/0509659330_3.jpg","album_id":456192160,"stat_params":"search_item_id=1832191569&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=8"},{"type":"t","id":4206758961,"art_id":1315545409,"img_id":null,"name":"True
+        Comfort","band_id":4140417542,"band_name":"Moongazing Hare","album_name":"Wild
+        Nothing","item_url_root":"https://moongazinghare.bandcamp.com","item_url_path":"https://moongazinghare.bandcamp.com/track/true-comfort","img":"https://f4.bcbits.com/img/1315545409_3.jpg","album_id":1128456779,"stat_params":"search_item_id=4206758961&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=9"},{"type":"t","id":3963294759,"art_id":3481111097,"img_id":null,"name":"wild
+        nothing","band_id":1924935802,"band_name":"TARR","album_name":"TAPE","item_url_root":"https://tarrr.bandcamp.com","item_url_path":"https://tarrr.bandcamp.com/track/wild-nothing","img":"https://f4.bcbits.com/img/3481111097_3.jpg","album_id":1996012817,"stat_params":"search_item_id=3963294759&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=10"},{"type":"t","id":146357004,"art_id":3140626572,"img_id":null,"name":"Emotion
+        feat. Wild Nothing","band_id":3906857503,"band_name":"Molly Burch","album_name":"Romantic
+        Images","item_url_root":"https://mollyburch.bandcamp.com","item_url_path":"https://mollyburch.bandcamp.com/track/emotion-feat-wild-nothing","img":"https://f4.bcbits.com/img/3140626572_3.jpg","album_id":4073056050,"stat_params":"search_item_id=146357004&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=11"},{"type":"t","id":2202165842,"art_id":1225868145,"img_id":null,"name":"Live
+        In Dreams (Wild Nothing Cover)","band_id":689468144,"band_name":"High Highs","album_name":null,"item_url_root":"https://highhighsmusic.bandcamp.com","item_url_path":"https://highhighsmusic.bandcamp.com/track/live-in-dreams-wild-nothing-cover","img":"https://f4.bcbits.com/img/1225868145_3.jpg","album_id":null,"stat_params":"search_item_id=2202165842&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=12"},{"type":"t","id":2378597816,"art_id":705342280,"img_id":null,"name":"Wild
+        Nothing","band_id":2217246516,"band_name":"Rocket Tree","album_name":"Nights","item_url_root":"https://rockettree.bandcamp.com","item_url_path":"https://rockettree.bandcamp.com/track/wild-nothing","img":"https://f4.bcbits.com/img/0705342280_3.jpg","album_id":2167220250,"stat_params":"search_item_id=2378597816&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=13"},{"type":"t","id":3236669499,"art_id":1315545409,"img_id":null,"name":"The
+        Grand Banks Empty","band_id":4140417542,"band_name":"Moongazing Hare","album_name":"Wild
+        Nothing","item_url_root":"https://moongazinghare.bandcamp.com","item_url_path":"https://moongazinghare.bandcamp.com/track/the-grand-banks-empty-2","img":"https://f4.bcbits.com/img/1315545409_3.jpg","album_id":1128456779,"stat_params":"search_item_id=3236669499&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=14"},{"type":"t","id":2145679287,"art_id":1337128075,"img_id":null,"name":"Stay
+        Wild","band_id":3542518255,"band_name":"Helvetia","album_name":"Nothing In
+        Rambling","item_url_root":"https://helvetiamusic.bandcamp.com","item_url_path":"https://helvetiamusic.bandcamp.com/track/stay-wild","img":"https://f4.bcbits.com/img/1337128075_3.jpg","album_id":1891045548,"stat_params":"search_item_id=2145679287&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=15"},{"type":"t","id":1359189561,"art_id":2086058957,"img_id":null,"name":"wild
+        nothing","band_id":4024080833,"band_name":"TARR","album_name":"TAPE","item_url_root":"https://callousrecords.bandcamp.com","item_url_path":"https://callousrecords.bandcamp.com/track/wild-nothing","img":"https://f4.bcbits.com/img/2086058957_3.jpg","album_id":2714693406,"stat_params":"search_item_id=1359189561&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=16"},{"type":"t","id":2821442958,"art_id":2799967513,"img_id":null,"name":"Evenings","band_id":4252508252,"band_name":"SF
+        Perkele","album_name":"Wild Nothing (2014)","item_url_root":"https://sfperkele.bandcamp.com","item_url_path":"https://sfperkele.bandcamp.com/track/evenings","img":"https://f4.bcbits.com/img/2799967513_3.jpg","album_id":1247390624,"stat_params":"search_item_id=2821442958&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=17"},{"type":"t","id":3452844679,"art_id":1315545409,"img_id":null,"name":"Wit''s
+        End","band_id":4140417542,"band_name":"Moongazing Hare","album_name":"Wild
+        Nothing","item_url_root":"https://moongazinghare.bandcamp.com","item_url_path":"https://moongazinghare.bandcamp.com/track/wits-end","img":"https://f4.bcbits.com/img/1315545409_3.jpg","album_id":1128456779,"stat_params":"search_item_id=3452844679&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=18"},{"type":"t","id":546235178,"art_id":1315545409,"img_id":null,"name":"Some
+        Beast","band_id":4140417542,"band_name":"Moongazing Hare","album_name":"Wild
+        Nothing","item_url_root":"https://moongazinghare.bandcamp.com","item_url_path":"https://moongazinghare.bandcamp.com/track/some-beast-2","img":"https://f4.bcbits.com/img/1315545409_3.jpg","album_id":1128456779,"stat_params":"search_item_id=546235178&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=19"},{"type":"t","id":671269346,"art_id":4168223963,"img_id":null,"name":"Wild","band_id":1881320587,"band_name":"Tony
+        OverBeat","album_name":"Nothing","item_url_root":"https://esemtrax.bandcamp.com","item_url_path":"https://esemtrax.bandcamp.com/track/wild","img":"https://f4.bcbits.com/img/4168223963_3.jpg","album_id":1836802777,"stat_params":"search_item_id=671269346&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=20"},{"type":"t","id":3631134984,"art_id":2951616529,"img_id":null,"name":"Rheya
+        (Wild Nothing)","band_id":1664787845,"band_name":"Murk Russell","album_name":"REAPER
+        EP","item_url_root":"https://murkrussellmusic.bandcamp.com","item_url_path":"https://murkrussellmusic.bandcamp.com/track/rheya-wild-nothing-2","img":"https://f4.bcbits.com/img/2951616529_3.jpg","album_id":3256073276,"stat_params":"search_item_id=3631134984&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=21"},{"type":"t","id":2018930716,"art_id":1553766895,"img_id":null,"name":"China
+        Town (Wild Nothing Cover)","band_id":1602279198,"band_name":"Bacio","album_name":"Influences","item_url_root":"https://bacio.bandcamp.com","item_url_path":"https://bacio.bandcamp.com/track/china-town-wild-nothing-cover","img":"https://f4.bcbits.com/img/1553766895_3.jpg","album_id":3001220201,"stat_params":"search_item_id=2018930716&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=22"},{"type":"t","id":3444895788,"art_id":4176829570,"img_id":null,"name":"Counting
+        Days (Wild Nothing Cover)","band_id":726531038,"band_name":"After Thought","album_name":null,"item_url_root":"https://afterthoughtband.bandcamp.com","item_url_path":"https://afterthoughtband.bandcamp.com/track/counting-days-wild-nothing-cover","img":"https://f4.bcbits.com/img/4176829570_3.jpg","album_id":null,"stat_params":"search_item_id=3444895788&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=23"},{"type":"t","id":4022622991,"art_id":1713083195,"img_id":null,"name":"Eyewitness
+        News (Wild Nothing sample)","band_id":2749280550,"band_name":"Tassels","album_name":"News","item_url_root":"https://tassels.bandcamp.com","item_url_path":"https://tassels.bandcamp.com/track/eyewitness-news-wild-nothing-sample","img":"https://f4.bcbits.com/img/1713083195_3.jpg","album_id":1943943887,"stat_params":"search_item_id=4022622991&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=24"},{"type":"t","id":3471673255,"art_id":2996797451,"img_id":null,"name":"Wild
+        Nothing","band_id":3716913529,"band_name":"Mute Swimmer","album_name":"Dendronephthya","item_url_root":"https://dendronrecords.bandcamp.com","item_url_path":"https://dendronrecords.bandcamp.com/track/wild-nothing","img":"https://f4.bcbits.com/img/2996797451_3.jpg","album_id":3395316411,"stat_params":"search_item_id=3471673255&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=25"},{"type":"t","id":573637791,"art_id":2812158914,"img_id":null,"name":"Run
+        Wild","band_id":2477404361,"band_name":"Breakaway","album_name":"Nothing Like
+        A Metaphor","item_url_root":"https://breakawaybreakaway.bandcamp.com","item_url_path":"https://breakawaybreakaway.bandcamp.com/track/run-wild","img":"https://f4.bcbits.com/img/2812158914_3.jpg","album_id":1985111892,"stat_params":"search_item_id=573637791&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=26"},{"type":"t","id":2997120436,"art_id":3794882916,"img_id":null,"name":"Wild
+        Nothing","band_id":350114436,"band_name":"Young Oceans","album_name":"Like
+        History (Instrumentals)","item_url_root":"https://youngoceans.bandcamp.com","item_url_path":"https://youngoceans.bandcamp.com/track/wild-nothing","img":"https://f4.bcbits.com/img/3794882916_3.jpg","album_id":2955394054,"stat_params":"search_item_id=2997120436&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=27"},{"type":"t","id":2630519842,"art_id":1040173735,"img_id":null,"name":"Boys
+        Life (Wild Nothing Remix)","band_id":2587116262,"band_name":"Small Black","album_name":"Best
+        Blues Remix EP","item_url_root":"https://smallblack.bandcamp.com","item_url_path":"https://smallblack.bandcamp.com/track/boys-life-wild-nothing-remix","img":"https://f4.bcbits.com/img/1040173735_3.jpg","album_id":2888157483,"stat_params":"search_item_id=2630519842&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=28"},{"type":"t","id":2698449979,"art_id":3142616785,"img_id":null,"name":"Winter
+        Break (Wild Nothing Cover)","band_id":3446820616,"band_name":"Gametangia","album_name":"American
+        Composers","item_url_root":"https://gametangia.bandcamp.com","item_url_path":"https://gametangia.bandcamp.com/track/winter-break-wild-nothing-cover","img":"https://f4.bcbits.com/img/3142616785_3.jpg","album_id":1650552127,"stat_params":"search_item_id=2698449979&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=29"},{"type":"t","id":2886554290,"art_id":856185844,"img_id":null,"name":"wild
+        nothing","band_id":387919237,"band_name":"TraceInMaze Records","album_name":"TARR
+        - TAPE","item_url_root":"https://traceinmazerecords.bandcamp.com","item_url_path":"https://traceinmazerecords.bandcamp.com/track/wild-nothing","img":"https://f4.bcbits.com/img/0856185844_3.jpg","album_id":989265109,"stat_params":"search_item_id=2886554290&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=30"},{"type":"t","id":4109746988,"art_id":509659330,"img_id":null,"name":"Blossom
+        Bomb","band_id":1235741655,"band_name":"Basin Spectra","album_name":"Gemini
+        Wild Nothing EP","item_url_root":"https://basinspectra.bandcamp.com","item_url_path":"https://basinspectra.bandcamp.com/track/blossom-bomb","img":"https://f4.bcbits.com/img/0509659330_3.jpg","album_id":456192160,"stat_params":"search_item_id=4109746988&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=31"},{"type":"t","id":93519536,"art_id":1971054595,"img_id":null,"name":"Summer
+        Holiday (Wild Nothing Cover)","band_id":1656293621,"band_name":"Don Patch","album_name":"February
+        EP","item_url_root":"https://donpatch.bandcamp.com","item_url_path":"https://donpatch.bandcamp.com/track/summer-holiday-wild-nothing-cover","img":"https://f4.bcbits.com/img/1971054595_3.jpg","album_id":94483179,"stat_params":"search_item_id=93519536&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=32"},{"type":"t","id":2301231800,"art_id":2415933300,"img_id":null,"name":"Live
+        in Dreams (Wild Nothing)","band_id":594304093,"band_name":"El Escudero","album_name":"Covers
+        Chantas","item_url_root":"https://elescudero.bandcamp.com","item_url_path":"https://elescudero.bandcamp.com/track/live-in-dreams-wild-nothing","img":"https://f4.bcbits.com/img/2415933300_3.jpg","album_id":1184698843,"stat_params":"search_item_id=2301231800&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=33"},{"type":"t","id":1663132223,"art_id":4113642636,"img_id":null,"name":"Chinatown","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Gemini","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/chinatown","img":"https://f4.bcbits.com/img/4113642636_3.jpg","album_id":2806773854,"stat_params":"search_item_id=1663132223&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=34"},{"type":"t","id":1846975688,"art_id":3221996752,"img_id":null,"name":"Partners
+        in Motion","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/partners-in-motion","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=1846975688&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=35"},{"type":"t","id":3269994654,"art_id":13477499,"img_id":null,"name":"Foyer","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Laughing Gas EP","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/foyer","img":"https://f4.bcbits.com/img/0013477499_3.jpg","album_id":1495678889,"stat_params":"search_item_id=3269994654&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=36"},{"type":"t","id":272121872,"art_id":3221996752,"img_id":null,"name":"Oscillation","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/oscillation","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=272121872&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=37"},{"type":"t","id":807847352,"art_id":1612004764,"img_id":null,"name":"Only
+        Heather","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Nocturne","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/only-heather","img":"https://f4.bcbits.com/img/1612004764_3.jpg","album_id":2709478878,"stat_params":"search_item_id=807847352&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=38"},{"type":"t","id":3284795781,"art_id":3221996752,"img_id":null,"name":"Shallow
+        Water","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/shallow-water","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=3284795781&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=39"},{"type":"t","id":4037169861,"art_id":3221996752,"img_id":null,"name":"Bend","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/bend","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=4037169861&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=40"},{"type":"t","id":3729291027,"art_id":4113642636,"img_id":null,"name":"Summer
+        Holiday","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Gemini","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/summer-holiday","img":"https://f4.bcbits.com/img/4113642636_3.jpg","album_id":2806773854,"stat_params":"search_item_id=3729291027&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=41"},{"type":"t","id":557010605,"art_id":1612004764,"img_id":null,"name":"Rheya","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Nocturne","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/rheya","img":"https://f4.bcbits.com/img/1612004764_3.jpg","album_id":2709478878,"stat_params":"search_item_id=557010605&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=42"},{"type":"t","id":2325857984,"art_id":4113642636,"img_id":null,"name":"gemini","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Gemini","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/gemini","img":"https://f4.bcbits.com/img/4113642636_3.jpg","album_id":2806773854,"stat_params":"search_item_id=2325857984&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=43"},{"type":"t","id":732703676,"art_id":4171534853,"img_id":null,"name":"Golden
+        Haze","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Golden
+        Haze","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/golden-haze","img":"https://f4.bcbits.com/img/4171534853_3.jpg","album_id":1106416896,"stat_params":"search_item_id=732703676&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=44"},{"type":"t","id":476702676,"art_id":3221996752,"img_id":null,"name":"Canyon
+        on Fire","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/canyon-on-fire","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=476702676&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=45"},{"type":"t","id":1325429861,"art_id":301769417,"img_id":null,"name":"Reichpop","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Life of Pause","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/reichpop","img":"https://f4.bcbits.com/img/0301769417_3.jpg","album_id":2153106644,"stat_params":"search_item_id=1325429861&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=46"},{"type":"t","id":1864709039,"art_id":4113642636,"img_id":null,"name":"Drifter","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Gemini","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/drifter","img":"https://f4.bcbits.com/img/4113642636_3.jpg","album_id":2806773854,"stat_params":"search_item_id=1864709039&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=47"},{"type":"t","id":500774665,"art_id":3221996752,"img_id":null,"name":"Through
+        Windows","band_id":2228040235,"band_name":"Wild Nothing","album_name":"Indigo","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/through-windows","img":"https://f4.bcbits.com/img/3221996752_3.jpg","album_id":452973411,"stat_params":"search_item_id=500774665&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=48"},{"type":"t","id":632732842,"art_id":301769417,"img_id":null,"name":"Adore","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Life of Pause","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/adore","img":"https://f4.bcbits.com/img/0301769417_3.jpg","album_id":2153106644,"stat_params":"search_item_id=632732842&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=49"},{"type":"t","id":3309932838,"art_id":301769417,"img_id":null,"name":"Whenever","band_id":2228040235,"band_name":"Wild
+        Nothing","album_name":"Life of Pause","item_url_root":"https://wildnothingct.bandcamp.com","item_url_path":"https://wildnothingct.bandcamp.com/track/whenever","img":"https://f4.bcbits.com/img/0301769417_3.jpg","album_id":2153106644,"stat_params":"search_item_id=3309932838&search_item_type=t&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=50"}],"stat_params_for_tag":"search_item_id=2&search_item_type=%40&search_match_part=%3F&search_page_id=2291598669&search_page_no=0&search_rank=1","time_ms":122},"tag":{},"genre":{}}'
+  recorded_at: Fri, 25 Nov 2022 13:14:39 GMT
+recorded_with: VCR 6.1.0

@@ -1,6 +1,7 @@
 module Bandcamp
   module Search
     class Albums < Bandcamp::Search::Base
+      MODEL_NAME = 'album'.freeze
       COLLECTION_NAME = 'albums'.freeze
 
       private

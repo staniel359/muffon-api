@@ -1,57 +1,61 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://www.googleapis.com/customsearch/v1/siterestrict?cx=<GOOGLE_SCOPES_BANDCAMP_TRACKS>&fields=items(pagemap(cse_image,metatags(og:description,og:site_name,og:title,og:url))),queries(request(totalResults))&key=<GOOGLE_API_KEY>&q=wejlhg239gh23&start=0
+    method: post
+    uri: https://bandcamp.com/api/bcsearch_public_api/1/autocomplete_elastic
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"search_text":"wejlhg239gh23","search_filter":"t","full_page":false}'
     headers:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '69'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - www.googleapis.com
+      - bandcamp.com
   response:
     status:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin
-      - Referer
-      - X-Origin
-      Date:
-      - Wed, 02 Jun 2021 15:18:31 GMT
+      Connection:
+      - keep-alive
       Server:
-      - ESF
+      - nginx
+      Content-Type:
+      - application/json
+      X-Bc-App-Description:
+      - lindacentral03-bc-search1
+      X-Bc-App-Id:
+      - '2580139'
       Cache-Control:
-      - private
-      X-Xss-Protection:
+      - no-cache, no-store
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 25 Nov 2022 13:15:01 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-hhn4030-HHN
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
       - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Alt-Svc:
-      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      X-Timer:
+      - S1669382101.032813,VS0,VE123
+      Vary:
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: |
-        {
-          "queries": {
-            "request": [
-              {}
-            ]
-          }
-        }
-  recorded_at: Wed, 02 Jun 2021 15:18:30 GMT
-recorded_with: VCR 6.0.0
+      string: '{"auto":{"results":[],"stat_params_for_tag":"search_item_id=2&search_item_type=%40&search_match_part=%3F&search_page_id=2291599160&search_page_no=0&search_rank=1","time_ms":6},"tag":{},"genre":{}}'
+  recorded_at: Fri, 25 Nov 2022 13:15:01 GMT
+recorded_with: VCR 6.1.0
