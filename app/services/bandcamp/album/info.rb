@@ -9,18 +9,12 @@ module Bandcamp
       private
 
       def album_data
+        return album_base_data if @args[:minimal]
+
         self_data
           .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
-      end
-
-      def artist_name
-        artist['name']
-      end
-
-      def artist
-        album['band']
       end
 
       def album_base_data
@@ -37,7 +31,13 @@ module Bandcamp
       end
 
       def artist_bandcamp_id
-        artist['band_id']
+        album.dig(
+          'band', 'band_id'
+        )
+      end
+
+      def artist_name
+        album['tralbum_artist']
       end
 
       def bandcamp_model
