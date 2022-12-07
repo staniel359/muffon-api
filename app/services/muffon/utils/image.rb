@@ -11,11 +11,11 @@ module Muffon
         return if image.blank?
 
         {
-          original: original_url,
-          large: variant_url(600),
-          medium: variant_url(300),
-          small: variant_url(100),
-          extrasmall: variant_url(50)
+          original: original_link,
+          large: variant_link(600),
+          medium: variant_link(300),
+          small: variant_link(100),
+          extrasmall: variant_link(50)
         }
       end
 
@@ -23,31 +23,37 @@ module Muffon
         @args[:image]
       end
 
-      def original_url
-        ActiveStorage::Current.set(
-          url_options:
-        ) do
-          image.url
-        end
+      def original_link
+        format_link(
+          image
+        )
       end
 
-      def url_options
-        { host: }
+      def format_link(image)
+        key = image.key
+        filename = image.blob.filename
+
+        "#{base_link}/uploads/#{key}/#{filename}"
       end
 
-      def host
-        Rails.application.credentials.url
+      def base_link
+        Rails
+          .application
+          .credentials
+          .url
       end
 
-      def variant_url(size)
-        ActiveStorage::Current.set(
-          url_options:
-        ) do
-          image.variant(
-            loader: { page: nil },
-            resize_to_fill: [size, size]
-          ).processed.url
-        end
+      def variant_link(size)
+        format_link(
+          variant(size)
+        )
+      end
+
+      def variant(size)
+        image.variant(
+          loader: { page: nil },
+          resize_to_fill: [size, size]
+        ).processed
       end
     end
   end

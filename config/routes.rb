@@ -16,6 +16,14 @@ Rails.application.routes.draw do
 
   root to: 'application#no_content'
 
+  namespace :uploads, as: :upload, constraints: { filename: /[^\/]+/ } do
+    scope ':key' do
+      scope ':filename' do
+        get '', action: 'show'
+      end
+    end
+  end
+
   scope :api, module: :api do
     scope module: :muffon do
       resources :profiles,
