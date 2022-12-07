@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   root to: 'application#no_content'
 
+  resources :uploads, only: :show, param: :key
+
   scope :api, module: :api do
     scope module: :muffon do
       resources :profiles,
