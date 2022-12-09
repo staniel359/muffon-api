@@ -46,7 +46,8 @@ module ProfileDecorator
   end
 
   def conversations
-    Conversation.with_or_of_profile(id)
+    active_conversations
+      .or(passive_conversations)
   end
 
   def feed_posts

@@ -20,41 +20,41 @@ class Profile < ApplicationRecord
 
   has_one_attached :image
 
-  has_many :library_artists, dependent: nil
-  has_many :library_albums, dependent: nil
-  has_many :library_tracks, dependent: nil
+  has_many :library_artists, dependent: :destroy
+  has_many :library_albums, dependent: :destroy
+  has_many :library_tracks, dependent: :destroy
 
   has_many :recommendations,
            class_name: '::Recommendation',
-           dependent: nil
+           dependent: :destroy
 
-  has_many :listened_artists, dependent: nil
-  has_many :listened_albums, dependent: nil
-  has_many :listened_tracks, dependent: nil
+  has_many :listened_artists, dependent: :destroy
+  has_many :listened_albums, dependent: :destroy
+  has_many :listened_tracks, dependent: :destroy
 
-  has_many :bookmark_artists, dependent: nil
-  has_many :bookmark_albums, dependent: nil
-  has_many :bookmark_tracks, dependent: nil
+  has_many :bookmark_artists, dependent: :destroy
+  has_many :bookmark_albums, dependent: :destroy
+  has_many :bookmark_tracks, dependent: :destroy
 
-  has_many :favorite_artists, dependent: nil
-  has_many :favorite_albums, dependent: nil
-  has_many :favorite_tracks, dependent: nil
+  has_many :favorite_artists, dependent: :destroy
+  has_many :favorite_albums, dependent: :destroy
+  has_many :favorite_tracks, dependent: :destroy
 
-  has_many :playlists, dependent: nil
+  has_many :playlists, dependent: :destroy
 
   has_many :own_posts,
            class_name: 'Post',
-           dependent: nil
+           dependent: :destroy
 
   has_many :posts,
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
-           dependent: nil
+           dependent: :destroy
 
   has_many :active_relationships,
            class_name: 'Relationship',
            inverse_of: :profile,
-           dependent: nil
+           dependent: :destroy
 
   has_many :following_profiles,
            through: :active_relationships,
@@ -64,7 +64,7 @@ class Profile < ApplicationRecord
            foreign_key: 'other_profile_id',
            class_name: 'Relationship',
            inverse_of: :other_profile,
-           dependent: nil
+           dependent: :destroy
 
   has_many :follower_profiles,
            through: :passive_relationships,
@@ -72,11 +72,21 @@ class Profile < ApplicationRecord
 
   has_many :own_communities,
            class_name: 'Community',
-           dependent: nil
+           dependent: :destroy
 
-  has_many :memberships, dependent: nil
+  has_many :memberships, dependent: :destroy
 
   has_many :communities, through: :memberships
+
+  has_many :active_conversations,
+           class_name: 'Conversation',
+           dependent: :destroy
+
+  has_many :passive_conversations,
+           class_name: 'Conversation',
+           foreign_key: 'other_profile_id',
+           inverse_of: :other_profile,
+           dependent: :destroy
 
   enum gender: {
     male: 0,
