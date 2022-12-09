@@ -1,0 +1,5 @@
+de:
+  mailer:
+    passwordReset:
+      subject: 'muffon | Passwordzurücksetzung'
+      text: "Dein Passwortzurücksetzungscode ist <strong>%{code}</strong>."
