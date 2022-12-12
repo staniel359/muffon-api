@@ -65,8 +65,8 @@ module API
             ::Muffon::Profile::Library::Album::Playlists.call(
               params.slice(
                 *%i[
-                  profile_id token library_id
-                  page limit order
+                  profile_id other_profile_id
+                  token library_id page limit order
                 ]
               )
             )
