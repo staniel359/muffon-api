@@ -11,7 +11,7 @@ module Muffon
         private
 
         def no_data?
-          false
+          audio_binary_data.blank?
         end
 
         def data
