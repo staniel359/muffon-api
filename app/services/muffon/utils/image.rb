@@ -50,10 +50,26 @@ module Muffon
       end
 
       def variant(size)
-        image.variant(
-          loader: { page: nil },
-          resize_to_fill: [size, size]
-        ).processed
+        image
+          .variant(
+            variant_options(size)
+          ).processed
+      end
+
+      def variant_options(size)
+        {
+          loader: loader_data,
+          resize_to_fill: [size, size],
+          saver: saver_data
+        }
+      end
+
+      def loader_data
+        { page: nil }
+      end
+
+      def saver_data
+        { allow_splitting: true }
       end
     end
   end
