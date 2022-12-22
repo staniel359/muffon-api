@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Favorites
-        class Base < Muffon::Profile::Base
+        class Base < Muffon::Processor::Profile::Base
           private
 
           def primary_args

@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Recommendations
-        class Base < Muffon::Profile::Base
+        class Base < Muffon::Processor::Profile::Base
           def call
             return if not_all_args?
 

@@ -3,7 +3,7 @@ module Muffon
     module Profile
       module Library
         module Artist
-          class Base < Muffon::Profile::Base
+          class Base < Muffon::Processor::Profile::Base
             private
 
             def primary_args

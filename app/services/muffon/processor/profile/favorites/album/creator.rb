@@ -50,7 +50,7 @@ module Muffon
             end
 
             def process_image
-              favorite_album.process_image(
+              favorite_album.process_image_later(
                 @args[:image]
               )
             end

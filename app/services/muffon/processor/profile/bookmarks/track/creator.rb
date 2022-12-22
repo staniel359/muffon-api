@@ -63,7 +63,7 @@ module Muffon
             end
 
             def process_image
-              bookmark_track.process_image(
+              bookmark_track.process_image_later(
                 @args[:image]
               )
             end

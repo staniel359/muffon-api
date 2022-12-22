@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Recommendation
-        class Creator < Muffon::Profile::Base
+        class Creator < Muffon::Processor::Profile::Base
           def call
             process_recommendation
           end

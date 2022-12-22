@@ -36,12 +36,6 @@ module Muffon
         end
       end
 
-      def process_image
-        profile.process_image(
-          @args[:image]
-        )
-      end
-
       def data
         { profile: profile_data }
       end

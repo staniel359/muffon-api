@@ -1,7 +1,7 @@
 module Muffon
   module Processor
     module Profile
-      class Updater < Muffon::Profile::Base
+      class Updater < Muffon::Processor::Profile::Base
         private
 
         def primary_args

@@ -64,7 +64,7 @@ module Muffon
             end
 
             def process_image
-              playlist_track.process_image(
+              playlist_track.process_image_later(
                 @args[:image]
               )
             end

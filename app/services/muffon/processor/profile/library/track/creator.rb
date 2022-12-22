@@ -125,7 +125,7 @@ module Muffon
             end
 
             def process_image
-              library_album&.process_image(
+              library_album&.process_image_later(
                 @args[:image]
               )
             end

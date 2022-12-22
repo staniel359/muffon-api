@@ -60,7 +60,7 @@ module Muffon
             end
 
             def process_image
-              favorite_track.process_image(
+              favorite_track.process_image_later(
                 @args[:image]
               )
             end

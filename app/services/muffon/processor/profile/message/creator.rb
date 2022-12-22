@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Message
-        class Creator < Muffon::Profile::Base
+        class Creator < Muffon::Processor::Profile::Base
           include Muffon::Utils::Sendable
 
           private

@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Recommendation
-        class Deleter < Muffon::Profile::Base
+        class Deleter < Muffon::Processor::Profile::Base
           private
 
           def forbidden?
