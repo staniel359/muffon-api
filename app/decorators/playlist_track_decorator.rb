@@ -10,6 +10,8 @@ module PlaylistTrackDecorator
     end
   end
 
+  delegate :profile_id, to: :playlist
+
   def self.included(base)
     base.extend ClassMethods
   end
