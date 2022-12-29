@@ -14,6 +14,8 @@ module Muffon
           id: find_community.id,
           title: find_community.title,
           image: image_data,
+          description:
+            find_community.description,
           members_count:
             find_community.members_count
         }.compact
