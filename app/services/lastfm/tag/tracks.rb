@@ -2,6 +2,7 @@ module LastFM
   module Tag
     class Tracks < LastFM::Tag::Web::Base
       COLLECTION_NAME = 'tracks'.freeze
+      MAX_PAGES_COUNT = 20
 
       include LastFM::Tag::Utils::Pagination
 
