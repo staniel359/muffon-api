@@ -10,8 +10,8 @@ module YandexMusic
 
         private
 
-        def not_all_args?
-          @args[:track_id].blank?
+        def primary_args
+          [@args[:track_id]]
         end
 
         def no_data?

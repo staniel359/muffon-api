@@ -5,18 +5,22 @@ module YandexMusic
         include Muffon::Utils::Global
 
         def call
-          return if @args[:track_id].blank?
+          return if not_all_args?
           return retry_with_new_session_id if wrong_session_id?
 
           data
-        rescue StandardError
-          nil
         end
 
         private
 
+        def primary_args
+          [@args[:track_id]]
+        end
+
         def wrong_session_id?
           response_data['preview']
+        rescue JSON::ParserError
+          true
         end
 
         def link
