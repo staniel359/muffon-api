@@ -28,7 +28,10 @@ module API
         def create_data
           ::Muffon::Processor::Profile::Playlist::Creator.call(
             params.slice(
-              *%i[profile_id token title image private]
+              *%i[
+                profile_id token title
+                description image private
+              ]
             )
           )
         end
@@ -46,7 +49,7 @@ module API
             params.slice(
               *%i[
                 profile_id token playlist_id
-                title image private
+                title description image private
               ]
             )
           )

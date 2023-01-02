@@ -18,7 +18,9 @@ module Muffon
 
           def playlist
             @playlist ||=
-              profile.playlists.find_by(
+              profile
+              .playlists
+              .find_by(
                 id: @args[:playlist_id]
               )
           end
@@ -36,9 +38,16 @@ module Muffon
 
           def update_playlist
             playlist.update(
-              title: @args[:title],
-              private: @args[:private]
+              update_args
             )
+          end
+
+          def update_args
+            {
+              title: @args[:title],
+              description: @args[:description],
+              private: @args[:private]
+            }
           end
 
           def playlist_data

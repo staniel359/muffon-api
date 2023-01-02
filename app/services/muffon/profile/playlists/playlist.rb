@@ -79,6 +79,8 @@ module Muffon
         def playlist_extra_data
           {
             image: playlist.image_data,
+            description:
+              playlist.description,
             tracks_count:
               playlist.tracks_count,
             created: created_formatted
