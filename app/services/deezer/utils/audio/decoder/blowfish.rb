@@ -11,9 +11,11 @@ module Deezer
           end
 
           def decrypt(string = '')
-            return '' if string.to_s.size.zero?
+            return '' if string.to_s.empty?
 
-            decrypt_string(string)
+            decrypt_string(
+              string
+            )
           end
 
           private
@@ -33,13 +35,16 @@ module Deezer
             cipher.iv = @cipher_iv
             cipher.padding = 0
 
-            cipher.update(string) << cipher.final
+            cipher.update(
+              string
+            ) << cipher.final
           end
 
           def cipher
-            @cipher ||= OpenSSL::Cipher.new(
-              'bf-cbc'
-            ).decrypt
+            @cipher ||=
+              OpenSSL::Cipher.new(
+                'bf-cbc'
+              ).decrypt
           end
         end
       end
