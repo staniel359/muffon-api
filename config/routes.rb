@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   scope :api, module: :api do
     scope module: :muffon do
       resources :profiles,
-        only: %i[index create update],
+        only: %i[index create update destroy],
         param: :profile_id
 
       namespace :profiles, as: :profile do

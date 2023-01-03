@@ -44,7 +44,7 @@ class Profile < ApplicationRecord
 
   has_many :own_posts,
            class_name: 'Post',
-           dependent: :destroy
+           dependent: nil
 
   has_many :posts,
            foreign_key: 'other_profile_id',
@@ -72,7 +72,7 @@ class Profile < ApplicationRecord
 
   has_many :own_communities,
            class_name: 'Community',
-           dependent: :destroy
+           dependent: nil
 
   has_many :memberships, dependent: :destroy
 
@@ -80,13 +80,13 @@ class Profile < ApplicationRecord
 
   has_many :active_conversations,
            class_name: 'Conversation',
-           dependent: :destroy
+           dependent: nil
 
   has_many :passive_conversations,
            class_name: 'Conversation',
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
-           dependent: :destroy
+           dependent: nil
 
   enum gender: {
     male: 0,

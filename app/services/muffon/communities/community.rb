@@ -37,6 +37,8 @@ module Muffon
       end
 
       def creator_data
+        return {} if creator.blank?
+
         {
           id: creator.id,
           nickname: creator.nickname,

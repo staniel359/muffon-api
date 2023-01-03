@@ -25,6 +25,8 @@ module Muffon
       end
 
       def profile_data
+        return {} if profile.blank?
+
         {
           id: profile.id,
           nickname: profile.nickname,

@@ -9,6 +9,8 @@ module API
 
       def update; end
 
+      def destroy; end
+
       private
 
       def allowed_request?
@@ -52,6 +54,14 @@ module API
           params.slice(
             *%i[profile_id token],
             *profile_params
+          )
+        )
+      end
+
+      def destroy_data
+        ::Muffon::Processor::Profile::Destroyer.call(
+          params.slice(
+            *%i[profile_id token password]
           )
         )
       end
