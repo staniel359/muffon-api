@@ -32,19 +32,29 @@ module Spotify
 
       def audio_data
         {
-          present: audio_link.present?,
-          link: audio_link
+          present:
+            audio_or_preview_link.present?,
+          link:
+            audio_or_preview_link
         }
       end
 
-      def audio_link
+      def audio_or_preview_link
         return unless audio_present?
         return 'test.mp3' if test?
 
-        @audio_link ||=
-          Spotify::Utils::Audio::Link.call(
-            track_id: @args[:track_id]
-          )
+        @audio_or_preview_link ||=
+          audio_link || audio_preview_link
+      end
+
+      def audio_link
+        Spotify::Utils::Audio::Link.call(
+          track_id: @args[:track_id]
+        )
+      end
+
+      def audio_preview_link
+        track['preview_url']
       end
     end
   end

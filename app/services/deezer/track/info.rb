@@ -39,19 +39,37 @@ module Deezer
 
       def audio_data
         {
-          present: audio_link.present?,
-          link: audio_link
+          present:
+            audio_or_preview_link.present?,
+          link:
+            audio_or_preview_link
         }
       end
 
-      def audio_link
+      def audio_or_preview_link
         return unless audio_present?
         return 'test.mp3' if test?
 
-        @audio_link ||=
-          Deezer::Utils::Audio::File.call(
-            track_id: @args[:track_id]
-          )
+        @audio_or_preview_link ||=
+          audio_link || audio_preview_link
+      end
+
+      def audio_link
+        Deezer::Utils::Audio::File.call(
+          track_id: @args[:track_id]
+        )
+      end
+
+      def audio_preview_link
+        audio_preview_data.try(
+          :[], 'HREF'
+        )
+      end
+
+      def audio_preview_data
+        track['MEDIA'].find do |m|
+          m['TYPE'] == 'preview'
+        end
       end
     end
   end
