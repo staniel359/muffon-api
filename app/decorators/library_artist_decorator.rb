@@ -6,6 +6,12 @@ module LibraryArtistDecorator
     base.extend ClassMethods
   end
 
+  def recommendations
+    Recommendation.where(
+      '? = ANY(library_artist_ids)', id
+    )
+  end
+
   private
 
   def playlist_ids

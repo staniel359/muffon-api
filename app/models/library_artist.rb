@@ -26,14 +26,14 @@ class LibraryArtist < ApplicationRecord
               scope: :profile_id
             }
 
-  private
-
   def create_recommendations
     Muffon::Worker::Profile::Recommendations::Creator.call(
       profile_id:,
       library_artist_id: id
     )
   end
+
+  private
 
   def clear_recommendations
     Muffon::Worker::Profile::Recommendations::Clearer.call(

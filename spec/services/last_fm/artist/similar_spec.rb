@@ -11,6 +11,16 @@ RSpec.describe LastFM::Artist::Similar do
 
       it { expect(output).to eq(Helpers::LastFM::Artist.similar_data) }
     end
+
+    context 'when artist exists and alternative' do
+      let(:output) do
+        VCR.use_cassette 'services/lastfm/artist/similar/success_alternative' do
+          subject.call(artist: 'norma loy', limit: 5, page: 2, profile_id: 1)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::LastFM::Artist.similar_alternative_data) }
+    end
   end
 
   describe 'no processing' do
