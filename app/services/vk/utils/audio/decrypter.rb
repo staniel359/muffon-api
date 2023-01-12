@@ -2,6 +2,8 @@ module VK
   module Utils
     module Audio
       class Decrypter < VK::Base
+        THREADS_COUNT = 20
+
         def call
           return if not_all_args? || no_data?
 
@@ -30,7 +32,7 @@ module VK
           @fragments_data ||=
             Parallel.map_with_index(
               fragments_paths,
-              in_threads: threads_count
+              in_threads: THREADS_COUNT
             ) do |path, index|
               fragment_data(
                 index, path
@@ -40,10 +42,6 @@ module VK
 
         def fragments_paths
           playlist_data[:fragments_paths]
-        end
-
-        def threads_count
-          fragments_paths.size
         end
 
         def fragment_data(index, path)
