@@ -12,7 +12,7 @@ gem 'bootsnap', require: false
 gem 'bcrypt'
 gem 'image_processing'
 gem 'mini_magick'
-gem 'nokogiri', '1.14.0.rc1'
+gem 'nokogiri'
 gem 'parallel'
 gem 'pg'
 gem 'puma'
