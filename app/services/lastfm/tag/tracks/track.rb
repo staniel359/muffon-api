@@ -16,9 +16,7 @@ module LastFM
         end
 
         def title
-          track.css(
-            '.chartlist-name a'
-          )[0].text
+          track['name']
         end
 
         def track
@@ -26,9 +24,9 @@ module LastFM
         end
 
         def artist_name
-          track.css(
-            '.chartlist-artist a'
-          )[0].text
+          track.dig(
+            'artist', 'name'
+          )
         end
 
         def track_data

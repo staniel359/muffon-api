@@ -3,7 +3,6 @@ module Muffon
     module Tag
       class Tracks < Muffon::Radio::Tag::Base
         TRACKS_LIMIT = 1_000
-        TAG_TRACKS_LIMIT = 50
 
         private
 
@@ -11,15 +10,9 @@ module Muffon
           @tag_info_data ||=
             LastFM::Tag::Tracks.call(
               tag: @args[:tag],
-              page: tag_random_page,
-              random: random?
+              limit: 1,
+              page: random_track_number
             )[:tag]
-        end
-
-        def pages_count
-          TRACKS_LIMIT.fdiv(
-            TAG_TRACKS_LIMIT
-          ).ceil
         end
 
         def radio_track_data

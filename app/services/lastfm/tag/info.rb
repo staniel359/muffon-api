@@ -1,7 +1,18 @@
 module LastFM
   module Tag
     class Info < LastFM::Tag::Base
+      API_METHOD = 'tag.getInfo'.freeze
+
       private
+
+      def no_data?
+        tag.blank? ||
+          tag['total'].zero?
+      end
+
+      def tag
+        response_data['tag']
+      end
 
       def params
         super.merge(

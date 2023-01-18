@@ -1,18 +1,13 @@
 module LastFM
   module Tag
-    class Albums < LastFM::Tag::Web::Base
+    class Albums < LastFM::Tag::Base
+      API_METHOD = 'tag.getTopAlbums'.freeze
       COLLECTION_NAME = 'albums'.freeze
-      MAX_PAGES_COUNT = 50
+      MODEL_NAME = 'album'.freeze
 
       include LastFM::Tag::Utils::Pagination
 
       private
-
-      def albums_list
-        response_data.css(
-          '.resource-list--release-list-item'
-        )
-      end
 
       def collection_item_data_formatted(album)
         LastFM::Tag::Albums::Album.call(

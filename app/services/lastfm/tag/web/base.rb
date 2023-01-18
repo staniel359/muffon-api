@@ -39,17 +39,6 @@ module LastFM
         def data
           { tag: tag_data }
         end
-
-        def total_pages_count
-          [
-            super,
-            max_pages_count
-          ].min
-        end
-
-        def max_pages_count
-          self.class::MAX_PAGES_COUNT
-        end
       end
     end
   end

@@ -9,10 +9,6 @@ module Muffon
         radio_track_data.blank?
       end
 
-      def random?
-        !test?
-      end
-
       def random_track_number
         return 1 if test?
 

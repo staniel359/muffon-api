@@ -1,21 +1,10 @@
 module LastFM
   module Tag
     class Base < LastFM::Base
-      API_METHOD = 'tag.getInfo'.freeze
-
       private
 
       def primary_args
         [@args[:tag]]
-      end
-
-      def no_data?
-        tag.blank? ||
-          tag['total'].zero?
-      end
-
-      def tag
-        response_data['tag']
       end
 
       def params
