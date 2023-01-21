@@ -5,7 +5,7 @@ RSpec.describe YouTube::Video::Related do
     context 'when video present' do
       let(:output) do
         VCR.use_cassette 'services/youtube/video/related/success' do
-          subject.call(video_id: '1aTIkQf3eRY', limit: 5, page: 'CBQQAA')
+          subject.call(video_id: '1aTIkQf3eRY', limit: 5, page: 2)
         end
       end
 

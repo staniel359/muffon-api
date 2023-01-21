@@ -1,34 +1,38 @@
 module YouTube
   module Video
     class Related < YouTube::Video::Base
+      COLLECTION_NAME = 'related'.freeze
+      TOTAL_LIMIT = 200
+
+      include Muffon::Utils::Pagination
+
       private
 
       def search_data
         @search_data ||=
           YouTube::Search::Videos.call(
             video_id: @args[:video_id],
-            limit: @args[:limit],
-            page: @args[:page]
+            limit: total_limit
           )[:search] || {}
       end
 
       def video_data
         video_base_data
-          .merge(video_related_data)
+          .merge(paginated_data)
       end
 
-      def video_related_data
-        {
-          prev_page:
-            search_data[:prev_page],
-          next_page:
-            search_data[:next_page],
-          related:
-        }.compact
+      def collection_count
+        raw_collection.size
       end
 
-      def related
+      def raw_collection
         search_data[:videos] || []
+      end
+
+      def collection
+        collection_paginated(
+          raw_collection
+        )
       end
     end
   end
