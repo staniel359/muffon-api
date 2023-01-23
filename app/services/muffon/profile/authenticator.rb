@@ -20,13 +20,18 @@ module Muffon
       end
 
       def profile
-        @profile ||= ::Profile.find_by(
-          email: @args[:email]
-        )
+        @profile ||=
+          ::Profile.find_by(
+            email: @args[:email]
+          )
       end
 
       def data
-        return not_found unless authenticated?
+        add_wrong_password_error unless
+            authenticated?
+
+        return profile.errors_data if
+            profile.errors?
 
         { profile: profile_data }
       end
@@ -35,6 +40,14 @@ module Muffon
         !!profile.authenticate(
           @args[:password]
         )
+      end
+
+      def add_wrong_password_error
+        profile
+          .errors
+          .add(
+            :password, 'wrong'
+          )
       end
 
       def profile_data

@@ -13,8 +13,19 @@ module Muffon
         end
 
         def forbidden?
-          !valid_profile? ||
-            !authenticated?
+          !valid_profile?
+        end
+
+        def data
+          add_wrong_password_error unless
+              authenticated?
+
+          return profile.errors_data if
+              profile.errors?
+
+          profile.destroy
+
+          { success: true }
         end
 
         def authenticated?
@@ -23,10 +34,12 @@ module Muffon
           )
         end
 
-        def data
-          profile.destroy
-
-          { success: true }
+        def add_wrong_password_error
+          profile
+            .errors
+            .add(
+              :password, 'wrong'
+            )
         end
       end
     end
