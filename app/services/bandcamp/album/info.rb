@@ -9,8 +9,6 @@ module Bandcamp
       private
 
       def album_data
-        return album_base_data if @args[:minimal]
-
         self_data
           .merge(album_base_data)
           .merge(album_extra_data)

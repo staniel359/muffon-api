@@ -20,24 +20,6 @@ module Bandcamp
         }
       end
 
-      def artists
-        return super if album_bandcamp_id.blank?
-
-        album_info_data[:artists]
-      end
-
-      def album_bandcamp_id
-        response_data['album_id']
-      end
-
-      def album_info_data
-        Bandcamp::Album::Info.call(
-          artist_id: artist_bandcamp_id,
-          album_id: album_bandcamp_id,
-          minimal: true
-        )[:album]
-      end
-
       def track_extra_data
         {
           album: album_data,
@@ -72,6 +54,10 @@ module Bandcamp
 
       def album_title
         response_data['album_title']
+      end
+
+      def album_bandcamp_id
+        response_data['album_id']
       end
 
       def image_data
