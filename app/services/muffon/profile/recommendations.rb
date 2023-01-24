@@ -53,24 +53,19 @@ module Muffon
       end
 
       def recommendations
-        if @args[:hide_library_artists]
-          recommendations_library_artists_hidden
-        else
-          recommendations_not_deleted
-        end
-      end
-
-      def recommendations_library_artists_hidden
-        Muffon::Profile::Recommendations::Hide::LibraryArtists.call(
-          profile_id: @args[:profile_id],
-          tracks_count: @args[:tracks_count]
+        Muffon::Profile::Recommendations::Hide.call(
+          hide_args
         )
       end
 
-      def recommendations_not_deleted
-        profile
-          .recommendations
-          .not_deleted
+      def hide_args
+        @args.slice(
+          *%i[
+            hide_library_artists
+            hide_listened_artists
+            profile_id tracks_count
+          ]
+        )
       end
 
       def collection_list

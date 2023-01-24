@@ -19,6 +19,7 @@ module API
                 profile_id token page limit
                 order filter filter_value
                 hide_library_artists tracks_count
+                hide_listened_artists
               ]
             )
           )
