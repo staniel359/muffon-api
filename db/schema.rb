@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_02_145200) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_25_151316) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -346,6 +346,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_02_145200) do
     t.datetime "updated_at", null: false
     t.string "player_id"
     t.string "title_downcase"
+    t.string "extra_title"
+    t.string "extra_title_downcase"
+    t.index ["extra_title_downcase", "title_downcase", "artist_id"], name: "index_tracks_on_title_and_extra_title_and_artist_id", unique: true
     t.index ["player_id"], name: "index_tracks_on_player_id", unique: true
     t.index ["title_downcase", "artist_id"], name: "index_tracks_on_title_downcase_and_artist_id", unique: true
   end

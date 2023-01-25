@@ -11,8 +11,8 @@ module Muffon
 
       def find_track
         @find_track ||=
-          ::Track.with_artist_title(
-            find_artist.id, title
+          ::Track.with_artist_title_extra_title(
+            find_artist.id, title, extra_title
           )
       end
 
@@ -21,6 +21,10 @@ module Muffon
           ::Artist.with_name(
             artist_name
           )
+      end
+
+      def extra_title
+        nil
       end
 
       def track_artist_data
