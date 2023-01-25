@@ -21,6 +21,20 @@ module Muffon
           }
         end
 
+        def top_tracks_count
+          library_artists
+            .library_tracks_count_desc_ordered
+            .first
+            &.library_tracks_count || 0
+        end
+
+        def top_albums_count
+          library_artists
+            .library_albums_count_desc_ordered
+            .first
+            &.library_albums_count || 0
+        end
+
         def total_items_count
           profile.library_artists_count
         end

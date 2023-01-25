@@ -8,6 +8,34 @@ module Muffon
 
         private
 
+        def recommendation_data
+          recommendation_base_data
+            .merge(paginated_data)
+        end
+
+        def recommendation_base_data
+          {
+            top_tracks_count:,
+            top_albums_count:
+          }
+        end
+
+        def top_tracks_count
+          recommendation
+            .library_artists
+            .library_tracks_count_desc_ordered
+            .first
+            &.library_tracks_count || 0
+        end
+
+        def top_albums_count
+          recommendation
+            .library_artists
+            .library_albums_count_desc_ordered
+            .first
+            &.library_albums_count || 0
+        end
+
         def total_items_count
           @total_items_count ||=
             recommendation
@@ -28,8 +56,6 @@ module Muffon
             library_artist:
           )
         end
-
-        alias recommendation_data paginated_data
       end
     end
   end

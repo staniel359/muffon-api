@@ -23,6 +23,20 @@ module Muffon
             }
           end
 
+          def top_tracks_count
+            tag_library_artists
+              .library_tracks_count_desc_ordered
+              .first
+              &.library_tracks_count || 0
+          end
+
+          def top_albums_count
+            tag_library_artists
+              .library_albums_count_desc_ordered
+              .first
+              &.library_albums_count || 0
+          end
+
           def total_items_count
             @total_items_count ||=
               tag_library_artists.count

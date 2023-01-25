@@ -19,6 +19,14 @@ module Muffon
             { top_tracks_count: }
           end
 
+          def top_tracks_count
+            library_track
+              .library_albums
+              .library_tracks_count_desc_ordered
+              .first
+              &.library_tracks_count || 0
+          end
+
           def track_data
             track_base_data
               .merge(paginated_data)

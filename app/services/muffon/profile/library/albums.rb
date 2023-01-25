@@ -18,6 +18,13 @@ module Muffon
           { top_tracks_count: }
         end
 
+        def top_tracks_count
+          library_albums
+            .library_tracks_count_desc_ordered
+            .first
+            &.library_tracks_count || 0
+        end
+
         def total_items_count
           profile.library_albums_count
         end

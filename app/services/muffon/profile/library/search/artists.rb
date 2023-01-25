@@ -26,9 +26,11 @@ module Muffon
             }
           end
 
-          def total_items_count
-            @total_items_count ||=
-              search_library_artists.count
+          def top_tracks_count
+            search_library_artists
+              .library_tracks_count_desc_ordered
+              .first
+              &.library_tracks_count || 0
           end
 
           def search_library_artists
@@ -37,6 +39,18 @@ module Muffon
                 'artists.name_downcase LIKE :query',
                 query: query_formatted
               )
+          end
+
+          def top_albums_count
+            search_library_artists
+              .library_albums_count_desc_ordered
+              .first
+              &.library_albums_count || 0
+          end
+
+          def total_items_count
+            @total_items_count ||=
+              search_library_artists.count
           end
 
           def library_artists_joined

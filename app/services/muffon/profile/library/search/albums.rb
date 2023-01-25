@@ -17,9 +17,11 @@ module Muffon
             { top_tracks_count: }
           end
 
-          def total_items_count
-            @total_items_count ||=
-              search_library_albums.count
+          def top_tracks_count
+            search_library_albums
+              .library_tracks_count_desc_ordered
+              .first
+              &.library_tracks_count || 0
           end
 
           def search_library_albums
@@ -29,6 +31,11 @@ module Muffon
                 'OR artists.name_downcase LIKE :query',
                 query: query_formatted
               )
+          end
+
+          def total_items_count
+            @total_items_count ||=
+              search_library_albums.count
           end
 
           def library_albums_joined
