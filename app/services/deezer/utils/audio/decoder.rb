@@ -6,18 +6,32 @@ module Deezer
         INTERVAL_CHUNK = 3
 
         def call
-          return '' if raw_audio_link.blank?
+          return '' if no_data?
 
           data
         end
 
         private
 
+        def no_data?
+          raw_audio_link.blank? ||
+            raw_binary_data.blank?
+        end
+
         def raw_audio_link
           @raw_audio_link ||=
             Deezer::Utils::Audio::Link.call(
               track_id: @args[:track_id]
             )
+        end
+
+        def raw_binary_data
+          @raw_binary_data ||=
+            RestClient.get(
+              raw_audio_link
+            )
+        rescue RestClient::Forbidden
+          nil
         end
 
         def data
@@ -29,16 +43,11 @@ module Deezer
         end
 
         def chunks_count
-          raw_binary_data.size.fdiv(
-            CHUNK_SIZE
-          ).ceil
-        end
-
-        def raw_binary_data
-          @raw_binary_data ||=
-            RestClient.get(
-              raw_audio_link
-            )
+          raw_binary_data
+            .size
+            .fdiv(
+              CHUNK_SIZE
+            ).ceil
         end
 
         def process_chunk(index, memo)
