@@ -1,6 +1,6 @@
 module Muffon
   module Profile
-    class Authenticator < Muffon::Base
+    class Authenticator < Muffon::Profile::Base
       PARAMS = %i[
         email
         password
@@ -15,10 +15,6 @@ module Muffon
         ]
       end
 
-      def no_data?
-        profile.blank?
-      end
-
       def profile
         @profile ||=
           ::Profile.find_by(
@@ -27,27 +23,12 @@ module Muffon
       end
 
       def data
-        add_wrong_password_error unless
-            authenticated?
+        check_password
 
         return profile.errors_data if
             profile.errors?
 
         { profile: profile_data }
-      end
-
-      def authenticated?
-        !!profile.authenticate(
-          @args[:password]
-        )
-      end
-
-      def add_wrong_password_error
-        profile
-          .errors
-          .add(
-            :password, 'wrong'
-          )
       end
 
       def profile_data

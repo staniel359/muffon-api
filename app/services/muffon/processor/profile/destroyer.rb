@@ -17,8 +17,7 @@ module Muffon
         end
 
         def data
-          add_wrong_password_error unless
-              authenticated?
+          check_password
 
           return profile.errors_data if
               profile.errors?
@@ -26,20 +25,6 @@ module Muffon
           profile.destroy
 
           { success: true }
-        end
-
-        def authenticated?
-          !!profile.authenticate(
-            @args[:password]
-          )
-        end
-
-        def add_wrong_password_error
-          profile
-            .errors
-            .add(
-              :password, 'wrong'
-            )
         end
       end
     end

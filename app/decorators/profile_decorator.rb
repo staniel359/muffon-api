@@ -118,6 +118,16 @@ module ProfileDecorator
       .present?
   end
 
+  def delete_library
+    library_tracks.delete_all
+
+    library_albums.delete_all
+
+    library_artists.delete_all
+
+    recommendations.delete_all
+  end
+
   private
 
   def set_token

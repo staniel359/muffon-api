@@ -43,6 +43,26 @@ module Muffon
       def nickname
         profile.nickname
       end
+
+      def check_password
+        return if authenticated?
+
+        add_wrong_password_error
+      end
+
+      def authenticated?
+        !!profile.authenticate(
+          @args[:password]
+        )
+      end
+
+      def add_wrong_password_error
+        profile
+          .errors
+          .add(
+            :password, 'wrong'
+          )
+      end
     end
   end
 end

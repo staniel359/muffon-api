@@ -44,20 +44,11 @@ Rails.application.routes.draw do
 
           namespace :library do
             get '', action: :info
+            delete '', action: :destroy
 
             resources :artists,
               only: %i[index create destroy],
               param: :library_id
-
-            resources :albums,
-              only: %i[index create destroy],
-              param: :library_id
-
-            resources :tracks,
-              only: %i[index create destroy],
-              param: :library_id
-
-            resources :tags, only: :index
 
             namespace :artists, as: :artist do
               scope ':library_id' do
@@ -68,6 +59,10 @@ Rails.application.routes.draw do
               end
             end
 
+            resources :albums,
+              only: %i[index create destroy],
+              param: :library_id
+
             namespace :albums, as: :album do
               scope ':library_id' do
                 get '', action: :info
@@ -76,6 +71,10 @@ Rails.application.routes.draw do
               end
             end
 
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :library_id
+
             namespace :tracks, as: :track do
               scope ':library_id' do
                 get '', action: :info
@@ -83,6 +82,8 @@ Rails.application.routes.draw do
                 get 'playlists'
               end
             end
+
+            resources :tags, only: :index
 
             namespace :tags, as: :tag do
               scope ':tag_id' do
