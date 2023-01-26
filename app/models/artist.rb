@@ -13,12 +13,4 @@ class Artist < ApplicationRecord
   has_many :profiles,
            through: :library_artists,
            dependent: nil
-
-  def update_tags
-    return if tag_ids.present?
-
-    Muffon::Worker::Artist::Tags::Updater.call(
-      name:
-    )
-  end
 end

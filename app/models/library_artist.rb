@@ -13,7 +13,7 @@ class LibraryArtist < ApplicationRecord
   after_create_commit :update_artist_tags
   after_create_commit :create_recommendations
 
-  before_destroy :clear_recommendations
+  after_destroy_commit :clear_recommendations
 
   belongs_to :profile, counter_cache: true
   belongs_to :artist
@@ -25,20 +25,4 @@ class LibraryArtist < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
-
-  def create_recommendations
-    Muffon::Worker::Profile::Recommendations::Creator.call(
-      profile_id:,
-      library_artist_id: id
-    )
-  end
-
-  private
-
-  def clear_recommendations
-    Muffon::Worker::Profile::Recommendations::Clearer.call(
-      profile_id:,
-      library_artist_id: id
-    )
-  end
 end

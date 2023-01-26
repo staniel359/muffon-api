@@ -22,4 +22,12 @@ module ArtistDecorator
       image: image_url
     )
   end
+
+  def update_tags
+    return if tag_ids.present?
+
+    Muffon::Worker::Artist::Tags::Updater.call(
+      name:
+    )
+  end
 end

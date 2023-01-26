@@ -120,6 +120,10 @@ module ProfileDecorator
 
   private
 
+  def set_token
+    self.token = SecureRandom.uuid
+  end
+
   def format_library_tag(tag)
     id, count = tag
 

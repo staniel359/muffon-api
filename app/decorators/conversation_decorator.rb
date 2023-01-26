@@ -17,4 +17,14 @@ module ConversationDecorator
   def self.included(base)
     base.extend ClassMethods
   end
+
+  def find_other_profile(profile_id)
+    starter?(profile_id) ? other_profile : profile
+  end
+
+  private
+
+  def starter?(profile_id)
+    profile_id.to_i == self.profile_id
+  end
 end

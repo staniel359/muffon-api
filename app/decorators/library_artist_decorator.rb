@@ -21,4 +21,18 @@ module LibraryArtistDecorator
       .pluck(:playlist_id)
       .uniq
   end
+
+  def create_recommendations
+    Muffon::Worker::Profile::Recommendations::Creator.call(
+      profile_id:,
+      library_artist_id: id
+    )
+  end
+
+  def clear_recommendations
+    Muffon::Worker::Profile::Recommendations::Clearer.call(
+      profile_id:,
+      library_artist_id: id
+    )
+  end
 end

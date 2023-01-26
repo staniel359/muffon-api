@@ -120,10 +120,4 @@ class Profile < ApplicationRecord
             presence: true,
             uniqueness: true,
             length: { maximum: 30 }
-
-  private
-
-  def set_token
-    self.token = SecureRandom.uuid
-  end
 end
