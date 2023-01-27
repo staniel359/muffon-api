@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_134302) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_143228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -144,6 +144,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_134302) do
     t.jsonb "album_source_data"
     t.index ["profile_id"], name: "index_favorite_tracks_on_profile_id"
     t.index ["track_id", "profile_id"], name: "index_favorite_tracks_on_track_id_and_profile_id", unique: true
+  end
+
+  create_table "favorite_videos", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_favorite_videos_on_profile_id"
+    t.index ["video_id", "profile_id"], name: "index_favorite_videos_on_video_id_and_profile_id", unique: true
+    t.index ["video_id"], name: "index_favorite_videos_on_video_id"
   end
 
   create_table "library_albums", force: :cascade do |t|
@@ -387,6 +397,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_134302) do
   add_foreign_key "favorite_albums", "profiles"
   add_foreign_key "favorite_artists", "profiles"
   add_foreign_key "favorite_tracks", "profiles"
+  add_foreign_key "favorite_videos", "profiles"
+  add_foreign_key "favorite_videos", "videos"
   add_foreign_key "library_albums", "library_artists"
   add_foreign_key "library_albums", "profiles"
   add_foreign_key "library_artists", "profiles"

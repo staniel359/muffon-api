@@ -12,15 +12,23 @@ module Muffon
         end
 
         def artists
-          @artists ||= profile.favorite_artists
+          @artists ||=
+            profile.favorite_artists
         end
 
         def albums
-          @albums ||= profile.favorite_albums
+          @albums ||=
+            profile.favorite_albums
         end
 
         def tracks
-          @tracks ||= profile.favorite_tracks
+          @tracks ||=
+            profile.favorite_tracks
+        end
+
+        def videos
+          @videos ||=
+            profile.favorite_videos
         end
       end
     end

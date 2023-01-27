@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Favorites
-        module Track
+        module Video
           class Destroyer < Muffon::Processor::Profile::Favorites::Base
             private
 
@@ -13,15 +13,15 @@ module Muffon
             end
 
             def process_favorite
-              favorite_track&.destroy
+              favorite_video&.destroy
 
               { success: true }
             end
 
-            def favorite_track
-              @favorite_track ||=
+            def favorite_video
+              @favorite_video ||=
                 profile
-                .favorite_tracks
+                .favorite_videos
                 .find_by(
                   id: @args[:favorite_id]
                 )

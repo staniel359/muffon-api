@@ -8,7 +8,8 @@ module Muffon
           {
             artists_count: artists.count,
             albums_count: albums.count,
-            tracks_count: tracks.count
+            tracks_count: tracks.count,
+            videos_count: videos.count
           }
         end
       end

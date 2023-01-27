@@ -64,8 +64,12 @@ module YouTube
 
       def publish_date
         date_formatted(
-          snippet['publishedAt']
+          raw_publish_date
         )
+      end
+
+      def raw_publish_date
+        snippet['publishedAt']
       end
     end
   end

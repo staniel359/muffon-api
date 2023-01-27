@@ -33,6 +33,7 @@ class Profile < ApplicationRecord
   has_many :favorite_artists, dependent: :destroy
   has_many :favorite_albums, dependent: :destroy
   has_many :favorite_tracks, dependent: :destroy
+  has_many :favorite_videos, dependent: :destroy
 
   has_many :bookmark_artists, dependent: :destroy
   has_many :bookmark_albums, dependent: :destroy
