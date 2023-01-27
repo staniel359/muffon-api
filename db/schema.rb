@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_25_151316) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_133906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -351,6 +351,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_25_151316) do
     t.index ["extra_title_downcase", "title_downcase", "artist_id"], name: "index_tracks_on_title_and_extra_title_and_artist_id", unique: true
     t.index ["player_id"], name: "index_tracks_on_player_id", unique: true
     t.index ["title_downcase", "artist_id"], name: "index_tracks_on_title_downcase_and_artist_id", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "youtube_id"
+    t.string "title"
+    t.string "channel_youtube_id"
+    t.string "channel_title"
+    t.integer "views_count", default: 0
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["youtube_id", "channel_youtube_id"], name: "index_videos_on_youtube_id_and_channel_youtube_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
