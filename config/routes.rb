@@ -118,32 +118,18 @@ Rails.application.routes.draw do
             end
           end
 
-          namespace :listened do
-            resources :artists,
-              only: %i[create destroy],
-              param: :listened_id
+          resources :playlists,
+            only: %i[index create update destroy],
+            param: :playlist_id
 
-            resources :albums,
-              only: %i[create destroy],
-              param: :listened_id
+          namespace :playlists, as: :playlist do
+            scope ':playlist_id' do
+              get '', action: :info
 
-            resources :tracks,
-              only: %i[create destroy],
-              param: :listened_id
-          end
-
-          namespace :bookmarks do
-            resources :artists,
-              only: %i[index create destroy],
-              param: :bookmark_id
-
-            resources :albums,
-              only: %i[index create destroy],
-              param: :bookmark_id
-
-            resources :tracks,
-              only: %i[index create destroy],
-              param: :bookmark_id
+              resources :tracks,
+                only: %i[index create destroy],
+                param: :playlist_track_id
+            end
           end
 
           namespace :favorites do
@@ -162,18 +148,38 @@ Rails.application.routes.draw do
               param: :favorite_id
           end
 
-          resources :playlists,
-            only: %i[index create update destroy],
-            param: :playlist_id
+          namespace :bookmarks do
+            resources :artists,
+              only: %i[index create destroy],
+              param: :bookmark_id
 
-          namespace :playlists, as: :playlist do
-            scope ':playlist_id' do
-              get '', action: :info
+            resources :albums,
+              only: %i[index create destroy],
+              param: :bookmark_id
 
-              resources :tracks,
-                only: %i[index create destroy],
-                param: :playlist_track_id
-            end
+            resources :tracks,
+              only: %i[index create destroy],
+              param: :bookmark_id
+          end
+
+          namespace :listened do
+            resources :artists,
+              only: %i[create destroy],
+              param: :listened_id
+
+            resources :albums,
+              only: %i[create destroy],
+              param: :listened_id
+
+            resources :tracks,
+              only: %i[create destroy],
+              param: :listened_id
+          end
+
+          namespace :watched do
+            resources :videos,
+              only: %i[create destroy],
+              param: :watched_id
           end
 
           namespace :lastfm do

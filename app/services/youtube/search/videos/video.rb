@@ -13,6 +13,11 @@ module YouTube
         def data
           return if snippet.blank?
 
+          self_data
+            .merge(video_data)
+        end
+
+        def video_data
           {
             source: source_data,
             title:,

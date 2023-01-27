@@ -4,7 +4,8 @@ module YouTube
       private
 
       def video_data
-        video_base_data
+        self_data
+          .merge(video_base_data)
           .merge(video_statistics_data)
           .merge(video_extra_data)
           .merge(with_more_data)

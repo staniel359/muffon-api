@@ -7,6 +7,7 @@ class CreateVideos < ActiveRecord::Migration[7.0]
       t.string :channel_title
       t.integer :views_count, default: 0
       t.string :image_url
+      t.string :publish_date
 
       t.timestamps
     end

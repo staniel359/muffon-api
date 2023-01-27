@@ -18,7 +18,7 @@ module API
       def videos_data
         ::YouTube::Playlist::Videos.call(
           params.slice(
-            *%i[playlist_id page limit]
+            *%i[playlist_id profile_id token page limit]
           )
         )
       end

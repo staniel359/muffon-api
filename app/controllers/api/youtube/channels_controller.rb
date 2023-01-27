@@ -30,7 +30,7 @@ module API
       def videos_data
         ::YouTube::Channel::Videos.call(
           params.slice(
-            *%i[channel_id page limit]
+            *%i[channel_id profile_id token page limit]
           )
         )
       end

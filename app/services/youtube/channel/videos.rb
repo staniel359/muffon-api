@@ -17,6 +17,8 @@ module YouTube
       def uploads_playlist_data
         YouTube::Playlist::Videos.call(
           playlist_id: uploads_playlist_id,
+          profile_id: @args[:profile_id],
+          token: @args[:token],
           limit: @args[:limit],
           page: @args[:page]
         )[:playlist] || {}

@@ -13,7 +13,9 @@ module YouTube
 
       def video_data_formatted(video)
         YouTube::Search::Videos::Video.call(
-          video:
+          video:,
+          profile_id: @args[:profile_id],
+          token: @args[:token]
         )
       end
     end

@@ -1,11 +1,19 @@
 module Muffon
   class Self < Muffon::Profile::Base
-    SELF_PREFIXES = %w[
-      library
-      favorite
-      bookmark
-      listened
-    ].freeze
+    SELF_PREFIXES = {
+      artist: %w[
+        library favorite bookmark listened
+      ],
+      album: %w[
+        library favorite bookmark listened
+      ],
+      track: %w[
+        library favorite bookmark listened
+      ],
+      video: %w[
+        watched
+      ]
+    }.freeze
 
     def call
       return {} if return?
@@ -62,11 +70,17 @@ module Muffon
     end
 
     def self_queries
-      SELF_PREFIXES.map do |prefix|
+      model_self_prefixes.map do |prefix|
         format_self_query(
           prefix
         )
       end
+    end
+
+    def model_self_prefixes
+      SELF_PREFIXES[
+        model.to_sym
+      ]
     end
 
     def format_self_query(prefix)

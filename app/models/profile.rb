@@ -28,19 +28,21 @@ class Profile < ApplicationRecord
            class_name: '::Recommendation',
            dependent: :destroy
 
-  has_many :listened_artists, dependent: :destroy
-  has_many :listened_albums, dependent: :destroy
-  has_many :listened_tracks, dependent: :destroy
-
-  has_many :bookmark_artists, dependent: :destroy
-  has_many :bookmark_albums, dependent: :destroy
-  has_many :bookmark_tracks, dependent: :destroy
+  has_many :playlists, dependent: :destroy
 
   has_many :favorite_artists, dependent: :destroy
   has_many :favorite_albums, dependent: :destroy
   has_many :favorite_tracks, dependent: :destroy
 
-  has_many :playlists, dependent: :destroy
+  has_many :bookmark_artists, dependent: :destroy
+  has_many :bookmark_albums, dependent: :destroy
+  has_many :bookmark_tracks, dependent: :destroy
+
+  has_many :listened_artists, dependent: :destroy
+  has_many :listened_albums, dependent: :destroy
+  has_many :listened_tracks, dependent: :destroy
+
+  has_many :watched_videos, dependent: :destroy
 
   has_many :own_posts,
            class_name: 'Post',

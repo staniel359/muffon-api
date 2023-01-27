@@ -8,7 +8,7 @@ module API
       def videos_data
         ::YouTube::Search::Videos.call(
           params.slice(
-            *%i[query page limit]
+            *%i[query profile_id token page limit]
           )
         )
       end

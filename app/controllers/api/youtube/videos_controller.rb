@@ -14,7 +14,7 @@ module API
       def info_data
         ::YouTube::Video::Info.call(
           params.slice(
-            *%i[video_id]
+            *%i[video_id profile_id token]
           )
         )
       end
@@ -38,7 +38,7 @@ module API
       def related_data
         ::YouTube::Video::Related.call(
           params.slice(
-            *%i[video_id page limit]
+            *%i[video_id profile_id token page limit]
           )
         )
       end

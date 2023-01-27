@@ -12,6 +12,8 @@ module YouTube
         @search_data ||=
           YouTube::Search::Videos.call(
             video_id: @args[:video_id],
+            profile_id: @args[:profile_id],
+            token: @args[:token],
             limit: total_limit
           )[:search] || {}
       end

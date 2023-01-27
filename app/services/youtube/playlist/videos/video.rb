@@ -11,6 +11,11 @@ module YouTube
         private
 
         def data
+          self_data
+            .merge(video_data)
+        end
+
+        def video_data
           {
             source: source_data,
             title:,

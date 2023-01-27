@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_133906) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_27_134302) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -360,9 +360,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_133906) do
     t.string "channel_title"
     t.integer "views_count", default: 0
     t.string "image_url"
+    t.string "publish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["youtube_id", "channel_youtube_id"], name: "index_videos_on_youtube_id_and_channel_youtube_id", unique: true
+  end
+
+  create_table "watched_videos", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "video_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id", "video_id"], name: "index_watched_videos_on_profile_id_and_video_id", unique: true
+    t.index ["profile_id"], name: "index_watched_videos_on_profile_id"
+    t.index ["video_id"], name: "index_watched_videos_on_video_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -397,4 +408,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_133906) do
   add_foreign_key "recommendations", "profiles"
   add_foreign_key "relationships", "profiles"
   add_foreign_key "relationships", "profiles", column: "other_profile_id"
+  add_foreign_key "watched_videos", "profiles"
+  add_foreign_key "watched_videos", "videos"
 end
