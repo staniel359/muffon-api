@@ -20,6 +20,21 @@ module Bandcamp
         }
       end
 
+      def artist_name
+        track_info_data['artist']
+      end
+
+      def track_info_data
+        @track_info_data ||=
+          Bandcamp::Web::Info.call(
+            link: bandcamp_link
+          )
+      end
+
+      def bandcamp_link
+        response_data['bandcamp_url']
+      end
+
       def track_extra_data
         {
           album: album_data,
