@@ -38,6 +38,7 @@ class Profile < ApplicationRecord
   has_many :bookmark_artists, dependent: :destroy
   has_many :bookmark_albums, dependent: :destroy
   has_many :bookmark_tracks, dependent: :destroy
+  has_many :bookmark_videos, dependent: :destroy
 
   has_many :listened_artists, dependent: :destroy
   has_many :listened_albums, dependent: :destroy

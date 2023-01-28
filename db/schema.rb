@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_27_143228) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_28_115554) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,6 +93,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_143228) do
     t.jsonb "album_source_data"
     t.index ["profile_id"], name: "index_bookmark_tracks_on_profile_id"
     t.index ["track_id", "profile_id"], name: "index_bookmark_tracks_on_track_id_and_profile_id", unique: true
+  end
+
+  create_table "bookmark_videos", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_bookmark_videos_on_profile_id"
+    t.index ["video_id", "profile_id"], name: "index_bookmark_videos_on_video_id_and_profile_id", unique: true
+    t.index ["video_id"], name: "index_bookmark_videos_on_video_id"
   end
 
   create_table "communities", force: :cascade do |t|
@@ -391,6 +401,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_27_143228) do
   add_foreign_key "bookmark_albums", "profiles"
   add_foreign_key "bookmark_artists", "profiles"
   add_foreign_key "bookmark_tracks", "profiles"
+  add_foreign_key "bookmark_videos", "profiles"
+  add_foreign_key "bookmark_videos", "videos"
   add_foreign_key "communities", "profiles"
   add_foreign_key "conversations", "profiles"
   add_foreign_key "conversations", "profiles", column: "other_profile_id"

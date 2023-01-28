@@ -164,6 +164,10 @@ Rails.application.routes.draw do
             resources :tracks,
               only: %i[index create destroy],
               param: :bookmark_id
+
+            resources :videos,
+              only: %i[index create destroy],
+              param: :bookmark_id
           end
 
           namespace :listened do
