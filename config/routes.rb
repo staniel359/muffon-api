@@ -14,6 +14,8 @@ end
 Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
+  mount ActionCable.server => '/cable'
+
   root to: 'application#no_content'
 
   namespace :uploads, as: :upload, constraints: { filename: /[^\/]+/ } do
