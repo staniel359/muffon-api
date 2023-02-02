@@ -33,6 +33,10 @@ module YandexMusic
         def password
           secrets.yandex_music[:password]
         end
+
+        def track_id
+          email_data[:track_id]
+        end
       end
     end
   end

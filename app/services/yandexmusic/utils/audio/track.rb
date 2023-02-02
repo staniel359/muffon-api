@@ -39,7 +39,10 @@ module YandexMusic
         end
 
         def cookies
-          { 'Session_id' => session_id }
+          {
+            'Session_id' => session_id,
+            'L' => l_cookie
+          }
         end
 
         def session_id
@@ -64,11 +67,19 @@ module YandexMusic
         def retry_with_new_session_id
           return if global_value.blank?
 
+          @global_value = nil
+
           update_global_value(
             'yandex_music_session_id'
           )
 
           call
+        end
+
+        def l_cookie
+          secrets.yandex_music[
+            :l_cookie
+          ]
         end
 
         alias data response_data

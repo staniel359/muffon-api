@@ -18,10 +18,6 @@ module YandexMusic
         YandexMusic::Utils::SessionId::Password.call
       end
 
-      def track_id
-        email_data[:track_id]
-      end
-
       def email_data
         YandexMusic::Utils::SessionId::Email.call
       end
