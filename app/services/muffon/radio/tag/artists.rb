@@ -19,7 +19,7 @@ module Muffon
 
         def radio_track_data
           @radio_track_data ||=
-            tag_artist_info_data.dig(
+            tag_artist_info_data&.dig(
               :tracks, 0
             )
         end
