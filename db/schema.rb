@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_28_115554) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_02_222749) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -102,7 +102,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_115554) do
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_bookmark_videos_on_profile_id"
     t.index ["video_id", "profile_id"], name: "index_bookmark_videos_on_video_id_and_profile_id", unique: true
-    t.index ["video_id"], name: "index_bookmark_videos_on_video_id"
   end
 
   create_table "communities", force: :cascade do |t|
@@ -163,7 +162,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_115554) do
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_favorite_videos_on_profile_id"
     t.index ["video_id", "profile_id"], name: "index_favorite_videos_on_video_id_and_profile_id", unique: true
-    t.index ["video_id"], name: "index_favorite_videos_on_video_id"
   end
 
   create_table "library_albums", force: :cascade do |t|
@@ -391,9 +389,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_28_115554) do
     t.bigint "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id", "video_id"], name: "index_watched_videos_on_profile_id_and_video_id", unique: true
     t.index ["profile_id"], name: "index_watched_videos_on_profile_id"
-    t.index ["video_id"], name: "index_watched_videos_on_video_id"
+    t.index ["video_id", "profile_id"], name: "index_watched_videos_on_video_id_and_profile_id", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
