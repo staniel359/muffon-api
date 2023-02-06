@@ -16,10 +16,18 @@ module Muffon
     end
 
     def profiles
-      @profiles ||= profiles_conditional
+      @profiles ||= profiles_online_filtered
     end
 
-    def profiles_conditional
+    def profiles_online_filtered
+      if @args[:online]
+        profiles_public_filtered.online
+      else
+        profiles_public_filtered
+      end
+    end
+
+    def profiles_public_filtered
       if creator?
         ::Profile
       else

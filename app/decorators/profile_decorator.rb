@@ -39,6 +39,12 @@ module ProfileDecorator
         image_association
       )
     end
+
+    def online
+      where(
+        online: true
+      )
+    end
   end
 
   def self.included(base)

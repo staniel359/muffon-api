@@ -24,7 +24,10 @@ module API
       def index_data
         ::Muffon::Profiles.call(
           params.slice(
-            *%i[other_profile_id token page limit order]
+            *%i[
+              other_profile_id token
+              page limit order online
+            ]
           )
         )
       end
