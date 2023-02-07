@@ -5,17 +5,20 @@ module VK
 
     private
 
-    def response_data
-      super['response']
+    def no_data?
+      JSON.parse(
+        response
+      )['error']
     end
 
     def response
-      RestClient::Request.execute(
-        method: :get,
-        url: link,
-        headers:,
-        proxy:
-      )
+      @response ||=
+        RestClient::Request.execute(
+          method: :get,
+          url: link,
+          headers:,
+          proxy:
+        )
     end
 
     def link
@@ -61,6 +64,10 @@ module VK
 
     def api_secret
       secrets.vk[:api_secret]
+    end
+
+    def response_data
+      super['response']
     end
 
     def artist_data_formatted(artist)
