@@ -65,8 +65,9 @@ module Odnoklassniki
     end
 
     def retry_with_new_session_id
-      return if global_value.blank?
+      return not_found if global_value.blank?
 
+      @global_value = nil
       @response_data = nil
 
       update_global_value(
