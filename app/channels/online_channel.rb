@@ -28,12 +28,4 @@ class OnlineChannel < ApplicationCable::Channel
       online:
     )
   end
-
-  def profile_id
-    profile.id
-  end
-
-  def token
-    profile.token
-  end
 end
