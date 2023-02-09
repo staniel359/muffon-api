@@ -41,7 +41,8 @@ module Muffon
           country: profile.country,
           city: profile.city,
           created: created_formatted,
-          online: profile.online
+          online: profile.online,
+          playing: profile.playing
         }.compact_blank
       end
 
