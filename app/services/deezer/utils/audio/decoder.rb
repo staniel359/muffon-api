@@ -6,32 +6,26 @@ module Deezer
         INTERVAL_CHUNK = 3
 
         def call
-          return '' if no_data?
+          return if not_all_args? || no_data?
 
           data
         end
 
         private
 
-        def no_data?
-          raw_audio_link.blank? ||
-            raw_binary_data.blank?
+        def primary_args
+          [@args[:track_id]]
         end
 
-        def raw_audio_link
-          @raw_audio_link ||=
-            Deezer::Utils::Audio::Link.call(
-              track_id: @args[:track_id]
-            )
+        def no_data?
+          raw_binary_data.blank?
         end
 
         def raw_binary_data
           @raw_binary_data ||=
-            RestClient.get(
-              raw_audio_link
+            Deezer::Utils::Audio::Binary.call(
+              track_id: @args[:track_id]
             )
-        rescue RestClient::Forbidden
-          nil
         end
 
         def data
@@ -53,29 +47,41 @@ module Deezer
         def process_chunk(index, memo)
           chunk = chunk(index)
 
-          decrypt_chunk?(index, chunk) &&
-            chunk = blowfish.decrypt(chunk)
+          chunk = blowfish.decrypt(chunk) if
+              decrypt_chunk?(index, chunk)
 
           memo << chunk
         end
 
         def chunk(index)
-          used_chunks_size = CHUNK_SIZE * index
-          current_chunk_size = [
-            CHUNK_SIZE,
-            raw_binary_data.size -
-              used_chunks_size
-          ].min
-
           raw_binary_data[
-            used_chunks_size,
-            current_chunk_size
+            used_chunks_size(index),
+            current_chunk_size(index)
           ]
         end
 
+        def used_chunks_size(index)
+          CHUNK_SIZE * index
+        end
+
+        def current_chunk_size(index)
+          [
+            CHUNK_SIZE,
+            remaining_chunks_size(index)
+          ].min
+        end
+
+        def remaining_chunks_size(index)
+          raw_binary_data.size -
+            used_chunks_size(index)
+        end
+
         def decrypt_chunk?(index, chunk)
-          (index % INTERVAL_CHUNK).zero? &&
+          (
+            index % INTERVAL_CHUNK
+          ).zero? && (
             chunk.size == CHUNK_SIZE
+          )
         end
 
         def blowfish

@@ -2,31 +2,36 @@ module Deezer
   module Utils
     module Audio
       class Link < Deezer::Base
-        BASE_LINK = 'https://media.deezer.com/v1/get_url'.freeze
+        BASE_LINK =
+          'https://media.deezer.com/v1/get_url'.freeze
 
         def call
+          return if not_all_args?
+
           data
         end
 
         private
 
-        def data
-          return '' if @args[:track_id].blank?
+        def primary_args
+          [@args[:track_id]]
+        end
 
+        def data
           response_data.dig(
             'data', 0, 'media', 0,
             'sources', 0, 'url'
-          ).to_s
-        end
-
-        def response
-          RestClient.post(
-            link, payload
           )
+        rescue RestClient::BadRequest
+          nil
         end
 
         def link
           BASE_LINK
+        end
+
+        def params
+          {}
         end
 
         def payload

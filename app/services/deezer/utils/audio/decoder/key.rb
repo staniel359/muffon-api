@@ -4,26 +4,50 @@ module Deezer
       class Decoder
         class Key < Deezer::Utils::Audio::Decoder
           SALT = 'g4el58wc0zvf9na1'.freeze
+          STRING_SIZE = 16
 
           def call
+            return if not_all_args?
+
             data
           end
 
           private
 
+          def primary_args
+            [@args[:track_id]]
+          end
+
           def data
-            return '' if @args[:track_id].blank?
+            STRING_SIZE
+              .times
+              .each_with_object('') do |index, string|
+                append_new_string_to_string(
+                  index, string
+                )
+              end
+          end
 
-            first, second =
-              track_id_hash.scan(/.{16}/)
+          def append_new_string_to_string(index, string)
+            first =
+              decode_string[0][index].ord
 
-            16.times.each_with_object('') do |i, memo|
-              memo << (
-                first[i].ord ^
-                  second[i].ord ^
-                  SALT[i].ord
-              ).chr
-            end
+            second =
+              decode_string[1][index].ord
+
+            third = SALT[index].ord
+
+            new_string =
+              first ^ second ^ third
+
+            string << new_string.chr
+          end
+
+          def decode_string
+            @decode_string ||=
+              track_id_hash.scan(
+                /.{#{STRING_SIZE}}/
+              )
           end
 
           def track_id_hash
