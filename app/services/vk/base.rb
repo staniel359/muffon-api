@@ -58,10 +58,6 @@ module VK
       )
     end
 
-    def proxy
-      secrets.proxy[:ru]
-    end
-
     def api_secret
       secrets.vk[:api_secret]
     end

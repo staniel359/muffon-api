@@ -60,10 +60,6 @@ module Odnoklassniki
       { imgfmt: 'base' }
     end
 
-    def proxy
-      secrets.proxy[:ru]
-    end
-
     def retry_with_new_session_id
       return not_found if global_value.blank?
 

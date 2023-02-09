@@ -18,10 +18,6 @@ module Genius
       { params: }
     end
 
-    def proxy
-      secrets.proxy[:ru]
-    end
-
     def artists_list
       [artist]
     end

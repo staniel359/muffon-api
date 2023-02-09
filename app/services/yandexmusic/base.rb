@@ -19,10 +19,6 @@ module YandexMusic
       { language: }
     end
 
-    def proxy
-      secrets.proxy[:ru]
-    end
-
     def artist_data_formatted(artist)
       {
         source:

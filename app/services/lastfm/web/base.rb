@@ -46,10 +46,6 @@ module LastFM
         { lfmanon: '0' }
       end
 
-      def proxy
-        secrets.proxy[:ru]
-      end
-
       def param_formatted(param)
         CGI.escape(super)
       end

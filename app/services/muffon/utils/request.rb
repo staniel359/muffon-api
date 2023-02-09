@@ -49,6 +49,10 @@ module Muffon
       def user_agent
         USER_AGENT
       end
+
+      def proxy
+        secrets.proxy[:ru]
+      end
     end
   end
 end
