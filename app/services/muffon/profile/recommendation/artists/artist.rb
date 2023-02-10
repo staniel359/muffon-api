@@ -16,10 +16,8 @@ module Muffon
               library: library_artist_data,
               name:,
               image: artist.image_data,
+              albums_count:,
               tracks_count:
-                library_artist.library_tracks_count,
-              albums_count:
-                library_artist.library_albums_count
             }.compact
           end
 

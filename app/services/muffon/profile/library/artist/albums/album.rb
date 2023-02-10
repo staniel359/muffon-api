@@ -22,8 +22,7 @@ module Muffon
                 library: library_album_data,
                 title:,
                 image: library_album.image_data,
-                tracks_count:
-                  library_album.library_tracks_count,
+                tracks_count:,
                 created: created_formatted
               }.compact
             end

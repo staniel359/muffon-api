@@ -12,11 +12,15 @@ module Muffon
 
       def self_data
         Muffon::Self.call(
-          profile_id: @args[:profile_id],
+          profile_id:,
           token: @args[:token],
           model: 'artist',
           model_id: artist_id
         )
+      end
+
+      def profile_id
+        @args[:profile_id]
       end
 
       def artist_id

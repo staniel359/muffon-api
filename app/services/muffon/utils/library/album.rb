@@ -45,6 +45,10 @@ module Muffon
           library_artist.artist
         end
 
+        def tracks_count
+          library_album.library_tracks_count
+        end
+
         def created_formatted
           datetime_formatted(
             library_album.created_at

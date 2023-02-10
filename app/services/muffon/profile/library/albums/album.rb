@@ -33,8 +33,7 @@ module Muffon
           def album_extra_data
             {
               image: library_album.image_data,
-              tracks_count:
-                library_album.library_tracks_count,
+              tracks_count:,
               created: created_formatted
             }.compact
           end

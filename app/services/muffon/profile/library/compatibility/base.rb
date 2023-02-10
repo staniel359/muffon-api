@@ -97,8 +97,6 @@ module Muffon
             @tracks_count ||=
               common_track_ids.size
           end
-
-          alias compatibility_data paginated_data
         end
       end
     end

@@ -17,6 +17,20 @@ module Muffon
         def artist
           @artist ||= library_artist.artist
         end
+
+        def albums_count
+          library_artist.library_albums_count
+        end
+
+        def tracks_count
+          library_artist.library_tracks_count
+        end
+
+        def created_formatted
+          datetime_formatted(
+            library_artist.created_at
+          )
+        end
       end
     end
   end

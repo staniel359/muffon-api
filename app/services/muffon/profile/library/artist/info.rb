@@ -18,20 +18,17 @@ module Muffon
           def artist_extra_data
             {
               image: artist.image_data,
-              tracks_count:
-                library_artist.library_tracks_count,
-              albums_count:
-                library_artist.library_albums_count,
-              playlists_count:
-                library_artist.profile_playlists.count,
+              tracks_count:,
+              albums_count:,
+              playlists_count:,
               created: created_formatted
             }.compact
           end
 
-          def created_formatted
-            datetime_formatted(
-              library_artist.created_at
-            )
+          def playlists_count
+            library_artist
+              .profile_playlists
+              .count
           end
         end
       end
