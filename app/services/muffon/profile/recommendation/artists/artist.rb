@@ -12,12 +12,18 @@ module Muffon
           private
 
           def data
+            self_data
+              .merge(artist_data)
+          end
+
+          def artist_data
             {
               library: library_artist_data,
               name:,
               image: artist.image_data,
               albums_count:,
-              tracks_count:
+              tracks_count:,
+              created: created_formatted
             }.compact
           end
 

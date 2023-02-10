@@ -53,7 +53,9 @@ module Muffon
 
         def collection_item_data_formatted(library_artist)
           Muffon::Profile::Recommendation::Artists::Artist.call(
-            library_artist:
+            library_artist:,
+            profile_id: @args[:profile_id],
+            token: @args[:token]
           )
         end
       end

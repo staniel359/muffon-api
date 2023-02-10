@@ -28,7 +28,10 @@ module API
         def info_data
           ::Muffon::Profile::Recommendation::Info.call(
             params.slice(
-              *%i[profile_id token recommendation_id]
+              *%i[
+                profile_id token
+                recommendation_id
+              ]
             )
           )
         end
@@ -38,7 +41,8 @@ module API
             params.slice(
               *%i[
                 profile_id token
-                recommendation_id page limit
+                recommendation_id
+                page limit
               ]
             )
           )
@@ -47,7 +51,10 @@ module API
         def destroy_data
           ::Muffon::Processor::Profile::Recommendation::Deleter.call(
             params.slice(
-              *%i[profile_id token recommendation_id]
+              *%i[
+                profile_id token
+                recommendation_id
+              ]
             )
           )
         end
