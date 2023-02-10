@@ -21,7 +21,8 @@ module Muffon
             name:,
             image: artist.image_data,
             artists_count:,
-            artists: library_artists_formatted
+            artists: library_artists_formatted,
+            profiles_count:
           }.compact
         end
 

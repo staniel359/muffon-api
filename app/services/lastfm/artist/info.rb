@@ -42,14 +42,6 @@ module LastFM
         }.compact
       end
 
-      def profiles_count
-        return if test?
-
-        find_artist
-          .profiles
-          .count
-      end
-
       def plays_count
         artist.dig(
           'stats', 'playcount'

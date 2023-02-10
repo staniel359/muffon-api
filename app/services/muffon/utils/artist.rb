@@ -34,6 +34,14 @@ module Muffon
       def listeners_count
         find_artist.listeners_count
       end
+
+      def profiles_count
+        return if test?
+
+        find_artist
+          .profiles
+          .count
+      end
     end
   end
 end
