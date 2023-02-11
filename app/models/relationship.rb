@@ -1,4 +1,12 @@
 class Relationship < ApplicationRecord
+  EVENT_CALLBACKS = %w[
+    created
+    deleted
+  ].freeze
+
+  include RelationshipDecorator
+  include Eventable
+
   belongs_to :profile,
              counter_cache: 'following_count'
 

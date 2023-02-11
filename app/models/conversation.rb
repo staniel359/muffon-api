@@ -5,8 +5,12 @@ class Conversation < ApplicationRecord
     updated_desc
     updated_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+  ].freeze
 
   include ConversationDecorator
+  include Eventable
 
   belongs_to :profile
   belongs_to :other_profile, class_name: 'Profile'

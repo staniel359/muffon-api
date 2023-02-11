@@ -14,6 +14,10 @@ module Muffon
               deleted: true
             )
 
+            recommendation&.send(
+              :add_deleted_event
+            )
+
             { success: true }
           end
 

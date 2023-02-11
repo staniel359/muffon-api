@@ -223,6 +223,10 @@ Rails.application.routes.draw do
           resources :messages, only: :create
 
           resources :communities, only: :index
+
+          scope :history, module: :history do
+            get 'events'
+          end
         end
       end
 

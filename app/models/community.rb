@@ -7,8 +7,18 @@ class Community < ApplicationRecord
     members_count_desc
     members_count_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    updated
+    deleted
+  ].freeze
+  EVENT_ATTRIBUTES = %w[
+    title
+    description
+  ].freeze
 
   include CommunityDecorator
+  include Eventable
 
   has_one_attached :image
 

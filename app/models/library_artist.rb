@@ -7,13 +7,18 @@ class LibraryArtist < ApplicationRecord
     library_tracks_count_desc
     library_tracks_count_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    deleted
+  ].freeze
 
   include LibraryArtistDecorator
+  include EventableArtist
 
-  after_create_commit :update_artist_tags
-  after_create_commit :create_recommendations
+  after_create :update_artist_tags
+  after_create :create_recommendations
 
-  after_destroy_commit :clear_recommendations
+  after_destroy :clear_recommendations
 
   belongs_to :profile, counter_cache: true
   belongs_to :artist

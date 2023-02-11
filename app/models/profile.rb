@@ -1,7 +1,6 @@
 class Profile < ApplicationRecord
   ORDERS = %w[
-    created_desc
-    created_asc
+    created_desc created_asc
     library_artists_count_desc
     library_artists_count_asc
     library_albums_count_desc
@@ -11,8 +10,17 @@ class Profile < ApplicationRecord
     followers_count_desc
     followers_count_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created updated
+  ].freeze
+  EVENT_ATTRIBUTES = %w[
+    email password nickname gender
+    birthdate country city private
+  ].freeze
 
+  include ProfileValidator
   include ProfileDecorator
+  include Eventable
 
   before_create :set_token
 
@@ -92,6 +100,16 @@ class Profile < ApplicationRecord
            inverse_of: :other_profile,
            dependent: nil
 
+  has_many :active_events,
+           class_name: 'Event',
+           dependent: :destroy
+
+  has_many :passive_events,
+           class_name: 'Event',
+           foreign_key: 'other_profile_id',
+           inverse_of: :other_profile,
+           dependent: nil
+
   enum gender: {
     male: 0,
     female: 1,
@@ -102,26 +120,4 @@ class Profile < ApplicationRecord
     profile: 0,
     creator: 1
   }
-
-  validates :email,
-            presence: true,
-            uniqueness: true,
-            format: {
-              with: URI::MailTo::EMAIL_REGEXP
-            }
-
-  validates :password,
-            presence: true,
-            length: { minimum: 6 },
-            on: :create
-
-  validates :password,
-            allow_blank: true,
-            length: { minimum: 6 },
-            on: :update
-
-  validates :nickname,
-            presence: true,
-            uniqueness: true,
-            length: { maximum: 30 }
 end

@@ -5,8 +5,13 @@ class LibraryAlbum < ApplicationRecord
     library_tracks_count_desc
     library_tracks_count_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    deleted
+  ].freeze
 
   include LibraryAlbumDecorator
+  include EventableAlbum
 
   has_one_attached :image
 

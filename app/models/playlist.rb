@@ -7,8 +7,19 @@ class Playlist < ApplicationRecord
     tracks_count_desc
     tracks_count_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    updated
+    deleted
+  ].freeze
+  EVENT_ATTRIBUTES = %w[
+    title
+    description
+    private
+  ].freeze
 
   include PlaylistDecorator
+  include Eventable
 
   has_one_attached :image
 

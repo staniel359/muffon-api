@@ -134,6 +134,14 @@ module ProfileDecorator
     recommendations.delete_all
   end
 
+  def profile_id
+    id
+  end
+
+  def related_events
+    active_events
+  end
+
   private
 
   def set_token
@@ -147,5 +155,9 @@ module ProfileDecorator
       id:,
       count:
     }
+  end
+
+  def eventable_data
+    {}
   end
 end

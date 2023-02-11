@@ -22,16 +22,20 @@ module Muffon
           end
 
           def recommendations
-            profile.recommendations.where(
-              '? = ANY(ARRAY[library_artist_ids])',
-              @args[:library_artist_id]
-            )
+            profile
+              .recommendations
+              .where(
+                '? = ANY(ARRAY[library_artist_ids])',
+                @args[:library_artist_id]
+              )
           end
 
           def delete_empty_recommendations
-            profile.recommendations.where(
-              library_artist_ids: []
-            ).delete_all
+            profile
+              .recommendations
+              .where(
+                library_artist_ids: []
+              ).delete_all
           end
         end
       end

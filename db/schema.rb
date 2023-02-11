@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_222749) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_11_082213) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -121,6 +121,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_222749) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id", "other_profile_id"], name: "index_conversations_on_profile_id_and_other_profile_id", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "eventable_type"
+    t.bigint "eventable_id"
+    t.bigint "profile_id", null: false
+    t.bigint "other_profile_id"
+    t.integer "event_type", null: false
+    t.jsonb "eventable_data"
+    t.jsonb "updated_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eventable_type", "eventable_id"], name: "index_events_on_eventable"
+    t.index ["other_profile_id"], name: "index_events_on_other_profile_id"
+    t.index ["profile_id"], name: "index_events_on_profile_id"
   end
 
   create_table "favorite_albums", force: :cascade do |t|
@@ -403,6 +418,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_222749) do
   add_foreign_key "communities", "profiles"
   add_foreign_key "conversations", "profiles"
   add_foreign_key "conversations", "profiles", column: "other_profile_id"
+  add_foreign_key "events", "profiles"
+  add_foreign_key "events", "profiles", column: "other_profile_id"
   add_foreign_key "favorite_albums", "profiles"
   add_foreign_key "favorite_artists", "profiles"
   add_foreign_key "favorite_tracks", "profiles"

@@ -3,9 +3,26 @@ class Post < ApplicationRecord
     created_desc
     created_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    updated
+    deleted
+  ].freeze
+  EVENT_ATTRIBUTES = %w[
+    text
+    artists
+    albums
+    tracks
+    playlists
+    communities
+    videos
+    video_playlists
+    by_community
+  ].freeze
 
   include PostDecorator
   include SendableDecorator
+  include Eventable
 
   has_many_attached :images
 

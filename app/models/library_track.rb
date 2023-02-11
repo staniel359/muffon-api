@@ -3,8 +3,13 @@ class LibraryTrack < ApplicationRecord
     created_desc
     created_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    deleted
+  ].freeze
 
   include LibraryTrackDecorator
+  include EventableTrack
 
   belongs_to :profile, counter_cache: true
   belongs_to :track

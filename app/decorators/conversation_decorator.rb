@@ -27,4 +27,19 @@ module ConversationDecorator
   def starter?(profile_id)
     profile_id.to_i == self.profile_id
   end
+
+  def eventable_data
+    {
+      other_profile:
+        other_profile_data
+    }
+  end
+
+  def other_profile_data
+    {
+      id: other_profile_id,
+      nickname:
+        other_profile.nickname
+    }
+  end
 end

@@ -24,4 +24,13 @@ module PlaylistDecorator
   def self.included(base)
     base.extend ClassMethods
   end
+
+  private
+
+  def eventable_data
+    {
+      id:,
+      title:
+    }
+  end
 end

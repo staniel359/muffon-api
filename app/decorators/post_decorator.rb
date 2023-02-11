@@ -47,4 +47,10 @@ module PostDecorator
   def self.included(base)
     base.extend ClassMethods
   end
+
+  private
+
+  def eventable_data
+    { text: }
+  end
 end

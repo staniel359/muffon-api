@@ -3,8 +3,13 @@ class FavoriteTrack < ApplicationRecord
     created_desc
     created_asc
   ].freeze
+  EVENT_CALLBACKS = %w[
+    created
+    deleted
+  ].freeze
 
   include FavoriteTrackDecorator
+  include EventableTrack
 
   has_one_attached :image
 

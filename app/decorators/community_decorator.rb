@@ -41,4 +41,13 @@ module CommunityDecorator
       .find_by(id: profile_id)
       .present?
   end
+
+  private
+
+  def eventable_data
+    {
+      id:,
+      title:
+    }
+  end
 end

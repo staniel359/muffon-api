@@ -1,7 +1,9 @@
 module RecommendationDecorator
   module ClassMethods
     def not_deleted
-      where(deleted: false)
+      where(
+        deleted: false
+      )
     end
 
     def library_artists_count_desc_ordered
