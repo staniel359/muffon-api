@@ -5,8 +5,8 @@ module Spotify
 
       def call
         data
-      rescue RestClient::BadRequest
-        bad_request
+      rescue *errors
+        nil
       end
 
       private
@@ -49,6 +49,13 @@ module Spotify
 
       def client_secret
         secrets.spotify[:api_secret]
+      end
+
+      def errors
+        [
+          RestClient::BadRequest,
+          RestClient::BadGateway
+        ]
       end
 
       alias response post_response
