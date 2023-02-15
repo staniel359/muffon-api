@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_11_082213) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_125757) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -381,9 +381,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_11_082213) do
     t.string "title_downcase"
     t.string "extra_title"
     t.string "extra_title_downcase"
-    t.index ["extra_title_downcase", "title_downcase", "artist_id"], name: "index_tracks_on_title_and_extra_title_and_artist_id", unique: true
+    t.index ["artist_id", "title_downcase", "extra_title_downcase"], name: "index_tracks_on_artist_id_and_title_and_extra_title", unique: true
+    t.index ["extra_title_downcase"], name: "index_tracks_on_extra_title_downcase"
     t.index ["player_id"], name: "index_tracks_on_player_id", unique: true
-    t.index ["title_downcase", "artist_id"], name: "index_tracks_on_title_downcase_and_artist_id", unique: true
+    t.index ["title_downcase"], name: "index_tracks_on_title_downcase"
   end
 
   create_table "videos", force: :cascade do |t|
