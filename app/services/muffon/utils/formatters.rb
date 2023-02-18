@@ -77,7 +77,15 @@ module Muffon
       end
 
       def description_truncated
-        description&.truncate(400).presence
+        description
+          &.truncate(400)
+          .presence
+      end
+
+      def description_truncated_small
+        description
+          &.truncate(100)
+          .presence
       end
 
       def library_tags_formatted(library_tags)

@@ -26,7 +26,7 @@ module Muffon
       def community_extra_data
         {
           description:
-            community.description,
+            description_truncated_small,
           image: community.image_data,
           creator: creator_data,
           members_count:
@@ -34,6 +34,10 @@ module Muffon
           profile: profile_data,
           created: created_formatted
         }.compact
+      end
+
+      def description
+        community.description
       end
 
       def creator_data
