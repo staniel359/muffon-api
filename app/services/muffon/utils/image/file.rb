@@ -85,7 +85,9 @@ module Muffon
         def file_image_content_type
           @args[:image].match(
             %r{(image/.+);}
-          )[1]
+          ).try(
+            :[], 1
+          ) || ''
         end
       end
     end
