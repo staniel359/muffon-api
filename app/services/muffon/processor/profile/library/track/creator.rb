@@ -53,10 +53,8 @@ module Muffon
               return if created_at.blank?
 
               if model.created_at.present?
-                if created_at >= model.created_at
-                  model.created_at =
-                    created_at
-                end
+                model.created_at = created_at if
+                  created_at >= model.created_at
               else
                 model.created_at = created_at
               end

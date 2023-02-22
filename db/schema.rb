@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_15_130206) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_123701) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,8 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_130206) do
     t.datetime "updated_at", null: false
     t.integer "listeners_count"
     t.string "title_downcase"
-    t.index ["artist_id"], name: "index_albums_on_artist_id"
-    t.index ["title_downcase", "artist_id"], name: "index_albums_on_title_downcase_and_artist_id", unique: true
+    t.index ["artist_id", "title_downcase"], name: "index_albums_on_artist_id_and_title_downcase", unique: true
+    t.index ["title_downcase"], name: "index_albums_on_title_downcase"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -380,10 +380,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_130206) do
     t.datetime "updated_at", null: false
     t.string "player_id"
     t.string "title_downcase"
-    t.string "extra_title"
-    t.string "extra_title_downcase"
-    t.index ["artist_id", "title_downcase", "extra_title_downcase"], name: "index_tracks_on_artist_id_and_title_and_extra_title", unique: true
-    t.index ["extra_title_downcase"], name: "index_tracks_on_extra_title_downcase"
+    t.index ["artist_id", "title_downcase"], name: "index_tracks_on_artist_id_and_title_downcase", unique: true
     t.index ["player_id"], name: "index_tracks_on_player_id", unique: true
     t.index ["title_downcase"], name: "index_tracks_on_title_downcase"
   end

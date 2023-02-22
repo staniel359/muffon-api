@@ -15,10 +15,7 @@ class Track < ApplicationRecord
   validates :title_downcase,
             presence: true,
             uniqueness: {
-              scope: %i[
-                artist_id
-                extra_title_downcase
-              ]
+              scope: :artist_id
             }
 
   validates :player_id,

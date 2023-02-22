@@ -6,7 +6,18 @@ module VK
       private
 
       def title
+        title_formatted(
+          raw_title,
+          extra_title
+        )
+      end
+
+      def raw_title
         album['title']
+      end
+
+      def extra_title
+        album['subtitle']
       end
 
       def artists_list
@@ -24,10 +35,6 @@ module VK
           owner_id: album['owner_id'],
           access_key: album['access_key']
         }
-      end
-
-      def extra_title
-        album['subtitle']
       end
 
       def image_data

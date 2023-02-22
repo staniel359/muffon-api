@@ -109,6 +109,12 @@ module Muffon
 
         library_tag
       end
+
+      def title_formatted(raw_title, extra_title)
+        return raw_title if extra_title.blank?
+
+        "#{raw_title} (#{extra_title})"
+      end
     end
   end
 end

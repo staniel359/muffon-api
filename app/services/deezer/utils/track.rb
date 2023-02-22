@@ -5,15 +5,22 @@ module Deezer
 
       private
 
-      def title
-        track['SNG_TITLE']
-      end
-
       def source_data
         {
           name: source_name,
           id: track['SNG_ID'].to_i
         }
+      end
+
+      def title
+        title_formatted(
+          raw_title,
+          extra_title
+        )
+      end
+
+      def raw_title
+        track['SNG_TITLE']
       end
 
       def extra_title

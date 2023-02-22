@@ -6,7 +6,18 @@ module YandexMusic
       private
 
       def title
+        title_formatted(
+          raw_title,
+          extra_title
+        )
+      end
+
+      def raw_title
         album['title']
+      end
+
+      def extra_title
+        album['version']
       end
 
       def artists_list
@@ -26,10 +37,6 @@ module YandexMusic
           name: source_name,
           id: album['id']
         }
-      end
-
-      def extra_title
-        album['version']
       end
 
       def image_data

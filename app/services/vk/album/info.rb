@@ -14,7 +14,6 @@ module VK
         {
           source: source_data,
           title:,
-          extra_title:,
           artist: artist_names_data,
           artists:
         }

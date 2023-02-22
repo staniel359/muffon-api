@@ -14,7 +14,6 @@ module YandexMusic
           source: source_data,
           player_id:,
           title:,
-          extra_title:,
           artist: artist_names_data,
           artists:
         }.compact
