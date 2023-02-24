@@ -1,8 +1,8 @@
 module Muffon
   module Profile
     module History
-      class Events
-        class Event < Muffon::Profile::History::Events
+      class Activity
+        class Event < Muffon::Profile::History::Activity
           def call
             data
           end
@@ -11,8 +11,7 @@ module Muffon
 
           def data
             {
-              type:
-                event.event_type,
+              type: event.event_type,
               model: model_data,
               created:
                 created_formatted

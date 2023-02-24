@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_123701) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_24_141655) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -270,6 +270,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_123701) do
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
   end
 
+  create_table "playing_events", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_playing_events_on_profile_id"
+  end
+
   create_table "playlist_tracks", force: :cascade do |t|
     t.bigint "playlist_id", null: false
     t.integer "track_id"
@@ -437,6 +445,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_22_123701) do
   add_foreign_key "memberships", "profiles"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "profiles"
+  add_foreign_key "playing_events", "profiles"
   add_foreign_key "playlist_tracks", "playlists"
   add_foreign_key "playlists", "profiles"
   add_foreign_key "posts", "communities"

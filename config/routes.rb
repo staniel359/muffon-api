@@ -225,7 +225,8 @@ Rails.application.routes.draw do
           resources :communities, only: :index
 
           scope :history, module: :history do
-            get 'events'
+            get 'activity'
+            get 'player'
           end
         end
       end

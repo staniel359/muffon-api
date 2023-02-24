@@ -110,6 +110,8 @@ class Profile < ApplicationRecord
            inverse_of: :other_profile,
            dependent: nil
 
+  has_many :playing_events, dependent: :destroy
+
   enum gender: {
     male: 0,
     female: 1,

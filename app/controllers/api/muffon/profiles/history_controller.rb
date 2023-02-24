@@ -2,12 +2,22 @@ module API
   module Muffon
     module Profiles
       class HistoryController < API::Muffon::ProfilesController
-        def events; end
+        def activity; end
+
+        def player; end
 
         private
 
-        def events_data
-          ::Muffon::Profile::History::Events.call(
+        def activity_data
+          ::Muffon::Profile::History::Activity.call(
+            params.slice(
+              *%i[profile_id token page limit order]
+            )
+          )
+        end
+
+        def player_data
+          ::Muffon::Profile::History::Player.call(
             params.slice(
               *%i[profile_id token page limit order]
             )

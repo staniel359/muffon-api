@@ -1,29 +1,27 @@
 class PlayingChannel < ApplicationCable::Channel
   def subscribed; end
 
-  def unsubscribed
-    update_profile_playing(nil)
-  end
+  def unsubscribed; end
 
   def update(data)
     playing = data.dig(
       'payload', 'playing'
     )
 
-    update_profile_playing(
+    create_profile_playing_event(
       playing
     )
   end
 
   private
 
-  def update_profile_playing(playing)
+  def create_profile_playing_event(playing)
     return if profile.blank?
 
-    Muffon::Processor::Profile::Playing::Updater.call(
-      profile_id:,
-      token:,
-      playing:
-    )
+    profile
+      .playing_events
+      .create!(
+        data: playing
+      )
   end
 end
