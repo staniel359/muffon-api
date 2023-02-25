@@ -9,6 +9,7 @@ module Muffon
 
       def data
         profile_base_data
+          .merge(profile_personal_data)
           .merge(profile_extra_data)
           .merge(profile_other_profile_data)
           .merge(profile_relationships_data)
@@ -33,17 +34,23 @@ module Muffon
         profile.role
       end
 
-      def profile_extra_data
+      def profile_personal_data
         {
           image: profile.image_data,
           gender: profile.gender,
           birthdate: profile.birthdate,
           country: profile.country,
           city: profile.city,
+          status: profile.status
+        }.compact_blank
+      end
+
+      def profile_extra_data
+        {
           created: created_formatted,
           online: profile.online,
           playing: profile.playing
-        }.compact_blank
+        }.compact
       end
 
       def created_formatted

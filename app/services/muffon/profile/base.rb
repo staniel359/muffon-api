@@ -12,6 +12,7 @@ module Muffon
         country
         city
         private
+        status
       ].freeze
 
       private

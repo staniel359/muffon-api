@@ -5,8 +5,8 @@ module Muffon
 
       def profile_data
         profile_base_data
+          .merge(profile_personal_data)
           .merge(profile_extra_data)
-          .merge(profile_online_data)
           .merge(profile_other_profile_data)
           .merge(profile_relationships_data)
           .merge(profile_lastfm_data)
@@ -43,29 +43,30 @@ module Muffon
         profile.role
       end
 
-      def profile_extra_data
+      def profile_personal_data
         {
           image: profile.image_data,
           gender: profile.gender,
           birthdate: profile.birthdate,
           country: profile.country,
           city: profile.city,
-          created: created_formatted,
-          playing: profile.playing
+          status: profile.status
         }.compact_blank
+      end
+
+      def profile_extra_data
+        {
+          created: created_formatted,
+          playing: profile.playing,
+          online: profile.online,
+          was_online: was_online_formatted
+        }.compact
       end
 
       def created_formatted
         datetime_formatted(
           profile.created_at
         )
-      end
-
-      def profile_online_data
-        {
-          online: profile.online,
-          was_online: was_online_formatted
-        }.compact
       end
 
       def was_online_formatted
