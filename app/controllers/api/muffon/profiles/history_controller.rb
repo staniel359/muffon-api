@@ -6,6 +6,8 @@ module API
 
         def player; end
 
+        def browser; end
+
         private
 
         def activity_data
@@ -18,6 +20,14 @@ module API
 
         def player_data
           ::Muffon::Profile::History::Player.call(
+            params.slice(
+              *%i[profile_id token page limit order]
+            )
+          )
+        end
+
+        def browser_data
+          ::Muffon::Profile::History::Browser.call(
             params.slice(
               *%i[profile_id token page limit order]
             )

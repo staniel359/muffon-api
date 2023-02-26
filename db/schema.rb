@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_25_113030) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_26_100448) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -103,6 +103,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_113030) do
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_bookmark_videos_on_profile_id"
     t.index ["video_id", "profile_id"], name: "index_bookmark_videos_on_video_id_and_profile_id", unique: true
+  end
+
+  create_table "browser_events", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_browser_events_on_profile_id"
   end
 
   create_table "communities", force: :cascade do |t|
@@ -423,6 +431,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_25_113030) do
   add_foreign_key "bookmark_tracks", "profiles"
   add_foreign_key "bookmark_videos", "profiles"
   add_foreign_key "bookmark_videos", "videos"
+  add_foreign_key "browser_events", "profiles"
   add_foreign_key "communities", "profiles"
   add_foreign_key "conversations", "profiles"
   add_foreign_key "conversations", "profiles", column: "other_profile_id"

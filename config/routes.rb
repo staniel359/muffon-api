@@ -227,6 +227,7 @@ Rails.application.routes.draw do
           scope :history, module: :history do
             get 'activity'
             get 'player'
+            get 'browser'
           end
         end
       end

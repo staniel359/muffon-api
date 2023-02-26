@@ -111,6 +111,7 @@ class Profile < ApplicationRecord
            dependent: nil
 
   has_many :playing_events, dependent: :destroy
+  has_many :browser_events, dependent: :destroy
 
   enum gender: {
     male: 0,
