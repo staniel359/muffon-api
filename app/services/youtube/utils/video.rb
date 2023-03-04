@@ -37,7 +37,7 @@ module YouTube
         {
           name: source_name,
           id: channel_youtube_id
-        }
+        }.compact
       end
 
       def channel_youtube_id

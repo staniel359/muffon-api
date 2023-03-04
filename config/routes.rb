@@ -694,6 +694,15 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    # YouTube Music
+
+    namespace :youtubemusic do
+      namespace :search do
+        get 'tracks'
+        get 'videos'
+      end
+    end
   end
 
   match '*path',

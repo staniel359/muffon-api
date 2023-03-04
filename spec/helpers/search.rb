@@ -25,8 +25,12 @@ module Helpers
         {:search=>{:labels=>[], :page=>1}}
       end
 
-      def no_videos_data
+      def youtube_no_videos_data
         {:search=>{:videos=>[]}}
+      end
+
+      def youtube_no_tracks_data
+        {:search=>{:tracks=>[]}}
       end
 
       def no_results_data
