@@ -51,6 +51,9 @@ module PostDecorator
   private
 
   def eventable_data
-    { text: }
+    {
+      id:,
+      text:
+    }
   end
 end
