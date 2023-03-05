@@ -1,18 +1,13 @@
 module SendableDecorator
   def attachments_data
     attachment_types.index_with do |t|
-      send(
-        "#{t}_formatted"
-      )
+      send("#{t}_formatted")
     end.compact_blank.presence
   end
 
   def attachments_minimal_data
     attachment_types.to_h do |t|
-      [
-        "with_#{t}",
-        send(t).present?
-      ]
+      ["with_#{t}", send(t).present?]
     end.compact_blank
   end
 
@@ -71,6 +66,18 @@ module SendableDecorator
   def video_data_formatted(video)
     Muffon::Sendable::Video.call(
       video:
+    )
+  end
+
+  def video_channels_formatted
+    video_channels.map do |c|
+      video_channel_data_formatted(c)
+    end
+  end
+
+  def video_channel_data_formatted(channel)
+    Muffon::Sendable::VideoChannel.call(
+      channel:
     )
   end
 

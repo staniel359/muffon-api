@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_26_100448) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_05_133823) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -275,6 +275,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_26_100448) do
     t.jsonb "communities", default: [], array: true
     t.jsonb "videos", default: [], array: true
     t.jsonb "video_playlists", default: [], array: true
+    t.jsonb "video_channels", default: [], array: true
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
   end
 
@@ -328,6 +329,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_26_100448) do
     t.jsonb "communities", default: [], array: true
     t.jsonb "videos", default: [], array: true
     t.jsonb "video_playlists", default: [], array: true
+    t.jsonb "video_channels", default: [], array: true
     t.index ["community_id"], name: "index_posts_on_community_id"
     t.index ["other_profile_id"], name: "index_posts_on_other_profile_id"
     t.index ["profile_id"], name: "index_posts_on_profile_id"

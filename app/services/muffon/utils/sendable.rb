@@ -8,6 +8,7 @@ module Muffon
         albums
         tracks
         videos
+        video_channels
         video_playlists
         playlists
         communities

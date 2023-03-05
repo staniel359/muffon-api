@@ -16,6 +16,7 @@ class Post < ApplicationRecord
     playlists
     communities
     videos
+    video_channels
     video_playlists
     by_community
   ].freeze
