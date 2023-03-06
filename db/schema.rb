@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_05_144933) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_185808) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,7 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_144933) do
     t.integer "listeners_count"
     t.string "title_downcase"
     t.index ["artist_id", "title_downcase"], name: "index_albums_on_artist_id_and_title_downcase", unique: true
-    t.index ["title_downcase"], name: "index_albums_on_title_downcase"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -410,7 +409,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_144933) do
     t.string "title_downcase"
     t.index ["artist_id", "title_downcase"], name: "index_tracks_on_artist_id_and_title_downcase", unique: true
     t.index ["player_id"], name: "index_tracks_on_player_id", unique: true
-    t.index ["title_downcase"], name: "index_tracks_on_title_downcase"
   end
 
   create_table "video_playlists", force: :cascade do |t|
