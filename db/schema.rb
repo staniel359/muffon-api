@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_185808) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_101712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -419,7 +419,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_185808) do
     t.text "description"
     t.integer "videos_count", default: 0
     t.string "image_url"
-    t.string "publish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["youtube_id", "channel_youtube_id"], name: "index_video_playlists_on_youtube_id_and_channel_youtube_id", unique: true
@@ -432,7 +431,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_185808) do
     t.string "channel_title"
     t.integer "views_count", default: 0
     t.string "image_url"
-    t.string "publish_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["youtube_id", "channel_youtube_id"], name: "index_videos_on_youtube_id_and_channel_youtube_id", unique: true

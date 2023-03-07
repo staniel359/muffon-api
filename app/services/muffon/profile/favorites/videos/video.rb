@@ -23,7 +23,6 @@ module Muffon
               title:,
               channel: channel_data,
               image: image_data,
-              publish_date:,
               created: created_formatted
             }.compact
           end
@@ -57,8 +56,8 @@ module Muffon
             video.image_url
           end
 
-          def raw_publish_date
-            video.publish_date
+          def publish_date
+            nil
           end
 
           def created_formatted

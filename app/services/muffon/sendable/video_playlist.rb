@@ -61,7 +61,9 @@ module Muffon
       end
 
       def raw_publish_date
-        find_video_playlist.publish_date
+        find_video_playlist
+          .created_at
+          .to_s
       end
     end
   end

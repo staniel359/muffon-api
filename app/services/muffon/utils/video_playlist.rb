@@ -25,7 +25,7 @@ module Muffon
           channel_title:,
           image_url: image,
           videos_count:,
-          publish_date:
+          created_at: publish_date
         }.compact
       end
 

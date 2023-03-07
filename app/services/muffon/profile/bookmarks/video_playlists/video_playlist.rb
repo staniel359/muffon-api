@@ -23,8 +23,6 @@ module Muffon
               title:,
               channel: channel_data,
               image: image_data,
-              videos_count:,
-              publish_date:,
               created: created_formatted
             }.compact
           end
@@ -59,11 +57,11 @@ module Muffon
           end
 
           def videos_count
-            video_playlist.videos_count
+            nil
           end
 
-          def raw_publish_date
-            video_playlist.publish_date
+          def publish_date
+            nil
           end
 
           def created_formatted
