@@ -8,7 +8,8 @@ module YouTube
       end
 
       def playlist_data
-        playlist_base_data
+        self_data
+          .merge(playlist_base_data)
           .merge(playlist_extra_data)
       end
 

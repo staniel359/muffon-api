@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_05_133823) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_05_144933) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -94,6 +94,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_133823) do
     t.jsonb "album_source_data"
     t.index ["profile_id"], name: "index_bookmark_tracks_on_profile_id"
     t.index ["track_id", "profile_id"], name: "index_bookmark_tracks_on_track_id_and_profile_id", unique: true
+  end
+
+  create_table "bookmark_video_playlists", force: :cascade do |t|
+    t.bigint "video_playlist_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_bookmark_video_playlists_on_profile_id"
+    t.index ["video_playlist_id", "profile_id"], name: "index_bookmark_video_playlists_on_video_playlist_and_profile", unique: true
   end
 
   create_table "bookmark_videos", force: :cascade do |t|
@@ -404,6 +413,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_133823) do
     t.index ["title_downcase"], name: "index_tracks_on_title_downcase"
   end
 
+  create_table "video_playlists", force: :cascade do |t|
+    t.string "youtube_id"
+    t.string "title"
+    t.string "channel_youtube_id"
+    t.string "channel_title"
+    t.text "description"
+    t.integer "videos_count", default: 0
+    t.string "image_url"
+    t.string "publish_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["youtube_id", "channel_youtube_id"], name: "index_video_playlists_on_youtube_id_and_channel_youtube_id", unique: true
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string "youtube_id"
     t.string "title"
@@ -431,6 +454,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_05_133823) do
   add_foreign_key "bookmark_albums", "profiles"
   add_foreign_key "bookmark_artists", "profiles"
   add_foreign_key "bookmark_tracks", "profiles"
+  add_foreign_key "bookmark_video_playlists", "profiles"
+  add_foreign_key "bookmark_video_playlists", "video_playlists"
   add_foreign_key "bookmark_videos", "profiles"
   add_foreign_key "bookmark_videos", "videos"
   add_foreign_key "browser_events", "profiles"

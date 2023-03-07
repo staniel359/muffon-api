@@ -37,7 +37,9 @@ module YouTube
 
     def collection_item_data_formatted(playlist)
       YouTube::Playlists::Playlist.call(
-        playlist:
+        playlist:,
+        profile_id: @args[:profile_id],
+        token: @args[:token]
       )
     end
 

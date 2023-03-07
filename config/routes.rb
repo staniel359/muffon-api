@@ -170,6 +170,10 @@ Rails.application.routes.draw do
             resources :videos,
               only: %i[index create destroy],
               param: :bookmark_id
+
+            resources :video_playlists,
+              only: %i[index create destroy],
+              param: :bookmark_id
           end
 
           namespace :listened do

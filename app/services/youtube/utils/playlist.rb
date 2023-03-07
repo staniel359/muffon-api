@@ -1,6 +1,8 @@
 module YouTube
   module Utils
     module Playlist
+      include Muffon::Utils::VideoPlaylist
+
       private
 
       def source_data
@@ -25,15 +27,23 @@ module YouTube
       def channel_data
         {
           source: channel_source_data,
-          title: snippet['channelTitle']
+          title: channel_title
         }
       end
 
       def channel_source_data
         {
           name: source_name,
-          id: snippet['channelId']
+          id: channel_youtube_id
         }
+      end
+
+      def channel_youtube_id
+        snippet['channelId']
+      end
+
+      def channel_title
+        snippet['channelTitle']
       end
 
       def image_data
@@ -63,8 +73,12 @@ module YouTube
 
       def publish_date
         date_formatted(
-          snippet['publishedAt']
+          raw_publish_date
         )
+      end
+
+      def raw_publish_date
+        snippet['publishedAt']
       end
     end
   end

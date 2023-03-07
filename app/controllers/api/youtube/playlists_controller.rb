@@ -10,7 +10,7 @@ module API
       def info_data
         ::YouTube::Playlist::Info.call(
           params.slice(
-            *%i[playlist_id]
+            *%i[playlist_id profile_id token]
           )
         )
       end

@@ -10,6 +10,11 @@ module YouTube
       private
 
       def data
+        self_data
+          .merge(playlist_data)
+      end
+
+      def playlist_data
         {
           source: source_data,
           title:,

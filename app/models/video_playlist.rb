@@ -1,4 +1,4 @@
-class Video < ApplicationRecord
+class VideoPlaylist < ApplicationRecord
   validates :youtube_id,
             presence: true,
             uniqueness: {

@@ -12,6 +12,9 @@ module Muffon
       ],
       video: %w[
         favorite bookmark watched
+      ],
+      video_playlist: %w[
+        bookmark
       ]
     }.freeze
 

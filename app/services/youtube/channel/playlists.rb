@@ -17,6 +17,8 @@ module YouTube
       def playlists_data
         YouTube::Playlists.call(
           channel_id: @args[:channel_id],
+          profile_id: @args[:profile_id],
+          token: @args[:token],
           limit: @args[:limit],
           page: @args[:page]
         )
