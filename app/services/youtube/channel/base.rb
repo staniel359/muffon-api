@@ -1,6 +1,8 @@
 module YouTube
   module Channel
     class Base < YouTube::Base
+      include YouTube::Utils::Channel
+
       private
 
       def primary_args
@@ -38,16 +40,6 @@ module YouTube
 
       def channel_base_data
         { title: }
-      end
-
-      def title
-        CGI.unescapeHTML(
-          snippet['title']
-        )
-      end
-
-      def snippet
-        channel['snippet']
       end
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_101712) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_103301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -409,6 +409,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_101712) do
     t.string "title_downcase"
     t.index ["artist_id", "title_downcase"], name: "index_tracks_on_artist_id_and_title_downcase", unique: true
     t.index ["player_id"], name: "index_tracks_on_player_id", unique: true
+  end
+
+  create_table "video_channels", force: :cascade do |t|
+    t.string "youtube_id"
+    t.string "title"
+    t.integer "videos_count", default: 0
+    t.integer "subscribers_count", default: 0
+    t.integer "views_count", default: 0
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "video_playlists", force: :cascade do |t|

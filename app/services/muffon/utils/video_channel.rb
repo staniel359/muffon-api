@@ -1,0 +1,70 @@
+module Muffon
+  module Utils
+    module VideoChannel
+      private
+
+      def find_video_channel
+        @find_video_channel ||=
+          ::VideoChannel.where(
+            youtube_id:
+          ).first_or_initialize.tap do |v|
+            v.attributes = update_params
+
+            v.save
+          end
+      end
+
+      def youtube_id
+        @args[:youtube_id]
+      end
+
+      def update_params
+        {
+          title:,
+          image_url: image,
+          videos_count:,
+          subscribers_count:,
+          views_count:,
+          created_at: publish_date
+        }.compact
+      end
+
+      def title
+        nil
+      end
+
+      def image
+        nil
+      end
+
+      def videos_count
+        nil
+      end
+
+      def subscribers_count
+        nil
+      end
+
+      def views_count
+        nil
+      end
+
+      def publish_date
+        nil
+      end
+
+      def self_data
+        Muffon::Self.call(
+          profile_id: @args[:profile_id],
+          token: @args[:token],
+          model: 'video_channel',
+          model_id: video_channel_id
+        )
+      end
+
+      def video_channel_id
+        find_video_channel.id
+      end
+    end
+  end
+end
