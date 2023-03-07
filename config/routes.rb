@@ -171,6 +171,10 @@ Rails.application.routes.draw do
               only: %i[index create destroy],
               param: :bookmark_id
 
+            resources :video_channels,
+              only: %i[index create destroy],
+              param: :bookmark_id
+
             resources :video_playlists,
               only: %i[index create destroy],
               param: :bookmark_id

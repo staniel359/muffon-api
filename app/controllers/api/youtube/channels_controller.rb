@@ -14,7 +14,7 @@ module API
       def info_data
         ::YouTube::Channel::Info.call(
           params.slice(
-            *%i[channel_id]
+            *%i[channel_id profile_id token]
           )
         )
       end

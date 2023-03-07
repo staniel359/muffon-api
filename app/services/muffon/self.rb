@@ -16,7 +16,9 @@ module Muffon
       video_playlist: %w[
         bookmark
       ],
-      video_channel: %w[]
+      video_channel: %w[
+        bookmark
+      ]
     }.freeze
 
     def call

@@ -5,23 +5,11 @@ module Muffon
         COLLECTION_NAME = 'artists'.freeze
         DEFAULT_ORDER = 'created_desc'.freeze
 
-        include Muffon::Utils::Pagination
-
         private
 
-        def total_items_count
-          @total_items_count ||= artists.count
-        end
-
-        def artists
-          @artists ||= profile.bookmark_artists
-        end
-
-        def collection_list
-          artists
-            .ordered(order, DEFAULT_ORDER)
-            .limit(limit)
-            .offset(offset)
+        def bookmarks
+          @bookmarks ||=
+            profile.bookmark_artists
         end
 
         def collection_item_data_formatted(bookmark_artist)
