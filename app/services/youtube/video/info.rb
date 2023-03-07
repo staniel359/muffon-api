@@ -13,17 +13,26 @@ module YouTube
 
       def video_statistics_data
         {
-          views_count:
-            statistics['viewCount'].to_i,
-          likes_count:
-            statistics['likeCount'].to_i,
+          views_count:,
+          likes_count:,
           dislikes_count:
-            statistics['dislikeCount'].to_i
         }
+      end
+
+      def views_count
+        statistics['viewCount'].to_i
       end
 
       def statistics
         video['statistics']
+      end
+
+      def likes_count
+        statistics['likeCount'].to_i
+      end
+
+      def dislikes_count
+        statistics['dislikeCount'].to_i
       end
 
       def video_extra_data

@@ -23,6 +23,7 @@ module Muffon
           title:,
           channel_youtube_id:,
           channel_title:,
+          views_count:,
           image_url: image,
           created_at: publish_date
         }.compact
@@ -37,6 +38,10 @@ module Muffon
       end
 
       def channel_title
+        nil
+      end
+
+      def views_count
         nil
       end
 
