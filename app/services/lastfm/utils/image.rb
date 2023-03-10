@@ -1,6 +1,9 @@
 module LastFM
   module Utils
     class Image < LastFM::Base
+      BASE_LINK =
+        'https://lastfm.freetls.fastly.net'.freeze
+
       def call
         data
       end
@@ -33,6 +36,7 @@ module LastFM
           .sub('/174s', size)
           .sub('/270x205', size)
           .sub('/300x300', size)
+          .sub(%r{(.+)(?=/i/u)}, BASE_LINK)
       end
     end
   end

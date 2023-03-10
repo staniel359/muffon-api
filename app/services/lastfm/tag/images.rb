@@ -16,9 +16,9 @@ module LastFM
       end
 
       def collection_item_data_formatted(image)
-        image['src'].sub(
-          '/270x205', '/174s'
-        )
+        LastFM::Utils::Image.call(
+          image: image['src']
+        )[:small]
       end
     end
   end

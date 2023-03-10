@@ -56,6 +56,7 @@ module Muffon
             Net::HTTPFatalError,
             OpenSSL::SSL::SSLError,
             RestClient::InternalServerError,
+            RestClient::NotAcceptable,
             RestClient::RequestFailed,
             RestClient::ServerBrokeConnection,
             RestClient::ServiceUnavailable,

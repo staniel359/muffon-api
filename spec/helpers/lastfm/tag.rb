@@ -15,7 +15,7 @@ module Helpers
         end
 
         def images_data
-          {:tag=>{:images=>["https://lastfm.freetls.fastly.net/i/u/174s/c2a2d6191c77662a8cd0d6a79ba3c5bc.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/b49bf61cad5a4e87cee679a72b73041b.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/ea184fa600534ceabf4bfb586b88b695.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/cf435d6cc0bc4245c2f26b19ea88254c.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/b297771d7bee45079f977a3c3491b3d5.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/6e16be3d79894df78ee8a75f47544db3.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/feee60560ab824611d335ddaa52140a3.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/0d63251ec6904140b02c663679a9969b.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/65487cdcf1af4973c98e8ca8d292f3d6.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/bb97b7bcd3e74c60a81f11280793d362.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/ce84f6f008b4a32dd04732f8d8f085b0.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/18c747da441e44e0b060199a23fc2d04.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/8e4dfda2d1d452ca5e518fc279d3c996.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/398b879dd04440b09814e40749d24c68.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/546d4c7bf97f4580a489116d861bfa04.jpg"]}}
+          {:tag=>{:images=>["https://lastfm.freetls.fastly.net/i/u/174s/5d6cd8ed9013e22cb4ae7ea76c2edd7f.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/2d37ff8e1291067fb86ac50a1ece2759.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/5aa21bc4551bb7223db87964e63fafcb.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/d2d343feaf41f0246ee65208c4efefd1.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/b4493384bed99d955573e78695015692.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/546d4c7bf97f4580a489116d861bfa04.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/ec1e40eadd785de63b34569ad6a9b4c8.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/1d0db57d4eb5f4e552542520ffc6fb6d.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/89b362d7455240a992f1eb05354f8a3a.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/c1259ffacd400fd426a39c80272916f6.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/708bf60a9e235e036a0900f24a8858ca.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/73680bf0c21f9ce67cdf0b66ee2511ba.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/333ebdb5e0fc4526bca54d29f39defeb.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/7c340cfc543cd9a165490052804baf26.jpg", "https://lastfm.freetls.fastly.net/i/u/174s/c10b42fd6abfd6419e3feb2502f5fd77.jpg"]}}
         end
 
         def info_data
@@ -23,7 +23,7 @@ module Helpers
         end
 
         def similar_data
-          {:tag=>{:similar=>[{:name=>"shoegaze"}, {:name=>"indie"}, {:name=>"indie pop"}, {:name=>"electronic"}, {:name=>"ethereal"}, {:name=>"female vocalists"}]}}
+          {:tag=>{:similar=>[{:name=>"shoegaze"}, {:name=>"indie"}, {:name=>"indie pop"}, {:name=>"electronic"}, {:name=>"female vocalists"}, {:name=>"ethereal"}]}}
         end
 
         def tracks_data
