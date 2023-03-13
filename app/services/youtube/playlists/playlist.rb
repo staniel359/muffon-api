@@ -21,7 +21,7 @@ module YouTube
           channel: channel_data,
           image: image_data,
           description:
-            description_truncated,
+            description_truncated_small,
           videos_count:,
           publish_date:
         }.compact
