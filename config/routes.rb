@@ -698,6 +698,7 @@ Rails.application.routes.draw do
       namespace :playlists, as: :playlist do
         scope ':playlist_id' do
           get '', action: :info
+          get 'description'
           get 'videos'
         end
       end

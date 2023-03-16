@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 16 Mar 2023 15:16:26 GMT
+      - Thu, 16 Mar 2023 15:14:02 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -54,5 +54,5 @@ http_interactions:
           },
           "items": []
         }
-  recorded_at: Thu, 16 Mar 2023 15:16:26 GMT
+  recorded_at: Thu, 16 Mar 2023 15:14:02 GMT
 recorded_with: VCR 6.1.0

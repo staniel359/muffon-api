@@ -11,6 +11,7 @@ module YouTube
         self_data
           .merge(playlist_base_data)
           .merge(playlist_extra_data)
+          .merge(with_more_data)
       end
 
       def playlist_extra_data
