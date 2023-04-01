@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_22_113326) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_01_073033) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -449,7 +449,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_22_113326) do
     t.string "title"
     t.string "channel_youtube_id"
     t.string "channel_title"
-    t.integer "views_count", default: 0
+    t.bigint "views_count", default: 0
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
