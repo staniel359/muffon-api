@@ -675,6 +675,7 @@ Rails.application.routes.draw do
     namespace :youtube do
       namespace :search do
         get 'videos'
+        get 'channels'
       end
 
       namespace :channels, as: :channel do

@@ -29,6 +29,10 @@ module Helpers
         {:search=>{:videos=>[]}}
       end
 
+      def youtube_no_channels_data
+        {:search=>{:channels=>[]}}
+      end
+
       def youtube_no_tracks_data
         {:search=>{:tracks=>[]}}
       end

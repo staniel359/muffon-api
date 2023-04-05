@@ -1,17 +1,12 @@
 module YouTube
   module Search
     class Videos < YouTube::Search::Base
+      MODEL_NAME = 'video'.freeze
+      COLLECTION_NAME = 'videos'.freeze
+
       private
 
-      def search_data
-        {
-          prev_page:,
-          next_page:,
-          videos: videos.compact
-        }.compact
-      end
-
-      def video_data_formatted(video)
+      def collection_item_data_formatted(video)
         YouTube::Search::Videos::Video.call(
           video:,
           profile_id: @args[:profile_id],

@@ -25,7 +25,7 @@ module YouTube
       def search_params
         {
           q: @args[:query],
-          type: 'video',
+          type: model_name,
           part: 'snippet',
           maxResults: limit,
           pageToken: @args[:page],
@@ -34,8 +34,25 @@ module YouTube
         }.compact
       end
 
+      def model_name
+        self.class::MODEL_NAME
+      end
+
       def data
         { search: search_data }
+      end
+
+      def search_data
+        {
+          prev_page:,
+          next_page:,
+          collection_name.to_sym =>
+            collection.compact
+        }.compact
+      end
+
+      def collection_list
+        response_data['items']
       end
     end
   end

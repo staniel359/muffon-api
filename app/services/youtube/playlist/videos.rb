@@ -1,6 +1,8 @@
 module YouTube
   module Playlist
     class Videos < YouTube::Playlist::Base
+      include Muffon::Utils::Pagination
+
       private
 
       def no_data?
@@ -42,17 +44,19 @@ module YouTube
         {
           prev_page:,
           next_page:,
-          videos:
+          videos: collection
         }.compact
       end
 
-      def video_data_formatted(video)
+      def collection_item_data_formatted(video)
         YouTube::Playlist::Videos::Video.call(
           video:,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )
       end
+
+      alias collection_list items_list
     end
   end
 end

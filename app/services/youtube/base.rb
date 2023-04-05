@@ -18,12 +18,6 @@ module YouTube
       secrets.google[:api_key]
     end
 
-    def videos
-      items_list.map do |v|
-        video_data_formatted(v)
-      end
-    end
-
     def image_data_formatted(image)
       YouTube::Utils::Image.call(
         image:
