@@ -1,0 +1,232 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=<GOOGLE_API_KEY>&maxResults=5&pageToken=CAUQAA&part=snippet&q=80s&type=playlist
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 06 Apr 2023 08:22:07 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#searchListResponse",
+          "etag": "fdIbKUBBWMR0DGKcrleDa-z6gu4",
+          "nextPageToken": "CAoQAA",
+          "prevPageToken": "CAUQAQ",
+          "regionCode": "BY",
+          "pageInfo": {
+            "totalResults": 55259,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#searchResult",
+              "etag": "QnDGarCikwR7FitMQqgKeqYRL54",
+              "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PLkF8z4_rEiHgaiTjiX6nWkR_GE71a9BlB"
+              },
+              "snippet": {
+                "publishedAt": "2015-04-23T19:09:21Z",
+                "channelId": "UCqAQGuvzmjgjGQOlVuWIzrA",
+                "title": "80&#39;s Playlist New Wave Music From The 1980&#39;s",
+                "description": "CosimaNiehaus #DelphineCormier #Cophine #CloneClub #OrphanBlack #TatianaMaslany #EvelyneBrochu #OB #AlisonHendrix ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/qsMz9vIaLwQ/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/qsMz9vIaLwQ/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/qsMz9vIaLwQ/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "amazontracy",
+                "liveBroadcastContent": "none",
+                "publishTime": "2015-04-23T19:09:21Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "mD2zxSrmk9KTvu3x5iNH9UwnYus",
+              "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PLpYWKGMgRA1uU9lyMtR8vQBzc4HrjpqYu"
+              },
+              "snippet": {
+                "publishedAt": "2013-06-19T01:37:51Z",
+                "channelId": "UCrygZjLoQ-EsLooJbbrlBwQ",
+                "title": "80s playlist - 13+ hours of top hits from the 1980s.",
+                "description": "A playlist, of music, from the 1980s. It'd be longer, but that's Youtube and their 200 entry max limit for you... Enjoy!",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/qeMFqkcPYcg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/qeMFqkcPYcg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/qeMFqkcPYcg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Hatamoto",
+                "liveBroadcastContent": "none",
+                "publishTime": "2013-06-19T01:37:51Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "sUnjvSabuNyJqKgFQ8jyrlYz79Q",
+              "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PLGBuKfnErZlDYOaD2bOazzCYvy13ozt7C"
+              },
+              "snippet": {
+                "publishedAt": "2018-04-18T15:32:01Z",
+                "channelId": "UCwtKO1Vwz-7g0nBxBQcU4bg",
+                "title": "80s Pop Music Hits Playlist - Greatest 1980&#39;s Pop Songs",
+                "description": "If you enjoyed listening to this playlist, we recommend you to check: Best Pop Music 80s, 90s Hits - Greatest Pop Songs of The ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/djV11Xbc914/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/djV11Xbc914/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/djV11Xbc914/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Redlist Decades",
+                "liveBroadcastContent": "none",
+                "publishTime": "2018-04-18T15:32:01Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "8nn_IgcUTx07mF-1xt2ijiOh6yA",
+              "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PLAQ7nLSEnhWRxZ_BN6B85RF9rh4uFwsp8"
+              },
+              "snippet": {
+                "publishedAt": "2019-03-03T18:33:48Z",
+                "channelId": "UCj-W8uYSxr7r8TgpsLMOZjQ",
+                "title": "Happy 80s Songs, 80s Playlist, Best 80s songs, Top 80s songs, songs that make you happy, smile, dance, sing-along.",
+                "description": "WOW 830k views so far! Thank you all so much for watching/listening to this playlist!!*** Best 80s songs make that you happy.",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/djV11Xbc914/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/djV11Xbc914/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/djV11Xbc914/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Jackie C",
+                "liveBroadcastContent": "none",
+                "publishTime": "2019-03-03T18:33:48Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "XEpjBt45uCKdOS-y9VwZY-S7N4I",
+              "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PL2pth5aaj4xrQ3dTg3tbTKnO4LtCOuf3l"
+              },
+              "snippet": {
+                "publishedAt": "2013-05-22T16:00:31Z",
+                "channelId": "UC2_QkN0K2wqniKMXY-_ai2A",
+                "title": "Mix 70&#39;s 80&#39;s 90&#39;s POP &amp; ROCK",
+                "description": "",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/PIb6AZdTr-A/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/PIb6AZdTr-A/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/PIb6AZdTr-A/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "RobCars",
+                "liveBroadcastContent": "none",
+                "publishTime": "2013-05-22T16:00:31Z"
+              }
+            }
+          ]
+        }
+  recorded_at: Thu, 06 Apr 2023 08:22:07 GMT
+recorded_with: VCR 6.1.0

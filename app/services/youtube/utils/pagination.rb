@@ -5,6 +5,14 @@ module YouTube
 
       private
 
+      def paginated_data
+        {
+          prev_page:,
+          next_page:,
+          collection_name.to_sym => collection
+        }.compact
+      end
+
       def prev_page
         response_data[
           'prevPageToken'

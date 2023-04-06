@@ -1,5 +1,7 @@
 module YouTube
   class Playlists < YouTube::Base
+    COLLECTION_NAME = 'playlists'.freeze
+
     include YouTube::Utils::Pagination
 
     private
@@ -27,14 +29,6 @@ module YouTube
       }
     end
 
-    def data
-      {
-        prev_page:,
-        next_page:,
-        playlists: collection
-      }.compact
-    end
-
     def collection_item_data_formatted(playlist)
       YouTube::Playlists::Playlist.call(
         playlist:,
@@ -43,6 +37,7 @@ module YouTube
       )
     end
 
+    alias data paginated_data
     alias collection_list items_list
   end
 end

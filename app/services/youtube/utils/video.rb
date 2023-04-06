@@ -45,7 +45,9 @@ module YouTube
       end
 
       def channel_title
-        snippet['channelTitle']
+        CGI.unescapeHTML(
+          snippet['channelTitle']
+        )
       end
 
       def image_data

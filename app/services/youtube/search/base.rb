@@ -39,16 +39,7 @@ module YouTube
       end
 
       def data
-        { search: search_data }
-      end
-
-      def search_data
-        {
-          prev_page:,
-          next_page:,
-          collection_name.to_sym =>
-            collection.compact
-        }.compact
+        { search: paginated_data }
       end
 
       def collection_list

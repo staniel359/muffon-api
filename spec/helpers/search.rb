@@ -33,6 +33,10 @@ module Helpers
         {:search=>{:channels=>[]}}
       end
 
+      def youtube_no_playlists_data
+        {:search=>{:playlists=>[]}}
+      end
+
       def youtube_no_tracks_data
         {:search=>{:tracks=>[]}}
       end

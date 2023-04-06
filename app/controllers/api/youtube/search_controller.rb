@@ -5,6 +5,8 @@ module API
 
       def channels; end
 
+      def playlists; end
+
       private
 
       def videos_data
@@ -17,6 +19,14 @@ module API
 
       def channels_data
         ::YouTube::Search::Channels.call(
+          params.slice(
+            *%i[query profile_id token page limit]
+          )
+        )
+      end
+
+      def playlists_data
+        ::YouTube::Search::Playlists.call(
           params.slice(
             *%i[query profile_id token page limit]
           )

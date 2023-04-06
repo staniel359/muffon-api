@@ -17,7 +17,9 @@ module YouTube
       end
 
       def title
-        snippet['title']
+        CGI.unescapeHTML(
+          snippet['title']
+        )
       end
 
       def snippet
@@ -43,7 +45,9 @@ module YouTube
       end
 
       def channel_title
-        snippet['channelTitle']
+        CGI.unescapeHTML(
+          snippet['channelTitle']
+        )
       end
 
       def image_data
@@ -61,7 +65,9 @@ module YouTube
       end
 
       def description
-        snippet['description']
+        CGI.unescapeHTML(
+          snippet['description']
+        )
       end
 
       def videos_count

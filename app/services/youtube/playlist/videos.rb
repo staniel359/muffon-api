@@ -1,6 +1,8 @@
 module YouTube
   module Playlist
     class Videos < YouTube::Playlist::Base
+      COLLECTION_NAME = 'videos'.freeze
+
       include Muffon::Utils::Pagination
 
       private
@@ -31,21 +33,13 @@ module YouTube
 
       def playlist_data
         playlist_base_data
-          .merge(playlist_videos_data)
+          .merge(paginated_data)
       end
 
       def playlist_base_data
         playlist_info_data.slice(
           *%i[source title channel]
         )
-      end
-
-      def playlist_videos_data
-        {
-          prev_page:,
-          next_page:,
-          videos: collection
-        }.compact
       end
 
       def collection_item_data_formatted(video)

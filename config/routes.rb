@@ -676,6 +676,7 @@ Rails.application.routes.draw do
       namespace :search do
         get 'videos'
         get 'channels'
+        get 'playlists'
       end
 
       namespace :channels, as: :channel do
