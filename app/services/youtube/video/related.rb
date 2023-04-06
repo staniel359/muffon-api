@@ -2,7 +2,7 @@ module YouTube
   module Video
     class Related < YouTube::Video::Base
       COLLECTION_NAME = 'related'.freeze
-      TOTAL_LIMIT = 200
+      TOTAL_LIMIT = 80
 
       include Muffon::Utils::Pagination
 
