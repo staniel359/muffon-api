@@ -24,7 +24,7 @@ module LastFM
         def name
           response_data.css(
             '.header-new-title'
-          )[0].text
+          )[0]&.text
         end
       end
     end
