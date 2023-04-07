@@ -8,7 +8,6 @@ class VideoPlaylist < ApplicationRecord
   validates :title, presence: true
 
   validates :channel_youtube_id,
-            presence: true,
             uniqueness: {
               scope: :youtube_id
             }

@@ -1,8 +1,8 @@
 module YouTubeMusic
   module Search
-    class Videos
-      class Video < YouTubeMusic::Search::Videos
-        include YouTube::Utils::Video
+    class Playlists
+      class Playlist < YouTubeMusic::Search::Playlists
+        include YouTube::Utils::Playlist
 
         def call
           data
@@ -12,10 +12,10 @@ module YouTubeMusic
 
         def data
           self_data
-            .merge(video_data)
+            .merge(playlist_data)
         end
 
-        def video_data
+        def playlist_data
           {
             source: source_data,
             title:,
@@ -24,12 +24,12 @@ module YouTubeMusic
           }
         end
 
-        def video
-          @args[:video]
+        def playlist
+          @args[:playlist]
         end
 
         def title
-          video.dig(
+          playlist.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns', 0,
             'musicResponsiveListItemFlexColumnRenderer',
@@ -38,17 +38,17 @@ module YouTubeMusic
         end
 
         def youtube_id
-          video.dig(
+          playlist.dig(
             'musicResponsiveListItemRenderer',
-            'flexColumns', 0,
-            'musicResponsiveListItemFlexColumnRenderer',
-            'text', 'runs', 0, 'navigationEndpoint',
-            'watchEndpoint', 'videoId'
+            'overlay', 'musicItemThumbnailOverlayRenderer',
+            'content', 'musicPlayButtonRenderer',
+            'playNavigationEndpoint',
+            'watchPlaylistEndpoint', 'playlistId'
           )
         end
 
         def channel_youtube_id
-          video.dig(
+          playlist.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns', 1,
             'musicResponsiveListItemFlexColumnRenderer',
@@ -58,7 +58,7 @@ module YouTubeMusic
         end
 
         def channel_title
-          video.dig(
+          playlist.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns', 1,
             'musicResponsiveListItemFlexColumnRenderer',
@@ -67,7 +67,7 @@ module YouTubeMusic
         end
 
         def image
-          video.dig(
+          playlist.dig(
             'musicResponsiveListItemRenderer',
             'thumbnail', 'musicThumbnailRenderer',
             'thumbnail', 'thumbnails', 0, 'url'

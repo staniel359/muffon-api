@@ -3,7 +3,9 @@ module YouTubeMusic
     class ScopeParams < YouTubeMusic::Search::Base
       SCOPES = {
         tracks: 'Songs',
-        videos: 'Videos'
+        videos: 'Videos',
+        mixes: 'Featured playlists',
+        playlists: 'Community playlists'
       }.freeze
 
       private

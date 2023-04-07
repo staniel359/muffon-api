@@ -5,6 +5,10 @@ module API
 
       def videos; end
 
+      def mixes; end
+
+      def playlists; end
+
       private
 
       def tracks_data
@@ -17,6 +21,22 @@ module API
 
       def videos_data
         ::YouTubeMusic::Search::Videos.call(
+          params.slice(
+            *%i[query profile_id token page]
+          )
+        )
+      end
+
+      def mixes_data
+        ::YouTubeMusic::Search::Mixes.call(
+          params.slice(
+            *%i[query profile_id token page]
+          )
+        )
+      end
+
+      def playlists_data
+        ::YouTubeMusic::Search::Playlists.call(
           params.slice(
             *%i[query profile_id token page]
           )

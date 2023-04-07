@@ -712,6 +712,8 @@ Rails.application.routes.draw do
       namespace :search do
         get 'tracks'
         get 'videos'
+        get 'mixes'
+        get 'playlists'
       end
     end
   end

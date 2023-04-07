@@ -33,6 +33,10 @@ module Helpers
         {:search=>{:channels=>[]}}
       end
 
+      def youtube_no_mixes_data
+        {:search=>{:mixes=>[]}}
+      end
+
       def youtube_no_playlists_data
         {:search=>{:playlists=>[]}}
       end

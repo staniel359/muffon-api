@@ -1,0 +1,331 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://music.youtube.com/youtubei/v1/search?continuation
+    body:
+      encoding: UTF-8
+      string: '{"context":{"client":{"clientName":"WEB_REMIX","clientVersion":"1.20230227.01.00","gl":"GB"}},"query":"wejlhg239gh23"}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '118'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - music.youtube.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Fri, 07 Apr 2023 11:27:22 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "responseContext": {
+            "visitorData": "CgtOYkM5YW01b1M3ayiZ_L-hBg%3D%3D",
+            "serviceTrackingParams": [
+              {
+                "service": "CSI",
+                "params": [
+                  {
+                    "key": "c",
+                    "value": "WEB_REMIX"
+                  },
+                  {
+                    "key": "cver",
+                    "value": "1.20230227.01.00"
+                  },
+                  {
+                    "key": "yt_li",
+                    "value": "0"
+                  },
+                  {
+                    "key": "GetSearch_rid",
+                    "value": "0x7430e55fc8a1c6af"
+                  }
+                ]
+              },
+              {
+                "service": "GFEEDBACK",
+                "params": [
+                  {
+                    "key": "logged_in",
+                    "value": "0"
+                  },
+                  {
+                    "key": "e",
+                    "value": "1714252,9406012,23804281,23918597,23946420,23966208,23983296,23998056,24004644,24007246,24034168,24036947,24077241,24080738,24120820,24135310,24140247,24162920,24169501,24181174,24187043,24187377,24187855,24197450,24211178,24219713,24235780,24241378,24255165,24255543,24255545,24262346,24263796,24268142,24288045,24288664,24290971,24390675,24391537,24391690,24396565,24404640,24405913,24407191,24409417,24415522,24415864,24415866,24416290,24419113,24426636,24428900,24429095,24439361,24439483,24440518,24450367,24451319,24451939,24453129,24455284,24456680,24458317,24458324,24458329,24458839,24462372,24465011,24465101,24466371,24466454,24466835,24467349,24468350,24468691,24468724,24470718,24471752,24474986,24477227,24477512,24482081,24483009,24483503,24483655,24484079,24485239,24485421,24486578,24487198,24488187,24490472,24491070,24494083,24494198,24494455,24494986,24494999,24495060,24495905,24495956,24495971,24496316,24496739,24496968,24499287,24499306,24499570,24499573,24499792,24511618,24515366,24516016,24516157,24518452,24519102,24519143,24519223,24519256,24519611,24530194,24530295,24530334,24530439,24530455,24530494,24531268,24533840,39323074"
+                  }
+                ]
+              },
+              {
+                "service": "ECATCHER",
+                "params": [
+                  {
+                    "key": "client.version",
+                    "value": "1.20000101"
+                  },
+                  {
+                    "key": "client.name",
+                    "value": "WEB_REMIX"
+                  },
+                  {
+                    "key": "client.fexp",
+                    "value": "24468691,24429095,24004644,24482081,24187377,24036947,24484079,24007246,24455284,24255165,24531268,1714252,24495060,24530334,24487198,24211178,24485421,24404640,24499573,24187855,24516157,24465011,24499306,24496739,24495956,23998056,24519223,24530295,24530439,24451319,24470718,24483009,24241378,24466835,24496968,24453129,24483655,24162920,24499570,24458839,24135310,24288045,24485239,24466371,24440518,24263796,24415522,24391537,24468724,24197450,24235780,24495971,24515366,24458329,24262346,24516016,24426636,24415866,24419113,39323074,24494198,24077241,24519102,24428900,24465101,24530494,24290971,23966208,24499792,24490472,24120820,24181174,24474986,23946420,24288664,24407191,23804281,24456680,24439483,24451939,24034168,24396565,24518452,24499287,24496316,24530455,24462372,24219713,23983296,24471752,24519256,23918597,24405913,24486578,24255543,24495905,24519611,24533840,24169501,24416290,24491070,24466454,24494999,24255545,24494083,24488187,24477227,24415864,24080738,24140247,24511618,24494455,24391690,24450367,24458324,24458317,24494986,24390675,24468350,9406012,24187043,24467349,24439361,24268142,24483503,24409417,24477512,24519143,24530194"
+                  }
+                ]
+              }
+            ],
+            "maxAgeSeconds": 120
+          },
+          "contents": {
+            "tabbedSearchResultsRenderer": {
+              "tabs": [
+                {
+                  "tabRenderer": {
+                    "title": "yt music",
+                    "selected": true,
+                    "content": {
+                      "sectionListRenderer": {
+                        "contents": [
+                          {
+                            "itemSectionRenderer": {
+                              "contents": [
+                                {
+                                  "messageRenderer": {
+                                    "text": {
+                                      "runs": [
+                                        {
+                                          "text": "No results found"
+                                        }
+                                      ]
+                                    },
+                                    "icon": {
+                                      "iconType": "SEARCH"
+                                    },
+                                    "trackingParams": "CAQQ-pUBGAAiEwjE6pL41Jf-AhVDMeAKHeTND_4=",
+                                    "subtext": {
+                                      "messageSubtextRenderer": {
+                                        "text": {
+                                          "runs": [
+                                            {
+                                              "text": "Try different keywords"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "trackingParams": "CAMQuy8YACITCMTqkvjUl_4CFUMx4Aod5M0P_g=="
+                            }
+                          }
+                        ],
+                        "trackingParams": "CAIQui8iEwjE6pL41Jf-AhVDMeAKHeTND_4="
+                      }
+                    },
+                    "tabIdentifier": "music_search_catalog",
+                    "trackingParams": "CAEQ8JMBGAAiEwjE6pL41Jf-AhVDMeAKHeTND_4="
+                  }
+                }
+              ]
+            }
+          },
+          "trackingParams": "CAAQvGkiEwjE6pL41Jf-AhVDMeAKHeTND_4="
+        }
+  recorded_at: Fri, 07 Apr 2023 11:27:22 GMT
+- request:
+    method: post
+    uri: https://music.youtube.com/youtubei/v1/search?continuation
+    body:
+      encoding: UTF-8
+      string: '{"context":{"client":{"clientName":"WEB_REMIX","clientVersion":"1.20230227.01.00","gl":"GB"}},"query":"wejlhg239gh23","params":null}'
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '132'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - music.youtube.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Fri, 07 Apr 2023 11:27:22 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "responseContext": {
+            "visitorData": "CgtVR0xXaU0wazVncyia_L-hBg%3D%3D",
+            "serviceTrackingParams": [
+              {
+                "service": "CSI",
+                "params": [
+                  {
+                    "key": "c",
+                    "value": "WEB_REMIX"
+                  },
+                  {
+                    "key": "cver",
+                    "value": "1.20230227.01.00"
+                  },
+                  {
+                    "key": "yt_li",
+                    "value": "0"
+                  },
+                  {
+                    "key": "GetSearch_rid",
+                    "value": "0xda000b3a4c957b67"
+                  }
+                ]
+              },
+              {
+                "service": "GFEEDBACK",
+                "params": [
+                  {
+                    "key": "logged_in",
+                    "value": "0"
+                  },
+                  {
+                    "key": "e",
+                    "value": "1714246,9405964,23804281,23848211,23918597,23946420,23966208,23983296,23998056,24004644,24007246,24034168,24036948,24077241,24080738,24120820,24135310,24140247,24162920,24169501,24181174,24187043,24187377,24197450,24211178,24219713,24224266,24235780,24236212,24241378,24248956,24255543,24255545,24262346,24263796,24268142,24288045,24288418,24288664,24290971,24390675,24391541,24396565,24404640,24405913,24407191,24409417,24415864,24415866,24416290,24426636,24428900,24429092,24439361,24439483,24440517,24443594,24447568,24449913,24450367,24451319,24453129,24455284,24456680,24458317,24458324,24458329,24458839,24459435,24465011,24465099,24466371,24466458,24468350,24468691,24468724,24471752,24474986,24477227,24477512,24481816,24482081,24483010,24483116,24483503,24483655,24484079,24485239,24485421,24486580,24487012,24487190,24488188,24490464,24490469,24490496,24491070,24494085,24494198,24494988,24494999,24495060,24495962,24495969,24495984,24496739,24496968,24499285,24499306,24499570,24499573,24499788,24499792,24513299,24514272,24515366,24515388,24516017,24516157,24518452,24519102,24519142,24519169,24519223,24519257,24530194,24530296,24530334,24530441,39323074"
+                  }
+                ]
+              },
+              {
+                "service": "ECATCHER",
+                "params": [
+                  {
+                    "key": "client.version",
+                    "value": "1.20000101"
+                  },
+                  {
+                    "key": "client.name",
+                    "value": "WEB_REMIX"
+                  },
+                  {
+                    "key": "client.fexp",
+                    "value": "23966208,24494198,24519169,39323074,24288418,24483010,24169501,24077241,24519102,24290971,24407191,24481816,23804281,23848211,24530441,23946420,24456680,24120820,24449913,24494988,24288664,24499792,24474986,24181174,24034168,23918597,24471752,24405913,23983296,24219713,24439483,24518452,24429092,1714246,24396565,24416290,24255543,24490469,24494999,24080738,24491070,24415864,24255545,24477227,24450367,24390675,24140247,24440517,24409417,24268142,24483503,24483116,24447568,24530296,24458324,24458317,24439361,24468350,24187043,24495962,24477512,24487190,24495969,24530194,24428900,24459435,24488188,24516017,24513299,24426636,24468691,24004644,24455284,24443594,24466458,24482081,24465011,24484079,24530334,24495060,9405964,24007246,24187377,24490464,24516157,24514272,24519223,24135310,24404640,24211178,24465099,24486580,24487012,24499573,24515388,24485421,24451319,24519142,24224266,23998056,24499285,24496739,24495984,24499306,24499570,24490496,24453129,24241378,24162920,24485239,24036948,24458839,24496968,24466371,24236212,24288045,24483655,24515366,24262346,24468724,24235780,24197450,24415866,24494085,24391541,24458329,24519257,24263796,24499788,24248956"
+                  }
+                ]
+              }
+            ],
+            "maxAgeSeconds": 120
+          },
+          "contents": {
+            "tabbedSearchResultsRenderer": {
+              "tabs": [
+                {
+                  "tabRenderer": {
+                    "title": "yt music",
+                    "selected": true,
+                    "content": {
+                      "sectionListRenderer": {
+                        "contents": [
+                          {
+                            "itemSectionRenderer": {
+                              "contents": [
+                                {
+                                  "messageRenderer": {
+                                    "text": {
+                                      "runs": [
+                                        {
+                                          "text": "No results found"
+                                        }
+                                      ]
+                                    },
+                                    "icon": {
+                                      "iconType": "SEARCH"
+                                    },
+                                    "trackingParams": "CAQQ-pUBGAAiEwipzLL41Jf-AhWEDeAKHUshD90=",
+                                    "subtext": {
+                                      "messageSubtextRenderer": {
+                                        "text": {
+                                          "runs": [
+                                            {
+                                              "text": "Try different keywords"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              ],
+                              "trackingParams": "CAMQuy8YACITCKnMsvjUl_4CFYQN4AodSyEP3Q=="
+                            }
+                          }
+                        ],
+                        "trackingParams": "CAIQui8iEwipzLL41Jf-AhWEDeAKHUshD90="
+                      }
+                    },
+                    "tabIdentifier": "music_search_catalog",
+                    "trackingParams": "CAEQ8JMBGAAiEwipzLL41Jf-AhWEDeAKHUshD90="
+                  }
+                }
+              ]
+            }
+          },
+          "trackingParams": "CAAQvGkiEwipzLL41Jf-AhWEDeAKHUshD90="
+        }
+  recorded_at: Fri, 07 Apr 2023 11:27:22 GMT
+recorded_with: VCR 6.1.0

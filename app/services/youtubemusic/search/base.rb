@@ -77,14 +77,6 @@ module YouTubeMusic
         )
       end
 
-      def collection_item_data_formatted(video)
-        YouTubeMusic::Search::Videos::Video.call(
-          video:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
-        )
-      end
-
       def next_page
         raw_data&.dig(
           'continuations', 0,
