@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/label?fmt=json&limit=5&offset=5&query=polydor
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 07 Apr 2023 20:15:58 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '876'
+      X-Ratelimit-Reset:
+      - '1680898559'
+      Last-Modified:
+      - Fri, 07 Apr 2023 19:53:05 GMT
+      Etag:
+      - '"ZDc2ODQwMDAwMDAwMDAwMFNvbHI="'
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjcmVhdGVkIjoiMjAyMy0wNC0wN1QyMDoxNTo1OC45NTNaIiwiY291bnQiOjY3LCJvZmZzZXQiOjUsImxhYmVscyI6W3siaWQiOiIxMjU3YzUzNS04YTYyLTQwNjEtODk1Ni05MWJkNzA4NjI0NmIiLCJ0eXBlIjoiT3JpZ2luYWwgUHJvZHVjdGlvbiIsInR5cGUtaWQiOiI3YWFhMzdmZS0yZGVmLTM0NzYtYjM1OS04MDI0NTg1MDA2MmQiLCJzY29yZSI6NjksIm5hbWUiOiJVTklWRVJTQUwgUE9MWURPUiIsInNvcnQtbmFtZSI6IlVOSVZFUlNBTCBQT0xZRE9SIiwiZGlzYW1iaWd1YXRpb24iOiJKYXBhbmVzZSBsYWJlbCBkaXZpc2lvbiwgMjAwMeKAkzIwMDIiLCJjb3VudHJ5IjoiSlAiLCJhcmVhIjp7ImlkIjoiMmRiNDI4MzctYzgzMi0zYzI3LWI0YTMtMDgxOThmNzU2OTNjIiwidHlwZSI6IkNvdW50cnkiLCJ0eXBlLWlkIjoiMDZkZDBhZTQtOGM3NC0zMGJiLWI0M2QtOTVkY2VkZjk2MWRlIiwibmFtZSI6IkphcGFuIiwic29ydC1uYW1lIjoiSmFwYW4iLCJsaWZlLXNwYW4iOnsiZW5kZWQiOm51bGx9fSwibGlmZS1zcGFuIjp7ImJlZ2luIjoiMjAwMSIsImVuZCI6IjIwMDItMDYiLCJlbmRlZCI6dHJ1ZX0sInRhZ3MiOlt7ImNvdW50IjoxLCJuYW1lIjoiai1wb3AifV19LHsiaWQiOiI4ZWUwOTYyOC03ZTk1LTQyYzItYTk5Yy1kNjM3YzA2NmNkMTAiLCJ0eXBlIjoiSG9sZGluZyIsInR5cGUtaWQiOiI0M2YzMWE2Mi05N2U0LTM2ZjYtOTc1Mi00NTNjMTMxYjcxZWQiLCJzY29yZSI6NjgsIm5hbWUiOiJQb2x5ZG9yIEIuVi4iLCJzb3J0LW5hbWUiOiJQb2x5ZG9yIEIuVi4iLCJkaXNhbWJpZ3VhdGlvbiI6Im5vdCBhbiBpbXByaW50OyBOTCBzdWJzaWRpYXJ5IGNvbXBhbnkgb2YgUG9seWRvciBJbnRlcm5hdGlvbmFsIiwiY291bnRyeSI6Ik5MIiwiYXJlYSI6eyJpZCI6ImVmMWI3Y2MwLWNkMjYtMzZmNC04ZWEwLTA0ZDk2MjM3ODZjNyIsInR5cGUiOiJDb3VudHJ5IiwidHlwZS1pZCI6IjA2ZGQwYWU0LThjNzQtMzBiYi1iNDNkLTk1ZGNlZGY5NjFkZSIsIm5hbWUiOiJOZXRoZXJsYW5kcyIsInNvcnQtbmFtZSI6Ik5ldGhlcmxhbmRzIiwibGlmZS1zcGFuIjp7ImVuZGVkIjpudWxsfX0sImxpZmUtc3BhbiI6eyJiZWdpbiI6IjE5NjQiLCJlbmRlZCI6bnVsbH19LHsiaWQiOiIzNjdiZDg4Yi1iYTYyLTRlYjgtYjUyMi05NzFlYjRlMjFlNjIiLCJ0eXBlIjoiT3JpZ2luYWwgUHJvZHVjdGlvbiIsInR5cGUtaWQiOiI3YWFhMzdmZS0yZGVmLTM0NzYtYjM1OS04MDI0NTg1MDA2MmQiLCJzY29yZSI6NjYsIm5hbWUiOiJHbG9ibyBQb2x5ZG9yIiwic29ydC1uYW1lIjoiR2xvYm8gUG9seWRvciIsImNvdW50cnkiOiJCUiIsImFyZWEiOnsiaWQiOiJmNDViNDdmOC01Nzk2LTM4NmUtYjE3Mi02YzMxYjAwOWE1ZDgiLCJ0eXBlIjoiQ291bnRyeSIsInR5cGUtaWQiOiIwNmRkMGFlNC04Yzc0LTMwYmItYjQzZC05NWRjZWRmOTYxZGUiLCJuYW1lIjoiQnJhemlsIiwic29ydC1uYW1lIjoiQnJhemlsIiwibGlmZS1zcGFuIjp7ImVuZGVkIjpudWxsfX0sImxpZmUtc3BhbiI6eyJlbmRlZCI6bnVsbH19LHsiaWQiOiIxMWVhMTYwYy1iMDcxLTRhOWUtYmY5Ni1hNTY3MmQ0MGRkNTMiLCJzY29yZSI6NjYsIm5hbWUiOiJQb2x5ZG9yIChVSykiLCJzb3J0LW5hbWUiOiJQb2x5ZG9yIChVSykiLCJjb3VudHJ5IjoiR0IiLCJhcmVhIjp7ImlkIjoiOGE3NTRhMTYtMDAyNy0zYTI5LWI2ZDctMmI0MGVhMDQ4MWVkIiwidHlwZSI6IkNvdW50cnkiLCJ0eXBlLWlkIjoiMDZkZDBhZTQtOGM3NC0zMGJiLWI0M2QtOTVkY2VkZjk2MWRlIiwibmFtZSI6IlVuaXRlZCBLaW5nZG9tIiwic29ydC1uYW1lIjoiVW5pdGVkIEtpbmdkb20iLCJsaWZlLXNwYW4iOnsiZW5kZWQiOm51bGx9fSwibGlmZS1zcGFuIjp7ImVuZGVkIjpudWxsfX0seyJpZCI6ImNlNWJjYWQ2LWU4ODQtNDY2NC1hNzg1LWEwZmRiMzAyZTNkOSIsInR5cGUiOiJIb2xkaW5nIiwidHlwZS1pZCI6IjQzZjMxYTYyLTk3ZTQtMzZmNi05NzUyLTQ1M2MxMzFiNzFlZCIsInNjb3JlIjo2NSwibmFtZSI6IlBvbHlkb3IgUmVjb3JkcyIsInNvcnQtbmFtZSI6IlBvbHlkb3IgUmVjb3JkcyIsImRpc2FtYmlndWF0aW9uIjoicmVjb3JkIGNvbXBhbnksIHBsZWFzZSB1c2Ug4oCcUG9seWRvcuKAnSBmb3IgcmVsZWFzZSBsYWJlbC4iLCJsaWZlLXNwYW4iOnsiYmVnaW4iOiIxOTEzLTA0LTAyIiwiZW5kZWQiOm51bGx9fV19
+  recorded_at: Fri, 07 Apr 2023 20:15:59 GMT
+recorded_with: VCR 6.1.0

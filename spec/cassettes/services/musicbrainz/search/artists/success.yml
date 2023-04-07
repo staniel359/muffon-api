@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/artist?fmt=json&limit=5&offset=5&query=kate%20bush
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 07 Apr 2023 20:09:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '990'
+      X-Ratelimit-Reset:
+      - '1680898154'
+      Last-Modified:
+      - Fri, 07 Apr 2023 20:08:47 GMT
+      Etag:
+      - '"OGJiZTg4MDAwMDAwMDAwMFNvbHI="'
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjcmVhdGVkIjoiMjAyMy0wNC0wN1QyMDowOToxMy41NzRaIiwiY291bnQiOjIyMTksIm9mZnNldCI6NSwiYXJ0aXN0cyI6W3siaWQiOiI0M2M2NWNkMi1hMmI1LTRlZWYtODliMi0zODE1NGMxZDIxZTUiLCJ0eXBlIjoiT3RoZXIiLCJ0eXBlLWlkIjoiYWM4OTcwNDUtNTA0My0zMjk0LTk2OWItMTg3MzYwZTQ1ZDg2Iiwic2NvcmUiOjUyLCJnZW5kZXItaWQiOiI5MzQ1MmI1YS1hOTQ3LTMwYzgtOTM0Zi02YTQwNTZiMTUxYzIiLCJuYW1lIjoiQm9ubmllIiwic29ydC1uYW1lIjoiQm9ubmllIiwiZ2VuZGVyIjoiZmVtYWxlIiwiYXJlYSI6eyJpZCI6IjlkNWRkNjc1LTNjZjQtNDI5Ni05ZTM5LTY3ODY1ZWJlZTc1OCIsInR5cGUiOiJTdWJkaXZpc2lvbiIsInR5cGUtaWQiOiJmZDNkNDRjNS04MGExLTM4NDItOTc0NS0yYzQ5NzJkMzVhZmEiLCJuYW1lIjoiRW5nbGFuZCIsInNvcnQtbmFtZSI6IkVuZ2xhbmQiLCJsaWZlLXNwYW4iOnsiZW5kZWQiOm51bGx9fSwiZGlzYW1iaWd1YXRpb24iOiJLYXRlIEJ1c2jigJlzIGRvZyIsImxpZmUtc3BhbiI6eyJlbmRlZCI6dHJ1ZX0sInRhZ3MiOlt7ImNvdW50IjoxLCJuYW1lIjoiYW5pbWFsIn0seyJjb3VudCI6MSwibmFtZSI6InR5cGU9YW5pbWFsIn1dfSx7ImlkIjoiNjZiOTU2MjAtMjVjYi00NTZiLWJjMDgtNmE1OGE5YzFkYmJmIiwidHlwZSI6Ik90aGVyIiwidHlwZS1pZCI6ImFjODk3MDQ1LTUwNDMtMzI5NC05NjliLTE4NzM2MGU0NWQ4NiIsInNjb3JlIjo1MiwiZ2VuZGVyLWlkIjoiMzZkM2QzMGEtODM5ZC0zZWRhLThjYjMtMjliZTQzODRlNGE5IiwibmFtZSI6IkNseWRlIiwic29ydC1uYW1lIjoiQ2x5ZGUiLCJnZW5kZXIiOiJtYWxlIiwiYXJlYSI6eyJpZCI6IjlkNWRkNjc1LTNjZjQtNDI5Ni05ZTM5LTY3ODY1ZWJlZTc1OCIsInR5cGUiOiJTdWJkaXZpc2lvbiIsInR5cGUtaWQiOiJmZDNkNDRjNS04MGExLTM4NDItOTc0NS0yYzQ5NzJkMzVhZmEiLCJuYW1lIjoiRW5nbGFuZCIsInNvcnQtbmFtZSI6IkVuZ2xhbmQiLCJsaWZlLXNwYW4iOnsiZW5kZWQiOm51bGx9fSwiZGlzYW1iaWd1YXRpb24iOiJLYXRlIEJ1c2jigJlzIGRvZyIsImxpZmUtc3BhbiI6eyJlbmRlZCI6dHJ1ZX0sInRhZ3MiOlt7ImNvdW50IjoxLCJuYW1lIjoiYW5pbWFsIn0seyJjb3VudCI6MSwibmFtZSI6InR5cGU9YW5pbWFsIn1dfSx7ImlkIjoiOWMzODczMTgtNTNjYS00ZDQzLTgxNGQtZWExN2VkNDEyMWJkIiwidHlwZSI6Ikdyb3VwIiwidHlwZS1pZCI6ImU0MzFmNWY2LWI1ZDItMzQzZC04YjM2LTcyNjA3ZmZmYjc0YiIsInNjb3JlIjo0OCwibmFtZSI6IkRyZWFtaW5nIG9mIEthdGUiLCJzb3J0LW5hbWUiOiJEcmVhbWluZyBvZiBLYXRlIiwiZGlzYW1iaWd1YXRpb24iOiJLYXRlIEJ1c2ggY292ZXJiYW5kIHdpdGggTWFhaWtlIEJyZWlqbWFuIiwibGlmZS1zcGFuIjp7ImVuZGVkIjpudWxsfX0seyJpZCI6ImM1NzkxNWVmLTRiMGYtNGRlOC1iZGMxLTM2OWY0ZmIxNTRjMSIsInR5cGUiOiJQZXJzb24iLCJ0eXBlLWlkIjoiYjZlMDM1ZjQtM2NlOS0zMzFjLTk3ZGYtODMzOTcyMzBiMGRmIiwic2NvcmUiOjQ0LCJnZW5kZXItaWQiOiIzNmQzZDMwYS04MzlkLTNlZGEtOGNiMy0yOWJlNDM4NGU0YTkiLCJuYW1lIjoiTWljaGFlbCBXb29kIiwic29ydC1uYW1lIjoiV29vZCwgTWljaGFlbCIsImdlbmRlciI6Im1hbGUiLCJkaXNhbWJpZ3VhdGlvbiI6IlRlbm9yLS13b3JrZWQgd2l0aCBLYXRlIEJ1c2guIiwibGlmZS1zcGFuIjp7ImVuZGVkIjpudWxsfSwidGFncyI6W3siY291bnQiOjEsIm5hbWUiOiJ3YWxrIGluIHRoZSBibGFjayBmb3Jlc3QifSx7ImNvdW50IjoxLCJuYW1lIjoic2hlJ2xsIGJlIGNvbWluZyByb3VuZCB0aGUgbW91bnRhaW4ifSx7ImNvdW50IjoxLCJuYW1lIjoibWljaGFlbCBnIHdvb2Qgb2YgbGVvbWluc3RlciB1ayJ9XX0seyJpZCI6IjkzY2NkNzZjLTM3OTAtNDQzNS1hOGJmLTAyYmMyNjI5NGI5MyIsInR5cGUiOiJHcm91cCIsInR5cGUtaWQiOiJlNDMxZjVmNi1iNWQyLTM0M2QtOGIzNi03MjYwN2ZmZmI3NGIiLCJzY29yZSI6NDMsIm5hbWUiOiJCdXNoIiwic29ydC1uYW1lIjoiQnVzaCIsImNvdW50cnkiOiJHQiIsImFyZWEiOnsiaWQiOiI4YTc1NGExNi0wMDI3LTNhMjktYjZkNy0yYjQwZWEwNDgxZWQiLCJ0eXBlIjoiQ291bnRyeSIsInR5cGUtaWQiOiIwNmRkMGFlNC04Yzc0LTMwYmItYjQzZC05NWRjZWRmOTYxZGUiLCJuYW1lIjoiVW5pdGVkIEtpbmdkb20iLCJzb3J0LW5hbWUiOiJVbml0ZWQgS2luZ2RvbSIsImxpZmUtc3BhbiI6eyJlbmRlZCI6bnVsbH19LCJiZWdpbi1hcmVhIjp7ImlkIjoiZjAzZDA5YjMtMzlkYy00MDgzLWFmZDYtMTU5ZTNmMGQ0NjJmIiwidHlwZSI6IkNpdHkiLCJ0eXBlLWlkIjoiNmZkOGYyOWEtM2QwYS0zMmZjLTk4MGQtZWE2OTdiNjlkYTc4IiwibmFtZSI6IkxvbmRvbiIsInNvcnQtbmFtZSI6IkxvbmRvbiIsImxpZmUtc3BhbiI6eyJlbmRlZCI6bnVsbH19LCJkaXNhbWJpZ3VhdGlvbiI6IkVuZ2xpc2ggcm9jayBiYW5kIiwiaXNuaXMiOlsiMDAwMDAwMDEwNjY4NjAwNSJdLCJsaWZlLXNwYW4iOnsiYmVnaW4iOiIxOTkyIiwiZW5kZWQiOm51bGx9LCJhbGlhc2VzIjpbeyJzb3J0LW5hbWUiOiJCdXNoy6MiLCJ0eXBlLWlkIjoiODk0YWZiYTYtMjgxNi0zYzI0LTgwNzItZWFkYjY2YmQwNGJjIiwibmFtZSI6IkJ1c2jLoyIsImxvY2FsZSI6bnVsbCwidHlwZSI6IkFydGlzdCBuYW1lIiwicHJpbWFyeSI6bnVsbCwiYmVnaW4tZGF0ZSI6bnVsbCwiZW5kLWRhdGUiOm51bGx9LHsic29ydC1uYW1lIjoiQnVzaCIsInR5cGUtaWQiOiI4OTRhZmJhNi0yODE2LTNjMjQtODA3Mi1lYWRiNjZiZDA0YmMiLCJuYW1lIjoiQnVzaCIsImxvY2FsZSI6bnVsbCwidHlwZSI6IkFydGlzdCBuYW1lIiwicHJpbWFyeSI6bnVsbCwiYmVnaW4tZGF0ZSI6bnVsbCwiZW5kLWRhdGUiOm51bGx9LHsic29ydC1uYW1lIjoiQnVzaCBYIiwidHlwZS1pZCI6Ijg5NGFmYmE2LTI4MTYtM2MyNC04MDcyLWVhZGI2NmJkMDRiYyIsIm5hbWUiOiJCdXNoIFgiLCJsb2NhbGUiOm51bGwsInR5cGUiOiJBcnRpc3QgbmFtZSIsInByaW1hcnkiOm51bGwsImJlZ2luLWRhdGUiOm51bGwsImVuZC1kYXRlIjpudWxsfV0sInRhZ3MiOlt7ImNvdW50IjoxLCJuYW1lIjoicm9jayJ9LHsiY291bnQiOjQsIm5hbWUiOiJhbHRlcm5hdGl2ZSByb2NrIn0seyJjb3VudCI6MiwibmFtZSI6ImJyaXRpc2gifSx7ImNvdW50IjozLCJuYW1lIjoiZ3J1bmdlIn0seyJjb3VudCI6MSwibmFtZSI6InVrIn0seyJjb3VudCI6MiwibmFtZSI6InBvc3QtZ3J1bmdlIn0seyJjb3VudCI6MSwibmFtZSI6ImVuZ2xpc2gifSx7ImNvdW50IjowLCJuYW1lIjoidGhlIHNvdW5kIn1dfV19
+  recorded_at: Fri, 07 Apr 2023 20:09:13 GMT
+recorded_with: VCR 6.1.0

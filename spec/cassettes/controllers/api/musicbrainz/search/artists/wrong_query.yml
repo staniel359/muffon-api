@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/artist?fmt=json&limit=20&offset=0&query=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 07 Apr 2023 20:06:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '822'
+      X-Ratelimit-Reset:
+      - '1680898018'
+      Last-Modified:
+      - Fri, 07 Apr 2023 20:06:31 GMT
+      Etag:
+      - '"OTBkNjg4MDAwMDAwMDAwMFNvbHI="'
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"created":"2023-04-07T20:06:57.870Z","count":0,"offset":0,"artists":[]}'
+  recorded_at: Fri, 07 Apr 2023 20:06:57 GMT
+recorded_with: VCR 6.1.0

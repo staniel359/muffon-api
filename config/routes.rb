@@ -436,6 +436,18 @@ Rails.application.routes.draw do
       end
     end
 
+    # MusicBrainz
+
+    namespace :musicbrainz do
+      namespace :search do
+        get 'artists'
+        get 'labels'
+        get 'groups'
+        get 'albums'
+        get 'tracks'
+      end
+    end
+
     # LastFM
 
     namespace :lastfm do

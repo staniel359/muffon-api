@@ -1,0 +1,173 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/release?fmt=json&limit=20&offset=0&query=kate%20bush%20hounds%20of%20love
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 07 Apr 2023 20:06:59 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '756'
+      X-Ratelimit-Reset:
+      - '1680898018'
+      Last-Modified:
+      - Fri, 07 Apr 2023 20:04:21 GMT
+      Etag:
+      - '"NjVlZTc4MDAwMDAwMDAwMFNvbHI="'
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: ASCII-8BIT
+      string: '{"created":"2023-04-07T20:06:59.222Z","count":371256,"offset":0,"releases":[{"id":"52677363-500b-4520-ba10-182e10719f17","score":100,"count":1,"title":"Kate
+        Bush","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Viva
+        City","artist":{"id":"0d0e5b83-0e33-4708-a7ea-4041592b48dd","name":"Viva City","sort-name":"Viva
+        City"}}],"release-group":{"id":"2b19c210-7975-456f-9196-42275026f7ba","type-id":"d6038452-8ee0-3f68-affc-2de9a1ede0b9","primary-type-id":"d6038452-8ee0-3f68-affc-2de9a1ede0b9","title":"Kate
+        Bush","primary-type":"Single"},"date":"2008","country":"GB","release-events":[{"date":"2008","area":{"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","name":"United
+        Kingdom","sort-name":"United Kingdom","iso-3166-1-codes":["GB"]}}],"barcode":"","label-info":[{"label":{"id":"fe60646f-d888-4b5e-be7f-a2ee01364671","name":"VERT"}}],"track-count":3,"media":[{"format":"CD","disc-count":1,"track-count":3}]},{"id":"09aaee51-c84e-486b-a6b1-33a2f2786e89","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cassette Case","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"4ec10334-8943-4d25-961b-9b877bc2714d","type-id":"dd2a21e1-0c00-3729-a7a0-de60b84eb5d1","primary-type-id":"f529b476-6e62-324f-b0aa-1f3e33d313fc","title":"Kate
+        Bush","disambiguation":"East Germany","primary-type":"Album","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1984","country":"XG","release-events":[{"date":"1984","area":{"id":"d907b0ac-2956-386f-a246-62d55779aae1","name":"East
+        Germany","sort-name":"East Germany","iso-3166-1-codes":["XG"]}}],"barcode":"","label-info":[{"catalog-number":"056
+        072","label":{"id":"7af3eafa-f81d-43d0-8e42-ce5161b2f43e","name":"AMIGA"}}],"track-count":11,"media":[{"format":"Cassette","disc-count":0,"track-count":11}]},{"id":"e6bbd194-1c3a-4565-bf19-affdc7b9adbf","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"Expanded Dynamic Range","packaging":"Cassette
+        Case","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"US","release-events":[{"date":"1983-06-15","area":{"id":"489ce91b-6658-3307-9877-795b68554c98","name":"United
+        States","sort-name":"United States","iso-3166-1-codes":["US"]}}],"barcode":"077771900440","label-info":[{"catalog-number":"4LP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":10,"media":[{"format":"Cassette","disc-count":0,"track-count":10}]},{"id":"028902a9-a748-47b8-907c-15b6e4cf48a3","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"green","packaging":"Cardboard/Paper
+        Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"bb1142b8-00f2-4a37-8d0c-fafadae7709c","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"brown","packaging":"Cardboard/Paper
+        Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"6caf7a21-a8c4-431c-a54b-096142769572","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cassette Case","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"4LP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"Cassette","disc-count":0,"track-count":6}]},{"id":"49cdc75c-7771-467c-8e93-d8fcf44183f5","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"clear","packaging":"Cardboard/Paper
+        Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"b8c980e8-94e9-4c1a-a05e-61f838c1855b","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"blue","packaging":"Cardboard/Paper
+        Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"db31bb2c-8975-4410-9502-40836f854f01","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"fa347058-5dbc-433e-a89e-565118333714","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"US","release-events":[{"date":"1983-06-15","area":{"id":"489ce91b-6658-3307-9877-795b68554c98","name":"United
+        States","sort-name":"United States","iso-3166-1-codes":["US"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":5,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":5}]},{"id":"da698179-f42e-4f00-bf20-d9890210f4b5","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"US","release-events":[{"date":"1983-06-15","area":{"id":"489ce91b-6658-3307-9877-795b68554c98","name":"United
+        States","sort-name":"United States","iso-3166-1-codes":["US"]}}],"barcode":"077771900419","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":5,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":5}]},{"id":"8d0d0fa8-79e1-40f9-8ec1-687c7ef2b837","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cassette Case","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"4ec10334-8943-4d25-961b-9b877bc2714d","type-id":"dd2a21e1-0c00-3729-a7a0-de60b84eb5d1","primary-type-id":"f529b476-6e62-324f-b0aa-1f3e33d313fc","title":"Kate
+        Bush","disambiguation":"East Germany","primary-type":"Album","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1984","country":"XG","release-events":[{"date":"1984","area":{"id":"d907b0ac-2956-386f-a246-62d55779aae1","name":"East
+        Germany","sort-name":"East Germany","iso-3166-1-codes":["XG"]}}],"barcode":"","label-info":[{"catalog-number":"056
+        072","label":{"id":"7af3eafa-f81d-43d0-8e42-ce5161b2f43e","name":"AMIGA"}}],"track-count":11,"media":[{"format":"Cassette","disc-count":0,"track-count":11}]},{"id":"d11c3e61-5f25-466a-aa83-fee06384923f","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"US","release-events":[{"date":"1983-06-15","area":{"id":"489ce91b-6658-3307-9877-795b68554c98","name":"United
+        States","sort-name":"United States","iso-3166-1-codes":["US"]}}],"barcode":"077771900419","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":5,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":5}]},{"id":"413bd1d1-e7d7-49dc-9744-28659cffbf04","score":100,"status-id":"518ffc83-5cde-34df-8627-81bff5093d92","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","count":1,"title":"Kate
+        Bush","status":"Promotion","packaging":"Cassette Case","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983","country":"US","release-events":[{"date":"1983","area":{"id":"489ce91b-6658-3307-9877-795b68554c98","name":"United
+        States","sort-name":"United States","iso-3166-1-codes":["US"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":5,"media":[{"format":"Cassette","disc-count":0,"track-count":5}]},{"id":"bf2f241e-c775-45e0-bdc4-88bc797c6c1f","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"white","packaging":"Cardboard/Paper
+        Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"3deacd5d-4bd7-4a19-b294-6de0b59ee217","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"4ec10334-8943-4d25-961b-9b877bc2714d","type-id":"dd2a21e1-0c00-3729-a7a0-de60b84eb5d1","primary-type-id":"f529b476-6e62-324f-b0aa-1f3e33d313fc","title":"Kate
+        Bush","disambiguation":"East Germany","primary-type":"Album","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"","country":"XG","release-events":[{"date":"","area":{"id":"d907b0ac-2956-386f-a246-62d55779aae1","name":"East
+        Germany","sort-name":"East Germany","iso-3166-1-codes":["XG"]}}],"barcode":"","label-info":[{"catalog-number":"8
+        56 072","label":{"id":"7af3eafa-f81d-43d0-8e42-ce5161b2f43e","name":"AMIGA"}}],"track-count":11,"media":[{"format":"12\"
+        Vinyl","disc-count":0,"track-count":11}]},{"id":"e515e0e8-b592-4225-b00b-ddaa344581cd","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"Super Dynamic Range","packaging":"Cassette
+        Case","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"4LP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"Cassette","disc-count":0,"track-count":6}]},{"id":"6e462618-5bdd-4827-86f8-77578a42b8d4","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","disambiguation":"gold","packaging":"Cardboard/Paper
+        Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP-19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI
+        America"}}],"track-count":6,"media":[{"format":"12\" Vinyl","disc-count":0,"track-count":6}]},{"id":"6b7734a1-2d8d-4cbb-8490-e9db70105ee6","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"eng","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"4ec10334-8943-4d25-961b-9b877bc2714d","type-id":"dd2a21e1-0c00-3729-a7a0-de60b84eb5d1","primary-type-id":"f529b476-6e62-324f-b0aa-1f3e33d313fc","title":"Kate
+        Bush","disambiguation":"East Germany","primary-type":"Album","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1984","country":"XG","release-events":[{"date":"1984","area":{"id":"d907b0ac-2956-386f-a246-62d55779aae1","name":"East
+        Germany","sort-name":"East Germany","iso-3166-1-codes":["XG"]}}],"barcode":"","label-info":[{"catalog-number":"8
+        56 072","label":{"id":"7af3eafa-f81d-43d0-8e42-ce5161b2f43e","name":"AMIGA"}}],"track-count":11,"media":[{"format":"12\"
+        Vinyl","disc-count":0,"track-count":11}]},{"id":"fc1ae142-74a9-4445-a3a6-c32688da588e","score":100,"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","count":1,"title":"Kate
+        Bush","status":"Official","packaging":"Cardboard/Paper Sleeve","text-representation":{"language":"mul","script":"Latn"},"artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","sort-name":"Bush,
+        Kate"}}],"release-group":{"id":"d8a1e534-e75f-425c-aefe-82bc7a115c18","type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","primary-type-id":"6d0c5bf6-7a33-3420-a519-44fc63eedebf","title":"Kate
+        Bush","disambiguation":"North America","primary-type":"EP","secondary-types":["Compilation"],"secondary-type-ids":["dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"]},"date":"1983-06-15","country":"CA","release-events":[{"date":"1983-06-15","area":{"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","name":"Canada","sort-name":"Canada","iso-3166-1-codes":["CA"]}}],"barcode":"","label-info":[{"catalog-number":"MLP
+        19004","label":{"id":"4881ac0f-1a15-4dd9-8b64-1c39a68edd33","name":"EMI America"}}],"track-count":6,"media":[{"format":"12\"
+        Vinyl","disc-count":0,"track-count":6}]}]}'
+  recorded_at: Fri, 07 Apr 2023 20:06:59 GMT
+recorded_with: VCR 6.1.0
