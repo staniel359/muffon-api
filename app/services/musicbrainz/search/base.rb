@@ -1,7 +1,7 @@
 module MusicBrainz
   module Search
     class Base < MusicBrainz::Base
-      include Muffon::Utils::Pagination
+      include MusicBrainz::Utils::Pagination
 
       private
 
@@ -13,17 +13,14 @@ module MusicBrainz
         "#{BASE_LINK}/#{model_name}"
       end
 
-      def model_name
-        self.class::MODEL_NAME
+      def params
+        super
+          .merge(search_params)
+          .merge(pagination_params)
       end
 
-      def params
-        {
-          query: @args[:query],
-          limit:,
-          offset:,
-          fmt: 'json'
-        }
+      def search_params
+        { query: @args[:query] }
       end
 
       def data

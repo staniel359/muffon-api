@@ -6,6 +6,14 @@ module MusicBrainz
 
     private
 
+    def params
+      { fmt: 'json' }
+    end
+
+    def model_name
+      self.class::MODEL_NAME
+    end
+
     def artist_data_formatted(artist)
       {
         source: artist_source_data(
@@ -26,7 +34,10 @@ module MusicBrainz
       }
     end
 
-    def image_data_formatted(album_id, album_type = 'release')
+    def image_data_formatted(
+      album_id,
+      album_type = 'release'
+    )
       MusicBrainz::Utils::Image.call(
         album_id:,
         album_type:

@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/artist/4b585938-f271-45e2-b19a-91c634b5e396?fmt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Apr 2023 13:03:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '826'
+      X-Ratelimit-Reset:
+      - '1680958988'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"ead47cedcf52b2923aa1e6074abb8fc3"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - HIT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"disambiguation":"","end_area":null,"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","end-area":null,"gender":"Female","life-span":{"begin":"1958-07-30","end":null,"ended":false},"sort-name":"Bush,
+        Kate","country":null,"begin_area":{"type":null,"sort-name":"Welling","name":"Welling","id":"f5fa3a2b-f793-4fab-8bb6-fe824c941b53","type-id":null,"disambiguation":""},"gender-id":"93452b5a-a947-30c8-934f-6a4056b151c2","id":"4b585938-f271-45e2-b19a-91c634b5e396","isnis":["0000000114808340"],"begin-area":{"type":null,"sort-name":"Welling","name":"Welling","id":"f5fa3a2b-f793-4fab-8bb6-fe824c941b53","type-id":null,"disambiguation":""},"name":"Kate
+        Bush","area":{"disambiguation":"","type-id":null,"id":"9d5dd675-3cf4-4296-9e39-67865ebee758","sort-name":"England","name":"England","type":null,"iso-3166-2-codes":["GB-ENG"]},"ipis":["00046612098","00046612196"],"type":"Person"}'
+  recorded_at: Sat, 08 Apr 2023 13:03:08 GMT
+recorded_with: VCR 6.1.0

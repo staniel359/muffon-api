@@ -446,6 +446,12 @@ Rails.application.routes.draw do
         get 'albums'
         get 'tracks'
       end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
     end
 
     # LastFM

@@ -1,0 +1,106 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/artist/4b585938-f271-45e2-b19a-91c634b5e396?fmt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Apr 2023 13:03:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '585'
+      X-Ratelimit-Reset:
+      - '1680959000'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"ead47cedcf52b2923aa1e6074abb8fc3"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - STALE
+    body:
+      encoding: ASCII-8BIT
+      string: '{"disambiguation":"","end_area":null,"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","end-area":null,"gender":"Female","life-span":{"begin":"1958-07-30","end":null,"ended":false},"sort-name":"Bush,
+        Kate","country":null,"begin_area":{"type":null,"sort-name":"Welling","name":"Welling","id":"f5fa3a2b-f793-4fab-8bb6-fe824c941b53","type-id":null,"disambiguation":""},"gender-id":"93452b5a-a947-30c8-934f-6a4056b151c2","id":"4b585938-f271-45e2-b19a-91c634b5e396","isnis":["0000000114808340"],"begin-area":{"type":null,"sort-name":"Welling","name":"Welling","id":"f5fa3a2b-f793-4fab-8bb6-fe824c941b53","type-id":null,"disambiguation":""},"name":"Kate
+        Bush","area":{"disambiguation":"","type-id":null,"id":"9d5dd675-3cf4-4296-9e39-67865ebee758","sort-name":"England","name":"England","type":null,"iso-3166-2-codes":["GB-ENG"]},"ipis":["00046612098","00046612196"],"type":"Person"}'
+  recorded_at: Sat, 08 Apr 2023 13:03:20 GMT
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/release-group?artist=4b585938-f271-45e2-b19a-91c634b5e396&fmt=json&inc=artist-credits&limit=5&offset=5&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Apr 2023 13:03:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1196'
+      X-Ratelimit-Reset:
+      - '1680959002'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"1beb2a7b941551209f8dd9a0387a53b4"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - STALE
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZWxlYXNlLWdyb3VwLWNvdW50Ijo0OSwicmVsZWFzZS1ncm91cHMiOlt7ImlkIjoiMmVlZmU4ODUtZjA1MC00MjZkLTkzZjAtMjljNWViOGI0ZjlhIiwicHJpbWFyeS10eXBlIjoiQWxidW0iLCJmaXJzdC1yZWxlYXNlLWRhdGUiOiIyMDExLTExLTIxIiwic2Vjb25kYXJ5LXR5cGUtaWRzIjpbXSwicHJpbWFyeS10eXBlLWlkIjoiZjUyOWI0NzYtNmU2Mi0zMjRmLWIwYWEtMWYzZTMzZDMxM2ZjIiwiZGlzYW1iaWd1YXRpb24iOiIiLCJhcnRpc3QtY3JlZGl0IjpbeyJqb2lucGhyYXNlIjoiIiwiYXJ0aXN0Ijp7ImRpc2FtYmlndWF0aW9uIjoiIiwibmFtZSI6IkthdGUgQnVzaCIsImlkIjoiNGI1ODU5MzgtZjI3MS00NWUyLWIxOWEtOTFjNjM0YjVlMzk2IiwidHlwZSI6IlBlcnNvbiIsInR5cGUtaWQiOiJiNmUwMzVmNC0zY2U5LTMzMWMtOTdkZi04MzM5NzIzMGIwZGYiLCJzb3J0LW5hbWUiOiJCdXNoLCBLYXRlIn0sIm5hbWUiOiJLYXRlIEJ1c2gifV0sInRpdGxlIjoiNTAgV29yZHMgZm9yIFNub3ciLCJzZWNvbmRhcnktdHlwZXMiOltdfSx7InNlY29uZGFyeS10eXBlcyI6W10sImFydGlzdC1jcmVkaXQiOlt7ImpvaW5waHJhc2UiOiIiLCJuYW1lIjoiS2F0ZSBCdXNoIiwiYXJ0aXN0Ijp7Im5hbWUiOiJLYXRlIEJ1c2giLCJ0eXBlIjoiUGVyc29uIiwiaWQiOiI0YjU4NTkzOC1mMjcxLTQ1ZTItYjE5YS05MWM2MzRiNWUzOTYiLCJ0eXBlLWlkIjoiYjZlMDM1ZjQtM2NlOS0zMzFjLTk3ZGYtODMzOTcyMzBiMGRmIiwic29ydC1uYW1lIjoiQnVzaCwgS2F0ZSIsImRpc2FtYmlndWF0aW9uIjoiIn19XSwidGl0bGUiOiJBZXJpYWwiLCJkaXNhbWJpZ3VhdGlvbiI6IiIsImZpcnN0LXJlbGVhc2UtZGF0ZSI6IjIwMDUtMTEtMDIiLCJzZWNvbmRhcnktdHlwZS1pZHMiOltdLCJwcmltYXJ5LXR5cGUtaWQiOiJmNTI5YjQ3Ni02ZTYyLTMyNGYtYjBhYS0xZjNlMzNkMzEzZmMiLCJwcmltYXJ5LXR5cGUiOiJBbGJ1bSIsImlkIjoiNjE2OWY1YmMtYjVmZi0zMzQ4LWI4MDYtMWIwZjJhNDE0MjE3In0seyJzZWNvbmRhcnktdHlwZS1pZHMiOltdLCJmaXJzdC1yZWxlYXNlLWRhdGUiOiIxOTg5LTEwLTE3IiwicHJpbWFyeS10eXBlLWlkIjoiZjUyOWI0NzYtNmU2Mi0zMjRmLWIwYWEtMWYzZTMzZDMxM2ZjIiwicHJpbWFyeS10eXBlIjoiQWxidW0iLCJpZCI6ImFkNTU1MDk1LWIwYTYtNDJjOC04N2FhLThiYTAzNWQyMGUxMiIsInNlY29uZGFyeS10eXBlcyI6W10sImFydGlzdC1jcmVkaXQiOlt7Im5hbWUiOiJLYXRlIEJ1c2giLCJhcnRpc3QiOnsiZGlzYW1iaWd1YXRpb24iOiIiLCJzb3J0LW5hbWUiOiJCdXNoLCBLYXRlIiwidHlwZS1pZCI6ImI2ZTAzNWY0LTNjZTktMzMxYy05N2RmLTgzMzk3MjMwYjBkZiIsIm5hbWUiOiJLYXRlIEJ1c2giLCJ0eXBlIjoiUGVyc29uIiwiaWQiOiI0YjU4NTkzOC1mMjcxLTQ1ZTItYjE5YS05MWM2MzRiNWUzOTYifSwiam9pbnBocmFzZSI6IiJ9XSwiZGlzYW1iaWd1YXRpb24iOiIiLCJ0aXRsZSI6IlRoZSBTZW5zdWFsIFdvcmxkIn0seyJzZWNvbmRhcnktdHlwZXMiOltdLCJkaXNhbWJpZ3VhdGlvbiI6IiIsImFydGlzdC1jcmVkaXQiOlt7ImpvaW5waHJhc2UiOiIiLCJuYW1lIjoiS2F0ZSBCdXNoIiwiYXJ0aXN0Ijp7InNvcnQtbmFtZSI6IkJ1c2gsIEthdGUiLCJuYW1lIjoiS2F0ZSBCdXNoIiwidHlwZSI6IlBlcnNvbiIsImlkIjoiNGI1ODU5MzgtZjI3MS00NWUyLWIxOWEtOTFjNjM0YjVlMzk2IiwidHlwZS1pZCI6ImI2ZTAzNWY0LTNjZTktMzMxYy05N2RmLTgzMzk3MjMwYjBkZiIsImRpc2FtYmlndWF0aW9uIjoiIn19XSwidGl0bGUiOiJUaGUgUmVkIFNob2VzIiwicHJpbWFyeS10eXBlLWlkIjoiZjUyOWI0NzYtNmU2Mi0zMjRmLWIwYWEtMWYzZTMzZDMxM2ZjIiwic2Vjb25kYXJ5LXR5cGUtaWRzIjpbXSwiZmlyc3QtcmVsZWFzZS1kYXRlIjoiMTk5My0xMC0yOCIsImlkIjoiZGU1NjBjMjQtOTVjMS0zYjViLWI3NmYtMGEwNzMwYjE4MTM0IiwicHJpbWFyeS10eXBlIjoiQWxidW0ifSx7InRpdGxlIjoiRGlyZWN0b3LigJlzIEN1dCIsImFydGlzdC1jcmVkaXQiOlt7ImpvaW5waHJhc2UiOiIiLCJuYW1lIjoiS2F0ZSBCdXNoIiwiYXJ0aXN0Ijp7ImRpc2FtYmlndWF0aW9uIjoiIiwic29ydC1uYW1lIjoiQnVzaCwgS2F0ZSIsIm5hbWUiOiJLYXRlIEJ1c2giLCJpZCI6IjRiNTg1OTM4LWYyNzEtNDVlMi1iMTlhLTkxYzYzNGI1ZTM5NiIsInR5cGUiOiJQZXJzb24iLCJ0eXBlLWlkIjoiYjZlMDM1ZjQtM2NlOS0zMzFjLTk3ZGYtODMzOTcyMzBiMGRmIn19XSwiZGlzYW1iaWd1YXRpb24iOiIiLCJzZWNvbmRhcnktdHlwZXMiOltdLCJpZCI6ImY4NTdjMjA5LTFhN2QtNDVkZC05N2NjLTYyYzMwYjkxYmUwMSIsInByaW1hcnktdHlwZSI6IkFsYnVtIiwiZmlyc3QtcmVsZWFzZS1kYXRlIjoiMjAxMS0wNS0xNiIsInNlY29uZGFyeS10eXBlLWlkcyI6W10sInByaW1hcnktdHlwZS1pZCI6ImY1MjliNDc2LTZlNjItMzI0Zi1iMGFhLTFmM2UzM2QzMTNmYyJ9XSwicmVsZWFzZS1ncm91cC1vZmZzZXQiOjV9
+  recorded_at: Sat, 08 Apr 2023 13:03:20 GMT
+recorded_with: VCR 6.1.0
