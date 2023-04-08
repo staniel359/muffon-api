@@ -6,6 +6,8 @@ module Muffon
           private
 
           def process_recommendations
+            return if profile.blank?
+
             update_recommendations
 
             delete_empty_recommendations
