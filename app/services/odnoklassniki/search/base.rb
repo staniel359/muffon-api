@@ -39,6 +39,11 @@ module Odnoklassniki
           collection_name
         ) || 0
       end
+
+      def albums
+        @albums ||=
+          response_data['albums']
+      end
     end
   end
 end

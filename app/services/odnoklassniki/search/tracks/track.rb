@@ -42,7 +42,10 @@ module Odnoklassniki
         def album_data
           return if album_id.blank?
 
-          { source: album_source_data }
+          {
+            source: album_source_data,
+            title: album['name']
+          }
         end
 
         def album_id
@@ -54,6 +57,12 @@ module Odnoklassniki
             name: source_name,
             id: album_id
           }
+        end
+
+        def album
+          @args[:albums].find do |a|
+            a['id'] == album_id
+          end
         end
 
         def image
