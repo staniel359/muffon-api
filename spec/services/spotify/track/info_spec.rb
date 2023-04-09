@@ -14,6 +14,12 @@ RSpec.describe Spotify::Track::Info do
   end
 
   describe 'no processing' do
+    context 'when no track_id given' do
+      let(:output) { subject.call }
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+
     context 'when wrong track_id' do
       let(:output) do
         VCR.use_cassette 'services/spotify/track/info/wrong_id' do
@@ -21,7 +27,7 @@ RSpec.describe Spotify::Track::Info do
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

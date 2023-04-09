@@ -14,7 +14,7 @@ RSpec.describe API::LastFM::TagsController do
       expect(response).to have_http_status(:bad_request)
     end
 
-    it 'returns 400 if wrong tag name' do
+    it 'returns 404 if wrong tag name' do
       VCR.use_cassette 'controllers/api/lastfm/tags/info/wrong_tag' do
         get :info, params: { tag: random }
       end
@@ -38,7 +38,7 @@ RSpec.describe API::LastFM::TagsController do
       expect(response).to have_http_status(:bad_request)
     end
 
-    it 'returns 400 if wrong tag name' do
+    it 'returns 404 if wrong tag name' do
       VCR.use_cassette 'controllers/api/lastfm/tags/description/wrong_tag' do
         get :description, params: { tag: random }
       end
@@ -62,7 +62,7 @@ RSpec.describe API::LastFM::TagsController do
       expect(response).to have_http_status(:bad_request)
     end
 
-    it 'returns 400 if wrong tag name' do
+    it 'returns 404 if wrong tag name' do
       VCR.use_cassette 'controllers/api/lastfm/tags/artists/wrong_tag' do
         get :artists, params: { tag: random }
       end
@@ -86,7 +86,7 @@ RSpec.describe API::LastFM::TagsController do
       expect(response).to have_http_status(:bad_request)
     end
 
-    it 'returns 400 if wrong tag name' do
+    it 'returns 404 if wrong tag name' do
       VCR.use_cassette 'controllers/api/lastfm/tags/albums/wrong_tag' do
         get :albums, params: { tag: random }
       end
@@ -110,7 +110,7 @@ RSpec.describe API::LastFM::TagsController do
       expect(response).to have_http_status(:bad_request)
     end
 
-    it 'returns 400 if wrong tag name' do
+    it 'returns 404 if wrong tag name' do
       VCR.use_cassette 'controllers/api/lastfm/tags/tracks/wrong_tag' do
         get :tracks, params: { tag: random }
       end
@@ -134,7 +134,7 @@ RSpec.describe API::LastFM::TagsController do
       expect(response).to have_http_status(:bad_request)
     end
 
-    it 'returns 400 if wrong tag name' do
+    it 'returns 404 if wrong tag name' do
       VCR.use_cassette 'controllers/api/lastfm/tags/images/wrong_tag' do
         get :images, params: { tag: random }
       end

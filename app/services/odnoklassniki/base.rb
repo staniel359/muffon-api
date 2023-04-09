@@ -10,6 +10,8 @@ module Odnoklassniki
       return not_found if no_data?
 
       data
+    rescue RestClient::BadRequest
+      not_found
     end
 
     private

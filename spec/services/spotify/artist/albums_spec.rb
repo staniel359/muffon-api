@@ -14,6 +14,12 @@ RSpec.describe Spotify::Artist::Albums do
   end
 
   describe 'no processing' do
+    context 'when no artist_id given' do
+      let(:output) { subject.call }
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+
     context 'when wrong artist_id' do
       let(:output) do
         VCR.use_cassette 'services/spotify/artist/albums/wrong_id' do

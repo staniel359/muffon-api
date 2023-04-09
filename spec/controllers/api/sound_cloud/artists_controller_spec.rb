@@ -8,7 +8,7 @@ RSpec.describe API::SoundCloud::ArtistsController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong artist' do
+    it 'returns 404 if wrong artist' do
       VCR.use_cassette 'controllers/api/soundcloud/artists/albums/wrong_id' do
         get :albums, params: { artist_id: '346758273629' }
       end

@@ -8,6 +8,8 @@ module Spotify
 
     def call
       super
+    rescue RestClient::BadRequest
+      not_found
     rescue RestClient::Unauthorized
       retry_with_new_spotify_token
     end

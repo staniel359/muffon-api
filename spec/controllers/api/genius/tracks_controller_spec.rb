@@ -8,7 +8,7 @@ RSpec.describe API::Genius::TracksController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong id' do
+    it 'returns 404 if wrong id' do
       VCR.use_cassette 'controllers/api/genius/tracks/info/wrong_id' do
         get :info, params: { track_id: random }
       end
@@ -26,7 +26,7 @@ RSpec.describe API::Genius::TracksController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong id' do
+    it 'returns 404 if wrong id' do
       VCR.use_cassette 'controllers/api/genius/tracks/description/wrong_id' do
         get :description, params: { track_id: random }
       end
@@ -44,7 +44,7 @@ RSpec.describe API::Genius::TracksController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong id' do
+    it 'returns 404 if wrong id' do
       VCR.use_cassette 'controllers/api/genius/tracks/tags/wrong_id' do
         get :tags, params: { track_id: random }
       end
@@ -62,7 +62,7 @@ RSpec.describe API::Genius::TracksController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong id' do
+    it 'returns 404 if wrong id' do
       VCR.use_cassette 'controllers/api/genius/tracks/lyrics/wrong_id' do
         get :lyrics, params: { track_id: random }
       end

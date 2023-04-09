@@ -4,6 +4,12 @@ module YandexMusic
       'https://api.music.yandex.net'.freeze
     SOURCE_NAME = 'yandexmusic'.freeze
 
+    def call
+      super
+    rescue RestClient::BadRequest
+      not_found
+    end
+
     private
 
     def response

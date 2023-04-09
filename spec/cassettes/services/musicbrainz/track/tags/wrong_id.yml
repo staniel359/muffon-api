@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/recording/wejlhg239gh23?fmt=json&inc=artist-credits%2Btags%2Breleases
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 09 Apr 2023 13:41:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1089'
+      X-Ratelimit-Reset:
+      - '1681047686'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - '"326ef3f5b9aabae00194a1623cdb3810"'
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"help":"For usage, please see: https://musicbrainz.org/development/mmd","error":"Invalid
+        mbid."}'
+  recorded_at: Sun, 09 Apr 2023 13:41:24 GMT
+recorded_with: VCR 6.1.0

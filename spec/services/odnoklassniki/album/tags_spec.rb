@@ -27,7 +27,7 @@ RSpec.describe Odnoklassniki::Album::Tags do
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
     end
   end
 end

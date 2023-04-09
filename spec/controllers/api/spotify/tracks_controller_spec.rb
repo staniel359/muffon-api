@@ -8,12 +8,12 @@ RSpec.describe API::Spotify::TracksController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong track_id' do
+    it 'returns 404 if wrong track_id' do
       VCR.use_cassette 'controllers/api/spotify/tracks/info/wrong_id' do
         get :info, params: { track_id: random }
       end
 
-      expect(response).to have_http_status(:bad_request)
+      expect(response).to have_http_status(:not_found)
     end
   end
 end

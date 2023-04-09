@@ -468,6 +468,13 @@ Rails.application.routes.draw do
           get 'tags'
         end
       end
+
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+          get 'tags'
+        end
+      end
     end
 
     # LastFM

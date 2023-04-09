@@ -8,12 +8,12 @@ RSpec.describe API::YandexMusic::ArtistsController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong artist_id' do
+    it 'returns 404 if wrong artist_id' do
       VCR.use_cassette 'controllers/api/yandexmusic/artists/albums/wrong_id' do
         get :albums, params: { artist_id: random }
       end
 
-      expect(response).to have_http_status(:bad_request)
+      expect(response).to have_http_status(:not_found)
     end
   end
 end

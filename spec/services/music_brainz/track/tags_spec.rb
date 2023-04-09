@@ -1,15 +1,15 @@
-RSpec.describe Genius::Track::Lyrics do
+RSpec.describe MusicBrainz::Track::Tags do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when track_id present' do
       let(:output) do
-        VCR.use_cassette 'services/genius/track/lyrics/success' do
-          subject.call(track_id: '344944')
+        VCR.use_cassette 'services/musicbrainz/track/tags/success' do
+          subject.call(track_id: '6029d549-5858-4936-9156-b90770d2ae92')
         end
       end
 
-      it { expect(output).to eq(Helpers::Genius::Track.lyrics_data) }
+      it { expect(output).to eq(Helpers::MusicBrainz::Track.tags_data) }
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe Genius::Track::Lyrics do
 
     context 'when wrong track_id' do
       let(:output) do
-        VCR.use_cassette 'services/genius/track/lyrics/wrong_id' do
+        VCR.use_cassette 'services/musicbrainz/track/tags/wrong_id' do
           subject.call(track_id: random)
         end
       end

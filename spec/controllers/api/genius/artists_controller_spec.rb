@@ -8,7 +8,7 @@ RSpec.describe API::Genius::ArtistsController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if wrong id' do
+    it 'returns 404 if wrong id' do
       VCR.use_cassette 'controllers/api/genius/artists/albums/wrong_id' do
         get :albums, params: { artist_id: random }
       end
