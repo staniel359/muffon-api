@@ -54,18 +54,11 @@ module Odnoklassniki
       end
 
       def session_id(redirect)
-        return '' unless
-            successful_login?(redirect)
-
-        redirect.response.cookies[
-          'JSESSIONID'
-        ]
-      end
-
-      def successful_login?(redirect)
         redirect
           .response
-          .headers[:location] == '/'
+          .cookies[
+            'JSESSIONID'
+          ]
       end
     end
   end
