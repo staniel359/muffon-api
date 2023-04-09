@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/release-group/b3c5541a-e1d0-354f-b6c8-565c37dde332?fmt=json&inc=artist-credits%2Btags
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 09 Apr 2023 12:55:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '814'
+      X-Ratelimit-Reset:
+      - '1681044919'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"f78908ed25453e4c855b5ba3a04a71c8"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - STALE
+    body:
+      encoding: ASCII-8BIT
+      string: '{"title":"Never for Ever","secondary-type-ids":[],"primary-type":"Album","primary-type-id":"f529b476-6e62-324f-b0aa-1f3e33d313fc","first-release-date":"1980-09-08","secondary-types":[],"artist-credit":[{"artist":{"tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"count":2,"name":"ambient pop"},{"name":"art pop","count":5},{"count":5,"name":"art
+        rock"},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"name":"new wave","count":1},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"count":1,"name":"singer-songwriter"}],"type":"Person","disambiguation":"","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","name":"Kate
+        Bush","sort-name":"Bush, Kate"},"name":"Kate Bush","joinphrase":""}],"id":"b3c5541a-e1d0-354f-b6c8-565c37dde332","disambiguation":"","tags":[{"count":1,"name":"80s"},{"name":"art
+        pop","count":2},{"name":"art rock","count":6},{"name":"baroque pop","count":1},{"count":1,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":2},{"count":1,"name":"soft rock"}]}'
+  recorded_at: Sun, 09 Apr 2023 12:55:19 GMT
+recorded_with: VCR 6.1.0

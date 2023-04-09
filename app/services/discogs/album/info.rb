@@ -36,17 +36,8 @@ module Discogs
         album['released']
       end
 
-      def labels
-        album['labels'].pluck(
-          'name'
-        ).uniq
-      end
-
-      def label_source_data(label)
-        {
-          name: source_name,
-          id: label['id']
-        }
+      def labels_list
+        album['labels']
       end
     end
   end

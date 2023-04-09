@@ -1,6 +1,11 @@
 module MusicBrainz
   module Utils
     module Album
+      MODEL_NAMES = {
+        'release' => 'album',
+        'release-group' => 'group'
+      }.freeze
+
       include Muffon::Utils::Album
 
       private
@@ -16,8 +21,16 @@ module MusicBrainz
       def source_data
         {
           name: source_name,
-          id: album['id']
+          id: album['id'],
+          model:
+            model_name_formatted
         }
+      end
+
+      def model_name_formatted
+        MODEL_NAMES[
+          model_name
+        ]
       end
 
       def image_data
@@ -36,6 +49,18 @@ module MusicBrainz
       def raw_release_date
         album['date'] ||
           album['first-release-date']
+      end
+
+      def tags_list
+        album['tags'].pluck(
+          'name'
+        )
+      end
+
+      def tracks_list
+        album.dig(
+          'media', 0, 'tracks'
+        )
       end
     end
   end

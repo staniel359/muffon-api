@@ -77,15 +77,11 @@ module Muffon
       end
 
       def description_truncated
-        description
-          &.truncate(400)
-          .presence
+        description&.truncate(400).presence
       end
 
       def description_truncated_small
-        description
-          &.truncate(100)
-          .presence
+        description&.truncate(100).presence
       end
 
       def library_tags_formatted(library_tags)
@@ -94,9 +90,7 @@ module Muffon
         )
 
         library_tags.map do |t|
-          format_library_tag(
-            t, tags
-          )
+          format_library_tag(t, tags)
         end
       end
 
@@ -114,6 +108,16 @@ module Muffon
         return raw_title if extra_title.blank?
 
         "#{raw_title} (#{extra_title})"
+      end
+
+      def labels
+        labels_list.map do |l|
+          label_data_formatted(l)
+        end.uniq
+      end
+
+      def label_data_formatted(label)
+        label['name']
       end
     end
   end

@@ -30,10 +30,8 @@ module YandexMusic
         }.compact
       end
 
-      def labels
-        album['labels'].pluck(
-          'name'
-        ).uniq
+      def labels_list
+        album['labels']
       end
 
       def tags_list

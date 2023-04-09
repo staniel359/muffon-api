@@ -452,6 +452,22 @@ Rails.application.routes.draw do
           get 'albums'
         end
       end
+
+      namespace :groups, as: :group do
+        scope ':group_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+          get 'albums'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'tags'
+        end
+      end
     end
 
     # LastFM

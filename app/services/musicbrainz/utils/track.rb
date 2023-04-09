@@ -25,7 +25,8 @@ module MusicBrainz
 
         {
           source: album_source_data,
-          title: album['title']
+          title: album['title'],
+          model: 'album'
         }
       end
 

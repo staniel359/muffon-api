@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/release?fmt=json&inc=artist-credits&limit=20&offset=0&release-group=b3c5541a-e1d0-354f-b6c8-565c37dde332&status=official
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 09 Apr 2023 12:39:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1022'
+      X-Ratelimit-Reset:
+      - '1681043993'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"2dac9e69c6fd79a97e73c59c080dfc43"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"releases":[{"artist-credit":[{"artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type":"Person","name":"Kate Bush"},"name":"Kate Bush","joinphrase":""}],"country":"DE","packaging":null,"id":"003b599f-6dcc-31ce-a811-01048c1ea41a","cover-art-archive":{"count":10,"front":true,"artwork":true,"back":true,"darkened":false},"text-representation":{"language":"eng","script":"Latn"},"status":"Official","packaging-id":null,"quality":"normal","date":"1980","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Never
+        for Ever","barcode":null,"disambiguation":"","asin":null,"release-events":[{"date":"1980","area":{"disambiguation":"","type-id":null,"name":"Germany","type":null,"id":"85752fda-13c4-31a3-bee5-0e5cb1f51dad","iso-3166-1-codes":["DE"],"sort-name":"Germany"}}]},{"disambiguation":"","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","date":"1980","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Never
+        for Ever","barcode":"5099910733943","asin":null,"release-events":[{"date":"1980","area":{"type-id":null,"disambiguation":"","type":null,"name":"United
+        Kingdom","sort-name":"United Kingdom","id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","iso-3166-1-codes":["GB"]}}],"text-representation":{"language":"eng","script":"Latn"},"status":"Official","artist-credit":[{"name":"Kate
+        Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type":"Person","name":"Kate Bush","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""},"joinphrase":""}],"country":"GB","id":"0d259231-fdd2-4835-a6dd-cbd906ec7ac1","packaging":"Cassette
+        Case","cover-art-archive":{"darkened":false,"back":false,"artwork":false,"front":false,"count":0}},{"text-representation":{"script":"Latn","language":"eng"},"status":"Official","packaging":"Gatefold
+        Cover","id":"13dcd81c-28eb-4705-9abc-6d76143a681f","country":"BG","artist-credit":[{"joinphrase":"","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type":"Person","name":"Kate Bush"},"name":"Kate Bush"}],"cover-art-archive":{"back":true,"artwork":true,"front":true,"count":4,"darkened":false},"disambiguation":"","quality":"normal","packaging-id":"e724a489-a7e8-30a1-a17c-30dfd6831202","date":"1988","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","barcode":"","title":"Never
+        for Ever","release-events":[{"area":{"name":"Bulgaria","type":null,"sort-name":"Bulgaria","id":"114c14ad-9776-34e9-81b0-6299507f3771","iso-3166-1-codes":["BG"],"disambiguation":"","type-id":null},"date":"1988"}],"asin":null},{"status":"Official","text-representation":{"script":"Latn","language":"eng"},"cover-art-archive":{"darkened":false,"count":0,"front":false,"artwork":false,"back":false},"artist-credit":[{"name":"Kate
+        Bush","artist":{"type":"Person","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""},"joinphrase":""}],"country":"XE","packaging":"Gatefold
+        Cover","id":"2c110746-92d4-48d3-af0a-46c97be02256","disambiguation":"","title":"Never
+        for Ever","barcode":"","quality":"normal","packaging-id":"e724a489-a7e8-30a1-a17c-30dfd6831202","date":"1980","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","asin":null,"release-events":[{"area":{"type-id":null,"disambiguation":"","type":null,"name":"Europe","id":"89a675c2-3e37-3518-b83c-418bad59a85a","iso-3166-1-codes":["XE"],"sort-name":"Europe"},"date":"1980"}]},{"disambiguation":"","title":"Never
+        for Ever","barcode":"","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","quality":"normal","date":"1980-09-08","asin":null,"release-events":[{"date":"1980-09-08","area":{"type-id":null,"disambiguation":"","type":null,"name":"United
+        Kingdom","id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","iso-3166-1-codes":["GB"],"sort-name":"United
+        Kingdom"}}],"status":"Official","text-representation":{"language":"eng","script":"Latn"},"cover-art-archive":{"darkened":false,"count":3,"back":true,"artwork":true,"front":true},"country":"GB","artist-credit":[{"name":"Kate
+        Bush","artist":{"name":"Kate Bush","type":"Person","sort-name":"Bush, Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"joinphrase":""}],"packaging":"Cardboard/Paper
+        Sleeve","id":"3d0ab230-a119-4840-b3cf-ca6287301c46"},{"asin":null,"release-events":[{"area":{"disambiguation":"","type-id":null,"name":"Europe","type":null,"id":"89a675c2-3e37-3518-b83c-418bad59a85a","sort-name":"Europe","iso-3166-1-codes":["XE"]},"date":"2018-11-16"}],"disambiguation":"2018
+        remaster","packaging-id":"8f931351-d2e2-310f-afc6-37b89ddba246","date":"2018-11-16","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Never
+        for Ever","barcode":"190295568962","text-representation":{"language":"eng","script":"Latn"},"status":"Official","artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","name":"Kate
+        Bush"}}],"country":"XE","packaging":"Digipak","id":"66fefa36-42a9-4c0a-8955-a0d2be494ff5","cover-art-archive":{"darkened":false,"artwork":true,"back":true,"front":true,"count":3}},{"text-representation":{"language":"eng","script":"Latn"},"status":"Official","id":"7072100e-d8f1-4b7d-bcd3-c6d7f6c35d68","packaging":"Jewel
+        Case","country":"US","artist-credit":[{"joinphrase":"","name":"Kate Bush","artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","name":"Kate
+        Bush","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate"}}],"cover-art-archive":{"count":1,"front":false,"artwork":true,"back":false,"darkened":false},"disambiguation":"","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","date":"1990-10-25","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","barcode":"077774636025","title":"Never
+        for Ever","release-events":[{"date":"1990-10-25","area":{"name":"United States","type":null,"sort-name":"United
+        States","id":"489ce91b-6658-3307-9877-795b68554c98","iso-3166-1-codes":["US"],"disambiguation":"","type-id":null}}],"asin":"B00000DQSS"},{"release-events":[{"area":{"disambiguation":"","type-id":null,"iso-3166-1-codes":["XE"],"id":"89a675c2-3e37-3518-b83c-418bad59a85a","sort-name":"Europe","name":"Europe","type":null},"date":"1990-10-08"},{"date":"1990-10-08","area":{"name":"United
+        Kingdom","type":null,"iso-3166-1-codes":["GB"],"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","sort-name":"United
+        Kingdom","disambiguation":"","type-id":null}}],"asin":"B00000DQSS","disambiguation":"","barcode":"077774636025","title":"Never
+        for Ever","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","quality":"normal","date":"1990-10-08","status":"Official","text-representation":{"script":"Latn","language":"eng"},"cover-art-archive":{"darkened":false,"back":true,"artwork":true,"front":true,"count":10},"id":"734874d5-5ab2-33b6-b2f7-5151a86278a3","packaging":"Jewel
+        Case","country":"XE","artist-credit":[{"name":"Kate Bush","artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","name":"Kate
+        Bush","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate"},"joinphrase":""}]},{"asin":null,"release-events":[{"area":{"iso-3166-1-codes":["CA"],"id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","sort-name":"Canada","name":"Canada","type":null,"disambiguation":"","type-id":null},"date":"1990"}],"title":"Never
+        for Ever","barcode":"077774636025","quality":"normal","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1990","disambiguation":"Reissue","cover-art-archive":{"darkened":false,"back":true,"artwork":true,"front":true,"count":6},"country":"CA","artist-credit":[{"artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","name":"Kate Bush","type":"Person","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"name":"Kate
+        Bush","joinphrase":""}],"id":"9d536d64-cbcf-4831-9aff-d19cab01a270","packaging":"Jewel
+        Case","status":"Official","text-representation":{"language":"eng","script":"Latn"}},{"asin":null,"release-events":[{"date":"2018-11-16","area":{"type-id":null,"disambiguation":"","type":null,"name":"[Worldwide]","id":"525d4e18-3d00-31b9-a58b-a146a916de8f","iso-3166-1-codes":["XW"],"sort-name":"[Worldwide]"}}],"disambiguation":"2018
+        remaster","title":"Never for Ever","barcode":"190295511715","packaging-id":"119eba76-b343-3e02-a292-f0f00644bb9b","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"2018-11-16","status":"Official","text-representation":{"language":"eng","script":"Latn"},"cover-art-archive":{"darkened":false,"front":true,"back":false,"artwork":true,"count":1},"artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","type":"Person","name":"Kate
+        Bush","sort-name":"Bush, Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396"}}],"country":"XW","id":"a2942b11-c6b8-4f76-87a7-b4b4f4415268","packaging":"None"},{"cover-art-archive":{"darkened":false,"front":true,"back":true,"artwork":true,"count":12},"id":"a6997341-e8a8-4c04-856c-7876b7e561b5","packaging":"Jewel
+        Case","country":"XE","artist-credit":[{"artist":{"type":"Person","name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""},"name":"Kate
+        Bush","joinphrase":""}],"status":"Official","text-representation":{"script":"Latn","language":"eng"},"barcode":"077774636025","title":"Never
+        for Ever","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","quality":"normal","date":"","disambiguation":"","release-events":[{"area":{"disambiguation":"","type-id":null,"id":"89a675c2-3e37-3518-b83c-418bad59a85a","sort-name":"Europe","iso-3166-1-codes":["XE"],"name":"Europe","type":null},"date":""}],"asin":null},{"text-representation":{"script":"Latn","language":"eng"},"status":"Official","packaging":"Jewel
+        Case","id":"b2e294ca-cee4-48c8-b3f0-151f267ff358","country":"JP","artist-credit":[{"name":"Kate
+        Bush","artist":{"sort-name":"Bush, Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush","type":"Person","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"joinphrase":""}],"cover-art-archive":{"count":9,"front":true,"artwork":true,"back":true,"darkened":false},"disambiguation":"","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","quality":"normal","date":"1987-02-25","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","barcode":"4988006609242","title":"Never
+        for Ever","release-events":[{"date":"1987-02-25","area":{"id":"2db42837-c832-3c27-b4a3-08198f75693c","iso-3166-1-codes":["JP"],"sort-name":"Japan","type":null,"name":"Japan","type-id":null,"disambiguation":""}}],"asin":null},{"artist-credit":[{"name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type":"Person","name":"Kate Bush"},"joinphrase":""}],"country":"US","id":"bc7a0eda-c2a0-4cf8-b164-54df9611f582","packaging":"Jewel
+        Case","cover-art-archive":{"count":5,"front":true,"artwork":true,"back":true,"darkened":false},"text-representation":{"script":"Latn","language":"eng"},"status":"Official","asin":null,"release-events":[{"date":"1990-08-10","area":{"name":"United
+        States","type":null,"id":"489ce91b-6658-3307-9877-795b68554c98","sort-name":"United
+        States","iso-3166-1-codes":["US"],"disambiguation":"","type-id":null}}],"quality":"normal","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","date":"1990-08-10","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Never
+        for Ever","barcode":"077774636025","disambiguation":""},{"release-events":[{"area":{"type":null,"name":"Canada","id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","sort-name":"Canada","iso-3166-1-codes":["CA"],"type-id":null,"disambiguation":""},"date":"1980-09"}],"asin":null,"disambiguation":"","barcode":"","title":"Never
+        for Ever","packaging-id":"e724a489-a7e8-30a1-a17c-30dfd6831202","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1980-09","status":"Official","text-representation":{"script":"Latn","language":"eng"},"cover-art-archive":{"back":true,"artwork":true,"front":true,"count":5,"darkened":false},"packaging":"Gatefold
+        Cover","id":"bee184b6-493b-46bc-a3a1-31e434367c4a","country":"CA","artist-credit":[{"name":"Kate
+        Bush","artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","name":"Kate
+        Bush","type":"Person","sort-name":"Bush, Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396"},"joinphrase":""}]},{"asin":null,"release-events":[{"area":{"type":null,"name":"[Worldwide]","sort-name":"[Worldwide]","id":"525d4e18-3d00-31b9-a58b-a146a916de8f","iso-3166-1-codes":["XW"],"type-id":null,"disambiguation":""},"date":"2006-08-07"}],"packaging-id":"119eba76-b343-3e02-a292-f0f00644bb9b","quality":"normal","date":"2006-08-07","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Never
+        for Ever","barcode":"077774636056","disambiguation":"","country":"XW","artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"name":"Kate Bush","type":"Person","sort-name":"Bush, Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"}}],"packaging":"None","id":"dd428608-70e4-4e6a-8a0a-e2b3590a51af","cover-art-archive":{"count":1,"front":true,"artwork":true,"back":false,"darkened":false},"text-representation":{"language":"eng","script":"Latn"},"status":"Official"},{"artist-credit":[{"joinphrase":"","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","type":"Person","name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush, Kate"},"name":"Kate
+        Bush"}],"country":"DE","id":"ebfd78e3-35c8-4418-858f-7304fdf02f2c","packaging":"Jewel
+        Case","cover-art-archive":{"count":11,"front":true,"artwork":true,"back":true,"darkened":false},"text-representation":{"language":"eng","script":"Latn"},"status":"Official","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","quality":"normal","date":"","title":"Never
+        for Ever","barcode":"077774636025","disambiguation":"","asin":null,"release-events":[{"date":"","area":{"type-id":null,"disambiguation":"","type":null,"name":"Germany","sort-name":"Germany","id":"85752fda-13c4-31a3-bee5-0e5cb1f51dad","iso-3166-1-codes":["DE"]}}]},{"disambiguation":"Limited
+        Edition","title":"Never for Ever","barcode":"4988006836617","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"2005-11-02","asin":"B000BDJ61A","release-events":[{"area":{"type-id":null,"disambiguation":"","id":"2db42837-c832-3c27-b4a3-08198f75693c","sort-name":"Japan","iso-3166-1-codes":["JP"],"type":null,"name":"Japan"},"date":"2005-11-02"}],"status":"Official","text-representation":{"language":"eng","script":"Latn"},"cover-art-archive":{"darkened":false,"back":true,"artwork":true,"front":true,"count":15},"country":"JP","artist-credit":[{"joinphrase":"","artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","name":"Kate Bush","type":"Person"},"name":"Kate Bush"}],"packaging":"Cardboard/Paper
+        Sleeve","id":"f6972515-3c7d-49f0-97d8-9f9a765847b4"},{"text-representation":{"language":"eng","script":"Latn"},"status":"Official","id":"f9940b48-b521-43dd-8642-5c4512410208","packaging":"Jewel
+        Case","country":"CA","artist-credit":[{"artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","type":"Person","name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush, Kate"},"name":"Kate
+        Bush","joinphrase":""}],"cover-art-archive":{"count":0,"front":false,"artwork":false,"back":false,"darkened":false},"release-events":[{"area":{"disambiguation":"","type-id":null,"name":"Canada","type":null,"sort-name":"Canada","id":"71bbafaa-e825-3e15-8ca9-017dcad1748b","iso-3166-1-codes":["CA"]},"date":"1990"}],"asin":null,"disambiguation":"","quality":"normal","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1990","barcode":"077774636025","title":"Never
+        For Ever"}],"release-offset":0,"release-count":18}'
+  recorded_at: Sun, 09 Apr 2023 12:39:52 GMT
+recorded_with: VCR 6.1.0

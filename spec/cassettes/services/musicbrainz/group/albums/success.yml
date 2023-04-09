@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/release?fmt=json&inc=artist-credits&limit=5&offset=5&release-group=b3c5541a-e1d0-354f-b6c8-565c37dde332&status=official
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 09 Apr 2023 12:49:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '706'
+      X-Ratelimit-Reset:
+      - '1681044558'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"f0b1de1912fa863160134c4bdbdc2a45"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"release-count":18,"release-offset":5,"releases":[{"cover-art-archive":{"darkened":false,"front":true,"back":true,"artwork":true,"count":4},"id":"13dcd81c-28eb-4705-9abc-6d76143a681f","packaging":"Gatefold
+        Cover","artist-credit":[{"joinphrase":"","name":"Kate Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","type":"Person","name":"Kate
+        Bush","sort-name":"Bush, Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396"}}],"country":"BG","status":"Official","text-representation":{"script":"Latn","language":"eng"},"barcode":"","title":"Never
+        for Ever","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging-id":"e724a489-a7e8-30a1-a17c-30dfd6831202","quality":"normal","date":"1988","disambiguation":"","release-events":[{"area":{"type-id":null,"disambiguation":"","type":null,"name":"Bulgaria","id":"114c14ad-9776-34e9-81b0-6299507f3771","sort-name":"Bulgaria","iso-3166-1-codes":["BG"]},"date":"1988"}],"asin":null},{"text-representation":{"script":"Latn","language":"eng"},"status":"Official","id":"7072100e-d8f1-4b7d-bcd3-c6d7f6c35d68","packaging":"Jewel
+        Case","country":"US","artist-credit":[{"artist":{"name":"Kate Bush","type":"Person","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"name":"Kate
+        Bush","joinphrase":""}],"cover-art-archive":{"darkened":false,"artwork":true,"back":false,"front":false,"count":1},"release-events":[{"date":"1990-10-25","area":{"disambiguation":"","type-id":null,"id":"489ce91b-6658-3307-9877-795b68554c98","sort-name":"United
+        States","iso-3166-1-codes":["US"],"name":"United States","type":null}}],"asin":"B00000DQSS","disambiguation":"","quality":"normal","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","date":"1990-10-25","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","barcode":"077774636025","title":"Never
+        for Ever"},{"quality":"normal","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1990-10-08","barcode":"077774636025","title":"Never
+        for Ever","disambiguation":"","release-events":[{"date":"1990-10-08","area":{"type-id":null,"disambiguation":"","sort-name":"Europe","id":"89a675c2-3e37-3518-b83c-418bad59a85a","iso-3166-1-codes":["XE"],"type":null,"name":"Europe"}},{"date":"1990-10-08","area":{"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","sort-name":"United
+        Kingdom","iso-3166-1-codes":["GB"],"type":null,"name":"United Kingdom","type-id":null,"disambiguation":""}}],"asin":"B00000DQSS","id":"734874d5-5ab2-33b6-b2f7-5151a86278a3","packaging":"Jewel
+        Case","artist-credit":[{"joinphrase":"","name":"Kate Bush","artist":{"sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","name":"Kate
+        Bush","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""}}],"country":"XE","cover-art-archive":{"count":10,"artwork":true,"back":true,"front":true,"darkened":false},"text-representation":{"language":"eng","script":"Latn"},"status":"Official"},{"packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1987-02-25","title":"Never
+        for Ever","barcode":"4988006609242","disambiguation":"","asin":null,"release-events":[{"area":{"type":null,"name":"Japan","iso-3166-1-codes":["JP"],"id":"2db42837-c832-3c27-b4a3-08198f75693c","sort-name":"Japan","type-id":null,"disambiguation":""},"date":"1987-02-25"}],"artist-credit":[{"name":"Kate
+        Bush","artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","name":"Kate
+        Bush","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate"},"joinphrase":""}],"country":"JP","id":"b2e294ca-cee4-48c8-b3f0-151f267ff358","packaging":"Jewel
+        Case","cover-art-archive":{"darkened":false,"count":9,"front":true,"back":true,"artwork":true},"text-representation":{"language":"eng","script":"Latn"},"status":"Official"},{"disambiguation":"","barcode":"077774636025","title":"Never
+        for Ever","quality":"normal","packaging-id":"ec27701a-4a22-37f4-bfac-6616e0f9750a","date":"1990-08-10","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","release-events":[{"area":{"id":"489ce91b-6658-3307-9877-795b68554c98","sort-name":"United
+        States","iso-3166-1-codes":["US"],"type":null,"name":"United States","type-id":null,"disambiguation":""},"date":"1990-08-10"}],"asin":null,"status":"Official","text-representation":{"script":"Latn","language":"eng"},"cover-art-archive":{"count":5,"back":true,"artwork":true,"front":true,"darkened":false},"id":"bc7a0eda-c2a0-4cf8-b164-54df9611f582","packaging":"Jewel
+        Case","country":"US","artist-credit":[{"joinphrase":"","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type":"Person","name":"Kate Bush","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""},"name":"Kate
+        Bush"}]}]}'
+  recorded_at: Sun, 09 Apr 2023 12:49:18 GMT
+recorded_with: VCR 6.1.0
