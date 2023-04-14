@@ -31,6 +31,8 @@ class UploadsController < ApplicationController
       content_type: blob.content_type,
       disposition: 'inline'
     )
+  rescue ActionController::MissingFile
+    not_found
   end
 
   def blob_path
