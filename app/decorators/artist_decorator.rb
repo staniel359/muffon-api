@@ -1,10 +1,13 @@
 module ArtistDecorator
   module ClassMethods
     def with_name(name)
+      name_formatted =
+        name.strip.truncate(1_000)
+
       where(
-        name_downcase: name.strip.downcase
+        name_downcase: name_formatted.downcase
       ).first_or_create(
-        name: name.strip
+        name: name_formatted
       )
     rescue ActiveRecord::RecordNotUnique
       clear_cache

@@ -1,12 +1,13 @@
 module TrackDecorator
   module ClassMethods
     def with_artist_title(artist_id, title)
+      title_formatted = title.strip.truncate(1_000)
+
       where(
         artist_id:,
-        title_downcase: title.strip.downcase
+        title_downcase: title_formatted.downcase
       ).first_or_create(
-        title: title.strip,
-        player_id:
+        title: title_formatted, player_id:
       )
     rescue ActiveRecord::RecordNotUnique
       clear_cache
