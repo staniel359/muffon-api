@@ -4,6 +4,20 @@ module Genius
       private
 
       def track_data
+        track_base_data
+          .merge(lyrics_data)
+      end
+
+      def track_base_data
+        {
+          source: source_data,
+          title:,
+          artist: artist_names_data,
+          artists:
+        }
+      end
+
+      def lyrics_data
         { lyrics: }
       end
     end
