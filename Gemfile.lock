@@ -235,7 +235,7 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
-    rubocop (1.50.0)
+    rubocop (1.50.2)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -249,7 +249,7 @@ GEM
       parser (>= 3.2.1.0)
     rubocop-capybara (2.17.1)
       rubocop (~> 1.41)
-    rubocop-rails (2.19.0)
+    rubocop-rails (2.19.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
@@ -345,4 +345,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.11
+   2.4.12
