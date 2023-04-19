@@ -17,8 +17,6 @@ module Muffon
 
           attach_image
 
-          image_data if @args[:preload]
-
           { success: true }
         end
 
@@ -32,12 +30,6 @@ module Muffon
           image.attach(
             image_file_data
           )
-        end
-
-        def image_data
-          model
-            .reload
-            .image_data
         end
       end
     end

@@ -39,8 +39,7 @@ module Muffon
           {
             model: @args[:model],
             model_id: @args[:model_id],
-            image_file: @args[:image_file],
-            preload: true
+            image_file: @args[:image_file]
           }.to_json
         end
       end
