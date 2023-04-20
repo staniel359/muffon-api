@@ -80,11 +80,17 @@ module Muffon
           {
             image: playlist.image_data,
             description:
-              description_truncated_small,
+              description_formatted,
             tracks_count:
               playlist.tracks_count,
             created: created_formatted
           }.compact
+        end
+
+        def description_formatted
+          return description if @args[:info]
+
+          description_truncated_small
         end
 
         def description
