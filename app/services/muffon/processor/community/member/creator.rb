@@ -18,7 +18,8 @@ module Muffon
               community
               .memberships
               .where(
-                profile_id: @args[:profile_id]
+                profile_id:
+                  @args[:profile_id]
               ).first_or_create
           end
         end

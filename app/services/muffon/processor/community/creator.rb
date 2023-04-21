@@ -17,6 +17,8 @@ module Muffon
 
           process_image
 
+          join_community
+
           { community: community_data }
         end
 
@@ -32,7 +34,19 @@ module Muffon
         end
 
         def community_params
-          { description: @args[:description] }
+          {
+            description:
+              @args[:description]
+          }
+        end
+
+        def join_community
+          community
+            .memberships
+            .create(
+              profile_id:
+                @args[:profile_id]
+            )
         end
 
         def community_data
