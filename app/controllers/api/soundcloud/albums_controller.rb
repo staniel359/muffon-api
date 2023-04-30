@@ -7,6 +7,8 @@ module API
 
       def tags; end
 
+      def links; end
+
       private
 
       def info_data
@@ -27,6 +29,14 @@ module API
 
       def tags_data
         ::SoundCloud::Album::Tags.call(
+          params.slice(
+            *%i[album_id]
+          )
+        )
+      end
+
+      def links_data
+        ::SoundCloud::Album::Links.call(
           params.slice(
             *%i[album_id]
           )

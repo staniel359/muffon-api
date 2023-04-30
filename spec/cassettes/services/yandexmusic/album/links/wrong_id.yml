@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.music.yandex.net/albums/wejlhg239gh23/with-tracks?language=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.music.yandex.net
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 02 May 2023 09:25:03 GMT
+      Set-Cookie:
+      - _yasc=to9shW6p0J/9R6kepnaT3Qlbgjv1YO6afdbEacC99O9aeNrJt5XQzDgQG+bD; domain=.yandex.net;
+        path=/; expires=Fri, 29-Apr-2033 09:25:03 GMT; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1683019503187444-7257831749418180300
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Yandex-Music-Application:
+      - music-web
+      X-Yandex-Music-Execution-Duration:
+      - '1'
+      X-Yandex-Music-Hostname:
+      - music-stable-back-sas-50.sas.yp-c.yandex.net
+    body:
+      encoding: ASCII-8BIT
+      string: '{"invocationInfo":{"req-id":"1683019503187444-7257831749418180300","hostname":"music-stable-back-sas-50.sas.yp-c.yandex.net"},"error":{"name":"not-found","message":"Requested
+        action for /albums/wejlhg239gh23/with-tracks was not found"}}'
+  recorded_at: Tue, 02 May 2023 09:25:03 GMT
+recorded_with: VCR 6.1.0

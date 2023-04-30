@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://wmf.ok.ru/play;jsessionid=<ODNOKLASSNIKI_TEST_SESSION_ID>?imgfmt=base&tid=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - wmf.ok.ru
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Server:
+      - Apache
+      Date:
+      - Tue, 02 May 2023 10:25:42 GMT
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '762'
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCFkb2N0eXBlIGh0bWw+PGh0bWwgbGFuZz0iZW4iPjxoZWFkPjx0aXRsZT5IVFRQIFN0YXR1cyA0MDAg4oCTIEJhZCBSZXF1ZXN0PC90aXRsZT48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmJvZHkge2ZvbnQtZmFtaWx5OlRhaG9tYSxBcmlhbCxzYW5zLXNlcmlmO30gaDEsIGgyLCBoMywgYiB7Y29sb3I6d2hpdGU7YmFja2dyb3VuZC1jb2xvcjojNTI1RDc2O30gaDEge2ZvbnQtc2l6ZToyMnB4O30gaDIge2ZvbnQtc2l6ZToxNnB4O30gaDMge2ZvbnQtc2l6ZToxNHB4O30gcCB7Zm9udC1zaXplOjEycHg7fSBhIHtjb2xvcjpibGFjazt9IC5saW5lIHtoZWlnaHQ6MXB4O2JhY2tncm91bmQtY29sb3I6IzUyNUQ3Njtib3JkZXI6bm9uZTt9PC9zdHlsZT48L2hlYWQ+PGJvZHk+PGgxPkhUVFAgU3RhdHVzIDQwMCDigJMgQmFkIFJlcXVlc3Q8L2gxPjxociBjbGFzcz0ibGluZSIgLz48cD48Yj5UeXBlPC9iPiBTdGF0dXMgUmVwb3J0PC9wPjxwPjxiPkRlc2NyaXB0aW9uPC9iPiBUaGUgc2VydmVyIGNhbm5vdCBvciB3aWxsIG5vdCBwcm9jZXNzIHRoZSByZXF1ZXN0IGR1ZSB0byBzb21ldGhpbmcgdGhhdCBpcyBwZXJjZWl2ZWQgdG8gYmUgYSBjbGllbnQgZXJyb3IgKGUuZy4sIG1hbGZvcm1lZCByZXF1ZXN0IHN5bnRheCwgaW52YWxpZCByZXF1ZXN0IG1lc3NhZ2UgZnJhbWluZywgb3IgZGVjZXB0aXZlIHJlcXVlc3Qgcm91dGluZykuPC9wPjxociBjbGFzcz0ibGluZSIgLz48aDM+QXBhY2hlIFRvbWNhdC84LjUuODU8L2gzPjwvYm9keT48L2h0bWw+
+  recorded_at: Tue, 02 May 2023 10:25:42 GMT
+recorded_with: VCR 6.1.0

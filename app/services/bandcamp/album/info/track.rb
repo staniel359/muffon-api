@@ -30,6 +30,10 @@ module Bandcamp
           }
         end
 
+        def original_link
+          nil
+        end
+
         def track_extra_data
           {
             duration:,

@@ -75,5 +75,9 @@ module Discogs
         description: response_data['notes']
       )
     end
+
+    def model_name
+      self.class::MODEL_NAME
+    end
   end
 end

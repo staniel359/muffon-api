@@ -12,8 +12,17 @@ module Genius
       def source_data
         {
           name: source_name,
-          id: artist['id']
+          id: genius_id,
+          links: source_links
         }
+      end
+
+      def genius_id
+        artist['id']
+      end
+
+      def original_link
+        artist['url']
       end
     end
   end

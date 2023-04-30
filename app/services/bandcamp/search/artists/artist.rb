@@ -2,7 +2,7 @@ module Bandcamp
   module Search
     class Artists
       class Artist < Bandcamp::Search::Artists
-        include Muffon::Utils::Artist
+        include Bandcamp::Utils::Artist
 
         def call
           data

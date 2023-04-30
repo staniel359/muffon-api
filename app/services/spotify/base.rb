@@ -33,7 +33,7 @@ module Spotify
     end
 
     def test_token
-      secrets.spotify[:token]
+      secrets.spotify[:test_token]
     end
 
     def global_value

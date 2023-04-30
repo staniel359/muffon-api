@@ -70,4 +70,22 @@ RSpec.describe API::YouTube::ChannelsController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :links' do
+    it 'returns 200 if channel present' do
+      VCR.use_cassette 'controllers/api/youtube/channels/links/success' do
+        get :links, params: { channel_id: 'UCGJdzJQ3R1BpahSvcFq23HA' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 404 if wrong channel' do
+      VCR.use_cassette 'controllers/api/youtube/channels/links/wrong_id' do
+        get :links, params: { channel_id: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

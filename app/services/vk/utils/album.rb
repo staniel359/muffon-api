@@ -31,10 +31,31 @@ module VK
       def source_data
         {
           name: source_name,
-          id: album['id'],
-          owner_id: album['owner_id'],
-          access_key: album['access_key']
+          id: vk_id,
+          owner_id: vk_owner_id,
+          access_key: vk_access_key,
+          links: source_links
         }
+      end
+
+      def vk_id
+        album['id']
+      end
+
+      def vk_owner_id
+        album['owner_id']
+      end
+
+      def vk_access_key
+        album['access_key']
+      end
+
+      def original_link
+        "https://vk.com/music/album/#{vk_full_id}"
+      end
+
+      def vk_full_id
+        "#{vk_owner_id}_#{vk_id}_#{vk_access_key}"
       end
 
       def image_data

@@ -9,6 +9,8 @@ module API
 
       def albums; end
 
+      def links; end
+
       private
 
       def info_data
@@ -39,6 +41,14 @@ module API
         ::Discogs::Group::Albums.call(
           params.slice(
             *%i[group_id profile_id token page limit]
+          )
+        )
+      end
+
+      def links_data
+        ::Discogs::Group::Links.call(
+          params.slice(
+            *%i[group_id]
           )
         )
       end

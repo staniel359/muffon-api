@@ -8,12 +8,17 @@ module YouTube
       def source_data
         {
           name: source_name,
-          id: youtube_id
+          id: youtube_id,
+          links: source_links
         }
       end
 
       def youtube_id
         channel['id']
+      end
+
+      def original_link
+        "https://www.youtube.com/channel/#{youtube_id}"
       end
 
       def title

@@ -16,8 +16,17 @@ module Odnoklassniki
       def source_data
         {
           name: source_name,
-          id: album['id']
+          id: odnoklassniki_id,
+          links: source_links
         }
+      end
+
+      def odnoklassniki_id
+        album['id']
+      end
+
+      def original_link
+        "https://ok.ru/music/album/#{odnoklassniki_id}"
       end
 
       def image_data

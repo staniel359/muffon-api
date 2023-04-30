@@ -13,8 +13,9 @@ module Bandcamp
         {
           name: source_name,
           id: bandcamp_id,
-          model: bandcamp_model
-        }
+          model: bandcamp_model,
+          links: source_links
+        }.compact_blank
       end
 
       def bandcamp_id
@@ -23,6 +24,10 @@ module Bandcamp
 
       def bandcamp_model
         'artist'
+      end
+
+      def original_link
+        artist['item_url_root']
       end
 
       def image_data

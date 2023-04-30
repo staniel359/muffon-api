@@ -1,6 +1,8 @@
 module MusicBrainz
   module Utils
     module Artist
+      MODEL_NAME = 'artist'.freeze
+
       include Muffon::Utils::Artist
 
       private
@@ -12,8 +14,17 @@ module MusicBrainz
       def source_data
         {
           name: source_name,
-          id: artist['id']
+          id: musicbrainz_id,
+          links: source_links
         }
+      end
+
+      def musicbrainz_id
+        artist['id']
+      end
+
+      def original_link
+        "https://musicbrainz.org/#{model_name}/#{musicbrainz_id}"
       end
     end
   end

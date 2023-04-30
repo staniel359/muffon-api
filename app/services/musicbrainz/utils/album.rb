@@ -21,16 +21,25 @@ module MusicBrainz
       def source_data
         {
           name: source_name,
-          id: album['id'],
+          id: musicbrainz_id,
           model:
-            model_name_formatted
+            model_name_formatted,
+          links: source_links
         }
+      end
+
+      def musicbrainz_id
+        album['id']
       end
 
       def model_name_formatted
         MODEL_NAMES[
           model_name
         ]
+      end
+
+      def original_link
+        "https://musicbrainz.org/#{model_name}/#{musicbrainz_id}"
       end
 
       def image_data

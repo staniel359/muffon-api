@@ -5,6 +5,8 @@ module API
 
       def tags; end
 
+      def links; end
+
       private
 
       def info_data
@@ -17,6 +19,14 @@ module API
 
       def tags_data
         ::MusicBrainz::Track::Tags.call(
+          params.slice(
+            *%i[track_id]
+          )
+        )
+      end
+
+      def links_data
+        ::MusicBrainz::Track::Links.call(
           params.slice(
             *%i[track_id]
           )

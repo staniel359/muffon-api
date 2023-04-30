@@ -16,8 +16,26 @@ module Spotify
       def source_data
         {
           name: source_name,
-          id: track['id']
+          id: spotify_id,
+          links: source_links
         }
+      end
+
+      def spotify_id
+        track['id']
+      end
+
+      def original_link
+        track.dig(
+          'external_urls', 'spotify'
+        )
+      end
+
+      def streaming_link
+        streaming_link_formatted(
+          'track',
+          spotify_id
+        )
       end
 
       def album_data

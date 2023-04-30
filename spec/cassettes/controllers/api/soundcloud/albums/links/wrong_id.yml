@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/playlists/wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Authorization:
+      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.soundcloud.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '241'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 02 May 2023 10:30:34 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 58c4087ee7253768e2670cf3ebe54ce2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P3
+      X-Amz-Cf-Id:
+      - xC9l6dxsrI9F-H32e0ilqWaSQBVIw1pfI1rpOVN5mF6vyyUkxrAh5w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":400,"message":"Invalid playlist id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
+        - Bad Request","errors":[{"error_message":"Invalid playlist id: ''wejlhg239gh23''"}],"error":null}'
+  recorded_at: Tue, 02 May 2023 10:30:34 GMT
+recorded_with: VCR 6.1.0

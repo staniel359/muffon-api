@@ -12,8 +12,17 @@ module SoundCloud
       def source_data
         {
           name: source_name,
-          id: artist['id']
+          id: soundcloud_id,
+          links: source_links
         }
+      end
+
+      def soundcloud_id
+        artist['id']
+      end
+
+      def original_link
+        artist['permalink_url']
       end
 
       def image_data

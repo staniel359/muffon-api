@@ -1,6 +1,8 @@
 module Discogs
   module Utils
     module Artist
+      MODEL_NAME = 'artist'.freeze
+
       include Muffon::Utils::Artist
 
       private
@@ -12,12 +14,17 @@ module Discogs
       def source_data
         {
           name: source_name,
-          id: discogs_id
+          id: discogs_id,
+          links: source_links
         }
       end
 
       def discogs_id
         artist['id']
+      end
+
+      def original_link
+        "https://www.discogs.com/#{model_name}/#{discogs_id}"
       end
 
       def image_data

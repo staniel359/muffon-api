@@ -7,6 +7,8 @@ module API
 
       def videos; end
 
+      def links; end
+
       private
 
       def info_data
@@ -29,6 +31,14 @@ module API
         ::YouTube::Playlist::Videos.call(
           params.slice(
             *%i[playlist_id profile_id token page limit]
+          )
+        )
+      end
+
+      def links_data
+        ::YouTube::Playlist::Links.call(
+          params.slice(
+            *%i[playlist_id]
           )
         )
       end

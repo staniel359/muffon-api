@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=43c15929fe11506130&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000916168&playlist_id=wejlhg239gh23&sig=a11011084b3aa9bf6d901cfe69365635&v=5.131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Tue, 02 May 2023 09:20:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '411'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.113742
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure
+      Cache-Control:
+      - no-store
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
+        was missing or invalid: playlist_id not integer","request_params":[{"key":"v","value":"5.131"},{"key":"playlist_id","value":"wejlhg239gh23"},{"key":"owner_id","value":"-2000916168"},{"key":"access_key","value":"43c15929fe11506130"},{"key":"lang","value":"en"},{"key":"method","value":"audio.getPlaylistById"},{"key":"oauth","value":"1"}]}}'
+  recorded_at: Tue, 02 May 2023 09:20:57 GMT
+recorded_with: VCR 6.1.0

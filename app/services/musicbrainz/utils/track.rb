@@ -16,8 +16,17 @@ module MusicBrainz
       def source_data
         {
           name: source_name,
-          id: track['id']
+          id: musicbrainz_id,
+          links: source_links
         }
+      end
+
+      def musicbrainz_id
+        track['id']
+      end
+
+      def original_link
+        "https://musicbrainz.org/recording/#{musicbrainz_id}"
       end
 
       def album_data

@@ -2,6 +2,8 @@ module MusicBrainz
   module Search
     class Labels
       class Label < MusicBrainz::Search::Labels
+        MODEL_NAME = 'label'.freeze
+
         include MusicBrainz::Utils::Artist
 
         def call

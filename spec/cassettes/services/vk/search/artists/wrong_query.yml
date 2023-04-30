@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.searchArtists?access_token=<VK_ACCESS_TOKEN>&count=300&q=wejlhg239gh23&sig=ad79bca626a31e92e45c143adbb87b30&v=5.131
+    uri: https://api.vk.com/method/audio.searchArtists?access_token=<VK_ACCESS_TOKEN>&count=300&q=wejlhg239gh23&sig=fe54a924c124c82ea5cc05ad49d60f9f&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -10,8 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - VKAndroidApp/5.52-4543 (Android 5.1.1; SDK 22; x86_64; unknown Android SDK
-        built for x86_64; en; 320x240
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -24,18 +23,20 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sat, 06 Nov 2021 13:35:59 GMT
+      - Tue, 02 May 2023 09:21:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '55'
+      - '35'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.109209
+      - KPHP/7.4.113742
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
+      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure
       Cache-Control:
       - no-store
       X-Frame-Options:
@@ -43,5 +44,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"response":{"count":0,"items":[]}}'
-  recorded_at: Sat, 06 Nov 2021 13:35:59 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Tue, 02 May 2023 09:21:06 GMT
+recorded_with: VCR 6.1.0

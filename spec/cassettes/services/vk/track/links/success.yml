@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.vk.com/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=-2001339207_10339207&sig=e7f7dc18936b96b4f6a6642c268fe40e&v=5.131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Tue, 02 May 2023 09:21:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2567'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.113741
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure
+      Cache-Control:
+      - no-store
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":[{"artist":"Wild Nothing","id":10339207,"owner_id":-2001339207,"title":"Rheya","duration":235,"access_key":"348d8f66ae4dbd0160","ads":{"content_id":"-2001339207_10339207","duration":"235","account_age_type":"3","puid1":"554","puid22":"14"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"61608f4e-rDFtP-XvxzbULz66JFe_Rk-o85cDHRqKSDgyfohZdmSDlgGXA41j1CvvX3qyplf","url":"https:\/\/cs1-44v4.vkuseraudio.net\/s\/v1\/ac\/u7Uhtg1s7A9QuZqJ13V-CC0MiTQmc4LNTNtiZdjh91H_CsF5OXoz9FfT5eWrvPMJzdeyTf1RW4wLHB6IwPsIBX4qGtSDSQQ0JMDH63fqYWdxifsg6gZBqA3fkBJvJAyU38XBie1Q0bMVOVMshy9jBPrrFzXTdAyGH3qRr5UEx8Q3g2c\/index.m3u8?siren=1","date":1545228718,"lyrics_id":1,"album":{"id":938943,"title":"Nocturne","owner_id":-2000938943,"access_key":"388c7f3b4e5607bfda","thumb":{"width":300,"height":300,"photo_34":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=34x34&quality=96&sign=a581cad4ddfaebeb8d47c2115dddf964&c_uniq_tag=nMEHAEgVsXj7xhV0pskMWAmmlFDHVbRiyHWjLpydbNs&type=audio","photo_68":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=68x68&quality=96&sign=86aa39a0745abc8209d5cababf9fc046&c_uniq_tag=PaP9UKfUiOIHjn2uA0Ru8UEe3pzshui9Nq6mbGwctP4&type=audio","photo_135":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=135x135&quality=96&sign=8b9e803c879f658372d600413701ecac&c_uniq_tag=o71Wh_s20vErZs6pDUjkSyc-F7V-ZiwsbLFV8azrmxE&type=audio","photo_270":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=270x270&quality=96&sign=d5d165b4d7e4a7237143e8a7139acf03&c_uniq_tag=405OkXhfF3zIfFsI_HR_TK4t6VSM7E1sy6Oi7AZPOPI&type=audio","photo_300":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=300x300&quality=96&sign=3577bde32f42b7c8f3cd69658b27e17e&c_uniq_tag=8YGxfsW9aawLXRYtXW_Q86QoZPMNJrC4xckB6MEGN-0&type=audio","photo_600":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=600x600&quality=96&sign=386879e4b257bfe2a5f635586f781695&c_uniq_tag=_YhUNftBIU5HeYEEmcfa307gz0U4R6aOZHb498HdPFY&type=audio","photo_1200":"https:\/\/sun1-92.userapi.com\/impf\/c857520\/v857520425\/104570\/UJdgA6L6NzA.jpg?size=1184x1184&quality=96&sign=002516d7d3e537b3d9f2274a9e38253f&c_uniq_tag=Ux1s61YEgrbg91HH6AKXV1Ly8ut5NQxEnaFLb1b2GuA&type=audio"}},"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false}]}'
+  recorded_at: Tue, 02 May 2023 09:21:09 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,264 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.discogs.com/masters/28680?key=<DISCOGS_API_KEY>&secret=<DISCOGS_API_SECRET>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.discogs.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2023 09:51:37 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Content-Type, authorization, User-Agent, Private-Auth-Secret, Discogs-UID
+      Access-Control-Allow-Methods:
+      - HEAD,OPTIONS,GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Location
+      Cache-Control:
+      - public, must-revalidate
+      Content-Language:
+      - en
+      Strict-Transport-Security:
+      - max-age=15552000
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Discogs-Media-Type:
+      - discogs.v2
+      X-Discogs-Ratelimit:
+      - '60'
+      X-Discogs-Ratelimit-Remaining:
+      - '58'
+      X-Discogs-Ratelimit-Used:
+      - '2'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=DSFOzZl8tcT3LJ86mCLk04iTzG9DLZQJH3skUeSfF4g-1683021097-0-AaXp+9/Zbrr8xusOb9YBQR9egRaNa0y61orYhvjJhYLBIKlLd8VXWoW16koE5HWPe5Wiy/ZaFDQ4iTHaibUYhpo=;
+        path=/; expires=Tue, 02-May-23 10:21:37 GMT; domain=.discogs.com; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7c0f5ddf8e38bf8f-WAW
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id": 28680, "main_release": 197163, "most_recent_release": 19605145,
+        "resource_url": "https://api.discogs.com/masters/28680", "uri": "https://www.discogs.com/master/28680-Kate-Bush-Hounds-Of-Love",
+        "versions_url": "https://api.discogs.com/masters/28680/versions", "main_release_url":
+        "https://api.discogs.com/releases/197163", "most_recent_release_url": "https://api.discogs.com/releases/19605145",
+        "num_for_sale": 1036, "lowest_price": 1.65, "images": [{"type": "primary",
+        "uri": "https://i.discogs.com/DUcflD1Qg5ukeRgW1jwOkZ4HkB59Cc6qEl2uBh81gxY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTMy/LTY0MTEuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/DUcflD1Qg5ukeRgW1jwOkZ4HkB59Cc6qEl2uBh81gxY/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTMy/LTY0MTEuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/8YlIBx2pRoEUoftrNhBzMK_kT3R2d8p8fzrVA3xqIPE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTMy/LTY0MTEuanBlZw.jpeg",
+        "width": 600, "height": 597}, {"type": "secondary", "uri": "https://i.discogs.com/M1wybuB_9MQq3u5YiAIfiHg9pTmx9fv01xyDfDPHPAc/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ0/LTU2NjUuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/M1wybuB_9MQq3u5YiAIfiHg9pTmx9fv01xyDfDPHPAc/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ0/LTU2NjUuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/dJtMMiNxWgw1cKWTt9v_o5r-GnGsRb_iHh3yr9zeOuY/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ0/LTU2NjUuanBlZw.jpeg",
+        "width": 600, "height": 596}, {"type": "secondary", "uri": "https://i.discogs.com/sU-F22mV7bxfpkz9aQTIEppk1iBqER9J7_Lfjq-uUfU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwNTQ2/LTY5OTYuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/sU-F22mV7bxfpkz9aQTIEppk1iBqER9J7_Lfjq-uUfU/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwNTQ2/LTY5OTYuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/YrI36Dt7Nw2NJ2khM77syTSJq-q7QqPPTR63cHpSsxg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwNTQ2/LTY5OTYuanBlZw.jpeg",
+        "width": 600, "height": 599}, {"type": "secondary", "uri": "https://i.discogs.com/NlRc8Mlyn-HhLfDzNQNfQFI4z920l886ax3bsfKy8WQ/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwNTA3/LTcyNjAuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/NlRc8Mlyn-HhLfDzNQNfQFI4z920l886ax3bsfKy8WQ/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwNTA3/LTcyNjAuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/Lzdm_I1sTutDHgpdV7EJD2VntZXUjYmCaBAcB1Qh8pg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwNTA3/LTcyNjAuanBlZw.jpeg",
+        "width": 600, "height": 598}, {"type": "secondary", "uri": "https://i.discogs.com/PWLkZQ1YQpMbklj5lV9I2-wNTk0Dsa5JgW38c6_RgOg/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ3/LTExNTIuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/PWLkZQ1YQpMbklj5lV9I2-wNTk0Dsa5JgW38c6_RgOg/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ3/LTExNTIuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/PXrkiR4bCiarkC-aDgSeYyQvUJv_bFwij_9II5yU6UE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ3/LTExNTIuanBlZw.jpeg",
+        "width": 600, "height": 605}, {"type": "secondary", "uri": "https://i.discogs.com/y1VJ19R7lkIxDt5U8ZJa_npxJPUnFeLQmJWxCaTSbUk/rs:fit/g:sm/q:90/h:612/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ2/LTY0ODQuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/y1VJ19R7lkIxDt5U8ZJa_npxJPUnFeLQmJWxCaTSbUk/rs:fit/g:sm/q:90/h:612/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ2/LTY0ODQuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/5f_JnTXJXx_rt6GEeAwhbOfVGqg2wvutczdVV-C3BEM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNDc1NTkwOTQ2/LTY0ODQuanBlZw.jpeg",
+        "width": 600, "height": 612}, {"type": "secondary", "uri": "https://i.discogs.com/4wWBgx4IykhoOIa3h6Q9rJaiCbooDrOh3DnxPyUCETw/rs:fit/g:sm/q:90/h:182/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTU4MTg4NDQ5/LTI3NjQuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/4wWBgx4IykhoOIa3h6Q9rJaiCbooDrOh3DnxPyUCETw/rs:fit/g:sm/q:90/h:182/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTU4MTg4NDQ5/LTI3NjQuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/QOm1HiDMLU42YWUBC_UHHwz55GQ3fddYjZEcXCWoCtg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTU4MTg4NDQ5/LTI3NjQuanBlZw.jpeg",
+        "width": 600, "height": 182}, {"type": "secondary", "uri": "https://i.discogs.com/lk0Lr9ZDB8wVMMj1TP6bpL81y_1L8JWRNhZD2bhtcVw/rs:fit/g:sm/q:90/h:171/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTU4MTg4NDUz/LTQ5NTcuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/lk0Lr9ZDB8wVMMj1TP6bpL81y_1L8JWRNhZD2bhtcVw/rs:fit/g:sm/q:90/h:171/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTU4MTg4NDUz/LTQ5NTcuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/72NVyyLf-7KRERuRKcjIBWrpANJcX-ARNnK4MSDcLLU/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTU4MTg4NDUz/LTQ5NTcuanBlZw.jpeg",
+        "width": 600, "height": 171}, {"type": "secondary", "uri": "https://i.discogs.com/zYrdB1327FhzorJMGjPYdaJWq1IVKmsSDY5X69F4hpI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTY1OTcwODky/LTY0NjguanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/zYrdB1327FhzorJMGjPYdaJWq1IVKmsSDY5X69F4hpI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTY1OTcwODky/LTY0NjguanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/0BhMhMvFgaFFYaH-Yb6MnjqAxQUGVmzX-CssX_TF1FA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTY1OTcwODky/LTY0NjguanBlZw.jpeg",
+        "width": 600, "height": 600}, {"type": "secondary", "uri": "https://i.discogs.com/Ri2yviBmE-9n8Pf71c8Vo287A_l3p8lFS9PhZX0Hf-8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTY1OTcwODkz/LTEwNDMuanBlZw.jpeg",
+        "resource_url": "https://i.discogs.com/Ri2yviBmE-9n8Pf71c8Vo287A_l3p8lFS9PhZX0Hf-8/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTY1OTcwODkz/LTEwNDMuanBlZw.jpeg",
+        "uri150": "https://i.discogs.com/M1qDp5YGm5tNxzG36vfwZchoMbhfCXOR_zvzPC45qvI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NzE2/My0xNTY1OTcwODkz/LTEwNDMuanBlZw.jpeg",
+        "width": 600, "height": 600}], "genres": ["Electronic", "Rock", "Pop"], "styles":
+        ["Art Rock", "Experimental", "Pop Rock"], "year": 1985, "tracklist": [{"position":
+        "", "type_": "heading", "title": "Hounds Of Love", "duration": ""}, {"position":
+        "A1", "type_": "track", "title": "Running Up That Hill (A Deal With God)",
+        "extraartists": [{"name": "Paddy Bush", "anv": "", "join": "", "role": "Balalaika",
+        "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"},
+        {"name": "Del Palmer", "anv": "", "join": "", "role": "Bass", "tracks": "",
+        "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"}, {"name":
+        "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks": "", "id":
+        304254, "resource_url": "https://api.discogs.com/artists/304254"}], "duration":
+        "4:56"}, {"position": "A2", "type_": "track", "title": "Hounds Of Love", "extraartists":
+        [{"name": "Jonathan Williams (4)", "anv": "Johnathan Williams", "join": "",
+        "role": "Cello", "tracks": "", "id": 335904, "resource_url": "https://api.discogs.com/artists/335904"},
+        {"name": "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"}],
+        "duration": "3:01"}, {"position": "A3", "type_": "track", "title": "The Big
+        Sky", "extraartists": [{"name": "Youth", "anv": "", "join": "", "role": "Bass",
+        "tracks": "", "id": 2656, "resource_url": "https://api.discogs.com/artists/2656"},
+        {"name": "Paddy Bush", "anv": "", "join": "", "role": "Didgeridoo [Dijeridu]",
+        "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"},
+        {"name": "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Charlie Morgan", "anv": "Charlie", "join": "", "role": "Handclaps
+        [Handclapping]", "tracks": "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Del Palmer", "anv": "Del", "join": "", "role": "Handclaps [Handclapping]",
+        "tracks": "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"},
+        {"name": "Morris Pert", "anv": "", "join": "", "role": "Percussion", "tracks":
+        "", "id": 281925, "resource_url": "https://api.discogs.com/artists/281925"}],
+        "duration": "4:35"}, {"position": "A4", "type_": "track", "title": "Mother
+        Stands For Comfort", "extraartists": [{"name": "Eberhard Weber", "anv": "",
+        "join": "", "role": "Bass", "tracks": "", "id": 169989, "resource_url": "https://api.discogs.com/artists/169989"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"}],
+        "duration": "3:05"}, {"position": "A5", "type_": "track", "title": "Cloudbusting",
+        "extraartists": [{"name": "Dave Lawson", "anv": "", "join": "", "role": "Arranged
+        By [Arranged For Strings By]", "tracks": "", "id": 468457, "resource_url":
+        "https://api.discogs.com/artists/468457"}, {"name": "Brian Bath", "anv": "",
+        "join": "", "role": "Backing Vocals", "tracks": "", "id": 281921, "resource_url":
+        "https://api.discogs.com/artists/281921"}, {"name": "Del Palmer", "anv": "",
+        "join": "", "role": "Backing Vocals", "tracks": "", "id": 205697, "resource_url":
+        "https://api.discogs.com/artists/205697"}, {"name": "John Carder Bush", "anv":
+        "", "join": "", "role": "Backing Vocals", "tracks": "", "id": 281917, "resource_url":
+        "https://api.discogs.com/artists/281917"}, {"name": "Paddy Bush", "anv": "",
+        "join": "", "role": "Backing Vocals", "tracks": "", "id": 281922, "resource_url":
+        "https://api.discogs.com/artists/281922"}, {"name": "Charlie Morgan", "anv":
+        "", "join": "", "role": "Drums", "tracks": "", "id": 249350, "resource_url":
+        "https://api.discogs.com/artists/249350"}, {"name": "Stuart Elliott", "anv":
+        "", "join": "", "role": "Drums", "tracks": "", "id": 304254, "resource_url":
+        "https://api.discogs.com/artists/304254"}, {"name": "The Medicci Sextet",
+        "anv": "", "join": "", "role": "Strings", "tracks": "", "id": 281919, "resource_url":
+        "https://api.discogs.com/artists/281919"}], "duration": "5:07"}, {"position":
+        "", "type_": "heading", "title": "The Ninth Wave", "duration": ""}, {"position":
+        "B1", "type_": "track", "title": "And Dream Of Sheep", "extraartists": [{"name":
+        "Donal Lunny", "anv": "", "join": "", "role": "Bouzouki", "tracks": "", "id":
+        255429, "resource_url": "https://api.discogs.com/artists/255429"}, {"name":
+        "John Sheahan", "anv": "", "join": "", "role": "Whistle [Whistles]", "tracks":
+        "", "id": 281918, "resource_url": "https://api.discogs.com/artists/281918"}],
+        "duration": "2:40"}, {"position": "B2", "type_": "track", "title": "Under
+        Ice", "extraartists": [{"name": "Paddy Bush", "anv": "", "join": "", "role":
+        "Harmony Vocals [Harmonic Vocals]", "tracks": "", "id": 281922, "resource_url":
+        "https://api.discogs.com/artists/281922"}], "duration": "2:22"}, {"position":
+        "B3", "type_": "track", "title": "Waking The Witch", "extraartists": [{"name":
+        "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks": "", "id":
+        249350, "resource_url": "https://api.discogs.com/artists/249350"}, {"name":
+        "Kevin McAlea", "anv": "", "join": "", "role": "Sequenced By [Synthesiser
+        Sequences]", "tracks": "", "id": 281920, "resource_url": "https://api.discogs.com/artists/281920"},
+        {"name": "Del Palmer", "anv": "", "join": "", "role": "Synthesizer [Fairlight
+        Bass]", "tracks": "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"}],
+        "duration": "4:17"}, {"position": "B4", "type_": "track", "title": "Watching
+        You Without Me", "extraartists": [{"name": "Danny Thompson", "anv": "", "join":
+        "", "role": "Double Bass", "tracks": "", "id": 65787, "resource_url": "https://api.discogs.com/artists/65787"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"}],
+        "duration": "4:06"}, {"position": "B5", "type_": "track", "title": "Jig Of
+        Life", "extraartists": [{"name": "Donal Lunny", "anv": "", "join": "", "role":
+        "Bouzouki, Bodhr\u00e1n", "tracks": "", "id": 255429, "resource_url": "https://api.discogs.com/artists/255429"},
+        {"name": "Paddy Bush", "anv": "", "join": "", "role": "Didgeridoo [Dijeridu]",
+        "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"},
+        {"name": "Charlie Morgan", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 249350, "resource_url": "https://api.discogs.com/artists/249350"},
+        {"name": "Stuart Elliott", "anv": "Stuart Elliot", "join": "", "role": "Drums",
+        "tracks": "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"},
+        {"name": "John Sheahan", "anv": "", "join": "", "role": "Fiddle [Fiddles],
+        Whistle [Whistles]", "tracks": "", "id": 281918, "resource_url": "https://api.discogs.com/artists/281918"},
+        {"name": "John Carder Bush", "anv": "", "join": "", "role": "Narrator [Narration
+        By]", "tracks": "", "id": 281917, "resource_url": "https://api.discogs.com/artists/281917"},
+        {"name": "Liam O''Flynn", "anv": "", "join": "", "role": "Uilleann Pipes",
+        "tracks": "", "id": 255447, "resource_url": "https://api.discogs.com/artists/255447"},
+        {"name": "John Carder Bush", "anv": "", "join": "", "role": "Vocals", "tracks":
+        "", "id": 281917, "resource_url": "https://api.discogs.com/artists/281917"}],
+        "duration": "4:03"}, {"position": "B6", "type_": "track", "title": "Hello
+        Earth", "extraartists": [{"name": "Michael Berkeley", "anv": "", "join": "",
+        "role": "Arranged By [Arranged For Voices By]", "tracks": "", "id": 683293,
+        "resource_url": "https://api.discogs.com/artists/683293"}, {"name": "Eberhard
+        Weber", "anv": "", "join": "", "role": "Bass", "tracks": "", "id": 169989,
+        "resource_url": "https://api.discogs.com/artists/169989"}, {"name": "Donal
+        Lunny", "anv": "", "join": "", "role": "Bouzouki", "tracks": "", "id": 255429,
+        "resource_url": "https://api.discogs.com/artists/255429"}, {"name": "The Richard
+        Hickox Singers", "anv": "", "join": "", "role": "Choir", "tracks": "", "id":
+        281926, "resource_url": "https://api.discogs.com/artists/281926"}, {"name":
+        "Richard Hickox", "anv": "", "join": "", "role": "Directed By [Choir Directed
+        By]", "tracks": "", "id": 683292, "resource_url": "https://api.discogs.com/artists/683292"},
+        {"name": "Stuart Elliott", "anv": "", "join": "", "role": "Drums", "tracks":
+        "", "id": 304254, "resource_url": "https://api.discogs.com/artists/304254"},
+        {"name": "Brian Bath", "anv": "", "join": "", "role": "Guitar", "tracks":
+        "", "id": 281921, "resource_url": "https://api.discogs.com/artists/281921"},
+        {"name": "Liam O''Flynn", "anv": "", "join": "", "role": "Uilleann Pipes",
+        "tracks": "", "id": 255447, "resource_url": "https://api.discogs.com/artists/255447"}],
+        "duration": "6:10"}, {"position": "B7", "type_": "track", "title": "The Morning
+        Fog", "extraartists": [{"name": "Del Palmer", "anv": "", "join": "", "role":
+        "Bass", "tracks": "", "id": 205697, "resource_url": "https://api.discogs.com/artists/205697"},
+        {"name": "John Williams (7)", "anv": "", "join": "", "role": "Guitar", "tracks":
+        "", "id": 337094, "resource_url": "https://api.discogs.com/artists/337094"},
+        {"name": "Kevin McAlea", "anv": "", "join": "", "role": "Synthesizer", "tracks":
+        "", "id": 281920, "resource_url": "https://api.discogs.com/artists/281920"},
+        {"name": "Paddy Bush", "anv": "", "join": "", "role": "Violin [Violins], Fujara
+        [Fujare]", "tracks": "", "id": 281922, "resource_url": "https://api.discogs.com/artists/281922"}],
+        "duration": "2:32"}], "artists": [{"name": "Kate Bush", "anv": "", "join":
+        "", "role": "", "tracks": "", "id": 85929, "resource_url": "https://api.discogs.com/artists/85929"}],
+        "title": "Hounds Of Love", "notes": "Hounds of Love is the fifth studio album
+        by English musician [a85929], first released 16th September 1985.\r\n\r\n\"Hounds
+        Of Love\" era singles:\r\n \u25aa [url=https://www.discogs.com/master/28695]Running
+        Up That Hill[/url] (8/85) \u25aa [url=https://www.discogs.com/master/28665]Cloudbusting[/url]
+        (10/85) \u25aa [url=https://www.discogs.com/master/28719]Hounds Of Love[/url]
+        (2/86) \u25aa [url=https://www.discogs.com/master/28702]The Big Sky[/url]
+        (4/86) \u25aa [url=https://www.discogs.com/master/28714]Experiment IV[/url]
+        (10/86, featured on [m=28732]) \u25aa\r\n\r\nVideos featuring tracks from
+        \"Hounds Of Love\":\r\n\u25aa [url=https://www.discogs.com/master/588138]The
+        Hair Of The Hound[/url]\r\n\u25aa [url=https://www.discogs.com/master/339992]The
+        Whole Story[/url]", "data_quality": "Correct", "videos": [{"uri": "https://www.youtube.com/watch?v=VerK4zwMRQw",
+        "title": "Kate Bush - Hounds of Love - Official Music Video", "description":
+        "Official music video for the single Hounds of Love -- which is the title
+        track of the Hounds of Love album by Kate Bush.  It was also the third of
+        the album''s four singles. The single was released on 24 February 1986, and
+        reached number 18 in the UK Sin", "duration": 183, "embed": true}, {"uri":
+        "https://www.youtube.com/watch?v=pllRW9wETzw", "title": "Kate Bush - Cloudbusting
+        - Official Music Video", "description": "Official music video for the single
+        Cloudbusting written, produced and performed by the British singer Kate Bush.
+        It was the second single released from her no.1 1985 album Hounds of Love.
+        Cloudbusting peaked at no.20 in the UK Singles Chart.\r\n\r\nThe m", "duration":
+        417, "embed": true}, {"uri": "https://www.youtube.com/watch?v=k7FEneG7gsg",
+        "title": "Waking The Witch", "description": "Provided to YouTube by Parlophone
+        UK\n\nWaking The Witch \u00b7 Kate Bush\n\nHounds Of Love\n\n\u2117 1985 The
+        copyright in this sound recording is owned by Novercia Ltd under exclusive
+        licence to EMI Records Ltd\n\nWriter: Kate Bush\n\nAuto-generated by YouTube.",
+        "duration": 259, "embed": true}, {"uri": "https://www.youtube.com/watch?v=wp43OdtAAkM",
+        "title": "Kate Bush - Running Up That Hill - Official Music Video", "description":
+        "Official music video for the single Running Up That Hill written and produced
+        by British singer Kate Bush.\n\nThe song was the first single from Kate''s
+        1985 album Hounds of Love and released in the UK on 5 August 1985.\n  \nRunning
+        Up That Hill entered th", "duration": 297, "embed": true}]}'
+  recorded_at: Tue, 02 May 2023 09:51:37 GMT
+recorded_with: VCR 6.1.0

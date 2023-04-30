@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000885619&playlist_id=3885619&sig=e747fd83f25e3ffd92b5bbd0adabe445&v=5.131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Tue, 02 May 2023 10:35:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2189'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.113742
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure
+      Cache-Control:
+      - no-store
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"id":3885619,"owner_id":-2000885619,"type":1,"title":"Shadow","description":"","count":1,"followers":6,"plays":92,"create_time":1541803898,"update_time":1541803918,"genres":[{"id":21,"name":"Alternative"}],"is_following":false,"year":2012,"photo":{"width":300,"height":300,"photo_34":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","photo_68":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","photo_135":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","photo_270":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","photo_300":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","photo_600":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=600x600&quality=96&sign=47b1f5e5495826e392506090c3280c23&c_uniq_tag=V625QyoXTrbtwBx00XUJt1XJVlTL5Vp_AhUxvpDtSao&type=audio","photo_1200":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio"},"permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true},"subtitle_badge":false,"play_button":false,"access_key":"154554fc908e1e4c72","is_explicit":false,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962"}],"album_type":"main_only","exclusive":false}}'
+  recorded_at: Tue, 02 May 2023 10:35:10 GMT
+recorded_with: VCR 6.1.0

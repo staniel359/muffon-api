@@ -31,12 +31,17 @@ module VK
       def source_data
         {
           name: source_name,
-          id: vk_id
+          id: vk_id,
+          links: source_links
         }
       end
 
       def vk_id
         "#{track['owner_id']}_#{track['id']}"
+      end
+
+      def original_link
+        "https://vk.com/audio#{vk_id}"
       end
 
       def album_data

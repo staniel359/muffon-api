@@ -20,8 +20,17 @@ module Genius
       def source_data
         {
           name: source_name,
-          id: album['id']
+          id: genius_id,
+          links: source_links
         }
+      end
+
+      def genius_id
+        album['id']
+      end
+
+      def original_link
+        album['url']
       end
 
       def image_data

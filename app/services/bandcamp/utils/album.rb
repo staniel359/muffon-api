@@ -14,7 +14,8 @@ module Bandcamp
           name: source_name,
           id: bandcamp_id,
           artist_id: artist_bandcamp_id,
-          model: bandcamp_model
+          model: bandcamp_model,
+          links: source_links
         }
       end
 
@@ -24,6 +25,17 @@ module Bandcamp
 
       def bandcamp_model
         album['item_type']
+      end
+
+      def original_link
+        album['bandcamp_url']
+      end
+
+      def streaming_link
+        streaming_link_formatted(
+          'album',
+          bandcamp_id
+        )
       end
 
       def artist_data

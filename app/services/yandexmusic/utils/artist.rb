@@ -12,8 +12,17 @@ module YandexMusic
       def source_data
         {
           name: source_name,
-          id: artist['id']
+          id: yandexmusic_id,
+          links: source_links
         }
+      end
+
+      def yandexmusic_id
+        artist['id']
+      end
+
+      def original_link
+        "https://music.yandex.ru/artist/#{yandexmusic_id}"
       end
 
       def image_data

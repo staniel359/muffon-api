@@ -12,8 +12,17 @@ module Spotify
       def source_data
         {
           name: source_name,
-          id: artist['id']
+          id: spotify_id,
+          links: source_links
         }
+      end
+
+      def spotify_id
+        artist['id']
+      end
+
+      def original_link
+        "https://open.spotify.com/artist/#{spotify_id}"
       end
 
       def image_data

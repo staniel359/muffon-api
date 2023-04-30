@@ -14,12 +14,24 @@ module Bandcamp
           name: source_name,
           id: bandcamp_id,
           artist_id: artist_bandcamp_id,
-          model: 'track'
+          model: 'track',
+          links: source_links
         }
       end
 
       def bandcamp_id
         track['track_id']
+      end
+
+      def original_link
+        response_data['bandcamp_url']
+      end
+
+      def streaming_link
+        streaming_link_formatted(
+          'track',
+          bandcamp_id
+        )
       end
 
       def artist_data

@@ -1,0 +1,33 @@
+RSpec.describe LastFM::Artist::Links do
+  subject { described_class }
+
+  describe 'successful processing' do
+    context 'when artist exists' do
+      let(:output) do
+        VCR.use_cassette 'services/lastfm/artist/links/success' do
+          subject.call(artist: 'wild nothing')
+        end
+      end
+
+      it { expect(output).to eq(Helpers::LastFM::Artist.links_data) }
+    end
+  end
+
+  describe 'no processing' do
+    context 'when no name given' do
+      let(:output) { subject.call }
+
+      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+    end
+
+    context 'when wrong name' do
+      let(:output) do
+        VCR.use_cassette 'services/lastfm/artist/links/wrong_name' do
+          subject.call(artist: random)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::Base.not_found_error) }
+    end
+  end
+end

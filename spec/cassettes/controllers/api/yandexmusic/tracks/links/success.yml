@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.music.yandex.net/tracks/2203363?language=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.music.yandex.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 02 May 2023 10:36:02 GMT
+      Set-Cookie:
+      - _yasc=DFTHM+o65llMjbT/bv3lOU86zb63e0gk1U0EMn0Y37qrYnwHjDxuUO7mrbWJ; domain=.yandex.net;
+        path=/; expires=Fri, 29-Apr-2033 10:36:02 GMT; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1683023762050623-16761343745989781940
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Yandex-Music-Application:
+      - music-web
+      X-Yandex-Music-Execution-Duration:
+      - '6'
+      X-Yandex-Music-Hostname:
+      - music-stable-back-sas-28.sas.yp-c.yandex.net
+    body:
+      encoding: ASCII-8BIT
+      string: '{"invocationInfo":{"req-id":"1683023762050623-16761343745989781940","hostname":"music-stable-back-sas-28.sas.yp-c.yandex.net","exec-duration-millis":5},"result":[{"id":"2203363","realId":"2203363","title":"Running
+        Up That Hill (A Deal With God)","available":false,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"availableForOptions":["bookmate"],"storageDir":"","durationMs":298930,"fileSize":0,"r128":{"i":-15.63,"tp":0.17},"fade":{"inStart":2.3,"inStop":6.0,"outStart":284.3,"outStop":291.6},"previewDurationMs":30000,"artists":[{"id":15446,"name":"Kate
+        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/42108/67876e03.a.24376-1/%%","prefix":"67876e03.a.24376-1"},"genres":[]}],"albums":[{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","trackCount":4,"likesCount":32,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%","prefix":"adea840e.a.13203052-1"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"trackPosition":{"volume":1,"index":3}}],"coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","lyricsAvailable":true,"type":"music","rememberPosition":false,"trackSharingFlag":"COVER_ONLY","lyricsInfo":{"hasAvailableSyncLyrics":true,"hasAvailableTextLyrics":true},"trackSource":"OWN","error":"no-rights"}]}'
+  recorded_at: Tue, 02 May 2023 10:36:02 GMT
+recorded_with: VCR 6.1.0

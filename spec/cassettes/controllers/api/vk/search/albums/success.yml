@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.searchAlbums?access_token=<VK_ACCESS_TOKEN>&count=300&q=wild%20nothing%20chinatown&sig=67693c51b842b0a99c34240cfc9939a2&v=5.131
+    uri: https://api.vk.com/method/audio.searchAlbums?access_token=<VK_ACCESS_TOKEN>&count=300&q=wild%20nothing%20chinatown&sig=d89aeac993593e88c5d4d165183c406d&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -10,8 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - VKAndroidApp/5.52-4543 (Android 5.1.1; SDK 22; x86_64; unknown Android SDK
-        built for x86_64; en; 320x240
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -24,25 +23,26 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Sat, 06 Nov 2021 13:35:55 GMT
+      - Tue, 02 May 2023 10:33:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '1100'
+      - '35'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.109209
+      - KPHP/7.4.113742
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
+      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        eyJyZXNwb25zZSI6eyJjb3VudCI6MSwiaXRlbXMiOlt7ImlkIjoxMDE4MTg2LCJvd25lcl9pZCI6LTIwMDAwMTgxODYsInR5cGUiOjEsInRpdGxlIjoiR2VtaW5pIiwiZGVzY3JpcHRpb24iOiIiLCJjb3VudCI6MTIsImZvbGxvd2VycyI6NjU1LCJwbGF5cyI6MTQ4MDYsImNyZWF0ZV90aW1lIjoxNDk1Njc0NDg5LCJ1cGRhdGVfdGltZSI6MTYyNzUyMzk0NCwiZ2VucmVzIjpbeyJpZCI6MiwibmFtZSI6ItCg0L7QuiJ9LHsiaWQiOjIxLCJuYW1lIjoi0JDQu9GM0YLQtdGA0L3QsNGC0LjQstCwIn1dLCJpc19mb2xsb3dpbmciOmZhbHNlLCJ5ZWFyIjoyMDEwLCJwaG90byI6eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjMwMCwicGhvdG9fMzQiOiJodHRwczpcL1wvc3VuMi5jb3Ntb3N0di1ieS1taW5zay51c2VyYXBpLmNvbVwvaW1wZlwvUEI4NGloc2VXX3FxRGE2VUtpX1RWZWtiTHhxRC1MQzkwNjVvc3dcL0VlMFZpLWlsNHIwLmpwZz9zaXplPTM0eDM0JnF1YWxpdHk9OTYmc2lnbj03Y2E3YTcwNTM1NWRhOTU4OThjOTc3NTQyZmJlZGUyNCZjX3VuaXFfdGFnPVNiMXllREQwSEQxb0U1N1psanpsREdYNGwyejFXTk9qVk10YkRVXzc4a1UmdHlwZT1hdWRpbyIsInBob3RvXzY4IjoiaHR0cHM6XC9cL3N1bjIuY29zbW9zdHYtYnktbWluc2sudXNlcmFwaS5jb21cL2ltcGZcL1BCODRpaHNlV19xcURhNlVLaV9UVmVrYkx4cUQtTEM5MDY1b3N3XC9FZTBWaS1pbDRyMC5qcGc/c2l6ZT02OHg2OCZxdWFsaXR5PTk2JnNpZ249YjU1MzZiZWYyZTNjMmYyMTFlMmM2MTRjZDY3YWE1ZGUmY191bmlxX3RhZz1JRFVJOG9QeHYyZEFkcGRUZ3FOUk1WQXR1STBvanB0ODYwZGVNWmtwQUFVJnR5cGU9YXVkaW8iLCJwaG90b18xMzUiOiJodHRwczpcL1wvc3VuMi5jb3Ntb3N0di1ieS1taW5zay51c2VyYXBpLmNvbVwvaW1wZlwvUEI4NGloc2VXX3FxRGE2VUtpX1RWZWtiTHhxRC1MQzkwNjVvc3dcL0VlMFZpLWlsNHIwLmpwZz9zaXplPTEzNXgxMzUmcXVhbGl0eT05NiZzaWduPWY0MzlmYzQwYjM5NjYyZDM1MDJjZDA0Y2UwZGM5ODBhJmNfdW5pcV90YWc9Skp3dWtCelU3SERjLW9kTUxMYWxZTXE0OHRJODB5RURBUGlIcGJwWDFocyZ0eXBlPWF1ZGlvIiwicGhvdG9fMjcwIjoiaHR0cHM6XC9cL3N1bjIuY29zbW9zdHYtYnktbWluc2sudXNlcmFwaS5jb21cL2ltcGZcL1BCODRpaHNlV19xcURhNlVLaV9UVmVrYkx4cUQtTEM5MDY1b3N3XC9FZTBWaS1pbDRyMC5qcGc/c2l6ZT0yNzB4MjcwJnF1YWxpdHk9OTYmc2lnbj1mNjAyOWQxOTg5MjRmOWFmNWU1NjkwYmFjNDVlNzhiYyZjX3VuaXFfdGFnPUhTUXAwUmxkUzNLMWtmaDZyQm85X1ZXRGw4bm03R0Zvb3dGMG5xelpRNFUmdHlwZT1hdWRpbyIsInBob3RvXzMwMCI6Imh0dHBzOlwvXC9zdW4yLmNvc21vc3R2LWJ5LW1pbnNrLnVzZXJhcGkuY29tXC9pbXBmXC9QQjg0aWhzZVdfcXFEYTZVS2lfVFZla2JMeHFELUxDOTA2NW9zd1wvRWUwVmktaWw0cjAuanBnP3NpemU9MzAweDMwMCZxdWFsaXR5PTk2JnNpZ249NzgwZGYyZDBmNDMyNjdkMDgyM2EwNDc3NDVkNzRiZWUmY191bmlxX3RhZz12Q3VvdGxiLUgteHhyMkhhbmNlZUJBN3dBNm8zWVRhSW5WOW5NNXdha21RJnR5cGU9YXVkaW8iLCJwaG90b182MDAiOiJodHRwczpcL1wvc3VuMi5jb3Ntb3N0di1ieS1taW5zay51c2VyYXBpLmNvbVwvaW1wZlwvUEI4NGloc2VXX3FxRGE2VUtpX1RWZWtiTHhxRC1MQzkwNjVvc3dcL0VlMFZpLWlsNHIwLmpwZz9zaXplPTU5Mng1OTImcXVhbGl0eT05NiZzaWduPTQ0NzFkOWFlMTk3NWY5NmIxODI3OTE3ZjBmZWI5ZmI0JmNfdW5pcV90YWc9OUtyUVFoMkNXRGxOLVBzanZ3Tjk5SkZJN2JsSVdYODNpSDFydTI1RW01cyZ0eXBlPWF1ZGlvIiwicGhvdG9fMTIwMCI6Imh0dHBzOlwvXC9zdW4yLmNvc21vc3R2LWJ5LW1pbnNrLnVzZXJhcGkuY29tXC9pbXBmXC9QQjg0aWhzZVdfcXFEYTZVS2lfVFZla2JMeHFELUxDOTA2NW9zd1wvRWUwVmktaWw0cjAuanBnP3NpemU9MTE4NHgxMTg0JnF1YWxpdHk9OTYmc2lnbj01MzgzYzRkOTM4ZDk5YmJhNDA3Y2UwMmMyNmUxNjRhNCZjX3VuaXFfdGFnPUZDR29peVp0a3VDdVM4dXBleDlIY3gyd1pIcE9hc3hoX1hUNnhxMHNjQ1EmdHlwZT1hdWRpbyJ9LCJwZXJtaXNzaW9ucyI6eyJwbGF5Ijp0cnVlLCJzaGFyZSI6dHJ1ZSwiZWRpdCI6ZmFsc2UsImZvbGxvdyI6dHJ1ZSwiZGVsZXRlIjpmYWxzZSwiYm9vbV9kb3dubG9hZCI6dHJ1ZX0sInN1YnRpdGxlX2JhZGdlIjpmYWxzZSwicGxheV9idXR0b24iOmZhbHNlLCJhY2Nlc3Nfa2V5IjoiNGIwZDU0MWU1YzY0MTc3MmU0IiwiaXNfZXhwbGljaXQiOmZhbHNlLCJtYWluX2FydGlzdHMiOlt7Im5hbWUiOiJXaWxkIE5vdGhpbmciLCJkb21haW4iOiI0MzMzMDA1NDQwMDE4OTIzOTYyIiwiaWQiOiI0MzMzMDA1NDQwMDE4OTIzOTYyIn1dLCJhbGJ1bV90eXBlIjoibWFpbl9vbmx5In1dfX0=
-  recorded_at: Sat, 06 Nov 2021 13:35:55 GMT
-recorded_with: VCR 6.0.0
+      string: '{"response":{"count":0,"items":[]}}'
+  recorded_at: Tue, 02 May 2023 10:33:28 GMT
+recorded_with: VCR 6.1.0

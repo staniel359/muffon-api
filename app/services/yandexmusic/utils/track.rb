@@ -27,8 +27,24 @@ module YandexMusic
       def source_data
         {
           name: source_name,
-          id: track['id'].to_i
+          id: yandexmusic_id,
+          links: source_links
         }
+      end
+
+      def yandexmusic_id
+        track['id'].to_i
+      end
+
+      def original_link
+        "https://music.yandex.ru/track/#{yandexmusic_id}"
+      end
+
+      def streaming_link
+        streaming_link_formatted(
+          'track',
+          yandexmusic_id
+        )
       end
 
       def album_data

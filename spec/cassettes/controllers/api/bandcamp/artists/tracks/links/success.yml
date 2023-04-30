@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://bandcamp.com/api/mobile/22/tralbum_details?band_id=2228040235&tralbum_id=2723372494&tralbum_type=t
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - bandcamp.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=UTF-8
+      Cache-Control:
+      - no-cache, no-store
+      Set-Cookie:
+      - BACKENDID3=flexocentral-t7b6-4; path=/; Secure
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 02 May 2023 09:42:02 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-ams21063-AMS
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1683020523.634087,VS0,VE117
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6MjcyMzM3MjQ5NCwidHlwZSI6InQiLCJ0aXRsZSI6IkxldHRpbmcgR28iLCJiYW5kY2FtcF91cmwiOiJodHRwczovL3dpbGRub3RoaW5nY3QuYmFuZGNhbXAuY29tL3RyYWNrL2xldHRpbmctZ28iLCJhcnRfaWQiOjMyMjE5OTY3NTIsImJhbmQiOnsiYmFuZF9pZCI6MjIyODA0MDIzNSwibmFtZSI6IldpbGQgTm90aGluZyIsImltYWdlX2lkIjoxODQ1NTI0MCwiYmlvIjoiQXNrIEphY2sgVGF0dW0gd2hhdCDigJhXaWxkIE5vdGhpbmfigJkgbWVhbnMgYW5kIGhl4oCZbGwgYW5zd2VyOiDigJhhIGNvbnRyYWRpY3Rpb27igJkuIEluIDIwMTAsIDIxIHllYXIgb2xkIFRhdHVtIHJlbGVhc2VkIG9uZSBvZiB0aGUgZmluZXN0IGN1bHQgcG9wIHJlY29yZHMgb2YgdGhlIHN1bW1lciB3aGlsc3QgZW5zY29uY2VkIGluIGhpcyBzZW5pb3IgeWVhciBvZiBjb2xsZWdlIGluIEJsYWNrc2J1cmcsIFZBLCBhIHNtYWxsIG1pZC1hdGxhbnRpYyB0b3duIGJldHRlciBrbm93biBmb3IgcHJvZHVjaW5nIGZvb3RiYWxsIGZhbnMgYW5kIGVuZ2luZWVycyB0aGFuIG11c2ljaWFucy4gVGF0dW0gbGl2ZXMgaW4gY29udHJhZGljdGlvbnMuIiwibG9jYXRpb24iOiJCbGFja3NidXJnLCBWaXJnaW5pYSJ9LCJ0cmFsYnVtX2FydGlzdCI6IldpbGQgTm90aGluZyIsInBhY2thZ2VfYXJ0IjpbXSwiZmVhdHVyZWRfdHJhY2tfaWQiOjI3MjMzNzI0OTQsInRyYWNrcyI6W3sidHJhY2tfaWQiOjI3MjMzNzI0OTQsInRyYWNrX2xpY2Vuc2VfaWQiOm51bGwsInRpdGxlIjoiTGV0dGluZyBHbyIsInRyYWNrX251bSI6MSwic3RyZWFtaW5nX3VybCI6eyJtcDMtMTI4IjoiaHR0cHM6Ly9iYW5kY2FtcC5jb20vc3RyZWFtX3JlZGlyZWN0P2VuYz1tcDMtMTI4JnRyYWNrX2lkPTI3MjMzNzI0OTQmdHM9MTY4MzAyMDUyMiZ0PTY1NTNmNmM4MGVlZjI0ZjBjYzZjODE4M2NmMTIxMGVjZTZjMjMyMzgifSwiZHVyYXRpb24iOjIyMS42LCJlbmNvZGluZ3NfaWQiOjEyNjQyODYxMTEsImFsYnVtX3RpdGxlIjpudWxsLCJiYW5kX25hbWUiOiJXaWxkIE5vdGhpbmciLCJhcnRfaWQiOm51bGwsImFsYnVtX2lkIjo0NTI5NzM0MTEsImlzX3N0cmVhbWFibGUiOnRydWUsImhhc19seXJpY3MiOmZhbHNlLCJpc19zZXRfcHJpY2UiOmZhbHNlLCJwcmljZSI6MS4wLCJoYXNfZGlnaXRhbF9kb3dubG9hZCI6dHJ1ZSwibWVyY2hfaWRzIjpudWxsLCJtZXJjaF9zb2xkX291dCI6bnVsbCwiY3VycmVuY3kiOiJVU0QiLCJyZXF1aXJlX2VtYWlsIjpmYWxzZSwiaXNfcHVyY2hhc2FibGUiOnRydWUsImJhbmRfaWQiOjIyMjgwNDAyMzUsImxhYmVsIjoiQ2FwdHVyZWQgVHJhY2tzIiwibGFiZWxfaWQiOjIzMDQxOTkyMTJ9XSwiY3JlZGl0cyI6bnVsbCwiYWJvdXQiOm51bGwsImFsYnVtX2lkIjo0NTI5NzM0MTEsImFsYnVtX3RpdGxlIjoiSW5kaWdvIiwicmVsZWFzZV9kYXRlIjoxNTM1NjczNjAwLCJpc19wdXJjaGFzYWJsZSI6dHJ1ZSwiZnJlZV9kb3dubG9hZCI6ZmFsc2UsImlzX3ByZW9yZGVyIjpmYWxzZSwidGFncyI6W3sibmFtZSI6IlJvY2siLCJub3JtX25hbWUiOiJyb2NrIiwidXJsIjoiL3RhZy9yb2NrIiwiaXNsb2MiOmZhbHNlLCJsb2NfaWQiOm51bGwsImdlb25hbWUiOm51bGx9LHsibmFtZSI6ImluZGllIiwibm9ybV9uYW1lIjoiaW5kaWUiLCJ1cmwiOiIvdGFnL2luZGllIiwiaXNsb2MiOmZhbHNlLCJsb2NfaWQiOm51bGwsImdlb25hbWUiOm51bGx9LHsibmFtZSI6ImluZGllIHBvcCIsIm5vcm1fbmFtZSI6ImluZGllLXBvcCIsInVybCI6Ii90YWcvaW5kaWUtcG9wIiwiaXNsb2MiOmZhbHNlLCJsb2NfaWQiOm51bGwsImdlb25hbWUiOm51bGx9LHsibmFtZSI6IkJsYWNrc2J1cmciLCJub3JtX25hbWUiOiJibGFja3NidXJnIiwidXJsIjoiL3RhZy9ibGFja3NidXJnIiwiaXNsb2MiOnRydWUsImxvY19pZCI6MTU3NTAyOTQxMiwiZ2VvbmFtZSI6eyJpZCI6NDc0NzgyNiwibmFtZSI6IkJsYWNrc2J1cmciLCJmdWxsbmFtZSI6IkJsYWNrc2J1cmcsIFZpcmdpbmlhIn19XSwiY3VycmVuY3kiOiJVU0QiLCJpc19zZXRfcHJpY2UiOmZhbHNlLCJwcmljZSI6MS4wLCJyZXF1aXJlX2VtYWlsIjpmYWxzZSwibGFiZWwiOiJDYXB0dXJlZCBUcmFja3MiLCJsYWJlbF9pZCI6MjMwNDE5OTIxMiwicGFja2FnZV9kZXRhaWxzX2xpdGUiOnt9LCJoYXNfZGlnaXRhbF9kb3dubG9hZCI6dHJ1ZSwibnVtX2Rvd25sb2FkYWJsZV90cmFja3MiOjEsIm1lcmNoX3NvbGRfb3V0IjpudWxsLCJzdHJlYW1pbmdfbGltaXQiOjN9
+  recorded_at: Tue, 02 May 2023 09:42:02 GMT
+recorded_with: VCR 6.1.0

@@ -18,7 +18,26 @@ module LastFM
       end
 
       def source_data
-        { name: source_name }
+        {
+          name: source_name,
+          links: source_links
+        }
+      end
+
+      def original_link
+        "https://www.last.fm/music/#{original_link_artist_name}/_/#{original_link_title}"
+      end
+
+      def original_link_artist_name
+        CGI.escape(
+          artist_name
+        )
+      end
+
+      def original_link_title
+        CGI.escape(
+          title
+        )
       end
 
       def duration

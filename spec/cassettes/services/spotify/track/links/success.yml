@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/tracks/29d0nY7TzCoi22XBqDQkiP
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Authorization:
+      - Bearer BQAGBdh4Fv-0K79_F3SAUD1M7d-xm2kxhzMYzCZ90TLrhqjGTUb7p4yhdFyM30MAg0deWx-07OqmH5wfuPo3rjZtVWrHoB7sU4DMCn0f83YXuP3C9sKO
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=7200
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Tue, 02 May 2023 09:13:17 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "album" : {
+            "album_group" : "album",
+            "album_type" : "album",
+            "artists" : [ {
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+              },
+              "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+              "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+              "name" : "Kate Bush",
+              "type" : "artist",
+              "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+            } ],
+            "available_markets" : [ ],
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/album/3OYnManu1Nlxnw9OMng7BH"
+            },
+            "href" : "https://api.spotify.com/v1/albums/3OYnManu1Nlxnw9OMng7BH",
+            "id" : "3OYnManu1Nlxnw9OMng7BH",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b2735c390e413e27798edd4d18b4",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://i.scdn.co/image/ab67616d00001e025c390e413e27798edd4d18b4",
+              "width" : 300
+            }, {
+              "height" : 64,
+              "url" : "https://i.scdn.co/image/ab67616d000048515c390e413e27798edd4d18b4",
+              "width" : 64
+            } ],
+            "name" : "Hounds of Love (2018 Remaster)",
+            "release_date" : "1985-09-16",
+            "release_date_precision" : "day",
+            "total_tracks" : 12,
+            "type" : "album",
+            "uri" : "spotify:album:3OYnManu1Nlxnw9OMng7BH"
+          },
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL",
+            "id" : "1aSxMhuvixZ8h9dK9jIDwL",
+            "name" : "Kate Bush",
+            "type" : "artist",
+            "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
+          } ],
+          "available_markets" : [ ],
+          "disc_number" : 1,
+          "duration_ms" : 300840,
+          "explicit" : false,
+          "external_ids" : {
+            "isrc" : "GBAYE1800884"
+          },
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/track/29d0nY7TzCoi22XBqDQkiP"
+          },
+          "href" : "https://api.spotify.com/v1/tracks/29d0nY7TzCoi22XBqDQkiP",
+          "id" : "29d0nY7TzCoi22XBqDQkiP",
+          "is_local" : false,
+          "name" : "Running Up That Hill (A Deal With God) - 2018 Remaster",
+          "popularity" : 63,
+          "preview_url" : null,
+          "track_number" : 1,
+          "type" : "track",
+          "uri" : "spotify:track:29d0nY7TzCoi22XBqDQkiP"
+        }
+  recorded_at: Tue, 02 May 2023 09:13:17 GMT
+recorded_with: VCR 6.1.0

@@ -2,6 +2,8 @@ module Discogs
   module Search
     class Labels
       class Label < Discogs::Search::Labels
+        MODEL_NAME = 'label'.freeze
+
         include Discogs::Utils::Artist
 
         def call

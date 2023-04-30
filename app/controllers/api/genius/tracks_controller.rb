@@ -9,6 +9,8 @@ module API
 
       def lyrics; end
 
+      def links; end
+
       private
 
       def info_data
@@ -37,6 +39,14 @@ module API
 
       def lyrics_data
         ::Genius::Track::Lyrics.call(
+          params.slice(
+            *%i[track_id]
+          )
+        )
+      end
+
+      def links_data
+        ::Genius::Track::Links.call(
           params.slice(
             *%i[track_id]
           )

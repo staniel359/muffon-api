@@ -188,4 +188,42 @@ RSpec.describe API::LastFM::Artists::TracksController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :links' do
+    it 'returns 200' do
+      VCR.use_cassette 'controllers/api/lastfm/artists/tracks/links/success' do
+        get :links, params: { artist: 'Kate Bush', track: 'Hounds Of Love' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no track title' do
+      get :links, params: { artist: 'Kate Bush', track: ' ' }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong track title' do
+      VCR.use_cassette 'controllers/api/lastfm/artists/tracks/links/wrong_track' do
+        get :links, params: { artist: 'Kate Bush', track: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it 'returns 400 if no artist name' do
+      get :links, params: { artist: ' ', track: 'Hounds Of Love' }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong artist name' do
+      VCR.use_cassette 'controllers/api/lastfm/artists/tracks/links/wrong_artist' do
+        get :links, params: { artist: random, track: 'Hounds Of Love' }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

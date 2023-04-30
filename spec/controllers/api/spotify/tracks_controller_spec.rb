@@ -16,4 +16,22 @@ RSpec.describe API::Spotify::TracksController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :links' do
+    it 'returns 200 if track_id present' do
+      VCR.use_cassette 'controllers/api/spotify/tracks/links/success' do
+        get :links, params: { track_id: '29d0nY7TzCoi22XBqDQkiP' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 404 if wrong track_id' do
+      VCR.use_cassette 'controllers/api/spotify/tracks/links/wrong_id' do
+        get :links, params: { track_id: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

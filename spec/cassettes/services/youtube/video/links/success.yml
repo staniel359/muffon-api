@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=1aTIkQf3eRY&key=<GOOGLE_API_KEY>&part=snippet,statistics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 02 May 2023 09:26:50 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJraW5kIjogInlvdXR1YmUjdmlkZW9MaXN0UmVzcG9uc2UiLAogICJldGFnIjogInVxYlVJX3lhSExSZ1k2VFBvZWRNYXJxVkQzVSIsCiAgIml0ZW1zIjogWwogICAgewogICAgICAia2luZCI6ICJ5b3V0dWJlI3ZpZGVvIiwKICAgICAgImV0YWciOiAicEVjc2Y0M1NtdXNKUUo4aFVpU1lqX2NRTW93IiwKICAgICAgImlkIjogIjFhVElrUWYzZVJZIiwKICAgICAgInNuaXBwZXQiOiB7CiAgICAgICAgInB1Ymxpc2hlZEF0IjogIjIwMTQtMTItMDFUMTI6NDQ6NTBaIiwKICAgICAgICAiY2hhbm5lbElkIjogIlVDYmFKWlVWcWZFWlB0d2FVekdnZFo4QSIsCiAgICAgICAgInRpdGxlIjogIkNoaW5hdG93biIsCiAgICAgICAgImRlc2NyaXB0aW9uIjogIlByb3ZpZGVkIHRvIFlvdVR1YmUgYnkgQldTQ0QgSW5jXG5cbkNoaW5hdG93biDCtyBXaWxkIE5vdGhpbmdcblxuR2VtaW5pXG5cbuKElyAyMDEwIENhcHR1cmVkIFRyYWNrc1xuXG5SZWxlYXNlZCBvbjogMjAxMC0wNS0yNVxuXG5NYWluICBBcnRpc3Q6IFdpbGQgTm90aGluZ1xuXG5BdXRvLWdlbmVyYXRlZCBieSBZb3VUdWJlLiIsCiAgICAgICAgInRodW1ibmFpbHMiOiB7CiAgICAgICAgICAiZGVmYXVsdCI6IHsKICAgICAgICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpLzFhVElrUWYzZVJZL2RlZmF1bHQuanBnIiwKICAgICAgICAgICAgIndpZHRoIjogMTIwLAogICAgICAgICAgICAiaGVpZ2h0IjogOTAKICAgICAgICAgIH0sCiAgICAgICAgICAibWVkaXVtIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvMWFUSWtRZjNlUlkvbXFkZWZhdWx0LmpwZyIsCiAgICAgICAgICAgICJ3aWR0aCI6IDMyMCwKICAgICAgICAgICAgImhlaWdodCI6IDE4MAogICAgICAgICAgfSwKICAgICAgICAgICJoaWdoIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvMWFUSWtRZjNlUlkvaHFkZWZhdWx0LmpwZyIsCiAgICAgICAgICAgICJ3aWR0aCI6IDQ4MCwKICAgICAgICAgICAgImhlaWdodCI6IDM2MAogICAgICAgICAgfSwKICAgICAgICAgICJzdGFuZGFyZCI6IHsKICAgICAgICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpLzFhVElrUWYzZVJZL3NkZGVmYXVsdC5qcGciLAogICAgICAgICAgICAid2lkdGgiOiA2NDAsCiAgICAgICAgICAgICJoZWlnaHQiOiA0ODAKICAgICAgICAgIH0sCiAgICAgICAgICAibWF4cmVzIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvMWFUSWtRZjNlUlkvbWF4cmVzZGVmYXVsdC5qcGciLAogICAgICAgICAgICAid2lkdGgiOiAxMjgwLAogICAgICAgICAgICAiaGVpZ2h0IjogNzIwCiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICAiY2hhbm5lbFRpdGxlIjogIldpbGQgTm90aGluZyAtIFRvcGljIiwKICAgICAgICAidGFncyI6IFsKICAgICAgICAgICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgIkdlbWluaSIsCiAgICAgICAgICAiQ2hpbmF0b3duIgogICAgICAgIF0sCiAgICAgICAgImNhdGVnb3J5SWQiOiAiMTAiLAogICAgICAgICJsaXZlQnJvYWRjYXN0Q29udGVudCI6ICJub25lIiwKICAgICAgICAibG9jYWxpemVkIjogewogICAgICAgICAgInRpdGxlIjogIkNoaW5hdG93biIsCiAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiUHJvdmlkZWQgdG8gWW91VHViZSBieSBCV1NDRCBJbmNcblxuQ2hpbmF0b3duIMK3IFdpbGQgTm90aGluZ1xuXG5HZW1pbmlcblxu4oSXIDIwMTAgQ2FwdHVyZWQgVHJhY2tzXG5cblJlbGVhc2VkIG9uOiAyMDEwLTA1LTI1XG5cbk1haW4gIEFydGlzdDogV2lsZCBOb3RoaW5nXG5cbkF1dG8tZ2VuZXJhdGVkIGJ5IFlvdVR1YmUuIgogICAgICAgIH0KICAgICAgfSwKICAgICAgInN0YXRpc3RpY3MiOiB7CiAgICAgICAgInZpZXdDb3VudCI6ICIxMDAwMDQ2IiwKICAgICAgICAibGlrZUNvdW50IjogIjE2MzY2IiwKICAgICAgICAiZmF2b3JpdGVDb3VudCI6ICIwIiwKICAgICAgICAiY29tbWVudENvdW50IjogIjE4NCIKICAgICAgfQogICAgfQogIF0sCiAgInBhZ2VJbmZvIjogewogICAgInRvdGFsUmVzdWx0cyI6IDEsCiAgICAicmVzdWx0c1BlclBhZ2UiOiAxCiAgfQp9Cg==
+  recorded_at: Tue, 02 May 2023 09:26:50 GMT
+recorded_with: VCR 6.1.0

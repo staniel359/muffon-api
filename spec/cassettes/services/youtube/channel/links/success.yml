@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/channels?id=UC7kI8WjpCfFoMSNDuRh_4lA&key=<GOOGLE_API_KEY>&part=snippet,contentDetails,statistics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.googleapis.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 02 May 2023 09:26:47 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#channelListResponse",
+          "etag": "ipxpWwh86cU1PT5EHc70sNlV8mM",
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 5
+          },
+          "items": [
+            {
+              "kind": "youtube#channel",
+              "etag": "9UKfxjBFOPOrvIHwo99OUC23B5w",
+              "id": "UC7kI8WjpCfFoMSNDuRh_4lA",
+              "snippet": {
+                "title": "Pitchfork",
+                "description": "The Most Trusted Voice in Music.",
+                "customUrl": "@pitchfork",
+                "publishedAt": "2008-09-04T15:10:14Z",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://yt3.ggpht.com/ytc/AGIKgqMopRpwcMg6APXmBC5Ejyt6qhfSPXsU7x6oYMoN9w=s88-c-k-c0x00ffffff-no-rj",
+                    "width": 88,
+                    "height": 88
+                  },
+                  "medium": {
+                    "url": "https://yt3.ggpht.com/ytc/AGIKgqMopRpwcMg6APXmBC5Ejyt6qhfSPXsU7x6oYMoN9w=s240-c-k-c0x00ffffff-no-rj",
+                    "width": 240,
+                    "height": 240
+                  },
+                  "high": {
+                    "url": "https://yt3.ggpht.com/ytc/AGIKgqMopRpwcMg6APXmBC5Ejyt6qhfSPXsU7x6oYMoN9w=s800-c-k-c0x00ffffff-no-rj",
+                    "width": 800,
+                    "height": 800
+                  }
+                },
+                "localized": {
+                  "title": "Pitchfork",
+                  "description": "The Most Trusted Voice in Music."
+                }
+              },
+              "contentDetails": {
+                "relatedPlaylists": {
+                  "likes": "",
+                  "uploads": "UU7kI8WjpCfFoMSNDuRh_4lA"
+                }
+              },
+              "statistics": {
+                "viewCount": "517756015",
+                "subscriberCount": "1250000",
+                "hiddenSubscriberCount": false,
+                "videoCount": "2712"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 02 May 2023 09:26:47 GMT
+recorded_with: VCR 6.1.0

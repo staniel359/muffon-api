@@ -1,0 +1,148 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/release/bee184b6-493b-46bc-a3a1-31e434367c4a?fmt=json&inc=artist-credits%2Btags%2Blabels%2Brecordings
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2023 10:18:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1089'
+      X-Ratelimit-Reset:
+      - '1683022724'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"52ed3cad77bd0ee796ba0172262b1111"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"status":"Official","quality":"normal","tags":[{"name":"art pop","count":1},{"name":"baroque
+        pop","count":1},{"count":1,"name":"progressive pop"}],"text-representation":{"language":"eng","script":"Latn"},"packaging-id":"e724a489-a7e8-30a1-a17c-30dfd6831202","barcode":"","country":"CA","date":"1980-09","release-events":[{"date":"1980-09","area":{"sort-name":"Canada","type-id":null,"disambiguation":"","iso-3166-1-codes":["CA"],"type":null,"name":"Canada","id":"71bbafaa-e825-3e15-8ca9-017dcad1748b"}}],"disambiguation":"","packaging":"Gatefold
+        Cover","asin":null,"cover-art-archive":{"count":5,"back":true,"artwork":true,"darkened":false,"front":true},"media":[{"format":"12\"
+        Vinyl","track-offset":0,"tracks":[{"title":"Babooshka","id":"9d944fb3-3034-4de8-b3bf-20256a1e013c","position":1,"artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush"}}],"length":197000,"recording":{"id":"21026567-8554-45f3-9644-ec251571f8c1","disambiguation":"","title":"Babooshka","tags":[{"name":"art
+        pop","count":2},{"count":1,"name":"art rock"},{"count":1,"name":"baroque pop"},{"name":"piano
+        rock","count":1},{"name":"pop","count":2},{"count":4,"name":"pop rock"},{"name":"progressive
+        pop","count":2}],"artist-credit":[{"joinphrase":"","name":"Kate Bush","artist":{"type":"Person","name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""}}],"video":false,"length":208000,"first-release-date":"1980-06-27"},"number":"A1"},{"artist-credit":[{"artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person"},"name":"Kate
+        Bush","joinphrase":""}],"title":"Delius","id":"8ac431ce-3392-41ab-b18c-cbcbcae6fb25","position":2,"length":169000,"recording":{"first-release-date":"1980-09-08","video":false,"length":171600,"tags":[{"count":2,"name":"art
+        pop"},{"name":"art rock","count":1},{"name":"baroque pop","count":1},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":2},{"name":"rock","count":1}],"artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush","sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"}}],"id":"7988093a-eba1-4a9c-8b10-1cff436f4cba","title":"Delius
+        (Song of Summer)","disambiguation":""},"number":"A2"},{"number":"A3","recording":{"tags":[{"name":"art
+        pop","count":2},{"count":2,"name":"art rock"},{"count":2,"name":"baroque pop"},{"count":1,"name":"pop"},{"count":2,"name":"pop
+        rock"},{"name":"progressive pop","count":1},{"name":"rock","count":1}],"artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate"}}],"id":"8a708cd5-c298-4d53-88cc-eaf29afafd0e","title":"Blow Away (For
+        Bill)","disambiguation":"","first-release-date":"1980-09-08","video":false,"length":214693},"length":212000,"artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person"}}],"title":"Blow
+        Away","id":"c423362c-ea79-4e2c-b4ce-6bf429b8f3b8","position":3},{"recording":{"video":false,"length":228933,"first-release-date":"1980-09-08","id":"c58b2522-99fa-4200-bb24-35d07f582fa4","title":"All
+        We Ever Look For","disambiguation":"","tags":[{"name":"art pop","count":2},{"count":2,"name":"art
+        rock"},{"count":2,"name":"baroque pop"},{"count":1,"name":"pop"},{"count":2,"name":"pop
+        rock"},{"name":"progressive pop","count":2},{"count":1,"name":"rock"}],"artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush"}}]},"number":"A4","title":"All We Ever Look For","id":"07151979-33f7-475d-855f-a8e876c39a48","position":4,"artist-credit":[{"artist":{"sort-name":"Bush,
+        Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush"},"joinphrase":"","name":"Kate Bush"}],"length":225000},{"length":246000,"title":"Egypt","id":"341daff6-c6f9-4429-8c16-dc3ff02f6fbd","position":5,"artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person"}}],"number":"A5","recording":{"length":252173,"video":false,"first-release-date":"1980-09-08","disambiguation":"","title":"Egypt","id":"13eecc4f-2be8-44ef-b191-abea6c6496ad","artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","type":"Person"}}],"tags":[{"count":2,"name":"art
+        pop"},{"count":3,"name":"art rock"},{"name":"baroque pop","count":1},{"count":1,"name":"pop"},{"count":2,"name":"pop
+        rock"},{"count":2,"name":"progressive pop"},{"name":"progressive rock","count":1},{"count":1,"name":"rock"}]}},{"recording":{"title":"The
+        Wedding List","disambiguation":"","id":"0349ac8a-9783-4284-a6ce-eb21dd4484ac","artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush"}}],"tags":[{"count":2,"name":"art pop"},{"name":"art rock","count":2},{"name":"baroque
+        pop","count":1},{"name":"piano rock","count":1},{"count":1,"name":"pop"},{"count":2,"name":"pop
+        rock"},{"count":2,"name":"progressive pop"},{"count":1,"name":"rock"}],"length":255733,"video":false,"first-release-date":"1980-09-08"},"number":"B1","artist-credit":[{"artist":{"disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate Bush","type":"Person"},"joinphrase":"","name":"Kate
+        Bush"}],"title":"The Wedding List","position":6,"id":"3c39c2fe-62af-4217-9abe-c5bb04f3f9e0","length":254000},{"length":192000,"title":"Violin","id":"c6f18b4a-1147-405a-9036-c871ce230d8c","position":7,"artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush","sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"}}],"number":"B2","recording":{"length":195933,"video":false,"first-release-date":"1980-09-08","disambiguation":"","title":"Violin","id":"cbaccfea-aa69-47d7-a597-60a3d5b8d83c","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"type":"Person","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""}}],"tags":[{"name":"art
+        pop","count":1},{"count":3,"name":"art rock"},{"name":"baroque pop","count":1},{"name":"glam
+        rock","count":1},{"name":"pop","count":1},{"count":2,"name":"pop rock"},{"name":"progressive
+        pop","count":1},{"name":"rock","count":1}]}},{"length":168000,"artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person"}}],"title":"The
+        Infant Kiss","position":8,"id":"7f2fd5cb-46a8-407f-86ab-af1628a7bd62","number":"B3","recording":{"disambiguation":"","title":"The
+        Infant Kiss","id":"bae1b3ba-09e7-4672-8e66-e0906ecd3dc4","artist-credit":[{"artist":{"type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush","sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"joinphrase":"","name":"Kate
+        Bush"}],"tags":[{"count":2,"name":"art pop"},{"count":3,"name":"art rock"},{"count":2,"name":"baroque
+        pop"},{"count":1,"name":"pop"},{"count":2,"name":"pop rock"},{"count":1,"name":"progressive
+        pop"},{"count":1,"name":"rock"}],"length":170026,"video":false,"first-release-date":"1980-09-08"}},{"recording":{"length":51933,"video":false,"first-release-date":"1980-09-08","title":"Night
+        Scented Stock","disambiguation":"","id":"20c7b3b4-68bc-4352-9ae2-bcb02c5e570f","artist-credit":[{"artist":{"type":"Person","name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":""},"name":"Kate
+        Bush","joinphrase":""}],"tags":[{"name":"a cappella","count":1},{"count":1,"name":"ambient
+        pop"},{"count":1,"name":"art pop"},{"count":3,"name":"art rock"},{"count":1,"name":"baroque
+        pop"},{"name":"choral","count":1},{"count":1,"name":"pop"},{"count":2,"name":"pop
+        rock"},{"count":1,"name":"progressive pop"},{"count":1,"name":"rock"}]},"number":"B4","position":9,"id":"3039197f-3388-437d-8441-4eb63c77a783","title":"Night
+        Scented Stock","artist-credit":[{"name":"Kate Bush","joinphrase":"","artist":{"name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","sort-name":"Bush,
+        Kate"}}],"length":51000},{"number":"B5","recording":{"first-release-date":"1980-09-08","length":178640,"video":false,"artist-credit":[{"artist":{"sort-name":"Bush,
+        Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush"},"joinphrase":"","name":"Kate Bush"}],"tags":[{"count":2,"name":"art
+        pop"},{"name":"art rock","count":3},{"count":2,"name":"baroque pop"},{"name":"chamber
+        folk","count":1},{"name":"pop","count":2},{"name":"pop rock","count":2},{"name":"progressive
+        pop","count":1},{"count":1,"name":"rock"}],"disambiguation":"","title":"Army
+        Dreamers","id":"dd5725e1-62dc-4ae4-b91b-db80660bc452"},"length":177000,"artist-credit":[{"artist":{"type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush","sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"name":"Kate
+        Bush","joinphrase":""}],"title":"Army Dreamers","id":"73fc4337-b42a-4016-b1e9-f2431ef8bdff","position":10},{"artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"sort-name":"Bush, Kate","disambiguation":"","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush"}}],"id":"e0577ddd-d07b-4d37-ba1c-64cf23dfa757","position":11,"title":"Breathing","length":322000,"recording":{"length":329800,"video":false,"first-release-date":"1980-04-18","title":"Breathing","disambiguation":"","id":"4a04206f-0ef6-4080-b055-ddd305536450","artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","disambiguation":"","type":"Person","name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396"}}],"tags":[{"name":"alternative
+        rock","count":1},{"name":"alternative/indie rock","count":1},{"name":"art
+        pop","count":2},{"count":2,"name":"baroque pop"},{"name":"pop","count":2},{"name":"pop
+        rock","count":2},{"count":2,"name":"progressive pop"},{"count":1,"name":"rock"}]},"number":"B6"}],"title":"","position":1,"track-count":11,"format-id":"3e9080b0-5e6c-34ab-bd15-f526b6306a64"}],"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","artist-credit":[{"joinphrase":"","name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"name":"pop","count":5},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"disambiguation":"","sort-name":"Bush,
+        Kate","name":"Kate Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person"}}],"id":"bee184b6-493b-46bc-a3a1-31e434367c4a","label-info":[{"catalog-number":"STAO
+        6476","label":{"sort-name":"Harvest","label-code":1305,"type-id":"7aaa37fe-2def-3476-b359-80245850062d","tags":[],"disambiguation":"UK
+        based sub-label of EMI, re-activated in 2013 under Capitol Music Group in
+        Hollywood, CA","type":"Original Production","name":"Harvest","id":"993af7f6-bb99-456b-83e7-5e728ea80a0e"}},{"catalog-number":"STAO-6476","label":{"sort-name":"Harvest","label-code":1305,"type-id":"7aaa37fe-2def-3476-b359-80245850062d","tags":[],"disambiguation":"UK
+        based sub-label of EMI, re-activated in 2013 under Capitol Music Group in
+        Hollywood, CA","type":"Original Production","name":"Harvest","id":"993af7f6-bb99-456b-83e7-5e728ea80a0e"}}],"title":"Never
+        for Ever"}'
+  recorded_at: Tue, 02 May 2023 10:18:43 GMT
+recorded_with: VCR 6.1.0

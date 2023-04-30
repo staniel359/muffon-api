@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/playlists/249480404
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Authorization:
+      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.soundcloud.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '29497'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 02 May 2023 09:10:18 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 7135e74802b850169bf88eb66663d5a6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P3
+      X-Amz-Cf-Id:
+      - cJtJABP7pcbZFWltLkEuLm4eqgSqMDgvfqrm9QQ5aKGt6sO7QvGbPQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"duration":2556735,"genre":"Pop","release_day":1,"permalink":"gemini-16","permalink_url":"https://soundcloud.com/wildnothing/sets/gemini-16","release_month":1,"release_year":2010,"description":null,"uri":"https://api.soundcloud.com/playlists/249480404","label_name":null,"label_id":null,"label":null,"tag_list":"","track_count":12,"user_id":3820545,"last_modified":"2018/02/18
+        21:29:51 +0000","license":"all-rights-reserved","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"playlist_type":"album","type":"album","id":249480404,"downloadable":null,"likes_count":194,"sharing":"public","created_at":"2016/08/11
+        18:51:07 +0000","release":null,"tags":"","kind":"playlist","title":"Gemini","purchase_title":null,"ean":null,"streamable":true,"embeddable_by":"all","artwork_url":"https://i1.sndcdn.com/artworks-15f325d5-dcac-4cd3-846a-729ef85538ba-0-large.jpg","purchase_url":null,"tracks_uri":"https://api.soundcloud.com/playlists/249480404/tracks","tracks":[{"kind":"track","id":275266309,"created_at":"2016/07/25
+        12:39:56 +0000","duration":30000,"commentable":true,"comment_count":8,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Live in Dreams","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010070","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275266309","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/live-in-dreams","artwork_url":"https://i1.sndcdn.com/artworks-nP7jExjDPgyN-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275266309/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/IK37AqzmfZQO_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":21756,"download_count":0,"favoritings_count":414,"reposts_count":7,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275266204,"created_at":"2016/07/25
+        12:39:28 +0000","duration":30000,"commentable":true,"comment_count":0,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Summer Holiday","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010071","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275266204","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/summer-holiday","artwork_url":"https://i1.sndcdn.com/artworks-ymJP5znXpZrq-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275266204/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/vrX44lcKuRoL_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":6470,"download_count":0,"favoritings_count":106,"reposts_count":7,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264050,"created_at":"2016/07/25
+        12:30:03 +0000","duration":30000,"commentable":true,"comment_count":1,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Drifter","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010072","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264050","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/drifter","artwork_url":"https://i1.sndcdn.com/artworks-7HjBLpGyprTE-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264050/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/3abOcPDwuuN3_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":3938,"download_count":0,"favoritings_count":71,"reposts_count":4,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264694,"created_at":"2016/07/25
+        12:32:52 +0000","duration":30000,"commentable":true,"comment_count":0,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Pessimist","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010073","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264694","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/pessimist","artwork_url":"https://i1.sndcdn.com/artworks-WeXKpiussyJD-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264694/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/GzgWLLTab5GQ_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":4448,"download_count":0,"favoritings_count":70,"reposts_count":8,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264487,"created_at":"2016/07/25
+        12:32:01 +0000","duration":30000,"commentable":true,"comment_count":0,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"O Lilac","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010074","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264487","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/o-lilac","artwork_url":"https://i1.sndcdn.com/artworks-moaSDhBxxyp3-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264487/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/1KynDbjl6pBb_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":2507,"download_count":0,"favoritings_count":49,"reposts_count":4,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264814,"created_at":"2016/07/25
+        12:33:24 +0000","duration":30000,"commentable":true,"comment_count":2,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Bored Games","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010075","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264814","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/bored-games","artwork_url":"https://i1.sndcdn.com/artworks-UvcMMNLMsmUU-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264814/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/jSeYAx3XozgE_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":3665,"download_count":0,"favoritings_count":69,"reposts_count":6,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264128,"created_at":"2016/07/25
+        12:30:26 +0000","duration":30000,"commentable":true,"comment_count":0,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Confirmation","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010076","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264128","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/confirmation","artwork_url":"https://i1.sndcdn.com/artworks-xWeV8VTkBjIJ-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264128/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/eP9QzHgbZXPd_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":2989,"download_count":0,"favoritings_count":62,"reposts_count":2,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264606,"created_at":"2016/07/25
+        12:32:29 +0000","duration":30000,"commentable":true,"comment_count":1,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"My Angel Lonely","description":null,"label_name":"Captured
+        Tracks","release":null,"key_signature":null,"isrc":"US8YA1010077","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264606","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/my-angel-lonely","artwork_url":"https://i1.sndcdn.com/artworks-hlZzQHTf1nbk-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264606/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/hPO1WiAzUjyQ_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":3022,"download_count":0,"favoritings_count":51,"reposts_count":3,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275265042,"created_at":"2016/07/25
+        12:34:20 +0000","duration":30000,"commentable":true,"comment_count":1,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"The Witching Hour","description":null,"label_name":"Captured
+        Tracks","release":null,"key_signature":null,"isrc":"US8YA1010078","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275265042","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/the-witching-hour","artwork_url":"https://i1.sndcdn.com/artworks-O9zZV71X0yWO-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275265042/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/7ba3O7SSMVxt_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":3996,"download_count":0,"favoritings_count":60,"reposts_count":1,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264872,"created_at":"2016/07/25
+        12:33:35 +0000","duration":30000,"commentable":true,"comment_count":4,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Chinatown","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010079","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264872","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/chinatown-1","artwork_url":"https://i1.sndcdn.com/artworks-hNZNTb4ftE9F-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264872/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/t5Mbo8D6LVx8_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":17463,"download_count":0,"favoritings_count":248,"reposts_count":10,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275264355,"created_at":"2016/07/25
+        12:31:27 +0000","duration":30000,"commentable":true,"comment_count":4,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Our Composition Book","description":null,"label_name":"Captured
+        Tracks","release":null,"key_signature":null,"isrc":"US8YA1010080","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275264355","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/our-composition-book","artwork_url":"https://i1.sndcdn.com/artworks-MAeuWa7SM176-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275264355/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/9kjJC3WSTvAv_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":4703,"download_count":0,"favoritings_count":72,"reposts_count":2,"downloadable":false,"access":"preview","policy":null,"monetization_model":null},{"kind":"track","id":275265225,"created_at":"2016/07/25
+        12:35:10 +0000","duration":30000,"commentable":true,"comment_count":4,"sharing":"public","tag_list":"
+        ","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"Alternative
+        Rock","title":"Gemini","description":null,"label_name":"Captured Tracks","release":null,"key_signature":null,"isrc":"US8YA1010081","bpm":null,"release_year":2010,"release_month":5,"release_day":25,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/275265225","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","id":3820545,"kind":"user","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","username":"Wild_Nothing","permalink":"wildnothing","created_at":"2011/03/24
+        14:41:58 +0000","last_modified":"2020/11/19 16:12:41 +0000","first_name":"WIld
+        Nothing","last_name":"","full_name":"WIld Nothing","city":"New York","description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","country":"United
+        States","track_count":111,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":"wildnothing","discogs_name":null,"website_title":"Store","website":"http://wildnothingmusic.com","comments_count":0,"online":false,"likes_count":0,"playlist_count":15,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/wildnothing/gemini","artwork_url":"https://i1.sndcdn.com/artworks-3A2HkXQ3luOo-0-large.jpg","stream_url":"https://api.soundcloud.com/tracks/275265225/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/qM0cuDni8xTP_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":13594,"download_count":0,"favoritings_count":226,"reposts_count":12,"downloadable":false,"access":"preview","policy":null,"monetization_model":null}]}'
+  recorded_at: Tue, 02 May 2023 09:10:18 GMT
+recorded_with: VCR 6.1.0

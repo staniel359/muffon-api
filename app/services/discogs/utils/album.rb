@@ -1,6 +1,11 @@
 module Discogs
   module Utils
     module Album
+      MODELS = {
+        album: 'release',
+        group: 'master'
+      }.freeze
+
       include Muffon::Utils::Album
 
       private
@@ -17,7 +22,8 @@ module Discogs
         {
           name: source_name,
           id: discogs_id,
-          model: discogs_model
+          model: discogs_model,
+          links: source_links
         }
       end
 
@@ -27,6 +33,16 @@ module Discogs
 
       def discogs_model
         'album'
+      end
+
+      def original_link
+        "https://www.discogs.com/#{model_formatted}/#{discogs_id}"
+      end
+
+      def model_formatted
+        MODELS[
+          discogs_model.to_sym
+        ]
       end
 
       def image_data

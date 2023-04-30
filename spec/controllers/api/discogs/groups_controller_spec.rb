@@ -70,4 +70,22 @@ RSpec.describe API::Discogs::GroupsController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :links' do
+    it 'returns 200 if group_id present' do
+      VCR.use_cassette 'controllers/api/discogs/groups/links/success' do
+        get :links, params: { group_id: '28680' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 404 if wrong group_id' do
+      VCR.use_cassette 'controllers/api/discogs/groups/links/wrong_id' do
+        get :links, params: { group_id: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

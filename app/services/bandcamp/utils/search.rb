@@ -16,8 +16,9 @@ module Bandcamp
           name: source_name,
           id: bandcamp_id,
           artist_id: artist_bandcamp_id,
-          model: model_name
-        }.compact
+          model: model_name,
+          links: source_links
+        }.compact_blank
       end
 
       def bandcamp_id
@@ -28,6 +29,17 @@ module Bandcamp
         return if model_name == 'artist'
 
         model['band_id']
+      end
+
+      def original_link
+        model['item_url_path']
+      end
+
+      def streaming_link
+        streaming_link_formatted(
+          model_name,
+          bandcamp_id
+        )
       end
 
       def artist_data

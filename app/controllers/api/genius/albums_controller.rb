@@ -5,6 +5,8 @@ module API
 
       def description; end
 
+      def links; end
+
       private
 
       def info_data
@@ -17,6 +19,14 @@ module API
 
       def description_data
         ::Genius::Album::Description.call(
+          params.slice(
+            *%i[album_id]
+          )
+        )
+      end
+
+      def links_data
+        ::Genius::Album::Links.call(
           params.slice(
             *%i[album_id]
           )

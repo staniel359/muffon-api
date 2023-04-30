@@ -307,6 +307,7 @@ Rails.application.routes.draw do
               get '', action: :info
               get 'description'
               get 'tags'
+              get 'links'
             end
           end
 
@@ -315,6 +316,7 @@ Rails.application.routes.draw do
               get '', action: :info
               get 'description'
               get 'tags'
+              get 'links'
             end
           end
         end
@@ -346,12 +348,14 @@ Rails.application.routes.draw do
       namespace :albums, as: :album do
         scope ':album_id' do
           get '', action: :info
+          get 'links'
         end
       end
 
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'links'
         end
       end
     end
@@ -386,6 +390,7 @@ Rails.application.routes.draw do
           get 'description'
           get 'tags'
           get 'albums'
+          get 'links'
         end
       end
 
@@ -394,6 +399,7 @@ Rails.application.routes.draw do
           get '', action: :info
           get 'description'
           get 'tags'
+          get 'links'
         end
       end
     end
@@ -417,6 +423,7 @@ Rails.application.routes.draw do
         scope ':album_id' do
           get '', action: :info
           get 'description'
+          get 'links'
         end
       end
 
@@ -426,6 +433,7 @@ Rails.application.routes.draw do
           get 'description'
           get 'tags'
           get 'lyrics'
+          get 'links'
         end
       end
 
@@ -459,6 +467,7 @@ Rails.application.routes.draw do
           get 'description'
           get 'tags'
           get 'albums'
+          get 'links'
         end
       end
 
@@ -466,6 +475,7 @@ Rails.application.routes.draw do
         scope ':album_id' do
           get '', action: :info
           get 'tags'
+          get 'links'
         end
       end
 
@@ -473,6 +483,7 @@ Rails.application.routes.draw do
         scope ':track_id' do
           get '', action: :info
           get 'tags'
+          get 'links'
         end
       end
     end
@@ -492,6 +503,7 @@ Rails.application.routes.draw do
           get 'tracks'
           get 'listeners_count'
           get 'profiles'
+          get 'links'
 
           namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
             scope ':album' do
@@ -500,6 +512,7 @@ Rails.application.routes.draw do
               get 'tags'
               get 'listeners_count'
               get 'profiles'
+              get 'links'
             end
           end
 
@@ -510,6 +523,7 @@ Rails.application.routes.draw do
               get 'tags'
               get 'similar'
               get 'profiles'
+              get 'links'
             end
           end
         end
@@ -586,12 +600,14 @@ Rails.application.routes.draw do
         scope ':album_id' do
           get '', action: :info
           get 'tags'
+          get 'links'
         end
       end
 
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'links'
         end
       end
     end
@@ -616,12 +632,14 @@ Rails.application.routes.draw do
           get '', action: :info
           get 'description'
           get 'tags'
+          get 'links'
         end
       end
 
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'links'
         end
       end
     end
@@ -644,12 +662,14 @@ Rails.application.routes.draw do
       namespace :albums, as: :album do
         scope ':album_id' do
           get '', action: :info
+          get 'links'
         end
       end
 
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'links'
         end
       end
     end
@@ -666,12 +686,14 @@ Rails.application.routes.draw do
       namespace :albums, as: :album do
         scope ':album_id' do
           get '', action: :info
+          get 'links'
         end
       end
 
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'links'
         end
       end
 
@@ -701,12 +723,14 @@ Rails.application.routes.draw do
         scope ':album_id' do
           get '', action: :info
           get 'tags'
+          get 'links'
         end
       end
 
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'links'
         end
       end
     end
@@ -726,6 +750,7 @@ Rails.application.routes.draw do
           get 'description'
           get 'videos'
           get 'playlists'
+          get 'links'
         end
       end
 
@@ -735,6 +760,7 @@ Rails.application.routes.draw do
           get 'description'
           get 'tags'
           get 'related'
+          get 'links'
         end
       end
 
@@ -743,6 +769,7 @@ Rails.application.routes.draw do
           get '', action: :info
           get 'description'
           get 'videos'
+          get 'links'
         end
       end
     end

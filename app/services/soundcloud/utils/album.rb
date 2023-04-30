@@ -20,8 +20,24 @@ module SoundCloud
       def source_data
         {
           name: source_name,
-          id: album['id']
+          id: soundcloud_id,
+          links: source_links
         }
+      end
+
+      def soundcloud_id
+        album['id']
+      end
+
+      def original_link
+        album['permalink_url']
+      end
+
+      def streaming_link
+        streaming_link_formatted(
+          'album',
+          soundcloud_id
+        )
       end
 
       def image_data

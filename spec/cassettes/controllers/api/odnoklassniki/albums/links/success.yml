@@ -1,0 +1,652 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://wmf.ok.ru/album;jsessionid=<ODNOKLASSNIKI_TEST_SESSION_ID>?albumId=122892151976711&imgfmt=base
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - wmf.ok.ru
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - Apache
+      Date:
+      - Tue, 02 May 2023 10:24:28 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-store
+      Vary:
+      - accept-encoding
+      Content-Language:
+      - en-US
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "albums" : [ {
+            "id" : 122892149965596,
+            "name" : "Indigo",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+            "playlistId" : 15036976551,
+            "tracksCount" : 11,
+            "legal" : 1,
+            "year" : 2018,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122892150768608,
+            "name" : "Canyon on Fire",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvIrXqy7lb7IRFW30uvlVQgCFg2XlD0A3VMQJzdNizOfI",
+            "playlistId" : 15036976767,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2018,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122892150834160,
+            "name" : "Laughing Gas",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvrr-eq689RiytcWVfLGhause5H1Mhi4u-5pLSfhlXNwA",
+            "playlistId" : 15036976887,
+            "tracksCount" : 5,
+            "legal" : 1,
+            "year" : 2020,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122892150825966,
+            "name" : "Partners in Motion (Live from Brooklyn Steel)",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvClV10tWhsTQKSHsZrnyko_mRi8tjfuuE7-pz02Jy_OI",
+            "playlistId" : 15036976864,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2019,
+            "genres" : [ {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122892151866348,
+            "name" : "Cloudbusting",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f4V_cNCAsT1BnUcn_oC2N6A",
+            "playlistId" : 15036977048,
+            "tracksCount" : 2,
+            "legal" : 1,
+            "year" : 2010,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122892150764511,
+            "name" : "Shallow Water",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4QlCe3uDsO32cr-vpyvNPbw",
+            "playlistId" : 15036976746,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2018,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122892151907318,
+            "name" : "Blue Wings",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv22BF5aV8mCcUuFodBhcFZtfpL4m6YlAeVI495EfzI3g",
+            "playlistId" : 15036977069,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2019,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122892151915512,
+            "name" : "Nowhere",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNw_EYQy4Bn4BfkTn1JEY09cQ",
+            "playlistId" : 15036977103,
+            "tracksCount" : 2,
+            "legal" : 1,
+            "year" : 2012,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122892148826886,
+            "name" : "Live from Brooklyn Steel",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvClV10tWhsTQKSHsZrnyko_mRi8tjfuuE7-pz02Jy_OI",
+            "playlistId" : 15036976180,
+            "tracksCount" : 18,
+            "legal" : 1,
+            "year" : 2019,
+            "genres" : [ {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122892149478309,
+            "name" : "Gemini",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f1a1sEfjGT_U641cbft2low",
+            "playlistId" : 15036976355,
+            "tracksCount" : 12,
+            "legal" : 1,
+            "year" : 2010,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122910773941073,
+            "name" : "Shadow",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvwROH0XkPVyONi82TgGYNyabc_pL2_uQ5_4VbAl097bw",
+            "playlistId" : 15043487643,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2012,
+            "genres" : [ {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122892150756317,
+            "name" : "Partners in Motion",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv7zVdho3s329T_J4-IV8Yr7kT0aQFLBL5zQFdEn13WiY",
+            "playlistId" : 15036976722,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2018,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122892149400466,
+            "name" : "Foyer",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvrr-eq689RiytcWVfLGhause5H1Mhi4u-5pLSfhlXNwA",
+            "playlistId" : 15036976311,
+            "tracksCount" : 2,
+            "legal" : 1,
+            "year" : 2020,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          }, {
+            "id" : 122892150821869,
+            "name" : "Letting Go",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvFIFM9aSH0EehKvuVRC1xt1DehhM5ZtPQixLhWJyx9hA",
+            "playlistId" : 15036976828,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2018,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            }, {
+              "id" : 138,
+              "label" : "Indie"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          }, {
+            "id" : 122884964332379,
+            "name" : "CT5 Sampler:  Five Years of Captured Tracks",
+            "ensemble" : "Various Artists, Soft Metals, Alex Calder, Mac Demarco, Wild Nothing, DIIV, Minks, Chris Cohen, Heavenly Beat, The Soft Moon, Wi...",
+            "masterArtistId" : -271601135,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f3C6IVkLHvgugO9hzGfcMzI",
+            "playlistId" : 15034684745,
+            "tracksCount" : 12,
+            "legal" : 1,
+            "year" : 2013,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : -639901847,
+              "name" : "Various Artists"
+            }, {
+              "id" : 122883275211388,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f7mml0ZkdDvJmZlExwynxo8",
+              "name" : "Soft Metals"
+            }, {
+              "id" : 122894515970690,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f3C6IVkLHvgugO9hzGfcMzI",
+              "name" : "Alex Calder"
+            }, {
+              "id" : 122883081187955,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvVHvxFeWd8sZ7MTqL2j4WPezzP0IlFrzdYLmRmrbPpV0",
+              "name" : "Mac DeMarco"
+            }, {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            }, {
+              "id" : 122884037726893,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f6h8XgDTAvJ7DYgyZZed0ww",
+              "name" : "DIIV"
+            }, {
+              "id" : 122883267863162,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzwLTvhKaacMwf2ioV52ka0",
+              "name" : "Minks"
+            }, {
+              "id" : 122884255769246,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqviKDy2kN-hM4LX5G8q7tZUHKWhJZPCNimOON66ogT0lk",
+              "name" : "Chris Cohen"
+            }, {
+              "id" : 122884265538287,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f5cgWWd3b-r07ckqa4cvZIg",
+              "name" : "Heavenly Beat"
+            }, {
+              "id" : 122883274203782,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f2UpHyKPclDYbd8tPzyZRe0",
+              "name" : "The Soft Moon"
+            }, {
+              "id" : 122884033995294,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9fwi8mdNTA33ifqG2ArS01PI",
+              "name" : "Widowspeak"
+            }, {
+              "id" : 122884034843373,
+              "imageUrl" : "https://i.mycdn.me/i?r=AEHmMRnK-YkKnVHYtPjhS9W7Yvrw9CrauManNH8dYH-zFxy8Pl1KM9IymGpOmjwF7mQF_XhNpHyeyilauGQWjLbU",
+              "name" : "Beach Fossils"
+            }, {
+              "id" : 122883367760575,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f5HQ_Ir3W1BPD0unSHv0rA8",
+              "name" : "Blouse"
+            } ]
+          }, {
+            "id" : 122892150772705,
+            "name" : "Gruesome Flowers: A Tribute to the Wake",
+            "ensemble" : "Beach Fossils & Wild Nothing",
+            "masterArtistId" : -238519833,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv2bN5cVG8g2_xOdO3cDz9f8xKQK5IQEuHG0k5O9s_tag",
+            "playlistId" : 15036976791,
+            "tracksCount" : 2,
+            "legal" : 1,
+            "year" : 2011,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            }, {
+              "id" : 122884034843373,
+              "imageUrl" : "https://i.mycdn.me/i?r=AEHmMRnK-YkKnVHYtPjhS9W7Yvrw9CrauManNH8dYH-zFxy8Pl1KM9IymGpOmjwF7mQF_XhNpHyeyilauGQWjLbU",
+              "name" : "Beach Fossils"
+            } ]
+          }, {
+            "id" : 122909827425190,
+            "name" : "Emotion feat. Wild Nothing",
+            "ensemble" : "Molly Burch, Wild Nothing",
+            "masterArtistId" : -1417092794,
+            "image" : "https://i.mycdn.me/i?r=AEHmMRnK-YkKnVHYtPjhS9W7fiIDlkDVcmziOJBNxnVW0l-q-jtCeOKxCF0V3P92gQwF_XhNpHyeyilauGQWjLbU",
+            "playlistId" : 15043166930,
+            "tracksCount" : 1,
+            "legal" : 1,
+            "year" : 2021,
+            "genres" : [ {
+              "id" : 1,
+              "label" : "Pop"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122884188652188,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv_ngbTCso1fj7KfQ8_dU_0Unnus5d39mu7zflWJXFcLg",
+              "name" : "Molly Burch"
+            }, {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "single" : 1
+          } ],
+          "artists" : [ {
+            "id" : 122883968135759,
+            "name" : "Wild Nothing"
+          } ],
+          "album" : {
+            "id" : 122892151976711,
+            "name" : "Golden Haze",
+            "ensemble" : "Wild Nothing",
+            "masterArtistId" : 122883968135759,
+            "image" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "playlistId" : 15036977126,
+            "tracksCount" : 6,
+            "legal" : 1,
+            "year" : 2010,
+            "genres" : [ {
+              "id" : 2,
+              "label" : "Rock"
+            }, {
+              "id" : 21,
+              "label" : "Alternative"
+            } ],
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ]
+          },
+          "tracks" : [ {
+            "id" : 123005891261507,
+            "ensemble" : "Wild Nothing",
+            "duration" : 205,
+            "idForDownload" : 123094829515108,
+            "copyrightOwnerId" : 67,
+            "copyrightOwnerName" : "Merlin",
+            "releaseId" : 39216585,
+            "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "masterArtistId" : 122883968135759,
+            "albumId" : 122892151976711,
+            "name" : "Golden Haze",
+            "isDownloadAllowed" : true,
+            "giftPrice" : 10,
+            "ctx" : "album:122892151976711|1",
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "editRestricted" : true
+          }, {
+            "id" : 123005891380320,
+            "ensemble" : "Wild Nothing",
+            "duration" : 159,
+            "idForDownload" : 123094829273385,
+            "copyrightOwnerId" : 67,
+            "copyrightOwnerName" : "Merlin",
+            "releaseId" : 39216588,
+            "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "masterArtistId" : 122883968135759,
+            "albumId" : 122892151976711,
+            "name" : "Quiet Hours",
+            "isDownloadAllowed" : true,
+            "giftPrice" : 10,
+            "ctx" : "album:122892151976711|2",
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "editRestricted" : true
+          }, {
+            "id" : 123005891417193,
+            "ensemble" : "Wild Nothing",
+            "duration" : 206,
+            "idForDownload" : 123094829310258,
+            "copyrightOwnerId" : 67,
+            "copyrightOwnerName" : "Merlin",
+            "releaseId" : 39216592,
+            "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "masterArtistId" : 122883968135759,
+            "albumId" : 122892151976711,
+            "name" : "Take Me In",
+            "isDownloadAllowed" : true,
+            "giftPrice" : 10,
+            "ctx" : "album:122892151976711|3",
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "editRestricted" : true
+          }, {
+            "id" : 123005891790020,
+            "ensemble" : "Wild Nothing",
+            "duration" : 308,
+            "idForDownload" : 123094829068791,
+            "copyrightOwnerId" : 67,
+            "copyrightOwnerName" : "Merlin",
+            "releaseId" : 39216594,
+            "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "masterArtistId" : 122883968135759,
+            "albumId" : 122892151976711,
+            "name" : "Your Rabbit Feet",
+            "isDownloadAllowed" : true,
+            "giftPrice" : 10,
+            "ctx" : "album:122892151976711|4",
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "editRestricted" : true
+          }, {
+            "id" : 123005891925221,
+            "ensemble" : "Wild Nothing",
+            "duration" : 131,
+            "idForDownload" : 123094829113602,
+            "copyrightOwnerId" : 67,
+            "copyrightOwnerName" : "Merlin",
+            "releaseId" : 39216595,
+            "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "masterArtistId" : 122883968135759,
+            "albumId" : 122892151976711,
+            "name" : "Asleep",
+            "isDownloadAllowed" : true,
+            "giftPrice" : 10,
+            "ctx" : "album:122892151976711|5",
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "editRestricted" : true
+          }, {
+            "id" : 123005891990773,
+            "ensemble" : "Wild Nothing",
+            "duration" : 184,
+            "idForDownload" : 123094828798389,
+            "copyrightOwnerId" : 67,
+            "copyrightOwnerName" : "Merlin",
+            "releaseId" : 39216597,
+            "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqv05Jak8jO8oJzFMWa_sqNwzzELxtCkktIHZTDAUFtDYk",
+            "masterArtistId" : 122883968135759,
+            "albumId" : 122892151976711,
+            "name" : "Vultures Like Lovers",
+            "isDownloadAllowed" : true,
+            "giftPrice" : 10,
+            "ctx" : "album:122892151976711|6",
+            "allArtists" : [ {
+              "id" : 122883968135759,
+              "imageUrl" : "https://i.mycdn.me/i?r=ADEpfJ3IzjOIppVyQd5qHrqvTwKGYZZ4JlQgHdMdOjyy4fL3xpBf2sNXN7T2YdapBdE",
+              "name" : "Wild Nothing"
+            } ],
+            "editRestricted" : true
+          } ]
+        }
+  recorded_at: Tue, 02 May 2023 10:24:28 GMT
+recorded_with: VCR 6.1.0

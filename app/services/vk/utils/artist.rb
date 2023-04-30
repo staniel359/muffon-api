@@ -12,8 +12,17 @@ module VK
       def source_data
         {
           name: source_name,
-          id: artist['id']
+          id: vk_id,
+          links: source_links
         }
+      end
+
+      def vk_id
+        artist['id']
+      end
+
+      def original_link
+        "https://vk.com/artist/#{vk_id}"
       end
 
       def image_data

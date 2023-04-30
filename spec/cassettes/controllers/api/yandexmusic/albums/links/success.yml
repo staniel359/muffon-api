@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.music.yandex.net/albums/288149/with-tracks?language=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.music.yandex.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 02 May 2023 10:36:00 GMT
+      Set-Cookie:
+      - _yasc=uJXpysoNG+kx8MVvX8LUTRVEZf/5uj6wHA2TxGtQeAItoTc8djMwNgutH37i; domain=.yandex.net;
+        path=/; expires=Fri, 29-Apr-2033 10:36:00 GMT; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1683023760895506-7071349254687863672
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Yandex-Music-Application:
+      - music-web
+      X-Yandex-Music-Execution-Duration:
+      - '5'
+      X-Yandex-Music-Hostname:
+      - music-stable-back-sas-81.sas.yp-c.yandex.net
+    body:
+      encoding: ASCII-8BIT
+      string: '{"invocationInfo":{"hostname":"music-stable-back-sas-81.sas.yp-c.yandex.net","req-id":"1683023760895506-7071349254687863672","exec-duration-millis":"4"},"result":{"id":288149,"error":"not-found","customWave":{"title":"Hounds
+        Of Love","animationUrl":"https://music-custom-wave-media.s3.yandex.net/base.json"},"sortOrder":"asc","volumes":[],"pager":{"total":0,"page":0,"perPage":0}}}'
+  recorded_at: Tue, 02 May 2023 10:36:00 GMT
+recorded_with: VCR 6.1.0

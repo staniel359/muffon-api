@@ -8,6 +8,8 @@ module API
 
         def tags; end
 
+        def links; end
+
         private
 
         def info_data
@@ -28,6 +30,14 @@ module API
 
         def tags_data
           ::Bandcamp::Track::Tags.call(
+            params.slice(
+              *%i[artist_id track_id]
+            )
+          )
+        end
+
+        def links_data
+          ::Bandcamp::Track::Links.call(
             params.slice(
               *%i[artist_id track_id]
             )

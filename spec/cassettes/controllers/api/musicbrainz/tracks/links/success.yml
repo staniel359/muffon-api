@@ -1,0 +1,269 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/recording/6029d549-5858-4936-9156-b90770d2ae92?fmt=json&inc=artist-credits%2Btags%2Breleases
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - musicbrainz.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2023 10:18:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1105'
+      X-Ratelimit-Reset:
+      - '1683022726'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"792a4717e9cb8ac78e93f41980a22a4b"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Cache-Status:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"length":300000,"releases":[{"status":"Promotion","release-events":[{"area":{"disambiguation":"","iso-3166-1-codes":["FR"],"name":"France","sort-name":"France","type-id":null,"id":"08310658-51eb-3801-80de-5a0739207115","type":null},"date":"1985-07-30"}],"title":"Hounds
+        of Love","quality":"normal","status-id":"518ffc83-5cde-34df-8627-81bff5093d92","packaging":"Cardboard/Paper
+        Sleeve","disambiguation":"","date":"1985-07-30","artist-credit":[{"joinphrase":"","artist":{"tags":[{"count":1,"name":"alternative"},{"count":1,"name":"alternative
+        rock"},{"count":2,"name":"ambient pop"},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"count":1,"name":"british"},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"count":3,"name":"rock"},{"count":1,"name":"singer-songwriter"}],"name":"Kate
+        Bush","disambiguation":"","type":"Person","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396"},"name":"Kate Bush"}],"id":"352cac7d-a33f-4878-8ecb-960bcd9cf125","country":"FR","text-representation":{"language":"eng","script":"Latn"},"tags":[],"barcode":"","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f"},{"date":"1985-08-05","disambiguation":"","packaging":"Cardboard/Paper
+        Sleeve","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Running
+        Up That Hill","quality":"normal","release-events":[{"area":{"name":"United
+        Kingdom","iso-3166-1-codes":["GB"],"disambiguation":"","type":null,"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","type-id":null,"sort-name":"United
+        Kingdom"},"date":"1985-08-05"}],"status":"Official","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","barcode":"","text-representation":{"language":"eng","script":"Latn"},"tags":[],"country":"GB","id":"989aab5c-d5bf-45d8-a867-6e30ecc35ad4","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"disambiguation":"","name":"Kate Bush","tags":[{"count":1,"name":"alternative"},{"count":1,"name":"alternative
+        rock"},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"count":1,"name":"new wave"},{"name":"pop","count":5},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","type":"Person"}}]},{"barcode":"5099924038416","packaging-id":null,"country":"GB","text-representation":{"language":"eng","script":"Latn"},"tags":[],"id":"8fe61e63-bb4a-4960-9a10-7516f63f404b","artist-credit":[{"joinphrase":"","artist":{"type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","name":"Kate Bush","tags":[{"count":1,"name":"alternative"},{"count":1,"name":"alternative
+        rock"},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"count":5,"name":"art
+        rock"},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"count":1,"name":"singer-songwriter"}],"disambiguation":""},"name":"Kate
+        Bush"}],"packaging":null,"disambiguation":"","date":"1985-09-16","status-id":"518ffc83-5cde-34df-8627-81bff5093d92","status":"Promotion","release-events":[{"area":{"sort-name":"United
+        Kingdom","type-id":null,"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","type":null,"disambiguation":"","iso-3166-1-codes":["GB"],"name":"United
+        Kingdom"},"date":"1985-09-16"}],"title":"Hounds of Love","quality":"normal"},{"country":"DE","text-representation":{"script":"Latn","language":"eng"},"tags":[],"packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"5099924038447","artist-credit":[{"artist":{"tags":[{"count":1,"name":"alternative"},{"count":1,"name":"alternative
+        rock"},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"count":5,"name":"art
+        rock"},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"name":"pop","count":5},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"count":1,"name":"singer-songwriter"}],"name":"Kate
+        Bush","disambiguation":"","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"joinphrase":"","name":"Kate
+        Bush"}],"id":"12113d83-5c94-4b5e-bf88-0df918fa354f","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","disambiguation":"","packaging":"Cassette
+        Case","date":"1985-09-16","release-events":[{"area":{"iso-3166-1-codes":["DE"],"disambiguation":"","name":"Germany","id":"85752fda-13c4-31a3-bee5-0e5cb1f51dad","type-id":null,"sort-name":"Germany","type":null},"date":"1985-09-16"}],"status":"Official","title":"Hounds
+        of Love","quality":"normal"},{"title":"Hounds of Love","quality":"normal","status":"Promotion","release-events":[{"area":{"type":null,"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","sort-name":"United
+        Kingdom","type-id":null,"name":"United Kingdom","iso-3166-1-codes":["GB"],"disambiguation":""},"date":"1985-09-16"}],"status-id":"518ffc83-5cde-34df-8627-81bff5093d92","date":"1985-09-16","packaging":"Cardboard/Paper
+        Sleeve","disambiguation":"","artist-credit":[{"name":"Kate Bush","joinphrase":"","artist":{"name":"Kate
+        Bush","tags":[{"count":1,"name":"alternative"},{"count":1,"name":"alternative
+        rock"},{"count":2,"name":"ambient pop"},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"count":1,"name":"british"},{"name":"crossover
+        prog","count":1},{"name":"indie rock","count":1},{"count":1,"name":"new wave"},{"count":5,"name":"pop"},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"count":1,"name":"singer-songwriter"}],"disambiguation":"","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate"}}],"id":"9ac94d69-440c-4925-ae51-a6c46fc4d4a3","text-representation":{"language":"eng","script":"Latn"},"tags":[],"country":"GB","barcode":"5099924038416","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f"},{"country":"GB","text-representation":{"language":"eng","script":"Latn"},"tags":[],"packaging-id":null,"barcode":"5099924038416","artist-credit":[{"artist":{"disambiguation":"","name":"Kate
+        Bush","tags":[{"name":"alternative","count":1},{"name":"alternative rock","count":1},{"count":2,"name":"ambient
+        pop"},{"count":5,"name":"art pop"},{"count":5,"name":"art rock"},{"count":1,"name":"baroque
+        pop"},{"count":1,"name":"british"},{"count":1,"name":"crossover prog"},{"name":"indie
+        rock","count":1},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","type":"Person"},"joinphrase":"","name":"Kate Bush"}],"id":"e08e294a-782e-4a08-88e3-9d6dfbeb50a8","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","disambiguation":"","packaging":null,"date":"1985-09-16","release-events":[{"date":"1985-09-16","area":{"iso-3166-1-codes":["GB"],"disambiguation":"","name":"United
+        Kingdom","id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","type-id":null,"sort-name":"United
+        Kingdom","type":null}}],"status":"Official","title":"Hounds of Love","quality":"normal"},{"id":"b6852c88-b338-4571-8cb0-524b67986d81","artist-credit":[{"artist":{"name":"Kate
+        Bush","tags":[{"count":1,"name":"alternative"},{"name":"alternative rock","count":1},{"name":"ambient
+        pop","count":2},{"name":"art pop","count":5},{"count":5,"name":"art rock"},{"name":"baroque
+        pop","count":1},{"name":"british","count":1},{"name":"crossover prog","count":1},{"count":1,"name":"indie
+        rock"},{"count":1,"name":"new wave"},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"disambiguation":"","type":"Person","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396"},"joinphrase":"","name":"Kate
+        Bush"}],"packaging-id":null,"barcode":"5099924038416","country":"IT","tags":[],"text-representation":{"language":"eng","script":"Latn"},"release-events":[{"area":{"type":null,"type-id":null,"sort-name":"Italy","id":"c6500277-9a3d-349b-bf30-41afdbf42add","name":"Italy","disambiguation":"","iso-3166-1-codes":["IT"]},"date":"1985-09-16"}],"status":"Official","quality":"normal","title":"Hounds
+        of Love","disambiguation":"","packaging":null,"date":"1985-09-16","status-id":"4e304316-386d-3409-af2e-78857eec5cfe"},{"country":"ES","tags":[],"text-representation":{"script":"Latn","language":"eng"},"packaging-id":null,"barcode":"","artist-credit":[{"name":"Kate
+        Bush","artist":{"sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","disambiguation":"","tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush"},"joinphrase":""}],"id":"7ade7299-b128-4b40-b9e5-06fa81f8df91","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","disambiguation":"","packaging":null,"date":"1985-09-16","release-events":[{"area":{"type-id":null,"sort-name":"Spain","id":"471c46a7-afc5-31c4-923c-d0444f5053a4","type":null,"disambiguation":"","iso-3166-1-codes":["ES"],"name":"Spain"},"date":"1985-09-16"}],"status":"Official","title":"Hounds
+        of Love","quality":"normal"},{"barcode":"","packaging-id":null,"text-representation":{"script":"Latn","language":"eng"},"tags":[],"country":"PT","id":"f237e25c-34aa-4722-869b-fcddd06f869f","artist-credit":[{"artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","disambiguation":"","tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush"},"joinphrase":"","name":"Kate Bush"}],"date":"1985-09-16","packaging":null,"disambiguation":"","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","title":"Hounds
+        of Love","quality":"normal","status":"Official","release-events":[{"area":{"iso-3166-1-codes":["PT"],"disambiguation":"","name":"Portugal","id":"781b0c54-3d54-362d-a941-8a617def4992","type-id":null,"sort-name":"Portugal","type":null},"date":"1985-09-16"}]},{"status":"Official","release-events":[{"date":"1985-09-16","area":{"type":null,"type-id":null,"sort-name":"Europe","id":"89a675c2-3e37-3518-b83c-418bad59a85a","name":"Europe","disambiguation":"","iso-3166-1-codes":["XE"]}}],"quality":"normal","title":"Hounds
+        of Love","packaging":null,"disambiguation":"","date":"1985-09-16","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","id":"3da68750-f7b7-45a2-9073-bcc542e1e3cd","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","disambiguation":"","tags":[{"name":"alternative","count":1},{"count":1,"name":"alternative
+        rock"},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"count":1,"name":"new wave"},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush"}}],"barcode":"5099924038416","packaging-id":null,"country":"XE","text-representation":{"script":"Latn","language":"eng"},"tags":[]},{"id":"509ecae8-3952-42ce-a777-8cac7ccceb1b","artist-credit":[{"joinphrase":"","artist":{"tags":[{"name":"alternative","count":1},{"count":1,"name":"alternative
+        rock"},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"count":1,"name":"new wave"},{"name":"pop","count":5},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush","disambiguation":"","type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df"},"name":"Kate Bush"}],"packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"","tags":[],"text-representation":{"script":"Latn","language":"eng"},"country":"FR","title":"Hounds
+        of Love","quality":"normal","release-events":[{"area":{"id":"08310658-51eb-3801-80de-5a0739207115","sort-name":"France","type-id":null,"type":null,"iso-3166-1-codes":["FR"],"disambiguation":"","name":"France"},"date":"1985-09-16"}],"status":"Official","date":"1985-09-16","disambiguation":"","packaging":"Cassette
+        Case","status-id":"4e304316-386d-3409-af2e-78857eec5cfe"},{"packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"5099924038447","country":"FR","text-representation":{"script":"Latn","language":"eng"},"tags":[],"id":"9bd74c5e-68a6-4d33-bd33-69228eb0b163","artist-credit":[{"artist":{"disambiguation":"","tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"count":2,"name":"ambient pop"},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"name":"pop
+        rock","count":1},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"count":1,"name":"singer-songwriter"}],"name":"Kate
+        Bush","sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person"},"joinphrase":"","name":"Kate
+        Bush"}],"disambiguation":"","packaging":"Cassette Case","date":"1985-09-16","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","release-events":[{"area":{"disambiguation":"","iso-3166-1-codes":["FR"],"name":"France","sort-name":"France","type-id":null,"id":"08310658-51eb-3801-80de-5a0739207115","type":null},"date":"1985-09-16"}],"status":"Official","quality":"normal","title":"Hounds
+        of Love"},{"quality":"normal","title":"Hounds of Love","release-events":[{"date":"1985-09-16","area":{"iso-3166-1-codes":["NL"],"disambiguation":"","name":"Netherlands","id":"ef1b7cc0-cd26-36f4-8ea0-04d9623786c7","sort-name":"Netherlands","type-id":null,"type":null}}],"status":"Official","date":"1985-09-16","disambiguation":"","packaging":"Cassette
+        Case","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","id":"ca8e3742-f89e-4831-91e8-50bf1cbd7847","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"type":"Person","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"count":1,"name":"new wave"},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush","disambiguation":""}}],"packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"5099924038447","text-representation":{"language":"eng","script":"Latn"},"tags":[],"country":"NL"},{"title":"Hounds
+        of Love","quality":"normal","release-events":[{"area":{"type-id":null,"sort-name":"Germany","id":"85752fda-13c4-31a3-bee5-0e5cb1f51dad","type":null,"disambiguation":"","iso-3166-1-codes":["DE"],"name":"Germany"},"date":"1985-09-16"}],"status":"Official","date":"1985-09-16","disambiguation":"","packaging":"Cassette
+        Case","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","id":"7485cf16-fd7a-4681-a162-ca992fc0d51b","artist-credit":[{"joinphrase":"","artist":{"tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"count":5,"name":"art
+        rock"},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"count":1,"name":"new wave"},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush","disambiguation":"","type":"Person","sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396"},"name":"Kate
+        Bush"}],"packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"5099924038447","text-representation":{"language":"eng","script":"Latn"},"tags":[],"country":"DE"},{"text-representation":{"script":"Latn","language":"eng"},"tags":[],"country":"XE","barcode":"5099924038447","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","artist-credit":[{"artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","disambiguation":"","tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"count":2,"name":"ambient pop"},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush"},"joinphrase":"","name":"Kate Bush"}],"id":"1729eb60-2d93-42da-a262-620d6e744c50","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1985-09-16","packaging":"Cassette
+        Case","disambiguation":"","quality":"normal","title":"Hounds of Love","status":"Official","release-events":[{"date":"1985-09-16","area":{"disambiguation":"","iso-3166-1-codes":["XE"],"name":"Europe","sort-name":"Europe","type-id":null,"id":"89a675c2-3e37-3518-b83c-418bad59a85a","type":null}}]},{"date":"1985-09-16","packaging":"Cassette
+        Case","disambiguation":"","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","quality":"normal","title":"Hounds
+        of Love","status":"Official","release-events":[{"area":{"type":null,"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","sort-name":"United
+        Kingdom","type-id":null,"name":"United Kingdom","iso-3166-1-codes":["GB"],"disambiguation":""},"date":"1985-09-16"}],"barcode":"5099924038447","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","text-representation":{"language":"eng","script":"Latn"},"tags":[],"country":"GB","id":"faad687f-bf8e-431c-990e-96bc4f8e1b7e","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","disambiguation":"","tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"name":"indie rock","count":1},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"name":"rock","count":3},{"count":1,"name":"singer-songwriter"}],"name":"Kate
+        Bush"}}]},{"status":"Official","release-events":[{"date":"1985-09-16","area":{"disambiguation":"","iso-3166-1-codes":["GB"],"name":"United
+        Kingdom","type-id":null,"sort-name":"United Kingdom","id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","type":null}}],"quality":"normal","title":"Hounds
+        of Love","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging":"Cassette
+        Case","disambiguation":"","date":"1985-09-16","artist-credit":[{"artist":{"tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"count":1,"name":"british"},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush","disambiguation":"","type":"Person","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396"},"joinphrase":"","name":"Kate
+        Bush"}],"id":"53518f08-772d-46bc-922b-e3d0d8acc633","country":"GB","tags":[],"text-representation":{"language":"eng","script":"Latn"},"barcode":"5099924038447","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906"},{"text-representation":{"language":"eng","script":"Latn"},"tags":[],"country":"GB","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"5099924038447","artist-credit":[{"name":"Kate
+        Bush","artist":{"type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","disambiguation":"","name":"Kate
+        Bush","tags":[{"name":"alternative","count":1},{"name":"alternative rock","count":1},{"name":"ambient
+        pop","count":2},{"name":"art pop","count":5},{"name":"art rock","count":5},{"count":1,"name":"baroque
+        pop"},{"name":"british","count":1},{"count":1,"name":"crossover prog"},{"name":"indie
+        rock","count":1},{"name":"new wave","count":1},{"name":"pop","count":5},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}]},"joinphrase":""}],"id":"f8f6c862-b69e-4391-b6ee-3377ca50bd76","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1985-09-16","disambiguation":"","packaging":"Cassette
+        Case","title":"Hounds of Love","quality":"normal","release-events":[{"area":{"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","sort-name":"United
+        Kingdom","type-id":null,"type":null,"iso-3166-1-codes":["GB"],"disambiguation":"","name":"United
+        Kingdom"},"date":"1985-09-16"}],"status":"Official"},{"release-events":[{"date":"1985-09-16","area":{"type":null,"sort-name":"Spain","type-id":null,"id":"471c46a7-afc5-31c4-923c-d0444f5053a4","name":"Spain","disambiguation":"","iso-3166-1-codes":["ES"]}}],"status":"Official","quality":"normal","title":"Hounds
+        of Love","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","disambiguation":"","packaging":"Cassette
+        Case","date":"1985-09-16","artist-credit":[{"name":"Kate Bush","artist":{"id":"4b585938-f271-45e2-b19a-91c634b5e396","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","type":"Person","disambiguation":"","name":"Kate
+        Bush","tags":[{"name":"alternative","count":1},{"name":"alternative rock","count":1},{"name":"ambient
+        pop","count":2},{"count":5,"name":"art pop"},{"name":"art rock","count":5},{"count":1,"name":"baroque
+        pop"},{"name":"british","count":1},{"name":"crossover prog","count":1},{"count":1,"name":"indie
+        rock"},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}]},"joinphrase":""}],"id":"fd5436f6-2d18-4e89-ab53-d8a7e501425c","country":"ES","text-representation":{"language":"eng","script":"Latn"},"tags":[],"packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":""},{"title":"Hounds
+        of Love","quality":"normal","release-events":[{"area":{"type":null,"id":"ef1b7cc0-cd26-36f4-8ea0-04d9623786c7","type-id":null,"sort-name":"Netherlands","name":"Netherlands","iso-3166-1-codes":["NL"],"disambiguation":""},"date":"1985-09-16"}],"status":"Official","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1985-09-16","disambiguation":"","packaging":"Cassette
+        Case","artist-credit":[{"name":"Kate Bush","artist":{"type":"Person","sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396","name":"Kate
+        Bush","tags":[{"name":"alternative","count":1},{"count":1,"name":"alternative
+        rock"},{"count":2,"name":"ambient pop"},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"count":1,"name":"new wave"},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"disambiguation":""},"joinphrase":""}],"id":"b03f9dd7-979c-4159-a67c-25a3157d759e","tags":[],"text-representation":{"script":"Latn","language":"eng"},"country":"NL","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","barcode":"5099924038447"},{"status":"Official","release-events":[{"date":"1985-09-16","area":{"disambiguation":"","iso-3166-1-codes":["XE"],"name":"Europe","type-id":null,"sort-name":"Europe","id":"89a675c2-3e37-3518-b83c-418bad59a85a","type":null}}],"title":"Hounds
+        of Love","quality":"normal","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","packaging":"Cassette
+        Case","disambiguation":"","date":"1985-09-16","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"disambiguation":"","tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"count":5,"name":"art
+        rock"},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"name":"crossover
+        prog","count":1},{"name":"indie rock","count":1},{"count":1,"name":"new wave"},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","type":"Person"}}],"id":"3cec75f3-8717-4a9b-9930-082c49dd0aff","country":"XE","tags":[],"text-representation":{"language":"eng","script":"Latn"},"barcode":"5099924038447","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906"},{"status":"Official","release-events":[{"area":{"disambiguation":"","iso-3166-1-codes":["XE"],"name":"Europe","type-id":null,"sort-name":"Europe","id":"89a675c2-3e37-3518-b83c-418bad59a85a","type":null},"date":"1985-09-16"}],"quality":"normal","title":"Hounds
+        of Love","packaging":"Cassette Case","disambiguation":"","date":"1985-09-16","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","id":"76852d99-cb9c-4748-974f-46f77788434f","artist-credit":[{"artist":{"disambiguation":"","tags":[{"name":"alternative","count":1},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"count":5,"name":"art
+        rock"},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"name":"crossover
+        prog","count":1},{"name":"indie rock","count":1},{"name":"new wave","count":1},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"count":1,"name":"singer-songwriter"}],"name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","type":"Person"},"joinphrase":"","name":"Kate Bush"}],"barcode":"5099924038447","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","country":"XE","text-representation":{"script":"Latn","language":"eng"},"tags":[]},{"release-events":[{"area":{"type":null,"sort-name":"Zimbabwe","type-id":null,"id":"691e8ad6-2cc8-3678-8495-1ac96bbede55","name":"Zimbabwe","disambiguation":"","iso-3166-1-codes":["ZW"]},"date":"1985-09-16"}],"status":"Official","quality":"normal","title":"Hounds
+        of Love","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","disambiguation":"","packaging":null,"date":"1985-09-16","artist-credit":[{"joinphrase":"","artist":{"type":"Person","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","name":"Kate Bush","tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"count":5,"name":"pop"},{"count":1,"name":"pop
+        rock"},{"count":5,"name":"progressive pop"},{"count":3,"name":"rock"},{"name":"singer-songwriter","count":1}],"disambiguation":""},"name":"Kate
+        Bush"}],"id":"6ed33a19-e57b-4e86-bea5-71e2723bbbf2","country":"ZW","text-representation":{"language":"eng","script":"Latn"},"tags":[],"packaging-id":null,"barcode":"5099924038416"},{"text-representation":{"script":"Latn","language":"eng"},"tags":[],"country":"IT","barcode":"","packaging-id":"c70b737a-0114-39a9-88f7-82843e54f906","artist-credit":[{"name":"Kate
+        Bush","joinphrase":"","artist":{"disambiguation":"","tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"name":"british","count":1},{"count":1,"name":"crossover
+        prog"},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"count":3,"name":"rock"},{"count":1,"name":"singer-songwriter"}],"name":"Kate
+        Bush","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","sort-name":"Bush,
+        Kate","type":"Person"}}],"id":"27da626c-b251-40d3-85d5-dde2708e8c3e","status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1985-09-16","packaging":"Cassette
+        Case","disambiguation":"","quality":"normal","title":"Hounds of Love","status":"Official","release-events":[{"date":"1985-09-16","area":{"iso-3166-1-codes":["IT"],"disambiguation":"","name":"Italy","id":"c6500277-9a3d-349b-bf30-41afdbf42add","type-id":null,"sort-name":"Italy","type":null}}]},{"status-id":"4e304316-386d-3409-af2e-78857eec5cfe","date":"1985-09-16","packaging":"Cardboard/Paper
+        Sleeve","disambiguation":"","title":"Hounds of Love","quality":"normal","status":"Official","release-events":[{"area":{"type":null,"id":"8a754a16-0027-3a29-b6d7-2b40ea0481ed","sort-name":"United
+        Kingdom","type-id":null,"name":"United Kingdom","iso-3166-1-codes":["GB"],"disambiguation":""},"date":"1985-09-16"}],"tags":[],"text-representation":{"script":"Latn","language":"eng"},"country":"GB","barcode":"5099924038416","packaging-id":"f7101ce3-0384-39ce-9fde-fbbd0044d35f","artist-credit":[{"joinphrase":"","artist":{"sort-name":"Bush,
+        Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396","type":"Person","disambiguation":"","name":"Kate
+        Bush","tags":[{"count":1,"name":"alternative"},{"count":1,"name":"alternative
+        rock"},{"name":"ambient pop","count":2},{"count":5,"name":"art pop"},{"name":"art
+        rock","count":5},{"count":1,"name":"baroque pop"},{"count":1,"name":"british"},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"name":"new wave","count":1},{"name":"pop","count":5},{"name":"pop
+        rock","count":1},{"name":"progressive pop","count":5},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}]},"name":"Kate
+        Bush"}],"id":"e4b5581f-4b95-4f44-8c26-b89eedda962a"}],"artist-credit":[{"name":"Kate
+        Bush","artist":{"tags":[{"count":1,"name":"alternative"},{"name":"alternative
+        rock","count":1},{"count":2,"name":"ambient pop"},{"name":"art pop","count":5},{"name":"art
+        rock","count":5},{"name":"baroque pop","count":1},{"name":"british","count":1},{"name":"crossover
+        prog","count":1},{"count":1,"name":"indie rock"},{"count":1,"name":"new wave"},{"name":"pop","count":5},{"count":1,"name":"pop
+        rock"},{"name":"progressive pop","count":5},{"name":"rock","count":3},{"name":"singer-songwriter","count":1}],"name":"Kate
+        Bush","disambiguation":"","type":"Person","sort-name":"Bush, Kate","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","id":"4b585938-f271-45e2-b19a-91c634b5e396"},"joinphrase":""}],"id":"6029d549-5858-4936-9156-b90770d2ae92","title":"Running
+        Up That Hill (A Deal With God)","tags":[{"name":"alternative","count":3},{"count":3,"name":"alternative
+        pop/rock"},{"count":1,"name":"alternative/indie rock"},{"count":1,"name":"art
+        pop"},{"count":1,"name":"art rock"},{"count":1,"name":"college rock"},{"count":1,"name":"j-pop"},{"name":"pop","count":8},{"name":"pop
+        rock","count":3},{"name":"pop/rock","count":1},{"count":1,"name":"progressive
+        rock"},{"name":"rock","count":1},{"count":1,"name":"synth-pop"}],"first-release-date":"1985-07-30","video":false,"disambiguation":""}'
+  recorded_at: Tue, 02 May 2023 10:18:45 GMT
+recorded_with: VCR 6.1.0

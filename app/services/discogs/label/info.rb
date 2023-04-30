@@ -1,6 +1,8 @@
 module Discogs
   module Label
     class Info < Discogs::Label::Base
+      MODEL_NAME = 'label'.freeze
+
       private
 
       def label_data

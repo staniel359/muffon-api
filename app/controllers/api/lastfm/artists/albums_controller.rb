@@ -12,6 +12,8 @@ module API
 
         def profiles; end
 
+        def links; end
+
         private
 
         def info_data
@@ -50,6 +52,14 @@ module API
           ::LastFM::Album::Profiles.call(
             params.slice(
               *%i[artist album profile_id token page limit]
+            )
+          )
+        end
+
+        def links_data
+          ::LastFM::Album::Links.call(
+            params.slice(
+              *%i[artist album]
             )
           )
         end
