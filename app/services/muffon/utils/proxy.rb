@@ -2,10 +2,7 @@ module Muffon
   module Utils
     class Proxy < Muffon::Base
       BASE_LINK =
-        'http://hidedoor.com/doproxy.jsp'.freeze
-      COOKIE =
-        'NkI1KDVtPSMjI3A1eHw5a1ZMXyw4bEpEOEtzLjdMeG' \
-        'Q3VSMjI1sqSTd4O240VFJbUiEgQ3w1KC9vcjgzKg=='.freeze
+        'http://server9.kproxy.com/doproxy.jsp'.freeze
 
       class << self
         def call(args = {})
@@ -73,7 +70,11 @@ module Muffon
       end
 
       def proxy_cookies
-        { 'KP_DAT2__' => COOKIE }
+        { 'KP_DAT2__' => kproxy_cookie }
+      end
+
+      def kproxy_cookie
+        secrets.kproxy[:cookie]
       end
 
       def cookies
