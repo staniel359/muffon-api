@@ -11,6 +11,16 @@ RSpec.describe Deezer::Album::Info do
 
       it { expect(output).to eq(Helpers::Deezer::Album.info_data) }
     end
+
+    context 'when fallback album_id present' do
+      let(:output) do
+        VCR.use_cassette 'services/deezer/album/info/fallback_success' do
+          subject.call(album_id: '1063611', profile_id: 1)
+        end
+      end
+
+      it { expect(output).to eq(Helpers::Deezer::Album.fallback_info_data) }
+    end
   end
 
   describe 'no processing' do
