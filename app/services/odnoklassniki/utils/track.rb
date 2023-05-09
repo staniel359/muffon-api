@@ -30,8 +30,7 @@ module Odnoklassniki
       end
 
       def odnoklassniki_id
-        track['idForDownload'] ||
-          track['id']
+        track['id']
       end
 
       def original_link
