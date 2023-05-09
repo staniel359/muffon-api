@@ -14,6 +14,8 @@ module API
 
         def links; end
 
+        def albums; end
+
         private
 
         def info_data
@@ -60,6 +62,14 @@ module API
           ::LastFM::Track::Links.call(
             params.slice(
               *%i[artist track]
+            )
+          )
+        end
+
+        def albums_data
+          ::LastFM::Track::Albums.call(
+            params.slice(
+              *%i[artist track profile_id token]
             )
           )
         end

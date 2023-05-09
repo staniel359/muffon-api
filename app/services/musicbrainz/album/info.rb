@@ -35,7 +35,20 @@ module MusicBrainz
       end
 
       def album_data
-        album_base_data
+        return album_list_data if @args[:list]
+
+        album_full_data
+      end
+
+      def album_list_data
+        self_data
+          .merge(album_base_data)
+          .merge(album_list_extra_data)
+      end
+
+      def album_full_data
+        self_data
+          .merge(album_base_data)
           .merge(album_extra_data)
           .merge(with_more_data)
       end
@@ -47,6 +60,14 @@ module MusicBrainz
           artist: artist_names_data,
           artists:
         }
+      end
+
+      def album_list_extra_data
+        {
+          image: image_data,
+          release_date:,
+          listeners_count:
+        }.compact
       end
 
       def album_extra_data

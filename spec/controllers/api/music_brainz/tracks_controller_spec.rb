@@ -52,4 +52,22 @@ RSpec.describe API::MusicBrainz::TracksController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :albums' do
+    it 'returns 200 if id present' do
+      VCR.use_cassette 'controllers/api/musicbrainz/tracks/albums/success' do
+        get :albums, params: { track_id: '6029d549-5858-4936-9156-b90770d2ae92' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 404 if wrong id' do
+      VCR.use_cassette 'controllers/api/musicbrainz/tracks/albums/wrong_id' do
+        get :albums, params: { track_id: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

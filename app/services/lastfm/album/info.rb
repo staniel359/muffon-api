@@ -10,13 +10,17 @@ module LastFM
       end
 
       def album_data
+        return album_list_data if @args[:list]
+
         update_listeners_count
 
+        album_full_data
+      end
+
+      def album_list_data
         self_data
           .merge(album_base_data)
-          .merge(album_counters_data)
-          .merge(album_extra_data)
-          .merge(with_more_data)
+          .merge(album_list_extra_data)
       end
 
       def update_listeners_count
@@ -26,6 +30,14 @@ module LastFM
         )
       end
 
+      def album_full_data
+        self_data
+          .merge(album_base_data)
+          .merge(album_counters_data)
+          .merge(album_extra_data)
+          .merge(with_more_data)
+      end
+
       def album_base_data
         {
           source: source_data,
@@ -33,6 +45,13 @@ module LastFM
           artist: artist_names_data,
           artists:
         }
+      end
+
+      def album_list_extra_data
+        {
+          image: image_data,
+          listeners_count:
+        }.compact
       end
 
       def album_counters_data

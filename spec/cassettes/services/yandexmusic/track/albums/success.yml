@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.music.yandex.net/tracks/2203363?language=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.music.yandex.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 09 May 2023 08:22:38 GMT
+      Set-Cookie:
+      - _yasc=fm4WNo+KQ08Y6SWUIt7vqySUmQ6dqFt2HJuRrcv7l2Prw3c5SWButJEnsUiN; domain=.yandex.net;
+        path=/; expires=Fri, 06-May-2033 08:22:38 GMT; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1683620558648415-3070223381018294366
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Yandex-Music-Application:
+      - music-web
+      X-Yandex-Music-Execution-Duration:
+      - '38'
+      X-Yandex-Music-Hostname:
+      - music-stable-back-vla-33.vla.yp-c.yandex.net
+    body:
+      encoding: ASCII-8BIT
+      string: '{"invocationInfo":{"req-id":"1683620558648415-3070223381018294366","hostname":"music-stable-back-vla-33.vla.yp-c.yandex.net","exec-duration-millis":38},"result":[{"id":"2203363","realId":"2203363","title":"Running
+        Up That Hill (A Deal With God)","available":false,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"availableForOptions":["bookmate"],"disclaimers":[],"storageDir":"","durationMs":298930,"fileSize":0,"r128":{"i":-15.63,"tp":0.17},"fade":{"inStart":2.3,"inStop":6.0,"outStart":284.3,"outStop":291.6},"previewDurationMs":30000,"artists":[{"id":15446,"name":"Kate
+        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/42108/67876e03.a.24376-1/%%","prefix":"67876e03.a.24376-1"},"genres":[]}],"albums":[{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","trackCount":4,"likesCount":36,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%","prefix":"adea840e.a.13203052-1"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"trackPosition":{"volume":1,"index":3}}],"coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","lyricsAvailable":true,"type":"music","rememberPosition":false,"trackSharingFlag":"COVER_ONLY","lyricsInfo":{"hasAvailableSyncLyrics":true,"hasAvailableTextLyrics":true},"trackSource":"OWN","error":"no-rights"}]}'
+  recorded_at: Tue, 09 May 2023 08:22:38 GMT
+- request:
+    method: get
+    uri: https://api.music.yandex.net/albums/2688178/with-tracks?language=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.music.yandex.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 09 May 2023 08:22:39 GMT
+      Set-Cookie:
+      - _yasc=AS0eALvvUNjz3fXzpPhSenryeXkwhc/rW0tKJMW4df1cbwk30qwRVJx3XDE=; domain=.yandex.net;
+        path=/; expires=Fri, 06-May-2033 08:22:39 GMT; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1683620559014817-15360692070759829374
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Yandex-Music-Application:
+      - music-web
+      X-Yandex-Music-Execution-Duration:
+      - '7'
+      X-Yandex-Music-Hostname:
+      - music-stable-back-vla-44.vla.yp-c.yandex.net
+    body:
+      encoding: ASCII-8BIT
+      string: '{"invocationInfo":{"hostname":"music-stable-back-vla-44.vla.yp-c.yandex.net","req-id":"1683620559014817-15360692070759829374","exec-duration-millis":"6"},"result":{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","metaTagId":"58e3c0796ebb3476087d1911","trackCount":4,"likesCount":36,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","prefix":"adea840e.a.13203052-1","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"disclaimers":[],"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"customWave":{"title":"Cirkeln","animationUrl":"https://music-custom-wave-media.s3.yandex.net/base.json"},"sortOrder":"asc","volumes":[[{"id":"23340352","realId":"23340352","title":"Mountains
+        Crave","trackSource":"OWN","major":{"id":1,"name":"UNIVERSAL_MUSIC"},"available":true,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"disclaimers":[],"availableForOptions":["bookmate"],"durationMs":217700,"storageDir":"","fileSize":0,"r128":{"i":-11.33,"tp":-0.12},"previewDurationMs":30000,"artists":[{"id":546630,"name":"Anna
+        von Hausswolff","various":false,"composer":false,"cover":{"type":"from-album-cover","prefix":"cb676374.a.5080737-2","uri":"avatars.yandex.net/get-music-content/149669/cb676374.a.5080737-2/%%"},"genres":[]}],"albums":[{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","trackCount":4,"likesCount":36,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","prefix":"adea840e.a.13203052-1","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"disclaimers":[],"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"trackPosition":{"volume":1,"index":1}}],"coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","lyricsAvailable":true,"lyricsInfo":{"hasAvailableSyncLyrics":true,"hasAvailableTextLyrics":true},"best":false,"type":"music","rememberPosition":false,"trackSharingFlag":"VIDEO_ALLOWED"},{"id":"23340356","realId":"23340356","title":"Love
+        Child","trackSource":"OWN","major":{"id":1,"name":"UNIVERSAL_MUSIC"},"available":true,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"disclaimers":[],"availableForOptions":["bookmate"],"durationMs":273550,"storageDir":"","fileSize":0,"r128":{"i":-9.80,"tp":0.18},"previewDurationMs":30000,"artists":[{"id":128440,"name":"Atlas","various":false,"composer":false,"cover":{"type":"from-album-cover","prefix":"550a60ed.a.25303643-1","uri":"avatars.yandex.net/get-music-content/8123381/550a60ed.a.25303643-1/%%"},"genres":[]},{"id":3684022,"name":"Yavin
+        Calypso","various":false,"composer":false,"genres":[]}],"albums":[{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","trackCount":4,"likesCount":36,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","prefix":"adea840e.a.13203052-1","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"disclaimers":[],"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"trackPosition":{"volume":1,"index":2}}],"coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","lyricsAvailable":true,"lyricsInfo":{"hasAvailableSyncLyrics":true,"hasAvailableTextLyrics":true},"best":false,"type":"music","rememberPosition":false,"trackSharingFlag":"VIDEO_ALLOWED"},{"id":"2203363","realId":"2203363","title":"Running
+        Up That Hill (A Deal With God)","trackSource":"OWN","available":false,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"disclaimers":[],"availableForOptions":["bookmate"],"durationMs":298930,"storageDir":"","fileSize":0,"r128":{"i":-15.63,"tp":0.17},"previewDurationMs":30000,"artists":[{"id":15446,"name":"Kate
+        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","prefix":"67876e03.a.24376-1","uri":"avatars.yandex.net/get-music-content/42108/67876e03.a.24376-1/%%"},"genres":[]}],"albums":[{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","trackCount":4,"likesCount":36,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","prefix":"adea840e.a.13203052-1","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"disclaimers":[],"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"trackPosition":{"volume":1,"index":3}}],"coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","lyricsAvailable":true,"lyricsInfo":{"hasAvailableSyncLyrics":true,"hasAvailableTextLyrics":true},"best":true,"type":"music","rememberPosition":false,"trackSharingFlag":"COVER_ONLY","error":"no-rights"},{"id":"17469990","realId":"17469990","title":"Kids","version":"Radio
+        Version","trackSource":"OWN","available":false,"availableForPremiumUsers":true,"availableFullWithoutPermission":false,"disclaimers":[],"availableForOptions":["bookmate"],"durationMs":169820,"storageDir":"","fileSize":0,"r128":{"i":-7.69,"tp":1.13},"previewDurationMs":30000,"artists":[{"id":125399,"name":"Style
+        Of Eye","various":false,"composer":false,"cover":{"type":"from-album-cover","prefix":"beebeefe.a.1929138-1","uri":"avatars.yandex.net/get-music-content/41288/beebeefe.a.1929138-1/%%"},"genres":[]},{"id":330440,"name":"Soso","various":false,"composer":false,"cover":{"type":"from-album-cover","prefix":"982228d1.a.24559380-1","uri":"avatars.yandex.net/get-music-content/8316823/982228d1.a.24559380-1/%%"},"genres":[]}],"albums":[{"id":2688178,"title":"Cirkeln","type":"compilation","metaType":"music","version":"Official
+        Motion Picture Soundtrack","contentWarning":"explicit","year":2015,"releaseDate":"2015-03-04T00:00:00+03:00","coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","genre":"soundtrack","trackCount":4,"likesCount":36,"recent":false,"veryImportant":false,"artists":[{"id":171,"name":"Various
+        artists","various":true,"composer":false,"cover":{"type":"from-album-cover","prefix":"adea840e.a.13203052-1","uri":"avatars.yandex.net/get-music-content/2411511/adea840e.a.13203052-1/%%"},"genres":[]}],"labels":[{"id":450532,"name":"RMV
+        Grammofon"}],"available":true,"availableForPremiumUsers":true,"disclaimers":[],"availableForOptions":["bookmate"],"availableForMobile":true,"availablePartially":true,"bests":[2203363],"trackPosition":{"volume":1,"index":4}}],"coverUri":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","ogImage":"avatars.yandex.net/get-music-content/34131/d3018a83.a.2688178-1/%%","lyricsAvailable":false,"lyricsInfo":{"hasAvailableSyncLyrics":false,"hasAvailableTextLyrics":true},"best":false,"type":"music","rememberPosition":false,"trackSharingFlag":"COVER_ONLY","error":"no-rights"}]],"pager":{"total":4,"page":0,"perPage":4}}}'
+  recorded_at: Tue, 09 May 2023 08:22:39 GMT
+recorded_with: VCR 6.1.0

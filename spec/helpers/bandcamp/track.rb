@@ -2,6 +2,10 @@ module Helpers
   module Bandcamp
     module Track
       class << self
+        def albums_data
+          {:track=>{:albums=>[{:artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing", :source=>{:id=>2228040235, :name=>"bandcamp"}}], :image=>{:extrasmall=>"https://f4.bcbits.com/img/a3221996752_42.jpg", :large=>"https://f4.bcbits.com/img/a3221996752_5.jpg", :medium=>"https://f4.bcbits.com/img/a3221996752_4.jpg", :original=>"https://f4.bcbits.com/img/a3221996752_10.jpg", :small=>"https://f4.bcbits.com/img/a3221996752_3.jpg"}, :release_date=>"2018-08-31", :source=>{:artist_id=>2228040235, :id=>452973411, :links=>{:original=>"https://wildnothingct.bandcamp.com/album/indigo", :streaming=>"https://album.link/b/452973411"}, :model=>"album", :name=>"bandcamp"}, :title=>"Indigo"}], :artist=>{:name=>"Wild Nothing"}, :artists=>[{:name=>"Wild Nothing", :source=>{:id=>2228040235, :name=>"bandcamp"}}], :player_id=>"1", :source=>{:artist_id=>2228040235, :id=>2723372494, :links=>{:original=>"https://wildnothingct.bandcamp.com/track/letting-go", :streaming=>"https://album.link/b/2723372494"}, :model=>"track", :name=>"bandcamp"}, :title=>"Letting Go"}}
+        end
+
         def description_data
           {:track=>{:description=>"From Jack Tatum: “There were a number of songs that were kicking when I was finishing Indigo and ‘Blue Wings’ was very nearly included. I had sent the album off to mastering, but the song didn't sit right with me and I decided, at the last possible moment, to leave it off the album. It's intentionally a very bittersweet sounding song. I asked Ben Talmi who did the string arrangements on ‘Shadow’ to help out with this very simple dissonant string part I was hearing in my head which is now my favorite element in the track. It's a song about walking through to the other side of crippling self-doubt with the help of someone you love. It's a reminder to myself not to let things spiral, hard as it may be at times.”"}}
         end

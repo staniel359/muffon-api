@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.vk.com/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=138779021_456239923&sig=375fa8f3053378246a3788510d979f1f&v=5.131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Tue, 09 May 2023 08:21:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2618'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.113791
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixst=82add8f0e078d50ab0; expires=Tue, 09 May 2023 08:44:35 GMT; path=/;
+        domain=.vk.com; secure
+      Cache-Control:
+      - no-store
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXNwb25zZSI6W3siYXJ0aXN0IjoiS2F0ZSBCdXNoIiwiaWQiOjQ1NjIzOTkyMywib3duZXJfaWQiOjEzODc3OTAyMSwidGl0bGUiOiJIb3VuZHMgb2YgTG92ZTogUnVubmluZyBVcCBUaGF0IEhpbGwgKEEgRGVhbCB3aXRoIEdvZCkiLCJkdXJhdGlvbiI6Mjk5LCJhY2Nlc3Nfa2V5IjoiNDdhYWYyNjdiZmMzYTA3MDdiIiwiYWRzIjp7ImNvbnRlbnRfaWQiOiIxMzg3NzkwMjFfNDU2MjM5OTIzIiwiZHVyYXRpb24iOiIyOTkiLCJhY2NvdW50X2FnZV90eXBlIjoiMyIsInB1aWQxIjoiNTU0IiwicHVpZDIyIjoiMTEifSwiaXNfZXhwbGljaXQiOmZhbHNlLCJpc19mb2N1c190cmFjayI6ZmFsc2UsImlzX2xpY2Vuc2VkIjp0cnVlLCJ0cmFja19jb2RlIjoiMzdmODg3NWNkRl9Fejl6b1YxaVYyYVJkNHd3MWhTZm5mdXlJbHQyMkZUNktxUW1UZ2NBYzFSTTgtRHIwOGpqWXBBIiwidXJsIjoiaHR0cHM6XC9cL2NzMS01MnY0LnZrdXNlcmF1ZGlvLm5ldFwvc1wvdjFcL2FjXC9UYVg0eUxSckd4NWYyMW5SbHlVeDB0RG1qNmEwZDktWW4yQTVibnZVMGhhSkhCM28ySk9sTXBmcFNPQWFILUxyR0x5M2JPX2J5d2JFUFZoWW13czNwcUkzNEUzUWpOWjEzYTBFRWFKQ1c2NDJtR05HdEFPVUtlQm9xeGlzVWMyUjhrN3dHMWVlLVBMMVNDV1NocDlTMkJEd1ZGNk5qM2pkS21lYVZNQkptUFJyZXRBXC9pbmRleC5tM3U4P3NpcmVuPTEiLCJkYXRlIjoxNTEwMjIwMTUyLCJnZW5yZV9pZCI6MTgsImFsYnVtIjp7ImlkIjoxNDM3MTg2LCJ0aXRsZSI6IlZ1ZWx2ZSBhbCBTw6FiYWRvIE5vY2hlIChMb3MgODAgRGUgTG9zIDgwKSIsIm93bmVyX2lkIjotMjAwMDQzNzE4NiwiYWNjZXNzX2tleSI6IjExNDFiMWRkNGMyMWZkODEyNiIsInRodW1iIjp7IndpZHRoIjozMDAsImhlaWdodCI6MzAwLCJwaG90b18zNCI6Imh0dHBzOlwvXC9zdW4xLTE1LnVzZXJhcGkuY29tXC9pbXBmXC9kVW01SHhjai0zVTVGU2dLRmpnWnRqOF9SOUZ1SllTVjUtQUhWQVwvNlB0Zkk5OF9qelkuanBnP3NpemU9MzR4MzQmcXVhbGl0eT05NiZzaWduPTI3NmVlNjkxNjdlNWFjMmVkNzA1NTdiMmM0ZTZmYjIzJmNfdW5pcV90YWc9N1BORDltQmkwdEZGaFJvSGlLRmJCcHlpdFJDcW9DeEpjTS1EREVNV2FybyZ0eXBlPWF1ZGlvIiwicGhvdG9fNjgiOiJodHRwczpcL1wvc3VuMS0xNS51c2VyYXBpLmNvbVwvaW1wZlwvZFVtNUh4Y2otM1U1RlNnS0ZqZ1p0ajhfUjlGdUpZU1Y1LUFIVkFcLzZQdGZJOThfanpZLmpwZz9zaXplPTY4eDY4JnF1YWxpdHk9OTYmc2lnbj0xNWRkMWNiZGRmZjQwNzEzNmFjMTNiMWEyY2MyYzVhMSZjX3VuaXFfdGFnPWlqSmpnRlBvR0hjZEtQTk93blgwTWJfT3ZiYnFqaldyQlZEZ2diaHdNYTAmdHlwZT1hdWRpbyIsInBob3RvXzEzNSI6Imh0dHBzOlwvXC9zdW4xLTE1LnVzZXJhcGkuY29tXC9pbXBmXC9kVW01SHhjai0zVTVGU2dLRmpnWnRqOF9SOUZ1SllTVjUtQUhWQVwvNlB0Zkk5OF9qelkuanBnP3NpemU9MTM1eDEzNSZxdWFsaXR5PTk2JnNpZ249ZjJmZjU0ZjQwYzgzMmY3OGNkY2NmODdiMDcxZDEyNmYmY191bmlxX3RhZz1wV05sa0xEN1BzSkxOR0pVQ0xlcXBNWElTRGVhU2NXQ1gtUnA0bnk0ZXFNJnR5cGU9YXVkaW8iLCJwaG90b18yNzAiOiJodHRwczpcL1wvc3VuMS0xNS51c2VyYXBpLmNvbVwvaW1wZlwvZFVtNUh4Y2otM1U1RlNnS0ZqZ1p0ajhfUjlGdUpZU1Y1LUFIVkFcLzZQdGZJOThfanpZLmpwZz9zaXplPTI3MHgyNzAmcXVhbGl0eT05NiZzaWduPTA1YzI3MDU0NjI1NDNhNTY5ZWMwNTZmZmVhZDIwYjEyJmNfdW5pcV90YWc9MXNoUlVYcFoxRkV0UGVMVWRvS04xdXRSLUdKM2t4OXZJa0NsYk1PLTUzVSZ0eXBlPWF1ZGlvIiwicGhvdG9fMzAwIjoiaHR0cHM6XC9cL3N1bjEtMTUudXNlcmFwaS5jb21cL2ltcGZcL2RVbTVIeGNqLTNVNUZTZ0tGamdadGo4X1I5RnVKWVNWNS1BSFZBXC82UHRmSTk4X2p6WS5qcGc/c2l6ZT0zMDB4MzAwJnF1YWxpdHk9OTYmc2lnbj1lOTIxYzA3MGE0MTljMjQ5NDRjNWU5ZmUzMDE2MjEyNyZjX3VuaXFfdGFnPXhOcFdRTnllR01pSHB6MTFsbUIxRUJKZURFRUt1Yy1nVUVDRzRSdzhrT1kmdHlwZT1hdWRpbyIsInBob3RvXzYwMCI6Imh0dHBzOlwvXC9zdW4xLTE1LnVzZXJhcGkuY29tXC9pbXBmXC9kVW01SHhjai0zVTVGU2dLRmpnWnRqOF9SOUZ1SllTVjUtQUhWQVwvNlB0Zkk5OF9qelkuanBnP3NpemU9NjAweDYwMCZxdWFsaXR5PTk2JnNpZ249ZTNjYTQ1MjRhZWY4NmM5ZDMwYThhN2I4ZmM4ZjhmYTMmY191bmlxX3RhZz1hNkFVWElPbk1FZV9zYkxSbmpWaEpUZUZVdnJjc052QUY0Vm52ZENrbXFvJnR5cGU9YXVkaW8iLCJwaG90b18xMjAwIjoiaHR0cHM6XC9cL3N1bjEtMTUudXNlcmFwaS5jb21cL2ltcGZcL2RVbTVIeGNqLTNVNUZTZ0tGamdadGo4X1I5RnVKWVNWNS1BSFZBXC82UHRmSTk4X2p6WS5qcGc/c2l6ZT0xMTg0eDExODQmcXVhbGl0eT05NiZzaWduPTllODhhYThiYTgwNGJiMWY3ODM1YTFlYTA4NjNmODllJmNfdW5pcV90YWc9RkNhVnBPYzJ0Slg3bnd5eXZ0bnZJalNCV3RkVW5ORWpZOHBDNTF0NmRKUSZ0eXBlPWF1ZGlvIn19LCJzaG9ydF92aWRlb3NfYWxsb3dlZCI6ZmFsc2UsInN0b3JpZXNfYWxsb3dlZCI6ZmFsc2UsInN0b3JpZXNfY292ZXJfYWxsb3dlZCI6ZmFsc2V9XX0=
+  recorded_at: Tue, 09 May 2023 08:21:35 GMT
+- request:
+    method: get
+    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=1141b1dd4c21fd8126&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000437186&playlist_id=1437186&sig=d12ed6911e409d9fa62263705b2f70de&v=5.131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.vk.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - kittenx
+      Date:
+      - Tue, 09 May 2023 08:21:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2263'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - KPHP/7.4.113791
+      Set-Cookie:
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+        secure; HttpOnly
+      - remixst=82add8f0e078d50ab0; expires=Tue, 09 May 2023 08:44:35 GMT; path=/;
+        domain=.vk.com; secure
+      Cache-Control:
+      - no-store
+      X-Frame-Options:
+      - DENY
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXNwb25zZSI6eyJpZCI6MTQzNzE4Niwib3duZXJfaWQiOi0yMDAwNDM3MTg2LCJ0eXBlIjoxLCJ0aXRsZSI6IlZ1ZWx2ZSBhbCBTw6FiYWRvIE5vY2hlIiwiZGVzY3JpcHRpb24iOiIiLCJjb3VudCI6ODAsImZvbGxvd2VycyI6ODU1LCJwbGF5cyI6MzM4MjQsImNyZWF0ZV90aW1lIjoxNTAxMDI5NzEzLCJ1cGRhdGVfdGltZSI6MTYwNzcyMjMwMCwiZ2VucmVzIjpbeyJpZCI6MSwibmFtZSI6IlBvcCJ9XSwiaXNfZm9sbG93aW5nIjpmYWxzZSwieWVhciI6MTk5MiwicGhvdG8iOnsid2lkdGgiOjMwMCwiaGVpZ2h0IjozMDAsInBob3RvXzM0IjoiaHR0cHM6XC9cL3N1bjEtMTUudXNlcmFwaS5jb21cL2ltcGZcL2RVbTVIeGNqLTNVNUZTZ0tGamdadGo4X1I5RnVKWVNWNS1BSFZBXC82UHRmSTk4X2p6WS5qcGc/c2l6ZT0zNHgzNCZxdWFsaXR5PTk2JnNpZ249Mjc2ZWU2OTE2N2U1YWMyZWQ3MDU1N2IyYzRlNmZiMjMmY191bmlxX3RhZz03UE5EOW1CaTB0RkZoUm9IaUtGYkJweWl0UkNxb0N4SmNNLURERU1XYXJvJnR5cGU9YXVkaW8iLCJwaG90b182OCI6Imh0dHBzOlwvXC9zdW4xLTE1LnVzZXJhcGkuY29tXC9pbXBmXC9kVW01SHhjai0zVTVGU2dLRmpnWnRqOF9SOUZ1SllTVjUtQUhWQVwvNlB0Zkk5OF9qelkuanBnP3NpemU9Njh4NjgmcXVhbGl0eT05NiZzaWduPTE1ZGQxY2JkZGZmNDA3MTM2YWMxM2IxYTJjYzJjNWExJmNfdW5pcV90YWc9aWpKamdGUG9HSGNkS1BOT3duWDBNYl9PdmJicWpqV3JCVkRnZ2Jod01hMCZ0eXBlPWF1ZGlvIiwicGhvdG9fMTM1IjoiaHR0cHM6XC9cL3N1bjEtMTUudXNlcmFwaS5jb21cL2ltcGZcL2RVbTVIeGNqLTNVNUZTZ0tGamdadGo4X1I5RnVKWVNWNS1BSFZBXC82UHRmSTk4X2p6WS5qcGc/c2l6ZT0xMzV4MTM1JnF1YWxpdHk9OTYmc2lnbj1mMmZmNTRmNDBjODMyZjc4Y2RjY2Y4N2IwNzFkMTI2ZiZjX3VuaXFfdGFnPXBXTmxrTEQ3UHNKTE5HSlVDTGVxcE1YSVNEZWFTY1dDWC1ScDRueTRlcU0mdHlwZT1hdWRpbyIsInBob3RvXzI3MCI6Imh0dHBzOlwvXC9zdW4xLTE1LnVzZXJhcGkuY29tXC9pbXBmXC9kVW01SHhjai0zVTVGU2dLRmpnWnRqOF9SOUZ1SllTVjUtQUhWQVwvNlB0Zkk5OF9qelkuanBnP3NpemU9MjcweDI3MCZxdWFsaXR5PTk2JnNpZ249MDVjMjcwNTQ2MjU0M2E1NjllYzA1NmZmZWFkMjBiMTImY191bmlxX3RhZz0xc2hSVVhwWjFGRXRQZUxVZG9LTjF1dFItR0oza3g5dklrQ2xiTU8tNTNVJnR5cGU9YXVkaW8iLCJwaG90b18zMDAiOiJodHRwczpcL1wvc3VuMS0xNS51c2VyYXBpLmNvbVwvaW1wZlwvZFVtNUh4Y2otM1U1RlNnS0ZqZ1p0ajhfUjlGdUpZU1Y1LUFIVkFcLzZQdGZJOThfanpZLmpwZz9zaXplPTMwMHgzMDAmcXVhbGl0eT05NiZzaWduPWU5MjFjMDcwYTQxOWMyNDk0NGM1ZTlmZTMwMTYyMTI3JmNfdW5pcV90YWc9eE5wV1FOeWVHTWlIcHoxMWxtQjFFQkplREVFS3VjLWdVRUNHNFJ3OGtPWSZ0eXBlPWF1ZGlvIiwicGhvdG9fNjAwIjoiaHR0cHM6XC9cL3N1bjEtMTUudXNlcmFwaS5jb21cL2ltcGZcL2RVbTVIeGNqLTNVNUZTZ0tGamdadGo4X1I5RnVKWVNWNS1BSFZBXC82UHRmSTk4X2p6WS5qcGc/c2l6ZT02MDB4NjAwJnF1YWxpdHk9OTYmc2lnbj1lM2NhNDUyNGFlZjg2YzlkMzBhOGE3YjhmYzhmOGZhMyZjX3VuaXFfdGFnPWE2QVVYSU9uTUVlX3NiTFJualZoSlRlRlV2cmNzTnZBRjRWbnZkQ2ttcW8mdHlwZT1hdWRpbyIsInBob3RvXzEyMDAiOiJodHRwczpcL1wvc3VuMS0xNS51c2VyYXBpLmNvbVwvaW1wZlwvZFVtNUh4Y2otM1U1RlNnS0ZqZ1p0ajhfUjlGdUpZU1Y1LUFIVkFcLzZQdGZJOThfanpZLmpwZz9zaXplPTExODR4MTE4NCZxdWFsaXR5PTk2JnNpZ249OWU4OGFhOGJhODA0YmIxZjc4MzVhMWVhMDg2M2Y4OWUmY191bmlxX3RhZz1GQ2FWcE9jMnRKWDdud3l5dnRudklqU0JXdGRVbk5Falk4cEM1MXQ2ZEpRJnR5cGU9YXVkaW8ifSwicGVybWlzc2lvbnMiOnsicGxheSI6dHJ1ZSwic2hhcmUiOnRydWUsImVkaXQiOmZhbHNlLCJmb2xsb3ciOnRydWUsImRlbGV0ZSI6ZmFsc2UsImJvb21fZG93bmxvYWQiOnRydWV9LCJzdWJ0aXRsZV9iYWRnZSI6ZmFsc2UsInBsYXlfYnV0dG9uIjpmYWxzZSwiYWNjZXNzX2tleSI6IjExNDFiMWRkNGMyMWZkODEyNiIsInN1YnRpdGxlIjoiTG9zIDgwIERlIExvcyA4MCIsImlzX2V4cGxpY2l0IjpmYWxzZSwibWFpbl9hcnRpc3RzIjpbeyJuYW1lIjoiVmFyaW91cyBBcnRpc3RzIn1dLCJhbGJ1bV90eXBlIjoiY29sbGVjdGlvbiIsImV4Y2x1c2l2ZSI6ZmFsc2V9fQ==
+  recorded_at: Tue, 09 May 2023 08:21:35 GMT
+recorded_with: VCR 6.1.0

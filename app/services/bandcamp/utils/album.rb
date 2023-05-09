@@ -13,7 +13,8 @@ module Bandcamp
         {
           name: source_name,
           id: bandcamp_id,
-          artist_id: artist_bandcamp_id,
+          artist_id:
+            artist_bandcamp_id,
           model: bandcamp_model,
           links: source_links
         }

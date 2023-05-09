@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://genius.com/api/songs/wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - genius.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Tue, 09 May 2023 07:59:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 7c48679c9aa592ba-FRA
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _genius_ab_test_cohort=17; Max-Age=2147483647; Path=/
+      - _genius_ab_test_desktop_song_primis=above_the_fold; Max-Age=2147483647; Path=/
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 vegur
+      Cf-Cache-Status:
+      - MISS
+      Status:
+      - 404 Not Found
+      X-Runtime:
+      - '5'
+      Server:
+      - cloudflare
+    body:
+      encoding: ASCII-8BIT
+      string: '{"meta":{"status":404,"message":"404 Not Found"}}'
+  recorded_at: Tue, 09 May 2023 07:59:44 GMT
+recorded_with: VCR 6.1.0

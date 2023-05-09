@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.music.yandex.net/tracks/wejlhg239gh23?language=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.music.yandex.net
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 09 May 2023 15:12:55 GMT
+      Set-Cookie:
+      - _yasc=0WLNRTZ+twhDllZ1nUyJfX9LYVuRquFHZs5XX1Y1CZNt8VAkWiF+r8jiBR4=; domain=.yandex.net;
+        path=/; expires=Fri, 06-May-2033 15:12:55 GMT; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      X-Request-Id:
+      - 1683645175339872-15564020564771979615
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Yandex-Music-Application:
+      - music-web
+      X-Yandex-Music-Execution-Duration:
+      - '1'
+      X-Yandex-Music-Hostname:
+      - music-stable-back-sas-72.sas.yp-c.yandex.net
+    body:
+      encoding: UTF-8
+      string: '{"invocationInfo":{"req-id":"1683645175339872-15564020564771979615","hostname":"music-stable-back-sas-72.sas.yp-c.yandex.net"},"error":{"name":"validate","message":"Parameters
+        requirements are not met"}}'
+  recorded_at: Tue, 09 May 2023 15:12:53 GMT
+recorded_with: VCR 6.1.0

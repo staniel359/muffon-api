@@ -1,0 +1,170 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=kate%20bush&autocorrect=0&format=json&lang=en&method=track.getInfo&track=hounds%20of%20love
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Tue, 09 May 2023 08:01:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3458'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"track":{"name":"Hounds of Love","mbid":"984deb15-92f3-4917-9929-c0e930dc8a54","url":"https://www.last.fm/music/Kate+Bush/_/Hounds+of+Love","duration":"183000","streamable":{"#text":"0","fulltrack":"0"},"listeners":"388980","playcount":"2686386","artist":{"name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396","url":"https://www.last.fm/music/Kate+Bush"},"album":{"artist":"Kate
+        Bush","title":"Hounds of Love","mbid":"778c8867-ee94-366a-bcd8-e140cfbf1b67","url":"https://www.last.fm/music/Kate+Bush/Hounds+of+Love","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/391be121643ab50801b7955b0ac5b50c.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/391be121643ab50801b7955b0ac5b50c.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/391be121643ab50801b7955b0ac5b50c.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/391be121643ab50801b7955b0ac5b50c.png","size":"extralarge"}],"@attr":{"position":"1"}},"toptags":{"tag":[{"name":"80s","url":"https://www.last.fm/tag/80s"},{"name":"female
+        vocalists","url":"https://www.last.fm/tag/female+vocalists"},{"name":"pop","url":"https://www.last.fm/tag/pop"},{"name":"alternative","url":"https://www.last.fm/tag/alternative"},{"name":"singer-songwriter","url":"https://www.last.fm/tag/singer-songwriter"}]},"wiki":{"published":"31
+        Aug 2019, 14:38","summary":"\"Hounds of Love\" is a song written, produced
+        and performed by British singer Kate Bush. It is the title track and the third
+        single released from her number one 1985 album Hounds of Love. The single
+        was released on 24 February 1986, and reached number 18 in the UK Singles
+        Chart. \n\nThis is about the fear that rules all of us in one way or another,
+        in particular the fear of love. The hounds of love that are hunting you is
+        imagery for love itself as something to be feared, to run away from lest it
+        catches you and rips you up. <a href=\"http://www.last.fm/music/Kate+Bush/_/Hounds+of+Love\">Read
+        more on Last.fm</a>.","content":"\"Hounds of Love\" is a song written, produced
+        and performed by British singer Kate Bush. It is the title track and the third
+        single released from her number one 1985 album Hounds of Love. The single
+        was released on 24 February 1986, and reached number 18 in the UK Singles
+        Chart. \n\nThis is about the fear that rules all of us in one way or another,
+        in particular the fear of love. The hounds of love that are hunting you is
+        imagery for love itself as something to be feared, to run away from lest it
+        catches you and rips you up. At the same time, it says that perhaps the hounds
+        are friendly and one should not fear love (\"I''ve always been a coward, and
+        never know what''s good for me\"). (source songfacts).\n\nThe song was inspired
+        in part by an old black-and-white movie which was sort of a cult classic in
+        Kate''s family titled Night Of The Demon. The movie was about demons who hid
+        waiting in trees - the song''s opening line (in a male voice) \"It''s coming!
+        It''s in the trees!\" is taken directly from the movie.\n\nIn October 2004,
+        Q magazine placed this song at No.21 in its list of the 50 greatest British
+        songs of all-time. \n\nBritish band The Futureheads covered the song in 2005,
+        scoring a UK top 10 hit with it.\n\n <a href=\"http://www.last.fm/music/Kate+Bush/_/Hounds+of+Love\">Read
+        more on Last.fm</a>. User-contributed text is available under the Creative
+        Commons By-SA License; additional terms may apply."}}}'
+  recorded_at: Tue, 09 May 2023 08:01:19 GMT
+- request:
+    method: get
+    uri: https://ws.audioscrobbler.com/2.0?album=Hounds%20of%20Love&api_key=<LASTFM_API_KEY>&artist=Kate%20Bush&autocorrect=0&format=json&lang=en&method=album.getInfo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Tue, 09 May 2023 08:01:19 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '7291'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"album":{"artist":"Kate Bush","mbid":"08b76ba2-3253-436e-a734-a1d071b3bae6","tags":{"tag":[{"url":"https:\/\/www.last.fm\/tag\/female+vocalists","name":"female
+        vocalists"},{"url":"https:\/\/www.last.fm\/tag\/80s","name":"80s"},{"url":"https:\/\/www.last.fm\/tag\/alternative","name":"alternative"},{"url":"https:\/\/www.last.fm\/tag\/pop","name":"pop"},{"url":"https:\/\/www.last.fm\/tag\/singer-songwriter","name":"singer-songwriter"}]},"playcount":"21888703","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/391be121643ab50801b7955b0ac5b50c.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/391be121643ab50801b7955b0ac5b50c.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/391be121643ab50801b7955b0ac5b50c.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/391be121643ab50801b7955b0ac5b50c.png"},{"size":"mega","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/391be121643ab50801b7955b0ac5b50c.png"},{"size":"","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/391be121643ab50801b7955b0ac5b50c.png"}],"tracks":{"track":[{"streamable":{"fulltrack":"0","#text":"0"},"duration":298,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Running+Up+That+Hill+(A+Deal+with+God)","name":"Running
+        Up That Hill (A Deal with God)","@attr":{"rank":1},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":183,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Hounds+of+Love","name":"Hounds
+        of Love","@attr":{"rank":2},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":282,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/The+Big+Sky","name":"The
+        Big Sky","@attr":{"rank":3},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":188,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Mother+Stands+for+Comfort","name":"Mother
+        Stands for Comfort","@attr":{"rank":4},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":310,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Cloudbusting","name":"Cloudbusting","@attr":{"rank":5},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":165,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/And+Dream+of+Sheep","name":"And
+        Dream of Sheep","@attr":{"rank":6},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":141,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Under+Ice","name":"Under
+        Ice","@attr":{"rank":7},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":259,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Waking+the+Witch","name":"Waking
+        the Witch","@attr":{"rank":8},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":244,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Watching+You+Without+Me","name":"Watching
+        You Without Me","@attr":{"rank":9},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":244,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Jig+of+Life","name":"Jig
+        of Life","@attr":{"rank":10},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":373,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/Hello+Earth","name":"Hello
+        Earth","@attr":{"rank":11},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}},{"streamable":{"fulltrack":"0","#text":"0"},"duration":155,"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\/The+Morning+Fog","name":"The
+        Morning Fog","@attr":{"rank":12},"artist":{"url":"https:\/\/www.last.fm\/music\/Kate+Bush","name":"Kate
+        Bush","mbid":"4b585938-f271-45e2-b19a-91c634b5e396"}}]},"url":"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love","name":"Hounds
+        of Love","listeners":"1181857","wiki":{"published":"10 Oct 2022, 11:26","summary":"Hounds
+        of Love is the fifth studio album by English singer Kate Bush, released on
+        September 16, 1985 by EMI Records. It was a commercial success and marked
+        a return to the public eye for Bush after the relatively low sales of her
+        previous album, 1982''s The Dreaming. The album''s lead single, \"Running
+        Up That Hill (A Deal with God)\", became one of Bush''s biggest hits. The
+        album''s first side produced three further singles, \"Cloudbusting\", \"Hounds
+        of Love\" and \"The Big Sky\". The second side, subtitled The Ninth Wave,
+        forms a conceptual suite about a woman drifting alone in the <a href=\"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\">Read
+        more on Last.fm<\/a>.","content":"Hounds of Love is the fifth studio album
+        by English singer Kate Bush, released on September 16, 1985 by EMI Records.
+        It was a commercial success and marked a return to the public eye for Bush
+        after the relatively low sales of her previous album, 1982''s The Dreaming.
+        The album''s lead single, \"Running Up That Hill (A Deal with God)\", became
+        one of Bush''s biggest hits. The album''s first side produced three further
+        singles, \"Cloudbusting\", \"Hounds of Love\" and \"The Big Sky\". The second
+        side, subtitled The Ninth Wave, forms a conceptual suite about a woman drifting
+        alone in the sea at night.\n\n\"Hounds of Love\" received critical acclaim
+        both on its release and in retrospective reviews. It is considered by many
+        fans and music critics to be Bush''s best album, and has been regularly voted
+        one of the greatest albums of all time. It was Bush''s second album to top
+        the UK Albums Chart and in the US, it reached the top 20 on the Billboard
+        200. It is her best-selling studio album, having been certified double platinum
+        for 600,000 sales in the UK, and by 1998 it had sold 1.1 million copies worldwide.
+        The album was nominated at the 1986 Brit Awards for Best British Album, at
+        which Bush was also nominated for Best British Female and Best British Single
+        for \"Running Up That Hill\". <a href=\"https:\/\/www.last.fm\/music\/Kate+Bush\/Hounds+of+Love\">Read
+        more on Last.fm<\/a>. User-contributed text is available under the Creative
+        Commons By-SA License; additional terms may apply."}}}'
+  recorded_at: Tue, 09 May 2023 08:01:20 GMT
+recorded_with: VCR 6.1.0

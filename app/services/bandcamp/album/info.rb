@@ -9,6 +9,18 @@ module Bandcamp
       private
 
       def album_data
+        return album_list_data if @args[:list]
+
+        album_full_data
+      end
+
+      def album_list_data
+        self_data
+          .merge(album_base_data)
+          .merge(album_list_extra_data)
+      end
+
+      def album_full_data
         self_data
           .merge(album_base_data)
           .merge(album_extra_data)
@@ -42,6 +54,14 @@ module Bandcamp
         ALBUM_TYPES[
           album['type'].to_sym
         ]
+      end
+
+      def album_list_extra_data
+        {
+          image: image_data,
+          release_date:,
+          listeners_count:
+        }.compact
       end
 
       def album_extra_data
