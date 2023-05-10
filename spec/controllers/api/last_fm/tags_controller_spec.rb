@@ -119,6 +119,30 @@ RSpec.describe API::LastFM::TagsController do
     end
   end
 
+  describe 'GET :similar' do
+    it 'returns 200 if any similar' do
+      VCR.use_cassette 'controllers/api/lastfm/tags/similar/success' do
+        get :similar, params: { tag: 'dream pop' }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no tag name' do
+      get :similar, params: { tag: ' ' }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong tag name' do
+      VCR.use_cassette 'controllers/api/lastfm/tags/similar/wrong_tag' do
+        get :similar, params: { tag: random }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
   describe 'GET :images' do
     it 'returns 200 if any images' do
       VCR.use_cassette 'controllers/api/lastfm/tags/images/success' do

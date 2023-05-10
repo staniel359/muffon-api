@@ -1,8 +1,7 @@
 module Muffon
   module Utils
     class Proxy < Muffon::Base
-      BASE_LINK =
-        'http://server9.kproxy.com/doproxy.jsp'.freeze
+      SERVERS_COUNT = 10
 
       class << self
         def call(args = {})
@@ -14,6 +13,8 @@ module Muffon
         return if not_all_args?
 
         data
+      rescue Errno::ECONNREFUSED
+        call
       end
 
       private
@@ -44,9 +45,19 @@ module Muffon
 
       def response
         RestClient.post(
-          BASE_LINK,
+          base_link,
           payload
         )
+      end
+
+      def base_link
+        "http://server#{random_server_number}.kproxy.com/doproxy.jsp"
+      end
+
+      def random_server_number
+        return 1 if test?
+
+        rand(1..SERVERS_COUNT)
       end
 
       def payload
