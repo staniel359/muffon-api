@@ -13,7 +13,9 @@ module Muffon
       end
 
       def page
-        (@args[:page] || 1).to_i
+        (
+          @args[:page] || 1
+        ).to_i
       end
 
       def limit

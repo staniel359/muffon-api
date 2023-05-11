@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=1000&method=tag.getTopArtists&tag=wejlhg239gh23
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=1&method=tag.getTopArtists&page=1&tag=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -23,11 +23,11 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Tue, 17 Jan 2023 08:12:03 GMT
+      - Thu, 11 May 2023 14:24:23 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '117'
+      - '114'
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -40,6 +40,6 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"topartists":{"artist":[],"@attr":{"tag":"wejlhg239gh23","page":"1","perPage":"1000","totalPages":"0","total":"0"}}}'
-  recorded_at: Tue, 17 Jan 2023 08:12:03 GMT
+      string: '{"topartists":{"artist":[],"@attr":{"tag":"wejlhg239gh23","page":"1","perPage":"1","totalPages":"0","total":"0"}}}'
+  recorded_at: Thu, 11 May 2023 14:24:23 GMT
 recorded_with: VCR 6.1.0

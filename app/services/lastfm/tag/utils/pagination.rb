@@ -2,18 +2,18 @@ module LastFM
   module Tag
     module Utils
       module Pagination
-        TOTAL_LIMIT = 1_000
+        TOTAL_LIMIT = 10_000
 
         include Muffon::Utils::Pagination
 
         private
 
         def no_data?
-          raw_collection_list.blank?
+          collection_list.blank?
         end
 
-        def raw_collection_list
-          tag[model_name]
+        def collection_list
+          tag[model_name].last(limit)
         end
 
         def tag
@@ -26,10 +26,6 @@ module LastFM
           super.merge(
             pagination_params
           )
-        end
-
-        def pagination_params
-          { limit: total_limit }
         end
 
         def model_name
@@ -52,13 +48,9 @@ module LastFM
         end
 
         def collection_count
-          raw_collection_list.size
-        end
-
-        def collection_list
-          collection_paginated(
-            raw_collection_list
-          )
+          tag.dig(
+            '@attr', 'total'
+          ).to_i
         end
       end
     end
