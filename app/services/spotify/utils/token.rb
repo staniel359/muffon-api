@@ -1,11 +1,12 @@
 module Spotify
   module Utils
     class Token < Spotify::Base
-      BASE_LINK = 'https://accounts.spotify.com/api/token'.freeze
+      BASE_LINK =
+        'https://accounts.spotify.com/api/token'.freeze
 
       def call
         data
-      rescue *errors
+      rescue StandardError
         nil
       end
 
@@ -49,13 +50,6 @@ module Spotify
 
       def client_secret
         secrets.spotify[:api_secret]
-      end
-
-      def errors
-        [
-          RestClient::BadRequest,
-          RestClient::BadGateway
-        ]
       end
 
       alias response post_response
