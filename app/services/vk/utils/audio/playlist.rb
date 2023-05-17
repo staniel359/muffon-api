@@ -36,6 +36,10 @@ module VK
         end
 
         def key_link
+          "#{base_link}#{key_path}"
+        end
+
+        def key_path
           response_data.match(
             KEY_LINK_REGEX
           )[1]
