@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.searchArtists?access_token=<VK_ACCESS_TOKEN>&count=300&q=wejlhg239gh23&sig=fe54a924c124c82ea5cc05ad49d60f9f&v=5.131
+    uri: https://api.vk.com/method/audio.searchArtists?access_token=<VK_ACCESS_TOKEN>&count=20&offset=0&q=wejlhg239gh23&sig=a8307fb28d577dda8d8a8210f868509e&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Tue, 02 May 2023 09:21:06 GMT
+      - Wed, 17 May 2023 10:25:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,7 +31,7 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.113742
+      - KPHP/7.4.113840
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
@@ -44,5 +44,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"response":{"count":0,"items":[]}}'
-  recorded_at: Tue, 02 May 2023 09:21:06 GMT
+  recorded_at: Wed, 17 May 2023 10:25:23 GMT
 recorded_with: VCR 6.1.0

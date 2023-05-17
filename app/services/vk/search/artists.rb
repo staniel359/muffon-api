@@ -14,6 +14,12 @@ module VK
           token: @args[:token]
         )
       end
+
+      def collection_count
+        return super if super < limit
+
+        total_limit
+      end
     end
   end
 end

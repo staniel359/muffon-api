@@ -5,7 +5,7 @@ RSpec.describe VK::Search::Albums do
     context 'when query string given' do
       let(:output) do
         VCR.use_cassette 'services/vk/search/albums/success' do
-          subject.call(query: 'wild nothing', limit: 5, page: 2, profile_id: 1)
+          subject.call(query: 'a', limit: 5, page: 2, profile_id: 1)
         end
       end
 
