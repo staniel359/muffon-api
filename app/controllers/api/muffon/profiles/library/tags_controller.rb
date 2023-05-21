@@ -25,7 +25,10 @@ module API
           def info_data
             ::Muffon::Profile::Library::Tag::Info.call(
               params.slice(
-                *%i[profile_id token tag_id]
+                *%i[
+                  profile_id token
+                  other_profile_id tag_id
+                ]
               )
             )
           end
@@ -34,8 +37,9 @@ module API
             ::Muffon::Profile::Library::Tag::Artists.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token tag_id page limit order
+                  profile_id token
+                  other_profile_id tag_id
+                  page limit order
                 ]
               )
             )
