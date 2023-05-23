@@ -20,7 +20,7 @@ module LastFM
         return if album.blank?
 
         LastFM::Album::Info.call(
-          artist: artist_name,
+          artist: album_artist_name,
           album: album_title,
           list: true,
           profile_id: @args[:profile_id],
@@ -32,7 +32,7 @@ module LastFM
         track['album']
       end
 
-      def artist_name
+      def album_artist_name
         album['artist']
       end
 
