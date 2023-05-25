@@ -50,6 +50,7 @@ module LastFM
 
       def artist_extra_data
         {
+          image: image_data,
           description:
             description_truncated,
           tags: tags_truncated,
