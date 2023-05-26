@@ -52,5 +52,8 @@ module MuffonAPI
       openssl_verify_mode: 'none'
     }
     config.action_mailer.deliver_later_queue_name = 'profile_mailer'
+
+    config.active_storage.queues.analysis = :storage_analysis
+    config.active_storage.queues.purge = :storage_purge
   end
 end
