@@ -50,16 +50,21 @@ module Muffon
       end
 
       def variant(size)
+        options =
+          variant_options(size)
+
         image
           .variant(
-            variant_options(size)
+            options
           ).processed
       end
 
       def variant_options(size)
         {
           loader: loader_data,
-          resize_to_fill: [size, size],
+          resize_to_fill: [
+            size, size
+          ],
           saver: saver_data
         }
       end
