@@ -27,9 +27,9 @@ class Community < ApplicationRecord
              foreign_key: :profile_id,
              inverse_of: :own_communities
 
-  has_many :posts, dependent: :destroy
+  has_many :posts, dependent: :delete_all
 
-  has_many :memberships, dependent: :destroy
+  has_many :memberships, dependent: :delete_all
 
   has_many :members,
            through: :memberships,

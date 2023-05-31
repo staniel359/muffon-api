@@ -19,7 +19,7 @@ class LibraryAlbum < ApplicationRecord
   belongs_to :library_artist, counter_cache: true
   belongs_to :album
 
-  has_many :library_tracks, dependent: :destroy
+  has_many :library_tracks, dependent: :delete_all
 
   validates :album_id,
             uniqueness: {

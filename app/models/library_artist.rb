@@ -23,8 +23,8 @@ class LibraryArtist < ApplicationRecord
   belongs_to :profile, counter_cache: true
   belongs_to :artist
 
-  has_many :library_albums, dependent: :destroy
-  has_many :library_tracks, dependent: :destroy
+  has_many :library_albums, dependent: :delete_all
+  has_many :library_tracks, dependent: :delete_all
 
   validates :artist_id,
             uniqueness: {

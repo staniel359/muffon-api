@@ -15,7 +15,7 @@ class Conversation < ApplicationRecord
   belongs_to :profile
   belongs_to :other_profile, class_name: 'Profile'
 
-  has_many :messages, dependent: :destroy
+  has_many :messages, dependent: :delete_all
 
   validates :other_profile_id,
             uniqueness: {

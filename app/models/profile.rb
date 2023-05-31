@@ -28,33 +28,33 @@ class Profile < ApplicationRecord
 
   has_one_attached :image
 
-  has_many :library_artists, dependent: :destroy
-  has_many :library_albums, dependent: :destroy
-  has_many :library_tracks, dependent: :destroy
+  has_many :library_tracks, dependent: :delete_all
+  has_many :library_albums, dependent: :delete_all
+  has_many :library_artists, dependent: :delete_all
 
   has_many :recommendations,
            class_name: '::Recommendation',
-           dependent: :destroy
+           dependent: :delete_all
 
-  has_many :playlists, dependent: :destroy
+  has_many :playlists, dependent: :delete_all
 
-  has_many :favorite_artists, dependent: :destroy
-  has_many :favorite_albums, dependent: :destroy
-  has_many :favorite_tracks, dependent: :destroy
-  has_many :favorite_videos, dependent: :destroy
+  has_many :favorite_artists, dependent: :delete_all
+  has_many :favorite_albums, dependent: :delete_all
+  has_many :favorite_tracks, dependent: :delete_all
+  has_many :favorite_videos, dependent: :delete_all
 
-  has_many :bookmark_artists, dependent: :destroy
-  has_many :bookmark_albums, dependent: :destroy
-  has_many :bookmark_tracks, dependent: :destroy
-  has_many :bookmark_videos, dependent: :destroy
-  has_many :bookmark_video_channels, dependent: :destroy
-  has_many :bookmark_video_playlists, dependent: :destroy
+  has_many :bookmark_artists, dependent: :delete_all
+  has_many :bookmark_albums, dependent: :delete_all
+  has_many :bookmark_tracks, dependent: :delete_all
+  has_many :bookmark_videos, dependent: :delete_all
+  has_many :bookmark_video_channels, dependent: :delete_all
+  has_many :bookmark_video_playlists, dependent: :delete_all
 
-  has_many :listened_artists, dependent: :destroy
-  has_many :listened_albums, dependent: :destroy
-  has_many :listened_tracks, dependent: :destroy
+  has_many :listened_artists, dependent: :delete_all
+  has_many :listened_albums, dependent: :delete_all
+  has_many :listened_tracks, dependent: :delete_all
 
-  has_many :watched_videos, dependent: :destroy
+  has_many :watched_videos, dependent: :delete_all
 
   has_many :own_posts,
            class_name: 'Post',
@@ -63,12 +63,12 @@ class Profile < ApplicationRecord
   has_many :posts,
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
-           dependent: :destroy
+           dependent: :delete_all
 
   has_many :active_relationships,
            class_name: 'Relationship',
            inverse_of: :profile,
-           dependent: :destroy
+           dependent: :delete_all
 
   has_many :following_profiles,
            through: :active_relationships,
@@ -78,7 +78,7 @@ class Profile < ApplicationRecord
            foreign_key: 'other_profile_id',
            class_name: 'Relationship',
            inverse_of: :other_profile,
-           dependent: :destroy
+           dependent: :delete_all
 
   has_many :follower_profiles,
            through: :passive_relationships,
@@ -88,7 +88,7 @@ class Profile < ApplicationRecord
            class_name: 'Community',
            dependent: nil
 
-  has_many :memberships, dependent: :destroy
+  has_many :memberships, dependent: :delete_all
 
   has_many :communities, through: :memberships
 
@@ -104,7 +104,7 @@ class Profile < ApplicationRecord
 
   has_many :active_events,
            class_name: 'Event',
-           dependent: :destroy
+           dependent: :delete_all
 
   has_many :passive_events,
            class_name: 'Event',
@@ -112,8 +112,8 @@ class Profile < ApplicationRecord
            inverse_of: :other_profile,
            dependent: nil
 
-  has_many :playing_events, dependent: :destroy
-  has_many :browser_events, dependent: :destroy
+  has_many :playing_events, dependent: :delete_all
+  has_many :browser_events, dependent: :delete_all
 
   enum gender: {
     male: 0,

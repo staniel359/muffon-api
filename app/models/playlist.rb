@@ -25,7 +25,7 @@ class Playlist < ApplicationRecord
 
   belongs_to :profile
 
-  has_many :playlist_tracks, dependent: :destroy
+  has_many :playlist_tracks, dependent: :delete_all
 
   validates :title,
             presence: true,
