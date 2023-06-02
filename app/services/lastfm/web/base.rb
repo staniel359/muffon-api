@@ -27,7 +27,11 @@ module LastFM
       end
 
       def param_formatted(param)
-        CGI.escape(super)
+        CGI.escape(
+          CGI.escape(
+            super
+          )
+        )
       end
     end
   end
