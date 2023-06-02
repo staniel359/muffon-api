@@ -24,7 +24,9 @@ module LastFM
         def name
           response_data.css(
             '.header-new-title'
-          )[0]&.text
+          )[0].text
+        rescue StandardError
+          raise RestClient::NotFound
         end
       end
     end
