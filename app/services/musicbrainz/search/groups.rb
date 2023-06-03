@@ -3,7 +3,6 @@ module MusicBrainz
     class Groups < MusicBrainz::Search::Base
       COLLECTION_NAME = 'groups'.freeze
       MODEL_NAME = 'release-group'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

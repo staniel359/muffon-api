@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://kerve.last.fm/kerve/charts?f=tag:wejlhg239gh23&format=json&nr=1000&type=album
+    uri: https://kerve.last.fm/kerve/charts?f=tag:wejlhg239gh23&format=json&nr=10000&type=album
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
@@ -35,7 +35,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Thu, 24 Nov 2022 12:42:58 GMT
+      - Sat, 03 Jun 2023 09:40:22 GMT
       Via:
       - 1.1 google
       Alt-Svc:
@@ -45,5 +45,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"results":{"album":[]}}'
-  recorded_at: Thu, 24 Nov 2022 12:42:58 GMT
+  recorded_at: Sat, 03 Jun 2023 09:40:23 GMT
 recorded_with: VCR 6.1.0

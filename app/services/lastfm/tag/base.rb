@@ -1,6 +1,8 @@
 module LastFM
   module Tag
     class Base < LastFM::Base
+      TOTAL_LIMIT = 10_000
+
       private
 
       def primary_args

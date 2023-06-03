@@ -3,7 +3,6 @@ module Discogs
     class Albums < Discogs::Search::Base
       COLLECTION_NAME = 'albums'.freeze
       COLLECTION_TYPE = 'release'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

@@ -3,7 +3,6 @@ module VK
     class Tracks < VK::Search::Base
       API_METHOD = 'audio.search'.freeze
       COLLECTION_NAME = 'tracks'.freeze
-      TOTAL_LIMIT = 500
 
       private
 

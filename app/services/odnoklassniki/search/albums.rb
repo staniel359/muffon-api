@@ -3,7 +3,6 @@ module Odnoklassniki
     class Albums < Odnoklassniki::Search::Base
       COLLECTION_NAME = 'albums'.freeze
       ENDPOINT_NAME = 'albums'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

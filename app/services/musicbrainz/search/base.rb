@@ -1,6 +1,8 @@
 module MusicBrainz
   module Search
     class Base < MusicBrainz::Base
+      TOTAL_LIMIT = 10_000
+
       include MusicBrainz::Utils::Pagination
 
       private

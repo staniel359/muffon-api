@@ -1,6 +1,8 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::API::V2::Base
+      TOTAL_LIMIT = 10_000
+
       include Muffon::Utils::Pagination
 
       private

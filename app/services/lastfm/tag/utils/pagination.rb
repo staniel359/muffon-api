@@ -2,8 +2,6 @@ module LastFM
   module Tag
     module Utils
       module Pagination
-        TOTAL_LIMIT = 10_000
-
         include Muffon::Utils::Pagination
 
         private

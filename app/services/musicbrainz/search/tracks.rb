@@ -3,7 +3,6 @@ module MusicBrainz
     class Tracks < MusicBrainz::Search::Base
       COLLECTION_NAME = 'tracks'.freeze
       MODEL_NAME = 'recording'.freeze
-      TOTAL_LIMIT = 500
 
       private
 

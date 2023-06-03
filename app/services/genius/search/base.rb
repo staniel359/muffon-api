@@ -1,6 +1,8 @@
 module Genius
   module Search
     class Base < Genius::Base
+      TOTAL_LIMIT = 10_000
+
       include Muffon::Utils::Pagination
 
       private

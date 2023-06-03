@@ -3,7 +3,6 @@ module LastFM
     class Artists < LastFM::Multitag::Base
       MODEL_NAME = 'artist'.freeze
       COLLECTION_NAME = 'artists'.freeze
-      TOTAL_LIMIT = 1_000
 
       private
 

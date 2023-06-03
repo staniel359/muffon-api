@@ -1,6 +1,8 @@
 module Spotify
   module Search
     class Base < Spotify::Base
+      TOTAL_LIMIT = 10_000
+
       include Spotify::Utils::Pagination
 
       private

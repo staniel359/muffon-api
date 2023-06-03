@@ -3,7 +3,6 @@ module LastFM
     class Tags < LastFM::Top::Base
       COLLECTION_NAME = 'tags'.freeze
       MODEL_NAME = 'tag'.freeze
-      TOTAL_LIMIT = 1_000
 
       private
 

@@ -3,7 +3,6 @@ module MusicBrainz
     class Labels < MusicBrainz::Search::Base
       COLLECTION_NAME = 'labels'.freeze
       MODEL_NAME = 'label'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

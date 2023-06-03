@@ -3,7 +3,6 @@ module Discogs
     class Labels < Discogs::Search::Base
       COLLECTION_NAME = 'labels'.freeze
       COLLECTION_TYPE = 'label'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

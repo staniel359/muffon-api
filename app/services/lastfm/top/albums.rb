@@ -3,7 +3,6 @@ module LastFM
     class Albums < LastFM::Top::Base
       COLLECTION_NAME = 'albums'.freeze
       MODEL_NAME = 'album'.freeze
-      TOTAL_LIMIT = 1_000
 
       private
 

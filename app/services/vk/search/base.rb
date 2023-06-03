@@ -1,6 +1,8 @@
 module VK
   module Search
     class Base < VK::Base
+      TOTAL_LIMIT = 10_000
+
       include Muffon::Utils::Pagination
 
       private

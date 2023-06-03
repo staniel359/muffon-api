@@ -1,6 +1,8 @@
 module Discogs
   module Search
     class Base < Discogs::Base
+      TOTAL_LIMIT = 10_000
+
       include Discogs::Utils::Pagination
 
       private

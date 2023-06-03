@@ -1,6 +1,8 @@
 module LastFM
   module Multitag
     class Base < LastFM::Kerve::Base
+      TOTAL_LIMIT = 10_000
+
       include Muffon::Utils::Pagination
 
       private

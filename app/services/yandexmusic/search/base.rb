@@ -1,6 +1,8 @@
 module YandexMusic
   module Search
     class Base < YandexMusic::Base
+      TOTAL_LIMIT = 10_000
+
       include Muffon::Utils::Pagination
 
       private

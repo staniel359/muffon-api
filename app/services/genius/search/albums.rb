@@ -3,7 +3,6 @@ module Genius
     class Albums < Genius::Search::Base
       COLLECTION_NAME = 'albums'.freeze
       MODEL_NAME = 'album'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

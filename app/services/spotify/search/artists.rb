@@ -2,7 +2,6 @@ module Spotify
   module Search
     class Artists < Spotify::Search::Base
       COLLECTION_TYPE = 'artist'.freeze
-      TOTAL_LIMIT = 200
 
       private
 

@@ -3,7 +3,6 @@ module VK
     class Albums < VK::Search::Base
       API_METHOD = 'audio.searchAlbums'.freeze
       COLLECTION_NAME = 'albums'.freeze
-      TOTAL_LIMIT = 200
 
       private
 
