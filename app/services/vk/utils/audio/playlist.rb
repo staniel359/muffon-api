@@ -36,7 +36,11 @@ module VK
         end
 
         def key_link
-          "#{base_link}#{key_path}"
+          if key_path.start_with?('https://')
+            key_path
+          else
+            "#{base_link}#{key_path}"
+          end
         end
 
         def key_path
