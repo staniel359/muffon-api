@@ -8,7 +8,7 @@ module Muffon
       private
 
       def data
-        profile.present? || anonymous_token?
+        profile.present? || allowed_token?
       end
 
       def token
@@ -21,8 +21,10 @@ module Muffon
         )
       end
 
-      def anonymous_token?
-        token == secrets.anonymous[:token]
+      def allowed_token?
+        token.in?(
+          secrets.tokens
+        )
       end
     end
   end
