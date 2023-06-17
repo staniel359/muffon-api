@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_17_115710) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_17_124534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -410,6 +410,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_115710) do
     t.index ["profile_id", "other_profile_id"], name: "index_relationships_on_profile_id_and_other_profile_id", unique: true
   end
 
+  create_table "spotify_connections", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "spotify_id"
+    t.string "nickname"
+    t.string "image_url"
+    t.boolean "premium", default: false
+    t.string "access_token"
+    t.string "refresh_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_spotify_connections_on_profile_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -519,6 +532,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_115710) do
   add_foreign_key "recommendations", "profiles"
   add_foreign_key "relationships", "profiles"
   add_foreign_key "relationships", "profiles", column: "other_profile_id"
+  add_foreign_key "spotify_connections", "profiles"
   add_foreign_key "watched_videos", "profiles"
   add_foreign_key "watched_videos", "videos"
 end

@@ -116,6 +116,7 @@ class Profile < ApplicationRecord
   has_many :browser_events, dependent: :delete_all
 
   has_one :lastfm_connection, dependent: :destroy
+  has_one :spotify_connection, dependent: :destroy
 
   enum gender: {
     male: 0, female: 1, other: 2

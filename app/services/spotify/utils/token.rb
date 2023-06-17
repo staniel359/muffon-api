@@ -5,6 +5,8 @@ module Spotify
         'https://accounts.spotify.com/api/token'.freeze
 
       def call
+        return if not_all_args?
+
         data
       rescue StandardError
         nil
@@ -30,7 +32,9 @@ module Spotify
       def headers
         {
           'Authorization' =>
-            "Basic #{auth_token}"
+            "Basic #{auth_token}",
+          'Content-Type' =>
+            'application/x-www-form-urlencoded'
         }
       end
 

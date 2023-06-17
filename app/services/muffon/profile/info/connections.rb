@@ -18,7 +18,8 @@ module Muffon
 
         def connections_data
           {
-            lastfm: lastfm_data
+            lastfm: lastfm_data,
+            spotify: spotify_data
           }.compact
         end
 
@@ -35,6 +36,21 @@ module Muffon
         def lastfm_connection
           @lastfm_connection ||=
             profile.lastfm_connection
+        end
+
+        def spotify_data
+          return if spotify_connection.blank?
+
+          spotify_connection.slice(
+            :nickname,
+            :premium,
+            :image_url
+          )
+        end
+
+        def spotify_connection
+          @spotify_connection ||=
+            profile.spotify_connection
         end
       end
     end

@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   root to: 'application#no_content'
 
+  scope module: :application do
+    get 'code'
+  end
+
   namespace :uploads, as: :upload, constraints: { filename: /[^\/]+/ } do
     scope ':key' do
       scope ':filename' do
@@ -680,6 +684,10 @@ Rails.application.routes.draw do
           get 'albums'
         end
       end
+
+      resources :connections,
+        only: %i[create destroy],
+        param: :profile_id
     end
 
     # VK

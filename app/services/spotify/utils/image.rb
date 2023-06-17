@@ -20,7 +20,9 @@ module Spotify
       def image_data
         {
           original: image(0),
-          large: image(-3),
+          large: (
+            image(-3) || image(-2)
+          ),
           medium: image(-2),
           small: image(-1),
           extrasmall: image(-1)
