@@ -10,7 +10,7 @@ module API
       def info_data
         ::LastFM::User::Info.call(
           params.slice(
-            *%i[nickname]
+            *%i[profile_id token nickname]
           )
         )
       end
@@ -18,7 +18,7 @@ module API
       def plays_data
         ::LastFM::User::Plays.call(
           params.slice(
-            *%i[nickname page limit]
+            *%i[profile_id token nickname page limit]
           )
         )
       end

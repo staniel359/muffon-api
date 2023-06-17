@@ -9,7 +9,7 @@ module Muffon
           .merge(profile_extra_data)
           .merge(profile_other_profile_data)
           .merge(profile_relationships_data)
-          .merge(profile_lastfm_data)
+          .merge(profile_connections_data)
       end
 
       def profile_base_data
@@ -114,13 +114,11 @@ module Muffon
         }
       end
 
-      def profile_lastfm_data
-        return {} unless valid_profile?
-
-        {
-          lastfm_nickname: profile.lastfm_nickname,
-          lastfm_session_key: profile.lastfm_session_key
-        }
+      def profile_connections_data
+        Muffon::Profile::Info::Connections.call(
+          profile_id: @args[:profile_id],
+          token: @args[:token]
+        )
       end
     end
   end

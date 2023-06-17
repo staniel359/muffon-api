@@ -115,14 +115,13 @@ class Profile < ApplicationRecord
   has_many :playing_events, dependent: :delete_all
   has_many :browser_events, dependent: :delete_all
 
+  has_one :lastfm_connection, dependent: :destroy
+
   enum gender: {
-    male: 0,
-    female: 1,
-    other: 2
+    male: 0, female: 1, other: 2
   }
 
   enum role: {
-    profile: 0,
-    creator: 1
+    profile: 0, creator: 1
   }
 end

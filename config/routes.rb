@@ -570,16 +570,16 @@ Rails.application.routes.draw do
         get 'upcoming'
       end
 
-      namespace :connect do
+      namespace :connections do
         get 'token'
-
-        resources :sessions,
-          only: %i[create destroy],
-          param: :profile_id
       end
 
+      resources :connections,
+        only: %i[create destroy],
+        param: :profile_id
+
       namespace :users, as: :user do
-        scope ':nickname' do
+        scope ':profile_id' do
           get '', action: :info
           get 'plays'
         end

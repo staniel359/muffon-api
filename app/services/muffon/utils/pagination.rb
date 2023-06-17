@@ -26,7 +26,7 @@ module Muffon
       end
 
       def page_limit
-        PAGE_LIMIT
+        self.class::PAGE_LIMIT
       end
 
       def paginated_data

@@ -7,20 +7,32 @@ module LastFM
 
       def user_data
         {
-          nickname: user['name'],
-          image: image_data,
+          nickname:,
+          premium: premium?,
+          image_url:,
           plays_count:
-            user['playcount'].to_i
         }.compact
+      end
+
+      def nickname
+        user['name']
       end
 
       def user
         response_data['user']
       end
 
+      def premium?
+        user['subscriber'] == '1'
+      end
+
+      def image_url
+        image_data[:extrasmall]
+      end
+
       def image_data
-        LastFM::Utils::Image.call(
-          image:
+        image_data_formatted(
+          image
         )
       end
 
@@ -28,6 +40,10 @@ module LastFM
         user.dig(
           'image', -1, '#text'
         )
+      end
+
+      def plays_count
+        user['playcount'].to_i
       end
     end
   end

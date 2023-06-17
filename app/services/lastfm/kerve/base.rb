@@ -1,7 +1,8 @@
 module LastFM
   module Kerve
     class Base < LastFM::Base
-      BASE_LINK = 'https://kerve.last.fm/kerve'.freeze
+      BASE_LINK =
+        'https://kerve.last.fm/kerve'.freeze
 
       include Muffon::Utils::Pagination
 

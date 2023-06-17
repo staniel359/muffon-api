@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_01_073033) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_17_115710) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -205,6 +205,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_073033) do
     t.index ["video_id", "profile_id"], name: "index_favorite_videos_on_video_id_and_profile_id", unique: true
   end
 
+  create_table "lastfm_connections", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.string "nickname"
+    t.string "session_key"
+    t.string "image_url"
+    t.boolean "premium", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_lastfm_connections_on_profile_id"
+  end
+
   create_table "library_albums", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "album_id", null: false
@@ -364,8 +375,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_073033) do
     t.string "country"
     t.string "city"
     t.integer "role", default: 0
-    t.string "lastfm_session_key"
-    t.string "lastfm_nickname"
     t.integer "following_count", default: 0
     t.integer "followers_count", default: 0
     t.boolean "online", default: false
@@ -487,6 +496,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_01_073033) do
   add_foreign_key "favorite_tracks", "profiles"
   add_foreign_key "favorite_videos", "profiles"
   add_foreign_key "favorite_videos", "videos"
+  add_foreign_key "lastfm_connections", "profiles"
   add_foreign_key "library_albums", "library_artists"
   add_foreign_key "library_albums", "profiles"
   add_foreign_key "library_artists", "profiles"
