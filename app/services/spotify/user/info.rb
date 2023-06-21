@@ -3,24 +3,13 @@ module Spotify
     class Info < Spotify::User::Base
       private
 
-      def primary_args
-        [@args[:access_token]]
-      end
-
-      def no_data?
-        false
-      end
-
-      def forbidden?
-        false
-      end
-
       def user_data
         {
           spotify_id:,
           nickname:,
           premium: premium?,
-          image_url:
+          image_url:,
+          tracks_count:
         }.compact
       end
 
@@ -50,6 +39,19 @@ module Spotify
 
       def images
         response_data['images']
+      end
+
+      def tracks_count
+        tracks_data[:total_items]
+      end
+
+      def tracks_data
+        Spotify::User::Tracks.call(
+          profile_id: @args[:profile_id],
+          token: @args[:token],
+          access_token: @args[:access_token],
+          skip_profile: @args[:skip_profile]
+        )[:user]
       end
     end
   end

@@ -1,0 +1,430 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/me/tracks?limit=5&offset=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Authorization:
+      - Bearer BQBjHfZ7UMV_cIkI7dfKNtVmCSDxOgiL2rWHR4wvzswNRexjZciby_yw9wUivc94hi9lCK95jG1a-c3VcCx8krS5nKXSQer_TM_padBcVps-WACsRg83LYbN9nqITUuejLV1wyjLHL3JPOjpWBOLjfhqXI9tMTpVllbat4AMU2Hn3s2mSAziHUkytkg4Anty8chzUO25KR0xesxVWVteJmEKm0iwYIQEidcU
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=0
+      Etag:
+      - '"MC-IjhmOWEyMWE3MjU2OTZlYmI3M2NmNWM4ZGNmNDA4M2RiIg=="'
+      Vary:
+      - Authorization
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Mon, 03 Jul 2023 12:47:33 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/me/tracks?offset=5&limit=5",
+          "items" : [ {
+            "added_at" : "2023-07-03T12:47:12Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                  "id" : "6NrkINd80slV25wkBu9mEB",
+                  "name" : "Wild Nothing",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+                } ],
+                "available_markets" : [ "AD", "AE", "AG", "AL", "AM", "AO", "AR", "AT", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CD", "CG", "CH", "CI", "CL", "CM", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "ES", "ET", "FI", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IS", "IT", "JM", "JO", "KE", "KG", "KH", "KM", "KN", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MG", "MK", "ML", "MN", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "OM", "PA", "PE", "PH", "PK", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RW", "SA", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TD", "TG", "TH", "TJ", "TL", "TN", "TR", "TT", "TW", "TZ", "UA", "UG", "UY", "UZ", "VC", "VE", "VN", "XK", "ZA", "ZM", "ZW" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7A2iT7NcC9lcvhGu1pP0UA"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7A2iT7NcC9lcvhGu1pP0UA",
+                "id" : "7A2iT7NcC9lcvhGu1pP0UA",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 64
+                } ],
+                "name" : "Nocturne",
+                "release_date" : "2012-08-27",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:7A2iT7NcC9lcvhGu1pP0UA"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                "id" : "6NrkINd80slV25wkBu9mEB",
+                "name" : "Wild Nothing",
+                "type" : "artist",
+                "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+              } ],
+              "available_markets" : [ "AR", "AT", "BE", "BO", "BR", "BG", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "GB", "AD", "LI", "MC", "ID", "TH", "VN", "RO", "IL", "ZA", "SA", "AE", "BH", "QA", "OM", "KW", "EG", "MA", "DZ", "TN", "LB", "JO", "PS", "IN", "BY", "KZ", "MD", "UA", "AL", "BA", "HR", "ME", "MK", "RS", "SI", "KR", "BD", "PK", "LK", "GH", "KE", "NG", "TZ", "UG", "AG", "AM", "BS", "BB", "BZ", "BT", "BW", "BF", "CV", "CW", "DM", "GM", "GE", "GD", "GW", "GY", "HT", "JM", "LS", "LR", "MW", "MV", "ML", "NA", "NE", "SM", "ST", "SN", "SC", "SL", "KN", "LC", "VC", "SR", "TL", "TT", "AZ", "BN", "BI", "KH", "CM", "TD", "KM", "GQ", "SZ", "GA", "GN", "KG", "LA", "MO", "MR", "MN", "NP", "RW", "TG", "UZ", "ZW", "BJ", "MG", "MU", "MZ", "AO", "CI", "DJ", "ZM", "CD", "CG", "IQ", "LY", "TJ", "VE", "ET", "XK" ],
+              "disc_number" : 1,
+              "duration_ms" : 330920,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "GBBRP1235608"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/4Isn9476YXari5iQhCjdzR"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/4Isn9476YXari5iQhCjdzR",
+              "id" : "4Isn9476YXari5iQhCjdzR",
+              "is_local" : false,
+              "name" : "Paradise",
+              "popularity" : 40,
+              "preview_url" : "https://p.scdn.co/mp3-preview/2d96a9baf273e5bd5ac558a5f0dac55290483233?cid=807a4260992746f0a8d3b65fa7319836",
+              "track_number" : 8,
+              "type" : "track",
+              "uri" : "spotify:track:4Isn9476YXari5iQhCjdzR"
+            }
+          }, {
+            "added_at" : "2023-07-03T12:47:11Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                  "id" : "6NrkINd80slV25wkBu9mEB",
+                  "name" : "Wild Nothing",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+                } ],
+                "available_markets" : [ "AD", "AE", "AG", "AL", "AM", "AO", "AR", "AT", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CD", "CG", "CH", "CI", "CL", "CM", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "ES", "ET", "FI", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IS", "IT", "JM", "JO", "KE", "KG", "KH", "KM", "KN", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MG", "MK", "ML", "MN", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "OM", "PA", "PE", "PH", "PK", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RW", "SA", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TD", "TG", "TH", "TJ", "TL", "TN", "TR", "TT", "TW", "TZ", "UA", "UG", "UY", "UZ", "VC", "VE", "VN", "XK", "ZA", "ZM", "ZW" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7A2iT7NcC9lcvhGu1pP0UA"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7A2iT7NcC9lcvhGu1pP0UA",
+                "id" : "7A2iT7NcC9lcvhGu1pP0UA",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 64
+                } ],
+                "name" : "Nocturne",
+                "release_date" : "2012-08-27",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:7A2iT7NcC9lcvhGu1pP0UA"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                "id" : "6NrkINd80slV25wkBu9mEB",
+                "name" : "Wild Nothing",
+                "type" : "artist",
+                "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+              } ],
+              "available_markets" : [ "AR", "AT", "BE", "BO", "BR", "BG", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "GB", "AD", "LI", "MC", "ID", "TH", "VN", "RO", "IL", "ZA", "SA", "AE", "BH", "QA", "OM", "KW", "EG", "MA", "DZ", "TN", "LB", "JO", "PS", "IN", "BY", "KZ", "MD", "UA", "AL", "BA", "HR", "ME", "MK", "RS", "SI", "KR", "BD", "PK", "LK", "GH", "KE", "NG", "TZ", "UG", "AG", "AM", "BS", "BB", "BZ", "BT", "BW", "BF", "CV", "CW", "DM", "GM", "GE", "GD", "GW", "GY", "HT", "JM", "LS", "LR", "MW", "MV", "ML", "NA", "NE", "SM", "ST", "SN", "SC", "SL", "KN", "LC", "VC", "SR", "TL", "TT", "AZ", "BN", "BI", "KH", "CM", "TD", "KM", "GQ", "SZ", "GA", "GN", "KG", "LA", "MO", "MR", "MN", "NP", "RW", "TG", "UZ", "ZW", "BJ", "MG", "MU", "MZ", "AO", "CI", "DJ", "ZM", "CD", "CG", "IQ", "LY", "TJ", "VE", "ET", "XK" ],
+              "disc_number" : 1,
+              "duration_ms" : 318200,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "GBBRP1235603"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/5JvBj6uE6YBGeB2DwVyCgh"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/5JvBj6uE6YBGeB2DwVyCgh",
+              "id" : "5JvBj6uE6YBGeB2DwVyCgh",
+              "is_local" : false,
+              "name" : "Nocturne",
+              "popularity" : 40,
+              "preview_url" : "https://p.scdn.co/mp3-preview/592d292b49c70820dcce076595921491dcbf7129?cid=807a4260992746f0a8d3b65fa7319836",
+              "track_number" : 3,
+              "type" : "track",
+              "uri" : "spotify:track:5JvBj6uE6YBGeB2DwVyCgh"
+            }
+          }, {
+            "added_at" : "2023-07-03T12:47:10Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                  "id" : "6NrkINd80slV25wkBu9mEB",
+                  "name" : "Wild Nothing",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+                } ],
+                "available_markets" : [ "AD", "AE", "AG", "AL", "AM", "AO", "AR", "AT", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CD", "CG", "CH", "CI", "CL", "CM", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "ES", "ET", "FI", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IS", "IT", "JM", "JO", "KE", "KG", "KH", "KM", "KN", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MG", "MK", "ML", "MN", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "OM", "PA", "PE", "PH", "PK", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RW", "SA", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TD", "TG", "TH", "TJ", "TL", "TN", "TR", "TT", "TW", "TZ", "UA", "UG", "UY", "UZ", "VC", "VE", "VN", "XK", "ZA", "ZM", "ZW" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7A2iT7NcC9lcvhGu1pP0UA"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7A2iT7NcC9lcvhGu1pP0UA",
+                "id" : "7A2iT7NcC9lcvhGu1pP0UA",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 64
+                } ],
+                "name" : "Nocturne",
+                "release_date" : "2012-08-27",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:7A2iT7NcC9lcvhGu1pP0UA"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                "id" : "6NrkINd80slV25wkBu9mEB",
+                "name" : "Wild Nothing",
+                "type" : "artist",
+                "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+              } ],
+              "available_markets" : [ "AR", "AT", "BE", "BO", "BR", "BG", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "GB", "AD", "LI", "MC", "ID", "TH", "VN", "RO", "IL", "ZA", "SA", "AE", "BH", "QA", "OM", "KW", "EG", "MA", "DZ", "TN", "LB", "JO", "PS", "IN", "BY", "KZ", "MD", "UA", "AL", "BA", "HR", "ME", "MK", "RS", "SI", "KR", "BD", "PK", "LK", "GH", "KE", "NG", "TZ", "UG", "AG", "AM", "BS", "BB", "BZ", "BT", "BW", "BF", "CV", "CW", "DM", "GM", "GE", "GD", "GW", "GY", "HT", "JM", "LS", "LR", "MW", "MV", "ML", "NA", "NE", "SM", "ST", "SN", "SC", "SL", "KN", "LC", "VC", "SR", "TL", "TT", "AZ", "BN", "BI", "KH", "CM", "TD", "KM", "GQ", "SZ", "GA", "GN", "KG", "LA", "MO", "MR", "MN", "NP", "RW", "TG", "UZ", "ZW", "BJ", "MG", "MU", "MZ", "AO", "CI", "DJ", "ZM", "CD", "CG", "IQ", "LY", "TJ", "VE", "ET", "XK" ],
+              "disc_number" : 1,
+              "duration_ms" : 258560,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "GBBRP1235601"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/4urzTwD9Ewbi0qIqKWDne1"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/4urzTwD9Ewbi0qIqKWDne1",
+              "id" : "4urzTwD9Ewbi0qIqKWDne1",
+              "is_local" : false,
+              "name" : "Shadow",
+              "popularity" : 44,
+              "preview_url" : "https://p.scdn.co/mp3-preview/0410e2ffaacc297a9aee48716bdf101a65f7fc74?cid=807a4260992746f0a8d3b65fa7319836",
+              "track_number" : 1,
+              "type" : "track",
+              "uri" : "spotify:track:4urzTwD9Ewbi0qIqKWDne1"
+            }
+          }, {
+            "added_at" : "2023-07-03T12:47:09Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                  "id" : "6NrkINd80slV25wkBu9mEB",
+                  "name" : "Wild Nothing",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+                } ],
+                "available_markets" : [ "AD", "AE", "AG", "AL", "AM", "AO", "AR", "AT", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CD", "CG", "CH", "CI", "CL", "CM", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "ES", "ET", "FI", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IS", "IT", "JM", "JO", "KE", "KG", "KH", "KM", "KN", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MG", "MK", "ML", "MN", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "OM", "PA", "PE", "PH", "PK", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RW", "SA", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TD", "TG", "TH", "TJ", "TL", "TN", "TR", "TT", "TW", "TZ", "UA", "UG", "UY", "UZ", "VC", "VE", "VN", "XK", "ZA", "ZM", "ZW" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/7A2iT7NcC9lcvhGu1pP0UA"
+                },
+                "href" : "https://api.spotify.com/v1/albums/7A2iT7NcC9lcvhGu1pP0UA",
+                "id" : "7A2iT7NcC9lcvhGu1pP0UA",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b273f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e02f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d00004851f25bb2bcd00c2ef3760e6ad3",
+                  "width" : 64
+                } ],
+                "name" : "Nocturne",
+                "release_date" : "2012-08-27",
+                "release_date_precision" : "day",
+                "total_tracks" : 11,
+                "type" : "album",
+                "uri" : "spotify:album:7A2iT7NcC9lcvhGu1pP0UA"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                "id" : "6NrkINd80slV25wkBu9mEB",
+                "name" : "Wild Nothing",
+                "type" : "artist",
+                "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+              } ],
+              "available_markets" : [ "AR", "AT", "BE", "BO", "BR", "BG", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "GB", "AD", "LI", "MC", "ID", "TH", "VN", "RO", "IL", "ZA", "SA", "AE", "BH", "QA", "OM", "KW", "EG", "MA", "DZ", "TN", "LB", "JO", "PS", "IN", "BY", "KZ", "MD", "UA", "AL", "BA", "HR", "ME", "MK", "RS", "SI", "KR", "BD", "PK", "LK", "GH", "KE", "NG", "TZ", "UG", "AG", "AM", "BS", "BB", "BZ", "BT", "BW", "BF", "CV", "CW", "DM", "GM", "GE", "GD", "GW", "GY", "HT", "JM", "LS", "LR", "MW", "MV", "ML", "NA", "NE", "SM", "ST", "SN", "SC", "SL", "KN", "LC", "VC", "SR", "TL", "TT", "AZ", "BN", "BI", "KH", "CM", "TD", "KM", "GQ", "SZ", "GA", "GN", "KG", "LA", "MO", "MR", "MN", "NP", "RW", "TG", "UZ", "ZW", "BJ", "MG", "MU", "MZ", "AO", "CI", "DJ", "ZM", "CD", "CG", "IQ", "LY", "TJ", "VE", "ET", "XK" ],
+              "disc_number" : 1,
+              "duration_ms" : 193626,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "GBBRP1235605"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/57H0nc5Wd7jyioT3YoNDmr"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/57H0nc5Wd7jyioT3YoNDmr",
+              "id" : "57H0nc5Wd7jyioT3YoNDmr",
+              "is_local" : false,
+              "name" : "Only Heather",
+              "popularity" : 45,
+              "preview_url" : "https://p.scdn.co/mp3-preview/662a4b6b844db4477263ff31ac6a78e9b68f6177?cid=807a4260992746f0a8d3b65fa7319836",
+              "track_number" : 5,
+              "type" : "track",
+              "uri" : "spotify:track:57H0nc5Wd7jyioT3YoNDmr"
+            }
+          }, {
+            "added_at" : "2023-05-21T15:24:34Z",
+            "track" : {
+              "album" : {
+                "album_type" : "album",
+                "artists" : [ {
+                  "external_urls" : {
+                    "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                  },
+                  "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                  "id" : "6NrkINd80slV25wkBu9mEB",
+                  "name" : "Wild Nothing",
+                  "type" : "artist",
+                  "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+                } ],
+                "available_markets" : [ "AD", "AE", "AG", "AL", "AM", "AO", "AR", "AT", "AU", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR", "BS", "BT", "BW", "BY", "BZ", "CA", "CD", "CG", "CH", "CI", "CL", "CM", "CO", "CR", "CV", "CW", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "ES", "ET", "FI", "FJ", "FM", "FR", "GA", "GB", "GD", "GE", "GH", "GM", "GN", "GQ", "GR", "GT", "GW", "GY", "HK", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IN", "IQ", "IS", "IT", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MG", "MH", "MK", "ML", "MN", "MO", "MR", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NE", "NG", "NI", "NL", "NO", "NP", "NR", "NZ", "OM", "PA", "PE", "PG", "PH", "PK", "PL", "PS", "PT", "PW", "PY", "QA", "RO", "RS", "RW", "SA", "SB", "SC", "SE", "SG", "SI", "SK", "SL", "SM", "SN", "SR", "ST", "SV", "SZ", "TD", "TG", "TH", "TJ", "TL", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VC", "VE", "VN", "VU", "WS", "XK", "ZA", "ZM", "ZW" ],
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/album/3hxVFxpF7uUtjLHzvGIm7W"
+                },
+                "href" : "https://api.spotify.com/v1/albums/3hxVFxpF7uUtjLHzvGIm7W",
+                "id" : "3hxVFxpF7uUtjLHzvGIm7W",
+                "images" : [ {
+                  "height" : 640,
+                  "url" : "https://i.scdn.co/image/ab67616d0000b2736da7c8855ee1e48bb4d29184",
+                  "width" : 640
+                }, {
+                  "height" : 300,
+                  "url" : "https://i.scdn.co/image/ab67616d00001e026da7c8855ee1e48bb4d29184",
+                  "width" : 300
+                }, {
+                  "height" : 64,
+                  "url" : "https://i.scdn.co/image/ab67616d000048516da7c8855ee1e48bb4d29184",
+                  "width" : 64
+                } ],
+                "name" : "Gemini",
+                "release_date" : "2010-05-25",
+                "release_date_precision" : "day",
+                "total_tracks" : 12,
+                "type" : "album",
+                "uri" : "spotify:album:3hxVFxpF7uUtjLHzvGIm7W"
+              },
+              "artists" : [ {
+                "external_urls" : {
+                  "spotify" : "https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"
+                },
+                "href" : "https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB",
+                "id" : "6NrkINd80slV25wkBu9mEB",
+                "name" : "Wild Nothing",
+                "type" : "artist",
+                "uri" : "spotify:artist:6NrkINd80slV25wkBu9mEB"
+              } ],
+              "available_markets" : [ "AR", "AU", "AT", "BE", "BO", "BR", "BG", "CA", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NZ", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "US", "GB", "AD", "LI", "MC", "ID", "JP", "TH", "VN", "RO", "IL", "ZA", "SA", "AE", "BH", "QA", "OM", "KW", "EG", "MA", "DZ", "TN", "LB", "JO", "PS", "IN", "BY", "KZ", "MD", "UA", "AL", "BA", "HR", "ME", "MK", "RS", "SI", "KR", "BD", "PK", "LK", "GH", "KE", "NG", "TZ", "UG", "AG", "AM", "BS", "BB", "BZ", "BT", "BW", "BF", "CV", "CW", "DM", "FJ", "GM", "GE", "GD", "GW", "GY", "HT", "JM", "KI", "LS", "LR", "MW", "MV", "ML", "MH", "FM", "NA", "NR", "NE", "PW", "PG", "WS", "SM", "ST", "SN", "SC", "SL", "SB", "KN", "LC", "VC", "SR", "TL", "TO", "TT", "TV", "VU", "AZ", "BN", "BI", "KH", "CM", "TD", "KM", "GQ", "SZ", "GA", "GN", "KG", "LA", "MO", "MR", "MN", "NP", "RW", "TG", "UZ", "ZW", "BJ", "MG", "MU", "MZ", "AO", "CI", "DJ", "ZM", "CD", "CG", "IQ", "LY", "TJ", "VE", "ET", "XK" ],
+              "disc_number" : 1,
+              "duration_ms" : 198842,
+              "explicit" : false,
+              "external_ids" : {
+                "isrc" : "US8YA1010079"
+              },
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/track/3BRfgsKjcakny2wCYfZrvz"
+              },
+              "href" : "https://api.spotify.com/v1/tracks/3BRfgsKjcakny2wCYfZrvz",
+              "id" : "3BRfgsKjcakny2wCYfZrvz",
+              "is_local" : false,
+              "name" : "Chinatown",
+              "popularity" : 53,
+              "preview_url" : "https://p.scdn.co/mp3-preview/464d982ebc53a4a9fc2208c84ce9b0bf90772fc4?cid=807a4260992746f0a8d3b65fa7319836",
+              "track_number" : 10,
+              "type" : "track",
+              "uri" : "spotify:track:3BRfgsKjcakny2wCYfZrvz"
+            }
+          } ],
+          "limit" : 5,
+          "next" : null,
+          "offset" : 5,
+          "previous" : "https://api.spotify.com/v1/me/tracks?offset=0&limit=5",
+          "total" : 10
+        }
+  recorded_at: Mon, 03 Jul 2023 12:47:33 GMT
+recorded_with: VCR 6.2.0

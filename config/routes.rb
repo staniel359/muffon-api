@@ -688,6 +688,13 @@ Rails.application.routes.draw do
       resources :connections,
         only: %i[create destroy],
         param: :profile_id
+
+      namespace :users, as: :user do
+        scope ':profile_id' do
+          get '', action: :info
+          get 'tracks'
+        end
+      end
     end
 
     # VK

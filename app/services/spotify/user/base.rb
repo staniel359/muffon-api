@@ -4,7 +4,7 @@ module Spotify
       private
 
       def primary_args
-        return primary_test_args if test?
+        return primary_skip_profile_args if skip_profile?
 
         [
           @args[:profile_id],
@@ -12,20 +12,24 @@ module Spotify
         ]
       end
 
+      def skip_profile?
+        test? || !!@args[:skip_profile]
+      end
+
+      def primary_skip_profile_args
+        [@args[:access_token]]
+      end
+
       def no_data?
-        return false if test?
+        return false if skip_profile?
 
         profile.blank?
       end
 
       def forbidden?
-        return false if test?
+        return false if skip_profile?
 
         !valid_profile?
-      end
-
-      def primary_test_args
-        [@args[:access_token]]
       end
 
       def data

@@ -17,14 +17,6 @@ module Spotify
         )
       end
 
-      def collection_name
-        collection_type.pluralize
-      end
-
-      def collection_type
-        self.class::COLLECTION_TYPE
-      end
-
       def link
         "#{BASE_LINK}/search"
       end
@@ -40,6 +32,10 @@ module Spotify
           q: @args[:query],
           type: collection_type
         }
+      end
+
+      def collection_type
+        self.class::COLLECTION_TYPE
       end
 
       def data

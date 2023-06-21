@@ -61,7 +61,8 @@ module Spotify
 
       def spotify_user_info_data
         Spotify::User::Info.call(
-          access_token:
+          access_token:,
+          skip_profile: true
         )[:user]
       end
 
