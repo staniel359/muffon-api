@@ -70,10 +70,6 @@ module Spotify
         ).ceil
       end
 
-      def audio_data
-        { present: audio_present? }
-      end
-
       def audio_present?
         track[
           'available_markets'

@@ -34,7 +34,7 @@ module Bandcamp
           {
             album: album_data,
             image: image_data,
-            audio: audio_data
+            audio: audio_minimal_data
           }.compact
         end
 
@@ -63,8 +63,8 @@ module Bandcamp
           track['album_id']
         end
 
-        def audio_data
-          { present: true }
+        def audio_present?
+          true
         end
 
         alias model track

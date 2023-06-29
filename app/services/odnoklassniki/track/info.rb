@@ -25,7 +25,7 @@ module Odnoklassniki
           image: image_data,
           profiles_count:,
           duration:,
-          audio: audio_data
+          audio: audio_base_data
         }.compact
       end
 
@@ -55,17 +55,14 @@ module Odnoklassniki
         response_data['image']
       end
 
-      def audio_data
-        {
-          present: audio_present?,
-          link: audio_link
-        }
-      end
-
       def audio_link
         Odnoklassniki::Utils::Audio::Link.call(
-          link: response_data['play']
+          link: raw_audio_link
         )
+      end
+
+      def raw_audio_link
+        response_data['play']
       end
     end
   end

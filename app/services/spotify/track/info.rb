@@ -26,28 +26,16 @@ module Spotify
           image: image_data,
           profiles_count:,
           duration:,
-          audio: audio_data
+          audio: audio_base_data
         }.compact
       end
 
-      def audio_data
-        {
-          present:
-            audio_or_preview_link.present?,
-          link:
-            audio_or_preview_link
-        }
-      end
-
-      def audio_or_preview_link
-        return unless audio_present?
-        return 'test.mp3' if test?
-
-        @audio_or_preview_link ||=
-          audio_link || audio_preview_link
-      end
-
       def audio_link
+        audio_full_link ||
+          audio_preview_link
+      end
+
+      def audio_full_link
         Spotify::Utils::Audio::Link.call(
           track_id: @args[:track_id]
         )

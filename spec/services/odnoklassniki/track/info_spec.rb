@@ -5,7 +5,7 @@ RSpec.describe Odnoklassniki::Track::Info do
     context 'when track_id present' do
       let(:output) do
         VCR.use_cassette 'services/odnoklassniki/track/info/success' do
-          subject.call(track_id: '123042442621275', profile_id: 1)
+          subject.call(track_id: '123042442621275', profile_id: 1, audio_link: true)
         end
       end
 

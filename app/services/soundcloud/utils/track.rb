@@ -50,10 +50,6 @@ module SoundCloud
         track['duration'] / 1_000
       end
 
-      def audio_data
-        { present: audio_present? }
-      end
-
       def audio_present?
         track['streamable']
       end

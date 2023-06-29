@@ -20,7 +20,7 @@ module Deezer
 
         def raw_audio_link
           @raw_audio_link ||=
-            Deezer::Utils::Audio::Link.call(
+            Deezer::Utils::Audio::RawLink.call(
               track_id: @args[:track_id]
             )
         end

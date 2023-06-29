@@ -19,9 +19,15 @@ module Spotify
         end
 
         def audio_path
+          return test_audio_path if test?
+
           response_data['path']
         rescue StandardError
           nil
+        end
+
+        def test_audio_path
+          "files/audio/spotify/#{@args[:track_id]}.mp3"
         end
 
         def link

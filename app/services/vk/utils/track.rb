@@ -84,8 +84,8 @@ module VK
         track['duration']
       end
 
-      def audio_data
-        { present: true }
+      def audio_present?
+        true
       end
     end
   end

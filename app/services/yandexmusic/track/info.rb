@@ -25,22 +25,14 @@ module YandexMusic
           image: image_data,
           profiles_count:,
           duration:,
-          audio: audio_data
+          audio: audio_base_data
         }.compact
       end
 
-      def audio_data
-        {
-          present: audio_link.present?,
-          link: audio_link
-        }
-      end
-
       def audio_link
-        @audio_link ||=
-          YandexMusic::Utils::Audio::Link.call(
-            track_id: @args[:track_id]
-          )
+        YandexMusic::Utils::Audio::Link.call(
+          track_id: @args[:track_id]
+        )
       end
     end
   end

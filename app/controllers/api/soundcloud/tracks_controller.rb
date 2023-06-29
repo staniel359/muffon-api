@@ -12,7 +12,7 @@ module API
       def info_data
         ::SoundCloud::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[track_id profile_id token audio_link]
           )
         )
       end

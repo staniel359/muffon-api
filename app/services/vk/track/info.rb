@@ -26,25 +26,15 @@ module VK
           image: image_data,
           profiles_count:,
           duration:,
-          audio: audio_data
+          audio: audio_base_data
         }.compact
       end
 
-      def audio_data
-        {
-          present: audio_link.present?,
-          link: audio_link
-        }
-      end
-
       def audio_link
-        return 'test.mp3' if test?
-
-        @audio_link ||=
-          VK::Utils::Audio::File.call(
-            track_id: vk_track_id,
-            link: track['url']
-          )
+        VK::Utils::Audio::Link.call(
+          track_id: vk_track_id,
+          link: track['url']
+        )
       end
     end
   end

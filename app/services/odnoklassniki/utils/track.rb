@@ -47,10 +47,6 @@ module Odnoklassniki
         track['duration']
       end
 
-      def audio_data
-        { present: audio_present? }
-      end
-
       def audio_present?
         !!track['isDownloadAllowed']
       end

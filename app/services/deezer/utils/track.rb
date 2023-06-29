@@ -84,10 +84,6 @@ module Deezer
         track['DURATION'].to_i
       end
 
-      def audio_data
-        { present: audio_present? }
-      end
-
       def audio_present?
         track['FILESIZE'].to_i.positive?
       end

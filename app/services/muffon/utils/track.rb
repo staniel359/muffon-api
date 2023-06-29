@@ -56,6 +56,21 @@ module Muffon
           .profiles
           .count
       end
+
+      def audio_minimal_data
+        { present: audio_present? }
+      end
+
+      def audio_base_data
+        {
+          present: audio_present?,
+          link: audio_link_conditional
+        }.compact
+      end
+
+      def audio_link_conditional
+        audio_link if @args[:audio_link]
+      end
     end
   end
 end

@@ -44,7 +44,7 @@ module Bandcamp
           description:
             description_truncated,
           tags: tags_truncated,
-          audio: audio_data
+          audio: audio_base_data
         }.compact
       end
 
@@ -90,13 +90,6 @@ module Bandcamp
 
       def tags_list
         response_data['tags']
-      end
-
-      def audio_data
-        {
-          present: audio_present?,
-          link: audio_link
-        }.compact
       end
     end
   end

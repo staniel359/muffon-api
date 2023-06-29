@@ -35,7 +35,7 @@ module Deezer
             album: album_data,
             image: image_data,
             duration:,
-            audio: audio_data
+            audio: audio_minimal_data
           }.compact
         end
       end

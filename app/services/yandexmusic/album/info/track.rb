@@ -33,7 +33,7 @@ module YandexMusic
         def track_extra_data
           {
             duration:,
-            audio: audio_data
+            audio: audio_minimal_data
           }
         end
       end

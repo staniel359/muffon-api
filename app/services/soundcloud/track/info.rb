@@ -28,7 +28,7 @@ module SoundCloud
           description:
             description_truncated,
           tags: tags_truncated,
-          audio: audio_data
+          audio: audio_base_data
         }.compact
       end
 
@@ -42,20 +42,10 @@ module SoundCloud
         ].compact
       end
 
-      def audio_data
-        {
-          present: audio_link.present?,
-          link: audio_link
-        }
-      end
-
       def audio_link
-        return unless audio_present?
-
-        @audio_link ||=
-          SoundCloud::Utils::Audio::Link.call(
-            track_id: @args[:track_id]
-          )
+        SoundCloud::Utils::Audio::Link.call(
+          track_id: @args[:track_id]
+        )
       end
     end
   end
