@@ -17,13 +17,11 @@ module Discogs
         end
 
         def title
-          album.css(
-            'td.title > a'
-          )[0].text
+          album['title']
         end
 
         def album
-          @args[:album]
+          @args[:album]['keyRelease']
         end
 
         def album_base_data
@@ -36,7 +34,13 @@ module Discogs
         end
 
         def discogs_id
-          album['data-object-id'].to_i
+          (
+            group || album
+          )['discogsId']
+        end
+
+        def group
+          album['masterRelease']
         end
 
         def discogs_model
@@ -44,36 +48,31 @@ module Discogs
         end
 
         def group?
-          album[
-            'data-object-type'
-          ].include?('master')
+          group.present?
         end
 
         def artists_list
-          album.css(
-            'td.artist a'
-          )
+          album['primaryArtists']
         end
 
         def artist_data_formatted(artist)
           {
-            source:
-              artist_source_data(artist),
-            name: artist.text
+            source: artist_source_data(
+              artist
+            ),
+            name: artist.dig(
+              'artist', 'name'
+            )
           }
         end
 
         def artist_source_data(artist)
           {
             name: source_name,
-            id: artist_discogs_id(artist)
-          }.compact
-        end
-
-        def artist_discogs_id(artist)
-          artist['href'].match(
-            %r{/(\d+)-}
-          ).try(:[], 1)&.to_i
+            id: artist.dig(
+              'artist', 'discogsId'
+            )
+          }
         end
 
         def album_extra_data
@@ -85,29 +84,14 @@ module Discogs
         end
 
         def image
-          raw_image.try(
-            :[], 'data-src'
+          album.dig(
+            'images', 'edges', 0, 'node',
+            'fullsize', 'sourceUrl'
           )
-        end
-
-        def raw_image
-          album.css(
-            'td.image img'
-          )[0]
         end
 
         def release_date
-          date? ? release_date_node.text : ''
-        end
-
-        def date?
-          release_date_node.text != 'Unknown'
-        end
-
-        def release_date_node
-          album.css(
-            'td.year'
-          )
+          album['released']
         end
       end
     end

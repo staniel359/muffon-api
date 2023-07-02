@@ -5,7 +5,7 @@ RSpec.describe Discogs::Artist::Albums do
     context 'when artist_id given' do
       let(:output) do
         VCR.use_cassette 'services/discogs/artist/albums/success' do
-          subject.call(artist_id: '6271', album_type: 'album', page: 2, profile_id: 1)
+          subject.call(artist_id: '6271', album_type: 'album', limit: 5, page: 2, profile_id: 1)
         end
       end
 

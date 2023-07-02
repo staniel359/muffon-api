@@ -32,7 +32,8 @@ module Discogs
       end
 
       def original_link
-        "https://www.discogs.com/#{model_formatted}/#{discogs_id}"
+        'https://www.discogs.com' \
+          "/#{model_formatted}/#{discogs_id}"
       end
 
       def model_formatted

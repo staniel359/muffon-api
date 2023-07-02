@@ -1,17 +1,19 @@
 module Discogs
   module Artist
     class Albums < Discogs::Artist::Base
+      BASE_LINK =
+        'https://www.discogs.com/service' \
+        '/catalog/api/graphql'.freeze
       ALBUM_TYPES = {
         album: 'Albums',
-        single_ep: 'Singles-EPs',
+        single_ep: 'Singles & EPs',
         compilation: 'Compilations',
-        video: 'Videos',
         misc: 'Miscellaneous'
       }.freeze
       COLLECTION_NAME = 'albums'.freeze
       PAGE_LIMIT = 25
 
-      include Discogs::Utils::Pagination
+      include Muffon::Utils::Pagination
 
       private
 
@@ -22,19 +24,34 @@ module Discogs
         ]
       end
 
+      def no_data?
+        artist_info_data.blank?
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          Discogs::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )[:artist]
+      end
+
       def params
-        {
-          type: 'Releases',
-          subtype: album_type,
+        Discogs::Artist::Albums::Params.call(
+          artist_id: @args[:artist_id],
+          album_type:,
           page:,
-          sort: 'year,desc'
-        }
+          limit:
+        )
       end
 
       def album_type
         ALBUM_TYPES[
           @args[:album_type].to_sym
         ]
+      end
+
+      def limit
+        PAGE_LIMIT
       end
 
       def artist_data
@@ -44,31 +61,38 @@ module Discogs
       end
 
       def name
-        response_data.css(
-          'meta[property="og:title"]'
-        )[0]['content']
+        artist_info_data[:name]
       end
 
       def total_items_count
-        total_items_node.text.match(
-          /of (\d+)/
-        )[1].to_i
+        release_type_data['totalCount']
       end
 
-      def total_items_node
-        response_data.css(
-          '.pagination_total'
-        )[0]
+      def release_type_data
+        release_types['facetDetails'].find do |f|
+          f['facetName'] == album_type
+        end
       end
 
-      def limit
-        PAGE_LIMIT
+      def release_types
+        extra_data_items.find do |f|
+          f['superFacetName'] == 'release_type'
+        end
+      end
+
+      def extra_data_items
+        response_data.dig(
+          'data', 'artist', 'facets',
+          'artistCreditFacets', 'facets'
+        )
       end
 
       def collection_list
-        response_data.css(
-          '.card'
-        )
+        response_data.dig(
+          'data', 'artist', 'releases',
+          'releaseGroups', 'releaseGroupsByHeader',
+          0, 'releaseGroupDescriptions'
+        ) || []
       end
 
       def collection_item_data_formatted(album)

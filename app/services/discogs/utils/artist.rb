@@ -24,7 +24,8 @@ module Discogs
       end
 
       def original_link
-        "https://www.discogs.com/#{model_name}/#{discogs_id}"
+        'https://www.discogs.com' \
+          "/#{model_name}/#{discogs_id}"
       end
 
       def image_data
