@@ -48,19 +48,26 @@ module Genius
       end
 
       def lyrics_truncated
+        return if lyrics.blank?
+
         lyrics_formatted.truncate(200)
+      end
+
+      def lyrics
+        @lyrics ||=
+          Genius::Track::Info::Lyrics.call(
+            track_slug: track['path']
+          )[:lyrics]
       end
 
       def lyrics_formatted
         lyrics.map do |l|
-          l.is_a?(Hash) ? l[:text] : l
+          lyric_formatted(l)
         end.flatten.join
       end
 
-      def lyrics
-        Genius::Track::Info::Lyrics.call(
-          track_slug: track['path']
-        )[:lyrics]
+      def lyric_formatted(lyric)
+        lyric.is_a?(Hash) ? lyric[:text] : lyric
       end
     end
   end
