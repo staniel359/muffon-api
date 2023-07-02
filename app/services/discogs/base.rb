@@ -79,5 +79,7 @@ module Discogs
     def model_name
       self.class::MODEL_NAME
     end
+
+    alias artist_name artists_names
   end
 end

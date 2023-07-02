@@ -15,7 +15,7 @@ module Spotify
           source: source_data,
           player_id:,
           title:,
-          artist: artist_names_data,
+          artist: artists_base_data,
           artists:
         }
       end

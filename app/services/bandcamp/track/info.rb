@@ -15,7 +15,7 @@ module Bandcamp
           source: source_data,
           player_id:,
           title:,
-          artist: artist_names_data,
+          artist: artists_base_data,
           artists:
         }
       end
@@ -54,7 +54,7 @@ module Bandcamp
         {
           source: album_source_data,
           title: album_title,
-          artist: artist_names_data,
+          artist: artists_minimal_data,
           artists:
         }
       end

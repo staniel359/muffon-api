@@ -35,7 +35,7 @@ module Muffon
               library: library_track_data,
               player_id: track.player_id,
               title:,
-              artist: artist_names_data,
+              artist: artists_minimal_data,
               artists:
             }
           end

@@ -19,7 +19,7 @@ module SoundCloud
           {
             source: source_data,
             title:,
-            artist: artist_names_data,
+            artist: artists_minimal_data,
             artists:,
             image: image_data,
             listeners_count:

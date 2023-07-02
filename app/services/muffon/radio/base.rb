@@ -43,15 +43,24 @@ module Muffon
 
       def track_data
         {
-          player_id:
-            radio_track_data[:player_id],
-          source:
-            radio_track_data[:source],
-          title:
-            radio_track_data[:title],
-          artist: track_artist_data,
+          player_id:,
+          source: source_data,
+          title:,
+          artist: artists_base_data,
           artists:
         }
+      end
+
+      def player_id
+        radio_track_data[:player_id]
+      end
+
+      def source_data
+        radio_track_data[:source]
+      end
+
+      def title
+        radio_track_data[:title]
       end
 
       def artists

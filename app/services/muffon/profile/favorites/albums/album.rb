@@ -43,7 +43,7 @@ module Muffon
                 favorite_album.source_data,
               id: favorite_album.id,
               title:,
-              artist: artist_names_data,
+              artist: artists_minimal_data,
               artists:
             }.compact
           end

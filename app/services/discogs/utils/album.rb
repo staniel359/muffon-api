@@ -14,10 +14,6 @@ module Discogs
         album['title']
       end
 
-      def artist_name
-        artist_names
-      end
-
       def source_data
         {
           name: source_name,

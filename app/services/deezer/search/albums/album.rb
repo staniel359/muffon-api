@@ -23,7 +23,7 @@ module Deezer
           {
             source: source_data,
             title:,
-            artist: artist_names_data,
+            artist: artists_minimal_data,
             artists:,
             image: image_data,
             release_date:,

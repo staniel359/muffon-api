@@ -48,7 +48,7 @@ module Muffon
               id: favorite_track.id,
               player_id: track.player_id,
               title:,
-              artist: artist_names_data,
+              artist: artists_minimal_data,
               artists:
             }.compact
           end

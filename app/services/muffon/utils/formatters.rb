@@ -5,14 +5,27 @@ module Muffon
 
       private
 
-      def artist_names_data
-        { name: artist_names }
+      def artists_minimal_data
+        { name: artists_names }
       end
 
-      def artist_names
+      def artists_names
         artists.pluck(
           :name
-        ).join(', ')
+        ).join(
+          ', '
+        )
+      end
+
+      def artists_base_data
+        {
+          name: artists_names,
+          image: artists_image_data
+        }.compact
+      end
+
+      def artists_image_data
+        find_artist.image_data
       end
 
       def date_formatted(data)

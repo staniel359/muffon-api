@@ -41,7 +41,7 @@ module Muffon
               source: bookmark_album.source_data,
               id: bookmark_album.id,
               title:,
-              artist: artist_names_data,
+              artist: artists_minimal_data,
               artists:,
               image: bookmark_album.image_data,
               created: created_formatted

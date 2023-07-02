@@ -1,36 +1,7 @@
 module MusicBrainz
   module Track
-    class Info < MusicBrainz::Base
-      include MusicBrainz::Utils::Track
-
-      def call
-        super
-      rescue RestClient::BadRequest
-        not_found
-      end
-
+    class Info < MusicBrainz::Track::Base
       private
-
-      def primary_args
-        [@args[:track_id]]
-      end
-
-      def link
-        "#{BASE_LINK}/recording/#{@args[:track_id]}"
-      end
-
-      def params
-        super
-          .merge(track_params)
-      end
-
-      def track_params
-        { inc: 'artist-credits+tags+releases' }
-      end
-
-      def data
-        { track: track_data }
-      end
 
       def track_data
         track_base_data
@@ -43,7 +14,7 @@ module MusicBrainz
           source: source_data,
           player_id:,
           title:,
-          artist: artist_names_data,
+          artist: artists_base_data,
           artists:
         }
       end
@@ -67,8 +38,6 @@ module MusicBrainz
       def tags_list
         track['tags']
       end
-
-      alias track response_data
     end
   end
 end

@@ -23,17 +23,6 @@ module Muffon
           )
       end
 
-      def track_artist_data
-        {
-          name: artist_names,
-          image: artist_image_data
-        }.compact
-      end
-
-      def artist_image_data
-        find_artist.image_data
-      end
-
       def find_album
         return if album_title.blank?
 

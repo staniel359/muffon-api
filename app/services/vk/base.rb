@@ -87,6 +87,6 @@ module VK
       )
     end
 
-    alias artist_name artist_names
+    alias artist_name artists_names
   end
 end
