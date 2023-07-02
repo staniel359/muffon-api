@@ -5,8 +5,12 @@ module Odnoklassniki
 
       def call
         post_response
+
+        nil
       rescue RestClient::Found => e
         session_id(e)
+      rescue RestClient::ServerBrokeConnection
+        nil
       end
 
       private
