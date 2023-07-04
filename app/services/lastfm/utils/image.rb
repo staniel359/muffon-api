@@ -26,7 +26,7 @@ module LastFM
           large: image_resized('/600x600'),
           medium: image_resized('/300x300'),
           small: image_resized('/174s'),
-          extrasmall: image_resized('/64s')
+          extrasmall: image_resized('/60x60')
         }
       end
 
