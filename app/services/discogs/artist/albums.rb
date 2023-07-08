@@ -65,7 +65,9 @@ module Discogs
       end
 
       def total_items_count
-        release_type_data['totalCount']
+        release_type_data.try(
+          :[], 'totalCount'
+        ) || 0
       end
 
       def release_type_data
