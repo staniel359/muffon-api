@@ -17,8 +17,8 @@ module API
             ::Muffon::Profile::Library::Search::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token query
-                  page limit order minimal
+                  profile_id token other_profile_id
+                  query page limit order minimal
                 ]
               )
             )
@@ -28,8 +28,8 @@ module API
             ::Muffon::Profile::Library::Search::Albums.call(
               params.slice(
                 *%i[
-                  profile_id token query
-                  page limit order
+                  profile_id token other_profile_id
+                  query page limit order
                 ]
               )
             )
@@ -39,8 +39,8 @@ module API
             ::Muffon::Profile::Library::Search::Tracks.call(
               params.slice(
                 *%i[
-                  profile_id token query
-                  page limit order
+                  profile_id token other_profile_id
+                  query page limit order
                 ]
               )
             )
@@ -49,7 +49,10 @@ module API
           def tags_data
             ::Muffon::Profile::Library::Search::Tags.call(
               params.slice(
-                *%i[profile_id token query page limit]
+                *%i[
+                  profile_id token other_profile_id
+                  query page limit
+                ]
               )
             )
           end
