@@ -33,7 +33,7 @@ module Bandcamp
       def image_data
         image_data_formatted(
           image
-        )
+        ) || super
       end
 
       def image

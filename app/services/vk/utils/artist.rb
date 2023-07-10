@@ -27,8 +27,12 @@ module VK
 
       def image_data
         image_data_formatted(
-          artist['photo'], 'artist'
-        )
+          image, 'artist'
+        ) || super
+      end
+
+      def image
+        artist['photo']
       end
     end
   end

@@ -27,8 +27,12 @@ module SoundCloud
 
       def image_data
         image_data_formatted(
-          artist['avatar_url']
-        )
+          image
+        ) || super
+      end
+
+      def image
+        artist['avatar_url']
       end
     end
   end

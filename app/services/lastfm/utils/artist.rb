@@ -25,6 +25,16 @@ module LastFM
           name
         )
       end
+
+      def image_data
+        image_data_formatted(
+          image
+        ) || super
+      end
+
+      def image
+        nil
+      end
     end
   end
 end

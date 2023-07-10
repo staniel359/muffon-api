@@ -23,18 +23,22 @@ module LastFM
           {
             source: source_data,
             name:,
-            listeners_count:
-              artist['listeners'].to_i,
-            plays_count:
-              artist['scrobbles'].to_i,
+            listeners_count:,
+            plays_count:,
             image: image_data
           }.compact
         end
 
-        def image_data
-          image_data_formatted(
-            artist['image']
-          )
+        def listeners_count
+          artist['listeners'].to_i
+        end
+
+        def plays_count
+          artist['scrobbles'].to_i
+        end
+
+        def image
+          artist['image']
         end
       end
     end

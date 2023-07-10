@@ -30,8 +30,12 @@ module Odnoklassniki
 
         def image_data
           image_data_formatted(
-            artist['image']
-          )
+            image
+          ) || super
+        end
+
+        def image
+          artist['image']
         end
       end
     end

@@ -27,8 +27,12 @@ module Spotify
 
       def image_data
         image_data_formatted(
-          artist['images']
-        )
+          images
+        ) || super
+      end
+
+      def images
+        artist['images']
       end
     end
   end

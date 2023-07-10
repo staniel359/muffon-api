@@ -30,8 +30,12 @@ module Genius
 
         def image_data
           image_data_formatted(
-            artist['image_url']
-          )
+            image
+          ) || super
+        end
+
+        def image
+          artist['image_url']
         end
       end
     end

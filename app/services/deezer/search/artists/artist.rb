@@ -30,9 +30,12 @@ module Deezer
 
         def image_data
           image_data_formatted(
-            artist['ART_PICTURE'],
-            'artist'
-          )
+            image, 'artist'
+          ) || super
+        end
+
+        def image
+          artist['ART_PICTURE']
         end
       end
     end

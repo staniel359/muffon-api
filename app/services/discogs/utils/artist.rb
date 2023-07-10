@@ -31,7 +31,7 @@ module Discogs
       def image_data
         image_data_formatted(
           image
-        )
+        ) || super
       end
     end
   end
