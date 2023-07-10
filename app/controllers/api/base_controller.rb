@@ -1,5 +1,7 @@
 module API
   class BaseController < ApplicationController
+    CLIENT_VERSION = '2.0.0'.freeze
+
     before_action :render_data_with_status
 
     include ::Muffon::Utils::ErrorHandlers
@@ -28,11 +30,18 @@ module API
     end
 
     def allowed_request?
-      test? || valid_token?
+      return true if test?
+
+      valid_version? && valid_token?
     end
 
     def test?
       Rails.env.test?
+    end
+
+    def valid_version?
+      params[:version].present? &&
+        params[:version] >= CLIENT_VERSION
     end
 
     def valid_token?
