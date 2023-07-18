@@ -28,9 +28,7 @@ module YouTube
           type: model_name,
           part: 'snippet',
           maxResults: limit,
-          pageToken: @args[:page],
-          relatedToVideoId:
-            @args[:video_id]
+          pageToken: @args[:page]
         }.compact
       end
 

@@ -21,11 +21,15 @@ module YouTube
 
       def image_resized(prefix_one, prefix_two)
         @args[:image].sub(
+          'hqdefault', 'default'
+        ).sub(
           'default',
           "#{prefix_one}default"
         ).sub(
           's88', prefix_two
-        )
+        ).split(
+          '?sqp='
+        )[0]
       end
     end
   end
