@@ -6,9 +6,24 @@ module YouTube
       def video_data
         self_data
           .merge(video_base_data)
+          .merge(video_artist_data)
           .merge(video_statistics_data)
           .merge(video_extra_data)
           .merge(with_more_data)
+      end
+
+      def video_artist_data
+        {
+          artist: artist_info_data
+        }.compact
+      end
+
+      def artist_info_data
+        YouTube::Video::Info::Artist.call(
+          channel_title:,
+          profile_id: @args[:profile_id],
+          token: @args[:token]
+        )
       end
 
       def video_statistics_data
