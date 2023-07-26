@@ -70,6 +70,12 @@ module YouTube
       end
 
       def collection_list
+        videos_list.reject do |v|
+          new_video?(v)
+        end
+      end
+
+      def videos_list
         collection_list_conditional.select do |i|
           video_item?(i)
         end
@@ -79,6 +85,26 @@ module YouTube
         item[
           'compactVideoRenderer'
         ].present?
+      end
+
+      def new_video?(video)
+        video_badges(
+          video
+        ).find do |b|
+          new_video_badge?(b)
+        end
+      end
+
+      def video_badges(video)
+        video.dig(
+          'compactVideoRenderer', 'badges'
+        ) || []
+      end
+
+      def new_video_badge?(badge)
+        badge.dig(
+          'metadataBadgeRenderer', 'label'
+        ) == 'New'
       end
 
       def collection_item_data_formatted(video)
