@@ -21,6 +21,8 @@ module Muffon
         end
 
         def image_data
+          return if image_content_type.blank?
+
           {
             io: image_io,
             filename: image_filename,
@@ -30,10 +32,10 @@ module Muffon
           nil
         end
 
-        def image_io
-          return link_image if link_image?
+        def image_content_type
+          return link_image_content_type if link_image?
 
-          file_image
+          file_image_content_type
         end
 
         def link_image?
@@ -42,10 +44,28 @@ module Muffon
           )
         end
 
+        def link_image_content_type
+          link_image.content_type
+        end
+
         def link_image
           @link_image ||= URI.parse(
             @args[:image]
           ).open
+        end
+
+        def file_image_content_type
+          @args[:image].match(
+            %r{(image/.+);}
+          ).try(
+            :[], 1
+          ) || ''
+        end
+
+        def image_io
+          return link_image if link_image?
+
+          file_image
         end
 
         def file_image
@@ -70,24 +90,6 @@ module Muffon
           image_content_type.sub(
             '/', '.'
           )
-        end
-
-        def image_content_type
-          return link_image_content_type if link_image?
-
-          file_image_content_type
-        end
-
-        def link_image_content_type
-          link_image.content_type
-        end
-
-        def file_image_content_type
-          @args[:image].match(
-            %r{(image/.+);}
-          ).try(
-            :[], 1
-          ) || ''
         end
       end
     end
