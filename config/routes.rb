@@ -40,10 +40,6 @@ Rails.application.routes.draw do
         scope ':profile_id' do
           get '', action: :info
 
-          namespace :online do
-            patch '', action: :update
-          end
-
           namespace :playing do
             patch '', action: :update
           end
@@ -237,9 +233,19 @@ Rails.application.routes.draw do
           resources :communities, only: :index
 
           scope :history, module: :history do
-            get 'activity'
-            get 'player'
-            get 'browser'
+            scope :activity, module: :activity do
+              get '', action: :info
+            end
+
+            scope :player, module: :player do
+              get '', action: :info
+              patch '', action: :update
+            end
+
+            scope :browser, module: :browser do
+              get '', action: :info
+              patch '', action: :update
+            end
           end
         end
       end
