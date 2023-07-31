@@ -16,7 +16,9 @@ module Muffon
             end
 
             def process_library_album
-              library_album
+              library_album.update(
+                update_params
+              )
 
               return library_album.errors_data if
                   library_album.errors?
@@ -33,7 +35,7 @@ module Muffon
                 .where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
-                ).first_or_create
+                ).first_or_initialize
             end
 
             def title
@@ -50,6 +52,10 @@ module Muffon
                 .where(
                   artist_id: find_album.artist_id
                 ).first_or_create
+            end
+
+            def update_params
+              { source_data: @args[:source] }
             end
 
             def process_image

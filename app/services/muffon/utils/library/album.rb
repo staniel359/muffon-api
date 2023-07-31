@@ -54,6 +54,10 @@ module Muffon
             library_album.created_at
           )
         end
+
+        def source_data
+          library_album.source_data
+        end
       end
     end
   end

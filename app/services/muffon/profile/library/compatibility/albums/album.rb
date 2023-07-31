@@ -20,6 +20,7 @@ module Muffon
 
             def album_base_data
               {
+                source: source_data,
                 library: library_album_data,
                 title:,
                 artist: artists_minimal_data,

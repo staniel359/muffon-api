@@ -19,6 +19,7 @@ module Muffon
 
             def album_data
               {
+                source: source_data,
                 library: library_album_data,
                 title:,
                 image: library_album.image_data,

@@ -69,6 +69,8 @@ module Muffon
 
               update_created_at(library_album)
 
+              library_album.source_data = album_source_data
+
               library_album.save
             end
 
@@ -86,12 +88,16 @@ module Muffon
               @args[:album]
             end
 
+            def album_source_data
+              @args[:album_source] ||
+                library_album.source_data
+            end
+
             def update_library_track
               update_created_at(library_track)
 
               library_track.source_data = source_data
               library_track.audio_data = audio_data
-              library_track.album_source_data = album_source_data
 
               library_track.save
             end
@@ -111,11 +117,6 @@ module Muffon
 
             def audio_data
               @args[:audio] || library_track.audio_data
-            end
-
-            def album_source_data
-              @args[:album_source] ||
-                library_track.album_source_data
             end
 
             def title

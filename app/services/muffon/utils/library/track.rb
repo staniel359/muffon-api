@@ -59,7 +59,7 @@ module Muffon
 
           {
             source:
-              library_track.album_source_data,
+              library_album.source_data,
             title: album.title
           }
         end
