@@ -235,16 +235,19 @@ Rails.application.routes.draw do
           scope :history, module: :history do
             scope :activity, module: :activity do
               get '', action: :info
+              delete '', action: :destroy
             end
 
             scope :player, module: :player do
               get '', action: :info
               patch '', action: :update
+              delete '', action: :destroy
             end
 
             scope :browser, module: :browser do
               get '', action: :info
               patch '', action: :update
+              delete '', action: :destroy
             end
           end
         end

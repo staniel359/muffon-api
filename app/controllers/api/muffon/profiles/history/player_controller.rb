@@ -24,6 +24,14 @@ module API
               )
             )
           end
+
+          def destroy_data
+            ::Muffon::Processor::Profile::History::Player::Destroyer.call(
+              params.slice(
+                *%i[profile_id token]
+              )
+            )
+          end
         end
       end
     end
