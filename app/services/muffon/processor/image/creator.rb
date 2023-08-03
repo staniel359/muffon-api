@@ -17,7 +17,7 @@ module Muffon
 
           attach_image
 
-          image_data if @args[:preload]
+          image_data
 
           { success: true }
         end
