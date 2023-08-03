@@ -1,6 +1,7 @@
 module Spotify
   class Base < Muffon::Base
-    BASE_LINK = 'https://api.spotify.com/v1'.freeze
+    BASE_LINK =
+      'https://api.spotify.com/v1'.freeze
     SOURCE_NAME = 'spotify'.freeze
 
     include Muffon::Utils::Global

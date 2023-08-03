@@ -702,6 +702,7 @@ Rails.application.routes.draw do
         scope ':profile_id' do
           get '', action: :info
           get 'tracks'
+          get 'playlists'
         end
       end
     end

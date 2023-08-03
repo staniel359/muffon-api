@@ -5,7 +5,7 @@ RSpec.describe LastFM::User::Info do
     context 'when user exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/user/info/success' do
-          subject.call(nickname: 'cornwell_93')
+          subject.call(nickname: 'cornwell_93', counter: 'plays')
         end
       end
 

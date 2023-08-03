@@ -20,13 +20,17 @@ module Spotify
       def image_data
         {
           original: image(0),
-          large: (
-            image(-3) || image(-2)
-          ),
-          medium: image(-2),
+          large: large_image,
+          medium: medium_image,
           small: image(-1),
           extrasmall: image(-1)
         }
+      end
+
+      def large_image
+        image(-3) ||
+          image(-2) ||
+          image(-1)
       end
 
       def image(index)
@@ -36,10 +40,13 @@ module Spotify
       end
 
       def images_sorted
-        @images_sorted ||=
-          images.sort_by do |i|
-            i['height']
-          end.reverse
+        images.sort_by do |i|
+          i['height']
+        end.reverse
+      end
+
+      def medium_image
+        image(-2) || image(-1)
       end
     end
   end

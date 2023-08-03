@@ -55,8 +55,9 @@ module Muffon
                 source_data: @args[:source],
                 audio_data: @args[:audio],
                 album_source_data:
-                  @args[:album_source]
-              }
+                  @args[:album_source],
+                created_at: @args[:created]
+              }.compact
             end
 
             def album_title

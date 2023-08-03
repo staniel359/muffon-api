@@ -9,7 +9,8 @@ module Spotify
           nickname:,
           premium: premium?,
           image_url:,
-          tracks_count:
+          tracks_count:,
+          playlists_count:
         }.compact
       end
 
@@ -42,11 +43,28 @@ module Spotify
       end
 
       def tracks_count
+        return unless @args[:counter] == 'tracks'
+
         tracks_data[:total_items]
       end
 
       def tracks_data
         Spotify::User::Tracks.call(
+          profile_id: @args[:profile_id],
+          token: @args[:token],
+          access_token: @args[:access_token],
+          skip_profile: @args[:skip_profile]
+        )[:user]
+      end
+
+      def playlists_count
+        return unless @args[:counter] == 'playlists'
+
+        playlists_data[:total_items]
+      end
+
+      def playlists_data
+        Spotify::User::Playlists.call(
           profile_id: @args[:profile_id],
           token: @args[:token],
           access_token: @args[:access_token],

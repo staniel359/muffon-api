@@ -43,6 +43,8 @@ module LastFM
       end
 
       def plays_count
+        return unless @args[:counter] == 'plays'
+
         user['playcount'].to_i
       end
     end

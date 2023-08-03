@@ -10,7 +10,7 @@ module API
       def info_data
         ::LastFM::User::Info.call(
           params.slice(
-            *%i[profile_id token nickname]
+            *%i[profile_id token nickname counter]
           )
         )
       end

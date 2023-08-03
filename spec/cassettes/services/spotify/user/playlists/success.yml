@@ -1,0 +1,236 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/me/playlists?limit=5&offset=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Authorization:
+      - Bearer BQANUzbn0K51z78z7_e29hhFbN2uiqul9Jcy9NwSLzY87rQxV7Tqh4y7OZZV2uUofiCwWRXYLJZnWvImWG0O_Rmr-38-Au1srHCOYvSucLoFKsDls83Hv0Qri0QCEwhvzQWjLLkLIbcIuaCj2lYcThiHPe3jYw4G-g8s3IrSByYIlT7ykNvmEWybljfdR3fCb_9OZvUXBkvbdONCtD9Yam1io2IqkDYFBEyw
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.spotify.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-IjJiM2Y0ZmYzYmM3ZjI4MzJkYTVmNDU0NDA3YTQ2NjJiIg=="'
+      Vary:
+      - Authorization
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Thu, 03 Aug 2023 13:42:49 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "href" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj/playlists?offset=5&limit=5",
+          "items" : [ {
+            "collaborative" : false,
+            "description" : "",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/5Otq9ZokE8LGOrHjDfq29j"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/5Otq9ZokE8LGOrHjDfq29j",
+            "id" : "5Otq9ZokE8LGOrHjDfq29j",
+            "images" : [ ],
+            "name" : "My Playlist #8",
+            "owner" : {
+              "display_name" : "staniel",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/varkxpososm9sp59ojzpoc7rj"
+              },
+              "href" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj",
+              "id" : "varkxpososm9sp59ojzpoc7rj",
+              "type" : "user",
+              "uri" : "spotify:user:varkxpososm9sp59ojzpoc7rj"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MSxiMGVjOTExZmI4YTE0MGM1YzBlNDRhNjZmY2E2MzE5MTgxMTBlZDk1",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/5Otq9ZokE8LGOrHjDfq29j/tracks",
+              "total" : 0
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:5Otq9ZokE8LGOrHjDfq29j"
+          }, {
+            "collaborative" : false,
+            "description" : "",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/6sU0dnbL9BPKHOIDFh7S3N"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/6sU0dnbL9BPKHOIDFh7S3N",
+            "id" : "6sU0dnbL9BPKHOIDFh7S3N",
+            "images" : [ ],
+            "name" : "My Playlist #7",
+            "owner" : {
+              "display_name" : "staniel",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/varkxpososm9sp59ojzpoc7rj"
+              },
+              "href" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj",
+              "id" : "varkxpososm9sp59ojzpoc7rj",
+              "type" : "user",
+              "uri" : "spotify:user:varkxpososm9sp59ojzpoc7rj"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MSxjY2ZjOTdlM2NlNmI3MDcxOWNmMGUwYjBiNzljMzg0NDA4Mzk3ZmY1",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/6sU0dnbL9BPKHOIDFh7S3N/tracks",
+              "total" : 0
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:6sU0dnbL9BPKHOIDFh7S3N"
+          }, {
+            "collaborative" : false,
+            "description" : "",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/6TEB1vomOer2zgLQwk8NTm"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/6TEB1vomOer2zgLQwk8NTm",
+            "id" : "6TEB1vomOer2zgLQwk8NTm",
+            "images" : [ ],
+            "name" : "My Playlist #6",
+            "owner" : {
+              "display_name" : "staniel",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/varkxpososm9sp59ojzpoc7rj"
+              },
+              "href" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj",
+              "id" : "varkxpososm9sp59ojzpoc7rj",
+              "type" : "user",
+              "uri" : "spotify:user:varkxpososm9sp59ojzpoc7rj"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "MSwwMmM4YzE5ZTNhNTY4MTU1ZmE1MjYwZWU4YzQ4MDZkODIzNmM5MjQy",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/6TEB1vomOer2zgLQwk8NTm/tracks",
+              "total" : 0
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:6TEB1vomOer2zgLQwk8NTm"
+          }, {
+            "collaborative" : false,
+            "description" : "test desc",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/3jPx5nmC1q0j39biB2ZdDi"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/3jPx5nmC1q0j39biB2ZdDi",
+            "id" : "3jPx5nmC1q0j39biB2ZdDi",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://mosaic.scdn.co/640/ab67616d0000b273102301d657a1d8a70398bd07ab67616d0000b27354edb04b51f748d85ecae80cab67616d0000b273a2b5af06285eee08b54c19c7ab67616d0000b273d77d079731232d104567b854",
+              "width" : 640
+            }, {
+              "height" : 300,
+              "url" : "https://mosaic.scdn.co/300/ab67616d0000b273102301d657a1d8a70398bd07ab67616d0000b27354edb04b51f748d85ecae80cab67616d0000b273a2b5af06285eee08b54c19c7ab67616d0000b273d77d079731232d104567b854",
+              "width" : 300
+            }, {
+              "height" : 60,
+              "url" : "https://mosaic.scdn.co/60/ab67616d0000b273102301d657a1d8a70398bd07ab67616d0000b27354edb04b51f748d85ecae80cab67616d0000b273a2b5af06285eee08b54c19c7ab67616d0000b273d77d079731232d104567b854",
+              "width" : 60
+            } ],
+            "name" : "john maus",
+            "owner" : {
+              "display_name" : "staniel",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/varkxpososm9sp59ojzpoc7rj"
+              },
+              "href" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj",
+              "id" : "varkxpososm9sp59ojzpoc7rj",
+              "type" : "user",
+              "uri" : "spotify:user:varkxpososm9sp59ojzpoc7rj"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "NjMsMmRlODY1ZWJiNDdlNmIzZTYyOTE0OWI3MDA5ZWMzZGZiODQxNzFkMw==",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/3jPx5nmC1q0j39biB2ZdDi/tracks",
+              "total" : 60
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:3jPx5nmC1q0j39biB2ZdDi"
+          }, {
+            "collaborative" : false,
+            "description" : "",
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/playlist/4Fy9VOGUGBXFYzwBN7O2FR"
+            },
+            "href" : "https://api.spotify.com/v1/playlists/4Fy9VOGUGBXFYzwBN7O2FR",
+            "id" : "4Fy9VOGUGBXFYzwBN7O2FR",
+            "images" : [ {
+              "height" : 640,
+              "url" : "https://i.scdn.co/image/ab67616d0000b27354edb04b51f748d85ecae80c",
+              "width" : 640
+            } ],
+            "name" : "Bennington (2007)",
+            "owner" : {
+              "display_name" : "staniel",
+              "external_urls" : {
+                "spotify" : "https://open.spotify.com/user/varkxpososm9sp59ojzpoc7rj"
+              },
+              "href" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj",
+              "id" : "varkxpososm9sp59ojzpoc7rj",
+              "type" : "user",
+              "uri" : "spotify:user:varkxpososm9sp59ojzpoc7rj"
+            },
+            "primary_color" : null,
+            "public" : true,
+            "snapshot_id" : "Miw4YjI4N2IyODA2Mjk2MmU1MDMxM2RjYTYwOWEzYjlmY2NmNGMxODlm",
+            "tracks" : {
+              "href" : "https://api.spotify.com/v1/playlists/4Fy9VOGUGBXFYzwBN7O2FR/tracks",
+              "total" : 1
+            },
+            "type" : "playlist",
+            "uri" : "spotify:playlist:4Fy9VOGUGBXFYzwBN7O2FR"
+          } ],
+          "limit" : 5,
+          "next" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj/playlists?offset=10&limit=5",
+          "offset" : 5,
+          "previous" : "https://api.spotify.com/v1/users/varkxpososm9sp59ojzpoc7rj/playlists?offset=0&limit=5",
+          "total" : 13
+        }
+  recorded_at: Thu, 03 Aug 2023 13:42:49 GMT
+recorded_with: VCR 6.2.0

@@ -46,4 +46,28 @@ RSpec.describe API::Spotify::UsersController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :playlists' do
+    it 'returns 200 if user exists' do
+      VCR.use_cassette 'controllers/api/spotify/users/playlists/success' do
+        get :playlists, params: { access_token: 'BQDF0G5HXoWAjv6TcTR0iUt_yHwu8b2ANZ-Nowu1KaTS1POUnclTr0yCycfImQVcPRmFq5-_XLn9U1FXUzbOk7HlKAfqGj6ztDlgG2Ym990a1RgCs19aCYHr08IT2REZo7NT2vI0LHB4cONwMaroRP-H3Ke4lqpPW5TxlQq42leexbi4kUQr-KDe0ADtn4jJ7FeldpSuavYb_IrCx4heRQBjWFYQzsyOPVLv', profile_id: 1, page: 2, limit: 5 }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no access_token' do
+      get :playlists, params: { access_token: '', profile_id: 1 }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong access_token' do
+      VCR.use_cassette 'controllers/api/spotify/users/playlists/wrong_token' do
+        get :playlists, params: { access_token: random, profile_id: 1 }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end
