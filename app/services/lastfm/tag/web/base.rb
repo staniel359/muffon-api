@@ -1,14 +1,11 @@
 module LastFM
   module Tag
     module Web
-      class Base < LastFM::Web::Base
+      class Base < LastFM::Tag::Base
+        include LastFM::Utils::Web::Proxy
         include LastFM::Utils::Web::Pagination
 
         private
-
-        def primary_args
-          [@args[:tag]]
-        end
 
         def collection_list
           send(
@@ -34,10 +31,6 @@ module LastFM
           super.merge(
             pagination_params
           )
-        end
-
-        def data
-          { tag: tag_data }
         end
       end
     end

@@ -1,20 +1,18 @@
 module LastFM
   module Artist
     module Web
-      class Base < LastFM::Web::Base
+      class Base < LastFM::Artist::Base
+        include LastFM::Utils::Web::Proxy
+
         private
 
-        def primary_args
-          [@args[:artist]]
+        def no_data?
+          false
         end
 
         def base_link
           'https://www.last.fm/music' \
             "/#{artist_name_formatted}"
-        end
-
-        def data
-          { artist: artist_data }
         end
 
         def artist_base_data
@@ -25,8 +23,6 @@ module LastFM
           response_data.css(
             '.header-new-title'
           )[0].text
-        rescue StandardError
-          raise RestClient::NotFound
         end
       end
     end

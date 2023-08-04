@@ -43,9 +43,15 @@ module Spotify
       end
 
       def tracks_count
-        return unless @args[:counter] == 'tracks'
+        return unless with_counter?('tracks')
 
         tracks_data[:total_items]
+      end
+
+      def with_counter?(counter)
+        @args[:counters]&.include?(
+          counter
+        )
       end
 
       def tracks_data
@@ -58,7 +64,7 @@ module Spotify
       end
 
       def playlists_count
-        return unless @args[:counter] == 'playlists'
+        return unless with_counter?('playlists')
 
         playlists_data[:total_items]
       end

@@ -12,7 +12,7 @@ module API
       def info_data
         ::Spotify::User::Info.call(
           params.slice(
-            *%i[profile_id token access_token counter]
+            *%i[profile_id token access_token counters]
           )
         )
       end

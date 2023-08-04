@@ -5,12 +5,14 @@ module API
 
       def plays; end
 
+      def playlists; end
+
       private
 
       def info_data
         ::LastFM::User::Info.call(
           params.slice(
-            *%i[profile_id token nickname counter]
+            *%i[profile_id token nickname counters]
           )
         )
       end
@@ -19,6 +21,17 @@ module API
         ::LastFM::User::Plays.call(
           params.slice(
             *%i[profile_id token nickname page limit]
+          )
+        )
+      end
+
+      def playlists_data
+        ::LastFM::User::Playlists.call(
+          params.slice(
+            *%i[
+              profile_id token nickname
+              page limit with_tracks
+            ]
           )
         )
       end

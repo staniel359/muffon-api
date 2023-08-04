@@ -34,8 +34,6 @@ module Spotify
       def collection_item_data_formatted(playlist)
         Spotify::User::Playlists::Playlist.call(
           playlist:,
-          profile_id: @args[:profile_id],
-          token: @args[:token],
           with_tracks: @args[:with_tracks]
         )
       end

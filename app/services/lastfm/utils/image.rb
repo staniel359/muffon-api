@@ -36,6 +36,7 @@ module LastFM
           .sub('/174s', size)
           .sub('/270x205', size)
           .sub('/300x300', size)
+          .sub('/64s', size)
           .sub(%r{(.+)(?=/i/u)}, BASE_LINK)
       end
     end

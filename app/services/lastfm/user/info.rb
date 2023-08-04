@@ -10,7 +10,8 @@ module LastFM
           nickname:,
           premium: premium?,
           image_url:,
-          plays_count:
+          plays_count:,
+          playlists_count:
         }.compact
       end
 
@@ -43,9 +44,28 @@ module LastFM
       end
 
       def plays_count
-        return unless @args[:counter] == 'plays'
+        return unless with_counter?('plays')
 
         user['playcount'].to_i
+      end
+
+      def with_counter?(counter)
+        @args[:counters]&.include?(
+          counter
+        )
+      end
+
+      def playlists_count
+        return unless with_counter?('playlists')
+
+        user_playlists_data[:total_items]
+      end
+
+      def user_playlists_data
+        LastFM::User::Playlists.call(
+          nickname:,
+          skip_profile: true
+        )[:user]
       end
     end
   end

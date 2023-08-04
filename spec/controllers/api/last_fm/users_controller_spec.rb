@@ -46,4 +46,28 @@ RSpec.describe API::LastFM::UsersController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :playlists' do
+    it 'returns 200 if user exists' do
+      VCR.use_cassette 'controllers/api/lastfm/users/playlists/success' do
+        get :playlists, params: { nickname: 'cornwell_93', profile_id: 1, page: 2, limit: 5 }
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no user name' do
+      get :playlists, params: { nickname: '', profile_id: 1 }
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong user name' do
+      VCR.use_cassette 'controllers/api/lastfm/users/playlists/wrong_nickname' do
+        get :playlists, params: { nickname: random, profile_id: 1 }
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

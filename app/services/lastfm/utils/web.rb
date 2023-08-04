@@ -1,6 +1,6 @@
 module LastFM
-  module Web
-    class Base < LastFM::Base
+  module Utils
+    module Web
       private
 
       def response_data
@@ -8,14 +8,6 @@ module LastFM
           Nokogiri::HTML.parse(
             response
           )
-      end
-
-      def response
-        Muffon::Utils::Proxy.call(
-          link:,
-          params:,
-          cookies:
-        )
       end
 
       def params

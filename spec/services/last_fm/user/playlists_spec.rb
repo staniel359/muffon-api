@@ -1,15 +1,15 @@
-RSpec.describe LastFM::User::Info do
+RSpec.describe LastFM::User::Playlists do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when user exists' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/user/info/success' do
-          subject.call(nickname: 'cornwell_93', counters: ['plays'])
+        VCR.use_cassette 'services/lastfm/user/playlists/success' do
+          subject.call(nickname: 'cornwell_93', page: 2, limit: 5)
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM::User.info_data) }
+      it { expect(output).to eq(Helpers::LastFM::User.playlists_data) }
     end
   end
 
@@ -22,8 +22,8 @@ RSpec.describe LastFM::User::Info do
 
     context 'when wrong user nickname' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/user/info/wrong_nickname' do
-          subject.call(nickname: random)
+        VCR.use_cassette 'services/lastfm/user/playlists/wrong_nickname' do
+          subject.call(nickname: random, page: 2, limit: 5)
         end
       end
 
