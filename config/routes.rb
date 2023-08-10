@@ -596,6 +596,10 @@ Rails.application.routes.draw do
           get '', action: :info
           get 'plays'
           get 'playlists'
+
+          namespace :favorites do
+            get 'tracks'
+          end
         end
       end
     end

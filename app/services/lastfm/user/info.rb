@@ -11,7 +11,8 @@ module LastFM
           premium: premium?,
           image_url:,
           plays_count:,
-          playlists_count:
+          playlists_count:,
+          favorite_tracks_count:
         }.compact
       end
 
@@ -66,6 +67,19 @@ module LastFM
           nickname:,
           skip_profile: true
         )[:user]
+      end
+
+      def favorite_tracks_count
+        return unless with_counter?('favorite_tracks')
+
+        user_favorite_tracks_data[:total_items]
+      end
+
+      def user_favorite_tracks_data
+        LastFM::User::Favorites::Tracks.call(
+          nickname:,
+          skip_profile: true
+        )[:user][:favorites]
       end
     end
   end

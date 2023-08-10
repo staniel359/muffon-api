@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=5&method=user.getLovedTracks&page=2&user=cornwell_93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - ws.audioscrobbler.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Thu, 10 Aug 2023 11:10:44 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3997'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '86400'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"lovedtracks":{"track":[{"artist":{"url":"https:\/\/www.last.fm\/music\/Diana+Barton","name":"Diana
+        Barton","mbid":""},"date":{"uts":"1578869520","#text":"12 Jan 2020, 22:52"},"mbid":"","url":"https:\/\/www.last.fm\/music\/Diana+Barton\/_\/Tango","name":"Tango","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"streamable":{"fulltrack":"0","#text":"0"}},{"artist":{"url":"https:\/\/www.last.fm\/music\/Fanny+Forest","name":"Fanny
+        Forest","mbid":""},"date":{"uts":"1578168314","#text":"04 Jan 2020, 20:05"},"mbid":"","url":"https:\/\/www.last.fm\/music\/Fanny+Forest\/_\/Les+Lolitas+Des+Magazines","name":"Les
+        Lolitas Des Magazines","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"streamable":{"fulltrack":"0","#text":"0"}},{"artist":{"url":"https:\/\/www.last.fm\/music\/Dorine+Hollier","name":"Dorine
+        Hollier","mbid":""},"date":{"uts":"1570020536","#text":"02 Oct 2019, 12:48"},"mbid":"32731072-6e5d-481b-b8e6-c336356fdaa1","url":"https:\/\/www.last.fm\/music\/Dorine+Hollier\/_\/Tonight...+Crazy+Night","name":"Tonight...
+        Crazy Night","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"streamable":{"fulltrack":"0","#text":"0"}},{"artist":{"url":"https:\/\/www.last.fm\/music\/Casanova","name":"Casanova","mbid":""},"date":{"uts":"1561808239","#text":"29
+        Jun 2019, 11:37"},"mbid":"","url":"https:\/\/www.last.fm\/music\/Casanova\/_\/Tutti+quanti","name":"Tutti
+        quanti","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"streamable":{"fulltrack":"0","#text":"0"}},{"artist":{"url":"https:\/\/www.last.fm\/music\/Claudia+T.","name":"Claudia
+        T.","mbid":""},"date":{"uts":"1561808179","#text":"29 Jun 2019, 11:36"},"mbid":"","url":"https:\/\/www.last.fm\/music\/Claudia+T.\/_\/Dance+With+Me","name":"Dance
+        With Me","image":[{"size":"small","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/34s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"medium","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/64s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"large","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/174s\/2a96cbd8b46e442fc41c2b86b821562f.png"},{"size":"extralarge","#text":"https:\/\/lastfm.freetls.fastly.net\/i\/u\/300x300\/2a96cbd8b46e442fc41c2b86b821562f.png"}],"streamable":{"fulltrack":"0","#text":"0"}}],"@attr":{"user":"cornwell_93","totalPages":"19","page":"2","total":"91","perPage":"5"}}}'
+  recorded_at: Thu, 10 Aug 2023 11:10:44 GMT
+recorded_with: VCR 6.2.0
