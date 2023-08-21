@@ -48,7 +48,7 @@ module Odnoklassniki
       end
 
       def audio_present?
-        !!track['isDownloadAllowed']
+        true
       end
     end
   end
