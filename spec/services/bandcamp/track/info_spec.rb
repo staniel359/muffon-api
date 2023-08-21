@@ -5,7 +5,7 @@ RSpec.describe Bandcamp::Track::Info do
     context 'when track present with album' do
       let(:output) do
         VCR.use_cassette 'services/bandcamp/track/info/success_album' do
-          subject.call(artist_id: '2228040235', track_id: '2723372494', profile_id: 1, audio_link: true)
+          subject.call(artist_id: '2228040235', track_id: '2723372494', profile_id: 1, with_audio: true)
         end
       end
 
@@ -15,7 +15,7 @@ RSpec.describe Bandcamp::Track::Info do
     context 'when track present with description' do
       let(:output) do
         VCR.use_cassette 'services/bandcamp/track/info/success_description' do
-          subject.call(artist_id: '2228040235', track_id: '1709958085', profile_id: 1, audio_link: true)
+          subject.call(artist_id: '2228040235', track_id: '1709958085', profile_id: 1, with_audio: true)
         end
       end
 

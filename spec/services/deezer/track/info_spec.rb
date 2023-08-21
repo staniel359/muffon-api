@@ -5,7 +5,7 @@ RSpec.describe Deezer::Track::Info do
     context 'when track_id present' do
       let(:output) do
         VCR.use_cassette 'services/deezer/track/info/success' do
-          subject.call(track_id: '11616579', profile_id: 1, audio_link: true)
+          subject.call(track_id: '11616579', profile_id: 1, with_audio: true)
         end
       end
 

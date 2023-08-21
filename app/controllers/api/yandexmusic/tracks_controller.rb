@@ -14,7 +14,7 @@ module API
           params.slice(
             *%i[
               track_id profile_id token
-              language audio_link
+              language with_audio
             ]
           )
         )

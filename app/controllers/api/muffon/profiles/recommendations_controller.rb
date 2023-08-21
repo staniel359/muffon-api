@@ -16,13 +16,21 @@ module API
           ::Muffon::Profile::Recommendations.call(
             params.slice(
               *%i[
-                profile_id token page limit
-                order filter filter_value
-                hide_library_artists tracks_count
-                hide_listened_artists
-              ]
+                profile_id token
+                page limit order
+              ],
+              *filter_args
             )
           )
+        end
+
+        def filter_args
+          %i[
+            hide_library hide_listened
+            hide_library_tracks_count
+            tags_include tags_exclude
+            artists_include artists_exclude
+          ]
         end
 
         def info_data

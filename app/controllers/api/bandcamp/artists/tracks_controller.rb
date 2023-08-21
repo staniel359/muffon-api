@@ -19,7 +19,7 @@ module API
             params.slice(
               *%i[
                 artist_id track_id
-                profile_id token audio_link
+                profile_id token with_audio
               ]
             )
           )

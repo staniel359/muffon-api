@@ -12,7 +12,7 @@ module API
       def info_data
         ::VK::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id token audio_link]
+            *%i[track_id profile_id token with_audio]
           )
         )
       end

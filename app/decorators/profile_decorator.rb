@@ -1,39 +1,5 @@
 module ProfileDecorator
   module ClassMethods
-    def relationship_created_desc_ordered
-      order(
-        'relationships.created_at DESC'
-      )
-    end
-
-    def library_artists_count_desc_ordered
-      order(
-        library_artists_count: :desc,
-        created_at: :asc
-      )
-    end
-
-    def library_artists_count_asc_ordered
-      order(
-        library_artists_count: :asc,
-        created_at: :asc
-      )
-    end
-
-    def followers_count_desc_ordered
-      order(
-        followers_count: :desc,
-        created_at: :asc
-      )
-    end
-
-    def followers_count_asc_ordered
-      order(
-        followers_count: :asc,
-        created_at: :asc
-      )
-    end
-
     def associated
       includes(
         image_association

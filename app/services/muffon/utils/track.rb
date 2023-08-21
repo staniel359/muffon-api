@@ -69,7 +69,7 @@ module Muffon
       end
 
       def audio_link_conditional
-        audio_link if @args[:audio_link]
+        audio_link if @args[:with_audio]
       end
     end
   end
