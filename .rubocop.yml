@@ -26,6 +26,14 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
 
+Metrics/ClassLength:
+  Exclude:
+    - 'app/models/**/profile.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'app/decorators/**/profile_decorator.rb'
+
 Rails/SkipsModelValidations:
   Enabled: false
 

@@ -78,6 +78,32 @@ module ProfileDecorator
       )
   end
 
+  def artists_library_artist_ids(artists)
+    library_artists
+      .where(
+        artist_id: artist_ids(
+          artists
+        )
+      ).pluck(:id)
+  end
+
+  def artist_ids_from_library(tracks_count = 0)
+    library_artists
+      .where(
+        'library_tracks_count >= ?',
+        tracks_count
+      ).pluck(
+        :artist_id
+      )
+  end
+
+  def artists_ids_from_listened
+    listened_artists
+      .pluck(
+        :artist_id
+      )
+  end
+
   def in_followers?(profile_id)
     follower_profiles
       .find_by(id: profile_id)
@@ -121,6 +147,18 @@ module ProfileDecorator
       id:,
       count:
     }
+  end
+
+  def artist_ids(artists)
+    artists.map do |name|
+      artist_id(name)
+    end.compact
+  end
+
+  def artist_id(name)
+    Artist.with_name(
+      name
+    )&.id
   end
 
   def eventable_data

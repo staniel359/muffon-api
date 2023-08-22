@@ -2,7 +2,8 @@ module Muffon
   module Profile
     class Recommendations < Muffon::Profile::Base
       COLLECTION_NAME = 'recommendations'.freeze
-      DEFAULT_ORDER = 'library_artists_count_desc'.freeze
+      DEFAULT_ORDER =
+        'library_artists_count_desc'.freeze
 
       include Muffon::Utils::Pagination
 
@@ -28,42 +29,19 @@ module Muffon
 
       def recommendations_filtered
         @recommendations_filtered ||=
-          case @args[:filter]
-          when 'artists'
-            recommendations_artists_filtered
-          when 'tags'
-            recommendations_tags_filtered
-          else
-            recommendations
-          end
+          Muffon::Profile::Recommendations::Filter.call(
+            filter_args
+          )
       end
 
-      def recommendations_artists_filtered
-        Muffon::Profile::Recommendations::Filter::Artists.call(
-          profile_id: @args[:profile_id],
-          filter_value: @args[:filter_value]
-        )
-      end
-
-      def recommendations_tags_filtered
-        Muffon::Profile::Recommendations::Filter::Tags.call(
-          profile_id: @args[:profile_id],
-          filter_value: @args[:filter_value]
-        )
-      end
-
-      def recommendations
-        Muffon::Profile::Recommendations::Hide.call(
-          hide_args
-        )
-      end
-
-      def hide_args
+      def filter_args
         @args.slice(
           *%i[
-            hide_library_artists
-            hide_listened_artists
-            profile_id tracks_count
+            profile_id hide_library
+            hide_library_tracks_count
+            hide_listened tags_include
+            tags_exclude artists_include
+            artists_exclude
           ]
         )
       end

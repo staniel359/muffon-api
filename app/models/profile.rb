@@ -11,16 +11,44 @@ class Profile < ApplicationRecord
     followers_count_asc
   ].freeze
   EVENT_CALLBACKS = %w[
-    created updated
+    created
+    updated
   ].freeze
   EVENT_ATTRIBUTES = %w[
-    email password nickname gender
-    birthdate country city private
+    email
+    password
+    nickname
+    gender
+    birthdate
+    country
+    city
+    private
   ].freeze
 
-  include ProfileValidator
   include ProfileDecorator
   include Eventable
+
+  validates :email,
+            presence: true,
+            uniqueness: true,
+            format: {
+              with: URI::MailTo::EMAIL_REGEXP
+            }
+
+  validates :password,
+            presence: true,
+            length: { minimum: 6 },
+            on: :create
+
+  validates :password,
+            allow_blank: true,
+            length: { minimum: 6 },
+            on: :update
+
+  validates :nickname,
+            presence: true,
+            uniqueness: true,
+            length: { maximum: 30 }
 
   before_create :set_token
 
@@ -119,10 +147,13 @@ class Profile < ApplicationRecord
   has_one :spotify_connection, dependent: :destroy
 
   enum gender: {
-    male: 0, female: 1, other: 2
+    male: 0,
+    female: 1,
+    other: 2
   }
 
   enum role: {
-    profile: 0, creator: 1
+    profile: 0,
+    creator: 1
   }
 end
