@@ -1,4 +1,6 @@
 class Video < ApplicationRecord
+  include VideoDecorator
+
   validates :youtube_id,
             presence: true,
             uniqueness: {

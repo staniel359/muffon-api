@@ -1,4 +1,6 @@
 class VideoPlaylist < ApplicationRecord
+  include VideoPlaylistDecorator
+
   validates :youtube_id,
             presence: true,
             uniqueness: {

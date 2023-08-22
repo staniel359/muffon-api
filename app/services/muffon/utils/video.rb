@@ -5,13 +5,9 @@ module Muffon
 
       def find_video
         @find_video ||=
-          ::Video.where(
-            youtube_id:
-          ).first_or_initialize.tap do |v|
-            v.attributes = update_params
-
-            v.save
-          end
+          ::Video.with_youtube_id(
+            youtube_id, update_params
+          )
       end
 
       def youtube_id
