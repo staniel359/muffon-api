@@ -157,4 +157,14 @@ class Profile < ApplicationRecord
     profile: 0,
     creator: 1
   }
+
+  def delete_library
+    library_tracks.delete_all
+
+    library_albums.delete_all
+
+    library_artists.delete_all
+
+    recommendations.delete_all
+  end
 end

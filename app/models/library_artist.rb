@@ -15,6 +15,11 @@ class LibraryArtist < ApplicationRecord
   include LibraryArtistDecorator
   include EventableArtist
 
+  validates :artist_id,
+            uniqueness: {
+              scope: :profile_id
+            }
+
   after_create :update_artist_tags
   after_create :create_recommendations
 
@@ -26,8 +31,17 @@ class LibraryArtist < ApplicationRecord
   has_many :library_tracks, dependent: :delete_all
   has_many :library_albums, dependent: :delete_all
 
-  validates :artist_id,
-            uniqueness: {
-              scope: :profile_id
-            }
+  def create_recommendations
+    Muffon::Worker::Profile::Recommendations::Creator.call(
+      profile_id:,
+      library_artist_id: id
+    )
+  end
+
+  def clear_recommendations
+    Muffon::Worker::Profile::Recommendations::Clearer.call(
+      profile_id:,
+      library_artist_id: id
+    )
+  end
 end

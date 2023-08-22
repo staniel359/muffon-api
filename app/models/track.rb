@@ -21,5 +21,5 @@ class Track < ApplicationRecord
   validates :player_id,
             presence: true,
             uniqueness: true,
-            unless: -> { Rails.env.test? }
+            unless: -> { test? }
 end

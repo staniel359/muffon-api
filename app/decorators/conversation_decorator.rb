@@ -1,5 +1,7 @@
 module ConversationDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def associated
       includes(
         other_profile: image_association
@@ -12,10 +14,6 @@ module ConversationDecorator
         id: profile_id
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   def find_other_profile(profile_id)

@@ -1,5 +1,7 @@
 module CommunityDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def members_count_desc_ordered
       order(
         members_count: :desc
@@ -30,10 +32,6 @@ module CommunityDecorator
         [creator: image_association]
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   def in_members?(profile_id)

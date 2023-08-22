@@ -1,5 +1,7 @@
 module PlaylistTrackDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def associated
       includes(
         :track,
@@ -11,8 +13,4 @@ module PlaylistTrackDecorator
   end
 
   delegate :profile_id, to: :playlist
-
-  def self.included(base)
-    base.extend ClassMethods
-  end
 end

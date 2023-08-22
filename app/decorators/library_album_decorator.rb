@@ -1,5 +1,7 @@
 module LibraryAlbumDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def associated
       includes(
         :album,
@@ -7,10 +9,6 @@ module LibraryAlbumDecorator
         image_association
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   private

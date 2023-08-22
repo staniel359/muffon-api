@@ -1,5 +1,7 @@
 module LibraryTrackDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def associated
       includes(
         :track,
@@ -16,10 +18,6 @@ module LibraryTrackDecorator
         track: :artist
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   def library_albums

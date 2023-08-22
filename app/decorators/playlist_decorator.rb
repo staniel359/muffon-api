@@ -1,5 +1,7 @@
 module PlaylistDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def tracks_count_desc_ordered
       order(
         tracks_count: :desc,
@@ -19,10 +21,6 @@ module PlaylistDecorator
         image_association
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   private

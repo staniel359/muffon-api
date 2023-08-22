@@ -1,5 +1,7 @@
 module PostDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def with_profile_type
       where(
         post_type: 'profile'
@@ -42,10 +44,6 @@ module PostDecorator
         images_association
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   private

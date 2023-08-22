@@ -1,5 +1,7 @@
 module RecommendationDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def not_deleted
       where(
         deleted: false
@@ -117,10 +119,6 @@ module RecommendationDecorator
         id: profile_id
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   def library_artists

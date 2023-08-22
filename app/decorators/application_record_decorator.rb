@@ -1,12 +1,15 @@
 module ApplicationRecordDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def ordered(order, default_order)
       in_orders = order.in?(
         self::ORDERS
       )
 
-      order_formatted =
+      order_formatted = (
         in_orders ? order : default_order
+      )
 
       send(
         "#{order_formatted}_ordered"
@@ -105,16 +108,6 @@ module ApplicationRecordDecorator
           image_attachment_association
       }
     end
-
-    def clear_cache
-      ActiveRecord::Base
-        .connection
-        .clear_query_cache
-    end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   def image_data
@@ -135,7 +128,7 @@ module ApplicationRecordDecorator
 
   def errors_data
     forbidden.merge(
-      { errors: errors_formatted }
+      errors_formatted_data
     )
   end
 
@@ -153,13 +146,13 @@ module ApplicationRecordDecorator
     )
   end
 
+  def errors_formatted_data
+    { errors: errors_formatted }
+  end
+
   def errors_formatted
     errors.map do |e|
       { e.attribute => e.type }
     end
-  end
-
-  def update_artist_tags
-    artist.update_tags
   end
 end

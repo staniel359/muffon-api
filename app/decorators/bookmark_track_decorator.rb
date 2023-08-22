@@ -1,5 +1,7 @@
 module BookmarkTrackDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def associated
       includes(
         :album,
@@ -7,9 +9,5 @@ module BookmarkTrackDecorator
         image_association
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 end

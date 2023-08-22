@@ -1,5 +1,7 @@
 module ProfileDecorator
-  module ClassMethods
+  extend ActiveSupport::Concern
+
+  class_methods do
     def associated
       includes(
         image_association
@@ -11,10 +13,6 @@ module ProfileDecorator
         online: true
       )
     end
-  end
-
-  def self.included(base)
-    base.extend ClassMethods
   end
 
   def conversations
@@ -78,6 +76,10 @@ module ProfileDecorator
       )
   end
 
+  def related_events
+    active_events
+  end
+
   def artists_library_artist_ids(artists)
     library_artists
       .where(
@@ -116,24 +118,6 @@ module ProfileDecorator
       .present?
   end
 
-  def delete_library
-    library_tracks.delete_all
-
-    library_albums.delete_all
-
-    library_artists.delete_all
-
-    recommendations.delete_all
-  end
-
-  def profile_id
-    id
-  end
-
-  def related_events
-    active_events
-  end
-
   private
 
   def set_token
@@ -159,6 +143,10 @@ module ProfileDecorator
     Artist.with_name(
       name
     )&.id
+  end
+
+  def profile_id
+    id
   end
 
   def eventable_data
