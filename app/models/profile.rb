@@ -22,6 +22,7 @@ class Profile < ApplicationRecord
     birthdate
     country
     city
+    status
     private
   ].freeze
 
