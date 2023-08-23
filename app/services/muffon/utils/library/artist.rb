@@ -28,8 +28,20 @@ module Muffon
 
         def created_formatted
           datetime_formatted(
-            library_artist.created_at
+            created_conditional
           )
+        end
+
+        def created_conditional
+          first_library_track&.created_at ||
+            library_artist.created_at
+        end
+
+        def first_library_track
+          library_artist
+            .library_tracks
+            .created_asc_ordered
+            .first
         end
       end
     end

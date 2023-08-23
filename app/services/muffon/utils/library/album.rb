@@ -51,8 +51,20 @@ module Muffon
 
         def created_formatted
           datetime_formatted(
-            library_album.created_at
+            created_conditional
           )
+        end
+
+        def created_conditional
+          first_library_track&.created_at ||
+            library_album.created_at
+        end
+
+        def first_library_track
+          library_album
+            .library_tracks
+            .created_asc_ordered
+            .first
         end
 
         def source_data
