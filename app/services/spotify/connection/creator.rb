@@ -82,6 +82,7 @@ module Spotify
         profile
           .spotify_connection
           .slice(
+            :spotify_id,
             :nickname,
             :premium,
             :image_url
