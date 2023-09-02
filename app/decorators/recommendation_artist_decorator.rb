@@ -1,4 +1,4 @@
-module RecommendationDecorator
+module RecommendationArtistDecorator
   extend ActiveSupport::Concern
 
   class_methods do
@@ -17,7 +17,7 @@ module RecommendationDecorator
 
     def with_library_artists_count
       select(
-        'recommendations.*, ' \
+        'recommendation_artists.*, ' \
         'ARRAY_LENGTH(library_artist_ids, 1) ' \
         'as library_artist_ids_size'
       )

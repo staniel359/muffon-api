@@ -1,6 +1,6 @@
 module LibraryArtistDecorator
-  def recommendations
-    Recommendation.where(
+  def recommendation_artists
+    RecommendationArtist.where(
       '? = ANY(library_artist_ids)', id
     )
   end

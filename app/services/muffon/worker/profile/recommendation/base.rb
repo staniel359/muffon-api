@@ -1,7 +1,7 @@
 module Muffon
   module Worker
     module Profile
-      module Recommendations
+      module Recommendation
         class Base < Muffon::Base
           private
 
@@ -12,7 +12,7 @@ module Muffon
           def data
             limit_queue
 
-            process_recommendations
+            process_recommendation
           end
 
           def limit_queue

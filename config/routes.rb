@@ -109,14 +109,16 @@ Rails.application.routes.draw do
             end
           end
 
-          resources :recommendations,
-            only: %i[index destroy],
-            param: :recommendation_id
+          namespace :recommendations do
+            resources :artists,
+              only: %i[index destroy],
+              param: :recommendation_id
 
-          namespace :recommendations, as: :recommendation do
-            scope ':recommendation_id' do
-              get '', action: :info
-              get 'artists'
+            namespace :artists, as: :artist do
+              scope ':recommendation_id' do
+                get '', action: :info
+                get 'artists'
+              end
             end
           end
 

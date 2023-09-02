@@ -12,24 +12,15 @@ module Muffon
           ]
         end
 
-        def no_data?
-          recommendation.blank?
-        end
-
-        def recommendation
-          @recommendation ||=
-            profile
-            .recommendations
-            .find_by(
-              id: @args[:recommendation_id]
-            )
-        end
-
         def forbidden?
           !valid_profile?
         end
 
-        def data
+        def no_data?
+          recommendation.blank?
+        end
+
+        def profile_data
           { recommendation: recommendation_data }
         end
       end

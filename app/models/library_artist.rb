@@ -32,14 +32,14 @@ class LibraryArtist < ApplicationRecord
   has_many :library_albums, dependent: :delete_all
 
   def create_recommendations
-    Muffon::Worker::Profile::Recommendations::Creator.call(
+    Muffon::Worker::Profile::Recommendations::Artists::Creator.call(
       profile_id:,
       library_artist_id: id
     )
   end
 
   def clear_recommendations
-    Muffon::Worker::Profile::Recommendations::Clearer.call(
+    Muffon::Worker::Profile::Recommendations::Artists::Clearer.call(
       profile_id:,
       library_artist_id: id
     )

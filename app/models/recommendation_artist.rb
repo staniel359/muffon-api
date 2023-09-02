@@ -1,4 +1,4 @@
-class Recommendation < ApplicationRecord
+class RecommendationArtist < ApplicationRecord
   ORDERS = %w[
     library_artists_count_desc
     library_artists_count_asc
@@ -7,7 +7,7 @@ class Recommendation < ApplicationRecord
     deleted
   ].freeze
 
-  include RecommendationDecorator
+  include RecommendationArtistDecorator
   include EventableArtist
 
   after_create :update_artist_tags

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_31_175015) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_02_151931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -392,14 +392,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_175015) do
     t.index ["token"], name: "index_profiles_on_token"
   end
 
-  create_table "recommendations", force: :cascade do |t|
+  create_table "recommendation_artists", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.integer "artist_id"
     t.integer "library_artist_ids", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "deleted", default: false
-    t.index ["profile_id", "artist_id"], name: "index_recommendations_on_profile_id_and_artist_id", unique: true
+    t.index ["profile_id", "artist_id"], name: "index_recommendation_artists_on_profile_id_and_artist_id", unique: true
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -530,7 +530,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_175015) do
   add_foreign_key "posts", "communities"
   add_foreign_key "posts", "profiles"
   add_foreign_key "posts", "profiles", column: "other_profile_id"
-  add_foreign_key "recommendations", "profiles"
+  add_foreign_key "recommendation_artists", "profiles"
   add_foreign_key "relationships", "profiles"
   add_foreign_key "relationships", "profiles", column: "other_profile_id"
   add_foreign_key "spotify_connections", "profiles"

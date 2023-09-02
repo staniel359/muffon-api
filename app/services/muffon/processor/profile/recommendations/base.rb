@@ -6,16 +6,17 @@ module Muffon
           def call
             return if not_all_args?
 
-            process_recommendations
+            data
           end
 
           private
 
           def primary_args
-            [
-              @args[:profile_id],
-              @args[:library_artist_id]
-            ]
+            [@args[:profile_id]]
+          end
+
+          def data
+            process_recommendations
           end
         end
       end
