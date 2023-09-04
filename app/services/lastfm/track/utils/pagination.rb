@@ -25,7 +25,10 @@ module LastFM
 
         def raw_track_info_data
           LastFM::Track::Info.call(
-            @args
+            track_title:
+              @args[:track_title],
+            artist_name:
+              @args[:artist_name]
           )[:track]
         end
 

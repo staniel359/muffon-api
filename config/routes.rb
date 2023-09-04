@@ -465,8 +465,8 @@ Rails.application.routes.draw do
     # LastFM
 
     namespace :lastfm do
-      namespace :artists, as: :artist, constraints: { artist: /[^\/]+/ } do
-        scope ':artist' do
+      namespace :artists, as: :artist, constraints: { artist_name: /[^\/]+/ } do
+        scope ':artist_name' do
           get '', action: :info
           get 'description'
           get 'tags'
@@ -479,8 +479,8 @@ Rails.application.routes.draw do
           get 'profiles'
           get 'links'
 
-          namespace :albums, as: :album, constraints: { album: /[^\/]+/ } do
-            scope ':album' do
+          namespace :albums, as: :album, constraints: { album_title: /[^\/]+/ } do
+            scope ':album_title' do
               get '', action: :info
               get 'description'
               get 'tags'
@@ -490,8 +490,8 @@ Rails.application.routes.draw do
             end
           end
 
-          namespace :tracks, as: :track, constraints: { track: /[^\/]+/ } do
-            scope ':track' do
+          namespace :tracks, as: :track, constraints: { track_title: /[^\/]+/ } do
+            scope ':track_title' do
               get '', action: :info
               get 'description'
               get 'tags'
@@ -511,8 +511,8 @@ Rails.application.routes.draw do
         get 'tags'
       end
 
-      namespace :tags, as: :tag, constraints: { tag: /[^\/]+/ } do
-        scope ':tag' do
+      namespace :tags, as: :tag, constraints: { tag_name: /[^\/]+/ } do
+        scope ':tag_name' do
           get '', action: :info
           get 'description'
           get 'artists'

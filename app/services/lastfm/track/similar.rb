@@ -9,6 +9,12 @@ module LastFM
 
       private
 
+      def track_info_data
+        return {} if @args[:minimal]
+
+        super
+      end
+
       def track
         response_data[
           'similartracks'
@@ -27,7 +33,8 @@ module LastFM
         LastFM::Track::Similar::Track.call(
           track:,
           profile_id: @args[:profile_id],
-          token: @args[:token]
+          token: @args[:token],
+          minimal: @args[:minimal]
         )
       end
     end

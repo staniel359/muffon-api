@@ -24,21 +24,32 @@ module Muffon
 
           def artist_tags_data
             LastFM::Artist::Tags.call(
-              artist: find_artist.name
+              artist_name:
             )
+          end
+
+          def artist_name
+            find_artist.name
           end
 
           def tag_ids
             (
-              existing_tag_ids + new_tag_ids
+              existing_tag_ids +
+                new_tag_ids
             ).sort
           end
 
           def existing_tag_ids
             Tag.where(
               name_downcase:
-                tag_names.map(&:downcase)
+                tag_names_downcase
             ).pluck(:id)
+          end
+
+          def tag_names_downcase
+            tag_names.map(
+              &:downcase
+            )
           end
 
           def tag_names

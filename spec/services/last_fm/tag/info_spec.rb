@@ -5,7 +5,7 @@ RSpec.describe LastFM::Tag::Info do
     context 'when tag exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/tag/info/success' do
-          subject.call(tag: 'dream pop')
+          subject.call(tag_name: 'dream pop')
         end
       end
 
@@ -23,7 +23,7 @@ RSpec.describe LastFM::Tag::Info do
     context 'when wrong tag name' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/tag/info/wrong_name' do
-          subject.call(tag: random)
+          subject.call(tag_name: random)
         end
       end
 

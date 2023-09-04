@@ -10,7 +10,10 @@ module API
       def artists_data
         ::LastFM::Multitag::Artists.call(
           params.slice(
-            *%i[tags profile_id token page limit]
+            *%i[
+              tags profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -18,7 +21,10 @@ module API
       def albums_data
         ::LastFM::Multitag::Albums.call(
           params.slice(
-            *%i[tags profile_id token page limit]
+            *%i[
+              tags profile_id
+              token page limit
+            ]
           )
         )
       end

@@ -5,7 +5,7 @@ RSpec.describe LastFM::Track::Links do
     context 'when track exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/links/success' do
-          subject.call(artist: 'wild nothing', track: 'chinatown')
+          subject.call(artist_name: 'wild nothing', track_title: 'chinatown')
         end
       end
 
@@ -15,13 +15,13 @@ RSpec.describe LastFM::Track::Links do
 
   describe 'no processing' do
     context 'when no artist name given' do
-      let(:output) { subject.call(track: 'chinatown') }
+      let(:output) { subject.call(track_title: 'chinatown') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when no title given' do
-      let(:output) { subject.call(artist: 'wild nothing') }
+      let(:output) { subject.call(artist_name: 'wild nothing') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
@@ -29,7 +29,7 @@ RSpec.describe LastFM::Track::Links do
     context 'when wrong artist' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/links/wrong_artist' do
-          subject.call(artist: random, track: 'chinatown')
+          subject.call(artist_name: random, track_title: 'chinatown')
         end
       end
 
@@ -39,7 +39,7 @@ RSpec.describe LastFM::Track::Links do
     context 'when wrong title' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/links/wrong_title' do
-          subject.call(artist: 'wild nothing', track: random)
+          subject.call(artist_name: 'wild nothing', track_title: random)
         end
       end
 

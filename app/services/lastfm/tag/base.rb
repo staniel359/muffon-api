@@ -6,7 +6,7 @@ module LastFM
       private
 
       def primary_args
-        [@args[:tag]]
+        [@args[:tag_name]]
       end
 
       def params

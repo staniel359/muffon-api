@@ -37,7 +37,7 @@ module LastFM
       end
 
       def collection_item_data_formatted(album)
-        LastFM::Releases::Album.call(
+        LastFM::Releases::Release.call(
           album:,
           profile_id: @args[:profile_id],
           token: @args[:token]

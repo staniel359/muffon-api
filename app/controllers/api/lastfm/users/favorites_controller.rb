@@ -9,7 +9,10 @@ module API
         def tracks_data
           ::LastFM::User::Favorites::Tracks.call(
             params.slice(
-              *%i[profile_id token nickname page limit]
+              *%i[
+                profile_id token
+                nickname page limit
+              ]
             )
           )
         end

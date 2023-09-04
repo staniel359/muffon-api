@@ -3,8 +3,9 @@ RSpec.describe API::LastFM::TopController do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/top/artists/success' do
         get :artists
-        expect(response).to have_http_status(:ok)
       end
+
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -12,8 +13,9 @@ RSpec.describe API::LastFM::TopController do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/top/albums/success' do
         get :albums
-        expect(response).to have_http_status(:ok)
       end
+
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -21,8 +23,9 @@ RSpec.describe API::LastFM::TopController do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/top/tracks/success' do
         get :tracks
-        expect(response).to have_http_status(:ok)
       end
+
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -30,8 +33,9 @@ RSpec.describe API::LastFM::TopController do
     it 'returns 200' do
       VCR.use_cassette 'controllers/api/lastfm/top/tags/success' do
         get :tags
-        expect(response).to have_http_status(:ok)
       end
+
+      expect(response).to have_http_status(:ok)
     end
   end
 end

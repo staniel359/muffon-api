@@ -23,7 +23,7 @@ module LastFM
 
         def tag_name
           param_formatted(
-            @args[:tag]
+            @args[:tag_name]
           )
         end
 

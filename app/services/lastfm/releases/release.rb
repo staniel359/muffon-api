@@ -1,6 +1,6 @@
 module LastFM
   module Releases
-    class Album < LastFM::Releases::Base
+    class Release < LastFM::Releases::Base
       include LastFM::Utils::Album
 
       def call

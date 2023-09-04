@@ -20,8 +20,8 @@ module LastFM
         return if album.blank?
 
         LastFM::Album::Info.call(
-          artist: album_artist_name,
-          album: album_title,
+          artist_name: album_artist_name,
+          album_title:,
           list: true,
           profile_id: @args[:profile_id],
           token: @args[:token]

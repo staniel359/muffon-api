@@ -13,8 +13,8 @@ module API
             ::Muffon::Profile::LastFM::Scrobbler::Player.call(
               params.slice(
                 *%i[
-                  profile_id token title
-                  artist album duration
+                  profile_id token track_title
+                  artist_name album_title duration
                 ]
               )
             )
@@ -24,8 +24,8 @@ module API
             ::Muffon::Profile::LastFM::Scrobbler::Saver.call(
               params.slice(
                 *%i[
-                  profile_id token title
-                  artist album duration
+                  profile_id token track_title
+                  artist_name album_title duration
                 ]
               )
             )

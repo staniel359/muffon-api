@@ -9,7 +9,7 @@ module Muffon
         def artist_info_data
           @artist_info_data ||=
             LastFM::Artist::Tracks.call(
-              artist: @args[:artist],
+              artist_name: @args[:artist],
               limit: 1,
               page: random_track_number
             )[:artist]

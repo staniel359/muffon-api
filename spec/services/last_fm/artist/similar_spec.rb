@@ -5,7 +5,7 @@ RSpec.describe LastFM::Artist::Similar do
     context 'when artist exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/artist/similar/success' do
-          subject.call(artist: 'wild nothing', limit: 5, page: 2, profile_id: 1)
+          subject.call(artist_name: 'wild nothing', limit: 5, page: 2, profile_id: 1)
         end
       end
 
@@ -15,7 +15,7 @@ RSpec.describe LastFM::Artist::Similar do
     context 'when artist exists and alternative' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/artist/similar/success_alternative' do
-          subject.call(artist: 'norma loy', limit: 5, page: 2, profile_id: 1)
+          subject.call(artist_name: 'norma loy', limit: 5, page: 2, profile_id: 1)
         end
       end
 
@@ -33,7 +33,7 @@ RSpec.describe LastFM::Artist::Similar do
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/artist/similar/wrong_name' do
-          subject.call(artist: random)
+          subject.call(artist_name: random)
         end
       end
 

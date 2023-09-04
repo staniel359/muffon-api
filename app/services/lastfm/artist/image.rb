@@ -35,7 +35,8 @@ module LastFM
 
       def artist_images_data
         LastFM::Artist::Images.call(
-          artist: @args[:artist]
+          artist_name:
+            @args[:artist_name]
         )
       end
     end

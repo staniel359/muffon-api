@@ -5,7 +5,7 @@ RSpec.describe LastFM::Track::Similar do
     context 'when artist and track exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/similar/success' do
-          subject.call(artist: 'wild nothing', track: 'chinatown', limit: 5, page: 2, profile_id: 1)
+          subject.call(artist_name: 'wild nothing', track_title: 'chinatown', limit: 5, page: 2, profile_id: 1)
         end
       end
 
@@ -15,13 +15,13 @@ RSpec.describe LastFM::Track::Similar do
 
   describe 'no processing' do
     context 'when no track title given' do
-      let(:output) { subject.call(artist: 'wild nothing') }
+      let(:output) { subject.call(artist_name: 'wild nothing') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when no artist name given' do
-      let(:output) { subject.call(track: 'chinatown') }
+      let(:output) { subject.call(track_title: 'chinatown') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
@@ -29,7 +29,7 @@ RSpec.describe LastFM::Track::Similar do
     context 'when wrong track title' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/similar/wrong_title' do
-          subject.call(artist: 'wild nothing', track: random)
+          subject.call(artist_name: 'wild nothing', track_title: random)
         end
       end
 
@@ -39,7 +39,7 @@ RSpec.describe LastFM::Track::Similar do
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/track/similar/wrong_name' do
-          subject.call(artist: random, track: 'chinatown')
+          subject.call(artist_name: random, track_title: 'chinatown')
         end
       end
 

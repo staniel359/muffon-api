@@ -34,11 +34,15 @@ module Muffon
 
             def similar_artists_data
               ::LastFM::Artist::Similar.call(
-                artist: artist.name,
+                artist_name:,
                 limit:
                   SIMILAR_ARTISTS_LIMIT,
                 minimal: true
               )
+            end
+
+            def artist_name
+              artist.name
             end
 
             def artist

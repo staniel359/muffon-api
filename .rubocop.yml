@@ -29,7 +29,8 @@ Metrics/BlockLength:
 
 Metrics/ClassLength:
   Exclude:
-    - 'app/models/**/profile.rb'
+    - 'app/controllers/**/*.rb'
+    - 'app/models/**/*.rb'
 
 Metrics/ModuleLength:
   Exclude:

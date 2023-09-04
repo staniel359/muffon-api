@@ -14,7 +14,10 @@ module API
       def artists_data
         ::LastFM::Search::Artists.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -22,7 +25,10 @@ module API
       def albums_data
         ::LastFM::Search::Albums.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -30,7 +36,10 @@ module API
       def tracks_data
         ::LastFM::Search::Tracks.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query profile_id
+              token page limit
+            ]
           )
         )
       end

@@ -28,7 +28,10 @@ module API
       def info_data
         ::LastFM::Artist::Info.call(
           params.slice(
-            *%i[artist profile_id token language]
+            *%i[
+              artist_name profile_id
+              token language
+            ]
           )
         )
       end
@@ -36,7 +39,7 @@ module API
       def description_data
         ::LastFM::Artist::Description.call(
           params.slice(
-            *%i[artist language]
+            *%i[artist_name language]
           )
         )
       end
@@ -44,7 +47,7 @@ module API
       def tags_data
         ::LastFM::Artist::Tags.call(
           params.slice(
-            *%i[artist]
+            *%i[artist_name]
           )
         )
       end
@@ -52,7 +55,7 @@ module API
       def image_data
         ::LastFM::Artist::Image.call(
           params.slice(
-            *%i[artist]
+            *%i[artist_name]
           )
         )
       end
@@ -60,7 +63,7 @@ module API
       def images_data
         ::LastFM::Artist::Images.call(
           params.slice(
-            *%i[artist page limit update]
+            *%i[artist_name page limit update]
           )
         )
       end
@@ -68,7 +71,10 @@ module API
       def similar_data
         ::LastFM::Artist::Similar.call(
           params.slice(
-            *%i[artist profile_id token page limit]
+            *%i[
+              artist_name profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -76,7 +82,10 @@ module API
       def albums_data
         ::LastFM::Artist::Albums.call(
           params.slice(
-            *%i[artist profile_id token page limit]
+            *%i[
+              artist_name profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -84,7 +93,10 @@ module API
       def tracks_data
         ::LastFM::Artist::Tracks.call(
           params.slice(
-            *%i[artist profile_id token page limit]
+            *%i[
+              artist_name profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -92,7 +104,7 @@ module API
       def listeners_count_data
         ::LastFM::Artist::ListenersCount.call(
           params.slice(
-            *%i[artist]
+            *%i[artist_name]
           )
         )
       end
@@ -100,7 +112,10 @@ module API
       def profiles_data
         ::LastFM::Artist::Profiles.call(
           params.slice(
-            *%i[artist profile_id token page limit]
+            *%i[
+              artist_name profile_id
+              token page limit
+            ]
           )
         )
       end
@@ -108,7 +123,7 @@ module API
       def links_data
         ::LastFM::Artist::Links.call(
           params.slice(
-            *%i[artist]
+            *%i[artist_name]
           )
         )
       end

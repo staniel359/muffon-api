@@ -16,7 +16,7 @@ module Muffon
 
         def top_artist_info_data
           LastFM::Artist::Tracks.call(
-            artist: top_artist_name,
+            artist_name: top_artist_name,
             limit: 1,
             page: random_track_number
           )[:artist]

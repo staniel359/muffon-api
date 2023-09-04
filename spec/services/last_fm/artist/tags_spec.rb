@@ -5,7 +5,7 @@ RSpec.describe LastFM::Artist::Tags do
     context 'when artist exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/artist/tags/success' do
-          subject.call(artist: 'wild nothing')
+          subject.call(artist_name: 'wild nothing')
         end
       end
 
@@ -23,7 +23,7 @@ RSpec.describe LastFM::Artist::Tags do
     context 'when wrong name' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/artist/tags/wrong_name' do
-          subject.call(artist: random)
+          subject.call(artist_name: random)
         end
       end
 

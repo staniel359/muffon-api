@@ -9,8 +9,8 @@ module LastFM
 
       def primary_args
         [
-          @args[:artist],
-          @args[:album]
+          @args[:artist_name],
+          @args[:album_title]
         ]
       end
 

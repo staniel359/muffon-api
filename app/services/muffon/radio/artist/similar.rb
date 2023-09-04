@@ -10,7 +10,7 @@ module Muffon
         def artist_info_data
           @artist_info_data ||=
             LastFM::Artist::Similar.call(
-              artist: @args[:artist],
+              artist_name: @args[:artist],
               limit: 1,
               page: random_artist_number,
               minimal: true
@@ -26,9 +26,11 @@ module Muffon
 
         def similar_artist_info_data
           LastFM::Artist::Tracks.call(
-            artist: similar_artist_name,
+            artist_name:
+              similar_artist_name,
             limit: 1,
-            page: random_track_number
+            page:
+              random_track_number
           )[:artist]
         end
 

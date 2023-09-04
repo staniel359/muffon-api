@@ -11,8 +11,18 @@ module LastFM
         private
 
         def data
+          return track_minimal_data if @args[:minimal]
+
           self_data
             .merge(track_data)
+        end
+
+        def track_minimal_data
+          {
+            title:,
+            artist:
+              artists_minimal_data
+          }
         end
 
         def track

@@ -10,7 +10,7 @@ module LastFM
       private
 
       def primary_args
-        [@args[:artist]]
+        [@args[:artist_name]]
       end
 
       def no_data?
@@ -25,7 +25,8 @@ module LastFM
 
       def params
         {
-          artist: @args[:artist],
+          artist:
+            @args[:artist_name],
           limit: TOTAL_LIMIT
         }
       end
@@ -67,7 +68,8 @@ module LastFM
 
       def web_page_raw_collection_list(page)
         LastFM::Artist::Web::Similar.call(
-          artist: @args[:artist],
+          artist_name:
+            @args[:artist_name],
           page:
         ).dig(
           :artist, :similar

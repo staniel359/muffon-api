@@ -5,7 +5,7 @@ RSpec.describe LastFM::Album::Profiles do
     context 'when artist and album exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/album/profiles/success' do
-          subject.call(artist: 'wild nothing', album: 'nocturne', limit: 5, page: 2)
+          subject.call(artist_name: 'wild nothing', album_title: 'nocturne', limit: 5, page: 2)
         end
       end
 
@@ -15,13 +15,13 @@ RSpec.describe LastFM::Album::Profiles do
 
   describe 'no processing' do
     context 'when no album title given' do
-      let(:output) { subject.call(artist: 'wild nothing') }
+      let(:output) { subject.call(artist_name: 'wild nothing') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
 
     context 'when no artist name given' do
-      let(:output) { subject.call(album: 'nocturne') }
+      let(:output) { subject.call(album_title: 'nocturne') }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
@@ -29,7 +29,7 @@ RSpec.describe LastFM::Album::Profiles do
     context 'when wrong album title' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/album/profiles/wrong_title' do
-          subject.call(artist: 'wild nothing', album: random)
+          subject.call(artist_name: 'wild nothing', album_title: random)
         end
       end
 
@@ -39,7 +39,7 @@ RSpec.describe LastFM::Album::Profiles do
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/album/profiles/wrong_artist' do
-          subject.call(artist: random, album: 'nocturne')
+          subject.call(artist_name: random, album_title: 'nocturne')
         end
       end
 

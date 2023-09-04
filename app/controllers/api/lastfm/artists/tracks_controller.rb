@@ -21,7 +21,10 @@ module API
         def info_data
           ::LastFM::Track::Info.call(
             params.slice(
-              *%i[artist track profile_id token language]
+              *%i[
+                artist_name track_title
+                profile_id token language
+              ]
             )
           )
         end
@@ -29,7 +32,7 @@ module API
         def description_data
           ::LastFM::Track::Description.call(
             params.slice(
-              *%i[artist track language]
+              *%i[artist_name track_title language]
             )
           )
         end
@@ -37,7 +40,7 @@ module API
         def tags_data
           ::LastFM::Track::Tags.call(
             params.slice(
-              *%i[artist track]
+              *%i[artist_name track_title]
             )
           )
         end
@@ -45,7 +48,10 @@ module API
         def similar_data
           ::LastFM::Track::Similar.call(
             params.slice(
-              *%i[artist track profile_id token page limit]
+              *%i[
+                artist_name track_title
+                profile_id token page limit
+              ]
             )
           )
         end
@@ -53,7 +59,10 @@ module API
         def profiles_data
           ::LastFM::Track::Profiles.call(
             params.slice(
-              *%i[artist track profile_id token page limit]
+              *%i[
+                artist_name track_title
+                profile_id token page limit
+              ]
             )
           )
         end
@@ -61,7 +70,7 @@ module API
         def links_data
           ::LastFM::Track::Links.call(
             params.slice(
-              *%i[artist track]
+              *%i[artist_name track_title]
             )
           )
         end
@@ -69,7 +78,10 @@ module API
         def albums_data
           ::LastFM::Track::Albums.call(
             params.slice(
-              *%i[artist track profile_id token]
+              *%i[
+                artist_name track_title
+                profile_id token
+              ]
             )
           )
         end

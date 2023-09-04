@@ -8,7 +8,7 @@ module LastFM
       private
 
       def primary_args
-        [@args[:artist]]
+        [@args[:artist_name]]
       end
 
       def no_data?

@@ -9,7 +9,7 @@ module Muffon
         def tag_info_data
           @tag_info_data ||=
             LastFM::Tag::Tracks.call(
-              tag: @args[:tag],
+              tag_name: @args[:tag],
               limit: 1,
               page: random_track_number
             )[:tag]
