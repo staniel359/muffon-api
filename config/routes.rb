@@ -116,8 +116,17 @@ Rails.application.routes.draw do
 
             namespace :artists, as: :artist do
               scope ':recommendation_id' do
-                get '', action: :info
                 get 'artists'
+              end
+            end
+
+            resources :tracks,
+              only: %i[index destroy],
+              param: :recommendation_id
+
+            namespace :tracks, as: :track do
+              scope ':recommendation_id' do
+                get 'tracks'
               end
             end
           end

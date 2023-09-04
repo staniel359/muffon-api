@@ -62,6 +62,7 @@ class Profile < ApplicationRecord
   has_many :library_artists, dependent: :delete_all
 
   has_many :recommendation_artists, dependent: :delete_all
+  has_many :recommendation_tracks, dependent: :delete_all
 
   has_many :playlists, dependent: :delete_all
 
@@ -164,5 +165,7 @@ class Profile < ApplicationRecord
     library_artists.delete_all
 
     recommendation_artists.delete_all
+
+    recommendation_tracks.delete_all
   end
 end

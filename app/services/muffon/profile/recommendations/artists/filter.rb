@@ -11,8 +11,8 @@ module Muffon
 
           def data
             recommendations_not_deleted
-              .then { |r| hide_library_filter(r) }
-              .then { |r| hide_listened_filter(r) }
+              .then { |r| hide_library_artists_filter(r) }
+              .then { |r| hide_listened_artists_filter(r) }
               .then { |r| tags_include_filter(r) }
               .then { |r| tags_exclude_filter(r) }
               .then { |r| artists_include_filter(r) }
@@ -25,21 +25,21 @@ module Muffon
               .not_deleted
           end
 
-          def hide_library_filter(recommendations)
+          def hide_library_artists_filter(recommendations)
             return recommendations if
-                @args[:hide_library].blank?
+                @args[:hide_library_artists].blank?
 
-            recommendations.not_in_library(
+            recommendations.artists_not_in_library(
               @args[:profile_id],
-              @args[:hide_library_tracks_count].to_i
+              @args[:hide_library_artists_tracks_count].to_i
             )
           end
 
-          def hide_listened_filter(recommendations)
+          def hide_listened_artists_filter(recommendations)
             return recommendations if
-                @args[:hide_listened].blank?
+                @args[:hide_listened_artists].blank?
 
-            recommendations.not_in_listened(
+            recommendations.artists_not_in_listened(
               @args[:profile_id]
             )
           end

@@ -59,7 +59,7 @@ module Muffon
           end
 
           def library_artist_formatted(library_artist)
-            Muffon::Profile::Recommendation::Artist::Artists::Artist.call(
+            Muffon::Profile::Library::Artists::Artist.call(
               library_artist:,
               token: @args[:token]
             )

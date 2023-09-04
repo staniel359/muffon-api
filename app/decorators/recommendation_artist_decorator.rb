@@ -8,6 +8,12 @@ module RecommendationArtistDecorator
       )
     end
 
+    def associated
+      includes(
+        :artist
+      )
+    end
+
     def library_artists_count_desc_ordered
       with_library_artists_count
         .order(
@@ -74,7 +80,7 @@ module RecommendationArtistDecorator
         )
     end
 
-    def not_in_library(profile_id, tracks_count = 0)
+    def artists_not_in_library(profile_id, tracks_count = 0)
       ids = profile(
         profile_id
       ).artist_ids_from_library(
@@ -88,10 +94,10 @@ module RecommendationArtistDecorator
         )
     end
 
-    def not_in_listened(profile_id)
+    def artists_not_in_listened(profile_id)
       ids = profile(
         profile_id
-      ).artists_ids_from_listened
+      ).artist_ids_from_listened
 
       where
         .not(

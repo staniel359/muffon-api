@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_02_151931) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_102847) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -394,12 +394,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_151931) do
 
   create_table "recommendation_artists", force: :cascade do |t|
     t.bigint "profile_id", null: false
-    t.integer "artist_id"
+    t.bigint "artist_id", null: false
     t.integer "library_artist_ids", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "deleted", default: false
     t.index ["profile_id", "artist_id"], name: "index_recommendation_artists_on_profile_id_and_artist_id", unique: true
+  end
+
+  create_table "recommendation_tracks", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "track_id", null: false
+    t.integer "library_track_ids", default: [], array: true
+    t.boolean "deleted", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id", "track_id"], name: "index_recommendation_tracks_on_profile_id_and_track_id", unique: true
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -530,7 +540,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_151931) do
   add_foreign_key "posts", "communities"
   add_foreign_key "posts", "profiles"
   add_foreign_key "posts", "profiles", column: "other_profile_id"
+  add_foreign_key "recommendation_artists", "artists"
   add_foreign_key "recommendation_artists", "profiles"
+  add_foreign_key "recommendation_tracks", "profiles"
+  add_foreign_key "recommendation_tracks", "tracks"
   add_foreign_key "relationships", "profiles"
   add_foreign_key "relationships", "profiles", column: "other_profile_id"
   add_foreign_key "spotify_connections", "profiles"

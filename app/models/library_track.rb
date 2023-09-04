@@ -17,4 +17,22 @@ class LibraryTrack < ApplicationRecord
   belongs_to :library_album,
              optional: true,
              counter_cache: true
+
+  after_create :create_recommendations
+
+  after_destroy :clear_recommendations
+
+  def create_recommendations
+    Muffon::Worker::Profile::Recommendations::Tracks::Creator.call(
+      profile_id:,
+      library_track_id: id
+    )
+  end
+
+  def clear_recommendations
+    Muffon::Worker::Profile::Recommendations::Tracks::Clearer.call(
+      profile_id:,
+      library_track_id: id
+    )
+  end
 end

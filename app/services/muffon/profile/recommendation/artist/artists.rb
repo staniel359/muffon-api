@@ -48,12 +48,13 @@ module Muffon
             recommendation
               .library_artists
               .library_tracks_count_desc_ordered
+              .associated
               .limit(limit)
               .offset(offset)
           end
 
           def collection_item_data_formatted(library_artist)
-            Muffon::Profile::Recommendation::Artist::Artists::Artist.call(
+            Muffon::Profile::Library::Artists::Artist.call(
               library_artist:,
               profile_id: @args[:profile_id],
               token: @args[:token]

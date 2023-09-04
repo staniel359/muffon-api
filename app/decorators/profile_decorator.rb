@@ -99,10 +99,24 @@ module ProfileDecorator
       )
   end
 
-  def artists_ids_from_listened
+  def track_ids_from_library
+    library_tracks
+      .pluck(
+        :track_id
+      )
+  end
+
+  def artist_ids_from_listened
     listened_artists
       .pluck(
         :artist_id
+      )
+  end
+
+  def track_ids_from_listened
+    listened_tracks
+      .pluck(
+        :track_id
       )
   end
 

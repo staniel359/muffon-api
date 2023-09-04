@@ -1,4 +1,14 @@
 module LibraryArtistDecorator
+  extend ActiveSupport::Concern
+
+  class_methods do
+    def associated
+      includes(
+        :artist
+      )
+    end
+  end
+
   def recommendation_artists
     RecommendationArtist.where(
       '? = ANY(library_artist_ids)', id
