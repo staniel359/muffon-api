@@ -17,6 +17,8 @@ module API
 
       def tracks; end
 
+      def shows; end
+
       def listeners_count; end
 
       def profiles; end
@@ -97,6 +99,14 @@ module API
               artist_name profile_id
               token page limit
             ]
+          )
+        )
+      end
+
+      def shows_data
+        ::LastFM::Artist::Shows.call(
+          params.slice(
+            *%i[artist_name page]
           )
         )
       end

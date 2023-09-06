@@ -484,6 +484,7 @@ Rails.application.routes.draw do
           get 'similar'
           get 'albums'
           get 'tracks'
+          get 'shows'
           get 'listeners_count'
           get 'profiles'
           get 'links'
