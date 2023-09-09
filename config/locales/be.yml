@@ -1,4 +1,4 @@
-ru:
+be:
   mailer:
     passwordReset:
       subject: 'muffon | Скід пароля'

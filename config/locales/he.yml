@@ -1,0 +1,5 @@
+he:
+  mailer:
+    passwordReset:
+      subject: "muffon | איפוס סיסמה"
+      text: "קוד איפוס הסיסמה שלך הוא <strong>%{code}</strong>."
