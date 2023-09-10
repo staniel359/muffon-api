@@ -22,7 +22,13 @@ module Genius
 
         def lyrics_nodes
           response_data.xpath(
-            "//*[contains(@class, 'Lyrics__Container')]"
+            "//*[
+              contains(
+                @class, 'Lyrics__Container'
+              ) or contains(
+                @class, 'InreadContainer'
+              )
+            ]"
           )
         end
 
@@ -37,15 +43,17 @@ module Genius
         end
 
         def format_children(node)
-          node.children.map do |n|
-            format_node(n)
-          end
+          node
+            .children
+            .map do |n|
+              format_node(n)
+            end
         end
 
         def format_node(node)
           if text?(node)
             node.text
-          elsif new_line?(node)
+          elsif new_line?(node) || ad_section?(node)
             "\n"
           elsif italic?(node)
             format_children(node)
@@ -83,7 +91,7 @@ module Genius
               annotation_id(node),
             text: format_children(
               node.children[0]
-            )
+            ).flatten
           }
         end
 
@@ -93,6 +101,20 @@ module Genius
             .value
             .split('/')[1]
             .to_i
+        end
+
+        def ad_section?(node)
+          node
+            .classes
+            .find do |c|
+              ad_section_class?(c)
+            end.present?
+        end
+
+        def ad_section_class?(class_name)
+          class_name.include?(
+            'DfpAd__Container'
+          )
         end
       end
     end
