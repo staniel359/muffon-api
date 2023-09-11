@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+class PostComment < ApplicationRecord
   ORDERS = %w[
     created_desc
     created_asc
@@ -21,24 +21,13 @@ class Post < ApplicationRecord
     by_community
   ].freeze
 
-  include PostDecorator
+  include PostCommentDecorator
   include SendableDecorator
   include Eventable
 
   has_many_attached :images
 
-  has_many :post_comments, dependent: :delete_all
-
+  belongs_to :post
   belongs_to :profile
-
-  belongs_to :other_profile,
-             class_name: 'Profile',
-             optional: true
-
   belongs_to :community, optional: true
-
-  enum post_type: {
-    profile: 0,
-    community: 1
-  }
 end

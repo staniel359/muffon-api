@@ -6,11 +6,10 @@ module Muffon
           private
 
           def forbidden?
-            !post_creator? && !page_owner?
-          end
-
-          def page_owner?
-            post.other_profile_id == profile.id
+            super || (
+              !post_creator? &&
+                !page_owner?
+            )
           end
         end
       end

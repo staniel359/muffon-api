@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_102847) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_113349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -342,6 +342,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_102847) do
     t.index ["title", "profile_id"], name: "index_playlists_on_title_and_profile_id", unique: true
   end
 
+  create_table "post_comments", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "profile_id", null: false
+    t.boolean "by_community", default: false
+    t.bigint "community_id"
+    t.text "text"
+    t.jsonb "tracks", default: [], array: true
+    t.jsonb "albums", default: [], array: true
+    t.jsonb "artists", default: [], array: true
+    t.jsonb "playlists", default: [], array: true
+    t.jsonb "communities", default: [], array: true
+    t.jsonb "videos", default: [], array: true
+    t.jsonb "video_playlists", default: [], array: true
+    t.jsonb "video_channels", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["community_id"], name: "index_post_comments_on_community_id"
+    t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["profile_id"], name: "index_post_comments_on_profile_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "profile_id", null: false
     t.bigint "other_profile_id"
@@ -537,6 +558,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_102847) do
   add_foreign_key "playing_events", "profiles"
   add_foreign_key "playlist_tracks", "playlists"
   add_foreign_key "playlists", "profiles"
+  add_foreign_key "post_comments", "communities"
+  add_foreign_key "post_comments", "posts"
+  add_foreign_key "post_comments", "profiles"
   add_foreign_key "posts", "communities"
   add_foreign_key "posts", "profiles"
   add_foreign_key "posts", "profiles", column: "other_profile_id"

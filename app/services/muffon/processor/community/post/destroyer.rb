@@ -12,7 +12,10 @@ module Muffon
           end
 
           def forbidden?
-            super || !post_creator? || !community_owner?
+            super || (
+              !post_creator? &&
+                !community_owner?
+            )
           end
         end
       end

@@ -93,6 +93,10 @@ class Profile < ApplicationRecord
            inverse_of: :other_profile,
            dependent: :delete_all
 
+  has_many :own_post_comments,
+           class_name: 'PostComment',
+           dependent: nil
+
   has_many :active_relationships,
            class_name: 'Relationship',
            inverse_of: :profile,

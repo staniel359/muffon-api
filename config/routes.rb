@@ -222,6 +222,14 @@ Rails.application.routes.draw do
             only: %i[index create update destroy],
             param: :post_id
 
+          namespace :posts, as: :post do
+            scope ':post_id' do
+              resources :comments,
+                only: %i[index create update destroy],
+                param: :comment_id
+            end
+          end
+
           resources :followers,
             only: %i[index create destroy],
             param: :other_profile_id
@@ -305,6 +313,14 @@ Rails.application.routes.draw do
           resources :posts,
             only: %i[index create update destroy],
             param: :post_id
+
+          namespace :posts, as: :post do
+            scope ':post_id' do
+              resources :comments,
+                only: %i[index create update destroy],
+                param: :comment_id
+            end
+          end
 
           resources :members,
             only: %i[index create destroy],

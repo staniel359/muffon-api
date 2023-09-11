@@ -41,6 +41,7 @@ module PostDecorator
       includes(
         [profile: image_association],
         [community: image_association],
+        :post_comments,
         images_association
       )
     end

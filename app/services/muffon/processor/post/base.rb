@@ -33,9 +33,14 @@ module Muffon
         end
 
         def post
-          @post ||= ::Post.find_by(
-            id: @args[:post_id]
-          )
+          @post ||=
+            ::Post.find_by(
+              id: @args[:post_id]
+            )
+        end
+
+        def page_owner?
+          post.other_profile_id == profile.id
         end
 
         def community_owner?

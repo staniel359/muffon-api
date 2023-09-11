@@ -15,7 +15,7 @@ module Muffon
 
           process_images
 
-          { success: true }
+          { post: post_data }
         end
 
         def post
@@ -25,6 +25,12 @@ module Muffon
             .create(
               post_params
             )
+        end
+
+        def post_data
+          Muffon::Posts::Post.call(
+            post:
+          )
         end
       end
     end

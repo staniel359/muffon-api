@@ -23,7 +23,8 @@ module Muffon
 
           def community_params
             {
-              community_id: @args[:community_id],
+              community_id:
+                @args[:community_id],
               by_community: by_community?,
               post_type: 'community'
             }
