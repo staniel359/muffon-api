@@ -4,16 +4,10 @@ module Muffon
       class Creator < Muffon::Processor::Image::Base
         private
 
-        def primary_args
-          super + [
-            @args[:image_file]
-          ]
-        end
-
         def data
           image.purge_later if image.attached?
 
-          return if image_file == 'DELETED'
+          return if @args[:image_file].blank?
 
           attach_image
 
