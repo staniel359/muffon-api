@@ -11,7 +11,6 @@ module Discogs
         misc: 'Miscellaneous'
       }.freeze
       COLLECTION_NAME = 'albums'.freeze
-      PAGE_LIMIT = 25
 
       include Muffon::Utils::Pagination
 
@@ -47,10 +46,6 @@ module Discogs
         ALBUM_TYPES[
           @args[:album_type].to_sym
         ]
-      end
-
-      def limit
-        PAGE_LIMIT
       end
 
       def artist_data
