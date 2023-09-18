@@ -79,8 +79,8 @@ module Discogs
             'persistedQuery' => {
               'version' => 1,
               'sha256Hash' =>
-                '324f86cfd6a2749415b42a6f70c6899b' \
-                '0e89e74156e0a46facd50e288e50a91b'
+                '037c99d2a23ca49576b23602814853a9' \
+                'ccb1edb8d3c4af98e1e88ba15dcc56ac'
             }
           }
         end

@@ -6,6 +6,10 @@ module Discogs
 
       private
 
+      def primary_args
+        [@args[:artist_id]]
+      end
+
       def data
         { artist: artist_data }
       end

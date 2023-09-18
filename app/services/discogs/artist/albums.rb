@@ -18,8 +18,7 @@ module Discogs
       private
 
       def primary_args
-        [
-          @args[:artist_id],
+        super + [
           @args[:album_type]
         ]
       end

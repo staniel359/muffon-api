@@ -3,10 +3,6 @@ module Discogs
     class Info < Discogs::Artist::Base
       private
 
-      def primary_args
-        [@args[:artist_id]]
-      end
-
       def link
         "#{super}/#{@args[:artist_id]}"
       end
