@@ -51,7 +51,7 @@ module Muffon
       end
 
       def proxy
-        secrets.proxy[:ru]
+        secrets.proxy[:ru] if production?
       end
     end
   end

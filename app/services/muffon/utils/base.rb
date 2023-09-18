@@ -15,6 +15,10 @@ module Muffon
         Rails.env.test?
       end
 
+      def production?
+        Rails.env.production?
+      end
+
       def source_name
         self.class::SOURCE_NAME
       end
