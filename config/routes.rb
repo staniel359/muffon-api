@@ -857,6 +857,12 @@ Rails.application.routes.draw do
         get 'playlists'
       end
     end
+
+    # GitHub
+
+    namespace :github do
+      get 'releases'
+    end
   end
 
   match '*path',
