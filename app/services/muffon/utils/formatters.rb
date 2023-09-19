@@ -55,6 +55,10 @@ module Muffon
         description&.truncate(100).presence
       end
 
+      def lyrics_truncated
+        lyrics&.truncate(200).presence
+      end
+
       def title_formatted(raw_title, extra_title)
         return raw_title if extra_title.blank?
 

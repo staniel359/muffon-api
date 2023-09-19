@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.albums.get?apikey=<MUSIXMATCH_API_KEY>&artist_id=542702&g_album_name=1&page=2&page_size=5&s_release_date=desc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2582'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.01457691192627'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:25 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230044-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860825.956439,VS0,VE112
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.01457691192627,"available":28},"body":{"album_list":[{"album":{"album_id":33101690,"album_mbid":"","album_name":"Shallow
+        Water","album_rating":0,"album_release_date":"2018-08-07","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Captured
+        Tracks","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2019-06-21T07:26:43Z","external_ids":{"spotify":["6WAOkC0wHarvnwfXH930PX"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":33101697,"album_mbid":"","album_name":"Partners
+        in Motion","album_rating":0,"album_release_date":"2018-07-19","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Captured
+        Tracks","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2019-06-21T07:26:47Z","external_ids":{"spotify":["2dY44OgKzRtsESesDtFyS8"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":29040881,"album_mbid":"","album_name":"Letting
+        Go","album_rating":14,"album_release_date":"2018-06-05","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Secretly
+        Publishing","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2018-06-05T14:30:41Z","external_ids":{"spotify":["2NBfknJCDdEDta9MOVf1iO"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":24129388,"album_mbid":"","album_name":"LIFE
+        OF PAUSE","album_rating":52,"album_release_date":"2016-02-17","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]},"album_pline":"WILD
+        NOTHING \/ OCTAVE","album_copyright":"WILD NOTHING \/ OCTAVE","album_label":"WILD
+        NOTHING \/ OCTAVE","restricted":0,"updated_time":"2016-11-14T08:59:02Z","external_ids":{"spotify":[],"itunes":["1146823085"],"amazon_music":[]}}},{"album":{"album_id":22038079,"album_mbid":"","album_name":"A
+        Woman''s Wisdom","album_rating":0,"album_release_date":"2016-02-10","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2016 Captured
+        Tracks","album_copyright":"2016 Captured Tracks","album_label":"","restricted":0,"updated_time":"2016-03-04T23:36:51Z","external_ids":{"spotify":["11bbCMs05GWHSrkI41mctG","4tK4ey0yDVqGzcF3dPPZ7L"],"itunes":[],"amazon_music":[]}}}]}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:25 GMT
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.get?apikey=<MUSIXMATCH_API_KEY>&artist_id=542702
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '572'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.0053648948669434'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:25 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230126-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860825.271769,VS0,VE103
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.0053648948669434},"body":{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:25 GMT
+recorded_with: VCR 6.2.0

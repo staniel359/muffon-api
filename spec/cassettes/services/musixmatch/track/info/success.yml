@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/track.get?apikey=<MUSIXMATCH_API_KEY>&commontrack_id=6717709
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '962'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.0042459964752197'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:28 GMT
+      Age:
+      - '1'
+      X-Served-By:
+      - cache-fra-eddf8230084-FRA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1691860829.684947,VS0,VE2
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.0042459964752197},"body":{"track":{"track_id":93514583,"track_name":"Chinatown","track_name_translation_list":[],"track_rating":60,"commontrack_id":6717709,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":54,"album_id":21497986,"album_name":"Gemini","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Chinatown?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Chinatown\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2013-05-30T14:17:08Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]}}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:28 GMT
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=<MUSIXMATCH_API_KEY>&commontrack_id=6717709
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1749'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.0070538520812988'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:29 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230136-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860829.927667,VS0,VE196
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.0070538520812988},"body":{"lyrics":{"lyrics_id":8169238,"explicit":0,"lyrics_body":"Innocent
+        love\nI need someone, somewhere\nI need some way to come down\nI need some
+        way to make things right\n\nInnocent love\nI need someone, somewhere\nI need
+        some way to come down\nI need some way to make things right\n\n...\n\n*******
+        This Lyrics is NOT for Commercial use *******\n(1409621116560)","script_tracking_url":"https:\/\/tracking.musixmatch.com\/t1.0\/m_js\/e_1\/sn_0\/l_8169238\/su_0\/rs_0\/tr_3vUCAHVN2kB2wISBn6yntLr_uffRGjq_8EfqQ0rT16OidMs_LAQYAWMojWkQX6ok0Cq6pjB9PWHRyApWvpLtczi9yelzrPf0xQnZ4TIP2HfxNbRf9Tq-WqaTwvyIa6GNcYtiShTSP_AmcPus9hfVC-AlNA-yn_q9c44I0qD3azOjh2nGfNjbZzMHErUGwGDACajDGV_p_-BwT6-gAOk-gr7q7tCzHuEVZXFvxbzobGbgtIvgoplCjVWmscJatWE3MLz_K9RNLKwYyGLst6BU2sV4dOp3QczYz0dbGGgeAcjkvxpoMzVATxJnI-jXySb51Kmo-g2Z5O_AKQp001Kk35Rx5uylPPnuwCA9kpGIe9djBWZNV8Zs6DxoTuQX5OaYymXsJdsFa_XwFSCtq7B0MjijR99dDl9XliWYn0XQ2QJnEXFpE36jkofFtYcEm-UGvMQz\/","pixel_tracking_url":"https:\/\/tracking.musixmatch.com\/t1.0\/m_img\/e_1\/sn_0\/l_8169238\/su_0\/rs_0\/tr_3vUCAFrp4XdpqQWsRuk2la2NeXmZu0xXNcCCoHHNGyMsE12vqNTOi9PhXLLUWCGLi3O0UdYts9XlifJLisc88wdI7n4LmJERkmSvSjQyYaiNqKCLlmwqPUVGFxjOlOQs3wjDWQF7RYVU9wtNNhXvNpsGwoSDmO-h9UPb6v_H1AS-ZXX4_V11qVc4uonCcU8pAVj5d5pOdn0b0y_PBAA1pChLMT1sH3GDXEcfaFQ48dj_liViPKI_IK731K-Os_Zz2tHv61x2yolFEvrNBkScTyZ0D4YWr7U4Y6hcacMpk4Qany8bNymdUeodSiMMTaQsOfMMNfSdhDaE_3RLXuDVnR4dcUvymXkG--C1fKrbqKj7a0759QPjgMD4VuwQc9Nc5io-KIaJM1gqYiQIf3iohhTJLzCYOGZlEm7thmkY4oKy6Z7gNagg5YxHTt5MN2LgbFjs\/","lyrics_copyright":"Lyrics
+        powered by www.musixmatch.com. This Lyrics is NOT for Commercial use and only
+        30% of the lyrics are returned.","updated_time":"2022-09-08T14:15:32Z"}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:29 GMT
+recorded_with: VCR 6.2.0

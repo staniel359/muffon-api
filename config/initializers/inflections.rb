@@ -7,6 +7,7 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.acronym 'SoundCloud'
   inflect.acronym 'YandexMusic'
   inflect.acronym 'MusicBrainz'
+  inflect.acronym 'MusixMatch'
 
   inflect.uncountable %w[discogs genius]
 end

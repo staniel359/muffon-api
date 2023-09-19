@@ -10,6 +10,7 @@ SECRET_KEYS = [
   %i[google scopes bandcamp_tracks],
   %i[google scopes lastfm_tags],
   %i[lastfm api_key],
+  %i[musixmatch api_key],
   %i[odnoklassniki email],
   %i[odnoklassniki password],
   %i[odnoklassniki test_session_id],

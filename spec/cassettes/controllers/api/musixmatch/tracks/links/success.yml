@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/track.get?apikey=<MUSIXMATCH_API_KEY>&commontrack_id=6717709
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '962'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.0042459964752197'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:21 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230025-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860822.575594,VS0,VE99
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.0042459964752197},"body":{"track":{"track_id":93514583,"track_name":"Chinatown","track_name_translation_list":[],"track_rating":60,"commontrack_id":6717709,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":54,"album_id":21497986,"album_name":"Gemini","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Chinatown?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Chinatown\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2013-05-30T14:17:08Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]}}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:21 GMT
+recorded_with: VCR 6.2.0

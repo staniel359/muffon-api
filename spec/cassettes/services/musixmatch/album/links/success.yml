@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/album.get?album_id=14232026&apikey=<MUSIXMATCH_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '699'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.010669946670532'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:23 GMT
+      Age:
+      - '1'
+      X-Served-By:
+      - cache-fra-eddf8230099-FRA
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      X-Timer:
+      - S1691860824.974151,VS0,VE1
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.010669946670532},"body":{"album":{"album_id":14232026,"album_mbid":"172124dd-72da-4822-9945-e81b262ca7b3","album_name":"Nocturne","album_rating":40,"album_release_date":"2012-08-24","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]},"album_pline":"2012
+        Wild Nothing","album_copyright":"2012 Wild Nothing","album_label":"Spunk","restricted":0,"updated_time":"2016-09-19T09:09:12Z","external_ids":{"spotify":[],"itunes":["553810926"],"amazon_music":[]}}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:23 GMT
+recorded_with: VCR 6.2.0

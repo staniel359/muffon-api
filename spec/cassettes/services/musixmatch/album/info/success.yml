@@ -1,0 +1,143 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/album.get?album_id=14232026&apikey=<MUSIXMATCH_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '699'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.010669946670532'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:23 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230102-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860823.991277,VS0,VE104
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.010669946670532},"body":{"album":{"album_id":14232026,"album_mbid":"172124dd-72da-4822-9945-e81b262ca7b3","album_name":"Nocturne","album_rating":40,"album_release_date":"2012-08-24","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]},"album_pline":"2012
+        Wild Nothing","album_copyright":"2012 Wild Nothing","album_label":"Spunk","restricted":0,"updated_time":"2016-09-19T09:09:12Z","external_ids":{"spotify":[],"itunes":["553810926"],"amazon_music":[]}}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:23 GMT
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=14232026&apikey=<MUSIXMATCH_API_KEY>&page=1&page_size=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11214'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.014401912689209'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:23 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230127-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860823.305445,VS0,VE91
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.014401912689209,"available":11},"body":{"track_list":[{"track":{"track_id":17884693,"track_name":"Shadow","track_name_translation_list":[],"track_rating":60,"commontrack_id":11114110,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":71,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Shadow?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Shadow\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2016-04-19T21:13:52Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884694,"track_name":"Midnight
+        Song","track_name_translation_list":[],"track_rating":52,"commontrack_id":11114105,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":0,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Midnight-Song?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Midnight-Song\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2014-10-18T13:34:55Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884695,"track_name":"Nocturne","track_name_translation_list":[],"track_rating":52,"commontrack_id":11114106,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":60,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Nocturne?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Nocturne\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2016-04-06T13:36:43Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884696,"track_name":"Through
+        the Grass","track_name_translation_list":[],"track_rating":45,"commontrack_id":11114113,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":0,"has_richsync":0,"num_favourite":0,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Through-the-Grass?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Through-the-Grass\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2013-02-28T20:15:09Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884697,"track_name":"Only
+        Heather","track_name_translation_list":[],"track_rating":52,"commontrack_id":11114107,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":1,"num_favourite":38,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Only-Heather?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Only-Heather\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2016-03-29T07:05:29Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]}}},{"track":{"track_id":17884698,"track_name":"This
+        Chain Won''t Break","track_name_translation_list":[],"track_rating":45,"commontrack_id":27508956,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":8,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/This-Chain-Won-t-Break?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/This-Chain-Won-t-Break\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2014-12-04T13:16:16Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884699,"track_name":"Disappear
+        Always","track_name_translation_list":[],"track_rating":45,"commontrack_id":11114104,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":18,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Disappear-Always?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Disappear-Always\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2012-11-13T06:15:13Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884700,"track_name":"Paradise","track_name_translation_list":[],"track_rating":52,"commontrack_id":11114108,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":52,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Paradise?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Paradise\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2014-10-18T13:34:33Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884701,"track_name":"Counting
+        Days","track_name_translation_list":[],"track_rating":45,"commontrack_id":11114103,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":19,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Counting-Days?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Counting-Days\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2014-10-18T15:02:31Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884702,"track_name":"The
+        Blue Dress","track_name_translation_list":[],"track_rating":45,"commontrack_id":11114111,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":0,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/The-Blue-Dress?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/The-Blue-Dress\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2013-04-26T13:22:39Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}},{"track":{"track_id":17884703,"track_name":"Rheya","track_name_translation_list":[],"track_rating":45,"commontrack_id":11114109,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":0,"num_favourite":11,"album_id":14232026,"album_name":"Nocturne","artist_id":542702,"artist_name":"Wild
+        Nothing","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Rheya?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Nothing\/Rheya\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2013-02-28T10:50:07Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]}}}]}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:23 GMT
+recorded_with: VCR 6.2.0

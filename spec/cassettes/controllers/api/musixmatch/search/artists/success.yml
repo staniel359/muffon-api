@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.search?apikey=<MUSIXMATCH_API_KEY>&page=1&page_size=20&q=wild%20nothing
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '13151'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.036258935928345'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:17 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230090-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860817.882200,VS0,VE136
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.036258935928345,"available":10},"body":{"artist_list":[{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":14360754,"artist_name":"Beach
+        Fossils feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":10,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":479918,"artist_name":"Beach
+        Fossils","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30d3\u30fc\u30c1
+        \u30d5\u30a9\u30c3\u30b7\u30eb\u30ba"}],"artist_rating":52,"artist_twitter_url":"https:\/\/twitter.com\/beachfossils","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2021-12-10T08:47:26Z","begin_date_year":"2009","begin_date":"2009-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2018-04-13T02:54:45Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":47167648,"artist_name":"Molly
+        Burch feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":12,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":32103775,"artist_name":"Molly
+        Burch","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":32,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-09-21T15:44:57Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2023-02-14T14:43:26Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":51673115,"artist_name":"Small
+        Black feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":51673105,"artist_name":"Small
+        Black","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":33,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2021-11-25T01:28:58Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2023-02-14T13:01:15Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":51673112,"artist_name":"Small
+        Black feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":51673105,"artist_name":"Small
+        Black","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":33,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2021-11-25T01:28:58Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2023-02-14T13:01:15Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":38949844,"artist_name":"Yumi
+        Zouma feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":26497994,"artist_name":"Yumi
+        Zouma","artist_name_translation_list":[],"artist_comment":"","artist_country":"NZ","artist_alias_list":[{"artist_alias":"\u30e6\u30df\u30fb\u30be\u30a6\u30de"}],"artist_rating":41,"artist_twitter_url":"yumizouma","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2022-01-07T19:17:55Z","begin_date_year":"2013","begin_date":"2013-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2019-06-21T07:26:45Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":27748585,"artist_name":"Wild
+        Nothing \/ Blank Dogs \/ Zodiacs","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":414596,"artist_name":"Blank
+        Dogs","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[],"artist_rating":11,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2015-12-24T01:57:20Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":27739632,"artist_name":"Zodiacs","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2014-03-31T20:31:48Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2014-04-04T19:30:29Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":24552147,"artist_name":"Wild
+        Nothing feat. Michelle Williams","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":7,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":27833427,"artist_name":"Michelle
+        Williams","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2014-06-17T23:10:53Z","begin_date_year":"1980","begin_date":"1980-09-09","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2014-06-17T23:10:53Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":30372198,"artist_name":"Beach
+        Fossils & Wild Nothing, Beach Fossils & Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":1,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":14360754,"artist_name":"Beach
+        Fossils feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":10,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2018-04-13T02:54:45Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":479918,"artist_name":"Beach
+        Fossils","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30d3\u30fc\u30c1
+        \u30d5\u30a9\u30c3\u30b7\u30eb\u30ba"}],"artist_rating":52,"artist_twitter_url":"https:\/\/twitter.com\/beachfossils","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2021-12-10T08:47:26Z","begin_date_year":"2009","begin_date":"2009-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2016-01-16T02:43:38Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":30945602,"artist_name":"Small
+        Black feat. Wild Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"","artist_alias_list":[],"artist_rating":6,"artist_twitter_url":"","artist_credits":{"artist_list":[{"artist":{"artist_id":492258,"artist_name":"Small
+        Black","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[],"artist_rating":12,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-17T07:41:41Z","begin_date_year":"2009","begin_date":"2009-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]},"restricted":0,"updated_time":"2016-02-01T13:07:05Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}]}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:17 GMT
+recorded_with: VCR 6.2.0

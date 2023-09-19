@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.albums.get?apikey=<MUSIXMATCH_API_KEY>&artist_id=542702&g_album_name=1&page=1&page_size=20&s_release_date=desc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11248'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.030206918716431'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:15 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230076-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860816.678581,VS0,VE127
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.030206918716431,"available":28},"body":{"album_list":[{"album":{"album_id":31126738,"album_mbid":"","album_name":"Laughing
+        Gas","album_rating":20,"album_release_date":"2020-01-31","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":1004,"music_genre_parent_id":20,"music_genre_name":"Indie
+        Rock","music_genre_name_extended":"Alternative \/ Indie Rock","music_genre_vanity":"Alternative-Indie-Rock"}},{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]},"album_pline":"2020
+        Captured Tracks","album_copyright":"2020 Captured Tracks","album_label":"Captured
+        Tracks","restricted":0,"updated_time":"2021-08-06T17:25:21Z","external_ids":{"spotify":["28K81dRFuSVOdvtimu4p3L","3EJrWQPLj60Gak9IwjQjB2","3jPPl73kzB6RaYeoVfgMfd","44duSipuzTfDoFcgAKUxAn"],"itunes":["1446496924","1488674249"],"amazon_music":[]}}},{"album":{"album_id":34784902,"album_mbid":"","album_name":"Live
+        from Brooklyn Steel","album_rating":11,"album_release_date":"2019-09-27","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":1004,"music_genre_parent_id":20,"music_genre_name":"Indie
+        Rock","music_genre_name_extended":"Alternative \/ Indie Rock","music_genre_vanity":"Alternative-Indie-Rock"}}]},"album_pline":"2019
+        Captured Tracks","album_copyright":"2019 Captured Tracks","album_label":"Captured
+        Tracks","restricted":0,"updated_time":"2021-04-21T11:57:11Z","external_ids":{"spotify":["5C2WAnx0B0mGr2qDcOLCKy"],"itunes":["1479220337"],"amazon_music":[]}}},{"album":{"album_id":34760565,"album_mbid":"","album_name":"Partners
+        in Motion (Live from Brooklyn Steel)","album_rating":0,"album_release_date":"2019-09-10","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2019 Captured
+        Tracks","album_copyright":"2019 Captured Tracks","album_label":"Captured Tracks","restricted":0,"updated_time":"2019-09-16T09:38:17Z","external_ids":{"spotify":["31eu20fUZnu5YOtR623mej"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":33101692,"album_mbid":"","album_name":"INDIGO","album_rating":21,"album_release_date":"2018-08-31","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"Captured
+        Tracks Records","album_copyright":"Captured Tracks Records","album_label":"","restricted":0,"updated_time":"2019-06-21T07:26:45Z","external_ids":{"spotify":["6LdIcRWhfOReFs2dBMTD5H"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":33101689,"album_mbid":"","album_name":"Canyon
+        on Fire","album_rating":0,"album_release_date":"2018-08-22","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Captured
+        Tracks","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2019-06-21T07:26:43Z","external_ids":{"spotify":["7vWWCI1lfJCmqUZNAo5qZj"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":33101690,"album_mbid":"","album_name":"Shallow
+        Water","album_rating":0,"album_release_date":"2018-08-07","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Captured
+        Tracks","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2019-06-21T07:26:43Z","external_ids":{"spotify":["6WAOkC0wHarvnwfXH930PX"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":33101697,"album_mbid":"","album_name":"Partners
+        in Motion","album_rating":0,"album_release_date":"2018-07-19","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Captured
+        Tracks","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2019-06-21T07:26:47Z","external_ids":{"spotify":["2dY44OgKzRtsESesDtFyS8"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":29040881,"album_mbid":"","album_name":"Letting
+        Go","album_rating":14,"album_release_date":"2018-06-05","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2018 Secretly
+        Publishing","album_copyright":"2018 Captured Tracks","album_label":"","restricted":0,"updated_time":"2018-06-05T14:30:41Z","external_ids":{"spotify":["2NBfknJCDdEDta9MOVf1iO"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":24129388,"album_mbid":"","album_name":"LIFE
+        OF PAUSE","album_rating":52,"album_release_date":"2016-02-17","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]},"album_pline":"WILD
+        NOTHING \/ OCTAVE","album_copyright":"WILD NOTHING \/ OCTAVE","album_label":"WILD
+        NOTHING \/ OCTAVE","restricted":0,"updated_time":"2016-11-14T08:59:02Z","external_ids":{"spotify":[],"itunes":["1146823085"],"amazon_music":[]}}},{"album":{"album_id":22038079,"album_mbid":"","album_name":"A
+        Woman''s Wisdom","album_rating":0,"album_release_date":"2016-02-10","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2016 Captured
+        Tracks","album_copyright":"2016 Captured Tracks","album_label":"","restricted":0,"updated_time":"2016-03-04T23:36:51Z","external_ids":{"spotify":["11bbCMs05GWHSrkI41mctG","4tK4ey0yDVqGzcF3dPPZ7L"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":20898165,"album_mbid":"","album_name":"TV
+        Queen","album_rating":35,"album_release_date":"2016-02-05","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"","album_copyright":"(C)
+        2016 Captured Tracks","album_label":"","restricted":0,"updated_time":"2016-03-04T23:36:59Z","external_ids":{"spotify":["0HmwUsUy1aaK2SHdfYGOpe","24vqu40sxESuN77CiaekCI","77ytCZAWq9C60LSZJt4AwD"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":21348860,"album_mbid":"","album_name":"Reichpop","album_rating":0,"album_release_date":"2016-02-05","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"","album_copyright":"(C)
+        2016 Captured Tracks","album_label":"","restricted":0,"updated_time":"2016-03-04T23:36:49Z","external_ids":{"spotify":["0gXRMvaT05CYziubaW30ka","4oNuVR292tVXk6f5SGHJAz","4U7xGyOX6B76CvJNG8yPAW"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":20899212,"album_mbid":"","album_name":"To
+        Know You","album_rating":15,"album_release_date":"2016-02-05","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"","album_copyright":"(C)
+        2016 Captured Tracks","album_label":"","restricted":0,"updated_time":"2016-03-04T23:36:52Z","external_ids":{"spotify":["1LavvVbeT1Ay6unC63BsNT","5YM0iQujU2Rlpibchi7Kpa","6osJppkPRPQMrL3gFRPYtb"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":21687588,"album_mbid":"","album_name":"Life
+        of Pause","album_rating":25,"album_release_date":"2016-02-05","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"","album_copyright":"(C)
+        2016 Captured Tracks","album_label":"","restricted":0,"updated_time":"2016-09-19T09:09:12Z","external_ids":{"spotify":["132XstdF4o1uke8BEOCCty","1jJvfxHljO5AN0oApF8ThN","6SCRwoEWCseU4tlZ6KSzAi"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":15410259,"album_mbid":"","album_name":"Transfigurations","album_rating":9,"album_release_date":"2013-05-21","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]},"album_pline":"2013
+        Mazarine Records","album_copyright":"2013 Allegro","album_label":"Mazarine
+        Records","restricted":0,"updated_time":"2013-10-03T18:52:27Z","external_ids":{"spotify":[],"itunes":["652031317"],"amazon_music":[]}}},{"album":{"album_id":15410258,"album_mbid":"0624b71b-8722-49bd-ae67-614f716543c3","album_name":"Empty
+        Estate","album_rating":19,"album_release_date":"2013-05-15","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]},"album_pline":"2013
+        YOSHIMOTO R and C CO.,LTD.","album_copyright":"2013 YOSHIMOTO R and C CO.,LTD.","album_label":"YOSHIMOTO
+        R and C CO.,LTD.","restricted":0,"updated_time":"2016-09-19T09:09:12Z","external_ids":{"spotify":[],"itunes":["638694396"],"amazon_music":[]}}},{"album":{"album_id":14338652,"album_mbid":"bf2eba5a-5d5f-4543-8ea6-a4dd295dc954","album_name":"Empty
+        Estate","album_rating":17,"album_release_date":"2013-05-14","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]},"album_pline":"2013
+        Wild Nothing","album_copyright":"2013 Wild Nothing","album_label":"Bella Union","restricted":0,"updated_time":"2016-09-19T09:09:12Z","external_ids":{"spotify":[],"itunes":["643075103","636159436","647312568"],"amazon_music":[]}}},{"album":{"album_id":21497985,"album_mbid":"","album_name":"Empty
+        Estate - EP","album_rating":0,"album_release_date":"2013-05-14","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[]},"album_pline":"2013 Wild
+        Nothing","album_copyright":"2013 Wild Nothing","album_label":"","restricted":0,"updated_time":"2016-01-16T02:43:23Z","external_ids":{"spotify":["687nZ2RSLucYbTyhomPx0E"],"itunes":[],"amazon_music":[]}}},{"album":{"album_id":15410248,"album_mbid":"","album_name":"A
+        Dancing Shell","album_rating":27,"album_release_date":"2013-04-23","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":20,"music_genre_parent_id":34,"music_genre_name":"Alternative","music_genre_name_extended":"Alternative","music_genre_vanity":"Alternative"}}]},"album_pline":"2013
+        Captured Tracks","album_copyright":"2013 Captured Tracks","album_label":"Captured
+        Tracks","restricted":0,"updated_time":"2013-10-03T18:52:25Z","external_ids":{"spotify":["38pRAlrZQWdumMEVCiE7uh","4qVYxGQ72vE2CRnwyP9PFq"],"itunes":["644687117","632382719"],"amazon_music":[]}}},{"album":{"album_id":14232026,"album_mbid":"172124dd-72da-4822-9945-e81b262ca7b3","album_name":"Nocturne","album_rating":40,"album_release_date":"2012-08-24","artist_id":542702,"artist_name":"Wild
+        Nothing","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]},"album_pline":"2012
+        Wild Nothing","album_copyright":"2012 Wild Nothing","album_label":"Spunk","restricted":0,"updated_time":"2016-09-19T09:09:12Z","external_ids":{"spotify":[],"itunes":["553810926"],"amazon_music":[]}}}]}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:15 GMT
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.get?apikey=<MUSIXMATCH_API_KEY>&artist_id=542702
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '572'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.0052931308746338'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:16 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230036-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860816.042775,VS0,VE194
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.0052931308746338},"body":{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":39,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2016-10-03T07:40:27Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:16 GMT
+recorded_with: VCR 6.2.0

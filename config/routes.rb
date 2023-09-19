@@ -460,51 +460,6 @@ Rails.application.routes.draw do
       end
     end
 
-    # MusicBrainz
-
-    namespace :musicbrainz do
-      namespace :search do
-        get 'artists'
-        get 'labels'
-        get 'groups'
-        get 'albums'
-        get 'tracks'
-      end
-
-      namespace :artists, as: :artist do
-        scope ':artist_id' do
-          get 'albums'
-        end
-      end
-
-      namespace :groups, as: :group do
-        scope ':group_id' do
-          get '', action: :info
-          get 'description'
-          get 'tags'
-          get 'albums'
-          get 'links'
-        end
-      end
-
-      namespace :albums, as: :album do
-        scope ':album_id' do
-          get '', action: :info
-          get 'tags'
-          get 'links'
-        end
-      end
-
-      namespace :tracks, as: :track do
-        scope ':track_id' do
-          get '', action: :info
-          get 'tags'
-          get 'links'
-          get 'albums'
-        end
-      end
-    end
-
     # LastFM
 
     namespace :lastfm do
@@ -600,6 +555,84 @@ Rails.application.routes.draw do
           namespace :favorites do
             get 'tracks'
           end
+        end
+      end
+    end
+
+    # MusicBrainz
+
+    namespace :musicbrainz do
+      namespace :search do
+        get 'artists'
+        get 'labels'
+        get 'groups'
+        get 'albums'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
+
+      namespace :groups, as: :group do
+        scope ':group_id' do
+          get '', action: :info
+          get 'description'
+          get 'tags'
+          get 'albums'
+          get 'links'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'tags'
+          get 'links'
+        end
+      end
+
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+          get 'tags'
+          get 'links'
+          get 'albums'
+        end
+      end
+    end
+
+    # MusixMatch
+
+    namespace :musixmatch do
+      namespace :search do
+        get 'artists'
+        get 'tracks'
+      end
+
+      namespace :artists, as: :artist do
+        scope ':artist_id' do
+          get 'albums'
+        end
+      end
+
+      namespace :albums, as: :album do
+        scope ':album_id' do
+          get '', action: :info
+          get 'tags'
+          get 'links'
+        end
+      end
+
+      namespace :tracks, as: :track do
+        scope ':track_id' do
+          get '', action: :info
+          get 'tags'
+          get 'lyrics'
+          get 'links'
+          get 'albums'
         end
       end
     end

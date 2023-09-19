@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.search?apikey=<MUSIXMATCH_API_KEY>&page=2&page_size=5&q=a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.musixmatch.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2603'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.026652097702026'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Restarts:
+      - '0'
+      X-Varnish-Instance:
+      - api
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 12 Aug 2023 17:20:26 GMT
+      Age:
+      - '0'
+      X-Served-By:
+      - cache-fra-eddf8230049-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1691860826.995969,VS0,VE121
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.026652097702026,"available":10000},"body":{"artist_list":[{"artist":{"artist_id":49783,"artist_name":"No
+        Te Va Gustar","artist_name_translation_list":[],"artist_comment":"","artist_country":"UY","artist_alias_list":[{"artist_alias":"No
+        Te Va a Gustar"},{"artist_alias":"NTVG"}],"artist_rating":59,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2015-12-01T16:37:22Z","begin_date_year":"1994","begin_date":"1994-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":1370,"artist_name":"Alphaville","artist_name_translation_list":[{"artist_name_translation":{"language":"JA","translation":"\u30a2\u30eb\u30d5\u30a1\u30f4\u30a3\u30eb"}}],"artist_comment":"","artist_country":"DE","artist_alias_list":[{"artist_alias":"\u30a2\u30eb\u30d5\u30a1\u30f4\u30a3\u30eb"},{"artist_alias":"a
+        Ville"},{"artist_alias":"Alfaville"},{"artist_alias":"Alpha Ville"}],"artist_rating":44,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2013-11-05T11:24:57Z","begin_date_year":"1983","begin_date":"1983-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":52918551,"artist_name":"Selena","artist_name_translation_list":[{"artist_name_translation":{"language":"JA","translation":"\u30bb\u30ec\u30fc\u30ca"}}],"artist_comment":"","artist_country":"","artist_alias_list":[{"artist_alias":"\u30bb\u30ec\u30fc\u30ca"},{"artist_alias":"Selena
+        Quintanilla"},{"artist_alias":"Selena - Entre A Mi Mundo"}],"artist_rating":69,"artist_twitter_url":"","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2023-03-07T10:37:47Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}},{"artist":{"artist_id":11846,"artist_name":"New
+        Found Glory","artist_name_translation_list":[{"artist_name_translation":{"language":"JA","translation":"\u30cb\u30e5\u30fc\u30fb\u30d5\u30a1\u30a6\u30f3\u30c9\u30fb\u30b0\u30ed\u30fc\u30ea\u30fc"}}],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30cb\u30e5\u30fc\u30fb\u30d5\u30a1\u30a6\u30f3\u30c9\u30fb\u30b0\u30ed\u30fc\u30ea\u30fc"},{"artist_alias":"A
+        New Found Glory"},{"artist_alias":"Newfound Glory"},{"artist_alias":"A Newfound
+        Glory"},{"artist_alias":"NFG"}],"artist_rating":54,"artist_twitter_url":"https:\/\/twitter.com\/newfoundglory","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2015-11-28T00:22:40Z","begin_date_year":"1997","begin_date":"1997-00-00","end_date_year":"","end_date":"0000-00-00"}}]}}}'
+  recorded_at: Sat, 12 Aug 2023 17:20:26 GMT
+recorded_with: VCR 6.2.0
