@@ -16,6 +16,16 @@ module YandexMusic
           response_data['track_id']
         end
 
+        def response
+          RestClient::Request.execute(
+            method: :post,
+            url: link,
+            payload:,
+            headers:,
+            proxy:
+          )
+        end
+
         def link
           "#{login_base_link}/start"
         end
@@ -23,7 +33,7 @@ module YandexMusic
         def payload
           {
             login: email,
-            csrf_token:
+            csrf_token: @args[:csrf_token]
           }
         end
 
@@ -31,7 +41,9 @@ module YandexMusic
           secrets.yandex_music[:email]
         end
 
-        alias response post_response
+        def cookies
+          { uniqueuid: @args[:unique_uid] }
+        end
       end
     end
   end

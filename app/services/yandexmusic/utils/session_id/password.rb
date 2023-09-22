@@ -13,9 +13,19 @@ module YandexMusic
         end
 
         def session_id
-          post_response.cookies[
+          response.cookies[
             'Session_id'
           ]
+        end
+
+        def response
+          RestClient::Request.execute(
+            method: :post,
+            url: link,
+            payload:,
+            headers:,
+            proxy:
+          )
         end
 
         def link
@@ -27,6 +37,7 @@ module YandexMusic
             password:,
             track_id:,
             csrf_token:
+              @args[:csrf_token]
           }
         end
 
@@ -36,6 +47,19 @@ module YandexMusic
 
         def track_id
           email_data[:track_id]
+        end
+
+        def email_data
+          YandexMusic::Utils::SessionId::Email.call(
+            csrf_token:
+              @args[:csrf_token],
+            unique_uid:
+              @args[:unique_uid]
+          )
+        end
+
+        def cookies
+          { uniqueuid: @args[:unique_uid] }
         end
       end
     end

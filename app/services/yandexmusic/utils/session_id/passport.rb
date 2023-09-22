@@ -18,7 +18,9 @@ module YandexMusic
         def csrf_token
           response_data.css(
             'input[name="csrf_token"]'
-          )[0]['value']
+          )[0].try(
+            :[], 'value'
+          )
         end
 
         def response_data
