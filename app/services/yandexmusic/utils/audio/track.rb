@@ -65,7 +65,7 @@ module YandexMusic
         end
 
         def retry_with_new_session_id
-          return if global_value.blank?
+          return data if global_value.blank?
 
           @global_value = nil
 

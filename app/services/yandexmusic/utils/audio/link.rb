@@ -2,6 +2,8 @@ module YandexMusic
   module Utils
     module Audio
       class Link < YandexMusic::Base
+        SALT = 'XGRlBW9FXlekgbPrRHuSiA'.freeze
+
         def call
           return if not_all_args? || no_data?
 
@@ -26,12 +28,17 @@ module YandexMusic
         end
 
         def data
-          host, ts, path =
+          host, ts, path, s =
             response_data.values_at(
-              'host', 'ts', 'path'
+              'host', 'ts', 'path', 's'
             )
 
-          "https://#{host}/get-mp3/0/#{ts}#{path}"
+          path_hash =
+            Digest::MD5.hexdigest(
+              "#{SALT}#{path[1..]}#{s}"
+            )
+
+          "https://#{host}/get-mp3/#{path_hash}/#{ts}#{path}"
         end
 
         def link
