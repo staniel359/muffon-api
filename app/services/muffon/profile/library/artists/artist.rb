@@ -19,7 +19,10 @@ module Muffon
           end
 
           def artist_minimal_data
-            { name: }
+            {
+              name:,
+              image: artist.image_data
+            }
           end
 
           def library_artist
