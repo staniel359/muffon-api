@@ -12,7 +12,7 @@ module LastFM
       def collection_list
         response_data.css(
           '.big-artist-list-avatar-desktop img'
-        ).first(15)
+        ).first(20)
       end
 
       def collection_item_data_formatted(image)
