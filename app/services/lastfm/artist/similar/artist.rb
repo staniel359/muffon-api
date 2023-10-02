@@ -30,7 +30,8 @@ module LastFM
             source: source_data,
             name:,
             image: image_data,
-            listeners_count:
+            listeners_count:,
+            profiles_count:
           }.compact
         end
 
