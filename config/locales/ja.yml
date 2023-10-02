@@ -1,0 +1,5 @@
+ja:
+  mailer:
+    passwordReset:
+      subject: 'マフォン | パスワードリセット'
+      text: "パスワードリセットコードは <strong>%{code}</strong> です。"
