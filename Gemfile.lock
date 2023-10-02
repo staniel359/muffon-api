@@ -110,7 +110,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.12.0)
-    ffi (1.16.1)
+    ffi (1.16.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.0.1)
@@ -240,7 +240,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.56.3)
+    rubocop (1.56.4)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -258,7 +258,7 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.24.0)
       rubocop (~> 1.33)
-    rubocop-rails (2.21.1)
+    rubocop-rails (2.21.2)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
@@ -274,7 +274,7 @@ GEM
       sentry-ruby (~> 5.11.0)
     sentry-ruby (5.11.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-    sidekiq (7.1.4)
+    sidekiq (7.1.5)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
@@ -295,7 +295,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
-    unicode-display_width (2.4.2)
+    unicode-display_width (2.5.0)
     vcr (6.2.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
@@ -311,7 +311,7 @@ GEM
     websocket-extensions (0.1.5)
     whenever (1.0.0)
       chronic (>= 0.6.3)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
 
 PLATFORMS
   ruby
