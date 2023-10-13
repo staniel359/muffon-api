@@ -52,6 +52,7 @@ class Profile < ApplicationRecord
             length: { maximum: 30 }
 
   before_create :set_token
+  before_destroy :clear_assosiated_collections
 
   has_secure_password
 
@@ -65,6 +66,8 @@ class Profile < ApplicationRecord
   has_many :recommendation_tracks, dependent: :delete_all
 
   has_many :playlists, dependent: :delete_all
+
+  has_many :playlist_tracks, through: :playlists
 
   has_many :favorite_artists, dependent: :delete_all
   has_many :favorite_albums, dependent: :delete_all
@@ -86,16 +89,18 @@ class Profile < ApplicationRecord
 
   has_many :own_posts,
            class_name: 'Post',
-           dependent: nil
+           dependent: :nullify
 
   has_many :posts,
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
            dependent: :delete_all
 
+  has_many :post_comments, through: :posts
+
   has_many :own_post_comments,
            class_name: 'PostComment',
-           dependent: nil
+           dependent: :nullify
 
   has_many :active_relationships,
            class_name: 'Relationship',
@@ -118,21 +123,23 @@ class Profile < ApplicationRecord
 
   has_many :own_communities,
            class_name: 'Community',
-           dependent: nil
+           dependent: :nullify
 
   has_many :memberships, dependent: :delete_all
 
   has_many :communities, through: :memberships
 
+  has_many :messages, dependent: :nullify
+
   has_many :active_conversations,
            class_name: 'Conversation',
-           dependent: nil
+           dependent: :nullify
 
   has_many :passive_conversations,
            class_name: 'Conversation',
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
-           dependent: nil
+           dependent: :nullify
 
   has_many :active_events,
            class_name: 'Event',
@@ -142,13 +149,13 @@ class Profile < ApplicationRecord
            class_name: 'Event',
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
-           dependent: nil
+           dependent: :delete_all
 
   has_many :playing_events, dependent: :delete_all
   has_many :browser_events, dependent: :delete_all
 
-  has_one :lastfm_connection, dependent: :destroy
-  has_one :spotify_connection, dependent: :destroy
+  has_one :lastfm_connection, dependent: :delete
+  has_one :spotify_connection, dependent: :delete
 
   enum gender: {
     male: 0,
@@ -171,5 +178,13 @@ class Profile < ApplicationRecord
     recommendation_artists.delete_all
 
     recommendation_tracks.delete_all
+  end
+
+  def clear_assosiated_collections
+    playlist_tracks.delete_all
+
+    PostComment.merge(
+      post_comments
+    ).delete_all
   end
 end
