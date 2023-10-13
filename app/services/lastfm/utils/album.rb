@@ -1,6 +1,9 @@
 module LastFM
   module Utils
     module Album
+      DEFAULT_IMAGE_ID =
+        'c6f59c1e5e7240a4c0d427abd71f3dbb'.freeze
+
       include Muffon::Utils::Album
 
       private

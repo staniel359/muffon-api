@@ -35,6 +35,10 @@ module LastFM
         end
 
         def image
+          raw_image unless default_image?
+        end
+
+        def raw_image
           artist['image']
         end
       end

@@ -1,8 +1,4 @@
 module ArtistDecorator
-  DEFAULT_IMAGE_URL =
-    'https://lastfm.freetls.fastly.net/i/u/300x300' \
-    '/2a96cbd8b46e442fc41c2b86b821562f.png'.freeze
-
   extend ActiveSupport::Concern
 
   class_methods do
@@ -21,17 +17,7 @@ module ArtistDecorator
 
   def image_data
     LastFM::Utils::Image.call(
-      image: image_url_conditional
+      image: image_url
     )
-  end
-
-  private
-
-  def image_url_conditional
-    image_missing? ? DEFAULT_IMAGE_URL : image_url
-  end
-
-  def image_missing?
-    image_url == 'MISSING'
   end
 end

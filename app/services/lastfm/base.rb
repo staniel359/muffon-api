@@ -110,5 +110,15 @@ module LastFM
         %r{(.+)<a href="http(s?)://www.last.fm}m
       )[1].strip
     end
+
+    def default_image?
+      raw_image.include?(
+        default_image_id
+      )
+    end
+
+    def default_image_id
+      self.class::DEFAULT_IMAGE_ID
+    end
   end
 end
