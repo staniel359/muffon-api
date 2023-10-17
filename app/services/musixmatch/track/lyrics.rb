@@ -23,9 +23,9 @@ module MusixMatch
       end
 
       def lyrics
-        raw_lyrics.map(
-          &:text
-        )
+        raw_lyrics.map do |l|
+          "#{l.text}\n"
+        end
       end
 
       def raw_lyrics
