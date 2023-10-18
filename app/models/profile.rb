@@ -50,7 +50,7 @@ class Profile < ApplicationRecord
   validates :nickname,
             presence: true,
             uniqueness: true,
-            length: { maximum: 30 }
+            length: { maximum: 40 }
 
   before_create :set_token
   before_destroy :clear_assosiated_collections
