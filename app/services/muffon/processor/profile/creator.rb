@@ -9,7 +9,8 @@ module Muffon
             @args[:email],
             @args[:password],
             @args[:password_confirmation],
-            @args[:nickname]
+            @args[:nickname],
+            @args[:recaptcha]
           ]
         end
 
@@ -17,19 +18,11 @@ module Muffon
           false
         end
 
-        def profile
-          @profile ||= ::Profile.create(
-            create_params
-          )
-        end
-
-        def create_params
-          @args.permit!.slice(
-            *profile_params
-          )
-        end
-
         def data
+          profile
+
+          check_recaptcha
+
           return profile.errors_data if
               profile.errors?
 
@@ -38,6 +31,19 @@ module Muffon
           set_online
 
           authenticate
+        end
+
+        def profile
+          @profile ||=
+            ::Profile.create(
+              create_params
+            )
+        end
+
+        def create_params
+          @args.permit!.slice(
+            *profile_params
+          )
         end
 
         def set_online

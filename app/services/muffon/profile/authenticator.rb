@@ -27,6 +27,8 @@ module Muffon
       end
 
       def data
+        profile
+
         check_password
 
         return profile.errors_data if

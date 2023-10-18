@@ -64,6 +64,26 @@ module Muffon
             :password, 'wrong'
           )
       end
+
+      def check_recaptcha
+        return if valid_recaptcha?
+
+        add_invalid_recaptcha_error
+      end
+
+      def valid_recaptcha?
+        Recaptcha::Checker.call(
+          recaptcha: @args[:recaptcha]
+        )
+      end
+
+      def add_invalid_recaptcha_error
+        profile
+          .errors
+          .add(
+            :recaptcha, 'invalid'
+          )
+      end
     end
   end
 end

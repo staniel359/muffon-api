@@ -12,6 +12,7 @@ SECRET_KEYS = [
   %i[odnoklassniki email],
   %i[odnoklassniki password],
   %i[odnoklassniki test_session_id],
+  %i[recaptcha secret],
   %i[soundcloud api_key],
   %i[soundcloud test_access_token],
   %i[soundcloud test_v2_client_id],

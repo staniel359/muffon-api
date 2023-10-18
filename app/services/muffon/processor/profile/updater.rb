@@ -20,7 +20,8 @@ module Muffon
             update_params
           )
 
-          return profile.errors_data if profile.errors?
+          return profile.errors_data if
+              profile.errors?
 
           process_image
 

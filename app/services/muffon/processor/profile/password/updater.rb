@@ -32,8 +32,7 @@ module Muffon
           def data
             process_profile
 
-            add_wrong_password_reset_code_error if
-                codes_mismatch?
+            check_password_reset_code
 
             return profile.errors_data if
               profile.errors?
@@ -51,17 +50,23 @@ module Muffon
             )
           end
 
+          def check_password_reset_code
+            return if codes_match?
+
+            add_wrong_password_reset_code_error
+          end
+
+          def codes_match?
+            profile.password_reset_code ==
+              @args[:code].to_i
+          end
+
           def add_wrong_password_reset_code_error
             profile
               .errors
               .add(
                 :password_reset_code, 'wrong'
               )
-          end
-
-          def codes_mismatch?
-            profile.password_reset_code !=
-              @args[:code].to_i
           end
 
           def reset_profile_password_reset_code
