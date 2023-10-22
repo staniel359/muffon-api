@@ -30,9 +30,9 @@ module Muffon
 
       def global_posts
         if creator?
-          Post.global
+          ::Post.global
         else
-          Post.global_public
+          ::Post.global_public
         end
       end
 
