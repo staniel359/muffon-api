@@ -10,7 +10,7 @@ module Muffon
 
             def primary_args
               super + [
-                @args[:name]
+                @args[:artist_name]
               ]
             end
 
@@ -36,7 +36,7 @@ module Muffon
             end
 
             def name
-              @args[:name]
+              @args[:artist_name]
             end
 
             def bookmark_artist_data

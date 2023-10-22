@@ -62,11 +62,11 @@ module Muffon
       end
 
       def title
-        @args[:title]
+        @args[:track_title]
       end
 
       def artist_name
-        @args[:artist]
+        @args[:artist_name]
       end
 
       def album_id

@@ -281,14 +281,14 @@ Rails.application.routes.draw do
 
       namespace :radio do
         namespace :tag do
-          scope ':tag' do
+          scope ':tag_name' do
             get 'artists'
             get 'tracks'
           end
         end
 
         namespace :artist do
-          scope ':artist' do
+          scope ':artist_name' do
             get 'tracks'
             get 'similar'
           end

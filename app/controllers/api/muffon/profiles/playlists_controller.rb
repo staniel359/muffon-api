@@ -19,7 +19,8 @@ module API
             params.slice(
               *%i[
                 profile_id token other_profile_id
-                model title artist page limit order
+                model track_title artist_name
+                page limit order
               ]
             )
           )

@@ -5,7 +5,7 @@ module Muffon
         private
 
         def primary_args
-          [@args[:tag]]
+          [@args[:tag_name]]
         end
 
         def no_data?

@@ -10,8 +10,8 @@ module Muffon
 
             def primary_args
               super + [
-                @args[:title],
-                @args[:artist]
+                @args[:track_title],
+                @args[:artist_name]
               ]
             end
 
@@ -46,7 +46,7 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist]
+              @args[:artist_name]
             end
 
             def update_created_at(model)
@@ -85,7 +85,7 @@ module Muffon
             end
 
             def album_title
-              @args[:album]
+              @args[:album_title]
             end
 
             def album_source_data
@@ -120,7 +120,7 @@ module Muffon
             end
 
             def title
-              @args[:title]
+              @args[:track_title]
             end
 
             def process_image

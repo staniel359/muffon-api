@@ -5,7 +5,7 @@ RSpec.describe Muffon::Radio::Tag::Artists do
     context 'when tag exists' do
       let(:output) do
         VCR.use_cassette 'services/muffon/radio/tag/artists/success' do
-          subject.call(tag: '80s')
+          subject.call(tag_name: '80s')
         end
       end
 
@@ -23,7 +23,7 @@ RSpec.describe Muffon::Radio::Tag::Artists do
     context 'when wrong tag name' do
       let(:output) do
         VCR.use_cassette 'services/muffon/radio/tag/artists/wrong_name' do
-          subject.call(tag: random)
+          subject.call(tag_name: random)
         end
       end
 

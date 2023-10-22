@@ -23,8 +23,8 @@ module API
             ::Muffon::Processor::Profile::Bookmarks::Track::Creator.call(
               params.slice(
                 *%i[
-                  profile_id token title
-                  artist album image
+                  profile_id token track_title
+                  artist_name album_title image
                   source audio album_source
                 ]
               )

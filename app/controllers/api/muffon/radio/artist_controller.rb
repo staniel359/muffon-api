@@ -11,7 +11,7 @@ module API
         def tracks_data
           ::Muffon::Radio::Artist::Tracks.call(
             params.slice(
-              *%i[artist]
+              *%i[artist_name]
             )
           )
         end
@@ -19,7 +19,7 @@ module API
         def similar_data
           ::Muffon::Radio::Artist::Similar.call(
             params.slice(
-              *%i[artist]
+              *%i[artist_name]
             )
           )
         end

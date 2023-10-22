@@ -32,8 +32,8 @@ module API
             ::Muffon::Processor::Profile::Library::Album::Creator.call(
               params.slice(
                 *%i[
-                  profile_id token title
-                  artist image source
+                  profile_id token album_title
+                  artist_name image source
                 ]
               )
             )

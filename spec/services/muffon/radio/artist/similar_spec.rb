@@ -5,7 +5,7 @@ RSpec.describe Muffon::Radio::Artist::Similar do
     context 'when artist exists' do
       let(:output) do
         VCR.use_cassette 'services/muffon/radio/artist/similar/success' do
-          subject.call(artist: 'wild nothing')
+          subject.call(artist_name: 'wild nothing')
         end
       end
 
@@ -23,7 +23,7 @@ RSpec.describe Muffon::Radio::Artist::Similar do
     context 'when wrong artist name' do
       let(:output) do
         VCR.use_cassette 'services/muffon/radio/artist/similar/wrong_name' do
-          subject.call(artist: random)
+          subject.call(artist_name: random)
         end
       end
 

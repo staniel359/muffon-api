@@ -10,7 +10,7 @@ module Muffon
         def tag_info_data
           @tag_info_data ||=
             LastFM::Tag::Artists.call(
-              tag_name: @args[:tag],
+              tag_name: @args[:tag_name],
               limit: 1,
               page: random_artist_number,
               minimal: true

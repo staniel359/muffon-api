@@ -11,7 +11,7 @@ module API
         def artists_data
           ::Muffon::Radio::Tag::Artists.call(
             params.slice(
-              *%i[tag]
+              *%i[tag_name]
             )
           )
         end
@@ -19,7 +19,7 @@ module API
         def tracks_data
           ::Muffon::Radio::Tag::Tracks.call(
             params.slice(
-              *%i[tag]
+              *%i[tag_name]
             )
           )
         end
