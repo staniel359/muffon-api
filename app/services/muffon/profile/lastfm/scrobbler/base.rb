@@ -77,7 +77,7 @@ module Muffon
           def session_key
             profile
               .lastfm_connection
-              .session_key
+              &.session_key
           end
 
           def album_title_string
