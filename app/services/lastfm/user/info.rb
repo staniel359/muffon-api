@@ -29,7 +29,9 @@ module LastFM
       end
 
       def image_url
-        image_data[:extrasmall]
+        image_data.try(
+          :[], :extrasmall
+        )
       end
 
       def image_data
