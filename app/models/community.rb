@@ -20,6 +20,12 @@ class Community < ApplicationRecord
   include CommunityDecorator
   include Eventable
 
+  validates :title,
+            presence: true,
+            uniqueness: true
+
+  before_destroy :clear_assosiated_collections
+
   has_one_attached :image
 
   belongs_to :creator,
@@ -29,13 +35,17 @@ class Community < ApplicationRecord
 
   has_many :posts, dependent: :delete_all
 
+  has_many :post_comments, through: :posts
+
   has_many :memberships, dependent: :delete_all
 
   has_many :members,
            through: :memberships,
            source: :profile
 
-  validates :title,
-            presence: true,
-            uniqueness: true
+  def clear_assosiated_collections
+    PostComment.merge(
+      post_comments
+    ).delete_all
+  end
 end
