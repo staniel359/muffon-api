@@ -2,7 +2,7 @@ module LastFM
   module User
     module Web
       class Base < LastFM::User::Base
-        include LastFM::Utils::Web
+        include LastFM::Utils::Web::Proxy
 
         private
 

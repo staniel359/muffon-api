@@ -55,7 +55,7 @@ module Muffon
       end
 
       def random_server_number
-        return 1 if test?
+        return 10 if test?
 
         rand(1..SERVERS_COUNT)
       end

@@ -36,7 +36,9 @@ module LastFM
             '.playlisting-playlists-item-name'
           )[0].css(
             '.link-block-target'
-          )[0]['href']
+          )[0]['href'].match(
+            %r{(/user/.+)}
+          )[0]
         end
 
         def playlist
