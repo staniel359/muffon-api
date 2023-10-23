@@ -1,0 +1,127 @@
+<h2>
+  muffon Terms of Service
+</h2>
+
+<h4>
+  Last updated:
+</h4>
+
+<p>
+  2023-10-26
+</p>
+
+<h3>
+  1. Purpose and Functionality of muffon
+</h3>
+
+<p>
+  muffon is a music-listening, music-discovery, music-organization, and music-sharing application.
+</p>
+
+<h3>
+  2. Policies and User Bans
+</h3>
+
+<p>
+  Users may be banned for violating the terms outlined in section 6 below.
+</p>
+
+<h3>
+  3. Contact Information
+</h3>
+
+<p>
+  <ul>
+    <li>
+      Personal email: staniel359@gmail.com
+    </li>
+    <li>
+      Developer's page: https://github.com/staniel359
+    </li>
+    <li>
+      Community server: https://discord.gg/kpWsA5NBmJ
+    </li>
+  </ul>
+</p>
+
+<h3>
+  4. Limitations of Liability and Disclaimers
+</h3>
+
+<p>
+  muffon developers are not responsible for the improper use of muffon, including downloading copyrighted audio files.
+</p>
+
+<h3>
+  5. User Data Collection, Usage, and Protection
+</h3>
+
+<p>
+  <ul>
+    <li>
+      User data is provided by users themselves.
+    </li>
+    <li>
+      User data is used to display basic information to other users.
+    </li>
+    <li>
+      User data is stored securely in a password-protected database, on a server with restricted access.
+    </li>
+  </ul>
+</p>
+
+<h3>
+  6. User Conduct and Prohibited Activities
+</h3>
+
+<p>
+  Users must not engage in the following activities:
+
+  <ul>
+    <li>
+      Hacking or disassembling muffon.
+    </li>
+    <li>
+      Posting explicit or pornographic content.
+    </li>
+    <li>
+      Posting abusive or harmful content.
+    </li>
+    <li>
+      Spamming the platform.
+    </li>
+    <li>
+      Posting content related to minors, drugs, extremism, or any illegal or immoral activities.
+    </li>
+  </ul>
+</p>
+
+<h3>
+  7. Copyright and Intellectual Property
+</h3>
+
+<p>
+  muffon is the intellectual property of its creator, Aleksey Shpakovsky (staniel359).
+</p>
+
+<h3>
+  8. Dispute Resolution
+</h3>
+
+<p>
+  Disputes will be resolved with the assistance of qualified lawyers as third parties.
+</p>
+
+<h3>
+  9. Other Legal Requirements
+</h3>
+
+<p>
+  No additional legal requirements or clauses are included.
+</p>
+
+<br>
+
+<p>
+  By using Muffon, you agree to abide by these Terms of Service. Failure to comply may result in user bans and legal actions.
+</p>

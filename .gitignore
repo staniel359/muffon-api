@@ -1,6 +1,6 @@
 config/**/*.key
 config/deploy/templates
-public/files
+public/files/audio
 log
 tmp
 storage

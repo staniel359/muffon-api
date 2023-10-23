@@ -31,6 +31,11 @@ Rails.application.routes.draw do
   end
 
   scope :api, module: :api do
+    namespace :legal do
+      get 'privacy_policy'
+      get 'terms_and_conditions'
+    end
+
     scope module: :muffon do
       resources :profiles,
         only: %i[index create update destroy],
