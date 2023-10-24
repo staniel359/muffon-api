@@ -48,7 +48,7 @@ class Profile < ApplicationRecord
             length: { maximum: 40 }
 
   before_create :set_token
-  before_destroy :clear_assosiated_collections
+  before_destroy :clear_data
 
   has_secure_password
 
@@ -85,7 +85,7 @@ class Profile < ApplicationRecord
 
   has_many :own_posts,
            class_name: 'Post',
-           dependent: :nullify
+           dependent: nil
 
   has_many :posts,
            foreign_key: 'other_profile_id',
@@ -96,7 +96,7 @@ class Profile < ApplicationRecord
 
   has_many :own_post_comments,
            class_name: 'PostComment',
-           dependent: :nullify
+           dependent: nil
 
   has_many :active_relationships,
            class_name: 'Relationship',
@@ -119,23 +119,23 @@ class Profile < ApplicationRecord
 
   has_many :own_communities,
            class_name: 'Community',
-           dependent: :nullify
+           dependent: nil
 
   has_many :memberships, dependent: :delete_all
 
   has_many :communities, through: :memberships
 
-  has_many :messages, dependent: :nullify
+  has_many :messages, dependent: nil
 
   has_many :active_conversations,
            class_name: 'Conversation',
-           dependent: :nullify
+           dependent: nil
 
   has_many :passive_conversations,
            class_name: 'Conversation',
            foreign_key: 'other_profile_id',
            inverse_of: :other_profile,
-           dependent: :nullify
+           dependent: nil
 
   has_many :active_events,
            class_name: 'Event',
@@ -176,11 +176,37 @@ class Profile < ApplicationRecord
     recommendation_tracks.delete_all
   end
 
+  def clear_data
+    clear_info
+
+    clear_assosiated_collections
+  end
+
+  private
+
   def clear_assosiated_collections
     playlist_tracks.delete_all
 
     PostComment.merge(
       post_comments
     ).delete_all
+  end
+
+  def clear_info
+    attributes_list.each_key do |a|
+      self[a] = nil
+    end
+
+    save!(
+      validate: false
+    )
+  end
+
+  def attributes_list
+    attributes.except(
+      'id',
+      'created_at',
+      'updated_at'
+    )
   end
 end

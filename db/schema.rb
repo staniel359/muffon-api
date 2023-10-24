@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_13_095404) do
+ActiveRecord::Schema[7.1].define(version: 2023_09_07_113349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -131,7 +131,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_13_095404) do
   end
 
   create_table "communities", force: :cascade do |t|
-    t.bigint "profile_id"
+    t.bigint "profile_id", null: false
     t.string "title"
     t.text "description"
     t.integer "members_count", default: 0
@@ -142,8 +142,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_13_095404) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.bigint "profile_id"
-    t.bigint "other_profile_id"
+    t.bigint "profile_id", null: false
+    t.bigint "other_profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["profile_id", "other_profile_id"], name: "index_conversations_on_profile_id_and_other_profile_id", unique: true
@@ -293,7 +293,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_13_095404) do
 
   create_table "messages", force: :cascade do |t|
     t.bigint "conversation_id", null: false
-    t.bigint "profile_id"
+    t.bigint "profile_id", null: false
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -344,7 +344,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_13_095404) do
 
   create_table "post_comments", force: :cascade do |t|
     t.bigint "post_id", null: false
-    t.bigint "profile_id"
+    t.bigint "profile_id", null: false
     t.boolean "by_community", default: false
     t.bigint "community_id"
     t.text "text"
@@ -364,7 +364,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_13_095404) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "profile_id"
+    t.bigint "profile_id", null: false
     t.bigint "other_profile_id"
     t.text "text"
     t.datetime "created_at", null: false

@@ -22,7 +22,9 @@ module Muffon
           return profile.errors_data if
               profile.errors?
 
-          profile.destroy
+          profile.run_callbacks(
+            :destroy
+          )
 
           { success: true }
         end
