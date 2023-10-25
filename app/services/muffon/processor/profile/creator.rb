@@ -9,15 +9,12 @@ module Muffon
             @args[:email],
             @args[:password],
             @args[:password_confirmation],
-            @args[:nickname],
-            @args[:recaptcha]
+            @args[:nickname]
           ]
         end
 
         def data
           profile
-
-          check_recaptcha
 
           return profile.errors_data if
               profile.errors?

@@ -27,8 +27,7 @@ module API
       def create_data
         ::Muffon::Processor::Profile::Creator.call(
           params.slice(
-            *profile_params,
-            :recaptcha
+            *profile_params
           )
         )
       end
