@@ -2,6 +2,8 @@ module VK
   module Utils
     module Audio
       class Link < VK::Base
+        FILE_EXTENSION = 'mp3'.freeze
+
         include Muffon::Utils::Audio::Link
 
         private
@@ -20,7 +22,7 @@ module VK
         def write_audio_data_to_file
           convert_m3u8_file_to_ts_file
 
-          convert_ts_file_to_mp3_file
+          convert_ts_file_to_audio_file
 
           delete_ts_file if ts_file_present?
         end
@@ -38,12 +40,16 @@ module VK
           "public/#{audio_folder}/#{@args[:track_id]}"
         end
 
-        def convert_ts_file_to_mp3_file
+        def convert_ts_file_to_audio_file
           return if test?
 
           `ffmpeg -loglevel panic -y \
             -i #{file_path}.ts \
-            -c copy #{file_path}.mp3`
+            -c copy #{audio_file_name}`
+        end
+
+        def audio_file_name
+          "#{file_path}.#{file_extension}"
         end
 
         def ts_file_present?

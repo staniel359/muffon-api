@@ -2,6 +2,8 @@ module Muffon
   module Utils
     module Audio
       module Link
+        FILE_EXTENSION = 'mp3'.freeze
+
         def call
           return if not_all_args? || no_data?
 
@@ -46,7 +48,11 @@ module Muffon
 
         def audio_path
           @audio_path ||=
-            "#{audio_folder}/#{@args[:track_id]}.mp3"
+            "#{audio_folder}/#{@args[:track_id]}.#{file_extension}"
+        end
+
+        def file_extension
+          self.class::FILE_EXTENSION
         end
 
         def audio_link
