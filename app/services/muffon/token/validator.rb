@@ -8,7 +8,10 @@ module Muffon
       private
 
       def data
-        profile.present? || allowed_token?
+        token.present? && (
+          profile.present? ||
+            allowed_token?
+        )
       end
 
       def token

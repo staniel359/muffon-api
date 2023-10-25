@@ -13,14 +13,6 @@ module API
 
       private
 
-      def allowed_request?
-        create? || super
-      end
-
-      def create?
-        params[:action] == 'create'
-      end
-
       def index_data
         ::Muffon::Profiles.call(
           params.slice(

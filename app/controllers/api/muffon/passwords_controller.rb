@@ -7,10 +7,6 @@ module API
 
       private
 
-      def allowed_request?
-        true
-      end
-
       def reset_data
         ::Muffon::Profile::Password::Resetter.call(
           params.slice(
