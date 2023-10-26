@@ -2,6 +2,13 @@ module ProfileDecorator
   extend ActiveSupport::Concern
 
   class_methods do
+    def with_email(email)
+      find_by(
+        'lower(email) = ?',
+        email.strip.downcase
+      )
+    end
+
     def relationship_created_desc_ordered
       order(
         'relationships.created_at DESC'

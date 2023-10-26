@@ -14,8 +14,8 @@ module Muffon
 
         def profile
           @profile ||=
-            ::Profile.find_by(
-              email: @args[:email]
+            ::Profile.with_email(
+              @args[:email]
             )
         end
 
