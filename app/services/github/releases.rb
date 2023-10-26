@@ -31,12 +31,18 @@ module GitHub
 
     def collection_list
       collection_paginated(
-        response_data
+        collection_filtered
       )
     end
 
+    def collection_filtered
+      response_data.reject do |i|
+        i['published_at'].blank?
+      end
+    end
+
     def collection_count
-      response_data.size
+      collection_filtered.size
     end
 
     def collection_item_data_formatted(release)
