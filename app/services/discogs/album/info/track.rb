@@ -26,7 +26,7 @@ module Discogs
         def track_data
           {
             source: source_data,
-            player_id:,
+            player_id: player_source_id,
             title:,
             artist: artists_minimal_data,
             artists:,

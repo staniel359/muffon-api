@@ -39,14 +39,21 @@ module Muffon
 
           def bookmark_track_base_data
             {
-              source:
-                bookmark_track.source_data,
+              source: source_data,
               id: bookmark_track.id,
-              player_id: track.player_id,
+              player_id: player_source_id,
               title:,
               artist: artists_minimal_data,
               artists:
             }.compact
+          end
+
+          def source_data
+            bookmark_track.source_data
+          end
+
+          def player_id
+            track.player_id
           end
 
           def artists

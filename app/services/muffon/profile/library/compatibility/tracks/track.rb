@@ -22,7 +22,7 @@ module Muffon
               {
                 source: source_data,
                 library: library_track_data,
-                player_id: find_track.player_id,
+                player_id: player_source_id,
                 title:,
                 artist: artists_minimal_data,
                 artists:

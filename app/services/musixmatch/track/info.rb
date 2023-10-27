@@ -25,7 +25,7 @@ module MusixMatch
       def track_base_data
         {
           source: source_data,
-          player_id:,
+          player_id: player_source_id,
           title:,
           artist: artists_base_data,
           artists:

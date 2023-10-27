@@ -3,10 +3,24 @@ module Muffon
     module Track
       private
 
+      def player_source_id
+        [
+          player_id,
+          source_id
+        ].compact.join(
+          '-'
+        )
+      end
+
       def player_id
         return '1' if test?
 
         find_track.player_id
+      end
+
+      def source_id
+        source_data[:id] ||
+          source_data['id']
       end
 
       def find_track

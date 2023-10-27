@@ -85,6 +85,10 @@ module Muffon
         def audio_data
           library_track.audio_data
         end
+
+        def player_id
+          track.player_id
+        end
       end
     end
   end
