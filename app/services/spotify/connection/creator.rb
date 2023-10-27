@@ -9,10 +9,32 @@ module Spotify
         ]
       end
 
-      def process_profile
-        return forbidden if
-            access_token_data.blank?
+      def forbidden?
+        super ||
+          access_token_data.blank? ||
+          spotify_user_info_data.blank?
+      end
 
+      def access_token_data
+        @access_token_data ||=
+          Spotify::Utils::User::AccessToken.call(
+            code: @args[:spotify_code]
+          )
+      end
+
+      def spotify_user_info_data
+        @spotify_user_info_data ||=
+          Spotify::User::Info.call(
+            access_token:,
+            skip_profile: true
+          )[:user]
+      end
+
+      def access_token
+        access_token_data[:access_token]
+      end
+
+      def process_profile
         spotify_connection.update(
           spotify_connection_params
         )
@@ -21,13 +43,6 @@ module Spotify
             spotify_connection.errors?
 
         { profile: profile_data }
-      end
-
-      def access_token_data
-        @access_token_data ||=
-          Spotify::Utils::User::AccessToken.call(
-            code: @args[:spotify_code]
-          )
       end
 
       def spotify_connection
@@ -57,17 +72,6 @@ module Spotify
           :premium,
           :image_url
         )
-      end
-
-      def spotify_user_info_data
-        Spotify::User::Info.call(
-          access_token:,
-          skip_profile: true
-        )[:user]
-      end
-
-      def access_token
-        access_token_data[:access_token]
       end
 
       def profile_data

@@ -62,7 +62,7 @@ module Spotify
           token: @args[:token],
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
-        )[:user]
+        )[:user] || {}
       end
 
       def playlists_count
@@ -77,7 +77,7 @@ module Spotify
           token: @args[:token],
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
-        )[:user]
+        )[:user] || {}
       end
     end
   end
