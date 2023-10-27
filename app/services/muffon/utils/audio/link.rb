@@ -25,16 +25,20 @@ module Muffon
         end
 
         def create_audio_folder
+          return if test?
+
           FileUtils.mkdir_p(
             "public/#{audio_folder}"
           )
         end
 
         def audio_folder
-          "files/audio/#{source_name}"
+          "media/audio/#{source_name}"
         end
 
         def write_audio_data_to_file
+          return if test?
+
           audio_file.write(
             audio_binary_data
           )

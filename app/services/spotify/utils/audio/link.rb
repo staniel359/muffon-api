@@ -27,7 +27,7 @@ module Spotify
         end
 
         def test_audio_path
-          "files/audio/spotify/#{@args[:track_id]}.ogg"
+          "media/audio/spotify/#{@args[:track_id]}.ogg"
         end
 
         def link

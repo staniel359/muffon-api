@@ -24,7 +24,7 @@ module API
 
     def legal_file(scope)
       File.read(
-        "public/files/legal/#{scope}.txt"
+        "public/legal/#{scope}.txt"
       )
     end
 

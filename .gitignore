@@ -1,6 +1,6 @@
 config/**/*.key
 config/deploy/templates
-public/files/audio
+public/media
 public/muffon-vk
 log
 tmp
