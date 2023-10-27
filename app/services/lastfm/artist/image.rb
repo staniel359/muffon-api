@@ -30,7 +30,7 @@ module LastFM
       def images_list
         artist_images_data&.dig(
           :artist, :images
-        )
+        ) || []
       end
 
       def artist_images_data
