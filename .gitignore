@@ -1,6 +1,7 @@
 config/**/*.key
 config/deploy/templates
 public/files/audio
+public/muffon-vk
 log
 tmp
 storage

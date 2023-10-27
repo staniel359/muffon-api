@@ -13,7 +13,8 @@ append :linked_files,
   'config/master.key',
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
-  'config/sidekiq.yml'
+  'config/sidekiq.yml',
+  'public/muffon-vk'
 
 append :linked_dirs,
   'log',
@@ -70,6 +71,11 @@ namespace :config do
         'config/sidekiq.yml',
         "/root/#{fetch(:application)}/shared/config/sidekiq.yml"
       )
+
+      # upload!(
+      #   'public/muffon-vk',
+      #   "/root/#{fetch(:application)}/shared/public/muffon-vk"
+      # )
     end
   end
 end

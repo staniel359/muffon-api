@@ -20,6 +20,8 @@ module VK
         end
 
         def write_audio_data_to_file
+          return if test?
+
           convert_m3u8_file_to_ts_file
 
           convert_ts_file_to_audio_file
@@ -28,8 +30,23 @@ module VK
         end
 
         def convert_m3u8_file_to_ts_file
-          `streamlink --output #{ts_file_name} -f \
-            #{@args[:link]} best`
+          `#{converter_executable} \
+            -l #{m3u8_link_formatted} \
+            -o #{ts_file_name}`
+        end
+
+        def converter_executable
+          Rails
+            .public_path
+            .join(
+              'muffon-vk'
+            )
+        end
+
+        def m3u8_link_formatted
+          @args[:link].split(
+            'index.m3u8'
+          )[0]
         end
 
         def ts_file_name
@@ -41,8 +58,6 @@ module VK
         end
 
         def convert_ts_file_to_audio_file
-          return if test?
-
           `ffmpeg -loglevel panic -y \
             -i #{file_path}.ts \
             -c copy #{audio_file_name}`
