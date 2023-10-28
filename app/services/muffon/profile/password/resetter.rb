@@ -8,8 +8,8 @@ module Muffon
           [@args[:email]]
         end
 
-        def no_data?
-          profile.blank?
+        def forbidden?
+          false
         end
 
         def profile

@@ -15,6 +15,10 @@ module Muffon
         ]
       end
 
+      def forbidden?
+        false
+      end
+
       def profile
         @profile ||=
           ::Profile.with_email(
