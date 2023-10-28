@@ -7,7 +7,7 @@ module LastFM
         private
 
         def no_data?
-          false
+          name.blank?
         end
 
         def base_link
@@ -22,7 +22,7 @@ module LastFM
         def name
           response_data.css(
             '.header-new-title'
-          )[0].text
+          )[0]&.text
         end
       end
     end
