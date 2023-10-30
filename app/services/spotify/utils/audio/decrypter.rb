@@ -20,7 +20,9 @@ module Spotify
         end
 
         def no_data?
-          track_data.blank? || key.blank?
+          track_data.blank? ||
+            file_data.blank? ||
+            key.blank?
         end
 
         def track_data
@@ -34,6 +36,13 @@ module Spotify
           @global_id ||=
             Spotify::Utils::Audio::Decrypter::GlobalId.call(
               track_id: @args[:track_id]
+            )
+        end
+
+        def file_data
+          @file_data ||=
+            Spotify::Utils::Audio::Decrypter::File.call(
+              track_data:
             )
         end
 
@@ -82,13 +91,6 @@ module Spotify
           file_data.dig(
             'cdnurl', 0
           )
-        end
-
-        def file_data
-          @file_data ||=
-            Spotify::Utils::Audio::Decrypter::File.call(
-              track_data:
-            )
         end
       end
     end

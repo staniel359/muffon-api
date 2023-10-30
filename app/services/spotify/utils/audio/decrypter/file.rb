@@ -12,41 +12,75 @@ module Spotify
           end
 
           def no_data?
-            false
+            file_id.blank?
+          end
+
+          def file_id
+            @file_id ||=
+              matched_file.try(
+                :[], 'file_id'
+              )
+          end
+
+          def matched_file
+            files.find do |f|
+              matched_file?(f)
+            end
+          end
+
+          def files
+            file_group.try(
+              :[], 'file'
+            ) || []
+          end
+
+          def file_group
+            file_groups_formatted.find do |g|
+              matched_file_group?(g)
+            end
+          end
+
+          def file_groups_formatted
+            file_groups.map do |g|
+              format_file_group_data(g)
+            end
+          end
+
+          def file_groups
+            [
+              track_data,
+              *alternative_file_groups
+            ]
+          end
+
+          def track_data
+            @args[:track_data]
+          end
+
+          def alternative_file_groups
+            track_data['alternative'] || []
+          end
+
+          def format_file_group_data(file_group)
+            file_group.slice(
+              'file',
+              'restriction'
+            )
+          end
+
+          def matched_file_group?(file_group)
+            Spotify::Utils::Audio::Decrypter::File::GroupMatcher.call(
+              file_group:
+            )
+          end
+
+          def matched_file?(file)
+            file['format'] == FORMAT
           end
 
           def link
             "#{BASE_LINK}/storage-resolve/files" \
               "/audio/interactive/#{file_id}"
-          end
-
-          def file_id
-            matched_file['file_id']
-          end
-
-          def matched_file
-            file_ids.find do |f|
-              matched_file?(f)
-            end
-          end
-
-          def file_ids
-            alternative_file_data ||
-              file_data
-          end
-
-          def alternative_file_data
-            @args[:track_data].dig(
-              'alternative', 0, 'file'
-            )
-          end
-
-          def file_data
-            @args[:track_data]['file']
-          end
-
-          def matched_file?(file)
-            file['format'] == FORMAT
           end
 
           alias data response_data
