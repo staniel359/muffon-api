@@ -2,40 +2,23 @@ module Spotify
   module Utils
     module Audio
       class Link < Spotify::Base
-        def call
-          return if not_all_args? || no_data?
+        FILE_EXTENSION = 'ogg'.freeze
 
-          data
-        end
+        include Muffon::Utils::Audio::Link
 
         private
 
-        def not_all_args?
-          @args[:track_id].blank?
+        def primary_args
+          [@args[:track_id]]
         end
 
-        def no_data?
-          audio_path.blank?
-        end
+        def audio_binary_data
+          return 'test' if test?
 
-        def audio_path
-          return test_audio_path if test?
-
-          response_data['path']
-        rescue StandardError
-          nil
-        end
-
-        def test_audio_path
-          "media/audio/spotify/#{@args[:track_id]}.ogg"
-        end
-
-        def link
-          "http://localhost:5000/tracks/#{@args[:track_id]}"
-        end
-
-        def data
-          "#{secrets[:url]}/#{audio_path}"
+          @audio_binary_data ||=
+            Spotify::Utils::Audio::Decrypter.call(
+              track_id: @args[:track_id]
+            )
         end
       end
     end

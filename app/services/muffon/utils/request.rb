@@ -16,9 +16,10 @@ module Muffon
       end
 
       def response
-        RestClient.get(
-          link, headers
-        )
+        @response ||=
+          RestClient.get(
+            link, headers
+          )
       end
 
       def post_response

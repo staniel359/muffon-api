@@ -48,3 +48,6 @@ Style/FrozenStringLiteralComment:
 Lint/UselessAccessModifier:
   ContextCreatingMethods:
     - class_methods
+
+Layout/SpaceAroundOperators:
+  EnforcedStyleForExponentOperator: 'space'
