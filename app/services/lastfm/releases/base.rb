@@ -27,13 +27,13 @@ module LastFM
       def total_pages_count
         response_data.css(
           '.pagination-page'
-        ).last.text.to_i
+        ).last&.text&.to_i || 1
       end
 
       def collection_list
         response_data.css(
           '.resource-list--release-list-item'
-        )
+        ) || []
       end
 
       def collection_item_data_formatted(album)
