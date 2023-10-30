@@ -13,7 +13,9 @@ module Muffon
                 @args[:artist_name],
               limit: 1,
               page: random_track_number
-            )[:artist]
+            ).try(
+              :[], :artist
+            ) || {}
         end
 
         def radio_track_data
