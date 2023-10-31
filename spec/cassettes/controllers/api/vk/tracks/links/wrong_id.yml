@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=wejlhg239gh23&sig=9b640471b9d35d16901c934e5325d828&v=5.131
+    uri: https://api.vk.com/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=wejlhg239gh23&sig=a790d7241fb1d947bff410011d948cb1&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Tue, 02 May 2023 10:33:31 GMT
+      - Wed, 01 Nov 2023 19:54:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,12 +31,10 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.113742
+      - KPHP/7.4.114913
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
-        secure
       Cache-Control:
       - no-store
       X-Frame-Options:
@@ -45,5 +43,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
         was missing or invalid: audios[0].>>>[owner_id]<<<_[audio_id]_[sig] not integer","request_params":[{"key":"v","value":"5.131"},{"key":"audios","value":"wejlhg239gh23"},{"key":"method","value":"audio.getById"},{"key":"oauth","value":"1"}]}}'
-  recorded_at: Tue, 02 May 2023 10:33:31 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Wed, 01 Nov 2023 19:54:25 GMT
+recorded_with: VCR 6.2.0

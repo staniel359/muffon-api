@@ -31,10 +31,7 @@ module VK
       end
 
       def audio_link
-        VK::Utils::Audio::Link.call(
-          track_id: vk_track_id,
-          link: track['url']
-        )
+        track['url']
       end
     end
   end

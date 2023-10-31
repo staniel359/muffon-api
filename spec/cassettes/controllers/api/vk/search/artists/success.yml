@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.searchArtists?access_token=<VK_ACCESS_TOKEN>&count=20&offset=0&q=wild%20nothing&sig=1063760e0640e7f75cd8b6a608526caf&v=5.131
+    uri: https://api.vk.com/method/audio.searchArtists?access_token=<VK_ACCESS_TOKEN>&count=20&offset=0&q=wild%20nothing&sig=e54b274ed0f24348e01b6f8062aceee4&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 17 May 2023 10:25:22 GMT
+      - Wed, 01 Nov 2023 19:54:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,18 +31,16 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.113840
+      - KPHP/7.4.114913
       Set-Cookie:
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
         secure; HttpOnly
-      - remixstemp=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
-        secure
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
     body:
       encoding: ASCII-8BIT
-      string: '{"response":{"count":1,"items":[{"name":"Wild Nothing","domain":"wildnothing","id":"4333005440018923962","is_album_cover":false,"photo":[{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=143x143&quality=96&sign=a010fe03bcdd63801e2f75547f077bfa&c_uniq_tag=0TZDM3pHbMtvQjxtPNKf5sLETcHsWLcWYPTDqREyiaE&type=audio","width":143,"height":143},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=286x286&quality=96&sign=63b9e62f50c129b5b8069367095be62b&c_uniq_tag=KfCY8Uz9roKHIpdtW-9a_Ct-U_s7NSmQPCi-tlOE0UE&type=audio","width":286,"height":286},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio","width":1184,"height":1184},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=592x592&quality=96&sign=2522982712e346f584b8808c94003154&c_uniq_tag=jnIwAwih4oCo-dd_7gqpcpFZpsQHBjzEL7kiTyVsJiQ&type=audio","width":592,"height":592},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","width":68,"height":68},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=40x40&quality=96&sign=e328d89fe0c88f20c2482b703db0529a&c_uniq_tag=kRBxW9zbJiv_XnenGlsfUqDko2u5XXALsVt8zN5dr5U&type=audio","width":40,"height":40},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","width":135,"height":135},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=80x80&quality=96&sign=9b346168046f4b76c9f9278e5c45b15d&c_uniq_tag=jy-VNxU8QoxZfwHF8FHRadCdFJZ6B9MEI3yB41pGRI8&type=audio","width":80,"height":80},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","width":270,"height":270},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","width":34,"height":34},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=150x150&quality=96&sign=9d3deb0e3eb472cc45dd1261e1eb01b6&c_uniq_tag=_sGdjaBbMEFqIwWH0fLnsZp-ndIKUYleAA9_b3dHgmA&type=audio","width":150,"height":150},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","width":300,"height":300},{"url":"https:\/\/sun1-94.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","width":300,"height":300}]}]}}'
-  recorded_at: Wed, 17 May 2023 10:25:22 GMT
-recorded_with: VCR 6.1.0
+      string: '{"response":{"count":1,"items":[{"name":"Wild Nothing","domain":"wildnothing","id":"4333005440018923962","is_album_cover":false,"photo":[{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=143x143&quality=96&sign=a010fe03bcdd63801e2f75547f077bfa&c_uniq_tag=0TZDM3pHbMtvQjxtPNKf5sLETcHsWLcWYPTDqREyiaE&type=audio","width":143,"height":143},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=286x286&quality=96&sign=63b9e62f50c129b5b8069367095be62b&c_uniq_tag=KfCY8Uz9roKHIpdtW-9a_Ct-U_s7NSmQPCi-tlOE0UE&type=audio","width":286,"height":286},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio","width":1184,"height":1184},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=592x592&quality=96&sign=2522982712e346f584b8808c94003154&c_uniq_tag=jnIwAwih4oCo-dd_7gqpcpFZpsQHBjzEL7kiTyVsJiQ&type=audio","width":592,"height":592},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","width":68,"height":68},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=40x40&quality=96&sign=e328d89fe0c88f20c2482b703db0529a&c_uniq_tag=kRBxW9zbJiv_XnenGlsfUqDko2u5XXALsVt8zN5dr5U&type=audio","width":40,"height":40},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","width":135,"height":135},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=80x80&quality=96&sign=9b346168046f4b76c9f9278e5c45b15d&c_uniq_tag=jy-VNxU8QoxZfwHF8FHRadCdFJZ6B9MEI3yB41pGRI8&type=audio","width":80,"height":80},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","width":270,"height":270},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","width":34,"height":34},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=150x150&quality=96&sign=9d3deb0e3eb472cc45dd1261e1eb01b6&c_uniq_tag=_sGdjaBbMEFqIwWH0fLnsZp-ndIKUYleAA9_b3dHgmA&type=audio","width":150,"height":150},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","width":300,"height":300},{"url":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","width":300,"height":300}]}]}}'
+  recorded_at: Wed, 01 Nov 2023 19:54:22 GMT
+recorded_with: VCR 6.2.0
