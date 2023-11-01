@@ -14,7 +14,7 @@ module Deezer
           return 'test' if test?
 
           @audio_binary_data ||=
-            Deezer::Utils::Audio::Decoder.call(
+            Deezer::Utils::Audio::Decrypter.call(
               track_id: @args[:track_id]
             )
         end

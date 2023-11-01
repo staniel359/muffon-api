@@ -5,7 +5,7 @@ module Spotify
         class Binary
           class Chunk
             class Part < Spotify::Utils::Audio::Decrypter::Binary::Chunk
-              CIPHER = 'aes-128-ctr'.freeze
+              CIPHER_ALGORITHM = 'aes-128-ctr'.freeze
 
               private
 
@@ -23,21 +23,24 @@ module Spotify
               end
 
               def data
-                cipher.decrypt
-
-                cipher.key = key
-                cipher.iv = part_iv
-
-                cipher.update(
-                  part_binary
-                ) << cipher.final
+                Muffon::Decrypter.call(
+                  binary: chunk_part_binary,
+                  algorithm: CIPHER_ALGORITHM,
+                  key:,
+                  iv: part_iv
+                )
               end
 
-              def cipher
-                @cipher ||=
-                  OpenSSL::Cipher.new(
-                    CIPHER
-                  )
+              def chunk_part_binary
+                Muffon::Binary::Chunk.call(
+                  binary: chunk_binary,
+                  chunk_size: CHUNK_PART_SIZE,
+                  index:
+                )
+              end
+
+              def chunk_binary
+                @args[:chunk_binary]
               end
 
               def key
@@ -63,33 +66,6 @@ module Spotify
 
               def index
                 @args[:index]
-              end
-
-              def part_binary
-                chunk_binary[
-                  passed_parts_size,
-                  current_part_size
-                ]
-              end
-
-              def chunk_binary
-                @args[:chunk_binary]
-              end
-
-              def passed_parts_size
-                CHUNK_PART_SIZE * index
-              end
-
-              def current_part_size
-                [
-                  CHUNK_PART_SIZE,
-                  remaining_parts_size
-                ].min
-              end
-
-              def remaining_parts_size
-                chunk_binary.size -
-                  passed_parts_size
               end
             end
           end

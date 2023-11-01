@@ -39,34 +39,19 @@ module Spotify
 
             def chunk_binary
               @chunk_binary ||=
-                binary[
-                  passed_chunks_size,
-                  current_chunk_size
-                ]
+                Muffon::Binary::Chunk.call(
+                  binary:,
+                  chunk_size: CHUNK_SIZE,
+                  index:
+                )
             end
 
             def binary
               @args[:binary]
             end
 
-            def passed_chunks_size
-              CHUNK_SIZE * index
-            end
-
             def index
               @args[:index]
-            end
-
-            def current_chunk_size
-              [
-                CHUNK_SIZE,
-                remaining_chunks_size
-              ].min
-            end
-
-            def remaining_chunks_size
-              binary.size -
-                passed_chunks_size
             end
 
             def process_part(index)
