@@ -23,9 +23,10 @@ module Muffon
       end
 
       def post_response
-        RestClient.post(
-          link, payload, headers
-        )
+        @post_response ||=
+          RestClient.post(
+            link, payload, headers
+          )
       end
 
       def headers
@@ -47,12 +48,8 @@ module Muffon
         @args[:language] || 'en'
       end
 
-      def user_agent
-        USER_AGENT
-      end
-
       def proxy
-        secrets.proxy[:ru] if production?
+        secrets.proxy[:ru]
       end
     end
   end

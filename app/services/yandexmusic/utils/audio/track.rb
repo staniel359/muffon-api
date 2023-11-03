@@ -32,8 +32,9 @@ module YandexMusic
 
         def headers
           {
-            'X-Retpath-Y' => 'https://music.yandex.ru/',
-            'User-Agent' => user_agent,
+            'X-Retpath-Y' =>
+              'https://music.yandex.ru/',
+            'User-Agent' => USER_AGENT,
             cookies:
           }
         end

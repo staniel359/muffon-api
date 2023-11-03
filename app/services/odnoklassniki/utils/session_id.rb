@@ -48,7 +48,7 @@ module Odnoklassniki
 
       def headers
         {
-          'User-Agent' => user_agent,
+          'User-Agent' => USER_AGENT,
           params:
         }
       end

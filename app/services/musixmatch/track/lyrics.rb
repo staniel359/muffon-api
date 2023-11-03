@@ -10,7 +10,7 @@ module MusixMatch
       end
 
       def lyrics_headers
-        { 'User-Agent' => user_agent }
+        { 'User-Agent' => USER_AGENT }
       end
 
       def track_data
