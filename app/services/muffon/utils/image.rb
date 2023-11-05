@@ -61,10 +61,10 @@ module Muffon
 
       def variant_options(size)
         {
+          gravity: 'center',
+          extent: '1:1',
+          resize: "#{size}x#{size}>",
           loader: loader_data,
-          resize_to_fill: [
-            size, size
-          ],
           saver: saver_data
         }
       end
