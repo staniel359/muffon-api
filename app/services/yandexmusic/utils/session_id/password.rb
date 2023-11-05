@@ -3,10 +3,20 @@ module YandexMusic
     class SessionId
       class Password < YandexMusic::Utils::SessionId
         def call
+          return if not_all_args?
+
           data
         end
 
         private
+
+        def primary_args
+          [
+            @args[:csrf_token],
+            @args[:unique_uid],
+            @args[:track_id]
+          ]
+        end
 
         def data
           { session_id: }
@@ -37,7 +47,6 @@ module YandexMusic
             password:,
             track_id:,
             csrf_token:
-              @args[:csrf_token]
           }
         end
 
@@ -46,20 +55,19 @@ module YandexMusic
         end
 
         def track_id
-          email_data[:track_id]
+          @args[:track_id]
         end
 
-        def email_data
-          YandexMusic::Utils::SessionId::Email.call(
-            csrf_token:
-              @args[:csrf_token],
-            unique_uid:
-              @args[:unique_uid]
-          )
+        def csrf_token
+          @args[:csrf_token]
         end
 
         def cookies
-          { uniqueuid: @args[:unique_uid] }
+          { uniqueuid: unique_uid }
+        end
+
+        def unique_uid
+          @args[:unique_uid]
         end
       end
     end
