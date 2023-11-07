@@ -30,6 +30,8 @@ module Muffon
       end
 
       def format_link(image)
+        return if image.blank?
+
         key = image.key
         filename = image.blob.filename
 
@@ -57,6 +59,8 @@ module Muffon
           .variant(
             options
           ).processed
+      rescue ActiveStorage::FileNotFoundError
+        nil
       end
 
       def variant_options(size)
