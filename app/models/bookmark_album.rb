@@ -11,13 +11,13 @@ class BookmarkAlbum < ApplicationRecord
   include BookmarkAlbumDecorator
   include EventableAlbum
 
-  has_one_attached :image
-
-  belongs_to :profile
-  belongs_to :album
-
   validates :album_id,
             uniqueness: {
               scope: :profile_id
             }
+
+  has_one_attached :image
+
+  belongs_to :profile
+  belongs_to :album
 end

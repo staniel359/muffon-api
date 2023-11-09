@@ -21,15 +21,29 @@ class Playlist < ApplicationRecord
   include PlaylistDecorator
   include Eventable
 
+  validates :title,
+            presence: true,
+            uniqueness: {
+              scope: :profile_id
+            }
+
+  before_destroy :delete_data
+
   has_one_attached :image
 
   belongs_to :profile
 
   has_many :playlist_tracks, dependent: :delete_all
 
-  validates :title,
-            presence: true,
-            uniqueness: {
-              scope: :profile_id
-            }
+  private
+
+  def delete_data
+    delete_images
+  end
+
+  def delete_images
+    playlist_tracks.find_each do |t|
+      t.image.purge_later
+    end
+  end
 end

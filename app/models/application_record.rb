@@ -17,11 +17,11 @@ class ApplicationRecord < ActiveRecord::Base
     end
   end
 
+  private
+
   def update_artist_tags
     artist.update_tags
   end
-
-  private
 
   def test?
     Rails.env.test?

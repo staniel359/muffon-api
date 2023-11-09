@@ -13,6 +13,11 @@ class LibraryAlbum < ApplicationRecord
   include LibraryAlbumDecorator
   include EventableAlbum
 
+  validates :album_id,
+            uniqueness: {
+              scope: :profile_id
+            }
+
   has_one_attached :image
 
   belongs_to :profile, counter_cache: true
@@ -20,9 +25,4 @@ class LibraryAlbum < ApplicationRecord
   belongs_to :album
 
   has_many :library_tracks, dependent: :delete_all
-
-  validates :album_id,
-            uniqueness: {
-              scope: :profile_id
-            }
 end

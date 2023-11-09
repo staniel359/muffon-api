@@ -10,11 +10,11 @@ class RecommendationTrack < ApplicationRecord
   include RecommendationTrackDecorator
   include EventableTrack
 
-  belongs_to :profile
-  belongs_to :track
-
   validates :track_id,
             uniqueness: {
               scope: :profile_id
             }
+
+  belongs_to :profile
+  belongs_to :track
 end

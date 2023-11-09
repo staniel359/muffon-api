@@ -6,11 +6,11 @@ class ListenedAlbum < ApplicationRecord
 
   include EventableAlbum
 
-  belongs_to :profile
-  belongs_to :album
-
   validates :album_id,
             uniqueness: {
               scope: :profile_id
             }
+
+  belongs_to :profile
+  belongs_to :album
 end

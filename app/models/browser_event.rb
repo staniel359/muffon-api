@@ -4,7 +4,7 @@ class BrowserEvent < ApplicationRecord
     created_asc
   ].freeze
 
-  belongs_to :profile
-
   validates :data, presence: true
+
+  belongs_to :profile
 end

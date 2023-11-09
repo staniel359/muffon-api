@@ -47,8 +47,20 @@ class Profile < ApplicationRecord
             uniqueness: true,
             length: { maximum: 40 }
 
+  enum gender: {
+    male: 0,
+    female: 1,
+    other: 2
+  }
+
+  enum role: {
+    profile: 0,
+    creator: 1
+  }
+
   before_create :set_token
-  before_destroy :clear_data
+
+  before_destroy :delete_data
 
   has_secure_password
 
@@ -153,46 +165,45 @@ class Profile < ApplicationRecord
   has_one :lastfm_connection, dependent: :delete
   has_one :spotify_connection, dependent: :delete
 
-  enum gender: {
-    male: 0,
-    female: 1,
-    other: 2
-  }
-
-  enum role: {
-    profile: 0,
-    creator: 1
-  }
-
   def delete_library
+    delete_library_images
+
+    delete_library_collections
+
+    delete_recommendations_collections
+  end
+
+  private
+
+  def delete_library_images
+    library_albums.find_each do |a|
+      a.image.purge_later
+    end
+  end
+
+  def delete_library_collections
     library_tracks.delete_all
 
     library_albums.delete_all
 
     library_artists.delete_all
+  end
 
+  def delete_recommendations_collections
     recommendation_artists.delete_all
 
     recommendation_tracks.delete_all
   end
 
-  def clear_data
-    clear_info
+  def delete_data
+    delete_info
 
-    clear_assosiated_collections
+    delete_images
+
+    delete_assosiated_collections
   end
 
-  private
-
-  def clear_assosiated_collections
-    playlist_tracks.delete_all
-
-    PostComment.merge(
-      post_comments
-    ).delete_all
-  end
-
-  def clear_info
+  def delete_info
     attributes_list.each_key do |a|
       self[a] = nil
     end
@@ -208,5 +219,61 @@ class Profile < ApplicationRecord
       'created_at',
       'updated_at'
     )
+  end
+
+  def delete_images
+    delete_library_images
+
+    delete_favorites_images
+
+    delete_bookmarks_images
+
+    delete_playlists_images
+
+    delete_posts_images
+  end
+
+  def delete_favorites_images
+    favorite_albums.find_each do |a|
+      a.image.purge_later
+    end
+
+    favorite_tracks.find_each do |t|
+      t.image.purge_later
+    end
+  end
+
+  def delete_bookmarks_images
+    bookmark_albums.find_each do |a|
+      a.image.purge_later
+    end
+
+    bookmark_tracks.find_each do |t|
+      t.image.purge_later
+    end
+  end
+
+  def delete_playlists_images
+    playlist_tracks.find_each do |t|
+      t.image.purge_later
+    end
+  end
+
+  def delete_posts_images
+    posts.find_each do |p|
+      p.images.purge_later
+    end
+
+    post_comments.find_each do |c|
+      c.images.purge_later
+    end
+  end
+
+  def delete_assosiated_collections
+    playlist_tracks.delete_all
+
+    PostComment.merge(
+      post_comments
+    ).delete_all
   end
 end

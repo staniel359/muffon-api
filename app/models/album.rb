@@ -1,15 +1,6 @@
 class Album < ApplicationRecord
   include AlbumDecorator
 
-  has_many :library_albums, dependent: nil
-
-  has_many :profiles,
-           -> { distinct },
-           through: :library_albums,
-           dependent: nil
-
-  belongs_to :artist
-
   validates :title, presence: true
 
   validates :title_downcase,
@@ -17,4 +8,13 @@ class Album < ApplicationRecord
             uniqueness: {
               scope: :artist_id
             }
+
+  belongs_to :artist
+
+  has_many :library_albums, dependent: nil
+
+  has_many :profiles,
+           -> { distinct },
+           through: :library_albums,
+           dependent: nil
 end

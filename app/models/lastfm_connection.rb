@@ -1,6 +1,4 @@
 class LastFMConnection < ApplicationRecord
-  belongs_to :profile
-
   validates :nickname,
             :session_key,
             presence: true
@@ -10,4 +8,6 @@ class LastFMConnection < ApplicationRecord
               true,
               false
             ]
+
+  belongs_to :profile
 end

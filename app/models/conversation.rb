@@ -12,13 +12,27 @@ class Conversation < ApplicationRecord
   include ConversationDecorator
   include Eventable
 
+  validates :other_profile_id,
+            uniqueness: {
+              scope: :profile_id
+            }
+
+  before_destroy :delete_data
+
   belongs_to :profile
   belongs_to :other_profile, class_name: 'Profile'
 
   has_many :messages, dependent: :delete_all
 
-  validates :other_profile_id,
-            uniqueness: {
-              scope: :profile_id
-            }
+  private
+
+  def delete_data
+    delete_images
+  end
+
+  def delete_images
+    messages.find_each do |m|
+      m.images.purge_later
+    end
+  end
 end

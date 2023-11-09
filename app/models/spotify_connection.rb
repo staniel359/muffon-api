@@ -1,6 +1,4 @@
 class SpotifyConnection < ApplicationRecord
-  belongs_to :profile
-
   validates :spotify_id,
             :nickname,
             :access_token,
@@ -12,4 +10,6 @@ class SpotifyConnection < ApplicationRecord
               true,
               false
             ]
+
+  belongs_to :profile
 end

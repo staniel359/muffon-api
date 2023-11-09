@@ -13,17 +13,17 @@ class PlaylistTrack < ApplicationRecord
   include PlaylistTrackDecorator
   include EventableTrack
 
+  validates :track_id,
+            uniqueness: {
+              scope: :playlist_id
+            }
+
   has_one_attached :image
 
   belongs_to :playlist, counter_cache: 'tracks_count'
   belongs_to :track
   belongs_to :artist
   belongs_to :album, optional: true
-
-  validates :track_id,
-            uniqueness: {
-              scope: :playlist_id
-            }
 
   private
 

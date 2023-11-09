@@ -6,9 +6,6 @@ class WatchedVideo < ApplicationRecord
 
   include EventableVideo
 
-  belongs_to :profile
-  belongs_to :video
-
   validates :profile_id,
             uniqueness: {
               scope: :video_id
@@ -18,4 +15,7 @@ class WatchedVideo < ApplicationRecord
             uniqueness: {
               scope: :profile_id
             }
+
+  belongs_to :profile
+  belongs_to :video
 end

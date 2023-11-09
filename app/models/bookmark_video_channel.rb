@@ -10,9 +10,6 @@ class BookmarkVideoChannel < ApplicationRecord
 
   include EventableVideoChannel
 
-  belongs_to :video_channel
-  belongs_to :profile
-
   validates :video_channel_id,
             uniqueness: {
               scope: :profile_id
@@ -22,4 +19,7 @@ class BookmarkVideoChannel < ApplicationRecord
             uniqueness: {
               scope: :video_channel_id
             }
+
+  belongs_to :video_channel
+  belongs_to :profile
 end

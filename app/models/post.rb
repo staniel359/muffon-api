@@ -25,9 +25,14 @@ class Post < ApplicationRecord
   include SendableDecorator
   include Eventable
 
-  has_many_attached :images
+  enum post_type: {
+    profile: 0,
+    community: 1
+  }
 
-  has_many :post_comments, dependent: :delete_all
+  before_destroy :delete_data
+
+  has_many_attached :images
 
   belongs_to :profile
 
@@ -37,8 +42,17 @@ class Post < ApplicationRecord
 
   belongs_to :community, optional: true
 
-  enum post_type: {
-    profile: 0,
-    community: 1
-  }
+  has_many :post_comments, dependent: :delete_all
+
+  private
+
+  def delete_data
+    delete_images
+  end
+
+  def delete_images
+    post_comments.find_each do |c|
+      c.images.purge_later
+    end
+  end
 end

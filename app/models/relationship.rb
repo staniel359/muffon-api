@@ -7,15 +7,15 @@ class Relationship < ApplicationRecord
   include RelationshipDecorator
   include Eventable
 
+  validates :other_profile_id,
+            uniqueness: {
+              scope: :profile_id
+            }
+
   belongs_to :profile,
              counter_cache: 'following_count'
 
   belongs_to :other_profile,
              class_name: 'Profile',
              counter_cache: 'followers_count'
-
-  validates :other_profile_id,
-            uniqueness: {
-              scope: :profile_id
-            }
 end

@@ -24,7 +24,7 @@ class Community < ApplicationRecord
             presence: true,
             uniqueness: true
 
-  before_destroy :clear_assosiated_collections
+  before_destroy :delete_data
 
   has_one_attached :image
 
@@ -43,7 +43,25 @@ class Community < ApplicationRecord
            through: :memberships,
            source: :profile
 
-  def clear_assosiated_collections
+  private
+
+  def delete_data
+    delete_images
+
+    delete_assosiated_collections
+  end
+
+  def delete_images
+    posts.find_each do |p|
+      p.images.purge_later
+    end
+
+    post_comments.find_each do |c|
+      c.images.purge_later
+    end
+  end
+
+  def delete_assosiated_collections
     PostComment.merge(
       post_comments
     ).delete_all

@@ -22,6 +22,8 @@ class LibraryTrack < ApplicationRecord
 
   after_destroy :clear_recommendations
 
+  private
+
   def create_recommendations
     Muffon::Worker::Profile::Recommendations::Tracks::Creator.call(
       profile_id:,

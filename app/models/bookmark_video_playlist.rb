@@ -10,9 +10,6 @@ class BookmarkVideoPlaylist < ApplicationRecord
 
   include EventableVideoPlaylist
 
-  belongs_to :video_playlist
-  belongs_to :profile
-
   validates :video_playlist_id,
             uniqueness: {
               scope: :profile_id
@@ -22,4 +19,7 @@ class BookmarkVideoPlaylist < ApplicationRecord
             uniqueness: {
               scope: :video_playlist_id
             }
+
+  belongs_to :video_playlist
+  belongs_to :profile
 end
