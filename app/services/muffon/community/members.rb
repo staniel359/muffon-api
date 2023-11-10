@@ -32,6 +32,7 @@ module Muffon
 
       def collection_list
         members
+          .not_deleted
           .created_desc_ordered
           .limit(limit)
           .offset(offset)

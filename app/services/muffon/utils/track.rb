@@ -68,6 +68,7 @@ module Muffon
 
         find_track
           .profiles
+          .not_deleted
           .count
       end
 

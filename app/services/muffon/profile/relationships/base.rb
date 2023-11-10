@@ -25,6 +25,7 @@ module Muffon
 
         def collection_list
           profiles
+            .not_deleted
             .relationship_created_desc_ordered
             .limit(limit)
             .offset(offset)

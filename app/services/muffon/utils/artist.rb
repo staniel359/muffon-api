@@ -40,6 +40,7 @@ module Muffon
 
         find_artist
           .profiles
+          .not_deleted
           .count
       end
     end

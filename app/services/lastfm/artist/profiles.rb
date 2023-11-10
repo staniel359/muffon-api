@@ -27,6 +27,7 @@ module LastFM
 
       def collection_list
         profiles
+          .not_deleted
           .created_desc_ordered
           .limit(limit)
           .offset(offset)

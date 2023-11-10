@@ -37,6 +37,7 @@ module Muffon
 
     def collection_list
       profiles
+        .not_deleted
         .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)

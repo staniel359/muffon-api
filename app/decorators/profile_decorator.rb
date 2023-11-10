@@ -40,6 +40,12 @@ module ProfileDecorator
         online: true
       )
     end
+
+    def not_deleted
+      where.not(
+        nickname: nil
+      )
+    end
   end
 
   def conversations

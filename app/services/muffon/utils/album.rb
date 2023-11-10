@@ -43,6 +43,7 @@ module Muffon
 
         find_album
           .profiles
+          .not_deleted
           .count
       end
     end
