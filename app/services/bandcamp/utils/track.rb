@@ -62,13 +62,24 @@ module Bandcamp
       end
 
       def audio_present?
-        audio_link.present?
+        raw_audio_link.present?
+      end
+
+      def raw_audio_link
+        @raw_audio_link ||=
+          track.dig(
+            'streaming_url', 'mp3-128'
+          )
       end
 
       def audio_link
-        track.dig(
-          'streaming_url', 'mp3-128'
-        )
+        return unless audio_present?
+
+        RestClient.get(
+          raw_audio_link
+        ) do |response|
+          response.headers[:location]
+        end
       end
     end
   end
