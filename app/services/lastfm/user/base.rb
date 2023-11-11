@@ -1,6 +1,8 @@
 module LastFM
   module User
     class Base < LastFM::Base
+      include LastFM::Utils::User
+
       private
 
       def primary_args

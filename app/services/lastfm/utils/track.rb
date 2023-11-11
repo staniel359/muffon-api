@@ -1,6 +1,9 @@
 module LastFM
   module Utils
     module Track
+      DEFAULT_IMAGE_ID =
+        '4128a6eb29f94943c9d206c08e625904'.freeze
+
       include Muffon::Utils::Track
 
       private

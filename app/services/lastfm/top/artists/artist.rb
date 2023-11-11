@@ -36,14 +36,10 @@ module LastFM
         end
 
         def image_url
-          image || 'MISSING'
+          default_image? ? 'MISSING' : image
         end
 
         def image
-          raw_image unless default_image?
-        end
-
-        def raw_image
           artist['image']
         end
 

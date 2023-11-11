@@ -94,9 +94,21 @@ module LastFM
     end
 
     def image_data_formatted(image)
+      return if default_image?
+
       LastFM::Utils::Image.call(
         image:
       )
+    end
+
+    def default_image?
+      !!image&.include?(
+        default_image_id
+      )
+    end
+
+    def default_image_id
+      self.class::DEFAULT_IMAGE_ID
     end
 
     def with_more_tags?
@@ -109,16 +121,6 @@ module LastFM
       data.match(
         %r{(.+)<a href="http(s?)://www.last.fm}m
       )[1].strip
-    end
-
-    def default_image?
-      raw_image.include?(
-        default_image_id
-      )
-    end
-
-    def default_image_id
-      self.class::DEFAULT_IMAGE_ID
     end
   end
 end
