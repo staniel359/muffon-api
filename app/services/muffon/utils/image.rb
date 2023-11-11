@@ -65,6 +65,7 @@ module Muffon
 
       def variant_options(size)
         {
+          background: 'none',
           gravity: 'center',
           extent: '1:1',
           resize: "#{size}x#{size}>",
