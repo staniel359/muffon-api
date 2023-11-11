@@ -13,6 +13,10 @@ module Muffon
           ]
         end
 
+        def forbidden?
+          false
+        end
+
         def data
           profile
 
