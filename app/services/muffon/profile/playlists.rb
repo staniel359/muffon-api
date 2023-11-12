@@ -29,10 +29,14 @@ module Muffon
 
       def playlists_conditional
         if valid_profile? || creator?
-          profile.playlists
+          profile_playlists
         else
-          profile.playlists.public
+          profile_playlists.public
         end
+      end
+
+      def profile_playlists
+        profile.playlists
       end
 
       def collection_list

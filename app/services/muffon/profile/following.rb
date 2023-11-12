@@ -7,12 +7,14 @@ module Muffon
 
       def profiles_conditional
         if creator?
-          profile.following_profiles
+          following_profiles
         else
-          profile
-            .following_profiles
-            .public
+          following_profiles.public
         end
+      end
+
+      def following_profiles
+        profile.following_profiles
       end
     end
   end

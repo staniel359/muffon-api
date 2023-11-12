@@ -9,9 +9,39 @@ module ProfileDecorator
       )
     end
 
-    def relationship_created_desc_ordered
+    def with_relationship_created_at
+      select(
+        'profiles.*, relationships.created_at as created_at'
+      )
+    end
+
+    def with_membership_created_at
+      select(
+        'profiles.*, memberships.created_at as created_at'
+      )
+    end
+
+    def followed_desc_ordered
       order(
         'relationships.created_at DESC'
+      )
+    end
+
+    def followed_asc_ordered
+      order(
+        'relationships.created_at ASC'
+      )
+    end
+
+    def joined_desc_ordered
+      order(
+        'memberships.created_at DESC'
+      )
+    end
+
+    def joined_asc_ordered
+      order(
+        'memberships.created_at ASC'
       )
     end
 

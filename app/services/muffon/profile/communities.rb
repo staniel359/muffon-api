@@ -2,7 +2,7 @@ module Muffon
   module Profile
     class Communities < Muffon::Profile::Base
       COLLECTION_NAME = 'communities'.freeze
-      DEFAULT_ORDER = 'created_desc'.freeze
+      DEFAULT_ORDER = 'joined_desc'.freeze
 
       include Muffon::Utils::Pagination
 
@@ -27,6 +27,7 @@ module Muffon
 
       def collection_list
         communities
+          .with_membership_created_at
           .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)

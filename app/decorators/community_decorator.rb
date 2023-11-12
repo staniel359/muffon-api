@@ -14,6 +14,12 @@ module CommunityDecorator
       )
     end
 
+    def with_membership_created_at
+      select(
+        'communities.*, memberships.created_at as created_at'
+      )
+    end
+
     def joined_desc_ordered
       order(
         'memberships.created_at DESC'

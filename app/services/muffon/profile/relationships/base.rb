@@ -2,6 +2,8 @@ module Muffon
   module Profile
     module Relationships
       class Base < Muffon::Profile::Base
+        DEFAULT_ORDER = 'followed_desc'.freeze
+
         include Muffon::Utils::Pagination
 
         private
@@ -26,7 +28,8 @@ module Muffon
         def collection_list
           profiles
             .not_deleted
-            .relationship_created_desc_ordered
+            .with_relationship_created_at
+            .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
             .associated

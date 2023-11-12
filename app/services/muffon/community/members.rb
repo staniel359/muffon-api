@@ -2,6 +2,7 @@ module Muffon
   module Community
     class Members < Muffon::Community::Base
       COLLECTION_NAME = 'members'.freeze
+      DEFAULT_ORDER = 'joined_desc'.freeze
 
       include Muffon::Utils::Pagination
 
@@ -22,18 +23,21 @@ module Muffon
 
       def members_conditional
         if creator?
-          community.members
+          community_members
         else
-          community
-            .members
-            .public
+          community_members.public
         end
+      end
+
+      def community_members
+        community.members
       end
 
       def collection_list
         members
           .not_deleted
-          .created_desc_ordered
+          .with_membership_created_at
+          .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
           .associated

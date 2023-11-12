@@ -4,6 +4,10 @@ class Profile < ApplicationRecord
     created_asc
     followers_count_desc
     followers_count_asc
+    followed_desc
+    followed_asc
+    joined_desc
+    joined_asc
   ].freeze
   EVENT_CALLBACKS = %w[
     created
