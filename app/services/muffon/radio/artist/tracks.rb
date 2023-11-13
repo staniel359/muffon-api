@@ -6,6 +6,10 @@ module Muffon
 
         private
 
+        def no_data?
+          artist_info_data.blank? || super
+        end
+
         def artist_info_data
           @artist_info_data ||=
             LastFM::Artist::Tracks.call(
@@ -15,13 +19,14 @@ module Muffon
               page: random_track_number
             ).try(
               :[], :artist
-            ) || {}
+            )
         end
 
         def radio_track_data
-          artist_info_data.dig(
-            :tracks, 0
-          )
+          @radio_track_data ||=
+            artist_info_data.dig(
+              :tracks, 0
+            )
         end
 
         def artist_name

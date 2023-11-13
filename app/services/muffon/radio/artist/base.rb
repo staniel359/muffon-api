@@ -7,10 +7,6 @@ module Muffon
         def primary_args
           [@args[:artist_name]]
         end
-
-        def no_data?
-          artist_info_data.blank? || super
-        end
       end
     end
   end

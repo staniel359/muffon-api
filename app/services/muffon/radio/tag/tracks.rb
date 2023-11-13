@@ -6,13 +6,19 @@ module Muffon
 
         private
 
+        def no_data?
+          tag_info_data.blank? || super
+        end
+
         def tag_info_data
           @tag_info_data ||=
             LastFM::Tag::Tracks.call(
               tag_name: @args[:tag_name],
               limit: 1,
               page: random_track_number
-            )[:tag]
+            ).try(
+              :[], :tag
+            )
         end
 
         def radio_track_data

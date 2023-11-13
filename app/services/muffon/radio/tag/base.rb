@@ -7,10 +7,6 @@ module Muffon
         def primary_args
           [@args[:tag_name]]
         end
-
-        def no_data?
-          tag_info_data.blank? || super
-        end
       end
     end
   end
