@@ -19,8 +19,8 @@ module Muffon
       end
 
       def source_id
-        source_data[:id] ||
-          source_data['id']
+        source_data.try(:[], :id) ||
+          source_data.try(:[], 'id')
       end
 
       def find_track
