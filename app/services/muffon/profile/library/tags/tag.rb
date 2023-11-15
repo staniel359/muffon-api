@@ -12,8 +12,8 @@ module Muffon
           def data
             {
               library: library_tag_data,
-              name: tag[:name],
-              count: tag[:count]
+              name:,
+              count:
             }
           end
 
@@ -23,6 +23,14 @@ module Muffon
 
           def tag
             @args[:tag]
+          end
+
+          def name
+            tag[:name]
+          end
+
+          def count
+            tag[:count]
           end
         end
       end

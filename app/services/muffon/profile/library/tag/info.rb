@@ -11,10 +11,11 @@ module Muffon
           end
 
           def tag_extra_data
-            {
-              artists_count:
-                tag_library_artists.count
-            }
+            { artists_count: }
+          end
+
+          def artists_count
+            tag_library_artists.count
           end
         end
       end

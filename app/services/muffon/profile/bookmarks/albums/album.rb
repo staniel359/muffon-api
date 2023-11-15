@@ -21,7 +21,8 @@ module Muffon
           end
 
           def album
-            @album ||= bookmark_album.album
+            @album ||=
+              bookmark_album.album
           end
 
           def bookmark_album
@@ -38,14 +39,18 @@ module Muffon
 
           def bookmark_album_data
             {
-              source: bookmark_album.source_data,
+              source: source_data,
               id: bookmark_album.id,
               title:,
               artist: artists_minimal_data,
               artists:,
-              image: bookmark_album.image_data,
+              image: image_data,
               created: created_formatted
             }.compact
+          end
+
+          def source_data
+            bookmark_album.source_data
           end
 
           def artists
@@ -54,6 +59,10 @@ module Muffon
 
           def artist_data
             { name: artist_name }
+          end
+
+          def image_data
+            bookmark_album.image_data
           end
 
           def created_formatted

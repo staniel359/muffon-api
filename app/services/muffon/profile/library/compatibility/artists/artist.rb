@@ -5,6 +5,7 @@ module Muffon
         class Artists
           class Artist < Muffon::Profile::Library::Compatibility::Artists
             include Muffon::Utils::Library::Artist
+            include Muffon::Utils::Source::Artist
 
             def call
               data
@@ -19,9 +20,10 @@ module Muffon
 
             def artist_data
               {
+                source: source_data,
                 library: library_artist_data,
                 name:,
-                image: artist.image_data,
+                image: image_data,
                 albums_count:,
                 tracks_count:,
                 created: created_formatted
@@ -30,6 +32,10 @@ module Muffon
 
             def library_artist
               @args[:library_artist]
+            end
+
+            def image_data
+              artist.image_data
             end
           end
         end

@@ -21,7 +21,8 @@ module Muffon
           end
 
           def track
-            @track ||= favorite_track.track
+            @track ||=
+              favorite_track.track
           end
 
           def favorite_track
@@ -71,26 +72,40 @@ module Muffon
           def favorite_track_extra_data
             {
               album: album_data,
-              image:
-                favorite_track.image_data,
+              image: image_data,
               created: created_formatted,
-              audio:
-                favorite_track.audio_data
+              audio: audio_data
             }.compact
+          end
+
+          def image_data
+            favorite_track.image_data
+          end
+
+          def audio_data
+            favorite_track.audio_data
           end
 
           def album_data
             return if album.blank?
 
             {
-              source:
-                favorite_track.album_source_data,
-              title: album.title
+              source: album_source_data,
+              title: album_title
             }
           end
 
           def album
-            @album ||= favorite_track.album
+            @album ||=
+              favorite_track.album
+          end
+
+          def album_source_data
+            favorite_track.album_source_data
+          end
+
+          def album_title
+            album.title
           end
 
           def created_formatted

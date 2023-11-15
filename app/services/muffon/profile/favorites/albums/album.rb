@@ -21,7 +21,8 @@ module Muffon
           end
 
           def album
-            @album ||= favorite_album.album
+            @album ||=
+              favorite_album.album
           end
 
           def artist_name
@@ -39,13 +40,16 @@ module Muffon
 
           def favorite_album_base_data
             {
-              source:
-                favorite_album.source_data,
+              source: source_data,
               id: favorite_album.id,
               title:,
               artist: artists_minimal_data,
               artists:
             }.compact
+          end
+
+          def source_data
+            favorite_album.source_data
           end
 
           def favorite_album
@@ -62,10 +66,13 @@ module Muffon
 
           def favorite_album_extra_data
             {
-              image:
-                favorite_album.image_data,
+              image: image_data,
               created: created_formatted
             }.compact
+          end
+
+          def image_data
+            favorite_album.image_data
           end
 
           def created_formatted

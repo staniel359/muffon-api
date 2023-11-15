@@ -4,6 +4,7 @@ module Muffon
       class Artists
         class Artist < Muffon::Profile::Favorites::Artists
           include Muffon::Utils::Artist
+          include Muffon::Utils::Source::Artist
 
           def call
             data
@@ -31,11 +32,16 @@ module Muffon
 
           def favorite_artist_data
             {
+              source: source_data,
               id: favorite_artist.id,
               name:,
-              image: artist.image_data,
+              image: image_data,
               created: created_formatted
             }.compact
+          end
+
+          def image_data
+            artist.image_data
           end
 
           def created_formatted

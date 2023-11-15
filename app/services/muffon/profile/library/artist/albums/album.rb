@@ -22,7 +22,7 @@ module Muffon
                 source: source_data,
                 library: library_album_data,
                 title:,
-                image: library_album.image_data,
+                image: image_data,
                 tracks_count:,
                 created: created_formatted
               }.compact
@@ -30,6 +30,10 @@ module Muffon
 
             def library_album
               @args[:library_album]
+            end
+
+            def image_data
+              library_album.image_data
             end
           end
         end

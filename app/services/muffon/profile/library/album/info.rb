@@ -17,11 +17,15 @@ module Muffon
 
           def album_extra_data
             {
-              image: library_album.image_data,
+              image: image_data,
               tracks_count:,
               playlists_count:,
               created: created_formatted
             }.compact
+          end
+
+          def image_data
+            library_album.image_data
           end
 
           def playlists_count

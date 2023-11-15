@@ -17,12 +17,16 @@ module Muffon
 
           def artist_extra_data
             {
-              image: artist.image_data,
+              image: image_data,
               tracks_count:,
               albums_count:,
               playlists_count:,
               created: created_formatted
             }.compact
+          end
+
+          def image_data
+            artist.image_data
           end
 
           def playlists_count

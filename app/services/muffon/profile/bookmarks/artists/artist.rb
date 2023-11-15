@@ -4,6 +4,7 @@ module Muffon
       class Artists
         class Artist < Muffon::Profile::Bookmarks::Artists
           include Muffon::Utils::Artist
+          include Muffon::Utils::Source::Artist
 
           def call
             data
@@ -21,7 +22,8 @@ module Muffon
           end
 
           def artist
-            @artist ||= bookmark_artist.artist
+            @artist ||=
+              bookmark_artist.artist
           end
 
           def bookmark_artist
@@ -30,11 +32,16 @@ module Muffon
 
           def bookmark_artist_data
             {
+              source: source_data,
               id: bookmark_artist.id,
               name:,
-              image: artist.image_data,
+              image: image_data,
               created: created_formatted
             }.compact
+          end
+
+          def image_data
+            artist.image_data
           end
 
           def created_formatted

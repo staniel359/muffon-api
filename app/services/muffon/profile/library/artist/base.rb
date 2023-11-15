@@ -4,6 +4,7 @@ module Muffon
       module Artist
         class Base < Muffon::Profile::Library::Base
           include Muffon::Utils::Library::Artist
+          include Muffon::Utils::Source::Artist
 
           private
 
@@ -31,6 +32,7 @@ module Muffon
 
           def artist_base_data
             {
+              source: source_data,
               library: library_artist_data,
               name:
             }.compact

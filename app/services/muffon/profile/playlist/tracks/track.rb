@@ -41,7 +41,8 @@ module Muffon
           end
 
           def track
-            @track ||= playlist_track.track
+            @track ||=
+              playlist_track.track
           end
 
           def artist_name
@@ -67,24 +68,40 @@ module Muffon
           def playlist_track_extra_data
             {
               album: album_data,
-              image: playlist_track.image_data,
+              image: image_data,
               created: created_formatted,
-              audio: playlist_track.audio_data
+              audio: audio_data
             }.compact
+          end
+
+          def image_data
+            playlist_track.image_data
+          end
+
+          def audio_data
+            playlist_track.audio_data
           end
 
           def album_data
             return if album.blank?
 
             {
-              source:
-                playlist_track.album_source_data,
-              title: album.title
+              source: album_source_data,
+              title: album_title
             }
           end
 
           def album
-            @album ||= playlist_track.album
+            @album ||=
+              playlist_track.album
+          end
+
+          def album_source_data
+            playlist_track.album_source_data
+          end
+
+          def album_title
+            album.title
           end
 
           def created_formatted

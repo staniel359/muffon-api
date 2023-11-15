@@ -4,6 +4,7 @@ module Muffon
       class Artists
         class Artist < Muffon::Profile::Recommendations::Artists
           include Muffon::Utils::Artist
+          include Muffon::Utils::Source::Artist
 
           def call
             data
@@ -18,9 +19,10 @@ module Muffon
 
           def recommendation_data
             {
+              source: source_data,
               id: recommendation.id,
               name:,
-              image: artist.image_data,
+              image: image_data,
               artists_count:,
               artists: library_artists_formatted,
               profiles_count:
@@ -36,7 +38,12 @@ module Muffon
           end
 
           def artist
-            @artist ||= recommendation.artist
+            @artist ||=
+              recommendation.artist
+          end
+
+          def image_data
+            artist.image_data
           end
 
           def artists_count

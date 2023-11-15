@@ -4,6 +4,7 @@ module Muffon
       class Tracks
         class Track < Muffon::Profile::Recommendations::Tracks
           include Muffon::Utils::Track
+          include Muffon::Utils::Source::Track
 
           def call
             data
@@ -18,6 +19,7 @@ module Muffon
 
           def recommendation_data
             {
+              source: source_data,
               id:,
               player_id:,
               title:,
@@ -40,7 +42,8 @@ module Muffon
           end
 
           def track
-            @track ||= recommendation.track
+            @track ||=
+              recommendation.track
           end
 
           def artist_name

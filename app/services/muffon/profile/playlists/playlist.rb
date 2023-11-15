@@ -17,9 +17,9 @@ module Muffon
           {
             id: playlist.id,
             playlist_track_ids:,
-            title: playlist.title,
+            title:,
             profile: profile_data,
-            private: playlist.private
+            private: private?
           }.compact
         end
 
@@ -64,6 +64,10 @@ module Muffon
             )
         end
 
+        def title
+          playlist.title
+        end
+
         def profile_data
           {
             id: profile.id,
@@ -73,24 +77,36 @@ module Muffon
         end
 
         def profile
-          @profile ||= playlist.profile
+          @profile ||=
+            playlist.profile
+        end
+
+        def private?
+          playlist.private
         end
 
         def playlist_extra_data
           {
-            image: playlist.image_data,
+            image: image_data,
             description:
               description_formatted,
-            tracks_count:
-              playlist.tracks_count,
+            tracks_count:,
             created: created_formatted
           }.compact
+        end
+
+        def image_data
+          playlist.image_data
         end
 
         def description_formatted
           return description if @args[:info]
 
           description_truncated_small
+        end
+
+        def tracks_count
+          playlist.tracks_count
         end
 
         def description
