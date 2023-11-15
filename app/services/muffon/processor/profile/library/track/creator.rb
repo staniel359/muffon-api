@@ -29,7 +29,10 @@ module Muffon
 
               process_image
 
-              { library_track: library_track_data }
+              {
+                library_track:
+                  library_track_data
+              }
             end
 
             def update_library_artist
@@ -40,7 +43,9 @@ module Muffon
 
             def library_artist
               @library_artist ||=
-                profile.library_artists.where(
+                profile
+                .library_artists
+                .where(
                   artist_id: find_artist.id
                 ).first_or_initialize
             end
@@ -69,7 +74,8 @@ module Muffon
 
               update_created_at(library_album)
 
-              library_album.source_data = album_source_data
+              library_album.source_data =
+                @args[:album_source]
 
               library_album.save
             end
@@ -78,7 +84,9 @@ module Muffon
               return if album_title.blank?
 
               @library_album ||=
-                profile.library_albums.where(
+                profile
+                .library_albums
+                .where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
                 ).first_or_initialize
@@ -88,35 +96,24 @@ module Muffon
               @args[:album_title]
             end
 
-            def album_source_data
-              @args[:album_source] ||
-                library_album.source_data
-            end
-
             def update_library_track
               update_created_at(library_track)
 
-              library_track.source_data = source_data
-              library_track.audio_data = audio_data
+              library_track.source_data = @args[:source]
+              library_track.audio_data = @args[:audio]
 
               library_track.save
             end
 
             def library_track
               @library_track ||=
-                profile.library_tracks.where(
+                profile
+                .library_tracks
+                .where(
                   track_id: find_track.id,
                   library_artist_id: library_artist.id,
                   library_album_id: library_album&.id
                 ).first_or_initialize
-            end
-
-            def source_data
-              @args[:source] || library_track.source_data
-            end
-
-            def audio_data
-              @args[:audio] || library_track.audio_data
             end
 
             def title
