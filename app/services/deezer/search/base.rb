@@ -15,7 +15,7 @@ module Deezer
       def collection_list
         response_data.dig(
           'results', 'data'
-        )
+        ) || []
       end
 
       def payload
@@ -39,7 +39,7 @@ module Deezer
       def collection_count
         response_data.dig(
           'results', 'total'
-        )
+        ) || 0
       end
     end
   end
