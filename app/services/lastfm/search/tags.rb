@@ -13,7 +13,7 @@ module LastFM
         @response_data ||=
           Google::Search.call(
             params
-          )[:search]
+          )[:search] || {}
       end
 
       def params
@@ -33,9 +33,13 @@ module LastFM
       end
 
       def collection_list
-        response_data[:results].reject do |t|
+        raw_collection_list.reject do |t|
           t[:title].blank?
         end
+      end
+
+      def raw_collection_list
+        response_data[:results] || []
       end
 
       def collection_item_data_formatted(tag)
