@@ -63,10 +63,11 @@ module Deezer
       end
 
       def track_data_formatted(track)
+        track_conditional =
+          track['FALLBACK'] || track
+
         Deezer::Album::Info::Track.call(
-          track: (
-            track['FALLBACK'] || track
-          ),
+          track: track_conditional,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

@@ -31,9 +31,9 @@ module YouTubeMusic
       end
 
       def scopes
-        raw_scopes&.map do |s|
-          s['chipCloudChipRenderer']
-        end
+        raw_scopes&.pluck(
+          'chipCloudChipRenderer'
+        )
       end
 
       def raw_scopes
