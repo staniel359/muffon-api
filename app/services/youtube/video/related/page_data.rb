@@ -18,15 +18,14 @@ module YouTube
 
         def next_page_data
           JSON.parse(
-            next_page_response
+            next_page_response.body
           )
         end
 
         def next_page_response
-          RestClient.post(
-            next_page_link,
-            next_page_payload,
-            next_page_headers
+          format_post_request(
+            link: next_page_link,
+            payload: next_page_payload
           )
         end
 
@@ -52,10 +51,6 @@ module YouTube
             'clientVersion' =>
               '2.20230714.00.00'
           }
-        end
-
-        def next_page_headers
-          { content_type: :json }
         end
 
         def first_page_data
@@ -86,19 +81,23 @@ module YouTube
 
         def first_page_response_data
           Nokogiri::HTML.parse(
-            first_page_response
+            first_page_response.body
           )
         end
 
         def first_page_response
-          RestClient.get(
-            first_page_link
+          format_get_request(
+            link: first_page_link,
+            params: first_page_params
           )
         end
 
         def first_page_link
-          'https://www.youtube.com/watch' \
-            "?v=#{@args[:video_id]}"
+          'https://www.youtube.com/watch'
+        end
+
+        def first_page_params
+          { v: @args[:video_id] }
         end
 
         def initial_data_script?(script)

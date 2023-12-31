@@ -21,7 +21,7 @@ module Genius
         end
 
         def lyrics_nodes
-          response_data.xpath(
+          html_response_data.xpath(
             "//*[
               contains(
                 @class, 'Lyrics__Container'
@@ -29,12 +29,6 @@ module Genius
                 @class, 'InreadContainer'
               )
             ]"
-          )
-        end
-
-        def response_data
-          Nokogiri::HTML.parse(
-            response
           )
         end
 

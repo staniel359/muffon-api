@@ -15,7 +15,7 @@ module Deezer
         end
 
         def track_token
-          return '' if @args[:track_id].blank?
+          return if @args[:track_id].blank?
 
           response_data.dig(
             'results', 'data',

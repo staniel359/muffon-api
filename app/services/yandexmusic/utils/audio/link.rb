@@ -45,10 +45,6 @@ module YandexMusic
           "https:#{track_data['src']}"
         end
 
-        def headers
-          { params: }
-        end
-
         def params
           { format: 'json' }
         end

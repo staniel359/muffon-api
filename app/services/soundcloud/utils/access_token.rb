@@ -1,11 +1,12 @@
 module SoundCloud
   module Utils
     class AccessToken < SoundCloud::Base
-      BASE_LINK = 'https://api.soundcloud.com/oauth2/token'.freeze
+      BASE_LINK =
+        'https://api.soundcloud.com/oauth2/token'.freeze
 
       def call
         data
-      rescue RestClient::TooManyRequests
+      rescue Faraday::ClientError
         nil
       end
 

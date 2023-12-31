@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/tracks/wejlhg239gh23/streams
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - OAuth 2-245983--OUJiN2kaCPZYJvb0OR7CUtD
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '149'
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 30 Dec 2023 14:38:03 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 ce277c44a7fcd3e0deed163891a63842.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - WAW51-P4
+      X-Amz-Cf-Id:
+      - H0Uyc2wvC0KA_fd_G05jNGGF7hayOg-Sqsk7Y8CxoTD6043uNRg7Pg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":400,"message":"","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
+        - Bad Request","errors":[],"error":null}'
+  recorded_at: Sat, 30 Dec 2023 14:38:03 GMT
+recorded_with: VCR 6.2.0

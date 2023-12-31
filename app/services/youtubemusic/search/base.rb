@@ -56,16 +56,6 @@ module YouTubeMusic
         self.class::SCOPE
       end
 
-      def headers
-        super.merge(
-          search_headers
-        )
-      end
-
-      def search_headers
-        { params: }
-      end
-
       def params
         { continuation: @args[:page] }
       end

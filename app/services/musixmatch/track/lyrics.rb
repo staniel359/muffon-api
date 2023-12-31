@@ -4,12 +4,6 @@ module MusixMatch
       private
 
       def headers
-        super.merge(
-          lyrics_headers
-        )
-      end
-
-      def lyrics_headers
         { 'User-Agent' => USER_AGENT }
       end
 
@@ -36,13 +30,13 @@ module MusixMatch
 
       def lyrics_response_data
         Nokogiri::HTML.parse(
-          lyrics_response
+          lyrics_response.body
         )
       end
 
       def lyrics_response
-        RestClient.get(
-          original_link
+        format_get_request(
+          link: original_link
         )
       end
     end

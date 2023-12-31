@@ -4,10 +4,7 @@ module LastFM
       private
 
       def response_data
-        @response_data ||=
-          Nokogiri::HTML.parse(
-            response
-          )
+        html_response_data
       end
 
       def params

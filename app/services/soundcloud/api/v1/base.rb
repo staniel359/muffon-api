@@ -8,11 +8,15 @@ module SoundCloud
 
         def call
           super
-        rescue RestClient::Unauthorized
+        rescue Faraday::UnauthorizedError
           retry_with_new_access_token
         end
 
         private
+
+        def params
+          nil
+        end
 
         def headers
           {

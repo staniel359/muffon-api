@@ -19,10 +19,6 @@ module YouTubeMusic
       }
     end
 
-    def headers
-      { content_type: :json }
-    end
-
     def image_data_formatted(image)
       YouTubeMusic::Utils::Image.call(
         image:

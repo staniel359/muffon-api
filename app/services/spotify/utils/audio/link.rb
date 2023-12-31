@@ -13,8 +13,6 @@ module Spotify
         end
 
         def audio_binary_data
-          return 'test' if test?
-
           @audio_binary_data ||=
             Spotify::Utils::Audio::Decrypter.call(
               track_id: @args[:track_id]

@@ -8,7 +8,7 @@ module SoundCloud
 
         def call
           super
-        rescue RestClient::Unauthorized
+        rescue Faraday::UnauthorizedError
           retry_with_new_client_id
         end
 

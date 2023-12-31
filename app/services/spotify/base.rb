@@ -9,9 +9,9 @@ module Spotify
 
     def call
       super
-    rescue RestClient::BadRequest
+    rescue Faraday::BadRequestError
       not_found
-    rescue RestClient::Unauthorized
+    rescue Faraday::UnauthorizedError
       retry_with_new_spotify_token
     end
 
@@ -20,8 +20,7 @@ module Spotify
     def headers
       {
         'Authorization' =>
-          "Bearer #{spotify_token}",
-        params:
+          "Bearer #{spotify_token}"
       }
     end
 
@@ -39,7 +38,7 @@ module Spotify
 
     def global_value
       @global_value ||=
-        Spotify::Utils::Token.call
+        Spotify::Utils::AccessToken.call
     end
 
     def retry_with_new_spotify_token

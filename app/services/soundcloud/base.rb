@@ -6,8 +6,8 @@ module SoundCloud
 
     def response_data
       super
-    rescue RestClient::BadRequest
-      nil
+    rescue Faraday::BadRequestError
+      {}
     end
 
     def params

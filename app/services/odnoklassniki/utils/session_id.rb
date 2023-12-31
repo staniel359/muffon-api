@@ -4,24 +4,26 @@ module Odnoklassniki
       BASE_LINK = 'https://ok.ru/dk'.freeze
 
       def call
-        post_response
-
-        nil
-      rescue RestClient::Found => e
-        session_id(e)
-      rescue RestClient::ServerBrokeConnection
-        nil
+        data
       end
 
       private
 
+      def data
+        get_cookie(
+          response: post_response,
+          cookie: 'JSESSIONID'
+        )
+      end
+
       def post_response
-        RestClient::Request.execute(
-          method: :post,
-          url: link,
+        format_post_request(
+          link:,
+          params:,
           payload:,
           headers:,
-          proxy:
+          proxy:,
+          redirect: false
         )
       end
 
@@ -47,10 +49,7 @@ module Odnoklassniki
       end
 
       def headers
-        {
-          'User-Agent' => USER_AGENT,
-          params:
-        }
+        { 'User-Agent' => USER_AGENT }
       end
 
       def params

@@ -36,9 +36,9 @@ module Deezer
 
           def response
             @response ||=
-              RestClient.get(
-                link
-              )
+              format_get_request(
+                link:
+              ).body
           end
 
           def link

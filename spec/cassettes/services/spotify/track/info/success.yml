@@ -7,16 +7,14 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - Faraday v2.8.1
       Authorization:
-      - Bearer <SPOTIFY_TOKEN>
+      - Bearer BQAfRyyLashW7Ao4dONPmQxf0uQ4XSLMVNbZKm2UWtXiTRq7rrXxA1usX_r7DbEbGkds1pe-HnIv62lDOwHVnaL33wNBAAfopvQ7MM_50ukclMQ_3XI
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.spotify.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -25,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=80609
+      - public, max-age=7200
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -44,13 +42,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 30 Jan 2021 07:14:28 GMT
+      - Sun, 31 Dec 2023 14:06:09 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
@@ -69,7 +67,7 @@ http_interactions:
               "type" : "artist",
               "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
             } ],
-            "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+            "available_markets" : [ ],
             "external_urls" : {
               "spotify" : "https://open.spotify.com/album/3OYnManu1Nlxnw9OMng7BH"
             },
@@ -105,7 +103,7 @@ http_interactions:
             "type" : "artist",
             "uri" : "spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"
           } ],
-          "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
+          "available_markets" : [ ],
           "disc_number" : 1,
           "duration_ms" : 300840,
           "explicit" : false,
@@ -119,11 +117,463 @@ http_interactions:
           "id" : "29d0nY7TzCoi22XBqDQkiP",
           "is_local" : false,
           "name" : "Running Up That Hill (A Deal With God) - 2018 Remaster",
-          "popularity" : 57,
-          "preview_url" : "https://p.scdn.co/mp3-preview/d5e1a73a36a9b734b57ce8df08089baaecd3908a?cid=<SPOTIFY_API_KEY>",
+          "popularity" : 12,
+          "preview_url" : null,
           "track_number" : 1,
           "type" : "track",
           "uri" : "spotify:track:29d0nY7TzCoi22XBqDQkiP"
         }
-  recorded_at: Sat, 30 Jan 2021 07:14:28 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 31 Dec 2023 14:06:09 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/get_access_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQAfRyyLashW7Ao4dONPmQxf0uQ4XSLMVNbZKm2UWtXiTRq7rrXxA1usX_r7DbEbGkds1pe-HnIv62lDOwHVnaL33wNBAAfopvQ7MM_50ukclMQ_3XI
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      X-Envoy-Upstream-Service-Time:
+      - '48'
+      Set-Cookie:
+      - sp_t=c5a469ff838ec26d436dd982a2ab0b9e; path=/; expires=Mon, 30 Dec 2024 14:06:09
+        GMT; domain=.spotify.com; samesite=none; secure
+      Server:
+      - envoy
+      Date:
+      - Sun, 31 Dec 2023 14:06:09 GMT
+      X-Served-By:
+      - cache-fra-eddf8230131-FRA, cache-fra-eddf8230131-FRA
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1704031570.847435,VS0,VE77
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o","accessTokenExpirationTimestampMs":1704034226765,"isAnonymous":true}'
+  recorded_at: Sun, 31 Dec 2023 14:06:09 GMT
+- request:
+    method: get
+    uri: https://spclient.wg.spotify.com/metadata/4/track/46982c56ce8f4470a377026e2fe1ac2f?alt=json&platform=39&product=9&version=10000000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=77389
+      Etag:
+      - '"MC-AhfekA=="'
+      Vary:
+      - _ui.catalogue_str, _ui.country
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, client-token, content-access-token, Content-Type,
+        Origin, Retry-After, SPA-Preferred-Publisher, Spotify-App, Spotify-App-Version,
+        spotify-org-uri, X-ClientAttribute-Version, X-Client-Id, x-cloud-trace-context,
+        X-Cloud-Trace-Context, X-Geo-Country, X-Installation-Id, X-Spotify-Additional-Idp,
+        X-Spotify-Connection-Id, X-Spotify-Quicksilver-Uri, x-twitch-jwt
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, PUT, HEAD, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sun, 31 Dec 2023 14:06:09 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"gid": "46982c56ce8f4470a377026e2fe1ac2f","name": "Running Up That
+        Hill (A Deal With God) - 2018 Remaster","album": {"gid": "7d958bba06f243edb750528511153b2d","name":
+        "Hounds of Love (2018 Remaster)","artist": [{"gid": "269f610431094ef092c4e6481f3ef43b","name":
+        "Kate Bush"}],"label": "Rhino","date": {"year": 1985,"month": 9,"day": 16},"cover_group":
+        {"image": [{"file_id": "ab67616d00001e025c390e413e27798edd4d18b4","size":
+        "DEFAULT","width": 300,"height": 300},{"file_id": "ab67616d000048515c390e413e27798edd4d18b4","size":
+        "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b2735c390e413e27798edd4d18b4","size":
+        "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "8337a6aeaca744a7b32050f0c66e138f"},"prerelease_config":
+        {"earliest_reveal_date": {"year": 2023,"month": 3,"day": 13,"hour": 11},"earliest_coverart_reveal_date":
+        {"year": 2023,"month": 3,"day": 13,"hour": 11}}},"artist": [{"gid": "269f610431094ef092c4e6481f3ef43b","name":
+        "Kate Bush"}],"number": 1,"disc_number": 1,"duration": 300840,"popularity":
+        12,"external_id": [{"type": "isrc","id": "GBAYE1800884"}],"restriction": [{"countries_allowed":
+        "","catalogue_str": ["free","premium","shuffle"]}],"file": [{"file_id": "b0aed9271091a41a03fbf5f3f8ba2e26773e5319","format":
+        "OGG_VORBIS_320"},{"file_id": "03dd92dd2e4bd966d70e191364f41b930c4679be","format":
+        "OGG_VORBIS_160"},{"file_id": "b701c8c26ad0da4f131bd2c2d222028a99581e10","format":
+        "OGG_VORBIS_96"},{"file_id": "b2f5d9cdde2dec0046c006368f76b108bc27ed08","format":
+        "MP4_256_DUAL"},{"file_id": "751a6ee82f72d0f1ef0a03722abc5b111636a2f4","format":
+        "MP4_256"},{"file_id": "9196eb39ade3c7e379884c8f7f06c1fa46c73834","format":
+        "MP4_128_DUAL"},{"file_id": "f5deea160c85b781bf301f2a6809482dd35c1b36","format":
+        "MP4_128"},{"file_id": "4a8a119e813bee14cba87662ceabbce69582ba3e","format":
+        "AAC_24"}],"alternative": [{"gid": "3c23b1058b604a6e82c39ea9f1a5ee04","restriction":
+        [{"countries_forbidden": "XC","catalogue_str": ["free","premium","shuffle"]}],"file":
+        [{"file_id": "b8ac6bd7e2abee04178e04a6bf84201ae8410b2c","format": "OGG_VORBIS_320"},{"file_id":
+        "c04e355b9f4606b21f94b2a4de5db26aeca0163f","format": "OGG_VORBIS_160"},{"file_id":
+        "bfca02572d40f83810afacb1a252fc70ce81f930","format": "OGG_VORBIS_96"},{"file_id":
+        "79a288d79b1dce6cb1c4d164fea9176b749d55fa","format": "MP4_256_DUAL"},{"file_id":
+        "c3e3bb308caeef83a46d39e5e7eae19bfb03621a","format": "MP4_256"},{"file_id":
+        "e0857ca9712f30317d55f1f109941cc6931a25d0","format": "MP4_128_DUAL"},{"file_id":
+        "7e014014cf658a49d3703b7e6712dd528dce2cec","format": "MP4_128"},{"file_id":
+        "ab1c9d9826f3db6c81e7c4db3625df22f55cf781","format": "AAC_24"}],"preview":
+        [{"file_id": "861d26b52ece3e3ad72a7dc3463daece3478801a","format": "MP3_96"}],"original_audio":
+        {"uuid": "f1d42abac41b4c3b85f20d77921a2c08"}}],"earliest_live_timestamp":
+        1555585200,"licensor": {"uuid": "8337a6aeaca744a7b32050f0c66e138f"},"language_of_performance":
+        ["en"],"original_audio": {"uuid": "08041e9a7ca147f89a9af62ead7f85e9"},"original_title":
+        "Running Up That Hill (A Deal With God)","version_title": "2018 Remaster","artist_with_role":
+        [{"artist_gid": "269f610431094ef092c4e6481f3ef43b","artist_name": "Kate Bush","role":
+        "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:1PtQJZVZIdWIYdARpZRDFO","prerelease_config":
+        {"earliest_reveal_date": {"year": 2023,"month": 3,"day": 13,"hour": 11}}}'
+  recorded_at: Sun, 31 Dec 2023 14:06:10 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/get_access_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQAfRyyLashW7Ao4dONPmQxf0uQ4XSLMVNbZKm2UWtXiTRq7rrXxA1usX_r7DbEbGkds1pe-HnIv62lDOwHVnaL33wNBAAfopvQ7MM_50ukclMQ_3XI
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      X-Envoy-Upstream-Service-Time:
+      - '42'
+      Set-Cookie:
+      - sp_t=0ae9cd992c1042c9c2c2e6b93cabc397; path=/; expires=Mon, 30 Dec 2024 14:06:10
+        GMT; domain=.spotify.com; samesite=none; secure
+      Server:
+      - envoy
+      Date:
+      - Sun, 31 Dec 2023 14:06:10 GMT
+      X-Served-By:
+      - cache-fra-eddf8230092-FRA, cache-fra-eddf8230092-FRA
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1704031570.286430,VS0,VE71
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o","accessTokenExpirationTimestampMs":1704034226765,"isAnonymous":true}'
+  recorded_at: Sun, 31 Dec 2023 14:06:10 GMT
+- request:
+    method: get
+    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/c04e355b9f4606b21f94b2a4de5db26aeca0163f?alt=json&platform=39&product=9&version=10000000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - private, max-age=0, no-cache
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Date:
+      - Sun, 31 Dec 2023 14:06:10 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result": "CDN","cdnurl": ["https://audio-ak-spotify-com.akamaized.net/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?__token__=exp=1704117970~hmac=db8216944cd2dd965fc98b5a2c0cf95333ee9805430e44595c030751f428f451","https://audio-fa-tls13.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704117970_MrVDN9fj1PuPR45KCa8201AXXj1thTU0z98KLRyOVMM=","https://audio-fa-tls130.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704117970_MrVDN9fj1PuPR45KCa8201AXXj1thTU0z98KLRyOVMM=","https://audio-fa-quic0.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704117970_MrVDN9fj1PuPR45KCa8201AXXj1thTU0z98KLRyOVMM=","https://audio-fa-quic.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704117970_MrVDN9fj1PuPR45KCa8201AXXj1thTU0z98KLRyOVMM=","https://audio-fa.scdn.co/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704117970_MrVDN9fj1PuPR45KCa8201AXXj1thTU0z98KLRyOVMM="],"fileid":
+        "c04e355b9f4606b21f94b2a4de5db26aeca0163f","ttl": 86400}'
+  recorded_at: Sun, 31 Dec 2023 14:06:10 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/get_access_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQAfRyyLashW7Ao4dONPmQxf0uQ4XSLMVNbZKm2UWtXiTRq7rrXxA1usX_r7DbEbGkds1pe-HnIv62lDOwHVnaL33wNBAAfopvQ7MM_50ukclMQ_3XI
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      X-Envoy-Upstream-Service-Time:
+      - '49'
+      Set-Cookie:
+      - sp_t=cfc1a6b3d235eeb582afc177154534fc; path=/; expires=Mon, 30 Dec 2024 14:06:10
+        GMT; domain=.spotify.com; samesite=none; secure
+      Server:
+      - envoy
+      Date:
+      - Sun, 31 Dec 2023 14:06:10 GMT
+      X-Served-By:
+      - cache-fra-eddf8230068-FRA, cache-fra-eddf8230068-FRA
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1704031571.773202,VS0,VE79
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o","accessTokenExpirationTimestampMs":1704034226765,"isAnonymous":true}'
+  recorded_at: Sun, 31 Dec 2023 14:06:10 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/key?file_id=c04e355b9f4606b21f94b2a4de5db26aeca0163f&global_id=46982c56ce8f4470a377026e2fe1ac2f
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 31 Dec 2023 14:06:10 GMT
+      Server:
+      - waitress
+    body:
+      encoding: UTF-8
+      string: '{"key":"60168b9f56e646dec6492db9fedb9aa3"}
+
+        '
+  recorded_at: Sun, 31 Dec 2023 14:06:10 GMT
+- request:
+    method: get
+    uri: https://open.spotify.com/get_access_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQAfRyyLashW7Ao4dONPmQxf0uQ4XSLMVNbZKm2UWtXiTRq7rrXxA1usX_r7DbEbGkds1pe-HnIv62lDOwHVnaL33wNBAAfopvQ7MM_50ukclMQ_3XI
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=31536000
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      X-Envoy-Upstream-Service-Time:
+      - '43'
+      Set-Cookie:
+      - sp_t=6cba77b6f5559e9a9c5046a821c1a4e4; path=/; expires=Mon, 30 Dec 2024 14:06:11
+        GMT; domain=.spotify.com; samesite=none; secure
+      Server:
+      - envoy
+      Date:
+      - Sun, 31 Dec 2023 14:06:11 GMT
+      X-Served-By:
+      - cache-fra-eddf8230032-FRA, cache-fra-eddf8230032-FRA
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1704031571.096869,VS0,VE73
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o","accessTokenExpirationTimestampMs":1704034226765,"isAnonymous":true}'
+  recorded_at: Sun, 31 Dec 2023 14:06:11 GMT
+- request:
+    method: get
+    uri: https://audio-ak-spotify-com.akamaized.net/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?__token__=exp=1704117970~hmac=db8216944cd2dd965fc98b5a2c0cf95333ee9805430e44595c030751f428f451&alt=json&platform=39&product=9&version=10000000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Bearer BQCjt5LNUn1jrimssQ19U1qTewaUleuO-pf0VcIi7ociMKdl2CwGZ_JNE-OW26JbR494TUQLM8N7KuOYPZbBCol2vyG9gzlCEs5hAFYT6_MgxP2ET2o
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - AkamaiGHost
+      Mime-Version:
+      - '1.0'
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '176'
+      Expires:
+      - Sun, 31 Dec 2023 14:06:11 GMT
+      Date:
+      - Sun, 31 Dec 2023 14:06:11 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Max-Age:
+      - '86400'
+      Access-Control-Allow-Headers:
+      - range, pragma, cache-control
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: |
+        <HTML><HEAD><TITLE>Error</TITLE></HEAD><BODY>
+        An error occurred while processing your request.<p>
+        Reference&#32;&#35;199&#46;498cbb9&#46;1704031571&#46;12d28a27
+        </BODY></HTML>
+  recorded_at: Sun, 31 Dec 2023 14:06:11 GMT
+recorded_with: VCR 6.2.0

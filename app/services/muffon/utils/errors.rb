@@ -4,7 +4,7 @@ module Muffon
       ERRORS_DATA = {
         bad_request: {
           errors: [
-            RestClient::BadRequest
+            Faraday::BadRequestError
           ],
           handler: {
             error: {
@@ -15,7 +15,7 @@ module Muffon
         },
         forbidden: {
           errors: [
-            RestClient::Forbidden
+            Faraday::ForbiddenError
           ],
           handler: {
             error: {
@@ -26,7 +26,7 @@ module Muffon
         },
         not_found: {
           errors: [
-            RestClient::NotFound
+            Faraday::ResourceNotFound
           ],
           handler: {
             error: {
@@ -37,7 +37,7 @@ module Muffon
         },
         too_many_requests: {
           errors: [
-            RestClient::TooManyRequests
+            Faraday::ClientError
           ],
           handler: {
             error: {
@@ -52,15 +52,12 @@ module Muffon
             Errno::ECONNRESET,
             Errno::EHOSTUNREACH,
             Errno::ENETUNREACH,
+            Faraday::ConnectionFailed,
+            Faraday::ServerError,
+            Faraday::SSLError,
             JSON::ParserError,
             Net::HTTPFatalError,
             OpenSSL::SSL::SSLError,
-            RestClient::InternalServerError,
-            RestClient::NotAcceptable,
-            RestClient::RequestFailed,
-            RestClient::ServerBrokeConnection,
-            RestClient::ServiceUnavailable,
-            RestClient::SSLCertificateNotVerified,
             SocketError
           ],
           handler: {
@@ -72,8 +69,7 @@ module Muffon
         },
         gateway_timeout: {
           errors: [
-            RestClient::GatewayTimeout,
-            RestClient::Exceptions::OpenTimeout
+            Faraday::TimeoutError
           ],
           handler: {
             error: {

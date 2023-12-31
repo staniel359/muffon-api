@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ok.ru/dk?cmd=AnonymLogin
+    body:
+      encoding: UTF-8
+      string: st.email=<ODNOKLASSNIKI_EMAIL>&st.lang=en&st.password=<ODNOKLASSNIKI_PASSWORD>&st.posted=set
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: ''
+    headers:
+      Server:
+      - Apache
+      Date:
+      - Sat, 30 Dec 2023 14:17:39 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=9617a1ac0218a5a8e692e15f4d4b479781022b00ab99f257.1ede64; Domain=.ok.ru;
+        Path=/; Secure; HttpOnly; SameSite=none
+      - _statid=33a906c4-82d9-48db-8de2-4db3f2d9aed1; Domain=.ok.ru; Expires=Thu,
+        17 Jan 2092 17:31:46 GMT; Path=/; Secure; HttpOnly
+      - bci=6637749992852231420; Domain=.ok.ru; Expires=Thu, 17 Jan 2092 17:31:46
+        GMT; Path=/; Secure; HttpOnly
+      Content-Security-Policy:
+      - 'default-src data: ''self'' ''unsafe-inline'' ''unsafe-eval'' ok.ru *.ok.ru
+        odnoklassniki.ru *.odnoklassniki.ru mycdn.me http://*.mycdn.me https://*.mycdn.me
+        wss://ad.mail.ru *.mail.ru *.imgsmail.ru *.mradx.net *.serving-sys.com *.googleapis.com
+        *.gstatic.com www.google.com https://api-maps.yandex.ru yastatic.net yandex.st
+        *.doubleverify.com *.adsafeprotected.com https://consentmanager.mgr.consensu.org
+        https://cdn.consentmanager.mgr.consensu.org https://football.sportmail.ru
+        *.google.ru *.google.com *.googlesyndication.com *.yandex.ru blob:;  script-src
+        ''unsafe-inline'' ''unsafe-eval'' *.mail.ru https://*.mail.ru *.imgsmail.ru
+        *.mradx.net ok.ru *.ok.ru odnoklassniki.ru *.odnoklassniki.ru mycdn.me http://*.mycdn.me
+        https://*.mycdn.me mc.yandex.ru an.yandex.ru yastatic.net yandex.st *.google-analytics.com
+        api-maps.yandex.ru https://api-maps.yandex.ru https://clck.yandex.ru *.googleapis.com
+        *.gstatic.com www.google.com www.youtube.com https://www.youtube.com *.ytimg.com
+        https://*.ytimg.com *.doubleverify.com *.dvtps.com *.doubleclick.net *.googletagservices.com
+        *.googlesyndication.com *.googleadservices.com *.goodgame.ru https://*.goodgame.ru
+        https://*.moatads.com *.adlooxtracking.com *.adlooxtracking.ru *.adsafeprotected.com
+        *.serving-sys.com *.serving-sys.ru *.weborama.fr *.weborama-tech.ru https://enterprise.api-maps.yandex.ru
+        https://suggest-maps.yandex.ru https://*.hit.gemius.pl https://consentmanager.mgr.consensu.org
+        https://cdn.consentmanager.mgr.consensu.org https://gum.criteo.com https://football.sportmail.ru
+        *.googletagmanager.com connect.facebook.net *.google.ru *.google.com *.googlesyndication.com
+        yandex.ru;  worker-src blob: ''self'';  connect-src * wss: blob: data:;  font-src
+        * data: blob:; frame-src * blob: ''self'';  img-src * data: blob: about:;  media-src
+        * data: blob:;  object-src *;  report-uri /csp/report;'
+      Content-Security-Policy-Report-Only:
+      - 'default-src data: blob: about: ''self'' ''unsafe-inline'' ''unsafe-eval''
+        https: wss:; report-uri /csp/report?always;'
+      Location:
+      - "/dk?st.cmd=anonymMain&st.error=errors.password.wrong&st.email=<ODNOKLASSNIKI_EMAIL>"
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 30 Dec 2023 14:17:39 GMT
+recorded_with: VCR 6.2.0

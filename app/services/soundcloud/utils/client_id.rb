@@ -10,14 +10,16 @@ module SoundCloud
       private
 
       def data
-        script_response.match(
-          /client_id:"([\w-]+)"/
-        )[1]
+        script_response
+          .body
+          .match(
+            /client_id:"([\w-]+)"/
+          )[1]
       end
 
       def script_response
-        RestClient.get(
-          script_link
+        format_get_request(
+          link: script_link
         )
       end
 
@@ -38,19 +40,13 @@ module SoundCloud
       end
 
       def scripts
-        scripts_response_data.css(
+        html_response_data.css(
           'script'
         )
       end
 
-      def scripts_response_data
-        Nokogiri::HTML.parse(
-          response
-        )
-      end
-
       def params
-        {}
+        nil
       end
 
       def link

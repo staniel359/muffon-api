@@ -16,30 +16,26 @@ module YandexMusic
         end
 
         def csrf_token
-          response_data.css(
+          html_response_data.css(
             'input[name="csrf_token"]'
           )[0].try(
             :[], 'value'
           )
         end
 
-        def response_data
-          Nokogiri::HTML.parse(
-            response
-          )
-        end
-
         def response
           @response ||=
-            RestClient::Request.execute(
-              method: :get,
-              url: BASE_LINK,
+            format_get_request(
+              link: BASE_LINK,
               proxy:
             )
         end
 
         def unique_uid
-          response.cookies['uniqueuid']
+          get_cookie(
+            response:,
+            cookie: 'uniqueuid'
+          )
         end
       end
     end

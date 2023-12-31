@@ -9,7 +9,7 @@ module Spotify
           return if not_all_args? || no_data?
 
           data
-        rescue RestClient::NotFound
+        rescue Faraday::ResourceNotFound
           nil
         end
 
@@ -49,8 +49,7 @@ module Spotify
         def headers
           {
             'Authorization' =>
-              "Bearer #{token}",
-            params:
+              "Bearer #{token}"
           }
         end
 

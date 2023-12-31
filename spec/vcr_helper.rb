@@ -2,6 +2,7 @@ SECRET_KEYS = [
   %i[deezer api_token],
   %i[deezer license_token],
   %i[deezer track_token],
+  %i[deezer session_id],
   %i[discogs api_key],
   %i[discogs api_secret],
   %i[github token],

@@ -34,23 +34,17 @@ module LastFM
       end
 
       def params
-        RestClient::ParamsArray.new(
-          raw_params
-        )
+        {
+          f: tags_formatted,
+          type: model_name,
+          nr: total_limit,
+          format: 'json'
+        }
       end
 
-      def raw_params
-        [
-          *tags_params,
-          [:type, model_name],
-          [:nr, total_limit],
-          [:format, 'json']
-        ]
-      end
-
-      def tags_params
+      def tags_formatted
         @args[:tags].map do |t|
-          [:f, "tag:#{t}"]
+          "tag:#{t}"
         end
       end
 

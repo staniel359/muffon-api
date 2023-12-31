@@ -24,29 +24,26 @@ module Muffon
       end
 
       def data
-        RestClient.get(
-          link, headers
+        format_get_request(
+          link:,
+          params:,
+          cookies:
+            cookies_formatted
         )
       end
 
       def link
-        response_data.css(
+        html_response_data.css(
           'meta[http-equiv=refresh]'
         )[0]['content'].split(
           'url='
         )[1]
       end
 
-      def response_data
-        Nokogiri::HTML.parse(
-          response
-        )
-      end
-
       def response
-        RestClient.post(
-          base_link,
-          payload
+        format_post_request(
+          link: base_link,
+          payload:
         )
       end
 
@@ -62,13 +59,6 @@ module Muffon
 
       def payload
         { page: @args[:link] }
-      end
-
-      def headers
-        {
-          params:,
-          cookies: cookies_formatted
-        }
       end
 
       def params

@@ -29,8 +29,8 @@ module Deezer
           @args[:track_id]
         end
 
-        def headers
-          nil
+        def params
+          {}
         end
 
         def data

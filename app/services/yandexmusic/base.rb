@@ -6,16 +6,16 @@ module YandexMusic
 
     def call
       super
-    rescue RestClient::BadRequest
+    rescue Faraday::BadRequestError
       not_found
     end
 
     private
 
     def response
-      RestClient::Request.execute(
-        method: :get,
-        url: link,
+      format_get_request(
+        link:,
+        params:,
         headers:,
         proxy:
       )

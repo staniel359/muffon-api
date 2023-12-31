@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Basic ODA3YTQyNjA5OTI3NDZmMGE4ZDNiNjVmYTczMTk4MzY6ZDc4YTM3MThjN2U3NDI2MjlmNTFjMmU3OTk5ZTkyMTM=
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Dec 2023 14:44:22 GMT
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - __Host-device_id=AQCKKaG4zAosZxToTbZaZGbK_U-06wnFBvMVnYKJKqvInSK01EoJXlW1sk-4w7J1xLNhTWwX99SILGzYcyUQuPXKxc5S6prxZnU;Version=1;Path=/;Max-Age=2147483647;Secure;HttpOnly;SameSite=Lax
+      - sp_tr=false;Version=1;Domain=accounts.spotify.com;Path=/;Secure;SameSite=Lax
+      Sp-Trace-Id:
+      - 5f865c47aa40e474
+      X-Envoy-Upstream-Service-Time:
+      - '10'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"BQCCU_DpxgMRYmOzKOz0oMd0XvUoC8d1bcVhNvX5ldb0RzPBJFiLRDQuJ3ku-vDixgxeqxeclSX_UTmn5rZJITdGRL8RgTUcU2Wu3kyNVtlLM2dIhTM","token_type":"Bearer","expires_in":3600}'
+  recorded_at: Sat, 30 Dec 2023 14:44:22 GMT
+recorded_with: VCR 6.2.0

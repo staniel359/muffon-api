@@ -11,7 +11,7 @@ module MusicBrainz
       end
 
       def description
-        response_data.css(
+        html_response_data.css(
           '.wikipedia-extract-body'
         ).css(
           'p:not([class=mw-empty-elt])'
@@ -20,13 +20,6 @@ module MusicBrainz
         ).join(
           "\n"
         ).strip
-      end
-
-      def response_data
-        @response_data ||=
-          Nokogiri::HTML.parse(
-            response
-          )
       end
     end
   end

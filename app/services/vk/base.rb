@@ -7,15 +7,15 @@ module VK
 
     def no_data?
       JSON.parse(
-        response
+        response.body
       )['error']
     end
 
     def response
       @response ||=
-        RestClient::Request.execute(
-          method: :get,
-          url: link,
+        format_get_request(
+          link:,
+          params:,
           headers:,
           proxy:
         )
@@ -30,10 +30,7 @@ module VK
     end
 
     def headers
-      {
-        'User-Agent' => user_agent,
-        params:
-      }
+      { 'User-Agent' => user_agent }
     end
 
     def user_agent

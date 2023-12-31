@@ -3,7 +3,7 @@ module MusicBrainz
     class Base < MusicBrainz::Base
       def call
         super
-      rescue RestClient::BadRequest
+      rescue Faraday::BadRequestError
         not_found
       end
 

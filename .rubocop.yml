@@ -36,6 +36,9 @@ Metrics/ModuleLength:
   Exclude:
     - 'app/decorators/**/*.rb'
 
+Metrics/ParameterLists:
+  Enabled: false
+
 Rails/SkipsModelValidations:
   Enabled: false
 

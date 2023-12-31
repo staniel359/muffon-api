@@ -23,17 +23,18 @@ module YandexMusic
         end
 
         def session_id
-          response.cookies[
-            'Session_id'
-          ]
+          get_cookie(
+            response:,
+            cookie: 'Session_id'
+          )
         end
 
         def response
-          RestClient::Request.execute(
-            method: :post,
-            url: link,
+          format_post_request(
+            link:,
             payload:,
             headers:,
+            cookies:,
             proxy:
           )
         end

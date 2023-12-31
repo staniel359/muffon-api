@@ -34,7 +34,7 @@ module Spotify
 
       def data
         { user: user_data }
-      rescue RestClient::Unauthorized
+      rescue Faraday::UnauthorizedError
         return not_found if test?
 
         retry_with_new_session
@@ -49,8 +49,7 @@ module Spotify
           'Authorization' =>
             "Bearer #{access_token}",
           'Content-Type' =>
-            'application/x-www-form-urlencoded',
-          params:
+            'application/x-www-form-urlencoded'
         }
       end
 

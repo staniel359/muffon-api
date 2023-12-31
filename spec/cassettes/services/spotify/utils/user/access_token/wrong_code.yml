@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: UTF-8
+      string: code=wejlhg239gh23&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A4001%2Fcode
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Basic ODA3YTQyNjA5OTI3NDZmMGE4ZDNiNjVmYTczMTk4MzY6ZDc4YTM3MThjN2U3NDI2MjlmNTFjMmU3OTk5ZTkyMTM=
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 31 Dec 2023 14:00:39 GMT
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - __Host-device_id=AQBzayMhnuJeButeoYuSpqORCR1tWwia6cgDipNnfXGwdbyh-brNMi6uh5r1Q6IvN1_vTIJ56Eb5cK1V0oPJWJ81ieT0mqsQGb4;Version=1;Path=/;Max-Age=2147483647;Secure;HttpOnly;SameSite=Lax
+      - sp_tr=false;Version=1;Domain=accounts.spotify.com;Path=/;Secure;SameSite=Lax
+      Sp-Trace-Id:
+      - e021b63160c948cc
+      X-Envoy-Upstream-Service-Time:
+      - '13'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Vary:
+      - Accept-Encoding
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"invalid_grant","error_description":"Invalid authorization
+        code"}'
+  recorded_at: Sun, 31 Dec 2023 14:00:40 GMT
+recorded_with: VCR 6.2.0

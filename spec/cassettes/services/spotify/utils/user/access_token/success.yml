@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://accounts.spotify.com/api/token
+    body:
+      encoding: UTF-8
+      string: code=AQDGa0bdN78TsPy9yKGcmngXKeA0_p2UW7Gxodf0Wi4i2i8wr8vmRHa6mvpn2vZeBlRprDFJJeW8tkEuOh9lyCxM1C3Ks9HYqwcf7wbZn69P8WdNz4XH48T0GgBwe0l7GOD_Q27l7WMWcpNoIpUW2WK1WcMuMCFrripsLAQ-7D8UXRg9ygv_XH6r9Y-JDdnH-ZPqHt9mcEhKciV20mZVNRI4cOk&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A4001%2Fcode
+    headers:
+      User-Agent:
+      - Faraday v2.8.1
+      Authorization:
+      - Basic ODA3YTQyNjA5OTI3NDZmMGE4ZDNiNjVmYTczMTk4MzY6ZDc4YTM3MThjN2U3NDI2MjlmNTFjMmU3OTk5ZTkyMTM=
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 31 Dec 2023 14:00:39 GMT
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - __Host-device_id=AQDhZVhTT-zTZyv8MnBiTn6R7fQDFzdSRwRsjB0EWKbITa6xlbXh44aTBLjRt2dSUQtpG_jipgeEyqi-mLNeDkKIXc7qlllhAYc;Version=1;Path=/;Max-Age=2147483647;Secure;HttpOnly;SameSite=Lax
+      - sp_tr=false;Version=1;Domain=accounts.spotify.com;Path=/;Secure;SameSite=Lax
+      Sp-Trace-Id:
+      - 06e2c63616207dfb
+      X-Envoy-Upstream-Service-Time:
+      - '23'
+      Server:
+      - envoy
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"BQCg_WpyT7Aj_ihHVcrmSKU8g8n0VwCNy-pGL_tS19i-e9W-_Fj_HYDZmsoF41TBvfBQ2lqEp0KWY75pSH6KPweFAmMML_7ntdfzYTya3ty2dc66AJLm_zsljTnGzGkk_-t8W2mSuFr3rNGX7AllV0YFFsBUPYA8pJjqS3qwKknXt2mvrRCHof0x1vUZ-SbfYt5A06dWmJQ7L4uiF6iQ-XozoA","token_type":"Bearer","expires_in":3600,"refresh_token":"AQDqBnFzxS2lZSiIzZrbru-7W5mSdJ0ppDnlnVrvZatlVgkYEl6w8Cy6nK4qWWl4VLLYfXkkW-2CtzbhOQ6KwuGQ_XhQ5AUmw3wcRdN9zpJIDhEA0Ko7Spl2_15Ra5wCVfw","scope":"user-library-read
+        user-read-private"}'
+  recorded_at: Sun, 31 Dec 2023 14:00:39 GMT
+recorded_with: VCR 6.2.0

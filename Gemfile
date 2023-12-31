@@ -10,6 +10,8 @@ ruby File.read(
 
 gem 'bootsnap', require: false
 gem 'bcrypt'
+gem 'faraday'
+gem 'faraday-follow_redirects'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'nokogiri'
@@ -19,7 +21,6 @@ gem 'puma'
 gem 'rack-cors'
 gem 'rails'
 gem 'redis'
-gem 'rest-client'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sidekiq'

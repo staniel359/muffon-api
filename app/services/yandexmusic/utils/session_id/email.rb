@@ -26,11 +26,11 @@ module YandexMusic
         end
 
         def response
-          RestClient::Request.execute(
-            method: :post,
-            url: link,
+          format_post_request(
+            link:,
             payload:,
             headers:,
+            cookies:,
             proxy:
           )
         end

@@ -6,16 +6,11 @@ module Genius
     private
 
     def response
-      RestClient::Request.execute(
-        method: :get,
-        url: link,
-        headers:,
+      format_get_request(
+        link:,
+        params:,
         proxy:
       )
-    end
-
-    def headers
-      { params: }
     end
 
     def artists_list
@@ -52,11 +47,13 @@ module Genius
     end
 
     def raw_release_date(data)
-      (
-        data[
-          'release_date_components'
-        ] || {}
-      ).values.compact
+      raw_release_date_items(data)
+        .values
+        .compact
+    end
+
+    def raw_release_date_items(data)
+      data['release_date_components'] || {}
     end
   end
 end

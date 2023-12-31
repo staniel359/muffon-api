@@ -15,10 +15,7 @@ module GitHub
     end
 
     def headers
-      {
-        'Authorization' => "Bearer #{token}",
-        params:
-      }
+      { 'Authorization' => "Bearer #{token}" }
     end
 
     def token

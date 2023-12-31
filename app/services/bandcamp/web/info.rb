@@ -29,15 +29,11 @@ module Bandcamp
         )
       end
 
-      def response_data
-        Nokogiri::HTML.parse(
-          response
-        )
-      end
-
       def link
         @args[:link]
       end
+
+      alias response_data html_response_data
     end
   end
 end

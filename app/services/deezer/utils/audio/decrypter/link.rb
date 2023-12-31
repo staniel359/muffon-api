@@ -22,7 +22,7 @@ module Deezer
               'data', 0, 'media', 0,
               'sources', 0, 'url'
             )
-          rescue RestClient::BadRequest
+          rescue Faraday::BadRequestError
             nil
           end
 

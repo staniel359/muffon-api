@@ -30,12 +30,15 @@ module YandexMusic
             '/download/m'
         end
 
+        def params
+          nil
+        end
+
         def headers
           {
             'X-Retpath-Y' =>
               'https://music.yandex.ru/',
-            'User-Agent' => USER_AGENT,
-            cookies:
+            'User-Agent' => USER_AGENT
           }
         end
 

@@ -2,6 +2,12 @@ module SoundCloud
   module Utils
     module Audio
       class Link < SoundCloud::API::V1::Base
+        def call
+          return if not_all_args?
+
+          data
+        end
+
         private
 
         def primary_args
@@ -12,7 +18,7 @@ module SoundCloud
           response_data[
             'http_mp3_128_url'
           ]
-        rescue RestClient::Forbidden
+        rescue Faraday::ForbiddenError
           nil
         end
 

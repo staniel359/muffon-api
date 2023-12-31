@@ -10,7 +10,7 @@ module Odnoklassniki
       return not_found if no_data?
 
       data
-    rescue RestClient::BadRequest
+    rescue Faraday::BadRequestError
       not_found
     end
 
@@ -22,10 +22,9 @@ module Odnoklassniki
     end
 
     def response
-      RestClient::Request.execute(
-        method: :get,
-        url: link,
-        headers:,
+      format_get_request(
+        link:,
+        params:,
         proxy:
       )
     end

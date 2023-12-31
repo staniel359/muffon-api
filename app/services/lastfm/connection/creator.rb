@@ -19,6 +19,10 @@ module LastFM
           '&format=json'
       end
 
+      def params
+        {}
+      end
+
       def lastfm_token
         @args[:lastfm_token]
       end
@@ -30,10 +34,6 @@ module LastFM
           "token#{lastfm_token}" \
           "#{api_secret}"
         )
-      end
-
-      def headers
-        {}
       end
 
       def process_profile
