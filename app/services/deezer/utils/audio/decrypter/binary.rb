@@ -15,7 +15,20 @@ module Deezer
           end
 
           def no_data?
-            false
+            response.blank?
+          end
+
+          def response
+            @response ||=
+              format_get_request(
+                link:
+              ).body
+          rescue Faraday::ForbiddenError
+            nil
+          end
+
+          def link
+            @args[:link]
           end
 
           def data
@@ -32,17 +45,6 @@ module Deezer
               .fdiv(
                 CHUNK_SIZE
               ).ceil
-          end
-
-          def response
-            @response ||=
-              format_get_request(
-                link:
-              ).body
-          end
-
-          def link
-            @args[:link]
           end
 
           def process_chunk(index)
