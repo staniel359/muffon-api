@@ -17,8 +17,7 @@ SECRET_KEYS = [
   %i[soundcloud test_access_token],
   %i[soundcloud test_v2_client_id],
   %i[spotify token],
-  %i[vk access_token],
-  %i[vk access_token_kate]
+  %i[vk access_token]
 ].freeze
 
 VCR.configure do |config|

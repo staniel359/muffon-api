@@ -5,12 +5,6 @@ module VK
 
     private
 
-    def no_data?
-      JSON.parse(
-        response.body
-      )['error']
-    end
-
     def response
       @response ||=
         format_get_request(
@@ -46,7 +40,13 @@ module VK
     end
 
     def access_token
-      secrets.vk[:access_token]
+      return secrets.vk[:access_token] if test?
+
+      access_tokens[1]
+    end
+
+    def access_tokens
+      secrets.vk[:access_tokens]
     end
 
     def md5_signature
@@ -60,7 +60,19 @@ module VK
     end
 
     def response_data
-      super['response']
+      error = super['error']
+
+      if error.present?
+        error_formatted(error)
+      else
+        super['response']
+      end
+    end
+
+    def error_formatted(error)
+      return unless error['error_code'] == 9
+
+      raise "VK error: #{error['error_msg']}"
     end
 
     def artist_data_formatted(artist)
