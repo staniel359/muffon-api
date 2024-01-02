@@ -2,6 +2,9 @@ module YouTube
   module Video
     class Related
       class PageData < YouTube::Video::Related
+        FIRST_PAGE_LINK =
+          'https://www.youtube.com/watch'.freeze
+
         def call
           data
         end
@@ -87,13 +90,9 @@ module YouTube
 
         def first_page_response
           format_get_request(
-            link: first_page_link,
+            link: FIRST_PAGE_LINK,
             params: first_page_params
           )
-        end
-
-        def first_page_link
-          'https://www.youtube.com/watch'
         end
 
         def first_page_params
