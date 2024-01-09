@@ -35,6 +35,7 @@ module Spotify
 
           def chunks_count
             response
+              .body
               .size
               .fdiv(
                 CHUNK_SIZE
@@ -47,7 +48,7 @@ module Spotify
 
           def process_chunk(index)
             Spotify::Utils::Audio::Decrypter::Binary::Chunk.call(
-              binary: response,
+              binary: response.body,
               index:,
               key:
             )
