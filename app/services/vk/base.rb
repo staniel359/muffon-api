@@ -74,9 +74,13 @@ module VK
     end
 
     def error_formatted(error)
-      return unless error['error_code'] == 9
+      return {} unless too_many_requests_error?(error)
 
       raise "VK error: #{error['error_msg']}"
+    end
+
+    def too_many_requests_error?(error)
+      error['error_code'] == 9
     end
 
     def artist_data_formatted(artist)
