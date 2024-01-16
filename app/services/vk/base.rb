@@ -40,9 +40,13 @@ module VK
     end
 
     def access_token
-      return secrets.vk[:access_token] if test?
+      return test_access_token if test?
 
-      access_tokens[1]
+      access_tokens.sample
+    end
+
+    def test_access_token
+      secrets.vk[:access_token]
     end
 
     def access_tokens
