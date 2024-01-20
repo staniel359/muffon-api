@@ -55,11 +55,11 @@ module VK
       end
 
       def items_count
-        response_data['count']
+        response_data['count'] || 0
       end
 
       def collection_list
-        response_data['items']
+        response_data['items'] || []
       end
 
       def collection_name
