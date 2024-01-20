@@ -2,7 +2,8 @@ module SoundCloud
   module API
     module V2
       class Base < SoundCloud::Base
-        BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
+        BASE_LINK =
+          'https://api-v2.soundcloud.com'.freeze
 
         include Muffon::Utils::Global
 

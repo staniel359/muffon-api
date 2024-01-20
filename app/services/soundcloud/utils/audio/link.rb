@@ -15,11 +15,15 @@ module SoundCloud
         end
 
         def data
+          audio_link
+        rescue Faraday::ForbiddenError
+          alternative_audio_link
+        end
+
+        def audio_link
           response_data[
             'http_mp3_128_url'
           ]
-        rescue Faraday::ForbiddenError
-          nil
         end
 
         def link
@@ -28,6 +32,13 @@ module SoundCloud
 
         def params
           {}
+        end
+
+        def alternative_audio_link
+          SoundCloud::Utils::Audio::AlternativeLink.call(
+            track_id: @args[:track_id],
+            link: @args[:link]
+          )
         end
       end
     end

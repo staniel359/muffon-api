@@ -44,7 +44,8 @@ module SoundCloud
 
       def audio_link
         SoundCloud::Utils::Audio::Link.call(
-          track_id: @args[:track_id]
+          track_id: @args[:track_id],
+          link: original_link
         )
       end
     end
