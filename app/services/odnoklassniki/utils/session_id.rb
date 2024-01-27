@@ -5,6 +5,8 @@ module Odnoklassniki
 
       def call
         data
+      rescue Faraday::TimeoutError
+        nil
       end
 
       private
@@ -54,14 +56,6 @@ module Odnoklassniki
 
       def params
         { cmd: 'AnonymLogin' }
-      end
-
-      def session_id(redirect)
-        redirect
-          .response
-          .cookies[
-            'JSESSIONID'
-          ]
       end
     end
   end
