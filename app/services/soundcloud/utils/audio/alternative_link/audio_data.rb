@@ -10,33 +10,14 @@ module SoundCloud
           end
 
           def no_data?
-            false
-          end
-
-          def data
-            track_data.find do |data|
-              audio_data?(data)
-            end
-          end
-
-          def track_data
-            JSON.parse(
-              raw_track_data
-            )
-          end
-
-          def raw_track_data
-            track_script
-              .text
-              .match(
-                /window.__sc_hydration = (.+);/
-              )[1]
+            track_script.blank?
           end
 
           def track_script
-            scripts.find do |script|
-              track_script?(script)
-            end
+            @track_script ||=
+              scripts.find do |script|
+                track_script?(script)
+              end
           end
 
           def scripts
@@ -63,6 +44,26 @@ module SoundCloud
               .include?(
                 'transcodings'
               )
+          end
+
+          def data
+            track_data.find do |data|
+              audio_data?(data)
+            end
+          end
+
+          def track_data
+            JSON.parse(
+              raw_track_data
+            )
+          end
+
+          def raw_track_data
+            track_script
+              .text
+              .match(
+                /window.__sc_hydration = (.+);/
+              )[1]
           end
 
           def audio_data?(data)
