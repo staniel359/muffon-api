@@ -50,7 +50,7 @@ module Muffon
             end
 
             def process_recommendation(similar_artist)
-              Muffon::Worker::Profile::Recommendation::Artist::Creator.call(
+              Muffon::Processor::Profile::Recommendation::Artist::Creator.call(
                 artist_name: similar_artist[:name],
                 profile_id: @args[:profile_id],
                 library_artist_id:

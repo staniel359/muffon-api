@@ -57,7 +57,7 @@ module Muffon
             end
 
             def process_recommendation(similar_track)
-              Muffon::Worker::Profile::Recommendation::Track::Creator.call(
+              Muffon::Processor::Profile::Recommendation::Track::Creator.call(
                 artist_name:
                   similar_track[:artist][:name],
                 track_title:
