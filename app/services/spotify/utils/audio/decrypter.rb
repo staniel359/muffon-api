@@ -11,6 +11,8 @@ module Spotify
           data
         rescue Faraday::ResourceNotFound
           nil
+        rescue Faraday::UnauthorizedError
+          retry_with_new_spotify_token
         end
 
         private
@@ -46,15 +48,24 @@ module Spotify
             )
         end
 
-        def headers
-          {
-            'Authorization' =>
-              "Bearer #{token}"
-          }
+        def spotify_token
+          get_global_value(
+            'spotify_audio_token'
+          )
         end
 
-        def token
-          @token ||=
+        def retry_with_new_spotify_token
+          return if global_value.blank?
+
+          update_global_value(
+            'spotify_audio_token'
+          )
+
+          call
+        end
+
+        def global_value
+          @global_value ||=
             Spotify::Utils::Audio::Decrypter::Token.call
         end
 

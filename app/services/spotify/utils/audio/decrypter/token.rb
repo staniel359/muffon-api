@@ -16,6 +16,13 @@ module Spotify
             response_data['accessToken']
           end
 
+          def response
+            format_get_request(
+              link:,
+              proxy:
+            )
+          end
+
           def link
             BASE_LINK
           end
