@@ -42,6 +42,10 @@ module Spotify
               ).ceil
           end
 
+          def headers
+            nil
+          end
+
           def link
             @args[:file_link]
           end
