@@ -68,7 +68,7 @@ module LastFM
         LastFM::User::Playlists.call(
           nickname:,
           skip_profile: true
-        )[:user]
+        )[:user] || {}
       end
 
       def favorite_tracks_count

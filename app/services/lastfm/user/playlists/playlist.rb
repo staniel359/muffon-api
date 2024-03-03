@@ -73,7 +73,7 @@ module LastFM
             with_tracks: @args[:with_tracks]
           ).dig(
             :user, :playlist
-          )
+          ) || {}
         end
       end
     end
