@@ -21,8 +21,12 @@ module Spotify
 
           def key_hex
             response_data['key']
-          rescue Errno::ECONNREFUSED
-            nil
+          rescue Faraday::ServerError
+            return unless production?
+
+            `service muffon-spotify restart`
+
+            call
           end
 
           def link
