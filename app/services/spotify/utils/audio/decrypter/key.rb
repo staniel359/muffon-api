@@ -21,12 +21,8 @@ module Spotify
 
           def key_hex
             response_data['key']
-          rescue Faraday::ServerError
-            return unless production?
-
-            `service muffon-spotify restart`
-
-            call
+          rescue StandardError
+            restart_and_retry
           end
 
           def link
@@ -40,6 +36,14 @@ module Spotify
               file_id:
                 @args[:file_id]
             }
+          end
+
+          def restart_and_retry
+            return unless production?
+
+            `service muffon-spotify restart`
+
+            call
           end
 
           def data
