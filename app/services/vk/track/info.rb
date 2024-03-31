@@ -31,7 +31,10 @@ module VK
       end
 
       def audio_link
-        track['url']
+        VK::Utils::Audio::Link.call(
+          track_id: @args[:track_id],
+          link: track['url']
+        )
       end
     end
   end
