@@ -1,6 +1,7 @@
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 inherit_mode:
   merge:
