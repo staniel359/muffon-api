@@ -38,8 +38,11 @@ module Spotify
         def playlist_info_data
           @playlist_info_data ||=
             Spotify::Playlist::Info.call(
-              playlist_id: spotify_id
-            )[:playlist]
+              playlist_id: spotify_id,
+              profile_id: @args[:profile_id]
+            ).try(
+              :[], :playlist
+            ) || {}
         end
       end
     end

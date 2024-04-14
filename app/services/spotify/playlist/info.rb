@@ -17,6 +17,12 @@ module Spotify
         { playlist: playlist_data }
       end
 
+      def spotify_token
+        profile
+          &.spotify_connection
+          &.access_token || super
+      end
+
       def playlist_data
         {
           source: source_data,
@@ -34,11 +40,17 @@ module Spotify
 
       def tracks_list
         @tracks_list ||=
-          raw_tracks_list.uniq do |t|
+          raw_tracks_list_filtered.uniq do |t|
             t.dig(
               'track', 'id'
             )
           end
+      end
+
+      def raw_tracks_list_filtered
+        raw_tracks_list.select do |t|
+          t['track'].present?
+        end
       end
 
       def raw_tracks_list
