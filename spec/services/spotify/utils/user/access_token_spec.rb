@@ -4,8 +4,15 @@ RSpec.describe Spotify::Utils::User::AccessToken do
   describe 'successful processing' do
     context 'when code present' do
       let(:output) do
+        secrets =
+          Rails.application.credentials.spotify
+
         VCR.use_cassette 'services/spotify/utils/user/access_token/success' do
-          subject.call(code: 'AQDGa0bdN78TsPy9yKGcmngXKeA0_p2UW7Gxodf0Wi4i2i8wr8vmRHa6mvpn2vZeBlRprDFJJeW8tkEuOh9lyCxM1C3Ks9HYqwcf7wbZn69P8WdNz4XH48T0GgBwe0l7GOD_Q27l7WMWcpNoIpUW2WK1WcMuMCFrripsLAQ-7D8UXRg9ygv_XH6r9Y-JDdnH-ZPqHt9mcEhKciV20mZVNRI4cOk')
+          subject.call(
+            code: 'AQDGa0bdN78TsPy9yKGcmngXKeA0_p2UW7Gxodf0Wi4i2i8wr8vmRHa6mvpn2vZeBlRprDFJJeW8tkEuOh9lyCxM1C3Ks9HYqwcf7wbZn69P8WdNz4XH48T0GgBwe0l7GOD_Q27l7WMWcpNoIpUW2WK1WcMuMCFrripsLAQ-7D8UXRg9ygv_XH6r9Y-JDdnH-ZPqHt9mcEhKciV20mZVNRI4cOk',
+            client_id: secrets[:api_key],
+            client_secret: secrets[:api_secret]
+          )
         end
       end
 

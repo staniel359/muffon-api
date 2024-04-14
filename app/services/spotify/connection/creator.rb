@@ -5,7 +5,7 @@ module Spotify
 
       def primary_args
         super + [
-          @args[:spotify_code]
+          @args[:code]
         ]
       end
 
@@ -18,7 +18,11 @@ module Spotify
       def access_token_data
         @access_token_data ||=
           Spotify::Utils::User::AccessToken.call(
-            code: @args[:spotify_code]
+            code: @args[:code],
+            client_id:
+              @args[:client_id],
+            client_secret:
+              @args[:client_secret]
           )
       end
 

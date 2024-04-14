@@ -10,7 +10,10 @@ module API
       def create_data
         ::Spotify::Connection::Creator.call(
           params.slice(
-            *%i[spotify_code profile_id token]
+            *%i[
+              profile_id token code
+              client_id client_secret
+            ]
           )
         )
       end

@@ -5,7 +5,11 @@ module Spotify
         private
 
         def primary_args
-          [@args[:code]]
+          [
+            @args[:code],
+            @args[:client_id],
+            @args[:client_secret]
+          ]
         end
 
         def data
@@ -30,6 +34,14 @@ module Spotify
 
         def redirect_uri
           "#{secrets.url}/code"
+        end
+
+        def client_id
+          @args[:client_id]
+        end
+
+        def client_secret
+          @args[:client_secret]
         end
 
         def refresh_token
