@@ -26,7 +26,10 @@ module Spotify
       end
 
       def description
-        playlist['description'].presence
+        playlist['description'].gsub(
+          '<a href=spotify:playlist:',
+          '<a href=https://open.spotify.com/playlist/'
+        ).presence
       end
 
       def image_data

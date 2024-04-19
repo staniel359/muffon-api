@@ -55,7 +55,9 @@ module Spotify
       {
         source:
           artist_source_data(artist),
-        name: artist['name']
+        name:
+          artist['name'] ||
+            artist['type']
       }
     end
 

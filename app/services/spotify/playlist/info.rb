@@ -29,33 +29,26 @@ module Spotify
           title:,
           description:,
           image: image_data,
-          tracks_count:,
+          tracks_count:
+            tracks_list.size,
           tracks:
         }.compact
       end
 
-      def tracks_count
-        tracks_list.size
-      end
-
       def tracks_list
         @tracks_list ||=
-          raw_tracks_list_filtered.uniq do |t|
-            t.dig(
-              'track', 'id'
-            )
-          end
+          Spotify::Playlist::Info::Tracks.call(
+            playlist_id:
+              @args[:playlist_id],
+            profile_id:
+              @args[:profile_id],
+            total_items_count: tracks_count
+          )[:tracks]
       end
 
-      def raw_tracks_list_filtered
-        raw_tracks_list.select do |t|
-          t['track'].present?
-        end
-      end
-
-      def raw_tracks_list
+      def tracks_count
         playlist.dig(
-          'tracks', 'items'
+          'tracks', 'total'
         )
       end
 

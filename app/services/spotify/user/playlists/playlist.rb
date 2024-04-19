@@ -31,8 +31,15 @@ module Spotify
 
         def tracks
           return if @args[:with_tracks].blank?
+          return [] if tracks_count_initial.zero?
 
           playlist_info_data[:tracks]
+        end
+
+        def tracks_count_initial
+          playlist.dig(
+            'tracks', 'total'
+          )
         end
 
         def playlist_info_data
@@ -40,9 +47,7 @@ module Spotify
             Spotify::Playlist::Info.call(
               playlist_id: spotify_id,
               profile_id: @args[:profile_id]
-            ).try(
-              :[], :playlist
-            ) || {}
+            )[:playlist]
         end
       end
     end

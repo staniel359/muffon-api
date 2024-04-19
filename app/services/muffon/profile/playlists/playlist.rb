@@ -100,9 +100,14 @@ module Muffon
         end
 
         def description_formatted
-          return description if @args[:info]
+          return description if
+              @args[:info] || description_with_link?
 
           description_truncated_small
+        end
+
+        def description_with_link?
+          !!description&.include?('a href')
         end
 
         def tracks_count
