@@ -9,4 +9,6 @@ Rails.application.config.filter_parameters += %i[
   token
   lastfm_token
   lastfm_session_key
+  client_id
+  client_secret
 ]

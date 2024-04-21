@@ -60,6 +60,7 @@ module Spotify
       def spotify_connection_params
         spotify_connection_token_params
           .merge(spotify_connection_info_params)
+          .merge(spotify_connection_client_params)
       end
 
       def spotify_connection_token_params
@@ -76,6 +77,15 @@ module Spotify
           :premium,
           :image_url
         )
+      end
+
+      def spotify_connection_client_params
+        {
+          client_id:
+            @args[:client_id],
+          client_secret:
+            @args[:client_secret]
+        }
       end
 
       def profile_data

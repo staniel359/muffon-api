@@ -74,13 +74,8 @@ module Spotify
       def update_session
         Spotify::Connection::Updater.call(
           profile_id: @args[:profile_id],
-          token: @args[:token],
-          refresh_token:
+          token: @args[:token]
         )
-      end
-
-      def refresh_token
-        spotify_connection.refresh_token
       end
     end
   end
