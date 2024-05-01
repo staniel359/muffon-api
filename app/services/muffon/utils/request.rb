@@ -59,6 +59,8 @@ module Muffon
         ).get(
           link, params, headers
         )
+      rescue StandardError => error
+        handle_error(error)
       end
 
       def post_response
@@ -91,6 +93,8 @@ module Muffon
         ).post(
           link, payload, headers
         )
+      rescue StandardError => error
+        handle_error(error)
       end
 
       def html_response_data
@@ -98,6 +102,14 @@ module Muffon
           Nokogiri::HTML.parse(
             response.body
           )
+      end
+
+      def handle_error(error)
+        if @args[:debug_request]
+          pp error.response
+        end
+
+        raise error
       end
     end
   end
