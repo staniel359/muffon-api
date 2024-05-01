@@ -11,6 +11,8 @@ module Muffon
 
           attach_images
 
+          images_data
+
           { success: true }
         end
 
@@ -34,6 +36,12 @@ module Muffon
             model_id: @args[:model_id],
             image_file:
           )
+        end
+
+        def images_data
+          model
+            .reload
+            .images_data
         end
       end
     end
