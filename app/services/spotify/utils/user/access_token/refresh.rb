@@ -5,6 +5,13 @@ module Spotify
         class Refresh < Spotify::Utils::User::AccessToken
           private
 
+          def primary_args
+            [
+              @args[:profile_id],
+              @args[:token]
+            ]
+          end
+
           def data
             { access_token: }
           end
