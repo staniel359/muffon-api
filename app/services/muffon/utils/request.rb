@@ -54,13 +54,12 @@ module Muffon
         )
 
         client(
-          proxy:,
-          redirect:
+          proxy:, redirect:
         ).get(
           link, params, headers
         )
-      rescue StandardError => error
-        handle_error(error)
+      rescue StandardError => e
+        handle_error(e)
       end
 
       def post_response
@@ -88,13 +87,12 @@ module Muffon
         )
 
         client(
-          params:, proxy:,
-          redirect:, payload:
+          params:, proxy:, redirect:, payload:
         ).post(
           link, payload, headers
         )
-      rescue StandardError => error
-        handle_error(error)
+      rescue StandardError => e
+        handle_error(e)
       end
 
       def html_response_data
@@ -106,7 +104,9 @@ module Muffon
 
       def handle_error(error)
         if @args[:debug_request]
-          pp error.response
+          Rails.logger.debug(
+            error.response
+          )
         end
 
         raise error

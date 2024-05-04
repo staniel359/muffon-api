@@ -6,6 +6,10 @@ module Spotify
 
       private
 
+      def collection_list
+        super.compact
+      end
+
       def collection_item_data_formatted(track)
         Spotify::Search::Tracks::Track.call(
           track:,
