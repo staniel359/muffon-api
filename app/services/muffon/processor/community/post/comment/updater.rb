@@ -17,7 +17,7 @@ module Muffon
             end
 
             def forbidden?
-              super || !post_creator?
+              super || !post_comment_creator?
             end
 
             def post_comment_params
