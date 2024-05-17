@@ -155,8 +155,8 @@ module ProfileDecorator
   def artist_ids_from_library(tracks_count = 0)
     library_artists
       .where(
-        'library_tracks_count >= ?',
-        tracks_count
+        library_tracks_count:
+          tracks_count..
       ).pluck(
         :artist_id
       )
