@@ -24,62 +24,16 @@ module Muffon
       end
 
       def original_link
-        format_link(
-          image
-        )
-      end
-
-      def format_link(image)
-        return if image.blank?
-
-        key = image.key
-        filename = image.blob.filename
-
-        "#{base_link}/uploads/#{key}/#{filename}"
-      end
-
-      def base_link
-        Rails
-          .application
-          .credentials
-          .url
-      end
-
-      def variant_link(size)
-        format_link(
-          variant(size)
-        )
-      end
-
-      def variant(size)
-        options =
-          variant_options(size)
-
-        image
-          .variant(
-            options
-          ).processed
-      rescue ActiveStorage::FileNotFoundError
+        image.url
+      rescue StandardError
         nil
       end
 
-      def variant_options(size)
-        {
-          background: 'none',
-          gravity: 'center',
-          extent: '1:1',
-          resize: "#{size}x#{size}>",
-          loader: loader_data,
-          saver: saver_data
-        }
-      end
-
-      def loader_data
-        { page: nil }
-      end
-
-      def saver_data
-        { allow_splitting: true }
+      def variant_link(size)
+        Muffon::Utils::Image::VariantLink.call(
+          image:,
+          size:
+        )
       end
     end
   end

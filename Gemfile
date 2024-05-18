@@ -8,6 +8,7 @@ ruby File.read(
   '.ruby-version'
 ).strip
 
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', require: false
 gem 'bcrypt'
 gem 'faraday'

@@ -22,14 +22,6 @@ Rails.application.routes.draw do
     get 'code'
   end
 
-  namespace :uploads, as: :upload, constraints: { filename: /[^\/]+/ } do
-    scope ':key' do
-      scope ':filename' do
-        get '', action: 'show'
-      end
-    end
-  end
-
   scope :api, module: :api do
     namespace :legal do
       get 'privacy_policy'
