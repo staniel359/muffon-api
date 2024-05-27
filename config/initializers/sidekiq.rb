@@ -10,6 +10,6 @@ Sidekiq.configure_server do |config|
   ActiveJob::Base.logger = Sidekiq.logger
 
   config.redis = {
-    size: 50
+    size: 100
   }
 end
