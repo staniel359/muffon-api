@@ -10,6 +10,7 @@ Sidekiq.configure_server do |config|
   ActiveJob::Base.logger = Sidekiq.logger
 
   config.redis = {
-    size: 100
+    network_timeout: 5,
+    pool_timeout: 5
   }
 end
