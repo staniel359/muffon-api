@@ -1,5 +1,5 @@
 module Muffon
-  class Base
+  class Base < Service::Base
     ERRORS = Muffon::Utils::Errors
 
     include Muffon::Utils::Base
@@ -11,14 +11,10 @@ module Muffon
 
     class << self
       def call(args = {})
-        new(args).call
+        super
       rescue *ERRORS.list => e
         ERRORS.handle(e.class)
       end
-    end
-
-    def initialize(args = {})
-      @args = args
     end
 
     def call
@@ -27,24 +23,6 @@ module Muffon
       return forbidden if forbidden?
 
       data
-    end
-
-    private
-
-    def not_all_args?
-      primary_args.any?(&:blank?)
-    end
-
-    def primary_args
-      []
-    end
-
-    def no_data?
-      false
-    end
-
-    def forbidden?
-      false
     end
   end
 end

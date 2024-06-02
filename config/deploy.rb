@@ -13,7 +13,8 @@ append :linked_files,
   'config/master.key',
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
-  'config/sidekiq.yml'
+  'config/sidekiq.yml',
+  'invalid_requests.csv'
 
 append :linked_dirs,
   'log',
