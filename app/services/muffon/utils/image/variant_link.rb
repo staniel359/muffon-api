@@ -18,10 +18,11 @@ module Muffon
         end
 
         def data
-          image
+          image_link(
+            image
             .variant(options)
             .processed
-            .url
+          )
         rescue StandardError
           nil
         end

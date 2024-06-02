@@ -24,9 +24,18 @@ module Muffon
       end
 
       def original_link
-        image.url
-      rescue StandardError
-        nil
+        image_link(image)
+      end
+
+      def image_link(image)
+        "#{host}/images/#{image.key}"
+      end
+
+      def host
+        Rails
+          .application
+          .credentials
+          .url
       end
 
       def variant_link(size)

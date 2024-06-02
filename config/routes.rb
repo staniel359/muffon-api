@@ -22,6 +22,8 @@ Rails.application.routes.draw do
     get 'code'
   end
 
+  resources :images, only: :show, param: :key
+
   scope :api, module: :api do
     namespace :legal do
       get 'privacy_policy'

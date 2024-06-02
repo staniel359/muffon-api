@@ -7,8 +7,6 @@ module Muffon
         profile_base_data
           .merge(profile_personal_data)
           .merge(profile_extra_data)
-          .merge(profile_other_profile_data)
-          .merge(profile_relationships_data)
           .merge(profile_connections_data)
       end
 
@@ -55,63 +53,11 @@ module Muffon
       end
 
       def profile_extra_data
-        {
-          created: created_formatted,
-          playing: profile.playing,
-          online: profile.online,
-          was_online: was_online_formatted
-        }.compact
-      end
-
-      def created_formatted
-        datetime_formatted(
-          profile.created_at
+        Muffon::Profile::Info::Extra.call(
+          profile_id: @args[:profile_id],
+          other_profile_id:
+            @args[:other_profile_id]
         )
-      end
-
-      def was_online_formatted
-        return if profile.online
-
-        datetime_formatted(
-          was_online
-        )
-      end
-
-      def was_online
-        profile.was_online_at ||
-          profile.updated_at
-      end
-
-      def profile_other_profile_data
-        return {} unless valid_other_profile?
-
-        { other_profile: other_profile_data }
-      end
-
-      def other_profile_data
-        {
-          follower_of_profile: follower_of_profile?,
-          followed_by_profile: followed_by_profile?
-        }
-      end
-
-      def follower_of_profile?
-        profile.in_followers?(
-          @args[:other_profile_id]
-        )
-      end
-
-      def followed_by_profile?
-        profile.in_following?(
-          @args[:other_profile_id]
-        )
-      end
-
-      def profile_relationships_data
-        {
-          followers_count: profile.followers_count,
-          following_count: profile.following_count
-        }
       end
 
       def profile_connections_data
