@@ -723,6 +723,7 @@ Rails.application.routes.draw do
       namespace :tracks, as: :track do
         scope ':track_id' do
           get '', action: :info
+          get 'description'
           get 'links'
           get 'albums'
         end

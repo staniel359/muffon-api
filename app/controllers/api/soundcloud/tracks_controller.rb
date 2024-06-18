@@ -3,6 +3,8 @@ module API
     class TracksController < API::BaseController
       def info; end
 
+      def description; end
+
       def links; end
 
       def albums; end
@@ -13,6 +15,14 @@ module API
         ::SoundCloud::Track::Info.call(
           params.slice(
             *%i[track_id profile_id token with_audio]
+          )
+        )
+      end
+
+      def description_data
+        ::SoundCloud::Track::Description.call(
+          params.slice(
+            *%i[track_id]
           )
         )
       end

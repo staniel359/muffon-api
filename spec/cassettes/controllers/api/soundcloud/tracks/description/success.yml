@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/tracks/276297603
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.2
+      Authorization:
+      - OAuth 2-245983--La0MomsUmfRUjdZRxvloFtb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '3762'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 18 Jun 2024 14:45:04 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1e0f88a39289286be3e03ff93487da80.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P8
+      X-Amz-Cf-Id:
+      - vIxVLymXkcgkwICRm0Q05o-Fu1lwnXsbGC5IKRbkEozdDWxIe51d1A==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJraW5kIjoidHJhY2siLCJpZCI6Mjc2Mjk3NjAzLCJjcmVhdGVkX2F0IjoiMjAxNi8wOC8wMSAwOToyNTowNCArMDAwMCIsImR1cmF0aW9uIjo3MzIzNTEzLCJjb21tZW50YWJsZSI6dHJ1ZSwiY29tbWVudF9jb3VudCI6MzU1LCJzaGFyaW5nIjoicHVibGljIiwidGFnX2xpc3QiOiIgZGttbnRsIiwic3RyZWFtYWJsZSI6dHJ1ZSwiZW1iZWRkYWJsZV9ieSI6ImFsbCIsInB1cmNoYXNlX3VybCI6bnVsbCwicHVyY2hhc2VfdGl0bGUiOm51bGwsImdlbnJlIjoiIiwidGl0bGUiOiJEZWttYW50ZWwgUG9kY2FzdCAwODEgLSBKb3kgT3JiaXNvbiIsImRlc2NyaXB0aW9uIjoiSm95IE9yYnNpb24gaXMgc29tZW9uZSB3ZSBoYXZlIGEgbG9uZyBhbmQgZnJ1aXRmdWwgcmVsYXRpb25zaGlwIHdpdGggaGVyZSBhdCBEZWttYW50ZWwuIEhlIGlzLCBhbmQgYWx3YXlzIGhhcyBiZWVuLCBhIHB1cmUgZW1ib2RpbWVudCBvZiBVSyBkYW5jZSBtdXNpYy4gSGlzIHNvdW5kIGlzIHN0ZWVwZWQgaW4gRW5nbGlzaCBtdXNpY2FsIGhpc3RvcnkgKG9mdGVuIGV4cGxpY2l0bHkgaW4gdGhlIGZvcm0gb2Ygc2FtcGxlZCBtb25vbG9ndWVzKSBidXQgYWxzbyB2ZXJ5IG11Y2ggbWFrZXMgYSBuZXcgaGlzdG9yeSBvZiBpdHMgb3duLiBIZeKAmXMgaGFkIGNvdW50bGVzcyB1bmRlcmdyb3VuZCBoaXRzIGZyb20gaGlzIGRlZmluaXRpdmUgcG9zdC1kdWJzdGVwIGJyZWFrdGhyb3VnaCDigJhIeXBoIE1uZ2/igJkgdG8gaGlzIHBlYWsgdGltZSB0ZWNoIHRvb2xzIHdpdGggQm9kZGlrYSwgYW5kIGVhY2ggb25lIG1hcmtzIGEgbWluaSByZWludmVudGlvbiBvZiBoaXMgc3R5bGUuIFdoYXQgdGllcyB0aGVtIGFsbCB0b2dldGhlciwgdGhvdWdoLCBpcyBP4oCZR3JhZHnigJlzIHVuaXF1ZSBwZW5jaGFudCBmb3IgYmxlbmRpbmcgZ2FyYWdlLCBiYXNzLCBmdW5reSwgaG91c2UsIHRlY2hubyBhbmQgb2xkIHNjaG9vbCBqdW5nbGUgaW50byBoaXMgb3duIGZyZXNoIGNvbmNvY3Rpb25zLiBcblxuVGhlIHR3byBob3VyIHBvZGNhc3QgaGUgaGFzIHNlcnZlZCB1cCBoZXJlIC1hcyBhIHBlcmZlY3Qgd2FybSB1cCB0byBvdXIgZmVzdGl2YWwgdGhpcyB3ZWVrZW5kLSBpcyBzcGxpdCBpbnRvIHR3byBwYXJ0cy4gU2F5cyB0aGUgYXJ0aXN0IGhpbXNlbGYsIOKAnHRoZSBmaXJzdCBoYWxmIGlzIGJhc2ljYWxseSBhIHdheSBvZiBzaG93Y2FzaW5nIHByb2R1Y2VycyB0aGF0IGFyZSBkb2luZyBncmVhdCB0aGluZ3MgYXQgdGhlIG1vbWVudCBhbmQgaXMgY29tcGxldGVseSBtYWRlIHVwIG9mIG5ldywgdW5yZWxlYXNlZCBtdXNpYywgYW5kIHRoZSBzZWNvbmQgaGFsZiBpcyBiYXNpY2FsbHkgd2luZGluZyB0aGluZ3MgZG93biB3aXRoIGEgbG9hZCBvZiBzdHVmZiBmcm9tIG15IHJlY29yZCBjb2xsZWN0aW9uLiBBIGNvbWUgZG93biwgb2Ygc29ydHMu4oCdIFN0YXJ0aW5nIHdpdGggYSBzcG9rZW4gd29yZCBzbmlwcGV0IGZyb20gaGlzIGp1bmdsZSBwbGF5aW5nIHVuY2xlIFJheSBLZWl0aCwgdGhlIG1peCBpcyBpbml0aWFsbHkgYXRtb3NwaGVyaWMgYW5kIG1vb2R5LCB3aXRoIHNsZWVrIGFuZCBzdHJpcHBlZCBiYWNrIGRydW1zIGFuZCBzbWVhcmVkIHN5bnRocyBtYWtpbmcgZm9yIGEgaGVhZHkgYW5kIGludGltYXRlIG1vb2QuIEFmdGVyIHBpY2tpbmcgdXAgdGhyb3VnaCBza2V3ZWQgYmFzcyBwYXR0ZXJucyBhbmQgc2tlbGV0YWwgdGVjaG5vLCB0aGUgc2Vjb25kIGhhbGYgc2VkdWNlcyB3aXRoIGVsZWdpYWMgcmh5dGhtcywgamF6eiBzZWxlY3Rpb25zIGFuZCBzcG9rZW4gd29yZCB0cmFja3MgYXMgd2VsbCBhcyBkZWxpY2lvdXMgc291bCBzb3VuZHMsIHJlZ2dhZSBhbmQgc3RvbmVkIGJyb2tlbiBiZWF0LiAgVGhlIHJlc3VsdHMgc2hvdyBleGFjdGx5IHdoZXJlIE9yYmlzb24gaXMgYXQgbXVzaWNhbGx5LCBhcyB3ZWxsIGFzIG9mZmVyaW5nIGFuIGluc2lnaHQgaW50byB3aGVyZSBoZSBoYXMgY29tZSBmcm9tLiIsImxhYmVsX25hbWUiOm51bGwsInJlbGVhc2UiOm51bGwsImtleV9zaWduYXR1cmUiOm51bGwsImlzcmMiOm51bGwsImJwbSI6bnVsbCwicmVsZWFzZV95ZWFyIjpudWxsLCJyZWxlYXNlX21vbnRoIjpudWxsLCJyZWxlYXNlX2RheSI6bnVsbCwibGljZW5zZSI6ImFsbC1yaWdodHMtcmVzZXJ2ZWQiLCJ1cmkiOiJodHRwczovL2FwaS5zb3VuZGNsb3VkLmNvbS90cmFja3MvMjc2Mjk3NjAzIiwidXNlciI6eyJhdmF0YXJfdXJsIjoiaHR0cHM6Ly9pMS5zbmRjZG4uY29tL2F2YXRhcnMtMDAwMzA2MDc3OTMyLTNlaHVncS1sYXJnZS5qcGciLCJpZCI6OTcxNjQsImtpbmQiOiJ1c2VyIiwicGVybWFsaW5rX3VybCI6Imh0dHBzOi8vc291bmRjbG91ZC5jb20vZGttbnRsIiwidXJpIjoiaHR0cHM6Ly9hcGkuc291bmRjbG91ZC5jb20vdXNlcnMvOTcxNjQiLCJ1c2VybmFtZSI6ImRla21hbnRlbCIsInBlcm1hbGluayI6ImRrbW50bCIsImNyZWF0ZWRfYXQiOiIyMDA5LzA0LzA3IDIzOjA0OjIzICswMDAwIiwibGFzdF9tb2RpZmllZCI6IjIwMjQvMDYvMTIgMDg6MzA6MTAgKzAwMDAiLCJmaXJzdF9uYW1lIjoiIiwibGFzdF9uYW1lIjoiIiwiZnVsbF9uYW1lIjoiIiwiY2l0eSI6IkFtc3RlcmRhbSIsImRlc2NyaXB0aW9uIjoiQW1zdGVyZGFtIGJhc2VkIERKcywgZXZlbnRzIGNvbXBhbnkgYW5kIHJlY29yZCBsYWJlbC4gLSBzdXBwb3J0QGRla21hbnRlbC5jb20gZm9yIGFsbCB5b3VyIHdlYnNob3AgYW5kIGxhYmVsIGVucXVpcmllcy4iLCJjb3VudHJ5IjoiTmV0aGVybGFuZHMiLCJ0cmFja19jb3VudCI6MjAxNSwicHVibGljX2Zhdm9yaXRlc19jb3VudCI6MCwicmVwb3N0c19jb3VudCI6MCwiZm9sbG93ZXJzX2NvdW50IjowLCJmb2xsb3dpbmdzX2NvdW50IjowLCJwbGFuIjoiUHJvIFVubGltaXRlZCIsIm15c3BhY2VfbmFtZSI6bnVsbCwiZGlzY29nc19uYW1lIjpudWxsLCJ3ZWJzaXRlX3RpdGxlIjoiV2Vic2l0ZSIsIndlYnNpdGUiOiJodHRwOi8vd3d3LmRla21hbnRlbC5jb20iLCJjb21tZW50c19jb3VudCI6MCwib25saW5lIjpmYWxzZSwibGlrZXNfY291bnQiOjAsInBsYXlsaXN0X2NvdW50Ijo5NSwic3Vic2NyaXB0aW9ucyI6W3sicHJvZHVjdCI6eyJpZCI6ImNyZWF0b3ItcHJvLXVubGltaXRlZCIsIm5hbWUiOiJQcm8gVW5saW1pdGVkIn19XX0sInBlcm1hbGlua191cmwiOiJodHRwczovL3NvdW5kY2xvdWQuY29tL2RrbW50bC9kZWttYW50ZWwtcG9kY2FzdC0wODEtam95LW9yYmlzb24iLCJhcnR3b3JrX3VybCI6Imh0dHBzOi8vaTEuc25kY2RuLmNvbS9hcnR3b3Jrcy0wMDAxNzQyNzUwMTUtdnJyMmplLWxhcmdlLmpwZyIsInN0cmVhbV91cmwiOiJodHRwczovL2FwaS5zb3VuZGNsb3VkLmNvbS90cmFja3MvMjc2Mjk3NjAzL3N0cmVhbSIsImRvd25sb2FkX3VybCI6Imh0dHBzOi8vYXBpLnNvdW5kY2xvdWQuY29tL3RyYWNrcy8yNzYyOTc2MDMvZG93bmxvYWQiLCJ3YXZlZm9ybV91cmwiOiJodHRwczovL3dhdmUuc25kY2RuLmNvbS9FelF0NU5LdlZGY09fbS5wbmciLCJhdmFpbGFibGVfY291bnRyeV9jb2RlcyI6bnVsbCwic2VjcmV0X3VyaSI6bnVsbCwidXNlcl9mYXZvcml0ZSI6bnVsbCwidXNlcl9wbGF5YmFja19jb3VudCI6bnVsbCwicGxheWJhY2tfY291bnQiOjExMjU1OCwiZG93bmxvYWRfY291bnQiOjEwMDQ4LCJmYXZvcml0aW5nc19jb3VudCI6NTYxNCwicmVwb3N0c19jb3VudCI6NzU2LCJkb3dubG9hZGFibGUiOnRydWUsImFjY2VzcyI6InBsYXlhYmxlIiwicG9saWN5IjpudWxsLCJtb25ldGl6YXRpb25fbW9kZWwiOm51bGx9
+  recorded_at: Tue, 18 Jun 2024 14:45:04 GMT
+recorded_with: VCR 6.2.0

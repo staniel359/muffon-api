@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.soundcloud.com/tracks/wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.2
+      Authorization:
+      - OAuth 2-245983--La0MomsUmfRUjdZRxvloFtb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '235'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 18 Jun 2024 14:45:13 GMT
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Server:
+      - am/2
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 a530f843a2269d63579bc4238b63fbac.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P8
+      X-Amz-Cf-Id:
+      - lOKl3f7MyNWz4O5MJHq3nTCQems-wBRWaN-bDGwukVZjCLqnm6y-uw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":400,"message":"Invalid track id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
+        - Bad Request","errors":[{"error_message":"Invalid track id: ''wejlhg239gh23''"}],"error":null}'
+  recorded_at: Tue, 18 Jun 2024 14:45:13 GMT
+recorded_with: VCR 6.2.0
