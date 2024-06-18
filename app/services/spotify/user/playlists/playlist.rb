@@ -39,7 +39,7 @@ module Spotify
         def tracks_count_initial
           playlist.dig(
             'tracks', 'total'
-          )
+          ) || 0
         end
 
         def playlist_info_data
