@@ -61,13 +61,15 @@ module SoundCloud
       end
 
       def raw_tags_list
-        album['tags'].split(
+        album['tags']&.split(
           /\s?"\s?/
-        )
+        ) || []
       end
 
       def tracks_list
-        album['tracks']
+        album['tracks'].select do |t|
+          t['title'].present?
+        end
       end
 
       def track_data_formatted(track)

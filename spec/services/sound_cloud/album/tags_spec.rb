@@ -5,7 +5,7 @@ RSpec.describe SoundCloud::Album::Tags do
     context 'when album_id present' do
       let(:output) do
         VCR.use_cassette 'services/soundcloud/album/tags/success' do
-          subject.call(album_id: '1092365263')
+          subject.call(album_id: '249480404')
         end
       end
 

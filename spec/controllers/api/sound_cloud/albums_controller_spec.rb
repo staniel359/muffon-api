@@ -2,7 +2,7 @@ RSpec.describe API::SoundCloud::AlbumsController do
   describe 'GET :info' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/soundcloud/albums/info/success' do
-        get :info, params: { album_id: '447196953' }
+        get :info, params: { album_id: '249480404' }
       end
 
       expect(response).to have_http_status(:ok)
@@ -20,7 +20,7 @@ RSpec.describe API::SoundCloud::AlbumsController do
   describe 'GET :description' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/soundcloud/albums/description/success' do
-        get :description, params: { album_id: '447196953' }
+        get :description, params: { album_id: '249480404' }
       end
 
       expect(response).to have_http_status(:ok)
@@ -38,7 +38,7 @@ RSpec.describe API::SoundCloud::AlbumsController do
   describe 'GET :tags' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/soundcloud/albums/tags/success' do
-        get :tags, params: { album_id: '447196953' }
+        get :tags, params: { album_id: '249480404' }
       end
 
       expect(response).to have_http_status(:ok)
@@ -56,7 +56,7 @@ RSpec.describe API::SoundCloud::AlbumsController do
   describe 'GET :links' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/soundcloud/albums/links/success' do
-        get :links, params: { album_id: '447196953' }
+        get :links, params: { album_id: '249480404' }
       end
 
       expect(response).to have_http_status(:ok)

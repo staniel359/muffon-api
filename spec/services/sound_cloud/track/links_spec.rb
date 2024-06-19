@@ -5,7 +5,7 @@ RSpec.describe SoundCloud::Track::Links do
     context 'when track_id present' do
       let(:output) do
         VCR.use_cassette 'services/soundcloud/track/links/success' do
-          subject.call(track_id: '296774474')
+          subject.call(track_id: '12472418')
         end
       end
 

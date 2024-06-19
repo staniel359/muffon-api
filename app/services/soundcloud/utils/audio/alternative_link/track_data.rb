@@ -2,7 +2,7 @@ module SoundCloud
   module Utils
     module Audio
       class AlternativeLink
-        class AudioData < SoundCloud::Utils::Audio::AlternativeLink
+        class TrackData < SoundCloud::Utils::Audio::AlternativeLink
           private
 
           def primary_args

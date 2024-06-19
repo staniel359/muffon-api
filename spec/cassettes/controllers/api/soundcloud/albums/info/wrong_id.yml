@@ -2,61 +2,44 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.soundcloud.com/playlists/wejlhg239gh23
+    uri: https://api-v2.soundcloud.com/playlists/wejlhg239gh23?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Authorization:
-      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
+      - Faraday v2.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.soundcloud.com
+      Accept:
+      - "*/*"
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 500
+      message: Internal Server Error
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - text/plain; charset=utf-8
       Content-Length:
-      - '185'
+      - '0'
       Connection:
       - keep-alive
       Date:
-      - Tue, 05 Oct 2021 06:22:49 GMT
-      X-Robots-Tag:
-      - noindex
-      Cache-Control:
-      - private, max-age=0
-      Referrer-Policy:
-      - no-referrer
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - Wed, 19 Jun 2024 20:44:31 GMT
       Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000
       Server:
       - am/2
-      Vary:
-      - Origin
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 88944815e9efa1cfbf5b6acdd146175a.cloudfront.net (CloudFront)
+      - 1.1 553c17cdbfc8c5ba81390077b0e5d2d4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - HEL50-C2
+      - FRA56-P11
       X-Amz-Cf-Id:
-      - TqfZOECJtu3cPy8zPD4plklMHBuKIkNzVa6jCI-UPbe1s_kyUL4-nw==
+      - sBX-ssqFY89yiB2U7IEY417wSWyUTJAid0rixcA7FFEOHbmO-l72Mw==
     body:
-      encoding: ASCII-8BIT
-      string: '{"code":400,"message":"Invalid playlist id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
-        - Bad Request","errors":[{"error_message":"Invalid playlist id: ''wejlhg239gh23''"}],"error":null}'
-  recorded_at: Tue, 05 Oct 2021 06:22:49 GMT
-recorded_with: VCR 6.0.0
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 19 Jun 2024 20:44:31 GMT
+recorded_with: VCR 6.2.0

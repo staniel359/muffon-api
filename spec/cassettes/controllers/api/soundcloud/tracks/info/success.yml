@@ -2,21 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.soundcloud.com/tracks/296774474
+    uri: https://api-v2.soundcloud.com/tracks/12472418?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Authorization:
-      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
+      - Faraday v2.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.soundcloud.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -25,11 +21,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '909'
+      - '2975'
       Connection:
       - keep-alive
       Date:
-      - Tue, 05 Oct 2021 06:22:51 GMT
+      - Wed, 19 Jun 2024 20:44:33 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -41,7 +37,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000
       Server:
       - am/2
       Vary:
@@ -49,76 +45,18 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 3722e3fae8beaa8b858515be7ea93917.cloudfront.net (CloudFront)
+      - 1.1 012ed5015dc2306833b5abb65b3a0378.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - HEL50-C2
+      - FRA56-P11
       X-Amz-Cf-Id:
-      - l62oVPzsxe2rXx7_9S5iA1bXBfzp4Fdec9f5Gfp_u_C-4wxNuF227Q==
+      - qaYeNCXlRr5vYg63rSlNvCKZLQH0PmcRZh0gKaz7Sbd1ojjWeYVdog==
     body:
       encoding: ASCII-8BIT
-      string: '{"kind":"track","id":296774474,"created_at":"2016/12/08 02:53:46 +0000","duration":46267,"commentable":true,"comment_count":38,"sharing":"public","tag_list":"
-        vaporwave","streamable":true,"embeddable_by":"all","purchase_url":null,"purchase_title":null,"genre":"V
-        A P O R W A V E","title":"LUXURY ELITE - ALL NIGHT","description":"Luxury
-        Elite''s All Night\nLate Night Delight (c) Luxury Elite","label_name":null,"release":null,"key_signature":null,"isrc":null,"bpm":null,"release_year":null,"release_month":null,"release_day":null,"license":"all-rights-reserved","uri":"https://api.soundcloud.com/tracks/296774474","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000485875731-se22vc-large.jpg","id":247403880,"kind":"user","permalink_url":"https://soundcloud.com/that-gay-lmao","uri":"https://api.soundcloud.com/users/247403880","username":"scubb","permalink":"that-gay-lmao","created_at":"2016/08/14
-        19:36:22 +0000","last_modified":"2021/03/01 15:57:45 +0000","first_name":"lawson","last_name":"s","full_name":"lawson
-        s","city":"nowhere","description":"","country":"Jersey","track_count":18,"public_favorites_count":0,"reposts_count":0,"followers_count":0,"followings_count":0,"plan":"Free","myspace_name":null,"discogs_name":null,"website_title":null,"website":null,"comments_count":70,"online":false,"likes_count":0,"playlist_count":8,"subscriptions":[{"product":{"id":"free","name":"Free"}}]},"permalink_url":"https://soundcloud.com/that-gay-lmao/luxury-elite-all-night","artwork_url":"https://i1.sndcdn.com/artworks-000197371808-7uwudi-large.jpg","stream_url":"https://api.soundcloud.com/tracks/296774474/stream","download_url":null,"waveform_url":"https://wave.sndcdn.com/y3cxJMT8ueg3_m.png","available_country_codes":null,"secret_uri":null,"user_favorite":null,"user_playback_count":null,"playback_count":69775,"download_count":0,"favoritings_count":1218,"reposts_count":52,"downloadable":false,"access":"playable","policy":null,"monetization_model":null}'
-  recorded_at: Tue, 05 Oct 2021 06:22:51 GMT
-- request:
-    method: get
-    uri: https://api.soundcloud.com/tracks/296774474/streams
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*"
-      User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Authorization:
-      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.soundcloud.com
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '1251'
-      Connection:
-      - keep-alive
-      Date:
-      - Tue, 05 Oct 2021 06:22:51 GMT
-      X-Robots-Tag:
-      - noindex
-      Cache-Control:
-      - private, max-age=0
-      Referrer-Policy:
-      - no-referrer
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
-      Server:
-      - am/2
-      Vary:
-      - Origin
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 11e8f0c61352b0b7123fef57178c7f99.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - HEL50-C2
-      X-Amz-Cf-Id:
-      - _Dt1Lawqyd0Qmy-OpRRD0nzGAEFFdThBxgpJCguYhY2UOQ6MSqRqTA==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"http_mp3_128_url":"https://cf-media.sndcdn.com/y3cxJMT8ueg3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20veTNjeEpNVDh1ZWczLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMzNDE1MTM3fX19XX0_&Signature=I4fs4MYZ7huwevoYFjSQ2gZ4drUx0v0y5aUX7DCZVudbOwc7tTTu-9Ypbyn1iXm1fUHDjoboC0Symx4ak1CuStvIjU5wMC2Tk1OQazMWAy5j5m53trHXMc247CLg6WlB1LbaR97OQ8kNPbmrZhZseuaLslYR9-fOl9UVjxR53PeRu6oIF2bZCeTBDOTG84uCKhjXpaYzuqGq2zAHA3PDWTVrYoDQ2JEIwLfIWFAng2yXHEJBu9vGEdrOACpsBJv04RTclJtZThyVkni-3MEV~EpTzjMFxv7yi~KMERADtE13R2hKv37lGMxheZiXGaHATaFElaHrVKBI7rt4XuIwBQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ","hls_mp3_128_url":"https://cf-hls-media.sndcdn.com/playlist/y3cxJMT8ueg3.128.mp3/playlist.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLWhscy1tZWRpYS5zbmRjZG4uY29tL3BsYXlsaXN0L3kzY3hKTVQ4dWVnMy4xMjgubXAzL3BsYXlsaXN0Lm0zdTgqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMzNDE1MTM3fX19XX0_&Signature=A3lEOX44Tuzxe4cIgigNfCB3x5u8AXmvhIOYnmrafhMrPGquoIcM3KWkYqG1JCmT0UIjejI4baNNwiYhQT7dbyLu82KTSymTEW9aIWB9qqC~q1pBjnXQLu1ojpb7hlPoeBnOZ4OWWJXwOL5hG10PDZAvtW6Pscc0XXAo7gJ2XNtM2WXxZw3SV-7fXy3DI6J4ChGJ30mx1JjkIwFiEUMnCPY8UzJKzGp31LrvS-zb6jQZvzD4Ekb6pqkMWcwSf593j1zcyBuUlyooev0WD0dJ8rt6GH-ZFezrYuOPJY7aeb~dXa2Kgm~Zb0NBuDwF~~cRuMA5YE-JUUqx~kX~~K0pnw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ","preview_mp3_128_url":"https://cf-preview-media.sndcdn.com/preview/0/30/y3cxJMT8ueg3.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLXByZXZpZXctbWVkaWEuc25kY2RuLmNvbS9wcmV2aWV3LzAvMzAveTNjeEpNVDh1ZWczLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjMzNDE1MTM3fX19XX0_&Signature=TG1B9PCoGVUk0mTIvdSboU~HwGgDAQi96xf36eQ9Ht-cLm1R4J-kEThJ-uSiod2jKORCRZZny1UdVStDt9fMAP8q8MMnbugZzkpBr6OJubCWeuxDLUjL8jlh1RUjqoL-TYe2wtncHwrDcHwiJj3QQ91ZS8JJXbDx4sBdN1oS7ZvSEXyMU4EzW5yv0gWzbF-mCWoI7mTEumVG-4Ec4c939EXivo6V4AhkmqT~9H9VFPXxJvSmjPv9en1c1NxNxNCLrCE54h8G0rp78H54qwS3u1xczj2RqQYV2agKccawtCnMQiK1juoPfDUfxp6sZV1bYmTzzr5JJk0rMaN4w-UJ-Q__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ"}'
-  recorded_at: Tue, 05 Oct 2021 06:22:51 GMT
-recorded_with: VCR 6.0.0
+      string: '{"artwork_url":"https://i1.sndcdn.com/artworks-000005813687-l755p4-large.jpg","caption":null,"commentable":true,"comment_count":84,"created_at":"2011-03-24T14:58:03Z","description":"","downloadable":false,"download_count":0,"duration":198945,"full_duration":198945,"embeddable_by":"all","genre":"Pop","has_downloads_left":false,"id":12472418,"kind":"track","label_name":"Captured
+        Tracks","last_modified":"2022-03-19T17:13:28Z","license":"all-rights-reserved","likes_count":5792,"permalink":"chinatown","permalink_url":"https://soundcloud.com/wildnothing/chinatown","playback_count":410844,"public":true,"publisher_metadata":null,"purchase_title":null,"purchase_url":"http://itunes.apple.com/us/album/gemini/id365194361","release_date":null,"reposts_count":504,"secret_token":null,"sharing":"public","state":"finished","streamable":true,"tag_list":"wildnothing
+        gemini chinatown captured tracks jack tatum","title":"Chinatown","uri":"https://api.soundcloud.com/tracks/12472418","urn":"soundcloud:tracks:12472418","user_id":3820545,"visuals":null,"waveform_url":"https://wave.sndcdn.com/aPeRGvbN3lfq_m.json","display_date":"2011-03-24T14:58:03Z","media":{"transcodings":[{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:12472418/49aa64ee-0ee1-4b7e-b79d-3b19584cbd7e/stream/hls","preset":"mp3_0_0","duration":198945,"snipped":false,"format":{"protocol":"hls","mime_type":"audio/mpeg"},"quality":"sq"},{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:12472418/49aa64ee-0ee1-4b7e-b79d-3b19584cbd7e/stream/progressive","preset":"mp3_0_0","duration":198945,"snipped":false,"format":{"protocol":"progressive","mime_type":"audio/mpeg"},"quality":"sq"},{"url":"https://api-v2.soundcloud.com/media/soundcloud:tracks:12472418/14a8753c-70a4-483a-9f6b-61da945e565a/stream/hls","preset":"opus_0_0","duration":198945,"snipped":false,"format":{"protocol":"hls","mime_type":"audio/ogg;
+        codecs=\"opus\""},"quality":"sq"}]},"station_urn":"soundcloud:system-playlists:track-stations:12472418","station_permalink":"track-stations:12472418","track_authorization":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJnZW8iOiJCWSIsInN1YiI6IiIsInJpZCI6ImQ3YzllZGI5LTJjMmEtNGRmNi04NzkzLWViZDBjMjFjMTg5ZiIsImlhdCI6MTcxODgyOTg3M30.gstVms3e_PopLD4eRzhvGFTfcEmeu2CL6MquOsKLQ7o","monetization_model":"NOT_APPLICABLE","policy":"ALLOW","user":{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","first_name":"WIld
+        Nothing","followers_count":18264,"full_name":"WIld Nothing","id":3820545,"kind":"user","last_modified":"2020-11-19T16:12:41Z","last_name":"","permalink":"wildnothing","permalink_url":"https://soundcloud.com/wildnothing","uri":"https://api.soundcloud.com/users/3820545","urn":"soundcloud:users:3820545","username":"Wild_Nothing","verified":true,"city":"New
+        York","country_code":"US","badges":{"pro":false,"pro_unlimited":false,"verified":true},"station_urn":"soundcloud:system-playlists:artist-stations:3820545","station_permalink":"artist-stations:3820545"}}'
+  recorded_at: Wed, 19 Jun 2024 20:44:33 GMT
+recorded_with: VCR 6.2.0

@@ -1,6 +1,6 @@
 module SoundCloud
   module Track
-    class Base < SoundCloud::API::V1::Base
+    class Base < SoundCloud::API::V2::Base
       include SoundCloud::Utils::Track
 
       private
@@ -11,6 +11,8 @@ module SoundCloud
 
       def no_data?
         track.blank?
+      rescue Faraday::ServerError
+        true
       end
 
       def link

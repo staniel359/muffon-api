@@ -2,61 +2,44 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.soundcloud.com/tracks/wejlhg239gh23
+    uri: https://api-v2.soundcloud.com/tracks/wejlhg239gh23?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
-      Authorization:
-      - OAuth <SOUNDCLOUD_TEST_ACCESS_TOKEN>
+      - Faraday v2.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.soundcloud.com
+      Accept:
+      - "*/*"
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 500
+      message: Internal Server Error
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - text/plain; charset=utf-8
       Content-Length:
-      - '184'
+      - '0'
       Connection:
       - keep-alive
       Date:
-      - Tue, 05 Oct 2021 06:23:05 GMT
-      X-Robots-Tag:
-      - noindex
-      Cache-Control:
-      - private, max-age=0
-      Referrer-Policy:
-      - no-referrer
-      X-Frame-Options:
-      - DENY
-      X-Content-Type-Options:
-      - nosniff
+      - Wed, 19 Jun 2024 20:35:29 GMT
       Strict-Transport-Security:
-      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000
       Server:
       - am/2
-      Vary:
-      - Origin
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 6c183700546a331def0de99cb43d1575.cloudfront.net (CloudFront)
+      - 1.1 7daf545331a4f565a58e22b0fa952528.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - HEL50-C2
+      - FRA56-P11
       X-Amz-Cf-Id:
-      - PeSCnfV8TU2PfcHEOAb1kTE8Z7lNdgHsWin_EqdopAvP4938chx9WQ==
+      - rr7Y5ZHOdik3ldJ5UxqONMZIFW9brDe6-iMgLrWkk02DknvpdNF-uA==
     body:
-      encoding: ASCII-8BIT
-      string: '{"code":400,"message":"Invalid track id: ''wejlhg239gh23''","link":"https://developers.soundcloud.com/docs/api/explorer/open-api","status":"400
-        - Bad Request","errors":[{"error_message":"Invalid track id: ''wejlhg239gh23''"}],"error":null}'
-  recorded_at: Tue, 05 Oct 2021 06:23:05 GMT
-recorded_with: VCR 6.0.0
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 19 Jun 2024 20:35:29 GMT
+recorded_with: VCR 6.2.0
