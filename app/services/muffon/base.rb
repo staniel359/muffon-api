@@ -1,5 +1,5 @@
 module Muffon
-  class Base < Service::Base
+  class Base < Service
     ERRORS = Muffon::Utils::Errors
 
     include Muffon::Utils::Base

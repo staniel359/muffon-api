@@ -1,7 +1,7 @@
 require 'csv'
 
 module Utils
-  class InvalidRequestSaver < Service::Base
+  class InvalidRequestSaver < Service
     FILE_NAME = 'invalid_requests.csv'.freeze
     IGNORED_PATHS_REGEXP =
       %r{uploads/|media/|favicon.ico}
