@@ -39,17 +39,17 @@ module LastFM
       end
 
       def album_base_data
-        {
+        @album_base_data ||= {
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
-        }
+          artists:,
+          image: image_data
+        }.compact
       end
 
       def album_list_extra_data
         {
-          image: image_data,
           listeners_count:
         }.compact
       end
@@ -65,7 +65,6 @@ module LastFM
 
       def album_extra_data
         {
-          image: image_data,
           description:
             description_truncated,
           tags: tags_truncated,
@@ -112,6 +111,7 @@ module LastFM
       def track_data_formatted(track)
         LastFM::Album::Info::Track.call(
           track:,
+          album_data: album_base_data,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

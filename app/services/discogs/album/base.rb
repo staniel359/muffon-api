@@ -31,6 +31,7 @@ module Discogs
         Discogs::Album::Info::Track.call(
           track:,
           artists: artists_list,
+          album_data: album_base_data,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

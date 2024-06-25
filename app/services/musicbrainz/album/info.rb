@@ -54,17 +54,17 @@ module MusicBrainz
       end
 
       def album_base_data
-        {
+        @album_base_data ||= {
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
-        }
+          artists:,
+          image: image_data
+        }.compact
       end
 
       def album_list_extra_data
         {
-          image: image_data,
           release_date:,
           listeners_count:
         }.compact
@@ -72,7 +72,6 @@ module MusicBrainz
 
       def album_extra_data
         {
-          image: image_data,
           listeners_count:,
           release_date:,
           labels:,
@@ -94,6 +93,7 @@ module MusicBrainz
       def track_data_formatted(track)
         MusicBrainz::Album::Info::Track.call(
           track:,
+          album_data: album_base_data,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

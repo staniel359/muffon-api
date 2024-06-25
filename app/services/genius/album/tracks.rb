@@ -24,6 +24,7 @@ module Genius
       def track_data_formatted(track)
         Genius::Album::Tracks::Track.call(
           track: track['song'],
+          album_data: @args[:album_data],
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

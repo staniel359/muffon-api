@@ -32,9 +32,19 @@ module Odnoklassniki
 
         def track_extra_data
           {
+            album: album_data,
+            image: image_data,
             duration:,
             audio: audio_minimal_data
-          }
+          }.compact
+        end
+
+        def album_data
+          @args[:album_data]
+        end
+
+        def image_data
+          album_data[:image]
         end
       end
     end

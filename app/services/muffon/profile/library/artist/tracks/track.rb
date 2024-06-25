@@ -23,7 +23,9 @@ module Muffon
                 source: source_data,
                 library: library_track_data,
                 player_id: player_source_id,
-                title:
+                title:,
+                artist: artists_minimal_data,
+                artists:
               }.compact
             end
 

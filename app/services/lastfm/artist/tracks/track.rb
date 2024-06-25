@@ -24,8 +24,18 @@ module LastFM
             source: source_data,
             player_id: player_source_id,
             title:,
+            artist: artists_minimal_data,
+            artists:,
             listeners_count:
           }
+        end
+
+        def artists
+          [artist_data]
+        end
+
+        def artist_data
+          { name: artist_name }
         end
       end
     end

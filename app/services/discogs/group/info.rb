@@ -15,13 +15,13 @@ module Discogs
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
-        }
+          artists:,
+          image: image_data
+        }.compact
       end
 
       def group_extra_data
         {
-          image: image_data,
           profiles_count:,
           release_date:,
           description:
@@ -29,6 +29,10 @@ module Discogs
           tags: tags_truncated,
           tracks:
         }.compact
+      end
+
+      def album_base_data
+        @album_base_data ||= group_base_data
       end
     end
   end

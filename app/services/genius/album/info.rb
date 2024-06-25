@@ -23,17 +23,17 @@ module Genius
       end
 
       def album_base_data
-        {
+        @album_base_data ||= {
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
-        }
+          artists:,
+          image: image_data
+        }.compact
       end
 
       def album_list_extra_data
         {
-          image: image_data,
           release_date:,
           listeners_count:
         }.compact
@@ -41,7 +41,6 @@ module Genius
 
       def album_extra_data
         {
-          image: image_data,
           profiles_count:,
           release_date:,
           description:
@@ -57,6 +56,7 @@ module Genius
       def tracks
         Genius::Album::Tracks.call(
           album_id: @args[:album_id],
+          album_data: album_base_data,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )[:tracks] || []

@@ -14,22 +14,30 @@ module Muffon
 
             def data
               self_data
-                .merge(album_data)
+                .merge(album_base_data)
+                .merge(album_extra_data)
             end
 
-            def album_data
+            def album_base_data
               {
                 source: source_data,
                 library: library_album_data,
                 title:,
-                image: image_data,
-                tracks_count:,
-                created: created_formatted
+                artist: artists_minimal_data,
+                artists:
               }.compact
             end
 
             def library_album
               @args[:library_album]
+            end
+
+            def album_extra_data
+              {
+                image: image_data,
+                tracks_count:,
+                created: created_formatted
+              }.compact
             end
 
             def image_data

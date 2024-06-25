@@ -11,17 +11,17 @@ module Discogs
       end
 
       def album_base_data
-        {
+        @album_base_data ||= {
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
-        }
+          artists:,
+          image: image_data
+        }.compact
       end
 
       def album_extra_data
         {
-          image: image_data,
           profiles_count:,
           release_date:,
           description:

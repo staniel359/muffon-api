@@ -23,17 +23,17 @@ module VK
       end
 
       def album_base_data
-        {
+        @album_base_data ||= {
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
+          artists:,
+          image: image_data
         }
       end
 
       def album_list_extra_data
         {
-          image: image_data,
           release_date:,
           listeners_count:
         }.compact
@@ -41,7 +41,6 @@ module VK
 
       def album_extra_data
         {
-          image: image_data,
           listeners_count:
             album['followers'],
           plays_count: album['plays'],
@@ -70,7 +69,8 @@ module VK
           owner_id: vk_owner_id,
           access_key: vk_access_key,
           profile_id: @args[:profile_id],
-          token: @args[:token]
+          token: @args[:token],
+          album_data: album_base_data
         )
       end
     end
