@@ -49,7 +49,7 @@ module Genius
             node.text
           elsif new_line?(node) || ad_section?(node)
             "\n"
-          elsif italic?(node)
+          elsif italic?(node) || bold?(node)
             format_children(node)
           elsif with_annotation?(node)
             annotation_data(node)
@@ -68,6 +68,10 @@ module Genius
 
         def italic?(node)
           node.name == 'i'
+        end
+
+        def bold?(node)
+          node.name == 'b'
         end
 
         def with_annotation?(node)
