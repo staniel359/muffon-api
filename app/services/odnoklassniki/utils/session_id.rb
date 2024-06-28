@@ -5,7 +5,7 @@ module Odnoklassniki
 
       def call
         data
-      rescue Faraday::TimeoutError
+      rescue StandardError
         nil
       end
 
