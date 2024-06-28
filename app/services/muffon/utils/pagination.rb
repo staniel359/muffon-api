@@ -19,10 +19,18 @@ module Muffon
       end
 
       def limit
-        (
-          @args[:limit] ||
-            page_limit
-        ).to_i
+        if all_collection?
+          total_items_count
+        else
+          (
+            @args[:limit] ||
+              page_limit
+          ).to_i
+        end
+      end
+
+      def all_collection?
+        @args[:limit] == 'all'
       end
 
       def page_limit
