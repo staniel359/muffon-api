@@ -55,5 +55,18 @@ module MuffonAPI
 
     config.active_storage.queues.analysis = :storage_analysis
     config.active_storage.queues.purge = :storage_purge
+
+    config.to_prepare do
+      ActiveStorage::AnalyzeJob.class_eval do
+        def perform(blob)
+          blob.analyze
+        rescue *[
+          ActiveStorage::FileNotFoundError,
+          Aws::S3::Errors::NotFound
+        ]
+          nil
+        end
+      end
+    end
   end
 end
