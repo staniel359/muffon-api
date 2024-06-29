@@ -15,7 +15,11 @@ module LibraryTrackDecorator
 
     def album_associated
       includes(
-        track: :artist
+        track: :artist,
+        library_album: [
+          :album,
+          image_association
+        ]
       )
     end
   end
