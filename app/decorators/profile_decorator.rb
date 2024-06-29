@@ -152,7 +152,9 @@ module ProfileDecorator
       ).pluck(:id)
   end
 
-  def artist_ids_from_library(tracks_count = 0)
+  def artist_ids_from_library(
+    tracks_count = 0
+  )
     library_artists
       .where(
         library_tracks_count:

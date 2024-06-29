@@ -36,7 +36,10 @@ module RecommendationArtistDecorator
         ).created_asc_ordered
     end
 
-    def with_artists(artists, profile_id)
+    def with_artists(
+      artists,
+      profile_id
+    )
       ids = profile(
         profile_id
       ).artists_library_artist_ids(
@@ -49,7 +52,10 @@ module RecommendationArtistDecorator
       )
     end
 
-    def without_artists(artists, profile_id)
+    def without_artists(
+      artists,
+      profile_id
+    )
       ids = profile(
         profile_id
       ).artists_library_artist_ids(
@@ -80,7 +86,10 @@ module RecommendationArtistDecorator
         )
     end
 
-    def artists_not_in_library(profile_id, tracks_count = 0)
+    def artists_not_in_library(
+      profile_id,
+      tracks_count = 0
+    )
       ids = profile(
         profile_id
       ).artist_ids_from_library(

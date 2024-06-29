@@ -2,7 +2,10 @@ module TrackDecorator
   extend ActiveSupport::Concern
 
   class_methods do
-    def with_artist_title(artist_id, title)
+    def with_artist_title(
+      artist_id,
+      title
+    )
       title_formatted = title.strip.truncate(1_000)
 
       where(

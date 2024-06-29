@@ -16,7 +16,8 @@ module Muffon
             was_online: was_online_formatted,
             other_profile: other_profile_data,
             followers_count:,
-            following_count:
+            following_count:,
+            library: library_data
           }.compact
         end
 
@@ -76,6 +77,15 @@ module Muffon
 
         def following_count
           profile.following_count
+        end
+
+        def library_data
+          Muffon::Profile::Library::Info.call(
+            profile_id: @args[:profile_id],
+            token: @args[:token]
+          ).dig(
+            :profile, :library
+          )
         end
       end
     end

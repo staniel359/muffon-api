@@ -2,7 +2,10 @@ module ApplicationRecordDecorator
   extend ActiveSupport::Concern
 
   class_methods do
-    def ordered(order, default_order)
+    def ordered(
+      order,
+      default_order
+    )
       in_orders = order.in?(
         self::ORDERS
       )

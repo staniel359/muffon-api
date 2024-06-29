@@ -48,7 +48,10 @@ module RecommendationTrackDecorator
         )
     end
 
-    def artists_not_in_library(profile_id, tracks_count = 0)
+    def artists_not_in_library(
+      profile_id,
+      tracks_count = 0
+    )
       ids = profile(
         profile_id
       ).artist_ids_from_library(
