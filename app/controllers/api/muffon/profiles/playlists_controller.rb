@@ -40,7 +40,10 @@ module API
         def info_data
           ::Muffon::Profile::Playlist::Info.call(
             params.slice(
-              *%i[profile_id token other_profile_id playlist_id]
+              *%i[
+                profile_id token
+                other_profile_id playlist_id
+              ]
             )
           )
         end

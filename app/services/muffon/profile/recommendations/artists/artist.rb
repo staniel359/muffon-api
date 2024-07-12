@@ -25,7 +25,8 @@ module Muffon
               image: image_data,
               artists_count:,
               artists: library_artists_formatted,
-              profiles_count:
+              profiles_count:,
+              listeners_count:
             }.compact
           end
 
@@ -70,6 +71,10 @@ module Muffon
               library_artist:,
               token: @args[:token]
             )
+          end
+
+          def listeners_count
+            artist.listeners_count
           end
         end
       end
