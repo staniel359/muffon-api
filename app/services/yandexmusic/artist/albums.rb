@@ -7,6 +7,19 @@ module YandexMusic
 
       private
 
+      def params
+        super.merge(
+          albums_params
+        )
+      end
+
+      def albums_params
+        {
+          sort: 'year',
+          what: 'albums'
+        }
+      end
+
       def albums_list
         artist['albums']
       end

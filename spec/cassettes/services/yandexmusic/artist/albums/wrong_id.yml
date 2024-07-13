@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/artist.jsx?artist=wejlhg239gh23
+    uri: https://music.yandex.ru/handlers/artist.jsx?artist=wejlhg239gh23&sort=year&what=albums
     body:
       encoding: US-ASCII
       string: ''
@@ -21,19 +21,19 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 13 Jul 2024 14:51:15 GMT
+      - Sat, 13 Jul 2024 14:53:47 GMT
       Report-To:
       - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
       Set-Cookie:
-      - _yasc=Bju0jluPUAyq3xX3d7DzdlcjlAc4LVKAGbZcxUo33g1l/G4z3jvGrz386bvS4tsF; domain=.yandex.ru;
-        path=/; expires=Tue, 11 Jul 2034 14:51:15 GMT; secure
-      - i=mK3o9R9Sn1CRiQne9hkzceoNb3jvk8BsREAsQzUPt+twenUYuubrHhCg/nM+06DzbJ1ZwXZ9Munmoi7Ex1twBsRhYd0=;
-        Expires=Mon, 13-Jul-2026 14:51:15 GMT; Domain=.yandex.ru; Path=/; Secure;
+      - _yasc=De8J2dIrtahwKb5UCwzKXZWsRKtddWsvmdFScOvh40JnSUa2Y9ITwty4KKywzfibGQ==;
+        domain=.yandex.ru; path=/; expires=Tue, 11 Jul 2034 14:53:47 GMT; secure
+      - i=msXflGd0hoqfHyKk8uzrZ5xh9UnX3oBiIPqftAgrzzEAAuJNmjjILLXJb7zbYN1cQz81Sei2ZD9Y5Tdewwc/xmCKnbk=;
+        Expires=Mon, 13-Jul-2026 14:53:47 GMT; Domain=.yandex.ru; Path=/; Secure;
         HttpOnly
-      - yandexuid=9982496411720882275; Expires=Mon, 13-Jul-2026 14:51:15 GMT; Domain=.yandex.ru;
+      - yandexuid=9157365091720882427; Expires=Mon, 13-Jul-2026 14:53:47 GMT; Domain=.yandex.ru;
         Path=/; Secure
-      - yashr=6507986731720882275; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
-        2025 14:51:15 GMT; Secure; HttpOnly
+      - yashr=1550013091720882427; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
+        2025 14:53:47 GMT; Secure; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
@@ -52,5 +52,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"message":"Bad Request"}'
-  recorded_at: Sat, 13 Jul 2024 14:51:15 GMT
+  recorded_at: Sat, 13 Jul 2024 14:53:47 GMT
 recorded_with: VCR 6.2.0
