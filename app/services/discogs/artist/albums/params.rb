@@ -36,7 +36,7 @@ module Discogs
           {
             'discogsId' =>
               @args[:artist_id].to_i,
-            'sortDirection' => 'ASC',
+            'sortDirection' => 'DESC',
             'perPage' => limit,
             'desiredPage' => page
           }
