@@ -2,39 +2,55 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/albums/wejlhg239gh23/with-tracks?language=en
+    uri: https://music.yandex.ru/handlers/album.jsx?album=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - Faraday v2.10.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.music.yandex.net
+      Accept:
+      - "*/*"
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Content-Type:
-      - application/json;charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Sat, 06 Nov 2021 06:59:37 GMT
+      - Sat, 13 Jul 2024 14:08:24 GMT
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
+      Set-Cookie:
+      - _yasc=BPlhpKIKx5ViiPNIUbJEOcZbQs+jvlFTOcwgyKFTqWa6cVDKgFZjejeTDGzYulb7Ww==;
+        domain=.yandex.ru; path=/; expires=Tue, 11 Jul 2034 14:08:24 GMT; secure
+      - i=e621S1Z2NwIWl/f3BkPzgF6ehwxKfmrg9/TGQujWjC/OZ9I7enyc8E7sl9dBgruIG9Ey+r8xPFjCazsEV0Yb5H7nIxA=;
+        Expires=Mon, 13-Jul-2026 14:08:24 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=7832948351720879704; Expires=Mon, 13-Jul-2026 14:08:24 GMT; Domain=.yandex.ru;
+        Path=/; Secure
+      - yashr=346719671720879704; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul 2025
+        14:08:24 GMT; Secure; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
+      X-Compat:
+      - '5'
       X-Content-Type-Options:
       - nosniff
+      X-Powered-By:
+      - Express
       X-Xss-Protection:
       - 1; mode=block
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
     body:
       encoding: ASCII-8BIT
-      string: '{"invocationInfo":{"req-id":"1636181977111372-7930359439054752065","hostname":"music-stable-back-man-38.man.yp-c.yandex.net"},"error":{"name":"not-found","message":"Requested
-        action for /albums/wejlhg239gh23/with-tracks was not found"}}'
-  recorded_at: Sat, 06 Nov 2021 06:59:37 GMT
-recorded_with: VCR 6.0.0
+      string: '{"message":"Not Found"}'
+  recorded_at: Sat, 13 Jul 2024 14:08:24 GMT
+recorded_with: VCR 6.2.0

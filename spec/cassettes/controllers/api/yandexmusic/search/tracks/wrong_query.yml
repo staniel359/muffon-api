@@ -2,40 +2,57 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/search?language=en&page=0&text=wejlhg239gh23&type=track
+    uri: https://music.yandex.ru/handlers/music-search.jsx?language=en&page=0&text=wejlhg239gh23&type=track
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - Faraday v2.10.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.music.yandex.net
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      Cache-Control:
-      - no-cache
       Content-Type:
-      - application/json;charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Sat, 06 Nov 2021 06:59:35 GMT
+      - Sat, 13 Jul 2024 14:08:21 GMT
+      Referrer-Policy:
+      - no-referrer-when-downgrade
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
+      Set-Cookie:
+      - _yasc=bWJwGYlGOPGx9kTuzxfIRD8thHCKeIz4Uftvz0FuzYNz4O7buY6YmyEC0j1LvT/N; domain=.yandex.ru;
+        path=/; expires=Tue, 11 Jul 2034 14:08:20 GMT; secure
+      - i=Zn3Gu+HoV0Os/EMcsTWVSwVhDKaC7kq16VV+WkUJEkqGDZp8VOPVPFOVaLeyvO6oZii0piZbimF5i5+q35hpm2FbUTI=;
+        Expires=Mon, 13-Jul-2026 14:08:20 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=4885042611720879700; Expires=Mon, 13-Jul-2026 14:08:20 GMT; Domain=.yandex.ru;
+        Path=/; Secure
+      - yashr=9402680491720879700; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
+        2025 14:08:20 GMT; Secure; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
+      X-Compat:
+      - '5'
       X-Content-Type-Options:
       - nosniff
+      X-Powered-By:
+      - Express
       X-Xss-Protection:
       - 1; mode=block
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
     body:
       encoding: ASCII-8BIT
-      string: '{"invocationInfo":{"hostname":"music-stable-back-vla-40.vla.yp-c.yandex.net","req-id":"1636181975304038-6577541675281916750","exec-duration-millis":"50"},"result":{"type":"track","page":0,"perPage":20,"text":"wejlhg239gh23","searchRequestId":"music-stable-back-vla-40.vla.yp-c.yandex.net-1636181975304038-6577541675281916750-1636181975313"}}'
-  recorded_at: Sat, 06 Nov 2021 06:59:35 GMT
-recorded_with: VCR 6.0.0
+      string: '{"text":"wejlhg239gh23","albums":{"items":[]},"tracks":{"items":[]},"podcasts":{"items":[]},"podcast_episodes":{"items":[]},"artists":{"items":[]},"videos":{"items":[]},"playlists":{"items":[]},"users":{"items":[]},"request_id":"1720879700884715-7349917951320463511.2","searchRequestId":"music-stable-back-klg-35.klg.yp-c.yandex.net-1720879700884715-7349917951320463511.2-1720879700940","nullifyPage":false,"extendedParams":{},"misspell":{},"counts":{"artists":0,"albums":0,"tracks":0,"podcasts":0,"podcast_episodes":0,"videos":0,"playlists":0,"users":0}}'
+  recorded_at: Sat, 13 Jul 2024 14:08:21 GMT
+recorded_with: VCR 6.2.0

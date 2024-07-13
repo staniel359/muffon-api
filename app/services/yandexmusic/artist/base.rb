@@ -13,12 +13,12 @@ module YandexMusic
         artist.blank?
       end
 
-      def artist
-        response_data['result']
+      def link
+        "#{BASE_LINK}/artist.jsx"
       end
 
-      def link
-        "#{BASE_LINK}/artists/#{@args[:artist_id]}"
+      def params
+        { artist: @args[:artist_id] }
       end
 
       def data
@@ -34,6 +34,8 @@ module YandexMusic
           'artist', 'name'
         )
       end
+
+      alias artist response_data
     end
   end
 end

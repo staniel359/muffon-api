@@ -13,18 +13,19 @@ module YandexMusic
         album.blank?
       end
 
-      def album
-        response_data['result']
+      def link
+        "#{BASE_LINK}/album.jsx"
       end
 
-      def link
-        "#{BASE_LINK}/albums" \
-          "/#{@args[:album_id]}/with-tracks"
+      def params
+        { album: @args[:album_id] }
       end
 
       def data
         { album: album_data }
       end
+
+      alias album response_data
     end
   end
 end

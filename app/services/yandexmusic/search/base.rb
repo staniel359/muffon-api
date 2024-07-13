@@ -12,14 +12,11 @@ module YandexMusic
       end
 
       def collection_list
-        collection_data['results'] || []
+        collection_data['items'] || []
       end
 
       def collection_data
-        response_data.dig(
-          'result',
-          collection_name
-        ) || {}
+        response_data[collection_name] || {}
       end
 
       def collection_name
@@ -27,7 +24,7 @@ module YandexMusic
       end
 
       def link
-        "#{BASE_LINK}/search"
+        "#{BASE_LINK}/music-search.jsx"
       end
 
       def params

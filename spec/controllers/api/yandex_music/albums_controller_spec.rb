@@ -2,7 +2,7 @@ RSpec.describe API::YandexMusic::AlbumsController do
   describe 'GET :info' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/yandexmusic/albums/info/success' do
-        get :info, params: { album_id: '288149' }
+        get :info, params: { album_id: '6999409' }
       end
 
       expect(response).to have_http_status(:ok)
@@ -20,7 +20,7 @@ RSpec.describe API::YandexMusic::AlbumsController do
   describe 'GET :tags' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/yandexmusic/albums/tags/success' do
-        get :tags, params: { album_id: '288149' }
+        get :tags, params: { album_id: '6999409' }
       end
 
       expect(response).to have_http_status(:ok)
@@ -38,7 +38,7 @@ RSpec.describe API::YandexMusic::AlbumsController do
   describe 'GET :links' do
     it 'returns 200 if album_id present' do
       VCR.use_cassette 'controllers/api/yandexmusic/albums/links/success' do
-        get :links, params: { album_id: '288149' }
+        get :links, params: { album_id: '6999409' }
       end
 
       expect(response).to have_http_status(:ok)

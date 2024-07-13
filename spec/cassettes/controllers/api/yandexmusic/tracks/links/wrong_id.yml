@@ -2,50 +2,55 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/tracks/wejlhg239gh23?language=en
+    uri: https://music.yandex.ru/handlers/track.jsx?track=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Faraday v2.10.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.music.yandex.net
+      Accept:
+      - "*/*"
   response:
     status:
       code: 400
       message: Bad Request
     headers:
       Content-Type:
-      - application/json;charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Tue, 02 May 2023 10:36:02 GMT
+      - Sat, 13 Jul 2024 14:08:22 GMT
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
       Set-Cookie:
-      - _yasc=BLR41fR6MQ0W4zrPIqyyzBAozbSlEUv5z5WSF69s8LmURt7AvxKwNUPJmL+W; domain=.yandex.net;
-        path=/; expires=Fri, 29-Apr-2033 10:36:02 GMT; secure
+      - _yasc=/9tLJTpgP6sS51PY7IAHAJDu8OST2Iz82SnGhQrS2CWAMct8YjGFasEUgpjMiLLk; domain=.yandex.ru;
+        path=/; expires=Tue, 11 Jul 2034 14:08:22 GMT; secure
+      - i=zIPiiIXyEMsjrkyyMYbsiOT2Q/Du2I9t9Grv5sWob2AwWTxo10HiqMYFaJTmZp23PAMklCbLdG5Snt4v9xJcXP21k+E=;
+        Expires=Mon, 13-Jul-2026 14:08:22 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=5538736601720879702; Expires=Mon, 13-Jul-2026 14:08:22 GMT; Domain=.yandex.ru;
+        Path=/; Secure
+      - yashr=3758091911720879702; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
+        2025 14:08:22 GMT; Secure; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
+      X-Compat:
+      - '5'
       X-Content-Type-Options:
       - nosniff
-      X-Request-Id:
-      - 1683023762356571-14131909011586166035
+      X-Powered-By:
+      - Express
       X-Xss-Protection:
       - 1; mode=block
-      X-Yandex-Music-Application:
-      - music-web
-      X-Yandex-Music-Execution-Duration:
-      - '1'
-      X-Yandex-Music-Hostname:
-      - music-stable-back-sas-44.sas.yp-c.yandex.net
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
     body:
       encoding: UTF-8
-      string: '{"invocationInfo":{"req-id":"1683023762356571-14131909011586166035","hostname":"music-stable-back-sas-44.sas.yp-c.yandex.net"},"error":{"name":"validate","message":"Parameters
-        requirements are not met"}}'
-  recorded_at: Tue, 02 May 2023 10:36:02 GMT
-recorded_with: VCR 6.1.0
+      string: '{"message":"Bad Request"}'
+  recorded_at: Sat, 13 Jul 2024 14:08:22 GMT
+recorded_with: VCR 6.2.0

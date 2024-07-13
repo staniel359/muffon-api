@@ -14,13 +14,15 @@ module YandexMusic
       end
 
       def track
-        response_data.dig(
-          'result', 0
-        )
+        response_data['track']
       end
 
       def link
-        "#{BASE_LINK}/tracks/#{@args[:track_id]}"
+        "#{BASE_LINK}/track.jsx"
+      end
+
+      def params
+        { track: @args[:track_id] }
       end
 
       def data

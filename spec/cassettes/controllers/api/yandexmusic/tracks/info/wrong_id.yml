@@ -2,39 +2,55 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.music.yandex.net/tracks/wejlhg239gh23?language=en
+    uri: https://music.yandex.ru/handlers/track.jsx?track=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - Faraday v2.10.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.music.yandex.net
+      Accept:
+      - "*/*"
   response:
     status:
       code: 400
       message: Bad Request
     headers:
       Content-Type:
-      - application/json;charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Sat, 06 Nov 2021 06:59:36 GMT
+      - Sat, 13 Jul 2024 14:08:21 GMT
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
+      Set-Cookie:
+      - _yasc=+BngVJSKAxSFR9GHq8d99U0lmgadh8eXv96qeVViMSuhih7P/+ND837eIhEEZ5noZQ==;
+        domain=.yandex.ru; path=/; expires=Tue, 11 Jul 2034 14:08:21 GMT; secure
+      - i=r2JQ9TgM6wGMWs5XnelnXKwKsm/Vn6Wfjjiyk8fJoyQCu+ZluK00wUB1VASGPRW5D3LL3BTbhGDOL1eZLe6E5spQp4Q=;
+        Expires=Mon, 13-Jul-2026 14:08:21 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly
+      - yandexuid=6918355531720879701; Expires=Mon, 13-Jul-2026 14:08:21 GMT; Domain=.yandex.ru;
+        Path=/; Secure
+      - yashr=8950288051720879701; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
+        2025 14:08:21 GMT; Secure; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000
       Transfer-Encoding:
       - chunked
+      X-Compat:
+      - '5'
       X-Content-Type-Options:
       - nosniff
+      X-Powered-By:
+      - Express
       X-Xss-Protection:
       - 1; mode=block
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
     body:
       encoding: UTF-8
-      string: '{"invocationInfo":{"req-id":"1636181976363522-97146248967608458","hostname":"music-stable-back-sas-23.sas.yp-c.yandex.net"},"error":{"name":"validate","message":"Parameters
-        requirements are not met"}}'
-  recorded_at: Sat, 06 Nov 2021 06:59:36 GMT
-recorded_with: VCR 6.0.0
+      string: '{"message":"Bad Request"}'
+  recorded_at: Sat, 13 Jul 2024 14:08:21 GMT
+recorded_with: VCR 6.2.0

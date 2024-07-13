@@ -5,7 +5,7 @@ RSpec.describe YandexMusic::Track::Info do
     context 'when track_id present' do
       let(:output) do
         VCR.use_cassette 'services/yandexmusic/track/info/success' do
-          subject.call(track_id: '2203363', profile_id: 1, with_audio: true)
+          subject.call(track_id: '4780792', profile_id: 1, with_audio: true)
         end
       end
 
