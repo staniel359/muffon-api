@@ -68,6 +68,7 @@ module Discogs
             'creditName' => '',
             'formats' => [],
             'labels' => [],
+            'years' => [],
             'countries' => [],
             'anvs' => [],
             'search' => ''
@@ -79,8 +80,8 @@ module Discogs
             'persistedQuery' => {
               'version' => 1,
               'sha256Hash' =>
-                '037c99d2a23ca49576b23602814853a9' \
-                'ccb1edb8d3c4af98e1e88ba15dcc56ac'
+                'c6edf5e07eee754d5703296fb090f54b' \
+                'ef71630cf505382756f7916f3cfe6884'
             }
           }
         end

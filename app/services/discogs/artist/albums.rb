@@ -42,6 +42,10 @@ module Discogs
         )
       end
 
+      def headers
+        { 'DNT' => '1' }
+      end
+
       def album_type
         ALBUM_TYPES[
           @args[:album_type].to_sym
