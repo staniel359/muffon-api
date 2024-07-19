@@ -55,6 +55,7 @@ module Muffon
       def profile_extra_data
         Muffon::Profile::Info::Extra.call(
           profile_id: @args[:profile_id],
+          token: @args[:token],
           other_profile_id:
             @args[:other_profile_id]
         )
