@@ -64,7 +64,10 @@ module Spotify
       end
 
       def retry_with_new_session
-        update_session
+        session_update_result = update_session
+
+        return not_found unless
+            session_update_result[:success]
 
         spotify_connection.reload
 
