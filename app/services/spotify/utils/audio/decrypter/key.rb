@@ -22,7 +22,7 @@ module Spotify
           def key_hex
             response_data['key']
           rescue StandardError
-            restart_and_retry
+            nil
           end
 
           def link
@@ -36,14 +36,6 @@ module Spotify
               file_id:
                 @args[:file_id]
             }
-          end
-
-          def restart_and_retry
-            return unless production?
-
-            `service muffon-spotify restart`
-
-            call
           end
 
           def data
