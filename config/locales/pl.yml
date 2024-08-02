@@ -1,0 +1,5 @@
+en:
+  mailer:
+    passwordReset:
+      subject: 'muffon | Resetowanie hasła'
+      text: "Twój kod resetujący hasło to <strong>%{code}</strong>."
