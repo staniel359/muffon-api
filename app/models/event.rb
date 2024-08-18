@@ -6,11 +6,11 @@ class Event < ApplicationRecord
 
   validates :event_type, presence: true
 
-  enum event_type: {
-    created: 0,
-    updated: 1,
-    deleted: 2
-  }
+  enum :event_type, %i[
+    created
+    updated
+    deleted
+  ]
 
   belongs_to :eventable, polymorphic: true
 
