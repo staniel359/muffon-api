@@ -82,7 +82,8 @@ module Muffon
         def library_data
           Muffon::Profile::Library::Info.call(
             profile_id: @args[:profile_id],
-            token: @args[:token]
+            token: @args[:token],
+            other_profile_id: @args[:other_profile_id]
           ).dig(
             :profile, :library
           )
