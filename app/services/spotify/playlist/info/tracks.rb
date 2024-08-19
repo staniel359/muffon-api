@@ -29,7 +29,7 @@ module Spotify
 
         def tracks_filtered
           tracks.select do |t|
-            t['track'].present?
+            t.try(:[], 'track').present?
           end
         end
 

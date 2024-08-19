@@ -34,10 +34,6 @@ module Spotify
 
       def data
         { user: user_data }
-      rescue Faraday::UnauthorizedError
-        return not_found if test?
-
-        retry_with_new_session
       end
 
       def link
@@ -56,29 +52,6 @@ module Spotify
       def access_token
         @args[:access_token] ||
           spotify_connection&.access_token
-      end
-
-      def spotify_connection
-        @spotify_connection ||=
-          profile.spotify_connection
-      end
-
-      def retry_with_new_session
-        session_update_result = update_session
-
-        return not_found unless
-            session_update_result[:success]
-
-        spotify_connection.reload
-
-        call
-      end
-
-      def update_session
-        Spotify::Connection::Updater.call(
-          profile_id: @args[:profile_id],
-          token: @args[:token]
-        )
       end
     end
   end

@@ -27,11 +27,6 @@ module Spotify
             spotify_connection.refresh_token
           end
 
-          def spotify_connection
-            @spotify_connection ||=
-              profile.spotify_connection
-          end
-
           def client_id
             spotify_connection.client_id
           end

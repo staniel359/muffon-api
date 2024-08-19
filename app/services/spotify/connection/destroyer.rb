@@ -4,9 +4,7 @@ module Spotify
       private
 
       def process_profile
-        profile
-          .spotify_connection
-          &.destroy
+        spotify_connection&.destroy
 
         { success: true }
       end

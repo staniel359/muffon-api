@@ -18,9 +18,7 @@ module Spotify
       end
 
       def spotify_token
-        profile
-          &.spotify_connection
-          &.access_token || super
+        spotify_connection&.access_token || super
       end
 
       def playlist_data

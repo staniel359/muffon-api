@@ -12,7 +12,11 @@ module Spotify
     rescue Faraday::BadRequestError
       not_found
     rescue Faraday::UnauthorizedError
-      retry_with_new_spotify_token
+      if profile.present?
+        retry_with_new_session
+      else
+        retry_with_new_spotify_token
+      end
     end
 
     private
@@ -72,6 +76,29 @@ module Spotify
       Spotify::Utils::Image.call(
         images:
       )
+    end
+
+    def retry_with_new_session
+      session_update_result = update_session
+
+      return not_found unless
+          session_update_result[:success]
+
+      spotify_connection&.reload
+
+      call
+    end
+
+    def update_session
+      Spotify::Connection::Updater.call(
+        profile_id: @args[:profile_id],
+        token: @args[:token]
+      )
+    end
+
+    def spotify_connection
+      @spotify_connection ||=
+        profile&.spotify_connection
     end
 
     alias artist_name artists_names

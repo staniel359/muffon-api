@@ -25,11 +25,6 @@ module Spotify
           )
       end
 
-      def spotify_connection
-        @spotify_connection ||=
-          profile.spotify_connection
-      end
-
       def spotify_connection_params
         access_token_data.slice(
           :access_token
