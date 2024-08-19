@@ -4,4 +4,4 @@ public/media
 log
 tmp
 storage
-credentials.json
+spotify_cookies.txt

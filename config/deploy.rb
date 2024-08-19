@@ -14,7 +14,8 @@ append :linked_files,
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
   'config/sidekiq.yml',
-  'invalid_requests.csv'
+  'invalid_requests.csv',
+  'spotify_cookies.txt'
 
 append :linked_dirs,
   'log',
