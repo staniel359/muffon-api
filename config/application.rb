@@ -62,7 +62,8 @@ module MuffonAPI
           blob.analyze
         rescue *[
           ActiveStorage::FileNotFoundError,
-          Aws::S3::Errors::NotFound
+          Aws::S3::Errors::NotFound,
+          Aws::S3::Errors::NoSuchKey
         ]
           nil
         end
