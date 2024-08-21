@@ -34,6 +34,8 @@ module Spotify
 
       def data
         { user: user_data }
+      rescue Faraday::UnauthorizedError
+        retry_with_new_session
       end
 
       def link

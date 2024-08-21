@@ -15,6 +15,12 @@ module Spotify
 
       def data
         { playlist: playlist_data }
+      rescue Faraday::UnauthorizedError
+        if spotify_connection.present?
+          retry_with_new_session
+        else
+          retry_with_new_spotify_token
+        end
       end
 
       def spotify_token

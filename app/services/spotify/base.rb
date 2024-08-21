@@ -12,11 +12,7 @@ module Spotify
     rescue Faraday::BadRequestError
       not_found
     rescue Faraday::UnauthorizedError
-      if profile.present?
-        retry_with_new_session
-      else
-        retry_with_new_spotify_token
-      end
+      retry_with_new_spotify_token
     end
 
     private
