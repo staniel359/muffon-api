@@ -17,6 +17,7 @@ SECRET_KEYS = [
   %i[soundcloud test_access_token],
   %i[soundcloud test_v2_client_id],
   %i[spotify token],
+  %i[spotify cookies sp_dc],
   %i[vk access_token]
 ].freeze
 

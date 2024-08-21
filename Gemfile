@@ -9,6 +9,7 @@ ruby File.read(
 ).strip
 
 gem 'aws-sdk-s3', require: false
+gem 'base62-rb'
 gem 'bootsnap', require: false
 gem 'bcrypt'
 gem 'faraday'

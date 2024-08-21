@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v2.10.1
       Cookie:
-      - sp_dc=AQAnNlmpE7ZldPZVUX1hSSrEPtP4VJAFGl5k8GjWeIBUEaPyx3jJJpBwkG3x5wauH_yl4Yen2wjR4cX9dHSSLXJUdgvtT2hGc6xHK3JHql-YKAv0F3sJ-dTLCnF-_PjJAL33I-AJYYmoPRp8vRaWoC6fuLX9rGdS
+      - sp_dc=<SPOTIFY_COOKIES_SP_DC>
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Set-Cookie:
-      - sp_t=2cecdff56bd9d2f85c5e47c9931f3913; path=/; expires=Thu, 21 Aug 2025 20:00:41
+      - sp_t=e480150d68004f5403a16a12c98dd790; path=/; expires=Thu, 21 Aug 2025 20:56:19
         GMT; domain=.spotify.com; samesite=none; secure
       Content-Type:
       - application/json; charset=utf-8
@@ -36,30 +36,30 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Envoy-Upstream-Service-Time:
-      - '57'
+      - '58'
       Server:
       - envoy
       Date:
-      - Wed, 21 Aug 2024 20:00:41 GMT
+      - Wed, 21 Aug 2024 20:56:19 GMT
       X-Served-By:
-      - cache-fra-eddf8230076-FRA, cache-fra-eddf8230076-FRA
+      - cache-fra-eddf8230059-FRA, cache-fra-eddf8230024-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1724270441.126700,VS0,VE97
+      - S1724273779.010031,VS0,VE92
       Vary:
       - Accept-Encoding,Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1","accessTokenExpirationTimestampMs":1724273382695,"isAnonymous":false}'
-  recorded_at: Wed, 21 Aug 2024 20:00:41 GMT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj","accessTokenExpirationTimestampMs":1724276917652,"isAnonymous":false}'
+  recorded_at: Wed, 21 Aug 2024 20:56:19 GMT
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/metadata/4/track/16050db13dde6ad93ef3?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/metadata/4/track/00000000000016050db13dde6ad93ef3?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
@@ -67,7 +67,7 @@ http_interactions:
       User-Agent:
       - Faraday v2.10.1
       Authorization:
-      - Bearer BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1
+      - Bearer BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -78,7 +78,7 @@ http_interactions:
       message: Not Found
     headers:
       Cache-Control:
-      - private, max-age=0
+      - public, max-age=60
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
@@ -100,7 +100,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Wed, 21 Aug 2024 20:00:41 GMT
+      - Wed, 21 Aug 2024 20:56:19 GMT
       Server:
       - envoy
       Via:
@@ -110,5 +110,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 21 Aug 2024 20:00:41 GMT
+  recorded_at: Wed, 21 Aug 2024 20:56:19 GMT
 recorded_with: VCR 6.2.0
