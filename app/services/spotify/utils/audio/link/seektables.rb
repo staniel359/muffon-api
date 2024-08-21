@@ -1,12 +1,12 @@
 module Spotify
   module Utils
     module Audio
-      class Decrypter
-        class Track < Spotify::Utils::Audio::Decrypter
+      class Link
+        class Seektables < Spotify::Utils::Audio::Link
           private
 
           def primary_args
-            [@args[:global_id]]
+            [@args[:file_id]]
           end
 
           def no_data?
@@ -14,11 +14,11 @@ module Spotify
           end
 
           def link
-            "#{BASE_LINK}/metadata/4/track/#{global_id}"
+            "https://seektables.scdn.co/seektable/#{file_id}.json"
           end
 
-          def global_id
-            @args[:global_id]
+          def file_id
+            @args[:file_id]
           end
 
           alias data response_data

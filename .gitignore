@@ -4,4 +4,4 @@ public/media
 log
 tmp
 storage
-spotify_cookies.txt
+public/spotify_key_retriever.py

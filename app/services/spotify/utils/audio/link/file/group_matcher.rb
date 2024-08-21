@@ -1,9 +1,9 @@
 module Spotify
   module Utils
     module Audio
-      class Decrypter
+      class Link
         class File
-          class GroupMatcher < Spotify::Utils::Audio::Decrypter::File
+          class GroupMatcher < Spotify::Utils::Audio::Link::File
             private
 
             def primary_args

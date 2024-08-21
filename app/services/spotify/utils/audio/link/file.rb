@@ -1,9 +1,9 @@
 module Spotify
   module Utils
     module Audio
-      class Decrypter
-        class File < Spotify::Utils::Audio::Decrypter
-          FORMAT = 'OGG_VORBIS_160'.freeze
+      class Link
+        class File < Spotify::Utils::Audio::Link
+          FORMAT = 'MP4_128'.freeze
 
           private
 
@@ -69,7 +69,7 @@ module Spotify
           end
 
           def matched_file_group?(file_group)
-            Spotify::Utils::Audio::Decrypter::File::GroupMatcher.call(
+            Spotify::Utils::Audio::Link::File::GroupMatcher.call(
               file_group:
             )
           end

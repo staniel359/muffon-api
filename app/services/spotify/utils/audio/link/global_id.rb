@@ -1,8 +1,8 @@
 module Spotify
   module Utils
     module Audio
-      class Decrypter
-        class GlobalId < Spotify::Utils::Audio::Decrypter
+      class Link
+        class GlobalId < Spotify::Utils::Audio::Link
           DECODE_STRING = '0123456789' \
                           'abcdefghijklmnopqrstuvwxyz' \
                           'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.freeze
