@@ -80,7 +80,9 @@ module Spotify
             -decryption_key #{key} \
             -i #{file_link} \
             -y \
-            -loglevel panic \
+            -movflags +faststart \
+            -c copy \
+            -loglevel error \
             public/#{audio_path}`
         end
 
