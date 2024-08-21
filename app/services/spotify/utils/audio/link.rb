@@ -74,6 +74,8 @@ module Spotify
         end
 
         def write_audio_data_to_file
+          return if test?
+
           `ffmpeg \
             -decryption_key #{key} \
             -i #{file_link} \

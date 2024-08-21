@@ -5,7 +5,7 @@ RSpec.describe Spotify::Utils::Audio::Link do
     context 'when track_id present' do
       let(:output) do
         VCR.use_cassette 'services/spotify/utils/audio/link/success' do
-          subject.call(track_id: '29d0nY7TzCoi22XBqDQkiP')
+          subject.call(track_id: '3hMHG6lx9QHVcfYSUr5PoM')
         end
       end
 

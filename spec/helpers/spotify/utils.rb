@@ -7,7 +7,7 @@ module Helpers
         end
 
         def audio_link
-          'http://localhost:4001/media/audio/spotify/29d0nY7TzCoi22XBqDQkiP.ogg'
+          'http://localhost:4001/media/audio/spotify/3hMHG6lx9QHVcfYSUr5PoM.m4a'
         end
 
         def user_access_token_data

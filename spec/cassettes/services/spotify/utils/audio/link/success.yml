@@ -8,9 +8,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
-      Authorization:
-      - Bearer BQAAe_o6-OCwGjuEu5XMHiiUOfldgAlxQgUUIPzJmjNRa_dSu1Wyeegh8Tm91gjL2McU9siC9_bL_jTi18ow2StzdeBdMvV0tOkxePLIO04RS8a3nOGn
+      - Faraday v2.10.1
+      Cookie:
+      - sp_dc=AQAnNlmpE7ZldPZVUX1hSSrEPtP4VJAFGl5k8GjWeIBUEaPyx3jJJpBwkG3x5wauH_yl4Yen2wjR4cX9dHSSLXJUdgvtT2hGc6xHK3JHql-YKAv0F3sJ-dTLCnF-_PjJAL33I-AJYYmoPRp8vRaWoC6fuLX9rGdS
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -22,52 +22,52 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Envoy-Upstream-Service-Time:
-      - '39'
+      Accept-Ranges:
+      - bytes
       Set-Cookie:
-      - sp_t=a704ea2f59f3c726ba83d1451b3d84bf; path=/; expires=Mon, 30 Dec 2024 08:01:38
+      - sp_t=c07834a593ff4e7744ddef888aabf9e8; path=/; expires=Thu, 21 Aug 2025 20:00:31
         GMT; domain=.spotify.com; samesite=none; secure
       Content-Type:
       - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000
       Via:
       - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       X-Content-Type-Options:
       - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '76'
       Server:
       - envoy
-      Accept-Ranges:
-      - bytes
       Date:
-      - Sun, 31 Dec 2023 08:01:38 GMT
+      - Wed, 21 Aug 2024 20:00:31 GMT
       X-Served-By:
-      - cache-sof1510021-SOF, cache-sof1510021-SOF
+      - cache-fra-eddf8230066-FRA, cache-fra-eddf8230119-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1704009699.507447,VS0,VE97
+      - S1724270431.414593,VS0,VE120
       Vary:
       - Accept-Encoding,Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0","accessTokenExpirationTimestampMs":1704012907932,"isAnonymous":true}'
-  recorded_at: Sun, 31 Dec 2023 08:01:38 GMT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1","accessTokenExpirationTimestampMs":1724273382695,"isAnonymous":false}'
+  recorded_at: Wed, 21 Aug 2024 20:00:31 GMT
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/metadata/4/track/46982c56ce8f4470a377026e2fe1ac2f?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/metadata/4/track/6bfefa80e52948698c6f605c70f4a7d4?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
+      - Faraday v2.10.1
       Authorization:
-      - Bearer BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0
+      - Bearer BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -80,9 +80,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=77007
+      - public, max-age=76703
       Etag:
-      - '"MC-AhfekA=="'
+      - '"MC-CFcoAw=="'
       Vary:
       - _ui.catalogue_str, _ui.country
       Access-Control-Allow-Origin:
@@ -104,7 +104,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 31 Dec 2023 08:01:38 GMT
+      - Wed, 21 Aug 2024 20:00:31 GMT
       Server:
       - envoy
       Via:
@@ -115,45 +115,33 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"gid": "46982c56ce8f4470a377026e2fe1ac2f","name": "Running Up That
-        Hill (A Deal With God) - 2018 Remaster","album": {"gid": "7d958bba06f243edb750528511153b2d","name":
-        "Hounds of Love (2018 Remaster)","artist": [{"gid": "269f610431094ef092c4e6481f3ef43b","name":
-        "Kate Bush"}],"label": "Rhino","date": {"year": 1985,"month": 9,"day": 16},"cover_group":
-        {"image": [{"file_id": "ab67616d00001e025c390e413e27798edd4d18b4","size":
-        "DEFAULT","width": 300,"height": 300},{"file_id": "ab67616d000048515c390e413e27798edd4d18b4","size":
-        "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b2735c390e413e27798edd4d18b4","size":
-        "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "8337a6aeaca744a7b32050f0c66e138f"},"prerelease_config":
-        {"earliest_reveal_date": {"year": 2023,"month": 3,"day": 13,"hour": 11},"earliest_coverart_reveal_date":
-        {"year": 2023,"month": 3,"day": 13,"hour": 11}}},"artist": [{"gid": "269f610431094ef092c4e6481f3ef43b","name":
-        "Kate Bush"}],"number": 1,"disc_number": 1,"duration": 300840,"popularity":
-        12,"external_id": [{"type": "isrc","id": "GBAYE1800884"}],"restriction": [{"countries_allowed":
-        "","catalogue_str": ["free","premium","shuffle"]}],"file": [{"file_id": "b0aed9271091a41a03fbf5f3f8ba2e26773e5319","format":
-        "OGG_VORBIS_320"},{"file_id": "03dd92dd2e4bd966d70e191364f41b930c4679be","format":
-        "OGG_VORBIS_160"},{"file_id": "b701c8c26ad0da4f131bd2c2d222028a99581e10","format":
-        "OGG_VORBIS_96"},{"file_id": "b2f5d9cdde2dec0046c006368f76b108bc27ed08","format":
-        "MP4_256_DUAL"},{"file_id": "751a6ee82f72d0f1ef0a03722abc5b111636a2f4","format":
-        "MP4_256"},{"file_id": "9196eb39ade3c7e379884c8f7f06c1fa46c73834","format":
-        "MP4_128_DUAL"},{"file_id": "f5deea160c85b781bf301f2a6809482dd35c1b36","format":
-        "MP4_128"},{"file_id": "4a8a119e813bee14cba87662ceabbce69582ba3e","format":
-        "AAC_24"}],"alternative": [{"gid": "3c23b1058b604a6e82c39ea9f1a5ee04","restriction":
-        [{"countries_forbidden": "XC","catalogue_str": ["free","premium","shuffle"]}],"file":
-        [{"file_id": "b8ac6bd7e2abee04178e04a6bf84201ae8410b2c","format": "OGG_VORBIS_320"},{"file_id":
-        "c04e355b9f4606b21f94b2a4de5db26aeca0163f","format": "OGG_VORBIS_160"},{"file_id":
-        "bfca02572d40f83810afacb1a252fc70ce81f930","format": "OGG_VORBIS_96"},{"file_id":
-        "79a288d79b1dce6cb1c4d164fea9176b749d55fa","format": "MP4_256_DUAL"},{"file_id":
-        "c3e3bb308caeef83a46d39e5e7eae19bfb03621a","format": "MP4_256"},{"file_id":
-        "e0857ca9712f30317d55f1f109941cc6931a25d0","format": "MP4_128_DUAL"},{"file_id":
-        "7e014014cf658a49d3703b7e6712dd528dce2cec","format": "MP4_128"},{"file_id":
-        "ab1c9d9826f3db6c81e7c4db3625df22f55cf781","format": "AAC_24"}],"preview":
-        [{"file_id": "861d26b52ece3e3ad72a7dc3463daece3478801a","format": "MP3_96"}],"original_audio":
-        {"uuid": "f1d42abac41b4c3b85f20d77921a2c08"}}],"earliest_live_timestamp":
-        1555585200,"licensor": {"uuid": "8337a6aeaca744a7b32050f0c66e138f"},"language_of_performance":
-        ["en"],"original_audio": {"uuid": "08041e9a7ca147f89a9af62ead7f85e9"},"original_title":
-        "Running Up That Hill (A Deal With God)","version_title": "2018 Remaster","artist_with_role":
-        [{"artist_gid": "269f610431094ef092c4e6481f3ef43b","artist_name": "Kate Bush","role":
-        "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:1PtQJZVZIdWIYdARpZRDFO","prerelease_config":
-        {"earliest_reveal_date": {"year": 2023,"month": 3,"day": 13,"hour": 11}}}'
-  recorded_at: Sun, 31 Dec 2023 08:01:38 GMT
+      string: '{"gid": "6bfefa80e52948698c6f605c70f4a7d4","name": "Danger Zone - From
+        \"Top Gun\" Original Soundtrack","album": {"gid": "dd96f9fd721d4180beba4dbc157d56f6","name":
+        "Top Gun - Motion Picture Soundtrack (Special Expanded Edition)","artist":
+        [{"gid": "19334eaffa3f4f2282e251e36611e26f","name": "Various Artists"}],"label":
+        "Columbia/Legacy","date": {"year": 1999,"month": 1,"day": 1},"cover_group":
+        {"image": [{"file_id": "ab67616d00001e02fa183fdd680f1d249ba2f893","size":
+        "DEFAULT","width": 300,"height": 300},{"file_id": "ab67616d00004851fa183fdd680f1d249ba2f893","size":
+        "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b273fa183fdd680f1d249ba2f893","size":
+        "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "aa9468539d19400ca4c32fdc159926a9"}},"artist":
+        [{"gid": "8265d738c12c4d49803e1453a3a0072a","name": "Kenny Loggins"}],"number":
+        1,"disc_number": 1,"duration": 216346,"popularity": 63,"external_id": [{"type":
+        "isrc","id": "USSM18600108"}],"file": [{"file_id": "b448ea73a3972724547ee1a85bd03517017d66ad","format":
+        "OGG_VORBIS_320"},{"file_id": "9a2aa5af6f603d6889a47047aafbb2c51bc28edc","format":
+        "OGG_VORBIS_160"},{"file_id": "27e98138404f5f1be7be2e00f4e7545e7bf7cc4f","format":
+        "OGG_VORBIS_96"},{"file_id": "af6d1361063d0d9acbcf5d280ac550b9d730d34b","format":
+        "MP4_256_DUAL"},{"file_id": "f7226e699ce750884692aa19154dc32461904ace","format":
+        "MP4_256"},{"file_id": "9baa18d198c6ebe19363dc1b0a8d0720783faeeb","format":
+        "MP4_128_DUAL"},{"file_id": "92b55b5348f481e5024abb408263ee3062c9e000","format":
+        "MP4_128"},{"file_id": "755ea70a5e377ee133a62877d57d760cf44f91af","format":
+        "AAC_24"}],"preview": [{"file_id": "f60a2b5f25770366edd8bcf586b2cddf8e336a87","format":
+        "MP3_96"}],"earliest_live_timestamp": 413146860,"has_lyrics": true,"licensor":
+        {"uuid": "aa9468539d19400ca4c32fdc159926a9"},"language_of_performance": ["en"],"original_audio":
+        {"uuid": "0c607d70a4244104bddf8235f928b774"},"original_title": "Danger Zone","version_title":
+        "From \"Top Gun\" Original Soundtrack","artist_with_role": [{"artist_gid":
+        "8265d738c12c4d49803e1453a3a0072a","artist_name": "Kenny Loggins","role":
+        "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:4HiC3ulkTgbEcYYsSuR6PO"}'
+  recorded_at: Wed, 21 Aug 2024 20:00:31 GMT
 - request:
     method: get
     uri: https://open.spotify.com/get_access_token
@@ -162,9 +150,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
-      Authorization:
-      - Bearer BQAAe_o6-OCwGjuEu5XMHiiUOfldgAlxQgUUIPzJmjNRa_dSu1Wyeegh8Tm91gjL2McU9siC9_bL_jTi18ow2StzdeBdMvV0tOkxePLIO04RS8a3nOGn
+      - Faraday v2.10.1
+      Cookie:
+      - sp_dc=AQAnNlmpE7ZldPZVUX1hSSrEPtP4VJAFGl5k8GjWeIBUEaPyx3jJJpBwkG3x5wauH_yl4Yen2wjR4cX9dHSSLXJUdgvtT2hGc6xHK3JHql-YKAv0F3sJ-dTLCnF-_PjJAL33I-AJYYmoPRp8vRaWoC6fuLX9rGdS
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -176,52 +164,52 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=31536000
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       Accept-Ranges:
       - bytes
-      X-Envoy-Upstream-Service-Time:
-      - '19'
       Set-Cookie:
-      - sp_t=cb90f70ecd8c173b5022245fa437a903; path=/; expires=Mon, 30 Dec 2024 08:01:39
+      - sp_t=af80edf86a3eaaf2c77fe92f69335eed; path=/; expires=Thu, 21 Aug 2025 20:00:32
         GMT; domain=.spotify.com; samesite=none; secure
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '68'
       Server:
       - envoy
       Date:
-      - Sun, 31 Dec 2023 08:01:39 GMT
+      - Wed, 21 Aug 2024 20:00:32 GMT
       X-Served-By:
-      - cache-sof1510035-SOF, cache-sof1510035-SOF
+      - cache-fra-eddf8230050-FRA, cache-fra-eddf8230097-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1704009699.055443,VS0,VE74
+      - S1724270432.048589,VS0,VE106
       Vary:
       - Accept-Encoding,Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0","accessTokenExpirationTimestampMs":1704012907932,"isAnonymous":true}'
-  recorded_at: Sun, 31 Dec 2023 08:01:39 GMT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1","accessTokenExpirationTimestampMs":1724273382695,"isAnonymous":false}'
+  recorded_at: Wed, 21 Aug 2024 20:00:32 GMT
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/c04e355b9f4606b21f94b2a4de5db26aeca0163f?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/92b55b5348f481e5024abb408263ee3062c9e000?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
+      - Faraday v2.10.1
       Authorization:
-      - Bearer BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0
+      - Bearer BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -240,7 +228,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 31 Dec 2023 08:01:39 GMT
+      - Wed, 21 Aug 2024 20:00:32 GMT
       Server:
       - envoy
       Via:
@@ -251,9 +239,9 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"result": "CDN","cdnurl": ["https://audio-ak-spotify-com.akamaized.net/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?__token__=exp=1704096099~hmac=e6f853deca85b85ebed43eda781b1e422bbac584262883dec9852ff5347bb1cb","https://audio-fa-tls13.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704096099_7gVd-P0IJaVGEy6X5dI521bSTJGSuslSU3od2LsU1wk=","https://audio-fa-tls130.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704096099_7gVd-P0IJaVGEy6X5dI521bSTJGSuslSU3od2LsU1wk=","https://audio-fa-quic0.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704096099_7gVd-P0IJaVGEy6X5dI521bSTJGSuslSU3od2LsU1wk=","https://audio-fa-quic.spotifycdn.com/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704096099_7gVd-P0IJaVGEy6X5dI521bSTJGSuslSU3od2LsU1wk=","https://audio-fa.scdn.co/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?1704096099_7gVd-P0IJaVGEy6X5dI521bSTJGSuslSU3od2LsU1wk="],"fileid":
-        "c04e355b9f4606b21f94b2a4de5db26aeca0163f","ttl": 86400}'
-  recorded_at: Sun, 31 Dec 2023 08:01:39 GMT
+      string: '{"result": "CDN","cdnurl": ["https://audio-ak-spotify-com.akamaized.net/audio/92b55b5348f481e5024abb408263ee3062c9e000?__token__=exp=1724356832~hmac=4a816fe6eca71990e2b65b20e569baea3acea5452c41a9159b08bc0ba0a46ee0","https://audio-fa-tls13.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724356832_jopF-z_Y24I433HdiVfsXAFVlfwzZcc_jLm6v4fBgxY=","https://audio-fa-quic.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724356832_jopF-z_Y24I433HdiVfsXAFVlfwzZcc_jLm6v4fBgxY=","https://audio-fa-quic0.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724356832_jopF-z_Y24I433HdiVfsXAFVlfwzZcc_jLm6v4fBgxY=","https://audio-fa-tls130.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724356832_jopF-z_Y24I433HdiVfsXAFVlfwzZcc_jLm6v4fBgxY=","https://audio-fa.scdn.co/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724356832_jopF-z_Y24I433HdiVfsXAFVlfwzZcc_jLm6v4fBgxY="],"fileid":
+        "92b55b5348f481e5024abb408263ee3062c9e000","ttl": 86400}'
+  recorded_at: Wed, 21 Aug 2024 20:00:32 GMT
 - request:
     method: get
     uri: https://open.spotify.com/get_access_token
@@ -262,9 +250,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
-      Authorization:
-      - Bearer BQAAe_o6-OCwGjuEu5XMHiiUOfldgAlxQgUUIPzJmjNRa_dSu1Wyeegh8Tm91gjL2McU9siC9_bL_jTi18ow2StzdeBdMvV0tOkxePLIO04RS8a3nOGn
+      - Faraday v2.10.1
+      Cookie:
+      - sp_dc=AQAnNlmpE7ZldPZVUX1hSSrEPtP4VJAFGl5k8GjWeIBUEaPyx3jJJpBwkG3x5wauH_yl4Yen2wjR4cX9dHSSLXJUdgvtT2hGc6xHK3JHql-YKAv0F3sJ-dTLCnF-_PjJAL33I-AJYYmoPRp8vRaWoC6fuLX9rGdS
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -276,52 +264,52 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=31536000
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       Accept-Ranges:
       - bytes
-      X-Envoy-Upstream-Service-Time:
-      - '26'
       Set-Cookie:
-      - sp_t=c292d6b0e0b5f2aefdb1973442b7a81c; path=/; expires=Mon, 30 Dec 2024 08:01:39
+      - sp_t=c69b66c723daf79f1ba620dfe9c622f7; path=/; expires=Thu, 21 Aug 2025 20:00:32
         GMT; domain=.spotify.com; samesite=none; secure
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '64'
       Server:
       - envoy
       Date:
-      - Sun, 31 Dec 2023 08:01:39 GMT
+      - Wed, 21 Aug 2024 20:00:32 GMT
       X-Served-By:
-      - cache-sof1510034-SOF, cache-sof1510034-SOF
+      - cache-fra-eddf8230084-FRA, cache-fra-eddf8230082-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1704009700.572978,VS0,VE79
+      - S1724270433.684305,VS0,VE105
       Vary:
       - Accept-Encoding,Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0","accessTokenExpirationTimestampMs":1704012907932,"isAnonymous":true}'
-  recorded_at: Sun, 31 Dec 2023 08:01:39 GMT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1","accessTokenExpirationTimestampMs":1724273382695,"isAnonymous":false}'
+  recorded_at: Wed, 21 Aug 2024 20:00:32 GMT
 - request:
     method: get
-    uri: http://localhost:5000/key?file_id=c04e355b9f4606b21f94b2a4de5db26aeca0163f&global_id=46982c56ce8f4470a377026e2fe1ac2f
+    uri: https://seektables.scdn.co/seektable/92b55b5348f481e5024abb408263ee3062c9e000.json?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
+      - Faraday v2.10.1
       Authorization:
-      - Bearer BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0
+      - Bearer BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -331,20 +319,46 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Connection:
+      - keep-alive
       Content-Length:
-      - '43'
+      - '1662'
+      Last-Modified:
+      - Wed, 31 May 2017 13:02:04 GMT
+      Etag:
+      - '"ab90e4dd70ea01884d0191514959513e"'
+      X-Goog-Generation:
+      - '1496235724131464'
+      X-Goog-Metageneration:
+      - '1'
+      X-Goog-Stored-Content-Encoding:
+      - identity
+      X-Goog-Stored-Content-Length:
+      - '1662'
       Content-Type:
       - application/json
+      X-Amz-Checksum-Crc32c:
+      - yXexEg==
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '1297239'
       Date:
-      - Sun, 31 Dec 2023 08:01:39 GMT
-      Server:
-      - waitress
+      - Wed, 21 Aug 2024 20:00:33 GMT
+      X-Served-By:
+      - cache-chi-kigq8000022-CHI, cache-fra-etou8220154-FRA
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 234, 0
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=604800, no-transform
     body:
-      encoding: UTF-8
-      string: '{"key":"60168b9f56e646dec6492db9fedb9aa3"}
-
-        '
-  recorded_at: Sun, 31 Dec 2023 08:01:39 GMT
+      encoding: ASCII-8BIT
+      string: '{"offset":1789,"seektable_version":"1","pssh_widevine":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","index_range":[24,1492],"pssh":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","timescale":44100,"padding_samples":744,"pssh_playready":"AAACnHBzc2gAAAAAmgTweZhAQoarkuZb4IhflQAAAnx8AgAAAQABAHICPABXAFIATQBIAEUAQQBEAEUAUgAgAHgAbQBsAG4AcwA9ACIAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4AbQBpAGMAcgBvAHMAbwBmAHQALgBjAG8AbQAvAEQAUgBNAC8AMgAwADAANwAvADAAMwAvAFAAbABhAHkAUgBlAGEAZAB5AEgAZQBhAGQAZQByACIAIAB2AGUAcgBzAGkAbwBuAD0AIgA0AC4AMAAuADAALgAwACIAPgA8AEQAQQBUAEEAPgA8AFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBFAFkATABFAE4APgAxADYAPAAvAEsARQBZAEwARQBOAD4APABBAEwARwBJAEQAPgBBAEUAUwBDAFQAUgA8AC8AQQBMAEcASQBEAD4APAAvAFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBJAEQAPgBVADEAdQAxAGsAdgBSAEkANQBZAEUAQwBTAHIAdABBAGcAbQBQAHUATQBBAD0APQA8AC8ASwBJAEQAPgA8AEMASABFAEMASwBTAFUATQA+AFQAYQA4AGEASABlADMAbwB1AEwATQA9ADwALwBDAEgARQBDAEsAUwBVAE0APgA8AEwAQQBfAFUAUgBMAD4AaAB0AHQAcAA6AC8ALwBhAC0AZgBhAGsAZQAtAHMAZQByAHYAZQByAC4AcwBwAG8AdABpAGYAeQAuAG4AZQB0ADoAOAAwADgAMAAvAHQAZQBzAHQAPAAvAEwAQQBfAFUAUgBMAD4APAAvAEQAQQBUAEEAPgA8AC8AVwBSAE0ASABFAEEARABFAFIAPgA=","segments":[[175350,441344],[175684,441344],[172419,441344],[172959,441344],[172774,441344],[171356,441344],[171476,441344],[172910,441344],[174645,441344],[173203,441344],[173133,441344],[173775,441344],[172496,441344],[171629,441344],[171897,441344],[174109,441344],[172322,441344],[171581,441344],[171637,441344],[172247,441344],[171746,441344],[107160,273688]],"encoder_delay_samples":1024}'
+  recorded_at: Wed, 21 Aug 2024 20:00:33 GMT
 - request:
     method: get
     uri: https://open.spotify.com/get_access_token
@@ -353,9 +367,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
-      Authorization:
-      - Bearer BQAAe_o6-OCwGjuEu5XMHiiUOfldgAlxQgUUIPzJmjNRa_dSu1Wyeegh8Tm91gjL2McU9siC9_bL_jTi18ow2StzdeBdMvV0tOkxePLIO04RS8a3nOGn
+      - Faraday v2.10.1
+      Cookie:
+      - sp_dc=AQAnNlmpE7ZldPZVUX1hSSrEPtP4VJAFGl5k8GjWeIBUEaPyx3jJJpBwkG3x5wauH_yl4Yen2wjR4cX9dHSSLXJUdgvtT2hGc6xHK3JHql-YKAv0F3sJ-dTLCnF-_PjJAL33I-AJYYmoPRp8vRaWoC6fuLX9rGdS
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -367,89 +381,39 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=31536000
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       Accept-Ranges:
       - bytes
-      X-Envoy-Upstream-Service-Time:
-      - '28'
       Set-Cookie:
-      - sp_t=eaa97586ced7e3de6845506943b0c0d9; path=/; expires=Mon, 30 Dec 2024 08:01:40
+      - sp_t=2f3d11831e3e23c7bb04a14da9e94b95; path=/; expires=Thu, 21 Aug 2025 20:00:33
         GMT; domain=.spotify.com; samesite=none; secure
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '170'
       Server:
       - envoy
       Date:
-      - Sun, 31 Dec 2023 08:01:40 GMT
+      - Wed, 21 Aug 2024 20:00:33 GMT
       X-Served-By:
-      - cache-sof1510031-SOF, cache-sof1510031-SOF
+      - cache-fra-eddf8230051-FRA, cache-fra-eddf8230109-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1704009700.008269,VS0,VE82
+      - S1724270433.346833,VS0,VE209
       Vary:
       - Accept-Encoding,Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0","accessTokenExpirationTimestampMs":1704012907932,"isAnonymous":true}'
-  recorded_at: Sun, 31 Dec 2023 08:01:40 GMT
-- request:
-    method: get
-    uri: https://audio-ak-spotify-com.akamaized.net/audio/c04e355b9f4606b21f94b2a4de5db26aeca0163f?__token__=exp=1704096099~hmac=e6f853deca85b85ebed43eda781b1e422bbac584262883dec9852ff5347bb1cb&alt=json&platform=39&product=9&version=10000000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.8.1
-      Authorization:
-      - Bearer BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 403
-      message: Forbidden
-    headers:
-      Server:
-      - AkamaiGHost
-      Mime-Version:
-      - '1.0'
-      Content-Type:
-      - text/html
-      Content-Length:
-      - '176'
-      Expires:
-      - Sun, 31 Dec 2023 08:01:40 GMT
-      Date:
-      - Sun, 31 Dec 2023 08:01:40 GMT
-      Connection:
-      - keep-alive
-      Access-Control-Max-Age:
-      - '86400'
-      Access-Control-Allow-Headers:
-      - range, pragma, cache-control
-      Access-Control-Allow-Methods:
-      - GET
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: |
-        <HTML><HEAD><TITLE>Error</TITLE></HEAD><BODY>
-        An error occurred while processing your request.<p>
-        Reference&#32;&#35;199&#46;598cbb9&#46;1704009700&#46;122209f1
-        </BODY></HTML>
-  recorded_at: Sun, 31 Dec 2023 08:01:40 GMT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1","accessTokenExpirationTimestampMs":1724273382695,"isAnonymous":false}'
+  recorded_at: Wed, 21 Aug 2024 20:00:33 GMT
 recorded_with: VCR 6.2.0

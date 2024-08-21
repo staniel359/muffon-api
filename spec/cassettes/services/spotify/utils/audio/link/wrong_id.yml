@@ -8,9 +8,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
-      Authorization:
-      - Bearer BQAAe_o6-OCwGjuEu5XMHiiUOfldgAlxQgUUIPzJmjNRa_dSu1Wyeegh8Tm91gjL2McU9siC9_bL_jTi18ow2StzdeBdMvV0tOkxePLIO04RS8a3nOGn
+      - Faraday v2.10.1
+      Cookie:
+      - sp_dc=AQAnNlmpE7ZldPZVUX1hSSrEPtP4VJAFGl5k8GjWeIBUEaPyx3jJJpBwkG3x5wauH_yl4Yen2wjR4cX9dHSSLXJUdgvtT2hGc6xHK3JHql-YKAv0F3sJ-dTLCnF-_PjJAL33I-AJYYmoPRp8vRaWoC6fuLX9rGdS
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -22,41 +22,41 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
-      Strict-Transport-Security:
-      - max-age=31536000
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Content-Type-Options:
-      - nosniff
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       Accept-Ranges:
       - bytes
-      X-Envoy-Upstream-Service-Time:
-      - '21'
       Set-Cookie:
-      - sp_t=c785ff5d6a96618367b8cbdf0af32f97; path=/; expires=Mon, 30 Dec 2024 08:01:40
+      - sp_t=2cecdff56bd9d2f85c5e47c9931f3913; path=/; expires=Thu, 21 Aug 2025 20:00:41
         GMT; domain=.spotify.com; samesite=none; secure
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Upstream-Service-Time:
+      - '57'
       Server:
       - envoy
       Date:
-      - Sun, 31 Dec 2023 08:01:40 GMT
+      - Wed, 21 Aug 2024 20:00:41 GMT
       X-Served-By:
-      - cache-sof1510039-SOF, cache-sof1510039-SOF
+      - cache-fra-eddf8230076-FRA, cache-fra-eddf8230076-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1704009701.588598,VS0,VE72
+      - S1724270441.126700,VS0,VE97
       Vary:
       - Accept-Encoding,Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0","accessTokenExpirationTimestampMs":1704012907932,"isAnonymous":true}'
-  recorded_at: Sun, 31 Dec 2023 08:01:40 GMT
+      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1","accessTokenExpirationTimestampMs":1724273382695,"isAnonymous":false}'
+  recorded_at: Wed, 21 Aug 2024 20:00:41 GMT
 - request:
     method: get
     uri: https://spclient.wg.spotify.com/metadata/4/track/16050db13dde6ad93ef3?alt=json&platform=39&product=9&version=10000000
@@ -65,9 +65,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.8.1
+      - Faraday v2.10.1
       Authorization:
-      - Bearer BQBRp7gPOgux7Bv-vlvaZN_Sb62s3QCrNfKBsSE6NjLGHHQcAFgnxkea-bs9MD_FKL6cq7DtYLdbF6Q1l4PiRSibx9xdPQ1h0RRRB8fZf1jti6qpjX0
+      - Bearer BQDnw9054QozaYRpYWG8z0bLb7kUqPykQgPUpBStnfuMjk0HCzF8J15L1gqfqFzUBywR1AL42iM-H2s3fLN9H9WI7xS4UcCRJ2Knew-O4I3a2FhkT1k4xLxB6_mS4mZ0ypcZaZEBr7caf40yfhcJT_ccIn63W0pvqIq3ljvXDecEDBy4DDDh-5mPDxTal_mMtJYYgBQ-P4Y9_fI7HCvWoqhbsazTeZknGgESN0CPY9gU5tfaSt9pc2dGzhrDuVn-8FEKwR8lKtCU5GD6e91uprRRDl9-66KxP2BSTjyljnMIVQ98wczO1r1CSvm4oI5u3ql9n5L1IZ3UXczHeEZ_K8L1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -100,7 +100,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 31 Dec 2023 08:01:40 GMT
+      - Wed, 21 Aug 2024 20:00:41 GMT
       Server:
       - envoy
       Via:
@@ -110,5 +110,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 31 Dec 2023 08:01:41 GMT
+  recorded_at: Wed, 21 Aug 2024 20:00:41 GMT
 recorded_with: VCR 6.2.0

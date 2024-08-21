@@ -7,16 +7,14 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - Faraday v2.10.1
       Authorization:
-      - Bearer <SPOTIFY_TOKEN>
+      - Bearer BQBNTblitIE6IgywZssY-dy6qnChnGkz1hwcGpwLXTbA3BCZujxTpHr8Y7xNYkGdfM-FdyG6jvdsu6xqSdf7naTwadXmyUPi9dcp-0l15ewDMpjl6Wg
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.spotify.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 400
@@ -44,23 +42,17 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sat, 30 Jan 2021 07:14:29 GMT
+      - Wed, 21 Aug 2024 20:04:54 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
       Alt-Svc:
-      - clear
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: |-
-        {
-          "error" : {
-            "status" : 400,
-            "message" : "invalid id"
-          }
-        }
-  recorded_at: Sat, 30 Jan 2021 07:14:28 GMT
-recorded_with: VCR 6.0.0
+      string: '{"error": {"status": 400, "message": "Invalid base62 id" } }'
+  recorded_at: Wed, 21 Aug 2024 20:04:54 GMT
+recorded_with: VCR 6.2.0
