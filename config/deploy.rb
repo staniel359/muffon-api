@@ -13,7 +13,6 @@ append :linked_files,
   'config/master.key',
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
-  'config/sidekiq.yml',
   'invalid_requests.csv'
 
 append :linked_dirs,
@@ -52,24 +51,9 @@ namespace :config do
   desc 'Copy config'
   task :copy do
     on roles(:all) do |host|
-      # upload!(
-      #   'config/master.key',
-      #   "/root/#{fetch(:application)}/shared/config/master.key"
-      # )
-
-      # upload!(
-      #   'config/credentials/production.key',
-      #   "/root/#{fetch(:application)}/shared/config/credentials/production.key"
-      # )
-
       upload!(
         'config/credentials/production.yml.enc',
         "/root/#{fetch(:application)}/shared/config/credentials/production.yml.enc"
-      )
-
-      upload!(
-        'config/sidekiq.yml',
-        "/root/#{fetch(:application)}/shared/config/sidekiq.yml"
       )
     end
   end
