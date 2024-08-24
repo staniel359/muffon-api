@@ -51,16 +51,16 @@ class Profile < ApplicationRecord
             uniqueness: true,
             length: { maximum: 40 }
 
-  enum :gender, %i[
-    male
-    female
-    other
-  ]
+  enum :gender, {
+    male: 0,
+    female: 1,
+    other: 2
+  }
 
-  enum :role, %i[
-    profile
-    creator
-  ]
+  enum :role, {
+    profile: 0,
+    creator: 1
+  }
 
   before_create :set_token
 

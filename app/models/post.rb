@@ -25,10 +25,10 @@ class Post < ApplicationRecord
   include SendableDecorator
   include Eventable
 
-  enum :post_type, %i[
-    profile
-    community
-  ]
+  enum :post_type, {
+    profile: 0,
+    community: 1
+  }
 
   before_destroy :delete_data
 
