@@ -14,10 +14,16 @@ module Spotify
           end
 
           def data
+            return test_key if test?
+
             `python3.10 \
               public/spotify_key_retriever.py \
               --pssh #{pssh} \
               --token #{spotify_token}`
+          end
+
+          def test_key
+            '75a2ec7276c0c332cd9c03e970d2d984'
           end
 
           def pssh
