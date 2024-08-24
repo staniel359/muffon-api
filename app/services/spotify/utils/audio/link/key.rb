@@ -17,7 +17,7 @@ module Spotify
             return test_key if test?
 
             `python3.10 \
-              public/spotify_key_retriever.py \
+              lib/spotify/key_retriever.py \
               --pssh #{pssh} \
               --token #{spotify_token}`
           end
