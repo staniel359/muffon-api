@@ -13,8 +13,8 @@ module Muffon
         return if not_all_args?
 
         data
-      rescue Errno::ECONNREFUSED
-        call
+      rescue Faraday::ConnectionFailed
+        call_again
       end
 
       private

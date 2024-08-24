@@ -24,5 +24,13 @@ module Muffon
 
       data
     end
+
+    private
+
+    def call_again
+      self.class.call(
+        @args
+      )
+    end
   end
 end
