@@ -10,7 +10,14 @@ module Spotify
           end
 
           def no_data?
-            false
+            seektables_data.blank?
+          end
+
+          def seektables_data
+            @seektables_data ||=
+              Spotify::Utils::Audio::Link::Seektables.call(
+                file_id:
+              )
           end
 
           def data
@@ -27,9 +34,7 @@ module Spotify
           end
 
           def pssh
-            Spotify::Utils::Audio::Link::Seektables.call(
-              file_id:
-            )['pssh']
+            seektables_data['pssh']
           end
 
           def file_id

@@ -21,7 +21,11 @@ module Spotify
             @args[:file_id]
           end
 
-          alias data response_data
+          def data
+            response_data
+          rescue Faraday::ResourceNotFound
+            nil
+          end
         end
       end
     end
