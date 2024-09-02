@@ -13,7 +13,8 @@ append :linked_files,
   'config/master.key',
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
-  'invalid_requests.csv'
+  'invalid_requests.csv',
+  'lib/spotify/widevine.wvd'
 
 append :linked_dirs,
   'log',

@@ -23,8 +23,7 @@ module Spotify
           def data
             return test_key if test?
 
-            `python3.10 \
-              lib/spotify/key_retriever.py \
+            `python3.10 lib/spotify/key_retriever.py \
               --pssh #{pssh} \
               --token #{spotify_token}`
           end
