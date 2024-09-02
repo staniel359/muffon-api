@@ -53,6 +53,7 @@ module Deezer
         album['LABEL_NAME']
           .split('/')
           .uniq
+          .compact_blank
       end
 
       def tracks_list
