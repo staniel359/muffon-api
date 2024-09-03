@@ -2,6 +2,8 @@ module VK
   module Utils
     module Audio
       class Link < VK::Base
+        FILE_EXTENSION = 'mp3'.freeze
+
         include Muffon::Utils::Audio::Link
 
         private
@@ -13,11 +15,24 @@ module VK
           ]
         end
 
-        def audio_binary_data
-          @audio_binary_data ||=
-            format_get_request(
-              link: @args[:link]
-            ).body
+        def no_data?
+          false
+        end
+
+        def write_audio_data_to_file
+          return if test?
+
+          `ffmpeg \
+            -i #{link} \
+            -y \
+            -movflags +faststart \
+            -c copy \
+            -loglevel error \
+            public/#{audio_path}`
+        end
+
+        def link
+          @args[:link]
         end
       end
     end
