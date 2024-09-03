@@ -23,6 +23,7 @@ module VK
           return if test?
 
           `ffmpeg \
+            -http_persistent false \
             -i #{link} \
             -y \
             -movflags +faststart \
