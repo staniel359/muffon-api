@@ -68,6 +68,16 @@ module MuffonAPI
           nil
         end
       end
+
+      ActiveStorage::PurgeJob.class_eval do
+        def perform(blob)
+          blob.purge
+        rescue *[
+          Aws::S3::Errors::InternalError
+        ]
+          nil
+        end
+      end
     end
   end
 end
