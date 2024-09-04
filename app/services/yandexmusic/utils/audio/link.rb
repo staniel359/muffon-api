@@ -17,7 +17,8 @@ module YandexMusic
         end
 
         def no_data?
-          track_data.blank?
+          track_data.blank? ||
+            raw_link.blank?
         end
 
         def track_data
@@ -25,6 +26,10 @@ module YandexMusic
             YandexMusic::Utils::Audio::Track.call(
               track_id: @args[:track_id]
             )
+        end
+
+        def raw_link
+          track_data['src']
         end
 
         def data
@@ -42,7 +47,7 @@ module YandexMusic
         end
 
         def link
-          "https:#{track_data['src']}"
+          "https:#{raw_link}"
         end
 
         def params

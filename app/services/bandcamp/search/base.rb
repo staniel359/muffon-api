@@ -35,7 +35,7 @@ module Bandcamp
       def raw_collection_list
         response_data.dig(
           'auto', 'results'
-        )
+        ) || []
       end
 
       def collection_list
