@@ -47,7 +47,9 @@ module Spotify
             Spotify::Playlist::Info.call(
               playlist_id: spotify_id,
               profile_id: @args[:profile_id]
-            )[:playlist]
+            ).try(
+              :[], :playlist
+            ) || {}
         end
       end
     end

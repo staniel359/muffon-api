@@ -42,7 +42,7 @@ module SoundCloud
           track_data.dig(
             'data', 'media',
             'transcodings'
-          )
+          ) || []
         end
 
         def mp3_link?(data)
