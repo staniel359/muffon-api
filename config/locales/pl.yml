@@ -1,4 +1,4 @@
-en:
+pl:
   mailer:
     passwordReset:
       subject: 'muffon | Resetowanie hasła'
