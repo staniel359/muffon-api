@@ -31,7 +31,9 @@ module Spotify
           Spotify::User::Info.call(
             access_token:,
             skip_profile: true
-          )[:user]
+          ).try(
+            :[], :user
+          )
       end
 
       def access_token

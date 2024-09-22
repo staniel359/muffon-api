@@ -33,7 +33,7 @@ module Spotify
           return if @args[:with_tracks].blank?
           return [] if tracks_count_initial.zero?
 
-          playlist_info_data[:tracks]
+          playlist_info_data[:tracks] || []
         end
 
         def tracks_count_initial

@@ -28,7 +28,9 @@ module Spotify
         @artist_info_data ||=
           Spotify::Artist::Info.call(
             artist_id: @args[:artist_id]
-          )[:artist]
+          ).try(
+            :[], :artist
+          )
       end
 
       def collection_list

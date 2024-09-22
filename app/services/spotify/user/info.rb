@@ -47,7 +47,7 @@ module Spotify
       def tracks_count
         return unless with_counter?('tracks')
 
-        tracks_data[:total_items]
+        tracks_data[:total_items] || 0
       end
 
       def with_counter?(counter)
@@ -62,13 +62,15 @@ module Spotify
           token: @args[:token],
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
-        )[:user] || {}
+        ).try(
+          :[], :user
+        ) || {}
       end
 
       def playlists_count
         return unless with_counter?('playlists')
 
-        playlists_data[:total_items]
+        playlists_data[:total_items] || 0
       end
 
       def playlists_data
@@ -77,7 +79,9 @@ module Spotify
           token: @args[:token],
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
-        )[:user] || {}
+        ).try(
+          :[], :user
+        ) || {}
       end
     end
   end
