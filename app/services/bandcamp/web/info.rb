@@ -7,10 +7,16 @@ module Bandcamp
         [@args[:link]]
       end
 
+      def no_data?
+        false
+      end
+
       def data
         JSON.parse(
           raw_data
         )
+      rescue Faraday::ResourceNotFound
+        nil
       end
 
       def raw_data

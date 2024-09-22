@@ -13,7 +13,8 @@ module Bandcamp
       end
 
       def no_data?
-        track.blank?
+        track.blank? ||
+          track_info_data.blank?
       end
 
       def track
