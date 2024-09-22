@@ -63,7 +63,8 @@ module MuffonAPI
         rescue *[
           ActiveStorage::FileNotFoundError,
           Aws::S3::Errors::NotFound,
-          Aws::S3::Errors::NoSuchKey
+          Aws::S3::Errors::NoSuchKey,
+          Aws::S3::Errors::Http500Error
         ]
           nil
         end
