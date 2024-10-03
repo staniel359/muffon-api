@@ -14,7 +14,8 @@ append :linked_files,
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
   'invalid_requests.csv',
-  'lib/spotify/cookies.txt'
+  'lib/spotify/cookies.txt',
+  'lib/vk/downloader'
 
 append :linked_dirs,
   'log',
@@ -60,6 +61,11 @@ namespace :config do
       # upload!(
       #   'lib/spotify/cookies.txt',
       #   "/root/#{fetch(:application)}/shared/lib/spotify/cookies.txt"
+      # )
+
+      # upload!(
+      #   'lib/vk/downloader',
+      #   "/root/#{fetch(:application)}/shared/lib/vk/downloader"
       # )
     end
   end

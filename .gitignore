@@ -5,3 +5,4 @@ log
 tmp
 storage
 lib/spotify/cookies.txt
+lib/vk/downloader
