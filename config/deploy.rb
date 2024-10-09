@@ -14,7 +14,7 @@ append :linked_files,
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
   'invalid_requests.csv',
-  'lib/spotify/cookies.txt',
+  'lib/widevine.wvd',
   'lib/vk/downloader'
 
 append :linked_dirs,
@@ -58,10 +58,10 @@ namespace :config do
         "/root/#{fetch(:application)}/shared/config/credentials/production.yml.enc"
       )
 
-      # upload!(
-      #   'lib/spotify/cookies.txt',
-      #   "/root/#{fetch(:application)}/shared/lib/spotify/cookies.txt"
-      # )
+      upload!(
+        'lib/widevine.wvd',
+        "/root/#{fetch(:application)}/shared/lib/widevine.wvd"
+      )
 
       # upload!(
       #   'lib/vk/downloader',

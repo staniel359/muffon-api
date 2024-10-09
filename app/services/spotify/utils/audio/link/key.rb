@@ -10,7 +10,8 @@ module Spotify
           end
 
           def no_data?
-            seektables_data.blank?
+            # seektables_data.blank? # Widevine
+            false # PlayPlay
           end
 
           def seektables_data
@@ -23,9 +24,13 @@ module Spotify
           def data
             return test_key if test?
 
-            `python3.10 lib/spotify/key_retriever.py \
-              --pssh #{pssh} \
-              --token #{spotify_token}`
+            # `python3.10 lib/spotify/widevine/key_retriever.py \
+            #   --pssh #{pssh} \
+            #   --token #{spotify_token}` # Widevine
+
+            `python3.10 lib/spotify/playplay/key_retriever.py \
+              --file_id #{file_id} \
+              --token #{spotify_token}` # PlayPlay
           end
 
           def test_key
@@ -38,10 +43,6 @@ module Spotify
 
           def file_id
             @args[:file_id]
-          end
-
-          def token
-            Spotify::Utils::Audio::Link::Token.call
           end
         end
       end
