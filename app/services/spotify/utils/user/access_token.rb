@@ -1,7 +1,7 @@
 module Spotify
   module Utils
     module User
-      class AccessToken < Spotify::Utils::AccessToken
+      class AccessToken < Spotify::Utils::Token
         private
 
         def primary_args

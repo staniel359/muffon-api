@@ -2,72 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: https://open.spotify.com/get_access_token
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.10.1
-      Cookie:
-      - sp_dc=<SPOTIFY_COOKIES_SP_DC>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Accept-Ranges:
-      - bytes
-      Set-Cookie:
-      - sp_t=3dc48e98b0b99b7e852222ff207d030f; path=/; expires=Thu, 21 Aug 2025 20:56:15
-        GMT; domain=.spotify.com; samesite=none; secure
-      Content-Type:
-      - application/json; charset=utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
-      X-Content-Type-Options:
-      - nosniff
-      X-Envoy-Upstream-Service-Time:
-      - '61'
-      Server:
-      - envoy
-      Date:
-      - Wed, 21 Aug 2024 20:56:15 GMT
-      X-Served-By:
-      - cache-fra-eddf8230115-FRA, cache-fra-eddf8230035-FRA
-      X-Cache:
-      - MISS, MISS
-      X-Cache-Hits:
-      - 0, 0
-      X-Timer:
-      - S1724273776.710776,VS0,VE93
-      Vary:
-      - Accept-Encoding,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj","accessTokenExpirationTimestampMs":1724276917652,"isAnonymous":false}'
-  recorded_at: Wed, 21 Aug 2024 20:56:15 GMT
-- request:
-    method: get
     uri: https://spclient.wg.spotify.com/metadata/4/track/6bfefa80e52948698c6f605c70f4a7d4?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.10.1
+      - Faraday v2.12.0
       Authorization:
-      - Bearer BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj
+      - Bearer BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbHZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbjviLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTHbQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZaRPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhBBSJwNbm9QLytbBx6Yngjm5VT
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -80,19 +23,20 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=79832
+      - public, max-age=79230
       Etag:
-      - '"MC-CFcoAw=="'
+      - '"MC-Vv7qxQ=="'
       Vary:
-      - _ui.catalogue_str, _ui.country
+      - _ui.country
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Headers:
       - Accept, App-Platform, Authorization, client-token, content-access-token, Content-Type,
         Origin, Retry-After, SPA-Preferred-Publisher, Spotify-App, Spotify-App-Version,
         spotify-org-uri, X-ClientAttribute-Version, X-Client-Id, x-cloud-trace-context,
-        X-Cloud-Trace-Context, X-Geo-Country, X-Installation-Id, X-Spotify-Additional-Idp,
-        X-Spotify-Connection-Id, X-Spotify-Quicksilver-Uri, x-twitch-jwt
+        X-Cloud-Trace-Context, X-Geo-Country, X-Installation-Id, x-permission-grant-token,
+        X-Spotify-Additional-Idp, X-Spotify-Connection-Id, X-Spotify-Quicksilver-Uri,
+        x-twitch-jwt
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS, PUT, HEAD, DELETE, PATCH
       Access-Control-Allow-Credentials:
@@ -104,7 +48,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Wed, 21 Aug 2024 20:56:15 GMT
+      - Sun, 13 Oct 2024 21:17:16 GMT
       Server:
       - envoy
       Via:
@@ -125,7 +69,7 @@ http_interactions:
         "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b273fa183fdd680f1d249ba2f893","size":
         "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "aa9468539d19400ca4c32fdc159926a9"}},"artist":
         [{"gid": "8265d738c12c4d49803e1453a3a0072a","name": "Kenny Loggins"}],"number":
-        1,"disc_number": 1,"duration": 216346,"popularity": 63,"external_id": [{"type":
+        1,"disc_number": 1,"duration": 216346,"popularity": 61,"external_id": [{"type":
         "isrc","id": "USSM18600108"}],"file": [{"file_id": "b448ea73a3972724547ee1a85bd03517017d66ad","format":
         "OGG_VORBIS_320"},{"file_id": "9a2aa5af6f603d6889a47047aafbb2c51bc28edc","format":
         "OGG_VORBIS_160"},{"file_id": "27e98138404f5f1be7be2e00f4e7545e7bf7cc4f","format":
@@ -140,76 +84,20 @@ http_interactions:
         {"uuid": "0c607d70a4244104bddf8235f928b774"},"original_title": "Danger Zone","version_title":
         "From \"Top Gun\" Original Soundtrack","artist_with_role": [{"artist_gid":
         "8265d738c12c4d49803e1453a3a0072a","artist_name": "Kenny Loggins","role":
-        "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:4HiC3ulkTgbEcYYsSuR6PO"}'
-  recorded_at: Wed, 21 Aug 2024 20:56:16 GMT
+        "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:4HiC3ulkTgbEcYYsSuR6PO","content_authorization_attributes":
+        ""}'
+  recorded_at: Sun, 13 Oct 2024 21:17:16 GMT
 - request:
     method: get
-    uri: https://open.spotify.com/get_access_token
+    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.10.1
-      Cookie:
-      - sp_dc=<SPOTIFY_COOKIES_SP_DC>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Accept-Ranges:
-      - bytes
-      Set-Cookie:
-      - sp_t=78a0618b5ab0057851af79d75a89d433; path=/; expires=Thu, 21 Aug 2025 20:56:16
-        GMT; domain=.spotify.com; samesite=none; secure
-      Content-Type:
-      - application/json; charset=utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
-      X-Content-Type-Options:
-      - nosniff
-      X-Envoy-Upstream-Service-Time:
-      - '63'
-      Server:
-      - envoy
-      Date:
-      - Wed, 21 Aug 2024 20:56:16 GMT
-      X-Served-By:
-      - cache-fra-eddf8230045-FRA, cache-fra-eddf8230054-FRA
-      X-Cache:
-      - MISS, MISS
-      X-Cache-Hits:
-      - 0, 0
-      X-Timer:
-      - S1724273776.364689,VS0,VE96
-      Vary:
-      - Accept-Encoding,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj","accessTokenExpirationTimestampMs":1724276917652,"isAnonymous":false}'
-  recorded_at: Wed, 21 Aug 2024 20:56:16 GMT
-- request:
-    method: get
-    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/92b55b5348f481e5024abb408263ee3062c9e000?alt=json&platform=39&product=9&version=10000000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.10.1
+      - Faraday v2.12.0
       Authorization:
-      - Bearer BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj
+      - Bearer BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbHZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbjviLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTHbQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZaRPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhBBSJwNbm9QLytbBx6Yngjm5VT
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -228,7 +116,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Wed, 21 Aug 2024 20:56:16 GMT
+      - Sun, 13 Oct 2024 21:17:16 GMT
       Server:
       - envoy
       Via:
@@ -239,181 +127,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"result": "CDN","cdnurl": ["https://audio-ak-spotify-com.akamaized.net/audio/92b55b5348f481e5024abb408263ee3062c9e000?__token__=exp=1724360176~hmac=7cab08f21ff0b5a18263896ed758583adf464b8885c61ffa60fb85a3525818ec","https://audio-fa-tls13.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724360176_nneR-zJbnfqTeK-WfmpWDS1lr1XMhwyl7KfsDFJOBYQ=","https://audio-fa-quic.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724360176_nneR-zJbnfqTeK-WfmpWDS1lr1XMhwyl7KfsDFJOBYQ=","https://audio-fa-quic0.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724360176_nneR-zJbnfqTeK-WfmpWDS1lr1XMhwyl7KfsDFJOBYQ=","https://audio-fa-tls130.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724360176_nneR-zJbnfqTeK-WfmpWDS1lr1XMhwyl7KfsDFJOBYQ=","https://audio-fa.scdn.co/audio/92b55b5348f481e5024abb408263ee3062c9e000?1724360176_nneR-zJbnfqTeK-WfmpWDS1lr1XMhwyl7KfsDFJOBYQ="],"fileid":
-        "92b55b5348f481e5024abb408263ee3062c9e000","ttl": 86400}'
-  recorded_at: Wed, 21 Aug 2024 20:56:16 GMT
-- request:
-    method: get
-    uri: https://open.spotify.com/get_access_token
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.10.1
-      Cookie:
-      - sp_dc=<SPOTIFY_COOKIES_SP_DC>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Accept-Ranges:
-      - bytes
-      Set-Cookie:
-      - sp_t=8382deb74a952f57709761923e5b8109; path=/; expires=Thu, 21 Aug 2025 20:56:17
-        GMT; domain=.spotify.com; samesite=none; secure
-      Content-Type:
-      - application/json; charset=utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
-      X-Content-Type-Options:
-      - nosniff
-      X-Envoy-Upstream-Service-Time:
-      - '106'
-      Server:
-      - envoy
-      Date:
-      - Wed, 21 Aug 2024 20:56:17 GMT
-      X-Served-By:
-      - cache-fra-eddf8230138-FRA, cache-fra-eddf8230028-FRA
-      X-Cache:
-      - MISS, MISS
-      X-Cache-Hits:
-      - 0, 0
-      X-Timer:
-      - S1724273777.960117,VS0,VE143
-      Vary:
-      - Accept-Encoding,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj","accessTokenExpirationTimestampMs":1724276917652,"isAnonymous":false}'
-  recorded_at: Wed, 21 Aug 2024 20:56:17 GMT
-- request:
-    method: get
-    uri: https://seektables.scdn.co/seektable/92b55b5348f481e5024abb408263ee3062c9e000.json?alt=json&platform=39&product=9&version=10000000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.10.1
-      Authorization:
-      - Bearer BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1662'
-      Last-Modified:
-      - Wed, 31 May 2017 13:02:04 GMT
-      Etag:
-      - '"ab90e4dd70ea01884d0191514959513e"'
-      X-Goog-Generation:
-      - '1496235724131464'
-      X-Goog-Metageneration:
-      - '1'
-      X-Goog-Stored-Content-Encoding:
-      - identity
-      X-Goog-Stored-Content-Length:
-      - '1662'
-      Content-Type:
-      - application/json
-      X-Amz-Checksum-Crc32c:
-      - yXexEg==
-      Accept-Ranges:
-      - bytes
-      Age:
-      - '1300583'
-      Date:
-      - Wed, 21 Aug 2024 20:56:17 GMT
-      X-Served-By:
-      - cache-chi-kigq8000022-CHI, cache-mxp6939-MXP
-      X-Cache:
-      - HIT, HIT
-      X-Cache-Hits:
-      - 322, 0
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - max-age=604800, no-transform
-    body:
-      encoding: ASCII-8BIT
-      string: '{"offset":1789,"seektable_version":"1","pssh_widevine":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","index_range":[24,1492],"pssh":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","timescale":44100,"padding_samples":744,"pssh_playready":"AAACnHBzc2gAAAAAmgTweZhAQoarkuZb4IhflQAAAnx8AgAAAQABAHICPABXAFIATQBIAEUAQQBEAEUAUgAgAHgAbQBsAG4AcwA9ACIAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4AbQBpAGMAcgBvAHMAbwBmAHQALgBjAG8AbQAvAEQAUgBNAC8AMgAwADAANwAvADAAMwAvAFAAbABhAHkAUgBlAGEAZAB5AEgAZQBhAGQAZQByACIAIAB2AGUAcgBzAGkAbwBuAD0AIgA0AC4AMAAuADAALgAwACIAPgA8AEQAQQBUAEEAPgA8AFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBFAFkATABFAE4APgAxADYAPAAvAEsARQBZAEwARQBOAD4APABBAEwARwBJAEQAPgBBAEUAUwBDAFQAUgA8AC8AQQBMAEcASQBEAD4APAAvAFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBJAEQAPgBVADEAdQAxAGsAdgBSAEkANQBZAEUAQwBTAHIAdABBAGcAbQBQAHUATQBBAD0APQA8AC8ASwBJAEQAPgA8AEMASABFAEMASwBTAFUATQA+AFQAYQA4AGEASABlADMAbwB1AEwATQA9ADwALwBDAEgARQBDAEsAUwBVAE0APgA8AEwAQQBfAFUAUgBMAD4AaAB0AHQAcAA6AC8ALwBhAC0AZgBhAGsAZQAtAHMAZQByAHYAZQByAC4AcwBwAG8AdABpAGYAeQAuAG4AZQB0ADoAOAAwADgAMAAvAHQAZQBzAHQAPAAvAEwAQQBfAFUAUgBMAD4APAAvAEQAQQBUAEEAPgA8AC8AVwBSAE0ASABFAEEARABFAFIAPgA=","segments":[[175350,441344],[175684,441344],[172419,441344],[172959,441344],[172774,441344],[171356,441344],[171476,441344],[172910,441344],[174645,441344],[173203,441344],[173133,441344],[173775,441344],[172496,441344],[171629,441344],[171897,441344],[174109,441344],[172322,441344],[171581,441344],[171637,441344],[172247,441344],[171746,441344],[107160,273688]],"encoder_delay_samples":1024}'
-  recorded_at: Wed, 21 Aug 2024 20:56:17 GMT
-- request:
-    method: get
-    uri: https://open.spotify.com/get_access_token
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.10.1
-      Cookie:
-      - sp_dc=<SPOTIFY_COOKIES_SP_DC>
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Accept-Ranges:
-      - bytes
-      Set-Cookie:
-      - sp_t=53fb2ac34b7c1cb2c28c84a44722ba37; path=/; expires=Thu, 21 Aug 2025 20:56:17
-        GMT; domain=.spotify.com; samesite=none; secure
-      Content-Type:
-      - application/json; charset=utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
-      X-Content-Type-Options:
-      - nosniff
-      X-Envoy-Upstream-Service-Time:
-      - '65'
-      Server:
-      - envoy
-      Date:
-      - Wed, 21 Aug 2024 20:56:17 GMT
-      X-Served-By:
-      - cache-fra-eddf8230131-FRA, cache-fra-eddf8230131-FRA
-      X-Cache:
-      - MISS, MISS
-      X-Cache-Hits:
-      - 0, 0
-      X-Timer:
-      - S1724273778.701419,VS0,VE102
-      Vary:
-      - Accept-Encoding,Accept-Encoding
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQD3D9k0fhgReAbHWGFXwlVRh_wfFs8bfT1ji5Fz6Alnr4KuvyBMMueJav9oRUFFo7gh1Msc4-TccpoyWCOw3UYTjVe64-UzlKSURtjbz-Z3GsLEwm0bvDOnJBZzxvvVZnVCCQu1rsbnGHHI93Wl_zzg5HuARjfJSn19iR-zVk-3melMQBW6JRXkysetiAnRzEXL00hErLVBil7sZiDhWO4JkMd9uOYsV3_Rh0VmRrCDG0HqEDRyos5Spoj3V4540sLi323PANy-4PKuGjZ7InpInjqfZw5XARRMsVbygqGM4ekj8caWm_liFPU2vvb1jmfunrKWWXu3eDOj71hXNMRj","accessTokenExpirationTimestampMs":1724276917652,"isAnonymous":false}'
-  recorded_at: Wed, 21 Aug 2024 20:56:17 GMT
-recorded_with: VCR 6.2.0
+      string: '{"result": "CDN","cdnurl": ["https://audio-ak-spotify-com.akamaized.net/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?__token__=exp=1728940636~hmac=8de467ecafbe583377f30e4ad3cbeacaecefdba99078534b00f1b1f66229f32e","https://audio-fa-tls13.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa-quic.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa-quic0.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa-tls130.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa.scdn.co/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g="],"fileid":
+        "9a2aa5af6f603d6889a47047aafbb2c51bc28edc","ttl": 86400}'
+  recorded_at: Sun, 13 Oct 2024 21:17:16 GMT
+recorded_with: VCR 6.3.1

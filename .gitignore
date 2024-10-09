@@ -4,5 +4,5 @@ public/media
 log
 tmp
 storage
-lib/spotify/cookies.txt
+lib/widevine.wvd
 lib/vk/downloader

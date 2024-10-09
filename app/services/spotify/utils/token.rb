@@ -1,6 +1,6 @@
 module Spotify
   module Utils
-    class AccessToken < Spotify::Base
+    class Token < Spotify::Base
       BASE_LINK =
         'https://accounts.spotify.com/api/token'.freeze
 

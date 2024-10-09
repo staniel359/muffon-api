@@ -33,12 +33,14 @@ module Spotify
     end
 
     def test_token
-      secrets.spotify[:test_token]
+      'BQCVWE5E0PrIsn1dRQuzWtqYpaSZTWpNZbPNgt76' \
+        'Jf1hxjWMFQXBvB_QBJNwtiBXlsziSTn147jLWvcv' \
+        '0uiG2CIYXWOEcYlzMBt5hw7lf5MOMNjoxmc'
     end
 
     def global_value
       @global_value ||=
-        Spotify::Utils::AccessToken.call
+        Spotify::Utils::Token.call
     end
 
     def retry_with_new_spotify_token
