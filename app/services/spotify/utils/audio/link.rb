@@ -4,8 +4,8 @@ module Spotify
       class Link < Spotify::Base
         BASE_LINK =
           'https://spclient.wg.spotify.com'.freeze
-        # FILE_EXTENSION = 'm4a'.freeze # Widevine
-        FILE_EXTENSION = 'ogg'.freeze # PlayPlay
+        FILE_EXTENSION = 'm4a'.freeze # Widevine
+        # FILE_EXTENSION = 'ogg'.freeze # PlayPlay
 
         include Muffon::Utils::Audio::Link
 
