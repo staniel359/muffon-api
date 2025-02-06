@@ -2,11 +2,6 @@ module YandexMusic
   module Utils
     module Audio
       class Track < YandexMusic::Base
-        # rubocop:disable Layout/LineLength
-        COOKIE =
-          'Session_id=3:1720883025.5.0.1720883025049:qKU3wg:a1.1.2:1|1069814265.0.2.3:1720883025|3:10291445.185369.Pjop4a1rkrxTzCxZdnrnFe5ZcFM'.freeze
-        # rubocop:enable Layout/LineLength
-
         def call
           return if not_all_args?
 
@@ -40,9 +35,17 @@ module YandexMusic
           {
             'X-Retpath-Y' =>
               'https%3A%2F%2Fmusic.yandex.ru/',
-            'Cookie' => COOKIE,
+            'Cookie' => cookies_string,
             'User-Agent' => USER_AGENT
           }
+        end
+
+        def cookies_string
+          "Session_id=#{session_id}"
+        end
+
+        def session_id
+          secrets[:yandex_music][:session_id]
         end
       end
     end
