@@ -3,8 +3,7 @@ module Spotify
     module Audio
       class Link
         class File < Spotify::Utils::Audio::Link
-          FORMAT = 'MP4_128'.freeze # Widevine
-          # FORMAT = 'OGG_VORBIS_160'.freeze # PlayPlay
+          FORMAT = 'MP4_128'.freeze
 
           private
 

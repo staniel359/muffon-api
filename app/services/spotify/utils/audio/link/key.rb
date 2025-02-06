@@ -5,13 +5,8 @@ module Spotify
         class Key < Spotify::Utils::Audio::Link
           private
 
-          def primary_args
-            [@args[:file_id]]
-          end
-
           def no_data?
-            seektables_data.blank? # Widevine
-            # false # PlayPlay
+            seektables_data.blank?
           end
 
           def seektables_data
@@ -21,16 +16,16 @@ module Spotify
               )
           end
 
+          def file_id
+            @args[:file_id]
+          end
+
           def data
             return test_key if test?
 
-            `python3.12 lib/spotify/widevine/key_retriever.py \
+            `python3.12 lib/spotify/key_retriever.py \
               --pssh #{pssh} \
-              --token #{spotify_token}` # Widevine
-
-            # `python3.12 lib/spotify/playplay/key_retriever.py \
-            #   --file_id #{file_id} \
-            #   --token #{spotify_token}` # PlayPlay
+              --token #{spotify_token}`
           end
 
           def test_key
@@ -39,10 +34,6 @@ module Spotify
 
           def pssh
             seektables_data['pssh']
-          end
-
-          def file_id
-            @args[:file_id]
           end
         end
       end

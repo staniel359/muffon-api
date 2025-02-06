@@ -58,10 +58,10 @@ namespace :config do
         "/root/#{fetch(:application)}/shared/config/credentials/production.yml.enc"
       )
 
-      upload!(
-        'lib/widevine.wvd',
-        "/root/#{fetch(:application)}/shared/lib/widevine.wvd"
-      )
+      # upload!(
+      #   'lib/widevine.wvd',
+      #   "/root/#{fetch(:application)}/shared/lib/widevine.wvd"
+      # )
 
       # upload!(
       #   'lib/vk/downloader',
