@@ -1,4 +1,9 @@
 SECRET_KEYS = [
+  %i[amazon_music client_id],
+  %i[amazon_music client_secret],
+  %i[amazon_music refresh_token],
+  %i[amazon_music cookies ubid_acbuk],
+  %i[amazon_music cookies at_acbuk],
   %i[deezer api_token],
   %i[deezer license_token],
   %i[deezer track_token],
@@ -23,13 +28,28 @@ SECRET_KEYS = [
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
+
   config.hook_into :webmock
 
   SECRET_KEYS.each do |keys|
-    filter_name = "<#{keys.join('_').upcase}>"
-    filter_value = CGI.escape(
-      Rails.application.credentials.dig(*keys).to_s
-    )
+    filter_name =
+      "<#{keys.join('_').upcase}>"
+
+    filter_value =
+      Rails
+      .application
+      .credentials
+      .dig(*keys)
+      .to_s
+
+    filter_value_escaped =
+      CGI.escape(
+        filter_value
+      )
+
+    config.filter_sensitive_data(filter_name) do
+      filter_value_escaped
+    end
 
     config.filter_sensitive_data(filter_name) do
       filter_value

@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eu.mesk.skill.music.a2z.com/api/showCatalogAlbum
+    body:
+      encoding: UTF-8
+      string: '{"id":"wejlhg239gh23","headers":"{\"x-amzn-authentication\":\"{\\\"interface\\\":\\\"ClientAuthenticationInterface.v1_0.ClientTokenElement\\\",\\\"accessToken\\\":\\\"Atza|IwEBIIQd1ug2SOj_RQotgALoBSDScJuKIBKiCCEKJRv-OZJVTIc0AddPd7U7H7MM55xARpmkFBWyE91VPL9YXxNSXR0FeaeSqEu10ulIb3PuP9pIb3jJNGjYo437NY6nGaePiRftL55IyP014lrm3NcxsDPfasAtM31kzTpQ8Z-HN8enuJChGt3BCIbpYe_XJnK_hRHMwXXRCtY-Z606C2vLQQNniP-w5WEwutmtAhg14D02I3KHOryR5Sn0ajdJav3H41Pj0yL9xgw6ZXdh4yB-1XN8cy85zJjXmPtB-QJZtuK4cVS-qhnBlKL9nCaaXao4YW7lUFZOzTFpVM3zd4pbDJl1ON6eTHaLE3NbNlK1EK5GslLLNDs8DTRk10Oukp5GOaaR8xhpP8-fES7nEa4sIlRn\\\"}\",\"x-amzn-device-model\":\"WEBPLAYER\",\"x-amzn-device-width\":\"1920\",\"x-amzn-device-family\":\"WebPlayer\",\"x-amzn-device-id\":\"25814726589747619\",\"x-amzn-user-agent\":\"Mozilla/5.0
+        (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36\",\"x-amzn-device-height\":\"1080\",\"x-amzn-request-id\":\"db25d214-c2ce-4b05-a16b-7857efff2a7a\",\"x-amzn-device-language\":\"en_GB\",\"x-amzn-os-version\":\"1.0\",\"x-amzn-application-version\":\"1.0.15759.0\",\"x-amzn-timestamp\":\"1739135588000\",\"x-amzn-page-url\":\"https://music.amazon.com\",\"x-amzn-video-player-token\":\"{}\"}"}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 09 Feb 2025 21:13:08 GMT
+      Cache-Control:
+      - max-age=0
+      Apigw-Requestid:
+      - FvEPxh3TjoEEMRw=
+      Server:
+      - nginx/1.22.1
+      Set-Cookie:
+      - AWSALB=B+Ub77tCWmmz3/Bz41Xg7q+T9QDwxlNFtr9eVg5a1cbg1Xm595r3UIQLKejfytDT7NOVep52c1yLamFNR4pPWy52LVWPtjixG5ID1xlm9rhiEJDcXRyA3dXfGuZW;
+        Expires=Sun, 16 Feb 2025 21:13:08 GMT; Path=/
+      - AWSALBCORS=B+Ub77tCWmmz3/Bz41Xg7q+T9QDwxlNFtr9eVg5a1cbg1Xm595r3UIQLKejfytDT7NOVep52c1yLamFNR4pPWy52LVWPtjixG5ID1xlm9rhiEJDcXRyA3dXfGuZW;
+        Expires=Sun, 16 Feb 2025 21:13:08 GMT; Path=/; SameSite=None; Secure
+      X-Amzn-Trace-Id:
+      - Root=1-67a91a64-549118a47ee9d4b31f82e2d1;
+      Vary:
+      - accept-encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 98652de9f742fc1df9de714d921e14c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P5
+      X-Amz-Cf-Id:
+      - TiRYDCwE0JNRcm_yoG24792pVC-3l8Fl1S2h2aLBbxNUbMEr7cGL1Q==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"methods":[{"interface":"TemplateListInterface.v1_0.CreateAndBindTemplateMethod","template":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogTemplate","header":"Service
+        error","closeButton":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogCloseButtonElement","altText":"Dismiss","icon":"cancel","primaryLink":{"interface":"Web.PageInterface.v1_0.LinkElement","onItemSelected":[{"interface":"TemplateListInterface.v1_0.RemoveTemplateMethod","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}},"body":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogBodyElement","text":"Sorry
+        something went wrong. Please try one more time or contact customer service
+        if the problem persists.","onItemSelected":[]},"onCreated":[],"onBound":[],"onViewed":[],"onInteraction":[],"onLeave":[],"launchMode":"standard","cacheSeconds":9223372036854775807},"screenMode":"standard","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}'
+  recorded_at: Sun, 09 Feb 2025 21:13:08 GMT
+recorded_with: VCR 6.3.1

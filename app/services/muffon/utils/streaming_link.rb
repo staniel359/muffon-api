@@ -2,6 +2,7 @@ module Muffon
   module Utils
     class StreamingLink < Muffon::Base
       SOURCES = {
+        amazonmusic: 'a',
         bandcamp: 'b',
         deezer: 'd',
         soundcloud: 'sc',

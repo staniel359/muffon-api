@@ -1,7 +1,7 @@
 module Muffon
   module Utils
     module Sendable
-      LINK_REGEX = %r{\[link\](.*?)\[/link\]}
+      LINK_REGEXP = %r{\[link\](.*?)\[/link\]}
       ATTACHMENT_TYPES = %i[
         images
         artists
@@ -42,7 +42,7 @@ module Muffon
         return if @args[:text].blank?
 
         @args[:text].gsub(
-          LINK_REGEX,
+          LINK_REGEXP,
           ''
         ).strip
       end
@@ -85,7 +85,7 @@ module Muffon
         return [] if @args[:text].blank?
 
         @args[:text].scan(
-          LINK_REGEX
+          LINK_REGEXP
         ).flatten
       end
     end

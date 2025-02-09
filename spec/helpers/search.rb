@@ -48,6 +48,18 @@ module Helpers
       def no_results_data
         {:search=>{:page=>1, :results=>[]}}
       end
+
+      def amazonmusic_no_artists_data
+        {:search=>{:artists=>[]}}
+      end
+
+      def amazonmusic_no_albums_data
+        {:search=>{:albums=>[]}}
+      end
+
+      def amazonmusic_no_tracks_data
+        {:search=>{:tracks=>[]}}
+      end
     end
   end
 end

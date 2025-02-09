@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eu.mesk.skill.music.a2z.com/api/showCatalogArtist
+    body:
+      encoding: UTF-8
+      string: '{"id":"wejlhg239gh23","headers":"{\"x-amzn-authentication\":\"{\\\"interface\\\":\\\"ClientAuthenticationInterface.v1_0.ClientTokenElement\\\",\\\"accessToken\\\":\\\"Atza|IwEBIIQd1ug2SOj_RQotgALoBSDScJuKIBKiCCEKJRv-OZJVTIc0AddPd7U7H7MM55xARpmkFBWyE91VPL9YXxNSXR0FeaeSqEu10ulIb3PuP9pIb3jJNGjYo437NY6nGaePiRftL55IyP014lrm3NcxsDPfasAtM31kzTpQ8Z-HN8enuJChGt3BCIbpYe_XJnK_hRHMwXXRCtY-Z606C2vLQQNniP-w5WEwutmtAhg14D02I3KHOryR5Sn0ajdJav3H41Pj0yL9xgw6ZXdh4yB-1XN8cy85zJjXmPtB-QJZtuK4cVS-qhnBlKL9nCaaXao4YW7lUFZOzTFpVM3zd4pbDJl1ON6eTHaLE3NbNlK1EK5GslLLNDs8DTRk10Oukp5GOaaR8xhpP8-fES7nEa4sIlRn\\\"}\",\"x-amzn-device-model\":\"WEBPLAYER\",\"x-amzn-device-width\":\"1920\",\"x-amzn-device-family\":\"WebPlayer\",\"x-amzn-device-id\":\"25814726589747619\",\"x-amzn-user-agent\":\"Mozilla/5.0
+        (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36\",\"x-amzn-device-height\":\"1080\",\"x-amzn-request-id\":\"bdc8fd73-a2de-4d12-8705-a590f7542b59\",\"x-amzn-device-language\":\"en_GB\",\"x-amzn-os-version\":\"1.0\",\"x-amzn-application-version\":\"1.0.15759.0\",\"x-amzn-timestamp\":\"1739135595000\",\"x-amzn-page-url\":\"https://music.amazon.com\",\"x-amzn-video-player-token\":\"{}\"}"}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '14'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 09 Feb 2025 21:13:15 GMT
+      Apigw-Requestid:
+      - FvEQ5hj-DoEEMiQ=
+      Cache-Control:
+      - max-age=0
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 91dc0292eef4e22508a3ae73fe64bbf4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P5
+      X-Amz-Cf-Id:
+      - a-FOZQmLiH4Ni2u_AOIt4-fXFQvNwSbWP9xBg2wl2fN9jIIxbZ2nlQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"methods":[]}'
+  recorded_at: Sun, 09 Feb 2025 21:13:15 GMT
+recorded_with: VCR 6.3.1

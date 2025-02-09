@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://eu.mesk.skill.music.a2z.com/api/searchCatalogTracks
+    body:
+      encoding: UTF-8
+      string: '{"keyword":"wejlhg239gh23","headers":"{\"x-amzn-authentication\":\"{\\\"interface\\\":\\\"ClientAuthenticationInterface.v1_0.ClientTokenElement\\\",\\\"accessToken\\\":\\\"Atza|IwEBIIQd1ug2SOj_RQotgALoBSDScJuKIBKiCCEKJRv-OZJVTIc0AddPd7U7H7MM55xARpmkFBWyE91VPL9YXxNSXR0FeaeSqEu10ulIb3PuP9pIb3jJNGjYo437NY6nGaePiRftL55IyP014lrm3NcxsDPfasAtM31kzTpQ8Z-HN8enuJChGt3BCIbpYe_XJnK_hRHMwXXRCtY-Z606C2vLQQNniP-w5WEwutmtAhg14D02I3KHOryR5Sn0ajdJav3H41Pj0yL9xgw6ZXdh4yB-1XN8cy85zJjXmPtB-QJZtuK4cVS-qhnBlKL9nCaaXao4YW7lUFZOzTFpVM3zd4pbDJl1ON6eTHaLE3NbNlK1EK5GslLLNDs8DTRk10Oukp5GOaaR8xhpP8-fES7nEa4sIlRn\\\"}\",\"x-amzn-device-model\":\"WEBPLAYER\",\"x-amzn-device-width\":\"1920\",\"x-amzn-device-family\":\"WebPlayer\",\"x-amzn-device-id\":\"25814726589747619\",\"x-amzn-user-agent\":\"Mozilla/5.0
+        (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36\",\"x-amzn-device-height\":\"1080\",\"x-amzn-request-id\":\"0ca72587-29e8-4a6a-b8fe-1656faa379c5\",\"x-amzn-device-language\":\"en_GB\",\"x-amzn-os-version\":\"1.0\",\"x-amzn-application-version\":\"1.0.15759.0\",\"x-amzn-timestamp\":\"1739135603000\",\"x-amzn-page-url\":\"https://music.amazon.com\",\"x-amzn-video-player-token\":\"{}\"}"}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3278'
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 09 Feb 2025 21:13:24 GMT
+      Apigw-Requestid:
+      - FvESNiUBjoEEMRw=
+      Server:
+      - nginx/1.22.1
+      Set-Cookie:
+      - AWSALB=FfBs8vG8nMnbRquSCGRLLQznCpSEtWi59AwqR80TZ6xli8DMw2f+0QVl7w87cjYIrwkG6EexM+LUGSEc1qKZiv08eJFyUOK5F1ycT2HfFx7urd8+BZwWGv18YZzb;
+        Expires=Sun, 16 Feb 2025 21:13:24 GMT; Path=/
+      - AWSALBCORS=FfBs8vG8nMnbRquSCGRLLQznCpSEtWi59AwqR80TZ6xli8DMw2f+0QVl7w87cjYIrwkG6EexM+LUGSEc1qKZiv08eJFyUOK5F1ycT2HfFx7urd8+BZwWGv18YZzb;
+        Expires=Sun, 16 Feb 2025 21:13:24 GMT; Path=/; SameSite=None; Secure
+      X-Amzn-Trace-Id:
+      - Root=1-67a91a74-24db442b39c3864e16ae2053;
+      Cache-Control:
+      - max-age=0
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fd080e20137c93d47ed43a67821248f0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P5
+      X-Amz-Cf-Id:
+      - 87lpKxIGEXC4Nunk5GGgHyvzBdDvxExKktZsUfN27yJWBpoYyngrRw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"methods":[{"interface":"TemplateListInterface.v1_0.BindTemplateMethod","template":{"interface":"Web.TemplatesInterface.v1_0.Touch.GalleryTemplateInterface.GalleryTemplate","widgets":[],"templateData":{"interface":"Web.PageInterface.v1_0.TemplateDataElement","deeplink":"/search/wejlhg239gh23/songs","seoHead":{"interface":"Web.PageInterface.v1_0.SEOHeadElement","title":"Search
+        Amazon Music: browse by music genres and podcast categories","meta":[{"interface":"Web.PageInterface.v1_0.SEOHeadMetaElement","name":"robots","content":"noindex,
+        follow"},{"interface":"Web.PageInterface.v1_0.SEOHeadMetaElement","name":"description","content":"Find
+        your favourite music and podcasts or browse by genre to discover something
+        new."}],"link":[],"script":[]},"title":"Search Amazon Music: browse by music
+        genres and podcast categories","description":"","keywords":""},"onEndOfWidgetsReached":[],"onCreated":[{"interface":"InteractionInterface.v1_0.InvokeHttpSkillMethod","url":"https://eu.mesk.skill.music.a2z.com/api/searchCatalogTracks?keyword=wejlhg239gh23&userHash=%7B%22level%22%3A%22FREE_MEMBER%22%7D","clientInformation":[],"before":[],"after":[],"onSuccess":[],"onError":[{"interface":"TemplateListInterface.v1_0.CreateAndBindTemplateMethod","template":{"interface":"Web.TemplatesInterface.v1_0.Touch.MessageTemplateInterface.MessageTemplate","message":"We
+        are unable to complete your action.  Please try again later. ","header":"We''re
+        Sorry","image":"https://images-na.ssl-images-amazon.com/images/G/01/digital/music/player/recs-error-headphones._SX626_SY213_BL0_QL100_FMpng_.png","onCreated":[],"onBound":[],"onViewed":[],"onInteraction":[],"onLeave":[],"launchMode":"standard","cacheSeconds":9223372036854775807},"screenMode":"templateShard","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}],"queue":{"interface":"QueuesInterface.v1_0.MultiThreadedQueue","id":"MT_HTTP"},"forced":false},{"interface":"StorageInterface.v1_0.ClearGroupMethod","group":"DOWNLOAD_SELECT","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false},{"interface":"StorageInterface.v1_0.ClearGroupMethod","group":"MULTISELECT","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}],"onBound":[],"onViewed":[{"interface":"InteractionInterface.v1_0.GlobalInvokeHttpSkillMethod","url":"https://eu.mesk.skill.music.a2z.com/api/pageViewed?info=%7B%22type%22%3A%22SEARCH_CATALOG_TRACKS%22%2C%22subType%22%3Anull%2C%22itemId%22%3Anull%2C%22itemIdType%22%3Anull%2C%22refMarker%22%3Anull%2C%22associateTag%22%3Anull%2C%22blockRef%22%3Anull%2C%22pageEntityID%22%3Anull%2C%22pageEntityType%22%3Anull%2C%22pageEntityIdType%22%3Anull%7D&userHash=%7B%22level%22%3A%22FREE_MEMBER%22%7D","clientInformation":["PageViewedMetricInterface.v1_0.LoadTimeClientInformation","PageViewedMetricInterface.v1_0.RefMarkerClientInformation"],"before":[],"after":[],"onSuccess":[],"onError":[],"queue":{"interface":"QueuesInterface.v1_0.MultiThreadedQueue","id":"MT_HTTP"},"forced":false}],"onInteraction":[],"onLeave":[],"launchMode":"standard","cacheSeconds":9223372036854775807,"isEnumerated":false},"queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}'
+  recorded_at: Sun, 09 Feb 2025 21:13:24 GMT
+recorded_with: VCR 6.3.1

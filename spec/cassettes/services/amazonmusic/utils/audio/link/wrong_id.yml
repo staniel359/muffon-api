@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://music.amazon.co.uk/EU/api/dmls/
+    body:
+      encoding: UTF-8
+      string: '{"deviceToken":{"deviceId":"25814726589747619","deviceTypeId":"A16ZV8BU3SN1N3"},"customerId":"A2ZUU2NB43P99O","contentIdList":[{"identifier":"wejlhg239gh23","identifierType":"ASIN"}],"musicDashVersionList":["SIREN_KATANA_NO_CLEAR_LEAD"],"contentProtectionList":["TRACK_PSSH"],"customerInfo":{"marketplaceId":"A1F83G8C2ARO7P","territoryId":"GB"},"appInfo":{"musicAgent":"Maestro/1.0
+        WebCP/1.0.15759.0 (2304-bacb-WebC-8fee-37964)"}}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Encoding:
+      - amz-1.0
+      X-Amz-Target:
+      - com.amazon.digitalmusiclocator.DigitalMusicLocatorServiceExternal.getDashManifestsV2
+      Csrf-Rnd:
+      - '1533618916'
+      Csrf-Token:
+      - co4KZ+YisVWVE/UZXJkqXZ6CeIwO1F38N7Yvsnv1c2I=
+      Csrf-Ts:
+      - '1725608500761'
+      Cookie:
+      - ubid-acbuk=<AMAZON_MUSIC_COOKIES_UBID_ACBUK>; at-acbuk=<AMAZON_MUSIC_COOKIES_AT_ACBUK>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '279'
+      Connection:
+      - keep-alive
+      Server:
+      - Server
+      Date:
+      - Sun, 09 Feb 2025 21:13:32 GMT
+      Strict-Transport-Security:
+      - max-age=47474747; includeSubDomains; preload
+      X-Amz-Rid:
+      - 5M8DQJHK6PSMQ98QTQJF
+      X-Amzn-Requestid:
+      - cbac5e03-30b9-42a4-afad-4ec308b9b7a1
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8576ee57c8a84a61190d4c1b31b69a90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P12
+      X-Amz-Cf-Id:
+      - K8EL-VhU6ulJzp5RbPowe4LmJhlBy3l3ReLAz8ObbRHohSKyW8mTTw==
+    body:
+      encoding: UTF-8
+      string: '{"contentResponseList":[{"cdnType":"UNKNOWN","contentIdentifier":{"identifier":"wejlhg239gh23","identifierType":"ASIN"},"contentResponseStatusCode":"CONTENT_NOT_ELIGIBLE","contentResponseStatusMessage":"Content
+        is not eligible for playback","manifest":"","musicDashVersion":""}]}'
+  recorded_at: Sun, 09 Feb 2025 21:13:32 GMT
+recorded_with: VCR 6.3.1

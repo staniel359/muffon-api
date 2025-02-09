@@ -1,0 +1,182 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://music.amazon.co.uk/EU/api/dmls/
+    body:
+      encoding: UTF-8
+      string: '{"deviceToken":{"deviceId":"25814726589747619","deviceTypeId":"A16ZV8BU3SN1N3"},"customerId":"A2ZUU2NB43P99O","contentIdList":[{"identifier":"B00BRRGTQ4","identifierType":"ASIN"}],"musicDashVersionList":["SIREN_KATANA_NO_CLEAR_LEAD"],"contentProtectionList":["TRACK_PSSH"],"customerInfo":{"marketplaceId":"A1F83G8C2ARO7P","territoryId":"GB"},"appInfo":{"musicAgent":"Maestro/1.0
+        WebCP/1.0.15759.0 (2304-bacb-WebC-8fee-37964)"}}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Encoding:
+      - amz-1.0
+      X-Amz-Target:
+      - com.amazon.digitalmusiclocator.DigitalMusicLocatorServiceExternal.getDashManifestsV2
+      Csrf-Rnd:
+      - '1533618916'
+      Csrf-Token:
+      - co4KZ+YisVWVE/UZXJkqXZ6CeIwO1F38N7Yvsnv1c2I=
+      Csrf-Ts:
+      - '1725608500761'
+      Cookie:
+      - ubid-acbuk=<AMAZON_MUSIC_COOKIES_UBID_ACBUK>; at-acbuk=<AMAZON_MUSIC_COOKIES_AT_ACBUK>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '15651'
+      Connection:
+      - keep-alive
+      Server:
+      - Server
+      Date:
+      - Sun, 09 Feb 2025 21:13:31 GMT
+      Strict-Transport-Security:
+      - max-age=47474747; includeSubDomains; preload
+      X-Amz-Rid:
+      - 48KNZA08DRXD24FCMQP7
+      X-Amzn-Requestid:
+      - bebfceb7-758a-4546-9e9a-08eb22bfeef9
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ee047aee7532c119ede08bf41f5f0762.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P12
+      X-Amz-Cf-Id:
+      - 0GHiq45Hi00ksqzJNdUaR9ZqShjghBVTt14mNS2-XQwDJw7i-1b_jg==
+    body:
+      encoding: UTF-8
+      string: '{"contentResponseList":[{"cdnType":"cf-d17vo8z6jop21h","contentIdentifier":{"identifier":"B00BRRGTQ4","identifierType":"ASIN"},"contentResponseStatusCode":"SUCCESS","contentResponseStatusMessage":"","manifest":"<?xml
+        version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<MPD minBufferTime=\"PT2S\"
+        type=\"static\" mediaPresentationDuration=\"PT198.84271240234375S\" profiles=\"urn:mpeg:dash:profile:isoff-on-demand:2011\"
+        xmlns=\"urn:mpeg:dash:schema:mpd:2011\" xmlns:amz-music=\"urn:amazon:music:drm:2019\"
+        xmlns:cenc=\"urn:mpeg:cenc:2013\" xmlns:mspr=\"urn:microsoft:playready\">\n    <Period
+        id=\"0\">\n        <AdaptationSet id=\"1\" contentType=\"audio\" selectionPriority=\"1000\">\n            <ContentProtection
+        schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" cenc:default_KID=\"6b722031-1cf1-7b38-0d6c-d04dc13e4c0f\"
+        value=\"cenc\"/>\n            <ContentProtection schemeIdUri=\"urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed\">\n                <cenc:pssh>AAAAXXBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAD0SEGtyIDEc8Xs4DWzQTcE+TA8aC0FtYXpvbk11c2ljIhxjaWQ6YTNJZ01SenhlemdOYk5CTndUNU1Edz09</cenc:pssh>\n            </ContentProtection>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:mpegB:cicp:ProgramLoudness\" value=\"-8.2 LUFS\"/>\n            <SupplementalProperty
+        schemeIdUri=\"amz-music:trackType\" value=\"SD\"/>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:dash:adaptation-set-switching:2016\" value=\"3\"/>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:mpegB:cicp:AnchorLoudness\" value=\"-6.9 LUFS\"/>\n            <Representation
+        id=\"1\" qualityRanking=\"3\" codecs=\"opus\" audioSamplingRate=\"48000\"
+        bandwidth=\"53033\" mimeType=\"audio/mp4\">\n                <AudioChannelConfiguration
+        schemeIdUri=\"urn:mpeg:dash:23003:3:audio_channel_configuration:2011\" value=\"2\"/>\n                <BaseURL>https://d17vo8z6jop21h.cloudfront.net/0f1dc314-b45a-4236259249/c686e156-e8ab-3adf-84be-62fceb1fd944.mp4?r=bebfceb7-758a-4546-9e9a-08eb22bfeef9&amp;rs=EU&amp;mt=GB&amp;ql=SD_LOW&amp;dtype=A16ZV8BU3SN1N3</BaseURL>\n                <SegmentList
+        timescale=\"48000\" duration=\"480000\">\n                    <Initialization
+        range=\"0-976\"/>\n                    <SegmentURL mediaRange=\"1249-65565\"/>\n                    <SegmentURL
+        mediaRange=\"65566-129754\"/>\n                    <SegmentURL mediaRange=\"129755-193943\"/>\n                    <SegmentURL
+        mediaRange=\"193944-258132\"/>\n                    <SegmentURL mediaRange=\"258133-322321\"/>\n                    <SegmentURL
+        mediaRange=\"322322-386510\"/>\n                    <SegmentURL mediaRange=\"386511-450699\"/>\n                    <SegmentURL
+        mediaRange=\"450700-514888\"/>\n                    <SegmentURL mediaRange=\"514889-579077\"/>\n                    <SegmentURL
+        mediaRange=\"579078-643266\"/>\n                    <SegmentURL mediaRange=\"643267-707455\"/>\n                    <SegmentURL
+        mediaRange=\"707456-771644\"/>\n                    <SegmentURL mediaRange=\"771645-835833\"/>\n                    <SegmentURL
+        mediaRange=\"835834-900022\"/>\n                    <SegmentURL mediaRange=\"900023-964211\"/>\n                    <SegmentURL
+        mediaRange=\"964212-1028400\"/>\n                    <SegmentURL mediaRange=\"1028401-1092589\"/>\n                    <SegmentURL
+        mediaRange=\"1092590-1156778\"/>\n                    <SegmentURL mediaRange=\"1156779-1220967\"/>\n                    <SegmentURL
+        mediaRange=\"1220968-1279496\"/>\n                </SegmentList>\n            </Representation>\n            <Representation
+        id=\"2\" qualityRanking=\"2\" codecs=\"opus\" audioSamplingRate=\"48000\"
+        bandwidth=\"197209\" mimeType=\"audio/mp4\">\n                <AudioChannelConfiguration
+        schemeIdUri=\"urn:mpeg:dash:23003:3:audio_channel_configuration:2011\" value=\"2\"/>\n                <BaseURL>https://d17vo8z6jop21h.cloudfront.net/0f1dc314-b45a-4236259249/17b13712-e695-372a-84ee-49769492f444.mp4?r=bebfceb7-758a-4546-9e9a-08eb22bfeef9&amp;rs=EU&amp;mt=GB&amp;ql=SD_MEDIUM&amp;dtype=A16ZV8BU3SN1N3</BaseURL>\n                <SegmentList
+        timescale=\"48000\" duration=\"480000\">\n                    <Initialization
+        range=\"0-976\"/>\n                    <SegmentURL mediaRange=\"1249-245925\"/>\n                    <SegmentURL
+        mediaRange=\"245926-490114\"/>\n                    <SegmentURL mediaRange=\"490115-734303\"/>\n                    <SegmentURL
+        mediaRange=\"734304-978492\"/>\n                    <SegmentURL mediaRange=\"978493-1222681\"/>\n                    <SegmentURL
+        mediaRange=\"1222682-1466870\"/>\n                    <SegmentURL mediaRange=\"1466871-1711059\"/>\n                    <SegmentURL
+        mediaRange=\"1711060-1955248\"/>\n                    <SegmentURL mediaRange=\"1955249-2199437\"/>\n                    <SegmentURL
+        mediaRange=\"2199438-2443626\"/>\n                    <SegmentURL mediaRange=\"2443627-2687815\"/>\n                    <SegmentURL
+        mediaRange=\"2687816-2932004\"/>\n                    <SegmentURL mediaRange=\"2932005-3176193\"/>\n                    <SegmentURL
+        mediaRange=\"3176194-3420382\"/>\n                    <SegmentURL mediaRange=\"3420383-3664571\"/>\n                    <SegmentURL
+        mediaRange=\"3664572-3908760\"/>\n                    <SegmentURL mediaRange=\"3908761-4152949\"/>\n                    <SegmentURL
+        mediaRange=\"4152950-4397138\"/>\n                    <SegmentURL mediaRange=\"4397139-4641327\"/>\n                    <SegmentURL
+        mediaRange=\"4641328-4858976\"/>\n                </SegmentList>\n            </Representation>\n            <Representation
+        id=\"3\" qualityRanking=\"1\" codecs=\"opus\" audioSamplingRate=\"48000\"
+        bandwidth=\"325365\" mimeType=\"audio/mp4\">\n                <AudioChannelConfiguration
+        schemeIdUri=\"urn:mpeg:dash:23003:3:audio_channel_configuration:2011\" value=\"2\"/>\n                <BaseURL>https://d17vo8z6jop21h.cloudfront.net/0f1dc314-b45a-4236259249/c0dc7227-75f2-398c-9df6-9b8bd8ace970.mp4?r=bebfceb7-758a-4546-9e9a-08eb22bfeef9&amp;rs=EU&amp;mt=GB&amp;ql=SD_HIGH&amp;dtype=A16ZV8BU3SN1N3</BaseURL>\n                <SegmentList
+        timescale=\"48000\" duration=\"480000\">\n                    <Initialization
+        range=\"0-976\"/>\n                    <SegmentURL mediaRange=\"1249-406245\"/>\n                    <SegmentURL
+        mediaRange=\"406246-810434\"/>\n                    <SegmentURL mediaRange=\"810435-1214623\"/>\n                    <SegmentURL
+        mediaRange=\"1214624-1618812\"/>\n                    <SegmentURL mediaRange=\"1618813-2023001\"/>\n                    <SegmentURL
+        mediaRange=\"2023002-2427190\"/>\n                    <SegmentURL mediaRange=\"2427191-2831379\"/>\n                    <SegmentURL
+        mediaRange=\"2831380-3235568\"/>\n                    <SegmentURL mediaRange=\"3235569-3639757\"/>\n                    <SegmentURL
+        mediaRange=\"3639758-4043946\"/>\n                    <SegmentURL mediaRange=\"4043947-4448135\"/>\n                    <SegmentURL
+        mediaRange=\"4448136-4852324\"/>\n                    <SegmentURL mediaRange=\"4852325-5256513\"/>\n                    <SegmentURL
+        mediaRange=\"5256514-5660702\"/>\n                    <SegmentURL mediaRange=\"5660703-6064891\"/>\n                    <SegmentURL
+        mediaRange=\"6064892-6469080\"/>\n                    <SegmentURL mediaRange=\"6469081-6873269\"/>\n                    <SegmentURL
+        mediaRange=\"6873270-7277458\"/>\n                    <SegmentURL mediaRange=\"7277459-7681647\"/>\n                    <SegmentURL
+        mediaRange=\"7681648-8040736\"/>\n                </SegmentList>\n            </Representation>\n        </AdaptationSet>\n        <AdaptationSet
+        id=\"2\" contentType=\"audio\" selectionPriority=\"500\">\n            <ContentProtection
+        schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" cenc:default_KID=\"504e3c0f-6f79-27e4-4ba4-b58642ac31d1\"
+        value=\"cenc\"/>\n            <ContentProtection schemeIdUri=\"urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed\">\n                <cenc:pssh>AAAAXXBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAD0SEFBOPA9veSfkS6S1hkKsMdEaC0FtYXpvbk11c2ljIhxjaWQ6VUU0OEQyOTVKK1JMcExXR1Fxd3gwUT09</cenc:pssh>\n            </ContentProtection>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:mpegB:cicp:ProgramLoudness\" value=\"-8.2 LUFS\"/>\n            <SupplementalProperty
+        schemeIdUri=\"amz-music:trackType\" value=\"LD\"/>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:mpegB:cicp:AnchorLoudness\" value=\"-6.9 LUFS\"/>\n            <Representation
+        id=\"4\" qualityRanking=\"2000\" codecs=\"opus\" audioSamplingRate=\"48000\"
+        bandwidth=\"53033\" mimeType=\"audio/mp4\">\n                <AudioChannelConfiguration
+        schemeIdUri=\"urn:mpeg:dash:23003:3:audio_channel_configuration:2011\" value=\"2\"/>\n                <BaseURL>https://d17vo8z6jop21h.cloudfront.net/0f1dc314-b45a-4236259249/52f3649b-ff4e-3492-ac77-aa25d0085618.mp4?r=bebfceb7-758a-4546-9e9a-08eb22bfeef9&amp;rs=EU&amp;mt=GB&amp;ql=LD_LOW&amp;dtype=A16ZV8BU3SN1N3</BaseURL>\n                <SegmentList
+        timescale=\"48000\" duration=\"480000\">\n                    <Initialization
+        range=\"0-976\"/>\n                    <SegmentURL mediaRange=\"1249-65565\"/>\n                    <SegmentURL
+        mediaRange=\"65566-129754\"/>\n                    <SegmentURL mediaRange=\"129755-193943\"/>\n                    <SegmentURL
+        mediaRange=\"193944-258132\"/>\n                    <SegmentURL mediaRange=\"258133-322321\"/>\n                    <SegmentURL
+        mediaRange=\"322322-386510\"/>\n                    <SegmentURL mediaRange=\"386511-450699\"/>\n                    <SegmentURL
+        mediaRange=\"450700-514888\"/>\n                    <SegmentURL mediaRange=\"514889-579077\"/>\n                    <SegmentURL
+        mediaRange=\"579078-643266\"/>\n                    <SegmentURL mediaRange=\"643267-707455\"/>\n                    <SegmentURL
+        mediaRange=\"707456-771644\"/>\n                    <SegmentURL mediaRange=\"771645-835833\"/>\n                    <SegmentURL
+        mediaRange=\"835834-900022\"/>\n                    <SegmentURL mediaRange=\"900023-964211\"/>\n                    <SegmentURL
+        mediaRange=\"964212-1028400\"/>\n                    <SegmentURL mediaRange=\"1028401-1092589\"/>\n                    <SegmentURL
+        mediaRange=\"1092590-1156778\"/>\n                    <SegmentURL mediaRange=\"1156779-1220967\"/>\n                    <SegmentURL
+        mediaRange=\"1220968-1279496\"/>\n                </SegmentList>\n            </Representation>\n            <Representation
+        id=\"5\" qualityRanking=\"1000\" codecs=\"opus\" audioSamplingRate=\"48000\"
+        bandwidth=\"165170\" mimeType=\"audio/mp4\">\n                <AudioChannelConfiguration
+        schemeIdUri=\"urn:mpeg:dash:23003:3:audio_channel_configuration:2011\" value=\"2\"/>\n                <BaseURL>https://d17vo8z6jop21h.cloudfront.net/0f1dc314-b45a-4236259249/2deae90e-aa8d-3379-af60-a7d786cc4f74.mp4?r=bebfceb7-758a-4546-9e9a-08eb22bfeef9&amp;rs=EU&amp;mt=GB&amp;ql=LD_MEDIUM&amp;dtype=A16ZV8BU3SN1N3</BaseURL>\n                <SegmentList
+        timescale=\"48000\" duration=\"480000\">\n                    <Initialization
+        range=\"0-976\"/>\n                    <SegmentURL mediaRange=\"1249-205845\"/>\n                    <SegmentURL
+        mediaRange=\"205846-410034\"/>\n                    <SegmentURL mediaRange=\"410035-614223\"/>\n                    <SegmentURL
+        mediaRange=\"614224-818412\"/>\n                    <SegmentURL mediaRange=\"818413-1022601\"/>\n                    <SegmentURL
+        mediaRange=\"1022602-1226790\"/>\n                    <SegmentURL mediaRange=\"1226791-1430979\"/>\n                    <SegmentURL
+        mediaRange=\"1430980-1635168\"/>\n                    <SegmentURL mediaRange=\"1635169-1839357\"/>\n                    <SegmentURL
+        mediaRange=\"1839358-2043546\"/>\n                    <SegmentURL mediaRange=\"2043547-2247735\"/>\n                    <SegmentURL
+        mediaRange=\"2247736-2451924\"/>\n                    <SegmentURL mediaRange=\"2451925-2656113\"/>\n                    <SegmentURL
+        mediaRange=\"2656114-2860302\"/>\n                    <SegmentURL mediaRange=\"2860303-3064491\"/>\n                    <SegmentURL
+        mediaRange=\"3064492-3268680\"/>\n                    <SegmentURL mediaRange=\"3268681-3472869\"/>\n                    <SegmentURL
+        mediaRange=\"3472870-3677058\"/>\n                    <SegmentURL mediaRange=\"3677059-3881247\"/>\n                    <SegmentURL
+        mediaRange=\"3881248-4063536\"/>\n                </SegmentList>\n            </Representation>\n        </AdaptationSet>\n        <AdaptationSet
+        id=\"3\" contentType=\"audio\" selectionPriority=\"2000\">\n            <ContentProtection
+        schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" cenc:default_KID=\"ea81edb1-dc20-2fc2-2f27-2d14de08ab36\"
+        value=\"cenc\"/>\n            <ContentProtection schemeIdUri=\"urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed\">\n                <cenc:pssh>AAAAXXBzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAAD0SEOqB7bHcIC/CLyctFN4IqzYaC0FtYXpvbk11c2ljIhxjaWQ6Nm9IdHNkd2dMOEl2SnkwVTNnaXJOZz09</cenc:pssh>\n            </ContentProtection>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:mpegB:cicp:ProgramLoudness\" value=\"-8.2 LUFS\"/>\n            <SupplementalProperty
+        schemeIdUri=\"amz-music:trackType\" value=\"HD\"/>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:dash:adaptation-set-switching:2016\" value=\"1\"/>\n            <SupplementalProperty
+        schemeIdUri=\"urn:mpeg:mpegB:cicp:AnchorLoudness\" value=\"-6.9 LUFS\"/>\n            <Representation
+        id=\"6\" qualityRanking=\"4\" codecs=\"flac\" audioSamplingRate=\"44100\"
+        bandwidth=\"1064320\" mimeType=\"audio/mp4\">\n                <AudioChannelConfiguration
+        schemeIdUri=\"urn:mpeg:dash:23003:3:audio_channel_configuration:2011\" value=\"2\"/>\n                <SupplementalProperty
+        schemeIdUri=\"amz-music:bitDepth\" value=\"16\"/>\n                <BaseURL>https://d17vo8z6jop21h.cloudfront.net/0f1dc314-b45a-4236259249/28d463b5-b7a7-3df9-a6ce-040e3991e265.mp4?r=bebfceb7-758a-4546-9e9a-08eb22bfeef9&amp;rs=EU&amp;mt=GB&amp;ql=HD_44&amp;dtype=A16ZV8BU3SN1N3</BaseURL>\n                <SegmentList
+        timescale=\"44100\" duration=\"441000\">\n                    <Initialization
+        range=\"0-981\"/>\n                    <SegmentURL mediaRange=\"1254-723099\"/>\n                    <SegmentURL
+        mediaRange=\"723100-1699558\"/>\n                    <SegmentURL mediaRange=\"1699559-2929326\"/>\n                    <SegmentURL
+        mediaRange=\"2929327-4187237\"/>\n                    <SegmentURL mediaRange=\"4187238-5479427\"/>\n                    <SegmentURL
+        mediaRange=\"5479428-6803762\"/>\n                    <SegmentURL mediaRange=\"6803763-8125953\"/>\n                    <SegmentURL
+        mediaRange=\"8125954-9447814\"/>\n                    <SegmentURL mediaRange=\"9447815-10762942\"/>\n                    <SegmentURL
+        mediaRange=\"10762943-12033410\"/>\n                    <SegmentURL mediaRange=\"12033411-13315105\"/>\n                    <SegmentURL
+        mediaRange=\"13315106-14613972\"/>\n                    <SegmentURL mediaRange=\"14613973-15902388\"/>\n                    <SegmentURL
+        mediaRange=\"15902389-17206661\"/>\n                    <SegmentURL mediaRange=\"17206662-18537061\"/>\n                    <SegmentURL
+        mediaRange=\"18537062-19862524\"/>\n                    <SegmentURL mediaRange=\"19862525-21146902\"/>\n                    <SegmentURL
+        mediaRange=\"21146903-22309910\"/>\n                    <SegmentURL mediaRange=\"22309911-23390655\"/>\n                    <SegmentURL
+        mediaRange=\"23390656-23912913\"/>\n                </SegmentList>\n            </Representation>\n        </AdaptationSet>\n    </Period>\n</MPD>\n","musicDashVersion":"SIREN_KATANA_NO_CLEAR_LEAD"}]}'
+  recorded_at: Sun, 09 Feb 2025 21:13:31 GMT
+recorded_with: VCR 6.3.1

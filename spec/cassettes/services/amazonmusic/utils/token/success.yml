@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.amazon.com/auth/o2/token?client_id=<AMAZON_MUSIC_CLIENT_ID>&client_secret=<AMAZON_MUSIC_CLIENT_SECRET>&grant_type=refresh_token&refresh_token=<AMAZON_MUSIC_REFRESH_TOKEN>
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+        Safari/537.36
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Server
+      Date:
+      - Sun, 09 Feb 2025 21:13:32 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '912'
+      Connection:
+      - keep-alive
+      X-Amz-Rid:
+      - 41WSABNH66AZ9MT7CMR4
+      X-Amzn-Requestid:
+      - 2011758d-3c22-4f95-ab05-c5451ccb5989
+      X-Amz-Date:
+      - Sun, 09 Feb 2025 21:13:32 GMT
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Vary:
+      - Content-Type,Accept-Encoding,User-Agent
+      Strict-Transport-Security:
+      - max-age=47474747; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"Atza|IwEBIP24QvbT576xhX1poHFb6za16fmkq6G7K4Hoer1apRDefZRDJZQC1wYeX9sVQsal5Of7vml82ZXmSK4L5IhyCBjSfaOtJkul4wSMHUhAaMxcNV_w4w8ADKn2C6BtPEqflxZfSerB1VJnAMtzMW0j7X0mkecDco-xDaQDiUmV5idSu3NrCtTBkuOX7v3CO8JNwkUx9JxUA8JE5HHijpwtzAEeBGZhrFf-1zAQNhhJkjUZKUUPUJA-ani3k_XLhjmjjToESlTe3rNQPOWMBVA18q0H2eqkkP4gIRQdp_uZPdGLA_xVFtNt_ulFRXruWtZbDETlWvj16Nv1Az17ZX9WrKvOgaI5-wjstbwtuTCdFxXZG3VdL3UooTpoMzYBrwzztylU1dAGirWN-LFN1LCB8mwi","refresh_token":"<AMAZON_MUSIC_REFRESH_TOKEN>","token_type":"bearer","expires_in":3600}'
+  recorded_at: Sun, 09 Feb 2025 21:13:32 GMT
+recorded_with: VCR 6.3.1
