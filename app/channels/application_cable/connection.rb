@@ -3,19 +3,17 @@ module ApplicationCable
     identified_by :profile
 
     def connect
-      reject_unauthorized_connection if reject?
+      if reject?
+        reject_unauthorized_connection
+      end
     end
 
     def disconnect; end
 
     private
 
-    def reject?
-      !valid_token?
-    end
-
-    def valid_token?
-      Muffon::Token::Validator.call(
+    def profile
+      Profile.find_by(
         token:
       )
     end
@@ -24,8 +22,12 @@ module ApplicationCable
       request.params['token']
     end
 
-    def profile
-      Profile.find_by(
+    def reject?
+      !valid_token?
+    end
+
+    def valid_token?
+      Muffon::Token::Validator.call(
         token:
       )
     end

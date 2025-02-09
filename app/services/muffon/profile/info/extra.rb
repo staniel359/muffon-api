@@ -28,6 +28,8 @@ module Muffon
         end
 
         def playing
+          return unless online?
+
           profile.playing
         end
 

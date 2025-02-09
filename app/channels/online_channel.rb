@@ -17,7 +17,9 @@ class OnlineChannel < ApplicationCable::Channel
 
   private
 
-  def update_profile_online(boolean)
+  def update_profile_online(
+    boolean
+  )
     return if profile.blank?
 
     online = (
