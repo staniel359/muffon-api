@@ -13,27 +13,29 @@ module Genius
         end
 
         def lyrics
-          return '' if @args[:track_slug].blank?
+          return '' if track_slug.blank?
 
           format_children(
             lyrics_nodes
           ).compact.flatten
         end
 
+        def track_slug
+          @args[:track_slug]
+        end
+
         def lyrics_nodes
           html_response_data.xpath(
             "//*[
               contains(
-                @class, 'Lyrics__Container'
-              ) or contains(
-                @class, 'InreadContainer'
+                @class, 'Lyrics-sc'
               )
             ]"
           )
         end
 
         def link
-          "https://genius.com#{@args[:track_slug]}"
+          "https://genius.com#{track_slug}"
         end
 
         def format_children(node)
@@ -79,7 +81,7 @@ module Genius
             .attributes['class']
             &.value
             &.include?(
-              'ReferentFragmentdesktop__ClickTarget'
+              'ReferentFragment-desktop-sc'
             )
         end
 
