@@ -45,6 +45,8 @@ module YandexMusic
         end
 
         def session_id
+          return 'test' if test?
+
           secrets[:yandex_music][:session_id]
         end
       end

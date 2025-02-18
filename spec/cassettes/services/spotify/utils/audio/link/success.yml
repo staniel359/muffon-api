@@ -8,9 +8,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.12.0
+      - Faraday v2.12.2
       Authorization:
-      - Bearer BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbHZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbjviLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTHbQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZaRPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhBBSJwNbm9QLytbBx6Yngjm5VT
+      - Bearer BQAzSkrNZZ4VKzk-hkm-M-VcNdzUFfnq69H8wFFaLwIE8KZ4u0in51R9o9VQFP30VMMx4n4FHkOWRW8eQn2JEIBjkOuQ4J0S3lJeu0wnFSUQqsaRDLIKlhY0EzuoRwW5mmVKOfK2P25GKKgFnXepfDfk9StzDqzjWZ72FZDz92XNUPmuWcbSDF6uT_PxyEFsHcPUo81w_QLIfh6WNdAmJHmhr08mLGzMhs0sGgHkwitiZKWzxzcC21OMouUVyxONA6zdwYP55oTfjYeQyjFm7QgDPehaqJ4jfHZ-cTC-CggkFDJebeqX3EyZOEPInClpwhYlg54NAoNDPnxljuPC9enXREsdzet7hK0ISTIQ17GD3NU9ZQ
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=79230
+      - public, max-age=72342
       Etag:
-      - '"MC-Vv7qxQ=="'
+      - '"MC-lAjIdg=="'
       Vary:
       - _ui.country
       Access-Control-Allow-Origin:
@@ -48,7 +48,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 13 Oct 2024 21:17:16 GMT
+      - Tue, 18 Feb 2025 21:10:46 GMT
       Server:
       - envoy
       Via:
@@ -69,7 +69,7 @@ http_interactions:
         "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b273fa183fdd680f1d249ba2f893","size":
         "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "aa9468539d19400ca4c32fdc159926a9"}},"artist":
         [{"gid": "8265d738c12c4d49803e1453a3a0072a","name": "Kenny Loggins"}],"number":
-        1,"disc_number": 1,"duration": 216346,"popularity": 61,"external_id": [{"type":
+        1,"disc_number": 1,"duration": 216346,"popularity": 59,"external_id": [{"type":
         "isrc","id": "USSM18600108"}],"file": [{"file_id": "b448ea73a3972724547ee1a85bd03517017d66ad","format":
         "OGG_VORBIS_320"},{"file_id": "9a2aa5af6f603d6889a47047aafbb2c51bc28edc","format":
         "OGG_VORBIS_160"},{"file_id": "27e98138404f5f1be7be2e00f4e7545e7bf7cc4f","format":
@@ -81,23 +81,24 @@ http_interactions:
         "AAC_24"}],"preview": [{"file_id": "f60a2b5f25770366edd8bcf586b2cddf8e336a87","format":
         "MP3_96"}],"earliest_live_timestamp": 413146860,"has_lyrics": true,"licensor":
         {"uuid": "aa9468539d19400ca4c32fdc159926a9"},"language_of_performance": ["en"],"original_audio":
-        {"uuid": "0c607d70a4244104bddf8235f928b774"},"original_title": "Danger Zone","version_title":
-        "From \"Top Gun\" Original Soundtrack","artist_with_role": [{"artist_gid":
-        "8265d738c12c4d49803e1453a3a0072a","artist_name": "Kenny Loggins","role":
+        {"uuid": "0c607d70a4244104bddf8235f928b774","format": "AUDIO_FORMAT_STEREO"},"original_title":
+        "Danger Zone","version_title": "From \"Top Gun\" Original Soundtrack","artist_with_role":
+        [{"artist_gid": "8265d738c12c4d49803e1453a3a0072a","artist_name": "Kenny Loggins","role":
         "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:4HiC3ulkTgbEcYYsSuR6PO","content_authorization_attributes":
-        ""}'
-  recorded_at: Sun, 13 Oct 2024 21:17:16 GMT
+        "","audio_formats": [{"original_audio": {"uuid": "0c607d70a4244104bddf8235f928b774","format":
+        "AUDIO_FORMAT_STEREO"}}]}'
+  recorded_at: Tue, 18 Feb 2025 21:10:47 GMT
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/92b55b5348f481e5024abb408263ee3062c9e000?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.12.0
+      - Faraday v2.12.2
       Authorization:
-      - Bearer BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbHZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbjviLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTHbQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZaRPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhBBSJwNbm9QLytbBx6Yngjm5VT
+      - Bearer BQAzSkrNZZ4VKzk-hkm-M-VcNdzUFfnq69H8wFFaLwIE8KZ4u0in51R9o9VQFP30VMMx4n4FHkOWRW8eQn2JEIBjkOuQ4J0S3lJeu0wnFSUQqsaRDLIKlhY0EzuoRwW5mmVKOfK2P25GKKgFnXepfDfk9StzDqzjWZ72FZDz92XNUPmuWcbSDF6uT_PxyEFsHcPUo81w_QLIfh6WNdAmJHmhr08mLGzMhs0sGgHkwitiZKWzxzcC21OMouUVyxONA6zdwYP55oTfjYeQyjFm7QgDPehaqJ4jfHZ-cTC-CggkFDJebeqX3EyZOEPInClpwhYlg54NAoNDPnxljuPC9enXREsdzet7hK0ISTIQ17GD3NU9ZQ
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -116,7 +117,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Sun, 13 Oct 2024 21:17:16 GMT
+      - Tue, 18 Feb 2025 21:10:47 GMT
       Server:
       - envoy
       Via:
@@ -127,7 +128,67 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"result": "CDN","cdnurl": ["https://audio-ak-spotify-com.akamaized.net/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?__token__=exp=1728940636~hmac=8de467ecafbe583377f30e4ad3cbeacaecefdba99078534b00f1b1f66229f32e","https://audio-fa-tls13.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa-quic.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa-quic0.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa-tls130.spotifycdn.com/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g=","https://audio-fa.scdn.co/audio/9a2aa5af6f603d6889a47047aafbb2c51bc28edc?1728940636_K81pTri7fDu3Pe7GbR96FTODLk3IJDB03n1ZaH2P31g="],"fileid":
-        "9a2aa5af6f603d6889a47047aafbb2c51bc28edc","ttl": 86400}'
-  recorded_at: Sun, 13 Oct 2024 21:17:16 GMT
+      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-ak.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?__token__=exp=1739999447~hmac=dc60a6d8157e999335d8efed749f24d524b2807fdcfc3840ed80ec9319217d6f","https://audio-fa-tls130.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-fa-quic.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-fa-quic0.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-fa-tls13.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0="],"fileid":
+        "92b55b5348f481e5024abb408263ee3062c9e000","ttl": 86400}'
+  recorded_at: Tue, 18 Feb 2025 21:10:47 GMT
+- request:
+    method: get
+    uri: https://seektables.scdn.co/seektable/92b55b5348f481e5024abb408263ee3062c9e000.json?alt=json&platform=39&product=9&version=10000000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.2
+      Authorization:
+      - Bearer BQAzSkrNZZ4VKzk-hkm-M-VcNdzUFfnq69H8wFFaLwIE8KZ4u0in51R9o9VQFP30VMMx4n4FHkOWRW8eQn2JEIBjkOuQ4J0S3lJeu0wnFSUQqsaRDLIKlhY0EzuoRwW5mmVKOfK2P25GKKgFnXepfDfk9StzDqzjWZ72FZDz92XNUPmuWcbSDF6uT_PxyEFsHcPUo81w_QLIfh6WNdAmJHmhr08mLGzMhs0sGgHkwitiZKWzxzcC21OMouUVyxONA6zdwYP55oTfjYeQyjFm7QgDPehaqJ4jfHZ-cTC-CggkFDJebeqX3EyZOEPInClpwhYlg54NAoNDPnxljuPC9enXREsdzet7hK0ISTIQ17GD3NU9ZQ
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1662'
+      Last-Modified:
+      - Wed, 31 May 2017 13:02:04 GMT
+      Etag:
+      - '"ab90e4dd70ea01884d0191514959513e"'
+      X-Goog-Generation:
+      - '1496235724131464'
+      X-Goog-Metageneration:
+      - '1'
+      X-Goog-Stored-Content-Encoding:
+      - identity
+      X-Goog-Stored-Content-Length:
+      - '1662'
+      Content-Type:
+      - application/json
+      X-Amz-Checksum-Crc32c:
+      - yXexEg==
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '1576992'
+      Date:
+      - Tue, 18 Feb 2025 21:10:47 GMT
+      X-Served-By:
+      - cache-chi-kigq8000022-CHI, cache-fra-eddf8230122-FRA
+      X-Cache:
+      - HIT, HIT
+      X-Cache-Hits:
+      - 133, 0
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - max-age=604800, no-transform
+    body:
+      encoding: ASCII-8BIT
+      string: '{"offset":1789,"seektable_version":"1","pssh_widevine":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","index_range":[24,1492],"pssh":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","timescale":44100,"padding_samples":744,"pssh_playready":"AAACnHBzc2gAAAAAmgTweZhAQoarkuZb4IhflQAAAnx8AgAAAQABAHICPABXAFIATQBIAEUAQQBEAEUAUgAgAHgAbQBsAG4AcwA9ACIAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4AbQBpAGMAcgBvAHMAbwBmAHQALgBjAG8AbQAvAEQAUgBNAC8AMgAwADAANwAvADAAMwAvAFAAbABhAHkAUgBlAGEAZAB5AEgAZQBhAGQAZQByACIAIAB2AGUAcgBzAGkAbwBuAD0AIgA0AC4AMAAuADAALgAwACIAPgA8AEQAQQBUAEEAPgA8AFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBFAFkATABFAE4APgAxADYAPAAvAEsARQBZAEwARQBOAD4APABBAEwARwBJAEQAPgBBAEUAUwBDAFQAUgA8AC8AQQBMAEcASQBEAD4APAAvAFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBJAEQAPgBVADEAdQAxAGsAdgBSAEkANQBZAEUAQwBTAHIAdABBAGcAbQBQAHUATQBBAD0APQA8AC8ASwBJAEQAPgA8AEMASABFAEMASwBTAFUATQA+AFQAYQA4AGEASABlADMAbwB1AEwATQA9ADwALwBDAEgARQBDAEsAUwBVAE0APgA8AEwAQQBfAFUAUgBMAD4AaAB0AHQAcAA6AC8ALwBhAC0AZgBhAGsAZQAtAHMAZQByAHYAZQByAC4AcwBwAG8AdABpAGYAeQAuAG4AZQB0ADoAOAAwADgAMAAvAHQAZQBzAHQAPAAvAEwAQQBfAFUAUgBMAD4APAAvAEQAQQBUAEEAPgA8AC8AVwBSAE0ASABFAEEARABFAFIAPgA=","segments":[[175350,441344],[175684,441344],[172419,441344],[172959,441344],[172774,441344],[171356,441344],[171476,441344],[172910,441344],[174645,441344],[173203,441344],[173133,441344],[173775,441344],[172496,441344],[171629,441344],[171897,441344],[174109,441344],[172322,441344],[171581,441344],[171637,441344],[172247,441344],[171746,441344],[107160,273688]],"encoder_delay_samples":1024}'
+  recorded_at: Tue, 18 Feb 2025 21:10:47 GMT
 recorded_with: VCR 6.3.1

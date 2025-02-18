@@ -3,9 +3,9 @@ module ApplicationCable
     identified_by :profile
 
     def connect
-      if reject?
-        reject_unauthorized_connection
-      end
+      return unless reject_unauthorized_connection?
+
+      reject_unauthorized_connection
     end
 
     def disconnect; end
@@ -22,7 +22,7 @@ module ApplicationCable
       request.params['token']
     end
 
-    def reject?
+    def reject_unauthorized_connection?
       !valid_token?
     end
 
