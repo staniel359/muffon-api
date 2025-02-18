@@ -38,7 +38,7 @@ module Discogs
       {
         name: source_name,
         id: artist['id']
-      }
+      }.compact
     end
 
     def artist_name_formatted(name)

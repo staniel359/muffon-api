@@ -7,21 +7,19 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.discogs.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Date:
-      - Sun, 02 Jul 2023 12:28:23 GMT
+      - Tue, 18 Feb 2025 20:59:59 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -37,9 +35,9 @@ http_interactions:
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '57'
+      - '58'
       X-Discogs-Ratelimit-Used:
-      - '3'
+      - '2'
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
@@ -47,17 +45,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=qhYzr4mREJ3y7odbJ4KPOTc870k3YMmn3zU9VobMJK0-1688300903-0-AQ7y16gqrxPnN3mYzxnPHZ0YRFANPtvaMCEXlyHRPRmm8DlpNLqVPQAIthCwEJoWTfL5FC3AQPCWupqfTbLh8Oc=;
-        path=/; expires=Sun, 02-Jul-23 12:58:23 GMT; domain=.discogs.com; HttpOnly;
+      - __cf_bm=fMS2Z7A1nOYEMQvDKGN.6vi1QBov1Z.bfDGWJ3ZZ.C4-1739912399-1.0.1.1-E_5c8LWx7fr8qRnHogQf7i0Z5nR.6hg1e3a94IgGTHBy3fTyIuYf_PQIjbsphlirBhNDeJ42btd.XT.3O8KpCg;
+        path=/; expires=Tue, 18-Feb-25 21:29:59 GMT; domain=.discogs.com; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e06e3675c493576-WAW
+      - 9140f1ac392beeca-WAW
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: '{"message": "The requested resource was not found."}'
-  recorded_at: Sun, 02 Jul 2023 12:28:23 GMT
-recorded_with: VCR 6.2.0
+  recorded_at: Tue, 18 Feb 2025 20:59:59 GMT
+recorded_with: VCR 6.3.1

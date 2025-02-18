@@ -5,7 +5,7 @@ RSpec.describe Discogs::Artist::Albums do
     context 'when artist_id given' do
       let(:output) do
         VCR.use_cassette 'services/discogs/artist/albums/success' do
-          subject.call(artist_id: '6271', album_type: 'album', limit: 5, page: 2, profile_id: 1)
+          subject.call(artist_id: '6271', limit: 5, page: 2, profile_id: 1)
         end
       end
 
@@ -15,13 +15,7 @@ RSpec.describe Discogs::Artist::Albums do
 
   describe 'no processing' do
     context 'when no artist_id given' do
-      let(:output) { subject.call(album_type: 'album') }
-
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
-    end
-
-    context 'when no album_type given' do
-      let(:output) { subject.call(artist_id: '6271') }
+      let(:output) { subject.call }
 
       it { expect(output).to eq(Helpers::Base.bad_request_error) }
     end
@@ -29,7 +23,7 @@ RSpec.describe Discogs::Artist::Albums do
     context 'when wrong artist_id' do
       let(:output) do
         VCR.use_cassette 'services/discogs/artist/albums/wrong_id' do
-          subject.call(artist_id: random, album_type: 'album')
+          subject.call(artist_id: random)
         end
       end
 
