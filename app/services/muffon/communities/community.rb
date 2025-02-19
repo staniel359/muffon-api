@@ -10,6 +10,7 @@ module Muffon
       def data
         community_base_data
           .merge(community_extra_data)
+          .merge(with_more_data)
       end
 
       def community_base_data

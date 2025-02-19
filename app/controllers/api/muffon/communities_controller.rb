@@ -7,6 +7,8 @@ module API
 
       def info; end
 
+      def description; end
+
       def update; end
 
       def destroy; end
@@ -31,6 +33,14 @@ module API
 
       def info_data
         ::Muffon::Community::Info.call(
+          params.slice(
+            *%i[community_id profile_id token]
+          )
+        )
+      end
+
+      def description_data
+        ::Muffon::Community::Description.call(
           params.slice(
             *%i[community_id profile_id token]
           )

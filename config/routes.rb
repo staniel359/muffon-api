@@ -308,6 +308,7 @@ Rails.application.routes.draw do
       namespace :communities, as: :community do
         scope ':community_id' do
           get '', action: :info
+          get 'description'
 
           resources :posts,
             only: %i[index create update destroy],
