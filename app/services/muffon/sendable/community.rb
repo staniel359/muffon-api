@@ -15,10 +15,14 @@ module Muffon
           title: find_community.title,
           image: image_data,
           description:
-            find_community.description,
+            description_truncated_small,
           members_count:
             find_community.members_count
         }.compact
+      end
+
+      def description
+        find_community.description
       end
 
       def find_community

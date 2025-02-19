@@ -7,8 +7,7 @@ module Muffon
         Muffon::Communities::Community.call(
           community:,
           profile_id: @args[:profile_id],
-          token: @args[:token],
-          info: true
+          token: @args[:token]
         )
       end
 

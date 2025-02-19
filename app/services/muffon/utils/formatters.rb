@@ -48,21 +48,32 @@ module Muffon
       end
 
       def description_truncated
-        description&.truncate(400).presence
+        description
+          &.truncate(400)
+          .presence
       end
 
       def description_truncated_small
-        description&.truncate(100).presence
+        description
+          &.truncate(100)
+          .presence
       end
 
       def lyrics_truncated
-        lyrics&.truncate(200).presence
+        lyrics
+          &.truncate(200)
+          .presence
       end
 
-      def title_formatted(raw_title, extra_title)
-        return raw_title if extra_title.blank?
-
-        "#{raw_title} (#{extra_title})"
+      def title_formatted(
+        raw_title,
+        extra_title
+      )
+        if extra_title.blank?
+          raw_title
+        else
+          "#{raw_title} (#{extra_title})"
+        end
       end
 
       def source_links
