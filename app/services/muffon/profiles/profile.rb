@@ -48,9 +48,19 @@ module Muffon
       def profile_extra_data
         {
           created: created_formatted,
-          online: profile.online,
-          playing: profile.playing
+          online: online?,
+          playing:
         }.compact
+      end
+
+      def online?
+        profile.online
+      end
+
+      def playing
+        return unless online?
+
+        profile.playing
       end
 
       def created_formatted
