@@ -9,10 +9,6 @@ class OnlineChannel < ApplicationCable::Channel
     update_profile_online(
       false
     )
-
-    update_profile_playing(
-      nil
-    )
   end
 
   private
@@ -30,16 +26,6 @@ class OnlineChannel < ApplicationCable::Channel
       profile_id:,
       token:,
       online:
-    )
-  end
-
-  def update_profile_playing(playing)
-    return if profile.blank?
-
-    Muffon::Processor::Profile::Playing::Updater.call(
-      profile_id:,
-      token:,
-      playing:
     )
   end
 end
