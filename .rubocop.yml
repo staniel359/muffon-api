@@ -1,6 +1,8 @@
-require:
+plugins:
   - rubocop-rails
   - rubocop-rspec
+
+require:
   - rubocop-rspec_rails
 
 inherit_mode:
