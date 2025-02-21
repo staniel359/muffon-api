@@ -1,0 +1,5 @@
+zh:
+  mailer:
+    passwordReset:
+      subject: 'muffon | 重置密码'
+      text: "您的密码重置验证码是<strong>%{code}</strong>."
