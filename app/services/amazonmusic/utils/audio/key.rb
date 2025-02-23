@@ -11,7 +11,7 @@ module AmazonMusic
         def data
           return test_key if test?
 
-          `python3 \
+          `python3.12 \
             lib/amazonmusic/key_retriever.py \
             --pssh #{pssh} \
             --token "#{amazonmusic_token}" \
