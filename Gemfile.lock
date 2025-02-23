@@ -131,6 +131,7 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
+    csv (3.3.2)
     date (3.4.1)
     diff-lcs (1.6.0)
     drb (2.2.1)
@@ -390,6 +391,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq
   capistrano3-puma
+  csv
   faraday
   faraday-follow_redirects
   image_processing
@@ -403,6 +405,7 @@ DEPENDENCIES
   rack-cors
   rails
   redis
+  rexml
   rspec-rails
   rubocop
   rubocop-rails
