@@ -21,8 +21,12 @@ module Muffon
               profile
               .playlists
               .find_by(
-                id: @args[:playlist_id]
+                id: playlist_id
               )
+          end
+
+          def playlist_id
+            @args[:playlist_id]
           end
 
           def process_playlist
@@ -51,8 +55,12 @@ module Muffon
           end
 
           def playlist_data
-            Muffon::Profile::Playlists::Playlist.call(
-              playlist:
+            Muffon::Profile::Playlist::Info.call(
+              playlist_id:,
+              profile_id: @args[:profile_id],
+              token: @args[:token]
+            ).dig(
+              :profile, :playlist
             )
           end
         end

@@ -56,7 +56,9 @@ module Muffon
       end
 
       def track_id
-        find_track.id if model?('track')
+        return unless model?('track')
+
+        find_track.id
       end
 
       def model?(type)
@@ -74,7 +76,9 @@ module Muffon
       end
 
       def album_id
-        find_album.id if model?('album')
+        return unless model?('album')
+
+        find_album.id
       end
     end
   end

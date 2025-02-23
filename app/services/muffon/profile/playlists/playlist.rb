@@ -99,23 +99,17 @@ module Muffon
         end
 
         def description_formatted
-          if @args[:info] || description_with_link?
-            description
-          else
+          string_with_newlines_replaced_by_spaces(
             description_truncated_small
-          end
-        end
-
-        def description_with_link?
-          !!description&.include?('a href')
-        end
-
-        def tracks_count
-          playlist.tracks_count
+          )
         end
 
         def description
           playlist.description
+        end
+
+        def tracks_count
+          playlist.tracks_count
         end
 
         def created_formatted

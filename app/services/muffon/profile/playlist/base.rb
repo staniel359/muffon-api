@@ -20,8 +20,12 @@ module Muffon
             profile
             .playlists
             .find_by(
-              id: @args[:playlist_id]
+              id: playlist_id
             )
+        end
+
+        def playlist_id
+          @args[:playlist_id]
         end
 
         def forbidden?

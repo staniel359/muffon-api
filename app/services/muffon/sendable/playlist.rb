@@ -48,11 +48,21 @@ module Muffon
       def playlist_extra_data
         {
           description:
-            find_playlist.description,
+            description_formatted,
           image: image_data,
           tracks_count:
             find_playlist.tracks_count
         }.compact
+      end
+
+      def description_formatted
+        string_with_newlines_replaced_by_spaces(
+          description_truncated_small
+        )
+      end
+
+      def description
+        find_playlist.description
       end
 
       def image_data
