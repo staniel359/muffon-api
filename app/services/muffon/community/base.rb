@@ -14,8 +14,12 @@ module Muffon
       def community
         @community ||=
           ::Community.find_by(
-            id: @args[:community_id]
+            id: community_id
           )
+      end
+
+      def community_id
+        @args[:community_id]
       end
 
       def data

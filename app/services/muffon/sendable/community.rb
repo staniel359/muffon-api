@@ -15,10 +15,16 @@ module Muffon
           title: find_community.title,
           image: image_data,
           description:
-            description_truncated_small,
+            description_formatted,
           members_count:
             find_community.members_count
         }.compact
+      end
+
+      def description_formatted
+        string_with_newlines_replaced_by_spaces(
+          description_truncated_small
+        )
       end
 
       def description

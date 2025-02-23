@@ -43,11 +43,11 @@ module Muffon
         end
 
         def community_data
-          Muffon::Communities::Community.call(
-            community:,
+          Muffon::Community::Info.call(
+            community_id:,
             profile_id: @args[:profile_id],
             token: @args[:token]
-          )
+          )[:community]
         end
       end
     end

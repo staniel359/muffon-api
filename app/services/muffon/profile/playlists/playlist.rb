@@ -77,8 +77,7 @@ module Muffon
         end
 
         def profile
-          @profile ||=
-            playlist.profile
+          @profile ||= playlist.profile
         end
 
         def private?
@@ -100,10 +99,11 @@ module Muffon
         end
 
         def description_formatted
-          return description if
-              @args[:info] || description_with_link?
-
-          description_truncated_small
+          if @args[:info] || description_with_link?
+            description
+          else
+            description_truncated_small
+          end
         end
 
         def description_with_link?

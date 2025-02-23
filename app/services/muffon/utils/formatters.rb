@@ -94,6 +94,15 @@ module Muffon
           model_id:
         )
       end
+
+      def string_with_newlines_replaced_by_spaces(
+        string
+      )
+        string&.gsub(
+          "\n",
+          ' '
+        )
+      end
     end
   end
 end

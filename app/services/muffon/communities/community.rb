@@ -10,7 +10,6 @@ module Muffon
       def data
         community_base_data
           .merge(community_extra_data)
-          .merge(with_more_data)
       end
 
       def community_base_data
@@ -26,10 +25,9 @@ module Muffon
 
       def community_extra_data
         {
-          description:
-            description_truncated_small,
           image: community.image_data,
-          creator: creator_data,
+          description:
+            description_formatted,
           members_count:
             community.members_count,
           profile: profile_data,
@@ -37,23 +35,14 @@ module Muffon
         }.compact
       end
 
+      def description_formatted
+        string_with_newlines_replaced_by_spaces(
+          description_truncated_small
+        )
+      end
+
       def description
         community.description
-      end
-
-      def creator_data
-        return {} if creator.blank?
-
-        {
-          id: creator.id,
-          nickname: creator.nickname,
-          image: creator.image_data,
-          private: creator.private
-        }.compact
-      end
-
-      def creator
-        @creator ||= community.creator
       end
 
       def profile_data
