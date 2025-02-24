@@ -7,4 +7,6 @@ Sentry.init do |config|
       .credentials
       .sentry
       .url
+
+  config.send_default_pii = true
 end
