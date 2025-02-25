@@ -2,7 +2,7 @@ name: main
 on: workflow_dispatch
 
 jobs:
-  CD:
+  deploy:
     runs-on: ubuntu-latest
 
     services:
@@ -30,16 +30,26 @@ jobs:
     - name: Set up dependencies
       run: bundle install
 
+    - name: Set up database
+      env:
+        RAILS_ENV: test
+        RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      run: bundle exec rails db:migrate
+
     - name: Lint
       run: bundle exec rubocop
+
+    - name: Enable OpenSSL leacy provider
+      run: |-
+        sudo sed -i '/default = default_sect/a legacy = legacy_sect' /etc/ssl/openssl.cnf
+        sudo sed -i 's/# activate = 1/activate = 1/' /etc/ssl/openssl.cnf
+        sudo sed -i '/activate = 1/a [legacy_sect]\nactivate = 1' /etc/ssl/openssl.cnf
 
     - name: Test
       env:
         RAILS_ENV: test
         RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
-      run: |
-        bundle exec rails db:migrate
-        bundle exec rspec
+      run: bundle exec rspec
 
     - name: Deploy
       env:
