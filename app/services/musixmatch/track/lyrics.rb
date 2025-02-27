@@ -24,7 +24,7 @@ module MusixMatch
 
       def raw_lyrics
         lyrics_response_data.css(
-          '.r-ueyrd6'
+          '.r-1dxmaum'
         )
       end
 
