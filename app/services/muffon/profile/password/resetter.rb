@@ -30,9 +30,9 @@ module Muffon
         end
 
         def password_reset_code
-          (
-            SecureRandom.random_number(9e5) + 1e5
-          ).to_i
+          SecureRandom.random_number(
+            100_000..999_999
+          )
         end
 
         def send_password_reset_code_email
