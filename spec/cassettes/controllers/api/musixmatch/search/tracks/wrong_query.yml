@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.musixmatch.com/ws/1.1/track.search?apikey=<MUSIXMATCH_API_KEY>&page=1&page_size=20&q=wejlhg239gh23&s_track_rating=desc
+    uri: https://api.musixmatch.com/ws/1.1/track.search?apikey=<MUSIXMATCH_API_KEY>&page=1&page_size=20&q=wejlhg239gh23
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.musixmatch.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -26,38 +24,34 @@ http_interactions:
       - '114'
       Content-Type:
       - text/plain; charset=utf-8
-      Server:
-      - nginx
-      Via:
-      - 1.1 varnish, 1.1 varnish
       X-Mxm-Api-Application-Id:
       - '1409621116560'
       X-Mxm-Header-Execute-Time:
-      - '0.033856868743896'
+      - '0.016897916793823'
       X-Mxm-Header-Status:
       - '200'
-      X-Restarts:
-      - '0'
-      X-Varnish-Instance:
-      - api
+      X-Mxm-Nginx-Ingress-Controller:
+      - nginx-cdt-apisite-api
       Accept-Ranges:
       - bytes
-      Date:
-      - Sat, 12 Aug 2023 17:20:18 GMT
       Age:
       - '0'
+      Date:
+      - Thu, 27 Feb 2025 22:09:31 GMT
+      Via:
+      - 1.1 varnish
       X-Served-By:
-      - cache-fra-eddf8230096-FRA
+      - cache-fra-eddf8230102-FRA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1691860818.117665,VS0,VE127
+      - S1740694171.307166,VS0,VE111
       Vary:
       - Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"message":{"header":{"status_code":200,"execute_time":0.033856868743896,"available":0},"body":{"track_list":[]}}}'
-  recorded_at: Sat, 12 Aug 2023 17:20:18 GMT
-recorded_with: VCR 6.2.0
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.016897916793823,"available":0},"body":{"track_list":[]}}}'
+  recorded_at: Thu, 27 Feb 2025 22:09:31 GMT
+recorded_with: VCR 6.3.1

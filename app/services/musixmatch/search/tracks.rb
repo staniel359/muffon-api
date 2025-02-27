@@ -6,16 +6,6 @@ module MusixMatch
 
       private
 
-      def search_params
-        super.merge(
-          tracks_params
-        )
-      end
-
-      def tracks_params
-        { s_track_rating: 'desc' }
-      end
-
       def collection_item_data_formatted(track)
         MusixMatch::Search::Tracks::Track.call(
           track:,

@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.musixmatch.com/ws/1.1/track.search?apikey=<MUSIXMATCH_API_KEY>&page=2&page_size=5&q=a&s_track_rating=desc
+    uri: https://api.musixmatch.com/ws/1.1/track.search?apikey=<MUSIXMATCH_API_KEY>&page=2&page_size=5&q=wild%20nothing%20-%20chinatown
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Faraday v2.12.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.musixmatch.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,52 +21,49 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '4730'
+      - '4515'
       Content-Type:
       - text/plain; charset=utf-8
-      Server:
-      - nginx
-      Via:
-      - 1.1 varnish, 1.1 varnish
       X-Mxm-Api-Application-Id:
       - '1409621116560'
       X-Mxm-Header-Execute-Time:
-      - '0.23248195648193'
+      - '0.023138046264648'
       X-Mxm-Header-Status:
       - '200'
-      X-Restarts:
-      - '0'
-      X-Varnish-Instance:
-      - api
+      X-Mxm-Nginx-Ingress-Controller:
+      - nginx-cdt-apisite-api
       Accept-Ranges:
       - bytes
-      Date:
-      - Sat, 12 Aug 2023 17:20:27 GMT
       Age:
       - '0'
+      Date:
+      - Thu, 27 Feb 2025 22:07:21 GMT
+      Via:
+      - 1.1 varnish
       X-Served-By:
-      - cache-fra-eddf8230100-FRA
+      - cache-fra-eddf8230176-FRA
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1691860827.678820,VS0,VE329
+      - S1740694041.201734,VS0,VE130
       Vary:
       - Accept-Encoding
     body:
       encoding: ASCII-8BIT
-      string: '{"message":{"header":{"status_code":200,"execute_time":0.23248195648193,"available":10000},"body":{"track_list":[{"track":{"track_id":259245201,"track_name":"What
-        Was I Made For? [From The Motion Picture \"Barbie\"]","track_name_translation_list":[],"track_rating":99,"commontrack_id":161074192,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":1,"num_favourite":63,"album_id":57610143,"album_name":"What
-        Was I Made For? [From The Motion Picture \"Barbie\"]","artist_id":29247465,"artist_name":"Billie
-        Eilish","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Billie-Eilish\/What-Was-I-Made-For-From-The-Motion-Picture-Barbie?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Billie-Eilish\/What-Was-I-Made-For-From-The-Motion-Picture-Barbie\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2023-08-10T11:50:55Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":16,"music_genre_parent_id":34,"music_genre_name":"Soundtrack","music_genre_name_extended":"Soundtrack","music_genre_vanity":"Soundtrack"}}]}}},{"track":{"track_id":256522131,"track_name":"Dance
-        The Night (From Barbie The Album)","track_name_translation_list":[],"track_rating":99,"commontrack_id":159305876,"instrumental":0,"explicit":1,"has_lyrics":1,"has_subtitles":1,"has_richsync":1,"num_favourite":51,"album_id":57193843,"album_name":"Dance
-        The Night (From Barbie The Album)","artist_id":33491593,"artist_name":"Dua
-        Lipa","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Dua-Lipa\/Dance-The-Night-From-Barbie-The-Album?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Dua-Lipa\/Dance-The-Night-From-Barbie-The-Album\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2023-08-10T10:16:05Z","primary_genres":{"music_genre_list":[]}}},{"track":{"track_id":181014511,"track_name":"Cruel
-        Summer","track_name_translation_list":[],"track_rating":99,"commontrack_id":99297749,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":1,"num_favourite":881,"album_id":34234172,"album_name":"Lover","artist_id":259675,"artist_name":"Taylor
-        Swift","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Taylor-Swift\/Cruel-Summer?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Taylor-Swift\/Cruel-Summer\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2023-07-11T15:56:20Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]}}},{"track":{"track_id":253116049,"track_name":"Flowers","track_name_translation_list":[],"track_rating":99,"commontrack_id":157191703,"instrumental":0,"explicit":0,"has_lyrics":1,"has_subtitles":1,"has_richsync":1,"num_favourite":1011,"album_id":56318435,"album_name":"Endless
-        Summer Vacation","artist_id":224210,"artist_name":"Miley Cyrus","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Miley-Cyrus\/Flowers?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Miley-Cyrus\/Flowers\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2023-07-12T05:40:59Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":14,"music_genre_parent_id":34,"music_genre_name":"Pop","music_genre_name_extended":"Pop","music_genre_vanity":"Pop"}}]}}},{"track":{"track_id":258213384,"track_name":"fukumean","track_name_translation_list":[],"track_rating":99,"commontrack_id":160446433,"instrumental":0,"explicit":1,"has_lyrics":1,"has_subtitles":1,"has_richsync":1,"num_favourite":33,"album_id":57431286,"album_name":"a
-        Gift & a Curse","artist_id":55813094,"artist_name":"Gunna","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Gunna-17\/fukumean?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Gunna-17\/fukumean\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2023-08-08T13:46:44Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":18,"music_genre_parent_id":34,"music_genre_name":"Hip
-        Hop\/Rap","music_genre_name_extended":"Hip-Hop\/Rap","music_genre_vanity":"Hip-Hop-Rap"}}]}}}]}}}'
-  recorded_at: Sat, 12 Aug 2023 17:20:27 GMT
-recorded_with: VCR 6.2.0
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.023138046264648,"available":10000},"body":{"track_list":[{"track":{"track_id":130315172,"track_name":"Nothing
+        Left","track_name_translation_list":[],"track_rating":1,"commontrack_id":72598855,"instrumental":0,"explicit":0,"has_lyrics":0,"has_subtitles":0,"has_richsync":0,"num_favourite":0,"album_id":26195559,"album_name":"15
+        Dollars","artist_id":33665343,"artist_name":"Chinatown Suzy feat. Julianna","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Chinatown-Suzy-feat-Julianna\/Nothing-Left?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Chinatown-Suzy-feat-Julianna\/Nothing-Left\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2017-05-28T02:22:49Z","primary_genres":{"music_genre_list":[]}}},{"track":{"track_id":58222925,"track_name":"Chinatown
+        (From ''Chinatown'')","track_name_translation_list":[],"track_rating":1,"commontrack_id":29077600,"instrumental":0,"explicit":0,"has_lyrics":0,"has_subtitles":0,"has_richsync":0,"num_favourite":0,"album_id":17610554,"album_name":"TV
+        and Film Themes, Vol. 2","artist_id":24623868,"artist_name":"Hanny Williams","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Hanny-Williams\/Chinatown-From-Chinatown?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Hanny-Williams\/Chinatown-From-Chinatown\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2014-02-25T13:42:52Z","primary_genres":{"music_genre_list":[{"music_genre":{"music_genre_id":1168,"music_genre_parent_id":16,"music_genre_name":"Original
+        Score","music_genre_name_extended":"Soundtrack \/ Original Score","music_genre_vanity":"Soundtrack-Original-Score"}},{"music_genre":{"music_genre_id":16,"music_genre_parent_id":34,"music_genre_name":"Soundtrack","music_genre_name_extended":"Soundtrack","music_genre_vanity":"Soundtrack"}}]}}},{"track":{"track_id":87669861,"track_name":"Nothing''s
+        Gonna Stop Me Now - 132 Bpm","track_name_translation_list":[],"track_rating":1,"commontrack_id":49225026,"instrumental":0,"explicit":0,"has_lyrics":0,"has_subtitles":0,"has_richsync":0,"num_favourite":0,"album_id":16124124,"album_name":"80''s
+        Workout Greatest Hits (30 Workout Hits)","artist_id":29081647,"artist_name":"Wild*Side","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Side-2\/Nothing-s-Gonna-Stop-Me-Now-132-Bpm?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-Side-2\/Nothing-s-Gonna-Stop-Me-Now-132-Bpm\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2015-12-25T05:18:13Z","primary_genres":{"music_genre_list":[]}}},{"track":{"track_id":32940456,"track_name":"Chinatown
+        (From \"Chinatown\")","track_name_translation_list":[],"track_rating":1,"commontrack_id":13045822,"instrumental":0,"explicit":0,"has_lyrics":0,"has_subtitles":0,"has_richsync":0,"num_favourite":0,"album_id":15414402,"album_name":"Jazz
+        At the Movies \u2013 Film Noire","artist_id":24566730,"artist_name":"Billy
+        Nicholson Quintet","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Billy-Nicholson-Quintet\/Chinatown-From-Chinatown?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Billy-Nicholson-Quintet\/Chinatown-From-Chinatown\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2013-10-04T13:24:44Z","primary_genres":{"music_genre_list":[]}}},{"track":{"track_id":111350510,"track_name":"All
+        Or Nothing","track_name_translation_list":[],"track_rating":1,"commontrack_id":61097381,"instrumental":0,"explicit":0,"has_lyrics":0,"has_subtitles":0,"has_richsync":0,"num_favourite":0,"album_id":23510671,"album_name":"Good
+        To Go","artist_id":29333310,"artist_name":"Wild,","track_share_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-8\/All-Or-Nothing?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","track_edit_url":"https:\/\/www.musixmatch.com\/lyrics\/Wild-8\/All-Or-Nothing\/edit?utm_source=application&utm_campaign=api&utm_medium=home%3A1409621116560","restricted":0,"updated_time":"2016-05-09T05:43:30Z","primary_genres":{"music_genre_list":[]}}}]}}}'
+  recorded_at: Thu, 27 Feb 2025 22:07:21 GMT
+recorded_with: VCR 6.3.1
