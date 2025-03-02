@@ -1,4 +1,11 @@
 class SpotifyConnection < ApplicationRecord
+  DATA_KEYS = %i[
+    spotify_id
+    nickname
+    premium
+    image_url
+  ].freeze
+
   validates :spotify_id,
             :nickname,
             :access_token,

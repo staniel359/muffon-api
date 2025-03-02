@@ -27,9 +27,7 @@ module Muffon
           return if lastfm_connection.blank?
 
           lastfm_connection.slice(
-            :nickname,
-            :premium,
-            :image_url
+            *LastFMConnection::DATA_KEYS
           )
         end
 
@@ -42,9 +40,7 @@ module Muffon
           return if spotify_connection.blank?
 
           spotify_connection.slice(
-            :nickname,
-            :premium,
-            :image_url
+            *SpotifyConnection::DATA_KEYS
           )
         end
 

@@ -72,9 +72,7 @@ module LastFM
 
       def lastfm_connection_info_params
         lastfm_user_info_data.slice(
-          :nickname,
-          :premium,
-          :image_url
+          *LastFMConnection::DATA_KEYS
         )
       end
 
@@ -103,9 +101,7 @@ module LastFM
         profile
           .lastfm_connection
           .slice(
-            :nickname,
-            :premium,
-            :image_url
+            *LastFMConnection::DATA_KEYS
           )
       end
     end

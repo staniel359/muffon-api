@@ -19,8 +19,7 @@ module Spotify
         @access_token_data ||=
           Spotify::Utils::User::AccessToken.call(
             code: @args[:code],
-            client_id:
-              @args[:client_id],
+            client_id: @args[:client_id],
             client_secret:
               @args[:client_secret]
           )
@@ -54,15 +53,16 @@ module Spotify
       def spotify_connection
         @spotify_connection ||=
           SpotifyConnection.where(
-            profile_id:
-              @args[:profile_id]
+            profile_id: @args[:profile_id]
           ).first_or_initialize
       end
 
       def spotify_connection_params
-        spotify_connection_token_params
-          .merge(spotify_connection_info_params)
-          .merge(spotify_connection_client_params)
+        {
+          **spotify_connection_token_params,
+          **spotify_connection_info_params,
+          **spotify_connection_client_params
+        }
       end
 
       def spotify_connection_token_params
@@ -74,17 +74,13 @@ module Spotify
 
       def spotify_connection_info_params
         spotify_user_info_data.slice(
-          :spotify_id,
-          :nickname,
-          :premium,
-          :image_url
+          *SpotifyConnection::DATA_KEYS
         )
       end
 
       def spotify_connection_client_params
         {
-          client_id:
-            @args[:client_id],
+          client_id: @args[:client_id],
           client_secret:
             @args[:client_secret]
         }
@@ -102,10 +98,7 @@ module Spotify
         profile
           .spotify_connection
           .slice(
-            :spotify_id,
-            :nickname,
-            :premium,
-            :image_url
+            *SpotifyConnection::DATA_KEYS
           )
       end
     end
