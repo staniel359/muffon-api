@@ -3,7 +3,9 @@ module Eventable
 
   included do
     after_create :add_created_event
+
     before_update :add_updated_event
+
     before_destroy :add_deleted_event
 
     has_many :events,
@@ -30,9 +32,26 @@ module Eventable
   end
 
   def add_created_event?
-    event_callbacks.include?(
-      'created'
-    )
+    event_callbacks.include?('created') &&
+      save_event?
+  end
+
+  def save_event?
+    model_profile
+      .save_activity_history?
+  end
+
+  def model_profile
+    case self.class.name
+    when 'Profile'
+      self
+    when 'Community'
+      creator
+    when 'PlaylistTrack'
+      playlist.profile
+    else
+      profile
+    end
   end
 
   def event_callbacks
@@ -51,9 +70,9 @@ module Eventable
   end
 
   def add_updated_event?
-    event_callbacks.include?(
-      'updated'
-    ) && updated?
+    event_callbacks.include?('updated') &&
+      save_event? &&
+      updated?
   end
 
   def updated?
@@ -85,8 +104,7 @@ module Eventable
   end
 
   def add_deleted_event?
-    event_callbacks.include?(
-      'deleted'
-    )
+    event_callbacks.include?('deleted') &&
+      save_event?
   end
 end

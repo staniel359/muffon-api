@@ -4,10 +4,13 @@ module Muffon
       private
 
       def profile_data
-        profile_base_data
-          .merge(profile_personal_data)
-          .merge(profile_extra_data)
-          .merge(profile_connections_data)
+        {
+          **profile_base_data,
+          **profile_personal_data,
+          **profile_relationships_data,
+          **profile_extra_data,
+          **profile_connections_data
+        }
       end
 
       def profile_base_data
@@ -15,7 +18,7 @@ module Muffon
           id: profile.id,
           nickname:,
           email:,
-          role:,
+          role: profile.role,
           private: profile.private
         }.compact
       end
@@ -25,8 +28,12 @@ module Muffon
           ::Profile
           .associated
           .find_by(
-            id: @args[:profile_id]
+            id: profile_id
           )
+      end
+
+      def profile_id
+        @args[:profile_id]
       end
 
       def email
@@ -35,36 +42,41 @@ module Muffon
         profile.email
       end
 
-      def role
-        return if profile.role == 'profile'
-
-        profile.role
+      def profile_personal_data
+        Muffon::Profile::Info::Personal.call(
+          profile_id:,
+          token:
+        )
       end
 
-      def profile_personal_data
-        {
-          image: profile.image_data,
-          gender: profile.gender,
-          birthdate: profile.birthdate,
-          country: profile.country,
-          city: profile.city,
-          status: profile.status
-        }.compact_blank
+      def token
+        @args[:token]
+      end
+
+      def profile_relationships_data
+        Muffon::Profile::Info::Relationships.call(
+          profile_id:,
+          token:,
+          other_profile_id:
+        )
+      end
+
+      def other_profile_id
+        @args[:other_profile_id]
       end
 
       def profile_extra_data
         Muffon::Profile::Info::Extra.call(
-          profile_id: @args[:profile_id],
-          token: @args[:token],
+          profile_id:,
+          token:,
           other_profile_id:
-            @args[:other_profile_id]
         )
       end
 
       def profile_connections_data
         Muffon::Profile::Info::Connections.call(
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          profile_id:,
+          token:
         )
       end
     end

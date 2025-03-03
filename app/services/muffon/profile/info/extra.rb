@@ -14,10 +14,9 @@ module Muffon
             playing:,
             online: online?,
             was_online: was_online_formatted,
-            other_profile: other_profile_data,
-            followers_count:,
-            following_count:,
-            library: library_data
+            library: library_data,
+            save_activity_history:
+              profile.save_activity_history?
           }.compact
         end
 
@@ -50,42 +49,11 @@ module Muffon
             profile.updated_at
         end
 
-        def other_profile_data
-          return unless valid_other_profile?
-
-          {
-            follower_of_profile:
-              follower_of_profile?,
-            followed_by_profile:
-              followed_by_profile?
-          }
-        end
-
-        def follower_of_profile?
-          profile.in_followers?(
-            @args[:other_profile_id]
-          )
-        end
-
-        def followed_by_profile?
-          profile.in_following?(
-            @args[:other_profile_id]
-          )
-        end
-
-        def followers_count
-          profile.followers_count
-        end
-
-        def following_count
-          profile.following_count
-        end
-
         def library_data
           Muffon::Profile::Library::Info.call(
-            profile_id: @args[:profile_id],
+            profile_id:,
             token: @args[:token],
-            other_profile_id: @args[:other_profile_id]
+            other_profile_id:
           ).dig(
             :profile, :library
           )

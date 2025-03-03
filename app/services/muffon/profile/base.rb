@@ -13,6 +13,7 @@ module Muffon
         city
         private
         status
+        save_activity_history
       ].freeze
 
       private
