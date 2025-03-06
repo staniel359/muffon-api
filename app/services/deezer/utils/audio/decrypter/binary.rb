@@ -25,8 +25,6 @@ module Deezer
               ).body
           rescue Faraday::ForbiddenError
             nil
-          rescue ArgumentError
-            raise StandardError, link
           end
 
           def link
