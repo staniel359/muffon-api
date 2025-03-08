@@ -221,7 +221,8 @@ class Profile < ApplicationRecord
     attributes.except(
       'id',
       'created_at',
-      'updated_at'
+      'updated_at',
+      'save_activity_history'
     )
   end
 

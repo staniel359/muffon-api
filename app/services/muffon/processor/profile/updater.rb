@@ -29,9 +29,11 @@ module Muffon
         end
 
         def update_params
-          @args.permit!.slice(
-            *profile_params
-          )
+          @args
+            .permit!
+            .slice(
+              *profile_params
+            )
         end
 
         def profile_data
