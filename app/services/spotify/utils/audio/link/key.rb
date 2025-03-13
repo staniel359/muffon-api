@@ -27,9 +27,11 @@ module Spotify
           def data
             return test_key if test?
 
-            response
-              .body
-              .unpack1('H*')
+            nil
+            # Disable for now
+            # response
+            #   .body
+            #   .unpack1('H*')
           rescue Faraday::BadRequestError, Faraday::ConnectionFailed
             nil
           end
