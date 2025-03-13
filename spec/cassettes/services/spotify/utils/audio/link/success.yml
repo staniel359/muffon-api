@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/metadata/4/track/6bfefa80e52948698c6f605c70f4a7d4?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/metadata/4/track/76a241c78ff34b148a653c52adaed719?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v2.12.2
       Authorization:
-      - Bearer BQAzSkrNZZ4VKzk-hkm-M-VcNdzUFfnq69H8wFFaLwIE8KZ4u0in51R9o9VQFP30VMMx4n4FHkOWRW8eQn2JEIBjkOuQ4J0S3lJeu0wnFSUQqsaRDLIKlhY0EzuoRwW5mmVKOfK2P25GKKgFnXepfDfk9StzDqzjWZ72FZDz92XNUPmuWcbSDF6uT_PxyEFsHcPUo81w_QLIfh6WNdAmJHmhr08mLGzMhs0sGgHkwitiZKWzxzcC21OMouUVyxONA6zdwYP55oTfjYeQyjFm7QgDPehaqJ4jfHZ-cTC-CggkFDJebeqX3EyZOEPInClpwhYlg54NAoNDPnxljuPC9enXREsdzet7hK0ISTIQ17GD3NU9ZQ
+      - Bearer BQBoLIOMo4Yp4aNpcrBjdbq1s64ObDbn89_v3nEJWBQTujQfhITlulBBfOUadlQhDhcbnWrNHNgJIOQS8YWNGqGAN4a30_qu39i3RAdDKOaloHBcQLcrQW9mGB0gYuxvqfoB9BSj8Dq4JH0fuOORzCClqmHhZ6hDZ5mrzsM4PnPBOK9Yr3jGa07nw16Rz5_Uegqiyi_MmmXMrBgC2OkfKDp6JXqk-BHu_2BWXM1_SdItS_cTOOGH13dgAPAuedzAQTbrqBz80IWnAG_6vFvO9jRi6m8ljn6ABANRVVyLYTbbtqzkM_Bxa2gVa7XmzG-QUy1sj2qE37pwH8jH0DoVMzSQPr7XPhYvDl6KM5dhY3f6x2peXQ
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Cache-Control:
-      - public, max-age=72342
+      - public, max-age=78248
       Etag:
-      - '"MC-lAjIdg=="'
+      - '"MC-eqXOVQ=="'
       Vary:
       - _ui.country
       Access-Control-Allow-Origin:
@@ -48,7 +48,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Tue, 18 Feb 2025 21:10:46 GMT
+      - Thu, 13 Mar 2025 07:55:11 GMT
       Server:
       - envoy
       Via:
@@ -59,38 +59,36 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"gid": "6bfefa80e52948698c6f605c70f4a7d4","name": "Danger Zone - From
-        \"Top Gun\" Original Soundtrack","album": {"gid": "dd96f9fd721d4180beba4dbc157d56f6","name":
-        "Top Gun - Motion Picture Soundtrack (Special Expanded Edition)","artist":
-        [{"gid": "19334eaffa3f4f2282e251e36611e26f","name": "Various Artists"}],"label":
-        "Columbia/Legacy","date": {"year": 1999,"month": 1,"day": 1},"cover_group":
-        {"image": [{"file_id": "ab67616d00001e02fa183fdd680f1d249ba2f893","size":
-        "DEFAULT","width": 300,"height": 300},{"file_id": "ab67616d00004851fa183fdd680f1d249ba2f893","size":
-        "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b273fa183fdd680f1d249ba2f893","size":
-        "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "aa9468539d19400ca4c32fdc159926a9"}},"artist":
-        [{"gid": "8265d738c12c4d49803e1453a3a0072a","name": "Kenny Loggins"}],"number":
-        1,"disc_number": 1,"duration": 216346,"popularity": 59,"external_id": [{"type":
-        "isrc","id": "USSM18600108"}],"file": [{"file_id": "b448ea73a3972724547ee1a85bd03517017d66ad","format":
-        "OGG_VORBIS_320"},{"file_id": "9a2aa5af6f603d6889a47047aafbb2c51bc28edc","format":
-        "OGG_VORBIS_160"},{"file_id": "27e98138404f5f1be7be2e00f4e7545e7bf7cc4f","format":
-        "OGG_VORBIS_96"},{"file_id": "af6d1361063d0d9acbcf5d280ac550b9d730d34b","format":
-        "MP4_256_DUAL"},{"file_id": "f7226e699ce750884692aa19154dc32461904ace","format":
-        "MP4_256"},{"file_id": "9baa18d198c6ebe19363dc1b0a8d0720783faeeb","format":
-        "MP4_128_DUAL"},{"file_id": "92b55b5348f481e5024abb408263ee3062c9e000","format":
-        "MP4_128"},{"file_id": "755ea70a5e377ee133a62877d57d760cf44f91af","format":
-        "AAC_24"}],"preview": [{"file_id": "f60a2b5f25770366edd8bcf586b2cddf8e336a87","format":
-        "MP3_96"}],"earliest_live_timestamp": 413146860,"has_lyrics": true,"licensor":
-        {"uuid": "aa9468539d19400ca4c32fdc159926a9"},"language_of_performance": ["en"],"original_audio":
-        {"uuid": "0c607d70a4244104bddf8235f928b774","format": "AUDIO_FORMAT_STEREO"},"original_title":
-        "Danger Zone","version_title": "From \"Top Gun\" Original Soundtrack","artist_with_role":
-        [{"artist_gid": "8265d738c12c4d49803e1453a3a0072a","artist_name": "Kenny Loggins","role":
-        "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:4HiC3ulkTgbEcYYsSuR6PO","content_authorization_attributes":
-        "","audio_formats": [{"original_audio": {"uuid": "0c607d70a4244104bddf8235f928b774","format":
+      string: '{"gid": "76a241c78ff34b148a653c52adaed719","name": "Chinatown","album":
+        {"gid": "6bdea64f51b14268a500dd681978d9e4","name": "Gemini","artist": [{"gid":
+        "df57a052f904481091014a6e0a463225","name": "Wild Nothing"}],"label": "Captured
+        Tracks","date": {"year": 2010,"month": 5,"day": 25},"cover_group": {"image":
+        [{"file_id": "ab67616d00001e026da7c8855ee1e48bb4d29184","size": "DEFAULT","width":
+        300,"height": 300},{"file_id": "ab67616d000048516da7c8855ee1e48bb4d29184","size":
+        "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b2736da7c8855ee1e48bb4d29184","size":
+        "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "7591e93c6cb94fc5b98f0098633b12a6"}},"artist":
+        [{"gid": "df57a052f904481091014a6e0a463225","name": "Wild Nothing"}],"number":
+        10,"disc_number": 1,"duration": 198842,"popularity": 52,"external_id": [{"type":
+        "isrc","id": "US8YA1010079"}],"file": [{"file_id": "539a8d3d2289527a9d99b614d71516c98fea6c04","format":
+        "OGG_VORBIS_320"},{"file_id": "8b2551eb348f9a2ba503251e7b59a39f94c012a7","format":
+        "OGG_VORBIS_160"},{"file_id": "02322738901b016f3dd737a5383f21f95c622e8e","format":
+        "OGG_VORBIS_96"},{"file_id": "463b5296b7a88a954a08298cce2007c4190ae4d9","format":
+        "MP4_256_DUAL"},{"file_id": "cff5b92255f780a7fcac02aab369154610d337f8","format":
+        "MP4_256"},{"file_id": "7c8be26f2ea39265f0ce11adcddc814587d7078d","format":
+        "MP4_128_DUAL"},{"file_id": "0bf3ab0301e8731dccb41c701cc640a0e43ffcbb","format":
+        "MP4_128"},{"file_id": "4dcdbb6f20159af6366f0c02d949a5c211391572","format":
+        "AAC_24"}],"preview": [{"file_id": "464d982ebc53a4a9fc2208c84ce9b0bf90772fc4","format":
+        "MP3_96"}],"earliest_live_timestamp": 1627483696,"has_lyrics": true,"licensor":
+        {"uuid": "7591e93c6cb94fc5b98f0098633b12a6"},"language_of_performance": ["en"],"original_audio":
+        {"uuid": "d3b96a7795234c94b67d70d2da3f424f","format": "AUDIO_FORMAT_STEREO"},"original_title":
+        "Chinatown","artist_with_role": [{"artist_gid": "df57a052f904481091014a6e0a463225","artist_name":
+        "Wild Nothing","role": "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:3BRfgsKjcakny2wCYfZrvz","content_authorization_attributes":
+        "","audio_formats": [{"original_audio": {"uuid": "d3b96a7795234c94b67d70d2da3f424f","format":
         "AUDIO_FORMAT_STEREO"}}]}'
-  recorded_at: Tue, 18 Feb 2025 21:10:47 GMT
+  recorded_at: Thu, 13 Mar 2025 07:55:12 GMT
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/92b55b5348f481e5024abb408263ee3062c9e000?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/8b2551eb348f9a2ba503251e7b59a39f94c012a7?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
@@ -98,7 +96,7 @@ http_interactions:
       User-Agent:
       - Faraday v2.12.2
       Authorization:
-      - Bearer BQAzSkrNZZ4VKzk-hkm-M-VcNdzUFfnq69H8wFFaLwIE8KZ4u0in51R9o9VQFP30VMMx4n4FHkOWRW8eQn2JEIBjkOuQ4J0S3lJeu0wnFSUQqsaRDLIKlhY0EzuoRwW5mmVKOfK2P25GKKgFnXepfDfk9StzDqzjWZ72FZDz92XNUPmuWcbSDF6uT_PxyEFsHcPUo81w_QLIfh6WNdAmJHmhr08mLGzMhs0sGgHkwitiZKWzxzcC21OMouUVyxONA6zdwYP55oTfjYeQyjFm7QgDPehaqJ4jfHZ-cTC-CggkFDJebeqX3EyZOEPInClpwhYlg54NAoNDPnxljuPC9enXREsdzet7hK0ISTIQ17GD3NU9ZQ
+      - Bearer BQBoLIOMo4Yp4aNpcrBjdbq1s64ObDbn89_v3nEJWBQTujQfhITlulBBfOUadlQhDhcbnWrNHNgJIOQS8YWNGqGAN4a30_qu39i3RAdDKOaloHBcQLcrQW9mGB0gYuxvqfoB9BSj8Dq4JH0fuOORzCClqmHhZ6hDZ5mrzsM4PnPBOK9Yr3jGa07nw16Rz5_Uegqiyi_MmmXMrBgC2OkfKDp6JXqk-BHu_2BWXM1_SdItS_cTOOGH13dgAPAuedzAQTbrqBz80IWnAG_6vFvO9jRi6m8ljn6ABANRVVyLYTbbtqzkM_Bxa2gVa7XmzG-QUy1sj2qE37pwH8jH0DoVMzSQPr7XPhYvDl6KM5dhY3f6x2peXQ
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -117,7 +115,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Date:
-      - Tue, 18 Feb 2025 21:10:47 GMT
+      - Thu, 13 Mar 2025 07:55:11 GMT
       Server:
       - envoy
       Via:
@@ -128,67 +126,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-ak.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?__token__=exp=1739999447~hmac=dc60a6d8157e999335d8efed749f24d524b2807fdcfc3840ed80ec9319217d6f","https://audio-fa-tls130.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-fa-quic.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-fa-quic0.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0=","https://audio-fa-tls13.spotifycdn.com/audio/92b55b5348f481e5024abb408263ee3062c9e000?1739999447_JRZF-xgbEMYLgflnMp3kNYRaKWx_cTjeY-zXkt92vF0="],"fileid":
-        "92b55b5348f481e5024abb408263ee3062c9e000","ttl": 86400}'
-  recorded_at: Tue, 18 Feb 2025 21:10:47 GMT
-- request:
-    method: get
-    uri: https://seektables.scdn.co/seektable/92b55b5348f481e5024abb408263ee3062c9e000.json?alt=json&platform=39&product=9&version=10000000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.12.2
-      Authorization:
-      - Bearer BQAzSkrNZZ4VKzk-hkm-M-VcNdzUFfnq69H8wFFaLwIE8KZ4u0in51R9o9VQFP30VMMx4n4FHkOWRW8eQn2JEIBjkOuQ4J0S3lJeu0wnFSUQqsaRDLIKlhY0EzuoRwW5mmVKOfK2P25GKKgFnXepfDfk9StzDqzjWZ72FZDz92XNUPmuWcbSDF6uT_PxyEFsHcPUo81w_QLIfh6WNdAmJHmhr08mLGzMhs0sGgHkwitiZKWzxzcC21OMouUVyxONA6zdwYP55oTfjYeQyjFm7QgDPehaqJ4jfHZ-cTC-CggkFDJebeqX3EyZOEPInClpwhYlg54NAoNDPnxljuPC9enXREsdzet7hK0ISTIQ17GD3NU9ZQ
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1662'
-      Last-Modified:
-      - Wed, 31 May 2017 13:02:04 GMT
-      Etag:
-      - '"ab90e4dd70ea01884d0191514959513e"'
-      X-Goog-Generation:
-      - '1496235724131464'
-      X-Goog-Metageneration:
-      - '1'
-      X-Goog-Stored-Content-Encoding:
-      - identity
-      X-Goog-Stored-Content-Length:
-      - '1662'
-      Content-Type:
-      - application/json
-      X-Amz-Checksum-Crc32c:
-      - yXexEg==
-      Accept-Ranges:
-      - bytes
-      Age:
-      - '1576992'
-      Date:
-      - Tue, 18 Feb 2025 21:10:47 GMT
-      X-Served-By:
-      - cache-chi-kigq8000022-CHI, cache-fra-eddf8230122-FRA
-      X-Cache:
-      - HIT, HIT
-      X-Cache-Hits:
-      - 133, 0
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - max-age=604800, no-transform
-    body:
-      encoding: ASCII-8BIT
-      string: '{"offset":1789,"seektable_version":"1","pssh_widevine":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","index_range":[24,1492],"pssh":"AAAAU3Bzc2gAAAAA7e+LqXnWSs6jyCfc1R0h7QAAADMIARIQkrVbU0j0geUCSrtAgmPuMBoHc3BvdGlmeSIUkrVbU0j0geUCSrtAgmPuMGLJ4AA=","timescale":44100,"padding_samples":744,"pssh_playready":"AAACnHBzc2gAAAAAmgTweZhAQoarkuZb4IhflQAAAnx8AgAAAQABAHICPABXAFIATQBIAEUAQQBEAEUAUgAgAHgAbQBsAG4AcwA9ACIAaAB0AHQAcAA6AC8ALwBzAGMAaABlAG0AYQBzAC4AbQBpAGMAcgBvAHMAbwBmAHQALgBjAG8AbQAvAEQAUgBNAC8AMgAwADAANwAvADAAMwAvAFAAbABhAHkAUgBlAGEAZAB5AEgAZQBhAGQAZQByACIAIAB2AGUAcgBzAGkAbwBuAD0AIgA0AC4AMAAuADAALgAwACIAPgA8AEQAQQBUAEEAPgA8AFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBFAFkATABFAE4APgAxADYAPAAvAEsARQBZAEwARQBOAD4APABBAEwARwBJAEQAPgBBAEUAUwBDAFQAUgA8AC8AQQBMAEcASQBEAD4APAAvAFAAUgBPAFQARQBDAFQASQBOAEYATwA+ADwASwBJAEQAPgBVADEAdQAxAGsAdgBSAEkANQBZAEUAQwBTAHIAdABBAGcAbQBQAHUATQBBAD0APQA8AC8ASwBJAEQAPgA8AEMASABFAEMASwBTAFUATQA+AFQAYQA4AGEASABlADMAbwB1AEwATQA9ADwALwBDAEgARQBDAEsAUwBVAE0APgA8AEwAQQBfAFUAUgBMAD4AaAB0AHQAcAA6AC8ALwBhAC0AZgBhAGsAZQAtAHMAZQByAHYAZQByAC4AcwBwAG8AdABpAGYAeQAuAG4AZQB0ADoAOAAwADgAMAAvAHQAZQBzAHQAPAAvAEwAQQBfAFUAUgBMAD4APAAvAEQAQQBUAEEAPgA8AC8AVwBSAE0ASABFAEEARABFAFIAPgA=","segments":[[175350,441344],[175684,441344],[172419,441344],[172959,441344],[172774,441344],[171356,441344],[171476,441344],[172910,441344],[174645,441344],[173203,441344],[173133,441344],[173775,441344],[172496,441344],[171629,441344],[171897,441344],[174109,441344],[172322,441344],[171581,441344],[171637,441344],[172247,441344],[171746,441344],[107160,273688]],"encoder_delay_samples":1024}'
-  recorded_at: Tue, 18 Feb 2025 21:10:47 GMT
+      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938912_20lvVKtyFNcH6WiGbRrtrCJfx-LIQZE57-cRUq4iEgc=","https://audio-ak.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?__token__=exp=1741938912~hmac=b67f5ddbc8efd11610bb7401311eea2fe76d1ae8f632cd92abf3a25cf83f12b4","https://audio-fa-tls130.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938912_20lvVKtyFNcH6WiGbRrtrCJfx-LIQZE57-cRUq4iEgc=","https://audio-fa-quic.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938912_20lvVKtyFNcH6WiGbRrtrCJfx-LIQZE57-cRUq4iEgc=","https://audio-fa-quic0.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938912_20lvVKtyFNcH6WiGbRrtrCJfx-LIQZE57-cRUq4iEgc=","https://audio-fa-tls13.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938912_20lvVKtyFNcH6WiGbRrtrCJfx-LIQZE57-cRUq4iEgc="],"fileid":
+        "8b2551eb348f9a2ba503251e7b59a39f94c012a7","ttl": 86400}'
+  recorded_at: Thu, 13 Mar 2025 07:55:12 GMT
 recorded_with: VCR 6.3.1

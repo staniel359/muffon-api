@@ -6,39 +6,53 @@ module Spotify
           private
 
           def primary_args
-            []
+            [
+              @args[:track_id],
+              @args[:file_id]
+            ]
           end
 
           def no_data?
-            seektables_data.blank?
+            # seektables_data.blank?
+            false
           end
 
-          def seektables_data
-            @seektables_data ||=
-              Spotify::Utils::Audio::Link::Seektables.call(
-                file_id:
-              )
+          # def seektables_data
+          #   @seektables_data ||=
+          #     Spotify::Utils::Audio::Link::Seektables.call(
+          #       file_id:
+          #     )
+          # end
+
+          def data
+            return test_key if test?
+
+            response
+              .body
+              .unpack1('H*')
+          rescue Faraday::BadRequestError, Faraday::ConnectionFailed
+            nil
+          end
+
+          def test_key
+            'e9730e75426d748290f56f1f94074efc'
+          end
+
+          def link
+            "http://localhost:3745/audiokey/#{track_id}*#{file_id}"
+          end
+
+          def track_id
+            @args[:track_id]
           end
 
           def file_id
             @args[:file_id]
           end
 
-          def data
-            return test_key if test?
-
-            `python3.12 lib/spotify/key_retriever.py \
-              --pssh #{pssh} \
-              --token #{spotify_token}`
-          end
-
-          def test_key
-            '75a2ec7276c0c332cd9c03e970d2d984'
-          end
-
-          def pssh
-            seektables_data['pssh']
-          end
+          # def pssh
+          #   seektables_data['pssh']
+          # end
         end
       end
     end

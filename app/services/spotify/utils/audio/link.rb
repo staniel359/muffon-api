@@ -4,7 +4,7 @@ module Spotify
       class Link < Spotify::Base
         BASE_LINK =
           'https://spclient.wg.spotify.com'.freeze
-        FILE_EXTENSION = 'm4a'.freeze
+        FILE_EXTENSION = 'ogg'.freeze
 
         include Muffon::Utils::Audio::Link
 
@@ -34,10 +34,9 @@ module Spotify
         end
 
         def global_id
-          @global_id ||=
-            Spotify::Utils::Audio::Link::GlobalId.call(
-              track_id:
-            )
+          Spotify::Utils::Audio::Link::GlobalId.call(
+            track_id:
+          )
         end
 
         def track_id
@@ -82,7 +81,7 @@ module Spotify
         def key
           @key ||=
             Spotify::Utils::Audio::Link::Key.call(
-              global_id:,
+              track_id:,
               file_id:
             )
         end
