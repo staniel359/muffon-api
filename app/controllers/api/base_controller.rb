@@ -1,6 +1,6 @@
 module API
   class BaseController < ApplicationController
-    CLIENT_VERSION = '2.0.0'.freeze
+    CLIENT_MINIMUM_VERSION = '2.0.0'.freeze
 
     before_action :render_data_with_status
 
@@ -40,8 +40,22 @@ module API
     end
 
     def valid_version?
-      params[:version].present? &&
-        params[:version] >= CLIENT_VERSION
+      params[:version].present? && (
+        client_version >=
+          client_minimum_version
+      )
+    end
+
+    def client_version
+      Gem::Version.new(
+        params[:version]
+      )
+    end
+
+    def client_minimum_version
+      Gem::Version.new(
+        CLIENT_MINIMUM_VERSION
+      )
     end
 
     def valid_token?
