@@ -11,10 +11,6 @@ module Muffon
         Time.now.utc
       end
 
-      def development?
-        Rails.env.development?
-      end
-
       def test?
         Rails.env.test?
       end
