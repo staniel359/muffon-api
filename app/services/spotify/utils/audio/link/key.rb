@@ -41,8 +41,10 @@ module Spotify
           end
 
           def matched_version?
-            client_version >=
-              Gem::Version.new('2.2.0-beta.5')
+            client_version.present? && (
+              client_version >=
+                Gem::Version.new('2.2.0-beta.5')
+            )
           end
 
           def link

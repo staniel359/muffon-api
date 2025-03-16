@@ -82,7 +82,8 @@ module Spotify
           @key ||=
             Spotify::Utils::Audio::Link::Key.call(
               track_id:,
-              file_id:
+              file_id:,
+              client_version:
             )
         end
 

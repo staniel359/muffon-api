@@ -37,7 +37,8 @@ module Spotify
 
       def audio_full_link
         Spotify::Utils::Audio::Link.call(
-          track_id: @args[:track_id]
+          track_id: @args[:track_id],
+          client_version:
         )
       end
 
