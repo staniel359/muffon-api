@@ -41,20 +41,35 @@ module MuffonAPI
       :all
     ]
 
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      address: 'smtp.gmail.com',
-      port: 587,
-      domain: 'gmail.com',
-      user_name: credentials.mailer[:email],
-      password: credentials.mailer[:password],
-      authentication: :login,
-      openssl_verify_mode: 'none'
-    }
-    config.action_mailer.deliver_later_queue_name = 'profile_mailer'
+    config
+      .action_mailer
+      .delivery_method = :smtp
 
-    config.active_storage.queues.analysis = :storage_analysis
-    config.active_storage.queues.purge = :storage_purge
+    config
+      .action_mailer
+      .smtp_settings = {
+        address: 'smtp.gmail.com',
+        port: 587,
+        domain: 'gmail.com',
+        user_name: credentials.mailer[:email],
+        password: credentials.mailer[:password],
+        authentication: :login,
+        openssl_verify_mode: 'none'
+      }
+
+    config
+      .action_mailer
+      .deliver_later_queue_name = 'profile_mailer'
+
+    config
+      .active_storage
+      .queues
+      .analysis = :storage_analysis
+
+    config
+      .active_storage
+      .queues
+      .purge = :storage_purge
 
     config.to_prepare do
       ActiveStorage::AnalyzeJob.class_eval do
@@ -81,6 +96,26 @@ module MuffonAPI
       end
     end
 
-    config.active_support.to_time_preserves_timezone = :zone
+    config
+      .active_support
+      .to_time_preserves_timezone = :zone
+
+    config.session_store(
+      :cookie_store,
+      key: "_muffon_api_session"
+    )
+
+    config
+      .middleware
+      .use(
+        ActionDispatch::Cookies
+      )
+
+    config
+      .middleware
+      .use(
+        config.session_store,
+        config.session_options
+      )
   end
 end
