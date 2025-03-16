@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://open.spotify.com/get_access_token
+    uri: https://open.spotify.com/get_access_token?productType=web-player&reason=init&totp=705153&totpVer=5&ts=1742116599000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.12.0
+      - Faraday v2.12.2
       Cookie:
       - sp_dc=<SPOTIFY_COOKIES_SP_DC>
       Accept-Encoding:
@@ -22,39 +22,38 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
       Accept-Ranges:
       - bytes
-      Set-Cookie:
-      - sp_t=e6e6a3f76bbd2e5b476c7239d42d9c24; path=/; expires=Mon, 13 Oct 2025 21:31:42
-        GMT; domain=.spotify.com; samesite=none; secure
-      Content-Type:
-      - application/json; charset=utf-8
+      X-Envoy-Upstream-Service-Time:
+      - '76'
       Via:
       - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish, 1.1 varnish
       Server:
       - envoy
-      X-Envoy-Upstream-Service-Time:
-      - '122'
       Date:
-      - Sun, 13 Oct 2024 21:31:42 GMT
+      - Sun, 16 Mar 2025 09:16:40 GMT
       X-Served-By:
-      - cache-fra-eddf8230126-FRA, cache-fra-eddf8230126-FRA
+      - cache-fra-etou8220161-FRA, cache-fra-eddf8230119-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1728855103.757823,VS0,VE153
+      - S1742116600.326189,VS0,VE109
       Vary:
-      - Accept-Encoding,Accept-Encoding
+      - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"f6a40776580943a7bc5173125a1e8832","accessToken":"BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbHZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbjviLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTHbQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZaRPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhBBSJwNbm9QLytbBx6Yngjm5VT","accessTokenExpirationTimestampMs":1728855362407,"isAnonymous":false}'
-  recorded_at: Sun, 13 Oct 2024 21:31:43 GMT
+      string: '{"clientId":"d8a5ed958d274c2e8ee717e6a4b0971d","accessToken":"BQAPSh2DWsgT1wu2k57wsTstPhsZUml1CCDcVQMwtK67-lJ3SB7NTrTi8QW7IQ6o5muZbmSFrpAmXStXky4FLEYS6ZR6IuGkgsUVtbEsiGLdbSHIXT19ATrDdvj8btU-UQwTXLf2T-icljvRcgnqUn7mzpVdRK90dhbhBEZzfa4GbSiRjPzLhU9JSyxjyDuVXICBZyYqqXhLhwET6YysYpXktt-0cvVG8cPnomTEVMaTA0clbOt-TAcXh9F9ENkjfD6e9BTkEXNKKYdERNZgYkXnt14uAHj6dyeHAXCSSM7MYeuTKCXblnaHsa3Fsl0MmKmpD3k7utXUUo2Ydq9Y0UgxGfwnluncbCP-oML_4wfHRd72S1SfJLGFWw","accessTokenExpirationTimestampMs":1742117549189,"isAnonymous":false,"totpValidity":true,"_notes":"Usage
+        of this endpoint is not permitted under the Spotify Developer Terms and Developer
+        Policy, and applicable law"}'
+  recorded_at: Sun, 16 Mar 2025 09:16:40 GMT
 recorded_with: VCR 6.3.1

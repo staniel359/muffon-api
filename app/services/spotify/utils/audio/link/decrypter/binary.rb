@@ -5,7 +5,6 @@ module Spotify
         module Decrypter
           class Binary < Spotify::Utils::Audio::Link
             START_BYTE = 167
-            IV = '72e067fbddcbcf77ebe8bc643f630d93'.freeze
             CIPHER_ALGORITHM = 'aes-128-ctr'.freeze
 
             private
@@ -25,8 +24,8 @@ module Spotify
               Muffon::Decrypter.call(
                 binary: response.body,
                 algorithm: CIPHER_ALGORITHM,
-                key:,
-                iv:
+                key: key_bytes_string,
+                iv: iv_bytes_string
               )[START_BYTE..]
             end
 
@@ -38,12 +37,20 @@ module Spotify
               @args[:file_link]
             end
 
-            def key
-              [@args[:key]].pack('H*')
+            def key_bytes_string
+              [key_string].pack('H*')
             end
 
-            def iv
-              [IV].pack('H*')
+            def key_string
+              @args[:key]
+            end
+
+            def iv_bytes_string
+              [iv_string].pack('H*')
+            end
+
+            def iv_string
+              secrets.spotify[:iv]
             end
           end
         end

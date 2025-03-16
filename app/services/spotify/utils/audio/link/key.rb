@@ -27,7 +27,7 @@ module Spotify
           def data
             return test_key if test?
 
-            if client_version >= Gem::Version.new('2.2.0-beta.5')
+            if matched_version? || development?
               response
                 .body
                 .unpack1('H*')
@@ -38,6 +38,11 @@ module Spotify
 
           def test_key
             'e9730e75426d748290f56f1f94074efc'
+          end
+
+          def matched_version?
+            client_version >=
+              Gem::Version.new('2.2.0-beta.5')
           end
 
           def link

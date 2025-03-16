@@ -15,7 +15,7 @@ module Helpers
         end
 
         def audio_link_token
-          'BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbHZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbjviLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTHbQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZaRPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhBBSJwNbm9QLytbBx6Yngjm5VT'
+          'BQAPSh2DWsgT1wu2k57wsTstPhsZUml1CCDcVQMwtK67-lJ3SB7NTrTi8QW7IQ6o5muZbmSFrpAmXStXky4FLEYS6ZR6IuGkgsUVtbEsiGLdbSHIXT19ATrDdvj8btU-UQwTXLf2T-icljvRcgnqUn7mzpVdRK90dhbhBEZzfa4GbSiRjPzLhU9JSyxjyDuVXICBZyYqqXhLhwET6YysYpXktt-0cvVG8cPnomTEVMaTA0clbOt-TAcXh9F9ENkjfD6e9BTkEXNKKYdERNZgYkXnt14uAHj6dyeHAXCSSM7MYeuTKCXblnaHsa3Fsl0MmKmpD3k7utXUUo2Ydq9Y0UgxGfwnluncbCP-oML_4wfHRd72S1SfJLGFWw'
         end
       end
     end
