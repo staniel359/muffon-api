@@ -30,6 +30,8 @@ class Service
   end
 
   def client_version
-    @args[:client_version]
+    Gem::Version.new(
+      @args[:version]
+    )
   end
 end
