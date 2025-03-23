@@ -28,7 +28,7 @@ module Genius
           html_response_data.xpath(
             "//*[
               contains(
-                @class, 'Lyrics-sc'
+                @class, 'Lyrics__Container'
               )
             ]"
           )
@@ -81,7 +81,7 @@ module Genius
             .attributes['class']
             &.value
             &.include?(
-              'ReferentFragment-desktop-sc'
+              'ReferentFragment'
             )
         end
 
