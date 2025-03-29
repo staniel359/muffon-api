@@ -19,11 +19,13 @@ module Muffon
         end
 
         def albums_count
-          library_artist.library_albums_count
+          library_artist
+            .library_albums_count
         end
 
         def tracks_count
-          library_artist.library_tracks_count
+          library_artist
+            .library_tracks_count
         end
 
         def created_formatted

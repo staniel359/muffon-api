@@ -11,13 +11,19 @@ module ProfileDecorator
 
     def with_relationship_created_at
       select(
-        'profiles.*, relationships.created_at as created_at'
+        <<~SQL.squish
+          profiles.*,
+          relationships.created_at AS created_at
+        SQL
       )
     end
 
     def with_membership_created_at
       select(
-        'profiles.*, memberships.created_at as created_at'
+        <<~SQL.squish
+          profiles.*,
+          memberships.created_at AS created_at
+        SQL
       )
     end
 
@@ -119,19 +125,27 @@ module ProfileDecorator
 
   def library_tags
     library_artists
-      .left_joins(:artist)
-      .pluck(:tag_ids)
+      .left_joins(
+        :artist
+      )
+      .pluck(
+        :tag_ids
+      )
       .flatten
       .compact
       .tally
-      .sort_by(&:second)
+      .sort_by(
+        &:second
+      )
       .reverse
-      .map { |t| format_library_tag(t) }
+      .map { |tag| format_library_tag(tag) }
   end
 
   def playlist_tracks
     PlaylistTrack
-      .joins(:playlist)
+      .joins(
+        :playlist
+      )
       .where(
         playlists: {
           profile_id: id
@@ -180,7 +194,9 @@ module ProfileDecorator
     self.token = SecureRandom.uuid
   end
 
-  def format_library_tag(tag)
+  def format_library_tag(
+    tag
+  )
     id, count = tag
 
     {

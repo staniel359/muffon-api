@@ -23,19 +23,17 @@ Layout/LineLength:
   Exclude:
     - 'spec/**/*_spec.rb'
 
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*_spec.rb'
-    - 'app/decorators/**/*.rb'
-
 Metrics/ClassLength:
-  Exclude:
-    - 'app/controllers/**/*.rb'
-    - 'app/models/**/*.rb'
+  Enabled: false
 
 Metrics/ModuleLength:
-  Exclude:
-    - 'app/decorators/**/*.rb'
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
 
 Metrics/ParameterLists:
   Enabled: false

@@ -6,15 +6,20 @@ module AlbumDecorator
       artist_id,
       title
     )
-      title_formatted = title.strip.truncate(1_000)
+      title_formatted =
+        title
+        .strip
+        .truncate(1_000)
 
       where(
         artist_id:,
-        title_downcase: title_formatted.downcase
-      ).first_or_create(
-        artist_id:,
-        title: title_formatted
+        title_downcase:
+          title_formatted.downcase
       )
+        .first_or_create(
+          artist_id:,
+          title: title_formatted
+        )
     rescue ActiveRecord::RecordNotUnique
       clear_cache && retry
     end

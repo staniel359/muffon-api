@@ -34,7 +34,6 @@ module AmazonMusic
           BASE_LINK
         end
 
-        # rubocop:disable Metrics/MethodLength
         def payload
           {
             'deviceToken' => {
@@ -64,13 +63,11 @@ module AmazonMusic
             }
           }.to_json
         end
-        # rubocop:enable Metrics/MethodLength
 
         def track_id
           @args[:track_id]
         end
 
-        # rubocop:disable Metrics/MethodLength
         def headers
           {
             'User-Agent' => USER_AGENT,
@@ -85,7 +82,6 @@ module AmazonMusic
             'csrf-ts' => '1725608500761'
           }
         end
-        # rubocop:enable Metrics/MethodLength
 
         def cookies
           # Should be refreshed

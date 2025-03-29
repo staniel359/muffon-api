@@ -42,8 +42,7 @@ module Muffon
           end
 
           def track
-            @track ||=
-              recommendation.track
+            @track ||= recommendation.track
           end
 
           def artist_name

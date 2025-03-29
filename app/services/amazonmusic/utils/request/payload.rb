@@ -29,7 +29,6 @@ module AmazonMusic
           @args[:page]
         end
 
-        # rubocop:disable Metrics/MethodLength
         def headers
           {
             'x-amzn-authentication' =>
@@ -49,7 +48,6 @@ module AmazonMusic
             'x-amzn-video-player-token' => {}.to_json
           }
         end
-        # rubocop:enable Metrics/MethodLength
 
         def authentication_headers
           {

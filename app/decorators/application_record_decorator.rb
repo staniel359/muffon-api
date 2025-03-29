@@ -6,9 +6,10 @@ module ApplicationRecordDecorator
       order,
       default_order
     )
-      in_orders = order.in?(
-        self::ORDERS
-      )
+      in_orders =
+        order.in?(
+          self::ORDERS
+        )
 
       order_formatted = (
         in_orders ? order : default_order
@@ -78,7 +79,9 @@ module ApplicationRecordDecorator
     end
 
     def by_public_profile
-      joins(:profile)
+      joins(
+        :profile
+      )
         .where(
           profiles: {
             private: false
@@ -143,7 +146,9 @@ module ApplicationRecordDecorator
 
   private
 
-  def image_data_formatted(image)
+  def image_data_formatted(
+    image
+  )
     Muffon::Utils::Image.call(
       image:
     )
@@ -154,8 +159,8 @@ module ApplicationRecordDecorator
   end
 
   def errors_formatted
-    errors.map do |e|
-      { e.attribute => e.type }
+    errors.map do |error|
+      { error.attribute => error.type }
     end
   end
 end

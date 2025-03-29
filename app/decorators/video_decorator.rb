@@ -6,13 +6,17 @@ module VideoDecorator
       youtube_id,
       update_params = {}
     )
-      where(
-        youtube_id:
-      ).first_or_initialize.tap do |v|
-        v.attributes = update_params
+      video =
+        where(
+          youtube_id:
+        )
+        .first_or_initialize
 
-        v.save
-      end
+      video.update(
+        attributes: update_params
+      )
+
+      video
     rescue ActiveRecord::RecordNotUnique
       clear_cache && retry
     end

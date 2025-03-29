@@ -6,13 +6,17 @@ module VideoPlaylistDecorator
       youtube_id,
       update_params = {}
     )
-      where(
-        youtube_id:
-      ).first_or_initialize.tap do |v|
-        v.attributes = update_params
+      playlist =
+        where(
+          youtube_id:
+        )
+        .first_or_initialize
 
-        v.save
-      end
+      playlist.update(
+        attributes: update_params
+      )
+
+      playlist
     rescue ActiveRecord::RecordNotUnique
       clear_cache && retry
     end

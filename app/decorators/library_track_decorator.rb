@@ -37,15 +37,23 @@ module LibraryTrackDecorator
   def playlist_ids
     profile
       .playlist_tracks
-      .where(track_id:)
-      .pluck(:playlist_id)
+      .where(
+        track_id:
+      )
+      .pluck(
+        :playlist_id
+      )
       .uniq
   end
 
   def library_album_ids
     profile
       .library_tracks
-      .where(track_id:)
-      .pluck(:library_album_id)
+      .where(
+        track_id:
+      )
+      .pluck(
+        :library_album_id
+      )
   end
 end

@@ -6,13 +6,17 @@ module VideoChannelDecorator
       youtube_id,
       update_params = {}
     )
-      where(
-        youtube_id:
-      ).first_or_initialize.tap do |v|
-        v.attributes = update_params
+      channel =
+        where(
+          youtube_id:
+        )
+        .first_or_initialize
 
-        v.save
-      end
+      channel.update(
+        attributes: update_params
+      )
+
+      channel
     rescue ActiveRecord::RecordNotUnique
       clear_cache && retry
     end

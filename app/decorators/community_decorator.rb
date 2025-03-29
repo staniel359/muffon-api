@@ -16,7 +16,10 @@ module CommunityDecorator
 
     def with_membership_created_at
       select(
-        'communities.*, memberships.created_at as created_at'
+        <<~SQL.squish
+          communities.*,
+          memberships.created_at AS created_at
+        SQL
       )
     end
 
@@ -40,9 +43,13 @@ module CommunityDecorator
     end
   end
 
-  def in_members?(profile_id)
+  def in_members?(
+    profile_id
+  )
     members
-      .find_by(id: profile_id)
+      .find_by(
+        id: profile_id
+      )
       .present?
   end
 
