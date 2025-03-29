@@ -11,53 +11,84 @@ module Muffon
 
           def data
             recommendations_not_deleted
-              .then { |r| hide_library_tracks_filter(r) }
-              .then { |r| hide_library_artists_filter(r) }
-              .then { |r| hide_listened_tracks_filter(r) }
-              .then { |r| hide_listened_artists_filter(r) }
+              .then { hide_library_tracks_filter(it) }
+              .then { hide_library_artists_filter(it) }
+              .then { hide_listened_tracks_filter(it) }
+              .then { hide_listened_artists_filter(it) }
           end
 
           def recommendations_not_deleted
             profile
               .recommendation_tracks
               .not_deleted
+              .joined
           end
 
-          def hide_library_tracks_filter(recommendations)
-            return recommendations if
-                @args[:hide_library_tracks].blank?
-
-            recommendations.tracks_not_in_library(
-              @args[:profile_id]
-            )
+          def hide_library_tracks_filter(
+            recommendations
+          )
+            if hide_library_tracks?
+              recommendations
+                .tracks_not_in_library
+            else
+              recommendations
+            end
           end
 
-          def hide_library_artists_filter(recommendations)
-            return recommendations if
-                @args[:hide_library_artists].blank?
-
-            recommendations.artists_not_in_library(
-              @args[:profile_id],
-              @args[:hide_library_artists_tracks_count]
-            )
+          def hide_library_tracks?
+            @args[:hide_library_tracks].present?
           end
 
-          def hide_listened_tracks_filter(recommendations)
-            return recommendations if
-                @args[:hide_listened_tracks].blank?
-
-            recommendations.tracks_not_in_listened(
-              @args[:profile_id]
-            )
+          def hide_library_artists_filter(
+            recommendations
+          )
+            if hide_library_artists?
+              recommendations
+                .artists_not_in_library(
+                  tracks_count:
+                    hide_library_artists_tracks_count
+                )
+            else
+              recommendations
+            end
           end
 
-          def hide_listened_artists_filter(recommendations)
-            return recommendations if
-                @args[:hide_listened_artists].blank?
+          def hide_library_artists?
+            @args[:hide_library_artists].present?
+          end
 
-            recommendations.artists_not_in_listened(
-              @args[:profile_id]
-            )
+          def hide_library_artists_tracks_count
+            @args[:hide_library_artists_tracks_count].to_i
+          end
+
+          def hide_listened_tracks_filter(
+            recommendations
+          )
+            if hide_listened_tracks?
+              recommendations
+                .tracks_not_in_listened
+            else
+              recommendations
+            end
+          end
+
+          def hide_listened_tracks?
+            @args[:hide_listened_tracks].present?
+          end
+
+          def hide_listened_artists_filter(
+            recommendations
+          )
+            if hide_listened_artists?
+              recommendations
+                .artists_not_in_listened
+            else
+              recommendations
+            end
+          end
+
+          def hide_listened_artists?
+            @args[:hide_listened_artists].present?
           end
         end
       end

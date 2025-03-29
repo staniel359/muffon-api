@@ -143,57 +143,34 @@ module ProfileDecorator
     active_events
   end
 
-  def artists_library_artist_ids(artists)
+  def artists_library_artists_ids(
+    artists
+  )
     library_artists
       .where(
-        artist_id: artist_ids(
+        artist_id: artists_ids(
           artists
         )
       ).pluck(:id)
   end
 
-  def artist_ids_from_library(
-    tracks_count = 0
+  def in_followers?(
+    profile_id
   )
-    library_artists
-      .where(
-        library_tracks_count:
-          tracks_count..
-      ).pluck(
-        :artist_id
-      )
-  end
-
-  def track_ids_from_library
-    library_tracks
-      .pluck(
-        :track_id
-      )
-  end
-
-  def artist_ids_from_listened
-    listened_artists
-      .pluck(
-        :artist_id
-      )
-  end
-
-  def track_ids_from_listened
-    listened_tracks
-      .pluck(
-        :track_id
-      )
-  end
-
-  def in_followers?(profile_id)
     follower_profiles
-      .find_by(id: profile_id)
+      .find_by(
+        id: profile_id
+      )
       .present?
   end
 
-  def in_following?(profile_id)
+  def in_following?(
+    profile_id
+  )
     following_profiles
-      .find_by(id: profile_id)
+      .find_by(
+        id: profile_id
+      )
       .present?
   end
 
@@ -212,13 +189,19 @@ module ProfileDecorator
     }
   end
 
-  def artist_ids(artists)
+  def artists_ids(
+    artists
+  )
     artists.map do |name|
-      artist_id(name)
+      artist_id(
+        name
+      )
     end.compact
   end
 
-  def artist_id(name)
+  def artist_id(
+    name
+  )
     Artist.with_name(
       name
     )&.id

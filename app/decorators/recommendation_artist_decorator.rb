@@ -10,7 +10,15 @@ module RecommendationArtistDecorator
 
     def associated
       includes(
-        :artist
+        artist: {
+          library_artists: :library_tracks
+        }
+      )
+    end
+
+    def joined
+      left_joins(
+        artist: :listened_artists
       )
     end
 
@@ -18,14 +26,17 @@ module RecommendationArtistDecorator
       with_library_artists_count
         .order(
           'library_artist_ids_size DESC'
-        ).created_asc_ordered
+        )
+        .created_asc_ordered
     end
 
     def with_library_artists_count
       select(
-        'recommendation_artists.*, ' \
-        'ARRAY_LENGTH(library_artist_ids, 1) ' \
-        'as library_artist_ids_size'
+        <<~SQL.squish
+          recommendation_artists.*,
+          ARRAY_LENGTH(library_artist_ids, 1)
+          AS library_artist_ids_size
+        SQL
       )
     end
 
@@ -33,103 +44,119 @@ module RecommendationArtistDecorator
       with_library_artists_count
         .order(
           'library_artist_ids_size ASC'
-        ).created_asc_ordered
+        )
+        .created_asc_ordered
     end
 
     def with_artists(
       artists,
-      profile_id
+      profile_id:
     )
-      ids = profile(
-        profile_id
-      ).artists_library_artist_ids(
-        artists
-      )
+      artists_ids =
+        find_profile(
+          profile_id
+        ).artists_library_artists_ids(
+          artists
+        )
 
       where(
-        'library_artist_ids @> ARRAY[?]',
-        (ids.presence || [0])
+        'library_artist_ids::text[] @> ARRAY[?]',
+        artists_ids
       )
     end
 
     def without_artists(
       artists,
-      profile_id
+      profile_id:
     )
-      ids = profile(
-        profile_id
-      ).artists_library_artist_ids(
-        artists
-      )
+      artists_ids =
+        find_profile(
+          profile_id
+        ).artists_library_artists_ids(
+          artists
+        )
 
       where
         .not(
-          'library_artist_ids && ARRAY[?]',
-          (ids.presence || [0])
+          'library_artist_ids::text[] && ARRAY[?]',
+          artists_ids
         )
     end
 
-    def with_tags(tags)
-      left_joins(:artist)
-        .where(
-          'artists.tag_ids @> ARRAY[?]',
-          tag_ids(tags)
+    def with_tags(
+      tags
+    )
+      where(
+        'artists.tag_ids::text[] @> ARRAY[?]',
+        tags_ids(
+          tags
         )
+      )
     end
 
-    def without_tags(tags)
-      left_joins(:artist)
-        .where
+    def without_tags(
+      tags
+    )
+      where
         .not(
-          'artists.tag_ids && ARRAY[?]',
-          tag_ids(tags)
+          'artists.tag_ids::text[] && ARRAY[?]',
+          tags_ids(
+            tags
+          )
         )
     end
 
     def artists_not_in_library(
-      profile_id,
-      tracks_count = 0
+      tracks_count: 0
     )
-      ids = profile(
-        profile_id
-      ).artist_ids_from_library(
-        tracks_count
+      joins(
+        <<~SQL.squish
+          LEFT OUTER JOIN library_artists
+            ON (
+              library_artists.artist_id = artists.id
+                AND library_artists.library_tracks_count >= #{tracks_count}
+            )
+        SQL
+      ).where(
+        library_artists: {
+          id: nil
+        }
       )
-
-      where
-        .not(
-          'artist_id = ANY(ARRAY[?])',
-          (ids.presence || [0])
-        )
     end
 
-    def artists_not_in_listened(profile_id)
-      ids = profile(
-        profile_id
-      ).artist_ids_from_listened
-
-      where
-        .not(
-          'artist_id = ANY(ARRAY[?])',
-          (ids.presence || [0])
-        )
+    def artists_not_in_listened
+      where(
+        {
+          listened_artists: {
+            id: nil
+          }
+        }
+      )
     end
 
     private
 
-    def tag_ids(tags)
+    def tags_ids(
+      tags
+    )
       tags.map do |name|
-        tag_id(name)
+        tag_id(
+          name
+        )
       end.compact
     end
 
-    def tag_id(name)
+    def tag_id(
+      name
+    )
       Tag.with_name(
         name
       )&.id
     end
 
-    def profile(profile_id)
+    def find_profile(
+      profile_id
+    )
       Profile.find_by(
         id: profile_id
       )

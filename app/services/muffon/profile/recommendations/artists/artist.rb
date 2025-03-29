@@ -62,14 +62,18 @@ module Muffon
           def library_artists
             recommendation
               .library_artists
+              .associated
               .library_tracks_count_desc_ordered
               .limit(5)
           end
 
-          def library_artist_formatted(library_artist)
+          def library_artist_formatted(
+            library_artist
+          )
             Muffon::Profile::Library::Artists::Artist.call(
               library_artist:,
-              token: @args[:token]
+              token: @args[:token],
+              minimal: true
             )
           end
 

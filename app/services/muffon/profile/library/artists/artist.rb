@@ -13,15 +13,19 @@ module Muffon
           private
 
           def data
-            return artist_minimal_data if @args[:minimal]
-
-            self_data
-              .merge(artist_data)
+            if @args[:minimal].present?
+              artist_minimal_data
+            else
+              self_data
+                .merge(artist_minimal_data)
+                .merge(artist_base_data)
+            end
           end
 
           def artist_minimal_data
             {
               source: source_data,
+              library: library_artist_data,
               name:,
               image: image_data
             }
@@ -35,12 +39,8 @@ module Muffon
             artist.image_data
           end
 
-          def artist_data
+          def artist_base_data
             {
-              source: source_data,
-              library: library_artist_data,
-              name:,
-              image: image_data,
               albums_count:,
               tracks_count:,
               created: created_formatted

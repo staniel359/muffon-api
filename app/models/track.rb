@@ -18,6 +18,8 @@ class Track < ApplicationRecord
 
   has_many :library_tracks, dependent: nil
 
+  has_many :listened_tracks, dependent: nil
+
   has_many :profiles,
            -> { distinct },
            through: :library_tracks,

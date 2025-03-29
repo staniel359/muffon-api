@@ -14,18 +14,31 @@ module RecommendationTrackDecorator
       )
     end
 
+    def joined
+      left_joins(
+        track: [
+          :library_tracks,
+          :listened_tracks,
+          [artist: :listened_artists]
+        ]
+      )
+    end
+
     def library_tracks_count_desc_ordered
       with_library_tracks_count
         .order(
           'library_track_ids_size DESC'
-        ).created_asc_ordered
+        )
+        .created_asc_ordered
     end
 
     def with_library_tracks_count
       select(
-        'recommendation_tracks.*, ' \
-        'ARRAY_LENGTH(library_track_ids, 1) ' \
-        'as library_track_ids_size'
+        <<~SQL.squish
+          recommendation_tracks.*,
+          ARRAY_LENGTH(library_track_ids, 1)
+          AS library_track_ids_size
+        SQL
       )
     end
 
@@ -33,68 +46,49 @@ module RecommendationTrackDecorator
       with_library_tracks_count
         .order(
           'library_track_ids_size ASC'
-        ).created_asc_ordered
+        )
+        .created_asc_ordered
     end
 
-    def tracks_not_in_library(profile_id)
-      ids = profile(
-        profile_id
-      ).track_ids_from_library
-
-      where
-        .not(
-          'track_id = ANY(ARRAY[?])',
-          (ids.presence || [0])
-        )
+    def tracks_not_in_library
+      where(
+        library_tracks: {
+          id: nil
+        }
+      )
     end
 
     def artists_not_in_library(
-      profile_id,
-      tracks_count = 0
+      tracks_count: 0
     )
-      ids = profile(
-        profile_id
-      ).artist_ids_from_library(
-        tracks_count
+      joins(
+        <<~SQL.squish
+          LEFT OUTER JOIN library_artists
+            ON (
+              library_artists.artist_id = artists.id
+                AND library_artists.library_tracks_count >= #{tracks_count}
+            )
+        SQL
+      ).where(
+        library_artists: {
+          id: nil
+        }
       )
-
-      left_joins(:track)
-        .where.not(
-          'tracks.artist_id = ANY(ARRAY[?])',
-          (ids.presence || [0])
-        )
     end
 
-    def tracks_not_in_listened(profile_id)
-      ids = profile(
-        profile_id
-      ).track_ids_from_listened
-
-      where
-        .not(
-          'track_id = ANY(ARRAY[?])',
-          (ids.presence || [0])
-        )
+    def tracks_not_in_listened
+      where(
+        listened_tracks: {
+          id: nil
+        }
+      )
     end
 
-    def artists_not_in_listened(profile_id)
-      ids = profile(
-        profile_id
-      ).artist_ids_from_listened
-
-      left_joins(:track)
-        .where
-        .not(
-          'tracks.artist_id = ANY(ARRAY[?])',
-          (ids.presence || [0])
-        )
-    end
-
-    private
-
-    def profile(profile_id)
-      Profile.find_by(
-        id: profile_id
+    def artists_not_in_listened
+      where(
+        listened_artists: {
+          id: nil
+        }
       )
     end
   end

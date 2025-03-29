@@ -11,75 +11,126 @@ module Muffon
 
           def data
             recommendations_not_deleted
-              .then { |r| hide_library_artists_filter(r) }
-              .then { |r| hide_listened_artists_filter(r) }
-              .then { |r| tags_include_filter(r) }
-              .then { |r| tags_exclude_filter(r) }
-              .then { |r| artists_include_filter(r) }
-              .then { |r| artists_exclude_filter(r) }
+              .then { hide_library_artists_filter(it) }
+              .then { hide_listened_artists_filter(it) }
+              .then { tags_include_filter(it) }
+              .then { tags_exclude_filter(it) }
+              .then { artists_include_filter(it) }
+              .then { artists_exclude_filter(it) }
           end
 
           def recommendations_not_deleted
             profile
               .recommendation_artists
               .not_deleted
+              .joined
           end
 
-          def hide_library_artists_filter(recommendations)
-            return recommendations if
-                @args[:hide_library_artists].blank?
-
-            recommendations.artists_not_in_library(
-              @args[:profile_id],
-              @args[:hide_library_artists_tracks_count].to_i
-            )
+          def hide_library_artists_filter(
+            recommendations
+          )
+            if hide_library_artists?
+              recommendations
+                .artists_not_in_library(
+                  tracks_count:
+                    hide_library_artists_tracks_count
+                )
+            else
+              recommendations
+            end
           end
 
-          def hide_listened_artists_filter(recommendations)
-            return recommendations if
-                @args[:hide_listened_artists].blank?
-
-            recommendations.artists_not_in_listened(
-              @args[:profile_id]
-            )
+          def hide_library_artists?
+            @args[:hide_library_artists].present?
           end
 
-          def tags_include_filter(recommendations)
-            return recommendations if
-                @args[:tags_include].blank?
-
-            recommendations.with_tags(
-              @args[:tags_include]
-            )
+          def hide_library_artists_tracks_count
+            @args[:hide_library_artists_tracks_count].to_i
           end
 
-          def tags_exclude_filter(recommendations)
-            return recommendations if
-                @args[:tags_exclude].blank?
-
-            recommendations.without_tags(
-              @args[:tags_exclude]
-            )
+          def hide_listened_artists_filter(
+            recommendations
+          )
+            if hide_listened_artists?
+              recommendations
+                .artists_not_in_listened
+            else
+              recommendations
+            end
           end
 
-          def artists_include_filter(recommendations)
-            return recommendations if
-                @args[:artists_include].blank?
-
-            recommendations.with_artists(
-              @args[:artists_include],
-              @args[:profile_id]
-            )
+          def hide_listened_artists?
+            @args[:hide_listened_artists].present?
           end
 
-          def artists_exclude_filter(recommendations)
-            return recommendations if
-                @args[:artists_exclude].blank?
+          def tags_include_filter(
+            recommendations
+          )
+            if with_tags?
+              recommendations.with_tags(
+                @args[:tags_include]
+              )
+            else
+              recommendations
+            end
+          end
 
-            recommendations.without_artists(
-              @args[:artists_exclude],
-              @args[:profile_id]
-            )
+          def with_tags?
+            @args[:tags_include].present?
+          end
+
+          def tags_exclude_filter(
+            recommendations
+          )
+            if without_tags?
+              recommendations.without_tags(
+                @args[:tags_exclude]
+              )
+            else
+              recommendations
+            end
+          end
+
+          def without_tags?
+            @args[:tags_exclude].present?
+          end
+
+          def artists_include_filter(
+            recommendations
+          )
+            if with_artists?
+              recommendations.with_artists(
+                @args[:artists_include],
+                profile_id:
+              )
+            else
+              recommendations
+            end
+          end
+
+          def profile_id
+            @args[:profile_id]
+          end
+
+          def with_artists?
+            @args[:artists_include].present?
+          end
+
+          def artists_exclude_filter(
+            recommendations
+          )
+            if without_artists?
+              recommendations.without_artists(
+                @args[:artists_exclude],
+                profile_id:
+              )
+            else
+              recommendations
+            end
+          end
+
+          def without_artists?
+            @args[:artists_exclude].present?
           end
         end
       end
