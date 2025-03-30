@@ -32,6 +32,7 @@ module Muffon
             if hide_library_artists?
               recommendations
                 .artists_not_in_library(
+                  profile_id:,
                   tracks_count:
                     hide_library_artists_tracks_count
                 )
@@ -44,6 +45,10 @@ module Muffon
             @args[:hide_library_artists].present?
           end
 
+          def profile_id
+            @args[:profile_id]
+          end
+
           def hide_library_artists_tracks_count
             @args[:hide_library_artists_tracks_count].to_i
           end
@@ -53,7 +58,9 @@ module Muffon
           )
             if hide_listened_artists?
               recommendations
-                .artists_not_in_listened
+                .artists_not_in_listened(
+                  profile_id:
+                )
             else
               recommendations
             end
@@ -106,10 +113,6 @@ module Muffon
             else
               recommendations
             end
-          end
-
-          def profile_id
-            @args[:profile_id]
           end
 
           def with_artists?

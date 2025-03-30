@@ -18,7 +18,7 @@ module RecommendationArtistDecorator
 
     def joined
       left_joins(
-        artist: :listened_artists
+        :artist
       )
     end
 
@@ -107,6 +107,7 @@ module RecommendationArtistDecorator
     end
 
     def artists_not_in_library(
+      profile_id:,
       tracks_count: 0
     )
       joins(
@@ -114,6 +115,7 @@ module RecommendationArtistDecorator
           LEFT OUTER JOIN library_artists
             ON (
               library_artists.artist_id = artists.id
+                AND library_artists.profile_id = #{profile_id}
                 AND library_artists.library_tracks_count >= #{tracks_count}
             )
         SQL
@@ -124,8 +126,18 @@ module RecommendationArtistDecorator
       )
     end
 
-    def artists_not_in_listened
-      where(
+    def artists_not_in_listened(
+      profile_id:
+    )
+      joins(
+        <<~SQL.squish
+          LEFT OUTER JOIN listened_artists
+            ON (
+              listened_artists.artist_id = artists.id
+                AND listened_artists.profile_id = #{profile_id}
+            )
+        SQL
+      ).where(
         {
           listened_artists: {
             id: nil

@@ -16,11 +16,7 @@ module RecommendationTrackDecorator
 
     def joined
       left_joins(
-        track: [
-          :library_tracks,
-          :listened_tracks,
-          [artist: :listened_artists]
-        ]
+        [track: :artist]
       )
     end
 
@@ -50,8 +46,18 @@ module RecommendationTrackDecorator
         .created_asc_ordered
     end
 
-    def tracks_not_in_library
-      where(
+    def tracks_not_in_library(
+      profile_id:
+    )
+      joins(
+        <<~SQL.squish
+          LEFT OUTER JOIN library_tracks
+            ON (
+              library_tracks.track_id = tracks.id
+                AND library_tracks.profile_id = #{profile_id}
+            )
+        SQL
+      ).where(
         library_tracks: {
           id: nil
         }
@@ -59,6 +65,7 @@ module RecommendationTrackDecorator
     end
 
     def artists_not_in_library(
+      profile_id:,
       tracks_count: 0
     )
       joins(
@@ -66,6 +73,7 @@ module RecommendationTrackDecorator
           LEFT OUTER JOIN library_artists
             ON (
               library_artists.artist_id = artists.id
+                AND library_artists.profile_id = #{profile_id}
                 AND library_artists.library_tracks_count >= #{tracks_count}
             )
         SQL
@@ -76,16 +84,36 @@ module RecommendationTrackDecorator
       )
     end
 
-    def tracks_not_in_listened
-      where(
+    def tracks_not_in_listened(
+      profile_id:
+    )
+      joins(
+        <<~SQL.squish
+          LEFT OUTER JOIN listened_tracks
+            ON (
+              listened_tracks.track_id = tracks.id
+                AND listened_tracks.profile_id = #{profile_id}
+            )
+        SQL
+      ).where(
         listened_tracks: {
           id: nil
         }
       )
     end
 
-    def artists_not_in_listened
-      where(
+    def artists_not_in_listened(
+      profile_id:
+    )
+      joins(
+        <<~SQL.squish
+          LEFT OUTER JOIN listened_artists
+            ON (
+              listened_artists.artist_id = artists.id
+                AND listened_artists.profile_id = #{profile_id}
+            )
+        SQL
+      ).where(
         listened_artists: {
           id: nil
         }

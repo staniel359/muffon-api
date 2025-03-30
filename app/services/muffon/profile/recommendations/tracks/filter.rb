@@ -29,7 +29,9 @@ module Muffon
           )
             if hide_library_tracks?
               recommendations
-                .tracks_not_in_library
+                .tracks_not_in_library(
+                  profile_id:
+                )
             else
               recommendations
             end
@@ -39,12 +41,17 @@ module Muffon
             @args[:hide_library_tracks].present?
           end
 
+          def profile_id
+            @args[:profile_id]
+          end
+
           def hide_library_artists_filter(
             recommendations
           )
             if hide_library_artists?
               recommendations
                 .artists_not_in_library(
+                  profile_id:,
                   tracks_count:
                     hide_library_artists_tracks_count
                 )
@@ -66,7 +73,9 @@ module Muffon
           )
             if hide_listened_tracks?
               recommendations
-                .tracks_not_in_listened
+                .tracks_not_in_listened(
+                  profile_id:
+                )
             else
               recommendations
             end
@@ -81,7 +90,9 @@ module Muffon
           )
             if hide_listened_artists?
               recommendations
-                .artists_not_in_listened
+                .artists_not_in_listened(
+                  profile_id:
+                )
             else
               recommendations
             end
