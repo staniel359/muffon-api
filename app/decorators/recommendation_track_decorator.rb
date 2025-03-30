@@ -53,7 +53,7 @@ module RecommendationTrackDecorator
         <<~SQL.squish
           LEFT OUTER JOIN library_tracks
             ON (
-              library_tracks.track_id = tracks.id
+              library_tracks.track_id = recommendation_tracks.track_id
                 AND library_tracks.profile_id = #{profile_id}
             )
         SQL
@@ -91,7 +91,7 @@ module RecommendationTrackDecorator
         <<~SQL.squish
           LEFT OUTER JOIN listened_tracks
             ON (
-              listened_tracks.track_id = tracks.id
+              listened_tracks.track_id = recommendation_tracks.track_id
                 AND listened_tracks.profile_id = #{profile_id}
             )
         SQL
