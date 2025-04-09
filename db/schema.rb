@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_30_195111) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_09_210232) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -237,7 +237,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_195111) do
     t.integer "library_tracks_count", default: 0
     t.integer "library_albums_count", default: 0
     t.index ["artist_id", "profile_id"], name: "index_library_artists_on_artist_id_and_profile_id", unique: true
-    t.index ["artist_id"], name: "index_library_artists_on_artist_id"
     t.index ["profile_id"], name: "index_library_artists_on_profile_id"
   end
 
@@ -272,7 +271,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_195111) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id", "profile_id"], name: "index_listened_artists_on_artist_id_and_profile_id", unique: true
-    t.index ["artist_id"], name: "index_listened_artists_on_artist_id"
     t.index ["profile_id"], name: "index_listened_artists_on_profile_id"
   end
 
@@ -283,7 +281,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_30_195111) do
     t.datetime "updated_at", null: false
     t.index ["profile_id"], name: "index_listened_tracks_on_profile_id"
     t.index ["track_id", "profile_id"], name: "index_listened_tracks_on_track_id_and_profile_id", unique: true
-    t.index ["track_id"], name: "index_listened_tracks_on_track_id"
   end
 
   create_table "memberships", force: :cascade do |t|
