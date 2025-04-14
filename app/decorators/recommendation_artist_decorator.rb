@@ -60,7 +60,7 @@ module RecommendationArtistDecorator
         )
 
       where(
-        'library_artist_ids::text[] @> ARRAY[?]',
+        'library_artist_ids @> ARRAY[?]',
         artists_ids
       )
     end
@@ -78,7 +78,7 @@ module RecommendationArtistDecorator
 
       where
         .not(
-          'library_artist_ids::text[] && ARRAY[?]',
+          'library_artist_ids && ARRAY[?]',
           artists_ids
         )
     end
@@ -87,7 +87,7 @@ module RecommendationArtistDecorator
       tags
     )
       where(
-        'artists.tag_ids::text[] @> ARRAY[?]',
+        'artists.tag_ids @> ARRAY[?]',
         tags_ids(
           tags
         )
@@ -99,7 +99,7 @@ module RecommendationArtistDecorator
     )
       where
         .not(
-          'artists.tag_ids::text[] && ARRAY[?]',
+          'artists.tag_ids && ARRAY[?]',
           tags_ids(
             tags
           )
