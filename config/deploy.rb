@@ -29,19 +29,26 @@ set :rbenv_ruby, File.read(
 ).strip
 
 set :puma_service_unit_name, fetch(:application)
+
 set :puma_systemctl_user, :system
+
 set :puma_workers, 1
 
 set :nginx_config_name, fetch(:application)
+
 set :nginx_server_name,
   '178-79-138-81.ip.linodeusercontent.com'
+
 set :nginx_use_ssl, true
+
 set :nginx_ssl_certificate,
   "/etc/letsencrypt/live/#{fetch(:nginx_server_name)}/fullchain.pem"
+
 set :nginx_ssl_certificate_key,
   "/etc/letsencrypt/live/#{fetch(:nginx_server_name)}/privkey.pem"
 
 set :sidekiq_service_unit_user, :system
+
 set :sidekiq_user, :root
 
 set :whenever_roles, -> { :app }

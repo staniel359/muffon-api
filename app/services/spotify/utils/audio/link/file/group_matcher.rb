@@ -29,7 +29,8 @@ module Spotify
             def allowed_countries
               @allowed_countries ||=
                 file_group.dig(
-                  'restriction', 0,
+                  'restriction',
+                  0,
                   'countries_allowed'
                 )
             end
@@ -39,11 +40,13 @@ module Spotify
             end
 
             def country_in_countries_list?(string)
-              string.scan(
-                /.{2}/
-              ).include?(
-                COUNTRY_CODE
-              )
+              string
+                .scan(
+                  /.{2}/
+                )
+                .include?(
+                  COUNTRY_CODE
+                )
             end
 
             def not_in_forbidden_countries?
@@ -56,7 +59,8 @@ module Spotify
             def forbidden_countries
               @forbidden_countries ||=
                 file_group.dig(
-                  'restriction', 0,
+                  'restriction',
+                  0,
                   'countries_forbidden'
                 )
             end

@@ -29,14 +29,8 @@ module Spotify
         def track_data
           @track_data ||=
             Spotify::Utils::Audio::Link::Track.call(
-              global_id:
+              track_id:
             )
-        end
-
-        def global_id
-          Spotify::Utils::Audio::Link::GlobalId.call(
-            track_id:
-          )
         end
 
         def track_id

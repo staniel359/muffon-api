@@ -6,7 +6,7 @@ module Spotify
           private
 
           def primary_args
-            [@args[:global_id]]
+            [@args[:track_id]]
           end
 
           def no_data?
@@ -18,7 +18,10 @@ module Spotify
           end
 
           def global_id
-            @args[:global_id]
+            Base62
+              .decode(track_id)
+              .to_s(16)
+              .rjust(32, '0')
           end
 
           alias data response_data

@@ -3,6 +3,9 @@ module Spotify
     module Audio
       class Link
         class Key < Spotify::Utils::Audio::Link
+          BASE_LINK =
+            'http://localhost:3745/audiokey'.freeze
+
           private
 
           def primary_args
@@ -13,16 +16,8 @@ module Spotify
           end
 
           def no_data?
-            # seektables_data.blank?
             false
           end
-
-          # def seektables_data
-          #   @seektables_data ||=
-          #     Spotify::Utils::Audio::Link::Seektables.call(
-          #       file_id:
-          #     )
-          # end
 
           def data
             return test_key if test?
@@ -48,7 +43,7 @@ module Spotify
           end
 
           def link
-            "http://localhost:3745/audiokey/#{track_id}*#{file_id}"
+            "#{BASE_LINK}/#{track_id}*#{file_id}"
           end
 
           def track_id
@@ -58,10 +53,6 @@ module Spotify
           def file_id
             @args[:file_id]
           end
-
-          # def pssh
-          #   seektables_data['pssh']
-          # end
         end
       end
     end

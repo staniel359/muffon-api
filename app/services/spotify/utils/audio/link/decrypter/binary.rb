@@ -21,12 +21,16 @@ module Spotify
             end
 
             def data
+              decrypted_data[START_BYTE..]
+            end
+
+            def decrypted_data
               Muffon::Decrypter.call(
                 binary: response.body,
                 algorithm: CIPHER_ALGORITHM,
                 key: key_bytes_string,
                 iv: iv_bytes_string
-              )[START_BYTE..]
+              )
             end
 
             def headers
