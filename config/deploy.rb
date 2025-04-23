@@ -14,8 +14,7 @@ append :linked_files,
   'config/credentials/production.yml.enc',
   'config/credentials/production.key',
   'invalid_requests.csv',
-  'lib/widevine.wvd',
-  'lib/vk/downloader'
+  'lib/widevine.wvd'
 
 append :linked_dirs,
   'log',
@@ -61,11 +60,6 @@ namespace :config do
       # upload!(
       #   'lib/widevine.wvd',
       #   "/root/#{fetch(:application)}/shared/lib/widevine.wvd"
-      # )
-
-      # upload!(
-      #   'lib/vk/downloader',
-      #   "/root/#{fetch(:application)}/shared/lib/vk/downloader"
       # )
     end
   end
