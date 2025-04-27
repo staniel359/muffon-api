@@ -59,7 +59,7 @@ module LastFM
 
       def web_raw_collection_list
         Parallel.map(
-          (1..WEB_PAGES_COUNT),
+          1..WEB_PAGES_COUNT,
           in_threads: WEB_PAGES_COUNT
         ) do |page|
           web_page_raw_collection_list(page)
