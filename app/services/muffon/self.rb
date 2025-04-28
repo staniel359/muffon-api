@@ -2,16 +2,27 @@ module Muffon
   class Self < Muffon::Profile::Base
     SELF_PREFIXES = {
       artist: %w[
-        library favorite bookmark listened
+        library
+        favorite
+        bookmark
+        listened
       ],
       album: %w[
-        library favorite bookmark listened
+        library
+        favorite
+        bookmark
+        listened
       ],
       track: %w[
-        library favorite bookmark listened
+        library
+        favorite
+        bookmark
+        listened
       ],
       video: %w[
-        favorite bookmark watched
+        favorite
+        bookmark
+        watched
       ],
       video_playlist: %w[
         bookmark
@@ -51,14 +62,6 @@ module Muffon
           a['value']
         ]
       end
-    end
-
-    def profile
-      @profile ||=
-        ::Profile
-        .find_by(
-          id: @args[:profile_id]
-        )
     end
 
     def raw_self_data
