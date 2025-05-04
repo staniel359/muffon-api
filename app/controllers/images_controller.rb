@@ -18,8 +18,18 @@ class ImagesController < ApplicationController
 
   def redirect_to_image_link
     redirect_to(
-      blob.url,
+      image_link,
       allow_other_host: true
     )
+  end
+
+  def image_link
+    if Rails.env.development?
+      rails_blob_url(
+        blob
+      )
+    else
+      blob.url
+    end
   end
 end
