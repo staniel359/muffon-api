@@ -11,18 +11,31 @@ class LibraryTrack < ApplicationRecord
   include LibraryTrackDecorator
   include EventableTrack
 
-  belongs_to :profile, counter_cache: true
+  after_create_commit :handle_after_create_commit
+
+  after_destroy_commit :handle_after_destroy_commit
+
+  belongs_to :profile,
+             counter_cache: true
+
   belongs_to :track
-  belongs_to :library_artist, counter_cache: true
+
+  belongs_to :library_artist,
+             counter_cache: true
+
   belongs_to :library_album,
              optional: true,
              counter_cache: true
 
-  after_create :create_recommendations
-
-  after_destroy :clear_recommendations
-
   private
+
+  def handle_after_create_commit
+    create_recommendations
+  end
+
+  def handle_after_destroy_commit
+    clear_recommendations
+  end
 
   def create_recommendations
     Muffon::Worker::Profile::Recommendations::Tracks::Creator.call(

@@ -19,8 +19,7 @@ module Muffon
         def data
           check_password
 
-          return profile.errors_data if
-              profile.errors?
+          return profile.errors_data if profile.errors?
 
           profile.run_callbacks(
             :destroy

@@ -4,7 +4,8 @@ class PlayingEvent < ApplicationRecord
     created_asc
   ].freeze
 
-  validates :data, presence: true
+  validates :data,
+            presence: true
 
   belongs_to :profile
 end

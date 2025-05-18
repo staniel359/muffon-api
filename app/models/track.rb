@@ -1,7 +1,8 @@
 class Track < ApplicationRecord
   include TrackDecorator
 
-  validates :title, presence: true
+  validates :title,
+            presence: true
 
   validates :title_downcase,
             presence: true,
@@ -14,14 +15,16 @@ class Track < ApplicationRecord
             uniqueness: true,
             unless: -> { test? }
 
-  belongs_to :artist
+  has_many :library_tracks,
+           dependent: nil
 
-  has_many :library_tracks, dependent: nil
-
-  has_many :listened_tracks, dependent: nil
+  has_many :listened_tracks,
+           dependent: nil
 
   has_many :profiles,
            -> { distinct },
            through: :library_tracks,
            dependent: nil
+
+  belongs_to :artist
 end

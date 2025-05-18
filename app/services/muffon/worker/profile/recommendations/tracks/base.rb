@@ -19,7 +19,8 @@ module Muffon
             def worker_args
               @args.slice(
                 *%i[
-                  profile_id library_track_id
+                  profile_id
+                  library_track_id
                 ]
               ).to_json
             end

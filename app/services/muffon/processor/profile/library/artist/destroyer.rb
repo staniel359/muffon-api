@@ -20,7 +20,9 @@ module Muffon
 
             def library_artist
               @library_artist ||=
-                profile.library_artists.find_by(
+                profile
+                .library_artists
+                .find_by(
                   id: @args[:library_id]
                 )
             end

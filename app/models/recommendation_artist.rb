@@ -15,8 +15,15 @@ class RecommendationArtist < ApplicationRecord
               scope: :profile_id
             }
 
-  after_create :update_artist_tags
+  after_create_commit :handle_after_create_commit
 
   belongs_to :profile
+
   belongs_to :artist
+
+  private
+
+  def handle_after_create_commit
+    update_artist_tags
+  end
 end

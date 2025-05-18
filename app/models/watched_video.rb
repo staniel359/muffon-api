@@ -17,5 +17,6 @@ class WatchedVideo < ApplicationRecord
             }
 
   belongs_to :profile
+
   belongs_to :video
 end

@@ -5,5 +5,6 @@ class Message < ApplicationRecord
   has_many_attached :images
 
   belongs_to :conversation
+
   belongs_to :profile
 end

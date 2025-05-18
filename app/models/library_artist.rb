@@ -20,36 +20,38 @@ class LibraryArtist < ApplicationRecord
               scope: :profile_id
             }
 
-  after_create :update_artist_tags
-  after_create :create_recommendations
+  after_create_commit :handle_after_create_commit
 
-  before_destroy :delete_data
+  after_destroy_commit :handle_after_destroy_commit
 
-  after_destroy :clear_recommendations
+  has_many :library_tracks,
+           dependent: :destroy
 
-  belongs_to :profile, counter_cache: true
+  has_many :library_albums,
+           dependent: :destroy
+
+  belongs_to :profile,
+             counter_cache: true
+
   belongs_to :artist
 
-  has_many :library_tracks, dependent: :delete_all
-  has_many :library_albums, dependent: :delete_all
-
   private
+
+  def handle_after_create_commit
+    update_artist_tags
+
+    create_recommendations
+  end
+
+  def handle_after_destroy_commit
+    clear_recommendations
+  end
 
   def create_recommendations
     Muffon::Worker::Profile::Recommendations::Artists::Creator.call(
       profile_id:,
       library_artist_id: id
     )
-  end
-
-  def delete_data
-    delete_images
-  end
-
-  def delete_images
-    library_albums.find_each do |a|
-      a.image.purge_later
-    end
   end
 
   def clear_recommendations

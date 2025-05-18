@@ -28,6 +28,9 @@ class PostComment < ApplicationRecord
   has_many_attached :images
 
   belongs_to :post
+
   belongs_to :profile
-  belongs_to :community, optional: true
+
+  belongs_to :community,
+             optional: true
 end

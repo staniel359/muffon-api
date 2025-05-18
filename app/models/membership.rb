@@ -13,6 +13,7 @@ class Membership < ApplicationRecord
             }
 
   belongs_to :profile
+
   belongs_to :community,
              counter_cache: 'members_count'
 end

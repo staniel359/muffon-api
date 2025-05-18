@@ -21,5 +21,6 @@ class BookmarkVideoChannel < ApplicationRecord
             }
 
   belongs_to :video_channel
+
   belongs_to :profile
 end

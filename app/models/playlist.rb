@@ -27,23 +27,10 @@ class Playlist < ApplicationRecord
               scope: :profile_id
             }
 
-  before_destroy :delete_data
-
   has_one_attached :image
 
+  has_many :playlist_tracks,
+           dependent: :destroy
+
   belongs_to :profile
-
-  has_many :playlist_tracks, dependent: :delete_all
-
-  private
-
-  def delete_data
-    delete_images
-  end
-
-  def delete_images
-    playlist_tracks.find_each do |t|
-      t.image.purge_later
-    end
-  end
 end

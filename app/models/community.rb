@@ -24,46 +24,23 @@ class Community < ApplicationRecord
             presence: true,
             uniqueness: true
 
-  before_destroy :delete_data
-
   has_one_attached :image
 
-  belongs_to :creator,
-             class_name: 'Profile',
-             foreign_key: :profile_id,
-             inverse_of: :own_communities
+  has_many :posts,
+           dependent: :destroy
 
-  has_many :posts, dependent: :delete_all
+  has_many :post_comments,
+           through: :posts
 
-  has_many :post_comments, through: :posts
-
-  has_many :memberships, dependent: :delete_all
+  has_many :memberships,
+           dependent: :destroy
 
   has_many :members,
            through: :memberships,
            source: :profile
 
-  private
-
-  def delete_data
-    delete_images
-
-    delete_assosiated_collections
-  end
-
-  def delete_images
-    posts.find_each do |p|
-      p.images.purge_later
-    end
-
-    post_comments.find_each do |c|
-      c.images.purge_later
-    end
-  end
-
-  def delete_assosiated_collections
-    PostComment.merge(
-      post_comments
-    ).delete_all
-  end
+  belongs_to :creator,
+             class_name: 'Profile',
+             foreign_key: :profile_id,
+             inverse_of: :own_communities
 end

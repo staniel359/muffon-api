@@ -12,5 +12,6 @@ class ListenedAlbum < ApplicationRecord
             }
 
   belongs_to :profile
+
   belongs_to :album
 end

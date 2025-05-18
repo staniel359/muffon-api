@@ -19,6 +19,9 @@ class FavoriteTrack < ApplicationRecord
   has_one_attached :image
 
   belongs_to :profile
+
   belongs_to :track
-  belongs_to :album, optional: true
+
+  belongs_to :album,
+             optional: true
 end

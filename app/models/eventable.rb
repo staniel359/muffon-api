@@ -2,11 +2,11 @@ module Eventable
   extend ActiveSupport::Concern
 
   included do
-    after_create :add_created_event
+    after_create_commit :handle_after_create_commit
 
-    before_update :add_updated_event
+    after_update_commit :handle_after_update_commit
 
-    before_destroy :add_deleted_event
+    before_destroy :handle_before_destroy
 
     has_many :events,
              as: :eventable,
@@ -14,6 +14,18 @@ module Eventable
   end
 
   private
+
+  def handle_after_create_commit
+    add_created_event
+  end
+
+  def handle_after_update_commit
+    add_updated_event
+  end
+
+  def handle_before_destroy
+    add_deleted_event
+  end
 
   def add_created_event
     return unless add_created_event?
@@ -76,8 +88,8 @@ module Eventable
   end
 
   def updated?
-    event_attributes.any? do |a|
-      a.in?(changed)
+    event_attributes.any? do |attribute|
+      attribute.in?(changed)
     end
   end
 

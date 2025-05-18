@@ -20,10 +20,15 @@ class PlaylistTrack < ApplicationRecord
 
   has_one_attached :image
 
-  belongs_to :playlist, counter_cache: 'tracks_count'
+  belongs_to :playlist,
+             counter_cache: 'tracks_count'
+
   belongs_to :track
+
   belongs_to :artist
-  belongs_to :album, optional: true
+
+  belongs_to :album,
+             optional: true
 
   private
 

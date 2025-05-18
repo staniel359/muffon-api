@@ -21,5 +21,6 @@ class BookmarkVideoPlaylist < ApplicationRecord
             }
 
   belongs_to :video_playlist
+
   belongs_to :profile
 end

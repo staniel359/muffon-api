@@ -20,9 +20,14 @@ class LibraryAlbum < ApplicationRecord
 
   has_one_attached :image
 
-  belongs_to :profile, counter_cache: true
-  belongs_to :library_artist, counter_cache: true
-  belongs_to :album
+  has_many :library_tracks,
+           dependent: :destroy
 
-  has_many :library_tracks, dependent: :delete_all
+  belongs_to :profile,
+             counter_cache: true
+
+  belongs_to :library_artist,
+             counter_cache: true
+
+  belongs_to :album
 end
