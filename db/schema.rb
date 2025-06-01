@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_09_210232) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_01_075029) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -409,7 +409,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_09_210232) do
     t.integer "library_albums_count", default: 0
     t.integer "library_tracks_count", default: 0
     t.text "status"
-    t.boolean "save_activity_history", default: true, null: false
+    t.boolean "save_activity_history", default: true
     t.index ["email"], name: "index_profiles_on_email", unique: true
     t.index ["nickname"], name: "index_profiles_on_nickname", unique: true
     t.index ["token"], name: "index_profiles_on_token"
