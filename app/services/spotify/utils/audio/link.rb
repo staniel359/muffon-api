@@ -17,7 +17,10 @@ module Spotify
         private
 
         def primary_args
-          [@args[:track_id]]
+          [
+            @args[:track_id],
+            @args[:client_version]
+          ]
         end
 
         def no_data?
