@@ -16,7 +16,7 @@ module Muffon
           end
 
           def limit_queue
-            Sidekiq::Queue[queue].limit = 1
+            Sidekiq::Queue[queue].limit = 3
           end
         end
       end
