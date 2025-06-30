@@ -1,4 +1,4 @@
-:concurrency: 25
+:concurrency: 50
 :dynamic: true
 :limits:
   default: 5
