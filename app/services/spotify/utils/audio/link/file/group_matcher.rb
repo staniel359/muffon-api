@@ -14,7 +14,7 @@ module Spotify
               false
             end
 
-            def data
+            def matched_group?
               in_allowed_countries? &&
                 not_in_forbidden_countries?
             end
@@ -64,6 +64,8 @@ module Spotify
                   'countries_forbidden'
                 )
             end
+
+            alias data matched_group?
           end
         end
       end

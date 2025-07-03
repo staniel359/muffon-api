@@ -56,18 +56,26 @@ module Genius
       def lyrics
         @lyrics ||=
           Genius::Track::Info::Lyrics.call(
-            track_slug: track['path']
+            track_slug:
           )[:lyrics]
       end
 
+      def track_slug
+        track['path']
+      end
+
       def lyrics_formatted
-        lyrics.map do |l|
-          lyric_formatted(l)
-        end.flatten.join
+        lyrics.map do |lyric|
+          lyric_formatted(lyric)
+        end.join
       end
 
       def lyric_formatted(lyric)
-        lyric.is_a?(Hash) ? lyric[:text] : lyric
+        if lyric.is_a?(Hash)
+          lyric[:text]
+        else
+          lyric
+        end
       end
     end
   end
