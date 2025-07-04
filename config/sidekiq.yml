@@ -2,10 +2,10 @@
 :dynamic: true
 :limits:
   default: 5
-  artist_tags: 1
-  profile_mailer: 1
-  storage_analysis: 1
-  storage_purge: 1
+  artist_tags: 5
+  profile_mailer: 5
+  storage_analysis: 5
+  storage_purge: 5
 :queues:
   - default
   - artist_tags
