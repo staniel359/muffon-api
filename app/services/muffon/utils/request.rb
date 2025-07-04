@@ -50,13 +50,17 @@ module Muffon
         redirect: true
       )
         set_cookies(
-          headers:, cookies:
+          headers:,
+          cookies:
         )
 
         client(
-          proxy:, redirect:
+          proxy:,
+          redirect:
         ).get(
-          link, params, headers
+          link,
+          params,
+          headers
         )
       rescue StandardError => e
         handle_error(e)
@@ -83,13 +87,19 @@ module Muffon
         redirect: true
       )
         set_cookies(
-          headers:, cookies:
+          headers:,
+          cookies:
         )
 
         client(
-          params:, proxy:, redirect:, payload:
+          params:,
+          proxy:,
+          redirect:,
+          payload:
         ).post(
-          link, payload, headers
+          link,
+          payload,
+          headers
         )
       rescue StandardError => e
         handle_error(e)
@@ -104,9 +114,11 @@ module Muffon
 
       def handle_error(error)
         if @args[:debug_request]
-          Rails.logger.debug(
-            error.response
-          )
+          Rails
+            .logger
+            .debug(
+              error.response
+            )
         end
 
         raise error

@@ -7,11 +7,21 @@ module LastFM
         private
 
         def response
-          Muffon::Utils::Proxy.call(
+          format_get_request(
             link:,
             params:,
-            cookies:
+            headers:,
+            cookies:,
+            proxy:
           )
+        end
+
+        def proxy
+          secrets.proxy[:us]
+        end
+
+        def headers
+          { 'User-Agent' => Muffon::Utils::Request::USER_AGENT }
         end
       end
     end

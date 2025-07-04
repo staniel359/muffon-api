@@ -31,11 +31,14 @@ module Muffon
           payload: nil
         )
           Faraday.new(
-            params:, proxy:,
+            params:,
+            proxy:,
             request: request_options
           ) do |connection|
             set_connection(
-              connection:, redirect:, payload:
+              connection:,
+              redirect:,
+              payload:
             )
           end
         end
