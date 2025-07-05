@@ -7,18 +7,16 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      - Faraday v2.13.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - kerve.last.fm
+      Accept:
+      - "*/*"
   response:
     status:
       code: 404
-      message: artist param invalid
+      message: Not Found
     headers:
       X-Raw-Content-Length:
       - '2'
@@ -35,9 +33,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Thu, 01 Sep 2022 20:17:39 GMT
+      - Sat, 05 Jul 2025 08:10:05 GMT
       Via:
-      - 1.1 google
+      - 1.1 google, 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
@@ -45,5 +43,5 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: "{}"
-  recorded_at: Thu, 01 Sep 2022 20:17:39 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Sat, 05 Jul 2025 08:10:05 GMT
+recorded_with: VCR 6.3.1

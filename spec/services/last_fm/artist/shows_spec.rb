@@ -5,7 +5,7 @@ RSpec.describe LastFM::Artist::Shows do
     context 'when artist exists' do
       let(:output) do
         VCR.use_cassette 'services/lastfm/artist/shows/success' do
-          subject.call(artist_name: 'taylor swift', page: 2, profile_id: 1)
+          subject.call(artist_name: 'lady gaga', page: 2, profile_id: 1)
         end
       end
 
