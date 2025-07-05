@@ -47,7 +47,11 @@ set :nginx_ssl_certificate,
 set :nginx_ssl_certificate_key,
   "/etc/letsencrypt/live/#{fetch(:nginx_server_name)}/privkey.pem"
 
+set :service_unit_user, :system
+
 set :sidekiq_service_unit_user, :system
+
+set :sidekiq_service_unit_name, 'sidekiq'
 
 set :sidekiq_user, :root
 
