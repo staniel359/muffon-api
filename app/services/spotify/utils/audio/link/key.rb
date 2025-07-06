@@ -20,9 +20,9 @@ module Spotify
           end
 
           def data
-            return test_key if test?
-
-            if matched_version?
+            if test?
+              test_key
+            elsif matched_version?
               response
                 .body
                 .unpack1('H*')

@@ -47,6 +47,8 @@ module API
     end
 
     def client_version
+      return if params[:version].blank?
+
       Gem::Version.new(
         params[:version]
       )
