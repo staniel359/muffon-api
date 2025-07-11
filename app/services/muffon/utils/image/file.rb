@@ -5,16 +5,16 @@ module Muffon
     class Image
       class File < Muffon::Base
         def call
-          return {} if not_all_args?
+          # return {} if not_all_args?
 
           data
         end
 
         private
 
-        def primary_args
-          [@args[:image]]
-        end
+        # def primary_args
+        #   [@args[:image]]
+        # end
 
         def data
           { image: image_data }
@@ -39,9 +39,30 @@ module Muffon
         end
 
         def link_image?
-          @args[:image].match(
+          image.match(
             %r{https?://}
           )
+        end
+
+        def image
+          @image ||=
+            @args[:image] ||
+              read_temp_image_file
+        end
+
+        def read_temp_image_file
+          file =
+            ::File.open(
+              @args[:temp_image_file_path]
+            )
+
+          text = file.read
+
+          file.close
+
+          ::File.delete(file)
+
+          text
         end
 
         def link_image_content_type
@@ -50,12 +71,12 @@ module Muffon
 
         def link_image
           @link_image ||= URI.parse(
-            @args[:image]
+            image
           ).open
         end
 
         def file_image_content_type
-          @args[:image].match(
+          image.match(
             %r{(image/.+);}
           ).try(
             :[], 1
@@ -81,7 +102,7 @@ module Muffon
         end
 
         def base64_image_data
-          @args[:image].split(
+          image.split(
             ','
           )[1]
         end

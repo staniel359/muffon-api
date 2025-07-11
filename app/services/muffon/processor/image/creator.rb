@@ -7,7 +7,7 @@ module Muffon
         def data
           image.purge_later if image.attached?
 
-          return if @args[:image_file].blank?
+          return if @args[:image_file].blank? && @args[:temp_image_file_path].blank?
 
           attach_image
 

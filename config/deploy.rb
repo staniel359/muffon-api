@@ -20,6 +20,7 @@ append :linked_dirs,
   'log',
   'tmp/pids',
   'tmp/sockets',
+  'tmp/sidekiq/images',
   'public/media'
 
 set :keep_releases, 1
