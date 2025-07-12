@@ -32,12 +32,16 @@ module Muffon
           @image_file_data ||=
             Muffon::Utils::Image::File.call(
               image: image_file,
-              temp_image_file_path: @args[:temp_image_file_path]
+              temp_image_file_path:
             )[:image]
         end
 
         def image_file
           @args[:image_file]
+        end
+
+        def temp_image_file_path
+          @args[:temp_image_file_path]
         end
       end
     end

@@ -1,7 +1,9 @@
 Sidekiq.strict_args!
 
 Sidekiq.configure_server do |config|
-  config.logger.level = Logger::WARN
+  if Rails.env.production?
+    config.logger.level = Logger::WARN
+  end
 
   Rails.logger = Sidekiq.logger
 

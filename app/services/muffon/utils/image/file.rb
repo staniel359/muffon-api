@@ -47,7 +47,7 @@ module Muffon
         def image
           @image ||=
             @args[:image] ||
-              read_temp_image_file
+            read_temp_image_file
         end
 
         def read_temp_image_file

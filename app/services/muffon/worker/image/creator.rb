@@ -8,7 +8,8 @@ module Muffon
           [
             @args[:profile_id],
             @args[:model],
-            @args[:model_id]
+            @args[:model_id],
+            @args[:temp_image_file_path]
           ]
         end
 
@@ -38,8 +39,8 @@ module Muffon
           {
             model: @args[:model],
             model_id: @args[:model_id],
-            image_file: @args[:image_file],
-            temp_image_file_path: @args[:temp_image_file_path]
+            temp_image_file_path:
+              @args[:temp_image_file_path]
           }.to_json
         end
       end
