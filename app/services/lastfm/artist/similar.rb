@@ -1,6 +1,7 @@
 module LastFM
   module Artist
-    class Similar < LastFM::Kerve::Base
+    class Similar < LastFM::Artist::Base
+      API_METHOD = 'artist.getSimilar'.freeze
       COLLECTION_NAME = 'similar'.freeze
       TOTAL_LIMIT = 200
       WEB_PAGES_COUNT = 20
@@ -9,22 +10,25 @@ module LastFM
 
       private
 
-      def primary_args
-        [@args[:artist_name]]
+      def required_args
+        %i[
+          artist_name
+        ]
       end
 
       def no_data?
-        artist.blank?
+        artist.blank? || name.blank?
       end
 
       def artist
         response_data[
-          'results'
+          'similarartists'
         ]
       end
 
       def params
         {
+          **super,
           artist:
             @args[:artist_name],
           limit: TOTAL_LIMIT
@@ -37,20 +41,21 @@ module LastFM
 
       def name
         artist.dig(
-          'main_artist', 'artist'
+          '@attr',
+          'artist'
+        )
+      end
+
+      def collection_list
+        collection_paginated(
+          raw_collection_list
         )
       end
 
       def raw_collection_list
         @raw_collection_list ||=
-          retrieve_raw_collection_list
-      end
-
-      def retrieve_raw_collection_list
-        return original_raw_collection_list if
-            original_raw_collection_list.present?
-
-        web_raw_collection_list
+          original_raw_collection_list.presence ||
+          web_raw_collection_list
       end
 
       def original_raw_collection_list
@@ -90,7 +95,7 @@ module LastFM
         )
       end
 
-      alias link similar_artists_link
+      # alias link similar_artists_link
     end
   end
 end

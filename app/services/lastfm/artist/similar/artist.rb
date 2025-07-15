@@ -35,8 +35,13 @@ module LastFM
           }.compact
         end
 
+        def name
+          artist['name']
+        end
+
         def image
-          artist['image']
+          artist['image'][0]['#text'] ||
+            artist['image']
         end
       end
     end
