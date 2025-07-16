@@ -31,7 +31,7 @@ module LastFM
         end
 
         def image
-          album['image']
+          album['image'][0]['#text']
         end
 
         def listeners_count

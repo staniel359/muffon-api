@@ -2,52 +2,50 @@
 http_interactions:
 - request:
     method: get
-    uri: https://kerve.last.fm/kerve/search?limit=5&page=2&q=a&type=artist
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=a&autocorrect=0&format=json&limit=5&method=artist.search&page=2
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      - Faraday v2.13.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - kerve.last.fm
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Raw-Content-Length:
-      - '2041'
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Wed, 16 Jul 2025 07:45:45 GMT
       Content-Type:
-      - application/json; charset=UTF-8
-      Access-Control-Allow-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
-      Access-Control-Request-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
+      - application/json
+      Content-Length:
+      - '7209'
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, PUT
+      - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
       - "*"
-      Date:
-      - Tue, 05 Jul 2022 18:35:12 GMT
+      Access-Control-Max-Age:
+      - '86400'
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '{"results":{"query":"a","totalArtists":"21137963","totalAlbums":"0","totalTracks":"0","artistmatches":{"artist":[{"name":"A$AP
-        Rocky","listeners":"1684574","url":"https://www.last.fm/music/A$AP+Rocky","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/a435f62d0eb4e00321f4902b00483edc.png","sr":{"w1":765992,"w2":0,"qw":12.0,"fw":"9191919","sw":"1078359668","md5":"13709067655428264261","w":"0xFFFFFFFFFF73BE10|0xFFFFFFFFBFB9898B|0xBE4064661B995145"}},{"name":"AC/DC","listeners":"3242315","url":"https://www.last.fm/music/AC%2FDC","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/63a9486e422e4d219d9a4d0e1ad7f343.png","sr":{"w1":751589,"w2":0,"qw":12.0,"fw":"9019089","sw":"1070280118","md5":"14922339712503220546","w":"0xFFFFFFFFFF76612E|0xFFFFFFFFC034D249|0xCF16CCE815758942"}},{"name":"System
-        of a Down","listeners":"3964755","url":"https://www.last.fm/music/System+of+a+Down","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/332424feb79446459d3c0b79e95e8cdd.png","sr":{"w1":1028119,"w2":0,"qw":8.4000000000000004,"fw":"8636215","sw":"1743541232","md5":"16520175602690493829","w":"0xFFFFFFFFFF7C38C8|0xFFFFFFFF9813AC0F|0xE543742ED9710D85"}},{"name":"Panic!
-        at the Disco","listeners":"2950319","url":"https://www.last.fm/music/Panic%21+at+the+Disco","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/12c50b0207aef658448720ee19c238fc.png","sr":{"w1":831137,"w2":0,"qw":10.1899999999999995,"fw":"8477614","sw":"1238733995","md5":"12311805662367439525","w":"0xFFFFFFFFFF7EA451|0xFFFFFFFFB62A6B54|0xAADC5204E90DDAA5"}},{"name":"Christina
-        Aguilera","listeners":"3208395","url":"https://www.last.fm/music/Christina+Aguilera","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/6bff292e498e847faaabbd5758b9299c.png","sr":{"w1":743626,"w2":0,"qw":10.1899999999999995,"fw":"7585000","sw":"1061552856","md5":"8913412786415796802","w":"0xFFFFFFFFFF8C4317|0xFFFFFFFFC0B9FD27|0x7BB2CDB436BD0242"}}]},"albummatches":{"album":[]},"trackmatches":{"track":[]}}}'
-  recorded_at: Tue, 05 Jul 2022 18:35:12 GMT
-recorded_with: VCR 6.1.0
+      encoding: UTF-8
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"a","startPage":"2"},"opensearch:totalResults":"28068866","opensearch:startIndex":"5","opensearch:itemsPerPage":"5","artistmatches":{"artist":[{"name":"Ariana
+        Grande","listeners":"3907460","mbid":"f4fdbb4c-e4b7-47a0-b83b-d91bbfcfa387","url":"https://www.last.fm/music/Ariana+Grande","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Arctic
+        Monkeys","listeners":"6332893","mbid":"ada7a83c-e3e1-40f1-93f9-3e73dbc9298a","url":"https://www.last.fm/music/Arctic+Monkeys","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Agust
+        D","listeners":"701766","mbid":"","url":"https://www.last.fm/music/Agust+D","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"A$AP
+        Rocky","listeners":"3004642","mbid":"25b7b584-d952-4662-a8b9-dd8cdfbfeb64","url":"https://www.last.fm/music/A$AP+Rocky","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"aespa","listeners":"1073855","mbid":"","url":"https://www.last.fm/music/aespa","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Adele","listeners":"5025388","mbid":"cc2c9c3c-b7bc-4b8b-84d8-4fbd8779e493","url":"https://www.last.fm/music/Adele","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Alex
+        G","listeners":"1719563","mbid":"b9e306aa-5f93-4f50-9dd1-335526e33c1a","url":"https://www.last.fm/music/Alex+G","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Cigarettes
+        After Sex","listeners":"2400768","mbid":"34557d8f-ee4a-44ab-ae6e-49bb8ac604d0","url":"https://www.last.fm/music/Cigarettes+After+Sex","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"Gracie
+        Abrams","listeners":"1505129","mbid":"","url":"https://www.last.fm/music/Gracie+Abrams","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]},{"name":"System
+        of a Down","listeners":"5170844","mbid":"cc0b7089-c08d-4c10-b6b0-873582c17fd6","url":"https://www.last.fm/music/System+of+a+Down","streamable":"0","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"mega"}]}]},"@attr":{"for":"a"}}}'
+  recorded_at: Wed, 16 Jul 2025 07:45:45 GMT
+recorded_with: VCR 6.3.1

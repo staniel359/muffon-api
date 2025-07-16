@@ -1,6 +1,6 @@
 module LastFM
   module Search
-    class Base < LastFM::Kerve::Base
+    class Base < LastFM::Base
       TOTAL_LIMIT = 10_000
 
       include Muffon::Utils::Pagination
@@ -9,6 +9,10 @@ module LastFM
 
       def primary_args
         [@args[:query]]
+      end
+
+      def api_method
+        "#{model_name}.search"
       end
 
       def results_list
@@ -24,14 +28,10 @@ module LastFM
       end
 
       def params
-        search_params
-          .merge(pagination_params)
-      end
-
-      def search_params
         {
-          q: @args[:query],
-          type: model_name
+          **super,
+          model_name => @args[:query],
+          **pagination_params
         }
       end
 
@@ -49,7 +49,7 @@ module LastFM
       def collection_count
         response_data.dig(
           'results',
-          "total#{collection_name.capitalize}"
+          'opensearch:totalResults'
         ).to_i
       end
 
@@ -58,12 +58,10 @@ module LastFM
       end
 
       def results_list_filtered
-        results_list.reject do |r|
-          r['name'] == '(null)'
+        results_list.reject do |result|
+          result['name'] == '(null)'
         end
       end
-
-      alias link search_link
     end
   end
 end

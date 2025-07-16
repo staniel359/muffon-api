@@ -28,10 +28,6 @@ module LastFM
           }.compact
         end
 
-        def image
-          artist['image']
-        end
-
         def listeners_count
           artist['listeners'].to_i
         end

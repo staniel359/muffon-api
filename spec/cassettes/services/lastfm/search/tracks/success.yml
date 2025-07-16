@@ -2,52 +2,43 @@
 http_interactions:
 - request:
     method: get
-    uri: https://kerve.last.fm/kerve/search?limit=5&page=2&q=wild%20nothing%20chinatown&type=track
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=5&method=track.search&page=2&track=wild%20nothing%20chinatown
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      - Faraday v2.13.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - kerve.last.fm
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Raw-Content-Length:
-      - '2343'
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Wed, 16 Jul 2025 07:45:46 GMT
       Content-Type:
-      - application/json; charset=UTF-8
-      Access-Control-Allow-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
-      Access-Control-Request-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
+      - application/json
+      Content-Length:
+      - '3020'
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, PUT
+      - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
       - "*"
-      Date:
-      - Tue, 05 Jul 2022 18:34:59 GMT
+      Access-Control-Max-Age:
+      - '86400'
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"results":{"query":"wild nothing chinatown","totalArtists":"0","totalAlbums":"0","totalTracks":"196","artistmatches":{"artist":[]},"albummatches":{"album":[]},"trackmatches":{"track":[{"name":"Chinatown
-        (Live from Brooklyn Steel)","artist":"Wild Nothing","listeners":"130","url":"https://www.last.fm/music/Wild+Nothing/_/Chinatown+(Live+from+Brooklyn+Steel)","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":215,"w2":0,"qw":22.9200000000000017,"fw":"4960","sw":"3572","md5":"7805516144181770232","w":"0xFFFFFFFFFFFFEC9F|0xFFFFFFFFFFFFF20B|0x6C52C393E687F7F8"}},{"name":"Gemini
-        - Chinatown","artist":"Wild Nothing","listeners":"121","url":"https://www.last.fm/music/Wild+Nothing/_/Gemini+-+Chinatown","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":243,"w2":0,"qw":20.2199999999999989,"fw":"4939","sw":"4564","md5":"8803040629245605880","w":"0xFFFFFFFFFFFFECB4|0xFFFFFFFFFFFFEE2B|0x7A2AAECFD183F7F8"}},{"name":"Chinatown","artist":"Wild_Nothing","listeners":"219","url":"https://www.last.fm/music/Wild_Nothing/_/Chinatown","image":"","sr":{"artist_id":"17121284426753708024","w1":198,"w2":0,"qw":22.9200000000000017,"fw":"4580","sw":"3100","md5":"11408611379622121464","w":"0xFFFFFFFFFFFFEE1B|0xFFFFFFFFFFFFF3E3|0x9E53879AB6DB0FF8"}},{"name":"10
-        Chinatown","artist":"Wild Nothing","listeners":"134","url":"https://www.last.fm/music/Wild+Nothing/_/10+Chinatown","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":191,"w2":0,"qw":20.2199999999999989,"fw":"3884","sw":"3098","md5":"11410149892114610168","w":"0xFFFFFFFFFFFFF0D3|0xFFFFFFFFFFFFF3E5|0x9E58FEDF9173F7F8"}},{"name":"\"Chinatown\"
-        from the album Gemini (Captured Tracks) - Wild N","artist":"Wild Nothing","listeners":"101","url":"https://www.last.fm/music/Wild+Nothing/_/%22Chinatown%22+from+the+album+Gemini+(Captured+Tracks)+-+Wild+N","image":"https://lastfm.freetls.fastly.net/i/u/174s/85382d1d98294ee85c063271310c048d.png","sr":{"artist_id":"1427118825420748792","w1":109,"w2":0,"qw":24.4899999999999984,"fw":"2701","sw":"1267","md5":"9720023114628724728","w":"0xFFFFFFFFFFFFF572|0xFFFFFFFFFFFFFB0C|0x86E475861C07F7F8"}}]}}}'
-  recorded_at: Tue, 05 Jul 2022 18:34:58 GMT
-recorded_with: VCR 6.1.0
+      string: !binary |-
+        eyJyZXN1bHRzIjp7Im9wZW5zZWFyY2g6UXVlcnkiOnsiI3RleHQiOiIiLCJyb2xlIjoicmVxdWVzdCIsInN0YXJ0UGFnZSI6IjIifSwib3BlbnNlYXJjaDp0b3RhbFJlc3VsdHMiOiIyMDMiLCJvcGVuc2VhcmNoOnN0YXJ0SW5kZXgiOiI1Iiwib3BlbnNlYXJjaDppdGVtc1BlclBhZ2UiOiI1IiwidHJhY2ttYXRjaGVzIjp7InRyYWNrIjpbeyJuYW1lIjoiQ2hpbmF0b3duIChMaXZlIGZyb20gQnJvb2tseW4gU3RlZWwpIiwiYXJ0aXN0IjoiV2lsZCBOb3RoaW5nIiwidXJsIjoiaHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9XaWxkK05vdGhpbmcvXy9DaGluYXRvd24rKExpdmUrZnJvbStCcm9va2x5bitTdGVlbCkiLCJzdHJlYW1hYmxlIjoiRklYTUUiLCJsaXN0ZW5lcnMiOiIxNjEiLCJpbWFnZSI6W3siI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzM0cy8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoic21hbGwifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6Im1lZGl1bSJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6ImxhcmdlIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoiZXh0cmFsYXJnZSJ9XSwibWJpZCI6IiJ9LHsibmFtZSI6IkdlbWluaSAtIENoaW5hdG93biIsImFydGlzdCI6IldpbGQgTm90aGluZyIsInVybCI6Imh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvV2lsZCtOb3RoaW5nL18vR2VtaW5pKy0rQ2hpbmF0b3duIiwic3RyZWFtYWJsZSI6IkZJWE1FIiwibGlzdGVuZXJzIjoiMTI0IiwiaW1hZ2UiOlt7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sIm1iaWQiOiIifSx7Im5hbWUiOiJDaGluYXRvd24iLCJhcnRpc3QiOiJXaWxkX05vdGhpbmciLCJ1cmwiOiJodHRwczovL3d3dy5sYXN0LmZtL211c2ljL1dpbGRfTm90aGluZy9fL0NoaW5hdG93biIsInN0cmVhbWFibGUiOiJGSVhNRSIsImxpc3RlbmVycyI6IjIzMCIsImltYWdlIjpbeyIjdGV4dCI6IiIsInNpemUiOiJzbWFsbCJ9LHsiI3RleHQiOiIiLCJzaXplIjoibWVkaXVtIn0seyIjdGV4dCI6IiIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiIiLCJzaXplIjoiZXh0cmFsYXJnZSJ9XSwibWJpZCI6IiJ9LHsibmFtZSI6IjEwIENoaW5hdG93biIsImFydGlzdCI6IldpbGQgTm90aGluZyIsInVybCI6Imh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvV2lsZCtOb3RoaW5nL18vMTArQ2hpbmF0b3duIiwic3RyZWFtYWJsZSI6IkZJWE1FIiwibGlzdGVuZXJzIjoiMTM0IiwiaW1hZ2UiOlt7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sIm1iaWQiOiIifSx7Im5hbWUiOiJDaGluYXRvd24g4oCTIExpdmUgRnJvbSBCcm9va2x5biBTdGVlbCIsImFydGlzdCI6IldpbGQgTm90aGluZyIsInVybCI6Imh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvV2lsZCtOb3RoaW5nL18vQ2hpbmF0b3duKyVFMiU4MCU5MytMaXZlK0Zyb20rQnJvb2tseW4rU3RlZWwiLCJzdHJlYW1hYmxlIjoiRklYTUUiLCJsaXN0ZW5lcnMiOiIxOCIsImltYWdlIjpbeyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJzbWFsbCJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzY0cy8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoibWVkaXVtIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMTc0cy8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoibGFyZ2UifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zMDB4MzAwLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJleHRyYWxhcmdlIn1dLCJtYmlkIjoiIn1dfSwiQGF0dHIiOnt9fX0=
+  recorded_at: Wed, 16 Jul 2025 07:45:46 GMT
+recorded_with: VCR 6.3.1

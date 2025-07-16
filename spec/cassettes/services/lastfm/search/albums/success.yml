@@ -2,52 +2,55 @@
 http_interactions:
 - request:
     method: get
-    uri: https://kerve.last.fm/kerve/search?limit=5&page=2&q=a&type=album
+    uri: https://ws.audioscrobbler.com/2.0?album=a&api_key=<LASTFM_API_KEY>&autocorrect=0&format=json&limit=5&method=album.search&page=2
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      - Faraday v2.13.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - kerve.last.fm
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      X-Raw-Content-Length:
-      - '2445'
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Wed, 16 Jul 2025 07:45:44 GMT
       Content-Type:
       - application/json; charset=UTF-8
-      Access-Control-Allow-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
+      Content-Length:
+      - '6195'
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, PUT
+      - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
       - "*"
-      Date:
-      - Tue, 05 Jul 2022 19:02:53 GMT
+      Access-Control-Max-Age:
+      - '86400'
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '{"results":{"query":"a","totalArtists":"0","totalAlbums":"102145821","totalTracks":"0","artistmatches":{"artist":[]},"albummatches":{"album":[{"name":"Absolution","artist":"Muse","listeners":"2146143","url":"https://www.last.fm/music/Muse/Absolution","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/09a7dd691dba9ed475f1b5c1bef0074a.png","sr":{"artist_id":"4306015308686641900","w1":396523,"w2":0,"qw":12.0,"fw":"4758299","sw":"399822705","md5":"10226407771481197292","w":"0xFFFFFFFFFFB764E4|0xFFFFFFFFE82B308E|0x8DEB7FAFB36E4AEC"}},{"name":"A
-        Fever You Can''t Sweat Out","artist":"Panic! at the Disco","listeners":"1599310","url":"https://www.last.fm/music/Panic%21+at+the+Disco/A+Fever+You+Can%27t+Sweat+Out","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/249a926fbef4487eb39bbb93d4a0618d.png","sr":{"artist_id":"12311805662367439525","w1":341451,"w2":0,"qw":13.8699999999999992,"fw":"4736631","sw":"309865584","md5":"2486547571407248037","w":"0xFFFFFFFFFFB7B988|0xFFFFFFFFED87D38F|0x2281FDD786D6DAA5"}},{"name":"when
-        we all fall asleep, where do we go?","artist":"Billie Eilish","listeners":"1205205","url":"https://www.last.fm/music/Billie+Eilish/when+we+all+fall+asleep,+where+do+we+go%3F","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/ee8173de0f04cbbb282fc62a5583fda9.png","sr":{"artist_id":"901216531582379301","w1":553043,"w2":0,"qw":8.4000000000000004,"fw":"4645572","sw":"649254995","md5":"1773917906562082085","w":"0xFFFFFFFFFFB91D3B|0xFFFFFFFFD94D27AC|0x189E38EFF9566525"}},{"name":"ARTPOP","artist":"Lady
-        Gaga","listeners":"628335","url":"https://www.last.fm/music/Lady+Gaga/ARTPOP","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/15ef1c034e1f6a71d0d69d3b6f5c534f.png","sr":{"artist_id":"10992807719782908954","w1":377505,"w2":0,"qw":12.0,"fw":"4530077","sw":"368300314","md5":"7372677264028075034","w":"0xFFFFFFFFFFBAE062|0xFFFFFFFFEA0C2EE5|0x665102E8D5FE041A"}},{"name":"At.Long.Last.A$AP","artist":"A$AP
-        Rocky","listeners":"692545","url":"https://www.last.fm/music/A$AP+Rocky/At.Long.Last.A$AP","streamable":"0","image":"https://lastfm.freetls.fastly.net/i/u/174s/5184e16c4f2964ebb3e4b68b3ccb849e.png","sr":{"artist_id":"13709067655428264261","w1":306054,"w2":0,"qw":14.1600000000000001,"fw":"4333747","sw":"254274700","md5":"15083664103131205957","w":"0xFFFFFFFFFFBDDF4C|0xFFFFFFFFF0D81373|0xD153F095CA725145"}}]},"trackmatches":{"track":[]}}}'
-  recorded_at: Tue, 05 Jul 2022 19:02:53 GMT
-recorded_with: VCR 6.1.0
+      encoding: UTF-8
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"a","startPage":"2"},"opensearch:totalResults":"122964092","opensearch:startIndex":"5","opensearch:itemsPerPage":"5","albummatches":{"album":[{"name":"AM","artist":"Arctic
+        Monkeys","url":"https://www.last.fm/music/Arctic+Monkeys/AM","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/f579e414e20f40969185e41182d72472.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/f579e414e20f40969185e41182d72472.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/f579e414e20f40969185e41182d72472.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/f579e414e20f40969185e41182d72472.png","size":"extralarge"}],"streamable":"0","mbid":"bf584cf2-dc33-433e-b8b2-b85578822726"},{"name":"ASTROWORLD","artist":"Travis
+        Scott","url":"https://www.last.fm/music/Travis+Scott/ASTROWORLD","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/4386a469e620103f8436b3e969075959.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/4386a469e620103f8436b3e969075959.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/4386a469e620103f8436b3e969075959.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/4386a469e620103f8436b3e969075959.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"After
+        Hours","artist":"The Weeknd","url":"https://www.last.fm/music/The+Weeknd/After+Hours","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/4583932b753c96d0d2f22fe9774e5ef3.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/4583932b753c96d0d2f22fe9774e5ef3.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/4583932b753c96d0d2f22fe9774e5ef3.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/4583932b753c96d0d2f22fe9774e5ef3.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Cigarettes
+        After Sex","artist":"Cigarettes After Sex","url":"https://www.last.fm/music/Cigarettes+After+Sex/Cigarettes+After+Sex","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/5d53d7e6aad2f08c464e301d3bab6e96.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/5d53d7e6aad2f08c464e301d3bab6e96.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/5d53d7e6aad2f08c464e301d3bab6e96.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/5d53d7e6aad2f08c464e301d3bab6e96.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"The
+        Rise and Fall of a Midwest Princess","artist":"Chappell Roan","url":"https://www.last.fm/music/Chappell+Roan/The+Rise+and+Fall+of+a+Midwest+Princess","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/acd4dcd1ffdc64da01273b1e3512a708.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/acd4dcd1ffdc64da01273b1e3512a708.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/acd4dcd1ffdc64da01273b1e3512a708.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/acd4dcd1ffdc64da01273b1e3512a708.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Heroes
+        & Villains","artist":"Metro Boomin","url":"https://www.last.fm/music/Metro+Boomin/Heroes+&+Villains","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/1240a338ee297d49b02b8f4e608ae49c.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/1240a338ee297d49b02b8f4e608ae49c.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/1240a338ee297d49b02b8f4e608ae49c.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/1240a338ee297d49b02b8f4e608ae49c.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Anti
+        (Deluxe)","artist":"Rihanna","url":"https://www.last.fm/music/Rihanna/Anti+(Deluxe)","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/d4a339a2bd2bc5fe470e0b0c10444903.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/d4a339a2bd2bc5fe470e0b0c10444903.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/d4a339a2bd2bc5fe470e0b0c10444903.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/d4a339a2bd2bc5fe470e0b0c10444903.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"HIT
+        ME HARD AND SOFT","artist":"Billie Eilish","url":"https://www.last.fm/music/Billie+Eilish/HIT+ME+HARD+AND+SOFT","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/6db576307ee7bdd81056432542b6bab7.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/6db576307ee7bdd81056432542b6bab7.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/6db576307ee7bdd81056432542b6bab7.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/6db576307ee7bdd81056432542b6bab7.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"At.Long.Last.A$AP","artist":"A$AP
+        Rocky","url":"https://www.last.fm/music/A$AP+Rocky/At.Long.Last.A$AP","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/5184e16c4f2964ebb3e4b68b3ccb849e.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/5184e16c4f2964ebb3e4b68b3ccb849e.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/5184e16c4f2964ebb3e4b68b3ccb849e.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/5184e16c4f2964ebb3e4b68b3ccb849e.png","size":"extralarge"}],"streamable":"0","mbid":""},{"name":"Around
+        the Fur","artist":"Deftones","url":"https://www.last.fm/music/Deftones/Around+the+Fur","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/3e6814b457a9087e0c46d5a949de2766.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/3e6814b457a9087e0c46d5a949de2766.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/3e6814b457a9087e0c46d5a949de2766.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/3e6814b457a9087e0c46d5a949de2766.png","size":"extralarge"}],"streamable":"0","mbid":"cf33646a-d030-3144-ba3d-234e13634e15"}]},"@attr":{"for":"a"}}}'
+  recorded_at: Wed, 16 Jul 2025 07:45:44 GMT
+recorded_with: VCR 6.3.1
