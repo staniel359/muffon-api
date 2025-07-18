@@ -20,7 +20,7 @@ module LastFM
         end
 
         def artist_name
-          track['artist']
+          track['artist']['name']
         end
 
         def track_data
@@ -32,12 +32,6 @@ module LastFM
             artists:,
             listeners_count:
           }
-        end
-
-        def artist_image_data
-          image_data_formatted(
-            track['image']
-          )
         end
       end
     end

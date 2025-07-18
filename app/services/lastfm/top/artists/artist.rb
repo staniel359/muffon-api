@@ -13,8 +13,6 @@ module LastFM
         def data
           return artist_minimal_data if @args[:minimal]
 
-          update_artist_image
-
           self_data
             .merge(artist_data)
         end
@@ -25,22 +23,6 @@ module LastFM
 
         def artist
           @args[:artist]
-        end
-
-        def update_artist_image
-          return if test?
-
-          find_artist.update(
-            image_url:
-          )
-        end
-
-        def image_url
-          default_image? ? 'MISSING' : image
-        end
-
-        def image
-          artist['image']
         end
 
         def artist_data

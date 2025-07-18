@@ -2,48 +2,42 @@
 http_interactions:
 - request:
     method: get
-    uri: https://kerve.last.fm/kerve/similarartists?artist=wejlhg239gh23&limit=200
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&limit=200&method=artist.getSimilar&page=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.2p20
+      - Faraday v2.13.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - kerve.last.fm
+      Accept:
+      - "*/*"
   response:
     status:
-      code: 404
-      message: artist param invalid
+      code: 200
+      message: OK
     headers:
-      X-Raw-Content-Length:
-      - '2'
+      Server:
+      - openresty/1.13.6.2
+      Date:
+      - Fri, 18 Jul 2025 07:43:10 GMT
       Content-Type:
-      - application/json; charset=UTF-8
-      Access-Control-Allow-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
-      Access-Control-Request-Headers:
-      - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
-        X-Atmosphere-Transport, *
+      - application/json
+      Content-Length:
+      - '77'
       Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, PUT
+      - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
       - "*"
-      Date:
-      - Thu, 01 Sep 2022 20:17:24 GMT
+      Access-Control-Max-Age:
+      - '86400'
       Via:
       - 1.1 google
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Transfer-Encoding:
-      - chunked
     body:
-      encoding: ASCII-8BIT
-      string: "{}"
-  recorded_at: Thu, 01 Sep 2022 20:17:24 GMT
-recorded_with: VCR 6.1.0
+      encoding: UTF-8
+      string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
+  recorded_at: Fri, 18 Jul 2025 07:43:10 GMT
+recorded_with: VCR 6.3.1

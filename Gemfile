@@ -13,6 +13,7 @@ gem 'aws-sdk-core', '3.211'
 gem 'base62-rb'
 gem 'bootsnap', require: false
 gem 'bcrypt'
+gem 'countries'
 gem 'csv'
 gem 'faraday'
 gem 'faraday-follow_redirects'
