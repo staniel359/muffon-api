@@ -1,3 +1,7 @@
+every 30.minutes do
+  command "sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches'"
+end
+
 every 3.hours do
   command 'rm -rf /root/muffon-api/shared/public/media/audio'
 end
