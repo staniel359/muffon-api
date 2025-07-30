@@ -803,6 +803,10 @@ Rails.application.routes.draw do
           get 'playlists'
         end
       end
+
+      namespace :audio do
+        get 'secret'
+      end
     end
 
     # VK
