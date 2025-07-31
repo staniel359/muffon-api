@@ -30,7 +30,7 @@ module API
     end
 
     def allowed_request?
-      return true if test? || request.path == '/api/spotify/audio/secret'
+      return true if test?
 
       valid_version? && valid_token?
     end
