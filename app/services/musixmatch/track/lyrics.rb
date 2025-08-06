@@ -1,11 +1,13 @@
 module MusixMatch
   module Track
     class Lyrics < MusixMatch::Track::Info
-      private
+      CLASSES_DATA = {
+        'container' => 'r-zd98yo',
+        'subheader' => 'r-a023e6',
+        'lyrics' => 'r-1inkyih'
+      }.freeze
 
-      def headers
-        { 'User-Agent' => USER_AGENT }
-      end
+      private
 
       def track_data
         track_base_data
@@ -17,15 +19,34 @@ module MusixMatch
       end
 
       def lyrics
-        raw_lyrics.map do |l|
-          "#{l.text}\n"
-        end
+        raw_lyrics
+          .map
+          .with_index do |lyric, index|
+            text = lyric.text
+
+            if subheader_node?(lyric)
+              text = "[#{text.capitalize}]"
+
+              text = "\n#{text}" unless index.zero?
+            else
+              text =
+                text.tr(
+                  '′',
+                  "'"
+                )
+            end
+
+            "#{text}\n"
+          end
       end
 
       def raw_lyrics
-        lyrics_response_data.css(
-          '.r-1dxmaum'
-        )
+        lyrics_response_data
+          .css(
+            ".#{CLASSES_DATA['container']}"
+          ).css(
+            ".#{CLASSES_DATA['subheader']}, .#{CLASSES_DATA['lyrics']}"
+          )
       end
 
       def lyrics_response_data
@@ -36,8 +57,25 @@ module MusixMatch
 
       def lyrics_response
         format_get_request(
-          link: original_link
+          link: original_link,
+          headers:
         )
+      end
+
+      def headers
+        { 'User-Agent' => USER_AGENT }
+      end
+
+      def subheader_node?(
+        lyric
+      )
+        lyric
+          .attr(
+            'class'
+          )
+          .include?(
+            CLASSES_DATA['subheader']
+          )
       end
     end
   end
