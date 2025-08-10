@@ -17,12 +17,18 @@ module Muffon
         end
 
         def conversation
-          @conversation ||=
-            profile
-            .conversations
-            .find_by(
-              id: @args[:conversation_id]
-            )
+          if instance_variable_defined?(
+            :@conversation
+          )
+            @conversation
+          else
+            @conversation =
+              profile
+              .conversations
+              .find_by(
+                id: @args[:conversation_id]
+              )
+          end
         end
 
         def forbidden?

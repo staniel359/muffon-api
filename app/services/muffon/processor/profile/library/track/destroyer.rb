@@ -19,10 +19,18 @@ module Muffon
             end
 
             def library_track
-              @library_track ||=
-                profile.library_tracks.find_by(
-                  id: @args[:library_id]
-                )
+              if instance_variable_defined?(
+                :@library_track
+              )
+                @library_track
+              else
+                @library_track =
+                  profile
+                  .library_tracks
+                  .find_by(
+                    id: @args[:library_id]
+                  )
+              end
             end
           end
         end

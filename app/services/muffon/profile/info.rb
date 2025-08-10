@@ -24,12 +24,18 @@ module Muffon
       end
 
       def profile
-        @profile ||=
-          ::Profile
-          .associated
-          .find_by(
-            id: profile_id
-          )
+        if instance_variable_defined?(
+          :@profile
+        )
+          @profile
+        else
+          @profile =
+            ::Profile
+            .associated
+            .find_by(
+              id: profile_id
+            )
+        end
       end
 
       def profile_id

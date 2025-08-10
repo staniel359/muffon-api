@@ -23,10 +23,16 @@ module Muffon
       end
 
       def find_playlist
-        @find_playlist ||=
-          ::Playlist.find_by(
-            id: playlist[:id]
-          )
+        if instance_variable_defined?(
+          :@find_playlist
+        )
+          @find_playlist
+        else
+          @find_playlist =
+            ::Playlist.find_by(
+              id: playlist[:id]
+            )
+        end
       end
 
       def playlist

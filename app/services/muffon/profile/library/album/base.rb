@@ -19,10 +19,16 @@ module Muffon
           end
 
           def library_album
-            @library_album ||=
-              library_albums.find_by(
-                id: @args[:library_id]
-              )
+            if instance_variable_defined?(
+              :@library_album
+            )
+              @library_album
+            else
+              @library_album =
+                library_albums.find_by(
+                  id: @args[:library_id]
+                )
+            end
           end
 
           def library_data

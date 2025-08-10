@@ -19,12 +19,18 @@ module Muffon
             end
 
             def bookmark_video
-              @bookmark_video ||=
-                profile
-                .bookmark_videos
-                .find_by(
-                  id: @args[:bookmark_id]
-                )
+              if instance_variable_defined?(
+                :@bookmark_video
+              )
+                @bookmark_video
+              else
+                @bookmark_video =
+                  profile
+                  .bookmark_videos
+                  .find_by(
+                    id: @args[:bookmark_id]
+                  )
+              end
             end
           end
         end

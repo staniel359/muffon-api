@@ -12,10 +12,16 @@ module Muffon
         end
 
         def community
-          @community ||=
-            ::Community.find_by(
-              id: community_id
-            )
+          if instance_variable_defined?(
+            :@community
+          )
+            @community
+          else
+            @community =
+              ::Community.find_by(
+                id: community_id
+              )
+          end
         end
 
         def community_id

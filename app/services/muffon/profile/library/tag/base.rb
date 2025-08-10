@@ -17,9 +17,16 @@ module Muffon
           end
 
           def tag
-            @tag ||= ::Tag.find_by(
-              id: @args[:tag_id]
+            if instance_variable_defined?(
+              :@tag
             )
+              @tag
+            else
+              @tag =
+                ::Tag.find_by(
+                  id: @args[:tag_id]
+                )
+            end
           end
 
           def library_data

@@ -19,12 +19,18 @@ module Muffon
             end
 
             def watched_video
-              @watched_video ||=
-                profile
-                .watched_videos
-                .find_by(
-                  id: @args[:watched_id]
-                )
+              if instance_variable_defined?(
+                :@watched_video
+              )
+                @watched_video
+              else
+                @watched_video =
+                  profile
+                  .watched_videos
+                  .find_by(
+                    id: @args[:watched_id]
+                  )
+              end
             end
           end
         end

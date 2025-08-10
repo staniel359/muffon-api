@@ -16,12 +16,18 @@ module Muffon
         end
 
         def playlist
-          @playlist ||=
-            profile
-            .playlists
-            .find_by(
-              id: playlist_id
-            )
+          if instance_variable_defined?(
+            :@playlist
+          )
+            @playlist
+          else
+            @playlist =
+              profile
+              .playlists
+              .find_by(
+                id: playlist_id
+              )
+          end
         end
 
         def playlist_id

@@ -23,7 +23,7 @@ module RecommendationTrackDecorator
     def library_tracks_count_desc_ordered
       with_library_tracks_count
         .order(
-          'library_track_ids_size DESC'
+          library_track_ids_size: :desc
         )
         .created_asc_ordered
     end
@@ -41,7 +41,7 @@ module RecommendationTrackDecorator
     def library_tracks_count_asc_ordered
       with_library_tracks_count
         .order(
-          'library_track_ids_size ASC'
+          library_track_ids_size: :asc
         )
         .created_asc_ordered
     end

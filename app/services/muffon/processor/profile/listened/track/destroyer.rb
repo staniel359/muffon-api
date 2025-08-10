@@ -19,12 +19,18 @@ module Muffon
             end
 
             def listened_track
-              @listened_track ||=
-                profile
-                .listened_tracks
-                .find_by(
-                  id: @args[:listened_id]
-                )
+              if instance_variable_defined?(
+                :@listened_track
+              )
+                @listened_track
+              else
+                @listened_track =
+                  profile
+                  .listened_tracks
+                  .find_by(
+                    id: @args[:listened_id]
+                  )
+              end
             end
           end
         end

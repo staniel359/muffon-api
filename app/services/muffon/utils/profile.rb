@@ -21,10 +21,16 @@ module Muffon
       def profile
         return if @args[:profile_id].blank?
 
-        @profile ||=
-          ::Profile.find_by(
-            id: @args[:profile_id]
-          )
+        if instance_variable_defined?(
+          :@profile
+        )
+          @profile
+        else
+          @profile =
+            ::Profile.find_by(
+              id: @args[:profile_id]
+            )
+        end
       end
 
       def valid_profile_token?
@@ -44,10 +50,16 @@ module Muffon
       def other_profile
         return if @args[:other_profile_id].blank?
 
-        @other_profile ||=
-          ::Profile.find_by(
-            id: @args[:other_profile_id]
-          )
+        if instance_variable_defined?(
+          :@other_profile
+        )
+          @other_profile
+        else
+          @other_profile =
+            ::Profile.find_by(
+              id: @args[:other_profile_id]
+            )
+        end
       end
 
       def valid_other_profile_token?

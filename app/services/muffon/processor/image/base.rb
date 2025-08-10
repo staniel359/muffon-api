@@ -16,10 +16,16 @@ module Muffon
         end
 
         def model
-          @model ||=
-            model_class.find_by(
-              id: @args[:model_id]
-            )
+          if instance_variable_defined?(
+            :@model
+          )
+            @model
+          else
+            @model =
+              model_class.find_by(
+                id: @args[:model_id]
+              )
+          end
         end
 
         def model_class

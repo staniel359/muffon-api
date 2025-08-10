@@ -37,12 +37,18 @@ module LastFM
         end
 
         def find_recommendation
-          @find_recommendation ||=
-            profile
-            .recommendation_artists
-            .find_by(
-              artist_id: find_artist.id
-            )
+          if instance_variable_defined?(
+            :@find_recommendation
+          )
+            @find_recommendation
+          else
+            @find_recommendation =
+              profile
+              .recommendation_artists
+              .find_by(
+                artist_id: find_artist.id
+              )
+          end
         end
 
         def name

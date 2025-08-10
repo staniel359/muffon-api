@@ -26,7 +26,9 @@ module LastFM
           **super,
           **pagination_params,
           country: (
-            ISO3166::Country[@args[:country]].translations['en'] if @args[:country].present?
+            if @args[:country].present?
+              ISO3166::Country[@args[:country]].translations['en']
+            end
           )
         }.compact
       end

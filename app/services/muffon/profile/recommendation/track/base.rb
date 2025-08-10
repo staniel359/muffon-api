@@ -6,12 +6,18 @@ module Muffon
           private
 
           def recommendation
-            @recommendation ||=
-              profile
-              .recommendation_tracks
-              .find_by(
-                id: @args[:recommendation_id]
-              )
+            if instance_variable_defined?(
+              :@recommendation
+            )
+              @recommendation
+            else
+              @recommendation =
+                profile
+                .recommendation_tracks
+                .find_by(
+                  id: @args[:recommendation_id]
+                )
+            end
           end
         end
       end

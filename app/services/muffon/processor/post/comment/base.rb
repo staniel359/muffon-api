@@ -22,12 +22,18 @@ module Muffon
           end
 
           def post_comment
-            @post_comment ||=
-              post
-              .post_comments
-              .find_by(
-                id: @args[:comment_id]
-              )
+            if instance_variable_defined?(
+              :@post_comment
+            )
+              @post_comment
+            else
+              @post_comment =
+                post
+                .post_comments
+                .find_by(
+                  id: @args[:comment_id]
+                )
+            end
           end
 
           def data

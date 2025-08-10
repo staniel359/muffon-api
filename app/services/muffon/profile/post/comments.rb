@@ -20,12 +20,18 @@ module Muffon
         end
 
         def post
-          @post ||=
-            profile
-            .own_posts
-            .find_by(
-              id: @args[:post_id]
-            )
+          if instance_variable_defined?(
+            :@post
+          )
+            @post
+          else
+            @post =
+              profile
+              .own_posts
+              .find_by(
+                id: @args[:post_id]
+              )
+          end
         end
 
         def data

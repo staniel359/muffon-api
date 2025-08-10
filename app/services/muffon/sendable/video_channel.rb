@@ -21,10 +21,16 @@ module Muffon
       end
 
       def find_video_channel
-        @find_video_channel ||=
-          ::VideoChannel.find_by(
-            youtube_id:
-          )
+        if instance_variable_defined?(
+          :@find_video_channel
+        )
+          @find_video_channel
+        else
+          @find_video_channel =
+            ::VideoChannel.find_by(
+              youtube_id:
+            )
+        end
       end
 
       def youtube_id

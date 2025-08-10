@@ -10,10 +10,13 @@ class ImagesController < ApplicationController
   private
 
   def blob
-    @blob ||=
-      ActiveStorage::Blob.find_by(
+    if instance_variable_defined?(:@blob)
+      @blob
+    else
+      @blob = ActiveStorage::Blob.find_by(
         key: params[:key]
       )
+    end
   end
 
   def redirect_to_image_link

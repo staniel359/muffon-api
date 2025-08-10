@@ -19,12 +19,18 @@ module Muffon
             end
 
             def favorite_track
-              @favorite_track ||=
-                profile
-                .favorite_tracks
-                .find_by(
-                  id: @args[:favorite_id]
-                )
+              if instance_variable_defined?(
+                :@favorite_track
+              )
+                @favorite_track
+              else
+                @favorite_track =
+                  profile
+                  .favorite_tracks
+                  .find_by(
+                    id: @args[:favorite_id]
+                  )
+              end
             end
           end
         end

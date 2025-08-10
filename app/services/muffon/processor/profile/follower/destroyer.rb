@@ -12,11 +12,19 @@ module Muffon
           end
 
           def relationship
-            @relationship ||=
-              profile.active_relationships.find_by(
-                other_profile_id:
-                  @args[:other_profile_id]
-              )
+            if instance_variable_defined?(
+              :@relationship
+            )
+              @relationship
+            else
+              @relationship =
+                profile
+                .active_relationships
+                .find_by(
+                  other_profile_id:
+                    @args[:other_profile_id]
+                )
+            end
           end
         end
       end

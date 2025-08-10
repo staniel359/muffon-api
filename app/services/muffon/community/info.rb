@@ -17,12 +17,18 @@ module Muffon
       end
 
       def community
-        @community ||=
-          ::Community
-          .associated
-          .find_by(
-            id: community_id
-          )
+        if instance_variable_defined?(
+          :@community
+        )
+          @community
+        else
+          @community =
+            ::Community
+            .associated
+            .find_by(
+              id: community_id
+            )
+        end
       end
 
       def community_extra_data

@@ -19,12 +19,18 @@ module Muffon
             end
 
             def favorite_video
-              @favorite_video ||=
-                profile
-                .favorite_videos
-                .find_by(
-                  id: @args[:favorite_id]
-                )
+              if instance_variable_defined?(
+                :@favorite_video
+              )
+                @favorite_video
+              else
+                @favorite_video =
+                  profile
+                  .favorite_videos
+                  .find_by(
+                    id: @args[:favorite_id]
+                  )
+              end
             end
           end
         end

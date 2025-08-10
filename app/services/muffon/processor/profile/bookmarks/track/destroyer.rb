@@ -19,10 +19,18 @@ module Muffon
             end
 
             def bookmark_track
-              @bookmark_track ||=
-                profile.bookmark_tracks.find_by(
-                  id: @args[:bookmark_id]
-                )
+              if instance_variable_defined?(
+                :@bookmark_track
+              )
+                @bookmark_track
+              else
+                @bookmark_track =
+                  profile
+                  .bookmark_tracks
+                  .find_by(
+                    id: @args[:bookmark_id]
+                  )
+              end
             end
           end
         end

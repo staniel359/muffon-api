@@ -19,10 +19,18 @@ module Muffon
             end
 
             def listened_artist
-              @listened_artist ||=
-                profile.listened_artists.find_by(
-                  id: @args[:listened_id]
-                )
+              if instance_variable_defined?(
+                :@listened_artist
+              )
+                @listened_artist
+              else
+                @listened_artist =
+                  profile
+                  .listened_artists
+                  .find_by(
+                    id: @args[:listened_id]
+                  )
+              end
             end
           end
         end
