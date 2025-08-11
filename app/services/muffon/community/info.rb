@@ -83,8 +83,6 @@ module Muffon
           community.created_at
         )
       end
-
-      alias description_truncated description_truncated_small
     end
   end
 end
