@@ -23,15 +23,9 @@ module Muffon
         {
           id: profile.id,
           nickname:,
-          role:,
+          role: profile.role,
           private: profile.private
         }.compact
-      end
-
-      def role
-        return if profile.role == 'profile'
-
-        profile.role
       end
 
       def profile_personal_data
