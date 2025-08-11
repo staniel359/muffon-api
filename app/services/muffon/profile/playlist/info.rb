@@ -66,7 +66,11 @@ module Muffon
         end
 
         def description
-          playlist.description
+          Nokogiri::HTML
+            .parse(
+              playlist.description
+            )
+            .text
         end
 
         def tracks_count
