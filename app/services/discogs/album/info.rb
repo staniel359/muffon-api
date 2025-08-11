@@ -29,7 +29,7 @@ module Discogs
           labels:,
           tags: tags_truncated,
           tracks:
-        }.compact
+        }.compact_blank
       end
 
       def raw_release_date

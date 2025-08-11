@@ -46,7 +46,7 @@ module YandexMusic
           labels:,
           tags: tags_truncated,
           tracks:
-        }.compact
+        }.compact_blank
       end
 
       def labels_list
