@@ -1,0 +1,5 @@
+tr:
+  mailer:
+    passwordReset:
+      subject: 'muffon | Şifre sıfırlama'
+      text: "Şifre sıfırlama kodunuz <strong>%{code}</strong>."
