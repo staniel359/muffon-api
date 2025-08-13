@@ -2,4 +2,4 @@ ko:
   mailer:
     passwordReset:
       subject: 'muffon | 비밀번호 재설정'
-      text: "비밀번호 재설정 코드는 <strong>%{code}</strong>입니다."
+      text: "비밀번호 재설정 코드는 %{code}입니다."

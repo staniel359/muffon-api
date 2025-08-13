@@ -2,4 +2,4 @@ tr:
   mailer:
     passwordReset:
       subject: 'muffon | Şifre sıfırlama'
-      text: "Şifre sıfırlama kodunuz <strong>%{code}</strong>."
+      text: "Şifre sıfırlama kodunuz %{code}."

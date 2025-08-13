@@ -1,9 +1,11 @@
 class ProfileMailer < ApplicationMailer
+  EMAIL = 'foobar@gmail.com'.freeze
+
   def password_reset_email
     @text = password_reset_text
 
     mail(
-      to: email,
+      to: EMAIL,
       subject: password_reset_subject
     )
   end
@@ -11,27 +13,23 @@ class ProfileMailer < ApplicationMailer
   private
 
   def password_reset_text
-    I18n.with_locale(locale) do
-      I18n.t(
-        'mailer.passwordReset.text',
-        code: params[:code]
-      )
-    end
+    I18n.t(
+      'mailer.passwordReset.text',
+      code: code_formatted
+    )
   end
 
-  def locale
-    params[:language]
+  def code_formatted
+    "<strong>#{code}</strong>"
   end
 
-  def email
-    params[:email]
+  def code
+    SecureRandom.alphanumeric
   end
 
   def password_reset_subject
-    I18n.with_locale(locale) do
-      I18n.t(
-        'mailer.passwordReset.subject'
-      )
-    end
+    I18n.t(
+      'mailer.passwordReset.subject'
+    )
   end
 end

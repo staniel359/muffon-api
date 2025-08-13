@@ -2,4 +2,4 @@ be:
   mailer:
     passwordReset:
       subject: 'muffon | Скід пароля'
-      text: "Ваш код для скіду пароля <strong>%{code}</strong>."
+      text: "Ваш код для скіду пароля %{code}."

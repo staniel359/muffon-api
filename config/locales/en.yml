@@ -2,4 +2,4 @@ en:
   mailer:
     passwordReset:
       subject: 'muffon | Password reset'
-      text: "Your password reset code is <strong>%{code}</strong>."
+      text: "Your password reset code is %{code}."

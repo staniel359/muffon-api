@@ -2,4 +2,4 @@ ru:
   mailer:
     passwordReset:
       subject: 'muffon | Сброс пароля'
-      text: "Ваш код для сброса пароля <strong>%{code}</strong>."
+      text: "Ваш код для сброса пароля %{code}."

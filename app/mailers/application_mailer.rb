@@ -14,11 +14,11 @@ class ApplicationMailer < ActionMailer::Base
   end
 
   def message_id
-    "<#{uuid}@#{domain}>"
+    "<#{hash}@#{domain}>"
   end
 
-  def uuid
-    SecureRandom.uuid
+  def hash
+    SecureRandom.alphanumeric
   end
 
   def domain
