@@ -66,9 +66,15 @@ module Muffon
         end
 
         def description
+          return if raw_description.blank?
+
           CGI.unescapeHTML(
-            playlist.description
+            raw_description
           )
+        end
+
+        def raw_description
+          playlist.description
         end
 
         def tracks_count
