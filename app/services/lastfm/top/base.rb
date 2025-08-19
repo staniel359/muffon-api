@@ -39,7 +39,11 @@ module LastFM
 
       def collection_count
         response_data.dig(
-          (@args[:country].present? ? "top#{collection_name}" : collection_name),
+          if @args[:country].present?
+            "top#{collection_name}"
+          else
+            collection_name
+          end,
           '@attr',
           'total'
         ).to_i
@@ -47,7 +51,11 @@ module LastFM
 
       def collection_list
         response_data.dig(
-          (@args[:country].present? && collection_name == 'artists' ? "top#{collection_name}" : collection_name),
+          if @args[:country].present? && collection_name == 'artists'
+            "top#{collection_name}"
+          else
+            collection_name
+          end,
           self.class::MODEL_NAME
         ).last(limit)
       end
