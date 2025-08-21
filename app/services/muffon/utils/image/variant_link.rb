@@ -36,9 +36,7 @@ module Muffon
             background: 'none',
             gravity: 'center',
             extent: '1:1',
-            resize: resize_option,
-            loader: loader_data,
-            saver: saver_data
+            resize: resize_option
           }
         end
 
@@ -48,14 +46,6 @@ module Muffon
 
         def size
           @args[:size]
-        end
-
-        def loader_data
-          { page: nil }
-        end
-
-        def saver_data
-          { allow_splitting: true }
         end
       end
     end
