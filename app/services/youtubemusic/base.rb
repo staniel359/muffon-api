@@ -13,8 +13,7 @@ module YouTubeMusic
     def client_data
       {
         'clientName' => 'WEB_REMIX',
-        'clientVersion' =>
-          '1.20230227.01.00',
+        'clientVersion' => '1.20230227.01.00',
         'gl' => 'GB'
       }
     end

@@ -5,26 +5,29 @@ module Odnoklassniki
 
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        return retry_with_new_session_id if retry_with_new_session_id?
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def collection_list
-        response_data[
-          collection_name
-        ] || []
+        response_data[collection_name] || []
       end
 
       def params
-        super.merge(
-          search_params
-        )
-      end
-
-      def search_params
         {
+          **super,
           q: @args[:query],
           start: offset,
           count: limit

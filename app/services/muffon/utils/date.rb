@@ -4,14 +4,20 @@ module Muffon
       FORMAT = '%Y-%m-%d'.freeze
 
       def call
+        return if args_missing?
+
         data
       end
 
       private
 
-      def data
-        return '' if @args[:data].blank?
+      def required_args
+        %i[
+          data
+        ]
+      end
 
+      def data
         send(
           "date_#{class_name}_formatted"
         )
@@ -25,7 +31,7 @@ module Muffon
       end
 
       def date_integer_formatted
-        return '' if @args[:data].zero?
+        return if @args[:data].zero?
 
         Time
           .zone
@@ -35,13 +41,15 @@ module Muffon
       end
 
       def date_string_formatted
-        return '' if @args[:data] == '0'
+        return if @args[:data] == '0'
 
-        ::Date.parse(
-          @args[:data]
-        ).strftime(
-          date_string_format
-        )
+        ::Date
+          .parse(
+            @args[:data]
+          )
+          .strftime(
+            date_string_format
+          )
       rescue ::Date::Error
         date_without_zero_items
       end

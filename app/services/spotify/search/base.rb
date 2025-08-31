@@ -5,15 +5,30 @@ module Spotify
 
       include Spotify::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
+        retry_with_new_spotify_token
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
+      end
+
+      def data
+        { search: paginated_data }
       end
 
       def collection_list
         response_data.dig(
-          collection_name, 'items'
+          collection_name,
+          'items'
         )
       end
 
@@ -22,15 +37,11 @@ module Spotify
       end
 
       def params
-        super
-          .merge(search_params)
-          .merge(pagination_params)
-      end
-
-      def search_params
         {
+          **super,
           q: @args[:query],
-          type: collection_type
+          type: collection_type,
+          **pagination_params
         }
       end
 
@@ -38,13 +49,10 @@ module Spotify
         self.class::COLLECTION_TYPE
       end
 
-      def data
-        { search: paginated_data }
-      end
-
       def collection_count
         response_data.dig(
-          collection_name, 'total'
+          collection_name,
+          'total'
         )
       end
     end

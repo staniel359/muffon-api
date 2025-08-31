@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/artist/wejlhg239gh23?fmt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Tue, 09 Sep 2025 07:37:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '1124'
+      X-Ratelimit-Reset:
+      - '1757403446'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - '"326ef3f5b9aabae00194a1623cdb3810"'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Runtime:
+      - '0.003059'
+    body:
+      encoding: UTF-8
+      string: '{"help":"For usage, please see: https://musicbrainz.org/development/mmd","error":"Invalid
+        mbid."}'
+  recorded_at: Tue, 09 Sep 2025 07:37:24 GMT
+recorded_with: VCR 6.3.1

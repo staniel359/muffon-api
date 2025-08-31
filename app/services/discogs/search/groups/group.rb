@@ -5,10 +5,18 @@ module Discogs
         include Discogs::Utils::Album
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            group
+          ]
+        end
 
         def data
           self_data

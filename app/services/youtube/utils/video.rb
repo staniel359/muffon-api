@@ -1,11 +1,6 @@
 module YouTube
   module Utils
     module Video
-      DOMAINS = {
-        youtube: 'www',
-        youtubemusic: 'music'
-      }.freeze
-
       include Muffon::Utils::Video
 
       private
@@ -33,13 +28,7 @@ module YouTube
       end
 
       def original_link
-        "https://#{original_link_domain}.youtube.com/watch?v=#{youtube_id}"
-      end
-
-      def original_link_domain
-        DOMAINS[
-          source_name.to_sym
-        ]
+        "https://www.youtube.com/watch?v=#{youtube_id}"
       end
 
       def streaming_link
@@ -75,16 +64,13 @@ module YouTube
 
       def image_data
         image_data_formatted(
-          image
+          images:,
+          model: 'video'
         )
       end
 
-      def image
-        snippet.dig(
-          'thumbnails',
-          'default',
-          'url'
-        )
+      def images
+        snippet['thumbnails']
       end
 
       def publish_date

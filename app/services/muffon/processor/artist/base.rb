@@ -4,10 +4,20 @@ module Muffon
       class Base < Muffon::Base
         include Muffon::Utils::Artist
 
+        def call
+          check_args
+
+          return if no_data?
+
+          data
+        end
+
         private
 
-        def primary_args
-          [@args[:name]]
+        def required_args
+          %i[
+            name
+          ]
         end
 
         def name

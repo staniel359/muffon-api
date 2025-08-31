@@ -4,12 +4,6 @@ module YandexMusic
       'https://music.yandex.ru/handlers'.freeze
     SOURCE_NAME = 'yandexmusic'.freeze
 
-    def call
-      super
-    rescue Faraday::BadRequestError
-      not_found
-    end
-
     private
 
     def response
@@ -18,6 +12,13 @@ module YandexMusic
         params:,
         headers:,
         proxy:
+      )
+    end
+
+    def proxy
+      credentials.dig(
+        :proxy,
+        :ru
       )
     end
 

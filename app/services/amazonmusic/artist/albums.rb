@@ -7,37 +7,23 @@ module AmazonMusic
 
       private
 
-      def no_data?
-        artist_info_data.blank?
-      end
-
-      def artist_info_data
-        @artist_info_data ||=
-          AmazonMusic::Artist::Info.call(
-            artist_id:
-          )[:artist]
+      def artist_data
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def link
         "#{BASE_LINK}/showCatalogMusicItems/" \
           'uri%3A_SLASH__SLASH_artist_SLASH_' \
-          "#{artist_id}_SLASH_chronological-albums"
+          "#{@args[:artist_id]}_SLASH_chronological-albums"
       end
 
       def payload
         AmazonMusic::Utils::Request::Payload.call(
           page: @args[:page]
         )
-      end
-
-      def artist_data
-        super.merge(
-          paginated_data
-        )
-      end
-
-      def name
-        artist_info_data[:name]
       end
 
       def collection_item_data_formatted(album)

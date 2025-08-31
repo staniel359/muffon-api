@@ -2,10 +2,18 @@ module Muffon
   class Profiles
     class Profile < Muffon::Profile::Base
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          profile
+        ]
+      end
 
       def data
         profile_base_data

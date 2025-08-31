@@ -3,16 +3,22 @@ module SoundCloud
     class Base < SoundCloud::API::V2::Base
       include SoundCloud::Utils::Album
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:album_id]]
+        data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_client_id
+      rescue Faraday::ServerError, Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def no_data?
-        album.blank?
-      rescue Faraday::ServerError
-        true
+      private
+
+      def required_args
+        %i[
+          album_id
+        ]
       end
 
       def link

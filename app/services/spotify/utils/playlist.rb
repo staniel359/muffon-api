@@ -17,7 +17,8 @@ module Spotify
 
       def original_link
         playlist.dig(
-          'external_urls', 'spotify'
+          'external_urls',
+          'spotify'
         )
       end
 

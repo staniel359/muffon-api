@@ -10,14 +10,9 @@ module LastFM
 
       private
 
-      def required_args
-        %i[
-          artist_name
-        ]
-      end
-
-      def no_data?
-        artist.blank? || name.blank?
+      def not_found?
+        super ||
+          name.blank?
       end
 
       def artist

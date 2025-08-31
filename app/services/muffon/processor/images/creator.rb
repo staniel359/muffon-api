@@ -5,9 +5,7 @@ module Muffon
         private
 
         def data
-          images.purge_later if images.attached?
-
-          return if @args[:image_files].blank?
+          model_images.purge_later if model_images.attached?
 
           attach_images
 
@@ -16,18 +14,20 @@ module Muffon
           { success: true }
         end
 
-        def images
-          @images ||= model.images
+        def model_images
+          @model_images ||= model.images
         end
 
         def attach_images
-          image_files.each do |i|
-            attach_image(i)
+          image_files.each do |image_file|
+            attach_image(
+              image_file
+            )
           end
         end
 
         def image_files
-          @args[:image_files]
+          @args[:image_files] || []
         end
 
         def attach_image(image_file)

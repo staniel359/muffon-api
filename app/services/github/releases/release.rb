@@ -2,10 +2,18 @@ module GitHub
   class Releases
     class Release < GitHub::Releases
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          release
+        ]
+      end
 
       def data
         {

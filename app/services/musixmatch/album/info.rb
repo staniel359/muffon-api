@@ -10,9 +10,11 @@ module MusixMatch
       end
 
       def album_data
-        return album_list_data if @args[:list]
-
-        album_full_data
+        if @args[:list]
+          album_list_data
+        else
+          album_full_data
+        end
       end
 
       def album_full_data
@@ -26,12 +28,6 @@ module MusixMatch
         self_data
           .merge(album_base_data)
           .merge(album_list_extra_data)
-      end
-
-      def album
-        response_data.dig(
-          'message', 'body', 'album'
-        )
       end
 
       def album_base_data
@@ -79,7 +75,8 @@ module MusixMatch
           profile_id: @args[:profile_id],
           token: @args[:token]
         ).dig(
-          :album, :tracks
+          :album,
+          :tracks
         )
       end
     end

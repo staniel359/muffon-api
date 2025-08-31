@@ -9,6 +9,10 @@ module MusixMatch
 
       private
 
+      def not_found?
+        false
+      end
+
       def link
         "#{BASE_LINK}/album.tracks.get"
       end

@@ -4,15 +4,15 @@ module Muffon
       class Base < Muffon::Profile::Base
         private
 
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:playlist_id]
+        def required_args
+          super + %i[
+            playlist_id
           ]
         end
 
-        def no_data?
-          super || playlist.blank?
+        def not_found?
+          super ||
+            playlist.blank?
         end
 
         def playlist
@@ -35,9 +35,15 @@ module Muffon
         end
 
         def forbidden?
-          return false if creator?
-
-          playlist.private && !valid_profile?
+          if profile.private || playlist.private
+            if creator?
+              false
+            else
+              !valid_profile?
+            end
+          else
+            false
+          end
         end
 
         def profile_data

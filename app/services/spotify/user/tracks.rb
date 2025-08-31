@@ -7,28 +7,23 @@ module Spotify
 
       private
 
-      def link
-        "#{super}/tracks"
-      end
-
       def user_data
-        tracks_data
-          .merge(paginated_data)
-      end
-
-      def tracks_data
         {
-          total_items:
-            total_items_count
+          total_items: total_items_count,
+          **paginated_data
         }
       end
 
       def total_items_count
-        response_data['total']
+        user['total']
+      end
+
+      def link
+        "#{super}/tracks"
       end
 
       def collection_list
-        response_data['items']
+        user['items']
       end
 
       def collection_item_data_formatted(track)

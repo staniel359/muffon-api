@@ -8,12 +8,11 @@ module Muffon
 
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:token],
-              @args[:track_title],
-              @args[:artist_name]
+          def required_args
+            super + %i[
+              token
+              track_title
+              artist_name
             ]
           end
 

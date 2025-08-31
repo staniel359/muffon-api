@@ -7,24 +7,19 @@ module Odnoklassniki
 
       private
 
-      def albums_list
-        response_data['masterAlbums'] || []
-      end
-
       def artist_data
-        super.merge(
-          paginated_data
-        )
+        {
+          **super,
+          **paginated_data
+        }
       end
 
-      def name
-        response_data.dig(
-          'artist', 'name'
-        )
+      def albums_list
+        artist['masterAlbums'] || []
       end
 
       def total_items_count
-        @total_items_count ||= albums_list.size
+        albums_list.size
       end
 
       def collection_list

@@ -5,29 +5,15 @@ module Muffon
         class Destroyer < Muffon::Processor::Profile::Playlist::Base
           private
 
-          def primary_args
-            super + [
-              @args[:playlist_id]
+          def required_args
+            super + %i[
+              playlist_id
             ]
           end
 
-          def no_data?
-            super || playlist.blank?
-          end
-
-          def playlist
-            if instance_variable_defined?(
-              :@playlist
-            )
-              @playlist
-            else
-              @playlist =
-                profile
-                .playlists
-                .find_by(
-                  id: @args[:playlist_id]
-                )
-            end
+          def not_found?
+            super ||
+              playlist.blank?
           end
 
           def process_playlist

@@ -5,10 +5,18 @@ module LastFM
         include LastFM::Utils::Artist
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            artist
+          ]
+        end
 
         def data
           return artist_minimal_data if @args[:minimal]

@@ -5,10 +5,18 @@ module MusicBrainz
 
       include MusicBrainz::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def link
@@ -16,13 +24,11 @@ module MusicBrainz
       end
 
       def params
-        super
-          .merge(search_params)
-          .merge(pagination_params)
-      end
-
-      def search_params
-        { query: @args[:query] }
+        {
+          **super,
+          query: @args[:query],
+          **pagination_params
+        }
       end
 
       def data

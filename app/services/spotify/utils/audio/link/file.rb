@@ -5,45 +5,34 @@ module Spotify
         class File < Spotify::Utils::Audio::Link
           FORMAT = 'OGG_VORBIS_160'.freeze
 
+          def call
+            check_args
+
+            return if no_data?
+
+            data
+          end
+
           private
 
-          def primary_args
-            [@args[:track_data]]
+          def required_args
+            %i[
+              track_data
+            ]
           end
 
           def no_data?
-            file_id.blank?
-          end
-
-          def file_id
-            @file_id ||=
-              matched_file.try(
-                :[], 'file_id'
-              )
-          end
-
-          def matched_file
-            files.find do |f|
-              matched_file?(f)
-            end
-          end
-
-          def files
-            file_group.try(
-              :[], 'file'
-            ) || []
+            file_group.blank? ||
+              matched_file.blank?
           end
 
           def file_group
-            file_groups_formatted.find do |g|
-              matched_file_group?(g)
-            end
-          end
-
-          def file_groups_formatted
-            file_groups.map do |g|
-              format_file_group_data(g)
-            end
+            @file_group ||=
+              file_groups.find do |file_group|
+                matched_file_group?(
+                  file_group
+                )
+              end
           end
 
           def file_groups
@@ -61,26 +50,40 @@ module Spotify
             track_data['alternative'] || []
           end
 
-          def format_file_group_data(file_group)
-            file_group.slice(
-              'file',
-              'restriction'
-            )
-          end
-
-          def matched_file_group?(file_group)
+          def matched_file_group?(
+            file_group
+          )
             Spotify::Utils::Audio::Link::File::GroupMatcher.call(
               file_group:
             )
           end
 
-          def matched_file?(file)
-            file['format'] == FORMAT
+          def matched_file
+            @matched_file ||=
+              files.find do |file_data|
+                matched_file?(
+                  file_data
+                )
+              end
+          end
+
+          def files
+            file_group['file']
+          end
+
+          def matched_file?(
+            file_data
+          )
+            file_data['format'] == FORMAT
           end
 
           def link
             "#{BASE_LINK}/storage-resolve/files" \
               "/audio/interactive/#{file_id}"
+          end
+
+          def file_id
+            matched_file['file_id']
           end
 
           alias data response_data

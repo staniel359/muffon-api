@@ -4,8 +4,10 @@ module Muffon
       class Base < Muffon::Radio::Base
         private
 
-        def primary_args
-          [@args[:tag_name]]
+        def required_args
+          %i[
+            tag_name
+          ]
         end
       end
     end

@@ -3,12 +3,12 @@ module Discogs
     class Info < Discogs::Artist::Base
       private
 
-      def link
-        "#{super}/#{@args[:artist_id]}"
+      def name
+        artist['name']
       end
 
-      def name
-        response_data['name']
+      def link
+        "#{super}/#{@args[:artist_id]}"
       end
     end
   end

@@ -2,15 +2,19 @@ module MusicBrainz
   module Group
     class Base < MusicBrainz::Base
       def call
-        super
+        check_args
+
+        data
       rescue Faraday::BadRequestError
-        not_found
+        raise not_found_error
       end
 
       private
 
-      def primary_args
-        [@args[:group_id]]
+      def required_args
+        %i[
+          group_id
+        ]
       end
 
       def link
@@ -24,6 +28,8 @@ module MusicBrainz
       def data
         { group: group_data }
       end
+
+      alias group response_data
     end
   end
 end

@@ -5,24 +5,33 @@ module VK
 
       include VK::Utils::Album
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [
-          @args[:album_id],
-          @args[:owner_id],
-          @args[:access_key]
+      def required_args
+        %i[
+          album_id
+          owner_id
+          access_key
         ]
       end
 
-      def no_data?
+      def not_found?
         album.blank?
       end
 
       def params
-        super.merge(
-          album_params
-        )
+        {
+          **super,
+          **album_params
+        }
       end
 
       def album_params

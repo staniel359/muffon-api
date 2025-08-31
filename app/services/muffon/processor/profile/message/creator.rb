@@ -2,37 +2,34 @@ module Muffon
   module Processor
     module Profile
       module Message
-        class Creator < Muffon::Processor::Profile::Base
+        class Creator < Muffon::Processor::Profile::Message::Base
           include Muffon::Utils::Sendable
 
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:token],
-              @args[:other_profile_id]
-            ] + content_args
-          end
-
-          def forbidden?
-            !valid_profile?
-          end
-
-          def data
-            process_message
+          def required_args
+            super +
+              %i[
+                other_profile_id
+              ] +
+              content_args
           end
 
           def process_message
             message
 
-            return message.errors_data if message.errors?
+            if message.errors?
+              message.errors_data
+            else
+              conversation.touch
 
-            conversation.touch
+              process_images
 
-            process_images
-
-            { conversation: conversation_data }
+              {
+                conversation:
+                  conversation_data
+              }
+            end
           end
 
           def message
@@ -69,8 +66,10 @@ module Muffon
           end
 
           def message_params
-            message_profile_params
-              .merge(sendable_params)
+            {
+              **message_profile_params,
+              **sendable_params
+            }
           end
 
           def message_profile_params

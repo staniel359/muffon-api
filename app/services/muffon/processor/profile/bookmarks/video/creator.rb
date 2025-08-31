@@ -8,17 +8,14 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:youtube_id]
+            def required_args
+              super + %i[
+                youtube_id
               ]
             end
 
             def process_bookmark
               bookmark_video
-
-              return bookmark_video.errors_data if
-                  bookmark_video.errors?
 
               {
                 bookmark_video:
@@ -32,7 +29,8 @@ module Muffon
                 .bookmark_videos
                 .where(
                   video_id: find_video.id
-                ).first_or_create
+                )
+                .first_or_create!
             end
 
             def bookmark_video_data

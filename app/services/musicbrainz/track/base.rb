@@ -4,15 +4,19 @@ module MusicBrainz
       include MusicBrainz::Utils::Track
 
       def call
-        super
+        check_args
+
+        data
       rescue Faraday::BadRequestError
-        not_found
+        raise not_found_error
       end
 
       private
 
-      def primary_args
-        [@args[:track_id]]
+      def required_args
+        %i[
+          track_id
+        ]
       end
 
       def link
@@ -20,12 +24,10 @@ module MusicBrainz
       end
 
       def params
-        super
-          .merge(track_params)
-      end
-
-      def track_params
-        { inc: 'artist-credits+tags+releases' }
+        {
+          **super,
+          inc: 'artist-credits+tags+releases'
+        }
       end
 
       def data

@@ -12,8 +12,10 @@ module Muffon
             def process_recommendations
               return if library_track.blank?
 
-              similar_tracks.each do |s|
-                process_recommendation(s)
+              similar_tracks.each do |similar_track|
+                process_recommendation(
+                  similar_track
+                )
               end
             end
 
@@ -34,7 +36,8 @@ module Muffon
 
             def similar_tracks
               similar_tracks_data.dig(
-                :track, :similar
+                :track,
+                :similar
               ) || []
             end
 
@@ -42,8 +45,7 @@ module Muffon
               ::LastFM::Track::Similar.call(
                 artist_name:,
                 track_title:,
-                limit:
-                  SIMILAR_TRACKS_LIMIT,
+                limit: SIMILAR_TRACKS_LIMIT,
                 minimal: true
               )
             end
@@ -55,7 +57,8 @@ module Muffon
             end
 
             def track
-              @track ||= library_track.track
+              @track ||=
+                library_track.track
             end
 
             def track_title

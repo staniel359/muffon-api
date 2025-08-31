@@ -2,7 +2,7 @@ module LastFM
   module User
     module Web
       class Base < LastFM::User::Base
-        include LastFM::Utils::Web::Proxy
+        include LastFM::Utils::Web
 
         private
 
@@ -19,9 +19,12 @@ module LastFM
         end
 
         def nickname
-          response_data.css(
-            '.header-title'
-          ).text.strip
+          response_data
+            .css(
+              '.header-title'
+            )
+            .text
+            .strip
         end
       end
     end

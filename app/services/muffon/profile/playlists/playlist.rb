@@ -3,10 +3,18 @@ module Muffon
     class Playlists
       class Playlist < Muffon::Profile::Base
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            playlist
+          ]
+        end
 
         def data
           playlist_base_data

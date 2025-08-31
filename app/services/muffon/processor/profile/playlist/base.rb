@@ -5,17 +5,6 @@ module Muffon
         class Base < Muffon::Processor::Profile::Base
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:token]
-            ]
-          end
-
-          def forbidden?
-            !valid_profile?
-          end
-
           def data
             process_playlist
           end
@@ -24,6 +13,21 @@ module Muffon
             playlist.process_image(
               @args[:image]
             )
+          end
+
+          def playlist
+            if instance_variable_defined?(
+              :@playlist
+            )
+              @playlist
+            else
+              @playlist =
+                profile
+                .playlists
+                .find_by(
+                  id: @args[:playlist_id]
+                )
+            end
           end
         end
       end

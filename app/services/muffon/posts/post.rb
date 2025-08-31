@@ -2,10 +2,18 @@ module Muffon
   module Posts
     class Post < Muffon::Base
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          post
+        ]
+      end
 
       def data
         post_base_data

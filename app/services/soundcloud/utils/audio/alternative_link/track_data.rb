@@ -3,10 +3,20 @@ module SoundCloud
     module Audio
       class AlternativeLink
         class TrackData < SoundCloud::Utils::Audio::AlternativeLink
+          def call
+            check_args
+
+            return if no_data?
+
+            data
+          end
+
           private
 
-          def primary_args
-            [@args[:link]]
+          def required_args
+            %i[
+              link
+            ]
           end
 
           def no_data?

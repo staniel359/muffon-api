@@ -6,9 +6,9 @@ module Muffon
           class Destroyer < Muffon::Processor::Profile::Playlist::Track::Base
             private
 
-            def primary_args
-              super + [
-                @args[:playlist_track_id]
+            def required_args
+              super + %i[
+                playlist_track_id
               ]
             end
 
@@ -19,9 +19,11 @@ module Muffon
             end
 
             def playlist_track
-              playlist.playlist_tracks.find_by(
-                id: @args[:playlist_track_id]
-              )
+              playlist
+                .playlist_tracks
+                .find_by(
+                  id: @args[:playlist_track_id]
+                )
             end
           end
         end

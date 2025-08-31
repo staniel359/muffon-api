@@ -1,52 +1,35 @@
 module Muffon
   module Utils
-    class Errors
+    module Errors
       ERRORS_DATA = {
-        bad_request: {
+        'bad_request' => {
           errors: [
-            Faraday::BadRequestError
+            Muffon::Error::BadRequestError
           ],
-          handler: {
-            error: {
-              code: 400,
-              text: 'Bad request'
-            }
+          response: {
+            code: 400,
+            text: 'Bad request'
           }
         },
-        forbidden: {
+        'forbidden' => {
           errors: [
-            Faraday::ForbiddenError
+            Muffon::Error::ForbiddenError
           ],
-          handler: {
-            error: {
-              code: 403,
-              text: 'Forbidden'
-            }
+          response: {
+            code: 403,
+            text: 'Forbidden'
           }
         },
-        not_found: {
+        'not_found' => {
           errors: [
-            Faraday::ResourceNotFound
+            Muffon::Error::NotFoundError
           ],
-          handler: {
-            error: {
-              code: 404,
-              text: 'Not found'
-            }
+          response: {
+            code: 404,
+            text: 'Not found'
           }
         },
-        too_many_requests: {
-          errors: [
-            Faraday::ClientError
-          ],
-          handler: {
-            error: {
-              code: 429,
-              text: 'Too Many Requests'
-            }
-          }
-        },
-        bad_gateway: {
+        'bad_gateway' => {
           errors: [
             Errno::ECONNREFUSED,
             Errno::ECONNRESET,
@@ -60,50 +43,43 @@ module Muffon
             OpenSSL::SSL::SSLError,
             SocketError
           ],
-          handler: {
-            error: {
-              code: 502,
-              text: 'Bad Gateway'
-            }
+          response: {
+            code: 502,
+            text: 'Bad Gateway'
           }
         },
-        gateway_timeout: {
+        'gateway_timeout' => {
           errors: [
             Faraday::TimeoutError
           ],
-          handler: {
-            error: {
-              code: 504,
-              text: 'Gateway Timeout'
-            }
+          response: {
+            code: 504,
+            text: 'Gateway Timeout'
           }
         }
       }.freeze
 
-      class << self
-        def list
-          ERRORS_DATA.values.pluck(
-            :errors
-          ).flatten
-        end
+      private
 
-        def handlers
-          ERRORS_DATA.transform_values do |v|
-            v[:handler]
-          end
-        end
+      def bad_request_error
+        Muffon::Error::BadRequestError
+      end
 
-        def handle(error)
-          handler =
-            ERRORS_DATA
-            .values
-            .find do |k|
-              k[:errors].include?(error)
-            end
-            .try(:[], :handler)
+      def not_found_error
+        Muffon::Error::NotFoundError
+      end
 
-          handler || raise(error)
-        end
+      def forbidden_error
+        Muffon::Error::ForbiddenError
+      end
+
+      def error_response_data(
+        error_key
+      )
+        error_data =
+          ERRORS_DATA[error_key][:response]
+
+        { error: error_data }
       end
     end
   end

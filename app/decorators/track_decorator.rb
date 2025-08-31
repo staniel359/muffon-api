@@ -3,8 +3,8 @@ module TrackDecorator
 
   class_methods do
     def with_artist_title(
-      artist_id,
-      title
+      artist_id:,
+      title:
     )
       title_formatted =
         title
@@ -18,7 +18,7 @@ module TrackDecorator
         title_downcase:
           title_formatted.downcase
       )
-        .first_or_create(
+        .first_or_create!(
           title: title_formatted,
           player_id:
         )
@@ -33,7 +33,9 @@ module TrackDecorator
     private
 
     def player_id
-      SecureRandom.uuid unless test?
+      return if test?
+
+      SecureRandom.uuid
     end
   end
 end

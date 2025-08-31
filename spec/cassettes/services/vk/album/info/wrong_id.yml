@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.getPlaylistById?access_key=43c15929fe11506130&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000916168&playlist_id=wejlhg239gh23&sig=36cc3afea75bdf45e482d856d94c8ea9&v=5.131
+    uri: https://api.vk.ru/method/audio.getPlaylistById?access_key=43c15929fe11506130&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000916168&playlist_id=wejlhg239gh23&sig=ac11ebcb402ebeaac434426308ca57fd&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,7 +21,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:27 GMT
+      - Mon, 22 Sep 2025 21:09:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,17 +29,27 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=XYWzKFm0J9ZquHB1gw8a4yGxe5pCBvteH9DLnvCYJ2nUOny25rxVKzR1Xi-bcM5PcL3NHjJ71FX9Rhe4TX8JD6dZ1isPV-ABc17L_topEZFhDY57TDVDMJDh2AG7dc1dx4k;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      X-Frontend:
+      - front656410
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - cd0-Fum31fFwApXRd-ou3w7nEhLzGw
+      Server-Timing:
+      - tid;desc="cd0-Fum31fFwApXRd-ou3w7nEhLzGw",front;dur=28.970
     body:
       encoding: ASCII-8BIT
       string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
-        was missing or invalid: playlist_id not integer","request_params":[{"key":"v","value":"5.131"},{"key":"playlist_id","value":"wejlhg239gh23"},{"key":"owner_id","value":"-2000916168"},{"key":"access_key","value":"43c15929fe11506130"},{"key":"lang","value":"en"},{"key":"method","value":"audio.getPlaylistById"},{"key":"oauth","value":"1"}]}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:27 GMT
-recorded_with: VCR 6.2.0
+        was missing or invalid: playlist_id not integer","request_params":[{"key":"access_key","value":"43c15929fe11506130"},{"key":"lang","value":"en"},{"key":"owner_id","value":"-2000916168"},{"key":"playlist_id","value":"wejlhg239gh23"},{"key":"v","value":"5.131"},{"key":"method","value":"audio.getPlaylistById"},{"key":"oauth","value":"1"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:09:15 GMT
+recorded_with: VCR 6.3.1

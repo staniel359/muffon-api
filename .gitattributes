@@ -1,1 +1,7 @@
+.github/ export-ignore
 spec/ export-ignore
+test/ export-ignore
+Capfile export-ignore
+.rspec export-ignore
+.rubocop.yml export-ignore
+config/deploy/ export-ignore

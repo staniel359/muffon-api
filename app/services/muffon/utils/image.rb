@@ -2,14 +2,20 @@ module Muffon
   module Utils
     class Image < Muffon::Base
       def call
+        return if args_missing?
+
         data
       end
 
       private
 
-      def data
-        return if image.blank?
+      def required_args
+        %i[
+          image
+        ]
+      end
 
+      def data
         {
           original: original_link,
           large: variant_link(600),

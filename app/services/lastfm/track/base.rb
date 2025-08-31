@@ -5,16 +5,24 @@ module LastFM
 
       include LastFM::Utils::Track
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [
-          @args[:artist_name],
-          @args[:track_title]
+      def required_args
+        %i[
+          artist_name
+          track_title
         ]
       end
 
-      def no_data?
+      def not_found?
         track.blank?
       end
 

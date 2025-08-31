@@ -4,9 +4,11 @@ module Odnoklassniki
       private
 
       def album_data
-        return album_list_data if @args[:list]
-
-        album_full_data
+        if @args[:list]
+          album_list_data
+        else
+          album_full_data
+        end
       end
 
       def album_list_data

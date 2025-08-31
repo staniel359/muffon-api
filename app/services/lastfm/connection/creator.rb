@@ -5,9 +5,9 @@ module LastFM
 
       private
 
-      def primary_args
-        super + [
-          @args[:lastfm_token]
+      def required_args
+        super + %i[
+          lastfm_token
         ]
       end
 
@@ -37,36 +37,37 @@ module LastFM
       end
 
       def process_profile
-        lastfm_connection.update(
+        lastfm_connection.update!(
           lastfm_connection_params
         )
 
-        return lastfm_connection.errors_data if
-            lastfm_connection.errors?
-
-        { profile: profile_data }
+        if lastfm_connection.errors?
+          lastfm_connection.errors_data
+        else
+          { profile: profile_data }
+        end
       end
 
       def lastfm_connection
         @lastfm_connection ||=
-          LastFMConnection.where(
-            profile_id:
-              @args[:profile_id]
-          ).first_or_initialize
+          LastFMConnection
+          .where(
+            profile_id: @args[:profile_id]
+          )
+          .first_or_initialize
       end
 
       def lastfm_connection_params
-        lastfm_connection_token_params
-          .merge(lastfm_connection_info_params)
-      end
-
-      def lastfm_connection_token_params
-        { session_key: }
+        {
+          session_key:,
+          **lastfm_connection_info_params
+        }
       end
 
       def session_key
         response_data.dig(
-          'session', 'key'
+          'session',
+          'key'
         )
       end
 
@@ -85,7 +86,8 @@ module LastFM
 
       def nickname
         response_data.dig(
-          'session', 'name'
+          'session',
+          'name'
         )
       end
 

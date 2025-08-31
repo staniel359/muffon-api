@@ -3,35 +3,53 @@ module LastFM
     class Base < LastFM::Base
       include LastFM::Utils::User
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        check_if_forbidden
+
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
+      end
+
       private
 
-      def primary_args
-        return primary_skip_profile_args if skip_profile?
-
-        [
-          @args[:profile_id],
-          @args[:token]
-        ]
+      def required_args
+        if skip_profile?
+          %i[
+            nickname
+          ]
+        else
+          %i[
+            profile_id
+            token
+          ]
+        end
       end
 
       def skip_profile?
-        test? || !!@args[:skip_profile]
+        return true if test?
+
+        !!@args[:skip_profile]
       end
 
-      def primary_skip_profile_args
-        [@args[:nickname]]
-      end
-
-      def no_data?
-        return false if skip_profile?
-
-        profile.blank?
+      def not_found?
+        if skip_profile?
+          false
+        else
+          profile.blank?
+        end
       end
 
       def forbidden?
-        return false if skip_profile?
-
-        !valid_profile?
+        if skip_profile?
+          false
+        else
+          !valid_profile?
+        end
       end
 
       def params
@@ -46,7 +64,9 @@ module LastFM
 
       def lastfm_nickname
         @args[:nickname] ||
-          profile.lastfm_connection&.nickname
+          profile
+            .lastfm_connection
+            &.nickname
       end
 
       def data

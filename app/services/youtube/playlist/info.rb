@@ -3,13 +3,9 @@ module YouTube
     class Info < YouTube::Playlist::Base
       private
 
-      def no_data?
-        playlist.blank?
-      end
-
       def playlist_data
         self_data
-          .merge(playlist_base_data)
+          .merge(super)
           .merge(playlist_extra_data)
           .merge(with_more_data)
       end

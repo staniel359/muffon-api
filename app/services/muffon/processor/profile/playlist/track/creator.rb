@@ -8,20 +8,18 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:track_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                playlist_id
+                track_title
+                artist_name
               ]
             end
 
             def process_playlist_track
-              playlist_track.update(
+              playlist_track.update!(
                 update_params
               )
-
-              return playlist_track.errors_data if
-                  playlist_track.errors?
 
               process_image
 
@@ -37,7 +35,8 @@ module Muffon
                 .playlist_tracks
                 .where(
                   track_id: find_track.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def title

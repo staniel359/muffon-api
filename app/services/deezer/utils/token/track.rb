@@ -5,18 +5,24 @@ module Deezer
         API_METHOD = 'song.getListData'.freeze
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            track_id
+          ]
+        end
 
         def data
           { track_token: }
         end
 
         def track_token
-          return if @args[:track_id].blank?
-
           response_data.dig(
             'results', 'data',
             0, 'TRACK_TOKEN'

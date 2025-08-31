@@ -1,11 +1,6 @@
 module YouTube
   module Utils
     module Playlist
-      DOMAINS = {
-        youtube: 'www',
-        youtubemusic: 'music'
-      }.freeze
-
       include Muffon::Utils::VideoPlaylist
 
       private
@@ -23,13 +18,7 @@ module YouTube
       end
 
       def original_link
-        "https://#{original_link_domain}.youtube.com/playlist?list=#{youtube_id}"
-      end
-
-      def original_link_domain
-        DOMAINS[
-          source_name.to_sym
-        ]
+        "https://www.youtube.com/playlist?list=#{youtube_id}"
       end
 
       def title
@@ -68,16 +57,13 @@ module YouTube
 
       def image_data
         image_data_formatted(
-          image
+          images:,
+          model: 'playlist'
         )
       end
 
-      def image
-        snippet.dig(
-          'thumbnails',
-          'default',
-          'url'
-        )
+      def images
+        snippet['thumbnails']
       end
 
       def description

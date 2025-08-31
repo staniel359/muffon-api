@@ -5,10 +5,18 @@ module YouTube
         include YouTube::Utils::Video
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            video
+          ]
+        end
 
         def data
           self_data
@@ -30,7 +38,8 @@ module YouTube
 
         def youtube_id
           snippet.dig(
-            'resourceId', 'videoId'
+            'resourceId',
+            'videoId'
           )
         end
       end

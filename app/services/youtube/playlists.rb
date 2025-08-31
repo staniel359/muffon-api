@@ -4,10 +4,20 @@ module YouTube
 
     include YouTube::Utils::Pagination
 
+    def call
+      check_args
+
+      data
+    rescue Faraday::ResourceNotFound
+      raise not_found_error
+    end
+
     private
 
-    def primary_args
-      [@args[:channel_id]]
+    def required_args
+      %i[
+        channel_id
+      ]
     end
 
     def link
@@ -15,13 +25,8 @@ module YouTube
     end
 
     def params
-      super.merge(
-        playlists_params
-      )
-    end
-
-    def playlists_params
       {
+        **super,
         channelId: @args[:channel_id],
         part: 'id,snippet,contentDetails',
         maxResults: limit,

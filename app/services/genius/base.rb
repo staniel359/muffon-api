@@ -13,6 +13,13 @@ module Genius
       )
     end
 
+    def proxy
+      credentials.dig(
+        :proxy,
+        :ru
+      )
+    end
+
     def artists_list
       [artist]
     end

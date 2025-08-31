@@ -4,30 +4,31 @@ module Muffon
       class Updater < Muffon::Processor::Post::Base
         private
 
-        def primary_args
-          super + [
-            @args[:post_id]
-          ] + content_args
+        def required_args
+          super +
+            content_args +
+            %i[
+              post_id
+            ]
         end
 
-        def no_data?
-          super || post.blank?
+        def not_found?
+          super ||
+            post.blank?
         end
 
         def process_post
-          update_post
-
-          return post.errors_data if post.errors?
-
-          process_images
-
-          { post: post_data }
-        end
-
-        def update_post
           post.update(
             post_params
           )
+
+          if post.errors?
+            post.errors_data
+          else
+            process_images
+
+            { post: post_data }
+          end
         end
 
         def post_data

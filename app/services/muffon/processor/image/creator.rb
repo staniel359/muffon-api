@@ -5,27 +5,21 @@ module Muffon
         private
 
         def data
-          image.purge_later if image.attached?
+          model_image.purge_later if model_image.attached?
 
-          if @args[:image_file].blank? && @args[:temp_image_file_path].blank?
-            return
-          end
-
-          attach_image
+          attach_image if image_file_data.present?
 
           image_data
 
           { success: true }
         end
 
-        def image
-          @image ||= model.image
+        def model_image
+          @model_image ||= model.image
         end
 
         def attach_image
-          return if image_file_data.blank?
-
-          image.attach(
+          model_image.attach(
             image_file_data
           )
         end

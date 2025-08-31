@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.getPlaylistById?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000885619&playlist_id=3885619&sig=1255d8ac08c413af8a29ad671f8ded0f&v=5.131
+    uri: https://api.vk.ru/method/audio.getPlaylistById?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000885619&playlist_id=3885619&sig=0b24b020ea9ae8030ad3f76cde2e7fd2&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,42 +21,50 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:19 GMT
+      - Mon, 22 Sep 2025 21:08:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '2229'
+      - '2272'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=1zYgp1Wgef7Yeh19vuXK-AfoZvtXQKTV-hbS-KJoHQ9lr1kW35K8xFmzfVLDhqVfEUXrixwhJoL5JTRBb3v0bj29aj6s77ZC1kKSzelQfSwWUf_y4JPntLMdkHskujWAXw0;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      X-Frontend:
+      - front661612
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - oJEMKlsbURhE_AWgw22UOCcX56_ZKw
+      Server-Timing:
+      - tid;desc="oJEMKlsbURhE_AWgw22UOCcX56_ZKw",front;dur=48.768
     body:
       encoding: ASCII-8BIT
-      string: '{"response":{"id":3885619,"owner_id":-2000885619,"type":1,"title":"Shadow","description":"","count":1,"followers":7,"plays":154,"create_time":1541803898,"update_time":1541803918,"genres":[{"id":21,"name":"Alternative"}],"is_following":false,"year":2012,"photo":{"width":300,"height":300,"photo_34":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","photo_68":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","photo_135":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","photo_270":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","photo_300":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","photo_600":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=600x600&quality=96&sign=47b1f5e5495826e392506090c3280c23&c_uniq_tag=V625QyoXTrbtwBx00XUJt1XJVlTL5Vp_AhUxvpDtSao&type=audio","photo_1200":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio"},"permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true},"subtitle_badge":false,"play_button":false,"access_key":"154554fc908e1e4c72","is_explicit":false,"main_artists":[{"name":"Wild
-        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"album_type":"main_only","exclusive":false}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:19 GMT
+      string: '{"response":{"id":3885619,"owner_id":-2000885619,"type":1,"title":"Shadow","description":"","count":1,"followers":8,"plays":323,"create_time":1541803898,"update_time":1541803918,"genres":[{"id":21,"name":"Alternative"}],"is_following":false,"year":2012,"photo":{"width":300,"height":300,"id":"456239021","photo_34":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","photo_68":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","photo_135":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","photo_270":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","photo_300":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","photo_600":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=600x600&quality=96&sign=47b1f5e5495826e392506090c3280c23&c_uniq_tag=V625QyoXTrbtwBx00XUJt1XJVlTL5Vp_AhUxvpDtSao&type=audio","photo_1200":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio"},"permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true},"subtitle_badge":false,"play_button":false,"access_key":"154554fc908e1e4c72","is_explicit":false,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"album_type":"main_only","main_color":"#F3CD8F"}}'
+  recorded_at: Mon, 22 Sep 2025 21:08:17 GMT
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.get?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&album_id=3885619&owner_id=-2000885619&sig=3f2b342bd14229915b0d99839ea4f8fd&v=5.131
+    uri: https://api.vk.ru/method/audio.get?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&album_id=3885619&owner_id=-2000885619&sig=722f86f7c41b85fe3bdf7ce30788ab60&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -67,25 +73,37 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:20 GMT
+      - Mon, 22 Sep 2025 21:08:18 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '2390'
+      - '2644'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=sAOexebDEkDNhrdeSzy1jjXkxurm03hFhoeRR4l1XfV5ET_SWLaXXQuOXcE-D1c6nkKjUlf8z_kw45dfrRmLhkIyJmfShbxDP-joVkl8kcgFTQinLW5LAeZ0VxM2c142Too;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
+      - remixstlid=9089465072037622951_mdiEKaSFX84CVtjghwR1L4yUkZoXyjVdWJ3UgLSd54g;
+        expires=Tue, 22 Sep 2026 21:08:18 GMT; path=/; domain=.vk.ru; secure
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      X-Frontend:
+      - front656210
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - ScqY8TQXtvS7oQ9kvwFL3iewDIrtaA
+      Server-Timing:
+      - tid;desc="ScqY8TQXtvS7oQ9kvwFL3iewDIrtaA",front;dur=73.517
     body:
       encoding: ASCII-8BIT
-      string: '{"response":{"count":1,"items":[{"artist":"Wild Nothing","id":45263312,"owner_id":-2001263312,"title":"Shadow","duration":259,"access_key":"8681736bddea98178b","ads":{"content_id":"-2001263312_45263312","duration":"259","account_age_type":"3","puid22":"14"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"d5e56fc6lWKOtNnidFou94Sqp5VXQTS-fXfY4R4kuL--sIZIqB5ys3RyvpsYM12DhbD_yQMUYu8rJ4pg7adOf3l6T4aQzkqg69g","url":"","date":1673546513,"lyrics_id":1,"album":{"id":3885619,"title":"Shadow","owner_id":-2000885619,"access_key":"154554fc908e1e4c72","thumb":{"width":300,"height":300,"photo_34":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","photo_68":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","photo_135":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","photo_270":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","photo_300":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","photo_600":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=600x600&quality=96&sign=47b1f5e5495826e392506090c3280c23&c_uniq_tag=V625QyoXTrbtwBx00XUJt1XJVlTL5Vp_AhUxvpDtSao&type=audio","photo_1200":"https:\/\/sun19-2.userapi.com\/impf\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio"}},"main_artists":[{"name":"Wild
-        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false}]}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:20 GMT
-recorded_with: VCR 6.2.0
+      string: '{"response":{"count":1,"items":[{"artist":"Wild Nothing","id":45263312,"owner_id":-2001263312,"title":"Shadow","duration":259,"access_key":"8e7725d25fe0c1d974","ads":{"content_id":"-2001263312_45263312","duration":"259","account_age_type":"3","puid1":"554","puid22":"14"},"is_explicit":false,"is_focus_track":false,"track_code":"6d69c02eR_XmR-5_VwLAcVDxW73NYZtwyFS848KkJh6Jr4B78RyICFDtiQY7a7MFUesD4Zk0zCuQAutiOifQ3k5lSbXJzJk3gyuP","url":"https:\/\/cs1-66v4.vkuseraudio.ru\/s\/v1\/acmp\/ZfiJlUWPUYuaP4UOaNgfzMcCjlsfZUhz64ww3yzhHDNXwW95aRKpSE5fwjyXpTteuhlZ76P68IXtipkXALsgJmhr2wheCmSNQ41DsrBmbZWg-VkoqgEU4yz6XbRyf6bB9vK5IXY97LEH0kFlWNzlytZV6qwFXGjEp8uydZTAYQj-vtZPnw.mp3?siren=1","date":1673546513,"lyrics_id":1,"album":{"id":3885619,"title":"Shadow","owner_id":-2000885619,"access_key":"154554fc908e1e4c72","thumb":{"width":300,"height":300,"id":"456239021","photo_34":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","photo_68":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","photo_135":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","photo_270":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","photo_300":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","photo_600":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=600x600&quality=96&sign=47b1f5e5495826e392506090c3280c23&c_uniq_tag=V625QyoXTrbtwBx00XUJt1XJVlTL5Vp_AhUxvpDtSao&type=audio","photo_1200":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio"},"main_color":"#F3CD8F"},"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"release_audio_id":"-2001263312_45263312"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:08:18 GMT
+recorded_with: VCR 6.3.1

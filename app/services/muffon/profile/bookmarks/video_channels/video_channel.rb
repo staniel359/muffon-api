@@ -6,10 +6,18 @@ module Muffon
           include YouTube::Utils::Channel
 
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              bookmark_video_channel
+            ]
+          end
 
           def data
             self_data

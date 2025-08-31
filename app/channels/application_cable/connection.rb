@@ -14,21 +14,21 @@ module ApplicationCable
 
     def profile
       Profile.find_by(
-        token:
+        token: access_token
       )
     end
 
-    def token
+    def access_token
       request.params['token']
     end
 
     def reject_unauthorized_connection?
-      !valid_token?
+      !valid_access_token?
     end
 
-    def valid_token?
-      Muffon::Token::Validator.call(
-        token:
+    def valid_access_token?
+      Muffon::AccessToken::Validator.call(
+        access_token:
       )
     end
   end

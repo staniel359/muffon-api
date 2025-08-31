@@ -6,7 +6,8 @@ module Muffon
       def find_album
         @find_album ||=
           ::Album.with_artist_title(
-            find_artist.id, title
+            artist_id: find_artist.id,
+            title:
           )
       end
 

@@ -3,14 +3,17 @@ module Muffon
     module Profile
       module Recommendation
         module Track
-          class Creator < Muffon::Processor::Profile::Base
+          class Creator < Muffon::Processor::Profile::Recommendation::Base
             include Muffon::Utils::Track
 
-            def call
-              process_recommendation
-            end
-
             private
+
+            def required_args
+              super + %i[
+                artist_name
+                track_title
+              ]
+            end
 
             def process_recommendation
               recommendation
@@ -26,7 +29,8 @@ module Muffon
                 .recommendation_tracks
                 .where(
                   track_id: find_track.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def artist_name

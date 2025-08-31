@@ -4,15 +4,14 @@ module Muffon
       class Base < Muffon::Profile::Base
         private
 
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token],
-            @args[:conversation_id]
+        def required_args
+          super + %i[
+            token
+            conversation_id
           ]
         end
 
-        def no_data?
+        def not_found?
           conversation.blank?
         end
 

@@ -2,10 +2,18 @@ module Muffon
   module Sendable
     class Track < Muffon::Base
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          track
+        ]
+      end
 
       def data
         {

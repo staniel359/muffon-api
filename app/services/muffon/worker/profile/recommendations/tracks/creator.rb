@@ -11,7 +11,7 @@ module Muffon
               ::Profile::Recommendations::Tracks::CreatorWorker.set(
                 queue:
               ).perform_async(
-                worker_args
+                worker_args_formatted
               )
             end
           end

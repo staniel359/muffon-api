@@ -6,9 +6,9 @@ module Muffon
           class Base < Muffon::Processor::Profile::Recommendations::Base
             private
 
-            def primary_args
-              super + [
-                @args[:library_track_id]
+            def required_args
+              super + %i[
+                library_track_id
               ]
             end
           end

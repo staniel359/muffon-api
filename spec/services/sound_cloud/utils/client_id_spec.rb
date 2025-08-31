@@ -3,11 +3,13 @@ RSpec.describe SoundCloud::Utils::ClientId do
 
   describe 'successful processing' do
     let(:output) do
-      VCR.use_cassette 'services/soundcloud/utils/client_id/success' do
+      VCR.use_cassette(
+        'services/soundcloud/utils/client_id/success'
+      ) do
         subject.call
       end
     end
 
-    it { expect(output).to eq(Helpers::SoundCloud::Utils.client_id) }
+    it { expect(output).to eq(soundcloud_utils_client_id) }
   end
 end

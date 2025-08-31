@@ -6,13 +6,8 @@ module MusixMatch
       private
 
       def params
-        super.merge(
-          pagination_params
-        )
-      end
-
-      def pagination_params
         {
+          **super,
           page:,
           page_size: limit
         }
@@ -20,14 +15,16 @@ module MusixMatch
 
       def total_items_count
         response_data.dig(
-          'message', 'header',
+          'message',
+          'header',
           'available'
         )
       end
 
       def collection_list
         response_data.dig(
-          'message', 'body',
+          'message',
+          'body',
           "#{model_name}_list"
         )
       end

@@ -27,12 +27,20 @@ module Google
 
     include Muffon::Utils::Pagination
 
+    def call
+      check_args
+
+      data
+    rescue Faraday::BadRequestError
+      raise bad_request_error
+    end
+
     private
 
-    def primary_args
-      [
-        @args[:query],
-        @args[:scope]
+    def required_args
+      %i[
+        query
+        scope
       ]
     end
 

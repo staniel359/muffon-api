@@ -4,35 +4,38 @@ module Muffon
       class Updater < Muffon::Processor::Community::Base
         private
 
-        def primary_args
-          super + [
-            @args[:community_id],
-            @args[:title]
+        def required_args
+          super + %i[
+            community_id
+            title
           ]
         end
 
-        def no_data?
-          super || community.blank?
+        def not_found?
+          super ||
+            community.blank?
         end
 
         def forbidden?
-          !valid_profile? || !community_creator?
+          super ||
+            !community_creator?
         end
 
         def process_community
-          update_community
-
-          return community.errors_data if community.errors?
-
-          process_image
-
-          { community: community_data }
-        end
-
-        def update_community
           community.update(
             community_params
           )
+
+          if community.errors?
+            community.errors_data
+          else
+            process_image
+
+            {
+              community:
+                community_info_data
+            }
+          end
         end
 
         def community_params
@@ -42,7 +45,7 @@ module Muffon
           }
         end
 
-        def community_data
+        def community_info_data
           Muffon::Community::Info.call(
             community_id:,
             profile_id: @args[:profile_id],

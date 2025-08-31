@@ -6,6 +6,10 @@ module LastFM
         de es fr it ja pl pt ru sv tr zh
       ].freeze
 
+      def call
+        data
+      end
+
       private
 
       def data

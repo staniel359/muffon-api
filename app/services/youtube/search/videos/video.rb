@@ -5,10 +5,18 @@ module YouTube
         include YouTube::Utils::Video
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            video
+          ]
+        end
 
         def data
           return if snippet.blank?
@@ -33,7 +41,15 @@ module YouTube
 
         def youtube_id
           video.dig(
-            'id', 'videoId'
+            'id',
+            'videoId'
+          )
+        end
+
+        def image_data
+          image_data_formatted(
+            images:,
+            model: 'search_video'
           )
         end
       end

@@ -1,9 +1,17 @@
 module LastFM
   module Tags
     class Base < LastFM::Base
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def no_data?
+      def not_found?
         model.blank? ||
           tags_list.blank?
       end

@@ -5,10 +5,18 @@ module YouTube
         include YouTube::Utils::Channel
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            channel
+          ]
+        end
 
         def data
           return if snippet.blank?
@@ -32,7 +40,8 @@ module YouTube
 
         def youtube_id
           channel.dig(
-            'id', 'channelId'
+            'id',
+            'channelId'
           )
         end
 

@@ -3,19 +3,26 @@ module Genius
     class Base < Genius::Base
       include Genius::Utils::Album
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:album_id]]
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def no_data?
-        album.blank?
+      private
+
+      def required_args
+        %i[
+          album_id
+        ]
       end
 
       def album
         response_data.dig(
-          'response', 'album'
+          'response',
+          'album'
         )
       end
 

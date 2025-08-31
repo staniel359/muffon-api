@@ -8,20 +8,17 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:track_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                track_title
+                artist_name
               ]
             end
 
             def process_bookmark
-              bookmark_track.update(
-                update_params
+              bookmark_track.update!(
+                update_attributes
               )
-
-              return bookmark_track.errors_data if
-                  bookmark_track.errors?
 
               process_image
 
@@ -37,7 +34,8 @@ module Muffon
                 .bookmark_tracks
                 .where(
                   track_id: find_track.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def title
@@ -48,7 +46,7 @@ module Muffon
               @args[:artist_name]
             end
 
-            def update_params
+            def update_attributes
               {
                 album_id: find_album&.id,
                 source_data: @args[:source],

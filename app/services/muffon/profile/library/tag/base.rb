@@ -5,15 +5,15 @@ module Muffon
         class Base < Muffon::Profile::Library::Base
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:tag_id]
+          def required_args
+            super + %i[
+              tag_id
             ]
           end
 
-          def no_data?
-            super || tag.blank?
+          def not_found?
+            super ||
+              tag.blank?
           end
 
           def tag

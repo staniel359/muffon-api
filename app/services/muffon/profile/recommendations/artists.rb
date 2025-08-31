@@ -18,11 +18,14 @@ module Muffon
         def filter_args
           @args.slice(
             *%i[
-              profile_id hide_library_artists
+              profile_id
+              hide_library_artists
               hide_library_artists_tracks_count
               hide_listened_artists
-              tags_include tags_exclude
-              artists_include artists_exclude
+              tags_include
+              tags_exclude
+              artists_include
+              artists_exclude
             ]
           )
         end

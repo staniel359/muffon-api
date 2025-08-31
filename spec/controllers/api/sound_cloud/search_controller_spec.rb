@@ -1,22 +1,43 @@
 RSpec.describe API::SoundCloud::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/soundcloud/search/artists/success' do
-        get :artists, params: { query: 'luxury elite' }
+      VCR.use_cassette(
+        'controllers/api/soundcloud/search/artists/success'
+      ) do
+        get(
+          :artists,
+          params: {
+            **required_params,
+            query: 'luxury elite'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :artists
+      get(
+        :artists,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/soundcloud/search/artists/wrong_query' do
-        get :artists, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/soundcloud/search/artists/wrong_query'
+      ) do
+        get(
+          :artists,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
@@ -25,22 +46,43 @@ RSpec.describe API::SoundCloud::SearchController do
 
   describe 'GET :albums' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/soundcloud/search/albums/success' do
-        get :albums, params: { query: 'luxury elite' }
+      VCR.use_cassette(
+        'controllers/api/soundcloud/search/albums/success'
+      ) do
+        get(
+          :albums,
+          params: {
+            **required_params,
+            query: 'luxury elite'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :albums
+      get(
+        :albums,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/soundcloud/search/albums/wrong_query' do
-        get :albums, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/soundcloud/search/albums/wrong_query'
+      ) do
+        get(
+          :albums,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
@@ -49,22 +91,43 @@ RSpec.describe API::SoundCloud::SearchController do
 
   describe 'GET :tracks' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/soundcloud/search/tracks/success' do
-        get :tracks, params: { query: 'luxury elite' }
+      VCR.use_cassette(
+        'controllers/api/soundcloud/search/tracks/success'
+      ) do
+        get(
+          :tracks,
+          params: {
+            **required_params,
+            query: 'luxury elite'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :tracks
+      get(
+        :tracks,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/soundcloud/search/tracks/wrong_query' do
-        get :tracks, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/soundcloud/search/tracks/wrong_query'
+      ) do
+        get(
+          :tracks,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)

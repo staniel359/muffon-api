@@ -7,29 +7,28 @@ module Muffon
 
           private
 
-          def data
-            return if tags_list.blank?
-
-            find_artist.update(
-              tag_ids:
-            )
+          def no_data?
+            tags_list.blank?
           end
 
           def tags_list
             @tags_list ||=
-              artist_tags_data.dig(
-                :artist, :tags
+              LastFM::Artist::Tags.call(
+                artist_name:
+              ).dig(
+                :artist,
+                :tags
               )
-          end
-
-          def artist_tags_data
-            LastFM::Artist::Tags.call(
-              artist_name:
-            )
           end
 
           def artist_name
             find_artist.name
+          end
+
+          def data
+            find_artist.update!(
+              tag_ids:
+            )
           end
 
           def tag_ids
@@ -40,10 +39,12 @@ module Muffon
           end
 
           def existing_tag_ids
-            Tag.where(
-              name_downcase:
-                tag_names_downcase
-            ).pluck(:id)
+            Tag
+              .where(
+                name_downcase:
+                  tag_names_downcase
+              )
+              .pluck(:id)
           end
 
           def tag_names_downcase
@@ -54,15 +55,17 @@ module Muffon
 
           def tag_names
             @tag_names ||=
-              tags_list.map do |t|
-                t[:name].strip
+              tags_list.map do |tag|
+                tag[:name].strip
               end
           end
 
           def new_tag_ids
-            Tag.insert_all(
-              new_tags_formatted
-            ).pluck('id')
+            Tag
+              .insert_all(
+                new_tags_formatted
+              )
+              .pluck('id')
           end
 
           def new_tags_formatted

@@ -7,10 +7,18 @@ module Muffon
           include Muffon::Utils::Source::Track
 
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              recommendation
+            ]
+          end
 
           def data
             self_data

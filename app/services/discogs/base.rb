@@ -5,10 +5,6 @@ module Discogs
 
     private
 
-    def no_data?
-      response_data.blank?
-    end
-
     def params
       {
         key: api_key,

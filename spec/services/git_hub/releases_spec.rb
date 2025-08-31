@@ -3,8 +3,13 @@ RSpec.describe GitHub::Releases do
 
   describe 'successful processing' do
     let(:output) do
-      VCR.use_cassette 'services/github/releases/success' do
-        subject.call(limit: 5, page: 2)
+      VCR.use_cassette(
+        'services/github/releases/success'
+      ) do
+        subject.call(
+          limit: 5,
+          page: 2
+        )
       end
     end
 

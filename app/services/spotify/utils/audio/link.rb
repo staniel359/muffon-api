@@ -9,16 +9,18 @@ module Spotify
         include Muffon::Utils::Audio::Link
 
         def call
-          return if not_all_args? || no_data?
+          check_args
+
+          return if no_data?
 
           data
         end
 
         private
 
-        def primary_args
-          [
-            @args[:track_id]
+        def required_args
+          %i[
+            track_id
           ]
         end
 

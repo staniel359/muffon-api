@@ -5,16 +5,6 @@ module Spotify
     SOURCE_NAME = 'spotify'.freeze
     COUNTRY_CODE = 'GB'.freeze
 
-    include Muffon::Utils::Global
-
-    def call
-      super
-    rescue Faraday::BadRequestError
-      not_found
-    rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
-      retry_with_new_spotify_token
-    end
-
     private
 
     def headers
@@ -28,29 +18,29 @@ module Spotify
       return test_token if test?
 
       get_global_value(
-        'spotify_token'
+        'spotify:token',
+        refresh_class_name:
+          'Spotify::Utils::Token',
+        is_refresh: refresh_token?
       )
     end
 
     def test_token
-      'BQCVWE5E0PrIsn1dRQuzWtqYpaSZTWpNZbPNgt76' \
-        'Jf1hxjWMFQXBvB_QBJNwtiBXlsziSTn147jLWvcv' \
-        '0uiG2CIYXWOEcYlzMBt5hw7lf5MOMNjoxmc'
+      credentials.dig(
+        :spotify,
+        :test_token
+      )
     end
 
-    def global_value
-      @global_value ||=
-        Spotify::Utils::Token.call
+    def refresh_token?
+      !!@args[:is_refresh_token]
     end
 
     def retry_with_new_spotify_token
-      return if global_value.blank?
-
-      update_global_value(
-        'spotify_token'
+      self.class.call(
+        **@args,
+        is_refresh_token: true
       )
-
-      call
     end
 
     def artist_data_formatted(artist)

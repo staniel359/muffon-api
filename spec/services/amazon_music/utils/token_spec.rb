@@ -3,11 +3,13 @@ RSpec.describe AmazonMusic::Utils::Token do
 
   describe 'successful processing' do
     let(:output) do
-      VCR.use_cassette 'services/amazonmusic/utils/token/success' do
+      VCR.use_cassette(
+        'services/amazonmusic/utils/token/success'
+      ) do
         subject.call
       end
     end
 
-    it { expect(output).to eq(Helpers::AmazonMusic::Utils.token) }
+    it { expect(output).to eq(amazonmusic_utils_token) }
   end
 end

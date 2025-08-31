@@ -37,7 +37,7 @@ module LastFM
       end
 
       def update_image
-        find_artist.update(
+        find_artist.update!(
           image_url:
         )
       end

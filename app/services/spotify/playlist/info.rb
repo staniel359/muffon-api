@@ -1,31 +1,9 @@
 module Spotify
   module Playlist
-    class Info < Spotify::Base
+    class Info < Spotify::Playlist::Base
       include Spotify::Utils::Playlist
 
       private
-
-      def primary_args
-        [@args[:playlist_id]]
-      end
-
-      def link
-        "#{BASE_LINK}/playlists/#{@args[:playlist_id]}"
-      end
-
-      def data
-        { playlist: playlist_data }
-      rescue Faraday::UnauthorizedError
-        if spotify_connection.present?
-          retry_with_new_session
-        else
-          retry_with_new_spotify_token
-        end
-      end
-
-      def spotify_token
-        spotify_connection&.access_token || super
-      end
 
       def playlist_data
         {
@@ -41,7 +19,7 @@ module Spotify
 
       def tracks_list
         @tracks_list ||=
-          Spotify::Playlist::Info::Tracks.call(
+          Spotify::Playlist::Tracks.call(
             playlist_id: @args[:playlist_id],
             total_items_count: tracks_count
           )[:tracks]
@@ -55,12 +33,10 @@ module Spotify
       end
 
       def track_data_formatted(track)
-        Spotify::Playlist::Info::Track.call(
+        Spotify::Playlist::Tracks::Track.call(
           track:
         )
       end
-
-      alias playlist response_data
     end
   end
 end

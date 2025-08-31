@@ -39,7 +39,7 @@ module AmazonMusic
             'x-amzn-device-id' => DEVICE_ID,
             'x-amzn-user-agent' => USER_AGENT,
             'x-amzn-device-height' => '1080',
-            'x-amzn-request-id' => request_id,
+            'x-amzn-request-id' => uuid_string,
             'x-amzn-device-language' => 'en_GB',
             'x-amzn-os-version' => '1.0',
             'x-amzn-application-version' => '1.0.15759.0',
@@ -55,10 +55,6 @@ module AmazonMusic
               'ClientAuthenticationInterface.v1_0.ClientTokenElement',
             'accessToken' => amazonmusic_token
           }
-        end
-
-        def request_id
-          SecureRandom.uuid
         end
 
         def current_time_formatted

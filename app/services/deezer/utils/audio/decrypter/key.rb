@@ -6,10 +6,18 @@ module Deezer
           SALT = 'g4el58wc0zvf9na1'.freeze
           STRING_SIZE = 16
 
+          def call
+            check_args
+
+            data
+          end
+
           private
 
-          def primary_args
-            [@args[:track_id]]
+          def required_args
+            %i[
+              track_id
+            ]
           end
 
           def no_data?

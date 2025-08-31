@@ -3,13 +3,29 @@ module YouTube
     class Base < YouTube::Base
       include YouTube::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [
-          @args[:query] ||
-            @args[:video_id]
-        ]
+      def required_args
+        if @args[:video_id].present?
+          %i[
+            video_id
+          ]
+        elsif @args[:query].present?
+          %i[
+            query
+          ]
+        else
+          %i[
+            query
+            video_id
+          ]
+        end
       end
 
       def link
@@ -17,13 +33,8 @@ module YouTube
       end
 
       def params
-        super.merge(
-          search_params
-        )
-      end
-
-      def search_params
         {
+          **super,
           q: @args[:query],
           type: model_name,
           part: 'snippet',
@@ -42,6 +53,13 @@ module YouTube
 
       def collection_list
         response_data['items']
+      end
+
+      def channel_item?(
+        collection_item
+      )
+        collection_item['id'].is_a?(Hash) &&
+          collection_item.dig('id', 'kind') == 'youtube#channel'
       end
     end
   end

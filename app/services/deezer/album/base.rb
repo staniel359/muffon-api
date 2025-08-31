@@ -6,17 +6,21 @@ module Deezer
       include Deezer::Utils::Album
 
       def call
-        return bad_request if not_all_args?
-        return retry_with_fallback_album_id if
-          retry_with_fallback_album_id?
+        check_args
 
-        super
+        return retry_with_fallback_album_id if retry_with_fallback_album_id?
+
+        check_if_not_found
+
+        data
       end
 
       private
 
-      def primary_args
-        [@args[:album_id]]
+      def required_args
+        %i[
+          album_id
+        ]
       end
 
       def retry_with_fallback_album_id?
@@ -41,7 +45,7 @@ module Deezer
         )
       end
 
-      def no_data?
+      def not_found?
         album.blank?
       end
 

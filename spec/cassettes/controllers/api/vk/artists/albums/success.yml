@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.getArtistById?access_token=<VK_ACCESS_TOKEN>&artist_id=4333005440018923962&sig=499c3b9fcfffa84f62346b6b85143720&v=5.131
+    uri: https://api.vk.ru/method/audio.getArtistById?access_token=<VK_ACCESS_TOKEN>&artist_id=4333005440018923962&sig=3ffb90839af2101bdba2b8ba12c97758&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,41 +21,49 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:21 GMT
+      - Mon, 22 Sep 2025 21:08:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '124'
+      - '166'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=o0eoXXYuc2EzCA6Z32TBH-EobAB_cULsWUtHxk-SCIVgZEydEZmir8cbuNxbTr9TP_5F8nZUc8no7XcpNKgVabaY11VkRWF8x-3K_Od9c3DMZIA9LWoH63Dwk-CbyTVnA8E;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      X-Frontend:
+      - front661010
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - jo8_2jd7cFu-C-un3-1vsiwGjTc0mw
+      Server-Timing:
+      - tid;desc="jo8_2jd7cFu-C-un3-1vsiwGjTc0mw",front;dur=31.179
     body:
       encoding: ASCII-8BIT
-      string: '{"response":{"name":"Wild Nothing","domain":"wildnothing","id":"4333005440018923962","is_followed":false,"can_follow":true}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:21 GMT
+      string: '{"response":{"name":"Wild Nothing","domain":"wildnothing","id":"4333005440018923962","is_followed":false,"can_follow":true,"genres":[{"id":21,"name":"Alternative"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:08:19 GMT
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.getAlbumsByArtist?access_token=<VK_ACCESS_TOKEN>&artist_id=4333005440018923962&count=20&offset=0&sig=f148f96f81ac3c358bfd4e53b450c363&v=5.131
+    uri: https://api.vk.ru/method/audio.getAlbumsByArtist?access_token=<VK_ACCESS_TOKEN>&artist_id=4333005440018923962&count=20&offset=0&sig=4f500caddd5ab1e157fb4e5f4c6bce78&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -66,25 +72,35 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:22 GMT
+      - Mon, 22 Sep 2025 21:08:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '2264'
+      - '2294'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=mYdFnOlO5zjQyYbrE51D3Pt1uVlVjGkhufXzUQXNj11nVhtj0jizhl1iJle7tmbVAg78EY9VZ23vm9ZPLpdh7LU-O0GQayTsAFrARd9VuRoVIwLX5ndGRyAGTU6GU0odR2U;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      X-Frontend:
+      - front661612
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - 382wQvg-qF97KmIVMWFwdky2Tbms0A
+      Server-Timing:
+      - tid;desc="382wQvg-qF97KmIVMWFwdky2Tbms0A",front;dur=36.508
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        eyJyZXNwb25zZSI6eyJjb3VudCI6MSwiaXRlbXMiOlt7ImlkIjozODg1NjE5LCJvd25lcl9pZCI6LTIwMDA4ODU2MTksInR5cGUiOjEsInRpdGxlIjoiU2hhZG93IiwiZGVzY3JpcHRpb24iOiIiLCJjb3VudCI6MSwiZm9sbG93ZXJzIjo3LCJwbGF5cyI6MTU0LCJjcmVhdGVfdGltZSI6MTU0MTgwMzg5OCwidXBkYXRlX3RpbWUiOjE1NDE4MDM5MTgsImdlbnJlcyI6W3siaWQiOjIxLCJuYW1lIjoi0JDQu9GM0YLQtdGA0L3QsNGC0LjQstCwIn1dLCJpc19mb2xsb3dpbmciOmZhbHNlLCJ5ZWFyIjoyMDEyLCJwaG90byI6eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjMwMCwicGhvdG9fMzQiOiJodHRwczpcL1wvc3VuMTktMi51c2VyYXBpLmNvbVwvaW1wZlwvYzg1MDIzNlwvdjg1MDIzNjkxNlwvNjZkOGZcL3VXMUNob3U1elFNLmpwZz9zaXplPTM0eDM0JnF1YWxpdHk9OTYmc2lnbj00MjQ1N2JkMjIzZTVjM2EyNzc3NDU2NzY5NWI4NDU4ZCZjX3VuaXFfdGFnPUtDdTVrUmtjN3g1TGRkUFJIb1Z4UDJnTmpQMHlERk5fd0hkU0VvMENNU0kmdHlwZT1hdWRpbyIsInBob3RvXzY4IjoiaHR0cHM6XC9cL3N1bjE5LTIudXNlcmFwaS5jb21cL2ltcGZcL2M4NTAyMzZcL3Y4NTAyMzY5MTZcLzY2ZDhmXC91VzFDaG91NXpRTS5qcGc/c2l6ZT02OHg2OCZxdWFsaXR5PTk2JnNpZ249MDY5ZTk3MWM1MjZlOWQyNWQzNGExZDc4N2QwYzM1ZTcmY191bmlxX3RhZz1uX0NwVlNFNWdmUDFPQ2REcjhMUE9NTEw4SW5OMVV1c2x4VDdIZWVTV1V3JnR5cGU9YXVkaW8iLCJwaG90b18xMzUiOiJodHRwczpcL1wvc3VuMTktMi51c2VyYXBpLmNvbVwvaW1wZlwvYzg1MDIzNlwvdjg1MDIzNjkxNlwvNjZkOGZcL3VXMUNob3U1elFNLmpwZz9zaXplPTEzNXgxMzUmcXVhbGl0eT05NiZzaWduPTA3Y2Y0MzFjNjM2ZWIxNmUzNTZhYzQ4YWJjM2VhNTgzJmNfdW5pcV90YWc9QW5oeWpUTGhGWWpwdGVXczZzLTUzM0FIVDVOWjBkMGxnWUNDT2d3SVNtZyZ0eXBlPWF1ZGlvIiwicGhvdG9fMjcwIjoiaHR0cHM6XC9cL3N1bjE5LTIudXNlcmFwaS5jb21cL2ltcGZcL2M4NTAyMzZcL3Y4NTAyMzY5MTZcLzY2ZDhmXC91VzFDaG91NXpRTS5qcGc/c2l6ZT0yNzB4MjcwJnF1YWxpdHk9OTYmc2lnbj02YTAzODFhNzUzOThmZDk2NzU2MTIxOTg1NTYyNzQ2ZCZjX3VuaXFfdGFnPWNUdW1PUlFiRUtYOGxQSGlKSjNSdXdCalFEbzZWRFhGX3ltRzVkaW1nVVUmdHlwZT1hdWRpbyIsInBob3RvXzMwMCI6Imh0dHBzOlwvXC9zdW4xOS0yLnVzZXJhcGkuY29tXC9pbXBmXC9jODUwMjM2XC92ODUwMjM2OTE2XC82NmQ4ZlwvdVcxQ2hvdTV6UU0uanBnP3NpemU9MzAweDMwMCZxdWFsaXR5PTk2JnNpZ249NTEwOTM5MzcxZGIzYzU0YzJkNTlmNjEyMmE2YmU4MGQmY191bmlxX3RhZz1OVTdjSEQ3VkxlV0hGX2I2QzdnRWN0N2JBSVQ4aW9uZjZrbXVmRk9yTGxvJnR5cGU9YXVkaW8iLCJwaG90b182MDAiOiJodHRwczpcL1wvc3VuMTktMi51c2VyYXBpLmNvbVwvaW1wZlwvYzg1MDIzNlwvdjg1MDIzNjkxNlwvNjZkOGZcL3VXMUNob3U1elFNLmpwZz9zaXplPTYwMHg2MDAmcXVhbGl0eT05NiZzaWduPTQ3YjFmNWU1NDk1ODI2ZTM5MjUwNjA5MGMzMjgwYzIzJmNfdW5pcV90YWc9VjYyNVF5b1hUcmJ0d0J4MDBYVUp0MVhKVmxUTDVWcF9BaFV4dnBEdFNhbyZ0eXBlPWF1ZGlvIiwicGhvdG9fMTIwMCI6Imh0dHBzOlwvXC9zdW4xOS0yLnVzZXJhcGkuY29tXC9pbXBmXC9jODUwMjM2XC92ODUwMjM2OTE2XC82NmQ4ZlwvdVcxQ2hvdTV6UU0uanBnP3NpemU9MTE4NHgxMTg0JnF1YWxpdHk9OTYmc2lnbj1kOTllYTYyZDRlODY2MGU2MDVjYjE1NmQ2ZGEyZDRiMiZjX3VuaXFfdGFnPTUyamJIYTJLaW1vaXdtNkZmc25fZ0lVSVRuYWF6bktJcDNlUGItQ1ZYdUEmdHlwZT1hdWRpbyJ9LCJwZXJtaXNzaW9ucyI6eyJwbGF5Ijp0cnVlLCJzaGFyZSI6dHJ1ZSwiZWRpdCI6ZmFsc2UsImZvbGxvdyI6dHJ1ZSwiZGVsZXRlIjpmYWxzZSwiYm9vbV9kb3dubG9hZCI6dHJ1ZX0sInN1YnRpdGxlX2JhZGdlIjpmYWxzZSwicGxheV9idXR0b24iOmZhbHNlLCJhY2Nlc3Nfa2V5IjoiMTU0NTU0ZmM5MDhlMWU0YzcyIiwiaXNfZXhwbGljaXQiOmZhbHNlLCJtYWluX2FydGlzdHMiOlt7Im5hbWUiOiJXaWxkIE5vdGhpbmciLCJkb21haW4iOiI0MzMzMDA1NDQwMDE4OTIzOTYyIiwiaWQiOiI0MzMzMDA1NDQwMDE4OTIzOTYyIiwiaXNfZm9sbG93ZWQiOmZhbHNlLCJjYW5fZm9sbG93IjpmYWxzZX1dLCJhbGJ1bV90eXBlIjoibWFpbl9vbmx5IiwiZXhjbHVzaXZlIjpmYWxzZX1dfX0=
-  recorded_at: Wed, 01 Nov 2023 19:54:22 GMT
-recorded_with: VCR 6.2.0
+      string: '{"response":{"count":1,"items":[{"id":3885619,"owner_id":-2000885619,"type":1,"title":"Shadow","description":"","count":1,"followers":8,"plays":323,"create_time":1541803898,"update_time":1541803918,"genres":[{"id":21,"name":"Alternative"}],"is_following":false,"year":2012,"photo":{"width":300,"height":300,"id":"456239021","photo_34":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=34x34&quality=96&sign=42457bd223e5c3a27774567695b8458d&c_uniq_tag=KCu5kRkc7x5LddPRHoVxP2gNjP0yDFN_wHdSEo0CMSI&type=audio","photo_68":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=68x68&quality=96&sign=069e971c526e9d25d34a1d787d0c35e7&c_uniq_tag=n_CpVSE5gfP1OCdDr8LPOMLL8InN1UuslxT7HeeSWUw&type=audio","photo_135":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=135x135&quality=96&sign=07cf431c636eb16e356ac48abc3ea583&c_uniq_tag=AnhyjTLhFYjpteWs6s-533AHT5NZ0d0lgYCCOgwISmg&type=audio","photo_270":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=270x270&quality=96&sign=6a0381a75398fd96756121985562746d&c_uniq_tag=cTumORQbEKX8lPHiJJ3RuwBjQDo6VDXF_ymG5dimgUU&type=audio","photo_300":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=300x300&quality=96&sign=510939371db3c54c2d59f6122a6be80d&c_uniq_tag=NU7cHD7VLeWHF_b6C7gEct7bAIT8ionf6kmufFOrLlo&type=audio","photo_600":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=600x600&quality=96&sign=47b1f5e5495826e392506090c3280c23&c_uniq_tag=V625QyoXTrbtwBx00XUJt1XJVlTL5Vp_AhUxvpDtSao&type=audio","photo_1200":"https:\/\/sun1-94.vkuserphoto.ru\/impg\/c850236\/v850236916\/66d8f\/uW1Chou5zQM.jpg?size=1184x1184&quality=96&sign=d99ea62d4e8660e605cb156d6da2d4b2&c_uniq_tag=52jbHa2Kimoiwm6Ffsn_gIUITnaaznKIp3ePb-CVXuA&type=audio"},"permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true},"subtitle_badge":false,"play_button":false,"access_key":"154554fc908e1e4c72","is_explicit":false,"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"album_type":"main_only","main_color":"#F3CD8F"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:08:19 GMT
+recorded_with: VCR 6.3.1

@@ -24,7 +24,7 @@ module LastFM
       end
 
       def update_listeners_count
-        find_album.update(
+        find_album.update!(
           listeners_count:
             album['listeners'].to_i
         )

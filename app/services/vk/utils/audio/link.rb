@@ -6,17 +6,19 @@ module VK
 
         include Muffon::Utils::Audio::Link
 
-        private
+        def call
+          check_args
 
-        def primary_args
-          [
-            @args[:track_id],
-            @args[:link]
-          ]
+          data
         end
 
-        def no_data?
-          false
+        private
+
+        def required_args
+          %i[
+            track_id
+            link
+          ]
         end
 
         def write_audio_data_to_file
@@ -24,16 +26,12 @@ module VK
 
           `ffmpeg \
             -http_persistent false \
-            -i #{link} \
+            -i #{@args[:link]} \
             -y \
             -movflags +faststart \
             -c copy \
             -loglevel error \
             public/#{audio_path}`
-        end
-
-        def link
-          @args[:link]
         end
       end
     end

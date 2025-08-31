@@ -3,10 +3,18 @@ module MusixMatch
     class Base < MusixMatch::Base
       include MusixMatch::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def link
@@ -14,13 +22,10 @@ module MusixMatch
       end
 
       def params
-        super.merge(
-          search_params
-        )
-      end
-
-      def search_params
-        { q: @args[:query] }
+        {
+          **super,
+          q: @args[:query]
+        }
       end
 
       def data

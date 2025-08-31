@@ -4,22 +4,24 @@ module Muffon
       class Creator < Muffon::Processor::Community::Base
         private
 
-        def primary_args
-          super + [
-            @args[:title]
+        def required_args
+          super + %i[
+            title
           ]
         end
 
         def process_community
           community
 
-          return community.errors_data if community.errors?
+          if community.errors?
+            community.errors_data
+          else
+            process_image
 
-          process_image
+            join_community
 
-          join_community
-
-          { community: community_data }
+            { community: community_data }
+          end
         end
 
         def community
@@ -28,7 +30,8 @@ module Muffon
             .own_communities
             .where(
               title: @args[:title]
-            ).create(
+            )
+            .create(
               community_params
             )
         end

@@ -4,12 +4,17 @@ RSpec.describe MusicBrainz::Group::Info do
   describe 'successful processing' do
     context 'when group_id given' do
       let(:output) do
-        VCR.use_cassette 'services/musicbrainz/group/info/success' do
-          subject.call(group_id: 'b3c5541a-e1d0-354f-b6c8-565c37dde332', profile_id: 1)
+        VCR.use_cassette(
+          'services/musicbrainz/group/info/success'
+        ) do
+          subject.call(
+            group_id: 'b3c5541a-e1d0-354f-b6c8-565c37dde332',
+            profile_id: 1
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::MusicBrainz::Group.info_data) }
+      it { expect(output).to eq(musicbrainz_group_info_data) }
     end
   end
 
@@ -17,17 +22,21 @@ RSpec.describe MusicBrainz::Group::Info do
     context 'when no group_id given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong group_id' do
       let(:output) do
-        VCR.use_cassette 'services/musicbrainz/group/info/wrong_id' do
-          subject.call(group_id: random)
+        VCR.use_cassette(
+          'services/musicbrainz/group/info/wrong_id'
+        ) do
+          subject.call(
+            group_id: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

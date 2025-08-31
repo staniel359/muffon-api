@@ -3,10 +3,28 @@ module Bandcamp
     class Base < Bandcamp::Base
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:artist_id]]
+      def required_args
+        %i[
+          artist_id
+        ]
+      end
+
+      def not_found?
+        name.blank?
+      end
+
+      def name
+        artist['name']
       end
 
       def params
@@ -17,7 +35,12 @@ module Bandcamp
         { artist: artist_data }
       end
 
+      def artist_data
+        { name: }
+      end
+
       alias link artist_label_link
+      alias artist response_data
     end
   end
 end

@@ -5,14 +5,15 @@ module Muffon
         class Creator < Muffon::Processor::Post::Creator
           private
 
-          def primary_args
-            super + [
-              @args[:other_profile_id]
+          def required_args
+            super + %i[
+              other_profile_id
             ]
           end
 
-          def no_data?
-            super || other_profile.blank?
+          def not_found?
+            super ||
+              other_profile.blank?
           end
 
           def post_params

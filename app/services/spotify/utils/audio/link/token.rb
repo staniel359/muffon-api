@@ -15,11 +15,9 @@ module Spotify
           private
 
           def data
-            if test?
-              test_token
-            else
-              response_data['token']
-            end
+            return test_token if test?
+
+            response_data['token']
           end
 
           # rubocop:disable Layout/LineLength

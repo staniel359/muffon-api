@@ -4,12 +4,19 @@ RSpec.describe LastFM::Tag::Albums do
   describe 'successful processing' do
     context 'when tag exists' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/tag/albums/success' do
-          subject.call(tag_name: 'pop', limit: 5, page: 2, profile_id: 1)
+        VCR.use_cassette(
+          'services/lastfm/tag/albums/success'
+        ) do
+          subject.call(
+            tag_name: 'pop',
+            limit: 5,
+            page: 2,
+            profile_id: 1
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM::Tag.albums_data) }
+      it { expect(output).to eq(lastfm_tag_albums_data) }
     end
   end
 
@@ -17,17 +24,21 @@ RSpec.describe LastFM::Tag::Albums do
     context 'when no tag name given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong tag name' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/tag/albums/wrong_name' do
-          subject.call(tag_name: random)
+        VCR.use_cassette(
+          'services/lastfm/tag/albums/wrong_name'
+        ) do
+          subject.call(
+            tag_name: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

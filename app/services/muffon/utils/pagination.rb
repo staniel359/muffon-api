@@ -75,14 +75,17 @@ module Muffon
 
       def collection
         @collection ||=
-          collection_list.map do |i|
-            collection_item_data_formatted(i)
+          collection_list.map do |item|
+            collection_item_data_formatted(
+              item
+            )
           end
       end
 
       def collection_paginated(collection)
         collection.slice(
-          offset, limit
+          offset,
+          limit
         ) || []
       end
 

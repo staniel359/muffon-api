@@ -6,8 +6,9 @@ module Muffon
 
         private
 
-        def no_data?
-          top_info_data.blank? || super
+        def not_found?
+          top_info_data.blank? ||
+            super
         end
 
         def top_info_data

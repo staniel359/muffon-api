@@ -3,18 +3,28 @@ module Discogs
     class Base < Discogs::Base
       include Discogs::Utils::Artist
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:label_id]]
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def link
-        "#{BASE_LINK}/labels/#{@args[:label_id]}"
+      private
+
+      def required_args
+        %i[
+          label_id
+        ]
       end
 
       def data
         { label: label_data }
+      end
+
+      def link
+        "#{BASE_LINK}/labels/#{@args[:label_id]}"
       end
 
       alias artist response_data

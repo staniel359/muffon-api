@@ -5,9 +5,9 @@ module Muffon
         class Destroyer < Muffon::Processor::Post::Comment::Base
           private
 
-          def primary_args
-            super + [
-              @args[:comment_id]
+          def required_args
+            super + %i[
+              comment_id
             ]
           end
 

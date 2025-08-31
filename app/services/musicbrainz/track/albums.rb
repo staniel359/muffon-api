@@ -13,8 +13,8 @@ module MusicBrainz
       end
 
       def albums
-        album_ids.map do |id|
-          album_info(id)
+        album_ids.map do |album_id|
+          album_info(album_id)
         end.compact
       end
 
@@ -23,8 +23,8 @@ module MusicBrainz
       end
 
       def unique_albums
-        track['releases'].uniq do |a|
-          a['title']
+        track['releases'].uniq do |album_data|
+          album_data['title']
         end
       end
 

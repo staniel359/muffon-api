@@ -4,39 +4,27 @@ module Muffon
       class Updater < Muffon::Processor::Profile::Base
         private
 
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token]
-          ]
-        end
-
-        def forbidden?
-          !valid_profile?
-        end
-
         def data
           profile.update(
             update_params
           )
 
-          return profile.errors_data if
-              profile.errors?
+          if profile.errors?
+            profile.errors_data
+          else
+            process_image
 
-          process_image
-
-          profile_data
+            profile_info_data
+          end
         end
 
         def update_params
-          @args
-            .permit!
-            .slice(
-              *profile_params
-            )
+          @args.slice(
+            *profile_params
+          )
         end
 
-        def profile_data
+        def profile_info_data
           Muffon::Profile::Info.call(
             profile_id: @args[:profile_id],
             token: @args[:token]

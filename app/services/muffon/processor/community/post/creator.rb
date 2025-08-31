@@ -5,24 +5,20 @@ module Muffon
         class Creator < Muffon::Processor::Post::Creator
           private
 
-          def primary_args
-            super + [
-              @args[:community_id]
+          def required_args
+            super + %i[
+              community_id
             ]
           end
 
-          def no_data?
-            super || community.blank?
+          def not_found?
+            super ||
+              community.blank?
           end
 
           def post_params
-            super.merge(
-              community_params
-            )
-          end
-
-          def community_params
             {
+              **super,
               community_id:
                 @args[:community_id],
               by_community: by_community?,

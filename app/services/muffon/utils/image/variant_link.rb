@@ -3,32 +3,32 @@ module Muffon
     class Image
       class VariantLink < Muffon::Utils::Image
         def call
-          return if not_all_args?
+          return if args_missing?
 
           data
         end
 
         private
 
-        def primary_args
-          [
-            @args[:image],
-            @args[:size]
+        def required_args
+          %i[
+            image
+            size
           ]
         end
 
         def data
           image_link(
-            image
-            .variant(options)
-            .processed
+            image_variant
           )
-        rescue StandardError
-          nil
         end
 
-        def image
+        def image_variant
           @args[:image]
+            .variant(
+              options
+            )
+            .processed
         end
 
         def options

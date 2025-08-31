@@ -3,16 +3,24 @@ module Bandcamp
     class Base < Bandcamp::Base
       include Bandcamp::Utils::Track
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [
-          @args[:artist_id],
-          @args[:track_id]
+      def required_args
+        %i[
+          artist_id
+          track_id
         ]
       end
 
-      def no_data?
+      def not_found?
         track.blank? ||
           track_info_data.blank?
       end

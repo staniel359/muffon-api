@@ -4,9 +4,9 @@ module LastFM
       class Info < LastFM::User::Web::Base
         private
 
-        def primary_args
-          super + [
-            @args[:playlist_id]
+        def required_args
+          super + %i[
+            playlist_id
           ]
         end
 

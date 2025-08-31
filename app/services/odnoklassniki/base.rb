@@ -2,19 +2,11 @@ module Odnoklassniki
   class Base < Muffon::Base
     SOURCE_NAME = 'odnoklassniki'.freeze
 
-    include Muffon::Utils::Global
-
-    def call
-      return bad_request if not_all_args?
-      return retry_with_new_session_id if auth_failed?
-      return not_found if no_data?
-
-      data
-    rescue Faraday::BadRequestError
-      not_found
-    end
-
     private
+
+    def retry_with_new_session_id?
+      auth_failed?
+    end
 
     def auth_failed?
       response_data['error'] ==
@@ -38,11 +30,25 @@ module Odnoklassniki
       self.class::ENDPOINT_NAME
     end
 
+    def params
+      { imgfmt: 'base' }
+    end
+
+    def proxy
+      credentials.dig(
+        :proxy,
+        :ru
+      )
+    end
+
     def session_id
       return test_session_id if test?
 
       get_global_value(
-        'odnoklassniki_session_id'
+        'odnoklassniki:session_id',
+        refresh_class_name:
+          'Odnoklassniki::Utils::SessionId',
+        is_refresh: refresh_session_id?
       )
     end
 
@@ -53,30 +59,15 @@ module Odnoklassniki
       )
     end
 
-    def global_value
-      @global_value ||=
-        Odnoklassniki::Utils::SessionId.call
-    end
-
-    def params
-      { imgfmt: 'base' }
+    def refresh_session_id?
+      !!@args[:is_refresh_session_id]
     end
 
     def retry_with_new_session_id
-      return not_found if global_value.blank?
-
-      @global_value = nil
-      @response_data = nil
-
-      update_global_value(
-        'odnoklassniki_session_id'
+      self.class.call(
+        **@args,
+        is_refresh_session_id: true
       )
-
-      call
-    end
-
-    def no_data?
-      response_data['error'].present?
     end
 
     def artist_data_formatted(artist)

@@ -6,10 +6,18 @@ module Muffon
           include Muffon::Utils::Library::Album
 
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              library_album
+            ]
+          end
 
           def data
             self_data

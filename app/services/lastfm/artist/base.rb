@@ -5,13 +5,25 @@ module LastFM
 
       include LastFM::Utils::Artist
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:artist_name]]
+        check_if_not_found
+
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def no_data?
+      private
+
+      def required_args
+        %i[
+          artist_name
+        ]
+      end
+
+      def not_found?
         artist.blank?
       end
 

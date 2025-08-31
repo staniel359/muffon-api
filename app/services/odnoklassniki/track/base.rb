@@ -5,20 +5,29 @@ module Odnoklassniki
 
       include Odnoklassniki::Utils::Track
 
+      def call
+        check_args
+
+        return retry_with_new_session_id if retry_with_new_session_id?
+
+        data
+      rescue Faraday::BadRequestError
+        raise not_found_error
+      end
+
       private
 
-      def primary_args
-        [@args[:track_id]]
+      def required_args
+        %i[
+          track_id
+        ]
       end
 
       def params
-        super.merge(
-          track_params
-        )
-      end
-
-      def track_params
-        { tid: @args[:track_id] }
+        {
+          **super,
+          tid: @args[:track_id]
+        }
       end
 
       def data

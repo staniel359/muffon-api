@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.get?apikey=<MUSIXMATCH_API_KEY>&artist_id=wejlhg239gh23
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '86'
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.0026569366455078'
+      X-Mxm-Header-Status:
+      - '404'
+      X-Mxm-Nginx-Ingress-Controller:
+      - nginx-cdt-apisite-api
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Date:
+      - Tue, 09 Sep 2025 07:41:59 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fra-etou8220122-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1757403719.102989,VS0,VE95
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":404,"execute_time":0.0026569366455078},"body":""}}'
+  recorded_at: Tue, 09 Sep 2025 07:41:59 GMT
+recorded_with: VCR 6.3.1

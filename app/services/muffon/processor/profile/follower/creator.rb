@@ -8,9 +8,6 @@ module Muffon
           def process_relationship
             relationship
 
-            return relationship.errors_data if
-                relationship.errors?
-
             { other_profile: other_profile_data }
           end
 
@@ -21,7 +18,8 @@ module Muffon
               .where(
                 other_profile_id:
                   @args[:other_profile_id]
-              ).first_or_create
+              )
+              .first_or_create!
           end
         end
       end

@@ -1,19 +1,19 @@
 module Muffon
   class Decrypter < Muffon::Base
     def call
-      return if not_all_args?
+      check_args
 
       data
     end
 
     private
 
-    def primary_args
-      [
-        @args[:binary],
-        @args[:algorithm],
-        @args[:key],
-        @args[:iv]
+    def required_args
+      %i[
+        binary
+        algorithm
+        key
+        iv
       ]
     end
 
@@ -38,6 +38,7 @@ module Muffon
 
     def set_cipher_data
       cipher.key = key
+
       cipher.iv = iv
 
       cipher.padding = 0 if no_padding?
@@ -56,9 +57,11 @@ module Muffon
     end
 
     def decrypt_binary
-      cipher.update(
-        binary
-      ) << cipher.final
+      cipher
+        .update(
+          binary
+        ) <<
+        cipher.final
     end
 
     def binary

@@ -3,9 +3,17 @@ module Muffon
     class Base < Muffon::Base
       include Muffon::Utils::Track
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def no_data?
+      def not_found?
         radio_track_data.blank?
       end
 

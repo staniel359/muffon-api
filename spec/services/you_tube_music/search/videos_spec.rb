@@ -4,22 +4,31 @@ RSpec.describe YouTubeMusic::Search::Videos do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'services/youtubemusic/search/videos/success' do
-          subject.call(query: 'wild nothing')
+        VCR.use_cassette(
+          'services/youtubemusic/search/videos/success'
+        ) do
+          subject.call(
+            query: 'wild nothing'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::YouTubeMusic::Search.videos_data) }
+      it { expect(output).to eq(youtube_music_search_videos_data) }
     end
 
     context 'when query present with next page' do
       let(:output) do
-        VCR.use_cassette 'services/youtubemusic/search/videos/success_next_page' do
-          subject.call(query: 'wild nothing', page: 'EqkDEgx3aWxkIG5vdGhpbmcamANFZ1dLQVFJUUFVZ1VhZ29RQ1JBREVBUVFDaEFGZ2dFTFR6RkphVVZyWVZGUFIwbUNBUXMyYUdvdGNHWkJjMkZpTklJQkMwTldPVmM0UVhOSldqaFJnZ0VMZW0wMk16WldVMUZZVlZXQ0FRdE5ZMFp5VTNCNldXRXlRWUlCQzJGVmRFUmZRa0pUWWxZNGdnRUxWWE5XZGpjdFNYTndYekNDQVF0MldqVlBlblJPUjJWYWE0SUJDMEl3UWpoRVV6SmFZMmRWZ2dFTFprUTRVbVZpTFhwSVdFR0NBUXRTVm1WcU0xOVdjVGhJYTRJQkMxaGxaM2wxU0ZwU2VYbEpnZ0VMVG5ac1NHSkdNRlYyV0UyQ0FRdFBhVlk1Wlc1QmJ6TnVVWUlCQzNkT1pIRlZNMlpRTlZSSmdnRUxVVXBoUm5WZk5rdHVlVW1DQVF0UGNtbFRiVGgwVldkcE5JSUJDMjFYYVdKME9WSlhkM1JaZ2dFTFZWRTJhWEp4YW5ad2NHLUNBUXRrZFMxVldFTlVUR1JTYnclM0QlM0QY8erQLg%3D%3D')
+        VCR.use_cassette(
+          'services/youtubemusic/search/videos/success_next_page'
+        ) do
+          subject.call(
+            query: 'wild nothing',
+            page: 'EqkDEgx3aWxkIG5vdGhpbmcamANFZ1dLQVFJUUFVZ1VhZ29RQ1JBREVBUVFDaEFGZ2dFTFR6RkphVVZyWVZGUFIwbUNBUXMyYUdvdGNHWkJjMkZpTklJQkMwTldPVmM0UVhOSldqaFJnZ0VMZW0wMk16WldVMUZZVlZXQ0FRdE5ZMFp5VTNCNldXRXlRWUlCQzJGVmRFUmZRa0pUWWxZNGdnRUxWWE5XZGpjdFNYTndYekNDQVF0MldqVlBlblJPUjJWYWE0SUJDMEl3UWpoRVV6SmFZMmRWZ2dFTFprUTRVbVZpTFhwSVdFR0NBUXRTVm1WcU0xOVdjVGhJYTRJQkMxaGxaM2wxU0ZwU2VYbEpnZ0VMVG5ac1NHSkdNRlYyV0UyQ0FRdFBhVlk1Wlc1QmJ6TnVVWUlCQzNkT1pIRlZNMlpRTlZSSmdnRUxVVXBoUm5WZk5rdHVlVW1DQVF0UGNtbFRiVGgwVldkcE5JSUJDMjFYYVdKME9WSlhkM1JaZ2dFTFZWRTJhWEp4YW5ad2NHLUNBUXRrZFMxVldFTlVUR1JTYnclM0QlM0QY8erQLg%3D%3D'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::YouTubeMusic::Search.videos_next_page_data) }
+      it { expect(output).to eq(youtube_music_search_videos_next_page_data) }
     end
   end
 
@@ -27,17 +36,21 @@ RSpec.describe YouTubeMusic::Search::Videos do
     context 'when no query given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'services/youtubemusic/search/videos/wrong_query' do
-          subject.call(query: random)
+        VCR.use_cassette(
+          'services/youtubemusic/search/videos/wrong_query'
+        ) do
+          subject.call(
+            query: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Search.youtube_no_videos_data) }
+      it { expect(output).to eq(youtube_no_videos_data) }
     end
   end
 end

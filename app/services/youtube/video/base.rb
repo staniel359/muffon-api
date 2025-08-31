@@ -3,13 +3,23 @@ module YouTube
     class Base < YouTube::Base
       include YouTube::Utils::Video
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:video_id]]
+        check_if_not_found
+
+        data
       end
 
-      def no_data?
+      private
+
+      def required_args
+        %i[
+          video_id
+        ]
+      end
+
+      def not_found?
         video.blank?
       end
 
@@ -38,7 +48,7 @@ module YouTube
         { video: video_data }
       end
 
-      def video_base_data
+      def video_data
         {
           source: source_data,
           title:,

@@ -2,25 +2,25 @@ module Muffon
   module Profile
     module Library
       module Compatibility
-        class Base < Muffon::Base
+        class Base < Muffon::Profile::Base
           include Muffon::Utils::Pagination
 
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:other_profile_id]
+          def required_args
+            super + %i[
+              other_profile_id
             ]
           end
 
-          def no_data?
-            profile.blank? ||
+          def not_found?
+            super ||
               other_profile.blank?
           end
 
           def forbidden?
-            !valid_profile? && !valid_other_profile?
+            !valid_profile? &&
+              !valid_other_profile?
           end
 
           def data

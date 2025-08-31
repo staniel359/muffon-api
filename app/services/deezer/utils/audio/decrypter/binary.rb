@@ -5,12 +5,22 @@ module Deezer
         class Binary < Deezer::Utils::Audio::Decrypter
           CHUNK_SIZE = 2048
 
+          def call
+            check_args
+
+            return if no_data?
+
+            data
+          rescue Faraday::ForbiddenError
+            nil
+          end
+
           private
 
-          def primary_args
-            [
-              @args[:link],
-              @args[:track_id]
+          def required_args
+            %i[
+              link
+              track_id
             ]
           end
 
@@ -23,8 +33,6 @@ module Deezer
               format_get_request(
                 link:
               ).body
-          rescue Faraday::ForbiddenError
-            nil
           end
 
           def link

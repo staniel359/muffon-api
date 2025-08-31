@@ -41,17 +41,16 @@ module Muffon
     private
 
     def return?
-      not_all_args? ||
-        no_data? ||
-        !valid_profile?
+      args_missing? ||
+        not_found? ||
+        forbidden?
     end
 
-    def primary_args
-      [
-        @args[:profile_id],
-        @args[:token],
-        @args[:model],
-        @args[:model_id]
+    def required_args
+      super + %i[
+        token
+        model
+        model_id
       ]
     end
 

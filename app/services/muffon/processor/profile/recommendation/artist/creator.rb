@@ -3,14 +3,16 @@ module Muffon
     module Profile
       module Recommendation
         module Artist
-          class Creator < Muffon::Processor::Profile::Base
+          class Creator < Muffon::Processor::Profile::Recommendation::Base
             include Muffon::Utils::Artist
 
-            def call
-              process_recommendation
-            end
-
             private
+
+            def required_args
+              super + %i[
+                artist_name
+              ]
+            end
 
             def process_recommendation
               recommendation
@@ -26,7 +28,8 @@ module Muffon
                 .recommendation_artists
                 .where(
                   artist_id: find_artist.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def name

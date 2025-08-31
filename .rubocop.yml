@@ -41,6 +41,9 @@ Metrics/ParameterLists:
 Rails/SkipsModelValidations:
   Enabled: false
 
+RSpec/ExampleLength:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 

@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-v2.soundcloud.com/users/wejlhg239gh23?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
+      Server:
+      - am/2
+      Date:
+      - Tue, 09 Sep 2025 07:58:42 GMT
+      Vary:
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 5c21b2b6b5e8901cc7633407000764f0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P11
+      X-Amz-Cf-Id:
+      - JWLlrZnyb2FgcXX302ZYg2BUBqhFetf1YhCOQtttIOa864fa4S-hKQ==
+    body:
+      encoding: ASCII-8BIT
+      string: "{}"
+  recorded_at: Tue, 09 Sep 2025 07:58:43 GMT
+recorded_with: VCR 6.3.1

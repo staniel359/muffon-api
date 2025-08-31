@@ -7,7 +7,7 @@ module Muffon
 
         private
 
-        def no_data?
+        def not_found?
           top_info_data.blank? ||
             top_artist_info_data.blank? ||
             super

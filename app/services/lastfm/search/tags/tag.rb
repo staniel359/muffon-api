@@ -3,10 +3,18 @@ module LastFM
     class Tags
       class Tag < LastFM::Search::Tags
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            tag
+          ]
+        end
 
         def data
           { name: }

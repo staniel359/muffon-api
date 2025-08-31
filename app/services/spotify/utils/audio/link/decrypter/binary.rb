@@ -5,19 +5,21 @@ module Spotify
         module Decrypter
           class Binary < Spotify::Utils::Audio::Link
             START_BYTE = 167
-            CIPHER_ALGORITHM = 'aes-128-ctr'.freeze
+            CIPHER_ALGORITHM = 'AES-128-CTR'.freeze
+
+            def call
+              check_args
+
+              data
+            end
 
             private
 
-            def primary_args
-              [
-                @args[:file_link],
-                @args[:key]
+            def required_args
+              %i[
+                file_link
+                key
               ]
-            end
-
-            def no_data?
-              false
             end
 
             def data

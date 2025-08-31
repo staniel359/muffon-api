@@ -31,8 +31,12 @@ module MusicBrainz
 
       def release_date
         date_formatted(
-          track['first-release-date']
+          raw_release_date
         )
+      end
+
+      def raw_release_date
+        track['first-release-date']
       end
 
       def tags_list

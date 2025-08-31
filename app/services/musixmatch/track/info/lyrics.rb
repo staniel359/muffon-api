@@ -20,8 +20,10 @@ module MusixMatch
 
         def raw_lyrics
           response_data.dig(
-            'message', 'body',
-            'lyrics', 'lyrics_body'
+            'message',
+            'body',
+            'lyrics',
+            'lyrics_body'
           )
         end
       end

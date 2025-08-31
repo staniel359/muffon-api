@@ -41,7 +41,7 @@ module AmazonMusic
       end
 
       def next_page_url_query_data
-        Muffon::Utils::Link::QueryParser.call(
+        parse_query_string(
           link: next_page_url
         )
       end

@@ -1,12 +1,12 @@
-module Helpers
-  module MusixMatch
-    module Search
-      class << self
-        def artists_data
+module Spec
+  module Helpers
+    module MusixMatch
+      module Search
+        def musixmatch_search_artists_data
           {:search=>{:artists=>[{:name=>"No Te Va Gustar", :source=>{:id=>49783, :links=>{:original=>"https://www.musixmatch.com/artist/49783"}, :name=>"musixmatch"}}, {:name=>"Alphaville", :source=>{:id=>1370, :links=>{:original=>"https://www.musixmatch.com/artist/1370"}, :name=>"musixmatch"}}, {:name=>"Selena", :source=>{:id=>52918551, :links=>{:original=>"https://www.musixmatch.com/artist/52918551"}, :name=>"musixmatch"}}, {:name=>"New Found Glory", :source=>{:id=>11846, :links=>{:original=>"https://www.musixmatch.com/artist/11846"}, :name=>"musixmatch"}}], :page=>2, :total_pages=>2000}}
         end
 
-        def tracks_data
+        def musixmatch_search_tracks_data
           {:search=>{:page => 2, :total_pages => 2000, :tracks => [{:album => {:source => {:id => 26195559, :name => "musixmatch"}, :title => "15 Dollars"}, :artist => {:name => "Chinatown Suzy feat. Julianna"}, :artists => [{:name => "Chinatown Suzy feat. Julianna", :source => {:id => 33665343, :name => "musixmatch"}}], :player_id => "1-72598855", :source => {:id => 72598855, :links => {:original => "https://www.musixmatch.com/lyrics/33665343/72598855"}, :name => "musixmatch"}, :title => "Nothing Left"}, {:album => {:source => {:id => 17610554, :name => "musixmatch"}, :title => "TV and Film Themes, Vol. 2"}, :artist => {:name => "Hanny Williams"}, :artists => [{:name => "Hanny Williams", :source => {:id => 24623868, :name => "musixmatch"}}], :player_id => "1-29077600", :source => {:id => 29077600, :links => {:original => "https://www.musixmatch.com/lyrics/24623868/29077600"}, :name => "musixmatch"}, :title => "Chinatown (From 'Chinatown')"}, {:album => {:source => {:id => 16124124, :name => "musixmatch"}, :title => "80's Workout Greatest Hits (30 Workout Hits)"}, :artist => {:name => "Wild*Side"}, :artists => [{:name => "Wild*Side", :source => {:id => 29081647, :name => "musixmatch"}}], :player_id => "1-49225026", :source => {:id => 49225026, :links => {:original => "https://www.musixmatch.com/lyrics/29081647/49225026"}, :name => "musixmatch"}, :title => "Nothing's Gonna Stop Me Now - 132 Bpm"}, {:album => {:source => {:id => 15414402, :name => "musixmatch"}, :title => "Jazz At the Movies – Film Noire"}, :artist => {:name => "Billy Nicholson Quintet"}, :artists => [{:name => "Billy Nicholson Quintet", :source => {:id => 24566730, :name => "musixmatch"}}], :player_id => "1-13045822", :source => {:id => 13045822, :links => {:original => "https://www.musixmatch.com/lyrics/24566730/13045822"}, :name => "musixmatch"}, :title => "Chinatown (From \"Chinatown\")"}, {:album => {:source => {:id => 23510671, :name => "musixmatch"}, :title => "Good To Go"}, :artist => {:name => "Wild,"}, :artists => [{:name => "Wild,", :source => {:id => 29333310, :name => "musixmatch"}}], :player_id => "1-61097381", :source => {:id => 61097381, :links => {:original => "https://www.musixmatch.com/lyrics/29333310/61097381"}, :name => "musixmatch"}, :title => "All Or Nothing"}]}}
         end
       end

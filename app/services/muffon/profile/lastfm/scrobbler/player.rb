@@ -5,9 +5,9 @@ module Muffon
         class Player < Muffon::Profile::LastFM::Scrobbler::Base
           private
 
-          def primary_args
-            super + [
-              @args[:duration]
+          def required_args
+            super + %i[
+              duration
             ]
           end
 

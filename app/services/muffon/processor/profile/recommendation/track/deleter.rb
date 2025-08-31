@@ -3,31 +3,40 @@ module Muffon
     module Profile
       module Recommendation
         module Track
-          class Deleter < Muffon::Processor::Profile::Base
+          class Deleter < Muffon::Processor::Profile::Recommendation::Base
             private
 
-            def forbidden?
-              !valid_profile?
+            def required_args
+              super + %i[
+                recommendation_id
+              ]
             end
 
-            def data
-              recommendation&.update(
-                deleted: true
-              )
+            def process_recommendation
+              if recommendation.present?
+                recommendation.update!(
+                  deleted: true
+                )
 
-              recommendation&.send(
-                :add_deleted_event
-              )
+                recommendation.send(
+                  :add_deleted_event
+                )
+              end
 
               { success: true }
             end
 
             def recommendation
-              profile
-                .recommendation_tracks
-                .find_by(
-                  id: @args[:recommendation_id]
-                )
+              if defined?(@recommendation)
+                @recommendation
+              else
+                @recommendation =
+                  profile
+                  .recommendation_tracks
+                  .find_by(
+                    id: @args[:recommendation_id]
+                  )
+              end
             end
           end
         end

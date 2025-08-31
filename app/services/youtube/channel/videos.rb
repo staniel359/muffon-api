@@ -4,12 +4,8 @@ module YouTube
       private
 
       def channel_data
-        channel_base_data
-          .merge(channel_videos_data)
-      end
-
-      def channel_videos_data
         {
+          **super,
           prev_page:,
           next_page:,
           videos:

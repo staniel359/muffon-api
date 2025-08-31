@@ -5,12 +5,8 @@ module VK
 
       private
 
-      def no_data?
-        name.blank?
-      end
-
       def name
-        response_data['name']
+        artist['name']
       end
 
       def signature
@@ -23,10 +19,6 @@ module VK
 
       def artist_params
         { artist_id: vk_artist_id }
-      end
-
-      def artist_data
-        { name: }
       end
     end
   end

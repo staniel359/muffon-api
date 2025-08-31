@@ -40,7 +40,8 @@ module Odnoklassniki
 
       def album
         response_data.dig(
-          'albums', 0
+          'albums',
+          0
         )
       end
 

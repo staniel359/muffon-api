@@ -2,10 +2,18 @@ module Muffon
   module Sendable
     class Community < Muffon::Base
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          community
+        ]
+      end
 
       def data
         return {} if find_community.blank?

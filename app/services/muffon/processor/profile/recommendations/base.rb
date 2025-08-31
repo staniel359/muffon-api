@@ -3,16 +3,16 @@ module Muffon
     module Profile
       module Recommendations
         class Base < Muffon::Processor::Profile::Base
-          def call
-            return if not_all_args?
-
-            data
-          end
-
           private
 
-          def primary_args
-            [@args[:profile_id]]
+          def required_args
+            %i[
+              profile_id
+            ]
+          end
+
+          def forbidden?
+            false
           end
 
           def data

@@ -5,10 +5,19 @@ module Odnoklassniki
         include Odnoklassniki::Utils::Track
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            track
+            albums
+          ]
+        end
 
         def data
           self_data
@@ -60,8 +69,8 @@ module Odnoklassniki
         end
 
         def album
-          @args[:albums].find do |a|
-            a['id'] == album_id
+          @args[:albums].find do |album_data|
+            album_data['id'] == album_id
           end
         end
 

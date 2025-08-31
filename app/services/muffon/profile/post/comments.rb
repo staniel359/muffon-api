@@ -9,14 +9,15 @@ module Muffon
 
         private
 
-        def primary_args
-          super + [
-            @args[:post_id]
+        def required_args
+          super + %i[
+            post_id
           ]
         end
 
-        def no_data?
-          super || post.blank?
+        def not_found?
+          super ||
+            post.blank?
         end
 
         def post

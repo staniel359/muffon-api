@@ -6,11 +6,26 @@ module Deezer
           BASE_LINK =
             'https://media.deezer.com/v1/get_url'.freeze
           FORMAT = 'MP3_128'.freeze
+          ERRORS = [
+            Faraday::BadRequestError,
+            Faraday::ForbiddenError,
+            Faraday::UnprocessableEntityError
+          ].freeze
+
+          def call
+            check_args
+
+            data
+          rescue *ERRORS
+            nil
+          end
 
           private
 
-          def primary_args
-            [@args[:track_id]]
+          def required_args
+            %i[
+              track_id
+            ]
           end
 
           def no_data?
@@ -19,11 +34,14 @@ module Deezer
 
           def data
             response_data.dig(
-              'data', 0, 'media', 0,
-              'sources', 0, 'url'
+              'data',
+              0,
+              'media',
+              0,
+              'sources',
+              0,
+              'url'
             )
-          rescue Faraday::BadRequestError, Faraday::ForbiddenError, Faraday::UnprocessableEntityError
-            nil
           end
 
           def link

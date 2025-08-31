@@ -3,19 +3,30 @@ module Genius
     class Base < Genius::Base
       include Genius::Utils::Track
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:track_id]]
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def no_data?
-        track.blank?
+      private
+
+      def required_args
+        %i[
+          track_id
+        ]
+      end
+
+      def data
+        { track: track_data }
       end
 
       def track
         response_data.dig(
-          'response', 'song'
+          'response',
+          'song'
         )
       end
 
@@ -23,15 +34,14 @@ module Genius
         "#{BASE_LINK}/songs/#{@args[:track_id]}"
       end
 
-      def data
-        { track: track_data }
-      end
-
       def artists_list
-        track.values_at(
-          'primary_artist',
-          'featured_artists'
-        ).flatten.compact
+        track
+          .values_at(
+            'primary_artist',
+            'featured_artists'
+          )
+          .flatten
+          .compact
       end
     end
   end

@@ -13,27 +13,21 @@ module MusicBrainz
       end
 
       def params
-        super
-          .merge(albums_params)
-          .merge(pagination_params)
-      end
-
-      def albums_params
         {
+          **super,
           'release-group' => @args[:group_id],
           status: 'official',
-          inc: 'artist-credits'
+          inc: 'artist-credits',
+          **pagination_params
         }
       end
 
       def collection_list
-        response_data['releases']
+        group['releases']
       end
 
       def total_items_count
-        response_data[
-          'release-count'
-        ]
+        group['release-count']
       end
 
       def collection_item_data_formatted(album)

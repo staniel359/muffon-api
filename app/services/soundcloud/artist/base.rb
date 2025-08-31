@@ -1,18 +1,22 @@
 module SoundCloud
   module Artist
     class Base < SoundCloud::API::V2::Base
+      def call
+        check_args
+
+        data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_client_id
+      rescue Faraday::BadRequestError, Faraday::ResourceNotFound
+        raise not_found_error
+      end
+
       private
 
-      def primary_args
-        [@args[:artist_id]]
-      end
-
-      def no_data?
-        response_data.blank?
-      end
-
-      def link
-        "#{BASE_LINK}/users/#{@args[:artist_id]}"
+      def required_args
+        %i[
+          artist_id
+        ]
       end
 
       def data
@@ -25,15 +29,23 @@ module SoundCloud
 
       def name
         artist_info_data.dig(
-          :artist, :name
+          :artist,
+          :name
         )
       end
 
       def artist_info_data
-        SoundCloud::Artist::Info.call(
-          artist_id: @args[:artist_id]
-        )
+        @artist_info_data ||=
+          SoundCloud::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )
       end
+
+      def link
+        "#{BASE_LINK}/users/#{@args[:artist_id]}"
+      end
+
+      alias artist response_data
     end
   end
 end

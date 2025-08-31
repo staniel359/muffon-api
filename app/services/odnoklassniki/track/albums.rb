@@ -13,13 +13,18 @@ module Odnoklassniki
       end
 
       def albums
-        album_ids.map do |id|
-          album_info(id)
-        end.compact
+        album_ids
+          .map do |album_id|
+            album_info(
+              album_id
+            )
+          end
+          .compact
       end
 
       def album_ids
-        response_data['albums'].pluck('id')
+        response_data['albums']
+          .pluck('id')
       end
 
       def album_info(album_id)

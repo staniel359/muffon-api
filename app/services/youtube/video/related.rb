@@ -8,8 +8,10 @@ module YouTube
       private
 
       def video_data
-        video_base_data
-          .merge(paginated_data)
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def page
@@ -20,7 +22,8 @@ module YouTube
         continuation_item&.dig(
           'continuationItemRenderer',
           'continuationEndpoint',
-          'continuationCommand', 'token'
+          'continuationCommand',
+          'token'
         )
       end
 
@@ -38,8 +41,10 @@ module YouTube
 
       def first_page_collection_list
         page_data.dig(
-          'contents', 'twoColumnWatchNextResults',
-          'secondaryResults', 'secondaryResults',
+          'contents',
+          'twoColumnWatchNextResults',
+          'secondaryResults',
+          'secondaryResults',
           'results'
         )
       end
@@ -54,16 +59,15 @@ module YouTube
 
       def next_page_collection_list
         page_data.dig(
-          'onResponseReceivedEndpoints', 0,
+          'onResponseReceivedEndpoints',
+          0,
           'appendContinuationItemsAction',
           'continuationItems'
         )
       end
 
       def continuation_item?(item)
-        item[
-          'continuationItemRenderer'
-        ].present?
+        item['continuationItemRenderer'].present?
       end
 
       def total_pages_count
@@ -71,40 +75,50 @@ module YouTube
       end
 
       def collection_list
-        videos_list.reject do |v|
-          new_video?(v)
+        videos_list.reject do |video_data|
+          new_video?(
+            video_data
+          )
         end
       end
 
       def videos_list
-        collection_list_conditional.select do |i|
-          video_item?(i)
+        collection_list_conditional.select do |item_data|
+          video_item?(
+            item_data
+          )
         end
       end
 
-      def video_item?(item)
-        item[
-          'compactVideoRenderer'
-        ].present?
+      def video_item?(item_data)
+        item_data['compactVideoRenderer'].present?
       end
 
-      def new_video?(video)
+      def new_video?(
+        video_data
+      )
         video_badges(
-          video
-        ).find do |b|
-          new_video_badge?(b)
+          video_data
+        ).find do |badge_data|
+          new_video_badge?(
+            badge_data
+          )
         end
       end
 
-      def video_badges(video)
-        video.dig(
-          'compactVideoRenderer', 'badges'
+      def video_badges(video_data)
+        video_data.dig(
+          'compactVideoRenderer',
+          'badges'
         ) || []
       end
 
-      def new_video_badge?(badge)
-        badge.dig(
-          'metadataBadgeRenderer', 'label'
+      def new_video_badge?(
+        badge_data
+      )
+        badge_data.dig(
+          'metadataBadgeRenderer',
+          'label'
         ) == 'New'
       end
 

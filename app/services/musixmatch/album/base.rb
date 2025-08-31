@@ -1,20 +1,35 @@
 module MusixMatch
   module Album
     class Base < MusixMatch::Base
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:album_id]]
+        check_if_not_found
+
+        data
       end
 
-      def params
-        super.merge(
-          album_params
+      private
+
+      def required_args
+        %i[
+          album_id
+        ]
+      end
+
+      def album
+        response_data.dig(
+          'message',
+          'body',
+          'album'
         )
       end
 
-      def album_params
-        { album_id: @args[:album_id] }
+      def params
+        {
+          **super,
+          album_id: @args[:album_id]
+        }
       end
 
       def data

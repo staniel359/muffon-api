@@ -1,21 +1,16 @@
 module Genius
   module Artist
     class Info < Genius::Artist::Base
-      include Genius::Utils::Artist
-
       private
 
-      def primary_args
-        [@args[:artist_id]]
-      end
-
-      def no_data?
-        artist.blank?
+      def name
+        artist['name']
       end
 
       def artist
         response_data.dig(
-          'response', 'artist'
+          'response',
+          'artist'
         )
       end
     end

@@ -3,13 +3,23 @@ module YouTube
     class Base < YouTube::Base
       include YouTube::Utils::Channel
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:channel_id]]
+        check_if_not_found
+
+        data
       end
 
-      def no_data?
+      private
+
+      def required_args
+        %i[
+          channel_id
+        ]
+      end
+
+      def not_found?
         channel.blank?
       end
 
@@ -22,13 +32,8 @@ module YouTube
       end
 
       def params
-        super.merge(
-          channel_params
-        )
-      end
-
-      def channel_params
         {
+          **super,
           id: @args[:channel_id],
           part: 'snippet,contentDetails,statistics'
         }
@@ -38,7 +43,7 @@ module YouTube
         { channel: channel_data }
       end
 
-      def channel_base_data
+      def channel_data
         { title: }
       end
     end

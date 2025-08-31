@@ -4,6 +4,10 @@ module AmazonMusic
       BASE_LINK =
         'https://api.amazon.com/auth/o2/token'.freeze
 
+      def call
+        data
+      end
+
       private
 
       def data

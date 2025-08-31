@@ -13,7 +13,8 @@ module Discogs
 
       def total_pages_count
         album.dig(
-          'pagination', 'pages'
+          'pagination',
+          'pages'
         )
       end
 

@@ -3,18 +3,28 @@ module Discogs
     class Base < Discogs::Base
       include Discogs::Utils::Album
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:album_id]]
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def link
-        "#{BASE_LINK}/releases/#{@args[:album_id]}"
+      private
+
+      def required_args
+        %i[
+          album_id
+        ]
       end
 
       def data
         { album: album_data }
+      end
+
+      def link
+        "#{BASE_LINK}/releases/#{@args[:album_id]}"
       end
 
       def artists_list
@@ -22,8 +32,8 @@ module Discogs
       end
 
       def tracks_list
-        album['tracklist'].select do |t|
-          t['type_'] == 'track'
+        album['tracklist'].select do |track_data|
+          track_data['type_'] == 'track'
         end
       end
 
@@ -38,9 +48,14 @@ module Discogs
       end
 
       def tags_list
-        album.values_at(
-          'genres', 'styles'
-        ).flatten.compact.uniq
+        album
+          .values_at(
+            'genres',
+            'styles'
+          )
+          .flatten
+          .compact
+          .uniq
       end
 
       alias album response_data

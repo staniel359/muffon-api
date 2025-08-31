@@ -4,18 +4,20 @@ module Muffon
       class Destroyer < Muffon::Processor::Community::Base
         private
 
-        def primary_args
-          super + [
-            @args[:community_id]
+        def required_args
+          super + %i[
+            community_id
           ]
         end
 
-        def no_data?
-          super || community.blank?
+        def not_found?
+          super ||
+            community.blank?
         end
 
         def forbidden?
-          !valid_profile? || !community_creator?
+          super ||
+            !community_creator?
         end
 
         def process_community

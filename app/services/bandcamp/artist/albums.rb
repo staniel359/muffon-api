@@ -6,27 +6,24 @@ module Bandcamp
       private
 
       def artist_data
-        artist_base_data
-          .merge(paginated_data)
-      end
-
-      def artist_base_data
-        { name: artist['name'] }
-      end
-
-      def total_items_count
-        @total_items_count ||= albums_list.size
-      end
-
-      def albums_list
-        @albums_list ||=
-          artist['discography']
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def collection_list
         collection_paginated(
           albums_list
         )
+      end
+
+      def albums_list
+        artist['discography']
+      end
+
+      def total_items_count
+        albums_list.size
       end
 
       def collection_item_data_formatted(album)
@@ -36,8 +33,6 @@ module Bandcamp
           token: @args[:token]
         )
       end
-
-      alias artist response_data
     end
   end
 end

@@ -7,15 +7,19 @@ module AmazonMusic
         include Muffon::Utils::Audio::Link
 
         def call
-          return if not_all_args? || no_data?
+          check_args
+
+          return if no_data?
 
           data
         end
 
         private
 
-        def primary_args
-          [@args[:track_id]]
+        def required_args
+          %i[
+            track_id
+          ]
         end
 
         def no_data?
@@ -26,7 +30,7 @@ module AmazonMusic
 
         def track_data
           @track_data ||=
-            AmazonMusic::Utils::Audio::Track.call(
+            AmazonMusic::Utils::Audio::Link::Track.call(
               track_id:
             )
         end
@@ -44,7 +48,7 @@ module AmazonMusic
 
         def key
           @key ||=
-            AmazonMusic::Utils::Audio::Key.call(
+            AmazonMusic::Utils::Audio::Link::Key.call(
               track_data:
             )
         end

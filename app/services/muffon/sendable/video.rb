@@ -4,10 +4,18 @@ module Muffon
       include YouTube::Utils::Video
 
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          video
+        ]
+      end
 
       def data
         {

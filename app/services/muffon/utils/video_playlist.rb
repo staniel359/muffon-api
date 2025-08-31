@@ -6,7 +6,8 @@ module Muffon
       def find_video_playlist
         @find_video_playlist ||=
           ::VideoPlaylist.with_youtube_id(
-            youtube_id, update_params
+            youtube_id:,
+            update_attributes:
           )
       end
 
@@ -14,13 +15,14 @@ module Muffon
         @args[:youtube_id]
       end
 
-      def update_params
+      def update_attributes
         {
           title:,
           channel_youtube_id:,
           channel_title:,
-          image_url: image,
+          description:,
           videos_count:,
+          image_url: image,
           created_at: publish_date
         }.compact
       end
@@ -37,11 +39,15 @@ module Muffon
         nil
       end
 
-      def image
+      def description
         nil
       end
 
       def videos_count
+        nil
+      end
+
+      def image
         nil
       end
 

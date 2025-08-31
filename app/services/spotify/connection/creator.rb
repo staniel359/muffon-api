@@ -3,9 +3,9 @@ module Spotify
     class Creator < Spotify::Connection::Base
       private
 
-      def primary_args
-        super + [
-          @args[:code]
+      def required_args
+        super + %i[
+          code
         ]
       end
 
@@ -30,9 +30,7 @@ module Spotify
           Spotify::User::Info.call(
             access_token:,
             skip_profile: true
-          ).try(
-            :[], :user
-          )
+          )[:user]
       end
 
       def access_token
@@ -44,17 +42,20 @@ module Spotify
           spotify_connection_params
         )
 
-        return spotify_connection.errors_data if
-            spotify_connection.errors?
-
-        { profile: profile_data }
+        if spotify_connection.errors?
+          spotify_connection.errors_data
+        else
+          { profile: profile_data }
+        end
       end
 
       def spotify_connection
         @spotify_connection ||=
-          SpotifyConnection.where(
+          SpotifyConnection
+          .where(
             profile_id: @args[:profile_id]
-          ).first_or_initialize
+          )
+          .first_or_initialize
       end
 
       def spotify_connection_params

@@ -2,10 +2,18 @@ module Muffon
   module Sendable
     class Playlist < Muffon::Base
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          playlist
+        ]
+      end
 
       def data
         return {} if find_playlist.blank?

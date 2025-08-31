@@ -6,10 +6,18 @@ module Muffon
           include Muffon::Utils::Track
 
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              bookmark_track
+            ]
+          end
 
           def data
             self_data

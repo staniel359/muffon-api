@@ -25,7 +25,7 @@ module Muffon
         end
 
         def collection_item_data_formatted(message)
-          Muffon::Profile::Messages::Message.call(
+          Muffon::Profile::Conversation::Messages::Message.call(
             message:
           )
         end

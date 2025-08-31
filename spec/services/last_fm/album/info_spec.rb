@@ -4,30 +4,45 @@ RSpec.describe LastFM::Album::Info do
   describe 'successful processing' do
     context 'when artist and album exists' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/album/info/success' do
-          subject.call(artist_name: 'wild nothing', album_title: 'nocturne', profile_id: 1)
+        VCR.use_cassette(
+          'services/lastfm/album/info/success'
+        ) do
+          subject.call(
+            artist_name: 'wild nothing',
+            album_title: 'nocturne',
+            profile_id: 1
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM::Album.info_data) }
+      it { expect(output).to eq(lastfm_album_info_data) }
     end
   end
 
   describe 'no processing' do
     context 'when no album title given' do
-      let(:output) { subject.call(artist_name: 'wild nothing') }
+      let(:output) do
+        subject.call(
+          artist_name: 'wild nothing'
+        )
+      end
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong album title' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/album/info/wrong_title' do
-          subject.call(artist_name: 'wild nothing', album_title: random)
+        VCR.use_cassette(
+          'services/lastfm/album/info/wrong_title'
+        ) do
+          subject.call(
+            artist_name: 'wild nothing',
+            album_title: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

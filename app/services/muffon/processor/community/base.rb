@@ -1,15 +1,8 @@
 module Muffon
   module Processor
     module Community
-      class Base < Muffon::Profile::Base
+      class Base < Muffon::Processor::Profile::Base
         private
-
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token]
-          ]
-        end
 
         def community
           if instance_variable_defined?(

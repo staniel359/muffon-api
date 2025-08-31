@@ -6,10 +6,18 @@ module Muffon
           include YouTube::Utils::Playlist
 
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              bookmark_video_playlist
+            ]
+          end
 
           def data
             self_data

@@ -2,13 +2,21 @@ module Spotify
   module Utils
     module User
       class AccessToken < Spotify::Utils::Token
+        def call
+          check_args
+
+          data
+        rescue Faraday::BadRequestError
+          raise not_found_error
+        end
+
         private
 
-        def primary_args
-          [
-            @args[:code],
-            @args[:client_id],
-            @args[:client_secret]
+        def required_args
+          %i[
+            code
+            client_id
+            client_secret
           ]
         end
 

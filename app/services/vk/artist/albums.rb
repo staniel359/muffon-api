@@ -8,19 +8,15 @@ module VK
 
       private
 
-      def no_data?
-        artist_info_data.blank?
-      end
-
-      def artist_info_data
-        @artist_info_data ||=
-          VK::Artist::Info.call(
-            artist_id: vk_artist_id
-          )[:artist]
+      def artist_data
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def albums_list
-        response_data['items']
+        artist['items']
       end
 
       def signature
@@ -41,21 +37,8 @@ module VK
         }
       end
 
-      def artist_data
-        artist_base_data
-          .merge(paginated_data)
-      end
-
-      def artist_base_data
-        { name: }
-      end
-
-      def name
-        artist_info_data[:name]
-      end
-
       def total_items_count
-        response_data['count'].to_i
+        artist['count'].to_i
       end
 
       def album_data_formatted(album)

@@ -5,17 +5,21 @@ module LastFM
 
       include LastFM::Utils::Album
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [
-          @args[:artist_name],
-          @args[:album_title]
-        ]
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def no_data?
-        album.blank?
+      private
+
+      def required_args
+        %i[
+          artist_name
+          album_title
+        ]
       end
 
       def album

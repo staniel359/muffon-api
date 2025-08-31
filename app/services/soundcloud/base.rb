@@ -4,12 +4,6 @@ module SoundCloud
 
     private
 
-    def response_data
-      super
-    rescue Faraday::BadRequestError
-      {}
-    end
-
     def params
       { client_id: }
     end

@@ -3,10 +3,20 @@ module Bandcamp
     class Base < Bandcamp::Base
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:label_id]]
+      def required_args
+        %i[
+          label_id
+        ]
       end
 
       def params

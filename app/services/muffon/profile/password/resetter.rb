@@ -4,8 +4,10 @@ module Muffon
       class Resetter < Muffon::Profile::Base
         private
 
-        def primary_args
-          [@args[:email]]
+        def required_args
+          %i[
+            email
+          ]
         end
 
         def forbidden?
@@ -20,7 +22,7 @@ module Muffon
         end
 
         def data
-          profile.update(
+          profile.update!(
             password_reset_code:
           )
 
@@ -30,7 +32,7 @@ module Muffon
         end
 
         def password_reset_code
-          SecureRandom.random_number(
+          rand(
             100_000..999_999
           )
         end

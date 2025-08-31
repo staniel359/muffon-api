@@ -5,10 +5,18 @@ module MusixMatch
         include MusixMatch::Utils::Album
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            album
+          ]
+        end
 
         def data
           self_data

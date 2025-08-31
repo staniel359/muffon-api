@@ -16,7 +16,8 @@ module Muffon
 
           def percent
             compatibility_percent_data.dig(
-              :compatibility, :percent
+              :compatibility,
+              :percent
             )
           end
 

@@ -5,7 +5,7 @@ module LastFM
 
       private
 
-      def no_data?
+      def not_found?
         tag.blank? ||
           tag['total'].zero?
       end

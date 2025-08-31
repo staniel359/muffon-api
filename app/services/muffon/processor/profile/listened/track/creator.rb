@@ -8,18 +8,15 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:track_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                track_title
+                artist_name
               ]
             end
 
             def process_listened
               listened_track
-
-              return listened_track.errors_data if
-                  listened_track.errors?
 
               { listened_track: listened_track_data }
             end
@@ -30,7 +27,8 @@ module Muffon
                 .listened_tracks
                 .where(
                   track_id: find_track.id
-                ).first_or_create
+                )
+                .first_or_create!
             end
 
             def title

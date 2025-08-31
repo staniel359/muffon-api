@@ -4,10 +4,18 @@ module Muffon
       include YouTube::Utils::Channel
 
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          channel
+        ]
+      end
 
       def data
         {

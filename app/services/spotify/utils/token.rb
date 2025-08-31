@@ -5,8 +5,6 @@ module Spotify
         'https://accounts.spotify.com/api/token'.freeze
 
       def call
-        return if not_all_args?
-
         data
       end
 

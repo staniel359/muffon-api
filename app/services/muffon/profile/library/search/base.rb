@@ -7,10 +7,9 @@ module Muffon
 
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:query]
+          def required_args
+            super + %i[
+              query
             ]
           end
 

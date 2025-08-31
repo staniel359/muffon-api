@@ -2,10 +2,18 @@ module Muffon
   class Communities
     class Community < Muffon::Communities
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          community
+        ]
+      end
 
       def data
         community_base_data

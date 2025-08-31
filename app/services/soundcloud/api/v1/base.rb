@@ -5,8 +5,6 @@ module SoundCloud
         BASE_LINK =
           'https://api.soundcloud.com'.freeze
 
-        include Muffon::Utils::Global
-
         def call
           super
         rescue Faraday::UnauthorizedError
@@ -30,7 +28,10 @@ module SoundCloud
           return test_access_token if test?
 
           get_global_value(
-            'soundcloud_access_token'
+            'soundcloud:v1:access_token',
+            refresh_class_name:
+              'SoundCloud::Utils::AccessToken',
+            is_refresh: refresh_access_token?
           )
         end
 
@@ -41,19 +42,15 @@ module SoundCloud
           )
         end
 
-        def global_value
-          @global_value ||=
-            SoundCloud::Utils::AccessToken.call
+        def refresh_access_token?
+          !!@args[:is_refresh_access_token]
         end
 
         def retry_with_new_access_token
-          return if global_value.blank?
-
-          update_global_value(
-            'soundcloud_access_token'
+          self.class.call(
+            **@args,
+            is_refresh_access_token: true
           )
-
-          call
         end
       end
     end

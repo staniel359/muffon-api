@@ -1,22 +1,43 @@
 RSpec.describe API::LastFM::SearchController do
   describe 'GET :artists' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/lastfm/search/artists/success' do
-        get :artists, params: { query: 'wild nothing' }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/artists/success'
+      ) do
+        get(
+          :artists,
+          params: {
+            **required_params,
+            query: 'wild nothing'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :artists
+      get(
+        :artists,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/lastfm/search/artists/wrong_query' do
-        get :artists, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/artists/wrong_query'
+      ) do
+        get(
+          :artists,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
@@ -25,22 +46,43 @@ RSpec.describe API::LastFM::SearchController do
 
   describe 'GET :albums' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/lastfm/search/albums/success' do
-        get :albums, params: { query: 'wild nothing gemini' }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/albums/success'
+      ) do
+        get(
+          :albums,
+          params: {
+            **required_params,
+            query: 'wild nothing gemini'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :albums
+      get(
+        :albums,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/lastfm/search/albums/wrong_query' do
-        get :albums, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/albums/wrong_query'
+      ) do
+        get(
+          :albums,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
@@ -49,22 +91,43 @@ RSpec.describe API::LastFM::SearchController do
 
   describe 'GET :tracks' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/lastfm/search/tracks/success' do
-        get :tracks, params: { query: 'wild nothing chinatown' }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/tracks/success'
+      ) do
+        get(
+          :tracks,
+          params: {
+            **required_params,
+            query: 'wild nothing chinatown'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :tracks
+      get(
+        :tracks,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/lastfm/search/tracks/wrong_query' do
-        get :tracks, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/tracks/wrong_query'
+      ) do
+        get(
+          :tracks,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
@@ -73,22 +136,43 @@ RSpec.describe API::LastFM::SearchController do
 
   describe 'GET :tags' do
     it 'returns 200 if query present' do
-      VCR.use_cassette 'controllers/api/lastfm/search/tags/success' do
-        get :tags, params: { query: 'pop' }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/tags/success'
+      ) do
+        get(
+          :tags,
+          params: {
+            **required_params,
+            query: 'pop'
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)
     end
 
     it 'returns 400 if no query' do
-      get :tags
+      get(
+        :tags,
+        params: {
+          **required_params
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette 'controllers/api/lastfm/search/tags/wrong_query' do
-        get :tags, params: { query: random }
+      VCR.use_cassette(
+        'controllers/api/lastfm/search/tags/wrong_query'
+      ) do
+        get(
+          :tags,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
       end
 
       expect(response).to have_http_status(:ok)

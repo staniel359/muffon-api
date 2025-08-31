@@ -6,7 +6,8 @@ module Muffon
       def find_video
         @find_video ||=
           ::Video.with_youtube_id(
-            youtube_id, update_params
+            youtube_id:,
+            update_attributes:
           )
       end
 
@@ -14,7 +15,7 @@ module Muffon
         @args[:youtube_id]
       end
 
-      def update_params
+      def update_attributes
         {
           title:,
           channel_youtube_id:,

@@ -1,21 +1,30 @@
 module Genius
   module Annotation
     class Info < Genius::Base
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:annotation_id]]
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
-      def no_data?
-        annotation.blank?
+      private
+
+      def required_args
+        %i[
+          annotation_id
+        ]
       end
 
       def annotation
         response_data.dig(
-          'response', 'referent',
-          'annotations', 0,
-          'body', 'html'
+          'response',
+          'referent',
+          'annotations',
+          0,
+          'body',
+          'html'
         )
       end
 

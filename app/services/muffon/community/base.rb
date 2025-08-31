@@ -1,13 +1,23 @@
 module Muffon
   module Community
     class Base < Muffon::Base
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:community_id]]
+        check_if_not_found
+
+        data
       end
 
-      def no_data?
+      private
+
+      def required_args
+        %i[
+          community_id
+        ]
+      end
+
+      def not_found?
         community.blank?
       end
 

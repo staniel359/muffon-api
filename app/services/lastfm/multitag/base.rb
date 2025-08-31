@@ -5,21 +5,23 @@ module LastFM
 
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def not_all_args?
-        super || !tags_is_array?
+      def required_args
+        %i[
+          tags
+        ]
       end
 
-      def primary_args
-        [@args[:tags]]
-      end
-
-      def tags_is_array?
-        @args[:tags].is_a?(Array)
-      end
-
-      def no_data?
+      def not_found?
         raw_collection_list.blank?
       end
 

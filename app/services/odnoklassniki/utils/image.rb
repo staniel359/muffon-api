@@ -2,19 +2,16 @@ module Odnoklassniki
   module Utils
     class Image < Odnoklassniki::Base
       def call
+        return if no_data?
+
         data
       end
 
       private
 
-      def data
-        return unless image_present?
-
-        image_data
-      end
-
-      def image_present?
-        image.present? && !placeholder?
+      def no_data?
+        image.blank? ||
+          placeholder?
       end
 
       def image
@@ -27,7 +24,7 @@ module Odnoklassniki
         )
       end
 
-      def image_data
+      def data
         {
           original: image,
           large: image,

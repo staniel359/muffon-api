@@ -1,14 +1,35 @@
 module AmazonMusic
   module Artist
     class Base < AmazonMusic::Base
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:artist_id]]
+        check_if_not_found
+
+        data
       end
 
-      def artist_id
-        @args[:artist_id]
+      private
+
+      def required_args
+        %i[
+          artist_id
+        ]
+      end
+
+      def not_found?
+        name.blank?
+      end
+
+      def name
+        artist_info_data[:name]
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          AmazonMusic::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )[:artist]
       end
 
       def data
@@ -20,6 +41,7 @@ module AmazonMusic
       end
 
       alias response post_response
+      alias artist response_data
     end
   end
 end

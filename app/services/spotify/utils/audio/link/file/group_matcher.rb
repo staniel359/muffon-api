@@ -4,14 +4,18 @@ module Spotify
       class Link
         class File
           class GroupMatcher < Spotify::Utils::Audio::Link::File
-            private
+            def call
+              check_args
 
-            def primary_args
-              [@args[:file_group]]
+              data
             end
 
-            def no_data?
-              false
+            private
+
+            def required_args
+              %i[
+                file_group
+              ]
             end
 
             def matched_group?

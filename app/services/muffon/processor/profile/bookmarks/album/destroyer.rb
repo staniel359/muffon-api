@@ -6,9 +6,9 @@ module Muffon
           class Destroyer < Muffon::Processor::Profile::Bookmarks::Base
             private
 
-            def primary_args
-              super + [
-                @args[:bookmark_id]
+            def required_args
+              super + %i[
+                bookmark_id
               ]
             end
 

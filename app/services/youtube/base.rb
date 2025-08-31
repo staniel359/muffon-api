@@ -21,9 +21,15 @@ module YouTube
       )
     end
 
-    def image_data_formatted(image)
+    def image_data_formatted(
+      model:,
+      images: nil,
+      image: nil
+    )
       YouTube::Utils::Image.call(
-        image:
+        images:,
+        image:,
+        model:
       )
     end
   end

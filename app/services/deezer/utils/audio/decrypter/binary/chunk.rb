@@ -8,13 +8,19 @@ module Deezer
             CIPHER_ALGORITHM = 'bf-cbc'.freeze
             IV = "\x00\x01\x02\x03\x04\x05\x06\a".freeze
 
+            def call
+              check_args
+
+              data
+            end
+
             private
 
-            def primary_args
-              [
-                @args[:binary],
-                @args[:index],
-                @args[:key]
+            def required_args
+              %i[
+                binary
+                index
+                key
               ]
             end
 

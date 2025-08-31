@@ -5,26 +5,26 @@ module Muffon
         class Image < Muffon::Processor::Image::Base
           private
 
-          def primary_args
-            super + [
-              @args[:image_file]
+          def required_args
+            super + %i[
+              image_file
             ]
           end
 
           def data
+            return if image_file_data.blank?
+
             attach_image
           end
 
           def attach_image
-            return if image_file_data.blank?
-
-            images.attach(
+            model_images.attach(
               image_file_data
             )
           end
 
-          def images
-            @images ||= model.images
+          def model_images
+            model.images
           end
         end
       end

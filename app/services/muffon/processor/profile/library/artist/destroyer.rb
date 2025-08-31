@@ -6,9 +6,9 @@ module Muffon
           class Destroyer < Muffon::Processor::Profile::Library::Artist::Base
             private
 
-            def primary_args
-              super + [
-                @args[:library_id]
+            def required_args
+              super + %i[
+                library_id
               ]
             end
 

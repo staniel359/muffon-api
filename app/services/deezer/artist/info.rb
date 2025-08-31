@@ -5,17 +5,11 @@ module Deezer
 
       private
 
-      def primary_args
-        [@args[:artist_id]]
-      end
-
-      def no_data?
-        artist.blank?
-      end
-
-      def artist
+      def name
         response_data.dig(
-          'results', 'DATA'
+          'results',
+          'DATA',
+          'ART_NAME'
         )
       end
 
@@ -24,10 +18,6 @@ module Deezer
           art_id: @args[:artist_id],
           lang: language
         }.to_json
-      end
-
-      def name
-        artist['ART_NAME']
       end
     end
   end

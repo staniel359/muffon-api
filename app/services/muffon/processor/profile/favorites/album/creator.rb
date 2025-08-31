@@ -8,24 +8,24 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:album_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                album_title
+                artist_name
               ]
             end
 
             def process_favorite
-              favorite_album.update(
-                update_params
+              favorite_album.update!(
+                update_attributes
               )
-
-              return favorite_album.errors_data if
-                  favorite_album.errors?
 
               process_image
 
-              { favorite_album: favorite_album_data }
+              {
+                favorite_album:
+                  favorite_album_data
+              }
             end
 
             def favorite_album
@@ -34,7 +34,8 @@ module Muffon
                 .favorite_albums
                 .where(
                   album_id: find_album.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def title
@@ -45,7 +46,7 @@ module Muffon
               @args[:artist_name]
             end
 
-            def update_params
+            def update_attributes
               { source_data: @args[:source] }
             end
 

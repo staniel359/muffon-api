@@ -8,12 +8,10 @@ module MusicBrainz
       private
 
       def params
-        super
-          .merge(group_params)
-      end
-
-      def group_params
-        { inc: 'artist-credits+tags' }
+        {
+          **super,
+          inc: 'artist-credits+tags'
+        }
       end
 
       def group_data
@@ -47,11 +45,12 @@ module MusicBrainz
           MusicBrainz::Group::Description.call(
             group_id: @args[:group_id]
           ).dig(
-            :group, :description
+            :group,
+            :description
           )
       end
 
-      alias album response_data
+      alias album group
     end
   end
 end

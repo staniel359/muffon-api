@@ -2,16 +2,24 @@ module Muffon
   module Processor
     module Image
       class Base < Muffon::Base
+        def call
+          check_args
+
+          check_if_not_found
+
+          data
+        end
+
         private
 
-        def primary_args
-          [
-            @args[:model],
-            @args[:model_id]
+        def required_args
+          %i[
+            model
+            model_id
           ]
         end
 
-        def no_data?
+        def not_found?
           model.blank?
         end
 
@@ -36,18 +44,11 @@ module Muffon
 
         def image_file_data
           @image_file_data ||=
-            Muffon::Utils::Image::File.call(
-              image: image_file,
+            Muffon::Utils::Image::FileData.call(
+              image: @args[:image_file],
               temp_image_file_path:
-            ).try(:[], :image)
-        end
-
-        def image_file
-          @args[:image_file]
-        end
-
-        def temp_image_file_path
-          @args[:temp_image_file_path]
+                @args[:temp_image_file_path]
+            )
         end
       end
     end

@@ -4,28 +4,24 @@ module Muffon
       class Destroyer < Muffon::Processor::Profile::Base
         private
 
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token],
-            @args[:password]
+        def required_args
+          super + %i[
+            password
           ]
-        end
-
-        def forbidden?
-          !valid_profile?
         end
 
         def data
           check_password
 
-          return profile.errors_data if profile.errors?
+          if profile.errors?
+            profile.errors_data
+          else
+            profile.run_callbacks(
+              :destroy
+            )
 
-          profile.run_callbacks(
-            :destroy
-          )
-
-          { success: true }
+            { success: true }
+          end
         end
       end
     end

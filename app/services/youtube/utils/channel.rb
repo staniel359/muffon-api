@@ -33,16 +33,13 @@ module YouTube
 
       def image_data
         image_data_formatted(
-          image
+          images:,
+          model: 'channel'
         )
       end
 
-      def image
-        snippet.dig(
-          'thumbnails',
-          'default',
-          'url'
-        )
+      def images
+        snippet['thumbnails']
       end
 
       def description

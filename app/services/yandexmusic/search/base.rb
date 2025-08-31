@@ -5,10 +5,22 @@ module YandexMusic
 
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
+      end
+
+      def data
+        { search: paginated_data }
       end
 
       def collection_list
@@ -19,22 +31,13 @@ module YandexMusic
         response_data[collection_name] || {}
       end
 
-      def collection_name
-        self.class::COLLECTION_NAME
-      end
-
       def link
         "#{BASE_LINK}/music-search.jsx"
       end
 
       def params
-        super.merge(
-          search_params
-        )
-      end
-
-      def search_params
         {
+          **super,
           text: @args[:query],
           type: collection_type,
           page: page - 1
@@ -45,8 +48,8 @@ module YandexMusic
         self.class::COLLECTION_TYPE
       end
 
-      def data
-        { search: paginated_data }
+      def collection_name
+        self.class::COLLECTION_NAME
       end
 
       def collection_count

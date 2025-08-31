@@ -5,7 +5,7 @@ module YouTube
 
       def video_data
         self_data
-          .merge(video_base_data)
+          .merge(super)
           .merge(video_artist_data)
           .merge(video_statistics_data)
           .merge(video_extra_data)

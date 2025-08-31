@@ -3,8 +3,7 @@ module Muffon
     module Profile
       module Recommendations
         module Artists
-          class Creator <
-              Muffon::Processor::Profile::Recommendations::Artists::Base
+          class Creator < Muffon::Processor::Profile::Recommendations::Artists::Base
             SIMILAR_ARTISTS_LIMIT = 200
 
             private
@@ -12,8 +11,10 @@ module Muffon
             def process_recommendations
               return if library_artist.blank?
 
-              similar_artists.each do |s|
-                process_recommendation(s)
+              similar_artists.each do |similar_artist|
+                process_recommendation(
+                  similar_artist
+                )
               end
             end
 
@@ -34,15 +35,15 @@ module Muffon
 
             def similar_artists
               similar_artists_data.dig(
-                :artist, :similar
+                :artist,
+                :similar
               ) || []
             end
 
             def similar_artists_data
               ::LastFM::Artist::Similar.call(
                 artist_name:,
-                limit:
-                  SIMILAR_ARTISTS_LIMIT,
+                limit: SIMILAR_ARTISTS_LIMIT,
                 minimal: true
               )
             end

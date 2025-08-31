@@ -4,7 +4,7 @@ module SoundCloud
       private
 
       def name
-        response_data['username']
+        artist['username']
       end
     end
   end

@@ -1,6 +1,6 @@
 module MusicBrainz
   module Artist
-    class Albums < MusicBrainz::Base
+    class Albums < MusicBrainz::Artist::Base
       ALBUM_TYPES = {
         album: 'album',
         single: 'single',
@@ -16,22 +16,17 @@ module MusicBrainz
 
       private
 
-      def primary_args
-        [
-          @args[:artist_id],
-          @args[:album_type]
+      def required_args
+        super + %i[
+          album_type
         ]
       end
 
-      def no_data?
-        artist_info_data.blank?
-      end
-
-      def artist_info_data
-        @artist_info_data ||=
-          MusicBrainz::Artist::Info.call(
-            artist_id: @args[:artist_id]
-          )[:artist]
+      def artist_data
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def link
@@ -39,16 +34,12 @@ module MusicBrainz
       end
 
       def params
-        super
-          .merge(albums_params)
-          .merge(pagination_params)
-      end
-
-      def albums_params
         {
+          **super,
           artist: @args[:artist_id],
           type: album_type,
-          inc: 'artist-credits'
+          inc: 'artist-credits',
+          **pagination_params
         }
       end
 
@@ -58,25 +49,12 @@ module MusicBrainz
         ]
       end
 
-      def data
-        { artist: artist_data }
-      end
-
-      def artist_data
-        artist_info_data
-          .merge(paginated_data)
-      end
-
       def total_items_count
-        response_data[
-          'release-group-count'
-        ]
+        artist['release-group-count']
       end
 
       def collection_list
-        response_data[
-          'release-groups'
-        ]
+        artist['release-groups']
       end
 
       def collection_item_data_formatted(album)

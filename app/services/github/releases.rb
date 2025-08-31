@@ -8,6 +8,10 @@ module GitHub
 
     include Muffon::Utils::Pagination
 
+    def call
+      data
+    end
+
     private
 
     def link

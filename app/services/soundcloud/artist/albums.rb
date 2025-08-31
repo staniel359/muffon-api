@@ -8,8 +8,15 @@ module SoundCloud
 
       private
 
+      def artist_data
+        {
+          **super,
+          **paginated_data
+        }
+      end
+
       def albums_list
-        response_data['collection']
+        artist['collection']
       end
 
       def link
@@ -17,13 +24,10 @@ module SoundCloud
       end
 
       def params
-        super.merge(
-          albums_params
-        )
-      end
-
-      def albums_params
-        { limit: LIMIT }
+        {
+          **super,
+          limit: LIMIT
+        }
       end
 
       def collection_list
@@ -32,14 +36,8 @@ module SoundCloud
         )
       end
 
-      def artist_data
-        super.merge(
-          paginated_data
-        )
-      end
-
       def total_items_count
-        @total_items_count ||= albums_list.size
+        albums_list.size
       end
 
       def collection_item_data_formatted(album)

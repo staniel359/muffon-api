@@ -6,14 +6,17 @@ module ApplicationRecordDecorator
       order,
       default_order
     )
-      in_orders =
+      is_known_order =
         order.in?(
           self::ORDERS
         )
 
-      order_formatted = (
-        in_orders ? order : default_order
-      )
+      order_formatted =
+        if is_known_order
+          order
+        else
+          default_order
+        end
 
       send(
         "#{order_formatted}_ordered"
@@ -123,8 +126,10 @@ module ApplicationRecordDecorator
   end
 
   def images_data
-    images.map do |i|
-      image_data_formatted(i)
+    images.map do |image|
+      image_data_formatted(
+        image
+      )
     end
   end
 
@@ -133,9 +138,12 @@ module ApplicationRecordDecorator
   end
 
   def errors_data
-    forbidden.merge(
-      errors_formatted_data
-    )
+    {
+      **error_response_data(
+        'forbidden'
+      ),
+      **errors_formatted_data
+    }
   end
 
   def profile_playlists

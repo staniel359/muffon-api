@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.searchAlbums?access_token=<VK_ACCESS_TOKEN>&count=20&offset=0&q=wild%20nothing%20chinatown&sig=c1113d5546dc7885fd5106ec5d0f102d&v=5.131
+    uri: https://api.vk.ru/method/audio.searchAlbums?access_token=<VK_ACCESS_TOKEN>&count=20&offset=0&q=wild%20nothing%20chinatown&sig=337219b5fc0819384dfea487210feb56&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,24 +21,38 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:23 GMT
+      - Mon, 22 Sep 2025 21:08:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '35'
+      - '2360'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=QHfUVTTw0QoVbLCUxkGXy_a8qAqKvgbox03zgi6mK38Qalj8TbWA72_geoSLpjbpk3-4xtoeraziFvm-wzTJ4ZFqQu39ZZQuRHjQhp3KmFDQMUDGqZVUk1I6627pGLk6NHo;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      Strict-Transport-Security:
+      - max-age=86400
+      X-Frontend:
+      - front661806
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - iefO9ad58eXb2pSgTSUhsb9Y1ublvQ
+      Server-Timing:
+      - tid;desc="iefO9ad58eXb2pSgTSUhsb9Y1ublvQ",front;dur=200.871
     body:
       encoding: ASCII-8BIT
-      string: '{"response":{"count":0,"items":[]}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:23 GMT
-recorded_with: VCR 6.2.0
+      string: '{"response":{"count":1,"items":[{"id":15021352,"owner_id":-2000021352,"type":1,"title":"Nothing
+        But... Funky House Selections, Vol. 11","description":"","count":25,"followers":7,"plays":196,"create_time":1646804998,"update_time":1646804998,"genres":[{"id":36,"name":"House"}],"is_following":false,"year":2022,"photo":{"width":300,"height":300,"id":"457239033","photo_34":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=34x34&quality=96&sign=ccfe39226885aa364f0c2ee7aa49d505&c_uniq_tag=Mv1dTpF2R0gGUCdss6Eunrg4Ip_fHB1bYhAzKbZHzU4&type=audio","photo_68":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=68x68&quality=96&sign=632b97551f720761875291c4882248e0&c_uniq_tag=0tl0adNjwIr_EipW3fDxawOsxmpYaovmaAYDqtVYfgc&type=audio","photo_135":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=135x135&quality=96&sign=5b7fac8f39a36edf02f4617c33f0195a&c_uniq_tag=YVDI5DkSYjDbWdVhPswiI99Lsp7uMUZqG6MHCB-kKF0&type=audio","photo_270":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=270x270&quality=96&sign=93d9934f72c72cefa917da9250f70e98&c_uniq_tag=EEp7NcVBNIrBAM85MgfkTB9qnhVgIDPARYu-E2IWrxw&type=audio","photo_300":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=300x300&quality=96&sign=15a5273b2323af557d1cbc5298f78745&c_uniq_tag=8m2WbVe7hWVvjIb9--tPVISeatBcqRqRSF26jCR0jnI&type=audio","photo_600":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=600x600&quality=96&sign=035b98d63b775e2eb6b79119f676002c&c_uniq_tag=vs3N6wjOWQkVlOPqtGhSZHtEcLZIspiPwyjmfkCxKmI&type=audio","photo_1200":"https:\/\/sun1-24.vkuserphoto.ru\/impg\/ZRToHOut5UV-hY9KR39o3PuH00eOODQ5RpcmIg\/87TR4xp9hEs.jpg?size=1184x1184&quality=96&sign=e706ddcc8f93f31a9ffd02d09d88697f&c_uniq_tag=2EtFnlVcazhL9XaO1lZ7Qc5g2qMxiNkT8cBN634r3dc&type=audio"},"permissions":{"play":true,"share":true,"edit":false,"follow":true,"delete":false,"boom_download":true},"subtitle_badge":false,"play_button":false,"access_key":"5f9aa8abbc63936ec5","is_explicit":false,"main_artists":[{"name":"Various
+        Artists","is_followed":false,"can_follow":false}],"album_type":"collection","main_color":"#2D2018"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:08:21 GMT
+recorded_with: VCR 6.3.1

@@ -6,10 +6,13 @@ module MusixMatch
 
     private
 
-    def no_data?
-      response_data.dig(
-        'message', 'body'
-      ).blank?
+    def not_found?
+      response_data
+        .dig(
+          'message',
+          'body'
+        )
+        .blank?
     end
 
     def params

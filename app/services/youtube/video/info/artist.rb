@@ -5,10 +5,18 @@ module YouTube
         include Muffon::Utils::Artist
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            channel_title
+          ]
+        end
 
         def data
           return if name.blank?

@@ -5,14 +5,20 @@ module YouTube
         include YouTube::Utils::Playlist
 
         def call
+          check_args
+
           data
         end
 
         private
 
-        def data
-          return if snippet.blank?
+        def required_args
+          %i[
+            playlist
+          ]
+        end
 
+        def data
           self_data
             .merge(playlist_data)
         end
@@ -33,7 +39,15 @@ module YouTube
 
         def youtube_id
           playlist.dig(
-            'id', 'playlistId'
+            'id',
+            'playlistId'
+          )
+        end
+
+        def image_data
+          image_data_formatted(
+            images:,
+            model: 'search_playlist'
           )
         end
       end

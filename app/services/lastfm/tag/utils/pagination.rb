@@ -6,7 +6,7 @@ module LastFM
 
         private
 
-        def no_data?
+        def not_found?
           collection_list.blank?
         end
 

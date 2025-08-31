@@ -3,20 +3,18 @@ module VideoChannelDecorator
 
   class_methods do
     def with_youtube_id(
-      youtube_id,
-      update_params = {}
+      youtube_id:,
+      update_attributes:
     )
-      channel =
-        where(
-          youtube_id:
-        )
-        .first_or_initialize
-
-      channel.update(
-        attributes: update_params
+      where(
+        youtube_id:
       )
-
-      channel
+        .first_or_initialize
+        .tap do |video_channel|
+        video_channel.update!(
+          update_attributes
+        )
+      end
     rescue ActiveRecord::RecordNotUnique
       clear_cache && retry
     end

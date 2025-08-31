@@ -8,20 +8,17 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:album_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                album_title
+                artist_name
               ]
             end
 
             def process_library_album
-              library_album.update(
-                update_params
+              library_album.update!(
+                update_attributes
               )
-
-              return library_album.errors_data if
-                  library_album.errors?
 
               process_image
 
@@ -35,7 +32,8 @@ module Muffon
                 .where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def title
@@ -51,10 +49,11 @@ module Muffon
                 .library_artists
                 .where(
                   artist_id: find_album.artist_id
-                ).first_or_create
+                )
+                .first_or_create!
             end
 
-            def update_params
+            def update_attributes
               { source_data: @args[:source] }
             end
 

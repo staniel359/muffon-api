@@ -5,10 +5,18 @@ module YouTube
         include YouTube::Utils::Video
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            video
+          ]
+        end
 
         def data
           self_data
@@ -25,14 +33,13 @@ module YouTube
         end
 
         def video
-          @args[:video][
-            'compactVideoRenderer'
-          ]
+          @args[:video]['compactVideoRenderer']
         end
 
         def title
           video.dig(
-            'title', 'simpleText'
+            'title',
+            'simpleText'
           )
         end
 
@@ -42,23 +49,37 @@ module YouTube
 
         def channel_youtube_id
           video.dig(
-            'longBylineText', 'runs',
-            0, 'navigationEndpoint',
-            'browseEndpoint', 'browseId'
+            'longBylineText',
+            'runs',
+            0,
+            'navigationEndpoint',
+            'browseEndpoint',
+            'browseId'
           )
         end
 
         def channel_title
           video.dig(
             'longBylineText',
-            'runs', 0, 'text'
+            'runs',
+            0,
+            'text'
+          )
+        end
+
+        def image_data
+          image_data_formatted(
+            image:,
+            model: 'related_video'
           )
         end
 
         def image
           video.dig(
             'thumbnail',
-            'thumbnails', 0, 'url'
+            'thumbnails',
+            0,
+            'url'
           )
         end
 

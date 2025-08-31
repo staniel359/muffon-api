@@ -2,22 +2,20 @@ module SoundCloud
   module Utils
     class Image < SoundCloud::Base
       def call
+        return if args_missing?
+
         data
       end
 
       private
 
+      def required_args
+        %i[
+          image
+        ]
+      end
+
       def data
-        return if image.blank?
-
-        image_data
-      end
-
-      def image
-        @args[:image]
-      end
-
-      def image_data
         {
           original: image_resized('t500x500'),
           large: image_resized('t500x500'),
@@ -28,8 +26,9 @@ module SoundCloud
       end
 
       def image_resized(size)
-        image.sub(
-          'large', size
+        @args[:image].sub(
+          'large',
+          size
         )
       end
     end

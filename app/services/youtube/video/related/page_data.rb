@@ -6,10 +6,18 @@ module YouTube
           'https://www.youtube.com/watch'.freeze
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            video_id
+          ]
+        end
 
         def data
           if @args[:page].present?
@@ -51,8 +59,7 @@ module YouTube
           {
             'gl' => 'GB',
             'clientName' => 'WEB',
-            'clientVersion' =>
-              '2.20230714.00.00'
+            'clientVersion' => '2.20250926.01.00'
           }
         end
 

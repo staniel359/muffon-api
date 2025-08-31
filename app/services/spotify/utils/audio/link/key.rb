@@ -6,17 +6,19 @@ module Spotify
           BASE_LINK =
             'http://localhost:3745/audiokey'.freeze
 
-          private
+          def call
+            check_args
 
-          def primary_args
-            [
-              @args[:track_id],
-              @args[:file_id]
-            ]
+            data
           end
 
-          def no_data?
-            false
+          private
+
+          def required_args
+            %i[
+              track_id
+              file_id
+            ]
           end
 
           def data
@@ -29,8 +31,6 @@ module Spotify
             response
               .body
               .unpack1('H*')
-          rescue Faraday::BadRequestError, Faraday::ConnectionFailed
-            nil
           end
 
           def test_key

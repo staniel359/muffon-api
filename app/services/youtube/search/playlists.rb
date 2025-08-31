@@ -6,6 +6,14 @@ module YouTube
 
       private
 
+      def collection_list
+        super.reject do |collection_item|
+          channel_item?(
+            collection_item
+          )
+        end
+      end
+
       def collection_item_data_formatted(playlist)
         YouTube::Search::Playlists::Playlist.call(
           playlist:,

@@ -3,18 +3,9 @@ module Spotify
     class Updater < Spotify::Connection::Base
       private
 
-      def process_profile
-        return forbidden if
-            access_token_data.blank?
-
-        spotify_connection.update(
-          spotify_connection_params
-        )
-
-        return spotify_connection.errors_data if
-            spotify_connection.errors?
-
-        { success: true }
+      def forbidden?
+        super ||
+          access_token_data.blank?
       end
 
       def access_token_data
@@ -25,10 +16,23 @@ module Spotify
           )
       end
 
-      def spotify_connection_params
-        access_token_data.slice(
-          :access_token
+      def process_profile
+        spotify_connection.update(
+          spotify_connection_params
         )
+
+        if spotify_connection.errors?
+          spotify_connection.errors_data
+        else
+          { success: true }
+        end
+      end
+
+      def spotify_connection_params
+        {
+          access_token:
+            access_token_data[:access_token]
+        }
       end
     end
   end

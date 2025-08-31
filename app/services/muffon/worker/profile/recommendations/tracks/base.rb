@@ -6,9 +6,9 @@ module Muffon
           class Base < Muffon::Worker::Profile::Recommendations::Base
             private
 
-            def primary_args
-              super + [
-                @args[:library_track_id]
+            def required_args
+              super + %i[
+                library_track_id
               ]
             end
 
@@ -17,12 +17,10 @@ module Muffon
             end
 
             def worker_args
-              @args.slice(
-                *%i[
-                  profile_id
-                  library_track_id
-                ]
-              ).to_json
+              {
+                profile_id: @args[:profile_id],
+                library_track_id: @args[:library_track_id]
+              }
             end
           end
         end

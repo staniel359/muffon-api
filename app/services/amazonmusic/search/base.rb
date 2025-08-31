@@ -3,10 +3,18 @@ module AmazonMusic
     class Base < AmazonMusic::Base
       include AmazonMusic::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def data

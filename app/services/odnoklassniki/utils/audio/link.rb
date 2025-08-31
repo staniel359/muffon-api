@@ -6,14 +6,20 @@ module Odnoklassniki
           '43561287293571488343173598143728'.freeze
 
         def call
+          check_args
+
           data
         end
 
         private
 
-        def data
-          return if @args[:link].blank?
+        def required_args
+          %i[
+            link
+          ]
+        end
 
+        def data
           "#{@args[:link]}&clientHash=#{client_hash}"
         end
 
@@ -22,9 +28,11 @@ module Odnoklassniki
             .map
             .with_index do |number, index|
               first_sequence_item_formatted(
-                number, index
+                number,
+                index
               )
-            end.join
+            end
+            .join
         end
 
         def first_sequence
@@ -35,10 +43,14 @@ module Odnoklassniki
             )
         end
 
-        def first_sequence_item_formatted(number, index)
+        def first_sequence_item_formatted(
+          number,
+          index
+        )
           multiplied =
             first_sequence_item_multiplied(
-              number, index
+              number,
+              index
             )
 
           (
@@ -46,7 +58,10 @@ module Odnoklassniki
           ).abs
         end
 
-        def first_sequence_item_multiplied(number, index)
+        def first_sequence_item_multiplied(
+          number,
+          index
+        )
           third_sequence[index] *
             third_sequence[index + 1] *
             number
@@ -63,8 +78,8 @@ module Odnoklassniki
           @second_sequence ||=
             md5_digest_string
             .chars
-            .map do |c|
-              c.to_i(16)
+            .map do |char|
+              char.to_i(16)
             end
         end
 
@@ -75,8 +90,8 @@ module Odnoklassniki
         end
 
         def md5_string
-          Rack::Utils.parse_nested_query(
-            @args[:link]
+          parse_query_string(
+            link: @args[:link]
           )['md5']
         end
 

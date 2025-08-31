@@ -7,10 +7,18 @@ module MusicBrainz
         include MusicBrainz::Utils::Artist
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            label
+          ]
+        end
 
         def data
           {

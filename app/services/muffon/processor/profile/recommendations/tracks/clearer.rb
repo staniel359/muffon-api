@@ -8,20 +8,18 @@ module Muffon
             private
 
             def process_recommendations
-              return if profile.blank?
-
               update_recommendations
 
               delete_empty_recommendations
             end
 
             def update_recommendations
-              recommendations.find_each do |rec|
-                rec.library_track_ids -= [
+              recommendations.find_each do |recommendation|
+                recommendation.library_track_ids -= [
                   @args[:library_track_id]
                 ]
 
-                rec.save
+                recommendation.save
               end
             end
 
@@ -39,7 +37,8 @@ module Muffon
                 .recommendation_tracks
                 .where(
                   library_track_ids: []
-                ).delete_all
+                )
+                .delete_all
             end
           end
         end

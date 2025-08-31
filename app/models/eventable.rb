@@ -54,7 +54,7 @@ module Eventable
   end
 
   def model_profile
-    case self.class.name
+    case model_name.name
     when 'Profile'
       self
     when 'Community'

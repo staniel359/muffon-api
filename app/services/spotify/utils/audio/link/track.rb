@@ -3,14 +3,20 @@ module Spotify
     module Audio
       class Link
         class Track < Spotify::Utils::Audio::Link
-          private
+          def call
+            check_args
 
-          def primary_args
-            [@args[:track_id]]
+            data
+          rescue Faraday::ResourceNotFound
+            raise not_found_error
           end
 
-          def no_data?
-            false
+          private
+
+          def required_args
+            %i[
+              track_id
+            ]
           end
 
           def link

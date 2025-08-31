@@ -5,16 +5,35 @@ module VK
 
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
+      end
+
+      def data
+        { search: paginated_data }
+      end
+
+      def collection_list
+        response_data['items'] || []
       end
 
       def params
-        super.merge(
-          search_params
-        )
+        {
+          **super,
+          q: query,
+          count: limit,
+          offset:
+        }
       end
 
       def signature
@@ -31,22 +50,12 @@ module VK
         @args[:query]
       end
 
-      def search_params
-        {
-          q: query,
-          count: limit,
-          offset:
-        }
-      end
-
-      def data
-        { search: paginated_data }
-      end
-
       def collection_count
-        return total_limit if wrong_items_count?
-
-        items_count
+        if wrong_items_count?
+          total_limit
+        else
+          items_count
+        end
       end
 
       def wrong_items_count?
@@ -56,10 +65,6 @@ module VK
 
       def items_count
         response_data['count'] || 0
-      end
-
-      def collection_list
-        response_data['items'] || []
       end
 
       def collection_name

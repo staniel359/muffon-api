@@ -7,27 +7,11 @@ module YandexMusic
 
       private
 
-      def params
-        super.merge(
-          albums_params
-        )
-      end
-
-      def albums_params
-        {
-          sort: 'year',
-          what: 'albums'
-        }
-      end
-
-      def albums_list
-        artist['albums']
-      end
-
       def artist_data
-        super.merge(
-          paginated_data
-        )
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def collection_list
@@ -36,8 +20,20 @@ module YandexMusic
         )
       end
 
+      def albums_list
+        artist['albums']
+      end
+
+      def params
+        {
+          **super,
+          sort: 'year',
+          what: 'albums'
+        }
+      end
+
       def total_items_count
-        @total_items_count ||= albums_list.size
+        albums_list.size
       end
 
       def collection_item_data_formatted(album)

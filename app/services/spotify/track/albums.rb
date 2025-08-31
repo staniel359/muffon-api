@@ -29,7 +29,8 @@ module Spotify
 
       def album_id
         track.dig(
-          'album', 'id'
+          'album',
+          'id'
         )
       end
     end

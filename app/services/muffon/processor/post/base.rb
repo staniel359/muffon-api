@@ -1,17 +1,8 @@
 module Muffon
   module Processor
     module Post
-      class Base < Muffon::Profile::Base
+      class Base < Muffon::Processor::Profile::Base
         include Muffon::Utils::Sendable
-
-        private
-
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token]
-          ]
-        end
 
         def community
           if instance_variable_defined?(
@@ -24,10 +15,6 @@ module Muffon
                 id: @args[:community_id]
               )
           end
-        end
-
-        def forbidden?
-          !valid_profile?
         end
 
         def data

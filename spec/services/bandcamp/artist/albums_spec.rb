@@ -4,12 +4,19 @@ RSpec.describe Bandcamp::Artist::Albums do
   describe 'successful processing' do
     context 'when artist present' do
       let(:output) do
-        VCR.use_cassette 'services/bandcamp/artist/albums/success' do
-          subject.call(artist_id: '2707934946', limit: 5, page: 2, profile_id: 1)
+        VCR.use_cassette(
+          'services/bandcamp/artist/albums/success'
+        ) do
+          subject.call(
+            artist_id: '2707934946',
+            limit: 5,
+            page: 2,
+            profile_id: 1
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Bandcamp::Artist.albums_data) }
+      it { expect(output).to eq(bandcamp_artist_albums_data) }
     end
   end
 
@@ -17,17 +24,21 @@ RSpec.describe Bandcamp::Artist::Albums do
     context 'when no args' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong artist' do
       let(:output) do
-        VCR.use_cassette 'services/bandcamp/artist/albums/wrong_artist' do
-          subject.call(artist_id: random)
+        VCR.use_cassette(
+          'services/bandcamp/artist/albums/wrong_artist'
+        ) do
+          subject.call(
+            artist_id: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

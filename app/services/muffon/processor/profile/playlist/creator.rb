@@ -5,21 +5,22 @@ module Muffon
         class Creator < Muffon::Processor::Profile::Playlist::Base
           private
 
-          def primary_args
-            super + [
-              @args[:title]
+          def required_args
+            super + %i[
+              title
             ]
           end
 
           def process_playlist
             playlist
 
-            return playlist.errors_data if
-                playlist.errors?
+            if playlist.errors?
+              playlist.errors_data
+            else
+              process_image
 
-            process_image
-
-            { playlist: playlist_data }
+              { playlist: playlist_data }
+            end
           end
 
           def playlist

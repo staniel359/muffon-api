@@ -8,20 +8,17 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:track_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                track_title
+                artist_name
               ]
             end
 
             def process_favorite
-              favorite_track.update(
+              favorite_track.update!(
                 update_params
               )
-
-              return favorite_track.errors_data if
-                  favorite_track.errors?
 
               process_image
 
@@ -34,7 +31,8 @@ module Muffon
                 .favorite_tracks
                 .where(
                   track_id: find_track.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def title

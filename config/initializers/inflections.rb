@@ -1,15 +1,29 @@
-ActiveSupport::Inflector.inflections(:en) do |inflect|
-  inflect.acronym 'API'
-  inflect.acronym 'LastFM'
-  inflect.acronym 'VK'
-  inflect.acronym 'YouTubeMusic'
-  inflect.acronym 'YouTube'
-  inflect.acronym 'SoundCloud'
-  inflect.acronym 'YandexMusic'
-  inflect.acronym 'MusicBrainz'
-  inflect.acronym 'MusixMatch'
-  inflect.acronym 'GitHub'
-  inflect.acronym 'AmazonMusic'
+ACRONYMS = %w[
+  API
+  LastFM
+  VK
+  YouTubeMusic
+  YouTube
+  SoundCloud
+  YandexMusic
+  MusicBrainz
+  MusixMatch
+  GitHub
+  AmazonMusic
+].freeze
+UNCOUNTABLES = %w[
+  discogs
+  genius
+].freeze
 
-  inflect.uncountable %w[discogs genius]
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  ACRONYMS.each do |acronym|
+    inflect.acronym(
+      acronym
+    )
+  end
+
+  inflect.uncountable(
+    UNCOUNTABLES
+  )
 end

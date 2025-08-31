@@ -5,7 +5,9 @@ module Muffon
         FILE_EXTENSION = 'mp3'.freeze
 
         def call
-          return if not_all_args? || no_data?
+          check_args
+
+          return if no_data?
 
           data
         end

@@ -8,35 +8,11 @@ module Genius
 
       private
 
-      def no_data?
-        artist_info_data.blank?
-      end
-
-      def artist_info_data
-        @artist_info_data ||=
-          Genius::Artist::Info.call(
-            artist_id: @args[:artist_id]
-          )[:artist]
-      end
-
-      def albums_list
-        response_data.dig(
-          'response', 'albums'
-        )
-      end
-
-      def link
-        "#{super}/albums"
-      end
-
-      def params
-        super.merge(
-          albums_params
-        )
-      end
-
-      def albums_params
-        { per_page: LIMIT }
+      def artist_data
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def collection_list
@@ -45,18 +21,26 @@ module Genius
         )
       end
 
-      def artist_data
-        super.merge(
-          paginated_data
+      def albums_list
+        artist.dig(
+          'response',
+          'albums'
         )
       end
 
-      def total_items_count
-        @total_items_count ||= albums_list.size
+      def link
+        "#{super}/albums"
       end
 
-      def name
-        artist_info_data[:name]
+      def params
+        {
+          **super,
+          per_page: LIMIT
+        }
+      end
+
+      def total_items_count
+        albums_list.size
       end
 
       def collection_item_data_formatted(album)

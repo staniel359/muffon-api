@@ -5,8 +5,10 @@ module LastFM
 
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def response_data
@@ -14,7 +16,8 @@ module LastFM
           Google::Search.call(
             params
           ).try(
-            :[], :search
+            :[],
+            :search
           ) || {}
       end
 

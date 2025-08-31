@@ -5,21 +5,16 @@ module SoundCloud
         BASE_LINK =
           'https://api-v2.soundcloud.com'.freeze
 
-        include Muffon::Utils::Global
-
-        def call
-          super
-        rescue Faraday::UnauthorizedError
-          retry_with_new_client_id
-        end
-
         private
 
         def client_id
           return test_client_id if test?
 
           get_global_value(
-            'soundcloud_v2_client_id'
+            'soundcloud:v2:client_id',
+            refresh_class_name:
+              'SoundCloud::Utils::ClientId',
+            is_refresh: refresh_client_id?
           )
         end
 
@@ -30,19 +25,15 @@ module SoundCloud
           )
         end
 
-        def global_value
-          @global_value ||=
-            SoundCloud::Utils::ClientId.call
+        def refresh_client_id?
+          !!@args[:is_refresh_client_id]
         end
 
         def retry_with_new_client_id
-          return if global_value.blank?
-
-          update_global_value(
-            'soundcloud_v2_client_id'
+          self.class.call(
+            **@args,
+            is_refresh_client_id: true
           )
-
-          call
         end
       end
     end

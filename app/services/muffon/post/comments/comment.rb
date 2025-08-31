@@ -3,10 +3,18 @@ module Muffon
     module Comments
       class Comment < Muffon::Base
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            comment
+          ]
+        end
 
         def data
           comment_base_data

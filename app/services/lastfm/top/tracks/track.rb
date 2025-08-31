@@ -5,10 +5,18 @@ module LastFM
         include LastFM::Utils::Track
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            track
+          ]
+        end
 
         def data
           self_data
@@ -17,10 +25,6 @@ module LastFM
 
         def track
           @args[:track]
-        end
-
-        def artist_name
-          track['artist']['name']
         end
 
         def track_data

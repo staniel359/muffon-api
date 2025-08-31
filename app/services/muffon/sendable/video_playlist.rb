@@ -4,10 +4,18 @@ module Muffon
       include YouTube::Utils::Playlist
 
       def call
+        check_args
+
         data
       end
 
       private
+
+      def required_args
+        %i[
+          playlist
+        ]
+      end
 
       def data
         {

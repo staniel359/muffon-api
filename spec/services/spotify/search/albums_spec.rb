@@ -4,12 +4,19 @@ RSpec.describe Spotify::Search::Albums do
   describe 'successful processing' do
     context 'when query present' do
       let(:output) do
-        VCR.use_cassette 'services/spotify/search/albums/success' do
-          subject.call(query: 'a', limit: 5, page: 2, profile_id: 1)
+        VCR.use_cassette(
+          'services/spotify/search/albums/success'
+        ) do
+          subject.call(
+            query: 'a',
+            limit: 5,
+            page: 2,
+            profile_id: 1
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Spotify::Search.albums_data) }
+      it { expect(output).to eq(spotify_search_albums_data) }
     end
   end
 
@@ -17,17 +24,21 @@ RSpec.describe Spotify::Search::Albums do
     context 'when no query given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong query' do
       let(:output) do
-        VCR.use_cassette 'services/spotify/search/albums/wrong_query' do
-          subject.call(query: random)
+        VCR.use_cassette(
+          'services/spotify/search/albums/wrong_query'
+        ) do
+          subject.call(
+            query: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Search.no_albums_data) }
+      it { expect(output).to eq(no_albums_data) }
     end
   end
 end

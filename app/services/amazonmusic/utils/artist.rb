@@ -6,7 +6,10 @@ module AmazonMusic
       private
 
       def name
-        artist['primaryText']['text']
+        artist.dig(
+          'primaryText',
+          'text'
+        )
       end
 
       def source_data
@@ -24,7 +27,10 @@ module AmazonMusic
       end
 
       def amazonmusic_slug
-        artist['primaryLink']['deeplink']
+        artist.dig(
+          'primaryLink',
+          'deeplink'
+        )
       end
 
       def original_link

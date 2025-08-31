@@ -1,41 +1,57 @@
 module Spotify
   module User
     class Base < Spotify::Base
+      def call
+        check_args
+
+        check_if_not_found
+
+        check_if_forbidden
+
+        data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_session
+      end
+
       private
 
-      def primary_args
-        return primary_skip_profile_args if skip_profile?
-
-        [
-          @args[:profile_id],
-          @args[:token]
-        ]
+      def required_args
+        if skip_profile?
+          %i[
+            access_token
+          ]
+        else
+          %i[
+            profile_id
+            token
+          ]
+        end
       end
 
       def skip_profile?
-        test? || !!@args[:skip_profile]
+        return true if test?
+
+        !!@args[:skip_profile]
       end
 
-      def primary_skip_profile_args
-        [@args[:access_token]]
-      end
-
-      def no_data?
-        return false if skip_profile?
-
-        profile.blank?
+      def not_found?
+        if skip_profile?
+          false
+        else
+          profile.blank?
+        end
       end
 
       def forbidden?
-        return false if skip_profile?
-
-        !valid_profile?
+        if skip_profile?
+          false
+        else
+          !valid_profile?
+        end
       end
 
       def data
         { user: user_data }
-      rescue Faraday::UnauthorizedError
-        retry_with_new_session
       end
 
       def link
@@ -55,6 +71,8 @@ module Spotify
         @args[:access_token] ||
           spotify_connection&.access_token
       end
+
+      alias user response_data
     end
   end
 end

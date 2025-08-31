@@ -2,31 +2,38 @@ module YouTubeMusic
   module Search
     class ScopeParams < YouTubeMusic::Search::Base
       SCOPES = {
-        tracks: 'Songs',
-        videos: 'Videos',
-        mixes: 'Featured playlists',
-        playlists: 'Community playlists'
+        'tracks' => 'Songs',
+        'videos' => 'Videos',
+        'mixes' => 'Featured playlists',
+        'playlists' => 'Community playlists'
       }.freeze
+
+      def call
+        check_args
+
+        data
+      end
 
       private
 
-      def primary_args
-        [
-          @args[:query],
-          @args[:scope]
+      def required_args
+        %i[
+          query
+          scope
         ]
       end
 
       def data
         scope_data&.dig(
           'navigationEndpoint',
-          'searchEndpoint', 'params'
+          'searchEndpoint',
+          'params'
         )
       end
 
       def scope_data
-        scopes&.find do |s|
-          matched_scope?(s)
+        scopes&.find do |scope|
+          matched_scope?(scope)
         end
       end
 
@@ -38,10 +45,16 @@ module YouTubeMusic
 
       def raw_scopes
         response_data.dig(
-          'contents', 'tabbedSearchResultsRenderer',
-          'tabs', 0, 'tabRenderer', 'content',
-          'sectionListRenderer', 'header',
-          'chipCloudRenderer', 'chips'
+          'contents',
+          'tabbedSearchResultsRenderer',
+          'tabs',
+          0,
+          'tabRenderer',
+          'content',
+          'sectionListRenderer',
+          'header',
+          'chipCloudRenderer',
+          'chips'
         )
       end
 
@@ -58,7 +71,7 @@ module YouTubeMusic
 
       def scope_formatted
         SCOPES[
-          @args[:scope].downcase.to_sym
+          @args[:scope]
         ]
       end
     end

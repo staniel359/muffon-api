@@ -27,7 +27,7 @@ class ImagesController < ApplicationController
   end
 
   def image_link
-    if Rails.env.development?
+    if development?
       rails_blob_url(
         blob
       )

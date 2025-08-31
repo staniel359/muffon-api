@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://musicbrainz.org/ws/2/artist/4b585938-f271-45e2-b19a-91c634b5e396?fmt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 Sep 2025 07:37:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=15
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1200'
+      X-Ratelimit-Remaining:
+      - '551'
+      X-Ratelimit-Reset:
+      - '1757403444'
+      Server:
+      - Plack::Handler::Starlet
+      Etag:
+      - W/"08d5453439ceca03f1f473b42aadffd5"
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Runtime:
+      - '0.039389'
+      X-Cache-Status:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"country":"GB","begin-area":{"name":"Welling","type-id":null,"id":"f5fa3a2b-f793-4fab-8bb6-fe824c941b53","sort-name":"Welling","type":null,"disambiguation":""},"sort-name":"Bush,
+        Kate","isnis":["0000000114808340"],"life-span":{"end":null,"ended":false,"begin":"1958-07-30"},"area":{"type":null,"disambiguation":"","iso-3166-2-codes":["GB-ENG"],"name":"England","type-id":null,"id":"9d5dd675-3cf4-4296-9e39-67865ebee758","sort-name":"England"},"ipis":["00046612098","00046612196"],"gender-id":"93452b5a-a947-30c8-934f-6a4056b151c2","disambiguation":"","type":"Person","gender":"Female","id":"4b585938-f271-45e2-b19a-91c634b5e396","type-id":"b6e035f4-3ce9-331c-97df-83397230b0df","end-area":null,"name":"Kate
+        Bush"}'
+  recorded_at: Tue, 09 Sep 2025 07:37:24 GMT
+recorded_with: VCR 6.3.1

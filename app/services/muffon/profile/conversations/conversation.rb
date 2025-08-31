@@ -3,10 +3,18 @@ module Muffon
     class Conversations
       class Conversation < Muffon::Profile::Conversations
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            conversation
+          ]
+        end
 
         def data
           {

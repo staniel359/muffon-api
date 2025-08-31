@@ -4,9 +4,11 @@ module Spotify
       private
 
       def album_data
-        return album_list_data if @args[:list]
-
-        album_full_data
+        if @args[:list]
+          album_list_data
+        else
+          album_full_data
+        end
       end
 
       def album_list_data
@@ -54,7 +56,7 @@ module Spotify
 
       def tracks_list
         @tracks_list ||=
-          Spotify::Album::Info::Tracks.call(
+          Spotify::Album::Tracks.call(
             album_id: @args[:album_id],
             total_items_count: tracks_count
           )[:tracks]
@@ -68,7 +70,7 @@ module Spotify
       end
 
       def track_data_formatted(track)
-        Spotify::Album::Info::Track.call(
+        Spotify::Album::Tracks::Track.call(
           track:,
           album_data: album_base_data,
           profile_id: @args[:profile_id],

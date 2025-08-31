@@ -5,6 +5,10 @@ module Muffon
 
     include Muffon::Utils::Pagination
 
+    def call
+      data
+    end
+
     private
 
     def data

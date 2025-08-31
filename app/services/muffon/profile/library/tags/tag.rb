@@ -4,14 +4,23 @@ module Muffon
       class Tags
         class Tag < Muffon::Profile::Library::Tags
           def call
+            check_args
+
             data
           end
 
           private
 
+          def required_args
+            %i[
+              tag
+            ]
+          end
+
           def data
             {
-              library: library_tag_data,
+              library:
+                library_tag_data,
               name:,
               count:
             }

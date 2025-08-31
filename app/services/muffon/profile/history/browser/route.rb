@@ -4,10 +4,18 @@ module Muffon
       class Browser
         class Route < Muffon::Profile::History::Browser
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              event
+            ]
+          end
 
           def data
             route_data

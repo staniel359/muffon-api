@@ -7,10 +7,18 @@ module Muffon
           include Muffon::Utils::Source::Artist
 
           def call
+            check_args
+
             data
           end
 
           private
+
+          def required_args
+            %i[
+              bookmark_artist
+            ]
+          end
 
           def data
             self_data

@@ -5,16 +5,8 @@ module VK
 
       private
 
-      def primary_args
-        [
-          @args[:album_id],
-          @args[:owner_id],
-          @args[:access_key]
-        ]
-      end
-
       def tracks_list
-        response_data['items']
+        album['items']
       end
 
       def album_params
@@ -42,9 +34,9 @@ module VK
       def track_data_formatted(track)
         VK::Album::Tracks::Track.call(
           track:,
+          album_data: @args[:album_data],
           profile_id: @args[:profile_id],
-          token: @args[:token],
-          album_data: @args[:album_data]
+          token: @args[:token]
         )
       end
     end

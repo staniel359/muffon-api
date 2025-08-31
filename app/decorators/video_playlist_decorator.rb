@@ -3,20 +3,18 @@ module VideoPlaylistDecorator
 
   class_methods do
     def with_youtube_id(
-      youtube_id,
-      update_params = {}
+      youtube_id:,
+      update_attributes:
     )
-      playlist =
-        where(
-          youtube_id:
-        )
-        .first_or_initialize
-
-      playlist.update(
-        attributes: update_params
+      where(
+        youtube_id:
       )
-
-      playlist
+        .first_or_initialize
+        .tap do |video_playlist|
+        video_playlist.update!(
+          update_attributes
+        )
+      end
     rescue ActiveRecord::RecordNotUnique
       clear_cache && retry
     end

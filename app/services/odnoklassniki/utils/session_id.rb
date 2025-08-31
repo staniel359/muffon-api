@@ -5,8 +5,6 @@ module Odnoklassniki
 
       def call
         data
-      rescue StandardError
-        nil
       end
 
       private

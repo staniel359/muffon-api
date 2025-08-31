@@ -7,10 +7,18 @@ module LastFM
             include LastFM::Utils::Track
 
             def call
+              check_args
+
               data
             end
 
             private
+
+            def required_args
+              %i[
+                track
+              ]
+            end
 
             def data
               track_base_data

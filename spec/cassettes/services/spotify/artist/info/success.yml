@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Authorization:
+      - Bearer BQDRsOwN6Zqu9lPj2uKh0ZDuICpRXeQJrrImM-ZyNTZin77Jb-Bi4bGnvat0jWgXYav2YPgI1vQslmAEiXaueEaW7i6-pzwuHaKD06tWFoUaJwld4JdJ7MevcMmJgH19EXZFRfcEnzM
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-IjczNWY3N2U4NzM1ZGRiYzFjYTdkNjViZTRjNjNhYTYyIg=="'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Date:
+      - Tue, 09 Sep 2025 19:25:48 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"external_urls":{"spotify":"https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"},"followers":{"href":null,"total":2465784},"genres":["art
+        pop","baroque pop","art rock"],"href":"https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL","id":"1aSxMhuvixZ8h9dK9jIDwL","images":[{"url":"https://i.scdn.co/image/ab6761610000e5eb187017724e58e78ee1f5a8e4","height":640,"width":640},{"url":"https://i.scdn.co/image/ab67616100005174187017724e58e78ee1f5a8e4","height":320,"width":320},{"url":"https://i.scdn.co/image/ab6761610000f178187017724e58e78ee1f5a8e4","height":160,"width":160}],"name":"Kate
+        Bush","popularity":73,"type":"artist","uri":"spotify:artist:1aSxMhuvixZ8h9dK9jIDwL"}'
+  recorded_at: Tue, 09 Sep 2025 19:25:48 GMT
+recorded_with: VCR 6.3.1

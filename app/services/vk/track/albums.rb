@@ -29,10 +29,6 @@ module VK
         )[:album]
       end
 
-      def album
-        track['album']
-      end
-
       def album_id
         album['id']
       end

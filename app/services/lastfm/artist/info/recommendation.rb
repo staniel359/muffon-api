@@ -11,16 +11,17 @@ module LastFM
         private
 
         def return?
-          test? ||
-            not_all_args? ||
+          return true if test?
+
+          args_missing? ||
             no_data? ||
             !valid_profile?
         end
 
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token]
+        def required_args
+          %i[
+            profile_id
+            token
           ]
         end
 

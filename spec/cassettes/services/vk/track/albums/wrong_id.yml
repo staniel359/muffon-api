@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=wejlhg239gh23&sig=a790d7241fb1d947bff410011d948cb1&v=5.131
+    uri: https://api.vk.ru/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=wejlhg239gh23&sig=0938764f83ab40cf463412f65c5bf40f&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,7 +21,7 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:31 GMT
+      - Mon, 22 Sep 2025 21:09:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,17 +29,29 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=RQQkvhG3Ct5u1av_05GL4expeNTdQeaR2pKg7u2IDJSpTQWlUBhB9PK4cvSxhm9sNrfc3-J1Me776ZtAI6cX1DJjI5Dyv1JaeG8CGFagUrGNc6c4qHuc5g5poARYnx2g-7U;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
+      - remixstlid=9064836011638285052_TnWbp4vl3kKj94A76fUPdp6svhFuFp5IlZeBCSwgOUw;
+        expires=Tue, 22 Sep 2026 21:09:20 GMT; path=/; domain=.vk.ru; secure
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      X-Frontend:
+      - front661410
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - bpEq9GvbwHYiSnXhgZh1wHXb7He-oA
+      Server-Timing:
+      - tid;desc="bpEq9GvbwHYiSnXhgZh1wHXb7He-oA",front;dur=29.861
     body:
       encoding: ASCII-8BIT
       string: '{"error":{"error_code":100,"error_msg":"One of the parameters specified
-        was missing or invalid: audios[0].>>>[owner_id]<<<_[audio_id]_[sig] not integer","request_params":[{"key":"v","value":"5.131"},{"key":"audios","value":"wejlhg239gh23"},{"key":"method","value":"audio.getById"},{"key":"oauth","value":"1"}]}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:31 GMT
-recorded_with: VCR 6.2.0
+        was missing or invalid: audios[0].>>>[owner_id]<<<_[audio_id]_[sig] not integer","request_params":[{"key":"audios","value":"wejlhg239gh23"},{"key":"v","value":"5.131"},{"key":"method","value":"audio.getById"},{"key":"oauth","value":"1"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:09:21 GMT
+recorded_with: VCR 6.3.1

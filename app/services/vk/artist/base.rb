@@ -1,16 +1,35 @@
 module VK
   module Artist
     class Base < VK::Base
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:artist_id]]
+        check_if_not_found
+
+        data
       end
 
-      def params
-        super.merge(
-          artist_params
-        )
+      private
+
+      def required_args
+        %i[
+          artist_id
+        ]
+      end
+
+      def not_found?
+        name.blank?
+      end
+
+      def name
+        artist_info_data[:name]
+      end
+
+      def artist_info_data
+        @artist_info_data ||=
+          VK::Artist::Info.call(
+            artist_id: vk_artist_id
+          )[:artist]
       end
 
       def vk_artist_id
@@ -20,6 +39,19 @@ module VK
       def data
         { artist: artist_data }
       end
+
+      def artist_data
+        { name: }
+      end
+
+      def params
+        {
+          **super,
+          **artist_params
+        }
+      end
+
+      alias artist response_data
     end
   end
 end

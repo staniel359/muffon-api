@@ -3,25 +3,22 @@ module Muffon
     module Profile
       module Recommendations
         module Artists
-          class Clearer <
-              Muffon::Processor::Profile::Recommendations::Artists::Base
+          class Clearer < Muffon::Processor::Profile::Recommendations::Artists::Base
             private
 
             def process_recommendations
-              return if profile.blank?
-
               update_recommendations
 
               delete_empty_recommendations
             end
 
             def update_recommendations
-              recommendations.find_each do |rec|
-                rec.library_artist_ids -= [
+              recommendations.find_each do |recommendation|
+                recommendation.library_artist_ids -= [
                   @args[:library_artist_id]
                 ]
 
-                rec.save
+                recommendation.save
               end
             end
 
@@ -39,7 +36,8 @@ module Muffon
                 .recommendation_artists
                 .where(
                   library_artist_ids: []
-                ).delete_all
+                )
+                .delete_all
             end
           end
         end

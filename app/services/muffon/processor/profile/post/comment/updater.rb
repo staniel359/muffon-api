@@ -7,7 +7,8 @@ module Muffon
             private
 
             def forbidden?
-              super || !post_comment_creator?
+              super ||
+                !post_comment_creator?
             end
           end
         end

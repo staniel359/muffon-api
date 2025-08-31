@@ -4,12 +4,8 @@ module YouTube
       private
 
       def channel_data
-        channel_base_data
-          .merge(channel_playlists_data)
-      end
-
-      def channel_playlists_data
         {
+          **super,
           prev_page:,
           next_page:,
           playlists:
@@ -17,9 +13,7 @@ module YouTube
       end
 
       def prev_page
-        playlists_data[
-          :prev_page
-        ]
+        playlists_data[:prev_page]
       end
 
       def playlists_data
@@ -34,15 +28,11 @@ module YouTube
       end
 
       def next_page
-        playlists_data[
-          :next_page
-        ]
+        playlists_data[:next_page]
       end
 
       def playlists
-        playlists_data[
-          :playlists
-        ]
+        playlists_data[:playlists]
       end
     end
   end

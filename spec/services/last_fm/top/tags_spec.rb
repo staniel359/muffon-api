@@ -4,12 +4,17 @@ RSpec.describe LastFM::Top::Tags do
   describe 'successful processing' do
     context 'when no primary args' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/top/tags/success' do
-          subject.call(limit: 5, page: 2)
+        VCR.use_cassette(
+          'services/lastfm/top/tags/success'
+        ) do
+          subject.call(
+            limit: 5,
+            page: 2
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM::Top.tags_data) }
+      it { expect(output).to eq(lastfm_top_tags_data) }
     end
   end
 end

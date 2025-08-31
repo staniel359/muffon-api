@@ -5,17 +5,19 @@ module SoundCloud
         include Muffon::Utils::Audio::Link
 
         def call
-          return if not_all_args? || no_data?
+          check_args
+
+          return if no_data?
 
           data
         end
 
         private
 
-        def primary_args
-          [
-            @args[:track_id],
-            @args[:link]
+        def required_args
+          %i[
+            track_id
+            link
           ]
         end
 
@@ -40,7 +42,8 @@ module SoundCloud
 
         def audio_links
           track_data.dig(
-            'data', 'media',
+            'data',
+            'media',
             'transcodings'
           ) || []
         end
@@ -50,7 +53,8 @@ module SoundCloud
 
           protocol =
             data.dig(
-              'format', 'protocol'
+              'format',
+              'protocol'
             )
 
           preset.start_with?('mp3') &&
@@ -105,7 +109,8 @@ module SoundCloud
 
         def track_authorization_token
           track_data.dig(
-            'data', 'track_authorization'
+            'data',
+            'track_authorization'
           )
         end
       end

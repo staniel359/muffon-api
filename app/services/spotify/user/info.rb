@@ -15,22 +15,21 @@ module Spotify
       end
 
       def spotify_id
-        response_data['id']
+        user['id']
       end
 
       def nickname
-        response_data['display_name']
+        user['display_name']
       end
 
       def premium?
-        response_data[
-          'product'
-        ] == 'premium'
+        user['product'] == 'premium'
       end
 
       def image_url
         image_data.try(
-          :[], :extrasmall
+          :[],
+          :extrasmall
         )
       end
 
@@ -41,7 +40,7 @@ module Spotify
       end
 
       def images
-        response_data['images']
+        user['images']
       end
 
       def tracks_count

@@ -4,12 +4,16 @@ RSpec.describe Muffon::Radio::Tag::Tracks do
   describe 'successful processing' do
     context 'when tag exists' do
       let(:output) do
-        VCR.use_cassette 'services/muffon/radio/tag/tracks/success' do
-          subject.call(tag_name: 'wild nothing')
+        VCR.use_cassette(
+          'services/muffon/radio/tag/tracks/success'
+        ) do
+          subject.call(
+            tag_name: 'wild nothing'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Muffon::Radio::Tag.tracks_data) }
+      it { expect(output).to eq(muffon_radio_tag_tracks_data) }
     end
   end
 
@@ -17,17 +21,21 @@ RSpec.describe Muffon::Radio::Tag::Tracks do
     context 'when no tag name given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong tag name' do
       let(:output) do
-        VCR.use_cassette 'services/muffon/radio/tag/tracks/wrong_name' do
-          subject.call(tag_name: random)
+        VCR.use_cassette(
+          'services/muffon/radio/tag/tracks/wrong_name'
+        ) do
+          subject.call(
+            tag_name: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

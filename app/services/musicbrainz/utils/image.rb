@@ -2,25 +2,21 @@ module MusicBrainz
   module Utils
     class Image < MusicBrainz::Base
       def call
+        return if args_missing?
+
         data
       end
 
       private
 
-      def data
-        return if not_all_args?
-
-        image_data
-      end
-
-      def primary_args
-        [
-          @args[:album_id],
-          @args[:album_type]
+      def required_args
+        %i[
+          album_id
+          album_type
         ]
       end
 
-      def image_data
+      def data
         {
           original: image_resized('1200'),
           large: image_resized('500'),

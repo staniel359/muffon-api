@@ -18,7 +18,9 @@ module MusixMatch
 
       def track
         response_data.dig(
-          'message', 'body', 'track'
+          'message',
+          'body',
+          'track'
         )
       end
 
@@ -45,7 +47,8 @@ module MusixMatch
         MusixMatch::Track::Info::Lyrics.call(
           track_id: @args[:track_id]
         ).dig(
-          :track, :lyrics
+          :track,
+          :lyrics
         )
       end
 

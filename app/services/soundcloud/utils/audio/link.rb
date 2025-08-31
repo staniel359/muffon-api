@@ -2,26 +2,23 @@ module SoundCloud
   module Utils
     module Audio
       class Link < SoundCloud::API::V2::Base
-        ERRORS = [
-          Faraday::ForbiddenError,
-          Faraday::UnauthorizedError
-        ].freeze
-
         def call
-          return if not_all_args?
+          check_args
 
           data
         end
 
         private
 
-        def primary_args
-          [@args[:track_id]]
+        def required_args
+          %i[
+            track_id
+          ]
         end
 
         def data
           audio_link
-        rescue *ERRORS
+        rescue Faraday::ForbiddenError, Faraday::UnauthorizedError
           alternative_audio_link
         end
 

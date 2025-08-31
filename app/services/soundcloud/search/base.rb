@@ -5,10 +5,24 @@ module SoundCloud
 
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_client_id
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
+      end
+
+      def data
+        { search: paginated_data }
       end
 
       def collection_list
@@ -20,21 +34,12 @@ module SoundCloud
       end
 
       def params
-        super.merge(
-          search_params
-        )
-      end
-
-      def search_params
         {
+          **super,
           q: @args[:query],
           limit:,
           offset:
         }
-      end
-
-      def data
-        { search: paginated_data }
       end
 
       def collection_count

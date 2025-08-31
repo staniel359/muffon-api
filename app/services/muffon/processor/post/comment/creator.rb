@@ -5,19 +5,21 @@ module Muffon
         class Creator < Muffon::Processor::Post::Comment::Base
           private
 
-          def primary_args
-            super + content_args
+          def required_args
+            super +
+              content_args
           end
 
           def process_post_comment
             post_comment
 
-            return post_comment.errors_data if
-                post_comment.errors?
+            if post_comment.errors?
+              post_comment.errors_data
+            else
+              process_images
 
-            process_images
-
-            { comment: comment_data }
+              { comment: comment_data }
+            end
           end
 
           def post_comment

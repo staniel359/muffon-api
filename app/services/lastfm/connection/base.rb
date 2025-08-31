@@ -1,16 +1,22 @@
 module LastFM
   module Connection
     class Base < LastFM::Base
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [
-          @args[:profile_id],
-          @args[:token]
+      def required_args
+        %i[
+          profile_id
+          token
         ]
       end
 
-      def no_data?
+      def not_found?
         profile.blank?
       end
 

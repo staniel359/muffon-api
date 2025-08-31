@@ -3,18 +3,24 @@ module Genius
     class Info
       class Lyrics < Genius::Track::Info
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            track_slug
+          ]
+        end
 
         def data
           { lyrics: }
         end
 
         def lyrics
-          return '' if track_slug.blank?
-
           format_children(
             lyrics_nodes
           ).compact.flatten

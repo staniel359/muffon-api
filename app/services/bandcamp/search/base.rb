@@ -14,14 +14,18 @@ module Bandcamp
       include Muffon::Utils::Pagination
       include Bandcamp::Utils::Search
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:query]]
+        data
       end
 
-      def no_data?
-        false
+      private
+
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def data

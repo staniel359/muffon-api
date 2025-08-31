@@ -3,22 +3,20 @@ module YandexMusic
     class Base < YandexMusic::Base
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      rescue Faraday::ResourceNotFound, Faraday::BadRequestError
+        raise not_found_error
+      end
+
       private
 
-      def primary_args
-        [@args[:artist_id]]
-      end
-
-      def no_data?
-        artist.blank?
-      end
-
-      def link
-        "#{BASE_LINK}/artist.jsx"
-      end
-
-      def params
-        { artist: @args[:artist_id] }
+      def required_args
+        %i[
+          artist_id
+        ]
       end
 
       def data
@@ -31,8 +29,17 @@ module YandexMusic
 
       def name
         artist.dig(
-          'artist', 'name'
+          'artist',
+          'name'
         )
+      end
+
+      def link
+        "#{BASE_LINK}/artist.jsx"
+      end
+
+      def params
+        { artist: @args[:artist_id] }
       end
 
       alias artist response_data

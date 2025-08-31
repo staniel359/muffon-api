@@ -8,17 +8,14 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                artist_name
               ]
             end
 
             def process_favorite
               favorite_artist
-
-              return favorite_artist.errors_data if
-                  favorite_artist.errors?
 
               {
                 favorite_artist:
@@ -32,7 +29,8 @@ module Muffon
                 .favorite_artists
                 .where(
                   artist_id: find_artist.id
-                ).first_or_create
+                )
+                .first_or_create!
             end
 
             def name

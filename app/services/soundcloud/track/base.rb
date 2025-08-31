@@ -3,16 +3,22 @@ module SoundCloud
     class Base < SoundCloud::API::V2::Base
       include SoundCloud::Utils::Track
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:track_id]]
+        data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_client_id
+      rescue Faraday::ResourceNotFound, Faraday::ServerError
+        raise not_found_error
       end
 
-      def no_data?
-        track.blank?
-      rescue Faraday::ServerError
-        true
+      private
+
+      def required_args
+        %i[
+          track_id
+        ]
       end
 
       def link

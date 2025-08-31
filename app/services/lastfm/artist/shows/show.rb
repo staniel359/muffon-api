@@ -3,10 +3,18 @@ module LastFM
     class Shows
       class Show < LastFM::Artist::Shows
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            show
+          ]
+        end
 
         def data
           {

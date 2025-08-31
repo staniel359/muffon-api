@@ -16,25 +16,43 @@ module Muffon
         save_activity_history
       ].freeze
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:profile_id]]
+        check_if_not_found
+
+        check_if_forbidden
+
+        data
       end
 
-      def no_data?
+      private
+
+      def required_args
+        %i[
+          profile_id
+        ]
+      end
+
+      def not_found?
         profile.blank?
       end
 
       def forbidden?
-        return false if creator?
-
-        profile.private && !valid_profile?
+        if profile.private
+          if creator?
+            false
+          else
+            !valid_profile?
+          end
+        else
+          false
+        end
       end
 
       def profile_params
-        PARAMS.reject do |p|
-          %i[image].include?(p)
+        PARAMS.reject do |param|
+          param == :image
         end
       end
 
@@ -62,7 +80,8 @@ module Muffon
         profile
           .errors
           .add(
-            :password, 'wrong'
+            :password,
+            'wrong'
           )
       end
     end

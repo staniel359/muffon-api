@@ -6,7 +6,7 @@ module API
 
     private
 
-    def allowed_request?
+    def request_allowed?
       true
     end
 

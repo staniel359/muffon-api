@@ -1,6 +1,6 @@
-module Helpers
-  module Search
-    class << self
+module Spec
+  module Helpers
+    module Search
       def no_artists_data
         {:search=>{:artists=>[], :page=>1}}
       end

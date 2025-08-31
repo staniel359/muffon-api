@@ -4,12 +4,12 @@ module Muffon
       class Creator < Muffon::Processor::Profile::Base
         private
 
-        def primary_args
-          [
-            @args[:email],
-            @args[:password],
-            @args[:password_confirmation],
-            @args[:nickname]
+        def required_args
+          %i[
+            email
+            password
+            password_confirmation
+            nickname
           ]
         end
 
@@ -20,14 +20,15 @@ module Muffon
         def data
           profile
 
-          return profile.errors_data if
-              profile.errors?
+          if profile.errors?
+            profile.errors_data
+          else
+            process_image
 
-          process_image
+            set_online
 
-          set_online
-
-          authenticate
+            authenticate
+          end
         end
 
         def profile
@@ -38,7 +39,7 @@ module Muffon
         end
 
         def create_params
-          @args.permit!.slice(
+          @args.slice(
             *profile_params
           )
         end

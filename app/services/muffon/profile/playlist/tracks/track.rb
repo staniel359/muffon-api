@@ -6,7 +6,15 @@ module Muffon
           include Muffon::Utils::Track
 
           def call
+            check_args
+
             data
+          end
+
+          def required_args
+            %i[
+              playlist_track
+            ]
           end
 
           private

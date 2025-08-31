@@ -10,23 +10,6 @@ module Muffon
 
       private
 
-      def params = {}
-
-      def headers = {}
-
-      def cookies = {}
-
-      def language
-        @args[:language] || 'en'
-      end
-
-      def proxy
-        credentials.dig(
-          :proxy,
-          :ru
-        )
-      end
-
       def response_data
         @response_data ||=
           JSON.parse(
@@ -65,8 +48,26 @@ module Muffon
           params,
           headers
         )
-      rescue StandardError => e
-        handle_error(e)
+      end
+
+      def params
+        {}
+      end
+
+      def language
+        @args[:language] || 'en'
+      end
+
+      def headers
+        {}
+      end
+
+      def cookies
+        {}
+      end
+
+      def proxy
+        nil
       end
 
       def post_response
@@ -104,8 +105,6 @@ module Muffon
           payload,
           headers
         )
-      rescue StandardError => e
-        handle_error(e)
       end
 
       def html_response_data
@@ -113,18 +112,6 @@ module Muffon
           Nokogiri::HTML.parse(
             response.body
           )
-      end
-
-      def handle_error(error)
-        if @args[:debug_request]
-          Rails
-            .logger
-            .debug(
-              error.response
-            )
-        end
-
-        raise error
       end
     end
   end

@@ -2,40 +2,23 @@ module Muffon
   module Processor
     module Profile
       module Online
-        class Updater < Muffon::Processor::Profile::Base
+        class Updater < Muffon::Processor::Profile::Online::Base
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:token],
-              @args[:online]
+          def required_args
+            super + %i[
+              online
             ]
-          end
-
-          def no_data?
-            profile.blank?
-          end
-
-          def forbidden?
-            !valid_profile?
-          end
-
-          def profile_data
-            process_profile
-
-            { success: true }
           end
 
           def process_profile
             profile.online = @args[:online]
 
-            if offline?
-              profile.was_online_at =
-                current_time
-            end
+            profile.was_online_at = current_time if offline?
 
-            profile.save
+            profile.save!
+
+            { success: true }
           end
 
           def offline?

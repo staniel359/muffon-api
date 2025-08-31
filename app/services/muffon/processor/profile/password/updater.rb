@@ -2,40 +2,20 @@ module Muffon
   module Processor
     module Profile
       module Password
-        class Updater < Muffon::Processor::Profile::Base
+        class Updater < Muffon::Processor::Profile::Password::Base
           private
 
-          def primary_args
-            [
-              @args[:email],
-              @args[:code],
-              @args[:password],
-              @args[:password_confirmation]
+          def required_args
+            %i[
+              email
+              code
+              password
+              password_confirmation
             ]
           end
 
           def forbidden?
             false
-          end
-
-          def profile
-            @profile ||=
-              ::Profile.with_email(
-                @args[:email]
-              )
-          end
-
-          def data
-            process_profile
-
-            check_password_reset_code
-
-            return profile.errors_data if
-              profile.errors?
-
-            reset_profile_password_reset_code
-
-            { success: true }
           end
 
           def process_profile
@@ -44,6 +24,16 @@ module Muffon
               password_confirmation:
                 @args[:password_confirmation]
             )
+
+            check_password_reset_code
+
+            if profile.errors?
+              profile.errors_data
+            else
+              reset_profile_password_reset_code!
+
+              { success: true }
+            end
           end
 
           def check_password_reset_code
@@ -65,8 +55,8 @@ module Muffon
               )
           end
 
-          def reset_profile_password_reset_code
-            profile.update(
+          def reset_profile_password_reset_code!
+            profile.update!(
               password_reset_code: nil
             )
           end

@@ -3,24 +3,23 @@ module AmazonMusic
     class Info < AmazonMusic::Artist::Base
       private
 
+      def name
+        artist.dig(
+          'methods',
+          0,
+          'template',
+          'headerText',
+          'text'
+        )
+      end
+
       def link
         "#{BASE_LINK}/showCatalogArtist"
       end
 
-      def no_data?
-        name.blank?
-      end
-
-      def name
-        response_data.dig(
-          'methods', 0, 'template',
-          'headerText', 'text'
-        )
-      end
-
       def payload
         AmazonMusic::Utils::Request::Payload.call(
-          model_id: artist_id
+          model_id: @args[:artist_id]
         )
       end
     end

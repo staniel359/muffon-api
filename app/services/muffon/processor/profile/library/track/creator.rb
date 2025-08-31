@@ -8,24 +8,19 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:track_title],
-                @args[:artist_name]
+            def required_args
+              super + %i[
+                track_title
+                artist_name
               ]
             end
 
-            def forbidden?
-              !valid_profile?
-            end
-
             def process_library_track
-              update_library_artist
-              update_library_album
-              update_library_track
+              update_library_artist!
 
-              return library_track.errors_data if
-                  library_track.errors?
+              update_library_album!
+
+              update_library_track!
 
               process_image
 
@@ -35,10 +30,12 @@ module Muffon
               }
             end
 
-            def update_library_artist
-              update_created_at(library_artist)
+            def update_library_artist!
+              update_created_at(
+                library_artist
+              )
 
-              library_artist.save
+              library_artist.save!
             end
 
             def library_artist
@@ -47,7 +44,8 @@ module Muffon
                 .library_artists
                 .where(
                   artist_id: find_artist.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def artist_name
@@ -69,15 +67,17 @@ module Muffon
               @args[:created]
             end
 
-            def update_library_album
+            def update_library_album!
               return if library_album.blank?
 
-              update_created_at(library_album)
+              update_created_at(
+                library_album
+              )
 
               library_album.source_data =
                 @args[:album_source]
 
-              library_album.save
+              library_album.save!
             end
 
             def library_album
@@ -89,20 +89,24 @@ module Muffon
                 .where(
                   album_id: find_album.id,
                   library_artist_id: library_artist.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def album_title
               @args[:album_title]
             end
 
-            def update_library_track
-              update_created_at(library_track)
+            def update_library_track!
+              update_created_at(
+                library_track
+              )
 
               library_track.source_data = @args[:source]
+
               library_track.audio_data = @args[:audio]
 
-              library_track.save
+              library_track.save!
             end
 
             def library_track
@@ -113,7 +117,8 @@ module Muffon
                   track_id: find_track.id,
                   library_artist_id: library_artist.id,
                   library_album_id: library_album&.id
-                ).first_or_initialize
+                )
+                .first_or_initialize
             end
 
             def title

@@ -4,10 +4,28 @@ module YouTube
       include YouTube::Utils::Playlist
       include YouTube::Utils::Pagination
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:playlist_id]]
+      def required_args
+        %i[
+          playlist_id
+        ]
+      end
+
+      def not_found?
+        playlist.blank?
+      end
+
+      def playlist
+        items_list[0]
       end
 
       def link
@@ -15,9 +33,10 @@ module YouTube
       end
 
       def params
-        super.merge(
-          playlist_params
-        )
+        {
+          **super,
+          **playlist_params
+        }
       end
 
       def playlist_params
@@ -31,16 +50,12 @@ module YouTube
         { playlist: playlist_data }
       end
 
-      def playlist_base_data
+      def playlist_data
         {
           source: source_data,
           title:,
           channel: channel_data
         }.compact
-      end
-
-      def playlist
-        items_list[0]
       end
     end
   end

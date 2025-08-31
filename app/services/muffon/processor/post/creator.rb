@@ -4,18 +4,21 @@ module Muffon
       class Creator < Muffon::Processor::Post::Base
         private
 
-        def primary_args
-          super + content_args
+        def required_args
+          super +
+            content_args
         end
 
         def process_post
           post
 
-          return post.errors_data if post.errors?
+          if post.errors?
+            post.errors_data
+          else
+            process_images
 
-          process_images
-
-          { post: post_data }
+            { post: post_data }
+          end
         end
 
         def post

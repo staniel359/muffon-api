@@ -5,10 +5,18 @@ module VK
         include VK::Utils::Track
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            track
+          ]
+        end
 
         def data
           self_data

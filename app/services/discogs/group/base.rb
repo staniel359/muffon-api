@@ -3,10 +3,20 @@ module Discogs
     class Base < Discogs::Album::Base
       include Discogs::Utils::Album
 
+      def call
+        check_args
+
+        data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
+      end
+
       private
 
-      def primary_args
-        [@args[:group_id]]
+      def required_args
+        %i[
+          group_id
+        ]
       end
 
       def link

@@ -4,12 +4,18 @@ RSpec.describe LastFM::Top::Tracks do
   describe 'successful processing' do
     context 'when no primary args' do
       let(:output) do
-        VCR.use_cassette 'services/lastfm/top/tracks/success' do
-          subject.call(limit: 5, page: 2, profile_id: 1)
+        VCR.use_cassette(
+          'services/lastfm/top/tracks/success'
+        ) do
+          subject.call(
+            limit: 5,
+            page: 2,
+            profile_id: 1
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM::Top.tracks_data) }
+      it { expect(output).to eq(lastfm_top_tracks_data) }
     end
 
     context 'when country present' do
@@ -23,7 +29,7 @@ RSpec.describe LastFM::Top::Tracks do
         end
       end
 
-      it { expect(output).to eq(Helpers::LastFM::Top.tracks_country_data) }
+      it { expect(output).to eq(lastfm_top_tracks_country_data) }
     end
   end
 

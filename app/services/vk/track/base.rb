@@ -5,13 +5,23 @@ module VK
 
       include VK::Utils::Track
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:track_id]]
+        check_if_not_found
+
+        data
       end
 
-      def no_data?
+      private
+
+      def required_args
+        %i[
+          track_id
+        ]
+      end
+
+      def not_found?
         track.blank?
       end
 
@@ -22,13 +32,10 @@ module VK
       end
 
       def params
-        super.merge(
-          track_params
-        )
-      end
-
-      def track_params
-        { audios: vk_track_id }
+        {
+          **super,
+          audios: vk_track_id
+        }
       end
 
       def vk_track_id

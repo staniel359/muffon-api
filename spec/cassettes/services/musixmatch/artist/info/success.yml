@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.musixmatch.com/ws/1.1/artist.get?apikey=<MUSIXMATCH_API_KEY>&artist_id=542702
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '571'
+      Content-Type:
+      - text/plain; charset=utf-8
+      X-Mxm-Api-Application-Id:
+      - '1409621116560'
+      X-Mxm-Header-Execute-Time:
+      - '0.010122060775757'
+      X-Mxm-Header-Status:
+      - '200'
+      X-Mxm-Nginx-Ingress-Controller:
+      - nginx-cdt-apisite-api
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Date:
+      - Tue, 09 Sep 2025 07:41:58 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-fra-etou8220027-FRA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1757403719.663809,VS0,VE103
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":{"header":{"status_code":200,"execute_time":0.010122060775757},"body":{"artist":{"artist_id":542702,"artist_name":"Wild
+        Nothing","artist_name_translation_list":[],"artist_comment":"","artist_country":"US","artist_alias_list":[{"artist_alias":"\u30ef\u30a4\u30eb\u30c9\u30ca\u30c3\u30b7\u30f3\u30b0"}],"artist_rating":34,"artist_twitter_url":"https:\/\/twitter.com\/WildNothing","artist_credits":{"artist_list":[]},"restricted":0,"updated_time":"2023-10-27T10:07:56Z","begin_date_year":"","begin_date":"0000-00-00","end_date_year":"","end_date":"0000-00-00"}}}}'
+  recorded_at: Tue, 09 Sep 2025 07:41:58 GMT
+recorded_with: VCR 6.3.1

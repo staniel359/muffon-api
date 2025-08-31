@@ -1,43 +1,14 @@
 module MusicBrainz
   module Album
-    class Info < MusicBrainz::Base
-      MODEL_NAME = 'release'.freeze
-
-      include MusicBrainz::Utils::Album
-
-      def call
-        super
-      rescue Faraday::BadRequestError
-        not_found
-      end
-
+    class Info < MusicBrainz::Album::Base
       private
 
-      def primary_args
-        [@args[:album_id]]
-      end
-
-      def link
-        "#{BASE_LINK}/release/#{@args[:album_id]}"
-      end
-
-      def params
-        super
-          .merge(album_params)
-      end
-
-      def album_params
-        { inc: 'artist-credits+tags+labels+recordings' }
-      end
-
-      def data
-        { album: album_data }
-      end
-
       def album_data
-        return album_list_data if @args[:list]
-
-        album_full_data
+        if @args[:list]
+          album_list_data
+        else
+          album_full_data
+        end
       end
 
       def album_list_data
@@ -86,7 +57,8 @@ module MusicBrainz
 
       def label_data_formatted(label)
         label.dig(
-          'label', 'name'
+          'label',
+          'name'
         )
       end
 

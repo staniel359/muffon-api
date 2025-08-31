@@ -5,20 +5,29 @@ module Odnoklassniki
 
       include Odnoklassniki::Utils::Album
 
+      def call
+        check_args
+
+        return retry_with_new_session_id if retry_with_new_session_id?
+
+        data
+      rescue Faraday::BadRequestError
+        raise not_found_error
+      end
+
       private
 
-      def primary_args
-        [@args[:album_id]]
+      def required_args
+        %i[
+          album_id
+        ]
       end
 
       def params
-        super.merge(
-          album_params
-        )
-      end
-
-      def album_params
-        { albumId: @args[:album_id] }
+        {
+          **super,
+          albumId: @args[:album_id]
+        }
       end
 
       def data

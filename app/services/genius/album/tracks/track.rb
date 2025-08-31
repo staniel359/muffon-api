@@ -5,10 +5,19 @@ module Genius
         include Genius::Utils::Track
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            track
+            album_data
+          ]
+        end
 
         def data
           self_data

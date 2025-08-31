@@ -6,22 +6,17 @@ module AmazonMusic
     DEVICE_ID = '25814726589747619'.freeze
     DEVICE_TYPE_ID = 'A16ZV8BU3SN1N3'.freeze
 
-    include Muffon::Utils::Global
-
     private
 
     def amazonmusic_token
-      get_global_value(
-        'amazonmusic_token',
-        expires_in: 3600
-      )
-    end
-
-    def global_value
       return test_token if test?
 
-      @global_value ||=
-        AmazonMusic::Utils::Token.call
+      get_global_value(
+        'amazonmusic:token',
+        expires_in_seconds: 3600,
+        refresh_class_name:
+          'AmazonMusic::Utils::Token'
+      )
     end
 
     def test_token

@@ -9,9 +9,9 @@ module Odnoklassniki
       def collection_item_data_formatted(track)
         Odnoklassniki::Search::Tracks::Track.call(
           track:,
+          albums:,
           profile_id: @args[:profile_id],
-          token: @args[:token],
-          albums:
+          token: @args[:token]
         )
       end
     end

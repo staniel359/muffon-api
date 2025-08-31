@@ -6,9 +6,10 @@ module Spotify
       private
 
       def params
-        super.merge(
-          pagination_params
-        )
+        {
+          **super,
+          **pagination_params
+        }
       end
 
       def pagination_params

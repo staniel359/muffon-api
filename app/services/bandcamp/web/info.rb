@@ -1,22 +1,26 @@
 module Bandcamp
   module Web
     class Info < Bandcamp::Base
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:link]]
+        data
+      rescue Faraday::ResourceNotFound
+        nil
       end
 
-      def no_data?
-        false
+      private
+
+      def required_args
+        %i[
+          link
+        ]
       end
 
       def data
         JSON.parse(
           raw_data
         )
-      rescue Faraday::ResourceNotFound
-        nil
       end
 
       def raw_data

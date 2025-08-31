@@ -3,14 +3,24 @@ module YandexMusic
     class Base < YandexMusic::Base
       include YandexMusic::Utils::Album
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:album_id]]
+        data
+      rescue Faraday::ResourceNotFound, Faraday::BadRequestError
+        raise not_found_error
       end
 
-      def no_data?
-        album.blank?
+      private
+
+      def required_args
+        %i[
+          album_id
+        ]
+      end
+
+      def data
+        { album: album_data }
       end
 
       def link
@@ -19,10 +29,6 @@ module YandexMusic
 
       def params
         { album: @args[:album_id] }
-      end
-
-      def data
-        { album: album_data }
       end
 
       alias album response_data

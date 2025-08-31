@@ -2,51 +2,56 @@ module Spotify
   module Utils
     class Image < Spotify::Base
       def call
+        return if args_missing?
+
         data
       end
 
       private
 
+      def required_args
+        %i[
+          images
+        ]
+      end
+
       def data
-        return if images.blank?
-
-        image_data
-      end
-
-      def images
-        @args[:images]
-      end
-
-      def image_data
         {
-          original: image(0),
+          original: image_by_index(0),
           large: large_image,
           medium: medium_image,
-          small: image(-1),
-          extrasmall: image(-1)
+          small: image_by_index(-1),
+          extrasmall: image_by_index(-1)
         }
       end
 
-      def large_image
-        image(-3) ||
-          image(-2) ||
-          image(-1)
-      end
-
-      def image(index)
+      def image_by_index(
+        index
+      )
         images_sorted.dig(
-          index, 'url'
+          index,
+          'url'
         )
       end
 
       def images_sorted
-        images.sort_by do |i|
-          i['height']
-        end.reverse
+        @images_sorted ||=
+          @args[:images]
+          .sort_by do |image_data|
+            image_data['height']
+          end
+          .reverse
+      end
+
+      def large_image
+        image_by_index(-3) ||
+          image_by_index(-2) ||
+          image_by_index(-1)
       end
 
       def medium_image
-        image(-2) || image(-1)
+        image_by_index(-2) ||
+          image_by_index(-1)
       end
     end
   end

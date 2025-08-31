@@ -2,7 +2,7 @@ module LastFM
   module Tag
     module Web
       class Base < LastFM::Tag::Base
-        include LastFM::Utils::Web::Proxy
+        include LastFM::Utils::Web
         include LastFM::Utils::Web::Pagination
 
         private

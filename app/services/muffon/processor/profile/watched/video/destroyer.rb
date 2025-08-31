@@ -6,9 +6,9 @@ module Muffon
           class Destroyer < Muffon::Processor::Profile::Watched::Base
             private
 
-            def primary_args
-              super + [
-                @args[:watched_id]
+            def required_args
+              super + %i[
+                watched_id
               ]
             end
 

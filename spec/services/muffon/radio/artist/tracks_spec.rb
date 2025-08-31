@@ -4,12 +4,16 @@ RSpec.describe Muffon::Radio::Artist::Tracks do
   describe 'successful processing' do
     context 'when artist exists' do
       let(:output) do
-        VCR.use_cassette 'services/muffon/radio/artist/tracks/success' do
-          subject.call(artist_name: 'wild nothing')
+        VCR.use_cassette(
+          'services/muffon/radio/artist/tracks/success'
+        ) do
+          subject.call(
+            artist_name: 'wild nothing'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Muffon::Radio::Artist.tracks_data) }
+      it { expect(output).to eq(muffon_radio_artist_tracks_data) }
     end
   end
 
@@ -17,17 +21,21 @@ RSpec.describe Muffon::Radio::Artist::Tracks do
     context 'when no artist name given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong artist name' do
       let(:output) do
-        VCR.use_cassette 'services/muffon/radio/artist/tracks/wrong_name' do
-          subject.call(artist_name: random)
+        VCR.use_cassette(
+          'services/muffon/radio/artist/tracks/wrong_name'
+        ) do
+          subject.call(
+            artist_name: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

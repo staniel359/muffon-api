@@ -2,18 +2,18 @@ module Muffon
   module Binary
     class Chunk < Muffon::Base
       def call
-        return if not_all_args?
+        check_args
 
         data
       end
 
       private
 
-      def primary_args
-        [
-          @args[:binary],
-          @args[:chunk_size],
-          @args[:index]
+      def required_args
+        %i[
+          binary
+          chunk_size
+          index
         ]
       end
 

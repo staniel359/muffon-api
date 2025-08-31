@@ -3,10 +3,18 @@ module YouTubeMusic
     class Base < YouTubeMusic::Base
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:query]]
+      def required_args
+        %i[
+          query
+        ]
       end
 
       def data
@@ -14,22 +22,27 @@ module YouTubeMusic
       end
 
       def collection_list
-        raw_data.try(
-          :[], 'contents'
-        ) || []
+        raw_data['contents'] || []
       end
 
       def raw_data
         raw_first_page_data ||
-          raw_next_page_data
+          raw_next_page_data ||
+          {}
       end
 
       def raw_first_page_data
         response_data.dig(
-          'contents', 'tabbedSearchResultsRenderer',
-          'tabs', 0, 'tabRenderer', 'content',
-          'sectionListRenderer', 'contents',
-          0, 'musicShelfRenderer'
+          'contents',
+          'tabbedSearchResultsRenderer',
+          'tabs',
+          0,
+          'tabRenderer',
+          'content',
+          'sectionListRenderer',
+          'contents',
+          0,
+          'musicShelfRenderer'
         )
       end
 
@@ -68,8 +81,9 @@ module YouTubeMusic
       end
 
       def next_page
-        raw_data&.dig(
-          'continuations', 0,
+        raw_data.dig(
+          'continuations',
+          0,
           'nextContinuationData',
           'continuation'
         )

@@ -24,9 +24,17 @@ module LastFM
 
       include Muffon::Utils::Pagination
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def no_data?
+      def not_found?
         response_data['error'].present?
       end
 
@@ -69,26 +77,31 @@ module LastFM
       end
 
       def collection_count
-        response_data.dig(
-          if country_code.present?
-            "top#{collection_name}"
-          else
-            collection_name
-          end,
-          '@attr',
-          'total'
-        ).to_i
+        response_data
+          .dig(
+            collection_name_computed,
+            '@attr',
+            'total'
+          ).to_i
+      end
+
+      def collection_name_computed
+        if country_code.present? && collection_name == 'artists'
+          "top#{collection_name}"
+        else
+          collection_name
+        end
       end
 
       def collection_list
-        response_data.dig(
-          if country_code.present? && collection_name == 'artists'
-            "top#{collection_name}"
-          else
-            collection_name
-          end,
-          self.class::MODEL_NAME
-        ).last(limit)
+        response_data
+          .dig(
+            collection_name_computed,
+            self.class::MODEL_NAME
+          )
+          .last(
+            limit
+          )
       end
     end
   end

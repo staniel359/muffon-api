@@ -2,41 +2,36 @@ module API
   class BaseController < ApplicationController
     CLIENT_MINIMUM_VERSION = '2.3.0'.freeze
 
-    before_action :render_data_with_status
+    include ::Muffon::Utils::Errors
 
-    include ::Muffon::Utils::ErrorHandlers
+    before_action :render_status_with_data
 
     private
 
-    def render_data_with_status
+    def render_status_with_data
       render(
-        {
-          json: data,
-          status:
-        }
+        status:,
+        json: data
       )
     end
 
     def data
-      @data ||= data_conditional
+      @data ||= action_data
     end
 
-    def data_conditional
-      return forbidden unless allowed_request?
+    def action_data
+      raise forbidden_error unless request_allowed?
 
       send(
         "#{params[:action]}_data"
       )
+    rescue StandardError => e
+      handle_error(e)
     end
 
-    def allowed_request?
-      return true if test?
-
-      valid_version? && valid_token?
-    end
-
-    def test?
-      Rails.env.test?
+    def request_allowed?
+      valid_version? &&
+        valid_access_token?
     end
 
     def valid_version?
@@ -60,18 +55,45 @@ module API
       )
     end
 
-    def valid_token?
-      ::Muffon::Token::Validator.call(
-        token: params[:token]
+    def valid_access_token?
+      ::Muffon::AccessToken::Validator.call(
+        access_token: params[:token]
       )
     end
 
-    def status
-      return 204 if data.blank?
+    def handle_error(
+      error
+    )
+      error_data =
+        ERRORS_DATA
+        .values
+        .find do |error_data|
+          error_data[:errors].include?(
+            error.class
+          )
+        end
 
+      raise error if error_data.blank?
+
+      {
+        error:
+          error_data[:response]
+      }
+    end
+
+    def status
+      if data.present?
+        error_code || :ok
+      else
+        :no_content
+      end
+    end
+
+    def error_code
       data.dig(
-        :error, :code
-      ) || 200
+        :error,
+        :code
+      )
     end
 
     def sendable_attachment_types

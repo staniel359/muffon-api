@@ -3,10 +3,18 @@ module LastFM
     class Playlists
       class Playlist < LastFM::User::Playlists
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            playlist
+          ]
+        end
 
         def data
           {

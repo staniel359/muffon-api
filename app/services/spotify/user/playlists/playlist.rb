@@ -5,10 +5,18 @@ module Spotify
         include Spotify::Utils::Playlist
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            playlist
+          ]
+        end
 
         def data
           {
@@ -38,7 +46,8 @@ module Spotify
 
         def tracks_count_initial
           playlist.dig(
-            'tracks', 'total'
+            'tracks',
+            'total'
           ) || 0
         end
 

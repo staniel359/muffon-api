@@ -13,21 +13,18 @@ module MusixMatch
       end
 
       def params
-        super.merge(
-          albums_params
-        )
-      end
-
-      def albums_params
         {
+          **super,
           s_release_date: 'desc',
           g_album_name: 1
         }
       end
 
       def artist_data
-        artist_base_data
-          .merge(paginated_data)
+        {
+          **super,
+          **paginated_data
+        }
       end
 
       def collection_item_data_formatted(album)

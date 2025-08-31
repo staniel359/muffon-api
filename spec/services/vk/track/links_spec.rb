@@ -4,12 +4,16 @@ RSpec.describe VK::Track::Links do
   describe 'successful processing' do
     context 'when track_id given' do
       let(:output) do
-        VCR.use_cassette 'services/vk/track/links/success' do
-          subject.call(track_id: '-2001339207_10339207')
+        VCR.use_cassette(
+          'services/vk/track/links/success'
+        ) do
+          subject.call(
+            track_id: '474499137_456584653'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::VK::Track.links_data) }
+      it { expect(output).to eq(vk_track_links_data) }
     end
   end
 
@@ -17,17 +21,21 @@ RSpec.describe VK::Track::Links do
     context 'when no track_id given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong track_id' do
       let(:output) do
-        VCR.use_cassette 'services/vk/track/links/wrong_id' do
-          subject.call(track_id: random)
+        VCR.use_cassette(
+          'services/vk/track/links/wrong_id'
+        ) do
+          subject.call(
+            track_id: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

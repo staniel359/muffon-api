@@ -8,8 +8,6 @@ module Muffon
           def process_membership
             membership
 
-            return membership.errors_data if membership.errors?
-
             { community: community_data }
           end
 
@@ -20,7 +18,8 @@ module Muffon
               .where(
                 profile_id:
                   @args[:profile_id]
-              ).first_or_create
+              )
+              .first_or_create!
           end
         end
       end

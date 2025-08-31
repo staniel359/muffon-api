@@ -2,32 +2,28 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/users/7652837461927649/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=200
+    uri: https://api-v2.soundcloud.com/users/wejlhg239gh23?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - Faraday v2.13.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api-v2.soundcloud.com
+      Accept:
+      - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 400
+      message: Bad Request
     headers:
       Content-Type:
-      - text/plain; charset=utf-8
+      - application/json; charset=utf-8
       Content-Length:
-      - '86'
+      - '2'
       Connection:
       - keep-alive
-      Date:
-      - Fri, 16 Jul 2021 16:22:03 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -42,18 +38,20 @@ http_interactions:
       - max-age=63072000
       Server:
       - am/2
+      Date:
+      - Tue, 09 Sep 2025 07:56:23 GMT
       Vary:
       - Origin
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 add50c826a69b24be8ba05da744b9204.cloudfront.net (CloudFront)
+      - 1.1 93f1c701362eb59a676baaac7ea81bd8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - HEL50-C2
+      - FRA56-P11
       X-Amz-Cf-Id:
-      - Jy8yFfSOypaEld5ShwAUVtCCQGK79VNjPLBjspVywCsz4Jp2vB95cA==
+      - F_7SXnm69wM2KJ0CaJiRWashcO-f64HtmL_X70wej7Oi4MquJRJd5A==
     body:
       encoding: ASCII-8BIT
-      string: '{"error":"Unexpected response when getting list of playlists"}'
-  recorded_at: Fri, 16 Jul 2021 16:22:03 GMT
-recorded_with: VCR 6.0.0
+      string: "{}"
+  recorded_at: Tue, 09 Sep 2025 07:56:24 GMT
+recorded_with: VCR 6.3.1

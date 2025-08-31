@@ -6,8 +6,10 @@ module Deezer
 
         private
 
-        def primary_args
-          [@args[:track_id]]
+        def required_args
+          %i[
+            track_id
+          ]
         end
 
         def audio_binary_data

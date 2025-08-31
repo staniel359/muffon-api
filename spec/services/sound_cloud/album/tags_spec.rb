@@ -4,12 +4,16 @@ RSpec.describe SoundCloud::Album::Tags do
   describe 'successful processing' do
     context 'when album_id present' do
       let(:output) do
-        VCR.use_cassette 'services/soundcloud/album/tags/success' do
-          subject.call(album_id: '249480404')
+        VCR.use_cassette(
+          'services/soundcloud/album/tags/success'
+        ) do
+          subject.call(
+            album_id: '249480404'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::SoundCloud::Album.tags_data) }
+      it { expect(output).to eq(soundcloud_album_tags_data) }
     end
   end
 
@@ -17,17 +21,21 @@ RSpec.describe SoundCloud::Album::Tags do
     context 'when no album_id given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong album_id' do
       let(:output) do
-        VCR.use_cassette 'services/soundcloud/album/tags/wrong_id' do
-          subject.call(album_id: random)
+        VCR.use_cassette(
+          'services/soundcloud/album/tags/wrong_id'
+        ) do
+          subject.call(
+            album_id: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

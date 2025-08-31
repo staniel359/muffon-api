@@ -1,35 +1,37 @@
 module Muffon
   module Utils
     module Global
-      REDIS = Redis.new
+      private
 
       def get_global_value(
         key,
-        expires_in: nil
+        is_refresh: false,
+        expires_in_seconds: nil,
+        refresh_class_name:
       )
-        if REDIS.get(key).blank?
-          update_global_value(
-            key,
-            expires_in:
-          )
+        value = $redis.get(key)
+
+        if value.blank? || is_refresh
+          new_value =
+            refresh_class_name
+              .constantize
+              .call
+
+          if expires_in_seconds.present?
+            $redis.setex(
+              key,
+              expires_in_seconds,
+              new_value
+            )
+          else
+            $redis.set(
+              key,
+              new_value
+            )
+          end
         end
 
-        REDIS.get(key)
-      end
-
-      def update_global_value(
-        key,
-        expires_in: nil
-      )
-        if expires_in.present?
-          REDIS.setex(
-            key, expires_in, global_value
-          )
-        else
-          REDIS.set(
-            key, global_value
-          )
-        end
+        $redis.get(key)
       end
     end
   end

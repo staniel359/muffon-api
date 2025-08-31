@@ -1,14 +1,32 @@
-module Helpers
-  module Base
-    RANDOM_STRING = 'wejlhg239gh23'.freeze
+module Spec
+  module Helpers
+    module Base
+      RANDOM_STRING = 'wejlhg239gh23'.freeze
+      CLIENT_VERSION = '2.3.0'.freeze
 
-    class << self
-      def bad_request_error
-        ::Muffon::Utils::Errors.handlers[:bad_request]
+      include Muffon::Utils::Errors
+
+      private
+
+      def random_string
+        RANDOM_STRING
       end
 
-      def not_found_error
-        ::Muffon::Utils::Errors.handlers[:not_found]
+      def required_params
+        {
+          token:,
+          version: CLIENT_VERSION
+        }
+      end
+
+      def token
+        credentials[:tokens].first
+      end
+
+      def credentials
+        Rails
+          .application
+          .credentials
       end
     end
   end

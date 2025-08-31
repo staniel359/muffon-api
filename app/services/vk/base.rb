@@ -6,13 +6,12 @@ module VK
     private
 
     def response
-      @response ||=
-        format_get_request(
-          link:,
-          params:,
-          headers:,
-          proxy:
-        )
+      format_get_request(
+        link:,
+        params:,
+        headers:,
+        proxy:
+      )
     end
 
     def link
@@ -21,17 +20,6 @@ module VK
 
     def api_method
       self.class::API_METHOD
-    end
-
-    def headers
-      { 'User-Agent' => user_agent }
-    end
-
-    def user_agent
-      credentials.dig(
-        :vk,
-        :user_agent
-      )
     end
 
     def params
@@ -72,6 +60,17 @@ module VK
       credentials.dig(
         :vk,
         :api_secret
+      )
+    end
+
+    def headers
+      { 'User-Agent' => user_agent }
+    end
+
+    def user_agent
+      credentials.dig(
+        :vk,
+        :user_agent
       )
     end
 

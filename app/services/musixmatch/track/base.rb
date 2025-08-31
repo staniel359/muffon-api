@@ -1,20 +1,27 @@
 module MusixMatch
   module Track
     class Base < MusixMatch::Base
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        [@args[:track_id]]
+      def required_args
+        %i[
+          track_id
+        ]
       end
 
       def params
-        super.merge(
-          track_params
-        )
-      end
-
-      def track_params
-        { commontrack_id: @args[:track_id] }
+        {
+          **super,
+          commontrack_id: @args[:track_id]
+        }
       end
 
       def data

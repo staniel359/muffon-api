@@ -9,11 +9,7 @@ module SoundCloud
       end
 
       def track_albums_data
-        { albums: }
-      end
-
-      def albums
-        []
+        { albums: [] }
       end
     end
   end

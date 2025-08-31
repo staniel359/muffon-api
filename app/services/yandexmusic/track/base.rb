@@ -3,14 +3,24 @@ module YandexMusic
     class Base < YandexMusic::Base
       include YandexMusic::Utils::Track
 
-      private
+      def call
+        check_args
 
-      def primary_args
-        [@args[:track_id]]
+        data
+      rescue Faraday::ResourceNotFound, Faraday::BadRequestError
+        raise not_found_error
       end
 
-      def no_data?
-        track.blank?
+      private
+
+      def required_args
+        %i[
+          track_id
+        ]
+      end
+
+      def data
+        { track: track_data }
       end
 
       def track
@@ -23,10 +33,6 @@ module YandexMusic
 
       def params
         { track: @args[:track_id] }
-      end
-
-      def data
-        { track: track_data }
       end
     end
   end

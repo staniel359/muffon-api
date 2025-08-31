@@ -8,19 +8,19 @@ module Muffon
 
             private
 
-            def primary_args
-              super + [
-                @args[:youtube_id]
+            def required_args
+              super + %i[
+                youtube_id
               ]
             end
 
             def process_watched
               watched_video
 
-              return watched_video.errors_data if
-                  watched_video.errors?
-
-              { watched_video: watched_video_data }
+              {
+                watched_video:
+                  watched_video_data
+              }
             end
 
             def watched_video
@@ -29,7 +29,8 @@ module Muffon
                 .watched_videos
                 .where(
                   video_id: find_video.id
-                ).first_or_create
+                )
+                .first_or_create!
             end
 
             def watched_video_data

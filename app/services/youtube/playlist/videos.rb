@@ -7,7 +7,7 @@ module YouTube
 
       private
 
-      def no_data?
+      def not_found?
         playlist_info_data.blank?
       end
 
@@ -32,14 +32,12 @@ module YouTube
       end
 
       def playlist_data
-        playlist_base_data
-          .merge(paginated_data)
-      end
-
-      def playlist_base_data
-        playlist_info_data.slice(
-          *%i[source title channel]
-        )
+        {
+          source: playlist_info_data[:source],
+          title: playlist_info_data[:title],
+          channel: playlist_info_data[:channel],
+          **paginated_data
+        }
       end
 
       def collection_item_data_formatted(video)

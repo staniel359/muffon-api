@@ -6,9 +6,9 @@ module Muffon
           class Destroyer < Muffon::Processor::Profile::Favorites::Base
             private
 
-            def primary_args
-              super + [
-                @args[:favorite_id]
+            def required_args
+              super + %i[
+                favorite_id
               ]
             end
 

@@ -2,15 +2,19 @@ module AmazonMusic
   module Utils
     class Image < AmazonMusic::Base
       def call
-        return if not_all_args?
+        return if no_data?
 
         data
       end
 
       private
 
-      def primary_args
-        [@args[:image_link]]
+      def no_data?
+        image_link.blank?
+      end
+
+      def image_link
+        @args[:image_link]
       end
 
       def data
@@ -33,10 +37,6 @@ module AmazonMusic
           image_link.match(
             %r{/images/I/([^.]+)}
           )[1]
-      end
-
-      def image_link
-        @args[:image_link]
       end
     end
   end

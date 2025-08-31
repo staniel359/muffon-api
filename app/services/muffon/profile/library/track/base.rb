@@ -7,15 +7,15 @@ module Muffon
 
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:library_id]
+          def required_args
+            super + %i[
+              library_id
             ]
           end
 
-          def no_data?
-            super || library_track.blank?
+          def not_found?
+            super ||
+              library_track.blank?
           end
 
           def library_track

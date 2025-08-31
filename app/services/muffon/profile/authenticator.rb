@@ -8,10 +8,10 @@ module Muffon
 
       private
 
-      def primary_args
-        [
-          @args[:email],
-          @args[:password]
+      def required_args
+        %i[
+          email
+          password
         ]
       end
 
@@ -31,10 +31,11 @@ module Muffon
 
         check_password
 
-        return profile.errors_data if
-            profile.errors?
-
-        { profile: profile_data }
+        if profile.errors?
+          profile.errors_data
+        else
+          { profile: profile_data }
+        end
       end
 
       def profile_data

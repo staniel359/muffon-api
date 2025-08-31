@@ -6,10 +6,10 @@ module LastFM
 
       private
 
-      def primary_args
-        [
-          @args[:artist_name],
-          @args[:track_title]
+      def required_args
+        %i[
+          artist_name
+          track_title
         ]
       end
     end

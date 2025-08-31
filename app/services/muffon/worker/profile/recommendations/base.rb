@@ -2,11 +2,19 @@ module Muffon
   module Worker
     module Profile
       module Recommendations
-        class Base < Muffon::Base
+        class Base < Muffon::Worker::Base
+          def call
+            check_args
+
+            data
+          end
+
           private
 
-          def primary_args
-            [@args[:profile_id]]
+          def required_args
+            %i[
+              profile_id
+            ]
           end
 
           def data

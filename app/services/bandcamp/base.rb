@@ -6,7 +6,7 @@ module Bandcamp
 
     private
 
-    def no_data?
+    def not_found?
       response_data.blank? ||
         response_data['error']
     end

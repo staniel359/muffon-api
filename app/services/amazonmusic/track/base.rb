@@ -3,16 +3,25 @@ module AmazonMusic
     class Base < AmazonMusic::Album::Base
       include AmazonMusic::Utils::Track
 
+      def call
+        check_args
+
+        check_if_not_found
+
+        data
+      end
+
       private
 
-      def primary_args
-        super + [
-          @args[:track_id]
+      def required_args
+        super + %i[
+          track_id
         ]
       end
 
-      def no_data?
-        super || track.blank?
+      def not_found?
+        super ||
+          track.blank?
       end
 
       def track

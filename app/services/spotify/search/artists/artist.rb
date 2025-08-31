@@ -5,10 +5,18 @@ module Spotify
         include Spotify::Utils::Artist
 
         def call
+          check_args
+
           data
         end
 
         private
+
+        def required_args
+          %i[
+            artist
+          ]
+        end
 
         def data
           self_data

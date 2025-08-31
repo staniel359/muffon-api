@@ -5,51 +5,30 @@ module Muffon
         class Updater < Muffon::Processor::Profile::Playlist::Base
           private
 
-          def primary_args
-            super + [
-              @args[:playlist_id],
-              @args[:title]
+          def required_args
+            super + %i[
+              playlist_id
+              title
             ]
           end
 
-          def no_data?
-            super || playlist.blank?
-          end
-
-          def playlist
-            if instance_variable_defined?(
-              :@playlist
-            )
-              @playlist
-            else
-              @playlist =
-                profile
-                .playlists
-                .find_by(
-                  id: playlist_id
-                )
-            end
-          end
-
-          def playlist_id
-            @args[:playlist_id]
+          def not_found?
+            super ||
+              playlist.blank?
           end
 
           def process_playlist
-            update_playlist
-
-            return playlist.errors_data if
-                playlist.errors?
-
-            process_image
-
-            { playlist: playlist_data }
-          end
-
-          def update_playlist
             playlist.update(
               update_args
             )
+
+            if playlist.errors?
+              playlist.errors_data
+            else
+              process_image
+
+              { playlist: playlist_data }
+            end
           end
 
           def update_args
@@ -62,11 +41,12 @@ module Muffon
 
           def playlist_data
             Muffon::Profile::Playlist::Info.call(
-              playlist_id:,
+              playlist_id: @args[:playlist_id],
               profile_id: @args[:profile_id],
               token: @args[:token]
             ).dig(
-              :profile, :playlist
+              :profile,
+              :playlist
             )
           end
         end

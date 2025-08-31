@@ -2,19 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.ru/method/audio.search?access_token=<VK_ACCESS_TOKEN>&count=5&offset=5&q=wild%20nothing&sig=12b77293df5f63a1e158500faf8d9733&v=5.131
+    uri: https://api.vk.ru/method/audio.search?access_token=<VK_ACCESS_TOKEN>&count=5&offset=5&q=wild%20nothing&sig=c739f6aaa7eb851f7ef04a97bacbfbbf&v=5.131
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
       - VKAndroidApp/4.13.1-1206 (Android 4.4.3; SDK 19; armeabi; ; ru)
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.vk.ru
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,33 +21,44 @@ http_interactions:
       Server:
       - kittenx
       Date:
-      - Wed, 01 Nov 2023 19:54:29 GMT
+      - Mon, 22 Sep 2025 21:09:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '8422'
+      - '5432'
       Connection:
       - keep-alive
       X-Powered-By:
-      - KPHP/7.4.114913
+      - KPHP/7.4.124670
       Set-Cookie:
+      - httoken=fJlU4CCgGHWLG5DeNttRHpHWtB6-yQPa-fifTzRqdU4Crf0M52JvZZ4pP9n8s5URR3cBDSnESVL8KOUk46hBNx98CZPz9Smg9HzE1xL2Y0Jr8t7Hyd5gHvttoGFkFiLe1kc;
+        Path=/; HttpOnly; Secure; SameSite=None; Max-Age=3600; Domain=api.vk.ru
       - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
+      - remixstlid=9082568935169889758_hBoag9pWhqptW0h8usTx7kiGVFhagbZq8ps6zZndQzw;
+        expires=Tue, 22 Sep 2026 21:09:19 GMT; path=/; domain=.vk.ru; secure
       Cache-Control:
       - no-store
       X-Frame-Options:
       - DENY
+      Strict-Transport-Security:
+      - max-age=86400
+      X-Frontend:
+      - front661806
+      Access-Control-Expose-Headers:
+      - X-Frontend
+      X-Trace-Id:
+      - r32MOqNtbk-EgBLO-n75vR69IY9tEA
+      Server-Timing:
+      - tid;desc="r32MOqNtbk-EgBLO-n75vR69IY9tEA",front;dur=261.644
     body:
       encoding: ASCII-8BIT
-      string: '{"response":{"count":725,"items":[{"artist":"Wild Nothing","id":10334252,"owner_id":-2001334252,"title":"Adore","duration":295,"access_key":"0918ae5890373a2fb4","ads":{"content_id":"-2001334252_10334252","duration":"295","account_age_type":"3","puid22":"14"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"0fbde8dcQYEZmwTZMWagwiJDD6pN-kchmJyfmQcODpcLchTBLcKQZNICNKtSDqDOXF8NqgjyQTuVkWVe3z4v4l6LK15IvLuDag","url":"","date":1545228709,"lyrics_id":1,"album":{"id":936094,"title":"Life
-        of Pause","owner_id":-2000936094,"access_key":"644037192016737d8b","thumb":{"width":300,"height":300,"photo_34":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=34x34&quality=96&sign=fd0766620ddf6b3a7a88675df5aefa76&c_uniq_tag=LHJLN34Z_Qe9AoBcIdVa_dTXJRoa5Xl7nI8Ml0Pfbss&type=audio","photo_68":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=68x68&quality=96&sign=335f66b92ac17d97eeec73214de4b1dd&c_uniq_tag=cdZCx0seBAFzjmSUgwag_Hlm-EPh6-GdYacqiT5ZHsA&type=audio","photo_135":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=135x135&quality=96&sign=ee3ec11701e6452982b183caf297fc6c&c_uniq_tag=fPEOh68thz22IBjYPNifENrJPdtt4EjEDvqbex8L70Q&type=audio","photo_270":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=270x270&quality=96&sign=97f9fff8bb837d04e73a475f55fc6894&c_uniq_tag=V0eb_dvoLSvin2yKnzixMRkbmw6FfIrYuVLBRw1iMKA&type=audio","photo_300":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=300x300&quality=96&sign=ff05be4206156352da43964a9bc5b9c8&c_uniq_tag=m4n7xLifYoOnzn67HXjriqkyAioUy4YCL9T6QWJMC5U&type=audio","photo_600":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=600x600&quality=96&sign=1e835b2d29b8d40e4ae6a746fc9e3615&c_uniq_tag=RlWJgSWrDpNU9KbN6vPQTk6faPPouEsk1Hy_0VWg5fQ&type=audio","photo_1200":"https:\/\/sun19-2.userapi.com\/impf\/JzhUKfMscF7lZwWgUP8HWpyTulbnwPrghlH5UA\/jx1OFrzGCNI.jpg?size=1184x1184&quality=96&sign=3e4b451e6f3a6a328b07851aa65ef0f7&c_uniq_tag=gEJF8EwTjefsW7uKgCrxDNw28HSavu0mJS8R28LVJp0&type=audio"}},"main_artists":[{"name":"Wild
-        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
-        Nothing","id":29996703,"owner_id":-2001996703,"title":"Summer Holiday","duration":242,"access_key":"2776707a72a8cd382d","ads":{"content_id":"-2001996703_29996703","duration":"242","account_age_type":"3","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"6354811eRkqFBcQ51EzaOHKv3BE6XuMDzxipvNWFc5h5MgexIL2Xr06c9Eu3JNo0DLPeEX9W5RnCFSYzerVS7SzLOC52zuxC9g","url":"","date":1545232450,"album":{"id":1018186,"title":"Gemini","owner_id":-2000018186,"access_key":"4b0d541e5c641772e4","thumb":{"width":300,"height":300,"photo_34":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=34x34&quality=96&sign=7ca7a705355da95898c977542fbede24&c_uniq_tag=Sb1yeDD0HD1oE57ZljzlDGX4l2z1WNOjVMtbDU_78kU&type=audio","photo_68":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=68x68&quality=96&sign=b5536bef2e3c2f211e2c614cd67aa5de&c_uniq_tag=IDUI8oPxv2dAdpdTgqNRMVAtuI0ojpt860deMZkpAAU&type=audio","photo_135":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=135x135&quality=96&sign=f439fc40b39662d3502cd04ce0dc980a&c_uniq_tag=JJwukBzU7HDc-odMLLalYMq48tI80yEDAPiHpbpX1hs&type=audio","photo_270":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=270x270&quality=96&sign=f6029d198924f9af5e5690bac45e78bc&c_uniq_tag=HSQp0RldS3K1kfh6rBo9_VWDl8nm7GFoowF0nqzZQ4U&type=audio","photo_300":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=300x300&quality=96&sign=780df2d0f43267d0823a047745d74bee&c_uniq_tag=vCuotlb-H-xxr2HanceeBA7wA6o3YTaInV9nM5wakmQ&type=audio","photo_600":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=600x600&quality=96&sign=5725c11b3cfbb360bac06caa821942e5&c_uniq_tag=4I-9cK3v46N5lriyRv2Gqejv_SGnI5wrzXszJMQh1zU&type=audio","photo_1200":"https:\/\/sun19-2.userapi.com\/impf\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=1184x1184&quality=96&sign=5383c4d938d99bba407ce02c26e164a4&c_uniq_tag=FCGoiyZtkuCuS8upex9Hcx2wZHpOasxh_XT6xq0scCQ&type=audio"}},"main_artists":[{"name":"Wild
-        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
-        Nothing","id":456245930,"owner_id":-218946932,"title":"Dial Tone","duration":203,"access_key":"7f08f0e7485e09bec9","ads":{"content_id":"-218946932_456245930","duration":"203","account_age_type":"3","puid22":"11"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"95c782d8RuFssL9dXlu4lEBB2mgtjj1f-8qIVWhqNkRZxHtKy22XBKcpjy89M7iYPl3YaGiGO0X2x2r3pAgQMQw9RNWodo0-HtU","url":"","date":1696326867,"genre_id":18,"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"Wild
-        Nothing","id":39216585,"owner_id":-2001216585,"title":"Golden Haze","duration":206,"access_key":"4ce381ca97d68ae0dd","ads":{"content_id":"-2001216585_39216585","duration":"206","account_age_type":"3","puid22":"4"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"8e4678f6DB0iqeruhP-uVpsrAn1pIin_ho6mJn6tKY0OSUtebYzd-Okw2pznl65a5TcAfSwqL-WLg3_2oZ0I-FuwdMFt2dkJUQ","url":"","date":1544590778,"lyrics_id":1,"album":{"id":2943019,"title":"Golden
-        Haze","owner_id":-2000943019,"access_key":"ce05cbe3408af145cc","thumb":{"width":300,"height":300,"photo_34":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=34x34&quality=96&sign=122ba5218e9e0e37f33cd418e966c3ed&c_uniq_tag=udXeXXlUr25rKjdJ_EqwmbRE3L1ZGzj251lyuMp_FMw&type=audio","photo_68":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=68x68&quality=96&sign=b7df20e8e10a4537c8e1fa54bf69ac21&c_uniq_tag=eaG7NoCQ8Po7qa4lIspJ5G676Dh0d3PgzZJjvwD8bB8&type=audio","photo_135":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=135x135&quality=96&sign=91a86915db61f52f75bfcaccafa7f404&c_uniq_tag=eMemHFXq55Q04cP-2PSUnPKqbruXJUj9Dvd5RPM4hMk&type=audio","photo_270":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=270x270&quality=96&sign=f3ad5f6e1dae0e1a07662f39b0b33fcb&c_uniq_tag=jZp4Ox5vZ05zhoZfIK55caRlBVxFdw4iZ5dRichQDUc&type=audio","photo_300":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=300x300&quality=96&sign=70861e20a23a633a37f200a19532ccbf&c_uniq_tag=ECaCBT3nGQCg0AKRmoaeo9vsodN6Gmqwr5zDJ72tFMI&type=audio","photo_600":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=600x600&quality=96&sign=1125c87ff6f192e5fffdf5c5527213ea&c_uniq_tag=PLUog79m-sJmw_7LR_bZZRHl7hkuM9-oHdqKfuiTR6k&type=audio","photo_1200":"https:\/\/sun19-1.userapi.com\/impf\/a63OLP5N2pS0BsM-GTtjnpLgEcWGaczTLJKe7A\/jAvwmwNBYkE.jpg?size=1184x1184&quality=96&sign=400a57ff69fa0fe4c3b2d84f9a895ff4&c_uniq_tag=yWZulBFqz5AwoMwdbD9E8yHyh87nkqdN6Ovs8TSQsMo&type=audio"}},"main_artists":[{"name":"Wild
-        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false},{"artist":"THE
-        RUNAWAY WILD","id":456244508,"owner_id":2000455450,"title":"Nothing Left","duration":281,"access_key":"f5f72e61a0cfd62116","ads":{"content_id":"2000455450_456244508","duration":"281","account_age_type":"3","puid22":"11"},"is_explicit":false,"is_focus_track":false,"is_licensed":true,"track_code":"c44cff42_dhXQKqU1zmc1_Gx9kGClSBnZQWmO1yyOPA9qkU-ChcsPZzZmua0UZzbj630QcedJn1oCFLSrv7m5m1qXKHD","url":"","date":1673455360,"genre_id":18,"short_videos_allowed":false,"stories_allowed":false,"stories_cover_allowed":false}]}}'
-  recorded_at: Wed, 01 Nov 2023 19:54:29 GMT
-recorded_with: VCR 6.2.0
+      string: '{"response":{"count":604,"items":[{"artist":"Wild Nothing","id":456246721,"owner_id":-218946932,"title":"The
+        Bodybuilder","duration":257,"access_key":"9c5127f88908e18813","ads":{"content_id":"-218946932_456246721","duration":"257","account_age_type":"3","puid1":"554","puid22":"11"},"is_explicit":false,"is_focus_track":false,"track_code":"e3e08e649M1OjBe7bE8Pz33V99w3wDlaK-Ymi8eXNOoW2JzxHZpnfpp4LMkPJw_DA8n13HLIP0Am68QpC4A90y8hrWBunD4SPOl2","url":"https:\/\/cs1-42v4.vkuseraudio.ru\/s\/v1\/acmp\/iZ-iQvvPTranG0ln30w7qisSyUzWqsg4Lwt7DN1oQDi3AOsRn5syFG5MOxpxnaRF-Z2A3ygmffDUwPmhh3xMJgXQ0pyMOlQCRkNmVJyTuqMllJH_VNH1iRHStlcWw65AMTS0x_FM7qS2p7whO9MMNTmHNDn157BzXfV4F6A5DK2y1ktwcQ.mp3?siren=1","date":1698331350,"genre_id":18},{"artist":"Wild
+        Nothing","id":456245930,"owner_id":-218946932,"title":"Dial Tone","duration":203,"access_key":"e22edb8f906906178d","ads":{"content_id":"-218946932_456245930","duration":"203","account_age_type":"3","puid1":"554","puid22":"11"},"is_explicit":false,"is_focus_track":false,"track_code":"37429039RcZVO8G_BJzaPnN4Jh28zz0hptAia0LilpXLeGAeJ4_WdYHP-s1n9NoyDWQkHfnHOzur3cDJjvWfrPKBUY8_h48ZJ16g","url":"https:\/\/cs9-13v4.vkuseraudio.ru\/s\/v1\/acmp\/1G5Bjt0bIYi35CQak5Hs1bOUz7XZfTdxPsJEFPUyhsxFjdX7HunwtRlX3emwLRaBkLxtMHH3n3Qe-DvHTbIUBvjWpt6f3zpvDvbAJmD_rAxNG2Xw57UF26wAHOzSb6itlrvMPZ-Vr4cgZB3dZk89DZYrryv0E3Wds_HEyE2uUpLvn9vJZA.mp3?siren=1","date":1696326867,"genre_id":18},{"artist":"Wild
+        Nothing","id":456246720,"owner_id":-218946932,"title":"Suburban Solutions","duration":222,"access_key":"4bbaa5fea1eef5a4a4","ads":{"content_id":"-218946932_456246720","duration":"222","account_age_type":"3","puid1":"554","puid22":"11"},"is_explicit":false,"is_focus_track":false,"track_code":"5e16c9ba7wuxJSCWKhJUCMcQ6BxBoQEEjt26yLiVsVidH7hkDPd8uGXRG-RJelQEuQzqHASpBx6D0FhqdIK4YaTmifV-8SXUw0BB","url":"https:\/\/cs1-81v4.vkuseraudio.ru\/s\/v1\/acmp\/EubUqE-pSAasttJ3Q5u8rnVhGpfZnjaG38YDFBQmO8QWeD1rs-SAii-IeMalS-2ghGP8SUH63cgklBSWfrEoGQEtgRcFpbgLQp25zi4X04IL89gvFgPPnQAnHGfZBKPubHZg4DZG3i8rmFozFXMwT7tzkbeZwW67g2F6_ht4VeD57Iucug.mp3?siren=1","date":1698331347,"genre_id":18},{"artist":"Wild
+        Moth","id":149319318,"owner_id":99835331,"title":"(how) nothing moves","duration":230,"access_key":"b6542c366fc6679510","ads":{"content_id":"99835331_149319318","duration":"230","account_age_type":"3","puid1":"554","puid22":"11"},"is_explicit":false,"is_focus_track":false,"track_code":"a90bcf5dYu5lvIns5x3nXCJa1gZUxI5Qj-fGEoLDWOjwe4elnoLxXbFIsp6EdedQXEbUBhHMiEqC6mvOT2w48686STU","url":"https:\/\/psv4.vkuseraudio.ru\/s\/v1\/amp2\/XPuInlR0GmUwe4pC7kxIKSTZHzkubTYTw2Z1BtdTarO-eTCu0ATOcA3PSaH6Ds_NHyp5dvk09u7D-0GoGjmpc-6kcyBKTduasJBMiw1rdYphizTEaFNPkICvvfLMbUb2gPyqaNTv_ETuz5jBuMTnmA2-AYD20jAjggF8.mp3?siren=1","date":1336165977,"genre_id":18},{"artist":"Wild
+        Nothing","id":29996708,"owner_id":-2001996708,"title":"Chinatown","duration":198,"access_key":"c1375a8b60576db2e9","ads":{"content_id":"-2001996708_29996708","duration":"198","account_age_type":"3","puid1":"554","puid22":"4"},"is_explicit":false,"is_focus_track":false,"track_code":"2d9a9510nUp2OHpoKm9JCueQofBwJQMLE1LchKpqwn08RNPDFVMO-aLMQRpJB0kGmYyj8DUtBREeX24LBS_MRAW94lIDMzZCBV0","url":"https:\/\/psv4.vkuseraudio.ru\/s\/v1\/amp2\/SZKqW5bnZChosfMXb-_QtosQoerSg3jRA_5ztJt0z2vEHQpvu2Ty2J-C0QSqd4AI_wSA3kveYM81g1SKS9mvSbhdbJF4_Ult8b9GS_1CChwp5RJo7aQ-4hUHxVdpeXIM2WEBGwcnKkjhHQQoMwt4SyO3Znxiu3-n3Rcg.mp3?siren=1","date":1545232450,"lyrics_id":1,"album":{"id":1018186,"title":"Gemini","owner_id":-2000018186,"access_key":"4b0d541e5c641772e4","thumb":{"width":300,"height":300,"id":"457239033","photo_34":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=34x34&quality=96&sign=7ca7a705355da95898c977542fbede24&c_uniq_tag=Sb1yeDD0HD1oE57ZljzlDGX4l2z1WNOjVMtbDU_78kU&type=audio","photo_68":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=68x68&quality=96&sign=b5536bef2e3c2f211e2c614cd67aa5de&c_uniq_tag=IDUI8oPxv2dAdpdTgqNRMVAtuI0ojpt860deMZkpAAU&type=audio","photo_135":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=135x135&quality=96&sign=f439fc40b39662d3502cd04ce0dc980a&c_uniq_tag=JJwukBzU7HDc-odMLLalYMq48tI80yEDAPiHpbpX1hs&type=audio","photo_270":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=270x270&quality=96&sign=f6029d198924f9af5e5690bac45e78bc&c_uniq_tag=HSQp0RldS3K1kfh6rBo9_VWDl8nm7GFoowF0nqzZQ4U&type=audio","photo_300":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=300x300&quality=96&sign=780df2d0f43267d0823a047745d74bee&c_uniq_tag=vCuotlb-H-xxr2HanceeBA7wA6o3YTaInV9nM5wakmQ&type=audio","photo_600":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=600x600&quality=96&sign=5725c11b3cfbb360bac06caa821942e5&c_uniq_tag=4I-9cK3v46N5lriyRv2Gqejv_SGnI5wrzXszJMQh1zU&type=audio","photo_1200":"https:\/\/sun1-15.vkuserphoto.ru\/impg\/PB84ihseW_qqDa6UKi_TVekbLxqD-LC9065osw\/Ee0Vi-il4r0.jpg?size=1184x1184&quality=96&sign=5383c4d938d99bba407ce02c26e164a4&c_uniq_tag=FCGoiyZtkuCuS8upex9Hcx2wZHpOasxh_XT6xq0scCQ&type=audio"},"main_color":"#837C6A"},"main_artists":[{"name":"Wild
+        Nothing","domain":"4333005440018923962","id":"4333005440018923962","is_followed":false,"can_follow":false}],"release_audio_id":"-2001996708_29996708"}]}}'
+  recorded_at: Mon, 22 Sep 2025 21:09:20 GMT
+recorded_with: VCR 6.3.1

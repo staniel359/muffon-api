@@ -5,15 +5,19 @@ module YandexMusic
         SALT = 'XGRlBW9FXlekgbPrRHuSiA'.freeze
 
         def call
-          return if not_all_args? || no_data?
+          check_args
+
+          return if no_data?
 
           data
         end
 
         private
 
-        def primary_args
-          [@args[:track_id]]
+        def required_args
+          %i[
+            track_id
+          ]
         end
 
         def no_data?
@@ -23,7 +27,7 @@ module YandexMusic
 
         def track_data
           @track_data ||=
-            YandexMusic::Utils::Audio::Track.call(
+            YandexMusic::Utils::Audio::Link::Track.call(
               track_id: @args[:track_id]
             )
         end
@@ -33,17 +37,26 @@ module YandexMusic
         end
 
         def data
-          host, ts, path, s =
+          first,
+          second,
+          third,
+          fourth =
             response_data.values_at(
-              'host', 'ts', 'path', 's'
+              'host',
+              'ts',
+              'path',
+              's'
             )
+
+          path_string =
+            "#{SALT}#{third[1..]}#{fourth}"
 
           path_hash =
             Digest::MD5.hexdigest(
-              "#{SALT}#{path[1..]}#{s}"
+              path_string
             )
 
-          "https://#{host}/get-mp3/#{path_hash}/#{ts}#{path}"
+          "https://#{first}/get-mp3/#{path_hash}/#{second}#{third}"
         end
 
         def link

@@ -2,19 +2,18 @@ module Muffon
   module Processor
     module Community
       module Member
-        class Base < Muffon::Profile::Base
+        class Base < Muffon::Processor::Profile::Base
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:token],
-              @args[:community_id]
+          def required_args
+            super + %i[
+              community_id
             ]
           end
 
-          def no_data?
-            super || community.blank?
+          def not_found?
+            super ||
+              community.blank?
           end
 
           def community
@@ -28,10 +27,6 @@ module Muffon
                   id: @args[:community_id]
                 )
             end
-          end
-
-          def forbidden?
-            !valid_profile?
           end
 
           def data

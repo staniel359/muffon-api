@@ -26,7 +26,8 @@ module Muffon
       def find_track
         @find_track ||=
           ::Track.with_artist_title(
-            find_artist.id, title
+            artist_id: find_artist.id,
+            title:
           )
       end
 
@@ -42,7 +43,8 @@ module Muffon
 
         @find_album ||=
           ::Album.with_artist_title(
-            find_artist.id, album_title
+            artist_id: find_artist.id,
+            title: album_title
           )
       end
 

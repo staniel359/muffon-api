@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api-v2.soundcloud.com/users/3820545?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1373'
+      Connection:
+      - keep-alive
+      X-Robots-Tag:
+      - noindex
+      Cache-Control:
+      - private, max-age=0
+      Referrer-Policy:
+      - no-referrer
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=63072000
+      Server:
+      - am/2
+      Date:
+      - Tue, 09 Sep 2025 07:58:42 GMT
+      Vary:
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b166ca183629eada7c88ffe6bf8562a2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - FRA56-P11
+      X-Amz-Cf-Id:
+      - VKTnsLM7H_8Vty1NSU9p9DtqreRJnqT2c5QWWbbFq1Zpkm5dIdLKHw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"avatar_url":"https://i1.sndcdn.com/avatars-000194665247-0u9he3-large.jpg","city":"New
+        York","comments_count":0,"country_code":"US","created_at":"2011-03-24T14:41:58Z","creator_subscriptions":[{"product":{"id":"free"}}],"creator_subscription":{"product":{"id":"free"}},"description":"\r\nhttp://capturedtracks.com/\r\nhttp://bellaunion.com/\r\nFor
+        North/South American Bookings: john@groundcontroltouring.com\r\nFor Rest of
+        the World: rob@codaagency.com\r\n\r\nhttps://itunes.apple.com/us/album/empty-estate/id636159436\r\nhttps://itunes.apple.com/us/album/nocturne/id553227907\r\nhttps://itunes.apple.com/us/album/gemini/id613623092","followers_count":18381,"followings_count":0,"first_name":"WIld
+        Nothing","full_name":"WIld Nothing","groups_count":0,"id":3820545,"kind":"user","last_modified":"2020-11-19T16:12:41Z","last_name":"","likes_count":1,"playlist_likes_count":0,"permalink":"wildnothing","permalink_url":"https://soundcloud.com/wildnothing","playlist_count":17,"reposts_count":null,"track_count":122,"uri":"https://api.soundcloud.com/users/3820545","urn":"soundcloud:users:3820545","username":"Wild_Nothing","verified":true,"visuals":null,"badges":{"pro":false,"creator_mid_tier":false,"pro_unlimited":false,"verified":true},"station_urn":"soundcloud:system-playlists:artist-stations:3820545","station_permalink":"artist-stations:3820545","date_of_birth":null}'
+  recorded_at: Tue, 09 Sep 2025 07:58:43 GMT
+recorded_with: VCR 6.3.1

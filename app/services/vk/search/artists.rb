@@ -15,9 +15,11 @@ module VK
       end
 
       def collection_count
-        return super if super < limit
-
-        total_limit
+        if super < limit
+          super
+        else
+          total_limit
+        end
       end
     end
   end

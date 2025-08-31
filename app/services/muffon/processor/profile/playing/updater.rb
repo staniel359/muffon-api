@@ -2,34 +2,19 @@ module Muffon
   module Processor
     module Profile
       module Playing
-        class Updater < Muffon::Processor::Profile::Base
+        class Updater < Muffon::Processor::Profile::Playing::Base
           private
 
-          def primary_args
-            [
-              @args[:profile_id],
-              @args[:token]
-            ]
-          end
-
-          def no_data?
-            profile.blank?
-          end
-
-          def forbidden?
-            !valid_profile?
-          end
-
-          def profile_data
-            process_profile
+          def process_profile
+            profile.update!(
+              playing:
+            )
 
             { success: true }
           end
 
-          def process_profile
-            profile.update(
-              playing: @args[:playing]
-            )
+          def playing
+            @args[:playing]
           end
         end
       end

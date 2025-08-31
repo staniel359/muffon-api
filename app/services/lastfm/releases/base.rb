@@ -3,8 +3,12 @@ module LastFM
     class Base < LastFM::Base
       COLLECTION_NAME = 'albums'.freeze
 
-      include LastFM::Utils::Web::Proxy
+      include LastFM::Utils::Web
       include Muffon::Utils::Pagination
+
+      def call
+        data
+      end
 
       private
 
@@ -25,9 +29,13 @@ module LastFM
       end
 
       def total_pages_count
-        response_data.css(
-          '.pagination-page'
-        ).last&.text&.to_i || 1
+        response_data
+          .css(
+            '.pagination-page'
+          )
+          .last
+          &.text
+          &.to_i || 1
       end
 
       def collection_list

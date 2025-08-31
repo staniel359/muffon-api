@@ -4,11 +4,10 @@ module Muffon
       class Base < Muffon::Profile::Base
         private
 
-        def primary_args
-          [
-            @args[:profile_id],
-            @args[:token],
-            @args[:recommendation_id]
+        def required_args
+          super + %i[
+            token
+            recommendation_id
           ]
         end
 
@@ -16,12 +15,15 @@ module Muffon
           !valid_profile?
         end
 
-        def no_data?
+        def not_found?
           recommendation.blank?
         end
 
         def profile_data
-          { recommendation: recommendation_data }
+          {
+            recommendation:
+              recommendation_data
+          }
         end
       end
     end

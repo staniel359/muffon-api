@@ -4,12 +4,16 @@ RSpec.describe YouTube::Playlist::Description do
   describe 'successful processing' do
     context 'when playlist present' do
       let(:output) do
-        VCR.use_cassette 'services/youtube/playlist/description/success' do
-          subject.call(playlist_id: 'PLUh4W61bt_K78wGbr6lUgPb5gjine4I6G')
+        VCR.use_cassette(
+          'services/youtube/playlist/description/success'
+        ) do
+          subject.call(
+            playlist_id: 'PLUh4W61bt_K78wGbr6lUgPb5gjine4I6G'
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::YouTube::Playlist.description_data) }
+      it { expect(output).to eq(youtube_playlist_description_data) }
     end
   end
 
@@ -17,17 +21,21 @@ RSpec.describe YouTube::Playlist::Description do
     context 'when no playlist_id given' do
       let(:output) { subject.call }
 
-      it { expect(output).to eq(Helpers::Base.bad_request_error) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
 
     context 'when wrong playlist_id' do
       let(:output) do
-        VCR.use_cassette 'services/youtube/playlist/description/wrong_id' do
-          subject.call(playlist_id: random)
+        VCR.use_cassette(
+          'services/youtube/playlist/description/wrong_id'
+        ) do
+          subject.call(
+            playlist_id: random_string
+          )
         end
       end
 
-      it { expect(output).to eq(Helpers::Base.not_found_error) }
+      it { expect { output }.to raise_error(not_found_error) }
     end
   end
 end

@@ -14,15 +14,11 @@ module YouTube
       end
 
       def prev_page
-        response_data[
-          'prevPageToken'
-        ]
+        response_data['prevPageToken']
       end
 
       def next_page
-        response_data[
-          'nextPageToken'
-        ]
+        response_data['nextPageToken']
       end
     end
   end

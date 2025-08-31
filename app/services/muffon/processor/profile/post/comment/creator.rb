@@ -7,9 +7,10 @@ module Muffon
             private
 
             def post_comment_params
-              super.merge(
-                post_params
-              )
+              {
+                **super,
+                **post_params
+              }
             end
 
             def post_params
