@@ -42,17 +42,15 @@ module Spotify
       def tracks_list
         @tracks_list ||=
           Spotify::Playlist::Info::Tracks.call(
-            playlist_id:
-              @args[:playlist_id],
-            profile_id:
-              @args[:profile_id],
+            playlist_id: @args[:playlist_id],
             total_items_count: tracks_count
           )[:tracks]
       end
 
       def tracks_count
         playlist.dig(
-          'tracks', 'total'
+          'tracks',
+          'total'
         )
       end
 

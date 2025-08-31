@@ -1,8 +1,8 @@
 module Spotify
-  module Playlist
+  module Album
     class Info
-      class Tracks < Spotify::Playlist::Info
-        PAGE_LIMIT = 100
+      class Tracks < Spotify::Album::Info
+        PAGE_LIMIT = 50
 
         include Spotify::Utils::Pagination
 
@@ -15,22 +15,7 @@ module Spotify
         end
 
         def data
-          {
-            tracks:
-              tracks_filtered_distinct
-          }
-        end
-
-        def tracks_filtered_distinct
-          tracks_filtered.uniq do |t|
-            t.dig('track', 'id')
-          end
-        end
-
-        def tracks_filtered
-          tracks.select do |t|
-            t.try(:[], 'track').present?
-          end
+          { tracks: }
         end
 
         def tracks
@@ -46,8 +31,8 @@ module Spotify
         end
 
         def page_tracks(page)
-          Spotify::Playlist::Info::Tracks::PageTracks.call(
-            playlist_id: @args[:playlist_id],
+          Spotify::Album::Info::Tracks::PageTracks.call(
+            album_id: @args[:album_id],
             page:
           )
         end

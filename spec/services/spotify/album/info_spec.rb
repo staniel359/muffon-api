@@ -5,7 +5,7 @@ RSpec.describe Spotify::Album::Info do
     context 'when album_id present' do
       let(:output) do
         VCR.use_cassette 'services/spotify/album/info/success' do
-          subject.call(album_id: '3OYnManu1Nlxnw9OMng7BH', profile_id: 1)
+          subject.call(album_id: '0nO5lyFdotlbbWdNkvB6Av', profile_id: 1)
         end
       end
 
