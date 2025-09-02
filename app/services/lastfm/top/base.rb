@@ -2,19 +2,46 @@ module LastFM
   module Top
     class Base < LastFM::Base
       TOTAL_LIMIT = 10_000
+      COUNTRIES_CODES_NAMES_DATA = {
+        **ISO3166::Country.translations,
+        'CI' => "Cote d'Ivoire",
+        'CV' => 'Cape Verde',
+        'CZ' => 'Czech Republic',
+        'IR' => 'Iran, Islamic Republic of',
+        'KP' => "Korea, Democratic People's Republic of",
+        'KR' => 'Korea, Republic of',
+        'LY' => 'Libyan Arab Jamahiriya',
+        'MK' => 'Macedonia',
+        'PS' => 'Palestinian Territory, Occupied',
+        'RE' => 'Reunion',
+        'SH' => 'Saint Helena',
+        'SX' => 'Sint Maarten',
+        'SZ' => 'Swaziland',
+        'TR' => 'Turkey',
+        'TZ' => 'Tanzania, United Republic of',
+        'VN' => 'Viet Nam'
+      }.freeze
 
       include Muffon::Utils::Pagination
 
       private
 
-      def f_param
-        return if @args[:country].blank?
+      def no_data?
+        response_data['error'].present?
+      end
 
-        "geo:#{@args[:country]}"
+      def f_param
+        return if country_code.blank?
+
+        "geo:#{country_code}"
+      end
+
+      def country_code
+        @args[:country]
       end
 
       def api_method
-        if @args[:country].present?
+        if country_code.present?
           "geo.getTop#{collection_name.capitalize}"
         else
           "chart.getTop#{collection_name.capitalize}"
@@ -25,12 +52,16 @@ module LastFM
         {
           **super,
           **pagination_params,
-          country: (
-            if @args[:country].present?
-              ISO3166::Country[@args[:country]].translations['en']
-            end
-          )
+          country: country_name
         }.compact
+      end
+
+      def country_name
+        return if country_code.blank?
+
+        COUNTRIES_CODES_NAMES_DATA[
+          country_code.upcase
+        ]&.downcase
       end
 
       def data
@@ -39,7 +70,7 @@ module LastFM
 
       def collection_count
         response_data.dig(
-          if @args[:country].present?
+          if country_code.present?
             "top#{collection_name}"
           else
             collection_name
@@ -51,7 +82,7 @@ module LastFM
 
       def collection_list
         response_data.dig(
-          if @args[:country].present? && collection_name == 'artists'
+          if country_code.present? && collection_name == 'artists'
             "top#{collection_name}"
           else
             collection_name
