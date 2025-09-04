@@ -7,7 +7,7 @@ every 3.hours do
 end
 
 every 3.days, at: '0:00 am' do
-  command 'ActiveRecord::Base.connection.execute("VACUUM ANALYZE")'
+  runner 'ActiveRecord::Base.connection.execute("VACUUM ANALYZE")'
 end
 
 every 5.days, at: '1:00 am' do
