@@ -41,7 +41,7 @@ module VK
       end
 
       def original_link
-        "https://vk.com/audio#{vk_id}"
+        "https://vk.ru/audio#{vk_id}"
       end
 
       def album_data

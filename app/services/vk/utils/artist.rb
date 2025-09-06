@@ -22,7 +22,7 @@ module VK
       end
 
       def original_link
-        "https://vk.com/artist/#{vk_id}"
+        "https://vk.ru/artist/#{vk_id}"
       end
 
       def image_data

@@ -1,6 +1,6 @@
 module VK
   class Base < Muffon::Base
-    BASE_LINK = 'https://api.vk.com'.freeze
+    BASE_LINK = 'https://api.vk.ru'.freeze
     SOURCE_NAME = 'vk'.freeze
 
     private

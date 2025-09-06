@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=138779021_456239923&sig=5b5ee9173da8ced7a10de9257cd4e62d&v=5.131
+    uri: https://api.vk.ru/method/audio.getById?access_token=<VK_ACCESS_TOKEN>&audios=138779021_456239923&sig=5b5ee9173da8ced7a10de9257cd4e62d&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.vk.com
+      - api.vk.ru
   response:
     status:
       code: 200
@@ -33,7 +33,7 @@ http_interactions:
       X-Powered-By:
       - KPHP/7.4.114913
       Set-Cookie:
-      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Wed, 01 Nov 2023 19:54:31 GMT
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=1141b1dd4c21fd8126&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000437186&playlist_id=1437186&sig=5b57786dc6585d5c0711633bd4ca7233&v=5.131
+    uri: https://api.vk.ru/method/audio.getPlaylistById?access_key=1141b1dd4c21fd8126&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000437186&playlist_id=1437186&sig=5b57786dc6585d5c0711633bd4ca7233&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.vk.com
+      - api.vk.ru
   response:
     status:
       code: 200
@@ -77,7 +77,7 @@ http_interactions:
       X-Powered-By:
       - KPHP/7.4.114913
       Set-Cookie:
-      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store

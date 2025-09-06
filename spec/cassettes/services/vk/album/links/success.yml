@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getPlaylistById?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000885619&playlist_id=3885619&sig=1255d8ac08c413af8a29ad671f8ded0f&v=5.131
+    uri: https://api.vk.ru/method/audio.getPlaylistById?access_key=154554fc908e1e4c72&access_token=<VK_ACCESS_TOKEN>&lang=en&owner_id=-2000885619&playlist_id=3885619&sig=1255d8ac08c413af8a29ad671f8ded0f&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.vk.com
+      - api.vk.ru
   response:
     status:
       code: 200
@@ -33,7 +33,7 @@ http_interactions:
       X-Powered-By:
       - KPHP/7.4.114913
       Set-Cookie:
-      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store

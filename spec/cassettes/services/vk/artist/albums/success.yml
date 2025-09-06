@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getArtistById?access_token=<VK_ACCESS_TOKEN>&artist_id=9214677642685687515&sig=3ff7a5cecddfea69144ba44b81abf9c9&v=5.131
+    uri: https://api.vk.ru/method/audio.getArtistById?access_token=<VK_ACCESS_TOKEN>&artist_id=9214677642685687515&sig=3ff7a5cecddfea69144ba44b81abf9c9&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.vk.com
+      - api.vk.ru
   response:
     status:
       code: 200
@@ -33,7 +33,7 @@ http_interactions:
       X-Powered-By:
       - KPHP/7.4.114913
       Set-Cookie:
-      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
@@ -45,7 +45,7 @@ http_interactions:
   recorded_at: Wed, 01 Nov 2023 19:54:27 GMT
 - request:
     method: get
-    uri: https://api.vk.com/method/audio.getAlbumsByArtist?access_token=<VK_ACCESS_TOKEN>&artist_id=9214677642685687515&count=5&offset=5&sig=b381d2971fed21e3c132c2faee902cc9&v=5.131
+    uri: https://api.vk.ru/method/audio.getAlbumsByArtist?access_token=<VK_ACCESS_TOKEN>&artist_id=9214677642685687515&count=5&offset=5&sig=b381d2971fed21e3c132c2faee902cc9&v=5.131
     body:
       encoding: US-ASCII
       string: ''
@@ -57,7 +57,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Host:
-      - api.vk.com
+      - api.vk.ru
   response:
     status:
       code: 200
@@ -76,7 +76,7 @@ http_interactions:
       X-Powered-By:
       - KPHP/7.4.114913
       Set-Cookie:
-      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.com;
+      - remixir=DELETED; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/; domain=.vk.ru;
         secure; HttpOnly
       Cache-Control:
       - no-store
