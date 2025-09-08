@@ -1,15 +1,20 @@
 class ProfileMailerPreview < ActionMailer::Preview
+  TEST_EMAIL = 'foobar@gmail.com'.freeze
+
   def password_reset_email
-    ProfileMailer.with(
-      email: profile.email,
-      code:
-        profile.password_reset_code
-    ).password_reset_email
+    mailer.password_reset_email
   end
 
   private
 
-  def profile
-    @profile ||= Profile.first
+  def mailer
+    ProfileMailer.with(
+      email: TEST_EMAIL,
+      code:
+    )
+  end
+
+  def code
+    SecureRandom.alphanumeric
   end
 end
