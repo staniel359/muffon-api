@@ -83,8 +83,8 @@ module AmazonMusic
           }
         end
 
+        # Need to be refreshed
         def cookies
-          # Should be refreshed
           {
             'ubid-acbuk' =>
               cookies_secrets[:ubid_acbuk],
