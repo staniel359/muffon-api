@@ -37,8 +37,7 @@ set :puma_workers, 1
 
 set :nginx_config_name, fetch(:application)
 
-set :nginx_server_name,
-  '178-79-138-81.ip.linodeusercontent.com'
+set :nginx_server_name, 'muffon.app'
 
 set :nginx_use_ssl, true
 
@@ -68,11 +67,6 @@ namespace :config do
         'config/credentials/production.yml.enc',
         "/root/#{fetch(:application)}/shared/config/credentials/production.yml.enc"
       )
-
-      # upload!(
-      #   'lib/widevine.wvd',
-      #   "/root/#{fetch(:application)}/shared/lib/widevine.wvd"
-      # )
     end
   end
 end
