@@ -8,8 +8,6 @@ module Spotify
         return if not_all_args?
 
         data
-      rescue StandardError
-        nil
       end
 
       private
@@ -49,11 +47,19 @@ module Spotify
       end
 
       def client_id
-        secrets.spotify[:api_key]
+        if test?
+          secrets.spotify[:api_key]
+        else
+          secrets.spotify[:api].sample[:key]
+        end
       end
 
       def client_secret
-        secrets.spotify[:api_secret]
+        if test?
+          secrets.spotify[:api_secret]
+        else
+          secrets.spotify[:api].sample[:secret]
+        end
       end
 
       alias response post_response
