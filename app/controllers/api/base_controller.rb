@@ -1,6 +1,6 @@
 module API
   class BaseController < ApplicationController
-    CLIENT_MINIMUM_VERSION = '2.0.0'.freeze
+    CLIENT_MINIMUM_VERSION = '2.3.0'.freeze
 
     before_action :render_data_with_status
 
