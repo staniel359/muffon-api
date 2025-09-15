@@ -94,12 +94,15 @@ module Muffon
         end
 
         def handle(error)
-          ERRORS_DATA
+          handler =
+            ERRORS_DATA
             .values
             .find do |k|
               k[:errors].include?(error)
             end
-            .try(:[], :handler) || raise error
+            .try(:[], :handler)
+
+          handler || raise(error)
         end
       end
     end
