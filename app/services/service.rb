@@ -28,8 +28,4 @@ class Service
   def forbidden?
     false
   end
-
-  def client_version
-    @args[:client_version]
-  end
 end

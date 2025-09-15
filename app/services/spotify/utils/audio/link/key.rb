@@ -20,26 +20,17 @@ module Spotify
           end
 
           def data
-            if test?
-              test_key
-            elsif matched_version?
-              response
-                .body
-                .unpack1('H*')
-            end
+            return test_key if test?
+
+            response
+              .body
+              .unpack1('H*')
           rescue Faraday::BadRequestError, Faraday::ConnectionFailed
             nil
           end
 
           def test_key
             'e9730e75426d748290f56f1f94074efc'
-          end
-
-          def matched_version?
-            client_version.present? && (
-              client_version >=
-                Gem::Version.new('2.2.0-beta.5')
-            )
           end
 
           def link

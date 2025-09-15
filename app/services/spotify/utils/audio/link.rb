@@ -18,8 +18,7 @@ module Spotify
 
         def primary_args
           [
-            @args[:track_id],
-            @args[:client_version]
+            @args[:track_id]
           ]
         end
 
@@ -79,8 +78,7 @@ module Spotify
           @key ||=
             Spotify::Utils::Audio::Link::Key.call(
               track_id:,
-              file_id:,
-              client_version:
+              file_id:
             )
         end
 

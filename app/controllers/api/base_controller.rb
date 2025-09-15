@@ -40,7 +40,7 @@ module API
     end
 
     def valid_version?
-      params[:version].present? && (
+      client_version.present? && (
         client_version >=
           client_minimum_version
       )

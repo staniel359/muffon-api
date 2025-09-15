@@ -11,10 +11,9 @@ module API
 
       def info_data
         ::Spotify::Track::Info.call(
-          **params.slice(
-            *%i[track_id profile_id token with_audio version]
-          ).permit!.to_h.symbolize_keys,
-          client_version:
+          params.slice(
+            *%i[track_id profile_id token with_audio]
+          )
         )
       end
 
