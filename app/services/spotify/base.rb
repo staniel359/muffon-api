@@ -11,7 +11,7 @@ module Spotify
       super
     rescue Faraday::BadRequestError
       not_found
-    rescue Faraday::UnauthorizedError
+    rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
       retry_with_new_spotify_token
     end
 
