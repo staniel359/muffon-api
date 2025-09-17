@@ -50,7 +50,7 @@ module Spotify
         if test?
           secrets.spotify[:api_key]
         else
-          secrets.spotify[:api].sample[:key]
+          api_secrets[:key]
         end
       end
 
@@ -58,8 +58,15 @@ module Spotify
         if test?
           secrets.spotify[:api_secret]
         else
-          secrets.spotify[:api].sample[:secret]
+          api_secrets[:secret]
         end
+      end
+
+      def api_secrets
+        @api_secrets ||=
+          secrets
+            .spotify[:api]
+            .sample
       end
 
       alias response post_response
