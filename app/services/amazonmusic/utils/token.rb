@@ -24,15 +24,24 @@ module AmazonMusic
       end
 
       def client_id
-        secrets.amazon_music['client_id']
+        credentials.dig(
+          :amazon_music,
+          :client_id
+        )
       end
 
       def client_secret
-        secrets.amazon_music['client_secret']
+        credentials.dig(
+          :amazon_music,
+          :client_secret
+        )
       end
 
       def refresh_token
-        secrets.amazon_music['refresh_token']
+        credentials.dig(
+          :amazon_music,
+          :refresh_token
+        )
       end
 
       def payload

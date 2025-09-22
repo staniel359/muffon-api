@@ -28,7 +28,10 @@ module VK
     end
 
     def user_agent
-      secrets.vk[:user_agent]
+      credentials.dig(
+        :vk,
+        :user_agent
+      )
     end
 
     def params
@@ -46,11 +49,17 @@ module VK
     end
 
     def test_access_token
-      secrets.vk[:access_token]
+      credentials.dig(
+        :vk,
+        :access_token
+      )
     end
 
     def access_tokens
-      secrets.vk[:access_tokens]
+      credentials.dig(
+        :vk,
+        :access_tokens
+      )
     end
 
     def md5_signature
@@ -60,7 +69,10 @@ module VK
     end
 
     def api_secret
-      secrets.vk[:api_secret]
+      credentials.dig(
+        :vk,
+        :api_secret
+      )
     end
 
     def response_data

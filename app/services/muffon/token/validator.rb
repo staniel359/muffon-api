@@ -26,7 +26,7 @@ module Muffon
 
       def allowed_token?
         token.in?(
-          secrets.tokens
+          credentials[:tokens]
         )
       end
     end

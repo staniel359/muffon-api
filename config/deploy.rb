@@ -10,9 +10,7 @@ set :branch, 'main'
 set :deploy_to, "/root/#{fetch(:application)}"
 
 append :linked_files,
-  'config/master.key',
-  'config/credentials/production.yml.enc',
-  'config/credentials/production.key',
+  'config/credentials/production.json',
   'invalid_requests.csv',
   'lib/widevine.wvd'
 
@@ -64,8 +62,8 @@ namespace :config do
   task :copy do
     on roles(:all) do |host|
       upload!(
-        'config/credentials/production.yml.enc',
-        "/root/#{fetch(:application)}/shared/config/credentials/production.yml.enc"
+        'config/credentials/production.json',
+        "/root/#{fetch(:application)}/shared/config/credentials/production.json"
       )
     end
   end

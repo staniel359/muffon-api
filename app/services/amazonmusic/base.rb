@@ -25,7 +25,10 @@ module AmazonMusic
     end
 
     def test_token
-      secrets.amazon_music[:token]
+      credentials.dig(
+        :amazon_music,
+        :token
+      )
     end
 
     def image_data_formatted(image_link)

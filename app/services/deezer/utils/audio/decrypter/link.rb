@@ -22,7 +22,7 @@ module Deezer
               'data', 0, 'media', 0,
               'sources', 0, 'url'
             )
-          rescue Faraday::BadRequestError, Faraday::ForbiddenError
+          rescue Faraday::BadRequestError, Faraday::ForbiddenError, Faraday::UnprocessableEntityError
             nil
           end
 

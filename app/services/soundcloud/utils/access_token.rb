@@ -29,11 +29,17 @@ module SoundCloud
       end
 
       def client_id
-        secrets.soundcloud[:client_id]
+        credentials.dig(
+          :soundcloud,
+          :client_id
+        )
       end
 
       def client_secret
-        secrets.soundcloud[:client_secret]
+        credentials.dig(
+          :soundcloud,
+          :client_secret
+        )
       end
 
       alias response post_response

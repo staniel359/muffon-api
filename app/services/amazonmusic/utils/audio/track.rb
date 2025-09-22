@@ -86,15 +86,25 @@ module AmazonMusic
         # Need to be refreshed
         def cookies
           {
-            'ubid-acbuk' =>
-              cookies_secrets[:ubid_acbuk],
-            'at-acbuk' =>
-              cookies_secrets[:at_acbuk]
+            'ubid-acbuk' => first_cookie,
+            'at-acbuk' => second_cookie
           }
         end
 
-        def cookies_secrets
-          secrets.amazon_music[:cookies]
+        def first_cookie
+          credentials.dig(
+            :amazon_music,
+            :cookies,
+            :ubid_acbuk
+          )
+        end
+
+        def second_cookie
+          credentials.dig(
+            :amazon_music,
+            :cookies,
+            :at_acbuk
+          )
         end
 
         def data

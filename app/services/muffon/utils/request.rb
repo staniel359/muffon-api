@@ -21,7 +21,10 @@ module Muffon
       end
 
       def proxy
-        secrets.proxy[:ru]
+        credentials.dig(
+          :proxy,
+          :ru
+        )
       end
 
       def response_data

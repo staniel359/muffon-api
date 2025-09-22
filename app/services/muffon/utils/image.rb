@@ -32,10 +32,7 @@ module Muffon
       end
 
       def host
-        Rails
-          .application
-          .credentials
-          .url
+        credentials[:url]
       end
 
       def variant_link(size)

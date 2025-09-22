@@ -33,7 +33,7 @@ module Spotify
         end
 
         def redirect_uri
-          "#{secrets.url}/code"
+          "#{credentials[:url]}/code"
         end
 
         def client_id

@@ -6,11 +6,16 @@ class ApplicationMailer < ActionMailer::Base
   private
 
   def from_email
-    secrets.mailer[:email]
+    credentials.dig(
+      :mailer,
+      :email
+    )
   end
 
-  def secrets
-    Rails.application.credentials
+  def credentials
+    Rails
+      .application
+      .credentials
   end
 
   def message_id
@@ -22,6 +27,9 @@ class ApplicationMailer < ActionMailer::Base
   end
 
   def domain
-    secrets.mailer[:domain]
+    credentials.dig(
+      :mailer,
+      :domain
+    )
   end
 end

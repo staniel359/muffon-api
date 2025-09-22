@@ -3,8 +3,10 @@ module Muffon
     module Base
       private
 
-      def secrets
-        Rails.application.credentials
+      def credentials
+        Rails
+          .application
+          .credentials
       end
 
       def current_time

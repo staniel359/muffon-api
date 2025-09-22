@@ -20,6 +20,27 @@ Bundler.require(*Rails.groups)
 
 module MuffonAPI
   class Application < Rails::Application
+    def credentials
+      @credentials ||=
+        JSON
+          .load_file(
+            credentials_file_path
+          )
+          .deep_symbolize_keys
+    end
+
+    def credentials_file_path
+      Rails
+        .root
+        .join(
+          "config/credentials/#{Rails.env}.json"
+        )
+    end
+
+    def secret_key_base
+      credentials[:secret_key_base]
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.0
 
@@ -51,8 +72,16 @@ module MuffonAPI
         address: 'smtp.gmail.com',
         port: 587,
         domain: 'gmail.com',
-        user_name: credentials.mailer[:email],
-        password: credentials.mailer[:password],
+        user_name:
+          credentials.dig(
+            :mailer,
+            :email
+          ),
+        password:
+          credentials.dig(
+            :mailer,
+            :password
+          ),
         authentication: :login,
         openssl_verify_mode: 'none'
       }

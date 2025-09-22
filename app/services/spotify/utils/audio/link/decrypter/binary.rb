@@ -54,7 +54,10 @@ module Spotify
             end
 
             def iv_string
-              secrets.spotify[:iv]
+              credentials.dig(
+                :spotify,
+                :iv
+              )
             end
           end
         end

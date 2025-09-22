@@ -19,7 +19,10 @@ module GitHub
     end
 
     def token
-      secrets.github[:token]
+      credentials.dig(
+        :github,
+        :token
+      )
     end
 
     def params

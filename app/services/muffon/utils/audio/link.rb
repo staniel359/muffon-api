@@ -60,7 +60,7 @@ module Muffon
         end
 
         def audio_link
-          "#{secrets[:url]}/#{audio_path}"
+          "#{credentials[:url]}/#{audio_path}"
         end
       end
     end

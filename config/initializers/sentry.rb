@@ -1,12 +1,16 @@
 return unless Rails.env.production?
 
 Sentry.init do |config|
-  config.dsn =
+  credentials =
     Rails
-      .application
-      .credentials
-      .sentry
-      .url
+    .application
+    .credentials
+
+  config.dsn =
+    credentials.dig(
+      :sentry,
+      :url
+    )
 
   config.send_default_pii = true
 end

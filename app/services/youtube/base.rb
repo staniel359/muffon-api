@@ -15,7 +15,10 @@ module YouTube
     end
 
     def api_key
-      secrets.google[:api_key]
+      credentials.dig(
+        :google,
+        :api_key
+      )
     end
 
     def image_data_formatted(image)

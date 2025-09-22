@@ -48,25 +48,34 @@ module Spotify
 
       def client_id
         if test?
-          secrets.spotify[:api_key]
+          credentials.dig(
+            :spotify,
+            :api_key
+          )
         else
-          api_secrets[:key]
+          api_credentials[:key]
         end
       end
 
       def client_secret
         if test?
-          secrets.spotify[:api_secret]
+          credentials.dig(
+            :spotify,
+            :api_secret
+          )
         else
-          api_secrets[:secret]
+          api_credentials[:secret]
         end
       end
 
-      def api_secrets
-        @api_secrets ||=
-          secrets
-            .spotify[:api]
-            .sample
+      def api_credentials
+        @api_credentials ||=
+          credentials
+          .dig(
+            :spotify,
+            :api
+          )
+          .sample
       end
 
       alias response post_response

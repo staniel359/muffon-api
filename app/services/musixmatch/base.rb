@@ -17,7 +17,10 @@ module MusixMatch
     end
 
     def api_key
-      secrets.musixmatch[:api_key]
+      credentials.dig(
+        :musixmatch,
+        :api_key
+      )
     end
 
     def model_name

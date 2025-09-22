@@ -17,11 +17,17 @@ module Discogs
     end
 
     def api_key
-      secrets.discogs[:api_key]
+      credentials.dig(
+        :discogs,
+        :api_key
+      )
     end
 
     def api_secret
-      secrets.discogs[:api_secret]
+      credentials.dig(
+        :discogs,
+        :api_secret
+      )
     end
 
     def artist_data_formatted(artist)

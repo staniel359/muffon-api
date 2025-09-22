@@ -1,3 +1,1 @@
 spec/ export-ignore
-config/credentials/*.yml.enc diff=rails_credentials
-config/credentials.yml.enc diff=rails_credentials

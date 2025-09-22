@@ -43,11 +43,17 @@ module Odnoklassniki
       end
 
       def email
-        secrets.odnoklassniki[:email]
+        credentials.dig(
+          :odnoklassniki,
+          :email
+        )
       end
 
       def password
-        secrets.odnoklassniki[:password]
+        credentials.dig(
+          :odnoklassniki,
+          :password
+        )
       end
 
       def headers

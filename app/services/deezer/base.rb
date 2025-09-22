@@ -40,7 +40,10 @@ module Deezer
     end
 
     def session_id
-      secrets.deezer[:session_id]
+      credentials.dig(
+        :deezer,
+        :session_id
+      )
     end
 
     def image_data_formatted(image_id, model)

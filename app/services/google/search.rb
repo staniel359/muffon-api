@@ -55,11 +55,15 @@ module Google
     end
 
     def api_key
-      secrets.google[:api_key]
+      credentials.dig(
+        :google,
+        :api_key
+      )
     end
 
     def scope_id
-      secrets.google.dig(
+      credentials.dig(
+        :google,
         :scopes,
         @args[:scope].to_sym
       )

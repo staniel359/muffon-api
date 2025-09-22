@@ -47,9 +47,10 @@ module Odnoklassniki
     end
 
     def test_session_id
-      secrets.odnoklassniki[
+      credentials.dig(
+        :odnoklassniki,
         :test_session_id
-      ]
+      )
     end
 
     def global_value

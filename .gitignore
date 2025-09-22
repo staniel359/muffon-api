@@ -1,4 +1,4 @@
-config/**/*.key
+config/credentials/**/*
 config/deploy/templates
 public/media
 log

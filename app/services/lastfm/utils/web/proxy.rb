@@ -17,7 +17,10 @@ module LastFM
         end
 
         def proxy
-          secrets.proxy[:us]
+          credentials.dig(
+            :proxy,
+            :us
+          )
         end
 
         def headers

@@ -35,9 +35,10 @@ module SoundCloud
         end
 
         def test_access_token
-          secrets.soundcloud[
+          credentials.dig(
+            :soundcloud,
             :test_access_token
-          ]
+          )
         end
 
         def global_value

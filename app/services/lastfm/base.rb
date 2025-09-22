@@ -24,11 +24,17 @@ module LastFM
     end
 
     def api_key
-      secrets.lastfm[:api_key]
+      credentials.dig(
+        :lastfm,
+        :api_key
+      )
     end
 
     def api_secret
-      secrets.lastfm[:api_secret]
+      credentials.dig(
+        :lastfm,
+        :api_secret
+      )
     end
 
     def artist_params

@@ -35,11 +35,16 @@ VCR.configure do |config|
     filter_name =
       "<#{keys.join('_').upcase}>"
 
-    filter_value =
+    credentials =
       Rails
       .application
       .credentials
-      .dig(*keys)
+
+    filter_value =
+      credentials
+      .dig(
+        *keys
+      )
       .to_s
 
     filter_value_escaped =

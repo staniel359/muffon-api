@@ -47,7 +47,10 @@ module YandexMusic
         def session_id
           return 'test' if test?
 
-          secrets[:yandex_music][:session_id]
+          credentials.dig(
+            :yandex_music,
+            :session_id
+          )
         end
       end
     end
