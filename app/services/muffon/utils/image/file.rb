@@ -5,7 +5,7 @@ module Muffon
     class Image
       class File < Muffon::Base
         def call
-          # return {} if not_all_args?
+          return if image.blank?
 
           data
         end
@@ -51,18 +51,23 @@ module Muffon
         end
 
         def read_temp_image_file
+          file_path =
+            @args[:temp_image_file_path]
+
+          return unless ::File.exist?(file_path)
+
           file =
             ::File.open(
-              @args[:temp_image_file_path]
+              file_path
             )
 
-          text = file.read
+          file_content = file.read
 
           file.close
 
-          ::File.delete(file)
+          ::File.delete(file_path)
 
-          text
+          file_content
         end
 
         def link_image_content_type

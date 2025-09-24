@@ -5,6 +5,8 @@ module Muffon
         def process_image(
           image_file
         )
+          return if image_file.blank?
+
           Muffon::Processor::Image::Creator.call(
             **base_args,
             image_file:
@@ -14,6 +16,8 @@ module Muffon
         def process_image_later(
           image_file
         )
+          return if image_file.blank?
+
           file =
             ::File.new(
               "tmp/sidekiq/images/#{SecureRandom.uuid}",

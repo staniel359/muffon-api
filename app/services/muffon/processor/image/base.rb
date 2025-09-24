@@ -39,7 +39,7 @@ module Muffon
             Muffon::Utils::Image::File.call(
               image: image_file,
               temp_image_file_path:
-            )[:image]
+            ).try(:[], :image)
         end
 
         def image_file
