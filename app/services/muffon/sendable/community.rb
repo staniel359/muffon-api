@@ -49,9 +49,14 @@ module Muffon
       end
 
       def image_data
-        find_community
-          .image_data
-          &.slice(:small)
+        {
+          small:
+            community_image_data[:small]
+        }
+      end
+
+      def community_image_data
+        find_community.image_data
       end
     end
   end
