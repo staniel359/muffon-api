@@ -213,18 +213,14 @@ class Profile < ApplicationRecord
   has_many :browser_events,
            dependent: :delete_all
 
-  def delete_library
-    library_tracks.each(
-      &:destroy
-    )
+  def delete_library!
+    delete_recommendations!
 
-    library_albums.each(
-      &:destroy
-    )
+    delete_library_tracks!
 
-    library_artists.each(
-      &:destroy
-    )
+    delete_library_albums!
+
+    delete_library_artists!
   end
 
   private
@@ -252,6 +248,51 @@ class Profile < ApplicationRecord
       'id',
       'created_at',
       'updated_at'
+    )
+  end
+
+  def delete_recommendations!
+    Sidekiq::Queue
+      .new(
+        "profile_recommendation_tracks_#{id}"
+      )
+      .clear
+
+    recommendation_tracks.delete_all
+
+    Sidekiq::Queue
+      .new(
+        "profile_recommendation_artists_#{id}"
+      )
+      .clear
+
+    recommendation_artists.delete_all
+  end
+
+  def delete_library_tracks!
+    library_tracks.delete_all
+
+    Profile.reset_counters(
+      id,
+      :library_tracks_count
+    )
+  end
+
+  def delete_library_albums!
+    library_albums.delete_all
+
+    Profile.reset_counters(
+      id,
+      :library_albums_count
+    )
+  end
+
+  def delete_library_artists!
+    library_artists.delete_all
+
+    Profile.reset_counters(
+      id,
+      :library_artists_count
     )
   end
 end

@@ -20,12 +20,13 @@ module Muffon
           def data
             check_password
 
-            return profile.errors_data if
-                profile.errors?
+            if profile.has_errors?
+              profile.errors_data
+            else
+              profile.delete_library!
 
-            profile.delete_library
-
-            { success: true }
+              { success: true }
+            end
           end
         end
       end
