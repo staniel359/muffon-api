@@ -3,7 +3,7 @@ module Spec
     module AmazonMusic
       module Utils
         def amazonmusic_utils_token
-          'Atza|IwEBIP24QvbT576xhX1poHFb6za16fmkq6G7K4Hoer1apRDefZRDJZQC1wYeX9sVQsal5Of7vml82ZXmSK4L5IhyCBjSfaOtJkul4wSMHUhAaMxcNV_w4w8ADKn2C6BtPEqflxZfSerB1VJnAMtzMW0j7X0mkecDco-xDaQDiUmV5idSu3NrCtTBkuOX7v3CO8JNwkUx9JxUA8JE5HHijpwtzAEeBGZhrFf-1zAQNhhJkjUZKUUPUJA-ani3k_XLhjmjjToESlTe3rNQPOWMBVA18q0H2eqkkP4gIRQdp_uZPdGLA_xVFtNt_ulFRXruWtZbDETlWvj16Nv1Az17ZX9WrKvOgaI5-wjstbwtuTCdFxXZG3VdL3UooTpoMzYBrwzztylU1dAGirWN-LFN1LCB8mwi'
+          'Atza|IwEBIOfUjhhw4tytLskZV3MJh2Anc6nXRYJPMWA8I4k_ixHJx0WcGNH8s6EEsTc4M7T4RqWXvxRmT584VKPV7yGUmixy9QtihShb19R6Ss5hQPG5HaW0eKjfxylyfvh2BYLL9GLCQ1g3DTwP2k-MZ8ZrbOwVPbm5bkDKGmC85H8vCq_wIWW3Ndh86cNjzmv77QONkzNUBYwvw632598MFtrNI9aoXKHC07mjAZI5IeD54JOm_zd0ZIoiBDGE1kwZmzTFw4UADotQQ1hGJjD_XRjZwXSOU5p1f73mgyI6qxDpZSssTA-R16_6cO75mo2h_CTQRIna6LwPqO1AaR79HpfiSf28HrGIwANB73Yz5b6o1GYjfoI3bQ_WFjGUXyoI_jlciusy8kQ-OTb6jHgZ60kEMRft'
         end
       end
     end

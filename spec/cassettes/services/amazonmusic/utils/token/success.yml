@@ -2,16 +2,16 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.amazon.com/auth/o2/token?client_id=<AMAZON_MUSIC_CLIENT_ID>&client_secret=<AMAZON_MUSIC_CLIENT_SECRET>&grant_type=refresh_token&refresh_token=<AMAZON_MUSIC_REFRESH_TOKEN>
+    uri: https://api.amazon.com/auth/o2/token
     body:
       encoding: UTF-8
-      string: ''
+      string: client_id=<AMAZON_MUSIC_CLIENT_ID>&client_secret&grant_type=refresh_token&refresh_token=<AMAZON_MUSIC_REFRESH_TOKEN>
     headers:
       User-Agent:
       - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
         Safari/537.36
-      Content-Length:
-      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -24,7 +24,7 @@ http_interactions:
       Server:
       - Server
       Date:
-      - Sun, 09 Feb 2025 21:13:32 GMT
+      - Tue, 30 Sep 2025 20:50:44 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -32,11 +32,11 @@ http_interactions:
       Connection:
       - keep-alive
       X-Amz-Rid:
-      - 41WSABNH66AZ9MT7CMR4
+      - 4MEFD4ZBJX7XTGPSQCP1
       X-Amzn-Requestid:
-      - 2011758d-3c22-4f95-ab05-c5451ccb5989
+      - d498fed5-0b7c-4ca1-9369-b8736028bcc5
       X-Amz-Date:
-      - Sun, 09 Feb 2025 21:13:32 GMT
+      - Tue, 30 Sep 2025 20:50:44 GMT
       Cache-Control:
       - no-cache, no-store, must-revalidate
       Pragma:
@@ -47,6 +47,6 @@ http_interactions:
       - max-age=47474747; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"access_token":"Atza|IwEBIP24QvbT576xhX1poHFb6za16fmkq6G7K4Hoer1apRDefZRDJZQC1wYeX9sVQsal5Of7vml82ZXmSK4L5IhyCBjSfaOtJkul4wSMHUhAaMxcNV_w4w8ADKn2C6BtPEqflxZfSerB1VJnAMtzMW0j7X0mkecDco-xDaQDiUmV5idSu3NrCtTBkuOX7v3CO8JNwkUx9JxUA8JE5HHijpwtzAEeBGZhrFf-1zAQNhhJkjUZKUUPUJA-ani3k_XLhjmjjToESlTe3rNQPOWMBVA18q0H2eqkkP4gIRQdp_uZPdGLA_xVFtNt_ulFRXruWtZbDETlWvj16Nv1Az17ZX9WrKvOgaI5-wjstbwtuTCdFxXZG3VdL3UooTpoMzYBrwzztylU1dAGirWN-LFN1LCB8mwi","refresh_token":"<AMAZON_MUSIC_REFRESH_TOKEN>","token_type":"bearer","expires_in":3600}'
-  recorded_at: Sun, 09 Feb 2025 21:13:32 GMT
+      string: '{"access_token":"Atza|IwEBIOfUjhhw4tytLskZV3MJh2Anc6nXRYJPMWA8I4k_ixHJx0WcGNH8s6EEsTc4M7T4RqWXvxRmT584VKPV7yGUmixy9QtihShb19R6Ss5hQPG5HaW0eKjfxylyfvh2BYLL9GLCQ1g3DTwP2k-MZ8ZrbOwVPbm5bkDKGmC85H8vCq_wIWW3Ndh86cNjzmv77QONkzNUBYwvw632598MFtrNI9aoXKHC07mjAZI5IeD54JOm_zd0ZIoiBDGE1kwZmzTFw4UADotQQ1hGJjD_XRjZwXSOU5p1f73mgyI6qxDpZSssTA-R16_6cO75mo2h_CTQRIna6LwPqO1AaR79HpfiSf28HrGIwANB73Yz5b6o1GYjfoI3bQ_WFjGUXyoI_jlciusy8kQ-OTb6jHgZ60kEMRft","refresh_token":"<AMAZON_MUSIC_REFRESH_TOKEN>","token_type":"bearer","expires_in":3600}'
+  recorded_at: Tue, 30 Sep 2025 20:50:44 GMT
 recorded_with: VCR 6.3.1

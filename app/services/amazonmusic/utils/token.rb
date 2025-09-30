@@ -18,7 +18,7 @@ module AmazonMusic
         BASE_LINK
       end
 
-      def params
+      def payload
         {
           grant_type: 'refresh_token',
           client_id:,
@@ -46,10 +46,6 @@ module AmazonMusic
           :amazon_music,
           :refresh_token
         )
-      end
-
-      def payload
-        nil
       end
 
       alias response post_response
