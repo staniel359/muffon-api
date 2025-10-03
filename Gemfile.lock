@@ -349,6 +349,9 @@ GEM
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
+    sqlite3 (2.7.4)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.7.4-x86_64-linux-gnu)
     sshkit (1.24.0)
       base64
       logger
@@ -389,6 +392,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   aws-sdk-core (= 3.211)
@@ -428,6 +432,7 @@ DEPENDENCIES
   sidekiq-limit_fetch
   spring
   spring-watcher-listen
+  sqlite3
   vcr
   web-console
   webmock

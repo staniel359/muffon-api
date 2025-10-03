@@ -31,6 +31,7 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sidekiq'
 gem 'sidekiq-limit_fetch'
+gem 'sqlite3'
 gem 'whenever', require: false
 
 group :development do
