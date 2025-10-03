@@ -22,7 +22,8 @@ module LastFM
       def update_listeners_count
         find_artist.update!(
           listeners_count: artist.dig(
-            'stats', 'listeners'
+            'stats',
+            'listeners'
           ).to_i
         )
       end
@@ -43,9 +44,12 @@ module LastFM
       end
 
       def plays_count
-        artist.dig(
-          'stats', 'playcount'
-        ).to_i
+        artist
+          .dig(
+            'stats',
+            'playcount'
+          )
+          .to_i
       end
 
       def artist_extra_data
@@ -59,6 +63,13 @@ module LastFM
         }.compact
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def description
         description_formatted(
           raw_description
@@ -67,19 +78,22 @@ module LastFM
 
       def raw_description
         artist.dig(
-          'bio', 'content'
+          'bio',
+          'content'
         )
       end
 
-      def tags_list
-        return [] if artist['tags'].blank?
-
-        [raw_tags_list].flatten
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
       end
 
-      def raw_tags_list
+      def raw_tags
         artist.dig(
-          'tags', 'tag'
+          'tags',
+          'tag'
         )
       end
 

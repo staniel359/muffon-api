@@ -9,7 +9,7 @@ module Odnoklassniki
         track['name']
       end
 
-      def artists_list
+      def raw_artists
         track['allArtists'].presence ||
           [artist]
       end
@@ -25,7 +25,7 @@ module Odnoklassniki
         {
           name: source_name,
           id: odnoklassniki_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

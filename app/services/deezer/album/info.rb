@@ -56,9 +56,11 @@ module Deezer
           .compact_blank
       end
 
-      def tracks_list
+      def raw_tracks
         response_data.dig(
-          'results', 'SONGS', 'data'
+          'results',
+          'SONGS',
+          'data'
         )
       end
 

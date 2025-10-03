@@ -7,7 +7,7 @@ module Muffon
         def source_data
           {
             name: 'lastfm',
-            links: source_links
+            links: source_links_data
           }
         end
 

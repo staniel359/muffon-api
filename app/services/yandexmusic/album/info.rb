@@ -51,15 +51,22 @@ module YandexMusic
         }.compact_blank
       end
 
-      def labels_list
+      def raw_labels
         album['labels']
       end
 
-      def tags_list
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         [album['genre']]
       end
 
-      def tracks_list
+      def raw_tracks
         album['volumes'].flatten
       end
 

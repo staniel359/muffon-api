@@ -10,12 +10,13 @@ module SoundCloud
         def client_id
           return test_client_id if test?
 
-          get_global_value(
-            'soundcloud:v2:client_id',
-            refresh_class_name:
-              'SoundCloud::Utils::ClientId',
-            is_refresh: refresh_client_id?
-          )
+          @client_id ||=
+            get_global_value(
+              'soundcloud:v2:client_id',
+              refresh_class_name:
+                'SoundCloud::Utils::ClientId',
+              is_refresh: refresh_client_id?
+            )
         end
 
         def test_client_id

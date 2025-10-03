@@ -34,7 +34,7 @@ module Genius
         "#{BASE_LINK}/songs/#{@args[:track_id]}"
       end
 
-      def artists_list
+      def raw_artists
         track
           .values_at(
             'primary_artist',

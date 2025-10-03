@@ -32,5 +32,11 @@ module YouTube
         model:
       )
     end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data
+    end
   end
 end

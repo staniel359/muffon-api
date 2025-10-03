@@ -11,12 +11,13 @@ module AmazonMusic
     def amazonmusic_token
       return test_token if test?
 
-      get_global_value(
-        'amazonmusic:token',
-        expires_in_seconds: 3600,
-        refresh_class_name:
-          'AmazonMusic::Utils::Token'
-      )
+      @amazonmusic_token ||=
+        get_global_value(
+          'amazonmusic:token',
+          expires_in_seconds: 3600,
+          refresh_class_name:
+            'AmazonMusic::Utils::Token'
+        )
     end
 
     def test_token
@@ -32,22 +33,24 @@ module AmazonMusic
       )
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source: artist_source_data(artist),
-        name: artist['name']
+        source: artist_source_data(
+          raw_artist_data
+        ),
+        name: raw_artist_data['name']
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['id']
+        id: raw_artist_data['id']
       }
-    end
-
-    def headers
-      { 'User-Agent' => USER_AGENT }
     end
   end
 end

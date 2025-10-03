@@ -18,7 +18,9 @@ module Muffon
 
         def collection_list
           library_tags_formatted(
-            library_tags[offset, limit] || []
+            collection_paginated(
+              library_tags
+            )
           )
         end
 

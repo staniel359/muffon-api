@@ -15,7 +15,7 @@ module Bandcamp
           id: bandcamp_id,
           artist_id: artist_bandcamp_id,
           model: 'track',
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -29,8 +29,8 @@ module Bandcamp
 
       def streaming_link
         streaming_link_formatted(
-          'track',
-          bandcamp_id
+          model: 'track',
+          model_id: bandcamp_id
         )
       end
 
@@ -75,10 +75,13 @@ module Bandcamp
       def audio_link
         return unless audio_present?
 
-        format_get_request(
-          link: raw_audio_link,
-          redirect: false
-        ).headers[:location]
+        response =
+          format_get_request(
+            link: raw_audio_link,
+            is_redirect: false
+          )
+
+        response.headers[:location]
       end
     end
   end

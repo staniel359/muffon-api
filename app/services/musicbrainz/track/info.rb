@@ -39,7 +39,14 @@ module MusicBrainz
         track['first-release-date']
       end
 
-      def tags_list
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         track['tags']
       end
     end

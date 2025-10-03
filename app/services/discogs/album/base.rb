@@ -27,35 +27,14 @@ module Discogs
         "#{BASE_LINK}/releases/#{@args[:album_id]}"
       end
 
-      def artists_list
-        album['artists'] || []
-      end
-
-      def tracks_list
-        album['tracklist'].select do |track_data|
-          track_data['type_'] == 'track'
-        end
-      end
-
       def track_data_formatted(track)
         Discogs::Album::Info::Track.call(
           track:,
-          artists: artists_list,
+          artists: raw_artists,
           album_data: album_base_data,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )
-      end
-
-      def tags_list
-        album
-          .values_at(
-            'genres',
-            'styles'
-          )
-          .flatten
-          .compact
-          .uniq
       end
 
       alias album response_data

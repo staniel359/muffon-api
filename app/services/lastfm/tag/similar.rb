@@ -9,14 +9,19 @@ module LastFM
         { similar: tags }
       end
 
-      def similar_list
+      def raw_tags
         response_data.css(
           '.tags-list .tag'
         )
       end
 
+      def tag_name_formatted(
+        tag_data
+      )
+        tag_data.text
+      end
+
       alias link base_link
-      alias tags_list similar_list
     end
   end
 end

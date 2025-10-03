@@ -39,18 +39,45 @@ module Genius
         )
       end
 
-      def description
-        track['description_preview']
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
       end
 
-      def tags_list
+      def description
+        track['description_preview'].presence
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         track['tags']
       end
 
       def lyrics_truncated
+        text_truncated(
+          lyrics_string,
+          size: 'small'
+        )
+      end
+
+      def lyrics_string
         return if lyrics.blank?
 
-        lyrics_formatted.truncate(200)
+        lyrics
+          .map do |lyric_data|
+            lyric_data_formatted(
+              lyric_data
+            )
+          end
+          .join
       end
 
       def lyrics
@@ -64,17 +91,14 @@ module Genius
         track['path']
       end
 
-      def lyrics_formatted
-        lyrics.map do |lyric|
-          lyric_formatted(lyric)
-        end.join
-      end
-
-      def lyric_formatted(lyric)
-        if lyric.is_a?(Hash)
-          lyric[:text]
-        else
-          lyric
+      def lyric_data_formatted(
+        lyric_data
+      )
+        case lyric_data
+        when Hash
+          lyric_data[:text]
+        when String
+          lyric_data
         end
       end
     end

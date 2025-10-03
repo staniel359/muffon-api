@@ -6,9 +6,9 @@ module YandexMusic
       private
 
       def title
-        title_formatted(
+        title_with_extra_title(
           raw_title,
-          extra_title
+          extra_title:
         )
       end
 
@@ -20,7 +20,7 @@ module YandexMusic
         album['version']
       end
 
-      def artists_list
+      def raw_artists
         album['artists'].presence ||
           [artist]
       end
@@ -36,7 +36,7 @@ module YandexMusic
         {
           name: source_name,
           id: yandexmusic_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -50,8 +50,8 @@ module YandexMusic
 
       def streaming_link
         streaming_link_formatted(
-          'album',
-          yandexmusic_id
+          model: 'album',
+          model_id: yandexmusic_id
         )
       end
 

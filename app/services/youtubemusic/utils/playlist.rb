@@ -9,7 +9,7 @@ module YouTubeMusic
         {
           name: source_name,
           id: youtube_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

@@ -75,15 +75,29 @@ module Bandcamp
         }.compact
       end
 
-      def description
-        album['about']
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
       end
 
-      def tags_list
+      def description
+        album['about'].presence
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         album['tags']
       end
 
-      def tracks_list
+      def raw_tracks
         album['tracks']
       end
 

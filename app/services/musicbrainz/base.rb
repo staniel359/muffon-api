@@ -14,22 +14,28 @@ module MusicBrainz
       self.class::MODEL_NAME
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
         source: artist_source_data(
-          artist
+          raw_artist_data
         ),
-        name: artist.dig(
-          'artist', 'name'
+        name: raw_artist_data.dig(
+          'artist',
+          'name'
         )
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist.dig(
-          'artist', 'id'
+        id: raw_artist_data.dig(
+          'artist',
+          'id'
         )
       }
     end
@@ -42,6 +48,18 @@ module MusicBrainz
         album_id:,
         album_type:
       )
+    end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data
+    end
+
+    def label_name_formatted(
+      raw_label_data
+    )
+      raw_label_data['name']
     end
 
     alias artist_name artists_names

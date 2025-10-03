@@ -24,10 +24,10 @@ module YandexMusic
 
           def headers
             {
+              **super,
               'X-Retpath-Y' =>
                 'https%3A%2F%2Fmusic.yandex.ru/',
-              'Cookie' => cookies_string,
-              'User-Agent' => USER_AGENT
+              'Cookie' => cookies_string
             }
           end
 

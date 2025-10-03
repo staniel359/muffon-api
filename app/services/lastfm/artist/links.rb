@@ -4,7 +4,7 @@ module LastFM
       private
 
       def artist_data
-        { links: source_links }
+        { links: source_links_data }
       end
     end
   end

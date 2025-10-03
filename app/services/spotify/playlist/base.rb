@@ -41,8 +41,7 @@ module Spotify
           title:,
           description:,
           image: image_data,
-          tracks_count:
-            tracks_list.size,
+          tracks_count: raw_tracks.size,
           tracks:
         }.compact
       end

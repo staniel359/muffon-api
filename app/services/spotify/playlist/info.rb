@@ -11,14 +11,13 @@ module Spotify
           title:,
           description:,
           image: image_data,
-          tracks_count:
-            tracks_list.size,
+          tracks_count: raw_tracks.size,
           tracks:
         }.compact
       end
 
-      def tracks_list
-        @tracks_list ||=
+      def raw_tracks
+        @raw_tracks ||=
           Spotify::Playlist::Tracks.call(
             playlist_id: @args[:playlist_id],
             total_items_count: tracks_count

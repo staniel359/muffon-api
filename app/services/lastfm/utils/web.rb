@@ -5,22 +5,8 @@ module LastFM
 
       private
 
-      def response
-        format_get_request(
-          link:,
-          params:,
-          headers:,
-          cookies:,
-          proxy:
-        )
-      end
-
       def params
         {}
-      end
-
-      def headers
-        { 'User-Agent' => USER_AGENT }
       end
 
       def cookies
@@ -28,10 +14,7 @@ module LastFM
       end
 
       def proxy
-        credentials.dig(
-          :proxy,
-          :us
-        )
+        proxies[:us]
       end
 
       def param_formatted(

@@ -38,37 +38,44 @@ module SoundCloud
       end
 
       def raw_release_date
-        album.values_at(
-          'release_year',
-          'release_month',
-          'release_day'
-        ).compact
+        album
+          .values_at(
+            'release_year',
+            'release_month',
+            'release_day'
+          )
+          .compact
+      end
+
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
       end
 
       def description
-        album['description']
+        album['description'].presence
       end
 
-      def tags_list
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         [
-          raw_genres_list,
-          raw_tags_list
-        ].flatten.compact_blank
+          *album['genre'],
+          *album['tags']&.split(/\s?"\s?/)
+        ]
+          .compact_blank
       end
 
-      def raw_genres_list
-        album['genre']
-      end
-
-      def raw_tags_list
-        album['tags']&.split(
-          /\s?"\s?/
-        ) || []
-      end
-
-      def tracks_list
-        album['tracks'].select do |t|
-          t['title'].present?
+      def raw_tracks
+        album['tracks'].select do |raw_track_data|
+          raw_track_data['title'].present?
         end
       end
 

@@ -16,7 +16,7 @@ module AmazonMusic
         {
           name: source_name,
           id: amazonmusic_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

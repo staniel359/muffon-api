@@ -27,7 +27,7 @@ module Spotify
             end
 
             def decrypted_data
-              Muffon::Decrypter.call(
+              Muffon::Utils::Decrypter.call(
                 binary: response.body,
                 algorithm: CIPHER_ALGORITHM,
                 key: key_bytes_string,

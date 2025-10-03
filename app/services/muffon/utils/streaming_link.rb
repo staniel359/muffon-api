@@ -11,6 +11,10 @@ module Muffon
         'youtube' => 'y',
         'youtubemusic' => 'y'
       }.freeze
+      LINKS = {
+        album: 'https://album.link',
+        track: 'https://song.link'
+      }.freeze
 
       def call
         check_args
@@ -36,39 +40,23 @@ module Muffon
       end
 
       def base_link
-        if album? || bandcamp_track?
-          'https://album.link'
-        elsif track? || video?
-          'https://song.link'
-        end
-      end
-
-      def album?
-        model == 'album'
-      end
-
-      def model
-        @args[:model]
-      end
-
-      def bandcamp_track?
-        source == 'bandcamp' && track?
-      end
-
-      def source
-        @args[:source]
-      end
-
-      def track?
-        model == 'track'
-      end
-
-      def video?
-        model == 'video'
+        @base_link ||=
+          case @args[:model]
+          when 'album'
+            LINKS[:album]
+          when 'track'
+            if @args[:source] == 'bandcamp'
+              LINKS[:album]
+            else
+              LINKS[:track]
+            end
+          when 'video'
+            LINKS[:track]
+          end
       end
 
       def source_prefix
-        SOURCES[source]
+        SOURCES[@args[:source]]
       end
 
       def data

@@ -13,7 +13,7 @@ module Odnoklassniki
         {
           name: source_name,
           id: odnoklassniki_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

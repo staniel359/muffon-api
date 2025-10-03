@@ -13,7 +13,7 @@ module MusixMatch
         {
           name: source_name,
           id: musixmatch_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

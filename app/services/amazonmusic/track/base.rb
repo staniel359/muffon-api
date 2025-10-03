@@ -26,15 +26,24 @@ module AmazonMusic
 
       def track
         @track ||=
-          tracks_list.find do |t|
-            matched_track?(t)
+          raw_tracks.find do |raw_track_data|
+            matched_track?(
+              raw_track_data
+            )
           end
       end
 
-      def matched_track?(track_data)
-        track_data.dig(
-          'primaryLink', 'deeplink'
-        ).include?(track_id)
+      def matched_track?(
+        raw_track_data
+      )
+        raw_track_data
+          .dig(
+            'primaryLink',
+            'deeplink'
+          )
+          .include?(
+            track_id
+          )
       end
 
       def track_id

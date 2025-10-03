@@ -13,7 +13,7 @@ module Deezer
         {
           name: source_name,
           id: deezer_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

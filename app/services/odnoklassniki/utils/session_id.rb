@@ -23,12 +23,16 @@ module Odnoklassniki
           payload:,
           headers:,
           proxy:,
-          redirect: false
+          is_redirect: false
         )
       end
 
       def link
         BASE_LINK
+      end
+
+      def params
+        { cmd: 'AnonymLogin' }
       end
 
       def payload
@@ -52,14 +56,6 @@ module Odnoklassniki
           :odnoklassniki,
           :password
         )
-      end
-
-      def headers
-        { 'User-Agent' => USER_AGENT }
-      end
-
-      def params
-        { cmd: 'AnonymLogin' }
       end
     end
   end

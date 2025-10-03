@@ -8,22 +8,27 @@ module SoundCloud
       { client_id: }
     end
 
-    def artists_list
+    def raw_artists
       [artist]
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source:
-          artist_source_data(artist),
-        name: artist['username']
+        source: artist_source_data(
+          raw_artist_data
+        ),
+        name: raw_artist_data['username']
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['id']
+        id: raw_artist_data['id']
       }
     end
 
@@ -31,6 +36,12 @@ module SoundCloud
       SoundCloud::Utils::Image.call(
         image:
       )
+    end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data
     end
   end
 end

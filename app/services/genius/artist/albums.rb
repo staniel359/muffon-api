@@ -17,11 +17,11 @@ module Genius
 
       def collection_list
         collection_paginated(
-          albums_list
+          raw_albums
         )
       end
 
-      def albums_list
+      def raw_albums
         artist.dig(
           'response',
           'albums'
@@ -40,7 +40,7 @@ module Genius
       end
 
       def total_items_count
-        albums_list.size
+        raw_albums.size
       end
 
       def collection_item_data_formatted(album)

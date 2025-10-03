@@ -15,7 +15,7 @@ module Discogs
         {
           name: source_name,
           id: discogs_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

@@ -51,14 +51,23 @@ module MusicBrainz
         }.compact_blank
       end
 
-      def labels_list
+      def raw_labels
         album['label-info']
       end
 
-      def label_data_formatted(label)
-        label.dig(
+      def label_data_formatted(
+        raw_label_data
+      )
+        raw_label_data.dig(
           'label',
           'name'
+        )
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
         )
       end
 

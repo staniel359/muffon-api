@@ -19,6 +19,13 @@ module YouTube
           publish_date:
         }.compact
       end
+
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
     end
   end
 end

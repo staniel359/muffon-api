@@ -57,7 +57,7 @@ module Discogs
           album['main_release']
         end
 
-        def artists_list
+        def raw_artists
           [{ 'name' => album['artist'] }]
         end
 

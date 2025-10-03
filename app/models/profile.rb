@@ -252,21 +252,29 @@ class Profile < ApplicationRecord
   end
 
   def delete_recommendations!
+    clear_recommendation_tracks_queue
+
+    recommendation_tracks.delete_all
+
+    clear_recommendation_artists_queue
+
+    recommendation_artists.delete_all
+  end
+
+  def clear_recommendation_tracks_queue
     Sidekiq::Queue
       .new(
         "profile_recommendation_tracks_#{id}"
       )
       .clear
+  end
 
-    recommendation_tracks.delete_all
-
+  def clear_recommendation_artists_queue
     Sidekiq::Queue
       .new(
         "profile_recommendation_artists_#{id}"
       )
       .clear
-
-    recommendation_artists.delete_all
   end
 
   def delete_library_tracks!

@@ -26,21 +26,27 @@ module Discogs
       )
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source:
-          artist_source_data(artist),
+        source: artist_source_data(
+          raw_artist_data
+        ),
         name: artist_name_formatted(
-          artist['name']
+          raw_artist_data['name']
         )
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['id']
-      }.compact
+        id: raw_artist_data['id']
+      }
+        .compact
     end
 
     def artist_name_formatted(name)
@@ -80,6 +86,18 @@ module Discogs
 
     def model_name
       self.class::MODEL_NAME
+    end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data
+    end
+
+    def label_name_formatted(
+      raw_label_data
+    )
+      raw_label_data['name']
     end
 
     alias artist_name artists_names

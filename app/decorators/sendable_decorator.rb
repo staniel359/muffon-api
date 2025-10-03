@@ -27,130 +27,130 @@ module SendableDecorator
   end
 
   def artists_formatted
-    artists.map do |artist|
+    artists.map do |artist_data|
       artist_data_formatted(
-        artist
+        artist_data
       )
     end
   end
 
   def artist_data_formatted(
-    artist
+    artist_data
   )
     Muffon::Sendable::Artist.call(
-      artist:
+      artist: artist_data
     )
   end
 
   def albums_formatted
-    albums.map do |album|
+    albums.map do |album_data|
       album_data_formatted(
-        album
+        album_data
       )
     end
   end
 
   def album_data_formatted(
-    album
+    album_data
   )
     Muffon::Sendable::Album.call(
-      album:
+      album: album_data
     )
   end
 
   def tracks_formatted
-    tracks.map do |track|
+    tracks.map do |track_data|
       track_data_formatted(
-        track
+        track_data
       )
     end
   end
 
   def track_data_formatted(
-    track
+    track_data
   )
     Muffon::Sendable::Track.call(
-      track:
+      track: track_data
     )
   end
 
   def videos_formatted
-    videos.map do |video|
+    videos.map do |video_data|
       video_data_formatted(
-        video
+        video_data
       )
     end
   end
 
   def video_data_formatted(
-    video
+    video_data
   )
     Muffon::Sendable::Video.call(
-      video:
+      video: video_data
     )
   end
 
   def video_channels_formatted
-    video_channels.map do |channel|
+    video_channels.map do |video_channel_data|
       video_channel_data_formatted(
-        channel
+        video_channel_data
       )
     end
   end
 
   def video_channel_data_formatted(
-    channel
+    video_channel_data
   )
     Muffon::Sendable::VideoChannel.call(
-      channel:
+      channel: video_channel_data
     )
   end
 
   def video_playlists_formatted
-    video_playlists.map do |playlist|
+    video_playlists.map do |video_playlist_data|
       video_playlist_data_formatted(
-        playlist
+        video_playlist_data
       )
     end
   end
 
   def video_playlist_data_formatted(
-    playlist
+    video_playlist_data
   )
     Muffon::Sendable::VideoPlaylist.call(
-      playlist:
+      playlist: video_playlist_data
     )
   end
 
   def playlists_formatted
-    playlists.map do |playlist|
+    playlists.map do |playlist_data|
       playlist_data_formatted(
-        playlist
+        playlist_data
       )
     end
   end
 
   def playlist_data_formatted(
-    playlist
+    playlist_data
   )
     Muffon::Sendable::Playlist.call(
-      playlist:
+      playlist: playlist_data
     )
   end
 
   def communities_formatted
-    communities.map do |community|
+    communities.map do |community_data|
       community_data_formatted(
-        community
+        community_data
       )
     end
   end
 
   def community_data_formatted(
-    community
+    community_data
   )
     Muffon::Sendable::Community.call(
-      community:
+      community: community_data
     )
   end
 end

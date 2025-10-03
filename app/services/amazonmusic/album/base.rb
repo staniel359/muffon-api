@@ -50,7 +50,7 @@ module AmazonMusic
         { album: album_data }
       end
 
-      def tracks_list
+      def raw_tracks
         album.dig(
           'widgets',
           0,

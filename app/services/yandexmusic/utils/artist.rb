@@ -13,7 +13,7 @@ module YandexMusic
         {
           name: source_name,
           id: yandexmusic_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

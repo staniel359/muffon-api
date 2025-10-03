@@ -27,12 +27,13 @@ module SoundCloud
         def access_token
           return test_access_token if test?
 
-          get_global_value(
-            'soundcloud:v1:access_token',
-            refresh_class_name:
-              'SoundCloud::Utils::AccessToken',
-            is_refresh: refresh_access_token?
-          )
+          @access_token ||=
+            get_global_value(
+              'soundcloud:v1:access_token',
+              refresh_class_name:
+                'SoundCloud::Utils::AccessToken',
+              is_refresh: refresh_access_token?
+            )
         end
 
         def test_access_token

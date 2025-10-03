@@ -5,33 +5,33 @@ module Muffon
 
       def get_global_value(
         key,
+        refresh_class_name:,
         is_refresh: false,
-        expires_in_seconds: nil,
-        refresh_class_name:
+        expires_in_seconds: nil
       )
-        value = $redis.get(key)
+        value = REDIS.get(key)
 
         if value.blank? || is_refresh
           new_value =
             refresh_class_name
-              .constantize
-              .call
+            .constantize
+            .call
 
           if expires_in_seconds.present?
-            $redis.setex(
+            REDIS.setex(
               key,
               expires_in_seconds,
               new_value
             )
           else
-            $redis.set(
+            REDIS.set(
               key,
               new_value
             )
           end
         end
 
-        $redis.get(key)
+        REDIS.get(key)
       end
     end
   end

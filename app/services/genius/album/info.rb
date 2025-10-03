@@ -49,8 +49,15 @@ module Genius
         }.compact
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def description
-        album['description_preview']
+        album['description_preview'].presence
       end
 
       def tracks

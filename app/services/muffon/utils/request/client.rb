@@ -29,7 +29,7 @@ module Muffon
         def client(
           proxy:,
           params: {},
-          redirect: true,
+          is_redirect: true,
           payload: nil
         )
           Faraday.new(
@@ -39,7 +39,7 @@ module Muffon
           ) do |connection|
             set_connection(
               connection:,
-              redirect:,
+              is_redirect:,
               payload:
             )
           end
@@ -47,14 +47,14 @@ module Muffon
 
         def set_connection(
           connection:,
-          redirect: true,
+          is_redirect: true,
           payload: nil
         )
           connection.response(
             :raise_error
           )
 
-          if redirect
+          if is_redirect
             connection.response(
               :follow_redirects
             )

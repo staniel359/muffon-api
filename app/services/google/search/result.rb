@@ -25,8 +25,10 @@ module Google
 
       def opengraph_data(name)
         result.dig(
-          'pagemap', 'metatags',
-          0, "og:#{name}"
+          'pagemap',
+          'metatags',
+          0,
+          "og:#{name}"
         )
       end
 
@@ -48,8 +50,10 @@ module Google
 
       def image_data
         result.dig(
-          'pagemap', 'cse_image',
-          0, 'src'
+          'pagemap',
+          'cse_image',
+          0,
+          'src'
         )
       end
 

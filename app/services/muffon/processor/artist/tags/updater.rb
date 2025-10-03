@@ -8,11 +8,11 @@ module Muffon
           private
 
           def no_data?
-            tags_list.blank?
+            tags.blank?
           end
 
-          def tags_list
-            @tags_list ||=
+          def tags
+            @tags ||=
               LastFM::Artist::Tags.call(
                 artist_name:
               ).dig(
@@ -27,40 +27,39 @@ module Muffon
 
           def data
             find_artist.update!(
-              tag_ids:
+              tag_ids: tags_ids
             )
           end
 
-          def tag_ids
-            (
-              existing_tag_ids +
-                new_tag_ids
-            ).sort
+          def tags_ids
+            [
+              *existing_tags_ids,
+              *new_tags_ids
+            ]
+              .sort
           end
 
-          def existing_tag_ids
+          def existing_tags_ids
             Tag
               .where(
                 name_downcase:
-                  tag_names_downcase
+                  tags_names_downcase
               )
               .pluck(:id)
           end
 
-          def tag_names_downcase
-            tag_names.map(
-              &:downcase
-            )
+          def tags_names_downcase
+            tags_names.map(&:downcase)
           end
 
-          def tag_names
-            @tag_names ||=
-              tags_list.map do |tag|
+          def tags_names
+            @tags_names ||=
+              tags.map do |tag|
                 tag[:name].strip
               end
           end
 
-          def new_tag_ids
+          def new_tags_ids
             Tag
               .insert_all(
                 new_tags_formatted
@@ -69,15 +68,19 @@ module Muffon
           end
 
           def new_tags_formatted
-            tag_names.map do |name|
-              format_tag(name)
+            tags_names.map do |tag_name|
+              tag_data_formatted(
+                tag_name
+              )
             end
           end
 
-          def format_tag(name)
+          def tag_data_formatted(
+            tag_name
+          )
             {
-              name:,
-              name_downcase: name.downcase
+              name: tag_name,
+              name_downcase: tag_name.downcase
             }
           end
         end

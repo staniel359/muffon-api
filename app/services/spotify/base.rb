@@ -17,12 +17,13 @@ module Spotify
     def spotify_token
       return test_token if test?
 
-      get_global_value(
-        'spotify:token',
-        refresh_class_name:
-          'Spotify::Utils::Token',
-        is_refresh: refresh_token?
-      )
+      @spotify_token ||=
+        get_global_value(
+          'spotify:token',
+          refresh_class_name:
+            'Spotify::Utils::Token',
+          is_refresh: refresh_token?
+        )
     end
 
     def test_token
@@ -37,26 +38,33 @@ module Spotify
     end
 
     def retry_with_new_spotify_token
+      return if spotify_token.blank?
+
       self.class.call(
         **@args,
         is_refresh_token: true
       )
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source:
-          artist_source_data(artist),
+        source: artist_source_data(
+          raw_artist_data
+        ),
         name:
-          artist['name'] ||
-            artist['type']
+          raw_artist_data['name'] ||
+            raw_artist_data['type']
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['id']
+        id: raw_artist_data['id']
       }
     end
 

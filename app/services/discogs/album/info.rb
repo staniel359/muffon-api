@@ -32,12 +32,22 @@ module Discogs
         }.compact_blank
       end
 
-      def raw_release_date
-        album['released']
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
       end
 
-      def labels_list
-        album['labels']
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_release_date
+        album['released']
       end
     end
   end

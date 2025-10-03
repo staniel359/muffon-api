@@ -13,7 +13,7 @@ module LastFM
 
       def not_found?
         model.blank? ||
-          tags_list.blank?
+          raw_tags.blank?
       end
 
       def model
@@ -36,7 +36,7 @@ module LastFM
         self.class::MODEL_NAME
       end
 
-      def tags_list
+      def raw_tags
         model['tag']
       end
 

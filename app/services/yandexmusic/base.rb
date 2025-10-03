@@ -6,38 +6,31 @@ module YandexMusic
 
     private
 
-    def response
-      format_get_request(
-        link:,
-        params:,
-        headers:,
-        proxy:
-      )
-    end
-
     def proxy
-      credentials.dig(
-        :proxy,
-        :ru
-      )
+      proxies[:ru]
     end
 
     def params
       { language: }
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source:
-          artist_source_data(artist),
-        name: artist['name']
+        source: artist_source_data(
+          raw_artist_data
+        ),
+        name: raw_artist_data['name']
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['id']
+        id: raw_artist_data['id']
       }
     end
 
@@ -45,6 +38,18 @@ module YandexMusic
       YandexMusic::Utils::Image.call(
         data:
       )
+    end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data
+    end
+
+    def label_name_formatted(
+      raw_label_data
+    )
+      raw_label_data['name']
     end
 
     alias artist_name artists_names

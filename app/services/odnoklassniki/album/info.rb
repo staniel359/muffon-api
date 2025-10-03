@@ -50,11 +50,18 @@ module Odnoklassniki
         }.compact
       end
 
-      def tags_list
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         album['genres']
       end
 
-      def tracks_list
+      def raw_tracks
         response_data['tracks']
       end
 

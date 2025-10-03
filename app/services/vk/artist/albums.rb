@@ -15,7 +15,7 @@ module VK
         }
       end
 
-      def albums_list
+      def raw_albums
         artist['items']
       end
 

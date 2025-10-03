@@ -6,9 +6,9 @@ module VK
       private
 
       def title
-        title_formatted(
+        title_with_extra_title(
           raw_title,
-          extra_title
+          extra_title:
         )
       end
 
@@ -20,7 +20,7 @@ module VK
         track['subtitle']
       end
 
-      def artists_list
+      def raw_artists
         track['main_artists'] || [artist]
       end
 
@@ -32,7 +32,7 @@ module VK
         {
           name: source_name,
           id: vk_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

@@ -53,15 +53,21 @@ module VK
         }.compact
       end
 
-      def tags_list
-        album['genres'].pluck(
-          'name'
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
         )
+      end
+
+      def raw_tags
+        album['genres'].pluck('name')
       end
 
       def tracks
         album_tracks.dig(
-          :album, :tracks
+          :album,
+          :tracks
         )
       end
 

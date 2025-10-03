@@ -4,7 +4,7 @@ module Muffon
       USER_AGENT =
         'Mozilla/5.0 (X11; Linux x86_64) ' \
         'AppleWebKit/537.36 (KHTML, like Gecko) ' \
-        'Chrome/101.0.4951.41 Safari/537.36'.freeze
+        'Chrome/143.0.7445.3 Safari/537.36'.freeze
 
       include Muffon::Utils::Request::Client
 
@@ -23,7 +23,8 @@ module Muffon
             link:,
             params:,
             headers:,
-            cookies:
+            cookies:,
+            proxy:
           )
       end
 
@@ -33,7 +34,7 @@ module Muffon
         headers: {},
         cookies: {},
         proxy: nil,
-        redirect: true
+        is_redirect: true
       )
         set_cookies(
           headers:,
@@ -42,7 +43,7 @@ module Muffon
 
         client(
           proxy:,
-          redirect:
+          is_redirect:
         ).get(
           link,
           params,
@@ -59,7 +60,7 @@ module Muffon
       end
 
       def headers
-        {}
+        { 'User-Agent' => USER_AGENT }
       end
 
       def cookies
@@ -70,6 +71,10 @@ module Muffon
         nil
       end
 
+      def proxies
+        credentials[:proxy]
+      end
+
       def post_response
         @post_response ||=
           format_post_request(
@@ -77,7 +82,8 @@ module Muffon
             params:,
             payload:,
             headers:,
-            cookies:
+            cookies:,
+            proxy:
           )
       end
 
@@ -88,7 +94,7 @@ module Muffon
         headers: {},
         cookies: {},
         proxy: nil,
-        redirect: true
+        is_redirect: true
       )
         set_cookies(
           headers:,
@@ -98,7 +104,7 @@ module Muffon
         client(
           params:,
           proxy:,
-          redirect:,
+          is_redirect:,
           payload:
         ).post(
           link,

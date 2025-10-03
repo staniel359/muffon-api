@@ -14,7 +14,7 @@ module Bandcamp
           name: source_name,
           id: bandcamp_id,
           model: bandcamp_model,
-          links: source_links
+          links: source_links_data
         }.compact_blank
       end
 

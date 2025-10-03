@@ -13,7 +13,7 @@ module SoundCloud
         {
           name: source_name,
           id: soundcloud_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

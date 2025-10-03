@@ -22,7 +22,7 @@ module YouTubeMusic
         {
           name: source_name,
           id: youtube_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -47,8 +47,8 @@ module YouTubeMusic
 
       def streaming_link
         streaming_link_formatted(
-          'video',
-          youtube_id
+          model: 'video',
+          model_id: youtube_id
         )
       end
 

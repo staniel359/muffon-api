@@ -27,16 +27,24 @@ module AmazonMusic
 
       def first_page_next_page_url
         response_data.dig(
-          'methods', 0,
-          'template', 'widgets', 0,
-          'onEndOfWidget', 0, 'url'
+          'methods',
+          0,
+          'template',
+          'widgets',
+          0,
+          'onEndOfWidget',
+          0,
+          'url'
         )
       end
 
       def other_pages_next_page_url
         response_data.dig(
-          'methods', 0,
-          'onEndOfWidget', 0, 'url'
+          'methods',
+          0,
+          'onEndOfWidget',
+          0,
+          'url'
         )
       end
 
@@ -54,15 +62,19 @@ module AmazonMusic
 
       def first_page_collection_list
         response_data.dig(
-          'methods', 0,
-          'template', 'widgets', 0,
+          'methods',
+          0,
+          'template',
+          'widgets',
+          0,
           'items'
         )
       end
 
       def other_pages_collection_list
         response_data.dig(
-          'methods', 0,
+          'methods',
+          0,
           'items'
         )
       end

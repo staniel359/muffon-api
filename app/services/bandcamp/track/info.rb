@@ -84,11 +84,25 @@ module Bandcamp
         )
       end
 
-      def description
-        response_data['about']
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
       end
 
-      def tags_list
+      def description
+        response_data['about'].presence
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         response_data['tags']
       end
     end

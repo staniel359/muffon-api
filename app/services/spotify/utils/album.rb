@@ -9,7 +9,7 @@ module Spotify
         album['name']
       end
 
-      def artists_list
+      def raw_artists
         album['artists']
       end
 
@@ -17,7 +17,7 @@ module Spotify
         {
           name: source_name,
           id: spotify_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -33,8 +33,8 @@ module Spotify
 
       def streaming_link
         streaming_link_formatted(
-          'album',
-          spotify_id
+          model: 'album',
+          model_id: spotify_id
         )
       end
 

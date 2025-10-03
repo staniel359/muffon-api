@@ -118,15 +118,25 @@ module LastFM
     end
 
     def with_more_tags?
-      tags_list.size >= 5
+      raw_tags.size >= 5
     end
 
-    def description_formatted(data)
-      return '' if data.blank?
+    def description_formatted(
+      description
+    )
+      return if description.blank?
 
-      data.match(
-        %r{(.+)<a href="http(s?)://www.last.fm}m
-      )[1].strip
+      description
+        .match(
+          %r{(.+)<a href="http(s?)://www.last.fm}m
+        )[1]
+        .strip
+    end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data['name']
     end
   end
 end

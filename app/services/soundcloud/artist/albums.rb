@@ -15,7 +15,7 @@ module SoundCloud
         }
       end
 
-      def albums_list
+      def raw_albums
         artist['collection']
       end
 
@@ -32,12 +32,12 @@ module SoundCloud
 
       def collection_list
         collection_paginated(
-          albums_list
+          raw_albums
         )
       end
 
       def total_items_count
-        albums_list.size
+        raw_albums.size
       end
 
       def collection_item_data_formatted(album)

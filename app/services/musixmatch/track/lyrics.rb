@@ -29,11 +29,7 @@ module MusixMatch
 
               text = "\n#{text}" unless index.zero?
             else
-              text =
-                text.tr(
-                  '′',
-                  "'"
-                )
+              text = text.tr('′', "'")
             end
 
             "#{text}\n"
@@ -62,17 +58,11 @@ module MusixMatch
         )
       end
 
-      def headers
-        { 'User-Agent' => USER_AGENT }
-      end
-
       def subheader_node?(
         lyric
       )
         lyric
-          .attr(
-            'class'
-          )
+          .attr('class')
           .include?(
             CLASSES_DATA['subheader']
           )

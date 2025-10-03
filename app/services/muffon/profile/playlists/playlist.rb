@@ -96,7 +96,7 @@ module Muffon
           {
             image: image_data,
             description:
-              description_formatted,
+              description_truncated_formatted,
             tracks_count:,
             created: created_formatted
           }.compact
@@ -106,9 +106,16 @@ module Muffon
           playlist.image_data
         end
 
-        def description_formatted
+        def description_truncated_formatted
           string_with_newlines_replaced_by_spaces(
-            description_truncated_small
+            description_truncated
+          )
+        end
+
+        def description_truncated
+          text_truncated(
+            description,
+            size: 'extrasmall'
           )
         end
 

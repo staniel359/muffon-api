@@ -20,14 +20,14 @@ module Muffon
       end
 
       def description
-        ''
+        nil
       end
 
       def with_more_tags?
-        tags_list.size > 5
+        raw_tags.size > 5
       end
 
-      def tags_list
+      def raw_tags
         []
       end
     end

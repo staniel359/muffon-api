@@ -56,7 +56,7 @@ module Deezer
 
             def chunk_binary
               @chunk_binary ||=
-                Muffon::Binary::Chunk.call(
+                Muffon::Utils::Binary::Chunk.call(
                   binary:,
                   chunk_size: CHUNK_SIZE,
                   index:
@@ -68,7 +68,7 @@ module Deezer
             end
 
             def decrypted_chunk_binary
-              Muffon::Decrypter.call(
+              Muffon::Utils::Decrypter.call(
                 binary: chunk_binary,
                 algorithm: CIPHER_ALGORITHM,
                 key:,

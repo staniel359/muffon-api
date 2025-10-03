@@ -71,8 +71,10 @@ module LastFM
 
       def image
         track.dig(
-          'album', 'image',
-          -1, '#text'
+          'album',
+          'image',
+          -1,
+          '#text'
         )
       end
 
@@ -88,6 +90,13 @@ module LastFM
         }
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def description
         description_formatted(
           raw_description
@@ -96,19 +105,22 @@ module LastFM
 
       def raw_description
         track.dig(
-          'wiki', 'content'
+          'wiki',
+          'content'
         )
       end
 
-      def tags_list
-        return [] if track['toptags'].blank?
-
-        [raw_tags_list].flatten
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
       end
 
-      def raw_tags_list
+      def raw_tags
         track.dig(
-          'toptags', 'tag'
+          'toptags',
+          'tag'
         )
       end
     end

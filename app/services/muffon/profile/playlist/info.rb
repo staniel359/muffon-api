@@ -77,6 +77,13 @@ module Muffon
           playlist.description
         end
 
+        def description_truncated
+          text_truncated(
+            description,
+            size: 'medium'
+          )
+        end
+
         def tracks_count
           playlist.tracks_count
         end

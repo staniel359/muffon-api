@@ -21,6 +21,13 @@ module YouTube
         }.compact
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def channel_statistics_data
         {
           views_count:,

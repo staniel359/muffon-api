@@ -1,6 +1,15 @@
 module Muffon
   module Utils
     module Formatters
+      TEXT_SIZES_DATA = {
+        'extrasmall' => 100,
+        'small' => 200,
+        'medium' => 400
+      }.freeze
+      COLLECTION_SIZES_DATA = {
+        'extrasmall' => 5
+      }.freeze
+
       include Muffon::Utils::Formatters::Collection
 
       private
@@ -10,11 +19,9 @@ module Muffon
       end
 
       def artists_names
-        artists.pluck(
-          :name
-        ).join(
-          ', '
-        )
+        artists
+          .pluck(:name)
+          .join(', ')
       end
 
       def artists_base_data
@@ -28,55 +35,60 @@ module Muffon
         find_artist.image_data
       end
 
-      def date_formatted(data)
+      def date_formatted(
+        data
+      )
         Muffon::Utils::Date.call(
           data:
         )
       end
 
-      def datetime_formatted(date)
+      def datetime_formatted(
+        date
+      )
         date.strftime('%F %T')
       end
 
-      def duration_formatted(duration)
+      def duration_string_to_seconds(
         duration
-          .split(':')
-          .map(&:to_i)
-          .inject(0) do |a, b|
-            (a * 60) + b
+      )
+        duration
+          .scan(/\d+/)
+          .then do |minutes, seconds|
+            (minutes.to_i * 60) + seconds.to_i
           end
       end
 
-      def description_truncated
-        description
-          &.truncate(400)
-          .presence
-      end
-
-      def description_truncated_small
-        description
-          &.truncate(100)
-          .presence
-      end
-
-      def lyrics_truncated
-        lyrics
-          &.truncate(200)
-          .presence
-      end
-
-      def title_formatted(
-        raw_title,
-        extra_title
+      def text_truncated(
+        text,
+        size:
       )
-        if extra_title.blank?
-          raw_title
+        text&.truncate(
+          TEXT_SIZES_DATA[size]
+        )
+      end
+
+      def collection_truncated(
+        collection,
+        size:
+      )
+        collection.first(
+          COLLECTION_SIZES_DATA[size]
+        )
+      end
+
+      def title_with_extra_title(
+        title,
+        extra_title: nil
+      )
+        if extra_title.present?
+          "#{title} (#{extra_title})"
         else
-          "#{raw_title} (#{extra_title})"
+          title
         end
       end
 
-      def source_links
+      def source_links_data
         {
           original: original_link,
           streaming: streaming_link
@@ -87,7 +99,10 @@ module Muffon
         nil
       end
 
-      def streaming_link_formatted(model, model_id)
+      def streaming_link_formatted(
+        model:,
+        model_id:
+      )
         Muffon::Utils::StreamingLink.call(
           model:,
           source: source_name,
@@ -98,10 +113,7 @@ module Muffon
       def string_with_newlines_replaced_by_spaces(
         string
       )
-        string&.gsub(
-          "\n",
-          ' '
-        )
+        string&.gsub("\n", ' ')
       end
     end
   end

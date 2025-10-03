@@ -14,7 +14,7 @@ module MusicBrainz
         album['title']
       end
 
-      def artists_list
+      def raw_artists
         album['artist-credit']
       end
 
@@ -24,7 +24,7 @@ module MusicBrainz
           id: musicbrainz_id,
           model:
             model_name_formatted,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -60,15 +60,15 @@ module MusicBrainz
           album['first-release-date']
       end
 
-      def tags_list
-        album['tags'].pluck(
-          'name'
-        )
+      def raw_tags
+        album['tags'].pluck('name')
       end
 
-      def tracks_list
+      def raw_tracks
         album.dig(
-          'media', 0, 'tracks'
+          'media',
+          0,
+          'tracks'
         )
       end
     end

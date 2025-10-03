@@ -27,7 +27,7 @@ module ApplicationCable
     end
 
     def valid_access_token?
-      Muffon::AccessToken::Validator.call(
+      Muffon::Utils::AccessToken::Validator.call(
         access_token:
       )
     end

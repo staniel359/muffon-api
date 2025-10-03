@@ -7,8 +7,12 @@ module YouTube
 
       def title
         CGI.unescapeHTML(
-          snippet['title']
+          raw_title
         )
+      end
+
+      def raw_title
+        snippet['title']
       end
 
       def snippet
@@ -19,7 +23,7 @@ module YouTube
         {
           name: source_name,
           id: youtube_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -33,8 +37,8 @@ module YouTube
 
       def streaming_link
         streaming_link_formatted(
-          'video',
-          youtube_id
+          model: 'video',
+          model_id: youtube_id
         )
       end
 
@@ -58,8 +62,12 @@ module YouTube
 
       def channel_title
         CGI.unescapeHTML(
-          snippet['channelTitle']
+          raw_channel_title
         )
+      end
+
+      def raw_channel_title
+        snippet['channelTitle']
       end
 
       def image_data
@@ -81,6 +89,22 @@ module YouTube
 
       def raw_publish_date
         snippet['publishedAt']
+      end
+
+      def description
+        return if raw_description.blank?
+
+        CGI.unescapeHTML(
+          raw_description
+        )
+      end
+
+      def raw_description
+        snippet['description'].presence
+      end
+
+      def raw_tags
+        snippet['tags']
       end
     end
   end

@@ -13,7 +13,7 @@ module Deezer
         {
           name: source_name,
           id: deezer_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -27,12 +27,12 @@ module Deezer
 
       def streaming_link
         streaming_link_formatted(
-          'album',
-          deezer_id
+          model: 'album',
+          model_id: deezer_id
         )
       end
 
-      def artists_list
+      def raw_artists
         album['ARTISTS']
       end
 

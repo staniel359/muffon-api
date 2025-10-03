@@ -9,7 +9,7 @@ module YouTube
         {
           name: source_name,
           id: youtube_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -23,8 +23,12 @@ module YouTube
 
       def title
         CGI.unescapeHTML(
-          snippet['title']
+          raw_title
         )
+      end
+
+      def raw_title
+        snippet['title']
       end
 
       def snippet
@@ -51,8 +55,12 @@ module YouTube
 
       def channel_title
         CGI.unescapeHTML(
-          snippet['channelTitle']
+          raw_channel_title
         )
+      end
+
+      def raw_channel_title
+        snippet['channelTitle']
       end
 
       def image_data
@@ -67,9 +75,15 @@ module YouTube
       end
 
       def description
+        return if raw_description.blank?
+
         CGI.unescapeHTML(
-          snippet['description']
+          raw_description
         )
+      end
+
+      def raw_description
+        snippet['description'].presence
       end
 
       def videos_count

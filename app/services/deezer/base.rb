@@ -52,18 +52,23 @@ module Deezer
       )
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source:
-          artist_source_data(artist),
-        name: artist['ART_NAME']
+        source: artist_source_data(
+          raw_artist_data
+        ),
+        name: raw_artist_data['ART_NAME']
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['ART_ID'].to_i
+        id: raw_artist_data['ART_ID'].to_i
       }
     end
 

@@ -55,7 +55,14 @@ module MusixMatch
         }.compact
       end
 
-      def tags_list
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
         album.dig(
           'primary_genres',
           'music_genre_list'

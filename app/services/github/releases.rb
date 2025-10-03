@@ -1,8 +1,7 @@
 module GitHub
   class Releases < Muffon::Base
     BASE_LINK =
-      'https://api.github.com/repos' \
-      '/staniel359/muffon/releases'.freeze
+      'https://api.github.com/repos/staniel359/muffon/releases'.freeze
     COLLECTION_NAME = 'releases'.freeze
     TOTAL_LIMIT = 100
 

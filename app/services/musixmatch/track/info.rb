@@ -43,16 +43,14 @@ module MusixMatch
         }.compact
       end
 
-      def lyrics
-        MusixMatch::Track::Info::Lyrics.call(
-          track_id: @args[:track_id]
-        ).dig(
-          :track,
-          :lyrics
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
         )
       end
 
-      def tags_list
+      def raw_tags
         track.dig(
           'primary_genres',
           'music_genre_list'
@@ -63,6 +61,22 @@ module MusixMatch
         tag.dig(
           'music_genre',
           'music_genre_name'
+        )
+      end
+
+      def lyrics_truncated
+        text_truncated(
+          lyrics,
+          size: 'small'
+        )
+      end
+
+      def lyrics
+        MusixMatch::Track::Info::Lyrics.call(
+          track_id: @args[:track_id]
+        ).dig(
+          :track,
+          :lyrics
         )
       end
     end

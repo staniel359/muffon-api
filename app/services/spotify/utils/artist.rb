@@ -13,7 +13,7 @@ module Spotify
         {
           name: source_name,
           id: spotify_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

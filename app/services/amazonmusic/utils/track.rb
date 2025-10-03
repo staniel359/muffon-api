@@ -11,7 +11,7 @@ module AmazonMusic
         )
       end
 
-      def artists_list
+      def raw_artists
         [artist_data]
       end
 
@@ -43,7 +43,7 @@ module AmazonMusic
           name: source_name,
           id: amazonmusic_id,
           album_id: album_amazonmusic_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -65,8 +65,8 @@ module AmazonMusic
 
       def streaming_link
         streaming_link_formatted(
-          'track',
-          amazonmusic_id
+          model: 'track',
+          model_id: amazonmusic_id
         )
       end
 
@@ -115,7 +115,7 @@ module AmazonMusic
       end
 
       def duration
-        duration_formatted(
+        duration_string_to_seconds(
           raw_duration
         )
       end

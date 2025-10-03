@@ -13,14 +13,6 @@ module Odnoklassniki
         'error.notloggedin'
     end
 
-    def response
-      format_get_request(
-        link:,
-        params:,
-        proxy:
-      )
-    end
-
     def link
       "https://wmf.ok.ru/#{endpoint_name};" \
         "jsessionid=#{session_id}"
@@ -35,21 +27,19 @@ module Odnoklassniki
     end
 
     def proxy
-      credentials.dig(
-        :proxy,
-        :ru
-      )
+      proxies[:ru]
     end
 
     def session_id
       return test_session_id if test?
 
-      get_global_value(
-        'odnoklassniki:session_id',
-        refresh_class_name:
-          'Odnoklassniki::Utils::SessionId',
-        is_refresh: refresh_session_id?
-      )
+      @session_id ||=
+        get_global_value(
+          'odnoklassniki:session_id',
+          refresh_class_name:
+            'Odnoklassniki::Utils::SessionId',
+          is_refresh: refresh_session_id?
+        )
     end
 
     def test_session_id
@@ -70,18 +60,23 @@ module Odnoklassniki
       )
     end
 
-    def artist_data_formatted(artist)
+    def artist_data_formatted(
+      raw_artist_data
+    )
       {
-        source:
-          artist_source_data(artist),
-        name: artist['name']
+        source: artist_source_data(
+          raw_artist_data
+        ),
+        name: raw_artist_data['name']
       }
     end
 
-    def artist_source_data(artist)
+    def artist_source_data(
+      raw_artist_data
+    )
       {
         name: source_name,
-        id: artist['id']
+        id: raw_artist_data['id']
       }
     end
 
@@ -89,6 +84,12 @@ module Odnoklassniki
       Odnoklassniki::Utils::Image.call(
         image:
       )
+    end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data['label']
     end
 
     alias artist_name artists_names

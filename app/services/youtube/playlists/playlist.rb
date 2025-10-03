@@ -29,7 +29,7 @@ module YouTube
           channel: channel_data,
           image: image_data,
           description:
-            description_truncated_small,
+            description_truncated,
           videos_count:,
           publish_date:
         }.compact
@@ -37,6 +37,13 @@ module YouTube
 
       def playlist
         @args[:playlist]
+      end
+
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'extrasmall'
+        )
       end
     end
   end

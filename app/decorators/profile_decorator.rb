@@ -138,7 +138,9 @@ module ProfileDecorator
         &:second
       )
       .reverse
-      .map { |tag| format_library_tag(tag) }
+      .map do |tag|
+        format_library_tag(tag)
+      end
   end
 
   def playlist_tracks

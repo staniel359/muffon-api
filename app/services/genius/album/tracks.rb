@@ -3,7 +3,11 @@ module Genius
     class Tracks < Genius::Album::Base
       private
 
-      def tracks_list
+      def data
+        { tracks: }
+      end
+
+      def raw_tracks
         response_data.dig(
           'response',
           'tracks'
@@ -12,10 +16,6 @@ module Genius
 
       def link
         "#{super}/tracks"
-      end
-
-      def data
-        { tracks: }
       end
 
       def track_data_formatted(track)

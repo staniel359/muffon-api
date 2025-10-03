@@ -89,8 +89,6 @@ module LastFM
           minimal: @args[:minimal]
         )
       end
-
-      # alias link similar_artists_link
     end
   end
 end

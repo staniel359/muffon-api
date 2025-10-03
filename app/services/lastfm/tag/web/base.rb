@@ -28,9 +28,10 @@ module LastFM
         end
 
         def params
-          super.merge(
-            pagination_params
-          )
+          {
+            **super,
+            **pagination_params
+          }
         end
       end
     end

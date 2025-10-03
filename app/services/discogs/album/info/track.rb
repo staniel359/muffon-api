@@ -48,7 +48,7 @@ module Discogs
           { name: 'lastfm' }
         end
 
-        def artists_list
+        def raw_artists
           track['artists'] ||
             @args[:artists]
         end
@@ -70,9 +70,13 @@ module Discogs
         end
 
         def duration
-          duration_formatted(
-            track['duration']
+          duration_string_to_seconds(
+            raw_duration
           )
+        end
+
+        def raw_duration
+          track['duration']
         end
       end
     end

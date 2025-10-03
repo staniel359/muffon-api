@@ -21,7 +21,7 @@ module SoundCloud
         {
           name: source_name,
           id: soundcloud_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -35,8 +35,8 @@ module SoundCloud
 
       def streaming_link
         streaming_link_formatted(
-          'album',
-          soundcloud_id
+          model: 'album',
+          model_id: soundcloud_id
         )
       end
 

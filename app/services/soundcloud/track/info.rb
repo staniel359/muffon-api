@@ -32,14 +32,26 @@ module SoundCloud
         }.compact
       end
 
-      def description
-        track['description']
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
       end
 
-      def tags_list
-        [
-          track['genre'].presence
-        ].compact
+      def description
+        track['description'].presence
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
+      def raw_tags
+        [track['genre']].compact_blank
       end
 
       def audio_link

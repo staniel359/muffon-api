@@ -4,34 +4,28 @@ module YouTube
       private
 
       def video_data
-        self_data
-          .merge(super)
-          .merge(video_artist_data)
-          .merge(video_statistics_data)
-          .merge(video_extra_data)
-          .merge(with_more_data)
-      end
-
-      def video_artist_data
         {
-          artist: artist_info_data
+          **self_data,
+          **super,
+          artist: artist_info_data,
+          views_count:,
+          likes_count:,
+          dislikes_count:,
+          image: image_data,
+          publish_date:,
+          description:
+            description_truncated,
+          tags: tags_truncated
         }.compact
       end
 
       def artist_info_data
-        YouTube::Video::Info::Artist.call(
-          channel_title:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
-        )
-      end
-
-      def video_statistics_data
-        {
-          views_count:,
-          likes_count:,
-          dislikes_count:
-        }
+        @artist_info_data ||=
+          YouTube::Video::Info::Artist.call(
+            channel_title:,
+            profile_id: @args[:profile_id],
+            token: @args[:token]
+          )
       end
 
       def views_count
@@ -50,24 +44,18 @@ module YouTube
         statistics['dislikeCount'].to_i
       end
 
-      def video_extra_data
-        {
-          image: image_data,
-          publish_date:,
-          description:
-            description_truncated,
-          tags: tags_truncated
-        }.compact
-      end
-
-      def description
-        CGI.unescapeHTML(
-          snippet['description']
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
         )
       end
 
-      def tags_list
-        snippet['tags'] || []
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
       end
     end
   end

@@ -12,12 +12,11 @@ module MusicBrainz
 
       def description
         html_response_data
-          .css(
-            '.wikipedia-extract-body p:not([class=mw-empty-elt])'
-          )
+          .css('.wikipedia-extract-body p:not([class=mw-empty-elt])')
           .map(&:text)
           .join("\n")
           .strip
+          .presence
       end
     end
   end

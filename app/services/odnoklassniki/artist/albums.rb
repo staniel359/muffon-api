@@ -14,17 +14,17 @@ module Odnoklassniki
         }
       end
 
-      def albums_list
+      def raw_albums
         artist['masterAlbums'] || []
       end
 
       def total_items_count
-        albums_list.size
+        raw_albums.size
       end
 
       def collection_list
         collection_paginated(
-          albums_list
+          raw_albums
         )
       end
 

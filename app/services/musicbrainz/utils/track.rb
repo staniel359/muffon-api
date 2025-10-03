@@ -9,7 +9,7 @@ module MusicBrainz
         track['title']
       end
 
-      def artists_list
+      def raw_artists
         track['artist-credit']
       end
 
@@ -17,7 +17,7 @@ module MusicBrainz
         {
           name: source_name,
           id: musicbrainz_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

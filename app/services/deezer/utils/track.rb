@@ -9,7 +9,7 @@ module Deezer
         {
           name: source_name,
           id: deezer_id,
-          links: source_links
+          links: source_links_data
         }
       end
 
@@ -23,15 +23,15 @@ module Deezer
 
       def streaming_link
         streaming_link_formatted(
-          'track',
-          deezer_id
+          model: 'track',
+          model_id: deezer_id
         )
       end
 
       def title
-        title_formatted(
+        title_with_extra_title(
           raw_title,
-          extra_title
+          extra_title:
         )
       end
 
@@ -49,7 +49,7 @@ module Deezer
         extra
       end
 
-      def artists_list
+      def raw_artists
         track['ARTISTS']
       end
 

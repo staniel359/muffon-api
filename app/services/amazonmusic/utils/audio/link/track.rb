@@ -75,7 +75,7 @@ module AmazonMusic
 
           def headers
             {
-              'User-Agent' => USER_AGENT,
+              **super,
               'Content-Encoding' => 'amz-1.0',
               'X-Amz-Target' =>
                 'com.amazon.digitalmusiclocator' \

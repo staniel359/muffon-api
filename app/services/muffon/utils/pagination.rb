@@ -13,24 +13,30 @@ module Muffon
       end
 
       def page
-        (
-          @args[:page] || 1
-        ).to_i
+        (@args[:page] || 1).to_i
       end
 
       def limit
         if all_collection?
           total_items_count
         else
-          (
-            @args[:limit] ||
-              page_limit
-          ).to_i
+          (@args[:limit] || page_limit).to_i
         end
       end
 
       def all_collection?
         @args[:limit] == 'all'
+      end
+
+      def total_items_count
+        [
+          collection_count,
+          total_limit
+        ].min
+      end
+
+      def total_limit
+        self.class::TOTAL_LIMIT
       end
 
       def page_limit
@@ -58,31 +64,22 @@ module Muffon
           .ceil
       end
 
-      def total_items_count
-        [
-          collection_count,
-          total_limit
-        ].min
-      end
-
-      def total_limit
-        self.class::TOTAL_LIMIT
-      end
-
       def collection_name
         self.class::COLLECTION_NAME
       end
 
       def collection
         @collection ||=
-          collection_list.map do |item|
+          collection_list.map do |raw_collection_item_data|
             collection_item_data_formatted(
-              item
+              raw_collection_item_data
             )
           end
       end
 
-      def collection_paginated(collection)
+      def collection_paginated(
+        collection
+      )
         collection.slice(
           offset,
           limit

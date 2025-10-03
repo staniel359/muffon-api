@@ -15,7 +15,7 @@ module MusicBrainz
         {
           name: source_name,
           id: musicbrainz_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

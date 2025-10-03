@@ -13,7 +13,7 @@ module Genius
         {
           name: source_name,
           id: genius_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

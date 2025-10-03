@@ -40,6 +40,13 @@ module MusicBrainz
         }.compact_blank
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def description
         @description ||=
           MusicBrainz::Group::Description.call(
@@ -48,6 +55,13 @@ module MusicBrainz
             :group,
             :description
           )
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
       end
 
       alias album group

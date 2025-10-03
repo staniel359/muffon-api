@@ -20,8 +20,15 @@ module Discogs
         }.compact
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def description
-        artist['profile']
+        artist['profile'].presence
       end
     end
   end

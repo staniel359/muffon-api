@@ -3,8 +3,8 @@ module Deezer
     class Albums < Deezer::Artist::Base
       API_METHOD = 'album.getDiscography'.freeze
       ALBUM_TYPES = {
-        album: '1',
-        single: '0'
+        'album' => '1',
+        'single' => '0'
       }.freeze
       COLLECTION_NAME = 'albums'.freeze
 
@@ -25,7 +25,7 @@ module Deezer
         }
       end
 
-      def albums_list
+      def raw_albums
         artist.dig(
           'results',
           'data'
@@ -43,33 +43,33 @@ module Deezer
       end
 
       def total_items_count
-        albums_list_filtered_sorted.size
+        raw_albums_filtered_sorted.size
       end
 
-      def albums_list_filtered_sorted
-        @albums_list_filtered_sorted ||=
-          albums_list_filtered
-          .sort_by do |album_data|
-            album_data['ORIGINAL_RELEASE_DATE']
+      def raw_albums_filtered_sorted
+        @raw_albums_filtered_sorted ||=
+          raw_albums_filtered
+          .sort_by do |raw_album_data|
+            raw_album_data['ORIGINAL_RELEASE_DATE']
           end
           .reverse
       end
 
-      def albums_list_filtered
-        albums_list.select do |album_data|
-          album_data['TYPE'] == album_type_id
+      def raw_albums_filtered
+        raw_albums.select do |raw_album_data|
+          raw_album_data['TYPE'] == album_type_id
         end
       end
 
       def album_type_id
         ALBUM_TYPES[
-          @args[:album_type].to_sym
+          @args[:album_type]
         ]
       end
 
       def collection_list
         collection_paginated(
-          albums_list_filtered_sorted
+          raw_albums_filtered_sorted
         )
       end
 

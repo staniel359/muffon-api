@@ -95,23 +95,24 @@ module LastFM
             end
 
             def image
-              track.css(
-                '.chartlist-image'
-              )[0].css(
-                'img'
-              )[0]['src']
+              track
+                .css('.chartlist-image')[0]
+                .css('img')[0]['src']
             end
 
             def duration
-              duration_formatted(
+              duration_string_to_seconds(
                 raw_duration
               )
             end
 
             def raw_duration
-              track.css(
-                '.chartlist-duration'
-              )[0].text.strip
+              track
+                .css(
+                  '.chartlist-duration'
+                )[0]
+                .text
+                .strip
             end
           end
         end

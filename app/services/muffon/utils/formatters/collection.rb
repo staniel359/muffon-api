@@ -6,76 +6,92 @@ module Muffon
 
         def artists
           @artists ||=
-            artists_list.map do |a|
-              artist_data_formatted(a)
+            raw_artists.map do |raw_artist_data|
+              artist_data_formatted(
+                raw_artist_data
+              )
             end
         end
 
         def albums
-          albums_list.map do |a|
-            album_data_formatted(a)
-          end
+          @albums ||=
+            raw_albums.map do |raw_album_data|
+              album_data_formatted(
+                raw_album_data
+              )
+            end
         end
 
         def tracks
-          tracks_list.map do |t|
-            track_data_formatted(t)
-          end
-        end
-
-        def tags_truncated
-          tags.first(5)
+          @tracks ||=
+            raw_tracks.map do |raw_track_data|
+              track_data_formatted(
+                raw_track_data
+              )
+            end
         end
 
         def tags
-          tags_list.map do |t|
-            tag_data_formatted(t)
-          end
+          @tags ||=
+            raw_tags.map do |raw_tag_data|
+              tag_data_formatted(
+                raw_tag_data
+              )
+            end
         end
 
-        def tag_data_formatted(tag)
-          { name: tag_name_formatted(tag) }
-        end
-
-        def tag_name_formatted(tag)
-          case tag.class.name
-          when 'String'
-            tag
-          when 'Hash'
-            tag['name'] || tag['label']
-          when 'Nokogiri::XML::Element'
-            tag.text
-          end
-        end
-
-        def library_tags_formatted(library_tags)
-          tags = Tag.where(
-            id: library_tags.pluck(:id)
-          )
-
-          library_tags.map do |t|
-            format_library_tag(t, tags)
-          end
-        end
-
-        def format_library_tag(library_tag, tags)
-          tag = tags.find do |t|
-            t.id == library_tag[:id]
-          end
-
-          library_tag[:name] = tag.name
-
-          library_tag
+        def tag_data_formatted(
+          raw_tag_data
+        )
+          { name: tag_name_formatted(raw_tag_data) }
         end
 
         def labels
-          labels_list.map do |l|
-            label_data_formatted(l)
-          end.uniq
+          raw_labels
+            .map do |raw_label_data|
+              label_data_formatted(
+                raw_label_data
+              )
+            end
+            .uniq
         end
 
-        def label_data_formatted(label)
-          label['name']
+        def label_data_formatted(
+          raw_label_data
+        )
+          label_name_formatted(
+            raw_label_data
+          )
+        end
+
+        def library_tags_formatted(
+          library_tags
+        )
+          tags =
+            Tag.where(
+              id: library_tags.pluck(:id)
+            )
+
+          library_tags.map do |library_tag_data|
+            format_library_tag(
+              library_tag_data,
+              tags
+            )
+          end
+        end
+
+        def format_library_tag(
+          library_tag_data,
+          tags
+        )
+          tag =
+            tags.find do |tag|
+              tag.id == library_tag_data[:id]
+            end
+
+          library_tag_data[:name] = tag.name
+
+          library_tag_data
         end
       end
     end

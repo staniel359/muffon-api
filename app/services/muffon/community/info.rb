@@ -48,6 +48,13 @@ module Muffon
         community.description
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def creator_data
         return {} if creator.blank?
 

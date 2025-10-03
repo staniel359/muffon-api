@@ -146,5 +146,13 @@ module MuffonAPI
         config.session_store,
         config.session_options
       )
+
+    config
+      .active_storage
+      .variant_processor = :mini_magick
+
+    config
+      .action_controller
+      .wrap_parameters_by_default = false
   end
 end

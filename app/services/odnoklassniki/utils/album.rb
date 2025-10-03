@@ -9,7 +9,7 @@ module Odnoklassniki
         album['name']
       end
 
-      def artists_list
+      def raw_artists
         album['allArtists']
       end
 
@@ -17,7 +17,7 @@ module Odnoklassniki
         {
           name: source_name,
           id: odnoklassniki_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

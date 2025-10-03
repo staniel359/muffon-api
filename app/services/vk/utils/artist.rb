@@ -13,7 +13,7 @@ module VK
         {
           name: source_name,
           id: vk_id,
-          links: source_links
+          links: source_links_data
         }
       end
 

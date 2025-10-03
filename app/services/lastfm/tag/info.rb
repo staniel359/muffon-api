@@ -35,6 +35,13 @@ module LastFM
         }
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
       def description
         description_formatted(
           raw_description
@@ -43,7 +50,8 @@ module LastFM
 
       def raw_description
         tag.dig(
-          'wiki', 'content'
+          'wiki',
+          'content'
         )
       end
     end

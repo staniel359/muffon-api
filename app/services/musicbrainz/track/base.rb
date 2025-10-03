@@ -34,6 +34,12 @@ module MusicBrainz
         { track: track_data }
       end
 
+      def tag_name_formatted(
+        tag_data
+      )
+        tag_data['name']
+      end
+
       alias track response_data
     end
   end

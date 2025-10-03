@@ -31,6 +31,20 @@ module Discogs
         }.compact
       end
 
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'medium'
+        )
+      end
+
+      def tags_truncated
+        collection_truncated(
+          tags,
+          size: 'extrasmall'
+        )
+      end
+
       def album_base_data
         @album_base_data ||= group_base_data
       end

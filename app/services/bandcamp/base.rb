@@ -33,5 +33,11 @@ module Bandcamp
       'https://f4.bcbits.com/img' \
         "/a#{data['art_id']}_10.jpg"
     end
+
+    def tag_name_formatted(
+      tag_data
+    )
+      tag_data['name']
+    end
   end
 end

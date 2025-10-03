@@ -15,7 +15,7 @@ module LastFM
       def source_data
         {
           name: source_name,
-          links: source_links
+          links: source_links_data
         }
       end
 
