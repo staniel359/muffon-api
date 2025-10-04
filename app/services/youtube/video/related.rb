@@ -45,10 +45,11 @@ module YouTube
       end
 
       def page_data
-        YouTube::Video::Related::PageData.call(
-          video_id: @args[:video_id],
-          page: @args[:page]
-        ) || {}
+        @page_data ||=
+          YouTube::Video::Related::PageData.call(
+            video_id: @args[:video_id],
+            page: @args[:page]
+          ) || {}
       end
 
       def next_page_collection_list
