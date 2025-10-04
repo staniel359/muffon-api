@@ -8,6 +8,8 @@ module Spotify
 
           def call
             data
+          rescue Faraday::ConnectionFailed
+            nil
           end
 
           private

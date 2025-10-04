@@ -22,6 +22,10 @@ module Spotify
           def data
             return test_key if test?
 
+            if response.status != 200
+              raise StandardError.new(response.body)
+            end
+
             response
               .body
               .unpack1('H*')
