@@ -26,7 +26,9 @@ module Muffon
       end
 
       def image_data
-        { small: super[:small] }
+        super.slice(
+          :small
+        )
       end
     end
   end

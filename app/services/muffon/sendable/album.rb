@@ -31,7 +31,8 @@ module Muffon
 
       def artist_name
         album.dig(
-          :artist, :name
+          :artist,
+          :name
         )
       end
     end

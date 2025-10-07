@@ -72,10 +72,9 @@ module Muffon
       end
 
       def image_data
-        {
-          small:
-            playlist_image_data[:small]
-        }
+        playlist_image_data&.slice(
+          :small
+        )
       end
 
       def playlist_image_data
