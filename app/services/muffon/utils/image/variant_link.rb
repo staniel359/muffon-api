@@ -6,6 +6,8 @@ module Muffon
           return if args_missing?
 
           data
+        rescue ActiveStorage::FileNotFoundError
+          nil
         end
 
         private
