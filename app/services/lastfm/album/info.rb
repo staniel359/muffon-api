@@ -101,10 +101,16 @@ module LastFM
 
       def raw_tags
         if album['tags'].present?
-          album.dig(
-            'tags',
-            'tag'
-          )
+          tags = album['tags']['tag']
+
+          case tags
+          when Array
+            tags
+          when Hash
+            [tags]
+          else
+            raise tags
+          end
         else
           []
         end
