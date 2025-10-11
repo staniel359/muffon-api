@@ -110,7 +110,7 @@ module LastFM
         album.dig(
           'tracks',
           'track'
-        )
+        ) || []
       end
 
       def track_data_formatted(track)
