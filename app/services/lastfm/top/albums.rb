@@ -4,6 +4,12 @@ module LastFM
       COLLECTION_NAME = 'albums'.freeze
       MODEL_NAME = 'album'.freeze
 
+      def call
+        super
+      rescue Faraday::BadRequestError
+        raise not_found_error
+      end
+
       private
 
       def collection_item_data_formatted(album)
