@@ -12,13 +12,16 @@ module Muffon
           end
 
           def tags
-            @tags ||=
+            @tags ||= begin
               LastFM::Artist::Tags.call(
                 artist_name:
               ).dig(
                 :artist,
                 :tags
               )
+            rescue Muffon::Error::NotFoundError
+              []
+            end
           end
 
           def artist_name
