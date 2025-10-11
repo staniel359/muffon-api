@@ -101,7 +101,11 @@ module LastFM
 
       def raw_tags
         if album['tags'].present?
-          tags = album['tags']['tag']
+          tags =
+            album.dig(
+              'tags',
+              'tag'
+            )
 
           case tags
           when Array
@@ -117,10 +121,22 @@ module LastFM
       end
 
       def raw_tracks
-        album.dig(
-          'tracks',
-          'track'
-        ) || []
+        if album['tracks'].present?
+          tracks =
+            album.dig(
+              'tracks',
+              'track'
+            )
+
+          case tracks
+          when Array
+            tracks
+          when Hash
+            [tracks]
+          end
+        else
+          []
+        end
       end
 
       def track_data_formatted(track)
