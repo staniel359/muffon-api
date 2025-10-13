@@ -11,6 +11,8 @@ module Spotify
         data
       rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
         retry_with_new_spotify_token
+      rescue Faraday::BadRequestError
+        raise bad_request_error
       end
 
       private
