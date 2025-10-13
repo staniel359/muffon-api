@@ -25,7 +25,12 @@ module VK
       end
 
       def artist
-        { 'name' => track['artist'] }
+        { 'name' => raw_artist_name }
+      end
+
+      def raw_artist_name
+        track['artist'].presence ||
+          'Various Artists'
       end
 
       def source_data

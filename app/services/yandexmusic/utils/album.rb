@@ -28,7 +28,7 @@ module YandexMusic
       def artist
         {
           'id' => 171,
-          'name' => 'Various artists'
+          'name' => 'Various Artists'
         }
       end
 
