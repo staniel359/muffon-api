@@ -129,6 +129,51 @@ module YouTubeMusic
           'url'
         )
       end
+
+      def raw_duration
+        video.dig(
+          'musicResponsiveListItemRenderer',
+          'flexColumns',
+          1,
+          'musicResponsiveListItemFlexColumnRenderer',
+          'text',
+          'runs'
+        ).find do |raw_item_data|
+          raw_item_data['text'].match?(/\d+:\d+/)
+        end.try(
+          :[],
+          'text'
+        )
+      end
+
+      def raw_views_count
+        raw_data =
+          video.dig(
+            'musicResponsiveListItemRenderer',
+            'flexColumns',
+            1,
+            'musicResponsiveListItemFlexColumnRenderer',
+            'text',
+            'runs'
+          ).find do |raw_item_data|
+            raw_item_data['text'].match?(/\w+ views/)
+          end ||
+          video.dig(
+            'musicResponsiveListItemRenderer',
+            'flexColumns',
+            2,
+            'musicResponsiveListItemFlexColumnRenderer',
+            'text',
+            'runs'
+          ).find do |raw_item_data|
+            raw_item_data['text'].match?(/\w+ plays/)
+          end
+
+        raw_data.try(
+          :[],
+          'text'
+        )&.match(/(.+) (views|plays)/).try(:[], 1)
+      end
     end
   end
 end

@@ -28,12 +28,19 @@ module YouTubeMusic
             source: source_data,
             title:,
             channel: channel_data,
-            image: image_data
-          }
+            image: image_data,
+            views_count:
+          }.compact
         end
 
         def playlist
           @args[:playlist]
+        end
+
+        def views_count
+          human_number_to_number(
+            raw_views_count
+          )
         end
       end
     end

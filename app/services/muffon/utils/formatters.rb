@@ -52,6 +52,8 @@ module Muffon
       def duration_string_to_seconds(
         duration
       )
+        return if duration.blank?
+
         duration
           .scan(/\d+/)
           .then do |minutes, seconds|
@@ -114,6 +116,39 @@ module Muffon
         string
       )
         string&.gsub("\n", ' ')
+      end
+
+      def human_number_to_number(
+        number
+      )
+        return if number.blank?
+
+        miltipliers = {
+          'K' => 3,
+          'M' => 6,
+          'B' => 9
+        }
+
+        _,
+        count_string,
+        multiplier_letter =
+          number
+          .match(
+            /(\d+(?:[.|,]\d+)*)(\w)*/
+          )
+          .to_a
+
+        count =
+          count_string
+          .gsub(',', '.')
+          .to_f
+
+        multiplier =
+          miltipliers[multiplier_letter] || 0
+
+        count *= 10 ** multiplier
+
+        count.to_i
       end
     end
   end
