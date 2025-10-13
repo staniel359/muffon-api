@@ -28,8 +28,8 @@ module YouTube
           search_image_data
         when 'channel'
           channel_image_data
-        when 'related_video'
-          related_video_image_data
+        when 'related_video', 'bookmark_video_playlist'
+          plain_image_data
         when 'video', 'playlist'
           image_data
         end
@@ -88,7 +88,7 @@ module YouTube
           )
       end
 
-      def related_video_image_data
+      def plain_image_data
         {
           original: @args[:image],
           large: @args[:image],

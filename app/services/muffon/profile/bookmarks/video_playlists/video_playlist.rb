@@ -60,6 +60,13 @@ module Muffon
             video_playlist.channel_title
           end
 
+          def image_data
+            image_data_formatted(
+              model: 'bookmark_video_playlist',
+              image:
+            )
+          end
+
           def image
             video_playlist.image_url
           end
