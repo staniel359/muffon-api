@@ -5,7 +5,7 @@ module Muffon
         def call
           check_args
 
-          check_if_not_found
+          return if no_data?
 
           data
         end
@@ -19,7 +19,7 @@ module Muffon
           ]
         end
 
-        def not_found?
+        def no_data?
           model.blank?
         end
 
