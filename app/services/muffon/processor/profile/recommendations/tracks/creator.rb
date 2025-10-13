@@ -35,19 +35,19 @@ module Muffon
             end
 
             def similar_tracks
-              similar_tracks_data.dig(
-                :track,
-                :similar
-              ) || []
-            end
-
-            def similar_tracks_data
-              ::LastFM::Track::Similar.call(
-                artist_name:,
-                track_title:,
-                limit: SIMILAR_TRACKS_LIMIT,
-                minimal: true
-              )
+              @similar_tracks ||= begin
+                ::LastFM::Track::Similar.call(
+                  artist_name:,
+                  track_title:,
+                  limit: SIMILAR_TRACKS_LIMIT,
+                  minimal: true
+                ).dig(
+                  :track,
+                  :similar
+                )
+              rescue Muffon::Error::NotFoundError
+                []
+              end
             end
 
             def artist_name
@@ -57,20 +57,21 @@ module Muffon
             end
 
             def track
-              @track ||=
-                library_track.track
+              @track ||= library_track.track
             end
 
             def track_title
               track.title
             end
 
-            def process_recommendation(similar_track)
+            def process_recommendation(
+              raw_similar_track_data
+            )
               Muffon::Processor::Profile::Recommendation::Track::Creator.call(
                 artist_name:
-                  similar_track[:artist][:name],
+                  raw_similar_track_data[:artist][:name],
                 track_title:
-                  similar_track[:title],
+                  raw_similar_track_data[:title],
                 profile_id: @args[:profile_id],
                 library_track_id:
                   @args[:library_track_id]
