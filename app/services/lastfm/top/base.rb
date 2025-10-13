@@ -50,7 +50,11 @@ module LastFM
 
       def api_method
         if country_code.present?
-          "geo.getTop#{collection_name.capitalize}"
+          if collection_name == 'tags'
+            raise not_found_error
+          else
+            "geo.getTop#{collection_name.capitalize}"
+          end
         else
           "chart.getTop#{collection_name.capitalize}"
         end
