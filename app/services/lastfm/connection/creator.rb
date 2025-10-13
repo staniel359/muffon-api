@@ -3,6 +3,12 @@ module LastFM
     class Creator < LastFM::Connection::Base
       API_METHOD = 'auth.getSession'.freeze
 
+      def call
+        super
+      rescue Faraday::ForbiddenError
+        raise forbidden_error
+      end
+
       private
 
       def required_args
@@ -37,7 +43,7 @@ module LastFM
       end
 
       def process_profile
-        lastfm_connection.update!(
+        lastfm_connection.update(
           lastfm_connection_params
         )
 
