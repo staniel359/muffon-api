@@ -11,27 +11,31 @@ module Muffon
             ]
           end
 
-          def payload_base_data
+          def payload
             {
+              **super,
               track: title,
               artist: artist_name,
               album: album_title,
               duration:,
-              method: 'track.updateNowPlaying',
+              method:
+                'track.updateNowPlaying',
               format: 'json'
             }.compact
           end
 
-          def api_sig_raw
+          def api_signature_first_part
             [
-              album_title_string,
+              album_title_formatted,
               "api_key#{api_key}",
               "artist#{artist_name}",
               "duration#{duration}",
               'methodtrack.updateNowPlaying',
               "sk#{session_key}",
               "track#{title}"
-            ].compact.join
+            ]
+              .compact
+              .join
           end
         end
       end
