@@ -34,6 +34,15 @@ module YouTube
       }
     end
 
+    def collection_list
+      items_list.reject do |raw_playlist_data|
+        raw_playlist_data.dig(
+          'snippet',
+          'title'
+        ).blank?
+      end
+    end
+
     def collection_item_data_formatted(playlist)
       YouTube::Playlists::Playlist.call(
         playlist:,
@@ -43,6 +52,5 @@ module YouTube
     end
 
     alias data paginated_data
-    alias collection_list items_list
   end
 end
