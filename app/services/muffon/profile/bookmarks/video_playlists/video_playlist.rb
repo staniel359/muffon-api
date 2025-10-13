@@ -72,6 +72,10 @@ module Muffon
             nil
           end
 
+          def description
+            nil
+          end
+
           def created_formatted
             datetime_formatted(
               bookmark_video_playlist.created_at
