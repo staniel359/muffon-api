@@ -104,7 +104,7 @@ module YouTube
       end
 
       def raw_tags
-        snippet['tags']
+        snippet['tags'] || []
       end
     end
   end
