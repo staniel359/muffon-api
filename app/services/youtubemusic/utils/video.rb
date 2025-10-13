@@ -38,7 +38,22 @@ module YouTubeMusic
           'navigationEndpoint',
           'watchEndpoint',
           'videoId'
-        )
+        ) ||
+          video.dig(
+            'musicResponsiveListItemRenderer',
+            'flexColumns',
+            0,
+            'musicResponsiveListItemFlexColumnRenderer',
+            'text',
+            'runs',
+            0,
+            'navigationEndpoint',
+            'browseEndpoint',
+            'browseId'
+          ).sub(
+            'MPED',
+            ''
+          )
       end
 
       def original_link
@@ -67,31 +82,34 @@ module YouTubeMusic
       end
 
       def channel_youtube_id
-        video.dig(
-          'musicResponsiveListItemRenderer',
-          'flexColumns',
-          1,
-          'musicResponsiveListItemFlexColumnRenderer',
-          'text',
-          'runs',
-          0,
+        raw_channel_data.dig(
           'navigationEndpoint',
           'browseEndpoint',
           'browseId'
         )
       end
 
+      def raw_channel_data
+        @raw_channel_data ||= begin
+          raw_data =
+            video.dig(
+              'musicResponsiveListItemRenderer',
+              'flexColumns',
+              1,
+              'musicResponsiveListItemFlexColumnRenderer',
+              'text',
+              'runs'
+            )
+
+          raw_data.find do |raw_item_data|
+            raw_item_data['navigationEndpoint'].present?
+          end ||
+            raw_data[0]
+        end
+      end
+
       def channel_title
-        video.dig(
-          'musicResponsiveListItemRenderer',
-          'flexColumns',
-          1,
-          'musicResponsiveListItemFlexColumnRenderer',
-          'text',
-          'runs',
-          0,
-          'text'
-        )
+        raw_channel_data['text']
       end
 
       def image_data
