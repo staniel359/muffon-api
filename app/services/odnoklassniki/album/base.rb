@@ -8,6 +8,8 @@ module Odnoklassniki
       def call
         check_args
 
+        check_if_not_found
+
         return retry_with_new_session_id if retry_with_new_session_id?
 
         data
@@ -23,6 +25,14 @@ module Odnoklassniki
         ]
       end
 
+      def not_found?
+        album.blank?
+      end
+
+      def album
+        response_data['album']
+      end
+
       def params
         {
           **super,
@@ -32,10 +42,6 @@ module Odnoklassniki
 
       def data
         { album: album_data }
-      end
-
-      def album
-        response_data['album']
       end
     end
   end
