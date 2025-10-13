@@ -34,18 +34,18 @@ module Muffon
             end
 
             def similar_artists
-              similar_artists_data.dig(
-                :artist,
-                :similar
-              ) || []
-            end
-
-            def similar_artists_data
-              ::LastFM::Artist::Similar.call(
-                artist_name:,
-                limit: SIMILAR_ARTISTS_LIMIT,
-                minimal: true
-              )
+              @similar_artists ||= begin
+                ::LastFM::Artist::Similar.call(
+                  artist_name:,
+                  limit: SIMILAR_ARTISTS_LIMIT,
+                  minimal: true
+                ).dig(
+                  :artist,
+                  :similar
+                )
+              rescue Muffon::Error::NotFoundError
+                []
+              end
             end
 
             def artist_name
@@ -56,9 +56,12 @@ module Muffon
               @artist ||= library_artist.artist
             end
 
-            def process_recommendation(similar_artist)
+            def process_recommendation(
+              raw_similar_artist_data
+            )
               Muffon::Processor::Profile::Recommendation::Artist::Creator.call(
-                artist_name: similar_artist[:name],
+                artist_name:
+                  raw_similar_artist_data[:name],
                 profile_id: @args[:profile_id],
                 library_artist_id:
                   @args[:library_artist_id]
