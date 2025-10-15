@@ -7,7 +7,8 @@ module AmazonMusic
 
       def title
         album.dig(
-          'primaryText', 'text'
+          'primaryText',
+          'text'
         )
       end
 
@@ -34,7 +35,8 @@ module AmazonMusic
 
       def artist_amazonmusic_slug
         album.dig(
-          'secondaryLink', 'deeplink'
+          'secondaryLink',
+          'deeplink'
         )
       end
 
@@ -54,7 +56,8 @@ module AmazonMusic
 
       def amazonmusic_slug
         album.dig(
-          'primaryLink', 'deeplink'
+          'primaryLink',
+          'deeplink'
         )
       end
 
@@ -87,8 +90,11 @@ module AmazonMusic
 
       def raw_release_date
         album.dig(
-          'primaryLink', 'onItemSelected', 1,
-          'template', 'headerTertiaryText'
+          'primaryLink',
+          'onItemSelected',
+          1,
+          'template',
+          'headerTertiaryText'
         )
       end
     end

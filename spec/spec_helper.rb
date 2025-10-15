@@ -124,6 +124,7 @@ RSpec.configure do |config|
   config.include Spec::Helpers::YouTube::Video
 
   config.include Spec::Helpers::YouTubeMusic::Search
+  config.include Spec::Helpers::YouTubeMusic::Track
 
   config.filter_rails_from_backtrace!
 

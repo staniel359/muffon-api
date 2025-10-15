@@ -945,6 +945,14 @@ Rails
           get 'mixes'
           get 'playlists'
         end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+            get 'links'
+            get 'albums'
+          end
+        end
       end
 
       # GitHub

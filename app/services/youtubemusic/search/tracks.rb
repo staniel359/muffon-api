@@ -6,9 +6,11 @@ module YouTubeMusic
 
       private
 
-      def collection_item_data_formatted(video)
-        YouTubeMusic::Search::Videos::Video.call(
-          video:,
+      def collection_item_data_formatted(
+        raw_track_data
+      )
+        YouTubeMusic::Search::Tracks::Track.call(
+          raw_track_data:,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

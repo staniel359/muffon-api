@@ -1,0 +1,227 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://music.youtube.com/youtubei/v1/next
+    body:
+      encoding: UTF-8
+      string: '{"videoId":"wejlhg239gh23","context":{"client":{"userAgent":"Mozilla/5.0
+        (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36","clientName":"WEB_REMIX","clientVersion":"1.20251013.03.00"}}}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Wed, 15 Oct 2025 12:12:35 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "responseContext": {
+            "visitorData": "CgtCRnhnRHh5cmo5NCizn77HBjIKCgJCWRIEGgAgbA%3D%3D",
+            "serviceTrackingParams": [
+              {
+                "service": "CSI",
+                "params": [
+                  {
+                    "key": "c",
+                    "value": "WEB_REMIX"
+                  },
+                  {
+                    "key": "cver",
+                    "value": "1.20251013.03.00"
+                  },
+                  {
+                    "key": "yt_li",
+                    "value": "0"
+                  },
+                  {
+                    "key": "GetWatchNext_rid",
+                    "value": "0xab43b259a7ffcade"
+                  }
+                ]
+              },
+              {
+                "service": "GFEEDBACK",
+                "params": [
+                  {
+                    "key": "logged_in",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "service": "ECATCHER",
+                "params": [
+                  {
+                    "key": "client.version",
+                    "value": "1.20000101"
+                  },
+                  {
+                    "key": "client.name",
+                    "value": "WEB_REMIX"
+                  }
+                ]
+              }
+            ]
+          },
+          "contents": {
+            "singleColumnMusicWatchNextResultsRenderer": {
+              "tabbedRenderer": {
+                "watchNextTabbedResultsRenderer": {
+                  "tabs": [
+                    {
+                      "tabRenderer": {
+                        "title": "Up next",
+                        "content": {
+                          "musicQueueRenderer": {
+                            "hack": true,
+                            "header": {
+                              "musicQueueHeaderRenderer": {
+                                "title": {
+                                  "runs": [
+                                    {
+                                      "text": "Playing from"
+                                    }
+                                  ]
+                                },
+                                "subtitle": {
+                                  "runs": [
+                                    {
+                                      "text": "Your Queue"
+                                    }
+                                  ]
+                                },
+                                "buttons": [
+                                  {
+                                    "chipCloudChipRenderer": {
+                                      "style": {
+                                        "styleType": "STYLE_TRANSPARENT"
+                                      },
+                                      "text": {
+                                        "runs": [
+                                          {
+                                            "text": "Save"
+                                          }
+                                        ]
+                                      },
+                                      "navigationEndpoint": {
+                                        "clickTrackingParams": "CAUQ0-cHGAAiEwjT5s_TlqaQAxUfgAoJHS3iCa_KAQTD2j4z",
+                                        "modalEndpoint": {
+                                          "modal": {
+                                            "modalWithTitleAndButtonRenderer": {
+                                              "title": {
+                                                "runs": [
+                                                  {
+                                                    "text": "Save this for later"
+                                                  }
+                                                ]
+                                              },
+                                              "content": {
+                                                "runs": [
+                                                  {
+                                                    "text": "Make playlists and share them after signing in"
+                                                  }
+                                                ]
+                                              },
+                                              "button": {
+                                                "buttonRenderer": {
+                                                  "style": "STYLE_BLUE_TEXT",
+                                                  "isDisabled": false,
+                                                  "text": {
+                                                    "runs": [
+                                                      {
+                                                        "text": "Sign in"
+                                                      }
+                                                    ]
+                                                  },
+                                                  "navigationEndpoint": {
+                                                    "clickTrackingParams": "CAYQ8FsiEwjT5s_TlqaQAxUfgAoJHS3iCa_KAQTD2j4z",
+                                                    "signInEndpoint": {
+                                                      "hack": true
+                                                    }
+                                                  },
+                                                  "trackingParams": "CAYQ8FsiEwjT5s_TlqaQAxUfgAoJHS3iCa8="
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "saveQueueToPlaylistCommand": {}
+                                      },
+                                      "trackingParams": "CAUQ0-cHGAAiEwjT5s_TlqaQAxUfgAoJHS3iCa8=",
+                                      "icon": {
+                                        "iconType": "ADD_TO_PLAYLIST"
+                                      },
+                                      "accessibilityData": {
+                                        "accessibilityData": {
+                                          "label": "Save"
+                                        }
+                                      },
+                                      "isSelected": false,
+                                      "uniqueId": "Save"
+                                    }
+                                  }
+                                ],
+                                "trackingParams": "CAQQ0ecHIhMI0-bP05amkAMVH4AKCR0t4gmv"
+                              }
+                            }
+                          }
+                        },
+                        "trackingParams": "CAMQn7QFGAAiEwjT5s_TlqaQAxUfgAoJHS3iCa8="
+                      }
+                    },
+                    {
+                      "tabRenderer": {
+                        "title": "Lyrics",
+                        "trackingParams": "CAIQk80FGAEiEwjT5s_TlqaQAxUfgAoJHS3iCa8=",
+                        "unselectable": true
+                      }
+                    },
+                    {
+                      "tabRenderer": {
+                        "title": "Related",
+                        "trackingParams": "CAEQlc0FGAIiEwjT5s_TlqaQAxUfgAoJHS3iCa8=",
+                        "unselectable": true
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "trackingParams": "CAAQg2ciEwjT5s_TlqaQAxUfgAoJHS3iCa8=",
+          "queueContextParams": "CAEaACCdm9DTlqaQA0IAUABaBAgAEAF4AQ=="
+        }
+  recorded_at: Wed, 15 Oct 2025 12:12:35 GMT
+recorded_with: VCR 6.3.1

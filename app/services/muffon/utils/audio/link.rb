@@ -53,8 +53,11 @@ module Muffon
         end
 
         def audio_path
-          @audio_path ||=
-            "#{audio_folder}/#{audio_file_name}.#{file_extension}"
+          "#{audio_path_without_extension}.#{file_extension}"
+        end
+
+        def audio_path_without_extension
+          "#{audio_folder}/#{audio_file_name}"
         end
 
         def audio_file_name
