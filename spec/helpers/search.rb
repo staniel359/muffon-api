@@ -45,6 +45,10 @@ module Spec
         {:search=>{:tracks=>[]}}
       end
 
+      def youtube_no_albums_data
+        {:search=>{:albums=>[]}}
+      end
+
       def no_results_data
         {:search=>{:page=>1, :results=>[]}}
       end

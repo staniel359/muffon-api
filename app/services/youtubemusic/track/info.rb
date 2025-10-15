@@ -9,6 +9,7 @@ module YouTubeMusic
           **track_base_data,
           album: album_data,
           image: image_data,
+          plays_count:,
           profiles_count:,
           duration:,
           audio: audio_base_data

@@ -38,22 +38,7 @@ module YouTubeMusic
           'navigationEndpoint',
           'watchEndpoint',
           'videoId'
-        ) ||
-          video.dig(
-            'musicResponsiveListItemRenderer',
-            'flexColumns',
-            0,
-            'musicResponsiveListItemFlexColumnRenderer',
-            'text',
-            'runs',
-            0,
-            'navigationEndpoint',
-            'browseEndpoint',
-            'browseId'
-          ).sub(
-            'MPED',
-            ''
-          )
+        )
       end
 
       def original_link
@@ -90,22 +75,15 @@ module YouTubeMusic
       end
 
       def raw_channel_data
-        @raw_channel_data ||= begin
-          raw_data =
-            video.dig(
-              'musicResponsiveListItemRenderer',
-              'flexColumns',
-              1,
-              'musicResponsiveListItemFlexColumnRenderer',
-              'text',
-              'runs'
-            )
-
-          raw_data.find do |raw_item_data|
-            raw_item_data['navigationEndpoint'].present?
-          end ||
-            raw_data[0]
-        end
+        video.dig(
+          'musicResponsiveListItemRenderer',
+          'flexColumns',
+          1,
+          'musicResponsiveListItemFlexColumnRenderer',
+          'text',
+          'runs',
+          0
+        )
       end
 
       def channel_title
@@ -131,23 +109,7 @@ module YouTubeMusic
       end
 
       def raw_duration
-        video.dig(
-          'musicResponsiveListItemRenderer',
-          'flexColumns',
-          1,
-          'musicResponsiveListItemFlexColumnRenderer',
-          'text',
-          'runs'
-        ).find do |raw_item_data|
-          raw_item_data['text'].match?(/\d+:\d+/)
-        end.try(
-          :[],
-          'text'
-        )
-      end
-
-      def raw_views_count
-        raw_data =
+        find_raw_duration(
           video.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns',
@@ -155,24 +117,21 @@ module YouTubeMusic
             'musicResponsiveListItemFlexColumnRenderer',
             'text',
             'runs'
-          ).find do |raw_item_data|
-            raw_item_data['text'].match?(/\w+ views/)
-          end ||
+          )
+        )
+      end
+
+      def raw_views_count
+        find_raw_views_count(
           video.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns',
-            2,
+            1,
             'musicResponsiveListItemFlexColumnRenderer',
             'text',
             'runs'
-          )&.find do |raw_item_data|
-            raw_item_data['text'].match?(/\w+ plays/)
-          end
-
-        raw_data.try(
-          :[],
-          'text'
-        )&.match(/(.+) (views|plays)/).try(:[], 1)
+          )
+        )
       end
     end
   end

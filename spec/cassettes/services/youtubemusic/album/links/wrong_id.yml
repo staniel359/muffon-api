@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://music.youtube.com/youtubei/v1/browse
+    body:
+      encoding: UTF-8
+      string: '{"context":{"client":{"userAgent":"Mozilla/5.0 (X11; Linux x86_64)
+        AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3 Safari/537.36","clientName":"WEB_REMIX","clientVersion":"1.20251013.03.00"}},"browseId":"wejlhg239gh23"}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 15 Oct 2025 20:41:33 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "error": {
+            "code": 400,
+            "message": "Request contains an invalid argument.",
+            "errors": [
+              {
+                "message": "Request contains an invalid argument.",
+                "domain": "global",
+                "reason": "badRequest"
+              }
+            ],
+            "status": "INVALID_ARGUMENT"
+          }
+        }
+  recorded_at: Wed, 15 Oct 2025 20:41:33 GMT
+recorded_with: VCR 6.3.1

@@ -30,6 +30,8 @@ module API
     end
 
     def request_allowed?
+      return true if development?
+
       valid_version? &&
         valid_access_token?
     end

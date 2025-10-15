@@ -29,7 +29,7 @@ module YouTubeMusic
         @args[:image]
         # .sub(
         #   'w60-h60-l90-rj',
-        #   "w#{size}-h#{size}-l100"
+        #   "w#{size}-h#{size}-l100-rj"
         # )
         # .sub(
         #   /(sd|hq)default.+/,

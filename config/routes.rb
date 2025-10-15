@@ -941,9 +941,18 @@ Rails
       namespace :youtubemusic do
         namespace :search do
           get 'tracks'
+          get 'albums'
           get 'videos'
           get 'mixes'
           get 'playlists'
+        end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'description'
+            get 'links'
+          end
         end
 
         namespace :tracks, as: :track do

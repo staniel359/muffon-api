@@ -104,19 +104,16 @@ module YouTubeMusic
       end
 
       def raw_views_count
-        playlist.dig(
-          'musicResponsiveListItemRenderer',
-          'flexColumns',
-          1,
-          'musicResponsiveListItemFlexColumnRenderer',
-          'text',
-          'runs'
-        ).find do |raw_item_data|
-          raw_item_data['text'].match?(/\w+ views/)
-        end.try(
-          :[],
-          'text'
-        )&.match(/(.+) views/).try(:[], 1)
+        find_raw_views_count(
+          playlist.dig(
+            'musicResponsiveListItemRenderer',
+            'flexColumns',
+            1,
+            'musicResponsiveListItemFlexColumnRenderer',
+            'text',
+            'runs'
+          )
+        )
       end
     end
   end

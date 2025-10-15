@@ -123,6 +123,7 @@ RSpec.configure do |config|
   config.include Spec::Helpers::YouTube::Search
   config.include Spec::Helpers::YouTube::Video
 
+  config.include Spec::Helpers::YouTubeMusic::Album
   config.include Spec::Helpers::YouTubeMusic::Search
   config.include Spec::Helpers::YouTubeMusic::Track
 

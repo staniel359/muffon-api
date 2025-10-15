@@ -24,23 +24,30 @@ module YouTubeMusic
           )
       end
 
-      def artist_name
-        raw_track_data.dig(
-          'longBylineText',
-          'runs',
-          0,
-          'text'
-        ) ||
-          raw_track_data.dig(
-            'musicResponsiveListItemRenderer',
-            'flexColumns',
-            1,
-            'musicResponsiveListItemFlexColumnRenderer',
-            'text',
-            'runs',
-            0,
-            'text'
-          )
+      def raw_artists
+        @raw_artists ||=
+          find_raw_artists_data(
+            raw_track_data.dig(
+              'longBylineText',
+              'runs'
+            ) ||
+            raw_track_data.dig(
+              'musicResponsiveListItemRenderer',
+              'flexColumns',
+              1,
+              'musicResponsiveListItemFlexColumnRenderer',
+              'text',
+              'runs'
+            ) ||
+            []
+          ).presence ||
+          [
+            raw_track_data.dig(
+              'longBylineText',
+              'runs',
+              0
+            )
+          ].compact
       end
 
       def source_data
@@ -78,56 +85,36 @@ module YouTubeMusic
         )
       end
 
-      def artists
-        [artist_data]
-      end
-
-      def artist_data
-        {
-          source: artist_source_data,
-          name: artist_name
-        }
-      end
-
-      def artist_source_data
-        {
-          name: source_name,
-          id: artist_youtube_id
-        }
-      end
-
-      def artist_youtube_id
-        raw_track_data.dig(
-          'longBylineText',
-          'runs',
-          0,
-          'navigationEndpoint',
-          'browseEndpoint',
-          'browseId'
-        ) ||
-          raw_track_data.dig(
-            'musicResponsiveListItemRenderer',
-            'flexColumns',
-            1,
-            'musicResponsiveListItemFlexColumnRenderer',
-            'text',
-            'runs',
-            0,
-            'navigationEndpoint',
-            'browseEndpoint',
-            'browseId'
-          )
-      end
-
       def albums
         [album_data]
       end
 
       def album_data
+        return if raw_album_data.blank?
+
         {
           source: album_source_data,
           title: album_title
         }
+      end
+
+      def raw_album_data
+        @raw_album_data ||=
+          find_raw_album_data(
+            raw_track_data.dig(
+              'longBylineText',
+              'runs'
+            ) ||
+            raw_track_data.dig(
+              'musicResponsiveListItemRenderer',
+              'flexColumns',
+              1,
+              'musicResponsiveListItemFlexColumnRenderer',
+              'text',
+              'runs'
+            ) ||
+            []
+          )
       end
 
       def album_source_data
@@ -138,45 +125,15 @@ module YouTubeMusic
       end
 
       def album_youtube_id
-        raw_track_data.dig(
-          'longBylineText',
-          'runs',
-          2,
+        raw_album_data.dig(
           'navigationEndpoint',
           'browseEndpoint',
           'browseId'
-        ) ||
-          raw_track_data.dig(
-            'musicResponsiveListItemRenderer',
-            'flexColumns',
-            1,
-            'musicResponsiveListItemFlexColumnRenderer',
-            'text',
-            'runs',
-            2,
-            'navigationEndpoint',
-            'browseEndpoint',
-            'browseId'
-          )
+        )
       end
 
       def album_title
-        raw_track_data.dig(
-          'longBylineText',
-          'runs',
-          2,
-          'text'
-        ) ||
-          raw_track_data.dig(
-            'musicResponsiveListItemRenderer',
-            'flexColumns',
-            1,
-            'musicResponsiveListItemFlexColumnRenderer',
-            'text',
-            'runs',
-            2,
-            'text'
-          )
+        raw_album_data['text']
       end
 
       def image_data
@@ -210,22 +167,28 @@ module YouTubeMusic
       end
 
       def raw_duration
-        raw_track_data.dig(
-          'lengthText',
-          'runs',
-          0,
-          'text'
-        ) ||
+        find_raw_duration(
+          raw_track_data.dig(
+            'lengthText',
+            'runs'
+          ) ||
+          raw_track_data.dig(
+            'musicResponsiveListItemRenderer',
+            'fixedColumns',
+            0,
+            'musicResponsiveListItemFixedColumnRenderer',
+            'text',
+            'runs'
+          ) ||
           raw_track_data.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns',
             1,
             'musicResponsiveListItemFlexColumnRenderer',
             'text',
-            'runs',
-            4,
-            'text'
+            'runs'
           )
+        )
       end
 
       def audio_present?
@@ -250,6 +213,21 @@ module YouTubeMusic
           'runs',
           4,
           'text'
+        )
+      end
+
+      def plays_count
+        human_number_to_number(
+          raw_plays_count
+        )
+      end
+
+      def raw_plays_count
+        find_raw_plays_count(
+          raw_track_data.dig(
+            'longBylineText',
+            'runs'
+          )
         )
       end
     end
