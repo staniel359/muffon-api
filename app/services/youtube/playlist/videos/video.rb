@@ -26,6 +26,7 @@ module YouTube
         def video_data
           {
             source: source_data,
+            channel: channel_data,
             title:,
             image: image_data,
             publish_date:
@@ -41,6 +42,14 @@ module YouTube
             'resourceId',
             'videoId'
           )
+        end
+
+        def channel_youtube_id
+          snippet['videoOwnerChannelId']
+        end
+
+        def channel_title
+          snippet['videoOwnerChannelTitle']
         end
       end
     end
