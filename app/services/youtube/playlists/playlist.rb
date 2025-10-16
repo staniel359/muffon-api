@@ -41,8 +41,14 @@ module YouTube
 
       def description_truncated
         text_truncated(
-          description,
+          description_formatted,
           size: 'extrasmall'
+        )
+      end
+
+      def description_formatted
+        string_with_newlines_replaced_by_space(
+          description
         )
       end
     end
