@@ -150,5 +150,17 @@ module MuffonAPI
     config
       .action_controller
       .wrap_parameters_by_default = false
+
+    config.filter_parameters += %i[
+      email
+      image
+      password
+      password_confirmation
+      token
+      lastfm_token
+      lastfm_session_key
+      client_id
+      client_secret
+    ]
   end
 end
