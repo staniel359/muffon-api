@@ -39,14 +39,8 @@ module YouTubeMusic
 
       def payload
         {
-          'context' => {
-            'client' => {
-              'userAgent' => USER_AGENT,
-              'clientName' => 'WEB_REMIX',
-              'clientVersion' => '1.20251013.03.00'
-            }
-          },
-          'browseId' => @args[:album_id]
+          'browseId' => @args[:album_id],
+          'context' => context_data
         }.to_json
       end
 

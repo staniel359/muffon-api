@@ -48,16 +48,17 @@ module Muffon
 
         def audio_file
           ::File.open(
-            "public/#{audio_path}", 'wb'
+            "public/#{audio_path}",
+            'wb'
           )
         end
 
         def audio_path
-          "#{audio_path_without_extension}.#{file_extension}"
+          "#{audio_folder}/#{audio_file_name_with_extension}"
         end
 
-        def audio_path_without_extension
-          "#{audio_folder}/#{audio_file_name}"
+        def audio_file_name_with_extension
+          "#{audio_file_name}.#{file_extension}"
         end
 
         def audio_file_name

@@ -3,6 +3,7 @@ module YouTubeMusic
     SOURCE_NAME = 'youtubemusic'.freeze
     BASE_LINK =
       'https://music.youtube.com/youtubei/v1/search'.freeze
+    VERSION_PARAM = '1.20230227.01.00'.freeze
 
     private
 
@@ -13,12 +14,14 @@ module YouTubeMusic
     def client_data
       {
         'clientName' => 'WEB_REMIX',
-        'clientVersion' => '1.20230227.01.00',
+        'clientVersion' => VERSION_PARAM,
         'gl' => 'GB'
       }
     end
 
-    def image_data_formatted(image)
+    def image_data_formatted(
+      image
+    )
       YouTubeMusic::Utils::Image.call(
         image:
       )
