@@ -51,6 +51,8 @@ module Muffon
       end
 
       def self_data
+        return {} if channel_youtube_id.blank?
+
         Muffon::Self.call(
           profile_id: @args[:profile_id],
           token: @args[:token],
