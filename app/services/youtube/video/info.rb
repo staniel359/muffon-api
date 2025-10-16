@@ -15,7 +15,8 @@ module YouTube
           publish_date:,
           description:
             description_truncated,
-          tags: tags_truncated
+          tags: tags_truncated,
+          **with_more_data
         }.compact
       end
 

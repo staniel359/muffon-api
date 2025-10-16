@@ -19,12 +19,8 @@ module YouTubeMusic
         end
 
         def data
-          self_data
-            .merge(video_data)
-        end
-
-        def video_data
           {
+            **self_data,
             source: source_data,
             title:,
             channel: channel_data,
