@@ -25,16 +25,19 @@ module YouTubeMusic
         }
       end
 
-      def image_resized(_size, _prefix)
+      def image_resized(
+        size,
+        prefix
+      )
         @args[:image]
-        # .sub(
-        #   'w60-h60-l90-rj',
-        #   "w#{size}-h#{size}-l100-rj"
-        # )
-        # .sub(
-        #   /(sd|hq)default.+/,
-        #   "#{prefix}default.jpg"
-        # )
+          .sub(
+            /w(\d+)-h(\d+)/,
+            "w#{size}-h#{size}"
+          )
+          .sub(
+            /(sd|hq)default/,
+            "#{prefix}default"
+          )
       end
     end
   end
