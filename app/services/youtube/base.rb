@@ -4,6 +4,8 @@ module YouTube
     BASE_LINK =
       'https://www.googleapis.com/youtube/v3'.freeze
 
+    include YouTube::Utils::Base
+
     private
 
     def items_list

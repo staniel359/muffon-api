@@ -7,14 +7,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - www.googleapis.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -27,11 +26,9 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 17 Jul 2023 22:45:13 GMT
+      - Thu, 16 Oct 2025 21:18:21 GMT
       Server:
       - scaffolding on HTTPServer2
-      Cache-Control:
-      - private
       X-Xss-Protection:
       - '0'
       X-Frame-Options:
@@ -54,5 +51,5 @@ http_interactions:
             "resultsPerPage": 0
           }
         }
-  recorded_at: Mon, 17 Jul 2023 22:45:13 GMT
-recorded_with: VCR 6.2.0
+  recorded_at: Thu, 16 Oct 2025 21:18:21 GMT
+recorded_with: VCR 6.3.1

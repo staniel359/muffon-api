@@ -19,12 +19,8 @@ module YouTube
         end
 
         def data
-          self_data
-            .merge(video_data)
-        end
-
-        def video_data
           {
+            **self_data,
             source: source_data,
             title:,
             channel: channel_data,
@@ -33,22 +29,31 @@ module YouTube
         end
 
         def video
-          @args[:video]['compactVideoRenderer']
+          @args[:video]
         end
 
         def title
           video.dig(
+            'playlistPanelVideoRenderer',
             'title',
-            'simpleText'
+            'runs',
+            0,
+            'text'
           )
         end
 
         def youtube_id
-          video['videoId']
+          video.dig(
+            'playlistPanelVideoRenderer',
+            'navigationEndpoint',
+            'watchEndpoint',
+            'videoId'
+          )
         end
 
         def channel_youtube_id
           video.dig(
+            'playlistPanelVideoRenderer',
             'longBylineText',
             'runs',
             0,
@@ -60,6 +65,7 @@ module YouTube
 
         def channel_title
           video.dig(
+            'playlistPanelVideoRenderer',
             'longBylineText',
             'runs',
             0,
@@ -75,9 +81,10 @@ module YouTube
 
         def image
           video.dig(
+            'playlistPanelVideoRenderer',
             'thumbnail',
             'thumbnails',
-            0,
+            -1,
             'url'
           )
         end

@@ -1,73 +1,50 @@
 module YouTube
   module Video
     class Related < YouTube::Video::Base
+      BASE_LINK =
+        'https://music.youtube.com/youtubei/v1/next'.freeze
       COLLECTION_NAME = 'related'.freeze
+      SCOPES_PREFIXES = %w[
+        RDAMVM
+        RDATiXv
+      ].freeze
 
       include Muffon::Utils::Pagination
 
       private
 
+      def not_found?
+        false
+      end
+
       def video_data
         {
-          **super,
+          **video_base_data,
           **paginated_data
         }
       end
 
-      def page
-        nil
+      def video_base_data
+        video_info_data.slice(
+          :source,
+          :title,
+          :channel
+        )
+      end
+
+      def video_info_data
+        @video_info_data ||=
+          YouTube::Video::Info.call(
+            video_id: @args[:video_id]
+          )[:video]
       end
 
       def next_page
-        continuation_item&.dig(
-          'continuationItemRenderer',
-          'continuationEndpoint',
-          'continuationCommand',
-          'token'
-        )
-      end
+        next_page_computed = page + 1
 
-      def continuation_item
-        collection_list_conditional.find do |i|
-          continuation_item?(i)
-        end
-      end
+        return if SCOPES_PREFIXES[next_page_computed - 1].blank?
 
-      def collection_list_conditional
-        @collection_list_conditional ||=
-          first_page_collection_list ||
-          next_page_collection_list || []
-      end
-
-      def first_page_collection_list
-        page_data.dig(
-          'contents',
-          'twoColumnWatchNextResults',
-          'secondaryResults',
-          'secondaryResults',
-          'results'
-        )
-      end
-
-      def page_data
-        @page_data ||=
-          YouTube::Video::Related::PageData.call(
-            video_id: @args[:video_id],
-            page: @args[:page]
-          ) || {}
-      end
-
-      def next_page_collection_list
-        page_data.dig(
-          'onResponseReceivedEndpoints',
-          0,
-          'appendContinuationItemsAction',
-          'continuationItems'
-        )
-      end
-
-      def continuation_item?(item)
-        item['continuationItemRenderer'].present?
+        next_page_computed
       end
 
       def total_pages_count
@@ -75,51 +52,47 @@ module YouTube
       end
 
       def collection_list
-        videos_list.reject do |video_data|
-          new_video?(
-            video_data
+        response_data
+          .dig(
+            'contents',
+            'singleColumnMusicWatchNextResultsRenderer',
+            'tabbedRenderer',
+            'watchNextTabbedResultsRenderer',
+            'tabs'
           )
-        end
-      end
-
-      def videos_list
-        collection_list_conditional.select do |item_data|
-          video_item?(
-            item_data
+          .find do |raw_item_data|
+            raw_item_data.dig(
+              'tabRenderer',
+              'title'
+            ) == 'Up next'
+          end
+          .dig(
+            'tabRenderer',
+            'content',
+            'musicQueueRenderer',
+            'content',
+            'playlistPanelRenderer',
+            'contents'
           )
-        end
       end
 
-      def video_item?(item_data)
-        item_data['compactVideoRenderer'].present?
+      def link
+        BASE_LINK
       end
 
-      def new_video?(
-        video_data
-      )
-        video_badges(
-          video_data
-        ).find do |badge_data|
-          new_video_badge?(
-            badge_data
-          )
-        end
+      def payload
+        {
+          'playlistId' => scope_param,
+          'context' => context_data
+        }.to_json
       end
 
-      def video_badges(video_data)
-        video_data.dig(
-          'compactVideoRenderer',
-          'badges'
-        ) || []
+      def scope_param
+        "#{scope_prefix}#{@args[:video_id]}"
       end
 
-      def new_video_badge?(
-        badge_data
-      )
-        badge_data.dig(
-          'metadataBadgeRenderer',
-          'label'
-        ) == 'New'
+      def scope_prefix
+        SCOPES_PREFIXES[page - 1]
       end
 
       def collection_item_data_formatted(video)
@@ -129,6 +102,8 @@ module YouTube
           token: @args[:token]
         )
       end
+
+      alias response post_response
     end
   end
 end
