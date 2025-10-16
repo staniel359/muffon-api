@@ -99,6 +99,20 @@ module YouTubeMusic
         .try(:[], 'text')
     end
 
+    def find_raw_videos_count(
+      raw_collection
+    )
+      raw_collection
+        .find do |raw_item_data|
+          raw_item_data['text'].match?(
+            /(.+) songs/
+          )
+        end
+        .try(:[], 'text')
+        &.match(/(.+) songs/)
+        .try(:[], 1)
+    end
+
     def find_raw_artists_data(
       raw_collection
     )

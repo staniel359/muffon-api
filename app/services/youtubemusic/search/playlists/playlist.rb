@@ -29,7 +29,8 @@ module YouTubeMusic
             title:,
             channel: channel_data,
             image: image_data,
-            views_count:
+            views_count:,
+            videos_count:
           }.compact
         end
 
@@ -40,6 +41,12 @@ module YouTubeMusic
         def views_count
           human_number_to_number(
             raw_views_count
+          )
+        end
+
+        def videos_count
+          human_number_to_number(
+            raw_videos_count
           )
         end
       end

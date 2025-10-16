@@ -115,6 +115,19 @@ module YouTubeMusic
           )
         )
       end
+
+      def raw_videos_count
+        find_raw_videos_count(
+          playlist.dig(
+            'musicResponsiveListItemRenderer',
+            'flexColumns',
+            1,
+            'musicResponsiveListItemFlexColumnRenderer',
+            'text',
+            'runs'
+          )
+        )
+      end
     end
   end
 end
