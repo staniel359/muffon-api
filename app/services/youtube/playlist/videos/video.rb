@@ -19,17 +19,15 @@ module YouTube
         end
 
         def data
-          self_data
-            .merge(video_data)
-        end
-
-        def video_data
           {
+            **self_data,
             source: source_data,
             channel: channel_data,
             title:,
             image: image_data,
-            publish_date:
+            publish_date:,
+            description:
+              description_truncated
           }.compact
         end
 
@@ -50,6 +48,19 @@ module YouTube
 
         def channel_title
           snippet['videoOwnerChannelTitle']
+        end
+
+        def description_truncated
+          text_truncated(
+            description_formatted,
+            size: 'extrasmall'
+          )
+        end
+
+        def description_formatted
+          string_with_newlines_replaced_by_space(
+            description
+          )
         end
       end
     end

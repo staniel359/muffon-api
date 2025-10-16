@@ -112,10 +112,14 @@ module Muffon
         )
       end
 
-      def string_with_newlines_replaced_by_spaces(
+      def string_with_newlines_replaced_by_space(
         string
       )
-        string&.gsub("\n", ' ')
+        return if string.blank?
+
+        string
+          .gsub(/\n+/, ' ')
+          .strip
       end
 
       def human_number_to_number(
