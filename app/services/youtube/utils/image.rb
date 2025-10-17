@@ -22,6 +22,8 @@ module YouTube
           search_image_data
         when 'channel'
           channel_image_data
+        when 'similar_video'
+          similar_video_image_data
         when 'video', 'playlist'
           image_data
         else
@@ -80,6 +82,25 @@ module YouTube
             's88',
             "s#{size}"
           )
+      end
+
+      def similar_video_image_data
+        {
+          original: similar_image_resized('maxres'),
+          large: similar_image_resized('sd'),
+          medium: similar_image_resized('hq'),
+          small: similar_image_resized('mq'),
+          extrasmall: similar_image_resized('')
+        }
+      end
+
+      def similar_image_resized(
+        prefix
+      )
+        @args[:image].sub(
+          /(sd|hq)default/,
+          "#{prefix}default"
+        )
       end
 
       def plain_image_data
