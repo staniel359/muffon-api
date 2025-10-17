@@ -1,9 +1,9 @@
 module YouTube
   module Video
-    class Related < YouTube::Video::Base
+    class Similar < YouTube::Video::Base
       BASE_LINK =
         'https://music.youtube.com/youtubei/v1/next'.freeze
-      COLLECTION_NAME = 'related'.freeze
+      COLLECTION_NAME = 'similar'.freeze
       SCOPES_PREFIXES = %w[
         RDAMVM
         RDATiXv
@@ -96,7 +96,7 @@ module YouTube
       end
 
       def collection_item_data_formatted(video)
-        YouTube::Video::Related::Video.call(
+        YouTube::Video::Similar::Video.call(
           video:,
           profile_id: @args[:profile_id],
           token: @args[:token]

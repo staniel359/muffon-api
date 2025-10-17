@@ -921,7 +921,7 @@ Rails
             get '', action: :info
             get 'description'
             get 'tags'
-            get 'related'
+            get 'similar'
             get 'links'
           end
         end

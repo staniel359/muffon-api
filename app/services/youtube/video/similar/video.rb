@@ -1,7 +1,7 @@
 module YouTube
   module Video
-    class Related
-      class Video < YouTube::Video::Related
+    class Similar
+      class Video < YouTube::Video::Similar
         include YouTube::Utils::Video
 
         def call
@@ -75,7 +75,8 @@ module YouTube
 
         def image_data
           image_data_formatted(
-            image:
+            image:,
+            model: 'similar_video'
           )
         end
 

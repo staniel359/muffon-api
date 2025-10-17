@@ -7,7 +7,7 @@ module API
 
       def tags; end
 
-      def related; end
+      def similar; end
 
       def links; end
 
@@ -16,7 +16,11 @@ module API
       def info_data
         ::YouTube::Video::Info.call(
           params.slice(
-            *%i[video_id profile_id token]
+            *%i[
+              video_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -24,7 +28,9 @@ module API
       def description_data
         ::YouTube::Video::Description.call(
           params.slice(
-            *%i[video_id]
+            *%i[
+              video_id
+            ]
           )
         )
       end
@@ -32,15 +38,22 @@ module API
       def tags_data
         ::YouTube::Video::Tags.call(
           params.slice(
-            *%i[video_id]
+            *%i[
+              video_id
+            ]
           )
         )
       end
 
-      def related_data
-        ::YouTube::Video::Related.call(
+      def similar_data
+        ::YouTube::Video::Similar.call(
           params.slice(
-            *%i[video_id profile_id token page limit]
+            *%i[
+              video_id
+              profile_id
+              token
+              page
+            ]
           )
         )
       end
@@ -48,7 +61,9 @@ module API
       def links_data
         ::YouTube::Video::Links.call(
           params.slice(
-            *%i[video_id]
+            *%i[
+              video_id
+            ]
           )
         )
       end

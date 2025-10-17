@@ -1,11 +1,11 @@
-RSpec.describe YouTube::Video::Related do
+RSpec.describe YouTube::Video::Similar do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when video present' do
       let(:output) do
         VCR.use_cassette(
-          'services/youtube/video/related/success'
+          'services/youtube/video/similar/success'
         ) do
           subject.call(
             video_id: '1aTIkQf3eRY'
@@ -13,13 +13,13 @@ RSpec.describe YouTube::Video::Related do
         end
       end
 
-      it { expect(output).to eq(youtube_video_related_data) }
+      it { expect(output).to eq(youtube_video_similar_data) }
     end
 
     context 'when video present with next page' do
       let(:output) do
         VCR.use_cassette(
-          'services/youtube/video/related/success_next_page'
+          'services/youtube/video/similar/success_next_page'
         ) do
           subject.call(
             video_id: '1aTIkQf3eRY',
@@ -28,7 +28,7 @@ RSpec.describe YouTube::Video::Related do
         end
       end
 
-      it { expect(output).to eq(youtube_video_related_next_page_data) }
+      it { expect(output).to eq(youtube_video_similar_next_page_data) }
     end
   end
 
@@ -42,7 +42,7 @@ RSpec.describe YouTube::Video::Related do
     context 'when wrong video_id' do
       let(:output) do
         VCR.use_cassette(
-          'services/youtube/video/related/wrong_id'
+          'services/youtube/video/similar/wrong_id'
         ) do
           subject.call(
             video_id: random_string

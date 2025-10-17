@@ -101,13 +101,13 @@ RSpec.describe API::YouTube::VideosController do
     end
   end
 
-  describe 'GET :related' do
+  describe 'GET :similar' do
     it 'returns 200 if video_id present' do
       VCR.use_cassette(
-        'controllers/api/youtube/videos/related/success'
+        'controllers/api/youtube/videos/similar/success'
       ) do
         get(
-          :related,
+          :similar,
           params: {
             **required_params,
             video_id: '1aTIkQf3eRY'
@@ -120,10 +120,10 @@ RSpec.describe API::YouTube::VideosController do
 
     it 'returns 404 if wrong video_id' do
       VCR.use_cassette(
-        'controllers/api/youtube/videos/related/wrong_id'
+        'controllers/api/youtube/videos/similar/wrong_id'
       ) do
         get(
-          :related,
+          :similar,
           params: {
             **required_params,
             video_id: random_string
