@@ -44,6 +44,10 @@ module Spotify
             "#{BASE_LINK}/#{track_id}*#{file_id}"
           end
 
+          def params
+            nil
+          end
+
           def track_id
             @args[:track_id]
           end
