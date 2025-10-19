@@ -28,7 +28,7 @@ module YouTube
           search_image_data
         when 'channel'
           channel_image_data
-        when 'related_video', 'bookmark_video_playlist'
+        when 'related_video', 'favorite_video', 'bookmark_video_playlist'
           plain_image_data
         when 'video', 'playlist'
           image_data

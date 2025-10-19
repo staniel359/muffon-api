@@ -60,6 +60,13 @@ module Muffon
             video.channel_title
           end
 
+          def image_data
+            image_data_formatted(
+              image:,
+              model: 'favorite_video'
+            )
+          end
+
           def image
             video.image_url
           end
