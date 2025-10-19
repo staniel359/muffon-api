@@ -418,7 +418,6 @@ DEPENDENCIES
   listen
   mini_magick
   nokogiri
-  parallel
   pg
   pry
   puma
