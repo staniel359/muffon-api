@@ -22,7 +22,7 @@ module TrackDecorator
           title: title_formatted,
           player_id:
         )
-    rescue ActiveRecord::RecordNotUnique
+    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
       clear_cache && retry
     end
 

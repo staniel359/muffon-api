@@ -15,7 +15,7 @@ module VideoChannelDecorator
           update_attributes
         )
       end
-    rescue ActiveRecord::RecordNotUnique
+    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
       clear_cache && retry
     end
   end

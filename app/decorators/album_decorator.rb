@@ -22,7 +22,7 @@ module AlbumDecorator
           artist_id:,
           title: title_formatted
         )
-    rescue ActiveRecord::RecordNotUnique
+    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
       clear_cache && retry
     end
   end
