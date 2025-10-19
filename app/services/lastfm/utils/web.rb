@@ -14,7 +14,7 @@ module LastFM
       end
 
       def proxy
-        proxies[:us]
+        proxies[:ru]
       end
 
       def param_formatted(
