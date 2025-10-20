@@ -165,7 +165,7 @@ module YouTubeMusic
             'musicResponsiveListItemFlexColumnRenderer',
             'text',
             'runs'
-          ).find do |raw_item_data|
+          )&.find do |raw_item_data|
             raw_item_data['text'].match?(/\w+ plays/)
           end
 
