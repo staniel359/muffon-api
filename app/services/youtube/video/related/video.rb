@@ -69,8 +69,7 @@ module YouTube
 
         def image_data
           image_data_formatted(
-            image:,
-            model: 'related_video'
+            image:
           )
         end
 

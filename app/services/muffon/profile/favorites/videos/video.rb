@@ -62,8 +62,7 @@ module Muffon
 
           def image_data
             image_data_formatted(
-              image:,
-              model: 'favorite_video'
+              image:
             )
           end
 

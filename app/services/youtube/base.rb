@@ -22,7 +22,7 @@ module YouTube
     end
 
     def image_data_formatted(
-      model:,
+      model: nil,
       images: nil,
       image: nil
     )

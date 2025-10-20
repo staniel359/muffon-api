@@ -66,6 +66,12 @@ module Muffon
         find_video_playlist.description
       end
 
+      def image_data
+        image_data_formatted(
+          image:
+        )
+      end
+
       def image
         find_video_playlist.image_url
       end

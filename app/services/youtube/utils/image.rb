@@ -11,12 +11,6 @@ module YouTube
 
       private
 
-      def required_args
-        %i[
-          model
-        ]
-      end
-
       def no_data?
         @args[:images].blank? &&
           @args[:image].blank?
@@ -28,10 +22,10 @@ module YouTube
           search_image_data
         when 'channel'
           channel_image_data
-        when 'related_video', 'favorite_video', 'bookmark_video_playlist'
-          plain_image_data
         when 'video', 'playlist'
           image_data
+        else
+          plain_image_data
         end
       end
 

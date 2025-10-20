@@ -60,6 +60,12 @@ module Muffon
             video.channel_title
           end
 
+          def image_data
+            image_data_formatted(
+              image:
+            )
+          end
+
           def image
             video.image_url
           end
