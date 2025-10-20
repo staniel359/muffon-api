@@ -18,15 +18,21 @@ module MusixMatch
           'message',
           'header',
           'available'
-        )
+        ) || 0
       end
 
       def collection_list
-        response_data.dig(
-          'message',
-          'body',
-          "#{model_name}_list"
-        )
+        data =
+          response_data.dig(
+            'message',
+            'body'
+          )
+
+        if data.present?
+          data["#{model_name}_list"]
+        else
+          []
+        end
       end
     end
   end
