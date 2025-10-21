@@ -1,11 +1,11 @@
-:concurrency: 75
+:concurrency: 50
 :dynamic: true
 :limits:
-  default: 5
-  artist_tags: 5
-  profile_mailer: 5
-  storage_analysis: 5
-  storage_purge: 5
+  default: 3
+  artist_tags: 3
+  profile_mailer: 3
+  storage_analysis: 3
+  storage_purge: 3
 :queues:
   - default
   - artist_tags
