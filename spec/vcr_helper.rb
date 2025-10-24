@@ -22,22 +22,6 @@ SECRET_KEYS = [
     at_acbuk
   ],
   %i[
-    deezer
-    api_token
-  ],
-  %i[
-    deezer
-    license_token
-  ],
-  %i[
-    deezer
-    track_token
-  ],
-  %i[
-    deezer
-    session_id
-  ],
-  %i[
     discogs
     api_key
   ],

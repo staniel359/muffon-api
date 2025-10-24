@@ -42,12 +42,6 @@ RSpec.configure do |config|
   config.include Spec::Helpers::Bandcamp::Search
   config.include Spec::Helpers::Bandcamp::Track
 
-  config.include Spec::Helpers::Deezer::Album
-  config.include Spec::Helpers::Deezer::Artist
-  config.include Spec::Helpers::Deezer::Search
-  config.include Spec::Helpers::Deezer::Track
-  config.include Spec::Helpers::Deezer::Utils
-
   config.include Spec::Helpers::Discogs::Album
   config.include Spec::Helpers::Discogs::Artist
   config.include Spec::Helpers::Discogs::Group

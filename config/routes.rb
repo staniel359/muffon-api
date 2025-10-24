@@ -427,37 +427,6 @@ Rails
         end
       end
 
-      # Deezer
-
-      namespace :deezer do
-        namespace :search do
-          get 'artists'
-          get 'albums'
-          get 'tracks'
-        end
-
-        namespace :artists, as: :artist do
-          scope ':artist_id' do
-            get 'albums'
-          end
-        end
-
-        namespace :albums, as: :album do
-          scope ':album_id' do
-            get '', action: :info
-            get 'links'
-          end
-        end
-
-        namespace :tracks, as: :track do
-          scope ':track_id' do
-            get '', action: :info
-            get 'links'
-            get 'albums'
-          end
-        end
-      end
-
       # Discogs
 
       namespace :discogs do

@@ -4,7 +4,6 @@ module Muffon
       SOURCES = {
         'amazonmusic' => 'a',
         'bandcamp' => 'b',
-        'deezer' => 'd',
         'soundcloud' => 'sc',
         'spotify' => 's',
         'yandexmusic' => 'ya',
