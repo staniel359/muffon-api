@@ -125,10 +125,6 @@ module MuffonAPI
       end
     end
 
-    config
-      .active_support
-      .to_time_preserves_timezone = :zone
-
     config.session_store(
       :cookie_store,
       key: "_muffon_api_session"
