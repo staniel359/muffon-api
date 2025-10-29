@@ -31,7 +31,12 @@ module Spotify
 
       def tracks_filtered
         tracks.select do |track_data|
-          track_data['track'].present?
+          track_data
+            .dig(
+              'track',
+              'name'
+            )
+            .present?
         end
       end
 
