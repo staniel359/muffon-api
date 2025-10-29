@@ -5,22 +5,22 @@ module ArtistDecorator
     def with_name(
       name
     )
-      name_formatted =
-        name
-        .strip
-        .truncate(
-          1_000
-        )
+      with_cache_clearance_and_retry_on_error do
+        name_formatted =
+          name
+          .strip
+          .truncate(
+            1_000
+          )
 
-      where(
-        name_downcase:
-          name_formatted.downcase
-      )
-        .first_or_create!(
-          name: name_formatted
+        where(
+          name_downcase:
+            name_formatted.downcase
         )
-    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
-      clear_cache && retry
+          .first_or_create!(
+            name: name_formatted
+          )
+      end
     end
   end
 

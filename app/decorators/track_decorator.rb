@@ -6,28 +6,30 @@ module TrackDecorator
       artist_id:,
       title:
     )
-      title_formatted =
-        title
-        .strip
-        .truncate(
-          1_000
-        )
+      with_cache_clearance_and_retry_on_error do
+        title_formatted =
+          title
+          .strip
+          .truncate(
+            1_000
+          )
 
-      where(
-        artist_id:,
-        title_downcase:
-          title_formatted.downcase
-      )
-        .first_or_create!(
-          title: title_formatted,
-          player_id:
+        where(
+          artist_id:,
+          title_downcase:
+            title_formatted.downcase
         )
-    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
-      clear_cache && retry
+          .first_or_create!(
+            title: title_formatted,
+            player_id:
+          )
+      end
     end
 
     def associated
-      includes(:artist)
+      includes(
+        :artist
+      )
     end
 
     private

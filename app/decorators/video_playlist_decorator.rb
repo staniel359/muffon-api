@@ -6,17 +6,17 @@ module VideoPlaylistDecorator
       youtube_id:,
       update_attributes:
     )
-      where(
-        youtube_id:
-      )
-        .first_or_initialize
-        .tap do |video_playlist|
-        video_playlist.update!(
-          update_attributes
+      with_cache_clearance_and_retry_on_error do
+        where(
+          youtube_id:
         )
+          .first_or_initialize
+          .tap do |video_playlist|
+            video_playlist.update!(
+              update_attributes
+            )
+          end
       end
-    rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
-      clear_cache && retry
     end
   end
 end
