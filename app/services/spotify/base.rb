@@ -97,6 +97,9 @@ module Spotify
         profile&.spotify_connection
     end
 
-    alias artist_name artists_names
+    def artist_name
+      artists_names.presence ||
+        'Various Artists'
+    end
   end
 end
