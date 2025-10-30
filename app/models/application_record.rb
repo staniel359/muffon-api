@@ -18,6 +18,8 @@ class ApplicationRecord < ActiveRecord::Base
       if @count < TRANSACTION_RETRIES_COUNT
         @count += 1
 
+        sleep 1
+
         retry
       else
         @count = 0
