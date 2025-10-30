@@ -20,11 +20,12 @@ module Spotify
             response_data['token']
           end
 
-          # rubocop:disable Layout/LineLength
           def test_token
-            'BQDWcGQwx7dZ_zGOoUo9hFfaLDKA4ifWng3WXMtjY3_E7prsRbUL_2aRp1RWZoM21OYh2vD_WTJQeYNbj2PvlvZDfxbsdpb6PBmFYn_2h4GNmz1Mu4FCooXAOLxQYbeo6EuSJIynbu311JYxCcsRTO-bDCt-9zE8MdzYj2yseaRxz-sOqKmvHzoBNK0mo94VZLWqJ38sCjCTIz7s1gQLl5JqieeT70C6kXcFUcJTZ8inPRnRweVSNjSd2X63MIDgKnZHXX4CsVfxQ5hyRWjwjOODlB1d8b3CXiQFzlowV2Zyj_fNY7ShL_9sXBT3gVP82mftu192VLjXeJ0pRWfLDAXwGW0UZMAuCrfxHUvdxpxN7F-uHw6kJ60z6_mrpSPDbw'
+            credentials.dig(
+              :spotify,
+              :test_audio_token
+            )
           end
-          # rubocop:enable Layout/LineLength
 
           def link
             BASE_LINK
