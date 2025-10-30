@@ -55,7 +55,8 @@ module Spotify
       def page_tracks(page)
         Spotify::Playlist::Tracks::PageTracks.call(
           playlist_id: @args[:playlist_id],
-          page:
+          page:,
+          profile_id: @args[:profile_id]
         )
       end
     end
