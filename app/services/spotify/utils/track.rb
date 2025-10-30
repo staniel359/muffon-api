@@ -33,6 +33,8 @@ module Spotify
       end
 
       def streaming_link
+        return if spotify_id.blank?
+
         streaming_link_formatted(
           model: 'track',
           model_id: spotify_id
