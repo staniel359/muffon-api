@@ -10,8 +10,10 @@ module API
           ::Muffon::Processor::Profile::Message::Creator.call(
             params.slice(
               *%i[
-                profile_id token
-                other_profile_id text
+                profile_id
+                token
+                other_profile_id
+                text
               ],
               *sendable_attachment_types
             )

@@ -23,8 +23,12 @@ module API
             ::Muffon::Profile::Library::Artists.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token page limit order
+                  profile_id
+                  other_profile_id
+                  token
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -33,7 +37,11 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Library::Artist::Creator.call(
               params.slice(
-                *%i[profile_id token artist_name]
+                *%i[
+                  profile_id
+                  token
+                  artist_name
+                ]
               )
             )
           end
@@ -42,8 +50,10 @@ module API
             ::Muffon::Profile::Library::Artist::Info.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token library_id
+                  profile_id
+                  other_profile_id
+                  token
+                  library_id
                 ]
               )
             )
@@ -53,8 +63,13 @@ module API
             ::Muffon::Profile::Library::Artist::Albums.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token library_id page limit order
+                  profile_id
+                  other_profile_id
+                  token
+                  library_id
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -64,8 +79,13 @@ module API
             ::Muffon::Profile::Library::Artist::Tracks.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token library_id page limit order
+                  profile_id
+                  other_profile_id
+                  token
+                  library_id
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -75,8 +95,13 @@ module API
             ::Muffon::Profile::Library::Artist::Playlists.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token library_id page limit order
+                  profile_id
+                  other_profile_id
+                  token
+                  library_id
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -85,7 +110,11 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::Library::Artist::Destroyer.call(
               params.slice(
-                *%i[profile_id token library_id]
+                *%i[
+                  profile_id
+                  token
+                  library_id
+                ]
               )
             )
           end

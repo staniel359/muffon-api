@@ -12,7 +12,12 @@ module API
       def info_data
         ::Spotify::User::Info.call(
           params.slice(
-            *%i[profile_id token access_token counters]
+            *%i[
+              profile_id
+              token
+              access_token
+              counters
+            ]
           )
         )
       end
@@ -20,7 +25,13 @@ module API
       def tracks_data
         ::Spotify::User::Tracks.call(
           params.slice(
-            *%i[profile_id token access_token page limit]
+            *%i[
+              profile_id
+              token
+              access_token
+              page
+              limit
+            ]
           )
         )
       end
@@ -29,8 +40,12 @@ module API
         ::Spotify::User::Playlists.call(
           params.slice(
             *%i[
-              profile_id token access_token
-              page limit with_tracks
+              profile_id
+              token
+              access_token
+              page
+              limit
+              with_tracks
             ]
           )
         )

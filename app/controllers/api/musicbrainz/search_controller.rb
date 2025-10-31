@@ -16,7 +16,13 @@ module API
       def artists_data
         ::MusicBrainz::Search::Artists.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -24,7 +30,13 @@ module API
       def albums_data
         ::MusicBrainz::Search::Albums.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -32,7 +44,13 @@ module API
       def groups_data
         ::MusicBrainz::Search::Groups.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -40,7 +58,13 @@ module API
       def tracks_data
         ::MusicBrainz::Search::Tracks.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -48,7 +72,13 @@ module API
       def labels_data
         ::MusicBrainz::Search::Labels.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

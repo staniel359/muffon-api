@@ -14,7 +14,12 @@ module API
       def info_data
         ::SoundCloud::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id token with_audio]
+            *%i[
+              track_id
+              profile_id
+              token
+              with_audio
+            ]
           )
         )
       end
@@ -22,7 +27,9 @@ module API
       def description_data
         ::SoundCloud::Track::Description.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -30,7 +37,9 @@ module API
       def links_data
         ::SoundCloud::Track::Links.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -38,7 +47,11 @@ module API
       def albums_data
         ::SoundCloud::Track::Albums.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[
+              track_id
+              profile_id
+              token
+            ]
           )
         )
       end

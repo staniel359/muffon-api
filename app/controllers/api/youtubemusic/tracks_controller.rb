@@ -25,7 +25,9 @@ module API
       def links_data
         ::YouTubeMusic::Track::Links.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end

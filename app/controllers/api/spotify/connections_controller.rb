@@ -11,8 +11,11 @@ module API
         ::Spotify::Connection::Creator.call(
           params.slice(
             *%i[
-              profile_id token code
-              client_id client_secret
+              profile_id
+              token
+              code
+              client_id
+              client_secret
             ]
           )
         )
@@ -21,7 +24,10 @@ module API
       def destroy_data
         ::Spotify::Connection::Destroyer.call(
           params.slice(
-            *%i[profile_id token]
+            *%i[
+              profile_id
+              token
+            ]
           )
         )
       end

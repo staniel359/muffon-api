@@ -15,8 +15,11 @@ module API
             ::Muffon::Profile::Library::Tags.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  other_profile_id page limit
+                  profile_id
+                  token
+                  other_profile_id
+                  page
+                  limit
                 ]
               )
             )
@@ -26,8 +29,10 @@ module API
             ::Muffon::Profile::Library::Tag::Info.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  other_profile_id tag_id
+                  profile_id
+                  token
+                  other_profile_id
+                  tag_id
                 ]
               )
             )
@@ -37,9 +42,13 @@ module API
             ::Muffon::Profile::Library::Tag::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  other_profile_id tag_id
-                  page limit order
+                  profile_id
+                  token
+                  other_profile_id
+                  tag_id
+                  page
+                  limit
+                  order
                 ]
               )
             )

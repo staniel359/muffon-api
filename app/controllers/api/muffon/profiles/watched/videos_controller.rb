@@ -12,7 +12,11 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Watched::Video::Creator.call(
               params.slice(
-                *%i[profile_id token youtube_id]
+                *%i[
+                  profile_id
+                  token
+                  youtube_id
+                ]
               )
             )
           end
@@ -20,7 +24,11 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::Watched::Video::Destroyer.call(
               params.slice(
-                *%i[profile_id token watched_id]
+                *%i[
+                  profile_id
+                  token
+                  watched_id
+                ]
               )
             )
           end

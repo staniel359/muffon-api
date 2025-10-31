@@ -25,7 +25,9 @@ module API
       def links_data
         ::Spotify::Track::Links.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -33,7 +35,11 @@ module API
       def albums_data
         ::Spotify::Track::Albums.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[
+              track_id
+              profile_id
+              token
+            ]
           )
         )
       end

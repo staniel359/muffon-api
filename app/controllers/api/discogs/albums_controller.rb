@@ -14,7 +14,11 @@ module API
       def info_data
         ::Discogs::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id token]
+            *%i[
+              album_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -22,7 +26,9 @@ module API
       def description_data
         ::Discogs::Album::Description.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end
@@ -30,7 +36,9 @@ module API
       def tags_data
         ::Discogs::Album::Tags.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end
@@ -38,7 +46,9 @@ module API
       def links_data
         ::Discogs::Album::Links.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end

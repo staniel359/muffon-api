@@ -14,8 +14,11 @@ module API
           ::Muffon::Profile::Followers.call(
             params.slice(
               *%i[
-                profile_id other_profile_id
-                token page limit
+                profile_id
+                other_profile_id
+                token
+                page
+                limit
               ]
             )
           )
@@ -24,7 +27,11 @@ module API
         def create_data
           ::Muffon::Processor::Profile::Follower::Creator.call(
             params.slice(
-              *%i[profile_id token other_profile_id]
+              *%i[
+                profile_id
+                token
+                other_profile_id
+              ]
             )
           )
         end
@@ -32,7 +39,11 @@ module API
         def destroy_data
           ::Muffon::Processor::Profile::Follower::Destroyer.call(
             params.slice(
-              *%i[profile_id token other_profile_id]
+              *%i[
+                profile_id
+                token
+                other_profile_id
+              ]
             )
           )
         end

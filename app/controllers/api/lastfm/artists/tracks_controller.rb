@@ -22,8 +22,11 @@ module API
           ::LastFM::Track::Info.call(
             params.slice(
               *%i[
-                artist_name track_title
-                profile_id token language
+                artist_name
+                track_title
+                profile_id
+                token
+                language
               ]
             )
           )
@@ -32,7 +35,11 @@ module API
         def description_data
           ::LastFM::Track::Description.call(
             params.slice(
-              *%i[artist_name track_title language]
+              *%i[
+                artist_name
+                track_title
+                language
+              ]
             )
           )
         end
@@ -40,7 +47,10 @@ module API
         def tags_data
           ::LastFM::Track::Tags.call(
             params.slice(
-              *%i[artist_name track_title]
+              *%i[
+                artist_name
+                track_title
+              ]
             )
           )
         end
@@ -49,8 +59,12 @@ module API
           ::LastFM::Track::Similar.call(
             params.slice(
               *%i[
-                artist_name track_title
-                profile_id token page limit
+                artist_name
+                track_title
+                profile_id
+                token
+                page
+                limit
               ]
             )
           )
@@ -60,8 +74,12 @@ module API
           ::LastFM::Track::Profiles.call(
             params.slice(
               *%i[
-                artist_name track_title
-                profile_id token page limit
+                artist_name
+                track_title
+                profile_id
+                token
+                page
+                limit
               ]
             )
           )
@@ -70,7 +88,10 @@ module API
         def links_data
           ::LastFM::Track::Links.call(
             params.slice(
-              *%i[artist_name track_title]
+              *%i[
+                artist_name
+                track_title
+              ]
             )
           )
         end
@@ -79,8 +100,10 @@ module API
           ::LastFM::Track::Albums.call(
             params.slice(
               *%i[
-                artist_name track_title
-                profile_id token
+                artist_name
+                track_title
+                profile_id
+                token
               ]
             )
           )

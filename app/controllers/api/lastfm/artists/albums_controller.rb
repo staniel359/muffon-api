@@ -20,8 +20,11 @@ module API
           ::LastFM::Album::Info.call(
             params.slice(
               *%i[
-                artist_name album_title
-                profile_id token language
+                artist_name
+                album_title
+                profile_id
+                token
+                language
               ]
             )
           )
@@ -30,7 +33,11 @@ module API
         def description_data
           ::LastFM::Album::Description.call(
             params.slice(
-              *%i[artist_name album_title language]
+              *%i[
+                artist_name
+                album_title
+                language
+              ]
             )
           )
         end
@@ -38,7 +45,10 @@ module API
         def tags_data
           ::LastFM::Album::Tags.call(
             params.slice(
-              *%i[artist_name album_title]
+              *%i[
+                artist_name
+                album_title
+              ]
             )
           )
         end
@@ -46,7 +56,10 @@ module API
         def listeners_count_data
           ::LastFM::Album::ListenersCount.call(
             params.slice(
-              *%i[artist_name album_title]
+              *%i[
+                artist_name
+                album_title
+              ]
             )
           )
         end
@@ -55,8 +68,12 @@ module API
           ::LastFM::Album::Profiles.call(
             params.slice(
               *%i[
-                artist_name album_title
-                profile_id token page limit
+                artist_name
+                album_title
+                profile_id
+                token
+                page
+                limit
               ]
             )
           )
@@ -65,7 +82,10 @@ module API
         def links_data
           ::LastFM::Album::Links.call(
             params.slice(
-              *%i[artist_name album_title]
+              *%i[
+                artist_name
+                album_title
+              ]
             )
           )
         end

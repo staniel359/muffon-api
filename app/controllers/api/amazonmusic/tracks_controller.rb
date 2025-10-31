@@ -13,8 +13,11 @@ module API
         ::AmazonMusic::Track::Info.call(
           params.slice(
             *%i[
-              album_id track_id profile_id
-              token with_audio
+              album_id
+              track_id
+              profile_id
+              token
+              with_audio
             ]
           )
         )
@@ -23,7 +26,10 @@ module API
       def links_data
         ::AmazonMusic::Track::Links.call(
           params.slice(
-            *%i[album_id track_id]
+            *%i[
+              album_id
+              track_id
+            ]
           )
         )
       end
@@ -32,8 +38,10 @@ module API
         ::AmazonMusic::Track::Albums.call(
           params.slice(
             *%i[
-              album_id track_id
-              profile_id token
+              album_id
+              track_id
+              profile_id
+              token
             ]
           )
         )

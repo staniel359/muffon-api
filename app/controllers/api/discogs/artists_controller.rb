@@ -9,8 +9,11 @@ module API
         ::Discogs::Artist::Albums.call(
           params.slice(
             *%i[
-              artist_id profile_id
-              token page limit
+              artist_id
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )

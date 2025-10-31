@@ -10,7 +10,11 @@ module API
       def info_data
         ::Spotify::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id token]
+            *%i[
+              album_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -18,7 +22,9 @@ module API
       def links_data
         ::Spotify::Album::Links.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end

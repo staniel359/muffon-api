@@ -13,7 +13,13 @@ module API
         def index_data
           ::Muffon::Community::Members.call(
             params.slice(
-              *%i[community_id profile_id token page limit]
+              *%i[
+                community_id
+                profile_id
+                token
+                page
+                limit
+              ]
             )
           )
         end
@@ -21,7 +27,11 @@ module API
         def create_data
           ::Muffon::Processor::Community::Member::Creator.call(
             params.slice(
-              *%i[profile_id token community_id]
+              *%i[
+                profile_id
+                token
+                community_id
+              ]
             )
           )
         end
@@ -29,7 +39,11 @@ module API
         def destroy_data
           ::Muffon::Processor::Community::Member::Destroyer.call(
             params.slice(
-              *%i[profile_id token community_id]
+              *%i[
+                profile_id
+                token
+                community_id
+              ]
             )
           )
         end

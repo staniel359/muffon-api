@@ -8,7 +8,9 @@ module API
       def info_data
         ::Genius::Annotation::Info.call(
           params.slice(
-            *%i[annotation_id]
+            *%i[
+              annotation_id
+            ]
           )
         )
       end

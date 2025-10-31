@@ -11,7 +11,11 @@ module API
         def info_data
           ::Muffon::Profile::Library::Info.call(
             params.slice(
-              *%i[profile_id token other_profile_id]
+              *%i[
+                profile_id
+                token
+                other_profile_id
+              ]
             )
           )
         end
@@ -19,7 +23,11 @@ module API
         def destroy_data
           ::Muffon::Processor::Profile::Library::Destroyer.call(
             params.slice(
-              *%i[profile_id token password]
+              *%i[
+                profile_id
+                token
+                password
+              ]
             )
           )
         end

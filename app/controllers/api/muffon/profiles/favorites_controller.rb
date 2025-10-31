@@ -9,7 +9,11 @@ module API
         def info_data
           ::Muffon::Profile::Favorites::Info.call(
             params.slice(
-              *%i[profile_id token other_profile_id]
+              *%i[
+                profile_id
+                token
+                other_profile_id
+              ]
             )
           )
         end

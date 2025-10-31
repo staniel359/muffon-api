@@ -12,7 +12,9 @@ module API
       def token_data
         ::LastFM::Connection::Token.call(
           params.slice(
-            *%i[language]
+            *%i[
+              language
+            ]
           )
         )
       end
@@ -20,7 +22,11 @@ module API
       def create_data
         ::LastFM::Connection::Creator.call(
           params.slice(
-            *%i[lastfm_token profile_id token]
+            *%i[
+              lastfm_token
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -28,7 +34,10 @@ module API
       def destroy_data
         ::LastFM::Connection::Destroyer.call(
           params.slice(
-            *%i[profile_id token]
+            *%i[
+              profile_id
+              token
+            ]
           )
         )
       end

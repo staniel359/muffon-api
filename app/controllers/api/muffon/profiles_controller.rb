@@ -17,8 +17,12 @@ module API
         ::Muffon::Profiles.call(
           params.slice(
             *%i[
-              other_profile_id token
-              page limit order online
+              other_profile_id
+              token
+              page
+              limit
+              order
+              online
             ]
           )
         )
@@ -39,7 +43,11 @@ module API
       def info_data
         ::Muffon::Profile::Info.call(
           params.slice(
-            *%i[profile_id other_profile_id token]
+            *%i[
+              profile_id
+              other_profile_id
+              token
+            ]
           )
         )
       end
@@ -47,7 +55,10 @@ module API
       def update_data
         ::Muffon::Processor::Profile::Updater.call(
           params.slice(
-            *%i[profile_id token],
+            *%i[
+              profile_id
+              token
+            ],
             *profile_params
           )
         )
@@ -56,7 +67,11 @@ module API
       def destroy_data
         ::Muffon::Processor::Profile::Destroyer.call(
           params.slice(
-            *%i[profile_id token password]
+            *%i[
+              profile_id
+              token
+              password
+            ]
           )
         )
       end

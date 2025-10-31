@@ -15,8 +15,12 @@ module API
             ::Muffon::Profile::Favorites::Artists.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token page limit order
+                  profile_id
+                  other_profile_id
+                  token
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -25,7 +29,11 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Favorites::Artist::Creator.call(
               params.slice(
-                *%i[profile_id token artist_name]
+                *%i[
+                  profile_id
+                  token
+                  artist_name
+                ]
               )
             )
           end
@@ -33,7 +41,11 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::Favorites::Artist::Destroyer.call(
               params.slice(
-                *%i[profile_id token favorite_id]
+                *%i[
+                  profile_id
+                  token
+                  favorite_id
+                ]
               )
             )
           end

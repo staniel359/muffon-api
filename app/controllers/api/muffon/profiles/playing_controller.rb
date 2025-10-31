@@ -9,7 +9,11 @@ module API
         def update_data
           ::Muffon::Processor::Profile::Playing::Updater.call(
             params.slice(
-              *%i[profile_id token playing]
+              *%i[
+                profile_id
+                token
+                playing
+              ]
             )
           )
         end

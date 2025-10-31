@@ -15,31 +15,32 @@ module API
             ::Muffon::Profile::Recommendations::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  page limit order
-                ],
-                *filter_args
+                  profile_id
+                  token
+                  page
+                  limit
+                  order
+                  hide_library_artists
+                  hide_library_artists_tracks_count
+                  hide_listened_artists
+                  tags_include
+                  tags_exclude
+                  artists_include
+                  artists_exclude
+                ]
               )
             )
-          end
-
-          def filter_args
-            %i[
-              hide_library_artists
-              hide_library_artists_tracks_count
-              hide_listened_artists
-              tags_include tags_exclude
-              artists_include artists_exclude
-            ]
           end
 
           def artists_data
             ::Muffon::Profile::Recommendation::Artist::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token
+                  profile_id
+                  token
                   recommendation_id
-                  page limit
+                  page
+                  limit
                 ]
               )
             )
@@ -49,7 +50,8 @@ module API
             ::Muffon::Processor::Profile::Recommendation::Artist::Deleter.call(
               params.slice(
                 *%i[
-                  profile_id token
+                  profile_id
+                  token
                   recommendation_id
                 ]
               )

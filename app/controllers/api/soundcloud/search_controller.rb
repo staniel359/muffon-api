@@ -12,7 +12,13 @@ module API
       def artists_data
         ::SoundCloud::Search::Artists.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -20,7 +26,13 @@ module API
       def albums_data
         ::SoundCloud::Search::Albums.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -28,7 +40,13 @@ module API
       def tracks_data
         ::SoundCloud::Search::Tracks.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

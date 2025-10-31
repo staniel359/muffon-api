@@ -14,7 +14,13 @@ module API
           def index_data
             ::Muffon::Profile::Bookmarks::Videos.call(
               params.slice(
-                *%i[profile_id token page limit order]
+                *%i[
+                  profile_id
+                  token
+                  page
+                  limit
+                  order
+                ]
               )
             )
           end
@@ -22,7 +28,11 @@ module API
           def create_data
             ::Muffon::Processor::Profile::Bookmarks::Video::Creator.call(
               params.slice(
-                *%i[profile_id token youtube_id]
+                *%i[
+                  profile_id
+                  token
+                  youtube_id
+                ]
               )
             )
           end
@@ -30,7 +40,11 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::Bookmarks::Video::Destroyer.call(
               params.slice(
-                *%i[profile_id token bookmark_id]
+                *%i[
+                  profile_id
+                  token
+                  bookmark_id
+                ]
               )
             )
           end

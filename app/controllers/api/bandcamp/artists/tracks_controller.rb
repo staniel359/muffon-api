@@ -18,8 +18,11 @@ module API
           ::Bandcamp::Track::Info.call(
             params.slice(
               *%i[
-                artist_id track_id
-                profile_id token with_audio
+                artist_id
+                track_id
+                profile_id
+                token
+                with_audio
               ]
             )
           )
@@ -28,7 +31,10 @@ module API
         def description_data
           ::Bandcamp::Track::Description.call(
             params.slice(
-              *%i[artist_id track_id]
+              *%i[
+                artist_id
+                track_id
+              ]
             )
           )
         end
@@ -36,7 +42,10 @@ module API
         def tags_data
           ::Bandcamp::Track::Tags.call(
             params.slice(
-              *%i[artist_id track_id]
+              *%i[
+                artist_id
+                track_id
+              ]
             )
           )
         end
@@ -44,7 +53,10 @@ module API
         def links_data
           ::Bandcamp::Track::Links.call(
             params.slice(
-              *%i[artist_id track_id]
+              *%i[
+                artist_id
+                track_id
+              ]
             )
           )
         end
@@ -52,7 +64,12 @@ module API
         def albums_data
           ::Bandcamp::Track::Albums.call(
             params.slice(
-              *%i[artist_id track_id profile_id token]
+              *%i[
+                artist_id
+                track_id
+                profile_id
+                token
+              ]
             )
           )
         end

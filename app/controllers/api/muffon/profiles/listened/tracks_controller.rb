@@ -13,8 +13,10 @@ module API
             ::Muffon::Processor::Profile::Listened::Track::Creator.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  track_title artist_name
+                  profile_id
+                  token
+                  track_title
+                  artist_name
                 ]
               )
             )
@@ -23,7 +25,11 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::Listened::Track::Destroyer.call(
               params.slice(
-                *%i[profile_id token listened_id]
+                *%i[
+                  profile_id
+                  token
+                  listened_id
+                ]
               )
             )
           end

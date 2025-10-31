@@ -12,7 +12,13 @@ module API
           def info_data
             ::Muffon::Profile::History::Activity.call(
               params.slice(
-                *%i[profile_id token page limit order]
+                *%i[
+                  profile_id
+                  token
+                  page
+                  limit
+                  order
+                ]
               )
             )
           end
@@ -20,7 +26,10 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::History::Activity::Destroyer.call(
               params.slice(
-                *%i[profile_id token]
+                *%i[
+                  profile_id
+                  token
+                ]
               )
             )
           end

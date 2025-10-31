@@ -16,8 +16,12 @@ module API
           ::Muffon::Profile::Posts.call(
             params.slice(
               *%i[
-                profile_id token other_profile_id
-                page limit order
+                profile_id
+                token
+                other_profile_id
+                page
+                limit
+                order
               ]
             )
           )
@@ -27,8 +31,10 @@ module API
           ::Muffon::Processor::Profile::Post::Creator.call(
             params.slice(
               *%i[
-                profile_id token
-                other_profile_id text
+                profile_id
+                token
+                other_profile_id
+                text
               ],
               *sendable_attachment_types
             )
@@ -38,7 +44,12 @@ module API
         def update_data
           ::Muffon::Processor::Profile::Post::Updater.call(
             params.slice(
-              *%i[profile_id token post_id text],
+              *%i[
+                profile_id
+                token
+                post_id
+                text
+              ],
               *sendable_attachment_types
             )
           )
@@ -47,7 +58,11 @@ module API
         def destroy_data
           ::Muffon::Processor::Profile::Post::Destroyer.call(
             params.slice(
-              *%i[profile_id token post_id]
+              *%i[
+                profile_id
+                token
+                post_id
+              ]
             )
           )
         end

@@ -10,8 +10,12 @@ module API
           ::Muffon::Profile::Communities.call(
             params.slice(
               *%i[
-                profile_id other_profile_id
-                token page limit order
+                profile_id
+                other_profile_id
+                token
+                page
+                limit
+                order
               ]
             )
           )

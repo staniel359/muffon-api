@@ -11,8 +11,11 @@ module API
         ::LastFM::Multitag::Artists.call(
           params.slice(
             *%i[
-              tags profile_id
-              token page limit
+              tags
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )
@@ -22,8 +25,11 @@ module API
         ::LastFM::Multitag::Albums.call(
           params.slice(
             *%i[
-              tags profile_id
-              token page limit
+              tags
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )

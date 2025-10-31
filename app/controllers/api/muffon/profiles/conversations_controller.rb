@@ -13,7 +13,13 @@ module API
         def index_data
           ::Muffon::Profile::Conversations.call(
             params.slice(
-              *%i[profile_id token page limit order]
+              *%i[
+                profile_id
+                token
+                page
+                limit
+                order
+              ]
             )
           )
         end
@@ -21,7 +27,11 @@ module API
         def info_data
           ::Muffon::Profile::Conversation::Info.call(
             params.slice(
-              *%i[profile_id token conversation_id]
+              *%i[
+                profile_id
+                token
+                conversation_id
+              ]
             )
           )
         end
@@ -30,8 +40,11 @@ module API
           ::Muffon::Profile::Conversation::Messages.call(
             params.slice(
               *%i[
-                profile_id token
-                conversation_id page limit
+                profile_id
+                token
+                conversation_id
+                page
+                limit
               ]
             )
           )

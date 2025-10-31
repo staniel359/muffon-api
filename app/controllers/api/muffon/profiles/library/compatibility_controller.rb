@@ -16,7 +16,11 @@ module API
           def info_data
             ::Muffon::Profile::Library::Compatibility::Info.call(
               params.slice(
-                *%i[profile_id token other_profile_id]
+                *%i[
+                  profile_id
+                  token
+                  other_profile_id
+                ]
               )
             )
           end
@@ -25,8 +29,11 @@ module API
             ::Muffon::Profile::Library::Compatibility::Artists.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  other_profile_id page limit
+                  profile_id
+                  token
+                  other_profile_id
+                  page
+                  limit
                 ]
               )
             )
@@ -36,8 +43,11 @@ module API
             ::Muffon::Profile::Library::Compatibility::Albums.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  other_profile_id page limit
+                  profile_id
+                  token
+                  other_profile_id
+                  page
+                  limit
                 ]
               )
             )
@@ -47,8 +57,11 @@ module API
             ::Muffon::Profile::Library::Compatibility::Tracks.call(
               params.slice(
                 *%i[
-                  profile_id token
-                  other_profile_id page limit
+                  profile_id
+                  token
+                  other_profile_id
+                  page
+                  limit
                 ]
               )
             )

@@ -14,25 +14,37 @@ module API
           def index_data
             ::Muffon::Profile::Bookmarks::VideoPlaylists.call(
               params.slice(
-                *%i[profile_id token page limit order]
+                *%i[
+                  profile_id
+                  token
+                  page
+                  limit
+                  order
+                ]
               )
             )
           end
 
           def create_data
-            ::Muffon::Processor::Profile::
-              Bookmarks::VideoPlaylist::Creator.call(
+            ::Muffon::Processor::Profile::Bookmarks::VideoPlaylist::Creator.call(
                 params.slice(
-                  *%i[profile_id token youtube_id]
+                  *%i[
+                    profile_id
+                    token
+                    youtube_id
+                  ]
                 )
               )
           end
 
           def destroy_data
-            ::Muffon::Processor::Profile::
-              Bookmarks::VideoPlaylist::Destroyer.call(
+            ::Muffon::Processor::Profile::Bookmarks::VideoPlaylist::Destroyer.call(
                 params.slice(
-                  *%i[profile_id token bookmark_id]
+                  *%i[
+                    profile_id
+                    token
+                    bookmark_id
+                  ]
                 )
               )
           end

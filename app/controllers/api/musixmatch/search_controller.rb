@@ -10,7 +10,13 @@ module API
       def artists_data
         ::MusixMatch::Search::Artists.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -18,7 +24,13 @@ module API
       def tracks_data
         ::MusixMatch::Search::Tracks.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

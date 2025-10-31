@@ -16,7 +16,11 @@ module API
       def info_data
         ::Discogs::Group::Info.call(
           params.slice(
-            *%i[group_id profile_id token]
+            *%i[
+              group_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -24,7 +28,9 @@ module API
       def description_data
         ::Discogs::Group::Description.call(
           params.slice(
-            *%i[group_id]
+            *%i[
+              group_id
+            ]
           )
         )
       end
@@ -32,7 +38,9 @@ module API
       def tags_data
         ::Discogs::Group::Tags.call(
           params.slice(
-            *%i[group_id]
+            *%i[
+              group_id
+            ]
           )
         )
       end
@@ -40,7 +48,13 @@ module API
       def albums_data
         ::Discogs::Group::Albums.call(
           params.slice(
-            *%i[group_id profile_id token page limit]
+            *%i[
+              group_id
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -48,7 +62,9 @@ module API
       def links_data
         ::Discogs::Group::Links.call(
           params.slice(
-            *%i[group_id]
+            *%i[
+              group_id
+            ]
           )
         )
       end

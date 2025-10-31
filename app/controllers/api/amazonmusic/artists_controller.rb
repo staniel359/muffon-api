@@ -8,7 +8,13 @@ module API
       def albums_data
         ::AmazonMusic::Artist::Albums.call(
           params.slice(
-            *%i[artist_id profile_id token page]
+            *%i[
+              artist_id
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

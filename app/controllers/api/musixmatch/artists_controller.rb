@@ -8,7 +8,13 @@ module API
       def albums_data
         ::MusixMatch::Artist::Albums.call(
           params.slice(
-            *%i[artist_id profile_id token page limit]
+            *%i[
+              artist_id
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

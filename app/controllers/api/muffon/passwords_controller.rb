@@ -10,7 +10,10 @@ module API
       def reset_data
         ::Muffon::Profile::Password::Resetter.call(
           params.slice(
-            *%i[email language]
+            *%i[
+              email
+              language
+            ]
           )
         )
       end
@@ -18,7 +21,12 @@ module API
       def update_data
         ::Muffon::Processor::Profile::Password::Updater.call(
           params.slice(
-            *%i[email code password password_confirmation]
+            *%i[
+              email
+              code
+              password
+              password_confirmation
+            ]
           )
         )
       end

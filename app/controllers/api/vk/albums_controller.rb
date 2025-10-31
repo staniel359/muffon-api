@@ -11,8 +11,12 @@ module API
         ::VK::Album::Info.call(
           params.slice(
             *%i[
-              album_id owner_id access_key
-              profile_id token language
+              album_id
+              owner_id
+              access_key
+              profile_id
+              token
+              language
             ]
           )
         )
@@ -21,7 +25,11 @@ module API
       def links_data
         ::VK::Album::Links.call(
           params.slice(
-            *%i[album_id owner_id access_key]
+            *%i[
+              album_id
+              owner_id
+              access_key
+            ]
           )
         )
       end

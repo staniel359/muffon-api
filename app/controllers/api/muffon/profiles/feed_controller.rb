@@ -10,8 +10,12 @@ module API
           ::Muffon::Profile::Feed.call(
             params.slice(
               *%i[
-                profile_id token page
-                limit order global
+                profile_id
+                token
+                page
+                limit
+                order
+                global
               ]
             )
           )

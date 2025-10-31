@@ -8,7 +8,13 @@ module API
       def index_data
         ::Muffon::Playlists.call(
           params.slice(
-            *%i[profile_id token page limit order]
+            *%i[
+              profile_id
+              token
+              page
+              limit
+              order
+            ]
           )
         )
       end

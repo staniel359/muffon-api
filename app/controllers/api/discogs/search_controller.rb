@@ -14,7 +14,13 @@ module API
       def artists_data
         ::Discogs::Search::Artists.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -22,7 +28,11 @@ module API
       def labels_data
         ::Discogs::Search::Labels.call(
           params.slice(
-            *%i[query page limit]
+            *%i[
+              query
+              page
+              limit
+            ]
           )
         )
       end
@@ -30,7 +40,13 @@ module API
       def groups_data
         ::Discogs::Search::Groups.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -38,7 +54,13 @@ module API
       def albums_data
         ::Discogs::Search::Albums.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

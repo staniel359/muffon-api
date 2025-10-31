@@ -14,7 +14,11 @@ module API
       def info_data
         ::YouTube::Playlist::Info.call(
           params.slice(
-            *%i[playlist_id profile_id token]
+            *%i[
+              playlist_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -22,7 +26,11 @@ module API
       def description_data
         ::YouTube::Playlist::Description.call(
           params.slice(
-            *%i[playlist_id profile_id token]
+            *%i[
+              playlist_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -30,7 +38,13 @@ module API
       def videos_data
         ::YouTube::Playlist::Videos.call(
           params.slice(
-            *%i[playlist_id profile_id token page limit]
+            *%i[
+              playlist_id
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -38,7 +52,9 @@ module API
       def links_data
         ::YouTube::Playlist::Links.call(
           params.slice(
-            *%i[playlist_id]
+            *%i[
+              playlist_id
+            ]
           )
         )
       end

@@ -12,7 +12,11 @@ module API
       def info_data
         ::MusicBrainz::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id token]
+            *%i[
+              album_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -20,7 +24,9 @@ module API
       def tags_data
         ::MusicBrainz::Album::Tags.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end
@@ -28,7 +34,9 @@ module API
       def links_data
         ::MusicBrainz::Album::Links.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end

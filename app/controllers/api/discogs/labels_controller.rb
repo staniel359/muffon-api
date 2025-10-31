@@ -12,7 +12,9 @@ module API
       def info_data
         ::Discogs::Label::Info.call(
           params.slice(
-            *%i[label_id]
+            *%i[
+              label_id
+            ]
           )
         )
       end
@@ -20,7 +22,9 @@ module API
       def description_data
         ::Discogs::Label::Description.call(
           params.slice(
-            *%i[label_id]
+            *%i[
+              label_id
+            ]
           )
         )
       end
@@ -28,7 +32,11 @@ module API
       def albums_data
         ::Discogs::Label::Albums.call(
           params.slice(
-            *%i[label_id page limit]
+            *%i[
+              label_id
+              page
+              limit
+            ]
           )
         )
       end

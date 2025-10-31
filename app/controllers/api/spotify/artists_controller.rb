@@ -9,8 +9,12 @@ module API
         ::Spotify::Artist::Albums.call(
           params.slice(
             *%i[
-              artist_id album_type
-              profile_id token page limit
+              artist_id
+              album_type
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )

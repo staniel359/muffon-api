@@ -12,7 +12,13 @@ module API
           def info_data
             ::Muffon::Profile::History::Browser.call(
               params.slice(
-                *%i[profile_id token page limit order]
+                *%i[
+                  profile_id
+                  token
+                  page
+                  limit
+                  order
+                ]
               )
             )
           end
@@ -20,7 +26,11 @@ module API
           def update_data
             ::Muffon::Processor::Profile::History::Browser::Updater.call(
               params.slice(
-                *%i[profile_id token route]
+                *%i[
+                  profile_id
+                  token
+                  route
+                ]
               )
             )
           end
@@ -28,7 +38,10 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::History::Browser::Destroyer.call(
               params.slice(
-                *%i[profile_id token]
+                *%i[
+                  profile_id
+                  token
+                ]
               )
             )
           end

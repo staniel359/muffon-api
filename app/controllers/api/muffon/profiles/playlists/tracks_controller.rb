@@ -15,8 +15,13 @@ module API
             ::Muffon::Profile::Playlist::Tracks.call(
               params.slice(
                 *%i[
-                  profile_id other_profile_id
-                  token playlist_id page limit order
+                  profile_id
+                  other_profile_id
+                  token
+                  playlist_id
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -26,9 +31,17 @@ module API
             ::Muffon::Processor::Profile::Playlist::Track::Creator.call(
               params.slice(
                 *%i[
-                  profile_id token playlist_id
-                  track_title artist_name album_title
-                  image source audio album_source created
+                  profile_id
+                  token
+                  playlist_id
+                  track_title
+                  artist_name
+                  album_title
+                  image
+                  source
+                  audio
+                  album_source
+                  created
                 ]
               )
             )
@@ -38,7 +51,9 @@ module API
             ::Muffon::Processor::Profile::Playlist::Track::Destroyer.call(
               params.slice(
                 *%i[
-                  profile_id token playlist_id
+                  profile_id
+                  token
+                  playlist_id
                   playlist_track_id
                 ]
               )

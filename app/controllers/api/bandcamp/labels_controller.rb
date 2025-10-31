@@ -10,7 +10,13 @@ module API
       def artists_data
         ::Bandcamp::Label::Artists.call(
           params.slice(
-            *%i[label_id profile_id token page limit]
+            *%i[
+              label_id
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -18,7 +24,13 @@ module API
       def albums_data
         ::Bandcamp::Label::Albums.call(
           params.slice(
-            *%i[label_id profile_id token page limit]
+            *%i[
+              label_id
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

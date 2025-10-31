@@ -18,9 +18,15 @@ module API
           ::Muffon::Profile::Playlists.call(
             params.slice(
               *%i[
-                profile_id token other_profile_id
-                model track_title artist_name
-                page limit order
+                profile_id
+                token
+                other_profile_id
+                model
+                track_title
+                artist_name
+                page
+                limit
+                order
               ]
             )
           )
@@ -30,8 +36,12 @@ module API
           ::Muffon::Processor::Profile::Playlist::Creator.call(
             params.slice(
               *%i[
-                profile_id token title
-                description image private
+                profile_id
+                token
+                title
+                description
+                image
+                private
               ]
             )
           )
@@ -41,8 +51,10 @@ module API
           ::Muffon::Profile::Playlist::Info.call(
             params.slice(
               *%i[
-                profile_id token
-                other_profile_id playlist_id
+                profile_id
+                token
+                other_profile_id
+                playlist_id
               ]
             )
           )
@@ -52,8 +64,13 @@ module API
           ::Muffon::Processor::Profile::Playlist::Updater.call(
             params.slice(
               *%i[
-                profile_id token playlist_id
-                title description image private
+                profile_id
+                token
+                playlist_id
+                title
+                description
+                image
+                private
               ]
             )
           )
@@ -62,7 +79,11 @@ module API
         def destroy_data
           ::Muffon::Processor::Profile::Playlist::Destroyer.call(
             params.slice(
-              *%i[profile_id token playlist_id]
+              *%i[
+                profile_id
+                token
+                playlist_id
+              ]
             )
           )
         end

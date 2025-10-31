@@ -14,7 +14,13 @@ module API
       def artists_data
         ::LastFM::Top::Artists.call(
           params.slice(
-            *%i[profile_id token country page limit]
+            *%i[
+              profile_id
+              token
+              country
+              page
+              limit
+            ]
           )
         )
       end
@@ -22,7 +28,13 @@ module API
       def albums_data
         ::LastFM::Top::Albums.call(
           params.slice(
-            *%i[profile_id token country page limit]
+            *%i[
+              profile_id
+              token
+              country
+              page
+              limit
+            ]
           )
         )
       end
@@ -30,7 +42,13 @@ module API
       def tracks_data
         ::LastFM::Top::Tracks.call(
           params.slice(
-            *%i[profile_id token country page limit]
+            *%i[
+              profile_id
+              token
+              country
+              page
+              limit
+            ]
           )
         )
       end
@@ -38,7 +56,11 @@ module API
       def tags_data
         ::LastFM::Top::Tags.call(
           params.slice(
-            *%i[country page limit]
+            *%i[
+              country
+              page
+              limit
+            ]
           )
         )
       end

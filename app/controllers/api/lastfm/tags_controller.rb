@@ -20,7 +20,10 @@ module API
       def info_data
         ::LastFM::Tag::Info.call(
           params.slice(
-            *%i[tag_name language]
+            *%i[
+              tag_name
+              language
+            ]
           )
         )
       end
@@ -28,7 +31,10 @@ module API
       def description_data
         ::LastFM::Tag::Description.call(
           params.slice(
-            *%i[tag_name language]
+            *%i[
+              tag_name
+              language
+            ]
           )
         )
       end
@@ -37,8 +43,11 @@ module API
         ::LastFM::Tag::Artists.call(
           params.slice(
             *%i[
-              tag_name profile_id
-              token page limit
+              tag_name
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )
@@ -48,8 +57,11 @@ module API
         ::LastFM::Tag::Albums.call(
           params.slice(
             *%i[
-              tag_name profile_id
-              token page limit
+              tag_name
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )
@@ -59,8 +71,11 @@ module API
         ::LastFM::Tag::Tracks.call(
           params.slice(
             *%i[
-              tag_name profile_id
-              token page limit
+              tag_name
+              profile_id
+              token
+              page
+              limit
             ]
           )
         )
@@ -69,7 +84,9 @@ module API
       def similar_data
         ::LastFM::Tag::Similar.call(
           params.slice(
-            *%i[tag_name]
+            *%i[
+              tag_name
+            ]
           )
         )
       end
@@ -77,7 +94,11 @@ module API
       def images_data
         ::LastFM::Tag::Images.call(
           params.slice(
-            *%i[tag_name page limit]
+            *%i[
+              tag_name
+              page
+              limit
+            ]
           )
         )
       end

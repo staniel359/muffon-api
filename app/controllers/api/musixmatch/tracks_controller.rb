@@ -16,7 +16,11 @@ module API
       def info_data
         ::MusixMatch::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[
+              track_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -24,7 +28,9 @@ module API
       def tags_data
         ::MusixMatch::Track::Tags.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -32,7 +38,9 @@ module API
       def lyrics_data
         ::MusixMatch::Track::Lyrics.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -40,7 +48,9 @@ module API
       def links_data
         ::MusixMatch::Track::Links.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -48,7 +58,11 @@ module API
       def albums_data
         ::MusixMatch::Track::Albums.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[
+              track_id
+              profile_id
+              token
+            ]
           )
         )
       end

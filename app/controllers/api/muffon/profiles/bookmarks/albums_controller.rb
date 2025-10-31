@@ -14,7 +14,13 @@ module API
           def index_data
             ::Muffon::Profile::Bookmarks::Albums.call(
               params.slice(
-                *%i[profile_id token page limit order]
+                *%i[
+                  profile_id
+                  token
+                  page
+                  limit
+                  order
+                ]
               )
             )
           end
@@ -23,8 +29,12 @@ module API
             ::Muffon::Processor::Profile::Bookmarks::Album::Creator.call(
               params.slice(
                 *%i[
-                  profile_id token album_title
-                  artist_name image source
+                  profile_id
+                  token
+                  album_title
+                  artist_name
+                  image
+                  source
                 ]
               )
             )
@@ -33,7 +43,11 @@ module API
           def destroy_data
             ::Muffon::Processor::Profile::Bookmarks::Album::Destroyer.call(
               params.slice(
-                *%i[profile_id token bookmark_id]
+                *%i[
+                  profile_id
+                  token
+                  bookmark_id
+                ]
               )
             )
           end

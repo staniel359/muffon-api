@@ -17,8 +17,11 @@ module API
             ::Muffon::Community::Post::Comments.call(
               params.slice(
                 *%i[
-                  community_id post_id
-                  page limit order
+                  community_id
+                  post_id
+                  page
+                  limit
+                  order
                 ]
               )
             )
@@ -28,9 +31,12 @@ module API
             ::Muffon::Processor::Community::Post::Comment::Creator.call(
               params.slice(
                 *%i[
-                  other_profile_id token
-                  community_id post_id
-                  by_community text
+                  other_profile_id
+                  token
+                  community_id
+                  post_id
+                  by_community
+                  text
                 ],
                 *sendable_attachment_types
               )
@@ -41,9 +47,13 @@ module API
             ::Muffon::Processor::Community::Post::Comment::Updater.call(
               params.slice(
                 *%i[
-                  other_profile_id token
-                  community_id post_id
-                  comment_id by_community text
+                  other_profile_id
+                  token
+                  community_id
+                  post_id
+                  comment_id
+                  by_community
+                  text
                 ],
                 *sendable_attachment_types
               )
@@ -54,8 +64,11 @@ module API
             ::Muffon::Processor::Community::Post::Comment::Destroyer.call(
               params.slice(
                 *%i[
-                  other_profile_id token
-                  community_id post_id comment_id
+                  other_profile_id
+                  token
+                  community_id
+                  post_id
+                  comment_id
                 ]
               )
             )

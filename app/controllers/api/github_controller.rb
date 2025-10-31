@@ -7,7 +7,10 @@ module API
     def releases_data
       ::GitHub::Releases.call(
         params.slice(
-          *%i[page limit]
+          *%i[
+            page
+            limit
+          ]
         )
       )
     end

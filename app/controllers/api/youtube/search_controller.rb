@@ -12,7 +12,13 @@ module API
       def videos_data
         ::YouTube::Search::Videos.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -20,7 +26,13 @@ module API
       def channels_data
         ::YouTube::Search::Channels.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end
@@ -28,7 +40,13 @@ module API
       def playlists_data
         ::YouTube::Search::Playlists.call(
           params.slice(
-            *%i[query profile_id token page limit]
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+            ]
           )
         )
       end

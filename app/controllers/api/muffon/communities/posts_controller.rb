@@ -15,7 +15,12 @@ module API
         def index_data
           ::Muffon::Community::Posts.call(
             params.slice(
-              *%i[community_id page limit order]
+              *%i[
+                community_id
+                page
+                limit
+                order
+              ]
             )
           )
         end
@@ -24,8 +29,11 @@ module API
           ::Muffon::Processor::Community::Post::Creator.call(
             params.slice(
               *%i[
-                community_id profile_id
-                token by_community text
+                community_id
+                profile_id
+                token
+                by_community
+                text
               ],
               *sendable_attachment_types
             )
@@ -36,8 +44,12 @@ module API
           ::Muffon::Processor::Community::Post::Updater.call(
             params.slice(
               *%i[
-                community_id post_id profile_id
-                token by_community text
+                community_id
+                post_id
+                profile_id
+                token
+                by_community
+                text
               ],
               *sendable_attachment_types
             )
@@ -47,7 +59,12 @@ module API
         def destroy_data
           ::Muffon::Processor::Community::Post::Destroyer.call(
             params.slice(
-              *%i[community_id post_id profile_id token]
+              *%i[
+                community_id
+                post_id
+                profile_id
+                token
+              ]
             )
           )
         end

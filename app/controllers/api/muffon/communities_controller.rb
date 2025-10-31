@@ -18,7 +18,13 @@ module API
       def index_data
         ::Muffon::Communities.call(
           params.slice(
-            *%i[profile_id token page limit order]
+            *%i[
+              profile_id
+              token
+              page
+              limit
+              order
+            ]
           )
         )
       end
@@ -26,7 +32,13 @@ module API
       def create_data
         ::Muffon::Processor::Community::Creator.call(
           params.slice(
-            *%i[profile_id token title description image]
+            *%i[
+              profile_id
+              token
+              title
+              description
+              image
+            ]
           )
         )
       end
@@ -34,7 +46,11 @@ module API
       def info_data
         ::Muffon::Community::Info.call(
           params.slice(
-            *%i[community_id profile_id token]
+            *%i[
+              community_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -42,7 +58,11 @@ module API
       def description_data
         ::Muffon::Community::Description.call(
           params.slice(
-            *%i[community_id profile_id token]
+            *%i[
+              community_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -51,8 +71,12 @@ module API
         ::Muffon::Processor::Community::Updater.call(
           params.slice(
             *%i[
-              community_id profile_id token
-              title description image
+              community_id
+              profile_id
+              token
+              title
+              description
+              image
             ]
           )
         )
@@ -61,7 +85,11 @@ module API
       def destroy_data
         ::Muffon::Processor::Community::Destroyer.call(
           params.slice(
-            *%i[community_id profile_id token]
+            *%i[
+              community_id
+              profile_id
+              token
+            ]
           )
         )
       end

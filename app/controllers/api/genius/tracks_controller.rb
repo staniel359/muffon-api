@@ -18,7 +18,11 @@ module API
       def info_data
         ::Genius::Track::Info.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[
+              track_id
+              profile_id
+              token
+            ]
           )
         )
       end
@@ -26,7 +30,9 @@ module API
       def description_data
         ::Genius::Track::Description.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -34,7 +40,9 @@ module API
       def tags_data
         ::Genius::Track::Tags.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -42,7 +50,9 @@ module API
       def lyrics_data
         ::Genius::Track::Lyrics.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -50,7 +60,9 @@ module API
       def links_data
         ::Genius::Track::Links.call(
           params.slice(
-            *%i[track_id]
+            *%i[
+              track_id
+            ]
           )
         )
       end
@@ -58,7 +70,11 @@ module API
       def albums_data
         ::Genius::Track::Albums.call(
           params.slice(
-            *%i[track_id profile_id token]
+            *%i[
+              track_id
+              profile_id
+              token
+            ]
           )
         )
       end

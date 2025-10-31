@@ -12,7 +12,12 @@ module API
       def info_data
         ::YandexMusic::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id token language]
+            *%i[
+              album_id
+              profile_id
+              token
+              language
+            ]
           )
         )
       end
@@ -20,7 +25,9 @@ module API
       def tags_data
         ::YandexMusic::Album::Tags.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end
@@ -28,7 +35,9 @@ module API
       def links_data
         ::YandexMusic::Album::Links.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end
