@@ -9,6 +9,8 @@ module Spotify
             data
           rescue Faraday::ResourceNotFound
             raise not_found_error
+          rescue Faraday::UnauthorizedError
+            raise Muffon::Error::ForbiddenError
           end
 
           private
