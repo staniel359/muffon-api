@@ -68,7 +68,7 @@ module Spotify
           end
 
           def files
-            file_group['file']
+            file_group['file'] || []
           end
 
           def matched_file?(
