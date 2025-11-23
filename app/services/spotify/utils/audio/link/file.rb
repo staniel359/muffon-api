@@ -47,7 +47,7 @@ module Spotify
           end
 
           def alternative_file_groups
-            track_data['alternative'] || []
+            track_data['alternative']
           end
 
           def matched_file_group?(
@@ -68,22 +68,21 @@ module Spotify
           end
 
           def files
-            file_group['file'] || []
+            file_group['file']
           end
 
           def matched_file?(
             file_data
           )
-            file_data['format'] == FORMAT
+            file_data['format'].to_s == FORMAT
           end
 
           def link
-            "#{BASE_LINK}/storage-resolve/files" \
-              "/audio/interactive/#{file_id}"
+            "#{BASE_LINK}/storage-resolve/files/audio/interactive/#{file_id}"
           end
 
           def file_id
-            matched_file['file_id']
+            matched_file['file_id'].unpack1('H*')
           end
 
           alias data response_data

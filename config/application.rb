@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative "../lib/spotify/spotify_pb"
 
 require "rails"
 # Pick the frameworks you want:

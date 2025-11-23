@@ -3,7 +3,7 @@ module Spotify
     module Audio
       class Link < Spotify::Base
         BASE_LINK =
-          'https://spclient.wg.spotify.com'.freeze
+          'https://gew1-spclient.spotify.com:443'.freeze
         FILE_EXTENSION = 'ogg'.freeze
 
         include Muffon::Utils::Audio::Link
@@ -49,22 +49,8 @@ module Spotify
         end
 
         def spotify_token
-          return test_token if test?
-
           @spotify_token ||=
             Spotify::Utils::Audio::Link::Token.call
-        end
-
-        def test_token
-          'BQCEIITz-wAyQhs4Wz-8uQNKD9CnN30yIKNj04G8' \
-            '-HrHgZIeMNQOc7njflVNWQrsefB7qhXNwKcnFQbH' \
-            'ZbK4vCID58eq3uILIahKI1DGLMGeDqkW7cehj444' \
-            'GWzaV8qbh-YvBOrOCC7e6MppIMiqXyEBfWE4qNbj' \
-            'viLA0oKbmxl7DgCn-yfVZpwM2OXj1ghq8nEpotTH' \
-            'bQMMmMD8_8Qn383FwQNveNGxJNMSNdRzaKetOnZa' \
-            'RPZ4MfcENBBZgIeZwiaiS_DpSIePB2Bw2cmTZJY4' \
-            'v2ptNlX-z-XEjwzwPxPwQ8wlHSl-LaKHRcLw4PhB' \
-            'BSJwNbm9QLytbBx6Yngjm5VT'
         end
 
         def params

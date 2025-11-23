@@ -10,7 +10,6 @@ ruby File.read(
 
 gem 'aws-sdk-s3', '1.170', require: false
 gem 'aws-sdk-core', '3.211'
-gem 'base62-rb'
 gem 'bootsnap', require: false
 gem 'bcrypt'
 gem 'countries'
@@ -32,6 +31,7 @@ gem 'sidekiq'
 gem 'sidekiq-limit_fetch'
 gem 'sqlite3'
 gem 'whenever', require: false
+gem 'google-protobuf', '3.25.8'
 
 group :development do
   gem 'capistrano', require: false

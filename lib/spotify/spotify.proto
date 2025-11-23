@@ -1,0 +1,97 @@
+// protoc --ruby_out=. --proto_path=. lib/spotify/spotify.proto
+
+syntax = "proto3";
+
+package spotify_protobuf;
+
+// Track data request
+
+message BatchedEntityRequest {
+  EntityRequest entity_request = 2;
+
+  message EntityRequest {
+    string entity_uri = 1;
+    ExtensionQuery query = 2;
+
+    message ExtensionQuery {
+      int32 extension_kind = 1;
+    }
+  }
+}
+
+// Track data response
+
+message BatchedExtensionResponse {
+  EntityExtensionDataArray extended_metadata = 2;
+
+  message EntityExtensionDataArray {
+    EntityExtensionData extension_data = 3;
+
+    message EntityExtensionData {
+      EntityExtensionDataHeader header = 1;
+
+      message EntityExtensionDataHeader {
+        int32 status_code = 1;
+      }
+
+      ExtensionData extension_data = 3;
+
+      message ExtensionData {
+        bytes value = 2;
+      }
+    }
+  }
+}
+
+// Track data
+
+message Track {
+  optional bytes gid = 1;
+  optional string name = 2;
+  optional Album album = 3;
+
+  message Album {
+    optional string name = 2;
+    repeated Artist artist = 3;
+  }
+
+  repeated Artist artist = 4;
+
+  message Artist {
+    optional string name = 2;
+  }
+
+  repeated Restriction restriction = 11;
+
+  message Restriction {
+    oneof country_restriction {
+      string countries_allowed = 2;
+      string countries_forbidden = 3;
+    }
+  }
+
+  repeated AudioFile file = 12;
+
+  message AudioFile {
+    optional bytes file_id = 1;
+    optional AudioFileFormat format = 2;
+
+    enum AudioFileFormat {
+      OGG_VORBIS_96 = 0;
+      OGG_VORBIS_160 = 1;
+      OGG_VORBIS_320 = 2;
+      MP3_256 = 3;
+      MP3_320 = 4;
+      MP3_160 = 5;
+      MP3_96 = 6;
+      MP3_160_ENC = 7;
+      AAC_24 = 8;
+      AAC_48 = 9;
+      FLAC_FLAC = 16;
+      FLAC_FLAC_24BIT = 22;
+    }
+  }
+
+  repeated Track alternative = 13;
+  repeated AudioFile preview = 15;
+}

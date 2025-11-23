@@ -8,9 +8,9 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.12.2
+      - Faraday v2.14.0
       Authorization:
-      - Bearer BQD8GX0LZ8ZumhQF9ltoT76T-vm0a2tu671SLJ8k1Sx8Xjru8-dxC0l3Rpf8EBQOPEAUM7oDtGyL5t5jLydKe73h5Qju9Dv2BmYWTmzVBe1-lPlrS4tHS_F8H8XjDT1ZFqzAK4MMcKE
+      - Bearer BQBHNNPx4P4Kda7VRNMJFnO5dx009hj_u7gDMzuARWQmadH_SQB6432uPsmaax3RnQCjtcIV3KxibOcCALfwsn5T6iLAqwwX7pROxE057mFTkLgX4eOKVZPWj3avKcRkLGOBKkOanYA
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Cache-Control:
       - public, max-age=0
       Etag:
-      - '"MC-ImFhZmVmZjhhZDg1MTFmMDVjOTAzMzhlMmJlOWNjOGQ0Ig=="'
+      - '"MC-IjM2NzU2ZGIwMTVjOGZlMzFjOTAyMWQ0NmJjNjBkNDFjIg=="'
       X-Robots-Tag:
       - noindex, nofollow
       Access-Control-Allow-Origin:
@@ -43,33 +43,36 @@ http_interactions:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Thu, 13 Mar 2025 07:55:10 GMT
+      - Sun, 23 Nov 2025 19:48:40 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
       string: '{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"},"href":"https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB","id":"6NrkINd80slV25wkBu9mEB","name":"Wild
         Nothing","type":"artist","uri":"spotify:artist:6NrkINd80slV25wkBu9mEB"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"external_urls":{"spotify":"https://open.spotify.com/album/3hxVFxpF7uUtjLHzvGIm7W"},"href":"https://api.spotify.com/v1/albums/3hxVFxpF7uUtjLHzvGIm7W","id":"3hxVFxpF7uUtjLHzvGIm7W","images":[{"url":"https://i.scdn.co/image/ab67616d0000b2736da7c8855ee1e48bb4d29184","width":640,"height":640},{"url":"https://i.scdn.co/image/ab67616d00001e026da7c8855ee1e48bb4d29184","width":300,"height":300},{"url":"https://i.scdn.co/image/ab67616d000048516da7c8855ee1e48bb4d29184","width":64,"height":64}],"name":"Gemini","release_date":"2010-05-25","release_date_precision":"day","total_tracks":12,"type":"album","uri":"spotify:album:3hxVFxpF7uUtjLHzvGIm7W"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"},"href":"https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB","id":"6NrkINd80slV25wkBu9mEB","name":"Wild
-        Nothing","type":"artist","uri":"spotify:artist:6NrkINd80slV25wkBu9mEB"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"disc_number":1,"duration_ms":198842,"explicit":false,"external_ids":{"isrc":"US8YA1010079"},"external_urls":{"spotify":"https://open.spotify.com/track/3BRfgsKjcakny2wCYfZrvz"},"href":"https://api.spotify.com/v1/tracks/3BRfgsKjcakny2wCYfZrvz","id":"3BRfgsKjcakny2wCYfZrvz","is_local":false,"name":"Chinatown","popularity":52,"preview_url":null,"track_number":10,"type":"track","uri":"spotify:track:3BRfgsKjcakny2wCYfZrvz"}'
-  recorded_at: Thu, 13 Mar 2025 07:55:10 GMT
+        Nothing","type":"artist","uri":"spotify:artist:6NrkINd80slV25wkBu9mEB"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"disc_number":1,"duration_ms":198842,"explicit":false,"external_ids":{"isrc":"US8YA1010079"},"external_urls":{"spotify":"https://open.spotify.com/track/3BRfgsKjcakny2wCYfZrvz"},"href":"https://api.spotify.com/v1/tracks/3BRfgsKjcakny2wCYfZrvz","id":"3BRfgsKjcakny2wCYfZrvz","is_local":false,"name":"Chinatown","popularity":51,"preview_url":null,"track_number":10,"type":"track","uri":"spotify:track:3BRfgsKjcakny2wCYfZrvz"}'
+  recorded_at: Sun, 23 Nov 2025 19:48:40 GMT
 - request:
-    method: get
-    uri: https://spclient.wg.spotify.com/metadata/4/track/76a241c78ff34b148a653c52adaed719?alt=json&platform=39&product=9&version=10000000
+    method: post
+    uri: https://gew1-spclient.spotify.com/extended-metadata/v0/extended-metadata?alt=json&platform=39&product=9&version=10000000
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: ASCII-8BIT
+      string: "\x12*\n$spotify:track:3BRfgsKjcakny2wCYfZrvz\x12\x02\b\n"
     headers:
       User-Agent:
-      - Faraday v2.12.2
+      - Faraday v2.14.0
       Authorization:
-      - Bearer BQBoLIOMo4Yp4aNpcrBjdbq1s64ObDbn89_v3nEJWBQTujQfhITlulBBfOUadlQhDhcbnWrNHNgJIOQS8YWNGqGAN4a30_qu39i3RAdDKOaloHBcQLcrQW9mGB0gYuxvqfoB9BSj8Dq4JH0fuOORzCClqmHhZ6hDZ5mrzsM4PnPBOK9Yr3jGa07nw16Rz5_Uegqiyi_MmmXMrBgC2OkfKDp6JXqk-BHu_2BWXM1_SdItS_cTOOGH13dgAPAuedzAQTbrqBz80IWnAG_6vFvO9jRi6m8ljn6ABANRVVyLYTbbtqzkM_Bxa2gVa7XmzG-QUy1sj2qE37pwH8jH0DoVMzSQPr7XPhYvDl6KM5dhY3f6x2peXQ
+      - Bearer BQDgn2YF7TAF3mRzOBHvjeWZSBMKz5kzDpvJl5U--YxqTmXh09TbFoMdwc5lE0y_I-HrqHfy1rqsJMeZuIvcbuEkTKuWpE--KMT8b3j8qM3eULg6bSubkhvZPpB1Xz9jxROYC98zz-_34hKcBpeH9XIjFxoK_PegUP_LFzG5PBKw7F2nseF3HiJiHGBgWhGiCOEctHZlmwxE0pps1QULLRy90NWWGhvtyYMD3zJZnvhwcoAW-kFVz9XRs7go4V125RCgBb5zaqm5Qjf_B1vT7yKwV4SxvHTRfZCFyEEmHs0GxSytKcwCL8dRcr5I99eK926SiVD4UIRmZn5FljY0AiukwKnINww0AQAk5-8f7qxJOixlQH-8ibE4VfdhgeX5yNiXgK4m0cj4
+      Content-Type:
+      - application/x-protobuf
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -80,82 +83,42 @@ http_interactions:
       message: OK
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - application/protobuf
       Cache-Control:
-      - public, max-age=78913
-      Etag:
-      - '"MC-eqXOVQ=="'
-      Vary:
-      - _ui.country
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, App-Platform, Authorization, client-token, content-access-token, Content-Type,
-        Origin, Retry-After, SPA-Preferred-Publisher, Spotify-App, Spotify-App-Version,
-        spotify-org-uri, X-ClientAttribute-Version, X-Client-Id, x-cloud-trace-context,
-        X-Cloud-Trace-Context, X-Geo-Country, X-Installation-Id, x-permission-grant-token,
-        X-Spotify-Additional-Idp, X-Spotify-Connection-Id, X-Spotify-Quicksilver-Uri,
-        x-twitch-jwt
-      Access-Control-Allow-Methods:
-      - POST, GET, OPTIONS, PUT, HEAD, DELETE, PATCH
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Max-Age:
-      - '604800'
+      - private, max-age=0
+      Server-Timing:
+      - edge;dur=3
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Thu, 13 Mar 2025 07:55:10 GMT
+      - Sun, 23 Nov 2025 19:48:40 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"gid": "76a241c78ff34b148a653c52adaed719","name": "Chinatown","album":
-        {"gid": "6bdea64f51b14268a500dd681978d9e4","name": "Gemini","artist": [{"gid":
-        "df57a052f904481091014a6e0a463225","name": "Wild Nothing"}],"label": "Captured
-        Tracks","date": {"year": 2010,"month": 5,"day": 25},"cover_group": {"image":
-        [{"file_id": "ab67616d00001e026da7c8855ee1e48bb4d29184","size": "DEFAULT","width":
-        300,"height": 300},{"file_id": "ab67616d000048516da7c8855ee1e48bb4d29184","size":
-        "SMALL","width": 64,"height": 64},{"file_id": "ab67616d0000b2736da7c8855ee1e48bb4d29184","size":
-        "LARGE","width": 640,"height": 640}]},"licensor": {"uuid": "7591e93c6cb94fc5b98f0098633b12a6"}},"artist":
-        [{"gid": "df57a052f904481091014a6e0a463225","name": "Wild Nothing"}],"number":
-        10,"disc_number": 1,"duration": 198842,"popularity": 52,"external_id": [{"type":
-        "isrc","id": "US8YA1010079"}],"file": [{"file_id": "539a8d3d2289527a9d99b614d71516c98fea6c04","format":
-        "OGG_VORBIS_320"},{"file_id": "8b2551eb348f9a2ba503251e7b59a39f94c012a7","format":
-        "OGG_VORBIS_160"},{"file_id": "02322738901b016f3dd737a5383f21f95c622e8e","format":
-        "OGG_VORBIS_96"},{"file_id": "463b5296b7a88a954a08298cce2007c4190ae4d9","format":
-        "MP4_256_DUAL"},{"file_id": "cff5b92255f780a7fcac02aab369154610d337f8","format":
-        "MP4_256"},{"file_id": "7c8be26f2ea39265f0ce11adcddc814587d7078d","format":
-        "MP4_128_DUAL"},{"file_id": "0bf3ab0301e8731dccb41c701cc640a0e43ffcbb","format":
-        "MP4_128"},{"file_id": "4dcdbb6f20159af6366f0c02d949a5c211391572","format":
-        "AAC_24"}],"preview": [{"file_id": "464d982ebc53a4a9fc2208c84ce9b0bf90772fc4","format":
-        "MP3_96"}],"earliest_live_timestamp": 1627483696,"has_lyrics": true,"licensor":
-        {"uuid": "7591e93c6cb94fc5b98f0098633b12a6"},"language_of_performance": ["en"],"original_audio":
-        {"uuid": "d3b96a7795234c94b67d70d2da3f424f","format": "AUDIO_FORMAT_STEREO"},"original_title":
-        "Chinatown","artist_with_role": [{"artist_gid": "df57a052f904481091014a6e0a463225","artist_name":
-        "Wild Nothing","role": "ARTIST_ROLE_MAIN_ARTIST"}],"canonical_uri": "spotify:track:3BRfgsKjcakny2wCYfZrvz","content_authorization_attributes":
-        "","audio_formats": [{"original_audio": {"uuid": "d3b96a7795234c94b67d70d2da3f424f","format":
-        "AUDIO_FORMAT_STEREO"}}]}'
-  recorded_at: Thu, 13 Mar 2025 07:55:10 GMT
+      string: !binary |-
+        EoAGCgwIyAEQjfkEGICangEQChrtBQoeCMgBEhAzMzQxMzU0MjM0MzEzNzM5II35BCiAmp4BEiRzcG90aWZ5OnRyYWNrOjNCUmZnc0tqY2Frbnkyd0NZZlpydnoapAUKKnR5cGUuZ29vZ2xlYXBpcy5jb20vc3BvdGlmeS5tZXRhZGF0YS5UcmFjaxL1BAoQdqJBx4/zSxSKZTxSra7XGRIJQ2hpbmF0b3duGs4BChBr3qZPUbFCaKUA3WgZeNnkEgZHZW1pbmkaIAoQ31egUvkESBCRAUpuCkYyJRIMV2lsZCBOb3RoaW5nKg9DYXB0dXJlZCBUcmFja3MyBwi0HxAKGDKKAWAKHgoUq2dhbQAAHgJtp8iFXuHki7TSkYQQABjYBCDYBAoeChSrZ2FtAABIUW2nyIVe4eSLtNKRhBABGIABIIABCh4KFKtnYW0AALJzbafIhV7h5Iu00pGEEAIYgAoggArKARIKEHWR6TxsuU/FuY8AmGM7EqYiIAoQ31egUvkESBCRAUpuCkYyJRIMV2lsZCBOb3RoaW5nKBQwAjj0ohhAZlIUCgRpc3JjEgxVUzhZQTEwMTAwNzliGAoUU5qNPSKJUnqdmbYU1xUWyY/qbAQQAmIYChSLJVHrNI+aK6UDJR57WaOflMASpxABYhgKFAIyJziQGwFvPdc3pTg/IflcYi6OEABiGAoUTc27byAVmvY2bwwC2UmlwhE5FXIQCHoYChRGTZguvFOkqfwiCMhM6bC/kHcvxBAGiAGw3IWIBpABAaoBEgoQdZHpPGy5T8W5jwCYYzsSprIBAmVuwgEUChDTuWp3lSNMlLZ9cNLaP0JPEAHaAQlDaGluYXRvd26CAiIKEN9XoFL5BEgQkQFKbgpGMiUSDFdpbGQgTm90aGluZxgBogIkc3BvdGlmeTp0cmFjazozQlJmZ3NLamNha255MndDWWZacnZ6ugIAygIWChQKENO5aneVI0yUtn1w0to/Qk8QAdgCAOICDhIMCLDchYgGEIDfoZ8B
+  recorded_at: Sun, 23 Nov 2025 19:48:41 GMT
 - request:
     method: get
-    uri: https://spclient.wg.spotify.com/storage-resolve/files/audio/interactive/8b2551eb348f9a2ba503251e7b59a39f94c012a7?alt=json&platform=39&product=9&version=10000000
+    uri: https://gew1-spclient.spotify.com/storage-resolve/files/audio/interactive/8b2551eb348f9a2ba503251e7b59a39f94c012a7?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.12.2
+      - Faraday v2.14.0
       Authorization:
-      - Bearer BQBoLIOMo4Yp4aNpcrBjdbq1s64ObDbn89_v3nEJWBQTujQfhITlulBBfOUadlQhDhcbnWrNHNgJIOQS8YWNGqGAN4a30_qu39i3RAdDKOaloHBcQLcrQW9mGB0gYuxvqfoB9BSj8Dq4JH0fuOORzCClqmHhZ6hDZ5mrzsM4PnPBOK9Yr3jGa07nw16Rz5_Uegqiyi_MmmXMrBgC2OkfKDp6JXqk-BHu_2BWXM1_SdItS_cTOOGH13dgAPAuedzAQTbrqBz80IWnAG_6vFvO9jRi6m8ljn6ABANRVVyLYTbbtqzkM_Bxa2gVa7XmzG-QUy1sj2qE37pwH8jH0DoVMzSQPr7XPhYvDl6KM5dhY3f6x2peXQ
+      - Bearer BQDgn2YF7TAF3mRzOBHvjeWZSBMKz5kzDpvJl5U--YxqTmXh09TbFoMdwc5lE0y_I-HrqHfy1rqsJMeZuIvcbuEkTKuWpE--KMT8b3j8qM3eULg6bSubkhvZPpB1Xz9jxROYC98zz-_34hKcBpeH9XIjFxoK_PegUP_LFzG5PBKw7F2nseF3HiJiHGBgWhGiCOEctHZlmwxE0pps1QULLRy90NWWGhvtyYMD3zJZnvhwcoAW-kFVz9XRs7go4V125RCgBb5zaqm5Qjf_B1vT7yKwV4SxvHTRfZCFyEEmHs0GxSytKcwCL8dRcr5I99eK926SiVD4UIRmZn5FljY0AiukwKnINww0AQAk5-8f7qxJOixlQH-8ibE4VfdhgeX5yNiXgK4m0cj4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -169,23 +132,26 @@ http_interactions:
       - application/json
       Cache-Control:
       - private, max-age=0, no-cache
+      Server-Timing:
+      - edge;dur=1
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Thu, 13 Mar 2025 07:55:11 GMT
+      - Sun, 23 Nov 2025 19:48:40 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938911_vghkqLVqkiG3fmGI8l89AAHVhgA5NcXC2hg0YU2_Q8o=","https://audio-ak.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?__token__=exp=1741938911~hmac=48f4a79c45437627a87dd01a9a149f94e9be5d1591b86110ca4b456ccbb7d030","https://audio-fa-tls130.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938911_vghkqLVqkiG3fmGI8l89AAHVhgA5NcXC2hg0YU2_Q8o=","https://audio-fa-quic.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938911_vghkqLVqkiG3fmGI8l89AAHVhgA5NcXC2hg0YU2_Q8o=","https://audio-fa-quic0.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938911_vghkqLVqkiG3fmGI8l89AAHVhgA5NcXC2hg0YU2_Q8o=","https://audio-fa-tls13.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1741938911_vghkqLVqkiG3fmGI8l89AAHVhgA5NcXC2hg0YU2_Q8o="],"fileid":
+      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-fa-tls130.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-fa-tls13.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-fa-quic0.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-ak.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?__token__=exp=1764013721~hmac=5e5edbb1eefaf08f7d127363c9d638c95c82ce85b2f9ae023a696dcece61ab54","https://audio-fa-quic.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s="],"fileid":
         "8b2551eb348f9a2ba503251e7b59a39f94c012a7","ttl": 86400}'
-  recorded_at: Thu, 13 Mar 2025 07:55:11 GMT
+  recorded_at: Sun, 23 Nov 2025 19:48:41 GMT
 recorded_with: VCR 6.3.1

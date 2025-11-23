@@ -96,7 +96,6 @@ GEM
       aws-sigv4 (~> 1.5)
     aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
-    base62-rb (0.3.1)
     base64 (0.3.0)
     bcrypt (3.1.20)
     bigdecimal (3.3.1)
@@ -149,10 +148,10 @@ GEM
       faraday (>= 1, < 3)
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
-    ffi (1.17.2)
     ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.3.0)
       activesupport (>= 6.1)
+    google-protobuf (3.25.8)
     hashdiff (1.2.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
@@ -186,7 +185,6 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
-    mini_portile2 (2.8.9)
     minitest (5.26.2)
     msgpack (1.8.0)
     net-http (0.8.0)
@@ -206,9 +204,6 @@ GEM
       net-protocol
     net-ssh (7.3.0)
     nio4r (2.7.5)
-    nokogiri (1.18.10)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.10-x86_64-linux-gnu)
       racc (~> 1.4)
     ostruct (0.6.3)
@@ -216,7 +211,6 @@ GEM
     parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
-    pg (1.6.2)
     pg (1.6.2-x86_64-linux)
     pp (0.6.3)
       prettyprint
@@ -357,8 +351,6 @@ GEM
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
-    sqlite3 (2.8.0)
-      mini_portile2 (~> 2.8.0)
     sqlite3 (2.8.0-x86_64-linux-gnu)
     sshkit (1.24.0)
       base64
@@ -399,13 +391,11 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
   aws-sdk-core (= 3.211)
   aws-sdk-s3 (= 1.170)
-  base62-rb
   bcrypt
   bootsnap
   capistrano
@@ -417,6 +407,7 @@ DEPENDENCIES
   csv
   faraday
   faraday-follow_redirects
+  google-protobuf (= 3.25.8)
   image_processing
   listen
   mini_magick
