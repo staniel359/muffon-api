@@ -27,26 +27,26 @@ module API
 
           def create_data
             ::Muffon::Processor::Profile::Bookmarks::VideoChannel::Creator.call(
-                params.slice(
-                  *%i[
-                    profile_id
-                    token
-                    youtube_id
-                  ]
-                )
+              params.slice(
+                *%i[
+                  profile_id
+                  token
+                  youtube_id
+                ]
               )
+            )
           end
 
           def destroy_data
             ::Muffon::Processor::Profile::Bookmarks::VideoChannel::Destroyer.call(
-                params.slice(
-                  *%i[
-                    profile_id
-                    token
-                    bookmark_id
-                  ]
-                )
+              params.slice(
+                *%i[
+                  profile_id
+                  token
+                  bookmark_id
+                ]
               )
+            )
           end
         end
       end

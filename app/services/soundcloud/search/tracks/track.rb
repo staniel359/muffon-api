@@ -7,7 +7,14 @@ module SoundCloud
         def call
           check_args
 
-          data
+          with_query_match(
+            title:,
+            query_title: @args[:query_title],
+            artist_name:,
+            query_artist_name: @args[:query_artist_name]
+          ) do
+            data
+          end
         end
 
         private
@@ -19,31 +26,21 @@ module SoundCloud
         end
 
         def data
-          self_data
-            .merge(track_base_data)
-            .merge(track_extra_data)
-        end
-
-        def track
-          @args[:track]
-        end
-
-        def track_base_data
           {
+            **self_data,
             source: source_data,
             player_id: player_source_id,
             title:,
             artist: artists_minimal_data,
-            artists:
-          }
-        end
-
-        def track_extra_data
-          {
+            artists:,
             image: image_data,
             duration:,
             audio: audio_minimal_data
           }.compact
+        end
+
+        def track
+          @args[:track]
         end
       end
     end

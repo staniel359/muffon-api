@@ -114,11 +114,13 @@ module Muffon
         end
 
         def collection_formatted(collection)
-          collection.map do |raw_item_data|
-            item_data_formatter.call(
-              raw_item_data
-            )
-          end
+          collection
+            .map do |raw_item_data|
+              item_data_formatter.call(
+                raw_item_data
+              )
+            end
+            .compact
         end
 
         def item_data_formatter

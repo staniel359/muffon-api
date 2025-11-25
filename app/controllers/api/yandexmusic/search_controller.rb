@@ -46,6 +46,9 @@ module API
               token
               page
               limit
+              with_automatch
+              artist_name
+              track_title
             ]
           )
         )

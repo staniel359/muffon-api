@@ -31,6 +31,9 @@ module Odnoklassniki
         Odnoklassniki::Search::Tracks::Track.call(
           track:,
           albums:,
+          is_with_query_match: @args[:with_automatch],
+          query_title: @args[:track_title],
+          query_artist_name: @args[:artist_name],
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

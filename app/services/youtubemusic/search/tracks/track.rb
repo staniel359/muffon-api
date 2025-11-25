@@ -7,7 +7,14 @@ module YouTubeMusic
         def call
           check_args
 
-          data
+          with_query_match(
+            title:,
+            query_title: @args[:query_title],
+            artist_name:,
+            query_artist_name: @args[:query_artist_name]
+          ) do
+            data
+          end
         end
 
         private

@@ -88,6 +88,46 @@ module Muffon
       def audio_link_conditional
         audio_link if @args[:with_audio]
       end
+
+      def with_query_match(
+        title:,
+        query_title:,
+        artist_name:,
+        query_artist_name:
+      )
+        if @args[:is_with_query_match].present?
+          if matches_query?(
+            title:,
+            query_title:,
+            artist_name:,
+            query_artist_name:
+          )
+            yield
+          end
+        else
+          yield
+        end
+      end
+
+      def matches_query?(
+        title:,
+        query_title:,
+        artist_name:,
+        query_artist_name:
+      )
+        is_titles_match =
+          title.downcase.include?(
+            query_title.downcase
+          )
+
+        is_artists_names_match =
+          artist_name.downcase.include?(
+            query_artist_name.downcase
+          )
+
+        is_titles_match &&
+          is_artists_names_match
+      end
     end
   end
 end

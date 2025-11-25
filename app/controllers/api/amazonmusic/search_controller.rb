@@ -43,6 +43,9 @@ module API
               profile_id
               token
               page
+              with_automatch
+              artist_name
+              track_title
             ]
           )
         )
