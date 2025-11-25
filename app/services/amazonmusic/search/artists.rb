@@ -1,9 +1,18 @@
 module AmazonMusic
   module Search
     class Artists < AmazonMusic::Search::Base
-      COLLECTION_NAME = 'artists'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          next_page:
+        )
+      end
 
       def link
         "#{BASE_LINK}/searchCatalogArtists"

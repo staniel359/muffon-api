@@ -8,7 +8,8 @@ RSpec.describe YouTube::Video::Similar do
           'services/youtube/video/similar/success'
         ) do
           subject.call(
-            video_id: '1aTIkQf3eRY'
+            video_id: '1aTIkQf3eRY',
+            profile_id: '1'
           )
         end
       end
@@ -23,7 +24,8 @@ RSpec.describe YouTube::Video::Similar do
         ) do
           subject.call(
             video_id: '1aTIkQf3eRY',
-            page: 2
+            page: '2',
+            profile_id: '1'
           )
         end
       end

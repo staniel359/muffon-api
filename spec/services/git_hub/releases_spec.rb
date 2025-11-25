@@ -7,8 +7,8 @@ RSpec.describe GitHub::Releases do
         'services/github/releases/success'
       ) do
         subject.call(
-          limit: 5,
-          page: 2
+          page: '2',
+          limit: '5'
         )
       end
     end

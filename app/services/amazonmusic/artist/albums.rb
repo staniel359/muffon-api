@@ -1,17 +1,40 @@
 module AmazonMusic
   module Artist
     class Albums < AmazonMusic::Artist::Base
-      COLLECTION_NAME = 'albums'.freeze
-
-      include AmazonMusic::Utils::Pagination
-
       private
 
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
+      end
+
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          next_page:
+        )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'methods',
+          0,
+          'template',
+          'widgets',
+          0,
+          'items'
+        ) ||
+          response_data.dig(
+            'methods',
+            0,
+            'items'
+          )
       end
 
       def link

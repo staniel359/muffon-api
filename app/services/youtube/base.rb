@@ -8,10 +8,6 @@ module YouTube
 
     private
 
-    def items_list
-      response_data['items'] || []
-    end
-
     def params
       { key: api_key }
     end

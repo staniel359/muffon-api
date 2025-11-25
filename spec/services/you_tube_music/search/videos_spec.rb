@@ -8,7 +8,8 @@ RSpec.describe YouTubeMusic::Search::Videos do
           'services/youtubemusic/search/videos/success'
         ) do
           subject.call(
-            query: 'wild nothing'
+            query: 'wild nothing',
+            profile_id: '1'
           )
         end
       end
@@ -50,7 +51,7 @@ RSpec.describe YouTubeMusic::Search::Videos do
         end
       end
 
-      it { expect(output).to eq(youtube_no_videos_data) }
+      it { expect(output).to eq(search_missing_videos_data) }
     end
   end
 end

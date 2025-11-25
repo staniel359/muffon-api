@@ -1,7 +1,5 @@
 module YouTube
   class Playlists < YouTube::Base
-    COLLECTION_NAME = 'playlists'.freeze
-
     include YouTube::Utils::Pagination
 
     def call
@@ -20,6 +18,32 @@ module YouTube
       ]
     end
 
+    def data
+      paginated_data(
+        collection_name: 'playlists',
+        raw_collection:
+          raw_collection_filtered,
+        page:,
+        limit:,
+        is_infinite: true,
+        previous_page:,
+        next_page:
+      )
+    end
+
+    def raw_collection_filtered
+      raw_collection.reject do |raw_playlist_data|
+        raw_playlist_data.dig(
+          'snippet',
+          'title'
+        ).blank?
+      end
+    end
+
+    def raw_collection
+      response_data['items'] || []
+    end
+
     def link
       "#{BASE_LINK}/playlists"
     end
@@ -34,15 +58,6 @@ module YouTube
       }
     end
 
-    def collection_list
-      items_list.reject do |raw_playlist_data|
-        raw_playlist_data.dig(
-          'snippet',
-          'title'
-        ).blank?
-      end
-    end
-
     def collection_item_data_formatted(playlist)
       YouTube::Playlists::Playlist.call(
         playlist:,
@@ -50,7 +65,5 @@ module YouTube
         token: @args[:token]
       )
     end
-
-    alias data paginated_data
   end
 end

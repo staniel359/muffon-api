@@ -9,9 +9,9 @@ RSpec.describe Discogs::Label::Albums do
         ) do
           subject.call(
             label_id: '26126',
-            page: 2,
-            limit: 5,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end

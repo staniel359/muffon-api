@@ -1,10 +1,35 @@
 module LastFM
   module Search
     class Albums < LastFM::Search::Base
-      COLLECTION_NAME = 'albums'.freeze
-      MODEL_NAME = 'album'.freeze
+      API_METHOD = 'album.search'.freeze
 
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'results',
+          'albummatches',
+          'album'
+        )
+      end
+
+      def params
+        {
+          **super,
+          album: @args[:query]
+        }
+      end
 
       def collection_item_data_formatted(album)
         LastFM::Search::Albums::Album.call(

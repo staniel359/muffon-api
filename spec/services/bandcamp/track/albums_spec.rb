@@ -10,7 +10,7 @@ RSpec.describe Bandcamp::Track::Albums do
           subject.call(
             artist_id: '2228040235',
             track_id: '2723372494',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

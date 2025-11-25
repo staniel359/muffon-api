@@ -6,12 +6,10 @@ module Muffon
           private
 
           def tag_data
-            tag_base_data
-              .merge(tag_extra_data)
-          end
-
-          def tag_extra_data
-            { artists_count: }
+            {
+              **super,
+              artists_count:
+            }
           end
 
           def artists_count

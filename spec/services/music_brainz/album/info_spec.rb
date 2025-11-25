@@ -9,7 +9,7 @@ RSpec.describe MusicBrainz::Album::Info do
         ) do
           subject.call(
             album_id: 'bee184b6-493b-46bc-a3a1-31e434367c4a',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

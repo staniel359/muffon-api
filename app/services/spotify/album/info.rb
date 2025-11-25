@@ -58,7 +58,7 @@ module Spotify
         @raw_tracks ||=
           Spotify::Album::Tracks.call(
             album_id: @args[:album_id],
-            total_items_count: tracks_count
+            items_count: tracks_count
           )[:tracks]
       end
 

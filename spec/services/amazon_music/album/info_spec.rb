@@ -9,7 +9,7 @@ RSpec.describe AmazonMusic::Album::Info do
         ) do
           subject.call(
             album_id: 'B00MWW3DJ4',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

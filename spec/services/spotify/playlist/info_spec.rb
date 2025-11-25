@@ -9,7 +9,7 @@ RSpec.describe Spotify::Playlist::Info do
         ) do
           subject.call(
             playlist_id: '3jPx5nmC1q0j39biB2ZdDi',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

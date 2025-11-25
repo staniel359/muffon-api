@@ -18,28 +18,8 @@ module LastFM
       end
 
       def data
-        self_data
-          .merge(album_data)
-      end
-
-      def title
-        album.css(
-          '.resource-list--release-list-item-name'
-        ).text.strip
-      end
-
-      def album
-        @args[:album]
-      end
-
-      def artist_name
-        album.css(
-          '.resource-list--release-list-item-artist'
-        ).text.strip
-      end
-
-      def album_data
         {
+          **self_data,
           source: source_data,
           title:,
           artist: artists_minimal_data,
@@ -50,10 +30,33 @@ module LastFM
         }.compact
       end
 
+      def title
+        album
+          .css(
+            '.resource-list--release-list-item-name'
+          )
+          .text
+          .strip
+      end
+
+      def album
+        @args[:album]
+      end
+
+      def artist_name
+        album
+          .css(
+            '.resource-list--release-list-item-artist'
+          )
+          .text
+          .strip
+      end
+
       def image
-        album.css(
-          '.resource-list--release-list-item-image img'
-        )[0]['src']
+        album
+          .css(
+            '.resource-list--release-list-item-image img'
+          )[0]['src']
       end
 
       def release_date
@@ -63,9 +66,12 @@ module LastFM
       end
 
       def raw_release_date
-        album.css(
-          '.resource-list--release-list-item-date'
-        ).text.strip
+        album
+          .css(
+            '.resource-list--release-list-item-date'
+          )
+          .text
+          .strip
       end
     end
   end

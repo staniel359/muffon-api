@@ -1,11 +1,7 @@
 module MusixMatch
   module Album
     class Tracks < MusixMatch::Album::Base
-      MODEL_NAME = 'track'.freeze
-      COLLECTION_NAME = 'tracks'.freeze
       PAGE_LIMIT = 200
-
-      include MusixMatch::Utils::Pagination
 
       private
 
@@ -13,8 +9,40 @@ module MusixMatch
         false
       end
 
+      def album_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:
+        )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'message',
+          'body',
+          'track_list'
+        )
+      end
+
       def link
         "#{BASE_LINK}/album.tracks.get"
+      end
+
+      def params
+        {
+          **super,
+          page_size: PAGE_LIMIT
+        }
+      end
+
+      def items_count
+        response_data.dig(
+          'message',
+          'header',
+          'available'
+        )
       end
 
       def collection_item_data_formatted(track)
@@ -24,8 +52,6 @@ module MusixMatch
           token: @args[:token]
         )
       end
-
-      alias album_data paginated_data
     end
   end
 end

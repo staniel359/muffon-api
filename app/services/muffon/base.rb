@@ -7,6 +7,7 @@ module Muffon
     include Muffon::Utils::Formatters
     include Muffon::Utils::Global
     include Muffon::Utils::More
+    include Muffon::Utils::Pagination
 
     private
 

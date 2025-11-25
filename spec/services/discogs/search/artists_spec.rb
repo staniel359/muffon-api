@@ -9,8 +9,8 @@ RSpec.describe Discogs::Search::Artists do
         ) do
           subject.call(
             query: 'kate bush',
-            limit: 5,
-            page: 2,
+            page: '2',
+            limit: '5',
             profile_id: 1
           )
         end
@@ -38,7 +38,7 @@ RSpec.describe Discogs::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(no_artists_data) }
+      it { expect(output).to eq(search_paginated_missing_artists_data) }
     end
   end
 end

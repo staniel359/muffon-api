@@ -1,10 +1,28 @@
 module MusicBrainz
   module Search
     class Tracks < MusicBrainz::Search::Base
-      COLLECTION_NAME = 'tracks'.freeze
       MODEL_NAME = 'recording'.freeze
 
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        response_data['recordings']
+      end
+
+      def link
+        "#{BASE_LINK}/recording"
+      end
 
       def collection_item_data_formatted(track)
         MusicBrainz::Search::Tracks::Track.call(

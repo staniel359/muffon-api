@@ -31,9 +31,10 @@ module LastFM
       end
 
       def params
-        super.merge(
-          track_params
-        )
+        {
+          **super,
+          **track_params
+        }
       end
 
       def data

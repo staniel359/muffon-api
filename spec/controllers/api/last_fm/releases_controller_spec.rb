@@ -8,8 +8,8 @@ RSpec.describe API::LastFM::ReleasesController do
           :new,
           params: {
             **required_params,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            profile_id: '1'
           }
         )
 
@@ -27,8 +27,8 @@ RSpec.describe API::LastFM::ReleasesController do
           :upcoming,
           params: {
             **required_params,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            profile_id: '1'
           }
         )
 

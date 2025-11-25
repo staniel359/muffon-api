@@ -2,18 +2,27 @@ module Muffon
   module Profile
     module Playlist
       class Tracks < Muffon::Profile::Playlist::Base
-        COLLECTION_NAME = 'tracks'.freeze
         DEFAULT_ORDER = 'updated_asc'.freeze
-
-        include Muffon::Utils::Pagination
 
         private
 
-        def total_items_count
-          playlist.tracks_count
+        def playlist_data
+          {
+            **tracks_data
+          }
         end
 
-        def collection_list
+        def tracks_data
+          paginated_data(
+            collection_name: 'tracks',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
+        end
+
+        def raw_collection
           tracks
             .ordered(order, DEFAULT_ORDER)
             .limit(limit)
@@ -22,7 +31,11 @@ module Muffon
         end
 
         def tracks
-          playlist.playlist_tracks
+          @tracks ||= playlist.playlist_tracks
+        end
+
+        def items_count
+          playlist.tracks_count
         end
 
         def collection_item_data_formatted(playlist_track)
@@ -32,8 +45,6 @@ module Muffon
             token: @args[:token]
           )
         end
-
-        alias playlist_data paginated_data
       end
     end
   end

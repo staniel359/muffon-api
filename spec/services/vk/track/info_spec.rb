@@ -9,8 +9,8 @@ RSpec.describe VK::Track::Info do
         ) do
           subject.call(
             track_id: '474499137_456584653',
-            profile_id: 1,
-            with_audio: true
+            with_audio: true,
+            profile_id: '1'
           )
         end
       end
@@ -25,8 +25,8 @@ RSpec.describe VK::Track::Info do
         ) do
           subject.call(
             track_id: '-400921_90392497',
-            profile_id: 1,
-            with_audio: true
+            with_audio: true,
+            profile_id: '1'
           )
         end
       end

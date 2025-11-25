@@ -10,8 +10,8 @@ RSpec.describe Bandcamp::Track::Info do
           subject.call(
             artist_id: '2228040235',
             track_id: '2723372494',
-            profile_id: 1,
-            with_audio: true
+            with_audio: true,
+            profile_id: '1'
           )
         end
       end
@@ -27,8 +27,8 @@ RSpec.describe Bandcamp::Track::Info do
           subject.call(
             artist_id: '2228040235',
             track_id: '1709958085',
-            profile_id: 1,
-            with_audio: true
+            with_audio: true,
+            profile_id: '1'
           )
         end
       end

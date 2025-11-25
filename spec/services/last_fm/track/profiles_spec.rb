@@ -10,8 +10,8 @@ RSpec.describe LastFM::Track::Profiles do
           subject.call(
             artist_name: 'kate bush',
             track_title: 'hounds of love',
-            limit: 5,
-            page: 2
+            page: '2',
+            limit: '5'
           )
         end
       end

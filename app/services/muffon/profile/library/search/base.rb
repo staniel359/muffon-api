@@ -3,8 +3,6 @@ module Muffon
     module Library
       module Search
         class Base < Muffon::Profile::Library::Base
-          include Muffon::Utils::Pagination
-
           private
 
           def required_args

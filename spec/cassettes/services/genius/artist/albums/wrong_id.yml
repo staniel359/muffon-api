@@ -7,21 +7,20 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.1.1p18
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - genius.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 404
       message: Not Found
     headers:
       Date:
-      - Sat, 23 Apr 2022 18:43:16 GMT
+      - Sun, 30 Nov 2025 21:33:26 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,28 +28,35 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 7008be694e721e9d-AMS
+      - 9a6d768dc8699d91-DME
+      Cf-Cache-Status:
+      - MISS
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _genius_ab_test_cohort=94; Max-Age=2147483647; Path=/
-      - _genius_ab_test_primis_mobile=control; Max-Age=2147483647; Path=/
+      - _cfuvid=4ftaHvzdumiBnD6lQ3_jGwQ27LfFnI3XrfdPAuz4xOc-1764538406236-0.0.1.1-604800000;
+        path=/; domain=.genius.com; HttpOnly; Secure; SameSite=None
+      - _genius_ab_test_cohort=47; Max-Age=2147483647; Path=/
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 vegur
-      Cf-Cache-Status:
-      - MISS
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Status:
-      - 404 Not Found
+      - 1.1 heroku-router
+      Nel:
+      - '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}'
+      Report-To:
+      - '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=kaRi59TS1vc4ml5KPuy3S4vnmx6icotKU83slwW2hUI%3D\u0026sid=929419e7-33ea-4e2f-85f0-7d8b7cd5cbd6\u0026ts=1764538406"}],"max_age":3600}'
+      Reporting-Endpoints:
+      - heroku-nel="https://nel.heroku.com/reports?s=kaRi59TS1vc4ml5KPuy3S4vnmx6icotKU83slwW2hUI%3D&sid=929419e7-33ea-4e2f-85f0-7d8b7cd5cbd6&ts=1764538406"
+      X-Request-Id:
+      - 20151790-6069-dcf7-69be-a8946206ce60
       X-Runtime:
-      - '13'
+      - '0.008449'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Server:
       - cloudflare
     body:
       encoding: ASCII-8BIT
       string: '{"meta":{"status":404,"message":"404 Not Found"}}'
-  recorded_at: Sat, 23 Apr 2022 18:43:16 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Sun, 30 Nov 2025 21:33:26 GMT
+recorded_with: VCR 6.3.1

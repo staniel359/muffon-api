@@ -3,20 +3,24 @@ module Muffon
     module Library
       module Compatibility
         class Artists < Muffon::Profile::Library::Compatibility::Base
-          COLLECTION_NAME = 'artists'.freeze
-
           private
 
           def compatibility_data
-            compatibility_base_data
-              .merge(paginated_data)
-          end
-
-          def compatibility_base_data
             {
               top_tracks_count:,
-              top_albums_count:
+              top_albums_count:,
+              **artists_data
             }
+          end
+
+          def artists_data
+            paginated_data(
+              collection_name: 'artists',
+              raw_collection:,
+              page:,
+              limit:,
+              items_count:
+            )
           end
 
           def top_tracks_count
@@ -42,7 +46,7 @@ module Muffon
               &.library_albums_count || 0
           end
 
-          def collection_list
+          def raw_collection
             other_profile_library_artists
               .library_tracks_count_desc_ordered
               .limit(limit)
@@ -57,7 +61,7 @@ module Muffon
             )
           end
 
-          alias total_items_count artists_count
+          alias items_count artists_count
         end
       end
     end

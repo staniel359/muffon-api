@@ -9,8 +9,8 @@ RSpec.describe Discogs::Group::Albums do
         ) do
           subject.call(
             group_id: '28680',
-            page: 2,
-            limit: 5
+            page: '2',
+            limit: '5'
           )
         end
       end

@@ -1,9 +1,7 @@
 module YandexMusic
   module Search
     class Base < YandexMusic::Base
-      TOTAL_LIMIT = 10_000
-
-      include Muffon::Utils::Pagination
+      MAXIMUM_ITEMS_COUNT = 10_000
 
       def call
         check_args
@@ -20,15 +18,7 @@ module YandexMusic
       end
 
       def data
-        { search: paginated_data }
-      end
-
-      def collection_list
-        collection_data['items'] || []
-      end
-
-      def collection_data
-        response_data[collection_name] || {}
+        { search: search_data }
       end
 
       def link
@@ -39,25 +29,12 @@ module YandexMusic
         {
           **super,
           text: @args[:query],
-          type: collection_type,
           page: page - 1
         }
       end
 
-      def collection_type
-        self.class::COLLECTION_TYPE
-      end
-
-      def collection_name
-        self.class::COLLECTION_NAME
-      end
-
-      def collection_count
-        collection_data['total'] || 0
-      end
-
-      def limit
-        collection_data['perPage']
+      def page
+        super.to_i
       end
     end
   end

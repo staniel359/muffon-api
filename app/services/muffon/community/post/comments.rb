@@ -2,10 +2,7 @@ module Muffon
   module Community
     module Post
       class Comments < Muffon::Community::Base
-        COLLECTION_NAME = 'comments'.freeze
         DEFAULT_ORDER = 'created_asc'.freeze
-
-        include Muffon::Utils::Pagination
 
         private
 
@@ -34,23 +31,33 @@ module Muffon
         end
 
         def data
-          { post: paginated_data }
+          { post: comments_data }
         end
 
-        def total_items_count
-          @total_items_count ||= comments.count
+        def comments_data
+          paginated_data(
+            collection_name: 'comments',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
+        end
+
+        def raw_collection
+          comments
+            .ordered(order, DEFAULT_ORDER)
+            .limit(limit)
+            .offset(offset)
+            .associated
         end
 
         def comments
           @comments ||= post.post_comments
         end
 
-        def collection_list
-          comments
-            .ordered(order, DEFAULT_ORDER)
-            .limit(limit)
-            .offset(offset)
-            .associated
+        def items_count
+          comments.count
         end
 
         def collection_item_data_formatted(comment)

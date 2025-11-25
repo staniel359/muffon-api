@@ -8,7 +8,8 @@ RSpec.describe YouTube::Video::Info do
           'services/youtube/video/info/success'
         ) do
           subject.call(
-            video_id: '1aTIkQf3eRY'
+            video_id: '1aTIkQf3eRY',
+            profile_id: '1'
           )
         end
       end

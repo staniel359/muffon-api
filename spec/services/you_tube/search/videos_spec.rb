@@ -9,8 +9,9 @@ RSpec.describe YouTube::Search::Videos do
         ) do
           subject.call(
             query: 'wild nothing chinatown',
-            limit: 5,
-            page: 'CAUQAA'
+            page: 'CAUQAA',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end
@@ -37,7 +38,7 @@ RSpec.describe YouTube::Search::Videos do
         end
       end
 
-      it { expect(output).to eq(youtube_no_videos_data) }
+      it { expect(output).to eq(search_missing_videos_data) }
     end
   end
 end

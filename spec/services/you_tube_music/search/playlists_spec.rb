@@ -8,7 +8,8 @@ RSpec.describe YouTubeMusic::Search::Playlists do
           'services/youtubemusic/search/playlists/success'
         ) do
           subject.call(
-            query: '80s'
+            query: '80s',
+            profile_id: '1'
           )
         end
       end
@@ -50,7 +51,7 @@ RSpec.describe YouTubeMusic::Search::Playlists do
         end
       end
 
-      it { expect(output).to eq(youtube_no_playlists_data) }
+      it { expect(output).to eq(search_missing_playlists_data) }
     end
   end
 end

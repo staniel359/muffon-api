@@ -1,9 +1,7 @@
 module Discogs
   module Search
     class Base < Discogs::Base
-      TOTAL_LIMIT = 10_000
-
-      include Discogs::Utils::Pagination
+      MAXIMUM_ITEMS_COUNT = 10_000
 
       def call
         check_args
@@ -19,7 +17,11 @@ module Discogs
         ]
       end
 
-      def collection_list
+      def data
+        { search: search_data }
+      end
+
+      def raw_collection
         response_data['results']
       end
 
@@ -28,29 +30,18 @@ module Discogs
       end
 
       def params
-        super.merge(
-          search_params
-        )
-      end
-
-      def search_params
         {
+          **super,
           query: @args[:query],
-          type: collection_type
+          page:,
+          per_page: limit
         }
       end
 
-      def collection_type
-        self.class::COLLECTION_TYPE
-      end
-
-      def data
-        { search: paginated_data }
-      end
-
-      def collection_count
+      def items_count
         response_data.dig(
-          'pagination', 'items'
+          'pagination',
+          'items'
         )
       end
     end

@@ -14,6 +14,7 @@ module Spotify
           %i[
             album_id
             page
+            limit
           ]
         end
 
@@ -23,6 +24,14 @@ module Spotify
 
         def link
           "#{super}/tracks"
+        end
+
+        def params
+          {
+            **super,
+            limit:,
+            offset:
+          }
         end
       end
     end

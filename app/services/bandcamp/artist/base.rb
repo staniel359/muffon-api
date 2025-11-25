@@ -1,8 +1,6 @@
 module Bandcamp
   module Artist
     class Base < Bandcamp::Base
-      include Muffon::Utils::Pagination
-
       def call
         check_args
 

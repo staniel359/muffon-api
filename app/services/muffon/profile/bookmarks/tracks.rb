@@ -2,18 +2,32 @@ module Muffon
   module Profile
     module Bookmarks
       class Tracks < Muffon::Profile::Bookmarks::Base
-        COLLECTION_NAME = 'tracks'.freeze
-        DEFAULT_ORDER = 'created_desc'.freeze
-
         private
 
-        def bookmarks
-          @bookmarks ||=
-            profile.bookmark_tracks
+        def bookmarks_data
+          paginated_data(
+            collection_name: 'tracks',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
         end
 
-        def collection_list
-          super.associated
+        def raw_collection
+          tracks
+            .ordered(order, DEFAULT_ORDER)
+            .limit(limit)
+            .offset(offset)
+            .associated
+        end
+
+        def tracks
+          @tracks ||= profile.bookmark_tracks
+        end
+
+        def items_count
+          tracks.count
         end
 
         def collection_item_data_formatted(bookmark_track)

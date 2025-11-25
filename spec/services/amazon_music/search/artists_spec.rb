@@ -9,8 +9,8 @@ RSpec.describe AmazonMusic::Search::Artists do
         ) do
           subject.call(
             query: 'john',
-            page: 'tztok-v2_yDSNVKX4qpcJP1qqK8Cky1NpVKbIZ68TMgYWE7Mdp3rCko74SgprBHLhKs8Vx6ZA',
-            profile_id: 1
+            page: amazonmusic_search_artists_page,
+            profile_id: '1'
           )
         end
       end
@@ -37,7 +37,7 @@ RSpec.describe AmazonMusic::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(amazonmusic_no_artists_data) }
+      it { expect(output).to eq(search_missing_artists_data) }
     end
   end
 end

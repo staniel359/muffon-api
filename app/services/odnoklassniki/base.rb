@@ -9,13 +9,11 @@ module Odnoklassniki
     end
 
     def auth_failed?
-      response_data['error'] ==
-        'error.notloggedin'
+      response_data['error'] == 'error.notloggedin'
     end
 
     def link
-      "https://wmf.ok.ru/#{endpoint_name};" \
-        "jsessionid=#{session_id}"
+      "https://wmf.ok.ru/#{endpoint_name};jsessionid=#{session_id}"
     end
 
     def endpoint_name

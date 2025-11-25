@@ -9,7 +9,7 @@ RSpec.describe VK::Track::Albums do
         ) do
           subject.call(
             track_id: '474499137_456584653',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

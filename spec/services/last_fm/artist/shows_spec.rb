@@ -9,8 +9,8 @@ RSpec.describe LastFM::Artist::Shows do
         ) do
           subject.call(
             artist_name: 'lady gaga',
-            page: 2,
-            profile_id: 1
+            page: '2',
+            profile_id: '1'
           )
         end
       end

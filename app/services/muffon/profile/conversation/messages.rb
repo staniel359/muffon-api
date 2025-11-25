@@ -2,21 +2,19 @@ module Muffon
   module Profile
     module Conversation
       class Messages < Muffon::Profile::Conversation::Base
-        COLLECTION_NAME = 'messages'.freeze
-
-        include Muffon::Utils::Pagination
-
         private
 
-        def total_items_count
-          @total_items_count ||= messages.count
+        def conversation_data
+          paginated_data(
+            collection_name: 'messages',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
         end
 
-        def messages
-          @messages ||= conversation.messages
-        end
-
-        def collection_list
+        def raw_collection
           messages
             .created_desc_ordered
             .limit(limit)
@@ -24,13 +22,19 @@ module Muffon
             .associated
         end
 
+        def messages
+          @messages ||= conversation.messages
+        end
+
+        def items_count
+          messages.count
+        end
+
         def collection_item_data_formatted(message)
           Muffon::Profile::Conversation::Messages::Message.call(
             message:
           )
         end
-
-        alias conversation_data paginated_data
       end
     end
   end

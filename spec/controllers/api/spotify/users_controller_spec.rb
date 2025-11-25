@@ -109,9 +109,9 @@ RSpec.describe API::Spotify::UsersController do
           params: {
             **required_params,
             access_token: 'BQDF0G5HXoWAjv6TcTR0iUt_yHwu8b2ANZ-Nowu1KaTS1POUnclTr0yCycfImQVcPRmFq5-_XLn9U1FXUzbOk7HlKAfqGj6ztDlgG2Ym990a1RgCs19aCYHr08IT2REZo7NT2vI0LHB4cONwMaroRP-H3Ke4lqpPW5TxlQq42leexbi4kUQr-KDe0ADtn4jJ7FeldpSuavYb_IrCx4heRQBjWFYQzsyOPVLv',
-            profile_id: 1,
-            page: 2,
-            limit: 5
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           }
         )
       end
@@ -125,7 +125,7 @@ RSpec.describe API::Spotify::UsersController do
         params: {
           **required_params,
           access_token: '',
-          profile_id: 1
+          profile_id: '1'
         }
       )
 
@@ -141,7 +141,7 @@ RSpec.describe API::Spotify::UsersController do
           params: {
             **required_params,
             access_token: random_string,
-            profile_id: 1
+            profile_id: '1'
           }
         )
       end

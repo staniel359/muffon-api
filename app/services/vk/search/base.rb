@@ -1,10 +1,6 @@
 module VK
   module Search
     class Base < VK::Base
-      TOTAL_LIMIT = 10_000
-
-      include Muffon::Utils::Pagination
-
       def call
         check_args
 
@@ -20,11 +16,11 @@ module VK
       end
 
       def data
-        { search: paginated_data }
+        { search: search_data }
       end
 
-      def collection_list
-        response_data['items'] || []
+      def raw_collection
+        response_data['items']
       end
 
       def params
@@ -50,25 +46,8 @@ module VK
         @args[:query]
       end
 
-      def collection_count
-        if wrong_items_count?
-          total_limit
-        else
-          items_count
-        end
-      end
-
-      def wrong_items_count?
-        items_count.zero? &&
-          collection_list.present?
-      end
-
-      def items_count
-        response_data['count'] || 0
-      end
-
-      def collection_name
-        self.class::COLLECTION_NAME
+      def next_page
+        page.to_i + 1
       end
     end
   end

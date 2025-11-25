@@ -25,7 +25,11 @@ module YouTube
       end
 
       def playlist
-        items_list[0]
+        raw_collection[0]
+      end
+
+      def raw_collection
+        response_data['items'] || []
       end
 
       def link

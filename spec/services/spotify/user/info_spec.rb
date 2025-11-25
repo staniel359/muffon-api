@@ -32,8 +32,8 @@ RSpec.describe Spotify::User::Info do
         ) do
           subject.call(
             access_token: random_string,
-            profile_id: 1,
-            token: 1
+            profile_id: '1',
+            token: '1'
           )
         end
       end

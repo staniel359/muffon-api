@@ -28,6 +28,14 @@ module YouTube
         end
       end
 
+      def data
+        { search: search_data }
+      end
+
+      def raw_collection
+        response_data['items']
+      end
+
       def link
         "#{BASE_LINK}/search"
       end
@@ -36,30 +44,17 @@ module YouTube
         {
           **super,
           q: @args[:query],
-          type: model_name,
           part: 'snippet',
           maxResults: limit,
           pageToken: @args[:page]
         }.compact
       end
 
-      def model_name
-        self.class::MODEL_NAME
-      end
-
-      def data
-        { search: paginated_data }
-      end
-
-      def collection_list
-        response_data['items']
-      end
-
       def channel_item?(
-        collection_item
+        raw_item_data
       )
-        collection_item['id'].is_a?(Hash) &&
-          collection_item.dig('id', 'kind') == 'youtube#channel'
+        raw_item_data['id'].is_a?(Hash) &&
+          raw_item_data.dig('id', 'kind') == 'youtube#channel'
       end
     end
   end

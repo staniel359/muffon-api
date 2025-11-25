@@ -9,9 +9,9 @@ RSpec.describe Genius::Search::Tracks do
         ) do
           subject.call(
             query: 'molly nilsson',
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end
@@ -38,7 +38,7 @@ RSpec.describe Genius::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(no_tracks_data) }
+      it { expect(output).to eq(search_missing_tracks_data) }
     end
   end
 end

@@ -2,57 +2,68 @@ module LastFM
   module User
     class Plays < LastFM::User::Base
       API_METHOD = 'user.getRecentTracks'.freeze
-      COLLECTION_NAME = 'plays'.freeze
-
-      include Muffon::Utils::Pagination
 
       private
 
-      def params
-        super.merge(
-          pagination_params
+      def user_data
+        paginated_data(
+          collection_name: 'plays',
+          raw_collection:
+            raw_collection_filtered,
+          page:,
+          limit:,
+          pages_count:
         )
       end
 
-      def total_pages_count
-        plays_data.dig(
-          '@attr', 'totalPages'
-        ).to_i
-      end
-
-      def plays_data
-        response_data['recenttracks']
-      end
-
-      def collection
-        plays_list_filtered.map do |p|
-          play_formatted(p)
+      def raw_collection_filtered
+        raw_collection.reject do |raw_play_data|
+          playing?(
+            raw_play_data
+          )
         end
       end
 
-      def plays_list_filtered
-        plays_list.reject do |p|
-          playing?(p)
-        end
+      def raw_collection
+        response_data.dig(
+          'recenttracks',
+          'track'
+        )
       end
 
-      def plays_list
-        plays_data['track']
+      def params
+        {
+          **super,
+          page:,
+          limit:
+        }
       end
 
-      def playing?(play)
-        play.dig(
-          '@attr', 'nowplaying'
-        ) == 'true'
+      def playing?(
+        raw_play_data
+      )
+        raw_play_data
+          .dig(
+            '@attr',
+            'nowplaying'
+          ) == 'true'
       end
 
-      def play_formatted(play)
+      def pages_count
+        response_data
+          .dig(
+            'recenttracks',
+            '@attr',
+            'totalPages'
+          )
+          .to_i
+      end
+
+      def collection_item_data_formatted(play)
         LastFM::User::Plays::Play.call(
           play:
         )
       end
-
-      alias user_data paginated_data
     end
   end
 end

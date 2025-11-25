@@ -3,13 +3,11 @@ module Spotify
     class Tracks < Spotify::Playlist::Info
       PAGE_LIMIT = 50
 
-      include Spotify::Utils::Pagination
-
       private
 
       def required_args
         super + %i[
-          total_items_count
+          items_count
         ]
       end
 
@@ -41,21 +39,28 @@ module Spotify
       end
 
       def tracks
-        total_pages_count
+        pages_count
           .times
           .flat_map do |page|
             page_tracks(page + 1)
           end
       end
 
-      def total_items_count
-        @args[:total_items_count]
+      def pages_count
+        items_count
+          .fdiv(PAGE_LIMIT)
+          .ceil
+      end
+
+      def items_count
+        @args[:items_count]
       end
 
       def page_tracks(page)
         Spotify::Playlist::Tracks::PageTracks.call(
           playlist_id: @args[:playlist_id],
           page:,
+          limit: PAGE_LIMIT,
           profile_id: @args[:profile_id]
         )
       end

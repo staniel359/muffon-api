@@ -1,10 +1,26 @@
 module YouTube
   module Search
     class Channels < YouTube::Search::Base
-      COLLECTION_NAME = 'channels'.freeze
-      MODEL_NAME = 'channel'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'channels',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          previous_page:,
+          next_page:
+        )
+      end
+
+      def params
+        {
+          **super,
+          type: 'channel'
+        }
+      end
 
       def collection_item_data_formatted(channel)
         YouTube::Search::Channels::Channel.call(

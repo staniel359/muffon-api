@@ -1,19 +1,29 @@
 module LastFM
   module Artist
     class Shows < LastFM::Artist::Web::Base
-      COLLECTION_NAME = 'shows'.freeze
-
       include LastFM::Utils::Web::Pagination
       include Muffon::Utils::Artist
 
       private
 
       def artist_data
-        artist_base_data
-          .merge(paginated_data)
+        {
+          **super,
+          **shows_data
+        }
       end
 
-      def collection_list
+      def shows_data
+        paginated_data(
+          collection_name: 'shows',
+          raw_collection:,
+          page:,
+          limit:,
+          pages_count:
+        )
+      end
+
+      def raw_collection
         response_data.css(
           '.events-list-item'
         )

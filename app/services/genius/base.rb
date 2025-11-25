@@ -62,5 +62,9 @@ module Genius
     )
       tag_data['name']
     end
+
+    def next_page
+      page.to_i + 1
+    end
   end
 end

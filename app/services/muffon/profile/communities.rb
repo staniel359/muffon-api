@@ -1,37 +1,42 @@
 module Muffon
   module Profile
     class Communities < Muffon::Profile::Base
-      COLLECTION_NAME = 'communities'.freeze
       DEFAULT_ORDER = 'joined_desc'.freeze
-
-      include Muffon::Utils::Pagination
 
       private
 
       def profile_data
-        profile_base_data
-          .merge(paginated_data)
+        {
+          **super,
+          **communities_data
+        }
       end
 
-      def profile_base_data
-        { nickname: }
+      def communities_data
+        paginated_data(
+          collection_name: 'communities',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
       end
 
-      def total_items_count
-        @total_items_count ||= communities.count
-      end
-
-      def communities
-        @communities ||= profile.communities
-      end
-
-      def collection_list
+      def raw_collection
         communities
           .with_membership_created_at
           .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
           .associated
+      end
+
+      def communities
+        @communities ||= profile.communities
+      end
+
+      def items_count
+        communities.count
       end
 
       def collection_item_data_formatted(community)

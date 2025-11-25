@@ -9,8 +9,8 @@ RSpec.describe Spotify::Track::Info do
         ) do
           subject.call(
             track_id: '3BRfgsKjcakny2wCYfZrvz',
-            profile_id: 1,
-            with_audio: true
+            with_audio: true,
+            profile_id: '1'
           )
         end
       end

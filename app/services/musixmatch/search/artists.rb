@@ -1,10 +1,29 @@
 module MusixMatch
   module Search
     class Artists < MusixMatch::Search::Base
-      MODEL_NAME = 'artist'.freeze
-      COLLECTION_NAME = 'artists'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'message',
+          'body',
+          'artist_list'
+        )
+      end
+
+      def link
+        "#{BASE_LINK}/artist.search"
+      end
 
       def collection_item_data_formatted(artist)
         MusixMatch::Search::Artists::Artist.call(

@@ -1,8 +1,6 @@
 module MusixMatch
   module Search
     class Base < MusixMatch::Base
-      include MusixMatch::Utils::Pagination
-
       def call
         check_args
 
@@ -17,19 +15,25 @@ module MusixMatch
         ]
       end
 
-      def link
-        "#{BASE_LINK}/#{model_name}.search"
+      def data
+        { search: search_data }
       end
 
       def params
         {
           **super,
-          q: @args[:query]
+          q: @args[:query],
+          page:,
+          page_size: limit
         }
       end
 
-      def data
-        { search: paginated_data }
+      def items_count
+        response_data.dig(
+          'message',
+          'header',
+          'available'
+        )
       end
     end
   end

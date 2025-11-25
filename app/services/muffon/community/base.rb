@@ -42,7 +42,7 @@ module Muffon
         { community: community_data }
       end
 
-      def community_base_data
+      def community_data
         {
           id: community.id,
           title: community.title

@@ -1,11 +1,19 @@
 module Bandcamp
   module Label
     class Artists < Bandcamp::Label::Base
-      COLLECTION_NAME = 'artists'.freeze
-
       private
 
-      def raw_collection_list
+      def label_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
+        )
+      end
+
+      def raw_collection
         response_data['artists']
       end
 

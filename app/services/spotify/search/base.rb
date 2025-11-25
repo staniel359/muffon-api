@@ -1,9 +1,7 @@
 module Spotify
   module Search
     class Base < Spotify::Base
-      TOTAL_LIMIT = 10_000
-
-      include Spotify::Utils::Pagination
+      MAXIMUM_ITEMS_COUNT = 10_000
 
       def call
         check_args
@@ -24,14 +22,7 @@ module Spotify
       end
 
       def data
-        { search: paginated_data }
-      end
-
-      def collection_list
-        response_data.dig(
-          collection_name,
-          'items'
-        )
+        { search: search_data }
       end
 
       def link
@@ -42,20 +33,9 @@ module Spotify
         {
           **super,
           q: @args[:query],
-          type: collection_type,
-          **pagination_params
+          limit:,
+          offset:
         }
-      end
-
-      def collection_type
-        self.class::COLLECTION_TYPE
-      end
-
-      def collection_count
-        response_data.dig(
-          collection_name,
-          'total'
-        )
       end
     end
   end

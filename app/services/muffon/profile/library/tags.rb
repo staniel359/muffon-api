@@ -4,8 +4,6 @@ module Muffon
       class Tags < Muffon::Profile::Library::Base
         COLLECTION_NAME = 'tags'.freeze
 
-        include Muffon::Utils::Pagination
-
         private
 
         def total_items_count

@@ -9,8 +9,8 @@ RSpec.describe Discogs::Search::Labels do
         ) do
           subject.call(
             query: 'kate bush',
-            limit: 5,
-            page: 2
+            page: '2',
+            limit: '5'
           )
         end
       end
@@ -37,7 +37,7 @@ RSpec.describe Discogs::Search::Labels do
         end
       end
 
-      it { expect(output).to eq(no_labels_data) }
+      it { expect(output).to eq(search_paginated_missing_labels_data) }
     end
   end
 end

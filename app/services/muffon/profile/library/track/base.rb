@@ -35,7 +35,7 @@ module Muffon
             { track: track_data }
           end
 
-          def track_base_data
+          def track_data
             {
               source: source_data,
               library: library_track_data,

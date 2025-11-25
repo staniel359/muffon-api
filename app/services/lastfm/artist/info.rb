@@ -4,43 +4,44 @@ module LastFM
       private
 
       def params
-        super.merge(
-          language_params
-        )
-      end
-
-      def artist_data
-        update_listeners_count
-
-        self_data
-          .merge(artist_base_data)
-          .merge(artist_counters_data)
-          .merge(artist_extra_data)
-          .merge(with_more_data)
-      end
-
-      def update_listeners_count
-        find_artist.update!(
-          listeners_count: artist.dig(
-            'stats',
-            'listeners'
-          ).to_i
-        )
-      end
-
-      def artist_base_data
         {
-          source: source_data,
-          name:
+          **super,
+          **language_params
         }
       end
 
-      def artist_counters_data
+      def artist_data
+        update_listeners_count!
+
         {
+          **self_data,
+          source: source_data,
+          name:,
           listeners_count:,
           plays_count:,
-          profiles_count:
+          profiles_count:,
+          image: image_data,
+          description:
+            description_truncated,
+          tags: tags_truncated,
+          recommendation:
+            recommendation_data,
+          **with_more_data
         }.compact
+      end
+
+      def update_listeners_count!
+        find_artist.update!(
+          listeners_count:
+            raw_listeners_count
+        )
+      end
+
+      def raw_listeners_count
+        artist.dig(
+          'stats',
+          'listeners'
+        ).to_i
       end
 
       def plays_count
@@ -50,17 +51,6 @@ module LastFM
             'playcount'
           )
           .to_i
-      end
-
-      def artist_extra_data
-        {
-          image: image_data,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          recommendation:
-            recommendation_data
-        }.compact
       end
 
       def description_truncated

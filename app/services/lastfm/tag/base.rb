@@ -1,7 +1,7 @@
 module LastFM
   module Tag
     class Base < LastFM::Base
-      TOTAL_LIMIT = 10_000
+      MAXIMUM_ITEMS_COUNT = 10_000
 
       def call
         check_args
@@ -22,13 +22,18 @@ module LastFM
       end
 
       def params
-        super.merge(
-          tag_params
-        )
+        {
+          **super,
+          **tag_params
+        }
       end
 
       def data
         { tag: tag_data }
+      end
+
+      def tag_data
+        { name: }
       end
     end
   end

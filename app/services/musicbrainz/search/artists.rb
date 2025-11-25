@@ -1,10 +1,26 @@
 module MusicBrainz
   module Search
     class Artists < MusicBrainz::Search::Base
-      COLLECTION_NAME = 'artists'.freeze
-      MODEL_NAME = 'artist'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        response_data['artists']
+      end
+
+      def link
+        "#{BASE_LINK}/artist"
+      end
 
       def collection_item_data_formatted(artist)
         MusicBrainz::Search::Artists::Artist.call(

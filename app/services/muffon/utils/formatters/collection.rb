@@ -64,6 +64,15 @@ module Muffon
           )
         end
 
+        def images
+          @images ||=
+            raw_images.map do |raw_image_data|
+              image_data_formatted(
+                raw_image_data
+              )
+            end
+        end
+
         def library_tags_formatted(
           library_tags
         )

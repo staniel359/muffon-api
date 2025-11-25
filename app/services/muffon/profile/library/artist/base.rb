@@ -36,7 +36,7 @@ module Muffon
             { artist: artist_data }
           end
 
-          def artist_base_data
+          def artist_data
             {
               source: source_data,
               library: library_artist_data,

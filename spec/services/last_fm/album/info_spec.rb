@@ -10,7 +10,7 @@ RSpec.describe LastFM::Album::Info do
           subject.call(
             artist_name: 'wild nothing',
             album_title: 'nocturne',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

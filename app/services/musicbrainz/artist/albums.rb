@@ -1,18 +1,14 @@
 module MusicBrainz
   module Artist
     class Albums < MusicBrainz::Artist::Base
-      ALBUM_TYPES = {
-        album: 'album',
-        single: 'single',
-        ep: 'ep',
-        compilation: 'compilation',
-        live: 'live',
-        misc: 'other'
+      ALBUMS_TYPES = {
+        'album' => 'album',
+        'single' => 'single',
+        'ep' => 'ep',
+        'compilation' => 'compilation',
+        'live' => 'live',
+        'misc' => 'other'
       }.freeze
-      COLLECTION_NAME = 'albums'.freeze
-      MODEL_NAME = 'release-group'.freeze
-
-      include MusicBrainz::Utils::Pagination
 
       private
 
@@ -25,8 +21,22 @@ module MusicBrainz
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
+      end
+
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
+      end
+
+      def raw_collection
+        artist['release-groups']
       end
 
       def link
@@ -39,22 +49,17 @@ module MusicBrainz
           artist: @args[:artist_id],
           type: album_type,
           inc: 'artist-credits',
-          **pagination_params
+          limit:,
+          offset:
         }
       end
 
       def album_type
-        ALBUM_TYPES[
-          @args[:album_type].to_sym
-        ]
+        ALBUMS_TYPES[@args[:album_type]]
       end
 
-      def total_items_count
+      def items_count
         artist['release-group-count']
-      end
-
-      def collection_list
-        artist['release-groups']
       end
 
       def collection_item_data_formatted(album)

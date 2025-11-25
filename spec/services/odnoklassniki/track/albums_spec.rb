@@ -9,7 +9,7 @@ RSpec.describe Odnoklassniki::Track::Albums do
         ) do
           subject.call(
             track_id: '123005877249254',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

@@ -3,9 +3,6 @@ module LastFM
     module Favorites
       class Tracks < LastFM::User::Base
         API_METHOD = 'user.getLovedTracks'.freeze
-        COLLECTION_NAME = 'tracks'.freeze
-
-        include Muffon::Utils::Pagination
 
         private
 
@@ -14,52 +11,46 @@ module LastFM
         end
 
         def favorites_data
-          {
-            total_items: total_items_count,
-            **paginated_data
-          }
+          paginated_data(
+            collection_name: 'tracks',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:,
+            is_with_items_count: true
+          )
         end
 
-        def total_items_count
-          tracks_data
+        def items_count
+          response_data
             .dig(
+              'lovedtracks',
               '@attr',
               'total'
             )
             .to_i
         end
 
-        def tracks_data
-          response_data['lovedtracks']
-        end
-
         def params
           {
             **super,
-            **pagination_params
+            page:,
+            limit:
           }
         end
 
-        def total_pages_count
-          tracks_data
-            .dig(
-              '@attr',
-              'totalPages'
-            )
-            .to_i
+        def raw_collection
+          response_data.dig(
+            'lovedtracks',
+            'track'
+          )
         end
 
-        def raw_tracks
-          tracks_data['track']
-        end
-
-        def track_data_formatted(track)
+        def collection_item_data_formatted(track)
           LastFM::User::Favorites::Tracks::Track.call(
             track:
           )
         end
-
-        alias collection tracks
       end
     end
   end

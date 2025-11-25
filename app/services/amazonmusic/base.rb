@@ -52,5 +52,33 @@ module AmazonMusic
         id: raw_artist_data['id']
       }
     end
+
+    def next_page
+      return if next_page_url.blank?
+
+      parse_query_string(
+        link: next_page_url
+      )['next']
+    end
+
+    def next_page_url
+      response_data.dig(
+        'methods',
+        0,
+        'template',
+        'widgets',
+        0,
+        'onEndOfWidget',
+        0,
+        'url'
+      ) ||
+        response_data.dig(
+          'methods',
+          0,
+          'onEndOfWidget',
+          0,
+          'url'
+        )
+    end
   end
 end

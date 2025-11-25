@@ -9,7 +9,7 @@ RSpec.describe MusicBrainz::Group::Info do
         ) do
           subject.call(
             group_id: 'b3c5541a-e1d0-354f-b6c8-565c37dde332',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

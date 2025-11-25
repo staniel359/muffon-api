@@ -9,8 +9,8 @@ RSpec.describe AmazonMusic::Search::Albums do
         ) do
           subject.call(
             query: 'wild nothing',
-            page: 'tztok-v2_yDSNVKX4qpd-k5g2XEe2Tm_Nlzd4-XZ9fuNUMWDqmo5MM231Xo0ZvwoenzCeFxY2',
-            profile_id: 1
+            page: amazonmusic_search_albums_page,
+            profile_id: '1'
           )
         end
       end
@@ -37,7 +37,7 @@ RSpec.describe AmazonMusic::Search::Albums do
         end
       end
 
-      it { expect(output).to eq(amazonmusic_no_albums_data) }
+      it { expect(output).to eq(search_missing_albums_data) }
     end
   end
 end

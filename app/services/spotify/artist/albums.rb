@@ -1,15 +1,12 @@
 module Spotify
   module Artist
     class Albums < Spotify::Artist::Base
-      COLLECTION_NAME = 'albums'.freeze
-      ALBUM_TYPES = {
+      ALBUMS_TYPES = {
         'album' => 'album',
         'single' => 'single',
         'compilation' => 'compilation',
         'appearance' => 'appears_on'
       }.freeze
-
-      include Spotify::Utils::Pagination
 
       private
 
@@ -22,11 +19,21 @@ module Spotify
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
       end
 
-      def collection_list
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
+      end
+
+      def raw_collection
         artist['items']
       end
 
@@ -37,17 +44,17 @@ module Spotify
       def params
         {
           **super,
-          include_groups: album_type
-        }
+          include_groups: album_type,
+          limit:,
+          offset:
+        }.compact
       end
 
       def album_type
-        ALBUM_TYPES[
-          @args[:album_type]
-        ]
+        ALBUMS_TYPES[@args[:album_type]]
       end
 
-      def total_items_count
+      def items_count
         artist['total']
       end
 

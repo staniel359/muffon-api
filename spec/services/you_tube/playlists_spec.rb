@@ -9,8 +9,9 @@ RSpec.describe YouTube::Playlists do
         ) do
           subject.call(
             channel_id: 'UCGJdzJQ3R1BpahSvcFq23HA',
-            limit: 5,
-            page: 'CAUQAA'
+            page: 'CAUQAA',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end

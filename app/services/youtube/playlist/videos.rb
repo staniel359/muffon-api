@@ -1,10 +1,6 @@
 module YouTube
   module Playlist
     class Videos < YouTube::Playlist::Base
-      COLLECTION_NAME = 'videos'.freeze
-
-      include Muffon::Utils::Pagination
-
       private
 
       def not_found?
@@ -16,6 +12,33 @@ module YouTube
           YouTube::Playlist::Info.call(
             playlist_id: @args[:playlist_id]
           )[:playlist]
+      end
+
+      def playlist_data
+        {
+          **playlist_info_data.slice(
+            :source,
+            :title,
+            :channel
+          ),
+          **videos_data
+        }
+      end
+
+      def videos_data
+        paginated_data(
+          collection_name: 'videos',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          previous_page:,
+          next_page:
+        )
+      end
+
+      def raw_collection
+        response_data['items']
       end
 
       def link
@@ -31,15 +54,6 @@ module YouTube
         }
       end
 
-      def playlist_data
-        {
-          source: playlist_info_data[:source],
-          title: playlist_info_data[:title],
-          channel: playlist_info_data[:channel],
-          **paginated_data
-        }
-      end
-
       def collection_item_data_formatted(video)
         YouTube::Playlist::Videos::Video.call(
           video:,
@@ -47,8 +61,6 @@ module YouTube
           token: @args[:token]
         )
       end
-
-      alias collection_list items_list
     end
   end
 end

@@ -71,9 +71,7 @@ module YouTubeMusic
       end
 
       def scope_formatted
-        SCOPES[
-          @args[:scope]
-        ]
+        SCOPES[@args[:scope]]
       end
     end
   end

@@ -1,30 +1,27 @@
 module LastFM
   module User
     class Playlists < LastFM::User::Web::Base
-      COLLECTION_NAME = 'playlists'.freeze
-
-      include Muffon::Utils::Pagination
-
       private
 
       def user_data
-        user_base_data
-          .merge(playlists_data)
-          .merge(paginated_data)
-      end
-
-      def playlists_data
         {
-          total_items:
-            total_items_count
+          **user_base_data,
+          **playlists_data
         }
       end
 
-      def total_items_count
-        raw_collection_list.size
+      def playlists_data
+        paginated_data(
+          collection_name: 'playlists',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true,
+          is_with_items_count: true
+        )
       end
 
-      def raw_collection_list
+      def raw_collection
         response_data.css(
           '.playlisting-playlists-item'
         )
@@ -32,12 +29,6 @@ module LastFM
 
       def link
         "#{base_link}/playlists"
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_collection_list
-        )
       end
 
       def collection_item_data_formatted(playlist)

@@ -2,13 +2,23 @@ module VK
   module Search
     class Tracks < VK::Search::Base
       API_METHOD = 'audio.search'.freeze
-      COLLECTION_NAME = 'tracks'.freeze
 
       private
 
-      def collection_list
-        super.reject do |track|
-          track['title'].blank?
+      def search_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          next_page:
+        )
+      end
+
+      def raw_collection
+        super.reject do |raw_track_data|
+          raw_track_data['title'].blank?
         end
       end
 

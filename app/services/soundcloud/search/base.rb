@@ -1,9 +1,7 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::API::V2::Base
-      TOTAL_LIMIT = 10_000
-
-      include Muffon::Utils::Pagination
+      MAXIMUM_ITEMS_COUNT = 10_000
 
       def call
         check_args
@@ -22,15 +20,11 @@ module SoundCloud
       end
 
       def data
-        { search: paginated_data }
+        { search: search_data }
       end
 
-      def collection_list
+      def raw_collection
         response_data['collection']
-      end
-
-      def link
-        "#{BASE_LINK}/search/#{collection_name}"
       end
 
       def params
@@ -42,7 +36,7 @@ module SoundCloud
         }
       end
 
-      def collection_count
+      def items_count
         response_data['total_results']
       end
     end

@@ -10,8 +10,8 @@ RSpec.describe LastFM::Album::Profiles do
           subject.call(
             artist_name: 'wild nothing',
             album_title: 'nocturne',
-            limit: 5,
-            page: 2
+            page: '2',
+            limit: '5'
           )
         end
       end

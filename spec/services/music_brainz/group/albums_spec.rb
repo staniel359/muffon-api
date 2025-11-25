@@ -9,9 +9,9 @@ RSpec.describe MusicBrainz::Group::Albums do
         ) do
           subject.call(
             group_id: 'b3c5541a-e1d0-354f-b6c8-565c37dde332',
-            profile_id: 1,
-            limit: 5,
-            page: 2
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end

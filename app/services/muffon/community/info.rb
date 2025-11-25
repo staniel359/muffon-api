@@ -4,16 +4,18 @@ module Muffon
       private
 
       def community_data
-        community_base_data
-          .merge(community_extra_data)
-          .merge(with_more_data)
-      end
-
-      def community_base_data
         {
-          id: community.id,
-          title: community.title
-        }
+          **super,
+          image: community.image_data,
+          description:,
+          description_truncated:,
+          creator: creator_data,
+          members_count:
+            community.members_count,
+          profile: profile_data,
+          created: created_formatted,
+          **with_more_data
+        }.compact
       end
 
       def community
@@ -29,19 +31,6 @@ module Muffon
               id: community_id
             )
         end
-      end
-
-      def community_extra_data
-        {
-          image: community.image_data,
-          description:,
-          description_truncated:,
-          creator: creator_data,
-          members_count:
-            community.members_count,
-          profile: profile_data,
-          created: created_formatted
-        }.compact
       end
 
       def description

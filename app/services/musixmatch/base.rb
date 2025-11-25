@@ -25,9 +25,5 @@ module MusixMatch
         :api_key
       )
     end
-
-    def model_name
-      self.class::MODEL_NAME
-    end
   end
 end

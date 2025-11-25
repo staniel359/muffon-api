@@ -9,7 +9,7 @@ RSpec.describe Spotify::Album::Info do
         ) do
           subject.call(
             album_id: '0nO5lyFdotlbbWdNkvB6Av',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

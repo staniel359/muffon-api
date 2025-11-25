@@ -9,8 +9,8 @@ RSpec.describe YandexMusic::Search::Artists do
         ) do
           subject.call(
             query: 'a',
-            page: 2,
-            profile_id: 1
+            page: '2',
+            profile_id: '1'
           )
         end
       end
@@ -37,7 +37,7 @@ RSpec.describe YandexMusic::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(no_artists_data) }
+      it { expect(output).to eq(search_paginated_missing_artists_data) }
     end
   end
 end

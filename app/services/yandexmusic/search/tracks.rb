@@ -1,10 +1,46 @@
 module YandexMusic
   module Search
     class Tracks < YandexMusic::Search::Base
-      COLLECTION_TYPE = 'track'.freeze
-      COLLECTION_NAME = 'tracks'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'tracks',
+          'items'
+        )
+      end
+
+      def params
+        {
+          **super,
+          type: 'track'
+        }
+      end
+
+      def items_count
+        response_data.dig(
+          'tracks',
+          'total'
+        )
+      end
+
+      def limit
+        response_data.dig(
+          'tracks',
+          'perPage'
+        )
+      end
 
       def collection_item_data_formatted(track)
         YandexMusic::Search::Tracks::Track.call(

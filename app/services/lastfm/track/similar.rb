@@ -2,31 +2,59 @@ module LastFM
   module Track
     class Similar < LastFM::Track::Base
       API_METHOD = 'track.getSimilar'.freeze
-      COLLECTION_NAME = 'similar'.freeze
-      TOTAL_LIMIT = 200
-
-      include LastFM::Track::Utils::Pagination
+      PAGE_LIMIT = 200
 
       private
 
-      def track_info_data
-        return {} if @args[:minimal]
+      def track_data
+        {
+          **track_info_data_computed,
+          **similar_data
+        }
+      end
 
-        super
+      def track_info_data_computed
+        if @args[:minimal]
+          {}
+        else
+          track_info_data.slice(
+            :title,
+            :artist,
+            :artists
+          )
+        end
+      end
+
+      def track_info_data
+        LastFM::Track::Info.call(
+          track_title: @args[:track_title],
+          artist_name: @args[:artist_name]
+        )[:track]
+      end
+
+      def similar_data
+        paginated_data(
+          collection_name: 'similar',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
+        )
+      end
+
+      def raw_collection
+        track['track']
       end
 
       def track
-        response_data[
-          'similartracks'
-        ]
+        response_data['similartracks']
       end
 
-      def pagination_params
-        { limit: TOTAL_LIMIT }
-      end
-
-      def raw_collection_list
-        track['track']
+      def params
+        {
+          **super,
+          limit: PAGE_LIMIT
+        }
       end
 
       def collection_item_data_formatted(track)

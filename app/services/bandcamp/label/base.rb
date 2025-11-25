@@ -1,8 +1,6 @@
 module Bandcamp
   module Label
     class Base < Bandcamp::Base
-      include Muffon::Utils::Pagination
-
       def call
         check_args
 
@@ -24,18 +22,7 @@ module Bandcamp
       end
 
       def data
-        { label: paginated_data }
-      end
-
-      def total_items_count
-        @total_items_count ||=
-          raw_collection_list.size
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_collection_list
-        )
+        { label: label_data }
       end
 
       alias link artist_label_link

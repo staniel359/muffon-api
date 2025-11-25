@@ -1,7 +1,7 @@
 module LastFM
   module Top
     class Base < LastFM::Base
-      TOTAL_LIMIT = 10_000
+      MAXIMUM_ITEMS_COUNT = 10_000
       COUNTRIES_CODES_NAMES_DATA = {
         **ISO3166::Country.translations,
         'CI' => "Cote d'Ivoire",
@@ -21,8 +21,6 @@ module LastFM
         'TZ' => 'Tanzania, United Republic of',
         'VN' => 'Viet Nam'
       }.freeze
-
-      include Muffon::Utils::Pagination
 
       def call
         check_args
@@ -48,21 +46,11 @@ module LastFM
         @args[:country]
       end
 
-      def api_method
-        if country_code.present?
-          raise not_found_error if collection_name == 'tags'
-
-          "geo.getTop#{collection_name.capitalize}"
-
-        else
-          "chart.getTop#{collection_name.capitalize}"
-        end
-      end
-
       def params
         {
           **super,
-          **pagination_params,
+          page:,
+          limit:,
           country: country_name
         }.compact
       end
@@ -76,35 +64,7 @@ module LastFM
       end
 
       def data
-        { top: paginated_data }
-      end
-
-      def collection_count
-        response_data
-          .dig(
-            collection_name_computed,
-            '@attr',
-            'total'
-          ).to_i
-      end
-
-      def collection_name_computed
-        if country_code.present? && collection_name == 'artists'
-          "top#{collection_name}"
-        else
-          collection_name
-        end
-      end
-
-      def collection_list
-        response_data
-          .dig(
-            collection_name_computed,
-            self.class::MODEL_NAME
-          )
-          .last(
-            limit
-          )
+        { top: top_data }
       end
     end
   end

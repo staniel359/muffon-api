@@ -1,21 +1,25 @@
 module LastFM
   module Tag
     class Images < LastFM::Tag::Web::Base
-      COLLECTION_NAME = 'artists'.freeze
+      LIMIT = 20
 
       private
 
       def tag_data
-        { images: collection }
+        { images: }
       end
 
-      def collection_list
-        response_data.css(
-          '.big-artist-list-avatar-desktop img'
-        ).first(20)
+      def raw_images
+        response_data
+          .css('.big-artist-list-avatar-desktop img')
+          .first(LIMIT)
       end
 
-      def collection_item_data_formatted(image)
+      def link
+        "#{super}/artists"
+      end
+
+      def image_data_formatted(image)
         LastFM::Utils::Image.call(
           image: image['src']
         )[:small]

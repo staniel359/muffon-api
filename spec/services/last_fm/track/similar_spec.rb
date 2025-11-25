@@ -10,9 +10,9 @@ RSpec.describe LastFM::Track::Similar do
           subject.call(
             artist_name: 'wild nothing',
             track_title: 'chinatown',
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end

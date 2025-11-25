@@ -8,8 +8,8 @@ RSpec.describe LastFM::Top::Tags do
           'services/lastfm/top/tags/success'
         ) do
           subject.call(
-            limit: 5,
-            page: 2
+            page: '2',
+            limit: '5'
           )
         end
       end

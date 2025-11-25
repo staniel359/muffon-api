@@ -7,17 +7,7 @@ module LastFM
 
         private
 
-        def collection_list
-          send(
-            "#{collection_name}_list"
-          )
-        end
-
         def link
-          "#{base_link}/#{collection_name}"
-        end
-
-        def base_link
           "https://www.last.fm/tag/#{tag_name}"
         end
 
@@ -30,7 +20,7 @@ module LastFM
         def params
           {
             **super,
-            **pagination_params
+            page:
           }
         end
       end

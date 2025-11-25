@@ -2,6 +2,8 @@ module Bandcamp
   module Search
     class Artists
       class Artist < Bandcamp::Search::Artists
+        MODEL_NAME = 'artist'.freeze
+
         include Bandcamp::Utils::Artist
 
         def call

@@ -1,12 +1,23 @@
 module MusicBrainz
   module Group
     class Albums < MusicBrainz::Group::Base
-      COLLECTION_NAME = 'albums'.freeze
       MODEL_NAME = 'release'.freeze
 
-      include MusicBrainz::Utils::Pagination
-
       private
+
+      def group_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
+      end
+
+      def raw_collection
+        group['releases']
+      end
 
       def link
         "#{base_link}/release"
@@ -18,15 +29,12 @@ module MusicBrainz
           'release-group' => @args[:group_id],
           status: 'official',
           inc: 'artist-credits',
-          **pagination_params
+          limit:,
+          offset:
         }
       end
 
-      def collection_list
-        group['releases']
-      end
-
-      def total_items_count
+      def items_count
         group['release-count']
       end
 
@@ -37,8 +45,6 @@ module MusicBrainz
           token: @args[:token]
         )
       end
-
-      alias group_data paginated_data
     end
   end
 end

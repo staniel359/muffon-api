@@ -1,10 +1,35 @@
 module LastFM
   module Search
     class Artists < LastFM::Search::Base
-      COLLECTION_NAME = 'artists'.freeze
-      MODEL_NAME = 'artist'.freeze
+      API_METHOD = 'artist.search'.freeze
 
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'results',
+          'artistmatches',
+          'artist'
+        )
+      end
+
+      def params
+        {
+          **super,
+          artist: @args[:query]
+        }
+      end
 
       def collection_item_data_formatted(artist)
         LastFM::Search::Artists::Artist.call(

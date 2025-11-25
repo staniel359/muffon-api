@@ -13,9 +13,7 @@ module YouTube
       end
 
       def prev_page
-        uploads_playlist_data[
-          :prev_page
-        ]
+        uploads_playlist_data[:prev_page]
       end
 
       def uploads_playlist_data
@@ -38,15 +36,11 @@ module YouTube
       end
 
       def next_page
-        uploads_playlist_data[
-          :next_page
-        ]
+        uploads_playlist_data[:next_page]
       end
 
       def videos
-        uploads_playlist_data[
-          :videos
-        ] || []
+        uploads_playlist_data[:videos] || []
       end
     end
   end

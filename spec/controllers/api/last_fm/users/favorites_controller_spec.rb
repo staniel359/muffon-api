@@ -9,9 +9,9 @@ RSpec.describe API::LastFM::Users::FavoritesController do
           params: {
             **required_params,
             nickname: 'cornwell_93',
-            profile_id: 1,
-            page: 2,
-            limit: 5
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           }
         )
       end
@@ -28,7 +28,7 @@ RSpec.describe API::LastFM::Users::FavoritesController do
           params: {
             **required_params,
             nickname: random_string,
-            profile_id: 1
+            profile_id: '1'
           }
         )
       end

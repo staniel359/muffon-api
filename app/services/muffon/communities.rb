@@ -1,9 +1,6 @@
 module Muffon
   class Communities < Muffon::Base
-    COLLECTION_NAME = 'communities'.freeze
     DEFAULT_ORDER = 'created_desc'.freeze
-
-    include Muffon::Utils::Pagination
 
     def call
       data
@@ -12,19 +9,33 @@ module Muffon
     private
 
     def data
-      { communities: paginated_data }
+      { communities: communities_data }
     end
 
-    def total_items_count
-      @total_items_count ||= ::Community.count
+    def communities_data
+      paginated_data(
+        collection_name: 'communities',
+        raw_collection:,
+        page:,
+        limit:,
+        items_count:
+      )
     end
 
-    def collection_list
-      ::Community
+    def raw_collection
+      communities
         .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)
         .associated
+    end
+
+    def communities
+      ::Community
+    end
+
+    def items_count
+      communities.count
     end
 
     def collection_item_data_formatted(community)

@@ -2,16 +2,9 @@ module Bandcamp
   module Search
     class Base < Bandcamp::Base
       BASE_LINK =
-        'https://bandcamp.com/api' \
-        '/bcsearch_public_api/1' \
+        'https://bandcamp.com/api/bcsearch_public_api/1' \
         '/autocomplete_elastic'.freeze
-      SEARCH_TYPES = {
-        'artist' => 'b',
-        'album' => 'a',
-        'track' => 't'
-      }.freeze
 
-      include Muffon::Utils::Pagination
       include Bandcamp::Utils::Search
 
       def call
@@ -29,23 +22,13 @@ module Bandcamp
       end
 
       def data
-        { search: paginated_data }
+        { search: search_data }
       end
 
-      def total_items_count
-        raw_collection_list.size
-      end
-
-      def raw_collection_list
+      def raw_collection
         response_data.dig(
           'auto',
           'results'
-        ) || []
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_collection_list
         )
       end
 
@@ -56,13 +39,8 @@ module Bandcamp
       def payload
         {
           search_text: @args[:query],
-          search_filter: model_type,
           full_page: false
         }
-      end
-
-      def model_type
-        SEARCH_TYPES[model_name]
       end
 
       def model_name

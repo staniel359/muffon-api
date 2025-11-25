@@ -9,7 +9,7 @@ RSpec.describe Discogs::Group::Info do
         ) do
           subject.call(
             group_id: '5319',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Discogs::Group::Info do
         ) do
           subject.call(
             group_id: '992584',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
@@ -39,7 +39,7 @@ RSpec.describe Discogs::Group::Info do
         ) do
           subject.call(
             group_id: '1531968',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

@@ -1,11 +1,9 @@
 module Google
   class Search < Muffon::Base
-    COLLECTION_NAME = 'results'.freeze
+    BASE_LINK =
+      'https://www.googleapis.com/customsearch/v1/siterestrict'.freeze
     PAGE_LIMIT = 10
     PAGES_LIMIT = 10
-    BASE_LINK =
-      'https://www.googleapis.com' \
-      '/customsearch/v1/siterestrict'.freeze
     FIELDS = <<~FIELDS.freeze
       items(
         pagemap(
@@ -25,8 +23,6 @@ module Google
       )
     FIELDS
 
-    include Muffon::Utils::Pagination
-
     def call
       check_args
 
@@ -44,8 +40,22 @@ module Google
       ]
     end
 
-    def collection_list
-      response_data['items'] || []
+    def data
+      { search: search_data }
+    end
+
+    def search_data
+      paginated_data(
+        collection_name: 'results',
+        raw_collection:,
+        page:,
+        limit:,
+        pages_count: PAGES_LIMIT
+      )
+    end
+
+    def raw_collection
+      response_data['items']
     end
 
     def link
@@ -78,27 +88,20 @@ module Google
     end
 
     def fields_formatted
-      FIELDS.scan(/\S/).join
+      FIELDS
+        .scan(/\S/)
+        .join
     end
 
-    def data
-      { search: paginated_data }
-    end
-
-    def total_pages_count
-      return if total_items_count.zero?
-
-      [
-        super,
-        PAGES_LIMIT
-      ].min
-    end
-
-    def total_items_count
-      response_data.dig(
-        'queries', 'request',
-        0, 'totalResults'
-      ).to_i
+    def items_count
+      response_data
+        .dig(
+          'queries',
+          'request',
+          0,
+          'totalResults'
+        )
+        .to_i
     end
 
     def limit

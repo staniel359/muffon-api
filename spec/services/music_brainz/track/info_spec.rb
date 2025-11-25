@@ -9,7 +9,7 @@ RSpec.describe MusicBrainz::Track::Info do
         ) do
           subject.call(
             track_id: '6029d549-5858-4936-9156-b90770d2ae92',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

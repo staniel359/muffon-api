@@ -39,7 +39,8 @@ module LastFM
 
           def artist_name
             track.dig(
-              'artist', 'name'
+              'artist',
+              'name'
             )
           end
 
@@ -51,7 +52,8 @@ module LastFM
 
           def raw_created
             track.dig(
-              'date', '#text'
+              'date',
+              '#text'
             ).to_datetime
           end
         end

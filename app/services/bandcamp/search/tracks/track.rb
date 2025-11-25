@@ -2,6 +2,8 @@ module Bandcamp
   module Search
     class Tracks
       class Track < Bandcamp::Search::Tracks
+        MODEL_NAME = 'track'.freeze
+
         include Muffon::Utils::Track
 
         def call

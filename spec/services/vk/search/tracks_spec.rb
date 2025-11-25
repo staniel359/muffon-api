@@ -9,9 +9,9 @@ RSpec.describe VK::Search::Tracks do
         ) do
           subject.call(
             query: 'wild nothing',
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end

@@ -3,26 +3,40 @@ module Muffon
     module Recommendation
       module Track
         class Tracks < Muffon::Profile::Recommendation::Track::Base
-          COLLECTION_NAME = 'tracks'.freeze
-
-          include Muffon::Utils::Pagination
-
           private
 
-          def total_items_count
-            @total_items_count ||=
-              recommendation
-              .library_track_ids
-              .size
+          def recommendation_data
+            {
+              **tracks_data
+            }
           end
 
-          def collection_list
-            recommendation
-              .library_tracks
+          def tracks_data
+            paginated_data(
+              collection_name: 'tracks',
+              raw_collection:,
+              page:,
+              limit:,
+              items_count:
+            )
+          end
+
+          def raw_collection
+            tracks
               .associated
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
+          end
+
+          def tracks
+            recommendation.library_tracks
+          end
+
+          def items_count
+            recommendation
+              .library_track_ids
+              .size
           end
 
           def collection_item_data_formatted(library_track)
@@ -32,8 +46,6 @@ module Muffon
               token: @args[:token]
             )
           end
-
-          alias recommendation_data paginated_data
         end
       end
     end

@@ -2,23 +2,28 @@ module Muffon
   module Profile
     module Favorites
       class Albums < Muffon::Profile::Favorites::Base
-        COLLECTION_NAME = 'albums'.freeze
-        DEFAULT_ORDER = 'created_desc'.freeze
-
-        include Muffon::Utils::Pagination
-
         private
 
-        def total_items_count
-          @total_items_count ||= albums.count
+        def favorites_data
+          paginated_data(
+            collection_name: 'albums',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
         end
 
-        def collection_list
+        def raw_collection
           albums
             .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
             .associated
+        end
+
+        def items_count
+          albums.count
         end
 
         def collection_item_data_formatted(favorite_album)
@@ -28,8 +33,6 @@ module Muffon
             token: @args[:token]
           )
         end
-
-        alias favorites_data paginated_data
       end
     end
   end

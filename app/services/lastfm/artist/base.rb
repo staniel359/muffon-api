@@ -32,13 +32,18 @@ module LastFM
       end
 
       def params
-        super.merge(
-          artist_params
-        )
+        {
+          **super,
+          **artist_params
+        }
       end
 
       def data
         { artist: artist_data }
+      end
+
+      def artist_data
+        { name: }
       end
     end
   end

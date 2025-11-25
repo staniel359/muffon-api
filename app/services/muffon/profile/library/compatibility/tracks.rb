@@ -3,11 +3,25 @@ module Muffon
     module Library
       module Compatibility
         class Tracks < Muffon::Profile::Library::Compatibility::Base
-          COLLECTION_NAME = 'tracks'.freeze
-
           private
 
-          def collection_list
+          def compatibility_data
+            {
+              **tracks_data
+            }
+          end
+
+          def tracks_data
+            paginated_data(
+              collection_name: 'tracks',
+              raw_collection:,
+              page:,
+              limit:,
+              items_count:
+            )
+          end
+
+          def raw_collection
             other_profile_library_tracks
               .created_desc_ordered
               .limit(limit)
@@ -31,8 +45,7 @@ module Muffon
             )
           end
 
-          alias compatibility_data paginated_data
-          alias total_items_count tracks_count
+          alias items_count tracks_count
         end
       end
     end

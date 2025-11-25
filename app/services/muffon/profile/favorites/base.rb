@@ -2,11 +2,13 @@ module Muffon
   module Profile
     module Favorites
       class Base < Muffon::Profile::Base
+        DEFAULT_ORDER = 'created_desc'.freeze
+
         private
 
         def profile_data
           {
-            nickname: profile.nickname,
+            **super,
             favorites: favorites_data
           }
         end

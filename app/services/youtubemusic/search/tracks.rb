@@ -1,10 +1,25 @@
 module YouTubeMusic
   module Search
     class Tracks < YouTubeMusic::Search::Base
-      COLLECTION_NAME = 'tracks'.freeze
-      SCOPE = 'tracks'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          next_page:
+        )
+      end
+
+      def scope_params
+        YouTubeMusic::Search::ScopeParams.call(
+          query: @args[:query],
+          scope: 'tracks'
+        )
+      end
 
       def collection_item_data_formatted(
         raw_track_data

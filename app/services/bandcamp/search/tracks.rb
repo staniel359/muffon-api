@@ -1,10 +1,24 @@
 module Bandcamp
   module Search
     class Tracks < Bandcamp::Search::Base
-      MODEL_NAME = 'track'.freeze
-      COLLECTION_NAME = 'tracks'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
+        )
+      end
+
+      def payload
+        {
+          **super,
+          search_filter: 't'
+        }
+      end
 
       def collection_item_data_formatted(track)
         Bandcamp::Search::Tracks::Track.call(

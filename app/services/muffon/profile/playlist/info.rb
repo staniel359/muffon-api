@@ -5,17 +5,17 @@ module Muffon
         private
 
         def playlist_data
-          playlist_base_data
-            .merge(playlist_extra_data)
-            .merge(with_more_data)
-        end
-
-        def playlist_base_data
           {
             id: playlist.id,
             title:,
             profile: playlist_profile_data,
-            private: private?
+            private: private?,
+            image: image_data,
+            description:,
+            description_truncated:,
+            tracks_count:,
+            created: created_formatted,
+            **with_more_data
           }.compact
         end
 
@@ -49,16 +49,6 @@ module Muffon
 
         def private?
           playlist.private
-        end
-
-        def playlist_extra_data
-          {
-            image: image_data,
-            description:,
-            description_truncated:,
-            tracks_count:,
-            created: created_formatted
-          }.compact
         end
 
         def image_data

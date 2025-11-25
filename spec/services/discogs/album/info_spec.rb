@@ -9,7 +9,7 @@ RSpec.describe Discogs::Album::Info do
         ) do
           subject.call(
             album_id: '197163',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
@@ -24,7 +24,7 @@ RSpec.describe Discogs::Album::Info do
         ) do
           subject.call(
             album_id: '546618',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
@@ -39,7 +39,7 @@ RSpec.describe Discogs::Album::Info do
         ) do
           subject.call(
             album_id: '13812684',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

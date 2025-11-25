@@ -1,10 +1,25 @@
 module Discogs
   module Search
     class Labels < Discogs::Search::Base
-      COLLECTION_NAME = 'labels'.freeze
-      COLLECTION_TYPE = 'label'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'labels',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def params
+        {
+          **super,
+          type: 'label'
+        }
+      end
 
       def collection_item_data_formatted(label)
         Discogs::Search::Labels::Label.call(

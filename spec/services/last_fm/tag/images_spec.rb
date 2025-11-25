@@ -9,7 +9,7 @@ RSpec.describe LastFM::Tag::Images do
         ) do
           subject.call(
             tag_name: 'dream pop',
-            page: 2
+            page: '2'
           )
         end
       end

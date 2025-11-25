@@ -1,9 +1,7 @@
 module MusicBrainz
   module Search
     class Base < MusicBrainz::Base
-      TOTAL_LIMIT = 10_000
-
-      include MusicBrainz::Utils::Pagination
+      MAXIMUM_ITEMS_COUNT = 10_000
 
       def call
         check_args
@@ -19,34 +17,21 @@ module MusicBrainz
         ]
       end
 
-      def link
-        "#{BASE_LINK}/#{model_name}"
-      end
-
       def params
         {
           **super,
           query: @args[:query],
-          **pagination_params
+          limit:,
+          offset:
         }
       end
 
       def data
-        { search: paginated_data }
+        { search: search_data }
       end
 
-      def collection_count
+      def items_count
         response_data['count']
-      end
-
-      def collection_list
-        response_data[
-          response_collection_name
-        ]
-      end
-
-      def response_collection_name
-        model_name.pluralize
       end
     end
   end

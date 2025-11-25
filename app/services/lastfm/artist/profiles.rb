@@ -1,37 +1,42 @@
 module LastFM
   module Artist
     class Profiles < LastFM::Artist::Base
-      COLLECTION_NAME = 'profiles'.freeze
-
-      include Muffon::Utils::Pagination
-
       private
 
-      def total_items_count
-        @total_items_count ||= profiles.count
+      def artist_data
+        paginated_data(
+          collection_name: 'profiles',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
       end
 
-      def profiles
-        @profiles ||= profiles_conditional
-      end
-
-      def profiles_conditional
-        if creator?
-          find_artist.profiles
-        else
-          find_artist
-            .profiles
-            .public
-        end
-      end
-
-      def collection_list
+      def raw_collection
         profiles
-          .not_deleted
           .created_desc_ordered
           .limit(limit)
           .offset(offset)
           .associated
+      end
+
+      def profiles
+        @profiles ||=
+          if creator?
+            find_artist
+              .profiles
+              .not_deleted
+          else
+            find_artist
+              .profiles
+              .not_deleted
+              .public
+          end
+      end
+
+      def items_count
+        profiles.count
       end
 
       def collection_item_data_formatted(profile)
@@ -41,8 +46,6 @@ module LastFM
           token: @args[:token]
         )
       end
-
-      alias artist_data paginated_data
     end
   end
 end

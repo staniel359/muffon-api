@@ -8,7 +8,8 @@ RSpec.describe YouTube::Channel::Info do
           'services/youtube/channel/info/success'
         ) do
           subject.call(
-            channel_id: 'UC7kI8WjpCfFoMSNDuRh_4lA'
+            channel_id: 'UC7kI8WjpCfFoMSNDuRh_4lA',
+            profile_id: '1'
           )
         end
       end

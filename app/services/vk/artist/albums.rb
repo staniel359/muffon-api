@@ -2,20 +2,27 @@ module VK
   module Artist
     class Albums < VK::Artist::Base
       API_METHOD = 'audio.getAlbumsByArtist'.freeze
-      COLLECTION_NAME = 'albums'.freeze
-
-      include Muffon::Utils::Pagination
 
       private
 
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
       end
 
-      def raw_albums
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
+      end
+
+      def raw_collection
         artist['items']
       end
 
@@ -37,19 +44,17 @@ module VK
         }
       end
 
-      def total_items_count
-        artist['count'].to_i
+      def items_count
+        artist['count']
       end
 
-      def album_data_formatted(album)
+      def collection_item_data_formatted(album)
         VK::Artist::Albums::Album.call(
           album:,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )
       end
-
-      alias collection albums
     end
   end
 end

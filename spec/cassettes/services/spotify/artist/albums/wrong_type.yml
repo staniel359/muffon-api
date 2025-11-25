@@ -88,7 +88,7 @@ http_interactions:
   recorded_at: Sat, 23 Apr 2022 18:40:35 GMT
 - request:
     method: get
-    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?include_groups&limit=20&offset=0
+    uri: https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?limit=20&offset=0
     body:
       encoding: US-ASCII
       string: ''
@@ -143,7 +143,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |-
         {
-          "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=0&limit=20&include_groups=",
+          "href" : "https://api.spotify.com/v1/artists/1aSxMhuvixZ8h9dK9jIDwL/albums?offset=0&limit=20",
           "items" : [ ],
           "limit" : 20,
           "next" : null,

@@ -1,8 +1,6 @@
 module YandexMusic
   module Artist
     class Base < YandexMusic::Base
-      include Muffon::Utils::Pagination
-
       def call
         check_args
 

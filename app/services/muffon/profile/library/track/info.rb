@@ -6,17 +6,9 @@ module Muffon
           private
 
           def track_data
-            self_data
-              .merge(track_base_data)
-              .merge(track_extra_data)
-          end
-
-          def profile_id
-            @args[:other_profile_id]
-          end
-
-          def track_extra_data
             {
+              **self_data,
+              **super,
               album: album_data,
               image: image_data,
               albums_count:,
@@ -24,6 +16,10 @@ module Muffon
               created: created_formatted,
               audio: audio_data
             }.compact
+          end
+
+          def profile_id
+            @args[:other_profile_id]
           end
 
           def albums_count

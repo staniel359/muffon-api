@@ -10,11 +10,13 @@ module Muffon
           end
 
           def percent
-            ([
-              artists_percent,
-              albums_percent,
-              tracks_percent
-            ].sum / 3).floor
+            (
+              [
+                artists_percent,
+                albums_percent,
+                tracks_percent
+              ].sum / 3
+            ).floor
           end
 
           def artists_percent

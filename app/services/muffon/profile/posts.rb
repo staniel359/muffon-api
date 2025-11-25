@@ -1,36 +1,41 @@
 module Muffon
   module Profile
     class Posts < Muffon::Profile::Base
-      COLLECTION_NAME = 'posts'.freeze
       DEFAULT_ORDER = 'created_desc'.freeze
-
-      include Muffon::Utils::Pagination
 
       private
 
       def profile_data
-        profile_base_data
-          .merge(paginated_data)
+        {
+          **super,
+          **posts_data
+        }
       end
 
-      def profile_base_data
-        { nickname: }
+      def posts_data
+        paginated_data(
+          collection_name: 'posts',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
       end
 
-      def total_items_count
-        @total_items_count ||= posts.count
+      def raw_collection
+        posts
+          .ordered(order, DEFAULT_ORDER)
+          .limit(limit)
+          .offset(offset)
+          .associated
       end
 
       def posts
         @posts ||= profile.posts
       end
 
-      def collection_list
-        posts
-          .ordered(order, DEFAULT_ORDER)
-          .limit(limit)
-          .offset(offset)
-          .associated
+      def items_count
+        posts.count
       end
 
       def collection_item_data_formatted(post)

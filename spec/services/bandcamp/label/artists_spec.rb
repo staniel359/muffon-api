@@ -9,8 +9,8 @@ RSpec.describe Bandcamp::Label::Artists do
         ) do
           subject.call(
             label_id: '2304199212',
-            limit: 5,
-            page: 2
+            page: '2',
+            limit: '5'
           )
         end
       end

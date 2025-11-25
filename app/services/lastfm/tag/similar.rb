@@ -1,8 +1,6 @@
 module LastFM
   module Tag
     class Similar < LastFM::Tag::Web::Base
-      COLLECTION_NAME = 'similar'.freeze
-
       private
 
       def tag_data
@@ -20,8 +18,6 @@ module LastFM
       )
         tag_data.text
       end
-
-      alias link base_link
     end
   end
 end

@@ -10,8 +10,8 @@ RSpec.describe AmazonMusic::Track::Info do
           subject.call(
             album_id: 'B00BRRGQAI',
             track_id: 'B00BRRGTQ4',
-            profile_id: 1,
-            with_audio: true
+            with_audio: true,
+            profile_id: '1'
           )
         end
       end

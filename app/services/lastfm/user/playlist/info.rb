@@ -59,7 +59,7 @@ module LastFM
         end
 
         def retrieve_page_tracks(page)
-          LastFM::User::Playlist::Info::Tracks.call(
+          LastFM::User::Playlist::Tracks.call(
             nickname: @args[:nickname],
             playlist_id: @args[:playlist_id],
             skip_profile: true,

@@ -3,13 +3,10 @@ module YouTube
     class Similar < YouTube::Video::Base
       BASE_LINK =
         'https://music.youtube.com/youtubei/v1/next'.freeze
-      COLLECTION_NAME = 'similar'.freeze
       SCOPES_PREFIXES = %w[
         RDAMVM
         RDATiXv
       ].freeze
-
-      include Muffon::Utils::Pagination
 
       private
 
@@ -20,8 +17,19 @@ module YouTube
       def video_data
         {
           **video_base_data,
-          **paginated_data
+          **similar_data
         }
+      end
+
+      def similar_data
+        paginated_data(
+          collection_name: 'similar',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          next_page:
+        )
       end
 
       def video_base_data
@@ -39,19 +47,7 @@ module YouTube
           )[:video]
       end
 
-      def next_page
-        next_page_computed = page + 1
-
-        return if SCOPES_PREFIXES[next_page_computed - 1].blank?
-
-        next_page_computed
-      end
-
-      def total_pages_count
-        nil
-      end
-
-      def collection_list
+      def raw_collection
         response_data
           .dig(
             'contents',
@@ -93,6 +89,18 @@ module YouTube
 
       def scope_prefix
         SCOPES_PREFIXES[page - 1]
+      end
+
+      def page
+        super.to_i
+      end
+
+      def next_page
+        next_page_computed = page + 1
+
+        return if SCOPES_PREFIXES[next_page_computed - 1].blank?
+
+        next_page_computed
       end
 
       def collection_item_data_formatted(video)

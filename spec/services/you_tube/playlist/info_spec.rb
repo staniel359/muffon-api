@@ -8,7 +8,8 @@ RSpec.describe YouTube::Playlist::Info do
           'services/youtube/playlist/info/success'
         ) do
           subject.call(
-            playlist_id: 'PLUh4W61bt_K78wGbr6lUgPb5gjine4I6G'
+            playlist_id: 'PLUh4W61bt_K78wGbr6lUgPb5gjine4I6G',
+            profile_id: '1'
           )
         end
       end

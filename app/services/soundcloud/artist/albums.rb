@@ -1,21 +1,28 @@
 module SoundCloud
   module Artist
     class Albums < SoundCloud::Artist::Base
-      COLLECTION_NAME = 'albums'.freeze
-      LIMIT = 200
-
-      include Muffon::Utils::Pagination
+      PAGE_LIMIT = 200
 
       private
 
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
       end
 
-      def raw_albums
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
+        )
+      end
+
+      def raw_collection
         artist['collection']
       end
 
@@ -26,18 +33,8 @@ module SoundCloud
       def params
         {
           **super,
-          limit: LIMIT
+          limit: PAGE_LIMIT
         }
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_albums
-        )
-      end
-
-      def total_items_count
-        raw_albums.size
       end
 
       def collection_item_data_formatted(album)

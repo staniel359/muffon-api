@@ -2,14 +2,37 @@ module Muffon
   module Profile
     module Recommendations
       class Tracks < Muffon::Profile::Recommendations::Base
-        COLLECTION_NAME = 'tracks'.freeze
         DEFAULT_ORDER =
           'library_tracks_count_desc'.freeze
 
         private
 
-        def recommendations_filtered
-          @recommendations_filtered ||=
+        def recommendations_data
+          {
+            **tracks_data
+          }
+        end
+
+        def tracks_data
+          paginated_data(
+            collection_name: 'tracks',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
+        end
+
+        def raw_collection
+          tracks
+            .associated
+            .ordered(order, DEFAULT_ORDER)
+            .limit(limit)
+            .offset(offset)
+        end
+
+        def tracks
+          @tracks ||=
             Muffon::Profile::Recommendations::Tracks::Filter.call(
               filter_args
             )
@@ -28,12 +51,8 @@ module Muffon
           )
         end
 
-        def collection_list
-          recommendations_filtered
-            .associated
-            .ordered(order, DEFAULT_ORDER)
-            .limit(limit)
-            .offset(offset)
+        def items_count
+          tracks.count
         end
 
         def collection_item_data_formatted(recommendation)

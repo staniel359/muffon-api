@@ -1,8 +1,6 @@
 module AmazonMusic
   module Search
     class Base < AmazonMusic::Base
-      include AmazonMusic::Utils::Pagination
-
       def call
         check_args
 
@@ -18,7 +16,7 @@ module AmazonMusic
       end
 
       def data
-        { search: paginated_data }
+        { search: search_data }
       end
 
       def payload
@@ -26,6 +24,22 @@ module AmazonMusic
           query: @args[:query],
           page: @args[:page]
         )
+      end
+
+      def raw_collection
+        response_data.dig(
+          'methods',
+          0,
+          'template',
+          'widgets',
+          0,
+          'items'
+        ) ||
+          response_data.dig(
+            'methods',
+            0,
+            'items'
+          )
       end
 
       alias response post_response

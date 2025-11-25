@@ -1,12 +1,28 @@
 module YouTube
   module Search
     class Playlists < YouTube::Search::Base
-      COLLECTION_NAME = 'playlists'.freeze
-      MODEL_NAME = 'playlist'.freeze
-
       private
 
-      def collection_list
+      def search_data
+        paginated_data(
+          collection_name: 'playlists',
+          raw_collection:,
+          page:,
+          limit:,
+          is_infinite: true,
+          previous_page:,
+          next_page:
+        )
+      end
+
+      def params
+        {
+          **super,
+          type: 'playlist'
+        }
+      end
+
+      def raw_collection
         super.reject do |collection_item|
           channel_item?(
             collection_item

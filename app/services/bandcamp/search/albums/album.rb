@@ -2,6 +2,8 @@ module Bandcamp
   module Search
     class Albums
       class Album < Bandcamp::Search::Albums
+        MODEL_NAME = 'album'.freeze
+
         include Muffon::Utils::Album
 
         def call

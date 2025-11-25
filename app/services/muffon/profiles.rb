@@ -1,9 +1,6 @@
 module Muffon
   class Profiles < Muffon::Base
-    COLLECTION_NAME = 'profiles'.freeze
     DEFAULT_ORDER = 'created_desc'.freeze
-
-    include Muffon::Utils::Pagination
 
     def call
       data
@@ -12,40 +9,47 @@ module Muffon
     private
 
     def data
-      { profiles: paginated_data }
+      { profiles: profiles_data }
     end
 
-    def total_items_count
-      @total_items_count ||= profiles.count
+    def profiles_data
+      paginated_data(
+        collection_name: 'profiles',
+        raw_collection:,
+        page:,
+        limit:,
+        items_count:
+      )
     end
 
-    def profiles
-      @profiles ||= profiles_online_filtered
-    end
-
-    def profiles_online_filtered
-      if @args[:online]
-        profiles_public_filtered.online
-      else
-        profiles_public_filtered
-      end
-    end
-
-    def profiles_public_filtered
-      if creator?
-        ::Profile
-      else
-        ::Profile.public
-      end
-    end
-
-    def collection_list
+    def raw_collection
       profiles
-        .not_deleted
         .ordered(order, DEFAULT_ORDER)
         .limit(limit)
         .offset(offset)
         .associated
+    end
+
+    def profiles
+      @profiles ||= begin
+        if creator?
+          ::Profile.not_deleted
+        else
+          ::Profile
+            .public
+            .not_deleted
+        end.then do |profiles|
+          if @args[:online]
+            profiles.online
+          else
+            profiles
+          end
+        end
+      end
+    end
+
+    def items_count
+      profiles.count
     end
 
     def collection_item_data_formatted(profile)

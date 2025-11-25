@@ -2,10 +2,7 @@ module LastFM
   module Artist
     class Similar < LastFM::Artist::Base
       API_METHOD = 'artist.getSimilar'.freeze
-      COLLECTION_NAME = 'similar'.freeze
-      TOTAL_LIMIT = 200
-
-      include LastFM::Artist::Utils::Pagination
+      PAGE_LIMIT = 200
 
       private
 
@@ -21,9 +18,7 @@ module LastFM
       def params
         {
           **super,
-          artist:
-            @args[:artist_name],
-          limit: TOTAL_LIMIT
+          limit: PAGE_LIMIT
         }
       end
 
@@ -34,22 +29,34 @@ module LastFM
         )
       end
 
-      def data
-        { artist: artist_data }
+      def artist_data
+        {
+          **super,
+          **similar_data
+        }
       end
 
-      def collection_list
-        collection_paginated(
-          raw_collection_list
+      def similar_data
+        paginated_data(
+          collection_name: 'similar',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
         )
       end
 
-      def raw_collection_list
+      def raw_collection
         artist['artist']
       end
 
-      def total_items_count
-        raw_collection_list.size
+      def items_count
+        artist
+          .dig(
+            '@attr',
+            'total'
+          )
+          .to_i
       end
 
       def collection_item_data_formatted(artist)

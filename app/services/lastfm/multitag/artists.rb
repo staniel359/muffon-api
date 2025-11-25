@@ -1,10 +1,16 @@
 module LastFM
   module Multitag
     class Artists < LastFM::Multitag::Base
-      MODEL_NAME = 'artist'.freeze
-      COLLECTION_NAME = 'artists'.freeze
-
       private
+
+      def multitag_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection: [],
+          page:,
+          limit:
+        )
+      end
 
       def collection_item_data_formatted(artist)
         LastFM::Multitag::Artists::Artist.call(

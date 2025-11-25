@@ -6,7 +6,7 @@ module Muffon
 
         def profile_data
           {
-            nickname: profile.nickname,
+            **super,
             library: library_data
           }
         end

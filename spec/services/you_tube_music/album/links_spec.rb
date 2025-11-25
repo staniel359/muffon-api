@@ -8,8 +8,7 @@ RSpec.describe YouTubeMusic::Album::Links do
           'services/youtubemusic/album/links/success'
         ) do
           subject.call(
-            album_id: 'MPREb_xCLoqKtsA0k',
-            profile_id: 1
+            album_id: 'MPREb_xCLoqKtsA0k'
           )
         end
       end

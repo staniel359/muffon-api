@@ -8,7 +8,8 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.13.2
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +22,7 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Wed, 16 Jul 2025 07:45:46 GMT
+      - Sun, 07 Dec 2025 18:39:05 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,5 +40,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wejlhg239gh23","startPage":"1"},"opensearch:totalResults":"0","opensearch:startIndex":"0","opensearch:itemsPerPage":"20","artistmatches":{"artist":[]},"@attr":{"for":"wejlhg239gh23"}}}'
-  recorded_at: Wed, 16 Jul 2025 07:45:46 GMT
+  recorded_at: Sun, 07 Dec 2025 18:39:05 GMT
 recorded_with: VCR 6.3.1

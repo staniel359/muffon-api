@@ -2,16 +2,30 @@ module GitHub
   class Releases < Muffon::Base
     BASE_LINK =
       'https://api.github.com/repos/staniel359/muffon/releases'.freeze
-    COLLECTION_NAME = 'releases'.freeze
-    TOTAL_LIMIT = 100
-
-    include Muffon::Utils::Pagination
+    PAGE_LIMIT = 100
 
     def call
       data
     end
 
     private
+
+    def data
+      paginated_data(
+        collection_name: 'releases',
+        raw_collection:
+          raw_collection_filtered,
+        page:,
+        limit:,
+        is_fractioned: true
+      )
+    end
+
+    def raw_collection_filtered
+      response_data.reject do |raw_item_data|
+        raw_item_data['published_at'].blank?
+      end
+    end
 
     def link
       BASE_LINK
@@ -29,23 +43,7 @@ module GitHub
     end
 
     def params
-      { per_page: TOTAL_LIMIT }
-    end
-
-    def collection_list
-      collection_paginated(
-        collection_filtered
-      )
-    end
-
-    def collection_filtered
-      response_data.reject do |i|
-        i['published_at'].blank?
-      end
-    end
-
-    def collection_count
-      collection_filtered.size
+      { per_page: PAGE_LIMIT }
     end
 
     def collection_item_data_formatted(release)
@@ -53,7 +51,5 @@ module GitHub
         release:
       )
     end
-
-    alias data paginated_data
   end
 end

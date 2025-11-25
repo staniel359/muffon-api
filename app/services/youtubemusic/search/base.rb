@@ -1,8 +1,6 @@
 module YouTubeMusic
   module Search
     class Base < YouTubeMusic::Base
-      include Muffon::Utils::Pagination
-
       def call
         check_args
 
@@ -21,8 +19,8 @@ module YouTubeMusic
         { search: search_data }
       end
 
-      def collection_list
-        raw_data['contents'] || []
+      def raw_collection
+        raw_data['contents']
       end
 
       def raw_data
@@ -58,17 +56,6 @@ module YouTubeMusic
         }.to_json
       end
 
-      def scope_params
-        YouTubeMusic::Search::ScopeParams.call(
-          query: @args[:query],
-          scope:
-        )
-      end
-
-      def scope
-        self.class::SCOPE
-      end
-
       def params
         { continuation: @args[:page] }
       end
@@ -89,15 +76,6 @@ module YouTubeMusic
         )
       end
 
-      def page
-        nil
-      end
-
-      def total_pages_count
-        nil
-      end
-
-      alias search_data paginated_data
       alias response post_response
     end
   end

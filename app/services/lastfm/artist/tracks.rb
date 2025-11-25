@@ -2,10 +2,7 @@ module LastFM
   module Artist
     class Tracks < LastFM::Artist::Base
       API_METHOD = 'artist.getTopTracks'.freeze
-      COLLECTION_NAME = 'tracks'.freeze
-      TOTAL_LIMIT = 1000
-
-      include LastFM::Artist::Utils::Pagination
+      MAXIMUM_ITEMS_COUNT = 1_000
 
       private
 
@@ -13,8 +10,50 @@ module LastFM
         response_data['toptracks']
       end
 
-      def collection_list
-        artist['track'].last(limit)
+      def params
+        {
+          **super,
+          page:,
+          limit:
+        }
+      end
+
+      def artist_data
+        {
+          **super,
+          **tracks_data
+        }
+      end
+
+      def name
+        artist.dig(
+          '@attr',
+          'artist'
+        )
+      end
+
+      def tracks_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        artist['track']
+      end
+
+      def items_count
+        artist
+          .dig(
+            '@attr',
+            'total'
+          )
+          .to_i
       end
 
       def collection_item_data_formatted(track)

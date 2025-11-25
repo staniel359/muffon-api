@@ -9,7 +9,7 @@ RSpec.describe SoundCloud::Album::Info do
         ) do
           subject.call(
             album_id: '249480404',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

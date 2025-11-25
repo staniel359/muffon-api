@@ -8,9 +8,9 @@ RSpec.describe LastFM::Top::Tracks do
           'services/lastfm/top/tracks/success'
         ) do
           subject.call(
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end
@@ -24,7 +24,9 @@ RSpec.describe LastFM::Top::Tracks do
           'services/lastfm/top/tracks/success_country'
         ) do
           subject.call(
-            country: 'US'
+            country: 'US',
+            page: '2',
+            limit: '5'
           )
         end
       end

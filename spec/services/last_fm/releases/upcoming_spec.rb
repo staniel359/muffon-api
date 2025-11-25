@@ -7,8 +7,8 @@ RSpec.describe LastFM::Releases::Upcoming do
         'services/lastfm/releases/upcoming/success'
       ) do
         subject.call(
-          page: 2,
-          profile_id: 1
+          page: '2',
+          profile_id: '1'
         )
       end
     end

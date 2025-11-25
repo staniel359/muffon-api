@@ -1,50 +1,51 @@
 module Muffon
   module Profile
     class Playlists < Muffon::Profile::Base
-      COLLECTION_NAME = 'playlists'.freeze
       DEFAULT_ORDER = 'created_desc'.freeze
 
-      include Muffon::Utils::Pagination
       include Muffon::Utils::Track
       include Muffon::Utils::Album
 
       private
 
       def profile_data
-        profile_base_data
-          .merge(paginated_data)
+        {
+          **super,
+          **playlists_data
+        }
       end
 
-      def profile_base_data
-        { nickname: }
+      def playlists_data
+        paginated_data(
+          collection_name: 'playlists',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:
+        )
       end
 
-      def total_items_count
-        @total_items_count ||= playlists.count
-      end
-
-      def playlists
-        @playlists ||= playlists_conditional
-      end
-
-      def playlists_conditional
-        if valid_profile? || creator?
-          profile_playlists
-        else
-          profile_playlists.public
-        end
-      end
-
-      def profile_playlists
-        profile.playlists
-      end
-
-      def collection_list
+      def raw_collection
         playlists
           .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
           .associated
+      end
+
+      def playlists
+        @playlists ||=
+          if valid_profile? || creator?
+            profile.playlists
+          else
+            profile
+              .playlists
+              .public
+          end
+      end
+
+      def items_count
+        playlists.count
       end
 
       def collection_item_data_formatted(playlist)
@@ -56,15 +57,17 @@ module Muffon
       end
 
       def track_id
-        return unless model?('track')
+        return unless model == 'track'
 
         find_track.id
       end
 
-      def model?(type)
+      def model
+        return if @args[:model].blank?
+
         @args[:model]
-          &.strip
-          &.downcase == type
+          .strip
+          .downcase
       end
 
       def title
@@ -76,7 +79,7 @@ module Muffon
       end
 
       def album_id
-        return unless model?('album')
+        return unless model == 'album'
 
         find_album.id
       end

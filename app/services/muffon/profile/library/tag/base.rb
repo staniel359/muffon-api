@@ -33,7 +33,7 @@ module Muffon
             { tag: tag_data }
           end
 
-          def tag_base_data
+          def tag_data
             {
               library: library_tag_data,
               name: tag.name

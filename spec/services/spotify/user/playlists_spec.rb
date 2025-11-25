@@ -9,8 +9,8 @@ RSpec.describe Spotify::User::Playlists do
         ) do
           subject.call(
             access_token: 'BQANUzbn0K51z78z7_e29hhFbN2uiqul9Jcy9NwSLzY87rQxV7Tqh4y7OZZV2uUofiCwWRXYLJZnWvImWG0O_Rmr-38-Au1srHCOYvSucLoFKsDls83Hv0Qri0QCEwhvzQWjLLkLIbcIuaCj2lYcThiHPe3jYw4G-g8s3IrSByYIlT7ykNvmEWybljfdR3fCb_9OZvUXBkvbdONCtD9Yam1io2IqkDYFBEyw',
-            page: 2,
-            limit: 5
+            page: '2',
+            limit: '5'
           )
         end
       end
@@ -33,8 +33,8 @@ RSpec.describe Spotify::User::Playlists do
         ) do
           subject.call(
             access_token: random_string,
-            profile_id: 1,
-            token: 1
+            profile_id: '1',
+            token: '1'
           )
         end
       end

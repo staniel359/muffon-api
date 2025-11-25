@@ -9,7 +9,7 @@ RSpec.describe LastFM::Search::Tags do
         ) do
           subject.call(
             query: 'pop',
-            page: 2
+            page: '2'
           )
         end
       end
@@ -36,7 +36,7 @@ RSpec.describe LastFM::Search::Tags do
         end
       end
 
-      it { expect(output).to eq(no_tags_data) }
+      it { expect(output).to eq(search_paginated_missing_tags_data) }
     end
   end
 end

@@ -10,7 +10,7 @@ RSpec.describe LastFM::Track::Albums do
           subject.call(
             artist_name: 'kate bush',
             track_title: 'hounds of love',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

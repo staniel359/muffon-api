@@ -1,10 +1,26 @@
 module MusicBrainz
   module Search
     class Albums < MusicBrainz::Search::Base
-      COLLECTION_NAME = 'albums'.freeze
-      MODEL_NAME = 'release'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        response_data['releases']
+      end
+
+      def link
+        "#{BASE_LINK}/release"
+      end
 
       def collection_item_data_formatted(album)
         MusicBrainz::Search::Albums::Album.call(

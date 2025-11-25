@@ -20,9 +20,7 @@ module LastFM
 
         def nickname
           response_data
-            .css(
-              '.header-title'
-            )
+            .css('.header-title')
             .text
             .strip
         end

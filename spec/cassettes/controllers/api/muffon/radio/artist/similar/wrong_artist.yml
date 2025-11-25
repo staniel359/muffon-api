@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&limit=200&method=artist.getSimilar&page=1
+    uri: https://ws.audioscrobbler.com/2.0?api_key=<LASTFM_API_KEY>&artist=wejlhg239gh23&autocorrect=0&format=json&limit=200&method=artist.getSimilar
     body:
       encoding: US-ASCII
       string: ''

@@ -64,7 +64,7 @@ http_interactions:
   recorded_at: Sat, 12 Aug 2023 17:20:13 GMT
 - request:
     method: get
-    uri: https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=14232026&apikey=<MUSIXMATCH_API_KEY>&page=1&page_size=200
+    uri: https://api.musixmatch.com/ws/1.1/album.tracks.get?album_id=14232026&apikey=<MUSIXMATCH_API_KEY>&page_size=200
     body:
       encoding: US-ASCII
       string: ''

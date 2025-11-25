@@ -9,7 +9,7 @@ RSpec.describe Genius::Album::Info do
         ) do
           subject.call(
             album_id: '168168',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

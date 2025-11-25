@@ -2,6 +2,8 @@ module MusicBrainz
   module Artist
     class Albums
       class Album < MusicBrainz::Artist::Albums
+        MODEL_NAME = 'release-group'.freeze
+
         include MusicBrainz::Utils::Album
 
         def call

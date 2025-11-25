@@ -48,7 +48,7 @@ module Muffon
 
         def profile_data
           {
-            nickname:,
+            **super,
             playlist: playlist_data
           }
         end

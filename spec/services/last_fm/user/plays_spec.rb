@@ -9,8 +9,8 @@ RSpec.describe LastFM::User::Plays do
         ) do
           subject.call(
             nickname: 'cornwell_93',
-            page: 2,
-            limit: 5
+            page: '2',
+            limit: '5'
           )
         end
       end
@@ -33,8 +33,8 @@ RSpec.describe LastFM::User::Plays do
         ) do
           subject.call(
             nickname: random_string,
-            page: 2,
-            limit: 5
+            page: '2',
+            limit: '5'
           )
         end
       end

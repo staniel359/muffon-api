@@ -8,7 +8,8 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.13.2
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,11 +22,11 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Wed, 16 Jul 2025 07:45:46 GMT
+      - Sun, 07 Dec 2025 18:39:08 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3020'
+      - '3098'
       Access-Control-Allow-Methods:
       - POST, GET, OPTIONS
       Access-Control-Allow-Origin:
@@ -37,8 +38,14 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJyZXN1bHRzIjp7Im9wZW5zZWFyY2g6UXVlcnkiOnsiI3RleHQiOiIiLCJyb2xlIjoicmVxdWVzdCIsInN0YXJ0UGFnZSI6IjIifSwib3BlbnNlYXJjaDp0b3RhbFJlc3VsdHMiOiIyMDMiLCJvcGVuc2VhcmNoOnN0YXJ0SW5kZXgiOiI1Iiwib3BlbnNlYXJjaDppdGVtc1BlclBhZ2UiOiI1IiwidHJhY2ttYXRjaGVzIjp7InRyYWNrIjpbeyJuYW1lIjoiQ2hpbmF0b3duIChMaXZlIGZyb20gQnJvb2tseW4gU3RlZWwpIiwiYXJ0aXN0IjoiV2lsZCBOb3RoaW5nIiwidXJsIjoiaHR0cHM6Ly93d3cubGFzdC5mbS9tdXNpYy9XaWxkK05vdGhpbmcvXy9DaGluYXRvd24rKExpdmUrZnJvbStCcm9va2x5bitTdGVlbCkiLCJzdHJlYW1hYmxlIjoiRklYTUUiLCJsaXN0ZW5lcnMiOiIxNjEiLCJpbWFnZSI6W3siI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzM0cy8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoic21hbGwifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS82NHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6Im1lZGl1bSJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzE3NHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6ImxhcmdlIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzAweDMwMC8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoiZXh0cmFsYXJnZSJ9XSwibWJpZCI6IiJ9LHsibmFtZSI6IkdlbWluaSAtIENoaW5hdG93biIsImFydGlzdCI6IldpbGQgTm90aGluZyIsInVybCI6Imh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvV2lsZCtOb3RoaW5nL18vR2VtaW5pKy0rQ2hpbmF0b3duIiwic3RyZWFtYWJsZSI6IkZJWE1FIiwibGlzdGVuZXJzIjoiMTI0IiwiaW1hZ2UiOlt7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sIm1iaWQiOiIifSx7Im5hbWUiOiJDaGluYXRvd24iLCJhcnRpc3QiOiJXaWxkX05vdGhpbmciLCJ1cmwiOiJodHRwczovL3d3dy5sYXN0LmZtL211c2ljL1dpbGRfTm90aGluZy9fL0NoaW5hdG93biIsInN0cmVhbWFibGUiOiJGSVhNRSIsImxpc3RlbmVycyI6IjIzMCIsImltYWdlIjpbeyIjdGV4dCI6IiIsInNpemUiOiJzbWFsbCJ9LHsiI3RleHQiOiIiLCJzaXplIjoibWVkaXVtIn0seyIjdGV4dCI6IiIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiIiLCJzaXplIjoiZXh0cmFsYXJnZSJ9XSwibWJpZCI6IiJ9LHsibmFtZSI6IjEwIENoaW5hdG93biIsImFydGlzdCI6IldpbGQgTm90aGluZyIsInVybCI6Imh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvV2lsZCtOb3RoaW5nL18vMTArQ2hpbmF0b3duIiwic3RyZWFtYWJsZSI6IkZJWE1FIiwibGlzdGVuZXJzIjoiMTM0IiwiaW1hZ2UiOlt7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zNHMvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvNjRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8xNzRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzMwMHgzMDAvMmE5NmNiZDhiNDZlNDQyZmM0MWMyYjg2YjgyMTU2MmYucG5nIiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sIm1iaWQiOiIifSx7Im5hbWUiOiJDaGluYXRvd24g4oCTIExpdmUgRnJvbSBCcm9va2x5biBTdGVlbCIsImFydGlzdCI6IldpbGQgTm90aGluZyIsInVybCI6Imh0dHBzOi8vd3d3Lmxhc3QuZm0vbXVzaWMvV2lsZCtOb3RoaW5nL18vQ2hpbmF0b3duKyVFMiU4MCU5MytMaXZlK0Zyb20rQnJvb2tseW4rU3RlZWwiLCJzdHJlYW1hYmxlIjoiRklYTUUiLCJsaXN0ZW5lcnMiOiIxOCIsImltYWdlIjpbeyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMzRzLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJzbWFsbCJ9LHsiI3RleHQiOiJodHRwczovL2xhc3RmbS5mcmVldGxzLmZhc3RseS5uZXQvaS91LzY0cy8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoibWVkaXVtIn0seyIjdGV4dCI6Imh0dHBzOi8vbGFzdGZtLmZyZWV0bHMuZmFzdGx5Lm5ldC9pL3UvMTc0cy8yYTk2Y2JkOGI0NmU0NDJmYzQxYzJiODZiODIxNTYyZi5wbmciLCJzaXplIjoibGFyZ2UifSx7IiN0ZXh0IjoiaHR0cHM6Ly9sYXN0Zm0uZnJlZXRscy5mYXN0bHkubmV0L2kvdS8zMDB4MzAwLzJhOTZjYmQ4YjQ2ZTQ0MmZjNDFjMmI4NmI4MjE1NjJmLnBuZyIsInNpemUiOiJleHRyYWxhcmdlIn1dLCJtYmlkIjoiIn1dfSwiQGF0dHIiOnt9fX0=
-  recorded_at: Wed, 16 Jul 2025 07:45:46 GMT
+      encoding: UTF-8
+      string: '{"results":{"opensearch:Query":{"#text":"","role":"request","searchTerms":"wild
+        nothing chinatown","startPage":"2"},"opensearch:totalResults":"983","opensearch:startIndex":"5","opensearch:itemsPerPage":"5","trackmatches":{"track":[{"name":"Wild
+        Nothing - Chinatown","artist":"dsbchillwave","url":"https://www.last.fm/music/dsbchillwave/_/Wild+Nothing+-+Chinatown","streamable":"0","listeners":"9","image":[{"#text":"","size":"small"},{"#text":"","size":"medium"},{"#text":"","size":"large"},{"#text":"","size":"extralarge"}],"mbid":""},{"name":"Shadow","artist":"Wild
+        Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Shadow","streamable":"0","listeners":"254295","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"f2bc8382-17cb-3d30-8fee-7b71617fbc27"},{"name":"Nocturne","artist":"Wild
+        Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Nocturne","streamable":"0","listeners":"166663","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"82659334-7360-4b93-ac3a-eee7853ec3af"},{"name":"Paradise","artist":"Wild
+        Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Paradise","streamable":"0","listeners":"150044","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"868b32e9-68f4-381d-80e5-78f8184d09a2"},{"name":"Drifter","artist":"Wild
+        Nothing","url":"https://www.last.fm/music/Wild+Nothing/_/Drifter","streamable":"0","listeners":"127237","image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png","size":"extralarge"}],"mbid":"0f617376-2e29-32c5-88f3-80d5b4cc0bcb"}]},"@attr":{"for":"wild
+        nothing chinatown"}}}'
+  recorded_at: Sun, 07 Dec 2025 18:39:08 GMT
 recorded_with: VCR 6.3.1

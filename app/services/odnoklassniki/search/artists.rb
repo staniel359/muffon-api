@@ -1,15 +1,25 @@
 module Odnoklassniki
   module Search
     class Artists < Odnoklassniki::Search::Base
-      COLLECTION_NAME = 'artists'.freeze
       ENDPOINT_NAME = 'artists'.freeze
 
       private
 
-      def collection_list
-        @collection_list ||= [
+      def search_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
+
+      def raw_collection
+        [
           first_artist,
-          *super
+          *response_data['artists']
         ].compact
       end
 
@@ -17,6 +27,13 @@ module Odnoklassniki
         response_data.dig(
           'bestMatch',
           'artist'
+        )
+      end
+
+      def items_count
+        response_data.dig(
+          'relevantCounts',
+          'artists'
         )
       end
 

@@ -2,20 +2,31 @@ module Muffon
   module Profile
     module History
       class Player < Muffon::Profile::History::Base
-        COLLECTION_NAME = 'tracks'.freeze
-        DEFAULT_ORDER = 'created_desc'.freeze
-
         private
 
-        def events
-          @events ||= profile.playing_events
+        def profile_data
+          paginated_data(
+            collection_name: 'tracks',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
         end
 
-        def collection_list
-          events
+        def raw_collection
+          tracks
             .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
+        end
+
+        def tracks
+          @tracks ||= profile.playing_events
+        end
+
+        def items_count
+          tracks.count
         end
 
         def collection_item_data_formatted(event)

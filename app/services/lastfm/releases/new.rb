@@ -1,7 +1,11 @@
 module LastFM
   module Releases
     class New < LastFM::Releases::Base
-      SCOPE = 'out-now'.freeze
+      private
+
+      def link
+        'https://www.last.fm/music/+releases/out-now/popular'
+      end
     end
   end
 end

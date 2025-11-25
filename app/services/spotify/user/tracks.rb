@@ -1,29 +1,37 @@
 module Spotify
   module User
     class Tracks < Spotify::User::Base
-      COLLECTION_NAME = 'tracks'.freeze
-
-      include Spotify::Utils::Pagination
-
       private
 
       def user_data
-        {
-          total_items: total_items_count,
-          **paginated_data
-        }
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          is_with_items_count: true
+        )
       end
 
-      def total_items_count
-        user['total']
+      def raw_collection
+        user['items']
       end
 
       def link
         "#{super}/tracks"
       end
 
-      def collection_list
-        user['items']
+      def params
+        {
+          **super,
+          limit:,
+          offset:
+        }
+      end
+
+      def items_count
+        user['total']
       end
 
       def collection_item_data_formatted(track)

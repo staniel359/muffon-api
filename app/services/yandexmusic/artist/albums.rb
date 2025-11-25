@@ -1,26 +1,26 @@
 module YandexMusic
   module Artist
     class Albums < YandexMusic::Artist::Base
-      COLLECTION_NAME = 'albums'.freeze
-
-      include Muffon::Utils::Pagination
-
       private
 
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
       end
 
-      def collection_list
-        collection_paginated(
-          raw_albums
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
         )
       end
 
-      def raw_albums
+      def raw_collection
         artist['albums']
       end
 
@@ -30,10 +30,6 @@ module YandexMusic
           sort: 'year',
           what: 'albums'
         }
-      end
-
-      def total_items_count
-        raw_albums.size
       end
 
       def collection_item_data_formatted(album)

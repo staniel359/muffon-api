@@ -9,9 +9,9 @@ RSpec.describe LastFM::Tag::Albums do
         ) do
           subject.call(
             tag_name: 'pop',
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end

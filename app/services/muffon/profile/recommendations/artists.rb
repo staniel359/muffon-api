@@ -2,14 +2,37 @@ module Muffon
   module Profile
     module Recommendations
       class Artists < Muffon::Profile::Recommendations::Base
-        COLLECTION_NAME = 'artists'.freeze
         DEFAULT_ORDER =
           'library_artists_count_desc'.freeze
 
         private
 
-        def recommendations_filtered
-          @recommendations_filtered ||=
+        def recommendations_data
+          {
+            **artists_data
+          }
+        end
+
+        def artists_data
+          paginated_data(
+            collection_name: 'artists',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
+        end
+
+        def raw_collection
+          artists
+            .associated
+            .ordered(order, DEFAULT_ORDER)
+            .limit(limit)
+            .offset(offset)
+        end
+
+        def artists
+          @artists ||=
             Muffon::Profile::Recommendations::Artists::Filter.call(
               filter_args
             )
@@ -30,12 +53,8 @@ module Muffon
           )
         end
 
-        def collection_list
-          recommendations_filtered
-            .associated
-            .ordered(order, DEFAULT_ORDER)
-            .limit(limit)
-            .offset(offset)
+        def items_count
+          artists.count
         end
 
         def collection_item_data_formatted(recommendation)

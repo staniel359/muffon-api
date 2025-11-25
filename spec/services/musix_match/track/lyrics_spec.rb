@@ -9,7 +9,7 @@ RSpec.describe MusixMatch::Track::Lyrics do
         ) do
           subject.call(
             track_id: '6717709',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

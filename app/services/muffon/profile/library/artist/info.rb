@@ -6,23 +6,19 @@ module Muffon
           private
 
           def artist_data
-            self_data
-              .merge(artist_base_data)
-              .merge(artist_extra_data)
-          end
-
-          def profile_id
-            @args[:other_profile_id]
-          end
-
-          def artist_extra_data
             {
+              **self_data,
+              **super,
               image: image_data,
               tracks_count:,
               albums_count:,
               playlists_count:,
               created: created_formatted
             }.compact
+          end
+
+          def profile_id
+            @args[:other_profile_id]
           end
 
           def image_data

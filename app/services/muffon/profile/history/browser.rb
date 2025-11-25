@@ -2,20 +2,31 @@ module Muffon
   module Profile
     module History
       class Browser < Muffon::Profile::History::Base
-        COLLECTION_NAME = 'routes'.freeze
-        DEFAULT_ORDER = 'created_desc'.freeze
-
         private
 
-        def events
-          @events ||= profile.browser_events
+        def profile_data
+          paginated_data(
+            collection_name: 'routes',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
+          )
         end
 
-        def collection_list
-          events
+        def raw_collection
+          routes
             .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
+        end
+
+        def routes
+          @routes ||= profile.browser_events
+        end
+
+        def items_count
+          routes.count
         end
 
         def collection_item_data_formatted(event)

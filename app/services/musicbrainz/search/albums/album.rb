@@ -2,6 +2,8 @@ module MusicBrainz
   module Search
     class Albums
       class Album < MusicBrainz::Search::Albums
+        MODEL_NAME = 'release'.freeze
+
         include MusicBrainz::Utils::Album
 
         def call

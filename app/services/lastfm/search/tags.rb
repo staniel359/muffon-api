@@ -1,14 +1,17 @@
 module LastFM
   module Search
     class Tags < LastFM::Search::Base
-      COLLECTION_NAME = 'tags'.freeze
-
       private
 
-      def required_args
-        %i[
-          query
-        ]
+      def search_data
+        paginated_data(
+          collection_name: 'tags',
+          raw_collection:
+            raw_collection_filtered,
+          page:,
+          limit:,
+          pages_count:
+        )
       end
 
       def response_data
@@ -33,17 +36,17 @@ module LastFM
         response_data[:page]
       end
 
-      def total_pages_count
+      def pages_count
         response_data[:total_pages]
       end
 
-      def collection_list
-        raw_collection_list.reject do |t|
-          t[:title].blank?
+      def raw_collection_filtered
+        raw_collection.reject do |item_data|
+          item_data[:title].blank?
         end
       end
 
-      def raw_collection_list
+      def raw_collection
         response_data[:results] || []
       end
 

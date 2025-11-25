@@ -3,53 +3,58 @@ module Muffon
     module Library
       module Search
         class Albums < Muffon::Profile::Library::Search::Base
-          COLLECTION_NAME = 'albums'.freeze
-          DEFAULT_ORDER = 'library_tracks_count_desc'.freeze
+          DEFAULT_ORDER =
+            'library_tracks_count_desc'.freeze
 
           private
 
           def library_data
-            library_base_data
-              .merge(paginated_data)
-          end
-
-          def library_base_data
-            { top_tracks_count: }
+            {
+              top_tracks_count:,
+              **albums_data
+            }
           end
 
           def top_tracks_count
-            search_library_albums
+            albums
               .library_tracks_count_desc_ordered
               .first
               &.library_tracks_count || 0
           end
 
-          def search_library_albums
-            @search_library_albums ||=
-              library_albums_joined.where(
+          def albums
+            @albums ||=
+              library_albums
+              .left_joins(
+                album: :artist
+              )
+              .where(
                 'albums.title_downcase LIKE :query ' \
                 'OR artists.name_downcase LIKE :query',
                 query: query_formatted
               )
           end
 
-          def total_items_count
-            @total_items_count ||=
-              search_library_albums.count
-          end
-
-          def library_albums_joined
-            library_albums.left_joins(
-              album: :artist
+          def albums_data
+            paginated_data(
+              collection_name: 'albums',
+              raw_collection:,
+              page:,
+              limit:,
+              items_count:
             )
           end
 
-          def collection_list
-            search_library_albums
+          def raw_collection
+            albums
               .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
               .associated
+          end
+
+          def items_count
+            albums.count
           end
 
           def collection_item_data_formatted(library_album)

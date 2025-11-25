@@ -1,9 +1,18 @@
 module SoundCloud
   module Search
     class Artists < SoundCloud::Search::Base
-      COLLECTION_NAME = 'artists'.freeze
-
       private
+
+      def search_data
+        paginated_data(
+          collection_name: 'artists',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count: MAXIMUM_ITEMS_COUNT
+        )
+      end
 
       def link
         "#{BASE_LINK}/search/users"

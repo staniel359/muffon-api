@@ -8,9 +8,7 @@ RSpec.describe YouTubeMusic::Track::Links do
           'services/youtubemusic/track/links/success'
         ) do
           subject.call(
-            track_id: '1aTIkQf3eRY',
-            profile_id: 1,
-            with_audio: true
+            track_id: '1aTIkQf3eRY'
           )
         end
       end

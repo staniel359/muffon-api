@@ -3,51 +3,55 @@ module Muffon
     module Library
       module Track
         class Albums < Muffon::Profile::Library::Track::Base
-          COLLECTION_NAME = 'albums'.freeze
           DEFAULT_ORDER = 'created_desc'.freeze
-
-          include Muffon::Utils::Pagination
 
           private
 
           def library_data
-            library_base_data
-              .merge(super)
-          end
-
-          def library_base_data
-            { top_tracks_count: }
+            {
+              top_tracks_count:,
+              **super
+            }
           end
 
           def top_tracks_count
-            library_track
-              .library_albums
+            albums
               .library_tracks_count_desc_ordered
               .first
               &.library_tracks_count || 0
           end
 
+          def albums
+            @albums ||= library_track.library_albums
+          end
+
           def track_data
-            track_base_data
-              .merge(paginated_data)
+            {
+              **super,
+              **albums_data
+            }
           end
 
-          def total_items_count
-            @total_items_count ||=
-              library_albums.count
+          def albums_data
+            paginated_data(
+              collection_name: 'albums',
+              raw_collection:,
+              page:,
+              limit:,
+              items_count:
+            )
           end
 
-          def library_albums
-            @library_albums ||=
-              library_track.library_albums
-          end
-
-          def collection_list
-            library_albums
+          def raw_collection
+            albums
               .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
               .associated
+          end
+
+          def items_count
+            albums.count
           end
 
           def collection_item_data_formatted(library_album)

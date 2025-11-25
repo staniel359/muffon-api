@@ -9,9 +9,9 @@ RSpec.describe Odnoklassniki::Search::Tracks do
         ) do
           subject.call(
             query: 'kate bush',
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            page: '2',
+            limit: '5',
+            profile_id: '1'
           )
         end
       end
@@ -38,7 +38,7 @@ RSpec.describe Odnoklassniki::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(no_tracks_data) }
+      it { expect(output).to eq(search_paginated_missing_tracks_data) }
     end
   end
 end

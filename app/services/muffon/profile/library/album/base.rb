@@ -35,7 +35,7 @@ module Muffon
             { album: album_data }
           end
 
-          def album_base_data
+          def album_data
             {
               source: source_data,
               library: library_album_data,

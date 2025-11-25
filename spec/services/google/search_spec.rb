@@ -9,7 +9,7 @@ RSpec.describe Google::Search do
         subject.call(
           query: 'pop',
           scope: 'lastfm_tags',
-          page: 2
+          page: '2'
         )
       end
     end

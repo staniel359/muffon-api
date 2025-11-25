@@ -1,20 +1,26 @@
 module Discogs
   module Artist
     class Albums < Discogs::Artist::Base
-      COLLECTION_NAME = 'albums'.freeze
-
-      include Discogs::Utils::Pagination
-
       private
 
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
       end
 
-      def collection_list
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          items_count:,
+          page:,
+          limit:
+        )
+      end
+
+      def raw_collection
         artist['releases']
       end
 
@@ -25,12 +31,14 @@ module Discogs
       def params
         {
           **super,
+          page:,
+          per_page: limit,
           sort: 'year',
           sort_order: 'desc'
         }
       end
 
-      def total_items_count
+      def items_count
         artist.dig(
           'pagination',
           'items'

@@ -1,37 +1,41 @@
 module Discogs
   module Label
     class Albums < Discogs::Label::Base
-      COLLECTION_NAME = 'albums'.freeze
-
-      include Discogs::Utils::Pagination
-
       private
+
+      def label_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          pages_count:
+        )
+      end
+
+      def raw_collection
+        artist['releases']
+      end
 
       def link
         "#{super}/releases"
       end
 
       def params
-        super.merge(
-          sort_params
-        )
-      end
-
-      def sort_params
         {
+          **super,
+          page:,
+          per_page: limit,
           sort: 'year',
           sort_order: 'desc'
         }
       end
 
-      def total_pages_count
+      def pages_count
         artist.dig(
-          'pagination', 'pages'
+          'pagination',
+          'pages'
         )
-      end
-
-      def collection_list
-        artist['releases']
       end
 
       def collection_item_data_formatted(album)
@@ -39,8 +43,6 @@ module Discogs
           album:
         )
       end
-
-      alias label_data paginated_data
     end
   end
 end

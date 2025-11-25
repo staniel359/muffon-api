@@ -10,7 +10,7 @@ RSpec.describe AmazonMusic::Artist::Albums do
           subject.call(
             artist_id: 'B001E3EXN2',
             page: amazonmusic_artist_albums_next_page,
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

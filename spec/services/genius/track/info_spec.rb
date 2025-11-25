@@ -9,7 +9,7 @@ RSpec.describe Genius::Track::Info do
         ) do
           subject.call(
             track_id: '344944',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end

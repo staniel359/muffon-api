@@ -9,7 +9,7 @@ RSpec.describe LastFM::Artist::Images do
         ) do
           subject.call(
             artist_name: 'wild nothing',
-            page: 2
+            page: '2'
           )
         end
       end

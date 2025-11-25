@@ -7,14 +7,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - ws.audioscrobbler.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,11 +22,11 @@ http_interactions:
       Server:
       - openresty/1.13.6.2
       Date:
-      - Thu, 11 May 2023 14:19:09 GMT
+      - Sun, 07 Dec 2025 18:46:23 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '3586'
+      - '3680'
       Access-Control-Request-Headers:
       - Origin, X-Atmosphere-tracking-id, X-Atmosphere-Framework, X-Cache-Date, Content-Type,
         X-Atmosphere-Transport, *
@@ -43,14 +42,12 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: '{"albums":{"album":[{"name":"Dangerous Woman","mbid":"","url":"https://www.last.fm/music/Ariana+Grande","artist":{"name":"Ariana
-        Grande","mbid":"f4fdbb4c-e4b7-47a0-b83b-d91bbfcfa387","url":"https://www.last.fm/music/Ariana+Grande"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/c01e49f1304ed48f058e28387f85749a.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/c01e49f1304ed48f058e28387f85749a.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/c01e49f1304ed48f058e28387f85749a.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/c01e49f1304ed48f058e28387f85749a.png","size":"extralarge"}],"@attr":{"rank":"1"}},{"name":"1989","mbid":"b15d9a20-5fe8-4b35-ad58-bf686787d950","url":"https://www.last.fm/music/Taylor+Swift","artist":{"name":"Taylor
-        Swift","mbid":"20244d07-534f-4eff-b4d4-930878889970","url":"https://www.last.fm/music/Taylor+Swift"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/7eb6cacc9dae4d3ccd436317add8cf4c.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/7eb6cacc9dae4d3ccd436317add8cf4c.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/7eb6cacc9dae4d3ccd436317add8cf4c.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/7eb6cacc9dae4d3ccd436317add8cf4c.png","size":"extralarge"}],"@attr":{"rank":"2"}},{"name":"Teenage
-        Dream","mbid":"d610e36f-aae9-4703-9a9b-355c9e8de6c7","url":"https://www.last.fm/music/Katy+Perry","artist":{"name":"Katy
-        Perry","mbid":"122d63fc-8671-43e4-9752-34e846d62a9c","url":"https://www.last.fm/music/Katy+Perry"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/b740d32fdcf665acac089884286f24ff.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/b740d32fdcf665acac089884286f24ff.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/b740d32fdcf665acac089884286f24ff.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/b740d32fdcf665acac089884286f24ff.png","size":"extralarge"}],"@attr":{"rank":"3"}},{"name":"My
-        Everything (Deluxe)","mbid":"","url":"https://www.last.fm/music/Ariana+Grande","artist":{"name":"Ariana
-        Grande","mbid":"f4fdbb4c-e4b7-47a0-b83b-d91bbfcfa387","url":"https://www.last.fm/music/Ariana+Grande"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/7398292e0f9aed3bb8646a905c1e1cee.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/7398292e0f9aed3bb8646a905c1e1cee.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/7398292e0f9aed3bb8646a905c1e1cee.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/7398292e0f9aed3bb8646a905c1e1cee.png","size":"extralarge"}],"@attr":{"rank":"4"}},{"name":"Doo-Wops
-        & Hooligans","mbid":"a854d4ac-66d2-4d6c-a225-7f22beb71472","url":"https://www.last.fm/music/Bruno+Mars","artist":{"name":"Bruno
-        Mars","mbid":"afb680f2-b6eb-4cd7-a70b-a63b25c763d5","url":"https://www.last.fm/music/Bruno+Mars"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/f7670d1bcac523562726c1774f45285f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/f7670d1bcac523562726c1774f45285f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/f7670d1bcac523562726c1774f45285f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/f7670d1bcac523562726c1774f45285f.png","size":"extralarge"}],"@attr":{"rank":"5"}}],"@attr":{"tag":"pop","page":"2","perPage":"5","totalPages":"9697","total":"48481"}}}'
-  recorded_at: Thu, 11 May 2023 14:19:09 GMT
-recorded_with: VCR 6.1.0
+      string: '{"albums":{"album":[{"name":"The Dutchess","mbid":"028388ff-2e86-4a86-ae46-9258fb3facbe","url":"https://www.last.fm/music/Fergie/The+Dutchess","artist":{"name":"Fergie","mbid":"4f9675d2-f6d5-486c-9b26-33dcca998500","url":"https://www.last.fm/music/Fergie"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/95571dda073a7262a5486794fe39fd88.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/95571dda073a7262a5486794fe39fd88.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/95571dda073a7262a5486794fe39fd88.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/95571dda073a7262a5486794fe39fd88.png","size":"extralarge"}],"@attr":{"rank":"1"}},{"name":"Spice","mbid":"11f89a03-558a-36c9-a192-34bc8f4873aa","url":"https://www.last.fm/music/Spice+Girls/Spice","artist":{"name":"Spice
+        Girls","mbid":"bf0caafc-2b20-4e07-ab85-87e14ff430ce","url":"https://www.last.fm/music/Spice+Girls"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/a73ddc45f4dc75a5b1c097754fe7643f.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/a73ddc45f4dc75a5b1c097754fe7643f.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/a73ddc45f4dc75a5b1c097754fe7643f.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/a73ddc45f4dc75a5b1c097754fe7643f.png","size":"extralarge"}],"@attr":{"rank":"2"}},{"name":"Speak
+        Now","mbid":"02ab59c9-f687-43da-9fa4-dda73c2f2d38","url":"https://www.last.fm/music/Taylor+Swift/Speak+Now","artist":{"name":"Taylor
+        Swift","mbid":"20244d07-534f-4eff-b4d4-930878889970","url":"https://www.last.fm/music/Taylor+Swift"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/a9ff4f81e3402e5fdd3c8e85681ad606.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/a9ff4f81e3402e5fdd3c8e85681ad606.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/a9ff4f81e3402e5fdd3c8e85681ad606.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/a9ff4f81e3402e5fdd3c8e85681ad606.png","size":"extralarge"}],"@attr":{"rank":"3"}},{"name":"True
+        Blue","mbid":"0a89a600-a205-42e6-8d5e-75c1e53dc80e","url":"https://www.last.fm/music/Madonna/True+Blue","artist":{"name":"Madonna","mbid":"79239441-bfd5-4981-a70c-55c3f15c1287","url":"https://www.last.fm/music/Madonna"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/c497ef1126c4cc7436a685e4ea32f62c.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/c497ef1126c4cc7436a685e4ea32f62c.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/c497ef1126c4cc7436a685e4ea32f62c.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/c497ef1126c4cc7436a685e4ea32f62c.png","size":"extralarge"}],"@attr":{"rank":"4"}},{"name":"Left
+        of the Middle","mbid":"04f5007e-9271-4532-9089-543b1ba8ffd0","url":"https://www.last.fm/music/Natalie+Imbruglia/Left+of+the+Middle","artist":{"name":"Natalie
+        Imbruglia","mbid":"60530915-9371-4b16-bc31-5c4456317ae0","url":"https://www.last.fm/music/Natalie+Imbruglia"},"image":[{"#text":"https://lastfm.freetls.fastly.net/i/u/34s/f7d7c8a6533202a089510df5f0beb6b3.png","size":"small"},{"#text":"https://lastfm.freetls.fastly.net/i/u/64s/f7d7c8a6533202a089510df5f0beb6b3.png","size":"medium"},{"#text":"https://lastfm.freetls.fastly.net/i/u/174s/f7d7c8a6533202a089510df5f0beb6b3.png","size":"large"},{"#text":"https://lastfm.freetls.fastly.net/i/u/300x300/f7d7c8a6533202a089510df5f0beb6b3.png","size":"extralarge"}],"@attr":{"rank":"5"}}],"@attr":{"tag":"pop","page":"2","perPage":"5","totalPages":"6392","total":"31957"}}}'
+  recorded_at: Sun, 07 Dec 2025 18:46:24 GMT
+recorded_with: VCR 6.3.1
