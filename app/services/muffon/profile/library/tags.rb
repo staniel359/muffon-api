@@ -2,24 +2,39 @@ module Muffon
   module Profile
     module Library
       class Tags < Muffon::Profile::Library::Base
-        COLLECTION_NAME = 'tags'.freeze
+        DEFAULT_ORDER = 'library_count_desc'.freeze
 
         private
 
-        def total_items_count
-          @total_items_count ||= library_tags.size
+        def library_data
+          {
+            **tags_data
+          }
         end
 
-        def library_tags
-          @library_tags ||= profile.library_tags
-        end
-
-        def collection_list
-          library_tags_formatted(
-            collection_paginated(
-              library_tags
-            )
+        def tags_data
+          paginated_data(
+            collection_name: 'tags',
+            raw_collection:,
+            page:,
+            limit:,
+            items_count:
           )
+        end
+
+        def raw_collection
+          tags
+            .ordered(order, DEFAULT_ORDER)
+            .limit(limit)
+            .offset(offset)
+        end
+
+        def tags
+          @tags ||= profile.library_tags
+        end
+
+        def items_count
+          tags.size
         end
 
         def collection_item_data_formatted(tag)
@@ -27,8 +42,6 @@ module Muffon
             tag:
           )
         end
-
-        alias library_data paginated_data
       end
     end
   end

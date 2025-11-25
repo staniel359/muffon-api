@@ -124,23 +124,18 @@ module ProfileDecorator
   end
 
   def library_tags
-    library_artists
-      .left_joins(
-        :artist
-      )
-      .pluck(
-        :tag_ids
-      )
-      .flatten
-      .compact
-      .tally
-      .sort_by(
-        &:second
-      )
-      .reverse
-      .map do |tag|
-        format_library_tag(tag)
-      end
+    Tag
+      .select(<<~SQL.squish)
+        tags.*,
+        tags_grouped.library_count
+      SQL
+      .joins(<<~SQL.squish)
+        RIGHT JOIN (
+          #{library_tags_grouped.to_sql}
+        )
+        AS tags_grouped
+        ON tags.id = tags_grouped.tag_id
+      SQL
   end
 
   def playlist_tracks
@@ -196,17 +191,6 @@ module ProfileDecorator
     self.token = SecureRandom.uuid
   end
 
-  def format_library_tag(
-    tag
-  )
-    id, count = tag
-
-    {
-      id:,
-      count:
-    }
-  end
-
   def artists_ids(
     artists
   )
@@ -231,5 +215,15 @@ module ProfileDecorator
 
   def eventable_data
     {}
+  end
+
+  def library_tags_grouped
+    library_artists
+      .select(<<~SQL.squish)
+        UNNEST(artists.tag_ids) AS tag_id,
+        COUNT(artists.tag_ids) AS library_count
+      SQL
+      .left_joins(:artist)
+      .group('tag_id')
   end
 end
