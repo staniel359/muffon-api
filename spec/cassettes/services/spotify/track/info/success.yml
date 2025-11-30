@@ -10,7 +10,7 @@ http_interactions:
       User-Agent:
       - Faraday v2.14.0
       Authorization:
-      - Bearer BQBHNNPx4P4Kda7VRNMJFnO5dx009hj_u7gDMzuARWQmadH_SQB6432uPsmaax3RnQCjtcIV3KxibOcCALfwsn5T6iLAqwwX7pROxE057mFTkLgX4eOKVZPWj3avKcRkLGOBKkOanYA
+      - Bearer BQAKIrI-5IhG79EDsNFVxVDfHfmiXvCckiQwMZB13j66NYsyDpGbWmqcGdEU43wVTpRI9wPlq6C5Xqrnc8zYazN7uS2ZFRddOM7aSATzZjzztxhJC7BGjInZJzjovOdQ8a7gG5pLPl4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -47,7 +47,7 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Sun, 23 Nov 2025 19:48:40 GMT
+      - Fri, 26 Dec 2025 11:13:14 GMT
       Server:
       - envoy
       Via:
@@ -59,20 +59,18 @@ http_interactions:
       string: '{"album":{"album_type":"album","artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"},"href":"https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB","id":"6NrkINd80slV25wkBu9mEB","name":"Wild
         Nothing","type":"artist","uri":"spotify:artist:6NrkINd80slV25wkBu9mEB"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"external_urls":{"spotify":"https://open.spotify.com/album/3hxVFxpF7uUtjLHzvGIm7W"},"href":"https://api.spotify.com/v1/albums/3hxVFxpF7uUtjLHzvGIm7W","id":"3hxVFxpF7uUtjLHzvGIm7W","images":[{"url":"https://i.scdn.co/image/ab67616d0000b2736da7c8855ee1e48bb4d29184","width":640,"height":640},{"url":"https://i.scdn.co/image/ab67616d00001e026da7c8855ee1e48bb4d29184","width":300,"height":300},{"url":"https://i.scdn.co/image/ab67616d000048516da7c8855ee1e48bb4d29184","width":64,"height":64}],"name":"Gemini","release_date":"2010-05-25","release_date_precision":"day","total_tracks":12,"type":"album","uri":"spotify:album:3hxVFxpF7uUtjLHzvGIm7W"},"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/6NrkINd80slV25wkBu9mEB"},"href":"https://api.spotify.com/v1/artists/6NrkINd80slV25wkBu9mEB","id":"6NrkINd80slV25wkBu9mEB","name":"Wild
         Nothing","type":"artist","uri":"spotify:artist:6NrkINd80slV25wkBu9mEB"}],"available_markets":["AR","AU","AT","BE","BO","BR","BG","CA","CL","CO","CR","CY","CZ","DK","DO","DE","EC","EE","SV","FI","FR","GR","GT","HN","HK","HU","IS","IE","IT","LV","LT","LU","MY","MT","MX","NL","NZ","NI","NO","PA","PY","PE","PH","PL","PT","SG","SK","ES","SE","CH","TW","TR","UY","US","GB","AD","LI","MC","ID","JP","TH","VN","RO","IL","ZA","SA","AE","BH","QA","OM","KW","EG","MA","DZ","TN","LB","JO","PS","IN","BY","KZ","MD","UA","AL","BA","HR","ME","MK","RS","SI","KR","BD","PK","LK","GH","KE","NG","TZ","UG","AG","AM","BS","BB","BZ","BT","BW","BF","CV","CW","DM","FJ","GM","GE","GD","GW","GY","HT","JM","KI","LS","LR","MW","MV","ML","MH","FM","NA","NR","NE","PW","PG","PR","WS","SM","ST","SN","SC","SL","SB","KN","LC","VC","SR","TL","TO","TT","TV","VU","AZ","BN","BI","KH","CM","TD","KM","GQ","SZ","GA","GN","KG","LA","MO","MR","MN","NP","RW","TG","UZ","ZW","BJ","MG","MU","MZ","AO","CI","DJ","ZM","CD","CG","IQ","LY","TJ","VE","ET","XK"],"disc_number":1,"duration_ms":198842,"explicit":false,"external_ids":{"isrc":"US8YA1010079"},"external_urls":{"spotify":"https://open.spotify.com/track/3BRfgsKjcakny2wCYfZrvz"},"href":"https://api.spotify.com/v1/tracks/3BRfgsKjcakny2wCYfZrvz","id":"3BRfgsKjcakny2wCYfZrvz","is_local":false,"name":"Chinatown","popularity":51,"preview_url":null,"track_number":10,"type":"track","uri":"spotify:track:3BRfgsKjcakny2wCYfZrvz"}'
-  recorded_at: Sun, 23 Nov 2025 19:48:40 GMT
+  recorded_at: Fri, 26 Dec 2025 11:13:15 GMT
 - request:
-    method: post
-    uri: https://gew1-spclient.spotify.com/extended-metadata/v0/extended-metadata?alt=json&platform=39&product=9&version=10000000
+    method: get
+    uri: https://spclient.wg.spotify.com/track-playback/v1/media/spotify:track:3BRfgsKjcakny2wCYfZrvz?manifestFileFormat=file_ids_mp4
     body:
-      encoding: ASCII-8BIT
-      string: "\x12*\n$spotify:track:3BRfgsKjcakny2wCYfZrvz\x12\x02\b\n"
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Faraday v2.14.0
       Authorization:
-      - Bearer BQDgn2YF7TAF3mRzOBHvjeWZSBMKz5kzDpvJl5U--YxqTmXh09TbFoMdwc5lE0y_I-HrqHfy1rqsJMeZuIvcbuEkTKuWpE--KMT8b3j8qM3eULg6bSubkhvZPpB1Xz9jxROYC98zz-_34hKcBpeH9XIjFxoK_PegUP_LFzG5PBKw7F2nseF3HiJiHGBgWhGiCOEctHZlmwxE0pps1QULLRy90NWWGhvtyYMD3zJZnvhwcoAW-kFVz9XRs7go4V125RCgBb5zaqm5Qjf_B1vT7yKwV4SxvHTRfZCFyEEmHs0GxSytKcwCL8dRcr5I99eK926SiVD4UIRmZn5FljY0AiukwKnINww0AQAk5-8f7qxJOixlQH-8ibE4VfdhgeX5yNiXgK4m0cj4
-      Content-Type:
-      - application/x-protobuf
+      - Bearer BQBnH7OYUYbuNBMAfi0WScQvhXk4Clucjalr-Z7TZNQMtDl87pc8xBbwcr6IW1WTC86B4ne_RR3umLjfWM6samEIAek63ZS5dnMaoZmWLU4BoH_wdzu2T4kUbtEFzYzvaDwPqxJ9EJAhVehK06rXeLV5U4vv5BIQbJW60cQjFK_f-hNW2Ok7-jwZOgPRb6O7BsVAxWdiV84oHQoHjKF93ZSHZGq1eD1gXCxo9QWgQ40jlr5L2tAsWPZY56Iktp4gi8aNuUcay0Z4p1FNn3ee8Ep1-eGdeQSZ6BONXMQC0PCV73XH_rosrC0cXCV2FJp1-VAbOj-rvWPO3bEIm_zDvPX3W5SK5CrZtMI3QFIc-OHfIW3c6JwTat0IPPrcq0WxOm4T2q7ifLe7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -82,12 +80,10 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/protobuf
       Cache-Control:
       - private, max-age=0
       Server-Timing:
-      - edge;dur=3
+      - edge;dur=358
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -96,7 +92,7 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Sun, 23 Nov 2025 19:48:40 GMT
+      - Fri, 26 Dec 2025 11:13:15 GMT
       Server:
       - envoy
       Via:
@@ -105,12 +101,12 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        EoAGCgwIyAEQjfkEGICangEQChrtBQoeCMgBEhAzMzQxMzU0MjM0MzEzNzM5II35BCiAmp4BEiRzcG90aWZ5OnRyYWNrOjNCUmZnc0tqY2Frbnkyd0NZZlpydnoapAUKKnR5cGUuZ29vZ2xlYXBpcy5jb20vc3BvdGlmeS5tZXRhZGF0YS5UcmFjaxL1BAoQdqJBx4/zSxSKZTxSra7XGRIJQ2hpbmF0b3duGs4BChBr3qZPUbFCaKUA3WgZeNnkEgZHZW1pbmkaIAoQ31egUvkESBCRAUpuCkYyJRIMV2lsZCBOb3RoaW5nKg9DYXB0dXJlZCBUcmFja3MyBwi0HxAKGDKKAWAKHgoUq2dhbQAAHgJtp8iFXuHki7TSkYQQABjYBCDYBAoeChSrZ2FtAABIUW2nyIVe4eSLtNKRhBABGIABIIABCh4KFKtnYW0AALJzbafIhV7h5Iu00pGEEAIYgAoggArKARIKEHWR6TxsuU/FuY8AmGM7EqYiIAoQ31egUvkESBCRAUpuCkYyJRIMV2lsZCBOb3RoaW5nKBQwAjj0ohhAZlIUCgRpc3JjEgxVUzhZQTEwMTAwNzliGAoUU5qNPSKJUnqdmbYU1xUWyY/qbAQQAmIYChSLJVHrNI+aK6UDJR57WaOflMASpxABYhgKFAIyJziQGwFvPdc3pTg/IflcYi6OEABiGAoUTc27byAVmvY2bwwC2UmlwhE5FXIQCHoYChRGTZguvFOkqfwiCMhM6bC/kHcvxBAGiAGw3IWIBpABAaoBEgoQdZHpPGy5T8W5jwCYYzsSprIBAmVuwgEUChDTuWp3lSNMlLZ9cNLaP0JPEAHaAQlDaGluYXRvd26CAiIKEN9XoFL5BEgQkQFKbgpGMiUSDFdpbGQgTm90aGluZxgBogIkc3BvdGlmeTp0cmFjazozQlJmZ3NLamNha255MndDWWZacnZ6ugIAygIWChQKENO5aneVI0yUtn1w0to/Qk8QAdgCAOICDhIMCLDchYgGEIDfoZ8B
-  recorded_at: Sun, 23 Nov 2025 19:48:41 GMT
+      string: '{"media":{"spotify:track:3BRfgsKjcakny2wCYfZrvz":{"item":{"metadata":{"uri":"spotify:track:3BRfgsKjcakny2wCYfZrvz","linked_from_uri":null,"context_description":null,"context_uri":"spotify:track:3BRfgsKjcakny2wCYfZrvz","name":"Chinatown","group_name":"Gemini","group_uri":"spotify:album:3hxVFxpF7uUtjLHzvGIm7W","authors":[{"name":"Wild
+        Nothing","uri":"spotify:artist:6NrkINd80slV25wkBu9mEB"}],"duration":198842,"images":[{"url":"https://i.scdn.co/image/ab67616d0000b2736da7c8855ee1e48bb4d29184","height":640,"width":640},{"url":"https://i.scdn.co/image/ab67616d000048516da7c8855ee1e48bb4d29184","height":64,"width":64},{"url":"https://i.scdn.co/image/ab67616d00001e026da7c8855ee1e48bb4d29184","height":300,"width":300}],"episode_content_type":null,"show_content_type":null,"is_explicit":false},"manifest":{"file_ids_mp4":[{"bitrate":256000,"file_id":"cff5b92255f780a7fcac02aab369154610d337f8","file_url":null,"impression_urls":null,"track_type":"AUDIO","format":"11","audio_quality":"VERY_HIGH","hifi_status":"NONE","gain_db":null,"expires_at":null,"average_bitrate":260334},{"bitrate":128000,"file_id":"0bf3ab0301e8731dccb41c701cc640a0e43ffcbb","file_url":null,"impression_urls":null,"track_type":"AUDIO","format":"10","audio_quality":"HIGH","hifi_status":"NONE","gain_db":null,"expires_at":null,"average_bitrate":132296}]},"audio_id":null,"track_type":"AUDIO","ms_played_until_update":30000,"ms_playing_update_interval":0,"content_type":"TRACK"}}}}'
+  recorded_at: Fri, 26 Dec 2025 11:13:15 GMT
 - request:
     method: get
-    uri: https://gew1-spclient.spotify.com/storage-resolve/files/audio/interactive/8b2551eb348f9a2ba503251e7b59a39f94c012a7?alt=json&platform=39&product=9&version=10000000
+    uri: https://spclient.wg.spotify.com/storage-resolve/v2/files/audio/interactive/10/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?alt=json&platform=39&product=9&version=10000000
     body:
       encoding: US-ASCII
       string: ''
@@ -118,7 +114,7 @@ http_interactions:
       User-Agent:
       - Faraday v2.14.0
       Authorization:
-      - Bearer BQDgn2YF7TAF3mRzOBHvjeWZSBMKz5kzDpvJl5U--YxqTmXh09TbFoMdwc5lE0y_I-HrqHfy1rqsJMeZuIvcbuEkTKuWpE--KMT8b3j8qM3eULg6bSubkhvZPpB1Xz9jxROYC98zz-_34hKcBpeH9XIjFxoK_PegUP_LFzG5PBKw7F2nseF3HiJiHGBgWhGiCOEctHZlmwxE0pps1QULLRy90NWWGhvtyYMD3zJZnvhwcoAW-kFVz9XRs7go4V125RCgBb5zaqm5Qjf_B1vT7yKwV4SxvHTRfZCFyEEmHs0GxSytKcwCL8dRcr5I99eK926SiVD4UIRmZn5FljY0AiukwKnINww0AQAk5-8f7qxJOixlQH-8ibE4VfdhgeX5yNiXgK4m0cj4
+      - Bearer BQBnH7OYUYbuNBMAfi0WScQvhXk4Clucjalr-Z7TZNQMtDl87pc8xBbwcr6IW1WTC86B4ne_RR3umLjfWM6samEIAek63ZS5dnMaoZmWLU4BoH_wdzu2T4kUbtEFzYzvaDwPqxJ9EJAhVehK06rXeLV5U4vv5BIQbJW60cQjFK_f-hNW2Ok7-jwZOgPRb6O7BsVAxWdiV84oHQoHjKF93ZSHZGq1eD1gXCxo9QWgQ40jlr5L2tAsWPZY56Iktp4gi8aNuUcay0Z4p1FNn3ee8Ep1-eGdeQSZ6BONXMQC0PCV73XH_rosrC0cXCV2FJp1-VAbOj-rvWPO3bEIm_zDvPX3W5SK5CrZtMI3QFIc-OHfIW3c6JwTat0IPPrcq0WxOm4T2q7ifLe7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -133,7 +129,7 @@ http_interactions:
       Cache-Control:
       - private, max-age=0, no-cache
       Server-Timing:
-      - edge;dur=1
+      - edge;dur=2
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -142,7 +138,7 @@ http_interactions:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Sun, 23 Nov 2025 19:48:40 GMT
+      - Fri, 26 Dec 2025 11:13:16 GMT
       Server:
       - envoy
       Via:
@@ -151,7 +147,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-fa-tls130.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-fa-tls13.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-fa-quic0.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s=","https://audio-ak.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?__token__=exp=1764013721~hmac=5e5edbb1eefaf08f7d127363c9d638c95c82ce85b2f9ae023a696dcece61ab54","https://audio-fa-quic.spotifycdn.com/audio/8b2551eb348f9a2ba503251e7b59a39f94c012a7?1764013721_x9GgNNLFyTHMTxzygbXpgZU8bsIBRp89dG5y3g6fF5s="],"fileid":
-        "8b2551eb348f9a2ba503251e7b59a39f94c012a7","ttl": 86400}'
-  recorded_at: Sun, 23 Nov 2025 19:48:41 GMT
+      string: '{"result": "CDN","cdnurl": ["https://audio-fa.scdn.co/audio/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?1766833996_vWFZPRxwZMNqU4_cKog_qM0uy_CS-XlYLSiz8b013ic=","https://audio-fa-tls130.spotifycdn.com/audio/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?1766833996_vWFZPRxwZMNqU4_cKog_qM0uy_CS-XlYLSiz8b013ic=","https://audio-fa-tls13.spotifycdn.com/audio/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?1766833996_vWFZPRxwZMNqU4_cKog_qM0uy_CS-XlYLSiz8b013ic=","https://audio-fa-quic.spotifycdn.com/audio/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?1766833996_vWFZPRxwZMNqU4_cKog_qM0uy_CS-XlYLSiz8b013ic=","https://audio-ak.spotifycdn.com/audio/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?__token__=exp=1766833996~hmac=bde72bce321efb8daad23d110ad2ec7ee1a975deea674ee2559919cea0526923","https://audio-fa-quic0.spotifycdn.com/audio/0bf3ab0301e8731dccb41c701cc640a0e43ffcbb?1766833996_vWFZPRxwZMNqU4_cKog_qM0uy_CS-XlYLSiz8b013ic="],"fileid":
+        "0bf3ab0301e8731dccb41c701cc640a0e43ffcbb","ttl": 86400}'
+  recorded_at: Fri, 26 Dec 2025 11:13:16 GMT
 recorded_with: VCR 6.3.1

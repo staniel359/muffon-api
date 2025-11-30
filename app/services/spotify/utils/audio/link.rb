@@ -3,8 +3,8 @@ module Spotify
     module Audio
       class Link < Spotify::Base
         BASE_LINK =
-          'https://gew1-spclient.spotify.com:443'.freeze
-        FILE_EXTENSION = 'ogg'.freeze
+          'https://spclient.wg.spotify.com'.freeze
+        FILE_EXTENSION = 'm4a'.freeze
 
         include Muffon::Utils::Audio::Link
 
@@ -33,12 +33,8 @@ module Spotify
         def track_data
           @track_data ||=
             Spotify::Utils::Audio::Link::Track.call(
-              track_id:
+              track_id: @args[:track_id]
             )
-        end
-
-        def track_id
-          @args[:track_id]
         end
 
         def file_data
@@ -65,7 +61,7 @@ module Spotify
         def key
           @key ||=
             Spotify::Utils::Audio::Link::Key.call(
-              track_id:,
+              track_id: @args[:track_id],
               file_id:
             )
         end
@@ -74,11 +70,17 @@ module Spotify
           file_data['fileid']
         end
 
-        def audio_binary_data
-          Spotify::Utils::Audio::Link::Decrypter::Binary.call(
-            file_link:,
-            key:
-          )
+        def write_audio_data_to_file
+          return if test?
+
+          `ffmpeg \
+            -decryption_key #{key} \
+            -i "#{file_link}" \
+            -y \
+            -movflags +faststart \
+            -c copy \
+            -loglevel error \
+            public/#{audio_path}`
         end
 
         def file_link

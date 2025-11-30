@@ -3,8 +3,6 @@ module Spotify
     module Audio
       class Link
         class Track < Spotify::Utils::Audio::Link
-          EXTENSION_KIND = 10
-
           def call
             check_args
 
@@ -24,71 +22,22 @@ module Spotify
           end
 
           def not_found?
-            track_data_encoded.blank?
-          end
-
-          def track_data_encoded
-            @track_data_encoded ||=
-              response_data.dig(
-                :extended_metadata,
-                :extension_data,
-                :extension_data,
-                :value
-              )
-          end
-
-          def response_data
-            SpotifyProtobuf::BatchedExtensionResponse
-              .decode(response.body)
-              .to_h
+            response_data['media'].blank?
           end
 
           def link
-            "#{BASE_LINK}/extended-metadata/v0/extended-metadata"
+            "#{BASE_LINK}/track-playback/v1/media/#{spotify_track_uri}"
           end
 
-          def payload
-            SpotifyProtobuf::BatchedEntityRequest.encode(
-              protobuf_request_message
-            )
-          end
-
-          def protobuf_request_message
-            SpotifyProtobuf::BatchedEntityRequest.new(
-              protobuf_request_message_data
-            )
-          end
-
-          def protobuf_request_message_data
-            {
-              entity_request: {
-                entity_uri: track_id_formatted,
-                query: {
-                  extension_kind: EXTENSION_KIND
-                }
-              }
-            }
-          end
-
-          def track_id_formatted
+          def spotify_track_uri
             "spotify:track:#{@args[:track_id]}"
           end
 
-          def headers
-            {
-              **super,
-              'Content-Type' => 'application/x-protobuf'
-            }
+          def params
+            { 'manifestFileFormat' => 'file_ids_mp4' }
           end
 
-          def data
-            SpotifyProtobuf::Track
-              .decode(track_data_encoded)
-              .to_h
-              .deep_stringify_keys
-          end
-
-          alias response post_response
+          alias data response_data
         end
       end
     end

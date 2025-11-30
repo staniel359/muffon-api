@@ -12,7 +12,8 @@ set :deploy_to, "/root/#{fetch(:application)}"
 append :linked_files,
   'config/credentials/production.json',
   'invalid_requests.csv',
-  'lib/widevine.wvd'
+  'lib/widevine.wvd',
+  'lib/widevine.json'
 
 append :linked_dirs,
   'log',
@@ -64,6 +65,11 @@ namespace :config do
       upload!(
         'config/credentials/production.json',
         "/root/#{fetch(:application)}/shared/config/credentials/production.json"
+      )
+
+      upload!(
+        'lib/widevine.json',
+        "/root/#{fetch(:application)}/shared/lib/widevine.json"
       )
     end
   end

@@ -31,7 +31,6 @@ gem 'sidekiq'
 gem 'sidekiq-limit_fetch'
 gem 'sqlite3'
 gem 'whenever', require: false
-gem 'google-protobuf', '3.25.8'
 
 group :development do
   gem 'capistrano', require: false
