@@ -31,7 +31,7 @@ module Muffon
     end
 
     def profiles
-      @profiles ||= begin
+      @profiles ||=
         if creator?
           ::Profile.not_deleted
         else
@@ -45,7 +45,6 @@ module Muffon
             profiles
           end
         end
-      end
     end
 
     def items_count

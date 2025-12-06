@@ -13,7 +13,7 @@ module Muffon
         private
 
         def no_data?
-          image.blank?
+          image.blank? || image == 'DELETED'
         end
 
         def image
