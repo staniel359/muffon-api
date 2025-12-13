@@ -8,6 +8,10 @@ module SoundCloud
       { client_id: }
     end
 
+    def proxy
+      proxies[:us]
+    end
+
     def raw_artists
       [artist]
     end
