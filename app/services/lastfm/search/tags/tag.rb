@@ -17,13 +17,7 @@ module LastFM
         end
 
         def data
-          { name: }
-        end
-
-        def name
-          tag[:title].match(
-            /(.+) music | Last.fm/
-          )[1].downcase
+          { name: tag.name }
         end
 
         def tag

@@ -11,7 +11,7 @@ module Spec
         end
 
         def lastfm_search_tags_data
-          {:search=>{:page=>2, :tags=>[{:name=>"noise pop"}, {:name=>"pop rock"}, {:name=>"chamber pop"}, {:name=>"psychedelic pop"}, {:name=>"post-pop"}, {:name=>"jangle pop"}, {:name=>"dance-pop"}, {:name=>"power pop"}, {:name=>"baroque pop"}, {:name=>"teen pop"}], :total_pages=>10}}
+          {:search=>{:page=>2, :tags=>[]}}
         end
 
         def lastfm_search_tracks_data

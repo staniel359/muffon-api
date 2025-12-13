@@ -38,11 +38,6 @@ SECRET_KEYS = [
     api_key
   ],
   %i[
-    google
-    scopes
-    lastfm_tags
-  ],
-  %i[
     lastfm
     api_key
   ],
