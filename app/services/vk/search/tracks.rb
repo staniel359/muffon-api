@@ -6,6 +6,12 @@ module VK
 
       private
 
+      def collection_list
+        super.reject do |track|
+          track['title'].blank?
+        end
+      end
+
       def collection_item_data_formatted(track)
         VK::Search::Tracks::Track.call(
           track:,
