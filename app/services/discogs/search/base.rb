@@ -1,8 +1,6 @@
 module Discogs
   module Search
     class Base < Discogs::Base
-      MAXIMUM_ITEMS_COUNT = 10_000
-
       def call
         check_args
 
@@ -43,6 +41,10 @@ module Discogs
           'pagination',
           'items'
         )
+      end
+
+      def maximum_items_count
+        pagination_maximum_items_count_data[:search]
       end
     end
   end

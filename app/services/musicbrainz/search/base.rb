@@ -1,8 +1,6 @@
 module MusicBrainz
   module Search
     class Base < MusicBrainz::Base
-      MAXIMUM_ITEMS_COUNT = 10_000
-
       def call
         check_args
 
@@ -32,6 +30,10 @@ module MusicBrainz
 
       def items_count
         response_data['count']
+      end
+
+      def maximum_items_count
+        pagination_maximum_items_count_data[:search]
       end
     end
   end

@@ -1,8 +1,6 @@
 module Spotify
   module Search
     class Base < Spotify::Base
-      MAXIMUM_ITEMS_COUNT = 10_000
-
       def call
         check_args
 
@@ -36,6 +34,10 @@ module Spotify
           limit:,
           offset:
         }
+      end
+
+      def maximum_items_count
+        pagination_maximum_items_count_data[:search]
       end
     end
   end

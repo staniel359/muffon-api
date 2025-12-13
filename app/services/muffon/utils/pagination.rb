@@ -3,6 +3,9 @@ module Muffon
     module Pagination
       DEFAULT_PAGE = 1
       DEFAULT_PAGE_LIMIT = 20
+      MAXIMUM_ITEMS_COUNT_DATA = {
+        search: 500
+      }.freeze
 
       private
 
@@ -57,6 +60,10 @@ module Muffon
 
       def order
         @args[:order]
+      end
+
+      def pagination_maximum_items_count_data
+        MAXIMUM_ITEMS_COUNT_DATA
       end
     end
   end

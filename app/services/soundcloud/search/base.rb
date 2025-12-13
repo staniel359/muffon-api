@@ -1,8 +1,6 @@
 module SoundCloud
   module Search
     class Base < SoundCloud::API::V2::Base
-      MAXIMUM_ITEMS_COUNT = 10_000
-
       def call
         check_args
 
@@ -38,6 +36,10 @@ module SoundCloud
 
       def items_count
         response_data['total_results']
+      end
+
+      def maximum_items_count
+        pagination_maximum_items_count_data[:search]
       end
     end
   end

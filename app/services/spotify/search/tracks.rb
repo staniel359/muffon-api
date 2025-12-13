@@ -10,7 +10,7 @@ module Spotify
           page:,
           limit:,
           items_count:,
-          maximum_items_count: MAXIMUM_ITEMS_COUNT
+          maximum_items_count:
         )
       end
 

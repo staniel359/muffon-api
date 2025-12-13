@@ -1,8 +1,6 @@
 module Odnoklassniki
   module Search
     class Base < Odnoklassniki::Base
-      MAXIMUM_ITEMS_COUNT = 10_000
-
       def call
         check_args
 
@@ -30,6 +28,10 @@ module Odnoklassniki
           start: offset,
           count: limit
         }
+      end
+
+      def maximum_items_count
+        pagination_maximum_items_count_data[:search]
       end
     end
   end

@@ -10,7 +10,7 @@ RSpec.describe SoundCloud::Search::Artists do
           subject.call(
             query: 'wild nothing',
             page: '2',
-            limit: '10',
+            limit: '5',
             profile_id: '1'
           )
         end

@@ -7,14 +7,13 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api-v2.soundcloud.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
@@ -23,11 +22,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '120'
+      - '100'
       Connection:
       - keep-alive
-      Date:
-      - Thu, 15 Jul 2021 18:19:52 GMT
       X-Robots-Tag:
       - noindex
       Cache-Control:
@@ -42,18 +39,20 @@ http_interactions:
       - max-age=63072000
       Server:
       - am/2
+      Date:
+      - Sat, 13 Dec 2025 17:27:13 GMT
       Vary:
       - Origin
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 f9d8d85c1cdd8d752a5fcdb241623dfa.cloudfront.net (CloudFront)
+      - 1.1 e7d332bec9a35a18e441d6c039a3e534.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - HEL50-C2
+      - WAW51-P4
       X-Amz-Cf-Id:
-      - IsuX5NQxIndCvF4FfMZrucWGSNEXe8REWNPMgLI0ILjWxolDPqT33g==
+      - ntXqg5xa8TkevtIawCYv63ACORDM6f86bhYrR1u4R2L9fCqTqfwxgQ==
     body:
       encoding: ASCII-8BIT
-      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:41a251aa2f744959b768411efe29ba43"}'
-  recorded_at: Thu, 15 Jul 2021 18:19:51 GMT
-recorded_with: VCR 6.0.0
+      string: '{"collection":[],"total_results":0,"query_urn":"soundcloud:search:d9e42bf18c1143b6b8b0087e68bafc04"}'
+  recorded_at: Sat, 13 Dec 2025 17:27:14 GMT
+recorded_with: VCR 6.3.1
