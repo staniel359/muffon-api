@@ -1,4 +1,4 @@
-lock '~> 3.19.1'
+lock '~> 3.20.0'
 
 set :application, 'muffon-api'
 

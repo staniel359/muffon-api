@@ -21,4 +21,6 @@ install_plugin Capistrano::Sidekiq::Systemd
 
 require 'whenever/capistrano'
 
-Dir.glob('lib/capistrano/tasks/*.rake').each { |task| import(task) }
+Dir.glob('lib/capistrano/tasks/*.rake').each do |task|
+  import(task)
+end
