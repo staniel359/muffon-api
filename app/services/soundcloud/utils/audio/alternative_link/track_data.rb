@@ -44,7 +44,8 @@ module SoundCloud
 
           def response
             format_get_request(
-              link: @args[:link]
+              link: @args[:link],
+              proxy:
             )
           end
 

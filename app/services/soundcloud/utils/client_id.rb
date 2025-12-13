@@ -19,7 +19,8 @@ module SoundCloud
 
       def script_response
         format_get_request(
-          link: script_link
+          link: script_link,
+          proxy:
         )
       end
 

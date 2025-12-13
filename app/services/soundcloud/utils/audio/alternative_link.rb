@@ -68,8 +68,8 @@ module SoundCloud
         def audio_file_response
           format_get_request(
             link: audio_file_link,
-            params:
-              audio_file_request_params
+            params: audio_file_request_params,
+            proxy:
           )
         end
 
@@ -85,10 +85,9 @@ module SoundCloud
 
         def audio_file_link_response
           format_get_request(
-            link:
-              audio_file_link_request_link,
-            params:
-              audio_file_link_request_params
+            link: audio_file_link_request_link,
+            params: audio_file_link_request_params,
+            proxy:
           )
         end
 

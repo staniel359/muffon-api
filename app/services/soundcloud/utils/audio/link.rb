@@ -23,9 +23,7 @@ module SoundCloud
         end
 
         def audio_link
-          response_data[
-            'http_mp3_128_url'
-          ]
+          response_data['http_mp3_128_url']
         end
 
         def link
