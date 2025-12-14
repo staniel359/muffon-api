@@ -1,7 +1,7 @@
 module SoundCloud
   module Album
-    class Info
-      class Track < SoundCloud::Album::Info
+    class Tracks
+      class Track < SoundCloud::Album::Tracks
         include SoundCloud::Utils::Track
 
         def call

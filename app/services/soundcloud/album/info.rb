@@ -73,19 +73,13 @@ module SoundCloud
           .compact_blank
       end
 
-      def raw_tracks
-        album['tracks'].select do |raw_track_data|
-          raw_track_data['title'].present?
-        end
-      end
-
-      def track_data_formatted(track)
-        SoundCloud::Album::Info::Track.call(
-          track:,
-          album_data: album_base_data,
+      def tracks
+        SoundCloud::Album::Tracks.call(
+          raw_album_data: album,
+          album_base_data:,
           profile_id: @args[:profile_id],
           token: @args[:token]
-        )
+        )[:tracks]
       end
     end
   end

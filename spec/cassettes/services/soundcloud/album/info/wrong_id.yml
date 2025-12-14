@@ -8,7 +8,8 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.9.2
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -24,22 +25,22 @@ http_interactions:
       - '0'
       Connection:
       - keep-alive
-      Date:
-      - Wed, 19 Jun 2024 20:41:05 GMT
       Strict-Transport-Security:
       - max-age=63072000
       Server:
       - am/2
+      Date:
+      - Sun, 14 Dec 2025 09:03:25 GMT
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 872b8cb7808b8e013ecc6c3cc24aa826.cloudfront.net (CloudFront)
+      - 1.1 164b93bce41a8c1c96d0b06d62a09dc0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - FRA56-P11
+      - JFK50-P12
       X-Amz-Cf-Id:
-      - cZ95EcP51VpVZJUHoaGjB4JORWKSFsNRIo_Wtodmgl1Z9I31E5paTQ==
+      - t_vWFkPVsONP-myIC50qD-PEouwwqmG9teU4EoEFxZ6SuCNhj1I_yg==
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Wed, 19 Jun 2024 20:41:05 GMT
-recorded_with: VCR 6.2.0
+  recorded_at: Sun, 14 Dec 2025 09:03:26 GMT
+recorded_with: VCR 6.3.1
