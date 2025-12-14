@@ -1,6 +1,6 @@
 module SoundCloud
   module Search
-    class Base < SoundCloud::API::V2::Base
+    class Base < SoundCloud::Base
       def call
         check_args
 

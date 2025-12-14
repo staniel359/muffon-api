@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/playlists/249480404?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
+    uri: https://api-v2.soundcloud.com/playlists/249480404?client_id=<SOUNDCLOUD_TEST_CLIENT_ID>
     body:
       encoding: US-ASCII
       string: ''
@@ -58,7 +58,7 @@ http_interactions:
   recorded_at: Sun, 14 Dec 2025 09:03:24 GMT
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/tracks?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&ids=275266309,275266204,275264050,275264694,275264487,275264814,275264128,275264606,275265042,275264872,275264355,275265225
+    uri: https://api-v2.soundcloud.com/tracks?client_id=<SOUNDCLOUD_TEST_CLIENT_ID>&ids=275266309,275266204,275264050,275264694,275264487,275264814,275264128,275264606,275265042,275264872,275264355,275265225
     body:
       encoding: US-ASCII
       string: ''

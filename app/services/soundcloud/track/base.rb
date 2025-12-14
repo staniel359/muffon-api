@@ -1,6 +1,6 @@
 module SoundCloud
   module Track
-    class Base < SoundCloud::API::V2::Base
+    class Base < SoundCloud::Base
       include SoundCloud::Utils::Track
 
       def call

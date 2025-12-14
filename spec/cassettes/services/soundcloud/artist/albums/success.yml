@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/users/3820545?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>
+    uri: https://api-v2.soundcloud.com/users/3820545?client_id=<SOUNDCLOUD_TEST_CLIENT_ID>
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Tue, 09 Sep 2025 07:56:32 GMT
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/users/3820545/albums?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=200
+    uri: https://api-v2.soundcloud.com/users/3820545/albums?client_id=<SOUNDCLOUD_TEST_CLIENT_ID>&limit=200
     body:
       encoding: US-ASCII
       string: ''

@@ -1,6 +1,6 @@
 module SoundCloud
   module Album
-    class Base < SoundCloud::API::V2::Base
+    class Base < SoundCloud::Base
       include SoundCloud::Utils::Album
 
       def call

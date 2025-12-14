@@ -1,7 +1,7 @@
 module SoundCloud
   module Utils
     module Audio
-      class Link < SoundCloud::API::V2::Base
+      class Link < SoundCloud::Base
         def call
           check_args
 

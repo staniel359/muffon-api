@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api-v2.soundcloud.com/search/tracks?client_id=<SOUNDCLOUD_TEST_V2_CLIENT_ID>&limit=5&offset=5&q=saint%20pepsi
+    uri: https://api-v2.soundcloud.com/search/tracks?client_id=<SOUNDCLOUD_TEST_CLIENT_ID>&limit=5&offset=5&q=saint%20pepsi
     body:
       encoding: US-ASCII
       string: ''

@@ -1,7 +1,7 @@
 module SoundCloud
   module Utils
     module Audio
-      class AlternativeLink < SoundCloud::API::V2::Base
+      class AlternativeLink < SoundCloud::Base
         include Muffon::Utils::Audio::Link
 
         def call

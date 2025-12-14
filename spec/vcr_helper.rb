@@ -59,15 +59,7 @@ SECRET_KEYS = [
   ],
   %i[
     soundcloud
-    api_key
-  ],
-  %i[
-    soundcloud
-    test_access_token
-  ],
-  %i[
-    soundcloud
-    test_v2_client_id
+    test_client_id
   ],
   %i[
     spotify
