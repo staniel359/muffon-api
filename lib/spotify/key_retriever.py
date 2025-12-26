@@ -65,17 +65,15 @@ license.raise_for_status()
 
 if license:
   cdm.parse_license(
-    session_id,
-    license.content
+    session_id = session_id,
+    license_message = license.content
   )
 
-  for i in cdm.get_keys(session_id):
-    if i.type == 'CONTENT':
-      key = i.key.hex()
-
-  for key in cdm.get_keys(session_id):
-    if key.type == 'CONTENT':
-      key = key.key.hex()
+  for key_data in cdm.get_keys(
+    session_id = session_id
+  ):
+    if key_data.type == 'CONTENT':
+      key = key_data.key.hex()
 
 cdm.close(
   session_id

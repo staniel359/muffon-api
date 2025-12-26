@@ -16,9 +16,16 @@ module Spotify
       private
 
       def required_args
-        %i[
-          track_id
-        ]
+        if test?
+          %i[
+            track_id
+          ]
+        else
+          %i[
+            track_id
+            client_version
+          ]
+        end
       end
 
       def no_data?

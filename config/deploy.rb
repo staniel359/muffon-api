@@ -66,11 +66,6 @@ namespace :config do
         'config/credentials/production.json',
         "/root/#{fetch(:application)}/shared/config/credentials/production.json"
       )
-
-      upload!(
-        'lib/widevine.json',
-        "/root/#{fetch(:application)}/shared/lib/widevine.json"
-      )
     end
   end
 end

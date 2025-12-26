@@ -31,18 +31,13 @@ module Spotify
       end
 
       def audio_link
-        audio_full_link ||
-          audio_preview_link
-      end
+        if !test?
+          return unless @args[:client_version] > '2.3.0'
+        end
 
-      def audio_full_link
         Spotify::Utils::Audio::Link.call(
           track_id: @args[:track_id]
         )
-      end
-
-      def audio_preview_link
-        track['preview_url']
       end
     end
   end
