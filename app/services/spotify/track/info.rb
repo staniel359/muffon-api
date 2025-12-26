@@ -31,9 +31,7 @@ module Spotify
       end
 
       def audio_link
-        if !test?
-          return unless @args[:client_version] > '2.3.0'
-        end
+        return unless test? || @args[:client_version] > '2.3.0'
 
         Spotify::Utils::Audio::Link.call(
           track_id: @args[:track_id]
