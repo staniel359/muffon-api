@@ -35,8 +35,7 @@ module LastFM
         LastFM::User::Playlists::Playlist.call(
           playlist:,
           nickname: lastfm_nickname,
-          skip_profile: true,
-          with_tracks: @args[:with_tracks]
+          skip_profile: true
         )
       end
     end

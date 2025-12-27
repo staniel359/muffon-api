@@ -20,8 +20,7 @@ module LastFM
           {
             source: source_data,
             title:,
-            tracks_count:,
-            tracks:
+            tracks_count:
           }.compact
         end
 
@@ -34,19 +33,16 @@ module LastFM
         end
 
         def lastfm_id
-          raw_lastfm_id.match(
-            %r{/playlists/(.+)}
-          )[1].to_i
+          raw_lastfm_id
+            .match(%r{/playlists/(.+)})[1]
+            .to_i
         end
 
         def raw_lastfm_id
-          playlist.css(
-            '.playlisting-playlists-item-name'
-          )[0].css(
-            '.link-block-target'
-          )[0]['href'].match(
-            %r{(/user/.+)}
-          )[0]
+          playlist
+            .css('.playlisting-playlists-item-name')[0]
+            .css('.link-block-target')[0]['href']
+            .match(%r{(/user/.+)})[0]
         end
 
         def playlist
@@ -58,30 +54,29 @@ module LastFM
         end
 
         def title
-          playlist.css(
-            '.playlisting-playlists-item-name'
-          )[0].text.strip
+          playlist
+            .css('.playlisting-playlists-item-name')[0]
+            .text
+            .strip
         end
 
         def tracks_count
-          tracks&.size
+          if raw_tracks_count.present?
+            raw_tracks_count
+              .text
+              .strip
+              .scan(/\d+/)
+              .join
+              .to_i
+          else
+            0
+          end
         end
 
-        def tracks
-          return if @args[:with_tracks].blank?
-
-          playlist_info_data[:tracks]
-        end
-
-        def playlist_info_data
-          LastFM::User::Playlist::Info.call(
-            nickname: @args[:nickname],
-            playlist_id: lastfm_id,
-            skip_profile: true,
-            with_tracks: @args[:with_tracks]
-          ).dig(
-            :user, :playlist
-          ) || {}
+        def raw_tracks_count
+          playlist.css(
+            '.playlisting-playlists-item-entry-count'
+          )[0]
         end
       end
     end

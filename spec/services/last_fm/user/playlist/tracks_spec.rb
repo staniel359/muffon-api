@@ -1,21 +1,21 @@
-RSpec.describe LastFM::User::Playlist::Info do
+RSpec.describe LastFM::User::Playlist::Tracks do
   subject { described_class }
 
   describe 'successful processing' do
     context 'when user and playlist exists' do
       let(:output) do
         VCR.use_cassette(
-          'services/lastfm/user/playlist/info/success'
+          'services/lastfm/user/playlist/tracks/success'
         ) do
           subject.call(
-            nickname: 'filipporomani',
-            playlist_id: '12688634',
-            with_tracks: true
+            nickname: 'cornwell_93',
+            playlist_id: '12688648',
+            page: '2'
           )
         end
       end
 
-      it { expect(output).to eq(lastfm_user_playlist_info_data) }
+      it { expect(output).to eq(lastfm_user_playlist_tracks_data) }
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe LastFM::User::Playlist::Info do
     context 'when no playlist_id given' do
       let(:output) do
         subject.call(
-          nickname: 'filipporomani'
+          nickname: 'cornwell_93'
         )
       end
 
@@ -33,7 +33,7 @@ RSpec.describe LastFM::User::Playlist::Info do
     context 'when no nickname given' do
       let(:output) do
         subject.call(
-          playlist_id: '12688634'
+          playlist_id: '12688648'
         )
       end
 
@@ -43,10 +43,10 @@ RSpec.describe LastFM::User::Playlist::Info do
     context 'when wrong playlist_id' do
       let(:output) do
         VCR.use_cassette(
-          'services/lastfm/user/playlist/info/wrong_id'
+          'services/lastfm/user/playlist/tracks/wrong_id'
         ) do
           subject.call(
-            nickname: 'filipporomani',
+            nickname: 'cornwell_93',
             playlist_id: '111'
           )
         end
@@ -58,11 +58,11 @@ RSpec.describe LastFM::User::Playlist::Info do
     context 'when wrong nickname' do
       let(:output) do
         VCR.use_cassette(
-          'services/lastfm/user/playlist/info/wrong_nickname'
+          'services/lastfm/user/playlist/tracks/wrong_nickname'
         ) do
           subject.call(
             nickname: random_string,
-            playlist_id: '12688634'
+            playlist_id: '12688648'
           )
         end
       end

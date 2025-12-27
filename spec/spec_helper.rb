@@ -65,6 +65,7 @@ RSpec.configure do |config|
   config.include Spec::Helpers::LastFM::User
   config.include Spec::Helpers::LastFM::User::Favorites
   config.include Spec::Helpers::LastFM::User::Playlist
+  config.include Spec::Helpers::LastFM::User::Playlists
 
   config.include Spec::Helpers::Muffon::Radio::Artist
   config.include Spec::Helpers::Muffon::Radio::Tag

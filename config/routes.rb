@@ -603,7 +603,10 @@ Rails
           scope ':profile_id' do
             get '', action: :info
             get 'plays'
-            get 'playlists'
+
+            resources :playlists, only: %i[index] do
+              get 'tracks'
+            end
 
             namespace :favorites do
               get 'tracks'

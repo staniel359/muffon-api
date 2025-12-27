@@ -5,8 +5,6 @@ module API
 
       def plays; end
 
-      def playlists; end
-
       private
 
       def info_data
@@ -31,21 +29,6 @@ module API
               nickname
               page
               limit
-            ]
-          )
-        )
-      end
-
-      def playlists_data
-        ::LastFM::User::Playlists.call(
-          params.slice(
-            *%i[
-              profile_id
-              token
-              nickname
-              page
-              limit
-              with_tracks
             ]
           )
         )
