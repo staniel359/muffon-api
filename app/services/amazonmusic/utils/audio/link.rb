@@ -41,8 +41,8 @@ module AmazonMusic
 
         def file_data
           @file_data ||=
-            track_data['Representation'].find do |d|
-              d['qualityRanking'] == '1000'
+            track_data['Representation'].find do |data|
+              data['qualityRanking'] == '1000'
             end
         end
 
