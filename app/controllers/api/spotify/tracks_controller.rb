@@ -11,15 +11,14 @@ module API
 
       def info_data
         ::Spotify::Track::Info.call(
-          **params.slice(
+          params.slice(
             *%i[
               track_id
               profile_id
               token
               with_audio
             ]
-          ).permit!.to_h,
-          client_version:
+          )
         )
       end
 
