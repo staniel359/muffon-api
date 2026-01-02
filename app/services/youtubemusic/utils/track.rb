@@ -47,6 +47,17 @@ module YouTubeMusic
               'runs',
               0
             )
+          ].compact.presence ||
+          [
+            raw_track_data.dig(
+              'musicResponsiveListItemRenderer',
+              'flexColumns',
+              1,
+              'musicResponsiveListItemFlexColumnRenderer',
+              'text',
+              'runs',
+              0
+            )
           ].compact
       end
 
