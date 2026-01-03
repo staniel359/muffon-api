@@ -16,18 +16,17 @@ module Muffon
       end
 
       def data
-        post_base_data
-          .merge(post_extra_data)
-      end
-
-      def post_base_data
         {
           id: post.id,
           profile: profile_data,
-          other_profile:
-            other_profile_data,
+          other_profile: other_profile_data,
           community: community_data,
-          post_type: post.post_type
+          post_type: post.post_type,
+          text: post.text,
+          by_community: post.by_community?,
+          created: created_formatted,
+          attachments: post.attachments_data,
+          comments:
         }.compact
       end
 
@@ -56,8 +55,7 @@ module Muffon
       end
 
       def other_profile
-        @other_profile ||=
-          post.other_profile
+        @other_profile ||= post.other_profile
       end
 
       def community_data
@@ -66,10 +64,8 @@ module Muffon
         {
           id: community.id,
           title: community.title,
-          image:
-            community.image_data,
-          creator:
-            community_creator_data
+          image: community.image_data,
+          creator: community_creator_data
         }.compact
       end
 
@@ -82,21 +78,7 @@ module Muffon
       end
 
       def community_creator_id
-        community
-          .creator
-          .id
-      end
-
-      def post_extra_data
-        {
-          text: post.text,
-          by_community:
-            post.by_community?,
-          created: created_formatted,
-          attachments:
-            post.attachments_data,
-          comments:
-        }.compact
+        community.creator.id
       end
 
       def created_formatted
@@ -106,8 +88,10 @@ module Muffon
       end
 
       def comments
-        comments_list.map do |c|
-          comment_formatted(c)
+        comments_list.map do |comment_data|
+          comment_formatted(
+            comment_data
+          )
         end
       end
 

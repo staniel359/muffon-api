@@ -16,17 +16,23 @@ module Muffon
       end
 
       def data
-        return {} if find_playlist.blank?
-
-        playlist_base_data
-          .merge(playlist_extra_data)
+        if find_playlist.present?
+          playlist_data
+        else
+          { deleted: true }
+        end
       end
 
-      def playlist_base_data
+      def playlist_data
         {
           id: find_playlist.id,
           title: find_playlist.title,
-          profile: profile_data
+          profile: profile_data,
+          description:
+            description_truncated_formatted,
+          image: image_data,
+          tracks_count:
+            find_playlist.tracks_count
         }.compact
       end
 
@@ -55,18 +61,7 @@ module Muffon
       end
 
       def playlist_profile
-        @playlist_profile ||=
-          find_playlist.profile
-      end
-
-      def playlist_extra_data
-        {
-          description:
-            description_truncated_formatted,
-          image: image_data,
-          tracks_count:
-            find_playlist.tracks_count
-        }.compact
+        @playlist_profile ||= find_playlist.profile
       end
 
       def description_truncated_formatted

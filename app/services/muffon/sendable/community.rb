@@ -16,8 +16,14 @@ module Muffon
       end
 
       def data
-        return {} if find_community.blank?
+        if find_community.present?
+          community_data
+        else
+          { deleted: true }
+        end
+      end
 
+      def community_data
         {
           id: find_community.id,
           title: find_community.title,
@@ -27,23 +33,6 @@ module Muffon
           members_count:
             find_community.members_count
         }.compact
-      end
-
-      def description_truncated_formatted
-        string_with_newlines_replaced_by_space(
-          description_truncated
-        )
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'extrasmall'
-        )
-      end
-
-      def description
-        find_community.description
       end
 
       def find_community
@@ -61,6 +50,23 @@ module Muffon
 
       def community
         @args[:community].deep_symbolize_keys
+      end
+
+      def description_truncated_formatted
+        string_with_newlines_replaced_by_space(
+          description_truncated
+        )
+      end
+
+      def description_truncated
+        text_truncated(
+          description,
+          size: 'extrasmall'
+        )
+      end
+
+      def description
+        find_community.description
       end
 
       def image_data

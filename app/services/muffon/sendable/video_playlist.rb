@@ -63,7 +63,9 @@ module Muffon
       end
 
       def description
-        find_video_playlist.description
+        find_video_playlist
+          .description
+          .presence
       end
 
       def image_data
