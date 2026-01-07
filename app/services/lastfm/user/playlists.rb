@@ -16,8 +16,9 @@ module LastFM
           raw_collection:,
           page:,
           limit:,
-          is_fractioned: true,
-          is_with_items_count: true
+          is_with_items_count: true,
+          items_count:,
+          pages_count:
         )
       end
 
@@ -29,6 +30,30 @@ module LastFM
 
       def link
         "#{base_link}/playlists"
+      end
+
+      def items_count
+        LastFM::User::Playlists::TotalCount.call(
+          nickname: lastfm_nickname,
+          pages_count:
+        )
+      end
+
+      def pages_count
+        if raw_pages_count.present?
+          raw_pages_count
+            .text
+            .strip
+            .to_i
+        else
+          1
+        end
+      end
+
+      def raw_pages_count
+        response_data
+          .css('.pagination-page')
+          .last
       end
 
       def collection_item_data_formatted(playlist)

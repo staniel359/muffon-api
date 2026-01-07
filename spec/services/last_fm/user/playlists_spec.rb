@@ -8,9 +8,9 @@ RSpec.describe LastFM::User::Playlists do
           'services/lastfm/user/playlists/success'
         ) do
           subject.call(
-            nickname: 'cornwell_93',
-            page: '2',
-            limit: '5'
+            skip_profile: true,
+            nickname: 'Wuttin',
+            page: '2'
           )
         end
       end
@@ -32,9 +32,9 @@ RSpec.describe LastFM::User::Playlists do
           'services/lastfm/user/playlists/wrong_nickname'
         ) do
           subject.call(
+            skip_profile: true,
             nickname: random_string,
-            page: '2',
-            limit: '5'
+            page: '2'
           )
         end
       end
