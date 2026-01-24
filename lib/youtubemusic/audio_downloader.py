@@ -11,7 +11,8 @@ parser.add_argument('--file_name')
 args = parser.parse_args()
 
 video = YouTube(
-  'https://www.youtube.com/watch?v=' + args.video_id
+  'https://www.youtube.com/watch?v=' + args.video_id,
+  use_po_token=True
 )
 
 audio_stream = video.streams.get_audio_only()
