@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 video = YouTube(
   'https://www.youtube.com/watch?v=' + args.video_id,
-  use_po_token=True
+  'WEB'
 )
 
 audio_stream = video.streams.get_audio_only()
