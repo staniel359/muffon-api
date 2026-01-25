@@ -59,11 +59,8 @@ module Muffon
         end
 
         def limit
-          if @args[:limit] == 'all'
+          @args[:limit] ||
             items_count_computed
-          else
-            @args[:limit]
-          end
         end
 
         def with_items_count?

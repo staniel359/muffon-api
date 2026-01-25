@@ -14,14 +14,19 @@ module Muffon
       end
 
       def limit
-        if @args[:limit].present?
-          @args[:limit].to_i
-        else
+        case @args[:limit]
+        when Integer
+          @args[:limit]
+        when String
+          @args[:limit].scan(/\d+/).join.to_i if @args[:limit].match?(/\d+/)
+        when nil
           DEFAULT_PAGE_LIMIT
         end
       end
 
       def offset
+        return if limit.blank?
+
         (page.to_i - 1) * limit
       end
 
