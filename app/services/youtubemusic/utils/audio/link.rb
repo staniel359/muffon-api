@@ -2,7 +2,7 @@ module YouTubeMusic
   module Utils
     module Audio
       class Link < YouTubeMusic::Base
-        FILE_EXTENSION = 'm4a'.freeze
+        FILE_EXTENSION = 'opus'.freeze
 
         include Muffon::Utils::Audio::Link
 
@@ -23,11 +23,13 @@ module YouTubeMusic
         def write_audio_data_to_file
           return if test?
 
-          `python3.12 \
-            lib/youtubemusic/audio_downloader.py \
-            --video_id #{@args[:track_id]} \
-            --output_path public/#{audio_folder} \
-            --file_name #{audio_file_name_with_extension}
+          `yt-dlp \
+            #{@args[:track_id]} \
+            --cookies-from-browser firefox \
+            --js-runtimes node \
+            --verbose \
+            --extract-audio \
+            --output public/#{audio_folder}/#{audio_file_name}
           `
         end
       end
