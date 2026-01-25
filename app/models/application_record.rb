@@ -1,5 +1,5 @@
 class ApplicationRecord < ActiveRecord::Base
-  TRANSACTION_RETRIES_COUNT = 1
+  TRANSACTION_RETRIES_COUNT = 3
 
   self.abstract_class = true
 
