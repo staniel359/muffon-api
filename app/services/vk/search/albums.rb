@@ -16,6 +16,13 @@ module VK
         )
       end
 
+      def raw_collection
+        super.select do |raw_album_data|
+          raw_album_data['main_artists'].present? ||
+            raw_album_data['artist'].present?
+        end
+      end
+
       def collection_item_data_formatted(album)
         VK::Search::Albums::Album.call(
           album:,
