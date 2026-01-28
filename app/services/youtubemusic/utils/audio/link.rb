@@ -26,9 +26,9 @@ module YouTubeMusic
           `yt-dlp \
             #{@args[:track_id]} \
             --cookies-from-browser firefox \
-            --js-runtimes node \
-            --verbose \
+            --js-runtimes deno:/root/.deno/bin/deno \
             --extract-audio \
+            --concurrent-fragments 5 \
             --output public/#{audio_folder}/#{audio_file_name}
           `
         end
