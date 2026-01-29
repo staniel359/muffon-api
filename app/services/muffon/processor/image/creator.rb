@@ -4,10 +4,6 @@ module Muffon
       class Creator < Muffon::Processor::Image::Base
         private
 
-        def no_data?
-          super || @args[:image_file].blank?
-        end
-
         def data
           model_image.purge_later if model_image.attached?
 
