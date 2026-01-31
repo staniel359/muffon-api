@@ -13,7 +13,7 @@ module VK
       end
 
       def raw_title
-        track['title']
+        track['title'] || 'Unknown'
       end
 
       def extra_title
@@ -29,8 +29,7 @@ module VK
       end
 
       def raw_artist_name
-        track['artist'].presence ||
-          'Various Artists'
+        track['artist'].presence || 'Unknown'
       end
 
       def source_data

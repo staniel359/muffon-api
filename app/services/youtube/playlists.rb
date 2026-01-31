@@ -21,23 +21,13 @@ module YouTube
     def data
       paginated_data(
         collection_name: 'playlists',
-        raw_collection:
-          raw_collection_filtered,
+        raw_collection:,
         page:,
         limit:,
         is_infinite: true,
         previous_page:,
         next_page:
       )
-    end
-
-    def raw_collection_filtered
-      raw_collection.reject do |raw_playlist_data|
-        raw_playlist_data.dig(
-          'snippet',
-          'title'
-        ).blank?
-      end
     end
 
     def raw_collection

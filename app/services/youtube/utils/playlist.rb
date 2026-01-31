@@ -28,7 +28,7 @@ module YouTube
       end
 
       def raw_title
-        snippet['title']
+        snippet['title'] || 'Unknown'
       end
 
       def snippet

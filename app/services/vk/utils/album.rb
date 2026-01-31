@@ -25,7 +25,11 @@ module VK
       end
 
       def artist
-        { 'name' => album['artist'] }
+        { 'name' => raw_artist_name }
+      end
+
+      def raw_artist_name
+        album['artist'].presence || 'Unknown'
       end
 
       def source_data

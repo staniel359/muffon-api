@@ -16,12 +16,6 @@ module VK
         )
       end
 
-      def raw_collection
-        super.reject do |raw_track_data|
-          raw_track_data['title'].blank?
-        end
-      end
-
       def collection_item_data_formatted(track)
         VK::Search::Tracks::Track.call(
           track:,
