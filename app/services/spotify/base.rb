@@ -93,8 +93,7 @@ module Spotify
     end
 
     def artist_name
-      artists_names.presence ||
-        'Various Artists'
+      artists_names.presence || 'Unknown Artist'
     end
   end
 end

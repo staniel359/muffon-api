@@ -67,7 +67,7 @@ module YouTube
       end
 
       def raw_channel_title
-        snippet['channelTitle']
+        snippet['channelTitle'].presence || 'Unknown Channel'
       end
 
       def image_data

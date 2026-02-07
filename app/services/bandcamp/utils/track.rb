@@ -53,8 +53,7 @@ module Bandcamp
       end
 
       def artist_name
-        track['band_name'] ||
-          'Various Artists'
+        track['band_name'].presence || 'Unknown Artist'
       end
 
       def duration

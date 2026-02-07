@@ -29,7 +29,7 @@ module VK
       end
 
       def raw_artist_name
-        album['artist'].presence || 'Unknown'
+        album['artist'].presence || 'Unknown Artist'
       end
 
       def source_data
