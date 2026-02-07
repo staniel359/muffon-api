@@ -3,13 +3,131 @@ module YouTube
     module Base
       private
 
-      def context_data
-        { client: client_data }
-      end
-
       # rubocop:disable Layout/LineLength
-      def client_data
-        { context: { client: { hl: 'en', gl: 'GB', remoteHost: '37.214.71.166', deviceMake: '', deviceModel: '', visitorData: 'Cgt6YzN0cjlLcTJ0OCiM25zMBjIKCgJCWRIEGgAgDQ%3D%3D', userAgent: 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0,gzip(gfe)', clientName: 'WEB_REMIX', clientVersion: '1.20260204.03.00', osName: 'X11', osVersion: '', originalUrl: 'https://music.youtube.com/', platform: 'DESKTOP', clientFormFactor: 'UNKNOWN_FORM_FACTOR', configInfo: { appInstallData: 'CIzbnMwGEIvk0BwQndCwBRDevM4cEKudzxwQwNvPHBCvhs8cENr3zhwQ1tzQHBCUttAcEJSD0BwQ597QHBCIh7AFELjkzhwQjOnPHBCV988cENHc0BwQ2NfQHBCL988cEL2ZsAUQvKTQHBC9tq4FEIHNzhwQ_LLOHBC36v4SEMbGzxwQyPfPHBDT4a8FELW1gBMQlP6wBRCZjbEFEMGP0BwQvoqwBRD21tAcEKa20BwQ-tzQHBDZxNAcEMzfrgUQyfevBRDDqtAcELvZzhwQ8J3PHBCu1s8cEImwzhwQh6zOHBDxtNAcEJbX0BwQjbDQHBCW288cENDCgBMQ-s7QHBD2q7AFEJHT0BwQ683QHCpAQ0FNU0xCVXYtWnEtRE1lVUVwVUNuQTdNQmJiUDhBc3l2MV9wMVFVRHpmOEZ5N2NHLXlhNDNRYjJEOTN6QXgwSDAA', coldConfigData: 'CIzbnMwGGjJBSVdMQ1gxdzEydWdZU3ZuVkZIc0lwNUF0VVpuVmdhWFlTOXFWTVQwc1kzWFNEeDJUQSIyQUlXTENYMGY4ZVQ4dDZONzNzckhJNVJ1SVgyZ3BoVEdGeU9aY1hwa2ZtNWp3aXZNR0E%3D', coldHashData: 'CIzbnMwGEhM4MzcyMjg4Nzg1MDY2MDg0NzkyGIzbnMwGMjJBSVdMQ1gxdzEydWdZU3ZuVkZIc0lwNUF0VVpuVmdhWFlTOXFWTVQwc1kzWFNEeDJUQToyQUlXTENYMGY4ZVQ4dDZONzNzckhJNVJ1SVgyZ3BoVEdGeU9aY1hwa2ZtNWp3aXZNR0E%3D', hotHashData: 'CIzbnMwGEhQxNjc1NjQyOTY0MjU3MjUzODcxORiM25zMBjIyQUlXTENYMXcxMnVnWVN2blZGSHNJcDVBdFVablZnYVhZUzlxVk1UMHNZM1hTRHgyVEE6MkFJV0xDWDBmOGVUOHQ2Tjczc3JISTVSdUlYMmdwaFRHRnlPWmNYcGtmbTVqd2l2TUdB' }, timeZone: 'Europe/Minsk', browserName: 'Firefox', browserVersion: '147.0', acceptHeader: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', deviceExperimentId: 'ChxOell3TkRBNU5qVTNOVFUwTmpjNE1UUTNOZz09EIzbnMwGGIzbnMwG', rolloutToken: 'CJrOsdDv44q_RRD89q6417mLAxjXl_aHoceSAw%3D%3D', screenWidthPoints: 759, screenHeightPoints: 651, screenPixelDensity: 1, screenDensityFloat: 1, utcOffsetMinutes: 180, userInterfaceTheme: 'USER_INTERFACE_THEME_LIGHT', musicAppInfo: { pwaInstallabilityStatus: 'PWA_INSTALLABILITY_STATUS_UNKNOWN', webDisplayMode: 'WEB_DISPLAY_MODE_BROWSER', storeDigitalGoodsApiSupportStatus: { playStoreDigitalGoodsApiSupportStatus: 'DIGITAL_GOODS_API_SUPPORT_STATUS_UNSUPPORTED' } } }, user: { lockedSafetyMode: false }, request: { useSsl: true, internalExperimentFlags: [], consistencyTokenJars: [] }, adSignalsInfo: { params: [{ key: 'dt', value: '1770466704703' }, { key: 'flash', value: '0' }, { key: 'frm', value: '0' }, { key: 'u_tz', value: '180' }, { key: 'u_his', value: '2' }, { key: 'u_h', value: '768' }, { key: 'u_w', value: '1366' }, { key: 'u_ah', value: '768' }, { key: 'u_aw', value: '1366' }, { key: 'u_cd', value: '24' }, { key: 'bc', value: '31' }, { key: 'bih', value: '651' }, { key: 'biw', value: '747' }, { key: 'brdim', value: '0,0,0,0,1366,0,1300,736,759,651' }, { key: 'vis', value: '1' }, { key: 'wgl', value: 'true' }, { key: 'ca_type', value: 'image' }] } }, query: 'wild nothing', suggestStats: { validationStatus: 'VALID', parameterValidationStatus: 'VALID_PARAMETERS', clientName: 'youtube-music', searchMethod: 'ENTER_KEY', inputMethods: ['KEYBOARD'], originalQuery: 'wild nothing', availableSuggestions: [{ index: 0, type: 25 }, { index: 1, type: 25 }, { index: 2, type: 25 }, { index: 3, type: 25 }, { index: 4, type: 0 }, { index: 5, type: 0 }, { index: 6, type: 0 }, { index: 7, type: 0 }, { index: 8, type: 0 }, { index: 9, type: 0 }], zeroPrefixEnabled: true, firstEditTimeMsec: 53_564, lastEditTimeMsec: 57_844 }, inlineSettingStatus: 'INLINE_SETTING_STATUS_ON' }
+      def context_data
+        {
+          client: {
+            hl: 'en',
+            gl: 'GB',
+            remoteHost: '168.0.212.14',
+            deviceMake: '',
+            deviceModel: '',
+            visitorData: 'CgtQY2Jaa1dKa3UxMCj645zMBjIKCgJCWRIEGgAgCg%3D%3D',
+            userAgent: 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:147.0) Gecko/20100101 Firefox/147.0,gzip(gfe)',
+            clientName: 'WEB_REMIX',
+            clientVersion: '1.20260204.03.00',
+            osName: 'X11',
+            osVersion: '',
+            originalUrl: 'https://music.youtube.com/',
+            platform: 'DESKTOP',
+            clientFormFactor: 'UNKNOWN_FORM_FACTOR',
+            configInfo: {
+              appInstallData: 'CPrjnMwGEPrO0BwQyPfPHBDa984cEIeszhwQprbQHBCxyYATEOGCgBMQvoqwBRDR3NAcEJbbzxwQ8bTQHBDJ968FEParsAUQk5mAExCU_rAFEIv3zxwQ2cTQHBC36v4SENbc0BwQvKTQHBCW19AcEJSD0BwQu9nOHBCNsNAcEMbGzxwQlffPHBDwnc8cEK7WzxwQw6rQHBDM364FENjX0BwQ-dzQHBCK5NAcEImwzhwQ9tbQHBCUttAcELjkzhwQvZmwBRD8ss4cEIHNzhwQx-LQHBCZjbEFEMDbzxwQr4bPHBCM6c8cEN68zhwQntCwBRCIh7AFENDCgBMQwY_QHBDT4a8FEOfe0BwQvbauBRCzxIATENvFgBMQ683QHBCpu9AcKkRDQU1TTHhVcy1acS1ETWVVRXBVQ25BN01CYmJQOEFzeXYxX3AxUVVEemY4Rnk3Y0cteWE0M1FiMkQ4aVZCSTNsQmgwSDAA',
+              coldConfigData: 'CPrjnMwGGjJBSVdMQ1gyWWZsYlpwcDQ3di1qeWNvWXNheXljWXdJQndfV3NnVTJENFJULUdSQTZCQSIyQUlXTENYMllmbGJacHA0N3Ytanljb1lzYXl5Y1l3SUJ3X1dzZ1UyRDRSVC1HUkE2QkE%3D',
+              coldHashData: 'CPrjnMwGEhM4MzcyMjg4Nzg1MDY2MDg0NzkyGPrjnMwGMjJBSVdMQ1gyWWZsYlpwcDQ3di1qeWNvWXNheXljWXdJQndfV3NnVTJENFJULUdSQTZCQToyQUlXTENYMllmbGJacHA0N3Ytanljb1lzYXl5Y1l3SUJ3X1dzZ1UyRDRSVC1HUkE2QkE%3D',
+              hotHashData: 'CPrjnMwGEhQxNjc1NjQyOTY0MjU3MjUzODcxORj645zMBjIyQUlXTENYMllmbGJacHA0N3Ytanljb1lzYXl5Y1l3SUJ3X1dzZ1UyRDRSVC1HUkE2QkE6MkFJV0xDWDJZZmxiWnBwNDd2LWp5Y29Zc2F5eWNZd0lCd19Xc2dVMkQ0UlQtR1JBNkJB'
+            },
+            browserName: 'Firefox',
+            browserVersion: '147.0',
+            acceptHeader: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            deviceExperimentId: 'ChxOell3TkRFd01UUTBOelkxTWprMU1UZzJOQT09EPrjnMwGGPrjnMwG',
+            rolloutToken: 'CICAxKGv9YK5_AEQjfn30rLHkgMYjfn30rLHkgM%3D',
+            screenWidthPoints: 759,
+            screenHeightPoints: 651,
+            screenPixelDensity: 1,
+            screenDensityFloat: 1,
+            utcOffsetMinutes: 180,
+            userInterfaceTheme: 'USER_INTERFACE_THEME_LIGHT',
+            timeZone: 'Europe/London',
+            musicAppInfo: {
+              pwaInstallabilityStatus: 'PWA_INSTALLABILITY_STATUS_UNKNOWN',
+              webDisplayMode: 'WEB_DISPLAY_MODE_BROWSER',
+              storeDigitalGoodsApiSupportStatus: {
+                playStoreDigitalGoodsApiSupportStatus: 'DIGITAL_GOODS_API_SUPPORT_STATUS_UNSUPPORTED'
+              }
+            }
+          },
+          user: {
+            lockedSafetyMode: false
+          },
+          request: {
+            useSsl: true,
+            internalExperimentFlags: [],
+            consistencyTokenJars: []
+          },
+          adSignalsInfo: {
+            params: [
+              {
+                key: 'dt',
+                value: '1770467836557'
+              },
+              {
+                key: 'flash',
+                value: '0'
+              },
+              {
+                key: 'frm',
+                value: '0'
+              },
+              {
+                key: 'u_tz',
+                value: '180'
+              },
+              {
+                key: 'u_his',
+                value: '2'
+              },
+              {
+                key: 'u_h',
+                value: '768'
+              },
+              {
+                key: 'u_w',
+                value: '1366'
+              },
+              {
+                key: 'u_ah',
+                value: '768'
+              },
+              {
+                key: 'u_aw',
+                value: '1366'
+              },
+              {
+                key: 'u_cd',
+                value: '24'
+              },
+              {
+                key: 'bc',
+                value: '31'
+              },
+              {
+                key: 'bih',
+                value: '651'
+              },
+              {
+                key: 'biw',
+                value: '747'
+              },
+              {
+                key: 'brdim',
+                value: '0,0,0,0,1366,0,1300,736,759,651'
+              },
+              {
+                key: 'vis',
+                value: '1'
+              },
+              {
+                key: 'wgl',
+                value: 'true'
+              },
+              {
+                key: 'ca_type',
+                value: 'image'
+              }
+            ]
+          }
+        }
       end
       # rubocop:enable Layout/LineLength
     end
