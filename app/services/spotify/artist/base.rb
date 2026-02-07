@@ -7,8 +7,8 @@ module Spotify
         check_if_not_found
 
         data
-      rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
-        retry_with_new_spotify_token
+      # rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
+      #   retry_with_new_spotify_token
       rescue Faraday::BadRequestError
         raise not_found_error
       end
