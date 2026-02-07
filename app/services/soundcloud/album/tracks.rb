@@ -20,6 +20,18 @@ module SoundCloud
         { tracks: }
       end
 
+      def raw_tracks
+        if raw_album_tracks.present?
+          response_data
+        else
+          []
+        end
+      end
+
+      def raw_album_tracks
+        @args[:raw_album_data]['tracks']
+      end
+
       def link
         "#{BASE_LINK}/tracks"
       end
@@ -32,7 +44,7 @@ module SoundCloud
       end
 
       def tracks_ids_string
-        @args[:raw_album_data]['tracks']
+        raw_album_tracks
           .pluck('id')
           .join(',')
       end
@@ -45,8 +57,6 @@ module SoundCloud
           token: @args[:token]
         )
       end
-
-      alias raw_tracks response_data
     end
   end
 end
