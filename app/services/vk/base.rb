@@ -73,20 +73,10 @@ module VK
       error = super['error']
 
       if error.present?
-        error_formatted(error)
+        raise "VK error: #{error['error_msg']}"
       else
         super['response']
       end
-    end
-
-    def error_formatted(error)
-      return {} unless too_many_requests_error?(error)
-
-      raise "VK error: #{error['error_msg']}"
-    end
-
-    def too_many_requests_error?(error)
-      error['error_code'] == 9
     end
 
     def artist_data_formatted(
