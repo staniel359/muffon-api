@@ -32,6 +32,13 @@ module LastFM
         "#{base_link}/playlists"
       end
 
+      def params
+        {
+          **super,
+          page:
+        }
+      end
+
       def items_count
         LastFM::User::Playlists::TotalCount.call(
           nickname: lastfm_nickname,
