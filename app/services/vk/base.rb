@@ -70,13 +70,15 @@ module VK
     end
 
     def response_data
-      error = super['error']
+      error_data = super['error']
 
-      if error.present?
-        raise "VK error: #{error['error_msg']}"
-      else
-        super['response']
-      end
+      raise_error(error_data) if error_data.present? && !test?
+
+      super['response']
+    end
+
+    def raise_error(error_data)
+      raise("[ERROR] (VK): #{error_data['error_msg']}")
     end
 
     def artist_data_formatted(
