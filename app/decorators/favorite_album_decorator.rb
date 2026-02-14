@@ -4,7 +4,7 @@ module FavoriteAlbumDecorator
   class_methods do
     def associated
       includes(
-        [album: :artist],
+        [{ album: :artist }],
         image_association
       )
     end

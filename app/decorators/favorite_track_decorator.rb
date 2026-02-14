@@ -5,7 +5,7 @@ module FavoriteTrackDecorator
     def associated
       includes(
         :album,
-        [track: :artist],
+        [{ track: :artist }],
         image_association
       )
     end

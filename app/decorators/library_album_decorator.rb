@@ -5,7 +5,7 @@ module LibraryAlbumDecorator
     def associated
       includes(
         :album,
-        [library_artist: :artist],
+        [{ library_artist: :artist }],
         image_association
       )
     end

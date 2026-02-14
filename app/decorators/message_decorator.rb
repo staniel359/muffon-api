@@ -4,7 +4,7 @@ module MessageDecorator
   class_methods do
     def associated
       includes(
-        [profile: image_association],
+        [{ profile: image_association }],
         images_association
       )
     end

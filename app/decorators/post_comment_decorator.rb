@@ -4,8 +4,8 @@ module PostCommentDecorator
   class_methods do
     def associated
       includes(
-        [profile: image_association],
-        [community: image_association],
+        [{ profile: image_association }],
+        [{ community: image_association }],
         images_association
       )
     end

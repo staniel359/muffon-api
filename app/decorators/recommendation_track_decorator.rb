@@ -10,13 +10,13 @@ module RecommendationTrackDecorator
 
     def associated
       includes(
-        [track: :artist]
+        [{ track: :artist }]
       )
     end
 
     def joined
       left_joins(
-        [track: :artist]
+        [{ track: :artist }]
       )
     end
 

@@ -39,8 +39,8 @@ module PostDecorator
 
     def associated
       includes(
-        [profile: image_association],
-        [community: image_association],
+        [{ profile: image_association }],
+        [{ community: image_association }],
         :post_comments,
         images_association
       )
