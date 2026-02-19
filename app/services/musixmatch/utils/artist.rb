@@ -6,23 +6,25 @@ module MusixMatch
       private
 
       def name
-        artist['artist_name']
+        raw_artist_data['name']
       end
 
       def source_data
         {
           name: source_name,
-          id: musixmatch_id,
+          slug: musixmatch_slug,
           links: source_links_data
         }
       end
 
-      def musixmatch_id
-        artist['artist_id']
+      def original_link
+        "https://www.musixmatch.com/artist/#{musixmatch_slug}"
       end
 
-      def original_link
-        "https://www.musixmatch.com/artist/#{musixmatch_id}"
+      def image_data
+        image_data_formatted(
+          raw_image
+        )
       end
     end
   end

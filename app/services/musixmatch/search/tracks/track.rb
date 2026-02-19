@@ -14,34 +14,49 @@ module MusixMatch
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_base_data)
-            .merge(track_extra_data)
-        end
-
-        def track
-          @args[:track]['track']
-        end
-
-        def track_base_data
           {
+            **self_data,
             source: source_data,
             player_id: player_source_id,
             title:,
             artist: artists_minimal_data,
-            artists:
-          }
+            artists:,
+            album: album_data,
+            image: image_data
+          }.compact
         end
 
-        def track_extra_data
-          {
-            album: album_data
-          }.compact
+        def raw_track_data
+          @args[:raw_track_data]
+        end
+
+        def title
+          raw_track_data['track_name']
+        end
+
+        def artist_name
+          raw_track_data['artist_name']
+        end
+
+        def musixmatch_slug
+          raw_track_data['commontrack_vanity_id']
+        end
+
+        def album_title
+          raw_track_data['album_name']
+        end
+
+        def musixmatch_album_slug
+          raw_track_data['album_vanity_id']
+        end
+
+        def raw_image
+          raw_track_data['album_coverart_500x500']
         end
       end
     end

@@ -37,10 +37,6 @@ module MusixMatch
       def artist_data
         { name: }
       end
-
-      def name
-        raw_artist_data['name']
-      end
     end
   end
 end

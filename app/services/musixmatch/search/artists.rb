@@ -9,25 +9,27 @@ module MusixMatch
           raw_collection:,
           page:,
           limit:,
-          items_count:
+          is_fractioned: true
         )
       end
 
       def raw_collection
         response_data.dig(
-          'message',
+          'pageProps',
+          'data',
+          'openSearch',
+          'data',
+          'opensearchTrackSearch',
           'body',
-          'artist_list'
+          'artists'
         )
       end
 
-      def link
-        "#{BASE_LINK}/artist.search"
-      end
-
-      def collection_item_data_formatted(artist)
+      def collection_item_data_formatted(
+        raw_artist_data
+      )
         MusixMatch::Search::Artists::Artist.call(
-          artist:,
+          raw_artist_data:,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

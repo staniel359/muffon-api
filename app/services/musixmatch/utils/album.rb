@@ -12,21 +12,21 @@ module MusixMatch
       def source_data
         {
           name: source_name,
-          slug: musixmatch_album_slug,
+          slug: musixmatch_slug,
           links: source_links_data
         }
       end
 
-      def musixmatch_album_slug
+      def musixmatch_slug
         raw_album_data['vanityId']
       end
 
       def original_link
-        "https://www.musixmatch.com/album/#{musixmatch_album_slug}"
+        "https://www.musixmatch.com/album/#{musixmatch_slug}"
       end
 
       def musixmatch_artist_slug
-        musixmatch_album_slug.split('/')[0]
+        musixmatch_slug.split('/')[0]
       end
 
       def artists

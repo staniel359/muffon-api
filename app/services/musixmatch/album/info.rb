@@ -47,7 +47,9 @@ module MusixMatch
         raw_album_data['trackList']
       end
 
-      def track_data_formatted(raw_track_data)
+      def track_data_formatted(
+        raw_track_data
+      )
         MusixMatch::Album::Info::Track.call(
           raw_track_data:,
           profile_id: @args[:profile_id],

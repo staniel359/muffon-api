@@ -8,7 +8,7 @@ RSpec.describe MusixMatch::Search::Tracks do
           'services/musixmatch/search/tracks/success'
         ) do
           subject.call(
-            query: 'wild nothing - chinatown',
+            query: 'a',
             page: '2',
             limit: '5',
             profile_id: '1'

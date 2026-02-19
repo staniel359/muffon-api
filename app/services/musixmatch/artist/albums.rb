@@ -7,6 +7,8 @@ module MusixMatch
         'single' => 'artistSingleAlbums'
       }.freeze
 
+      include MusixMatch::Utils::Artist
+
       private
 
       def required_args
@@ -49,7 +51,9 @@ module MusixMatch
         ALBUMS_TYPES_DATA[@args[:albums_type]]
       end
 
-      def collection_item_data_formatted(raw_album_data)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         MusixMatch::Artist::Albums::Album.call(
           raw_album_data:,
           profile_id: @args[:profile_id],

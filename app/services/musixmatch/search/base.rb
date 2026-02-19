@@ -22,18 +22,12 @@ module MusixMatch
       def params
         {
           **super,
-          q: @args[:query],
-          page:,
-          page_size: limit
+          query: @args[:query]
         }
       end
 
-      def items_count
-        response_data.dig(
-          'message',
-          'header',
-          'available'
-        )
+      def link
+        "#{BASE_LINK}/search.json"
       end
     end
   end
