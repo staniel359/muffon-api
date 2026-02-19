@@ -42,10 +42,6 @@ SECRET_KEYS = [
     api_key
   ],
   %i[
-    musixmatch
-    api_key
-  ],
-  %i[
     odnoklassniki
     email
   ],

@@ -5,10 +5,6 @@ module MusixMatch
 
       private
 
-      def link
-        "#{BASE_LINK}/album.get"
-      end
-
       def album_data
         if @args[:list]
           album_list_data
@@ -18,16 +14,23 @@ module MusixMatch
       end
 
       def album_full_data
-        self_data
-          .merge(album_base_data)
-          .merge(album_extra_data)
-          .merge(with_more_data)
+        {
+          **self_data,
+          **album_base_data,
+          release_date:,
+          listeners_count:,
+          tracks:,
+          **with_more_data
+        }.compact
       end
 
       def album_list_data
-        self_data
-          .merge(album_base_data)
-          .merge(album_list_extra_data)
+        {
+          **self_data,
+          **album_base_data,
+          release_date:,
+          listeners_count:
+        }.compact
       end
 
       def album_base_data
@@ -35,55 +38,20 @@ module MusixMatch
           source: source_data,
           title:,
           artist: artists_minimal_data,
-          artists:
-        }.compact
+          artists:,
+          image: image_data
+        }
       end
 
-      def album_extra_data
-        {
-          release_date:,
-          listeners_count:,
-          tags: tags_truncated,
-          tracks:
-        }.compact
+      def raw_tracks
+        raw_album_data['trackList']
       end
 
-      def album_list_extra_data
-        {
-          release_date:,
-          listeners_count:
-        }.compact
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
-        )
-      end
-
-      def raw_tags
-        album.dig(
-          'primary_genres',
-          'music_genre_list'
-        )
-      end
-
-      def tag_name_formatted(tag)
-        tag.dig(
-          'music_genre',
-          'music_genre_name'
-        )
-      end
-
-      def tracks
-        MusixMatch::Album::Tracks.call(
-          album_id: @args[:album_id],
+      def track_data_formatted(raw_track_data)
+        MusixMatch::Album::Info::Track.call(
+          raw_track_data:,
           profile_id: @args[:profile_id],
           token: @args[:token]
-        ).dig(
-          :album,
-          :tracks
         )
       end
     end

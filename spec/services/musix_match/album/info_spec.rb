@@ -2,13 +2,13 @@ RSpec.describe MusixMatch::Album::Info do
   subject { described_class }
 
   describe 'successful processing' do
-    context 'when album_id present' do
+    context 'when album_slug present' do
       let(:output) do
         VCR.use_cassette(
           'services/musixmatch/album/info/success'
         ) do
           subject.call(
-            album_id: '14232026',
+            album_slug: 'Wild-Nothing/Nocturne-4',
             profile_id: '1'
           )
         end
@@ -19,19 +19,19 @@ RSpec.describe MusixMatch::Album::Info do
   end
 
   describe 'no processing' do
-    context 'when no album_id given' do
+    context 'when no album_slug given' do
       let(:output) { subject.call }
 
       it { expect { output }.to raise_error(bad_request_error) }
     end
 
-    context 'when wrong album_id' do
+    context 'when wrong album_slug' do
       let(:output) do
         VCR.use_cassette(
-          'services/musixmatch/album/info/wrong_id'
+          'services/musixmatch/album/info/wrong_slug'
         ) do
           subject.call(
-            album_id: random_string
+            album_slug: random_string
           )
         end
       end

@@ -675,9 +675,8 @@ Rails
         end
 
         namespace :albums, as: :album do
-          scope ':album_id' do
+          scope ':album_slug' do
             get '', action: :info
-            get 'tags'
             get 'links'
           end
         end

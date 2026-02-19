@@ -3,8 +3,6 @@ module API
     class AlbumsController < API::BaseController
       def info; end
 
-      def tags; end
-
       def links; end
 
       private
@@ -13,19 +11,9 @@ module API
         ::MusixMatch::Album::Info.call(
           params.slice(
             *%i[
-              album_id
+              album_slug
               profile_id
               token
-            ]
-          )
-        )
-      end
-
-      def tags_data
-        ::MusixMatch::Album::Tags.call(
-          params.slice(
-            *%i[
-              album_id
             ]
           )
         )
@@ -35,7 +23,7 @@ module API
         ::MusixMatch::Album::Links.call(
           params.slice(
             *%i[
-              album_id
+              album_slug
             ]
           )
         )

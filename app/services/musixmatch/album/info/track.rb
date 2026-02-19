@@ -1,7 +1,7 @@
 module MusixMatch
   module Album
-    class Tracks
-      class Track < MusixMatch::Album::Tracks
+    class Info
+      class Track < MusixMatch::Album::Info
         include MusixMatch::Utils::Track
 
         def call
@@ -14,27 +14,24 @@ module MusixMatch
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_data)
-        end
-
-        def track
-          @args[:track]['track']
-        end
-
-        def track_data
           {
+            **self_data,
             source: source_data,
             player_id: player_source_id,
             title:,
             artist: artists_minimal_data,
-            artists:
-          }
+            artists:,
+            image: image_data
+          }.compact
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]
         end
       end
     end

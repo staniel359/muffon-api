@@ -1,35 +1,36 @@
 module MusixMatch
   module Album
     class Base < MusixMatch::Base
+      BASE_LINK =
+        'https://www.musixmatch.com/_next/data/fNde2hbCe1brBnYf2PEOi/en/album'.freeze
+
       def call
         check_args
 
-        check_if_not_found
-
         data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
       private
 
       def required_args
         %i[
-          album_id
+          album_slug
         ]
       end
 
-      def album
+      def raw_album_data
         response_data.dig(
-          'message',
-          'body',
-          'album'
+          'pageProps',
+          'data',
+          'albumGet',
+          'data'
         )
       end
 
-      def params
-        {
-          **super,
-          album_id: @args[:album_id]
-        }
+      def link
+        "#{BASE_LINK}/#{@args[:album_slug]}.json"
       end
 
       def data

@@ -6,28 +6,27 @@ module MusixMatch
       private
 
       def title
-        track['track_name']
+        raw_track_data['name']
       end
 
       def source_data
         {
           name: source_name,
-          id: musixmatch_id,
+          slug: musixmatch_track_slug,
           links: source_links_data
         }
       end
 
-      def musixmatch_id
-        track['commontrack_id']
+      def musixmatch_track_slug
+        raw_track_data['vanityId']
       end
 
       def original_link
-        'https://www.musixmatch.com/lyrics' \
-          "/#{artist_id}/#{musixmatch_id}"
+        "https://www.musixmatch.com/lyrics/#{musixmatch_track_slug}"
       end
 
-      def artist_id
-        track['artist_id']
+      def musixmatch_artist_slug
+        musixmatch_track_slug.split('/')[0]
       end
 
       def artists
@@ -44,12 +43,12 @@ module MusixMatch
       def artist_source_data
         {
           name: source_name,
-          id: artist_id
+          id: musixmatch_artist_slug
         }
       end
 
       def artist_name
-        track['artist_name']
+        raw_track_data['artistName']
       end
 
       def album_data
@@ -62,14 +61,28 @@ module MusixMatch
       end
 
       def album_title
-        track['album_name']
+        raw_track_data['albumName']
       end
 
       def album_source_data
         {
           name: source_name,
-          id: track['album_id']
+          slug: musixmatch_album_slug
         }
+      end
+
+      def musixmatch_album_slug
+        raw_track_data['albumVanityId']
+      end
+
+      def image_data
+        image_data_formatted(
+          raw_image
+        )
+      end
+
+      def raw_image
+        raw_track_data['coverImageHD']
       end
     end
   end

@@ -6,28 +6,27 @@ module MusixMatch
       private
 
       def title
-        album['album_name']
+        raw_album_data['name']
       end
 
       def source_data
         {
           name: source_name,
-          id: musixmatch_id,
+          slug: musixmatch_album_slug,
           links: source_links_data
         }
       end
 
-      def musixmatch_id
-        album['album_id']
+      def musixmatch_album_slug
+        raw_album_data['vanityId']
       end
 
       def original_link
-        'https://www.musixmatch.com/album' \
-          "/#{artist_id}/#{musixmatch_id}"
+        "https://www.musixmatch.com/album/#{musixmatch_album_slug}"
       end
 
-      def artist_id
-        album['artist_id']
+      def musixmatch_artist_slug
+        musixmatch_album_slug.split('/')[0]
       end
 
       def artists
@@ -44,12 +43,12 @@ module MusixMatch
       def artist_source_data
         {
           name: source_name,
-          id: artist_id
+          slug: musixmatch_artist_slug
         }
       end
 
       def artist_name
-        album['artist_name']
+        raw_album_data['artistName']
       end
 
       def release_date
@@ -59,7 +58,17 @@ module MusixMatch
       end
 
       def raw_release_date
-        album['album_release_date']
+        raw_album_data['releaseDate'] / 1_000
+      end
+
+      def image_data
+        image_data_formatted(
+          raw_image
+        )
+      end
+
+      def raw_image
+        raw_album_data['coverImage500x500']
       end
     end
   end
