@@ -4,12 +4,10 @@ module MusixMatch
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
+        {
+          **track_base_data,
+          albums:
+        }
       end
 
       def albums
@@ -18,7 +16,7 @@ module MusixMatch
 
       def album_data
         MusixMatch::Album::Info.call(
-          album_id: track['album_id'],
+          album_slug: musixmatch_album_slug,
           list: true,
           profile_id: @args[:profile_id],
           token: @args[:token]

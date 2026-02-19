@@ -9,6 +9,7 @@ module MusixMatch
     # rubocop:disable Layout/LineLength
     def cookies
       {
+        'captcha_id' => 'FLv8PvsPyv3mmelIXH+cgB7E5NJI22nBdrUe9E7xZsjXfH9yzA9p6HlPHHUEL4qIimNgu72+/qSd/2ZUL0p/JICKvHj5uVk0/GJ/A+AiwQA5eahzo0oaUsyoWOiNmHm8',
         'intercom-device-id-d2v13u5s' => 'd7dd3f43-316b-42b5-88b2-e685df396f8e',
         'intercom-id-d2v13u5s' => 'ffc75a4f-9abf-4918-b6fa-32aca84ea840',
         'musixmatchUserGuid' => '653db7b8-9a2b-4897-8953-36998a59af13',

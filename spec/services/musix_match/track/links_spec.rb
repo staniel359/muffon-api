@@ -2,13 +2,13 @@ RSpec.describe MusixMatch::Track::Links do
   subject { described_class }
 
   describe 'successful processing' do
-    context 'when track_id present' do
+    context 'when track_slug present' do
       let(:output) do
         VCR.use_cassette(
           'services/musixmatch/track/links/success'
         ) do
           subject.call(
-            track_id: '6717709',
+            track_slug: 'Wild-Nothing/Chinatown',
             profile_id: '1'
           )
         end
@@ -19,19 +19,19 @@ RSpec.describe MusixMatch::Track::Links do
   end
 
   describe 'no processing' do
-    context 'when no track_id given' do
+    context 'when no track_slug given' do
       let(:output) { subject.call }
 
       it { expect { output }.to raise_error(bad_request_error) }
     end
 
-    context 'when wrong track_id' do
+    context 'when wrong track_slug' do
       let(:output) do
         VCR.use_cassette(
-          'services/musixmatch/track/links/wrong_id'
+          'services/musixmatch/track/links/wrong_slug'
         ) do
           subject.call(
-            track_id: random_string
+            track_slug: random_string
           )
         end
       end

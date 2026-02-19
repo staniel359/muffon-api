@@ -682,9 +682,8 @@ Rails
         end
 
         namespace :tracks, as: :track do
-          scope ':track_id' do
+          scope ':track_slug' do
             get '', action: :info
-            get 'tags'
             get 'lyrics'
             get 'links'
             get 'albums'

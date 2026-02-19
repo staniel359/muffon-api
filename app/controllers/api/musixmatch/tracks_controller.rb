@@ -3,8 +3,6 @@ module API
     class TracksController < API::BaseController
       def info; end
 
-      def tags; end
-
       def lyrics; end
 
       def links; end
@@ -17,19 +15,9 @@ module API
         ::MusixMatch::Track::Info.call(
           params.slice(
             *%i[
-              track_id
+              track_slug
               profile_id
               token
-            ]
-          )
-        )
-      end
-
-      def tags_data
-        ::MusixMatch::Track::Tags.call(
-          params.slice(
-            *%i[
-              track_id
             ]
           )
         )
@@ -39,7 +27,7 @@ module API
         ::MusixMatch::Track::Lyrics.call(
           params.slice(
             *%i[
-              track_id
+              track_slug
             ]
           )
         )
@@ -49,7 +37,7 @@ module API
         ::MusixMatch::Track::Links.call(
           params.slice(
             *%i[
-              track_id
+              track_slug
             ]
           )
         )
@@ -59,7 +47,7 @@ module API
         ::MusixMatch::Track::Albums.call(
           params.slice(
             *%i[
-              track_id
+              track_slug
               profile_id
               token
             ]
