@@ -669,7 +669,7 @@ Rails
         end
 
         namespace :artists, as: :artist do
-          scope ':artist_id' do
+          scope ':artist_slug' do
             get 'albums'
           end
         end

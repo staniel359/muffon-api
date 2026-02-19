@@ -9,7 +9,8 @@ module API
         ::MusixMatch::Artist::Albums.call(
           params.slice(
             *%i[
-              artist_id
+              artist_slug
+              albums_type
               profile_id
               token
               page

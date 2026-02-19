@@ -1,6 +1,8 @@
 module MusixMatch
   class Base < Muffon::Base
     SOURCE_NAME = 'musixmatch'.freeze
+    BASE_LINK =
+      'https://www.musixmatch.com/_next/data/fNde2hbCe1brBnYf2PEOi/en'.freeze
 
     private
 

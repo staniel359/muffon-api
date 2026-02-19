@@ -4,40 +4,30 @@ module MusixMatch
       def call
         check_args
 
-        check_if_not_found
-
         data
+      rescue Faraday::ResourceNotFound
+        raise not_found_error
       end
 
       private
 
       def required_args
         %i[
-          artist_id
+          artist_slug
         ]
       end
 
-      def not_found?
-        super ||
-          name.blank?
+      def raw_artist_data
+        response_data.dig(
+          'pageProps',
+          'data',
+          'artistGet',
+          'data'
+        )
       end
 
-      def name
-        artist_info_data[:name]
-      end
-
-      def artist_info_data
-        @artist_info_data ||=
-          MusixMatch::Artist::Info.call(
-            artist_id: @args[:artist_id]
-          )[:artist]
-      end
-
-      def params
-        {
-          **super,
-          artist_id: @args[:artist_id]
-        }
+      def link
+        "#{BASE_LINK}/artist/#{@args[:artist_slug]}.json"
       end
 
       def data
@@ -48,7 +38,9 @@ module MusixMatch
         { name: }
       end
 
-      alias artist response_data
+      def name
+        raw_artist_data['name']
+      end
     end
   end
 end

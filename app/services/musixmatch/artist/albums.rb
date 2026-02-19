@@ -1,7 +1,19 @@
 module MusixMatch
   module Artist
     class Albums < MusixMatch::Artist::Base
+      ALBUMS_TYPES_DATA = {
+        'album' => 'artistAlbums',
+        'ep' => 'artistExtendedPlayAlbums',
+        'single' => 'artistSingleAlbums'
+      }.freeze
+
       private
+
+      def required_args
+        super + %i[
+          albums_type
+        ]
+      end
 
       def artist_data
         {
@@ -16,43 +28,30 @@ module MusixMatch
           raw_collection:,
           page:,
           limit:,
-          items_count:
+          is_fractioned: true
         )
       end
 
       def raw_collection
         response_data.dig(
-          'message',
-          'body',
-          'album_list'
+          'pageProps',
+          'data',
+          albums_type_key,
+          'data'
         )
       end
 
       def link
-        "#{BASE_LINK}/artist.albums.get"
+        "#{BASE_LINK}/artist/#{@args[:artist_slug]}/albums.json"
       end
 
-      def params
-        {
-          **super,
-          s_release_date: 'desc',
-          g_album_name: 1,
-          page:,
-          page_size: limit
-        }
+      def albums_type_key
+        ALBUMS_TYPES_DATA[@args[:albums_type]]
       end
 
-      def items_count
-        response_data.dig(
-          'message',
-          'header',
-          'available'
-        ) || 0
-      end
-
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(raw_album_data)
         MusixMatch::Artist::Albums::Album.call(
-          album:,
+          raw_album_data:,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

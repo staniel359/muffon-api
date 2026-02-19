@@ -14,34 +14,25 @@ module MusixMatch
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_base_data)
-            .merge(album_extra_data)
-        end
-
-        def album
-          @args[:album]['album']
-        end
-
-        def album_base_data
           {
+            **self_data,
             source: source_data,
             title:,
             artist: artists_minimal_data,
-            artists:
-          }
-        end
-
-        def album_extra_data
-          {
+            artists:,
+            image: image_data,
             release_date:,
             listeners_count:
           }.compact
+        end
+
+        def raw_album_data
+          @args[:raw_album_data]
         end
       end
     end

@@ -1,9 +1,6 @@
 module MusixMatch
   module Album
     class Base < MusixMatch::Base
-      BASE_LINK =
-        'https://www.musixmatch.com/_next/data/fNde2hbCe1brBnYf2PEOi/en/album'.freeze
-
       def call
         check_args
 
@@ -30,7 +27,7 @@ module MusixMatch
       end
 
       def link
-        "#{BASE_LINK}/#{@args[:album_slug]}.json"
+        "#{BASE_LINK}/album/#{@args[:album_slug]}.json"
       end
 
       def data

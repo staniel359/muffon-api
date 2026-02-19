@@ -1,6 +1,6 @@
 RSpec.describe API::MusixMatch::ArtistsController do
   describe 'GET :albums' do
-    it 'returns 200 if id present' do
+    it 'returns 200 if artist_slug present' do
       VCR.use_cassette(
         'controllers/api/musixmatch/artists/albums/success'
       ) do
@@ -8,7 +8,8 @@ RSpec.describe API::MusixMatch::ArtistsController do
           :albums,
           params: {
             **required_params,
-            artist_id: '542702'
+            artist_slug: 'Wild-Nothing',
+            albums_type: 'album'
           }
         )
       end
@@ -16,15 +17,16 @@ RSpec.describe API::MusixMatch::ArtistsController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 404 if wrong id' do
+    it 'returns 404 if wrong artist_slug' do
       VCR.use_cassette(
-        'controllers/api/musixmatch/artists/albums/wrong_id'
+        'controllers/api/musixmatch/artists/albums/wrong_slug'
       ) do
         get(
           :albums,
           params: {
             **required_params,
-            artist_id: random_string
+            artist_slug: random_string,
+            albums_type: 'album'
           }
         )
       end
