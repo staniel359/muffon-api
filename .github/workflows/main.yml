@@ -7,7 +7,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:15
+        image: postgres:18
         env:
           POSTGRES_DB: muffon_api_test
           POSTGRES_USER: muffon_api_test
@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Set up Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -39,7 +39,7 @@ jobs:
       - name: Lint
         run: bundle exec rubocop
 
-      - name: Enable OpenSSL leacy provider
+      - name: Enable OpenSSL legacy provider
         run: |-
           sudo sed -i '/default = default_sect/a legacy = legacy_sect' /etc/ssl/openssl.cnf
           sudo sed -i 's/# activate = 1/activate = 1/' /etc/ssl/openssl.cnf
