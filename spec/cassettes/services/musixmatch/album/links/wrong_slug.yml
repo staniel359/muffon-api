@@ -11,10 +11,9 @@ http_interactions:
       - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
         Safari/537.36
       Cookie:
-      - mxm_bab=BA; translate_lang=%7B%22key%22%3A%22en%22%2C%22name%22%3A%22English%22%7D;
-        musixmatchUserGuid=653db7b8-9a2b-4897-8953-36998a59af13; musixmatchUserToken=230812796cdefe19f917d094c40d94621d8fb6c3ab397f97840ae3;
-        ph_phc_TXdpocbGVeZVm5VJmAsHTMrCofBQu3e0kN8HGMNGTVW_posthog=%7B%22distinct_id%22%3A%2201954923-3065-743d-af55-bd8c8582fcda%22%2C%22%24sesid%22%3A%5B1754515585756%2C%220198813f-fd05-7862-90c9-26703272827d%22%2C1754515111173%5D%7D;
-        intercom-id-d2v13u5s=ffc75a4f-9abf-4918-b6fa-32aca84ea840; interco…cc8e639d620967119d348f18e13c56642a%22%2C%22mxm-com-v1.0%22%3A%222512e1a3845c7648239553a447d0129bdc76b1b1850e16eca8a5%22%2C%22web-desktop-app-v1.0%22%3A%222512d0ac75039ad0513817059a4395f1adcac0409524772eeedb%22%2C%22musixmatch-podcasts-v2.0%22%3A%222512a8435520ba8df404ff92d3520eb4710512e65b62959de0e1%22%2C%22mxm-pro-web-v1.0%22%3A%2225122645c8705bb79c8abec1a8a53dbb37085434ce0deed685d0%22%2C%22musixmatch-publishers-v2.0%22%3A%2225128f44f99620959462be12cd1bff7a76038212915a7c31d51d%22%7D%2C%22version%22%3A1%7D
+      - captcha_id=7BZeFfgQrSH+XcFcC5mQRvbayt6n0aEoNzHrZm1A+2Bmj0+N94wWuHq0yqnKVWz8S0kkCRT/3BrvKgC20yerK8aLC7ZX6insElVPANb5aYWqwNehnSVoU81p78PMymWm;
+        musixmatchUserToken={"tokens":{"mxm-account-v1.0":"26020903eefc78d53a9bbb0e65c34ed5dca95bc38552b730b418","mxm-com-v1.0":"26028615715593ed3cf85f9b3d1200b382447d596decb48a5e92","web-desktop-app-v1.0":"2602ad52220853349441e9d902d96fa3cfa39c061f488d28bc9e","musixmatch-podcasts-v2.0":"2602c74a4d396719ef1456e96a92466392e366c4940728f7cdfb","mxm-pro-web-v1.0":"2602622328dbf8447e6bdfc573f7963fe994e45c91b436104952","musixmatch-publishers-v2.0":"26024c39407eeaff359f500c698146e46c21e719fe7bfad58732","mxm-experiments-unstable-v1.0":"2602fd973ef88a551eb74f9b8e7a9845f6fb5896451127b335c5","mxm-experiments-v1.0":"2602733b87a3bef600a6596978d74941e3f7311b09cda4014ab4"},"version":1};
+        mxm_bab=AA
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -41,7 +40,7 @@ http_interactions:
       Via:
       - 1.1 varnish, 1.1 varnish
       Date:
-      - Thu, 19 Feb 2026 20:44:34 GMT
+      - Sat, 21 Feb 2026 14:33:15 GMT
       Geoip-City-Country-Code:
       - BY
       Geoip-City-Country-Name:
@@ -64,13 +63,13 @@ http_interactions:
       Referrer-Policy:
       - strict-origin-when-cross-origin
       X-Served-By:
-      - cache-iad-kcgs7200075-IAD, cache-fra-etou8220175-FRA
+      - cache-iad-kiad7000106-IAD, cache-fra-etou8220107-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1771533874.959525,VS0,VE101
+      - S1771684395.227667,VS0,VE110
       Vary:
       - Accept-Encoding
       Transfer-Encoding:
@@ -78,5 +77,83 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"pageProps":{"auth":{"appId":"mxm-com-v1.0","hasAuthCookie":false,"hasError":false,"user":null,"userToken":null},"data":{"footer":{"error":"__COM_RESPONSE_500__"}}},"__N_SSG":true}'
-  recorded_at: Thu, 19 Feb 2026 20:44:34 GMT
+  recorded_at: Sat, 21 Feb 2026 14:33:15 GMT
+- request:
+    method: get
+    uri: https://www.musixmatch.com/_next/data/fNde2hbCe1brBnYf2PEOi/en/album/wejlhg239gh23.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Cookie:
+      - captcha_id=7BZeFfgQrSH+XcFcC5mQRvbayt6n0aEoNzHrZm1A+2Bmj0+N94wWuHq0yqnKVWz8S0kkCRT/3BrvKgC20yerK8aLC7ZX6insElVPANb5aYWqwNehnSVoU81p78PMymWm;
+        musixmatchUserToken={"tokens":{"mxm-account-v1.0":"26020903eefc78d53a9bbb0e65c34ed5dca95bc38552b730b418","mxm-com-v1.0":"26028615715593ed3cf85f9b3d1200b382447d596decb48a5e92","web-desktop-app-v1.0":"2602ad52220853349441e9d902d96fa3cfa39c061f488d28bc9e","musixmatch-podcasts-v2.0":"2602c74a4d396719ef1456e96a92466392e366c4940728f7cdfb","mxm-pro-web-v1.0":"2602622328dbf8447e6bdfc573f7963fe994e45c91b436104952","musixmatch-publishers-v2.0":"26024c39407eeaff359f500c698146e46c21e719fe7bfad58732","mxm-experiments-unstable-v1.0":"2602fd973ef88a551eb74f9b8e7a9845f6fb5896451127b335c5","mxm-experiments-v1.0":"2602733b87a3bef600a6596978d74941e3f7311b09cda4014ab4"},"version":1};
+        mxm_bab=AA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Powered-By:
+      - Express
+      X-Nextjs-Cache:
+      - HIT
+      X-Mxm-Nginx-Ingress-Controller:
+      - nginx-fe-community-alb
+      Cache-Control:
+      - no-cache
+      Accept-Ranges:
+      - bytes
+      Via:
+      - 1.1 varnish, 1.1 varnish
+      Date:
+      - Sat, 21 Feb 2026 14:33:15 GMT
+      Geoip-City-Country-Code:
+      - BY
+      Geoip-City-Country-Name:
+      - belarus
+      Geoip-City:
+      - minsk
+      Geoip-Latitude:
+      - '53.870'
+      Geoip-Longitude:
+      - '27.440'
+      Geoip-Region:
+      - HM
+      X-Mxm-Restarts:
+      - '0'
+      Content-Security-Policy:
+      - frame-ancestors 'self' https://*.musixmatch.com https://*.mxmcdn.net https://*.replit.dev
+        https://*.replit.com
+      X-Content-Type-Options:
+      - nosniff
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      X-Served-By:
+      - cache-iad-kjyo7100037-IAD, cache-fra-etou8220128-FRA
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Timer:
+      - S1771684396.551548,VS0,VE108
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pageProps":{"auth":{"appId":"mxm-com-v1.0","hasAuthCookie":false,"hasError":false,"user":null,"userToken":null},"data":{"footer":{"error":"__COM_RESPONSE_500__"}}},"__N_SSG":true}'
+  recorded_at: Sat, 21 Feb 2026 14:33:15 GMT
 recorded_with: VCR 6.4.0

@@ -44,7 +44,7 @@ module MusixMatch
       end
 
       def link
-        "#{BASE_LINK}/artist/#{@args[:artist_slug]}/albums.json"
+        "#{base_link}/artist/#{@args[:artist_slug]}/albums.json"
       end
 
       def albums_type_key

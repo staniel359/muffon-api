@@ -5,8 +5,8 @@ module MusixMatch
         check_args
 
         data
-      rescue Faraday::ResourceNotFound
-        raise not_found_error
+      rescue Faraday::ResourceNotFound => e
+        handle_not_found_error(e)
       end
 
       private
@@ -32,7 +32,7 @@ module MusixMatch
       end
 
       def link
-        "#{BASE_LINK}/lyrics/#{@args[:track_slug]}.json"
+        "#{base_link}/lyrics/#{@args[:track_slug]}.json"
       end
     end
   end

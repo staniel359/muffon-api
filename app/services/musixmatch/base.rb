@@ -1,25 +1,66 @@
 module MusixMatch
   class Base < Muffon::Base
     SOURCE_NAME = 'musixmatch'.freeze
-    BASE_LINK =
-      'https://www.musixmatch.com/_next/data/fNde2hbCe1brBnYf2PEOi/en'.freeze
+    BASE_LINK = 'https://www.musixmatch.com'.freeze
 
     private
+
+    def base_link
+      "#{BASE_LINK}/_next/data/#{musixmatch_link_build_id}/en"
+    end
+
+    def musixmatch_link_build_id
+      return musixmatch_test_link_build_id if test?
+
+      @musixmatch_link_build_id ||=
+        get_global_value(
+          'musixmatch:link_build_id',
+          refresh_class_name:
+            'MusixMatch::Utils::LinkBuildId',
+          is_refresh: refresh_link_build_id?
+        )
+    end
+
+    def musixmatch_test_link_build_id
+      'fNde2hbCe1brBnYf2PEOi'
+    end
+
+    def refresh_link_build_id?
+      !!@args[:is_refresh_link_build_id]
+    end
 
     # rubocop:disable Layout/LineLength
     def cookies
       {
-        'captcha_id' => 'FLv8PvsPyv3mmelIXH+cgB7E5NJI22nBdrUe9E7xZsjXfH9yzA9p6HlPHHUEL4qIimNgu72+/qSd/2ZUL0p/JICKvHj5uVk0/GJ/A+AiwQA5eahzo0oaUsyoWOiNmHm8',
-        'intercom-device-id-d2v13u5s' => 'd7dd3f43-316b-42b5-88b2-e685df396f8e',
-        'intercom-id-d2v13u5s' => 'ffc75a4f-9abf-4918-b6fa-32aca84ea840',
-        'musixmatchUserGuid' => '653db7b8-9a2b-4897-8953-36998a59af13',
-        'musixmatchUserToken' => '{"tokens":{"mxm-account-v1.0":"25129347d67a55256dcc8e639d620967119d348f18e13c56642a","mxm-com-v1.0":"2512e1a3845c7648239553a447d0129bdc76b1b1850e16eca8a5","web-desktop-app-v1.0":"2512d0ac75039ad0513817059a4395f1adcac0409524772eeedb","musixmatch-podcasts-v2.0":"2512a8435520ba8df404ff92d3520eb4710512e65b62959de0e1","mxm-pro-web-v1.0":"25122645c8705bb79c8abec1a8a53dbb37085434ce0deed685d0","musixmatch-publishers-v2.0":"25128f44f99620959462be12cd1bff7a76038212915a7c31d51d"},"version":1}',
-        'mxm_bab' => 'BA',
-        'ph_phc_TXdpocbGVeZVm5VJmAsHTMrCofBQu3e0kN8HGMNGTVW_posthog' => '{"distinct_id":"01954923-3065-743d-af55-bd8c8582fcda","$sesid":[1754515585756,"0198813f-fd05-7862-90c9-26703272827d",1754515111173]}',
-        'translate_lang' => '{"key":"en","name":"English"}'
+        'captcha_id' => '7BZeFfgQrSH+XcFcC5mQRvbayt6n0aEoNzHrZm1A+2Bmj0+N94wWuHq0yqnKVWz8S0kkCRT/3BrvKgC20yerK8aLC7ZX6insElVPANb5aYWqwNehnSVoU81p78PMymWm',
+        'musixmatchUserToken' => '{"tokens":{"mxm-account-v1.0":"26020903eefc78d53a9bbb0e65c34ed5dca95bc38552b730b418","mxm-com-v1.0":"26028615715593ed3cf85f9b3d1200b382447d596decb48a5e92","web-desktop-app-v1.0":"2602ad52220853349441e9d902d96fa3cfa39c061f488d28bc9e","musixmatch-podcasts-v2.0":"2602c74a4d396719ef1456e96a92466392e366c4940728f7cdfb","mxm-pro-web-v1.0":"2602622328dbf8447e6bdfc573f7963fe994e45c91b436104952","musixmatch-publishers-v2.0":"26024c39407eeaff359f500c698146e46c21e719fe7bfad58732","mxm-experiments-unstable-v1.0":"2602fd973ef88a551eb74f9b8e7a9845f6fb5896451127b335c5","mxm-experiments-v1.0":"2602733b87a3bef600a6596978d74941e3f7311b09cda4014ab4"},"version":1}',
+        'mxm_bab' => 'AA'
       }
     end
     # rubocop:enable Layout/LineLength
+
+    def handle_not_found_error(
+      error
+    )
+      is_wrong_link_build_id =
+        JSON.parse(
+          error.response_body
+        ).dig(
+          'pageProps',
+          'data',
+          'footer',
+          'error'
+        )
+
+      unless is_wrong_link_build_id && !refresh_link_build_id?
+        raise not_found_error
+      end
+
+      self.class.call(
+        **@args,
+        is_refresh_link_build_id: true
+      )
+    end
 
     def image_data_formatted(
       image
