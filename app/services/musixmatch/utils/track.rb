@@ -12,7 +12,7 @@ module MusixMatch
       def source_data
         {
           name: source_name,
-          slug: musixmatch_slug,
+          slug: CGI.escape(musixmatch_slug),
           links: source_links_data
         }
       end
@@ -67,7 +67,7 @@ module MusixMatch
       def album_source_data
         {
           name: source_name,
-          slug: musixmatch_album_slug
+          slug: CGI.escape(musixmatch_album_slug)
         }
       end
 

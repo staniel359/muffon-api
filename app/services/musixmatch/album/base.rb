@@ -27,7 +27,7 @@ module MusixMatch
       end
 
       def link
-        "#{base_link}/album/#{@args[:album_slug]}.json"
+        "#{base_link}/album/#{CGI.unescape(@args[:album_slug])}.json"
       end
 
       def data

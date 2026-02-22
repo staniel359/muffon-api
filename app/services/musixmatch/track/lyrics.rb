@@ -11,7 +11,11 @@ module MusixMatch
       end
 
       def lyrics_formatted
-        lyrics.split("\n")
+        lyrics
+          .split("\n")
+          .product(["\n"])
+          .flatten
+          .reject(&:empty?)
       end
     end
   end
