@@ -40,6 +40,7 @@ module Muffon
               listeners_count:,
               plays_count:,
               profiles_count:,
+              pages: pages_data,
               **with_more_data
             }.compact
           end

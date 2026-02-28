@@ -29,8 +29,30 @@ module YouTubeMusic
           )
         end
 
+        def youtube_id
+          raw_artist_data.dig(
+            'musicResponsiveListItemRenderer',
+            'navigationEndpoint',
+            'browseEndpoint',
+            'browseId'
+          )
+        end
+
         def raw_artist_data
           @args[:raw_artist_data]
+        end
+
+        def name
+          raw_artist_data.dig(
+            'musicResponsiveListItemRenderer',
+            'flexColumns',
+            0,
+            'musicResponsiveListItemFlexColumnRenderer',
+            'text',
+            'runs',
+            0,
+            'text'
+          )
         end
       end
     end

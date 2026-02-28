@@ -919,6 +919,12 @@ Rails
           get 'playlists'
         end
 
+        namespace :artists, as: :artist do
+          scope ':artist_id' do
+            get 'albums'
+          end
+        end
+
         namespace :albums, as: :album do
           scope ':album_id' do
             get '', action: :info

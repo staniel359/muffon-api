@@ -60,6 +60,10 @@ module Muffon
           def recommendation_data
             @args[:recommendation_data]
           end
+
+          def pages_data
+            @args[:pages_data]
+          end
         end
       end
     end
