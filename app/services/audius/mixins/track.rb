@@ -83,8 +83,14 @@ module Audius
         raw_track_data['description']
       end
 
-      def tags
+      def raw_tags
         raw_track_data['genre'].split('/')
+      end
+
+      def tag_name_formatted(
+        tag_data
+      )
+        tag_data
       end
     end
   end
