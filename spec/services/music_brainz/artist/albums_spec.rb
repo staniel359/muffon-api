@@ -9,7 +9,7 @@ RSpec.describe MusicBrainz::Artist::Albums do
         ) do
           subject.call(
             artist_id: '4b585938-f271-45e2-b19a-91c634b5e396',
-            album_type: 'album',
+            albums_type: 'album',
             page: '2',
             limit: '5',
             profile_id: '1'
@@ -23,7 +23,21 @@ RSpec.describe MusicBrainz::Artist::Albums do
 
   describe 'no processing' do
     context 'when no artist_id given' do
-      let(:output) { subject.call }
+      let(:output) do
+        subject.call(
+          albums_type: 'album'
+        )
+      end
+
+      it { expect { output }.to raise_error(bad_request_error) }
+    end
+
+    context 'when no albums_type given' do
+      let(:output) do
+        subject.call(
+          artist_id: '4b585938-f271-45e2-b19a-91c634b5e396'
+        )
+      end
 
       it { expect { output }.to raise_error(bad_request_error) }
     end
@@ -35,12 +49,23 @@ RSpec.describe MusicBrainz::Artist::Albums do
         ) do
           subject.call(
             artist_id: random_string,
-            album_type: 'album'
+            albums_type: 'album'
           )
         end
       end
 
       it { expect { output }.to raise_error(not_found_error) }
+    end
+
+    context 'when wrong albums_type' do
+      let(:output) do
+        subject.call(
+          artist_id: '4b585938-f271-45e2-b19a-91c634b5e396',
+          albums_type: random_string
+        )
+      end
+
+      it { expect { output }.to raise_error(bad_request_error) }
     end
   end
 end

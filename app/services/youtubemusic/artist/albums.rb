@@ -11,8 +11,16 @@ module YouTubeMusic
       def required_args
         [
           *super,
-          :album_type
+          :albums_type
         ]
+      end
+
+      def wrong_args?
+        albums_type.blank?
+      end
+
+      def albums_type
+        ALBUMS_TYPES_DATA[@args[:albums_type]]
       end
 
       def artist_data
@@ -70,7 +78,7 @@ module YouTubeMusic
       def page_data
         artist_info_data.dig(
           :pages,
-          album_type_key
+          albums_type.to_sym
         )
       end
 
@@ -79,10 +87,6 @@ module YouTubeMusic
           YouTubeMusic::Artist::Info.call(
             artist_id: @args[:artist_id]
           )[:artist]
-      end
-
-      def album_type_key
-        ALBUMS_TYPES_DATA[@args[:album_type]].to_sym
       end
 
       def collection_item_data_formatted(

@@ -19,6 +19,10 @@ module YouTubeMusic
           ]
         end
 
+        def wrong_args?
+          false
+        end
+
         def data
           Muffon::Formatter::Source::Artist::Albums::Album.call(
             source_original_link:,

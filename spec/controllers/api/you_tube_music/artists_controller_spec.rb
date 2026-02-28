@@ -9,28 +9,12 @@ RSpec.describe API::YouTubeMusic::ArtistsController do
           params: {
             **required_params,
             artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw',
-            album_type: 'album'
+            albums_type: 'album'
           }
         )
       end
 
       expect(response).to have_http_status(:ok)
-    end
-
-    it 'returns 400 if no album_type' do
-      VCR.use_cassette(
-        'controllers/api/youtubemusic/artists/albums/no_album_type'
-      ) do
-        get(
-          :albums,
-          params: {
-            **required_params,
-            artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw'
-          }
-        )
-      end
-
-      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist_id' do
@@ -42,12 +26,37 @@ RSpec.describe API::YouTubeMusic::ArtistsController do
           params: {
             **required_params,
             artist_id: random_string,
-            album_type: 'album'
+            albums_type: 'album'
           }
         )
       end
 
       expect(response).to have_http_status(:not_found)
+    end
+
+    it 'returns 400 if no albums_type' do
+      get(
+        :albums,
+        params: {
+          **required_params,
+          artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw'
+        }
+      )
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 400 if wrong albums_type' do
+      get(
+        :albums,
+        params: {
+          **required_params,
+          artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw',
+          albums_type: random_string
+        }
+      )
+
+      expect(response).to have_http_status(:bad_request)
     end
   end
 end

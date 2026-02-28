@@ -9,7 +9,7 @@ RSpec.describe API::Spotify::ArtistsController do
           params: {
             **required_params,
             artist_id: '1aSxMhuvixZ8h9dK9jIDwL',
-            album_type: 'album'
+            albums_type: 'album'
           }
         )
       end
@@ -26,7 +26,7 @@ RSpec.describe API::Spotify::ArtistsController do
           params: {
             **required_params,
             artist_id: random_string,
-            album_type: 'album'
+            albums_type: 'album'
           }
         )
       end
@@ -34,18 +34,27 @@ RSpec.describe API::Spotify::ArtistsController do
       expect(response).to have_http_status(:not_found)
     end
 
-    it 'returns 400 if no album type' do
-      VCR.use_cassette(
-        'controllers/api/spotify/artists/albums/no_type'
-      ) do
-        get(
-          :albums,
-          params: {
-            **required_params,
-            artist_id: '1aSxMhuvixZ8h9dK9jIDwL'
-          }
-        )
-      end
+    it 'returns 400 if no albums_type' do
+      get(
+        :albums,
+        params: {
+          **required_params,
+          artist_id: '1aSxMhuvixZ8h9dK9jIDwL'
+        }
+      )
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 400 if wrong albums_type' do
+      get(
+        :albums,
+        params: {
+          **required_params,
+          artist_id: '1aSxMhuvixZ8h9dK9jIDwL',
+          albums_type: random_string
+        }
+      )
 
       expect(response).to have_http_status(:bad_request)
     end

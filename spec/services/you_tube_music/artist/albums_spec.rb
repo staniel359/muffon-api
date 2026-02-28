@@ -9,7 +9,7 @@ RSpec.describe YouTubeMusic::Artist::Albums do
         ) do
           subject.call(
             artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw',
-            album_type: 'album',
+            albums_type: 'album',
             limit: '5',
             page: '2',
             profile_id: '1'
@@ -25,17 +25,7 @@ RSpec.describe YouTubeMusic::Artist::Albums do
     context 'when no artist_id given' do
       let(:output) do
         subject.call(
-          album_type: 'album'
-        )
-      end
-
-      it { expect { output }.to raise_error(bad_request_error) }
-    end
-
-    context 'when no album_type given' do
-      let(:output) do
-        subject.call(
-          artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw'
+          albums_type: 'album'
         )
       end
 
@@ -49,12 +39,33 @@ RSpec.describe YouTubeMusic::Artist::Albums do
         ) do
           subject.call(
             artist_id: random_string,
-            album_type: 'album'
+            albums_type: 'album'
           )
         end
       end
 
       it { expect { output }.to raise_error(not_found_error) }
+    end
+
+    context 'when no albums_type given' do
+      let(:output) do
+        subject.call(
+          artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw'
+        )
+      end
+
+      it { expect { output }.to raise_error(bad_request_error) }
+    end
+
+    context 'when wrong albums_type' do
+      let(:output) do
+        subject.call(
+          artist_id: 'UC9UhWlkLfeypFt7pp7v_aBw',
+          albums_type: random_string
+        )
+      end
+
+      it { expect { output }.to raise_error(bad_request_error) }
     end
   end
 end

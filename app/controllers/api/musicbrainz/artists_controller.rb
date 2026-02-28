@@ -10,7 +10,7 @@ module API
           params.slice(
             *%i[
               artist_id
-              album_type
+              albums_type
               profile_id
               token
               page

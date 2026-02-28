@@ -32,8 +32,7 @@ RSpec.describe AmazonMusic::Artist::Albums do
           'services/amazonmusic/artist/albums/wrong_id'
         ) do
           subject.call(
-            artist_id: random_string,
-            album_type: 'album'
+            artist_id: random_string
           )
         end
       end

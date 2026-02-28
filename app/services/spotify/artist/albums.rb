@@ -14,7 +14,7 @@ module Spotify
 
       def required_args
         super + %i[
-          album_type
+          albums_type
         ]
       end
 
@@ -23,7 +23,7 @@ module Spotify
       end
 
       def albums_query
-        ALBUMS_QUERIES_DATA[@args[:album_type]]
+        ALBUMS_QUERIES_DATA[@args[:albums_type]]
       end
 
       def artist_data
@@ -56,7 +56,7 @@ module Spotify
       end
 
       def raw_collection_name
-        ALBUMS_COLLECTIONS_DATA[@args[:album_type]]
+        ALBUMS_COLLECTIONS_DATA[@args[:albums_type]]
       end
 
       def payload

@@ -14,8 +14,16 @@ module MusicBrainz
 
       def required_args
         super + %i[
-          album_type
+          albums_type
         ]
+      end
+
+      def wrong_args?
+        albums_type.blank?
+      end
+
+      def albums_type
+        ALBUMS_TYPES_DATA[@args[:albums_type]]
       end
 
       def artist_data
@@ -47,15 +55,11 @@ module MusicBrainz
         {
           **super,
           artist: @args[:artist_id],
-          type: album_type,
+          type: albums_type,
           inc: 'artist-credits',
           limit:,
           offset:
         }
-      end
-
-      def album_type
-        ALBUMS_TYPES_DATA[@args[:album_type]]
       end
 
       def items_count
