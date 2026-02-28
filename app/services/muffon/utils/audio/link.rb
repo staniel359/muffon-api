@@ -41,16 +41,12 @@ module Muffon
         def write_audio_data_to_file
           return if test?
 
-          audio_file.write(
-            audio_binary_data
-          )
-        end
-
-        def audio_file
-          ::File.open(
+          File.open(
             "public/#{audio_path}",
             'wb'
-          )
+          ) do |file|
+            file << audio_binary_data
+          end
         end
 
         def audio_path

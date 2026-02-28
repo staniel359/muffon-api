@@ -56,7 +56,7 @@ module Muffon
         end
 
         def temp_image_file_stream
-          ::File.new(
+          File.new(
             temp_image_file_path,
             'wb'
           )

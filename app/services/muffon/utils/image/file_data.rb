@@ -26,11 +26,11 @@ module Muffon
           return unless temp_image_file_present?
 
           content =
-            temp_image_file.read
+            File.read(
+              temp_image_file_path
+            )
 
-          temp_image_file.close
-
-          ::File.delete(
+          File.delete(
             temp_image_file_path
           )
 
@@ -39,20 +39,13 @@ module Muffon
 
         def temp_image_file_present?
           temp_image_file_path.present? &&
-            ::File.exist?(
+            File.exist?(
               temp_image_file_path
             )
         end
 
         def temp_image_file_path
           @args[:temp_image_file_path]
-        end
-
-        def temp_image_file
-          @temp_image_file ||=
-            ::File.open(
-              temp_image_file_path
-            )
         end
 
         def data
