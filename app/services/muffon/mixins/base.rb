@@ -56,6 +56,20 @@ module Muffon
           query_artist_name: @args[:query_artist_name]
         }
       end
+
+      def replace_url_host(
+        url:,
+        new_host:
+      )
+        uri_data = URI.parse(url)
+
+        old_host = "#{uri_data.scheme}://#{uri_data.host}"
+
+        url.sub(
+          old_host,
+          new_host
+        )
+      end
     end
   end
 end

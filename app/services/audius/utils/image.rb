@@ -19,16 +19,27 @@ module Audius
         return if @args[:images_data].blank?
 
         {
-          original: images[0],
-          large: images[0],
-          medium: images[1],
-          small: images[2],
-          extrasmall: images[2]
+          original: image_formatted('1000x1000'),
+          large: image_formatted('480x480'),
+          medium: image_formatted('480x480'),
+          small: image_formatted('150x150'),
+          extrasmall: image_formatted('150x150')
         }
       end
 
-      def images
-        @args[:images_data].values
+      def image_formatted(key)
+        if image_link_mirrors.present?
+          replace_url_host(
+            url: @args[:images_data][key],
+            new_host: image_link_mirrors[-1]
+          )
+        else
+          @args[:images_data][key]
+        end
+      end
+
+      def image_link_mirrors
+        @args[:images_data]['mirrors']
       end
     end
   end
