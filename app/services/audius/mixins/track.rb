@@ -51,13 +51,27 @@ module Audius
       end
 
       def audio_present?
-        audio_link.present?
+        raw_audio_link.present?
       end
 
-      def audio_link
+      def raw_audio_link
         raw_track_data.dig(
           'stream',
           'url'
+        )
+      end
+
+      def audio_link
+        replace_url_host(
+          url: raw_audio_link,
+          new_host: audio_link_mirrors[0]
+        )
+      end
+
+      def audio_link_mirrors
+        raw_track_data.dig(
+          'stream',
+          'mirrors'
         )
       end
 
