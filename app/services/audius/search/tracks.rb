@@ -8,7 +8,8 @@ module Audius
           collection_name: 'tracks',
           raw_collection:,
           page:,
-          limit:
+          limit:,
+          is_fractioned: true
         )
       end
 

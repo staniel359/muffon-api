@@ -1,6 +1,8 @@
 module Audius
   module Search
     class Base < Audius::Base
+      PAGE_LIMIT = 500
+
       def call
         check_args
 
@@ -28,7 +30,7 @@ module Audius
           **super,
           query: @args[:query],
           offset:,
-          limit:
+          limit: PAGE_LIMIT
         }
       end
     end
