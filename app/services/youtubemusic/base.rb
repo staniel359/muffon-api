@@ -8,6 +8,18 @@ module YouTubeMusic
 
     private
 
+    # rubocop:disable Layout/LineLength
+    def cookies
+      {
+        '__Secure-ROLLOUT_TOKEN' => 'CL-u9pzcruLp4QEQoYfAwqyOkwMYqeiRxayOkwM=',
+        '__Secure-YNID' => '16.YT=i2mygmBu25vuVDSBz3rcpbUX58T8EDmhC6PLd6nbGeLmn2QYtcmHAR0GMmOjOM0YpxaZGVdr07HqwsY577eXjJpYG3DzvQx5_diHrUTIGNM18wKzNNGYp3xFCiuIh1a_5XPnP6dyjj98BHrRdaXVuCIqRJJ_gRS84vvxvkiwcmWfFdPXvy1BJdtDcih37bfIJWi62bABneKgpOD-EPqXWsn0q3d4yRkey7OPrqQBwLt0-ncpEHRuxRRLqY7vzHlNINeEgxEPYYlZlkoJoBSbcOm6SIoHfZFbR1GgR5npYoPbzkv8mWDKYJejPp4caHAXf4ySOIMa_aigr4TxOjAgIQ',
+        'VISITOR_INFO1_LIVE' => 'x5bEMLtEr4o',
+        'VISITOR_PRIVACY_METADATA' => 'CgJCWRIEGgAgDA==',
+        'YSC' => 'h1zewZWCYfo'
+      }
+    end
+    # rubocop:enable Layout/LineLength
+
     def image_data_formatted(
       image
     )
