@@ -19,6 +19,8 @@ module YouTubeMusic
         end
 
         def data
+          return if youtube_id.blank?
+
           {
             **self_data,
             source: source_data,
