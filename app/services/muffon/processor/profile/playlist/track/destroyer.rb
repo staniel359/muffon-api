@@ -19,6 +19,8 @@ module Muffon
             end
 
             def playlist_track
+              return if playlist.blank?
+
               playlist
                 .playlist_tracks
                 .find_by(
