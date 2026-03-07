@@ -60,7 +60,11 @@ module YouTube
       end
 
       def raw_channel_title
-        snippet['channelTitle']
+        if channel_youtube_id == 'UC'
+          'YouTube Music'
+        else
+          snippet['channelTitle']
+        end
       end
 
       def image_data
