@@ -5,7 +5,7 @@ module Spotify
         check_args
 
         data
-      rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
+      rescue Faraday::UnauthorizedError
         if spotify_connection.present?
           retry_with_new_session
         else

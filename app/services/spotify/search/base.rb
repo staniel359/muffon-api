@@ -5,7 +5,7 @@ module Spotify
         check_args
 
         data
-      rescue Faraday::UnauthorizedError, Faraday::TooManyRequestsError
+      rescue Faraday::UnauthorizedError
         retry_with_new_spotify_token
       rescue Faraday::BadRequestError
         raise bad_request_error
