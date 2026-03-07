@@ -1,5 +1,6 @@
 class ApplicationRecord < ActiveRecord::Base
   TRANSACTION_RETRIES_COUNT = 3
+  TRANSACTION_RETRIES_INTERVAL = 1
 
   self.abstract_class = true
 
@@ -8,24 +9,21 @@ class ApplicationRecord < ActiveRecord::Base
   include ApplicationRecordDecorator
 
   class << self
-    def with_cache_clearance_and_retry_on_error(&)
+    def with_cache_clearance_and_retry_on_error(retries_made: 0, &)
       yield
     rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid => e
       clear_cache
 
-      @count ||= 0
+      is_retry = retries_made < TRANSACTION_RETRIES_COUNT
 
-      if @count < TRANSACTION_RETRIES_COUNT
-        @count += 1
+      raise e unless is_retry
 
-        sleep 1
+      sleep TRANSACTION_RETRIES_INTERVAL
 
-        retry
-      else
-        @count = 0
-
-        raise e
-      end
+      with_cache_clearance_and_retry_on_error(
+        retries_made: retries_made + 1,
+        &
+      )
     end
 
     def test?
