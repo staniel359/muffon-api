@@ -56,9 +56,14 @@ module YouTubeMusic
         }.to_json
       end
 
+      # rubocop:disable Layout/LineLength
       def params
-        { continuation: @args[:page] }
+        {
+          continuation: @args[:page],
+          ctoken: 'ErEDEgx3aWxkIG5vdGhpbmcaoANFZ1dLQVFJSUFVaGthaEFRQ1JBRUVBTVFDaEFWRUJBUURoQVJnZ0VMUzJwYWNuTnRSREUyWlRpQ0FRczNNM2xZVG05T1JFUktOSUlCQzJWVk9YRXdhRlpHTlVORmdnRUxUM1ZSWW1Ka1NERXpVR3VDQVF0VlgwaDFYMFZyYkd4aU1JSUJDM054ZW5CR1ppMTVhbTlqZ2dFTExYTjVSVXhSTm1waVNXdUNBUXQxVFVaM05IVmtjbVpDVVlJQkN6QkRTMWxVYzFrMVJUVk5nZ0VMZVdwak1GbE9jWGRSYlZtQ0FRc3RZWFp3UjBka1RtSkliNElCQzNVeVYzTndZVlF5Tm14cmdnRUxia1kxVjNsZlNERTRiRy1DQVF0dWRVOUROREpvWW5SS1ZZSUJDMWd3U1ZaVGRqVnBhemRWZ2dFTFoxTlJjbkZGZWtnM1JVR0NBUXRVYVhOWFExbFpVWFpxT0lJQkMwTjBMVzFKV1ZkSUxYVlpnZ0VMYTBoSVFXbGhVRUpJYlZHQ0FRczVaa05VVW10Q2VGZEJSUSUzRCUzRBjx6tAu'
+        }
       end
+      # rubocop:enable Layout/LineLength
 
       def raw_next_page_data
         response_data.dig(
