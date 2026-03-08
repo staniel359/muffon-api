@@ -78,7 +78,13 @@ module VK
     end
 
     def raise_error(error_data)
-      raise("[ERROR] (VK): #{error_data['error_msg']}")
+      error_text = error_data['error_msg']
+
+      if error_text.include?('audios is invalid')
+        raise not_found_error
+      else
+        raise "[Error (VK)]: #{error_text}"
+      end
     end
 
     def artist_data_formatted(
