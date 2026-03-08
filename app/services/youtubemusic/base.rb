@@ -8,6 +8,17 @@ module YouTubeMusic
 
     private
 
+    def headers
+      {
+        **super,
+        'X-Goog-Visitor-Id' =>
+          'CgtjcXJrbFFtY24wYyjy8LTNBjIKCgJCWRIEGgAgHQ%3D%3D',
+        'X-Youtube-Bootstrap-Logged-In' => 'false',
+        'X-Youtube-Client-Name' => '67',
+        'X-Youtube-Client-Version' => '1.20260304.03.00'
+      }
+    end
+
     # rubocop:disable Layout/LineLength
     def cookies
       {
