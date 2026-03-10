@@ -54,16 +54,18 @@ module AmazonMusic
         end
 
         def write_audio_data_to_file
-          return if test?
+          return true if test?
 
-          `ffmpeg \
-            -decryption_key #{key} \
-            -i "#{file_link}" \
-            -y \
-            -movflags +faststart \
-            -c copy \
-            -loglevel error \
-            public/#{audio_path}`
+          system(
+            "ffmpeg \
+              -decryption_key #{key} \
+              -i #{file_link} \
+              -y \
+              -movflags +faststart \
+              -c copy \
+              -loglevel error \
+              public/#{audio_path}"
+          )
         end
 
         def file_link

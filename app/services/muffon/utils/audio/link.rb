@@ -21,9 +21,7 @@ module Muffon
         def data
           create_audio_folder
 
-          write_audio_data_to_file
-
-          audio_link
+          (write_audio_data_to_file && audio_link).presence
         end
 
         def create_audio_folder
@@ -39,7 +37,7 @@ module Muffon
         end
 
         def write_audio_data_to_file
-          return if test?
+          return true if test?
 
           File.open(
             "public/#{audio_path}",

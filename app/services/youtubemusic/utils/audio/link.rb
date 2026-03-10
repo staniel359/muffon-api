@@ -23,14 +23,15 @@ module YouTubeMusic
         def write_audio_data_to_file
           return if test?
 
-          `yt-dlp \
-            #{@args[:track_id]} \
-            --cookies-from-browser firefox \
-            --js-runtimes deno:/root/.deno/bin/deno \
-            --extract-audio \
-            --concurrent-fragments 5 \
-            --output public/#{audio_folder}/#{audio_file_name}
-          `
+          system(
+            "yt-dlp \
+              #{@args[:track_id]} \
+              --cookies-from-browser firefox \
+              --js-runtimes deno:/root/.deno/bin/deno \
+              --extract-audio \
+              --concurrent-fragments 5 \
+              --output public/#{audio_folder}/#{audio_file_name}"
+          )
         end
       end
     end
