@@ -1,8 +1,8 @@
 module SoundCloud
   module Utils
     module Audio
-      class AlternativeLink
-        class TrackData < SoundCloud::Utils::Audio::AlternativeLink
+      class Link
+        class TrackData < SoundCloud::Utils::Audio::Link
           def call
             check_args
 
