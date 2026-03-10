@@ -82,6 +82,11 @@ module YouTubeMusic
             'navigationEndpoint',
             'watchEndpoint',
             'videoId'
+          ) ||
+          raw_track_data.dig(
+            'musicResponsiveListItemRenderer',
+            'playlistItemData',
+            'videoId'
           )
       end
 
