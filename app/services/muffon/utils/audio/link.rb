@@ -2,27 +2,7 @@ module Muffon
   module Utils
     module Audio
       module Link
-        FILE_EXTENSION = 'mp3'.freeze
-
-        def call
-          check_args
-
-          return if no_data?
-
-          data
-        end
-
         private
-
-        def no_data?
-          audio_binary_data.blank?
-        end
-
-        def data
-          create_audio_folder
-
-          (write_audio_data_to_file && audio_link).presence
-        end
 
         def create_audio_folder
           return if test?
@@ -36,15 +16,8 @@ module Muffon
           "media/audio/#{source_name}"
         end
 
-        def write_audio_data_to_file
-          return true if test?
-
-          File.open(
-            "public/#{audio_path}",
-            'wb'
-          ) do |file|
-            file << audio_binary_data
-          end
+        def audio_link
+          "#{credentials[:url]}/#{audio_path}"
         end
 
         def audio_path
@@ -61,10 +34,6 @@ module Muffon
 
         def file_extension
           self.class::FILE_EXTENSION
-        end
-
-        def audio_link
-          "#{credentials[:url]}/#{audio_path}"
         end
       end
     end

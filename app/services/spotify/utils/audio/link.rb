@@ -70,7 +70,13 @@ module Spotify
           file_data['fileid']
         end
 
-        def write_audio_data_to_file
+        def data
+          create_audio_folder
+
+          (retrieve_audio && audio_link).presence
+        end
+
+        def retrieve_audio
           return true if test?
 
           system(
