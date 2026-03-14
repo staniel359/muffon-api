@@ -14,7 +14,7 @@ module Spotify
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
@@ -31,8 +31,20 @@ module Spotify
           }.compact
         end
 
-        def track
-          @args[:track]['track']
+        def raw_artists
+          raw_track_data['artists']
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]['track']
+        end
+
+        def raw_images
+          raw_album_data['images']
+        end
+
+        def raw_album_data
+          raw_track_data['album']
         end
 
         def created_formatted
@@ -42,7 +54,11 @@ module Spotify
         end
 
         def raw_created
-          @args[:track]['added_at'].to_datetime
+          @args[:raw_track_data]['added_at'].to_datetime
+        end
+
+        def audio_present?
+          true
         end
       end
     end

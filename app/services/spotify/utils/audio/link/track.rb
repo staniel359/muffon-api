@@ -9,8 +9,6 @@ module Spotify
             check_if_not_found
 
             data
-          rescue Faraday::UnauthorizedError
-            raise Muffon::Error::ForbiddenError
           end
 
           private

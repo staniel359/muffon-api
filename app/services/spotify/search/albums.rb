@@ -16,28 +16,48 @@ module Spotify
 
       def raw_collection
         response_data.dig(
-          'albums',
+          'data',
+          'searchV2',
+          'albumsV2',
           'items'
         )
       end
 
-      def params
+      def payload
         {
-          **super,
-          type: 'album'
-        }
+          'variables' => {
+            'includePreReleases' => false,
+            'numberOfTopResults' => 20,
+            'searchTerm' => @args[:query],
+            'offset' => offset,
+            'limit' => limit,
+            'includeAudiobooks' => true,
+            'includeAuthors' => false
+          },
+          'operationName' => 'searchAlbums',
+          'extensions' => {
+            'persistedQuery' => {
+              'version' => 1,
+              'sha256Hash' => '5e7d2724fbef31a25f714844bf1313ffc748ebd4bd199eaad50628a4f246a7ab' # rubocop:disable Layout/LineLength
+            }
+          }
+        }.to_json
       end
 
       def items_count
         response_data.dig(
-          'albums',
-          'total'
+          'data',
+          'searchV2',
+          'albumsV2',
+          'totalCount'
         )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Spotify::Search::Albums::Album.call(
-          album:,
+          raw_album_data:,
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

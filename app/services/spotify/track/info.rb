@@ -4,10 +4,16 @@ module Spotify
       private
 
       def track_data
-        self_data
-          .merge(track_base_data)
-          .merge(track_extra_data)
-          .merge(with_more_data)
+        {
+          **self_data,
+          **track_base_data,
+          album: album_data,
+          image: image_data,
+          profiles_count:,
+          duration:,
+          audio: audio_base_data,
+          **with_more_data
+        }.compact
       end
 
       def track_base_data
@@ -20,14 +26,40 @@ module Spotify
         }
       end
 
-      def track_extra_data
+      def raw_artists
+        [
+          *raw_primary_artists,
+          *raw_other_artists
+        ]
+      end
+
+      def raw_primary_artists
+        raw_track_data.dig(
+          'firstArtist',
+          'items'
+        )
+      end
+
+      def raw_other_artists
+        raw_track_data.dig(
+          'otherArtists',
+          'items'
+        )
+      end
+
+      def payload
         {
-          album: album_data,
-          image: image_data,
-          profiles_count:,
-          duration:,
-          audio: audio_base_data
-        }.compact
+          'variables' => {
+            'uri' => spotify_uri
+          },
+          'operationName' => 'getTrack',
+          'extensions' => {
+            'persistedQuery' => {
+              'version' => 1,
+              'sha256Hash' => '612585ae06ba435ad26369870deaae23b5c8800a256cd8a57e08eddc25a37294' # rubocop:disable Layout/LineLength
+            }
+          }
+        }.to_json
       end
 
       def audio_link

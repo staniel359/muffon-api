@@ -4,33 +4,28 @@ module Spotify
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
+        {
+          **track_base_data,
+          albums:
+        }.compact
       end
 
-      def track_albums_data
-        { albums: }
+      def raw_albums
+        [raw_album_data].compact
       end
 
-      def albums
-        [album_data].compact
+      def raw_album_data
+        raw_track_data['albumOfTrack']
       end
 
-      def album_data
-        return if album_id.blank?
-
-        Spotify::Album::Info.call(
-          album_id:,
-          list: true,
+      def album_data_formatted(
+        raw_album_data
+      )
+        Spotify::Track::Albums::Album.call(
+          raw_album_data:,
+          raw_artists: raw_primary_artists,
           profile_id: @args[:profile_id],
           token: @args[:token]
-        )[:album]
-      end
-
-      def album_id
-        track.dig(
-          'album',
-          'id'
         )
       end
     end

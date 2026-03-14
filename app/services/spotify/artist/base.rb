@@ -1,6 +1,8 @@
 module Spotify
   module Artist
     class Base < Spotify::Base
+      include Spotify::Utils::Artist
+
       def call
         check_args
 
@@ -9,8 +11,6 @@ module Spotify
         data
       rescue Faraday::UnauthorizedError
         retry_with_new_spotify_token
-      rescue Faraday::BadRequestError
-        raise not_found_error
       end
 
       private
@@ -22,18 +22,18 @@ module Spotify
       end
 
       def not_found?
-        name.blank?
+        raw_artist_data.blank?
       end
 
-      def name
-        artist_info_data[:name]
+      def raw_artist_data
+        response_data.dig(
+          'data',
+          'artistUnion'
+        )
       end
 
-      def artist_info_data
-        @artist_info_data ||=
-          Spotify::Artist::Info.call(
-            artist_id: @args[:artist_id]
-          )[:artist]
+      def spotify_uri
+        "spotify:artist:#{@args[:artist_id]}"
       end
 
       def data
@@ -44,11 +44,14 @@ module Spotify
         { name: }
       end
 
-      def link
-        "#{BASE_LINK}/artists/#{@args[:artist_id]}"
+      def artist_info_data
+        @artist_info_data ||=
+          Spotify::Artist::Info.call(
+            artist_id: @args[:artist_id]
+          )[:artist]
       end
 
-      alias artist response_data
+      alias response post_response
     end
   end
 end

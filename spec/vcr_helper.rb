@@ -59,12 +59,27 @@ SECRET_KEYS = [
   ],
   %i[
     spotify
-    token
+    client_token
+  ],
+  %i[
+    spotify
+    cookies
+    sp_t
   ],
   %i[
     spotify
     cookies
     sp_dc
+  ],
+  %i[
+    spotify
+    cookies
+    sp_gaid
+  ],
+  %i[
+    spotify
+    cookies
+    sp_key
   ],
   %i[
     vk

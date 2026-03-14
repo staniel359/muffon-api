@@ -7,10 +7,6 @@ module Spotify
         data
       rescue Faraday::UnauthorizedError
         retry_with_new_spotify_token
-      rescue Faraday::BadRequestError
-        raise bad_request_error
-      rescue Faraday::ForbiddenError
-        raise forbidden_error
       end
 
       private
@@ -25,22 +21,11 @@ module Spotify
         { search: search_data }
       end
 
-      def link
-        "#{BASE_LINK}/search"
-      end
-
-      def params
-        {
-          **super,
-          q: @args[:query],
-          limit:,
-          offset:
-        }
-      end
-
       def maximum_items_count
         pagination_maximum_items_count_data[:search]
       end
+
+      alias response post_response
     end
   end
 end

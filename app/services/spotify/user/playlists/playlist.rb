@@ -14,7 +14,7 @@ module Spotify
 
         def required_args
           %i[
-            playlist
+            raw_playlist_data
           ]
         end
 
@@ -29,8 +29,8 @@ module Spotify
           }.compact
         end
 
-        def playlist
-          @args[:playlist]
+        def raw_playlist_data
+          @args[:raw_playlist_data]
         end
 
         def tracks_count
@@ -39,13 +39,14 @@ module Spotify
 
         def tracks
           return if @args[:with_tracks].blank?
+
           return [] if tracks_count_initial.zero?
 
           playlist_info_data[:tracks] || []
         end
 
         def tracks_count_initial
-          playlist.dig(
+          raw_playlist_data.dig(
             'tracks',
             'total'
           ) || 0
@@ -59,6 +60,10 @@ module Spotify
             ).try(
               :[], :playlist
             ) || {}
+        end
+
+        def raw_images
+          raw_playlist_data['images']
         end
       end
     end

@@ -45,17 +45,13 @@ RSpec.describe Spotify::Artist::Albums do
 
     context 'when wrong album type' do
       let(:output) do
-        VCR.use_cassette(
-          'services/spotify/artist/albums/wrong_type'
-        ) do
-          subject.call(
-            artist_id: '1aSxMhuvixZ8h9dK9jIDwL',
-            album_type: random_string
-          )
-        end
+        subject.call(
+          artist_id: '1aSxMhuvixZ8h9dK9jIDwL',
+          album_type: random_string
+        )
       end
 
-      it { expect(output).to eq(spotify_artist_no_albums_data) }
+      it { expect { output }.to raise_error(bad_request_error) }
     end
   end
 end

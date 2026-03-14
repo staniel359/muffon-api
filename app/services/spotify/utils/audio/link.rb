@@ -14,6 +14,8 @@ module Spotify
           return if no_data?
 
           data
+        rescue Faraday::UnauthorizedError
+          retry_with_new_spotify_token
         end
 
         private
@@ -42,11 +44,6 @@ module Spotify
             Spotify::Utils::Audio::Link::File.call(
               track_data:
             )
-        end
-
-        def spotify_token
-          @spotify_token ||=
-            Spotify::Utils::Audio::Link::Token.call
         end
 
         def params

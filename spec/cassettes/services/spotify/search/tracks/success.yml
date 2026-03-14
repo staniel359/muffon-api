@@ -1,429 +1,64 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.spotify.com/v1/search?limit=5&offset=5&q=a&type=track
+    method: post
+    uri: https://api-partner.spotify.com/pathfinder/v2/query
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"variables":{"includePreReleases":false,"numberOfTopResults":20,"searchTerm":"a","offset":5,"limit":5,"includeAudiobooks":true,"includeAuthors":false},"operationName":"searchTracks","extensions":{"persistedQuery":{"version":1,"sha256Hash":"131fd38c13431be963a851082dca0108a4200998b886e7e9d20a21fc51a36aaf"}}}'
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.0p0
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Authorization:
-      - Bearer <SPOTIFY_TOKEN>
+      - Bearer BQClTkaY77eY_KsGJLdQiidDfsyCW4dXHD9crKMUomPnjF17BVYYzYTl0S6MC3cICmpgueSNZ_-xgPHrtGiVxz5MaZin7XNW1HE77rgUxzbNzexL77OTMDGDQDkECNpKvFHFX4sYL9DNjK4v_Mi2EpvHVd8wxqY6sheaC2EOFV443rmY-ysvFzLNbKfebstWUQzKc5mZgEfP6daaq2JOP_2rQbA-tbnn9z653esCTs1LGa_v1XrNKBTpuWEhvU0tv7yw_M0YWi4x6XYdZn3qvu-9xVY-xb_FTqGSg_v14CtqFQVTQoFv1bFg82bCdbDjQmjYuS_YKqQWzVEv4c3_QmEGsZjEajVbtTL2o-c6tDGJbQqMVePBjmXudK9byaPNggwqWJT-vGvEG37a
+      Client-Token:
+      - "<SPOTIFY_CLIENT_TOKEN>"
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.spotify.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Cache-Control:
-      - public, max-age=7200
+      - private, max-age=0
       X-Robots-Tag:
       - noindex, nofollow
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
-        X-Cloud-Trace-Context, client-token, content-access-token
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS, PUT, DELETE, PATCH
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Max-Age:
-      - '604800'
+      Server-Timing:
+      - edge;dur=271
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Sat, 30 Jan 2021 07:14:27 GMT
+      - Sat, 14 Mar 2026 21:56:04 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: |-
-        {
-          "tracks" : {
-            "href" : "https://api.spotify.com/v1/search?query=a&type=track&offset=5&limit=5",
-            "items" : [ {
-              "album" : {
-                "album_type" : "album",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
-                  "id" : "66CXWjxzNUsdJxJ2JdwvnR",
-                  "name" : "Ariana Grande",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
-                } ],
-                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/3euz4vS7ezKGnNSwgyvKcd"
-                },
-                "href" : "https://api.spotify.com/v1/albums/3euz4vS7ezKGnNSwgyvKcd",
-                "id" : "3euz4vS7ezKGnNSwgyvKcd",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e025ef878a782c987d38d82b605",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d000048515ef878a782c987d38d82b605",
-                  "width" : 64
-                } ],
-                "name" : "Positions",
-                "release_date" : "2020-10-30",
-                "release_date_precision" : "day",
-                "total_tracks" : 14,
-                "type" : "album",
-                "uri" : "spotify:album:3euz4vS7ezKGnNSwgyvKcd"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
-                },
-                "href" : "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
-                "id" : "66CXWjxzNUsdJxJ2JdwvnR",
-                "name" : "Ariana Grande",
-                "type" : "artist",
-                "uri" : "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
-              } ],
-              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-              "disc_number" : 1,
-              "duration_ms" : 173710,
-              "explicit" : true,
-              "external_ids" : {
-                "isrc" : "USUM72020423"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/6Im9k8u9iIzKMrmV7BWtlF"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/6Im9k8u9iIzKMrmV7BWtlF",
-              "id" : "6Im9k8u9iIzKMrmV7BWtlF",
-              "is_local" : false,
-              "name" : "34+35",
-              "popularity" : 93,
-              "preview_url" : null,
-              "track_number" : 2,
-              "type" : "track",
-              "uri" : "spotify:track:6Im9k8u9iIzKMrmV7BWtlF"
-            }, {
-              "album" : {
-                "album_type" : "album",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/4Gso3d4CscCijv0lmajZWs"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/4Gso3d4CscCijv0lmajZWs",
-                  "id" : "4Gso3d4CscCijv0lmajZWs",
-                  "name" : "Don Toliver",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:4Gso3d4CscCijv0lmajZWs"
-                } ],
-                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/7z4GhRfLqfSkqrj5F3Yt2B"
-                },
-                "href" : "https://api.spotify.com/v1/albums/7z4GhRfLqfSkqrj5F3Yt2B",
-                "id" : "7z4GhRfLqfSkqrj5F3Yt2B",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b27345190a074bef3e8ce868b60c",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e0245190a074bef3e8ce868b60c",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d0000485145190a074bef3e8ce868b60c",
-                  "width" : 64
-                } ],
-                "name" : "Heaven Or Hell",
-                "release_date" : "2020-03-13",
-                "release_date_precision" : "day",
-                "total_tracks" : 12,
-                "type" : "album",
-                "uri" : "spotify:album:7z4GhRfLqfSkqrj5F3Yt2B"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/4Gso3d4CscCijv0lmajZWs"
-                },
-                "href" : "https://api.spotify.com/v1/artists/4Gso3d4CscCijv0lmajZWs",
-                "id" : "4Gso3d4CscCijv0lmajZWs",
-                "name" : "Don Toliver",
-                "type" : "artist",
-                "uri" : "spotify:artist:4Gso3d4CscCijv0lmajZWs"
-              } ],
-              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-              "disc_number" : 1,
-              "duration_ms" : 167915,
-              "explicit" : true,
-              "external_ids" : {
-                "isrc" : "USAT22001223"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/527k23H0A4Q0UJN3vGs0Da"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/527k23H0A4Q0UJN3vGs0Da",
-              "id" : "527k23H0A4Q0UJN3vGs0Da",
-              "is_local" : false,
-              "name" : "After Party",
-              "popularity" : 83,
-              "preview_url" : "https://p.scdn.co/mp3-preview/1abc83cda35186a1de03a2141e3e94dc2be65218?cid=<SPOTIFY_API_KEY>",
-              "track_number" : 4,
-              "type" : "track",
-              "uri" : "spotify:track:527k23H0A4Q0UJN3vGs0Da"
-            }, {
-              "album" : {
-                "album_type" : "album",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/0eDvMgVFoNV3TpwtrVCoTj"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/0eDvMgVFoNV3TpwtrVCoTj",
-                  "id" : "0eDvMgVFoNV3TpwtrVCoTj",
-                  "name" : "Pop Smoke",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:0eDvMgVFoNV3TpwtrVCoTj"
-                } ],
-                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/7e7t0MCrNDcJZsPwUKjmOc"
-                },
-                "href" : "https://api.spotify.com/v1/albums/7e7t0MCrNDcJZsPwUKjmOc",
-                "id" : "7e7t0MCrNDcJZsPwUKjmOc",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b27377ada0863603903f57b34369",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e0277ada0863603903f57b34369",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d0000485177ada0863603903f57b34369",
-                  "width" : 64
-                } ],
-                "name" : "Shoot For The Stars Aim For The Moon",
-                "release_date" : "2020-07-03",
-                "release_date_precision" : "day",
-                "total_tracks" : 19,
-                "type" : "album",
-                "uri" : "spotify:album:7e7t0MCrNDcJZsPwUKjmOc"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/0eDvMgVFoNV3TpwtrVCoTj"
-                },
-                "href" : "https://api.spotify.com/v1/artists/0eDvMgVFoNV3TpwtrVCoTj",
-                "id" : "0eDvMgVFoNV3TpwtrVCoTj",
-                "name" : "Pop Smoke",
-                "type" : "artist",
-                "uri" : "spotify:artist:0eDvMgVFoNV3TpwtrVCoTj"
-              }, {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/5f7VJjfbwm532GiveGC0ZK"
-                },
-                "href" : "https://api.spotify.com/v1/artists/5f7VJjfbwm532GiveGC0ZK",
-                "id" : "5f7VJjfbwm532GiveGC0ZK",
-                "name" : "Lil Baby",
-                "type" : "artist",
-                "uri" : "spotify:artist:5f7VJjfbwm532GiveGC0ZK"
-              }, {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/4r63FhuTkUYltbVAg5TQnk"
-                },
-                "href" : "https://api.spotify.com/v1/artists/4r63FhuTkUYltbVAg5TQnk",
-                "id" : "4r63FhuTkUYltbVAg5TQnk",
-                "name" : "DaBaby",
-                "type" : "artist",
-                "uri" : "spotify:artist:4r63FhuTkUYltbVAg5TQnk"
-              } ],
-              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-              "disc_number" : 1,
-              "duration_ms" : 190476,
-              "explicit" : true,
-              "external_ids" : {
-                "isrc" : "USUM72013355"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/0PvFJmanyNQMseIFrU708S"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/0PvFJmanyNQMseIFrU708S",
-              "id" : "0PvFJmanyNQMseIFrU708S",
-              "is_local" : false,
-              "name" : "For The Night (feat. Lil Baby & DaBaby)",
-              "popularity" : 90,
-              "preview_url" : null,
-              "track_number" : 3,
-              "type" : "track",
-              "uri" : "spotify:track:0PvFJmanyNQMseIFrU708S"
-            }, {
-              "album" : {
-                "album_type" : "single",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
-                  "id" : "6eUKZXaKkcviH0Ku9w2n3V",
-                  "name" : "Ed Sheeran",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
-                } ],
-                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/5bb2Sf8jps2DTyI2urMThV"
-                },
-                "href" : "https://api.spotify.com/v1/albums/5bb2Sf8jps2DTyI2urMThV",
-                "id" : "5bb2Sf8jps2DTyI2urMThV",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b27388e170d5ced543d191593fc8",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e0288e170d5ced543d191593fc8",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d0000485188e170d5ced543d191593fc8",
-                  "width" : 64
-                } ],
-                "name" : "Afterglow",
-                "release_date" : "2020-12-21",
-                "release_date_precision" : "day",
-                "total_tracks" : 1,
-                "type" : "album",
-                "uri" : "spotify:album:5bb2Sf8jps2DTyI2urMThV"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
-                },
-                "href" : "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
-                "id" : "6eUKZXaKkcviH0Ku9w2n3V",
-                "name" : "Ed Sheeran",
-                "type" : "artist",
-                "uri" : "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
-              } ],
-              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-              "disc_number" : 1,
-              "duration_ms" : 185486,
-              "explicit" : false,
-              "external_ids" : {
-                "isrc" : "GBAHS2001193"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/0E4Y1XIbs8GrAT1YqVy6dq"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/0E4Y1XIbs8GrAT1YqVy6dq",
-              "id" : "0E4Y1XIbs8GrAT1YqVy6dq",
-              "is_local" : false,
-              "name" : "Afterglow",
-              "popularity" : 90,
-              "preview_url" : "https://p.scdn.co/mp3-preview/ca59ce0946d37f9a7da3ab12b29a2f8a3605d50a?cid=<SPOTIFY_API_KEY>",
-              "track_number" : 1,
-              "type" : "track",
-              "uri" : "spotify:track:0E4Y1XIbs8GrAT1YqVy6dq"
-            }, {
-              "album" : {
-                "album_type" : "album",
-                "artists" : [ {
-                  "external_urls" : {
-                    "spotify" : "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
-                  },
-                  "href" : "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
-                  "id" : "66CXWjxzNUsdJxJ2JdwvnR",
-                  "name" : "Ariana Grande",
-                  "type" : "artist",
-                  "uri" : "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
-                } ],
-                "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/album/3euz4vS7ezKGnNSwgyvKcd"
-                },
-                "href" : "https://api.spotify.com/v1/albums/3euz4vS7ezKGnNSwgyvKcd",
-                "id" : "3euz4vS7ezKGnNSwgyvKcd",
-                "images" : [ {
-                  "height" : 640,
-                  "url" : "https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605",
-                  "width" : 640
-                }, {
-                  "height" : 300,
-                  "url" : "https://i.scdn.co/image/ab67616d00001e025ef878a782c987d38d82b605",
-                  "width" : 300
-                }, {
-                  "height" : 64,
-                  "url" : "https://i.scdn.co/image/ab67616d000048515ef878a782c987d38d82b605",
-                  "width" : 64
-                } ],
-                "name" : "Positions",
-                "release_date" : "2020-10-30",
-                "release_date_precision" : "day",
-                "total_tracks" : 14,
-                "type" : "album",
-                "uri" : "spotify:album:3euz4vS7ezKGnNSwgyvKcd"
-              },
-              "artists" : [ {
-                "external_urls" : {
-                  "spotify" : "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
-                },
-                "href" : "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
-                "id" : "66CXWjxzNUsdJxJ2JdwvnR",
-                "name" : "Ariana Grande",
-                "type" : "artist",
-                "uri" : "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
-              } ],
-              "available_markets" : [ "AD", "AE", "AL", "AR", "AT", "AU", "BA", "BE", "BG", "BH", "BO", "BR", "BY", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "DZ", "EC", "EE", "EG", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HR", "HU", "ID", "IE", "IL", "IN", "IS", "IT", "JO", "JP", "KW", "KZ", "LB", "LI", "LT", "LU", "LV", "MA", "MC", "MD", "ME", "MK", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "OM", "PA", "PE", "PH", "PL", "PS", "PT", "PY", "QA", "RO", "RS", "RU", "SA", "SE", "SG", "SI", "SK", "SV", "TH", "TN", "TR", "TW", "UA", "US", "UY", "VN", "XK", "ZA" ],
-              "disc_number" : 1,
-              "duration_ms" : 172324,
-              "explicit" : true,
-              "external_ids" : {
-                "isrc" : "USUM72019412"
-              },
-              "external_urls" : {
-                "spotify" : "https://open.spotify.com/track/35mvY5S1H3J2QZyna3TFe0"
-              },
-              "href" : "https://api.spotify.com/v1/tracks/35mvY5S1H3J2QZyna3TFe0",
-              "id" : "35mvY5S1H3J2QZyna3TFe0",
-              "is_local" : false,
-              "name" : "positions",
-              "popularity" : 94,
-              "preview_url" : null,
-              "track_number" : 12,
-              "type" : "track",
-              "uri" : "spotify:track:35mvY5S1H3J2QZyna3TFe0"
-            } ],
-            "limit" : 5,
-            "next" : "https://api.spotify.com/v1/search?query=a&type=track&offset=10&limit=5",
-            "offset" : 5,
-            "previous" : "https://api.spotify.com/v1/search?query=a&type=track&offset=0&limit=5",
-            "total" : 250008
-          }
-        }
-  recorded_at: Sat, 30 Jan 2021 07:14:26 GMT
-recorded_with: VCR 6.0.0
+      string: '{"data":{"searchV2":{"query":"a","tracksV2":{"items":[{"item":{"__typename":"TrackResponseWrapper","data":{"__typename":"Track","albumOfTrack":{"coverArt":{"extractedColors":{"colorDark":{"hex":"#427CA7","isFallback":false}},"sources":[{"height":300,"url":"https://i.scdn.co/image/ab67616d00001e02c6d914dd1a455fb8dfb2f16b","width":300},{"height":64,"url":"https://i.scdn.co/image/ab67616d00004851c6d914dd1a455fb8dfb2f16b","width":64},{"height":640,"url":"https://i.scdn.co/image/ab67616d0000b273c6d914dd1a455fb8dfb2f16b","width":640}]},"id":"42bSpkr89bdrwMMNuEZlDJ","name":"Race","uri":"spotify:album:42bSpkr89bdrwMMNuEZlDJ","visualIdentity":{"squareCoverImage":{"__typename":"VisualIdentityImage","extractedColorSet":{"encoreBaseSetTextColor":{"alpha":255,"blue":244,"green":193,"red":128},"highContrast":{"backgroundBase":{"alpha":255,"blue":131,"green":86,"red":15},"backgroundTintedBase":{"alpha":255,"blue":93,"green":50,"red":0},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":213,"red":148}},"higherContrast":{"backgroundBase":{"alpha":255,"blue":95,"green":53,"red":0},"backgroundTintedBase":{"alpha":255,"blue":133,"green":88,"red":41},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":96,"green":215,"red":30},"textSubdued":{"alpha":255,"blue":255,"green":213,"red":148}},"minContrast":{"backgroundBase":{"alpha":255,"blue":184,"green":136,"red":72},"backgroundTintedBase":{"alpha":255,"blue":155,"green":109,"red":44},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":255,"red":255}}}}}},"artists":{"items":[{"profile":{"name":"Alex
+        G"},"uri":"spotify:artist:6lcwlkAjBPSKnFBZjjZFJs"}]},"associationsV3":{"audioAssociations":{"totalCount":0},"videoAssociations":{"totalCount":0}},"contentRating":{"label":"EXPLICIT"},"duration":{"totalMilliseconds":223255},"id":"50gchdAhBUnVOLqQRyKE9L","trackMediaType":"AUDIO","name":"Race","playability":{"playable":true,"reason":"PLAYABLE"},"uri":"spotify:track:50gchdAhBUnVOLqQRyKE9L"}},"matchedFields":[]},{"item":{"__typename":"TrackResponseWrapper","data":{"__typename":"Track","albumOfTrack":{"coverArt":{"extractedColors":{"colorDark":{"hex":"#500810","isFallback":false}},"sources":[{"height":300,"url":"https://i.scdn.co/image/ab67616d00001e02de3c04b5fc750b68899b20a9","width":300},{"height":64,"url":"https://i.scdn.co/image/ab67616d00004851de3c04b5fc750b68899b20a9","width":64},{"height":640,"url":"https://i.scdn.co/image/ab67616d0000b273de3c04b5fc750b68899b20a9","width":640}]},"id":"5vkqYmiPBYLaalcmjujWxK","name":"In
+        Rainbows","uri":"spotify:album:5vkqYmiPBYLaalcmjujWxK","visualIdentity":{"squareCoverImage":{"__typename":"VisualIdentityImage","extractedColorSet":{"encoreBaseSetTextColor":{"alpha":255,"blue":161,"green":164,"red":249},"highContrast":{"backgroundBase":{"alpha":255,"blue":16,"green":8,"red":80},"backgroundTintedBase":{"alpha":255,"blue":55,"green":55,"red":128},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":185,"green":189,"red":255}},"higherContrast":{"backgroundBase":{"alpha":255,"blue":16,"green":8,"red":80},"backgroundTintedBase":{"alpha":255,"blue":55,"green":55,"red":128},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":96,"green":215,"red":30},"textSubdued":{"alpha":255,"blue":185,"green":189,"red":255}},"minContrast":{"backgroundBase":{"alpha":255,"blue":16,"green":8,"red":80},"backgroundTintedBase":{"alpha":255,"blue":55,"green":55,"red":128},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":255,"red":255}}}}}},"artists":{"items":[{"profile":{"name":"Radiohead"},"uri":"spotify:artist:4Z8W4fKeB5YxbusRsdQVPb"}]},"associationsV3":{"audioAssociations":{"totalCount":0},"videoAssociations":{"totalCount":0}},"contentRating":{"label":"NONE"},"duration":{"totalMilliseconds":228746},"id":"5Qv2Nby1xTr9pQyjkrc94J","trackMediaType":"AUDIO","name":"All
+        I Need","playability":{"playable":true,"reason":"PLAYABLE"},"uri":"spotify:track:5Qv2Nby1xTr9pQyjkrc94J"}},"matchedFields":[]},{"item":{"__typename":"TrackResponseWrapper","data":{"__typename":"Track","albumOfTrack":{"coverArt":{"extractedColors":{"colorDark":{"hex":"#5878A8","isFallback":false}},"sources":[{"height":300,"url":"https://i.scdn.co/image/ab67616d00001e02086a75a16dcda8d0b64f022a","width":300},{"height":64,"url":"https://i.scdn.co/image/ab67616d00004851086a75a16dcda8d0b64f022a","width":64},{"height":640,"url":"https://i.scdn.co/image/ab67616d0000b273086a75a16dcda8d0b64f022a","width":640}]},"id":"1FBxW4I6azDVjGallQ4wQk","name":"GOLDEN
+        HOUR : Part.4","uri":"spotify:album:1FBxW4I6azDVjGallQ4wQk","visualIdentity":{"squareCoverImage":{"__typename":"VisualIdentityImage","extractedColorSet":{"encoreBaseSetTextColor":{"alpha":255,"blue":241,"green":189,"red":154},"highContrast":{"backgroundBase":{"alpha":255,"blue":129,"green":83,"red":53},"backgroundTintedBase":{"alpha":255,"blue":92,"green":50,"red":21},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":208,"red":173}},"higherContrast":{"backgroundBase":{"alpha":255,"blue":95,"green":52,"red":23},"backgroundTintedBase":{"alpha":255,"blue":132,"green":86,"red":56},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":96,"green":215,"red":30},"textSubdued":{"alpha":255,"blue":255,"green":208,"red":173}},"minContrast":{"backgroundBase":{"alpha":255,"blue":168,"green":120,"red":88},"backgroundTintedBase":{"alpha":255,"blue":138,"green":92,"red":62},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":255,"red":255}}}}}},"artists":{"items":[{"profile":{"name":"ATEEZ"},"uri":"spotify:artist:68KmkJeZGfwe1OUaivBa2L"}]},"associationsV3":{"audioAssociations":{"totalCount":0},"videoAssociations":{"totalCount":0}},"contentRating":{"label":"NONE"},"duration":{"totalMilliseconds":219920},"id":"2VKGO4DNyUK5UxCQB3b3DF","trackMediaType":"AUDIO","name":"Adrenaline","playability":{"playable":true,"reason":"PLAYABLE"},"uri":"spotify:track:2VKGO4DNyUK5UxCQB3b3DF"}},"matchedFields":[]},{"item":{"__typename":"TrackResponseWrapper","data":{"__typename":"Track","albumOfTrack":{"coverArt":{"extractedColors":{"colorDark":{"hex":"#283070","isFallback":false}},"sources":[{"height":300,"url":"https://i.scdn.co/image/ab67616d00001e02222160133bca8f492712b7fe","width":300},{"height":64,"url":"https://i.scdn.co/image/ab67616d00004851222160133bca8f492712b7fe","width":64},{"height":640,"url":"https://i.scdn.co/image/ab67616d0000b273222160133bca8f492712b7fe","width":640}]},"id":"786SDwa0FZXk7Wzeq6pqhQ","name":"PEEKABOO","uri":"spotify:album:786SDwa0FZXk7Wzeq6pqhQ","visualIdentity":{"squareCoverImage":{"__typename":"VisualIdentityImage","extractedColorSet":{"encoreBaseSetTextColor":{"alpha":255,"blue":255,"green":184,"red":166},"highContrast":{"backgroundBase":{"alpha":255,"blue":112,"green":48,"red":40},"backgroundTintedBase":{"alpha":255,"blue":150,"green":82,"red":70},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":204,"red":188}},"higherContrast":{"backgroundBase":{"alpha":255,"blue":110,"green":46,"red":38},"backgroundTintedBase":{"alpha":255,"blue":148,"green":81,"red":69},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":96,"green":215,"red":30},"textSubdued":{"alpha":255,"blue":255,"green":204,"red":188}},"minContrast":{"backgroundBase":{"alpha":255,"blue":112,"green":48,"red":40},"backgroundTintedBase":{"alpha":255,"blue":150,"green":82,"red":70},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":255,"red":255}}}}}},"artists":{"items":[{"profile":{"name":"Big
+        Baby Tape"},"uri":"spotify:artist:5NMwoStnfHT4LdETlJSwDT"},{"profile":{"name":"Aarne"},"uri":"spotify:artist:5B5qmrbTFvA7TAxWruuwbo"},{"profile":{"name":"Toxi$"},"uri":"spotify:artist:2hTmpvdwhpNZryOkwTisRW"}]},"associationsV3":{"audioAssociations":{"totalCount":0},"videoAssociations":{"totalCount":0}},"contentRating":{"label":"EXPLICIT"},"duration":{"totalMilliseconds":179200},"id":"17nSd6VAbcvsFxzRGTMpWn","trackMediaType":"AUDIO","name":"Ameli","playability":{"playable":true,"reason":"PLAYABLE"},"uri":"spotify:track:17nSd6VAbcvsFxzRGTMpWn"}},"matchedFields":[]},{"item":{"__typename":"TrackResponseWrapper","data":{"__typename":"Track","albumOfTrack":{"coverArt":{"extractedColors":{"colorDark":{"hex":"#535353","isFallback":true}},"sources":[{"height":300,"url":"https://i.scdn.co/image/ab67616d00001e024cd857649cf2ce0ed3745102","width":300},{"height":64,"url":"https://i.scdn.co/image/ab67616d000048514cd857649cf2ce0ed3745102","width":64},{"height":640,"url":"https://i.scdn.co/image/ab67616d0000b2734cd857649cf2ce0ed3745102","width":640}]},"id":"78d4WZRK33CwjyWE5CHuJE","name":"I
+        Got Love","uri":"spotify:album:78d4WZRK33CwjyWE5CHuJE","visualIdentity":{"squareCoverImage":{"__typename":"VisualIdentityImage","extractedColorSet":{"encoreBaseSetTextColor":{"alpha":255,"blue":187,"green":187,"red":187},"highContrast":{"backgroundBase":{"alpha":255,"blue":83,"green":83,"red":83},"backgroundTintedBase":{"alpha":255,"blue":51,"green":51,"red":51},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":205,"green":205,"red":205}},"higherContrast":{"backgroundBase":{"alpha":255,"blue":53,"green":53,"red":53},"backgroundTintedBase":{"alpha":255,"blue":86,"green":86,"red":86},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":96,"green":215,"red":30},"textSubdued":{"alpha":255,"blue":205,"green":205,"red":205}},"minContrast":{"backgroundBase":{"alpha":255,"blue":83,"green":83,"red":83},"backgroundTintedBase":{"alpha":255,"blue":51,"green":51,"red":51},"textBase":{"alpha":255,"blue":255,"green":255,"red":255},"textBrightAccent":{"alpha":255,"blue":255,"green":255,"red":255},"textSubdued":{"alpha":255,"blue":255,"green":255,"red":255}}}}}},"artists":{"items":[{"profile":{"name":"MiyaGi
+        & Endspiel"},"uri":"spotify:artist:6L5bLEtpxwd0KOdOr3gtW4"},{"profile":{"name":"Rem
+        Digga"},"uri":"spotify:artist:2R1OELuSJzXjRm8lc8FjPC"}]},"associationsV3":{"audioAssociations":{"totalCount":0},"videoAssociations":{"totalCount":0}},"contentRating":{"label":"NONE"},"duration":{"totalMilliseconds":276687},"id":"43wgyQXc2M9KmTDUqVzugM","trackMediaType":"AUDIO","name":"I
+        Got Love","playability":{"playable":true,"reason":"PLAYABLE"},"uri":"spotify:track:43wgyQXc2M9KmTDUqVzugM"}},"matchedFields":[]}],"pagingInfo":{"limit":5,"nextOffset":10},"totalCount":13}}},"extensions":{"requestIds":{"/searchV2":{"search-api":"5f41039e-2a89-aedd-e96a-7d67981cb152/3iCH"}}}}'
+  recorded_at: Sat, 14 Mar 2026 21:56:04 GMT
+recorded_with: VCR 6.4.0

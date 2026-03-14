@@ -20,8 +20,7 @@ module Spotify
           Spotify::Utils::User::AccessToken.call(
             code: @args[:code],
             client_id: @args[:client_id],
-            client_secret:
-              @args[:client_secret]
+            client_secret: @args[:client_secret]
           )
       end
 
@@ -82,8 +81,7 @@ module Spotify
       def spotify_connection_client_params
         {
           client_id: @args[:client_id],
-          client_secret:
-            @args[:client_secret]
+          client_secret: @args[:client_secret]
         }
       end
 

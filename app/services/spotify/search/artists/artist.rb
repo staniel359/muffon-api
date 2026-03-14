@@ -14,26 +14,22 @@ module Spotify
 
         def required_args
           %i[
-            artist
+            raw_artist_data
           ]
         end
 
         def data
-          self_data
-            .merge(artist_data)
-        end
-
-        def artist
-          @args[:artist]
-        end
-
-        def artist_data
           {
+            **self_data,
             source: source_data,
             name:,
             image: image_data,
             listeners_count:
           }.compact
+        end
+
+        def raw_artist_data
+          @args[:raw_artist_data]['data']
         end
       end
     end

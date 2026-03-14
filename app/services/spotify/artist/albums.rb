@@ -1,11 +1,13 @@
 module Spotify
   module Artist
     class Albums < Spotify::Artist::Base
-      ALBUMS_TYPES = {
-        'album' => 'album',
-        'single' => 'single',
-        'compilation' => 'compilation',
-        'appearance' => 'appears_on'
+      ALBUMS_QUERIES_DATA = {
+        'album' => 'queryArtistDiscographyAlbums',
+        'single_ep' => 'queryArtistDiscographySingles'
+      }.freeze
+      ALBUMS_COLLECTIONS_DATA = {
+        'album' => 'albums',
+        'single_ep' => 'singles'
       }.freeze
 
       private
@@ -16,11 +18,23 @@ module Spotify
         ]
       end
 
+      def wrong_args?
+        albums_query.blank?
+      end
+
+      def albums_query
+        ALBUMS_QUERIES_DATA[@args[:album_type]]
+      end
+
       def artist_data
         {
           **super,
           **albums_data
         }
+      end
+
+      def name
+        artist_info_data[:name]
       end
 
       def albums_data
@@ -34,33 +48,60 @@ module Spotify
       end
 
       def raw_collection
-        artist['items']
+        raw_artist_data.dig(
+          'discography',
+          raw_collection_name,
+          'items'
+        )
       end
 
-      def link
-        "#{super}/albums"
+      def raw_collection_name
+        ALBUMS_COLLECTIONS_DATA[@args[:album_type]]
       end
 
-      def params
+      def payload
         {
-          **super,
-          include_groups: album_type,
-          limit:,
-          offset:
-        }.compact
+          'variables' => {
+            'uri' => spotify_uri,
+            'offset' => offset,
+            'limit' => limit,
+            'order' => 'DATE_DESC'
+          },
+          'operationName' => albums_query,
+          'extensions' => {
+            'persistedQuery' => {
+              'version' => 1,
+              'sha256Hash' => '5e07d323febb57b4a56a42abbf781490e58764aa45feb6e3dc0591564fc56599' # rubocop:disable Layout/LineLength
+            }
+          }
+        }.to_json
       end
 
-      def album_type
-        ALBUMS_TYPES[@args[:album_type]]
+      def spotify_uri
+        "spotify:artist:#{@args[:artist_id]}"
       end
 
       def items_count
-        artist['total']
+        raw_artist_data.dig(
+          'discography',
+          raw_collection_name,
+          'totalCount'
+        )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
+        raw_artist_data = {
+          'profile' => {
+            'name' => name
+          },
+          'uri' => spotify_uri
+        }
+
         Spotify::Artist::Albums::Album.call(
-          album:,
+          raw_album_data:,
+          raw_artists: [raw_artist_data],
           profile_id: @args[:profile_id],
           token: @args[:token]
         )

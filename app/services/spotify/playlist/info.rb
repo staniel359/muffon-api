@@ -26,15 +26,17 @@ module Spotify
       end
 
       def tracks_count
-        playlist.dig(
-          'tracks',
-          'total'
+        raw_playlist_data.dig(
+          'content',
+          'totalCount'
         )
       end
 
-      def track_data_formatted(track)
+      def track_data_formatted(
+        raw_track_data
+      )
         Spotify::Playlist::Tracks::Track.call(
-          track:
+          raw_track_data:
         )
       end
     end

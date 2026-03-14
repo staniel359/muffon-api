@@ -6,13 +6,11 @@ module Spotify
       def call
         check_args
 
+        check_if_not_found
+
         data
       rescue Faraday::UnauthorizedError
         retry_with_new_spotify_token
-      rescue Faraday::BadRequestError, Faraday::ResourceNotFound
-        raise not_found_error
-      rescue Faraday::ForbiddenError
-        raise forbidden_error
       end
 
       private
@@ -23,19 +21,26 @@ module Spotify
         ]
       end
 
-      def no_data?
-        track.blank?
+      def not_found?
+        raw_track_data['__typename'] == 'GenericError'
       end
 
-      def link
-        "#{BASE_LINK}/tracks/#{@args[:track_id]}"
+      def raw_track_data
+        response_data.dig(
+          'data',
+          'trackUnion'
+        )
+      end
+
+      def spotify_uri
+        "spotify:track:#{@args[:track_id]}"
       end
 
       def data
         { track: track_data }
       end
 
-      alias track response_data
+      alias response post_response
     end
   end
 end

@@ -1,12 +1,21 @@
 module Spotify
   class Base < Muffon::Base
-    BASE_LINK = 'https://api.spotify.com/v1'.freeze
+    BASE_LINK =
+      'https://api-partner.spotify.com/pathfinder/v2/query'.freeze
     SOURCE_NAME = 'spotify'.freeze
 
     private
 
+    def link
+      BASE_LINK
+    end
+
     def headers
-      { 'Authorization' => "Bearer #{spotify_token}" }
+      {
+        **super,
+        'Authorization' => "Bearer #{spotify_token}",
+        'Client-Token' => client_token
+      }
     end
 
     def spotify_token
@@ -15,8 +24,7 @@ module Spotify
       @spotify_token ||=
         get_global_value(
           'spotify:token',
-          refresh_class_name:
-            'Spotify::Utils::Token',
+          refresh_class_name: 'Spotify::Utils::Token',
           is_refresh: refresh_token?
         )
     end
@@ -41,6 +49,13 @@ module Spotify
       )
     end
 
+    def client_token
+      credentials.dig(
+        :spotify,
+        :client_token
+      )
+    end
+
     def artist_data_formatted(
       raw_artist_data
     )
@@ -48,18 +63,37 @@ module Spotify
         source: artist_source_data(
           raw_artist_data
         ),
-        name:
-          raw_artist_data['name'] ||
-            raw_artist_data['type']
-      }
+        name: raw_artist_data.dig(
+          'data',
+          'profile',
+          'name'
+        ) ||
+          raw_artist_data.dig(
+            'profile',
+            'name'
+          ) ||
+          raw_artist_data['name']
+      }.compact
     end
 
     def artist_source_data(
       raw_artist_data
     )
+      spotify_uri =
+        raw_artist_data.dig('data', 'uri') ||
+        raw_artist_data['uri']
+
+      return if spotify_uri.blank?
+
+      spotify_id =
+        spotify_uri.sub(
+          'spotify:artist:',
+          ''
+        )
+
       {
         name: source_name,
-        id: raw_artist_data['id']
+        id: spotify_id
       }
     end
 
@@ -70,14 +104,13 @@ module Spotify
     end
 
     def retry_with_new_session
-      session_update_result = update_session
+      if update_session[:success]
+        spotify_connection&.reload
 
-      return not_found unless
-          session_update_result[:success]
-
-      spotify_connection&.reload
-
-      call
+        call
+      else
+        not_found
+      end
     end
 
     def update_session
@@ -88,8 +121,9 @@ module Spotify
     end
 
     def spotify_connection
-      @spotify_connection ||=
-        profile&.spotify_connection
+      return @spotify_connection if defined?(@spotify_connection)
+
+      @spotify_connection = profile&.spotify_connection
     end
 
     def artist_name

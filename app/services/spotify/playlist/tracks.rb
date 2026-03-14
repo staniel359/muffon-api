@@ -12,17 +12,15 @@ module Spotify
       end
 
       def data
-        {
-          tracks:
-            tracks_filtered_distinct
-        }
+        { tracks: tracks_filtered_distinct }
       end
 
       def tracks_filtered_distinct
         tracks_filtered.uniq do |track_data|
           track_data.dig(
-            'track',
-            'id'
+            'itemV2',
+            'data',
+            'uri'
           )
         end
       end
@@ -31,7 +29,8 @@ module Spotify
         tracks.select do |track_data|
           track_data
             .dig(
-              'track',
+              'itemV2',
+              'data',
               'name'
             )
             .present?
@@ -56,7 +55,9 @@ module Spotify
         @args[:items_count]
       end
 
-      def page_tracks(page)
+      def page_tracks(
+        page
+      )
         Spotify::Playlist::Tracks::PageTracks.call(
           playlist_id: @args[:playlist_id],
           page:,

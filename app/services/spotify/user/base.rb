@@ -1,6 +1,8 @@
 module Spotify
   module User
     class Base < Spotify::Base
+      BASE_LINK = 'https://api.spotify.com/v1'.freeze
+
       def call
         check_args
 
@@ -11,6 +13,8 @@ module Spotify
         data
       rescue Faraday::UnauthorizedError
         retry_with_new_session
+      rescue Faraday::ForbiddenError
+        raise forbidden_error
       end
 
       private

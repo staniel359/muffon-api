@@ -6,11 +6,14 @@ module Spotify
       private
 
       def title
-        album['name']
+        raw_album_data['name']
       end
 
       def raw_artists
-        album['artists']
+        raw_album_data.dig(
+          'artists',
+          'items'
+        )
       end
 
       def source_data
@@ -22,13 +25,14 @@ module Spotify
       end
 
       def spotify_id
-        album['id']
+        raw_album_data['uri'].sub(
+          'spotify:album:',
+          ''
+        )
       end
 
       def original_link
-        album.dig(
-          'external_urls', 'spotify'
-        )
+        "https://open.spotify.com/album/#{spotify_id}"
       end
 
       def streaming_link
@@ -40,13 +44,27 @@ module Spotify
 
       def image_data
         image_data_formatted(
-          album['images']
+          raw_images
+        )
+      end
+
+      def raw_images
+        raw_album_data.dig(
+          'coverArt',
+          'sources'
         )
       end
 
       def release_date
         date_formatted(
-          album['release_date']
+          raw_release_date.to_s
+        )
+      end
+
+      def raw_release_date
+        raw_album_data.dig(
+          'date',
+          'year'
         )
       end
     end

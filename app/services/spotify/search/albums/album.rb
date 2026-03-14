@@ -14,21 +14,13 @@ module Spotify
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
-
-        def album
-          @args[:album]
-        end
-
-        def album_data
           {
+            **self_data,
             source: source_data,
             title:,
             artist: artists_minimal_data,
@@ -37,6 +29,11 @@ module Spotify
             release_date:,
             listeners_count:
           }.compact
+        end
+
+        def raw_album_data
+          @args[:raw_album_data].dig('data', 'preReleaseContent') ||
+            @args[:raw_album_data]['data']
         end
       end
     end

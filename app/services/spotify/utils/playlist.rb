@@ -12,18 +12,18 @@ module Spotify
       end
 
       def spotify_id
-        playlist['id']
-      end
-
-      def original_link
-        playlist.dig(
-          'external_urls',
-          'spotify'
+        raw_playlist_data['uri'].sub(
+          'spotify:playlist:',
+          ''
         )
       end
 
+      def original_link
+        "https://open.spotify.com/playlist/#{spotify_id}"
+      end
+
       def title
-        playlist['name']
+        raw_playlist_data['name']
       end
 
       def description
@@ -36,17 +36,22 @@ module Spotify
       end
 
       def raw_description
-        playlist['description'].presence
+        raw_playlist_data['description'].presence
       end
 
       def image_data
         image_data_formatted(
-          images
+          raw_images
         )
       end
 
-      def images
-        playlist['images']
+      def raw_images
+        raw_playlist_data.dig(
+          'images',
+          'items',
+          0,
+          'sources'
+        )
       end
     end
   end

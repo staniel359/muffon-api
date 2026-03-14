@@ -19,19 +19,27 @@ module Spotify
         end
 
         def data
-          playlist['items']
+          raw_playlist_data.dig(
+            'content',
+            'items'
+          )
         end
 
-        def link
-          "#{super}/tracks"
-        end
-
-        def params
+        def payload
           {
-            **super,
-            limit:,
-            offset:
-          }
+            'variables' => {
+              'uri' => spotify_uri,
+              'offset' => offset,
+              'limit' => limit
+            },
+            'operationName' => 'fetchPlaylistContents',
+            'extensions' => {
+              'persistedQuery' => {
+                'version' => 1,
+                'sha256Hash' => '346811f856fb0b7e4f6c59f8ebea78dd081c6e2fb01b77c954b26259d5fc6763' # rubocop:disable Layout/LineLength
+              }
+            }
+          }.to_json
         end
       end
     end

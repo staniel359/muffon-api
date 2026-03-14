@@ -1,13 +1,16 @@
 module Spotify
   module Utils
     module User
-      class AccessToken < Spotify::Utils::Token
+      class AccessToken < Spotify::Base
+        BASE_LINK =
+          'https://accounts.spotify.com/api/token'.freeze
+
         def call
           check_args
 
           data
         rescue Faraday::BadRequestError
-          raise not_found_error
+          raise bad_request_error
         end
 
         private
@@ -31,10 +34,13 @@ module Spotify
           response_data['access_token']
         end
 
+        def link
+          BASE_LINK
+        end
+
         def payload
           {
-            grant_type:
-              'authorization_code',
+            grant_type: 'authorization_code',
             code: @args[:code],
             redirect_uri:
           }
@@ -44,17 +50,28 @@ module Spotify
           "#{credentials[:url]}/code"
         end
 
-        def client_id
-          @args[:client_id]
+        def headers
+          {
+            'Authorization' => "Basic #{spotify_token}",
+            'Content-Type' => 'application/x-www-form-urlencoded'
+          }
         end
 
-        def client_secret
-          @args[:client_secret]
+        def spotify_token
+          Base64.strict_encode64(
+            raw_spotify_token
+          )
+        end
+
+        def raw_spotify_token
+          "#{@args[:client_id]}:#{@args[:client_secret]}"
         end
 
         def refresh_token
           response_data['refresh_token']
         end
+
+        alias response post_response
       end
     end
   end

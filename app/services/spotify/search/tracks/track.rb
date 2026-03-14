@@ -21,7 +21,7 @@ module Spotify
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
@@ -40,8 +40,11 @@ module Spotify
           }.compact
         end
 
-        def track
-          @args[:track]
+        def raw_track_data
+          @args[:raw_track_data].dig(
+            'item',
+            'data'
+          )
         end
       end
     end

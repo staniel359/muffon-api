@@ -1,66 +1,57 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.spotify.com/v1/playlists/wejlhg239gh23
+    method: post
+    uri: https://api-partner.spotify.com/pathfinder/v2/query
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"variables":{"uri":"spotify:playlist:wejlhg239gh23","offset":0,"limit":0,"enableWatchFeedEntrypoint":true},"operationName":"fetchPlaylist","extensions":{"persistedQuery":{"version":1,"sha256Hash":"346811f856fb0b7e4f6c59f8ebea78dd081c6e2fb01b77c954b26259d5fc6763"}}}'
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.2.2p53
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Authorization:
-      - Bearer BQANUzbn0K51z78z7_e29hhFbN2uiqul9Jcy9NwSLzY87rQxV7Tqh4y7OZZV2uUofiCwWRXYLJZnWvImWG0O_Rmr-38-Au1srHCOYvSucLoFKsDls83Hv0Qri0QCEwhvzQWjLLkLIbcIuaCj2lYcThiHPe3jYw4G-g8s3IrSByYIlT7ykNvmEWybljfdR3fCb_9OZvUXBkvbdONCtD9Yam1io2IqkDYFBEyw
+      - Bearer BQClTkaY77eY_KsGJLdQiidDfsyCW4dXHD9crKMUomPnjF17BVYYzYTl0S6MC3cICmpgueSNZ_-xgPHrtGiVxz5MaZin7XNW1HE77rgUxzbNzexL77OTMDGDQDkECNpKvFHFX4sYL9DNjK4v_Mi2EpvHVd8wxqY6sheaC2EOFV443rmY-ysvFzLNbKfebstWUQzKc5mZgEfP6daaq2JOP_2rQbA-tbnn9z653esCTs1LGa_v1XrNKBTpuWEhvU0tv7yw_M0YWi4x6XYdZn3qvu-9xVY-xb_FTqGSg_v14CtqFQVTQoFv1bFg82bCdbDjQmjYuS_YKqQWzVEv4c3_QmEGsZjEajVbtTL2o-c6tDGJbQqMVePBjmXudK9byaPNggwqWJT-vGvEG37a
+      Client-Token:
+      - "<SPOTIFY_CLIENT_TOKEN>"
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.spotify.com
+      Accept:
+      - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json
       Cache-Control:
       - private, max-age=0
       X-Robots-Tag:
       - noindex, nofollow
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
-        X-Cloud-Trace-Context, client-token, content-access-token
-      Access-Control-Allow-Methods:
-      - GET, POST, OPTIONS, PUT, DELETE, PATCH
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Max-Age:
-      - '604800'
+      Server-Timing:
+      - edge;dur=131
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Thu, 03 Aug 2023 13:42:48 GMT
+      - Sat, 14 Mar 2026 21:56:01 GMT
       Server:
       - envoy
       Via:
       - HTTP/2 edgeproxy, 1.1 google
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: |-
-        {
-          "error" : {
-            "status" : 404,
-            "message" : "Invalid playlist Id"
-          }
-        }
-  recorded_at: Thu, 03 Aug 2023 13:42:49 GMT
-recorded_with: VCR 6.2.0
+      string: '{"data":{"playlistV2":{"__typename":"GenericError","message":"Failed
+        to fetch playlist for uri spotify:playlist:wejlhg239gh23, status code: 400
+        BAD_REQUEST"}}}'
+  recorded_at: Sat, 14 Mar 2026 21:56:01 GMT
+recorded_with: VCR 6.4.0

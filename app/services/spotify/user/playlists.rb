@@ -34,9 +34,11 @@ module Spotify
         user['total']
       end
 
-      def collection_item_data_formatted(playlist)
+      def collection_item_data_formatted(
+        raw_playlist_data
+      )
         Spotify::User::Playlists::Playlist.call(
-          playlist:,
+          raw_playlist_data:,
           with_tracks: @args[:with_tracks],
           profile_id: @args[:profile_id]
         )

@@ -1,7 +1,7 @@
 module Spotify
-  module Artist
+  module Track
     class Albums
-      class Album < Spotify::Artist::Albums
+      class Album < Spotify::Track::Albums
         include Spotify::Utils::Album
 
         def call
@@ -19,10 +19,6 @@ module Spotify
           ]
         end
 
-        def wrong_args?
-          false
-        end
-
         def data
           {
             **self_data,
@@ -37,11 +33,7 @@ module Spotify
         end
 
         def raw_album_data
-          @args[:raw_album_data].dig(
-            'releases',
-            'items',
-            0
-          )
+          @args[:raw_album_data]
         end
 
         def raw_artists

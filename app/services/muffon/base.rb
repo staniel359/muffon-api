@@ -12,12 +12,17 @@ module Muffon
     private
 
     def check_args
-      return unless args_missing?
-
-      raise(
-        bad_request_error,
-        "Args missing: #{missing_args}"
-      )
+      if args_missing?
+        raise(
+          bad_request_error,
+          "Args missing: #{missing_args}"
+        )
+      elsif wrong_args?
+        raise(
+          bad_request_error,
+          'Wrong args'
+        )
+      end
     end
 
     def args_missing?
@@ -28,14 +33,18 @@ module Muffon
       required_args - present_args
     end
 
+    def required_args
+      []
+    end
+
     def present_args
       @args
         .compact_blank
         .keys
     end
 
-    def required_args
-      []
+    def wrong_args?
+      false
     end
 
     def check_if_not_found

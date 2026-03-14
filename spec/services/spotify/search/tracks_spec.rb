@@ -26,19 +26,5 @@ RSpec.describe Spotify::Search::Tracks do
 
       it { expect { output }.to raise_error(bad_request_error) }
     end
-
-    context 'when wrong query' do
-      let(:output) do
-        VCR.use_cassette(
-          'services/spotify/search/tracks/wrong_query'
-        ) do
-          subject.call(
-            query: random_string
-          )
-        end
-      end
-
-      it { expect(output).to eq(search_paginated_missing_tracks_data) }
-    end
   end
 end

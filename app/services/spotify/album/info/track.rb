@@ -1,7 +1,7 @@
 module Spotify
   module Album
-    class Tracks
-      class Track < Spotify::Album::Tracks
+    class Info
+      class Track < Spotify::Album::Info
         include Spotify::Utils::Track
 
         def call
@@ -14,38 +14,28 @@ module Spotify
 
         def required_args
           %i[
-            track
+            raw_track_data
             album_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_base_data)
-            .merge(track_extra_data)
-        end
-
-        def track
-          @args[:track]
-        end
-
-        def track_base_data
           {
+            **self_data,
             source: source_data,
             player_id: player_source_id,
             title:,
             artist: artists_minimal_data,
-            artists:
-          }
-        end
-
-        def track_extra_data
-          {
+            artists:,
             album: album_data,
             image: image_data,
             duration:,
             audio: audio_minimal_data
           }.compact
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]['track']
         end
 
         def album_data

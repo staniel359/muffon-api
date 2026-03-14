@@ -6,7 +6,10 @@ module Spotify
       private
 
       def name
-        artist['name']
+        raw_artist_data.dig(
+          'profile',
+          'name'
+        )
       end
 
       def source_data
@@ -18,7 +21,10 @@ module Spotify
       end
 
       def spotify_id
-        artist['id']
+        raw_artist_data['uri'].sub(
+          'spotify:artist:',
+          ''
+        )
       end
 
       def original_link
@@ -27,12 +33,16 @@ module Spotify
 
       def image_data
         image_data_formatted(
-          images
+          raw_images
         ) || super
       end
 
-      def images
-        artist['images']
+      def raw_images
+        raw_artist_data.dig(
+          'visuals',
+          'avatarImage',
+          'sources'
+        )
       end
     end
   end
