@@ -11,6 +11,8 @@ module Spotify
         retry_with_new_spotify_token
       rescue Faraday::BadRequestError
         raise not_found_error
+      rescue Faraday::ForbiddenError
+        raise forbidden_error
       end
 
       private
