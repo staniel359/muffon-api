@@ -8,6 +8,7 @@ module YouTubeMusic
 
     private
 
+    # rubocop:disable Layout/LineLength
     def headers
       {
         **super,
@@ -20,7 +21,6 @@ module YouTubeMusic
       }
     end
 
-    # rubocop:disable Layout/LineLength
     def cookies
       {
         '__Secure-ROLLOUT_TOKEN' => 'CNGmmZiBwa2IkwEQsPS9-aGfkwMYhYDS_aGfkwM=',

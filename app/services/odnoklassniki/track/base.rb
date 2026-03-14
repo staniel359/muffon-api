@@ -10,6 +10,8 @@ module Odnoklassniki
 
         return retry_with_new_session_id if retry_with_new_session_id?
 
+        raise forbidden_error if forbidden?
+
         data
       rescue Faraday::BadRequestError
         raise not_found_error
@@ -36,6 +38,10 @@ module Odnoklassniki
 
       def track
         response_data['track']
+      end
+
+      def forbidden?
+        response_data['error'] == 'error.copyright.restriction'
       end
     end
   end
