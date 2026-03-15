@@ -65,7 +65,7 @@ module AmazonMusic
           system(
             "ffmpeg \
               -decryption_key #{key} \
-              -i #{file_link} \
+              -i \"#{file_link}\" \
               -y \
               -movflags +faststart \
               -c copy \

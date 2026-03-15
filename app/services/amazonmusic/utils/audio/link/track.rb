@@ -89,7 +89,6 @@ module AmazonMusic
           end
 
           def cookies
-            # Need to be refreshed
             {
               'ubid-acbuk' => first_cookie,
               'at-acbuk' => second_cookie
@@ -97,19 +96,42 @@ module AmazonMusic
           end
 
           def first_cookie
+            if test?
+              test_amazon_music_cookies[:ubid_acbuk]
+            else
+              BROWSER_COOKIES_DATABASE.execute(
+                <<~SQL.squish
+                  SELECT value
+                  FROM moz_cookies
+                  WHERE
+                    host LIKE '%amazon%'
+                    AND name = 'ubid-acbuk'
+                SQL
+              ).flatten.first
+            end
+          end
+
+          def test_amazon_music_cookies
             credentials.dig(
               :amazon_music,
-              :cookies,
-              :ubid_acbuk
+              :cookies
             )
           end
 
           def second_cookie
-            credentials.dig(
-              :amazon_music,
-              :cookies,
-              :at_acbuk
-            )
+            if test?
+              test_amazon_music_cookies[:at_acbuk]
+            else
+              BROWSER_COOKIES_DATABASE.execute(
+                <<~SQL.squish
+                  SELECT value
+                  FROM moz_cookies
+                  WHERE
+                    host LIKE '%amazon%'
+                    AND name = 'at-acbuk'
+                SQL
+              ).flatten.first
+            end
           end
 
           def data

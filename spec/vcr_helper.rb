@@ -12,16 +12,6 @@ SECRET_KEYS = [
     refresh_token
   ],
   %i[
-    amazon_music
-    cookies
-    ubid_acbuk
-  ],
-  %i[
-    amazon_music
-    cookies
-    at_acbuk
-  ],
-  %i[
     discogs
     api_key
   ],
