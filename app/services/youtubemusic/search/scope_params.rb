@@ -59,6 +59,10 @@ module YouTubeMusic
         )
       end
 
+      def params
+        nil
+      end
+
       def payload
         {
           context: context_data,
