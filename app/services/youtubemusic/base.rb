@@ -17,7 +17,8 @@ module YouTubeMusic
         'X-Youtube-Bootstrap-Logged-In' => 'false',
         'X-Youtube-Client-Name' => '67',
         'X-Youtube-Client-Version' => '1.20260311.03.00',
-        'Referer' => 'https://music.youtube.com'
+        'Referer' => 'https://music.youtube.com',
+        'DNT' => '1'
       }
     end
 
