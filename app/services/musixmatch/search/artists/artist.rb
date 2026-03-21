@@ -51,7 +51,7 @@ module MusixMatch
               image_data.dig(
                 'image_format',
                 'image_format_id'
-              ) == 3
+              ).in?([3, 14])
             end
             .dig(
               'image_format',
