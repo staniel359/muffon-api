@@ -911,8 +911,9 @@ Rails
 
       namespace :youtubemusic do
         namespace :search do
-          get 'tracks'
+          get 'artists'
           get 'albums'
+          get 'tracks'
           get 'videos'
           get 'mixes'
           get 'playlists'

@@ -1,9 +1,6 @@
 module YouTubeMusic
   module Track
     class Base < YouTubeMusic::Base
-      BASE_LINK =
-        'https://music.youtube.com/youtubei/v1/next'.freeze
-
       def call
         check_args
 
@@ -50,7 +47,7 @@ module YouTubeMusic
       end
 
       def link
-        BASE_LINK
+        "#{BASE_LINK}/next"
       end
 
       def payload

@@ -1,9 +1,11 @@
 module API
   module YouTubeMusic
     class SearchController < API::BaseController
-      def tracks; end
+      def artists; end
 
       def albums; end
+
+      def tracks; end
 
       def videos; end
 
@@ -13,17 +15,14 @@ module API
 
       private
 
-      def tracks_data
-        ::YouTubeMusic::Search::Tracks.call(
+      def artists_data
+        ::YouTubeMusic::Search::Artists.call(
           params.slice(
             *%i[
               query
               profile_id
               token
               page
-              with_automatch
-              artist_name
-              track_title
             ]
           )
         )
@@ -37,6 +36,22 @@ module API
               profile_id
               token
               page
+            ]
+          )
+        )
+      end
+
+      def tracks_data
+        ::YouTubeMusic::Search::Tracks.call(
+          params.slice(
+            *%i[
+              query
+              profile_id
+              token
+              page
+              with_automatch
+              artist_name
+              track_title
             ]
           )
         )

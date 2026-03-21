@@ -1,14 +1,14 @@
 RSpec.describe API::YouTubeMusic::SearchController do
-  describe 'GET :tracks' do
+  describe 'GET :artists' do
     it 'returns 200 if query present' do
       VCR.use_cassette(
-        'controllers/api/youtubemusic/search/tracks/success'
+        'controllers/api/youtubemusic/search/artists/success'
       ) do
         get(
-          :tracks,
+          :artists,
           params: {
             **required_params,
-            query: 'wild nothing'
+            query: 'pet shop boys'
           }
         )
       end
@@ -18,7 +18,7 @@ RSpec.describe API::YouTubeMusic::SearchController do
 
     it 'returns 400 if no query' do
       get(
-        :tracks,
+        :artists,
         params: {
           **required_params
         }
@@ -29,10 +29,10 @@ RSpec.describe API::YouTubeMusic::SearchController do
 
     it 'returns 404 if wrong query' do
       VCR.use_cassette(
-        'controllers/api/youtubemusic/search/tracks/wrong_query'
+        'controllers/api/youtubemusic/search/artists/wrong_query'
       ) do
         get(
-          :tracks,
+          :artists,
           params: {
             **required_params,
             query: random_string
@@ -78,6 +78,51 @@ RSpec.describe API::YouTubeMusic::SearchController do
       ) do
         get(
           :albums,
+          params: {
+            **required_params,
+            query: random_string
+          }
+        )
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+  end
+
+  describe 'GET :tracks' do
+    it 'returns 200 if query present' do
+      VCR.use_cassette(
+        'controllers/api/youtubemusic/search/tracks/success'
+      ) do
+        get(
+          :tracks,
+          params: {
+            **required_params,
+            query: 'wild nothing'
+          }
+        )
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no query' do
+      get(
+        :tracks,
+        params: {
+          **required_params
+        }
+      )
+
+      expect(response).to have_http_status(:bad_request)
+    end
+
+    it 'returns 404 if wrong query' do
+      VCR.use_cassette(
+        'controllers/api/youtubemusic/search/tracks/wrong_query'
+      ) do
+        get(
+          :tracks,
           params: {
             **required_params,
             query: random_string

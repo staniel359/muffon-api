@@ -1,8 +1,7 @@
 module YouTubeMusic
   class Base < Muffon::Base
     SOURCE_NAME = 'youtubemusic'.freeze
-    BASE_LINK =
-      'https://music.youtube.com/youtubei/v1/search'.freeze
+    BASE_LINK = 'https://music.youtube.com/youtubei/v1'.freeze
 
     private
 
@@ -118,7 +117,7 @@ module YouTubeMusic
       raw_collection
     )
       raw_collection
-        .find do |raw_item_data|
+        &.find do |raw_item_data|
           raw_item_data['key'] == 'browse_id'
         end
         .try(:[], 'value')

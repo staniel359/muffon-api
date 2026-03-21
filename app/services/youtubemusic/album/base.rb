@@ -1,9 +1,6 @@
 module YouTubeMusic
   module Album
     class Base < YouTubeMusic::Base
-      BASE_LINK =
-        'https://music.youtube.com/youtubei/v1/browse'.freeze
-
       def call
         check_args
 
@@ -32,7 +29,7 @@ module YouTubeMusic
       end
 
       def link
-        BASE_LINK
+        "#{BASE_LINK}/browse"
       end
 
       def payload

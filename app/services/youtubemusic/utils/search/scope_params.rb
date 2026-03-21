@@ -61,7 +61,7 @@ module YouTubeMusic
         end
 
         def link
-          BASE_LINK
+          "#{BASE_LINK}/search"
         end
 
         def payload
