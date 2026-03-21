@@ -14,22 +14,21 @@ module SoundCloud
 
         def required_args
           %i[
-            track_id
-            link
+            raw_track_data
           ]
         end
 
         def no_data?
-          track_data.blank? ||
-            audio_link_data.blank?
+          # track_data.blank? ||
+          audio_link_data.blank?
         end
 
-        def track_data
-          @track_data ||=
-            SoundCloud::Utils::Audio::Link::TrackData.call(
-              link: @args[:link]
-            )
-        end
+        # def track_data
+        #   @track_data ||=
+        #     SoundCloud::Utils::Audio::Link::TrackData.call(
+        #       link: @args[:link]
+        #     )
+        # end
 
         def audio_link_data
           audio_links.find do |data|
@@ -38,11 +37,10 @@ module SoundCloud
         end
 
         def audio_links
-          track_data.dig(
-            'data',
+          @args[:raw_track_data].dig(
             'media',
             'transcodings'
-          ) || []
+          )
         end
 
         def mp3_link?(data)
