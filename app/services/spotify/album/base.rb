@@ -4,6 +4,8 @@ module Spotify
       include Spotify::Utils::Album
 
       def call
+        raise forbidden_error unless test?
+
         check_args
 
         check_if_not_found
