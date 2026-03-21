@@ -71,7 +71,7 @@ module Muffon
         nil
       end
 
-      def proxies
+      def proxy_data
         credentials[:proxy]
       end
 

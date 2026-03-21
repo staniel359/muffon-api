@@ -35,6 +35,12 @@ module YouTubeMusic
     end
     # rubocop:enable Layout/LineLength
 
+    def proxy
+      proxy_data
+        .dig(:uk, :ipv6)
+        .sample
+    end
+
     def image_data_formatted(
       image
     )

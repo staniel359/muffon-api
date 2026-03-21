@@ -25,7 +25,7 @@ module Odnoklassniki
     end
 
     def proxy
-      proxies[:ru]
+      proxy_data[:ru].sample
     end
 
     def session_id

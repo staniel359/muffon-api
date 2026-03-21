@@ -66,7 +66,7 @@ module VK
     end
 
     def proxy
-      proxies[:ru]
+      proxy_data[:ru].sample
     end
 
     def response_data

@@ -6,7 +6,9 @@ module Genius
     private
 
     def proxy
-      proxies[:ru]
+      proxy_data
+        .dig(:uk, :ipv6)
+        .sample
     end
 
     def raw_artists

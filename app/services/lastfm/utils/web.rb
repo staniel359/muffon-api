@@ -18,7 +18,9 @@ module LastFM
       end
 
       def proxy
-        proxies[:us]
+        proxy_data
+          .dig(:uk, :ipv6)
+          .sample
       end
 
       def param_formatted(

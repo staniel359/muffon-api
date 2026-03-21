@@ -41,7 +41,9 @@ module SoundCloud
     end
 
     def proxy
-      proxies[:us]
+      proxy_data
+        .dig(:uk, :ipv4)
+        .sample
     end
 
     def raw_artists

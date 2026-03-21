@@ -7,7 +7,7 @@ module YandexMusic
     private
 
     def proxy
-      proxies[:ru]
+      proxy_data[:ru].sample
     end
 
     def params
