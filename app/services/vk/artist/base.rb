@@ -2,6 +2,8 @@ module VK
   module Artist
     class Base < VK::Base
       def call
+        raise not_found_error unless test?
+
         check_args
 
         check_if_not_found

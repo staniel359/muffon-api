@@ -2,6 +2,8 @@ module VK
   module Search
     class Base < VK::Base
       def call
+        raise not_found_error unless test?
+
         check_args
 
         data
