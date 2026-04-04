@@ -4,8 +4,6 @@ module Spotify
       BASE_LINK = 'https://api.spotify.com/v1'.freeze
 
       def call
-        raise forbidden_error unless test?
-
         check_args
 
         check_if_not_found

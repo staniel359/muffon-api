@@ -2,8 +2,6 @@ module Spotify
   module Search
     class Base < Spotify::Base
       def call
-        raise forbidden_error unless test?
-
         check_args
 
         data
