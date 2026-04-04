@@ -1,8 +1,7 @@
 module SoundCloud
   class Base < Muffon::Base
     SOURCE_NAME = 'soundcloud'.freeze
-    BASE_LINK =
-      'https://api-v2.soundcloud.com'.freeze
+    BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
 
     private
 

@@ -10,34 +10,36 @@ module SoundCloud
       private
 
       def data
-        script_response
-          .body
-          .match(
-            /client_id:"([\w-]+)"/
-          )[1]
-      end
-
-      def script_response
-        format_get_request(
-          link: script_link,
-          proxy:
+        script_client_id_data.dig(
+          'data',
+          'id'
         )
       end
 
-      def script_link
-        soundcloud_scripts[-1]['src']
-      end
-
-      def soundcloud_scripts
-        scripts.select do |s|
-          matched_script?(s)
+      def script_client_id_data
+        script_data.find do |data|
+          data['hydratable'] == 'apiClient'
         end
       end
 
-      def matched_script?(script)
-        script['src']&.match(
-          'https://a-v2.sndcdn.com/assets'
-        ).present?
+      def script_data
+        JSON.parse(
+          raw_script_data
+        )
+      end
+
+      def raw_script_data
+        matched_script
+          .text
+          .match(
+            /window.__sc_hydration = (.+);$/
+          )[1]
+      end
+
+      def matched_script
+        scripts.find do |script|
+          matched_script?(script)
+        end
       end
 
       def scripts
@@ -46,12 +48,24 @@ module SoundCloud
         )
       end
 
+      def link
+        BASE_LINK
+      end
+
       def params
         nil
       end
 
-      def link
-        BASE_LINK
+      def proxy
+        nil
+      end
+
+      def matched_script?(script)
+        script
+          .text
+          .starts_with?(
+            'window.__sc_hydration'
+          )
       end
     end
   end
