@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://clienttoken.spotify.com/v1/clienttoken
+    body:
+      encoding: UTF-8
+      string: '{"client_data":{"client_id":"d8a5ed958d274c2e8ee717e6a4b0971d","client_version":"1.2.88.21.g8e037c8f","js_sdk_data":{"device_brand":"unknown","device_id":"<SPOTIFY_COOKIES_SP_T>","device_model":"unknown","device_type":"computer","os":"linux","os_version":"unknown"}}}'
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Cache-Control:
+      - private, max-age=0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Date:
+      - Sat, 04 Apr 2026 15:27:25 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response_type":"RESPONSE_GRANTED_TOKEN_RESPONSE","granted_token":{"token":"AAAmgTzrmdcObR04THhkRtA+sp1zDJF4SCwF9WIMeJwIjqJqzM3nxzzIW9l16up4aYb4EvS3Udf1b5CBYjFKx9I3qHKQ3kl+4IUna2VPkFDA24Hby0ynZMPxPmw5indJKWEAqrZUsrUeKK5vgbguZt7gKgS/wdMYLNLzbPoTAxd3UdTtTGeg5Rv/6qRj0BjsOCK/XmC03jqdnp7geMWd4dwL15FQMxzNIsYbABY+/bANr7z4REsblK+UxyJG5Y8YIdWsHsZjPKmjoDg/ORs2AZO0QOnmrzDEGxAXx82QWNWMUN7v2jYlxuFQddrTOAvPraBklf37pP+6lvgAG4hdlon+yJP1UgjJ","expires_after_seconds":1216800,"refresh_after_seconds":1209600,"domains":[{"domain":"spotify.com"},{"domain":"spotify.net"}]}}'
+  recorded_at: Sat, 04 Apr 2026 15:27:25 GMT
+recorded_with: VCR 6.4.0

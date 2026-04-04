@@ -21,22 +21,25 @@ module Spotify
         {
           'reason' => 'init',
           'productType' => 'web-player',
-          'totp' => password,
-          'totpServer' => password,
+          'totp' => client_password,
+          'totpServer' => server_password,
           'totpVer' => '61'
         }
       end
 
-      def password
+      def client_password
         return '269604' if test?
 
-        @password ||= password_data.now
+        password_data.at(
+          current_time
+        )
       end
 
       def password_data
-        ROTP::TOTP.new(
-          password_secret
-        )
+        @password_data ||=
+          ROTP::TOTP.new(
+            password_secret
+          )
       end
 
       def password_secret
@@ -44,6 +47,16 @@ module Spotify
           :spotify,
           :totp_secret
         )
+      end
+
+      def server_password
+        password_data.at(
+          spotify_server_time
+        )
+      end
+
+      def spotify_server_time
+        Spotify::Utils::ServerTime.call
       end
 
       def headers

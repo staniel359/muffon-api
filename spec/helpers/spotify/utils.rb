@@ -2,8 +2,12 @@ module Spec
   module Helpers
     module Spotify
       module Utils
-        def spotify_utils_access_token
-          'BQClTkaY77eY_KsGJLdQiidDfsyCW4dXHD9crKMUomPnjF17BVYYzYTl0S6MC3cICmpgueSNZ_-xgPHrtGiVxz5MaZin7XNW1HE77rgUxzbNzexL77OTMDGDQDkECNpKvFHFX4sYL9DNjK4v_Mi2EpvHVd8wxqY6sheaC2EOFV443rmY-ysvFzLNbKfebstWUQzKc5mZgEfP6daaq2JOP_2rQbA-tbnn9z653esCTs1LGa_v1XrNKBTpuWEhvU0tv7yw_M0YWi4x6XYdZn3qvu-9xVY-xb_FTqGSg_v14CtqFQVTQoFv1bFg82bCdbDjQmjYuS_YKqQWzVEv4c3_QmEGsZjEajVbtTL2o-c6tDGJbQqMVePBjmXudK9byaPNggwqWJT-vGvEG37a'
+        def spotify_utils_token
+          'BQDdYixfVH2Q4M1GQ8F2ZNWVaaXSedFc3c-J_UH_bG4l8qF7CtJcNJj0S6-Xr9qBQ-rqszMwz98qOFSMJHE-74Xqj_jP4JCZ54aqK0KV6WdSY5w_2rbg1nOtwEv2BTocOXXmAcGF0O5AjM3WrIFRzadEhlPEXjiRMhss6vKavWrqNiEZmLYNn4x46947wIr7ph4Z7-4R0DXoAbzCK30Apd8PQO1mxzEWRq9WLNd-HZ9y_gx64IGw1MkOTxqCknWUI7u3oNT55xEXT3_7rYJjte8wy0HfBYzM29PtNXtGRpXrJYXoZuvexluvFF4SPW0WDv--fehU-ILjK7ytbqkIxj77dj5Jig8avb1u7VtZ1bYIelfS5fze7HkKyhDGIgJ92-3Pvu8NJzWHky9_iQ'
+        end
+
+        def spotify_utils_client_token
+          'AAAmgTzrmdcObR04THhkRtA+sp1zDJF4SCwF9WIMeJwIjqJqzM3nxzzIW9l16up4aYb4EvS3Udf1b5CBYjFKx9I3qHKQ3kl+4IUna2VPkFDA24Hby0ynZMPxPmw5indJKWEAqrZUsrUeKK5vgbguZt7gKgS/wdMYLNLzbPoTAxd3UdTtTGeg5Rv/6qRj0BjsOCK/XmC03jqdnp7geMWd4dwL15FQMxzNIsYbABY+/bANr7z4REsblK+UxyJG5Y8YIdWsHsZjPKmjoDg/ORs2AZO0QOnmrzDEGxAXx82QWNWMUN7v2jYlxuFQddrTOAvPraBklf37pP+6lvgAG4hdlon+yJP1UgjJ'
         end
 
         def spotify_utils_user_access_token_data
