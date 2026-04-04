@@ -14,7 +14,7 @@ module Spotify
       {
         **super,
         'Authorization' => "Bearer #{spotify_token}",
-        'Client-Token' => client_token
+        'Client-Token' => spotify_client_token
       }
     end
 
@@ -49,10 +49,21 @@ module Spotify
       )
     end
 
-    def client_token
+    def spotify_client_token
+      return test_client_token if test?
+
+      @spotify_client_token ||=
+        get_global_value(
+          'spotify:client_token',
+          refresh_class_name: 'Spotify::Utils::ClientToken',
+          is_refresh: refresh_token?
+        )
+    end
+
+    def test_client_token
       credentials.dig(
         :spotify,
-        :client_token
+        :test_client_token
       )
     end
 
