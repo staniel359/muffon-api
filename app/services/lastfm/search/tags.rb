@@ -18,6 +18,12 @@ module LastFM
         tags
           .limit(limit)
           .offset(offset)
+          .order(
+            <<~SQL
+              LENGTH(name_downcase) ASC,
+              name_downcase ASC
+            SQL
+          )
       end
 
       def tags
