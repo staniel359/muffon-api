@@ -31,38 +31,38 @@ http_interactions:
       - sp_landing=https%3A%2F%2Fopen.spotify.com%2Fapi%2Fserver-time; Max-Age=86400;
         Path=/; Domain=.spotify.com; HttpOnly; Secure
       - sp_new=1; Max-Age=86400; Path=/; Domain=.spotify.com; Secure
-      - sp_t=6f12574e-79e8-4fc7-8a25-6aa7b80fce34; Max-Age=31536000; Path=/; Domain=.spotify.com;
+      - sp_t=6ab67854-dee1-47c0-b672-21a1d5a9180f; Max-Age=31536000; Path=/; Domain=.spotify.com;
         Secure
-      Strict-Transport-Security:
-      - max-age=31536000
+      X-Envoy-Upstream-Service-Time:
+      - '3'
       Server:
       - envoy
       X-Content-Type-Options:
       - nosniff
       Content-Type:
       - application/json; charset=utf-8
-      X-Envoy-Upstream-Service-Time:
-      - '4'
+      Strict-Transport-Security:
+      - max-age=31536000
       Via:
       - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 08 Apr 2026 20:31:46 GMT
+      - Wed, 08 Apr 2026 20:31:45 GMT
       X-Served-By:
-      - cache-fra-etou8220085-FRA, cache-fra-etou8220131-FRA
+      - cache-fra-etou8220085-FRA, cache-fra-etou8220192-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1775680306.209667,VS0,VE95
+      - S1775680305.267158,VS0,VE50
       Vary:
       - Accept-Encoding
     body:
       encoding: UTF-8
-      string: '{"serverTime":1775680306}'
-  recorded_at: Wed, 08 Apr 2026 20:31:46 GMT
+      string: '{"serverTime":1775680305}'
+  recorded_at: Wed, 08 Apr 2026 20:31:45 GMT
 - request:
     method: get
     uri: https://open.spotify.com/api/token?productType=web-player&reason=init&totp=269604&totpServer=060686&totpVer=61
@@ -75,7 +75,8 @@ http_interactions:
         Safari/537.36
       Cookie:
       - OptanonConsent=isGpcEnabled=0&datestamp=Sat+Apr+04+2026+16:50:19+GMT+0300+(Moscow+Standard+Time)&version=202601.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=c251b713-920a-4c61-8ba4-f61cef9393e0&interactionCount=2&isAnonUser=1&landingPath=NotLandingPage&groups=s00:1,f00:1,m00:1,t00:1,f11:1,i00:1,m03:1,ID01:1,m02:1,t02:0&intType=1&geolocation=;&AwaitingReconsent=false;
-        sp_t=<SPOTIFY_COOKIES_SP_T>; sp_gaid=<SPOTIFY_COOKIES_SP_GAID>; sp_key=<SPOTIFY_COOKIES_SP_KEY>
+        sp_t=<SPOTIFY_COOKIES_SP_T>; sp_gaid=<SPOTIFY_COOKIES_SP_GAID>; sp_key=<SPOTIFY_COOKIES_SP_KEY>;
+        sp_dc=AQAHK8mzL1OA5aRkz9AVKmkqG_WpyRDOlMip01t_FjZHxHU9XTyh2Vjqx4DaIj2K5RljRL_j6ZVnGuGEpGAiEJMaYoOCzExgclg7Y9Fu4Mr-7eeaho05UwjxwlCRKE5-Fh6iQVsTpG_V9mo20uSdwFmw6ijqJK-hlK4R_-oxk9gnyFV6mmQz33RPq5XwXizmTVDxPbEqOhBNhz_jIQ
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -87,41 +88,41 @@ http_interactions:
     headers:
       Connection:
       - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - envoy
       Via:
       - HTTP/1.1 fringe, HTTP/2 edgeproxy, 1.1 google, 1.1 varnish
+      X-Envoy-Upstream-Service-Time:
+      - '47'
+      Strict-Transport-Security:
+      - max-age=31536000
       Set-Cookie:
       - sp_landing=https%3A%2F%2Fopen.spotify.com%2Fapi%2Ftoken; Max-Age=86400; Path=/;
         Domain=.spotify.com; HttpOnly; Secure
-      Server:
-      - envoy
-      Content-Type:
-      - application/json; charset=utf-8
-      Strict-Transport-Security:
-      - max-age=31536000
-      X-Content-Type-Options:
-      - nosniff
-      X-Envoy-Upstream-Service-Time:
-      - '10'
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 08 Apr 2026 20:31:46 GMT
+      - Wed, 08 Apr 2026 20:31:45 GMT
       X-Served-By:
-      - cache-fra-etou8220111-FRA, cache-fra-etou8220198-FRA
+      - cache-fra-etou8220111-FRA, cache-fra-etou8220078-FRA
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1775680307.537488,VS0,VE75
+      - S1775680306.503246,VS0,VE134
       Vary:
       - Accept-Encoding
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"clientId":"d8a5ed958d274c2e8ee717e6a4b0971d","accessToken":"BQB2wFyctKP2O3vEE_COklhqqoCzYaIgee2MGPGB9ec0bZAmxkKHAAJzhzX71zTf1x73xXYY99uVndcTvztjHr6IJvtp2FJvHYEDSGQP7fO_4ugin1FKAEn-JGuHIJuSXuJu9uvNL10","accessTokenExpirationTimestampMs":1775683565807,"isAnonymous":true,"_notes":"Usage
+      string: '{"clientId":"d8a5ed958d274c2e8ee717e6a4b0971d","accessToken":"BQDcUSxJNXG8WWSR0oCxm4dme4XQn_ZrroVjax1bCrif2NJ-qkAx3-snxLgDGm0IJZT8fj5E1b09Dk-ugndBtOmgnn2i9Yz3FWhbqtBmu9hp5bPDFNL6Vt18d8vdGwvNrT7mvJjh4z9zeMXyPjO9snurv8RQS7zTfNw6aOFyhiHPu5qCfvWLTbTuIEV-wqloXqNp4O43ghfDsIzrWAs3Hgzz80fVpqDNnXXLLbzQBDEd9TI8eWpY8wRGULgXVP3GL3rNMtSzUu3Y8OEK5DmH-_r5lYC539uqBTiQa2n2SyUn0KPBYBM6MTXT36UZNIvb75iO_1wQRoPgYNW6Gy9l-3gpihrSARhLuaTY-SHdyDd0a4tF_27OCicVCMrg9YRz5LI82MZilK3-VllsRw","accessTokenExpirationTimestampMs":1775682847457,"isAnonymous":false,"_notes":"Usage
         of this endpoint is not permitted under the Spotify Developer Terms and Developer
         Policy, and applicable law"}'
-  recorded_at: Wed, 08 Apr 2026 20:31:46 GMT
+  recorded_at: Wed, 08 Apr 2026 20:31:45 GMT
 recorded_with: VCR 6.4.0

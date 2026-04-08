@@ -30,10 +30,10 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      - h3=":443"; ma=2592000
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Date:
-      - Sat, 04 Apr 2026 15:27:25 GMT
+      - Wed, 08 Apr 2026 20:31:45 GMT
       Server:
       - envoy
       Via:
@@ -42,6 +42,6 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"response_type":"RESPONSE_GRANTED_TOKEN_RESPONSE","granted_token":{"token":"AAAmgTzrmdcObR04THhkRtA+sp1zDJF4SCwF9WIMeJwIjqJqzM3nxzzIW9l16up4aYb4EvS3Udf1b5CBYjFKx9I3qHKQ3kl+4IUna2VPkFDA24Hby0ynZMPxPmw5indJKWEAqrZUsrUeKK5vgbguZt7gKgS/wdMYLNLzbPoTAxd3UdTtTGeg5Rv/6qRj0BjsOCK/XmC03jqdnp7geMWd4dwL15FQMxzNIsYbABY+/bANr7z4REsblK+UxyJG5Y8YIdWsHsZjPKmjoDg/ORs2AZO0QOnmrzDEGxAXx82QWNWMUN7v2jYlxuFQddrTOAvPraBklf37pP+6lvgAG4hdlon+yJP1UgjJ","expires_after_seconds":1216800,"refresh_after_seconds":1209600,"domains":[{"domain":"spotify.com"},{"domain":"spotify.net"}]}}'
-  recorded_at: Sat, 04 Apr 2026 15:27:25 GMT
+      string: '{"response_type":"RESPONSE_GRANTED_TOKEN_RESPONSE","granted_token":{"token":"AADk1ioz14IrS94bdtYj0lDoXbKwicq2lkqR+NXLxEO/F8Fy1pS+2nAJ4lwye11vXgJuI+wNDE/R5N7ZphUVJLVko45qV0//6pBSKJgn92QuY9hYDiuCPmzNRvBbM57iOWIeu7lgAibPl3Py7z4Lxz5FYlNH+e9ANWwllbesWmiST9BYZzGyMrNoRookgdFMZardyZvgO56u7vQk5zt7nw2gmzhH/Sk2lshIoQZh/aSxxorAuUCQOeJxQt095eFRF+dktn2qYcPMJ87Ese64C3Rpj9n+zAqghH5wGYpQIxXjCCvW2qSuTounpnIU3V0IQXeRby0PT6JsxgveA8XKb1iDqtEzjRBK","expires_after_seconds":1216800,"refresh_after_seconds":1209600,"domains":[{"domain":"spotify.com"},{"domain":"spotify.net"}]}}'
+  recorded_at: Wed, 08 Apr 2026 20:31:45 GMT
 recorded_with: VCR 6.4.0

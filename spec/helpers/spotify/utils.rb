@@ -3,11 +3,15 @@ module Spec
     module Spotify
       module Utils
         def spotify_utils_token
-          'BQDdYixfVH2Q4M1GQ8F2ZNWVaaXSedFc3c-J_UH_bG4l8qF7CtJcNJj0S6-Xr9qBQ-rqszMwz98qOFSMJHE-74Xqj_jP4JCZ54aqK0KV6WdSY5w_2rbg1nOtwEv2BTocOXXmAcGF0O5AjM3WrIFRzadEhlPEXjiRMhss6vKavWrqNiEZmLYNn4x46947wIr7ph4Z7-4R0DXoAbzCK30Apd8PQO1mxzEWRq9WLNd-HZ9y_gx64IGw1MkOTxqCknWUI7u3oNT55xEXT3_7rYJjte8wy0HfBYzM29PtNXtGRpXrJYXoZuvexluvFF4SPW0WDv--fehU-ILjK7ytbqkIxj77dj5Jig8avb1u7VtZ1bYIelfS5fze7HkKyhDGIgJ92-3Pvu8NJzWHky9_iQ'
+          'BQB2wFyctKP2O3vEE_COklhqqoCzYaIgee2MGPGB9ec0bZAmxkKHAAJzhzX71zTf1x73xXYY99uVndcTvztjHr6IJvtp2FJvHYEDSGQP7fO_4ugin1FKAEn-JGuHIJuSXuJu9uvNL10'
         end
 
         def spotify_utils_client_token
-          'AAAmgTzrmdcObR04THhkRtA+sp1zDJF4SCwF9WIMeJwIjqJqzM3nxzzIW9l16up4aYb4EvS3Udf1b5CBYjFKx9I3qHKQ3kl+4IUna2VPkFDA24Hby0ynZMPxPmw5indJKWEAqrZUsrUeKK5vgbguZt7gKgS/wdMYLNLzbPoTAxd3UdTtTGeg5Rv/6qRj0BjsOCK/XmC03jqdnp7geMWd4dwL15FQMxzNIsYbABY+/bANr7z4REsblK+UxyJG5Y8YIdWsHsZjPKmjoDg/ORs2AZO0QOnmrzDEGxAXx82QWNWMUN7v2jYlxuFQddrTOAvPraBklf37pP+6lvgAG4hdlon+yJP1UgjJ'
+          'AADk1ioz14IrS94bdtYj0lDoXbKwicq2lkqR+NXLxEO/F8Fy1pS+2nAJ4lwye11vXgJuI+wNDE/R5N7ZphUVJLVko45qV0//6pBSKJgn92QuY9hYDiuCPmzNRvBbM57iOWIeu7lgAibPl3Py7z4Lxz5FYlNH+e9ANWwllbesWmiST9BYZzGyMrNoRookgdFMZardyZvgO56u7vQk5zt7nw2gmzhH/Sk2lshIoQZh/aSxxorAuUCQOeJxQt095eFRF+dktn2qYcPMJ87Ese64C3Rpj9n+zAqghH5wGYpQIxXjCCvW2qSuTounpnIU3V0IQXeRby0PT6JsxgveA8XKb1iDqtEzjRBK'
+        end
+
+        def spotify_utils_audio_token
+          'BQDcUSxJNXG8WWSR0oCxm4dme4XQn_ZrroVjax1bCrif2NJ-qkAx3-snxLgDGm0IJZT8fj5E1b09Dk-ugndBtOmgnn2i9Yz3FWhbqtBmu9hp5bPDFNL6Vt18d8vdGwvNrT7mvJjh4z9zeMXyPjO9snurv8RQS7zTfNw6aOFyhiHPu5qCfvWLTbTuIEV-wqloXqNp4O43ghfDsIzrWAs3Hgzz80fVpqDNnXXLLbzQBDEd9TI8eWpY8wRGULgXVP3GL3rNMtSzUu3Y8OEK5DmH-_r5lYC539uqBTiQa2n2SyUn0KPBYBM6MTXT36UZNIvb75iO_1wQRoPgYNW6Gy9l-3gpihrSARhLuaTY-SHdyDd0a4tF_27OCicVCMrg9YRz5LI82MZilK3-VllsRw'
         end
 
         def spotify_utils_user_access_token_data

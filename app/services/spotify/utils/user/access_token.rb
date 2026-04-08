@@ -52,18 +52,18 @@ module Spotify
 
         def headers
           {
-            'Authorization' => "Basic #{spotify_token}",
+            'Authorization' => "Basic #{client_id_secret_encoded}",
             'Content-Type' => 'application/x-www-form-urlencoded'
           }
         end
 
-        def spotify_token
+        def client_id_secret_encoded
           Base64.strict_encode64(
-            raw_spotify_token
+            raw_client_id_secret
           )
         end
 
-        def raw_spotify_token
+        def raw_client_id_secret
           "#{@args[:client_id]}:#{@args[:client_secret]}"
         end
 

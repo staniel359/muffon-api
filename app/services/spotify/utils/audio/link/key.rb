@@ -22,7 +22,7 @@ module Spotify
 
             `python3.12 lib/spotify/key_retriever.py \
               --pssh #{pssh} \
-              --token #{spotify_token} \
+              --token #{spotify_audio_token} \
               --client-token #{spotify_client_token}`
           end
 

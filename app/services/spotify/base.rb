@@ -67,6 +67,37 @@ module Spotify
       )
     end
 
+    def spotify_audio_token
+      return test_audio_token if test?
+
+      @spotify_audio_token ||=
+        get_global_value(
+          'spotify:audio_token',
+          refresh_class_name: 'Spotify::Utils::AudioToken',
+          is_refresh: refresh_audio_token?
+        )
+    end
+
+    def test_audio_token
+      credentials.dig(
+        :spotify,
+        :test_audio_token
+      )
+    end
+
+    def refresh_audio_token?
+      !!@args[:is_refresh_audio_token]
+    end
+
+    def retry_with_new_spotify_audio_token
+      return if spotify_audio_token.blank?
+
+      self.class.call(
+        **@args,
+        is_refresh_audio_token: true
+      )
+    end
+
     def artist_data_formatted(
       raw_artist_data
     )

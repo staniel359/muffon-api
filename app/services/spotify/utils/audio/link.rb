@@ -15,7 +15,7 @@ module Spotify
 
           data
         rescue Faraday::UnauthorizedError
-          retry_with_new_spotify_token
+          retry_with_new_spotify_audio_token
         end
 
         private
@@ -91,6 +91,8 @@ module Spotify
         def file_link
           file_data['cdnurl'].sample
         end
+
+        alias spotify_token spotify_audio_token
       end
     end
   end
