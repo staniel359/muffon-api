@@ -15,7 +15,8 @@ module Spotify
 
           data
         rescue Faraday::UnauthorizedError
-          retry_with_new_spotify_audio_token
+          # retry_with_new_spotify_audio_token
+          raise forbidden_error
         end
 
         private
