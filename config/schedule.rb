@@ -6,15 +6,15 @@ every 3.hours do
   command 'rm -rf /root/muffon-api/shared/public/media/audio'
 end
 
-every 1.day do
+every 1.day, at: '0:00 am' do
   command 'yt-dlp -U'
 end
 
-every 3.days, at: '0:00 am' do
+every 3.days, at: '1:00 am' do
   runner 'ActiveRecord::Base.connection.execute("VACUUM ANALYZE")'
 end
 
-every 5.days, at: '1:00 am' do
+every 5.days, at: '2:00 am' do
   command 'sudo -u muffon_api pg_dump -Fc muffon_api > ~/backup/database.dump'
 
   # To restore
