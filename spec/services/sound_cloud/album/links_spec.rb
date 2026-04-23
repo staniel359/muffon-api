@@ -13,7 +13,7 @@ RSpec.describe SoundCloud::Album::Links do
         end
       end
 
-      it { expect(output).to eq(soundcloud_album_links_data) }
+      it { expect(output).to match_hash(soundcloud_album_links_data) }
     end
   end
 

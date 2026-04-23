@@ -1,15 +1,19 @@
 module SoundCloud
   module Track
-    class Albums < SoundCloud::Track::Info
+    class Albums < SoundCloud::Track::Base
+      include SoundCloud::Mixins::Track
+
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: [] }
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: soundcloud_id,
+          title:,
+          artists:,
+          albums: []
+        )
       end
     end
   end

@@ -2,7 +2,7 @@ module SoundCloud
   module Search
     class Albums
       class Album < SoundCloud::Search::Albums
-        include SoundCloud::Utils::Album
+        include SoundCloud::Mixins::Album
 
         def call
           check_args
@@ -14,28 +14,25 @@ module SoundCloud
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: soundcloud_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            release_date:,
+            **self_args
+          )
         end
 
-        def album
-          @args[:album]
+        def raw_album_data
+          @args[:raw_album_data]
         end
       end
     end

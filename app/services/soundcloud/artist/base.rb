@@ -45,7 +45,7 @@ module SoundCloud
         "#{BASE_LINK}/users/#{@args[:artist_id]}"
       end
 
-      alias artist response_data
+      alias raw_artist_data response_data
     end
   end
 end

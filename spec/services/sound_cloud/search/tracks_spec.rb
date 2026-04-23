@@ -16,7 +16,7 @@ RSpec.describe SoundCloud::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(soundcloud_search_tracks_data) }
+      it { expect(output).to match_hash(soundcloud_search_tracks_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe SoundCloud::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_tracks_data) }
+      it { expect(output).to match_hash(search_paginated_missing_tracks_data) }
     end
   end
 end

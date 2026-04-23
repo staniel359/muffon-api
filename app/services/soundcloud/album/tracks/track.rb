@@ -2,7 +2,7 @@ module SoundCloud
   module Album
     class Tracks
       class Track < SoundCloud::Album::Tracks
-        include SoundCloud::Utils::Track
+        include SoundCloud::Mixins::Track
 
         def call
           check_args
@@ -14,46 +14,36 @@ module SoundCloud
 
         def required_args
           %i[
-            track
+            raw_track_data
             album_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_base_data)
-            .merge(track_extra_data)
-        end
-
-        def track
-          @args[:track]
-        end
-
-        def track_base_data
-          {
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Album::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: soundcloud_id,
             title:,
-            artist: artists_minimal_data,
-            artists:
-          }
-        end
-
-        def track_extra_data
-          {
-            album: album_data,
-            image: image_data,
+            artists:,
+            image_data:,
+            album_data:,
             duration:,
-            audio: audio_minimal_data
-          }.compact
+            is_audio_present: audio_present?,
+            **self_args
+          )
         end
 
-        def album_data
-          @args[:album_data]
+        def raw_track_data
+          @args[:raw_track_data]
         end
 
         def image_data
           album_data[:image]
+        end
+
+        def album_data
+          @args[:album_data]
         end
       end
     end

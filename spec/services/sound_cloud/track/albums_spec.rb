@@ -14,7 +14,7 @@ RSpec.describe SoundCloud::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(soundcloud_track_albums_data) }
+      it { expect(output).to match_hash(soundcloud_track_albums_data) }
     end
   end
 

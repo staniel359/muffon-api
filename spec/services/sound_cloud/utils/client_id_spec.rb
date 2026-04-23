@@ -10,6 +10,6 @@ RSpec.describe SoundCloud::Utils::ClientId do
       end
     end
 
-    it { expect(output).to eq(soundcloud_utils_client_id) }
+    it { expect(output).to match_hash(soundcloud_utils_client_id) }
   end
 end

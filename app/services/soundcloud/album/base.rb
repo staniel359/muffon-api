@@ -1,8 +1,6 @@
 module SoundCloud
   module Album
     class Base < SoundCloud::Base
-      include SoundCloud::Utils::Album
-
       def call
         check_args
 
@@ -29,7 +27,7 @@ module SoundCloud
         { album: album_data }
       end
 
-      alias album response_data
+      alias raw_album_data response_data
     end
   end
 end

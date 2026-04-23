@@ -13,7 +13,7 @@ RSpec.describe SoundCloud::Album::Tags do
         end
       end
 
-      it { expect(output).to eq(soundcloud_album_tags_data) }
+      it { expect(output).to match_hash(soundcloud_album_tags_data) }
     end
   end
 

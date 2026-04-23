@@ -1,11 +1,7 @@
 module SoundCloud
   module Artist
     class Info < SoundCloud::Artist::Base
-      private
-
-      def name
-        artist['username']
-      end
+      include SoundCloud::Mixins::Artist
     end
   end
 end

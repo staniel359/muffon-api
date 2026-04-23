@@ -1,8 +1,10 @@
 module SoundCloud
-  module Utils
+  module Formatter
     class Image < SoundCloud::Base
       def call
-        return if args_missing?
+        check_args
+
+        return if @args[:image_url].blank?
 
         data
       end
@@ -11,7 +13,7 @@ module SoundCloud
 
       def required_args
         %i[
-          image
+          image_url
         ]
       end
 
@@ -26,7 +28,7 @@ module SoundCloud
       end
 
       def image_resized(size)
-        @args[:image].sub(
+        @args[:image_url].sub(
           'large',
           size
         )

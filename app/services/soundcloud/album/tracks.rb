@@ -1,6 +1,8 @@
 module SoundCloud
   module Album
     class Tracks < SoundCloud::Album::Base
+      include SoundCloud::Mixins::Album
+
       def call
         check_args
 
@@ -12,24 +14,24 @@ module SoundCloud
       def required_args
         %i[
           raw_album_data
-          album_base_data
+          album_data
         ]
       end
 
-      def data
+      def album_data
         { tracks: }
       end
 
       def raw_tracks
-        if raw_album_tracks.present?
+        if raw_album_data['tracks'].present?
           response_data
         else
           []
         end
       end
 
-      def raw_album_tracks
-        @args[:raw_album_data]['tracks']
+      def raw_album_data
+        @args[:raw_album_data]
       end
 
       def link
@@ -44,17 +46,18 @@ module SoundCloud
       end
 
       def tracks_ids_string
-        raw_album_tracks
+        raw_album_data['tracks']
           .pluck('id')
           .join(',')
       end
 
-      def track_data_formatted(track)
+      def track_data_formatted(
+        raw_track_data
+      )
         SoundCloud::Album::Tracks::Track.call(
-          track:,
-          album_data: @args[:album_base_data],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_track_data:,
+          album_data: @args[:album_data],
+          **self_args
         )
       end
     end

@@ -13,7 +13,7 @@ RSpec.describe SoundCloud::Album::Description do
         end
       end
 
-      it { expect(output).to eq(soundcloud_album_description_data) }
+      it { expect(output).to match_hash(soundcloud_album_description_data) }
     end
   end
 

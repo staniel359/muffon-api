@@ -5,6 +5,16 @@ module SoundCloud
 
     private
 
+    def params
+      { client_id: }
+    end
+
+    def proxy
+      proxy_data
+        .dig(:uk, :ipv4)
+        .sample
+    end
+
     def client_id
       return test_client_id if test?
 
@@ -33,52 +43,6 @@ module SoundCloud
         **@args,
         is_refresh_client_id: true
       )
-    end
-
-    def params
-      { client_id: }
-    end
-
-    def proxy
-      proxy_data
-        .dig(:uk, :ipv4)
-        .sample
-    end
-
-    def raw_artists
-      [artist]
-    end
-
-    def artist_data_formatted(
-      raw_artist_data
-    )
-      {
-        source: artist_source_data(
-          raw_artist_data
-        ),
-        name: raw_artist_data['username']
-      }
-    end
-
-    def artist_source_data(
-      raw_artist_data
-    )
-      {
-        name: source_name,
-        id: raw_artist_data['id']
-      }
-    end
-
-    def image_data_formatted(image)
-      SoundCloud::Utils::Image.call(
-        image:
-      )
-    end
-
-    def tag_name_formatted(
-      tag_data
-    )
-      tag_data
     end
   end
 end

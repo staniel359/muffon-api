@@ -1,8 +1,6 @@
 module SoundCloud
   module Track
     class Base < SoundCloud::Base
-      include SoundCloud::Utils::Track
-
       def call
         check_args
 
@@ -29,7 +27,7 @@ module SoundCloud
         { track: track_data }
       end
 
-      alias track response_data
+      alias raw_track_data response_data
     end
   end
 end
