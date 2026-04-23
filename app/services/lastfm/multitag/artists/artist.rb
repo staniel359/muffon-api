@@ -2,7 +2,7 @@ module LastFM
   module Multitag
     class Artists
       class Artist < LastFM::Multitag::Artists
-        include LastFM::Utils::Artist
+        include LastFM::Mixins::Artist
 
         def call
           check_args
@@ -14,39 +14,28 @@ module LastFM
 
         def required_args
           %i[
-            artist
+            raw_artist_data
           ]
         end
 
         def data
-          self_data
-            .merge(artist_data)
-        end
-
-        def artist
-          @args[:artist]
-        end
-
-        def artist_data
-          {
-            source: source_data,
+          Muffon::Formatter::Multitag::Artists::Artist.call(
+            artist_record:,
+            source_original_link:,
+            source_name:,
+            source_artist_id: nil,
             name:,
-            listeners_count:,
-            plays_count:,
-            image: image_data
-          }.compact
+            image_data:,
+            **self_args
+          )
         end
 
-        def listeners_count
-          artist['listeners'].to_i
+        def artist_record
+          @args[:raw_artist_data]
         end
 
-        def plays_count
-          artist['scrobbles'].to_i
-        end
-
-        def image
-          artist['image']
+        def name
+          artist_record.name
         end
       end
     end
