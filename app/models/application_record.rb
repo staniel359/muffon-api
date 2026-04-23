@@ -39,6 +39,12 @@ class ApplicationRecord < ActiveRecord::Base
     end
   end
 
+  def listeners_count
+    return 0 if test?
+
+    super
+  end
+
   private
 
   def test?

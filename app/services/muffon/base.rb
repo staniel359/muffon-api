@@ -6,7 +6,6 @@ module Muffon
     include Muffon::Utils::Profile
     include Muffon::Utils::Formatters
     include Muffon::Utils::Global
-    include Muffon::Utils::More
     include Muffon::Utils::Pagination
 
     private
@@ -15,7 +14,7 @@ module Muffon
       if args_missing?
         raise(
           bad_request_error,
-          "Args missing: #{missing_args}"
+          "Args missing: #{missing_args_string}"
         )
       elsif wrong_args?
         raise(
@@ -30,17 +29,15 @@ module Muffon
     end
 
     def missing_args
-      required_args - present_args
+      required_args - @args.keys
     end
 
     def required_args
       []
     end
 
-    def present_args
-      @args
-        .compact_blank
-        .keys
+    def missing_args_string
+      missing_args.join(', ')
     end
 
     def wrong_args?
