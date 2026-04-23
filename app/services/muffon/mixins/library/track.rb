@@ -1,8 +1,8 @@
 module Muffon
-  module Utils
+  module Mixins
     module Library
       module Track
-        include Muffon::Utils::Track
+        include Muffon::Mixins::Track
 
         private
 

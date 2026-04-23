@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Formatters
       TEXT_SIZES_DATA = {
         'extrasmall' => 100,

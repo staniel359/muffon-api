@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Request
       module Client
         private

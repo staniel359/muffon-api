@@ -40,7 +40,7 @@ class ApplicationController < ActionController::API
   end
 
   def save_invalid_request
-    Muffon::Utils::InvalidRequestSaver.call(
+    Muffon::Utils::InvalidRequest::Saver.call(
       request:
     )
   end

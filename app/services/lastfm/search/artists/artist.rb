@@ -2,7 +2,6 @@ module LastFM
   module Search
     class Artists
       class Artist < LastFM::Search::Artists
-        include Muffon::Utils::Artist
         include LastFM::Mixins::Artist
 
         def call

@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module Album
       class Base < Muffon::Formatter::Base
-        include Muffon::Utils::Album
+        include Muffon::Mixins::Album
 
         private
 
@@ -52,7 +52,7 @@ module Muffon
         end
 
         def source_streaming_link
-          Muffon::Utils::StreamingLink.call(
+          Muffon::Formatter::StreamingLink.call(
             model: 'album',
             source_name:,
             source_model_id: source_album_id

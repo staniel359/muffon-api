@@ -4,7 +4,7 @@ module Muffon
       module Bookmarks
         module Artist
           class Creator < Muffon::Processor::Profile::Bookmarks::Base
-            include Muffon::Utils::Artist
+            include Muffon::Mixins::Artist
 
             private
 

@@ -4,7 +4,7 @@ module Muffon
       module Library
         module Artist
           class Creator < Muffon::Processor::Profile::Library::Artist::Base
-            include Muffon::Utils::Artist
+            include Muffon::Mixins::Artist
 
             private
 

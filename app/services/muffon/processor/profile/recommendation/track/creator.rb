@@ -4,7 +4,7 @@ module Muffon
       module Recommendation
         module Track
           class Creator < Muffon::Processor::Profile::Recommendation::Base
-            include Muffon::Utils::Track
+            include Muffon::Mixins::Track
 
             private
 

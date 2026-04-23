@@ -3,7 +3,7 @@ module Muffon
     module Bookmarks
       class Tracks
         class Track < Muffon::Profile::Bookmarks::Tracks
-          include Muffon::Utils::Track
+          include Muffon::Mixins::Track
 
           def call
             check_args

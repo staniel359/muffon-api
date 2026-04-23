@@ -4,7 +4,7 @@ module Muffon
       module Listened
         module Album
           class Creator < Muffon::Processor::Profile::Listened::Base
-            include Muffon::Utils::Album
+            include Muffon::Mixins::Album
 
             private
 

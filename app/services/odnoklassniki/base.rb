@@ -2,6 +2,8 @@ module Odnoklassniki
   class Base < Muffon::Base
     SOURCE_NAME = 'odnoklassniki'.freeze
 
+    include Muffon::Mixins::GlobalStorage
+
     private
 
     def retry_with_new_session_id?

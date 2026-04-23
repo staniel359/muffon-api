@@ -1,8 +1,7 @@
 module Muffon
-  module Utils
+  module Mixins
     module Sendable
-      LINK_REGEXP =
-        %r{\[link\](.*?)\[/link\]}
+      LINK_REGEXP = %r{\[link\](.*?)\[/link\]}
       ATTACHMENT_TYPES = %i[
         images
         artists

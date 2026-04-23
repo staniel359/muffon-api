@@ -3,8 +3,8 @@ module Muffon
     class Playlists < Muffon::Profile::Base
       DEFAULT_ORDER = 'created_desc'.freeze
 
-      include Muffon::Utils::Track
-      include Muffon::Utils::Album
+      include Muffon::Mixins::Track
+      include Muffon::Mixins::Album
 
       private
 

@@ -1,7 +1,7 @@
 module Muffon
   module Sendable
     class Artist < Muffon::Base
-      include Muffon::Utils::Artist
+      include Muffon::Mixins::Artist
 
       def call
         check_args

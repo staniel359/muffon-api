@@ -19,7 +19,7 @@ module SendableDecorator
   private
 
   def attachment_types
-    Muffon::Utils::Sendable::ATTACHMENT_TYPES
+    Muffon::Mixins::Sendable::ATTACHMENT_TYPES
   end
 
   def images_formatted

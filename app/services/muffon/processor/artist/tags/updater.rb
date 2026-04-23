@@ -3,7 +3,7 @@ module Muffon
     module Artist
       module Tags
         class Updater < Muffon::Processor::Artist::Base
-          include Muffon::Utils::Artist
+          include Muffon::Mixins::Artist
 
           private
 

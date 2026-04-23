@@ -2,7 +2,6 @@ module LastFM
   module Tag
     class Artists
       class Artist < LastFM::Tag::Artists
-        include Muffon::Utils::Artist
         include LastFM::Mixins::Artist
 
         def call

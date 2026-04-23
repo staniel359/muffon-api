@@ -4,6 +4,8 @@ module Spotify
       'https://api-partner.spotify.com/pathfinder/v2/query'.freeze
     SOURCE_NAME = 'spotify'.freeze
 
+    include Muffon::Mixins::GlobalStorage
+
     private
 
     def link

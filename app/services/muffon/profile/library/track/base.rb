@@ -3,7 +3,7 @@ module Muffon
     module Library
       module Track
         class Base < Muffon::Profile::Library::Base
-          include Muffon::Utils::Library::Track
+          include Muffon::Mixins::Library::Track
 
           private
 

@@ -4,7 +4,7 @@ module Muffon
       module Favorites
         module Video
           class Creator < Muffon::Processor::Profile::Favorites::Base
-            include Muffon::Utils::Video
+            include Muffon::Mixins::Video
 
             private
 

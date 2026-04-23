@@ -1,7 +1,7 @@
 require 'open-uri'
 
 module Muffon
-  module Utils
+  module Formatter
     class Image
       class FileData < Muffon::Base
         def call
@@ -17,9 +17,7 @@ module Muffon
         end
 
         def image
-          @image ||=
-            @args[:image] ||
-            temp_image
+          @image ||= @args[:image] || temp_image
         end
 
         def temp_image
@@ -57,9 +55,7 @@ module Muffon
         end
 
         def link_image?
-          image.match?(
-            %r{https?://}
-          )
+          image.match?(%r{https?://})
         end
 
         def link_image_data
@@ -123,8 +119,7 @@ module Muffon
         end
 
         def file_image_content_type
-          @file_image_content_type ||=
-            image.match(%r{(image/.+);})[1]
+          image.match(%r{(image/.+);})[1]
         end
       end
     end

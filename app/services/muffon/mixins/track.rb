@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Track
       private
 
@@ -49,7 +49,7 @@ module Muffon
       end
 
       def self_data
-        Muffon::Self.call(
+        Muffon::Utils::Self.call(
           **self_args,
           model: 'track',
           model_id: track_record.id

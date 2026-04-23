@@ -1,7 +1,7 @@
 module YouTube
   module Mixins
     module VideoPlaylist
-      include Muffon::Utils::VideoPlaylist
+      include Muffon::Mixins::VideoPlaylist
 
       private
 

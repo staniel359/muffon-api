@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Errors
       ERRORS_DATA = {
         'bad_request' => {

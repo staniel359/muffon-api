@@ -4,7 +4,7 @@ module Muffon
       module Compatibility
         class Albums
           class Album < Muffon::Profile::Library::Compatibility::Albums
-            include Muffon::Utils::Library::Album
+            include Muffon::Mixins::Library::Album
 
             def call
               check_args

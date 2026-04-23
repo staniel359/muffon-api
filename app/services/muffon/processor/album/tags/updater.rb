@@ -3,7 +3,7 @@ module Muffon
     module Album
       module Tags
         class Updater < Muffon::Processor::Album::Base
-          include Muffon::Utils::Album
+          include Muffon::Mixins::Album
 
           private
 

@@ -2,7 +2,6 @@ module MusicBrainz
   module Search
     class Artists
       class Artist < MusicBrainz::Search::Artists
-        include Muffon::Utils::Artist
         include MusicBrainz::Mixins::Artist
 
         def call

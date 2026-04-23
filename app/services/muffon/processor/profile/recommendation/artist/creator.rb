@@ -4,7 +4,7 @@ module Muffon
       module Recommendation
         module Artist
           class Creator < Muffon::Processor::Profile::Recommendation::Base
-            include Muffon::Utils::Artist
+            include Muffon::Mixins::Artist
 
             private
 

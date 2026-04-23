@@ -1,7 +1,7 @@
 module LastFM
   module Mixins
     module Track
-      include Muffon::Utils::Track
+      include Muffon::Mixins::Track
       include Muffon::Mixins::Formatting::Collection
 
       private

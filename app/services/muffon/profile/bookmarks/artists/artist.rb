@@ -3,8 +3,8 @@ module Muffon
     module Bookmarks
       class Artists
         class Artist < Muffon::Profile::Bookmarks::Artists
-          include Muffon::Utils::Artist
-          include Muffon::Utils::Source::Artist
+          include Muffon::Mixins::Artist
+          include Muffon::Mixins::Source::Artist
 
           def call
             check_args

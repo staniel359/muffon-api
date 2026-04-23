@@ -2,7 +2,7 @@ module API
   class BaseController < ApplicationController
     CLIENT_MINIMUM_VERSION = '2.3.0'.freeze
 
-    include ::Muffon::Utils::Errors
+    include ::Muffon::Mixins::Errors
 
     before_action :render_status_with_data
 
@@ -99,7 +99,7 @@ module API
     end
 
     def sendable_attachment_types
-      ::Muffon::Utils::Sendable::ATTACHMENT_TYPES
+      ::Muffon::Mixins::Sendable::ATTACHMENT_TYPES
     end
   end
 end

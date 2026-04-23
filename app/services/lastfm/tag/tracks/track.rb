@@ -2,7 +2,6 @@ module LastFM
   module Tag
     class Tracks
       class Track < LastFM::Tag::Tracks
-        include Muffon::Utils::Track
         include LastFM::Mixins::Track
 
         def call

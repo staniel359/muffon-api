@@ -1,8 +1,6 @@
 module Odnoklassniki
   module Mixins
     module Artist
-      include Muffon::Utils::Artist
-
       private
 
       def name

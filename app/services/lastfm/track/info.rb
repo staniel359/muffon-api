@@ -1,7 +1,6 @@
 module LastFM
   module Track
     class Info < LastFM::Track::Base
-      include Muffon::Utils::Track
       include LastFM::Mixins::Track
 
       private

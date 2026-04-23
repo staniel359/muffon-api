@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Artist
       private
 
@@ -11,7 +11,7 @@ module Muffon
       end
 
       def self_data
-        Muffon::Self.call(
+        Muffon::Utils::Self.call(
           **self_args,
           model: 'artist',
           model_id: artist_record.id

@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module VideoChannel
       private
 
@@ -12,7 +12,7 @@ module Muffon
       end
 
       def self_data
-        Muffon::Self.call(
+        Muffon::Utils::Self.call(
           **self_args,
           model: 'video_channel',
           model_id: video_channel_record.id

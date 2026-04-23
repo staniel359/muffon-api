@@ -2,7 +2,6 @@ module LastFM
   module Track
     class Similar
       class Track < LastFM::Track::Similar
-        include Muffon::Utils::Track
         include LastFM::Mixins::Track
 
         def call

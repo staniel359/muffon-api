@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module VideoPlaylist
       class Base < Muffon::Formatter::Base
-        include Muffon::Utils::VideoPlaylist
+        include Muffon::Mixins::VideoPlaylist
 
         private
 

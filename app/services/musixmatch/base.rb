@@ -3,6 +3,8 @@ module MusixMatch
     SOURCE_NAME = 'musixmatch'.freeze
     BASE_LINK = 'https://www.musixmatch.com'.freeze
 
+    include Muffon::Mixins::GlobalStorage
+
     private
 
     def base_link

@@ -1,12 +1,11 @@
 module Muffon
   class Base < Service
-    include Muffon::Utils::Errors
     include Muffon::Mixins::Base
-    include Muffon::Utils::Request
-    include Muffon::Utils::Profile
-    include Muffon::Utils::Formatters
-    include Muffon::Utils::Global
-    include Muffon::Utils::Pagination
+    include Muffon::Mixins::Errors
+    include Muffon::Mixins::Request
+    include Muffon::Mixins::Profile
+    include Muffon::Mixins::Formatters
+    include Muffon::Mixins::Pagination
 
     private
 

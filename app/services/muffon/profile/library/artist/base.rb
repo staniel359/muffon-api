@@ -3,8 +3,8 @@ module Muffon
     module Library
       module Artist
         class Base < Muffon::Profile::Library::Base
-          include Muffon::Utils::Library::Artist
-          include Muffon::Utils::Source::Artist
+          include Muffon::Mixins::Library::Artist
+          include Muffon::Mixins::Source::Artist
 
           private
 

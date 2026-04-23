@@ -120,15 +120,15 @@ module ApplicationRecordDecorator
   end
 
   def image_data
-    image_data_formatted(
-      image
+    Muffon::Formatter::Image.call(
+      image:
     )
   end
 
   def images_data
     images.map do |image|
-      image_data_formatted(
-        image
+      Muffon::Formatter::Image.call(
+        image:
       )
     end
   end
@@ -153,14 +153,6 @@ module ApplicationRecordDecorator
   end
 
   private
-
-  def image_data_formatted(
-    image
-  )
-    Muffon::Utils::Image.call(
-      image:
-    )
-  end
 
   def errors_formatted_data
     { errors: errors_formatted }

@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Formatter
     class StreamingLink < Muffon::Base
       SOURCES_PREFIXES_DATA = {
         'amazonmusic' => 'a',

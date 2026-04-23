@@ -4,7 +4,7 @@ module Muffon
       module Library
         module Album
           class Creator < Muffon::Processor::Profile::Library::Album::Base
-            include Muffon::Utils::Album
+            include Muffon::Mixins::Album
 
             private
 

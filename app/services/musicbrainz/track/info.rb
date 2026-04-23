@@ -1,7 +1,6 @@
 module MusicBrainz
   module Track
     class Info < MusicBrainz::Track::Base
-      include Muffon::Utils::Track
       include MusicBrainz::Mixins::Track
 
       private

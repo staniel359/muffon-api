@@ -4,7 +4,7 @@ module Muffon
       module Bookmarks
         module VideoPlaylist
           class Creator < Muffon::Processor::Profile::Bookmarks::Base
-            include Muffon::Utils::VideoPlaylist
+            include Muffon::Mixins::VideoPlaylist
 
             private
 

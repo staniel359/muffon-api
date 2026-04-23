@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Album
       private
 
@@ -19,7 +19,7 @@ module Muffon
       end
 
       def self_data
-        Muffon::Self.call(
+        Muffon::Utils::Self.call(
           **self_args,
           model: 'album',
           model_id: album_record.id

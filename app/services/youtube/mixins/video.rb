@@ -1,7 +1,7 @@
 module YouTube
   module Mixins
     module Video
-      include Muffon::Utils::Video
+      include Muffon::Mixins::Video
       include Muffon::Mixins::Formatting::Collection
 
       private

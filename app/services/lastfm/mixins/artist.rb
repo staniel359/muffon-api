@@ -1,7 +1,7 @@
 module LastFM
   module Mixins
     module Artist
-      include Muffon::Utils::Artist
+      include Muffon::Mixins::Artist
       include Muffon::Mixins::Formatting::Collection
 
       private

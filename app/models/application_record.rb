@@ -4,7 +4,7 @@ class ApplicationRecord < ActiveRecord::Base
 
   self.abstract_class = true
 
-  include Muffon::Utils::Errors
+  include Muffon::Mixins::Errors
   include Muffon::Mixins::Processing::Image
   include ApplicationRecordDecorator
 

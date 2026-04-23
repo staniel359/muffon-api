@@ -3,7 +3,7 @@ module Muffon
     module Library
       module Album
         class Base < Muffon::Profile::Library::Base
-          include Muffon::Utils::Library::Album
+          include Muffon::Mixins::Library::Album
 
           private
 

@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module Artist
       class Base < Muffon::Formatter::Base
-        include Muffon::Utils::Artist
+        include Muffon::Mixins::Artist
 
         private
 

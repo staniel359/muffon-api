@@ -3,7 +3,6 @@ module LastFM
     class Info < LastFM::Artist::Base
       API_METHOD = 'artist.getInfo'.freeze
 
-      include Muffon::Utils::Artist
       include LastFM::Mixins::Artist
 
       private
@@ -23,7 +22,7 @@ module LastFM
           source_name:,
           source_artist_id: nil,
           name:,
-          image_data: artist_record.image_data,
+          image_data:,
           plays_count:,
           description:,
           description_size: 'medium',

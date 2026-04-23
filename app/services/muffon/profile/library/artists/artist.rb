@@ -3,8 +3,8 @@ module Muffon
     module Library
       class Artists
         class Artist < Muffon::Profile::Library::Artists
-          include Muffon::Utils::Library::Artist
-          include Muffon::Utils::Source::Artist
+          include Muffon::Mixins::Library::Artist
+          include Muffon::Mixins::Source::Artist
 
           def call
             check_args

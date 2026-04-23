@@ -4,7 +4,7 @@ module Spec
       RANDOM_STRING = 'wejlhg239gh23'.freeze
       CLIENT_VERSION = '2.3.0'.freeze
 
-      include Muffon::Utils::Errors
+      include Muffon::Mixins::Errors
 
       private
 

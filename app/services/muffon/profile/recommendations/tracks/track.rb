@@ -3,8 +3,8 @@ module Muffon
     module Recommendations
       class Tracks
         class Track < Muffon::Profile::Recommendations::Tracks
-          include Muffon::Utils::Track
-          include Muffon::Utils::Source::Track
+          include Muffon::Mixins::Track
+          include Muffon::Mixins::Source::Track
 
           def call
             check_args

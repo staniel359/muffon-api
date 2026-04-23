@@ -2,7 +2,6 @@ module LastFM
   module Top
     class Artists
       class Artist < LastFM::Top::Artists
-        include Muffon::Utils::Artist
         include LastFM::Mixins::Artist
 
         def call

@@ -1,7 +1,7 @@
 module LastFM
   module Mixins
     module Web
-      include Muffon::Utils::Request
+      include Muffon::Mixins::Request
 
       private
 

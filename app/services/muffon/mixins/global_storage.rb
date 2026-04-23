@@ -1,6 +1,6 @@
 module Muffon
-  module Utils
-    module Global
+  module Mixins
+    module GlobalStorage
       private
 
       def get_global_value(

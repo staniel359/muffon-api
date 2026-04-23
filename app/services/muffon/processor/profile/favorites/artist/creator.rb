@@ -4,7 +4,7 @@ module Muffon
       module Favorites
         module Artist
           class Creator < Muffon::Processor::Profile::Favorites::Base
-            include Muffon::Utils::Artist
+            include Muffon::Mixins::Artist
 
             private
 

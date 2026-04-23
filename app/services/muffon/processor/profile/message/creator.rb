@@ -3,7 +3,7 @@ module Muffon
     module Profile
       module Message
         class Creator < Muffon::Processor::Profile::Message::Base
-          include Muffon::Utils::Sendable
+          include Muffon::Mixins::Sendable
 
           private
 

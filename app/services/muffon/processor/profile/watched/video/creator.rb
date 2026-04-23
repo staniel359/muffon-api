@@ -4,7 +4,7 @@ module Muffon
       module Watched
         module Video
           class Creator < Muffon::Processor::Profile::Watched::Base
-            include Muffon::Utils::Video
+            include Muffon::Mixins::Video
 
             private
 

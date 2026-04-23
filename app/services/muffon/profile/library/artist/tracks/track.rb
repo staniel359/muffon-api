@@ -4,7 +4,7 @@ module Muffon
       module Artist
         class Tracks
           class Track < Muffon::Profile::Library::Artist::Tracks
-            include Muffon::Utils::Library::Track
+            include Muffon::Mixins::Library::Track
 
             def call
               check_args

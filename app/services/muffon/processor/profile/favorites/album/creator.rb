@@ -4,7 +4,7 @@ module Muffon
       module Favorites
         module Album
           class Creator < Muffon::Processor::Profile::Favorites::Base
-            include Muffon::Utils::Album
+            include Muffon::Mixins::Album
 
             private
 

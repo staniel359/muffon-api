@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Artist
       class Base < Muffon::Base
-        include Muffon::Utils::Artist
+        include Muffon::Mixins::Artist
 
         def call
           check_args

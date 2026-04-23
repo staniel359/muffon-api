@@ -3,7 +3,7 @@ module Muffon
     module Library
       class Albums
         class Album < Muffon::Profile::Library::Albums
-          include Muffon::Utils::Library::Album
+          include Muffon::Mixins::Library::Album
 
           def call
             check_args

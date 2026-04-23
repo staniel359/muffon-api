@@ -3,7 +3,7 @@ module Muffon
     module Multitag
       module Albums
         class Album < Muffon::Formatter::Album::Base
-          include Muffon::Utils::Album
+          include Muffon::Mixins::Album
 
           def call
             check_args

@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Pagination
       DEFAULT_PAGE = 1
       DEFAULT_PAGE_LIMIT = 20

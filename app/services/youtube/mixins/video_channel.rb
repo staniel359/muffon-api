@@ -1,7 +1,7 @@
 module YouTube
   module Mixins
     module VideoChannel
-      include Muffon::Utils::VideoChannel
+      include Muffon::Mixins::VideoChannel
 
       private
 

@@ -3,7 +3,7 @@ module Muffon
     module History
       class Player
         class Track < Muffon::Profile::History::Player
-          include Muffon::Utils::Track
+          include Muffon::Mixins::Track
 
           def call
             check_args

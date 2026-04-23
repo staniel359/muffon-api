@@ -2,7 +2,6 @@ module LastFM
   module Top
     class Albums
       class Album < LastFM::Top::Albums
-        include Muffon::Utils::Album
         include LastFM::Mixins::Album
 
         def call

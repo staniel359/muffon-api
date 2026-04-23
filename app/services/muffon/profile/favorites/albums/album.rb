@@ -3,7 +3,7 @@ module Muffon
     module Favorites
       class Albums
         class Album < Muffon::Profile::Favorites::Albums
-          include Muffon::Utils::Album
+          include Muffon::Mixins::Album
 
           def call
             check_args

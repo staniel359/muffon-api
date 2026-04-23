@@ -2,7 +2,6 @@ module LastFM
   module Tag
     class Albums
       class Album < LastFM::Tag::Albums
-        include Muffon::Utils::Album
         include LastFM::Mixins::Album
 
         def call

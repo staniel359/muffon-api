@@ -4,7 +4,7 @@ module Muffon
       module Playlist
         module Track
           class Creator < Muffon::Processor::Profile::Playlist::Track::Base
-            include Muffon::Utils::Track
+            include Muffon::Mixins::Track
 
             private
 

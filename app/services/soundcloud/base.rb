@@ -3,6 +3,8 @@ module SoundCloud
     SOURCE_NAME = 'soundcloud'.freeze
     BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
 
+    include Muffon::Mixins::GlobalStorage
+
     private
 
     def params

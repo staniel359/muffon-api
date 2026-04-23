@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Post
       class Base < Muffon::Processor::Profile::Base
-        include Muffon::Utils::Sendable
+        include Muffon::Mixins::Sendable
 
         def community
           if instance_variable_defined?(

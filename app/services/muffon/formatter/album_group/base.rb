@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module AlbumGroup
       class Base < Muffon::Formatter::Base
-        include Muffon::Utils::Album
+        include Muffon::Mixins::Album
 
         private
 

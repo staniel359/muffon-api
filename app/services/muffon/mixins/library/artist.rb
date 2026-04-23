@@ -1,8 +1,8 @@
 module Muffon
-  module Utils
+  module Mixins
     module Library
       module Artist
-        include Muffon::Utils::Artist
+        include Muffon::Mixins::Artist
 
         private
 

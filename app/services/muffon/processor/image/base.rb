@@ -44,7 +44,7 @@ module Muffon
 
         def image_file_data
           @image_file_data ||=
-            Muffon::Utils::Image::FileData.call(
+            Muffon::Formatter::Image::FileData.call(
               image: @args[:image_file],
               temp_image_file_path:
                 @args[:temp_image_file_path]

@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module VideoChannel
       class Base < Muffon::Formatter::Base
-        include Muffon::Utils::VideoChannel
+        include Muffon::Mixins::VideoChannel
 
         private
 

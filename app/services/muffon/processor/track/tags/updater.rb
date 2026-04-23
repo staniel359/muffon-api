@@ -3,7 +3,7 @@ module Muffon
     module Track
       module Tags
         class Updater < Muffon::Processor::Track::Base
-          include Muffon::Utils::Track
+          include Muffon::Mixins::Track
 
           private
 

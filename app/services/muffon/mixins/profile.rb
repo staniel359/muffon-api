@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Profile
       private
 

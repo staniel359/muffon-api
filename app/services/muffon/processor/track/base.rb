@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Track
       class Base < Muffon::Base
-        include Muffon::Utils::Track
+        include Muffon::Mixins::Track
 
         def call
           check_args

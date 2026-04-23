@@ -5,6 +5,8 @@ module AmazonMusic
     DEVICE_ID = '25814726589747619'.freeze
     DEVICE_TYPE_ID = 'A16ZV8BU3SN1N3'.freeze
 
+    include Muffon::Mixins::GlobalStorage
+
     private
 
     def amazonmusic_token

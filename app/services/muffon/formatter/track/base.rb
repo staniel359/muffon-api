@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module Track
       class Base < Muffon::Formatter::Base
-        include Muffon::Utils::Track
+        include Muffon::Mixins::Track
 
         private
 
@@ -53,7 +53,7 @@ module Muffon
         end
 
         def source_streaming_link
-          Muffon::Utils::StreamingLink.call(
+          Muffon::Formatter::StreamingLink.call(
             model: 'track',
             source_name:,
             source_model_id: source_track_id

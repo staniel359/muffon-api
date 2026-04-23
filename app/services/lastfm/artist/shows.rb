@@ -2,7 +2,6 @@ module LastFM
   module Artist
     class Shows < LastFM::Artist::Web::Base
       include LastFM::Mixins::Web::Pagination
-      include Muffon::Utils::Artist
 
       private
 

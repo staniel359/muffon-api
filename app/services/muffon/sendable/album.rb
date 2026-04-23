@@ -1,7 +1,7 @@
 module Muffon
   module Sendable
     class Album < Muffon::Base
-      include Muffon::Utils::Album
+      include Muffon::Mixins::Album
 
       def call
         check_args

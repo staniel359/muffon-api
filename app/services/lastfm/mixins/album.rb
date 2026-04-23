@@ -1,7 +1,7 @@
 module LastFM
   module Mixins
     module Album
-      include Muffon::Utils::Album
+      include Muffon::Mixins::Album
       include Muffon::Mixins::Formatting::Collection
 
       private

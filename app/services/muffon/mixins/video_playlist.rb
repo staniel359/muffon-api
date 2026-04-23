@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module VideoPlaylist
       private
 
@@ -13,7 +13,7 @@ module Muffon
       end
 
       def self_data
-        Muffon::Self.call(
+        Muffon::Utils::Self.call(
           **self_args,
           model: 'video_playlist',
           model_id: video_playlist_record.id

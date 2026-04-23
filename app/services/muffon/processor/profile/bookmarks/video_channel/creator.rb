@@ -4,7 +4,7 @@ module Muffon
       module Bookmarks
         module VideoChannel
           class Creator < Muffon::Processor::Profile::Bookmarks::Base
-            include Muffon::Utils::VideoChannel
+            include Muffon::Mixins::VideoChannel
 
             private
 

@@ -3,7 +3,7 @@ module Muffon
     module Favorites
       class Tracks
         class Track < Muffon::Profile::Favorites::Tracks
-          include Muffon::Utils::Track
+          include Muffon::Mixins::Track
 
           def call
             check_args
