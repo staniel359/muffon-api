@@ -21,7 +21,7 @@ module Muffon
         {
           name:,
           image: image_data,
-          listeners_count:
+          listeners_count: artist_record.listeners_count
         }.compact
       end
 

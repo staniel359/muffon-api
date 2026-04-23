@@ -26,7 +26,7 @@ module Muffon
                 profile
                 .listened_tracks
                 .where(
-                  track_id: find_track.id
+                  track_id: track_record.id
                 )
                 .first_or_create!
             end

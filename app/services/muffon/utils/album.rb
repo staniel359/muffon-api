@@ -3,16 +3,16 @@ module Muffon
     module Album
       private
 
-      def find_album
-        @find_album ||=
+      def album_record
+        @album_record ||=
           ::Album.with_artist_title(
-            artist_id: find_artist.id,
+            artist_id: artist_record.id,
             title:
           )
       end
 
-      def find_artist
-        @find_artist ||=
+      def artist_record
+        @artist_record ||=
           ::Artist.with_name(
             artist_name
           )
@@ -20,32 +20,10 @@ module Muffon
 
       def self_data
         Muffon::Self.call(
-          profile_id:,
-          token: @args[:token],
+          **self_args,
           model: 'album',
-          model_id: album_id
+          model_id: album_record.id
         )
-      end
-
-      def profile_id
-        @args[:profile_id]
-      end
-
-      def album_id
-        find_album.id
-      end
-
-      def listeners_count
-        find_album.listeners_count
-      end
-
-      def profiles_count
-        return if test?
-
-        find_album
-          .profiles
-          .not_deleted
-          .count
       end
     end
   end

@@ -1,7 +1,7 @@
 module Muffon
   module Sendable
     class Video < YouTube::Base
-      include YouTube::Utils::Video
+      include YouTube::Mixins::Video
 
       def call
         check_args
@@ -29,16 +29,16 @@ module Muffon
       end
 
       def title
-        find_video.title
+        video_record.title
       end
 
-      def find_video
+      def video_record
         if instance_variable_defined?(
-          :@find_video
+          :@video_record
         )
-          @find_video
+          @video_record
         else
-          @find_video =
+          @video_record =
             ::Video.find_by(
               youtube_id:
             )
@@ -54,11 +54,11 @@ module Muffon
       end
 
       def channel_youtube_id
-        find_video.channel_youtube_id
+        video_record.channel_youtube_id
       end
 
       def channel_title
-        find_video.channel_title
+        video_record.channel_title
       end
 
       def image_data
@@ -68,15 +68,15 @@ module Muffon
       end
 
       def image
-        find_video.image_url
+        video_record.image_url
       end
 
       def views_count
-        find_video.views_count
+        video_record.views_count
       end
 
       def raw_publish_date
-        find_video
+        video_record
           .created_at
           .to_s
       end

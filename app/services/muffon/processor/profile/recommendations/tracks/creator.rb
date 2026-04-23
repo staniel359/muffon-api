@@ -40,7 +40,7 @@ module Muffon
                   artist_name:,
                   track_title:,
                   limit: SIMILAR_TRACKS_LIMIT,
-                  minimal: true
+                  is_minimal: true
                 ).dig(
                   :track,
                   :similar

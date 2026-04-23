@@ -29,7 +29,7 @@ module Muffon
           end
 
           def data
-            find_artist.update!(
+            artist_record.update!(
               tags_ids: tags_ids.sort
             )
           end

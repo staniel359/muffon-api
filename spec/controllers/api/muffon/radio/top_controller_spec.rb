@@ -1,7 +1,9 @@
 RSpec.describe API::Muffon::Radio::TopController do
   describe 'GET :artists' do
     it 'returns 200' do
-      VCR.use_cassette 'controllers/api/muffon/radio/top/artists/success' do
+      VCR.use_cassette(
+        'controllers/api/muffon/radio/top/artists/success'
+      ) do
         get(
           :artists,
           params: {
@@ -16,7 +18,9 @@ RSpec.describe API::Muffon::Radio::TopController do
 
   describe 'GET :tracks' do
     it 'returns 200' do
-      VCR.use_cassette 'controllers/api/muffon/radio/top/tracks/success' do
+      VCR.use_cassette(
+        'controllers/api/muffon/radio/top/tracks/success'
+      ) do
         get(
           :tracks,
           params: {

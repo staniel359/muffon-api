@@ -65,10 +65,8 @@ module Muffon
         def link_image_data
           image_data(
             stream: link_image,
-            file_name:
-              link_image_filename,
-            content_type:
-              link_image_content_type
+            file_name: link_image_filename,
+            content_type: link_image_content_type
           )
         end
 
@@ -85,13 +83,11 @@ module Muffon
         end
 
         def link_image
-          @link_image ||=
-            URI.parse(image).open
+          @link_image ||= URI.parse(image).open
         end
 
         def link_image_filename
-          link_image_content_type
-            .sub('/', '.')
+          link_image_content_type.sub('/', '.')
         end
 
         def link_image_content_type
@@ -101,10 +97,8 @@ module Muffon
         def file_image_data
           image_data(
             stream: file_image_stream,
-            file_name:
-              file_image_filename,
-            content_type:
-              file_image_content_type
+            file_name: file_image_filename,
+            content_type: file_image_content_type
           )
         end
 
@@ -125,8 +119,7 @@ module Muffon
         end
 
         def file_image_filename
-          file_image_content_type
-            .sub('/', '.')
+          file_image_content_type.sub('/', '.')
         end
 
         def file_image_content_type

@@ -40,4 +40,10 @@ module TrackDecorator
       SecureRandom.uuid
     end
   end
+
+  def profiles_count
+    profiles
+      .not_deleted
+      .count
+  end
 end

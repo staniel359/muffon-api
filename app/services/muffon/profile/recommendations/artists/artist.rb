@@ -21,20 +21,16 @@ module Muffon
           end
 
           def data
-            self_data
-              .merge(recommendation_data)
-          end
-
-          def recommendation_data
             {
+              **self_data,
               source: source_data,
               id: recommendation.id,
               name:,
-              image: image_data,
-              artists_count:,
+              image: artist.image_data,
+              artists_count: recommendation.artists_count,
               artists: library_artists_formatted,
-              profiles_count:,
-              listeners_count:
+              profiles_count: artist.profiles_count,
+              listeners_count: artist.listeners_count
             }.compact
           end
 
@@ -47,23 +43,14 @@ module Muffon
           end
 
           def artist
-            @artist ||=
-              recommendation.artist
-          end
-
-          def image_data
-            artist.image_data
-          end
-
-          def artists_count
-            recommendation
-              .library_artist_ids
-              .size
+            @artist ||= recommendation.artist
           end
 
           def library_artists_formatted
-            library_artists.map do |a|
-              library_artist_formatted(a)
+            library_artists.map do |library_artist|
+              library_artist_formatted(
+                library_artist
+              )
             end
           end
 
@@ -81,12 +68,8 @@ module Muffon
             Muffon::Profile::Library::Artists::Artist.call(
               library_artist:,
               token: @args[:token],
-              minimal: true
+              is_minimal: true
             )
-          end
-
-          def listeners_count
-            artist.listeners_count
           end
         end
       end

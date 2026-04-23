@@ -1,10 +1,10 @@
 module Muffon
-  module Utils
+  module Formatter
     class Date < Muffon::Base
       FORMAT = '%Y-%m-%d'.freeze
 
       def call
-        return if args_missing?
+        check_args
 
         data
       end
@@ -13,43 +13,37 @@ module Muffon
 
       def required_args
         %i[
-          data
+          date
         ]
       end
 
       def data
-        send(
-          "date_#{class_name}_formatted"
-        )
-      end
-
-      def class_name
-        @args[:data]
-          .class
-          .name
-          .downcase
+        case @args[:date]
+        when Integer
+          date_integer_formatted
+        when String
+          date_string_formatted
+        when Array
+          date_array_formatted
+        end
       end
 
       def date_integer_formatted
-        return if @args[:data].zero?
+        return if @args[:date].zero?
 
         Time
           .zone
-          .at(@args[:data])
+          .at(@args[:date])
           .to_date
           .strftime(FORMAT)
       end
 
       def date_string_formatted
-        return if @args[:data] == '0'
+        return if @args[:date] == '0'
 
         ::Date
-          .parse(
-            @args[:data]
-          )
-          .strftime(
-            date_string_format
-          )
+          .parse(@args[:date])
+          .strftime(date_string_format)
       rescue ::Date::Error
         date_without_zero_items
       end
@@ -61,9 +55,9 @@ module Muffon
       end
 
       def date_items_count
-        @args[:data].split(
-          /[\s-]/
-        ).size
+        @args[:date]
+          .split(/[\s-]/)
+          .size
       end
 
       def format_formatted(size)
@@ -74,22 +68,18 @@ module Muffon
       end
 
       def date_without_zero_items
-        @args[:data].gsub(
-          '-00', ''
-        )
+        @args[:date].gsub('-00', '')
       end
 
       def date_array_formatted
-        ::Date.new(
-          *@args[:data]
-        ).strftime(
-          date_array_format
-        )
+        ::Date
+          .new(*@args[:date])
+          .strftime(date_array_format)
       end
 
       def date_array_format
         format_formatted(
-          @args[:data].size
+          @args[:date].size
         )
       end
     end

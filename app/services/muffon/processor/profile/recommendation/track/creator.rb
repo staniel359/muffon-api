@@ -28,7 +28,7 @@ module Muffon
                 profile
                 .recommendation_tracks
                 .where(
-                  track_id: find_track.id
+                  track_id: track_record.id
                 )
                 .first_or_initialize
             end

@@ -16,14 +16,14 @@ module Muffon
             )
         end
 
-        def cookie_formatted(cookies)
+        def cookie_formatted(
+          cookies
+        )
           cookies
             .map do |array|
               array.join('=')
             end
-            .join(
-              '; '
-            )
+            .join('; ')
         end
 
         def client(
@@ -86,11 +86,8 @@ module Muffon
             response.headers['set-cookie']
 
           cookies
-            &.match(
-              /#{cookie}=(\S+);/
-            ).try(
-              :[], 1
-            )
+            &.match(/#{cookie}=(\S+);/)
+            .try(:[], 1)
         end
       end
     end

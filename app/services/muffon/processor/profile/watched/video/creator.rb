@@ -28,7 +28,7 @@ module Muffon
                 profile
                 .watched_videos
                 .where(
-                  video_id: find_video.id
+                  video_id: video_record.id
                 )
                 .first_or_create!
             end

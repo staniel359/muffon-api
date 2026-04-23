@@ -38,7 +38,7 @@ module Muffon
                 ::LastFM::Artist::Similar.call(
                   artist_name:,
                   limit: SIMILAR_ARTISTS_LIMIT,
-                  minimal: true
+                  is_minimal: true
                 ).dig(
                   :artist,
                   :similar

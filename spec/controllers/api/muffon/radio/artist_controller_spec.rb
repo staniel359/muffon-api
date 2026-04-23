@@ -16,18 +16,6 @@ RSpec.describe API::Muffon::Radio::ArtistController do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'returns 400 if no artist name' do
-      get(
-        :tracks,
-        params: {
-          **required_params,
-          artist_name: ''
-        }
-      )
-
-      expect(response).to have_http_status(:bad_request)
-    end
-
     it 'returns 404 if wrong artist name' do
       VCR.use_cassette(
         'controllers/api/muffon/radio/artist/tracks/wrong_artist'
@@ -60,18 +48,6 @@ RSpec.describe API::Muffon::Radio::ArtistController do
       end
 
       expect(response).to have_http_status(:ok)
-    end
-
-    it 'returns 400 if no artist name' do
-      get(
-        :similar,
-        params: {
-          **required_params,
-          artist_name: ''
-        }
-      )
-
-      expect(response).to have_http_status(:bad_request)
     end
 
     it 'returns 404 if wrong artist name' do

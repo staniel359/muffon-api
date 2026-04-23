@@ -10,18 +10,16 @@ inherit_mode:
 AllCops:
   NewCops: enable
   Exclude:
-    - 'config/**/*'
-    - 'db/**/*'
-    - 'public/**/*'
     - 'spec/helpers/**/*'
     - 'spec/spec_helper.rb'
-    - 'Gemfile'
-    - 'Rakefile'
 
 Layout/LineLength:
   Max: 80
   Exclude:
     - 'spec/**/*_spec.rb'
+
+Metrics/AbcSize:
+  Max: 18
 
 Metrics/ClassLength:
   Enabled: false

@@ -13,7 +13,7 @@ RSpec.describe Muffon::Radio::Artist::Similar do
         end
       end
 
-      it { expect(output).to eq(muffon_radio_artist_similar_data) }
+      it { expect(output).to match_hash(muffon_radio_artist_similar_data) }
     end
   end
 

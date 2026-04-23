@@ -13,8 +13,7 @@ module GitHub
     def data
       paginated_data(
         collection_name: 'releases',
-        raw_collection:
-          raw_collection_filtered,
+        raw_collection: raw_collection_filtered,
         page:,
         limit:,
         is_fractioned: true
@@ -46,9 +45,11 @@ module GitHub
       { per_page: PAGE_LIMIT }
     end
 
-    def collection_item_data_formatted(release)
+    def collection_item_data_formatted(
+      raw_release_data
+    )
       GitHub::Releases::Release.call(
-        release:
+        raw_release_data:
       )
     end
   end

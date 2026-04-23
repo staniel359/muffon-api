@@ -1,7 +1,7 @@
 module Muffon
-  module Utils
-    class Image
-      module Processing
+  module Mixins
+    module Processing
+      module Image
         def process_image(
           image_file
         )

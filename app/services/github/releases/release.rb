@@ -11,43 +11,43 @@ module GitHub
 
       def required_args
         %i[
-          release
+          raw_release_data
         ]
       end
 
       def data
         {
           version:,
-          publish_date:,
+          publish_date: creation_date,
           link:,
           description:
         }
       end
 
       def version
-        release['name']
+        raw_release_data['name']
       end
 
-      def release
-        @args[:release]
+      def raw_release_data
+        @args[:raw_release_data]
       end
 
-      def publish_date
+      def creation_date
         datetime_formatted(
-          raw_publish_date
+          raw_creation_date
         )
       end
 
-      def raw_publish_date
-        release['published_at'].to_datetime
+      def raw_creation_date
+        raw_release_data['published_at'].to_datetime
       end
 
       def link
-        release['html_url']
+        raw_release_data['html_url']
       end
 
       def description
-        release['body']
+        raw_release_data['body']
       end
     end
   end

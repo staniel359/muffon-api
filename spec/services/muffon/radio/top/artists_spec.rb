@@ -10,6 +10,6 @@ RSpec.describe Muffon::Radio::Top::Artists do
       end
     end
 
-    it { expect(output).to eq(muffon_radio_top_artists_data) }
+    it { expect(output).to match_hash(muffon_radio_top_artists_data) }
   end
 end

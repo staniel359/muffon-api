@@ -8,7 +8,8 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.13.2
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,9 +20,9 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - openresty/1.13.6.2
+      - openresty
       Date:
-      - Fri, 18 Jul 2025 07:43:10 GMT
+      - Sat, 18 Apr 2026 14:24:14 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,5 +40,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"error":6,"message":"The artist you supplied could not be found","links":[]}'
-  recorded_at: Fri, 18 Jul 2025 07:43:10 GMT
-recorded_with: VCR 6.3.1
+  recorded_at: Sat, 18 Apr 2026 14:24:14 GMT
+recorded_with: VCR 6.4.0

@@ -26,7 +26,7 @@ module Muffon
                 profile
                 .listened_albums
                 .where(
-                  album_id: find_album.id
+                  album_id: album_record.id
                 )
                 .first_or_create!
             end

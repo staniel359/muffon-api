@@ -18,9 +18,10 @@ module Muffon
             LastFM::Top::Artists.call(
               limit: 1,
               page: random_artist_number,
-              minimal: true
+              is_minimal: true
             ).try(
-              :[], :top
+              :[],
+              :top
             )
         end
 
@@ -31,25 +32,25 @@ module Muffon
               limit: 1,
               page: random_track_number
             ).try(
-              :[], :artist
+              :[],
+              :artist
             )
         end
 
         def top_artist_name
-          @top_artist_name ||=
-            top_info_data.dig(
-              :artists, 0, :name
-            )
+          top_info_data.dig(
+            :artists,
+            0,
+            :name
+          )
         end
 
         def radio_track_data
-          @radio_track_data ||=
-            top_artist_info_data.dig(
-              :tracks, 0
-            )
+          top_artist_info_data.dig(
+            :tracks,
+            0
+          )
         end
-
-        alias artist_name top_artist_name
       end
     end
   end

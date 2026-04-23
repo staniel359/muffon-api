@@ -53,7 +53,7 @@ module RecommendationArtistDecorator
       profile_id:
     )
       artists_ids =
-        find_profile(
+        profile_record(
           profile_id
         ).artists_library_artists_ids(
           artists
@@ -70,7 +70,7 @@ module RecommendationArtistDecorator
       profile_id:
     )
       artists_ids =
-        find_profile(
+        profile_record(
           profile_id
         ).artists_library_artists_ids(
           artists
@@ -149,24 +149,14 @@ module RecommendationArtistDecorator
     private
 
     def tags_ids(
-      tags
+      tags_names
     )
-      tags.map do |name|
-        tag_id(
-          name
-        )
-      end.compact
+      Tag
+        .with_names(tags_names)
+        .pluck(:id)
     end
 
-    def tag_id(
-      name
-    )
-      Tag.with_name(
-        name
-      )&.id
-    end
-
-    def find_profile(
+    def profile_record(
       profile_id
     )
       Profile.find_by(
@@ -180,5 +170,9 @@ module RecommendationArtistDecorator
       profile_id:,
       id: library_artist_ids
     )
+  end
+
+  def artists_count
+    library_artist_ids.size
   end
 end

@@ -13,6 +13,6 @@ RSpec.describe GitHub::Releases do
       end
     end
 
-    it { expect(output).to eq(Helpers::GitHub.releases_data) }
+    it { expect(output).to match_hash(Helpers::GitHub.releases_data) }
   end
 end

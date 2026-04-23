@@ -59,7 +59,7 @@ module Muffon
       def track_id
         return unless model == 'track'
 
-        find_track.id
+        track_record.id
       end
 
       def model
@@ -81,7 +81,7 @@ module Muffon
       def album_id
         return unless model == 'album'
 
-        find_album.id
+        album_record.id
       end
     end
   end

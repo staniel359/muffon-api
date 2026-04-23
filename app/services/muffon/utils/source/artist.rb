@@ -12,13 +12,7 @@ module Muffon
         end
 
         def original_link
-          "https://www.last.fm/music/#{original_link_name}"
-        end
-
-        def original_link_name
-          CGI.escape(
-            name
-          )
+          "https://www.last.fm/music/#{CGI.escape(name)}"
         end
       end
     end

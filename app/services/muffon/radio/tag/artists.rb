@@ -19,9 +19,10 @@ module Muffon
               tag_name: @args[:tag_name],
               limit: 1,
               page: random_artist_number,
-              minimal: true
+              is_minimal: true
             ).try(
-              :[], :tag
+              :[],
+              :tag
             )
         end
 
@@ -32,25 +33,25 @@ module Muffon
               limit: 1,
               page: random_track_number
             ).try(
-              :[], :artist
+              :[],
+              :artist
             )
         end
 
         def tag_artist_name
-          @tag_artist_name ||=
-            tag_info_data.dig(
-              :artists, 0, :name
-            )
+          tag_info_data.dig(
+            :artists,
+            0,
+            :name
+          )
         end
 
         def radio_track_data
-          @radio_track_data ||=
-            tag_artist_info_data.dig(
-              :tracks, 0
-            )
+          tag_artist_info_data.dig(
+            :tracks,
+            0
+          )
         end
-
-        alias artist_name tag_artist_name
       end
     end
   end

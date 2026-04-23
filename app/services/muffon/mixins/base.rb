@@ -1,5 +1,5 @@
 module Muffon
-  module Utils
+  module Mixins
     module Base
       private
 
@@ -10,7 +10,7 @@ module Muffon
       end
 
       def current_time
-        Time.now.utc
+        Time.current
       end
 
       def test?
@@ -40,6 +40,21 @@ module Muffon
         Rack::Utils.parse_nested_query(
           raw_query
         )
+      end
+
+      def self_args
+        {
+          profile_id: @args[:profile_id],
+          token: @args[:token]
+        }
+      end
+
+      def query_match_args
+        {
+          is_with_query_match: @args[:is_with_query_match],
+          query_title: @args[:query_title],
+          query_artist_name: @args[:query_artist_name]
+        }
       end
     end
   end

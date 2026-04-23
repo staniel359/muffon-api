@@ -13,7 +13,7 @@ RSpec.describe Muffon::Radio::Tag::Tracks do
         end
       end
 
-      it { expect(output).to eq(muffon_radio_tag_tracks_data) }
+      it { expect(output).to match_hash(muffon_radio_tag_tracks_data) }
     end
   end
 

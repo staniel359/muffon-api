@@ -1,7 +1,7 @@
 module Muffon
   class Base < Service
     include Muffon::Utils::Errors
-    include Muffon::Utils::Base
+    include Muffon::Mixins::Base
     include Muffon::Utils::Request
     include Muffon::Utils::Profile
     include Muffon::Utils::Formatters

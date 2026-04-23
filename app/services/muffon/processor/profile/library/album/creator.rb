@@ -30,7 +30,7 @@ module Muffon
                 profile
                 .library_albums
                 .where(
-                  album_id: find_album.id,
+                  album_id: album_record.id,
                   library_artist_id: library_artist.id
                 )
                 .first_or_initialize
@@ -48,7 +48,7 @@ module Muffon
               profile
                 .library_artists
                 .where(
-                  artist_id: find_album.artist_id
+                  artist_id: album_record.artist_id
                 )
                 .first_or_create!
             end

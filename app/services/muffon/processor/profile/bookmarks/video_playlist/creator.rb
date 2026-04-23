@@ -29,7 +29,7 @@ module Muffon
                 .bookmark_video_playlists
                 .where(
                   video_playlist_id:
-                    find_video_playlist.id
+                    video_playlist_record.id
                 )
                 .first_or_create!
             end

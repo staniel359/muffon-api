@@ -20,12 +20,8 @@ module Muffon
           end
 
           def data
-            self_data
-              .merge(bookmark_video_data)
-          end
-
-          def bookmark_video_data
             {
+              **self_data,
               source: source_data,
               id: bookmark_video.id,
               title:,
@@ -68,10 +64,6 @@ module Muffon
 
           def image
             video.image_url
-          end
-
-          def publish_date
-            nil
           end
 
           def created_formatted

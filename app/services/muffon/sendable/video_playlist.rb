@@ -1,7 +1,7 @@
 module Muffon
   module Sendable
     class VideoPlaylist < YouTube::Base
-      include YouTube::Utils::Playlist
+      include YouTube::Mixins::VideoPlaylist
 
       def call
         check_args
@@ -30,16 +30,16 @@ module Muffon
       end
 
       def title
-        find_video_playlist.title
+        video_playlist_record.title
       end
 
-      def find_video_playlist
+      def video_playlist_record
         if instance_variable_defined?(
-          :@find_video_playlist
+          :@video_playlist_record
         )
-          @find_video_playlist
+          @video_playlist_record
         else
-          @find_video_playlist =
+          @video_playlist_record =
             ::VideoPlaylist.find_by(
               youtube_id:
             )
@@ -55,15 +55,15 @@ module Muffon
       end
 
       def channel_youtube_id
-        find_video_playlist.channel_youtube_id
+        video_playlist_record.channel_youtube_id
       end
 
       def channel_title
-        find_video_playlist.channel_title
+        video_playlist_record.channel_title
       end
 
       def description
-        find_video_playlist
+        video_playlist_record
           .description
           .presence
       end
@@ -75,15 +75,15 @@ module Muffon
       end
 
       def image
-        find_video_playlist.image_url
+        video_playlist_record.image_url
       end
 
       def videos_count
-        find_video_playlist.videos_count
+        video_playlist_record.videos_count
       end
 
       def raw_publish_date
-        find_video_playlist
+        video_playlist_record
           .created_at
           .to_s
       end

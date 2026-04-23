@@ -43,7 +43,7 @@ module Muffon
                 profile
                 .library_artists
                 .where(
-                  artist_id: find_artist.id
+                  artist_id: artist_record.id
                 )
                 .first_or_initialize
             end
@@ -87,7 +87,7 @@ module Muffon
                 profile
                 .library_albums
                 .where(
-                  album_id: find_album.id,
+                  album_id: album_record.id,
                   library_artist_id: library_artist.id
                 )
                 .first_or_initialize
@@ -114,7 +114,7 @@ module Muffon
                 profile
                 .library_tracks
                 .where(
-                  track_id: find_track.id,
+                  track_id: track_record.id,
                   library_artist_id: library_artist.id,
                   library_album_id: library_album&.id
                 )

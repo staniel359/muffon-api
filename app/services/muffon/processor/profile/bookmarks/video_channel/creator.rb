@@ -29,7 +29,7 @@ module Muffon
                 .bookmark_video_channels
                 .where(
                   video_channel_id:
-                    find_video_channel.id
+                    video_channel_record.id
                 )
                 .first_or_create!
             end

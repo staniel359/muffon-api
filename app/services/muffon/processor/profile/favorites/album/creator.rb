@@ -33,7 +33,7 @@ module Muffon
                 profile
                 .favorite_albums
                 .where(
-                  album_id: find_album.id
+                  album_id: album_record.id
                 )
                 .first_or_initialize
             end

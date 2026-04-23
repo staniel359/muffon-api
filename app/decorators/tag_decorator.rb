@@ -18,6 +18,19 @@ module TagDecorator
       end
     end
 
+    def with_names(
+      names
+    )
+      names_formatted =
+        names.map do |name|
+          name.strip.downcase
+        end
+
+      where(
+        name_downcase: names_formatted
+      )
+    end
+
     def library_count_desc_ordered
       order(
         'tags_grouped.library_count DESC',

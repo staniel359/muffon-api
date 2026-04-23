@@ -7,8 +7,7 @@ module Muffon
         private
 
         def not_found?
-          tag_info_data.blank? ||
-            super
+          tag_info_data.blank? || super
         end
 
         def tag_info_data
@@ -18,20 +17,15 @@ module Muffon
               limit: 1,
               page: random_track_number
             ).try(
-              :[], :tag
+              :[],
+              :tag
             )
         end
 
         def radio_track_data
-          @radio_track_data ||=
-            tag_info_data.dig(
-              :tracks, 0
-            )
-        end
-
-        def artist_name
-          radio_track_data.dig(
-            :artist, :name
+          tag_info_data.dig(
+            :tracks,
+            0
           )
         end
       end

@@ -25,8 +25,14 @@ module ArtistDecorator
   end
 
   def image_data
-    LastFM::Utils::Image.call(
-      image: image_url
+    LastFM::Formatter::Image.call(
+      image_url:
     )
+  end
+
+  def profiles_count
+    profiles
+      .not_deleted
+      .count
   end
 end

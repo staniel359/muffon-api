@@ -30,7 +30,7 @@ module Muffon
                 profile
                 .favorite_tracks
                 .where(
-                  track_id: find_track.id
+                  track_id: track_record.id
                 )
                 .first_or_initialize
             end
@@ -45,7 +45,7 @@ module Muffon
 
             def update_params
               {
-                album_id: find_album&.id,
+                album_id: album_record&.id,
                 source_data: @args[:source],
                 audio_data: @args[:audio],
                 album_source_data:

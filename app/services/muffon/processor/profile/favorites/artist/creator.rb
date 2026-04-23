@@ -28,7 +28,7 @@ module Muffon
                 profile
                 .favorite_artists
                 .where(
-                  artist_id: find_artist.id
+                  artist_id: artist_record.id
                 )
                 .first_or_create!
             end

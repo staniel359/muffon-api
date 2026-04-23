@@ -1,7 +1,7 @@
 module Muffon
-  module Utils
-    module Audio
-      module Link
+  module Mixins
+    module Processing
+      module Audio
         private
 
         def create_audio_folder
