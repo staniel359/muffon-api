@@ -1,36 +1,34 @@
 module MusixMatch
   module Track
     class Info < MusixMatch::Track::Base
-      include MusixMatch::Utils::Track
+      include MusixMatch::Mixins::Track
 
       private
 
       def track_data
-        {
-          **self_data,
-          **track_base_data,
-          album: album_data,
-          image: image_data,
-          profiles_count:,
-          lyrics: lyrics_truncated,
-          **with_more_data
-        }
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: nil,
+          source_track_slug: musixmatch_slug,
           title:,
-          artist: artists_base_data,
-          artists:
-        }
-      end
-
-      def lyrics_truncated
-        text_truncated(
-          lyrics,
-          size: 'small'
+          artists:,
+          album_title:,
+          source_album_id: nil,
+          source_album_slug: album_musixmatch_slug,
+          image_data:,
+          release_date: nil,
+          duration: nil,
+          description: nil,
+          description_size: nil,
+          tags: nil,
+          tags_size: nil,
+          lyrics:,
+          lyrics_size: 'small',
+          plays_count: nil,
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
         )
       end
 

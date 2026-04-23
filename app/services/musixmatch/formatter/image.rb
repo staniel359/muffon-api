@@ -1,19 +1,23 @@
 module MusixMatch
-  module Utils
+  module Formatter
     class Image < MusixMatch::Base
       def call
-        return if no_data?
+        check_args
 
         data
       end
 
       private
 
-      def no_data?
-        @args[:image].blank?
+      def required_args
+        %i[
+          image_url
+        ]
       end
 
       def data
+        return if @args[:image_url].blank?
+
         {
           original: image_resized('_1200_1200'),
           large: image_resized('_800_800'),
@@ -24,7 +28,7 @@ module MusixMatch
       end
 
       def image_resized(size)
-        @args[:image].sub(
+        @args[:image_url].sub(
           '_500_500',
           size
         )

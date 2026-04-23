@@ -14,7 +14,7 @@ RSpec.describe MusixMatch::Album::Links do
         end
       end
 
-      it { expect(output).to eq(musixmatch_album_links_data) }
+      it { expect(output).to match_hash(musixmatch_album_links_data) }
     end
   end
 

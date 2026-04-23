@@ -4,10 +4,15 @@ module MusixMatch
       private
 
       def track_data
-        {
-          **track_base_data,
+        Muffon::Formatter::Track::Lyrics.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: nil,
+          source_track_slug: musixmatch_slug,
+          title:,
+          artists:,
           lyrics: lyrics_formatted
-        }
+        )
       end
 
       def lyrics_formatted

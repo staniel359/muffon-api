@@ -32,7 +32,13 @@ module MusixMatch
       end
 
       def link
-        "#{base_link}/lyrics/#{CGI.unescape(@args[:track_slug])}.json"
+        "#{base_link}/lyrics/#{track_slug_formatted}.json"
+      end
+
+      def track_slug_formatted
+        CGI.unescape(
+          @args[:track_slug]
+        )
       end
     end
   end

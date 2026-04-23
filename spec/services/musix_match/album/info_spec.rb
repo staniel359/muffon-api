@@ -14,7 +14,7 @@ RSpec.describe MusixMatch::Album::Info do
         end
       end
 
-      it { expect(output).to eq(musixmatch_album_info_data) }
+      it { expect(output).to match_hash(musixmatch_album_info_data) }
     end
   end
 

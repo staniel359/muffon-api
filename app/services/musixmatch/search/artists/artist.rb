@@ -2,7 +2,7 @@ module MusixMatch
   module Search
     class Artists
       class Artist < MusixMatch::Search::Artists
-        include MusixMatch::Utils::Artist
+        include MusixMatch::Mixins::Artist
 
         def call
           check_args
@@ -19,13 +19,15 @@ module MusixMatch
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
+          Muffon::Formatter::Search::Artists::Artist.call(
+            source_original_link:,
+            source_name:,
+            source_artist_id: nil,
+            source_artist_slug: musixmatch_slug,
             name:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            **self_args
+          )
         end
 
         def raw_artist_data
@@ -36,26 +38,26 @@ module MusixMatch
           raw_artist_data['artist_name']
         end
 
-        def musixmatch_slug
-          raw_artist_data['artist_vanity_id']
-        end
-
-        def raw_image
+        def image_url
           return if raw_artist_data['artist_image'].blank?
 
-          raw_artist_data.dig(
-            'artist_image',
-            'image',
-            'image_format_list'
-          ).find do |image_data|
-            image_data.dig(
+          raw_artist_data
+            .dig(
+              'artist_image',
+              'image',
+              'image_format_list'
+            )
+            .find do |image_data|
+              image_data.dig(
+                'image_format',
+                'image_format_id'
+              ) == 3
+            end
+            .dig(
               'image_format',
-              'image_format_id'
-            ) == 3
-          end.dig(
-            'image_format',
-            'image_url'
-          )
+              'image_url'
+            )
+            .presence
         end
       end
     end

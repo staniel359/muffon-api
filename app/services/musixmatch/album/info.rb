@@ -1,60 +1,74 @@
 module MusixMatch
   module Album
     class Info < MusixMatch::Album::Base
-      include MusixMatch::Utils::Album
+      include MusixMatch::Mixins::Album
 
       private
 
       def album_data
-        if @args[:list]
+        if @args[:is_list]
           album_list_data
         else
           album_full_data
         end
       end
 
-      def album_full_data
-        {
-          **self_data,
-          **album_base_data,
-          release_date:,
-          listeners_count:,
-          tracks:,
-          **with_more_data
-        }.compact
-      end
-
       def album_list_data
-        {
-          **self_data,
-          **album_base_data,
-          release_date:,
-          listeners_count:
-        }.compact
-      end
-
-      def album_base_data
-        {
-          source: source_data,
+        Muffon::Formatter::Track::Albums::Album.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: nil,
+          source_album_slug: musixmatch_slug,
           title:,
-          artist: artists_minimal_data,
           artists:,
-          image: image_data
-        }
+          image_data:,
+          release_date:
+        )
       end
 
-      def raw_tracks
-        raw_album_data['trackList']
+      def album_full_data
+        Muffon::Formatter::Album::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: nil,
+          source_album_slug: musixmatch_slug,
+          title:,
+          artists:,
+          image_data:,
+          release_date:,
+          plays_count: nil,
+          description: nil,
+          description_size: nil,
+          tags: nil,
+          tags_size: nil,
+          labels: nil,
+          tracks:,
+          **self_args
+        )
       end
 
       def track_data_formatted(
         raw_track_data
       )
-        MusixMatch::Album::Info::Track.call(
+        MusixMatch::Album::Tracks::Track.call(
           raw_track_data:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          album_data: album_base_data,
+          **self_args
         )
+      end
+
+      def album_base_data
+        @album_base_data ||=
+          Muffon::Formatter::Track::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: nil,
+            source_album_slug: musixmatch_slug,
+            title:,
+            artists:,
+            image_data:,
+            release_date: nil
+          )
       end
     end
   end

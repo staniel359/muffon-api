@@ -30,8 +30,7 @@ module MusixMatch
       )
         MusixMatch::Search::Artists::Artist.call(
           raw_artist_data:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end

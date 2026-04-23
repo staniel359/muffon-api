@@ -2,7 +2,7 @@ module MusixMatch
   module Search
     class Tracks
       class Track < MusixMatch::Search::Tracks
-        include MusixMatch::Utils::Track
+        include MusixMatch::Mixins::Track
 
         def call
           check_args
@@ -19,16 +19,21 @@ module MusixMatch
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Search::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: nil,
+            source_track_slug: musixmatch_slug,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            album: album_data,
-            image: image_data
-          }.compact
+            album_title:,
+            source_album_id: nil,
+            source_album_slug: album_musixmatch_slug,
+            image_data:,
+            duration: nil,
+            is_audio_present: audio_present?,
+            **self_args
+          )
         end
 
         def raw_track_data
@@ -43,7 +48,7 @@ module MusixMatch
           raw_track_data['artist_name']
         end
 
-        def musixmatch_slug
+        def raw_musixmatch_slug
           raw_track_data['commontrack_vanity_id']
         end
 
@@ -51,12 +56,12 @@ module MusixMatch
           raw_track_data['album_name']
         end
 
-        def musixmatch_album_slug
+        def raw_album_musixmatch_slug
           raw_track_data['album_vanity_id']
         end
 
-        def raw_image
-          raw_track_data['album_coverart_500x500']
+        def image_url
+          raw_track_data['album_coverart_500x500'].presence
         end
       end
     end

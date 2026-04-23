@@ -14,7 +14,7 @@ RSpec.describe MusixMatch::Track::Lyrics do
         end
       end
 
-      it { expect(output).to eq(musixmatch_track_lyrics_data) }
+      it { expect(output).to match_hash(musixmatch_track_lyrics_data) }
     end
   end
 

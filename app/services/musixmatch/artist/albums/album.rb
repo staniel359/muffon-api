@@ -2,7 +2,7 @@ module MusixMatch
   module Artist
     class Albums
       class Album < MusixMatch::Artist::Albums
-        include MusixMatch::Utils::Album
+        include MusixMatch::Mixins::Album
 
         def call
           check_args
@@ -19,16 +19,17 @@ module MusixMatch
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
+          Muffon::Formatter::Artist::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: nil,
+            source_album_slug: musixmatch_slug,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
+            image_data:,
             release_date:,
-            listeners_count:
-          }.compact
+            **self_args
+          )
         end
 
         def raw_album_data

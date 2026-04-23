@@ -30,8 +30,7 @@ module MusixMatch
       )
         MusixMatch::Search::Tracks::Track.call(
           raw_track_data:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end
