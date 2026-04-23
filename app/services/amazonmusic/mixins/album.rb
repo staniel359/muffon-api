@@ -1,30 +1,30 @@
 module AmazonMusic
-  module Utils
+  module Mixins
     module Album
-      include Muffon::Utils::Album
+      include Muffon::Mixins::Formatting::Collection
 
       private
 
       def title
-        album.dig(
+        raw_album_data.dig(
           'primaryText',
           'text'
         )
       end
 
       def raw_artists
-        [artist_data]
+        [raw_artist_data]
       end
 
-      def artist_data
+      def raw_artist_data
         {
-          'name' => artist_name,
-          'id' => artist_amazonmusic_id
+          name: artist_name,
+          source_id: artist_amazonmusic_id
         }
       end
 
       def artist_name
-        album['secondaryText']
+        raw_album_data['secondaryText']
       end
 
       def artist_amazonmusic_id
@@ -34,18 +34,10 @@ module AmazonMusic
       end
 
       def artist_amazonmusic_slug
-        album.dig(
+        raw_album_data.dig(
           'secondaryLink',
           'deeplink'
         )
-      end
-
-      def source_data
-        {
-          name: source_name,
-          id: amazonmusic_id,
-          links: source_links_data
-        }
       end
 
       def amazonmusic_id
@@ -55,46 +47,47 @@ module AmazonMusic
       end
 
       def amazonmusic_slug
-        album.dig(
+        raw_album_data.dig(
           'primaryLink',
           'deeplink'
         )
       end
 
-      def original_link
+      def source_original_link
         "https://music.amazon.com#{amazonmusic_slug}"
       end
 
-      def streaming_link
-        streaming_link_formatted(
-          model: 'album',
-          model_id: amazonmusic_id
-        )
-      end
-
       def image_data
-        image_data_formatted(
-          image_link
+        AmazonMusic::Formatter::Image.call(
+          image_url:
         )
       end
 
-      def image_link
-        album['image']
+      def image_url
+        raw_album_data['image']
       end
 
       def release_date
-        date_formatted(
-          raw_release_date
+        Muffon::Formatter::Date.call(
+          date: raw_release_date
         )
       end
 
       def raw_release_date
-        album.dig(
+        raw_album_data.dig(
           'primaryLink',
           'onItemSelected',
           1,
           'template',
           'headerTertiaryText'
+        )
+      end
+
+      def raw_tracks
+        raw_album_data.dig(
+          'widgets',
+          0,
+          'items'
         )
       end
     end

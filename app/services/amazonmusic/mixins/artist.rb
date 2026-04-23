@@ -1,23 +1,13 @@
 module AmazonMusic
-  module Utils
+  module Mixins
     module Artist
-      include Muffon::Utils::Artist
-
       private
 
       def name
-        artist.dig(
+        raw_artist_data.dig(
           'primaryText',
           'text'
         )
-      end
-
-      def source_data
-        {
-          name: source_name,
-          id: amazonmusic_id,
-          links: source_links_data
-        }
       end
 
       def amazonmusic_id
@@ -27,24 +17,24 @@ module AmazonMusic
       end
 
       def amazonmusic_slug
-        artist.dig(
+        raw_artist_data.dig(
           'primaryLink',
           'deeplink'
         )
       end
 
-      def original_link
+      def source_original_link
         "https://music.amazon.com#{amazonmusic_slug}"
       end
 
       def image_data
-        image_data_formatted(
-          image_link
+        AmazonMusic::Formatter::Image.call(
+          image_url:
         )
       end
 
-      def image_link
-        artist['image']
+      def image_url
+        raw_artist_data['image']
       end
     end
   end

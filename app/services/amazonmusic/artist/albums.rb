@@ -44,16 +44,17 @@ module AmazonMusic
       end
 
       def payload
-        AmazonMusic::Utils::Request::Payload.call(
+        AmazonMusic::Formatter::Request::Payload.call(
           page: @args[:page]
         )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         AmazonMusic::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

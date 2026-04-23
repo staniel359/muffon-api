@@ -10,6 +10,6 @@ RSpec.describe AmazonMusic::Utils::Token do
       end
     end
 
-    it { expect(output).to eq(amazonmusic_utils_token) }
+    it { expect(output).to match_hash(amazonmusic_utils_token) }
   end
 end

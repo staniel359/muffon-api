@@ -13,7 +13,7 @@ RSpec.describe AmazonMusic::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(amazonmusic_artist_info_data) }
+      it { expect(output).to match_hash(amazonmusic_artist_info_data) }
     end
   end
 

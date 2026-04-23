@@ -1,46 +1,43 @@
 module AmazonMusic
   module Search
     class Tracks
-      class Track < AmazonMusic::Search::Tracks
-        include AmazonMusic::Utils::Track
+      class Track < AmazonMusic::Search::Base
+        include AmazonMusic::Mixins::Track
 
         def call
           check_args
 
-          with_query_match(
-            title:,
-            query_title: @args[:query_title],
-            artist_name:,
-            query_artist_name: @args[:query_artist_name]
-          ) do
-            data
-          end
+          data
         end
 
         private
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Search::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: amazonmusic_id,
+            source_track_album_id: album_amazonmusic_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            album: album_data,
-            image: image_data,
-            audio: audio_minimal_data
-          }.compact
+            image_data:,
+            album_title:,
+            source_album_id: album_amazonmusic_id,
+            duration:,
+            is_audio_present: audio_present?,
+            **self_args,
+            **query_match_args
+          )
         end
 
-        def track
-          @args[:track]
+        def raw_track_data
+          @args[:raw_track_data]
         end
       end
     end

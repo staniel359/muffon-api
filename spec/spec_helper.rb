@@ -126,3 +126,13 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
 end
+
+RSpec::Matchers.define :match_hash do |expected|
+  match do |actual|
+    Hashdiff.best_diff(expected, actual).blank?
+  end
+
+  failure_message do |actual|
+    Hashdiff.best_diff(expected, actual)
+  end
+end

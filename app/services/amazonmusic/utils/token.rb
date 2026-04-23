@@ -1,8 +1,7 @@
 module AmazonMusic
   module Utils
     class Token < AmazonMusic::Base
-      BASE_LINK =
-        'https://api.amazon.com/auth/o2/token'.freeze
+      BASE_LINK = 'https://api.amazon.com/auth/o2/token'.freeze
 
       def call
         data

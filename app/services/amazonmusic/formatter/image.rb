@@ -1,23 +1,23 @@
 module AmazonMusic
-  module Utils
+  module Formatter
     class Image < AmazonMusic::Base
       def call
-        return if no_data?
+        check_args
 
         data
       end
 
       private
 
-      def no_data?
-        image_link.blank?
-      end
-
-      def image_link
-        @args[:image_link]
+      def required_args
+        %i[
+          image_url
+        ]
       end
 
       def data
+        return if @args[:image_url].blank?
+
         {
           original: image_resized('1000'),
           large: image_resized('600'),
@@ -27,14 +27,16 @@ module AmazonMusic
         }
       end
 
-      def image_resized(size)
+      def image_resized(
+        size
+      )
         'https://m.media-amazon.com/images/I' \
           "/#{image_id}._SX#{size}_SY#{size}_.jpg"
       end
 
       def image_id
         @image_id ||=
-          image_link.match(
+          @args[:image_url].match(
             %r{/images/I/([^.]+)}
           )[1]
       end

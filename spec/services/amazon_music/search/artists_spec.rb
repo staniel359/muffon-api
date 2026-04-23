@@ -15,7 +15,7 @@ RSpec.describe AmazonMusic::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(amazonmusic_search_artists_data) }
+      it { expect(output).to match_hash(amazonmusic_search_artists_data) }
     end
   end
 
@@ -37,7 +37,7 @@ RSpec.describe AmazonMusic::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(search_missing_artists_data) }
+      it { expect(output).to match_hash(search_missing_artists_data) }
     end
   end
 end

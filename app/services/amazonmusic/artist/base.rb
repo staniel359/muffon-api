@@ -41,7 +41,6 @@ module AmazonMusic
       end
 
       alias response post_response
-      alias artist response_data
     end
   end
 end

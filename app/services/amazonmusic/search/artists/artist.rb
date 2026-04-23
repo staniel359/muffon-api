@@ -1,8 +1,8 @@
 module AmazonMusic
   module Search
     class Artists
-      class Artist < AmazonMusic::Search::Artists
-        include AmazonMusic::Utils::Artist
+      class Artist < AmazonMusic::Search::Base
+        include AmazonMusic::Mixins::Artist
 
         def call
           check_args
@@ -14,25 +14,23 @@ module AmazonMusic
 
         def required_args
           %i[
-            artist
+            raw_artist_data
           ]
         end
 
         def data
-          self_data
-            .merge(artist_data)
-        end
-
-        def artist
-          @args[:artist]
-        end
-
-        def artist_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Artists::Artist.call(
+            source_original_link:,
+            source_name:,
+            source_artist_id: amazonmusic_id,
             name:,
-            image: image_data
-          }
+            image_data:,
+            **self_args
+          )
+        end
+
+        def raw_artist_data
+          @args[:raw_artist_data]
         end
       end
     end

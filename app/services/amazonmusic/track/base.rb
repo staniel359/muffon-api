@@ -1,8 +1,6 @@
 module AmazonMusic
   module Track
     class Base < AmazonMusic::Album::Base
-      include AmazonMusic::Utils::Track
-
       def call
         check_args
 
@@ -20,12 +18,11 @@ module AmazonMusic
       end
 
       def not_found?
-        super ||
-          track.blank?
+        super || raw_track_data.blank?
       end
 
-      def track
-        @track ||=
+      def raw_track_data
+        @raw_track_data ||=
           raw_tracks.find do |raw_track_data|
             matched_track?(
               raw_track_data
@@ -42,12 +39,8 @@ module AmazonMusic
             'deeplink'
           )
           .include?(
-            track_id
+            @args[:track_id]
           )
-      end
-
-      def track_id
-        @args[:track_id]
       end
 
       def data

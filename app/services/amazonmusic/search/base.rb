@@ -20,7 +20,7 @@ module AmazonMusic
       end
 
       def payload
-        AmazonMusic::Utils::Request::Payload.call(
+        AmazonMusic::Formatter::Request::Payload.call(
           query: @args[:query],
           page: @args[:page]
         )

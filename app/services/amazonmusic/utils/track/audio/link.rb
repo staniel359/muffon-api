@@ -1,0 +1,81 @@
+module AmazonMusic
+  module Utils
+    module Track
+      module Audio
+        class Link < AmazonMusic::Base
+          FILE_EXTENSION = 'mp4'.freeze
+
+          include Muffon::Mixins::Processing::Audio
+
+          def call
+            check_args
+
+            return if no_data?
+
+            data
+          end
+
+          private
+
+          def required_args
+            %i[
+              track_id
+            ]
+          end
+
+          def no_data?
+            track_data.blank? ||
+              file_data.blank? ||
+              key.blank?
+          end
+
+          def track_data
+            @track_data ||=
+              AmazonMusic::Utils::Track::Audio::Link::Track.call(
+                track_id: @args[:track_id]
+              )
+          end
+
+          def file_data
+            @file_data ||=
+              track_data['Representation'].find do |data|
+                data['qualityRanking'] == '1000'
+              end
+          end
+
+          def key
+            @key ||=
+              AmazonMusic::Utils::Track::Audio::Link::Key.call(
+                track_data:
+              )
+          end
+
+          def data
+            create_audio_folder
+
+            (retrieve_audio && audio_link).presence
+          end
+
+          def retrieve_audio
+            return true if test?
+
+            system(
+              "ffmpeg \
+                -decryption_key #{key} \
+                -i \"#{file_link}\" \
+                -y \
+                -movflags +faststart \
+                -c copy \
+                -loglevel error \
+                public/#{audio_path}"
+            )
+          end
+
+          def file_link
+            file_data['BaseURL']
+          end
+        end
+      end
+    end
+  end
+end

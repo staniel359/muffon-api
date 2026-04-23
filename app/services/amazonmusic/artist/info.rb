@@ -4,7 +4,7 @@ module AmazonMusic
       private
 
       def name
-        artist.dig(
+        response_data.dig(
           'methods',
           0,
           'template',
@@ -18,7 +18,7 @@ module AmazonMusic
       end
 
       def payload
-        AmazonMusic::Utils::Request::Payload.call(
+        AmazonMusic::Formatter::Request::Payload.call(
           model_id: @args[:artist_id]
         )
       end

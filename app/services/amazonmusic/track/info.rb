@@ -1,63 +1,65 @@
 module AmazonMusic
   module Track
     class Info < AmazonMusic::Track::Base
+      include AmazonMusic::Mixins::Track
+
       private
 
       def track_data
-        self_data
-          .merge(track_base_data)
-          .merge(track_extra_data)
-          .merge(with_more_data)
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: amazonmusic_id,
+          source_track_album_id: album_amazonmusic_id,
           title:,
-          artist: artists_base_data,
-          artists:
-        }
-      end
-
-      def artist_name
-        track.dig(
-          'contextMenu', 'options', 0,
-          'onItemSelected', 1, 'template',
-          'headerPrimaryText'
+          artists:,
+          image_data:,
+          album_title:,
+          source_album_id: album_amazonmusic_id,
+          plays_count: nil,
+          duration:,
+          release_date: nil,
+          description: nil,
+          description_size: nil,
+          tags: nil,
+          tags_size: nil,
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
         )
       end
 
       def title
-        track['primaryText']
+        raw_track_data['primaryText']
+      end
+
+      def artist_name
+        raw_track_data.dig(
+          'contextMenu',
+          'options',
+          0,
+          'onItemSelected',
+          1,
+          'template',
+          'headerPrimaryText'
+        )
       end
 
       def artist_amazonmusic_slug
-        track.dig(
-          'contextMenu', 'options', 1,
-          'onItemSelected', 2, 'template',
-          'templateData', 'deeplink'
+        raw_track_data.dig(
+          'contextMenu',
+          'options',
+          1,
+          'onItemSelected',
+          2,
+          'template',
+          'templateData',
+          'deeplink'
         )
       end
 
-      def track_extra_data
-        {
-          album: album_data,
-          image: image_data,
-          profiles_count:,
-          duration:,
-          audio: audio_base_data
-        }.compact
-      end
-
-      def image_link
-        album['headerImage']
-      end
-
-      def audio_link
-        AmazonMusic::Utils::Audio::Link.call(
-          track_id: @args[:track_id]
-        )
+      def image_url
+        raw_album_data['headerImage']
       end
     end
   end

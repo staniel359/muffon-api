@@ -1,7 +1,7 @@
 module AmazonMusic
   module Album
     class Base < AmazonMusic::Base
-      include AmazonMusic::Utils::Album
+      include AmazonMusic::Mixins::Album
 
       def call
         check_args
@@ -20,16 +20,15 @@ module AmazonMusic
       end
 
       def not_found?
-        album['header'] == 'Service error'
+        raw_album_data['header'] == 'Service error'
       end
 
-      def album
-        @album ||=
-          response_data.dig(
-            'methods',
-            0,
-            'template'
-          )
+      def raw_album_data
+        response_data.dig(
+          'methods',
+          0,
+          'template'
+        )
       end
 
       def link
@@ -37,25 +36,13 @@ module AmazonMusic
       end
 
       def payload
-        AmazonMusic::Utils::Request::Payload.call(
-          model_id: album_id
+        AmazonMusic::Formatter::Request::Payload.call(
+          model_id: @args[:album_id]
         )
-      end
-
-      def album_id
-        @args[:album_id]
       end
 
       def data
         { album: album_data }
-      end
-
-      def raw_tracks
-        album.dig(
-          'widgets',
-          0,
-          'items'
-        )
       end
 
       alias response post_response

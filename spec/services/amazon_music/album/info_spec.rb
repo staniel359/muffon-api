@@ -14,7 +14,7 @@ RSpec.describe AmazonMusic::Album::Info do
         end
       end
 
-      it { expect(output).to eq(amazonmusic_album_info_data) }
+      it { expect(output).to match_hash(amazonmusic_album_info_data) }
     end
   end
 

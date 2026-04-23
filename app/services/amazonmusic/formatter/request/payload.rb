@@ -1,5 +1,5 @@
 module AmazonMusic
-  module Utils
+  module Formatter
     module Request
       class Payload < AmazonMusic::Base
         def call
@@ -58,7 +58,7 @@ module AmazonMusic
         end
 
         def current_time_formatted
-          (Time.current.to_i * 1000).to_s
+          (current_time.to_i * 1000).to_s
         end
       end
     end
