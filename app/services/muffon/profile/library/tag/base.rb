@@ -49,7 +49,7 @@ module Muffon
               library_artists
               .left_joins(:artist)
               .where(
-                '? = ANY(artists.tag_ids)',
+                '? = ANY(artists.tags_ids)',
                 @args[:tag_id]
               )
           end

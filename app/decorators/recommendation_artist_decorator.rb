@@ -84,24 +84,24 @@ module RecommendationArtistDecorator
     end
 
     def with_tags(
-      tags
+      tags_names
     )
       where(
-        'artists.tag_ids @> ARRAY[?]',
+        'artists.tags_ids::integer[] @> ARRAY[?]::integer[]',
         tags_ids(
-          tags
+          tags_names
         )
       )
     end
 
     def without_tags(
-      tags
+      tags_names
     )
       where
         .not(
-          'artists.tag_ids && ARRAY[?]',
+          'artists.tags_ids::integer[] && ARRAY[?]::integer[]',
           tags_ids(
-            tags
+            tags_names
           )
         )
     end

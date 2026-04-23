@@ -30,7 +30,7 @@ module Muffon
 
           def data
             find_artist.update!(
-              tag_ids: tags_ids
+              tags_ids:
             )
           end
 

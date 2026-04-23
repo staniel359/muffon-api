@@ -220,8 +220,8 @@ module ProfileDecorator
   def library_tags_grouped
     library_artists
       .select(<<~SQL.squish)
-        UNNEST(artists.tag_ids) AS tag_id,
-        COUNT(artists.tag_ids) AS library_count
+        UNNEST(artists.tags_ids) AS tag_id,
+        COUNT(artists.tags_ids) AS library_count
       SQL
       .left_joins(:artist)
       .group('tag_id')
