@@ -6,7 +6,21 @@ module LastFM
 
       private
 
-      def artist
+      def artist_data
+        {
+          **super,
+          **tracks_data
+        }
+      end
+
+      def name
+        raw_artist_data.dig(
+          '@attr',
+          'artist'
+        )
+      end
+
+      def raw_artist_data
         response_data['toptracks']
       end
 
@@ -16,20 +30,6 @@ module LastFM
           page:,
           limit:
         }
-      end
-
-      def artist_data
-        {
-          **super,
-          **tracks_data
-        }
-      end
-
-      def name
-        artist.dig(
-          '@attr',
-          'artist'
-        )
       end
 
       def tracks_data
@@ -44,11 +44,11 @@ module LastFM
       end
 
       def raw_collection
-        artist['track']
+        raw_artist_data['track']
       end
 
       def items_count
-        artist
+        raw_artist_data
           .dig(
             '@attr',
             'total'
@@ -56,11 +56,12 @@ module LastFM
           .to_i
       end
 
-      def collection_item_data_formatted(track)
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         LastFM::Artist::Tracks::Track.call(
-          track:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_track_data:,
+          **self_args
         )
       end
     end

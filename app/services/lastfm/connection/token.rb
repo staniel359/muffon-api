@@ -3,7 +3,9 @@ module LastFM
     class Token < LastFM::Base
       API_METHOD = 'auth.getToken'.freeze
       LASTFM_LANGUAGES = %w[
-        de es fr it ja pl pt ru sv tr zh
+        de es fr it ja
+        pl pt ru sv tr
+        zh
       ].freeze
 
       def call
@@ -33,9 +35,9 @@ module LastFM
           'https://www.last.fm',
           language,
           'api/auth'
-        ].compact.join(
-          '/'
-        )
+        ]
+          .compact
+          .join('/')
       end
 
       def language

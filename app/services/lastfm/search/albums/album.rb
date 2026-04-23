@@ -2,7 +2,7 @@ module LastFM
   module Search
     class Albums
       class Album < LastFM::Search::Albums
-        include LastFM::Utils::Album
+        include LastFM::Mixins::Album
 
         def call
           check_args
@@ -14,32 +14,27 @@ module LastFM
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
+          update_record_data!
 
-        def album
-          @args[:album]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: nil,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            release_date: nil,
+            **self_args
+          )
         end
 
-        def listeners_count
-          album['listeners'].to_i
+        def raw_album_data
+          @args[:raw_album_data]
         end
       end
     end

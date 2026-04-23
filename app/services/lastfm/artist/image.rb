@@ -1,42 +1,31 @@
 module LastFM
   module Artist
-    class Image < LastFM::Artist::Base
-      include Muffon::Utils::Artist
-
+    class Image < LastFM::Artist::Info
       private
 
       def artist_data
-        update_image
+        update_record_data!
 
         { image: image_data }
       end
 
-      def update_image
-        find_artist.update!(
-          image_url:
-        )
-      end
-
       def image_url
-        image || 'MISSING'
-      end
-
-      def image
         images_list.dig(
-          0, :medium
-        )
+          0,
+          :medium
+        ) || 'MISSING'
       end
 
       def images_list
-        artist_images_data&.dig(
-          :artist, :images
-        ) || []
+        artist_images_data.dig(
+          :artist,
+          :images
+        )
       end
 
       def artist_images_data
         LastFM::Artist::Images.call(
-          artist_name:
-            @args[:artist_name]
+          artist_name: @args[:artist_name]
         )
       end
     end

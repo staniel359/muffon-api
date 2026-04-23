@@ -47,7 +47,7 @@ module LastFM
               profile
               .recommendation_artists
               .find_by(
-                artist_id: find_artist.id
+                artist_id: artist_record.id
               )
           end
         end

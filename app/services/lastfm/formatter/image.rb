@@ -1,26 +1,31 @@
 module LastFM
-  module Utils
+  module Formatter
     class Image < LastFM::Base
-      BASE_LINK =
-        'https://lastfm.freetls.fastly.net'.freeze
+      BASE_LINK = 'https://lastfm.freetls.fastly.net'.freeze
+      DEFAULT_IDS_DATA = {
+        'artist' => '2a96cbd8b46e442fc41c2b86b821562f',
+        'album' => 'c6f59c1e5e7240a4c0d427abd71f3dbb',
+        'track' => '4128a6eb29f94943c9d206c08e625904',
+        'user' => '818148bf682d429dc215c1705eb27b98'
+      }.freeze
 
       def call
+        return if @args[:image_url].blank? || default_image?
+
         data
       end
 
       private
 
+      def default_image?
+        DEFAULT_IDS_DATA.values.any? do |image_id|
+          @args[:image_url].include?(
+            image_id
+          )
+        end
+      end
+
       def data
-        return if image.blank?
-
-        image_data
-      end
-
-      def image
-        @args[:image].presence
-      end
-
-      def image_data
         {
           original: image_resized(''),
           large: image_resized('/600x600'),
@@ -31,7 +36,7 @@ module LastFM
       end
 
       def image_resized(size)
-        image
+        @args[:image_url]
           .sub('/avatar170s', size)
           .sub('/174s', size)
           .sub('/270x205', size)

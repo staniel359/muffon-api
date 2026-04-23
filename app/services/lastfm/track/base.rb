@@ -3,8 +3,6 @@ module LastFM
     class Base < LastFM::Base
       API_METHOD = 'track.getInfo'.freeze
 
-      include LastFM::Utils::Track
-
       def call
         check_args
 
@@ -23,17 +21,22 @@ module LastFM
       end
 
       def not_found?
-        track.blank?
+        raw_track_data.blank?
       end
 
-      def track
+      def raw_track_data
         response_data['track']
       end
 
       def params
         {
           **super,
-          **track_params
+          artist: param_formatted(
+            @args[:artist_name]
+          ),
+          track: param_formatted(
+            @args[:track_title]
+          )
         }
       end
 

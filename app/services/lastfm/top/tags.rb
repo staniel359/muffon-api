@@ -44,8 +44,10 @@ module LastFM
           ).to_i
       end
 
-      def collection_item_data_formatted(tag)
-        { name: tag['name'] }
+      def collection_item_data_formatted(
+        raw_tag_data
+      )
+        { name: raw_tag_data['name'] }
       end
     end
   end

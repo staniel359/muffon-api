@@ -1,6 +1,6 @@
 module LastFM
   module Track
-    class Profiles < LastFM::Track::Base
+    class Profiles < LastFM::Track::Info
       private
 
       def track_data
@@ -24,11 +24,11 @@ module LastFM
       def profiles
         @profiles ||=
           if creator?
-            find_track
+            track_record
               .profiles
               .not_deleted
           else
-            find_track
+            track_record
               .profiles
               .not_deleted
               .public

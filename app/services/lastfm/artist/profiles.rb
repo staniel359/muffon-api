@@ -1,6 +1,6 @@
 module LastFM
   module Artist
-    class Profiles < LastFM::Artist::Base
+    class Profiles < LastFM::Artist::Info
       private
 
       def artist_data
@@ -24,11 +24,11 @@ module LastFM
       def profiles
         @profiles ||=
           if creator?
-            find_artist
+            artist_record
               .profiles
               .not_deleted
           else
-            find_artist
+            artist_record
               .profiles
               .not_deleted
               .public

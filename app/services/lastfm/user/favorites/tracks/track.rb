@@ -3,7 +3,7 @@ module LastFM
     module Favorites
       class Tracks
         class Track < LastFM::User::Favorites::Tracks
-          include LastFM::Utils::Track
+          include LastFM::Mixins::Track
 
           def call
             check_args
@@ -15,46 +15,23 @@ module LastFM
 
           def required_args
             %i[
-              track
+              raw_track_data
             ]
           end
 
           def data
-            {
-              source: source_data,
+            Muffon::Formatter::User::Favorites::Tracks::Track.call(
+              source_original_link:,
+              source_name:,
+              source_track_id: nil,
               title:,
-              artist: artists_minimal_data,
               artists:,
-              created: created_formatted
-            }.compact
-          end
-
-          def title
-            track['name']
-          end
-
-          def track
-            @args[:track]
-          end
-
-          def artist_name
-            track.dig(
-              'artist',
-              'name'
+              creation_date:
             )
           end
 
-          def created_formatted
-            datetime_formatted(
-              raw_created
-            )
-          end
-
-          def raw_created
-            track.dig(
-              'date',
-              '#text'
-            ).to_datetime
+          def raw_track_data
+            @args[:raw_track_data]
           end
         end
       end

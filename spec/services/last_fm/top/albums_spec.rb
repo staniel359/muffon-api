@@ -15,7 +15,7 @@
 #         end
 #       end
 
-#       it { expect(output).to eq(lastfm_top_albums_data) }
+#       it { expect(output).to match_hash(lastfm_top_albums_data) }
 #     end
 #   end
 # end

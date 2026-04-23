@@ -1,43 +1,34 @@
 module LastFM
   module Track
-    class Albums < LastFM::Track::Info
+    class Albums < LastFM::Track::Base
+      include LastFM::Mixins::Track
+
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
-      end
-
-      def albums
-        [album_data].compact
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: nil,
+          title:,
+          artists:,
+          albums: [album_data].compact
+        )
       end
 
       def album_data
-        return if album.blank?
+        return if raw_album_data.blank?
 
         LastFM::Album::Info.call(
           artist_name: album_artist_name,
           album_title:,
-          list: true,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          is_list: true,
+          **self_args
         )[:album]
       end
 
-      def album
-        track['album']
-      end
-
       def album_artist_name
-        album['artist']
-      end
-
-      def album_title
-        album['title']
+        raw_album_data['artist']
       end
     end
   end

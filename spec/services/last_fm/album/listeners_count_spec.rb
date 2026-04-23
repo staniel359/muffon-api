@@ -14,7 +14,7 @@ RSpec.describe LastFM::Album::ListenersCount do
         end
       end
 
-      it { expect(output).to eq(lastfm_album_listeners_count_data) }
+      it { expect(output).to match_hash(lastfm_album_listeners_count_data) }
     end
   end
 

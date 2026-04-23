@@ -13,6 +13,6 @@ RSpec.describe LastFM::Releases::Upcoming do
       end
     end
 
-    it { expect(output).to eq(lastfm_releases_upcoming_data) }
+    it { expect(output).to match_hash(lastfm_releases_upcoming_data) }
   end
 end

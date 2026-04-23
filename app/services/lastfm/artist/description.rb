@@ -4,7 +4,9 @@ module LastFM
       private
 
       def artist_data
-        { description: }
+        Muffon::Formatter::Artist::Description.call(
+          description:
+        )
       end
     end
   end

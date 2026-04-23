@@ -31,11 +31,12 @@ module LastFM
         }
       end
 
-      def collection_item_data_formatted(artist)
+      def collection_item_data_formatted(
+        raw_artist_data
+      )
         LastFM::Search::Artists::Artist.call(
-          artist:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_artist_data:,
+          **self_args
         )
       end
     end

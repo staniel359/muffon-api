@@ -22,6 +22,10 @@ module LastFM
           ((pages_count - 1) * PAGE_LIMIT) + remainder
         end
 
+        def pages_count
+          @args[:pages_count]
+        end
+
         def remainder
           response_data
             .css('.playlisting-playlists-item-wrap')
@@ -30,10 +34,6 @@ module LastFM
 
         def params
           { page: pages_count }
-        end
-
-        def pages_count
-          @args[:pages_count]
         end
       end
     end

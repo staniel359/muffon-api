@@ -17,7 +17,7 @@ RSpec.describe LastFM::Track::Similar do
         end
       end
 
-      it { expect(output).to eq(lastfm_track_similar_data) }
+      it { expect(output).to match_hash(lastfm_track_similar_data) }
     end
   end
 

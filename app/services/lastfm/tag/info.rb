@@ -3,55 +3,32 @@ module LastFM
     class Info < LastFM::Tag::Base
       API_METHOD = 'tag.getInfo'.freeze
 
+      include LastFM::Mixins::Tag
+
       private
 
       def not_found?
-        tag.blank? ||
-          tag['total'].zero?
+        taggings_count.zero?
       end
 
-      def tag
+      def raw_tag_data
         response_data['tag']
       end
 
       def params
-        super.merge(
-          language_params
-        )
+        {
+          **super,
+          lang: language
+        }.compact
       end
 
       def tag_data
-        tag_base_data
-          .merge(with_more_data)
-      end
-
-      def tag_base_data
-        {
-          name: tag['name'],
-          taggings_count: tag['total'],
-          taggers_count: tag['reach'],
-          description:
-            description_truncated
-        }
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
-        )
-      end
-
-      def description
-        description_formatted(
-          raw_description
-        )
-      end
-
-      def raw_description
-        tag.dig(
-          'wiki',
-          'content'
+        Muffon::Formatter::Tag::Info.call(
+          name:,
+          taggings_count:,
+          taggers_count:,
+          description:,
+          description_size: 'medium'
         )
       end
     end

@@ -1,7 +1,7 @@
 module LastFM
   module Artist
     class Shows < LastFM::Artist::Web::Base
-      include LastFM::Utils::Web::Pagination
+      include LastFM::Mixins::Web::Pagination
       include Muffon::Utils::Artist
 
       private
@@ -33,9 +33,11 @@ module LastFM
         "#{base_link}/+events"
       end
 
-      def collection_item_data_formatted(show)
+      def collection_item_data_formatted(
+        raw_show_data
+      )
         LastFM::Artist::Shows::Show.call(
-          show:
+          raw_show_data:
         )
       end
     end

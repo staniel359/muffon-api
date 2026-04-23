@@ -12,7 +12,7 @@ module LastFM
 
         def required_args
           %i[
-            show
+            raw_show_data
           ]
         end
 
@@ -27,44 +27,45 @@ module LastFM
         end
 
         def title
-          show.css(
-            '.events-list-item-event-name'
-          ).text.strip
+          raw_show_data
+            .css('.events-list-item-event-name')
+            .text
+            .strip
         end
 
-        def show
-          @args[:show]
+        def raw_show_data
+          @args[:raw_show_data]
         end
 
         def location
-          @location ||=
-            show.css(
-              '.events-list-item-venue--address'
-            )[0].text.strip
+          raw_show_data
+            .css('.events-list-item-venue--address')[0]
+            .text
+            .strip
         end
 
         def country
-          location.split(
-            ', '
-          ).last
+          location
+            .split(', ')
+            .last
         end
 
         def place
-          show.css(
-            '.events-list-item-venue--title'
-          )[0].text.strip
+          raw_show_data
+            .css('.events-list-item-venue--title')[0]
+            .text
+            .strip
         end
 
         def date
-          date_formatted(
-            raw_date
+          Muffon::Formatter::Date.call(
+            date: raw_date
           )
         end
 
         def raw_date
-          show.css(
-            '.events-list-item-date'
-          )[0]['content']
+          raw_show_data
+            .css('.events-list-item-date')[0]['content']
         end
       end
     end

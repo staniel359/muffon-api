@@ -1,10 +1,6 @@
 module LastFM
   module Artist
     class Base < LastFM::Base
-      API_METHOD = 'artist.getInfo'.freeze
-
-      include LastFM::Utils::Artist
-
       def call
         check_args
 
@@ -24,17 +20,19 @@ module LastFM
       end
 
       def not_found?
-        artist.blank?
+        raw_artist_data.blank?
       end
 
-      def artist
+      def raw_artist_data
         response_data['artist']
       end
 
       def params
         {
           **super,
-          **artist_params
+          artist: param_formatted(
+            @args[:artist_name]
+          )
         }
       end
 

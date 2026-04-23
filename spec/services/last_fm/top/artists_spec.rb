@@ -15,7 +15,7 @@ RSpec.describe LastFM::Top::Artists do
         end
       end
 
-      it { expect(output).to eq(lastfm_top_artists_data) }
+      it { expect(output).to match_hash(lastfm_top_artists_data) }
     end
 
     context 'when country present' do
@@ -29,7 +29,7 @@ RSpec.describe LastFM::Top::Artists do
         end
       end
 
-      it { expect(output).to eq(lastfm_top_artists_country_data) }
+      it { expect(output).to match_hash(lastfm_top_artists_country_data) }
     end
   end
 

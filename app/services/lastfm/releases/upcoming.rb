@@ -4,7 +4,7 @@ module LastFM
       private
 
       def link
-        'https://www.last.fm/music/+releases/coming-soon/popular'
+        "#{BASE_LINK}/coming-soon/popular"
       end
     end
   end

@@ -1,8 +1,10 @@
 module LastFM
   module Releases
     class Base < LastFM::Base
-      include LastFM::Utils::Web
-      include LastFM::Utils::Web::Pagination
+      BASE_LINK = 'https://www.last.fm/music/+releases'.freeze
+
+      include LastFM::Mixins::Web
+      include LastFM::Mixins::Web::Pagination
 
       def call
         data
@@ -30,11 +32,12 @@ module LastFM
         )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         LastFM::Releases::Release.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

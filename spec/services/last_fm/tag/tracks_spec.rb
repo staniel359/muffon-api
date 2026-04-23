@@ -16,7 +16,7 @@ RSpec.describe LastFM::Tag::Tracks do
         end
       end
 
-      it { expect(output).to eq(lastfm_tag_tracks_data) }
+      it { expect(output).to match_hash(lastfm_tag_tracks_data) }
     end
   end
 

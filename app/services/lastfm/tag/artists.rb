@@ -6,15 +6,14 @@ module LastFM
       private
 
       def not_found?
-        super ||
-          raw_collection.blank?
+        raw_collection.blank?
       end
 
       def raw_collection
-        tag['artist']
+        raw_tag_data['artist']
       end
 
-      def tag
+      def raw_tag_data
         response_data['topartists']
       end
 
@@ -34,7 +33,7 @@ module LastFM
       end
 
       def name
-        tag.dig(
+        raw_tag_data.dig(
           '@attr',
           'tag'
         )
@@ -52,18 +51,19 @@ module LastFM
       end
 
       def items_count
-        tag.dig(
+        raw_tag_data.dig(
           '@attr',
           'total'
         ).to_i
       end
 
-      def collection_item_data_formatted(artist)
+      def collection_item_data_formatted(
+        raw_artist_data
+      )
         LastFM::Tag::Artists::Artist.call(
-          artist:,
-          profile_id: @args[:profile_id],
-          token: @args[:token],
-          minimal: @args[:minimal]
+          raw_artist_data:,
+          is_minimal: @args[:is_minimal],
+          **self_args
         )
       end
     end

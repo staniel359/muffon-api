@@ -1,15 +1,24 @@
 module LastFM
   module Artist
-    class Tags < LastFM::Tags::Base
+    class Tags < LastFM::Artist::Base
       API_METHOD = 'artist.getTopTags'.freeze
-      MODEL_NAME = 'artist'.freeze
+
+      include LastFM::Mixins::Artist
 
       private
 
-      def required_args
-        %i[
-          artist_name
-        ]
+      def raw_artist_data
+        response_data['toptags']
+      end
+
+      def artist_data
+        Muffon::Formatter::Artist::Tags.call(
+          tags:
+        )
+      end
+
+      def raw_tags
+        raw_artist_data['tag']
       end
     end
   end

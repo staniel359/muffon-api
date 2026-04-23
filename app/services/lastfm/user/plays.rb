@@ -8,8 +8,7 @@ module LastFM
       def user_data
         paginated_data(
           collection_name: 'plays',
-          raw_collection:
-            raw_collection_filtered,
+          raw_collection: raw_collection_filtered,
           page:,
           limit:,
           pages_count:
@@ -59,9 +58,11 @@ module LastFM
           .to_i
       end
 
-      def collection_item_data_formatted(play)
+      def collection_item_data_formatted(
+        raw_play_data
+      )
         LastFM::User::Plays::Play.call(
-          play:
+          raw_play_data:
         )
       end
     end

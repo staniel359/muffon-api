@@ -1,5 +1,5 @@
 module LastFM
-  module Utils
+  module Mixins
     module Web
       module Pagination
         private

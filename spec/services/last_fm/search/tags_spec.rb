@@ -14,7 +14,7 @@ RSpec.describe LastFM::Search::Tags do
         end
       end
 
-      it { expect(output).to eq(lastfm_search_tags_data) }
+      it { expect(output).to match_hash(lastfm_search_tags_data) }
     end
   end
 
@@ -36,7 +36,7 @@ RSpec.describe LastFM::Search::Tags do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_tags_data) }
+      it { expect(output).to match_hash(search_paginated_missing_tags_data) }
     end
   end
 end

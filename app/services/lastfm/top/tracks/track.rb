@@ -2,7 +2,7 @@ module LastFM
   module Top
     class Tracks
       class Track < LastFM::Top::Tracks
-        include LastFM::Utils::Track
+        include LastFM::Mixins::Track
 
         def call
           check_args
@@ -14,28 +14,25 @@ module LastFM
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_data)
-        end
+          update_record_data!
 
-        def track
-          @args[:track]
-        end
-
-        def track_data
-          {
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Top::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: nil,
             title:,
-            artist: artists_base_data,
             artists:,
-            listeners_count:
-          }
+            **self_args
+          )
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]
         end
       end
     end

@@ -14,7 +14,7 @@ RSpec.describe LastFM::Album::Tags do
         end
       end
 
-      it { expect(output).to eq(lastfm_album_tags_data) }
+      it { expect(output).to match_hash(lastfm_album_tags_data) }
     end
   end
 

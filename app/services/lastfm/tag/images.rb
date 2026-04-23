@@ -3,6 +3,8 @@ module LastFM
     class Images < LastFM::Tag::Web::Base
       LIMIT = 20
 
+      include LastFM::Mixins::Tag
+
       private
 
       def tag_data
@@ -19,9 +21,13 @@ module LastFM
         "#{super}/artists"
       end
 
-      def image_data_formatted(image)
-        LastFM::Utils::Image.call(
-          image: image['src']
+      def image_data_formatted(
+        raw_image_data
+      )
+        image_url = raw_image_data['src']
+
+        LastFM::Formatter::Image.call(
+          image_url:
         )[:small]
       end
     end

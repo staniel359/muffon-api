@@ -2,7 +2,7 @@ module LastFM
   module Search
     class Tracks
       class Track < LastFM::Search::Tracks
-        include LastFM::Utils::Track
+        include LastFM::Mixins::Track
 
         def call
           check_args
@@ -14,37 +14,35 @@ module LastFM
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_data)
+          update_record_data!
+
+          Muffon::Formatter::Search::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: nil,
+            title:,
+            artists:,
+            is_with_artist_image: true,
+            album_title:,
+            source_album_id: nil,
+            image_data:,
+            duration:,
+            is_audio_present: audio_present?,
+            **self_args
+          )
         end
 
-        def track
-          @args[:track]
+        def raw_track_data
+          @args[:raw_track_data]
         end
 
         def artist_name
-          track['artist']
-        end
-
-        def track_data
-          {
-            source: source_data,
-            player_id: player_source_id,
-            title:,
-            artist: artists_base_data,
-            artists:
-          }.compact
-        end
-
-        def artist_image_data
-          image_data_formatted(
-            track['image']
-          )
+          raw_track_data['artist']
         end
       end
     end

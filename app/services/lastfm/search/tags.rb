@@ -19,7 +19,7 @@ module LastFM
           .limit(limit)
           .offset(offset)
           .order(
-            <<~SQL
+            <<~SQL.squish
               LENGTH(name_downcase) ASC,
               name_downcase ASC
             SQL
@@ -41,9 +41,11 @@ module LastFM
         tags.count
       end
 
-      def collection_item_data_formatted(tag)
+      def collection_item_data_formatted(
+        raw_tag_data
+      )
         LastFM::Search::Tags::Tag.call(
-          tag:
+          raw_tag_data:
         )
       end
     end

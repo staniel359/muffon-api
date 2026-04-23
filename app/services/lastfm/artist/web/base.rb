@@ -2,7 +2,7 @@ module LastFM
   module Artist
     module Web
       class Base < LastFM::Artist::Base
-        include LastFM::Utils::Web
+        include LastFM::Mixins::Web
 
         private
 
@@ -12,6 +12,12 @@ module LastFM
 
         def base_link
           "https://www.last.fm/music/#{artist_name_formatted}"
+        end
+
+        def artist_name_formatted
+          param_formatted(
+            @args[:artist_name]
+          )
         end
 
         def artist_base_data

@@ -15,7 +15,7 @@ RSpec.describe LastFM::User::Plays do
         end
       end
 
-      it { expect(output).to eq(lastfm_user_plays_data) }
+      it { expect(output).to match_hash(lastfm_user_plays_data) }
     end
   end
 

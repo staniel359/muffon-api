@@ -24,7 +24,9 @@ module LastFM
       def params
         {
           **super,
-          **tag_params
+          tag: param_formatted(
+            @args[:tag_name]
+          )
         }
       end
 

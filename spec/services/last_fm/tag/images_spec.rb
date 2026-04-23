@@ -14,7 +14,7 @@ RSpec.describe LastFM::Tag::Images do
         end
       end
 
-      it { expect(output).to eq(lastfm_tag_images_data) }
+      it { expect(output).to match_hash(lastfm_tag_images_data) }
     end
   end
 

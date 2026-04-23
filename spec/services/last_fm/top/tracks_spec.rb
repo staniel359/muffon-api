@@ -15,7 +15,7 @@ RSpec.describe LastFM::Top::Tracks do
         end
       end
 
-      it { expect(output).to eq(lastfm_top_tracks_data) }
+      it { expect(output).to match_hash(lastfm_top_tracks_data) }
     end
 
     context 'when country present' do
@@ -31,7 +31,7 @@ RSpec.describe LastFM::Top::Tracks do
         end
       end
 
-      it { expect(output).to eq(lastfm_top_tracks_country_data) }
+      it { expect(output).to match_hash(lastfm_top_tracks_country_data) }
     end
   end
 

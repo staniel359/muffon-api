@@ -14,13 +14,13 @@ module LastFM
       end
 
       def name
-        artist.dig(
+        raw_artist_data.dig(
           '@attr',
           'artist'
         )
       end
 
-      def artist
+      def raw_artist_data
         response_data['topalbums']
       end
 
@@ -44,11 +44,11 @@ module LastFM
       end
 
       def raw_collection
-        artist['album']
+        raw_artist_data['album']
       end
 
       def items_count
-        artist
+        raw_artist_data
           .dig(
             '@attr',
             'total'
@@ -56,11 +56,12 @@ module LastFM
           .to_i
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         LastFM::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

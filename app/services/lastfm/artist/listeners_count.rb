@@ -4,7 +4,7 @@ module LastFM
       private
 
       def artist_data
-        update_listeners_count!
+        update_record_data!
 
         { listeners_count: }
       end

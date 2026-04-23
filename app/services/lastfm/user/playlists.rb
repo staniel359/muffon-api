@@ -63,9 +63,11 @@ module LastFM
           .last
       end
 
-      def collection_item_data_formatted(playlist)
+      def collection_item_data_formatted(
+        raw_playlist_data
+      )
         LastFM::User::Playlists::Playlist.call(
-          playlist:,
+          raw_playlist_data:,
           nickname: lastfm_nickname,
           skip_profile: true
         )

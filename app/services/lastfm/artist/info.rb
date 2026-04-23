@@ -1,97 +1,43 @@
 module LastFM
   module Artist
     class Info < LastFM::Artist::Base
+      API_METHOD = 'artist.getInfo'.freeze
+
+      include Muffon::Utils::Artist
+      include LastFM::Mixins::Artist
+
       private
 
       def params
         {
           **super,
-          **language_params
-        }
-      end
-
-      def artist_data
-        update_listeners_count!
-
-        {
-          **self_data,
-          source: source_data,
-          name:,
-          listeners_count:,
-          plays_count:,
-          profiles_count:,
-          image: image_data,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          recommendation:
-            recommendation_data,
-          **with_more_data
+          lang: language
         }.compact
       end
 
-      def update_listeners_count!
-        find_artist.update!(
-          listeners_count:
-            raw_listeners_count
-        )
-      end
+      def artist_data
+        update_record_data!
 
-      def raw_listeners_count
-        artist.dig(
-          'stats',
-          'listeners'
-        ).to_i
-      end
-
-      def plays_count
-        artist
-          .dig(
-            'stats',
-            'playcount'
-          )
-          .to_i
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
-        )
-      end
-
-      def description
-        description_formatted(
-          raw_description
-        )
-      end
-
-      def raw_description
-        artist.dig(
-          'bio',
-          'content'
-        )
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
-        )
-      end
-
-      def raw_tags
-        artist.dig(
-          'tags',
-          'tag'
+        Muffon::Formatter::Artist::Info.call(
+          source_original_link:,
+          source_name:,
+          source_artist_id: nil,
+          name:,
+          image_data: artist_record.image_data,
+          plays_count:,
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          recommendation_data:,
+          **self_args
         )
       end
 
       def recommendation_data
         LastFM::Artist::Info::Recommendation.call(
-          profile_id: @args[:profile_id],
-          token: @args[:token],
-          artist_name: name
+          artist_name: name,
+          **self_args
         )
       end
     end

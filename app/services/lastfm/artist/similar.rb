@@ -7,11 +7,10 @@ module LastFM
       private
 
       def not_found?
-        super ||
-          name.blank?
+        super || name.blank?
       end
 
-      def artist
+      def raw_artist_data
         response_data['similarartists']
       end
 
@@ -23,7 +22,7 @@ module LastFM
       end
 
       def name
-        artist.dig(
+        raw_artist_data.dig(
           '@attr',
           'artist'
         )
@@ -47,11 +46,11 @@ module LastFM
       end
 
       def raw_collection
-        artist['artist']
+        raw_artist_data['artist']
       end
 
       def items_count
-        artist
+        raw_artist_data
           .dig(
             '@attr',
             'total'
@@ -59,12 +58,13 @@ module LastFM
           .to_i
       end
 
-      def collection_item_data_formatted(artist)
+      def collection_item_data_formatted(
+        raw_artist_data
+      )
         LastFM::Artist::Similar::Artist.call(
-          artist:,
-          profile_id: @args[:profile_id],
-          token: @args[:token],
-          minimal: @args[:minimal]
+          raw_artist_data:,
+          is_minimal: @args[:is_minimal],
+          **self_args
         )
       end
     end

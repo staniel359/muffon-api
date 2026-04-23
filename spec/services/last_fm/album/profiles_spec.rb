@@ -16,7 +16,7 @@ RSpec.describe LastFM::Album::Profiles do
         end
       end
 
-      it { expect(output).to eq(lastfm_album_profiles_data) }
+      it { expect(output).to match_hash(lastfm_album_profiles_data) }
     end
   end
 

@@ -13,7 +13,7 @@ RSpec.describe LastFM::Tag::Description do
         end
       end
 
-      it { expect(output).to eq(lastfm_tag_description_data) }
+      it { expect(output).to match_hash(lastfm_tag_description_data) }
     end
   end
 

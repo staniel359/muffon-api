@@ -46,9 +46,11 @@ module LastFM
           )
         end
 
-        def collection_item_data_formatted(track)
+        def collection_item_data_formatted(
+          raw_track_data
+        )
           LastFM::User::Favorites::Tracks::Track.call(
-            track:
+            raw_track_data:
           )
         end
       end

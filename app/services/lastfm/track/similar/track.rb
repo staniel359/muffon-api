@@ -2,7 +2,8 @@ module LastFM
   module Track
     class Similar
       class Track < LastFM::Track::Similar
-        include LastFM::Utils::Track
+        include Muffon::Utils::Track
+        include LastFM::Mixins::Track
 
         def call
           check_args
@@ -14,38 +15,26 @@ module LastFM
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          return track_minimal_data if @args[:minimal]
-
-          self_data
-            .merge(track_data)
-        end
-
-        def track_minimal_data
-          {
+          Muffon::Formatter::Track::SimilarTracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: nil,
             title:,
-            artist:
-              artists_minimal_data
-          }
-        end
-
-        def track
-          @args[:track]
-        end
-
-        def track_data
-          {
-            source: source_data,
-            player_id: player_source_id,
-            title:,
-            artist: artists_base_data,
             artists:,
-            duration:
-          }
+            duration:,
+            is_minimal: @args[:is_minimal],
+            is_audio_present: audio_present?,
+            **self_args
+          )
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]
         end
       end
     end

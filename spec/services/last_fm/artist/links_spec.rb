@@ -13,7 +13,7 @@ RSpec.describe LastFM::Artist::Links do
         end
       end
 
-      it { expect(output).to eq(lastfm_artist_links_data) }
+      it { expect(output).to match_hash(lastfm_artist_links_data) }
     end
   end
 

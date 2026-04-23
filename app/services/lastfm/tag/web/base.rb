@@ -2,8 +2,8 @@ module LastFM
   module Tag
     module Web
       class Base < LastFM::Tag::Base
-        include LastFM::Utils::Web
-        include LastFM::Utils::Web::Pagination
+        include LastFM::Mixins::Web
+        include LastFM::Mixins::Web::Pagination
 
         private
 

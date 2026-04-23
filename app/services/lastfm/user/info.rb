@@ -9,7 +9,7 @@ module LastFM
         {
           nickname:,
           premium: premium?,
-          image_url:,
+          image_url: image_url_extrasmall,
           plays_count:,
           playlists_count:,
           favorite_tracks_count:
@@ -17,39 +17,42 @@ module LastFM
       end
 
       def nickname
-        user['name']
+        raw_user_data['name']
       end
 
-      def user
+      def raw_user_data
         response_data['user']
       end
 
       def premium?
-        user['subscriber'] == '1'
+        raw_user_data['subscriber'] == '1'
       end
 
-      def image_url
+      def image_url_extrasmall
         image_data.try(
-          :[], :extrasmall
+          :[],
+          :extrasmall
         )
       end
 
       def image_data
-        image_data_formatted(
-          image
+        LastFM::Formatter::Image.call(
+          image_url:
         )
       end
 
-      def image
-        user.dig(
-          'image', -1, '#text'
+      def image_url
+        raw_user_data.dig(
+          'image',
+          -1,
+          '#text'
         )
       end
 
       def plays_count
         return unless with_counter?('plays')
 
-        user['playcount'].to_i
+        raw_user_data['playcount'].to_i
       end
 
       def with_counter?(counter)
@@ -81,7 +84,10 @@ module LastFM
         LastFM::User::Favorites::Tracks.call(
           nickname:,
           skip_profile: true
-        )[:user][:favorites]
+        ).dig(
+          :user,
+          :favorites
+        )
       end
     end
   end

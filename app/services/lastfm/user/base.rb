@@ -1,8 +1,6 @@
 module LastFM
   module User
     class Base < LastFM::Base
-      include LastFM::Utils::User
-
       def call
         check_args
 
@@ -53,9 +51,10 @@ module LastFM
       end
 
       def params
-        super.merge(
-          user_params
-        )
+        {
+          **super,
+          **user_params
+        }
       end
 
       def user_params

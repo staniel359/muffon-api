@@ -1,13 +1,12 @@
 module LastFM
   module Artist
     class Images < LastFM::Artist::Web::Base
-      include LastFM::Utils::Web::Pagination
-      include Muffon::Utils::Artist
+      include LastFM::Mixins::Web::Pagination
 
       private
 
       def artist_data
-        update_image! if update_image?
+        update_record_data! if update_image?
 
         {
           **super,
@@ -19,8 +18,7 @@ module LastFM
       end
 
       def update_image?
-        @args[:update].present? &&
-          image_url.present?
+        @args[:update].present? && image_url.present?
       end
 
       def image_url
@@ -51,15 +49,11 @@ module LastFM
         "#{base_link}/+images"
       end
 
-      def collection_item_data_formatted(image)
-        image_data_formatted(
-          image['src']
-        )
-      end
-
-      def update_image!
-        find_artist.update!(
-          image_url:
+      def collection_item_data_formatted(
+        raw_image_data
+      )
+        LastFM::Formatter::Image.call(
+          image_url: raw_image_data['src']
         )
       end
     end

@@ -14,7 +14,7 @@ module LastFM
       end
 
       def track_info_data_computed
-        if @args[:minimal]
+        if @args[:is_minimal]
           {}
         else
           track_info_data.slice(
@@ -27,8 +27,8 @@ module LastFM
 
       def track_info_data
         LastFM::Track::Info.call(
-          track_title: @args[:track_title],
-          artist_name: @args[:artist_name]
+          artist_name: @args[:artist_name],
+          track_title: @args[:track_title]
         )[:track]
       end
 
@@ -43,10 +43,10 @@ module LastFM
       end
 
       def raw_collection
-        track['track']
+        raw_track_data['track']
       end
 
-      def track
+      def raw_track_data
         response_data['similartracks']
       end
 
@@ -57,12 +57,13 @@ module LastFM
         }
       end
 
-      def collection_item_data_formatted(track)
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         LastFM::Track::Similar::Track.call(
-          track:,
-          profile_id: @args[:profile_id],
-          token: @args[:token],
-          minimal: @args[:minimal]
+          raw_track_data:,
+          is_minimal: @args[:is_minimal],
+          **self_args
         )
       end
     end

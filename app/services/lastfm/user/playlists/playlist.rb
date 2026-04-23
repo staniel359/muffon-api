@@ -12,24 +12,22 @@ module LastFM
 
         def required_args
           %i[
-            playlist
+            raw_playlist_data
           ]
         end
 
         def data
-          {
-            source: source_data,
+          Muffon::Formatter::User::Playlists::Playlist.call(
+            source_original_link:,
+            source_name:,
+            source_playlist_id: lastfm_id,
             title:,
-            tracks_count:
-          }.compact
-        end
-
-        def source_data
-          {
-            name: source_name,
-            id: lastfm_id,
-            links: source_links_data
-          }
+            image_data: nil,
+            description: nil,
+            description_size: nil,
+            tracks_count:,
+            tracks: nil
+          )
         end
 
         def lastfm_id
@@ -39,22 +37,22 @@ module LastFM
         end
 
         def raw_lastfm_id
-          playlist
+          raw_playlist_data
             .css('.playlisting-playlists-item-name')[0]
             .css('.link-block-target')[0]['href']
             .match(%r{(/user/.+)})[0]
         end
 
-        def playlist
-          @args[:playlist]
+        def raw_playlist_data
+          @args[:raw_playlist_data]
         end
 
-        def original_link
+        def source_original_link
           "https://www.last.fm#{raw_lastfm_id}"
         end
 
         def title
-          playlist
+          raw_playlist_data
             .css('.playlisting-playlists-item-name')[0]
             .text
             .strip
@@ -74,7 +72,7 @@ module LastFM
         end
 
         def raw_tracks_count
-          playlist.css(
+          raw_playlist_data.css(
             '.playlisting-playlists-item-entry-count'
           )[0]
         end

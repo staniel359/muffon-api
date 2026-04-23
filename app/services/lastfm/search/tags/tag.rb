@@ -12,16 +12,16 @@ module LastFM
 
         def required_args
           %i[
-            tag
+            raw_tag_data
           ]
         end
 
         def data
-          { name: tag.name }
+          { name: raw_tag_data.name }
         end
 
-        def tag
-          @args[:tag]
+        def raw_tag_data
+          @args[:raw_tag_data]
         end
       end
     end

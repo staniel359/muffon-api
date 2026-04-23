@@ -2,7 +2,8 @@ module LastFM
   module Tag
     class Artists
       class Artist < LastFM::Tag::Artists
-        include LastFM::Utils::Artist
+        include Muffon::Utils::Artist
+        include LastFM::Mixins::Artist
 
         def call
           check_args
@@ -14,36 +15,24 @@ module LastFM
 
         def required_args
           %i[
-            artist
+            raw_artist_data
           ]
         end
 
         def data
-          return artist_minimal_data if @args[:minimal]
-
-          self_data
-            .merge(artist_data)
-        end
-
-        def artist_minimal_data
-          { name: }
-        end
-
-        def name
-          artist['name']
-        end
-
-        def artist
-          @args[:artist]
-        end
-
-        def artist_data
-          {
-            source: source_data,
+          Muffon::Formatter::Tag::Artists::Artist.call(
+            source_original_link:,
+            source_name:,
+            source_artist_id: nil,
             name:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data: artist_record.image_data,
+            is_minimal: @args[:is_minimal],
+            **self_args
+          )
+        end
+
+        def raw_artist_data
+          @args[:raw_artist_data]
         end
       end
     end

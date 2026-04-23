@@ -6,16 +6,15 @@ module LastFM
       private
 
       def not_found?
-        super ||
-          raw_collection.blank?
+        super || raw_collection.blank?
+      end
+
+      def raw_tag_data
+        response_data['tracks']
       end
 
       def raw_collection
-        tag['track']
-      end
-
-      def tag
-        response_data['tracks']
+        raw_tag_data['track']
       end
 
       def params
@@ -34,7 +33,7 @@ module LastFM
       end
 
       def name
-        tag.dig(
+        raw_tag_data.dig(
           '@attr',
           'tag'
         )
@@ -52,17 +51,18 @@ module LastFM
       end
 
       def items_count
-        tag.dig(
+        raw_tag_data.dig(
           '@attr',
           'total'
         ).to_i
       end
 
-      def collection_item_data_formatted(track)
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         LastFM::Tag::Tracks::Track.call(
-          track:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_track_data:,
+          **self_args
         )
       end
     end
