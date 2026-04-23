@@ -15,7 +15,7 @@ RSpec.describe YandexMusic::Track::Info do
         end
       end
 
-      it { expect(output).to eq(yandexmusic_track_info_data) }
+      it { expect(output).to match_hash(yandexmusic_track_info_data) }
     end
   end
 

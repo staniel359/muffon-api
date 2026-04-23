@@ -13,7 +13,7 @@ RSpec.describe YandexMusic::Album::Links do
         end
       end
 
-      it { expect(output).to eq(yandexmusic_album_links_data) }
+      it { expect(output).to match_hash(yandexmusic_album_links_data) }
     end
   end
 

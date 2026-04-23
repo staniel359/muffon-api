@@ -13,7 +13,7 @@ RSpec.describe YandexMusic::Album::Tags do
         end
       end
 
-      it { expect(output).to eq(yandexmusic_album_tags_data) }
+      it { expect(output).to match_hash(yandexmusic_album_tags_data) }
     end
   end
 

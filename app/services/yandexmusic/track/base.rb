@@ -1,8 +1,6 @@
 module YandexMusic
   module Track
     class Base < YandexMusic::Base
-      include YandexMusic::Utils::Track
-
       def call
         check_args
 
@@ -23,7 +21,7 @@ module YandexMusic
         { track: track_data }
       end
 
-      def track
+      def raw_track_data
         response_data['track']
       end
 

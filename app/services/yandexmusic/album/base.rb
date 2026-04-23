@@ -1,8 +1,6 @@
 module YandexMusic
   module Album
     class Base < YandexMusic::Base
-      include YandexMusic::Utils::Album
-
       def call
         check_args
 
@@ -31,7 +29,7 @@ module YandexMusic
         { album: @args[:album_id] }
       end
 
-      alias album response_data
+      alias raw_album_data response_data
     end
   end
 end

@@ -1,7 +1,7 @@
 module YandexMusic
-  module Search
-    class Tracks
-      class Track < YandexMusic::Search::Tracks
+  module Album
+    module Tracks
+      class Track < YandexMusic::Album::Base
         include YandexMusic::Mixins::Track
 
         def call
@@ -15,28 +15,35 @@ module YandexMusic
         def required_args
           %i[
             raw_track_data
+            album_data
           ]
         end
 
         def data
-          Muffon::Formatter::Search::Tracks::Track.call(
+          Muffon::Formatter::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: yandexmusic_id,
             title:,
             artists:,
-            album_title:,
-            source_album_id: album_yandexmusic_id,
+            album_data:,
             image_data:,
             duration:,
             is_audio_present: audio_present?,
-            **query_match_args,
             **self_args
           )
         end
 
         def raw_track_data
           @args[:raw_track_data]
+        end
+
+        def album_data
+          @args[:album_data]
+        end
+
+        def image_data
+          album_data[:image]
         end
       end
     end
