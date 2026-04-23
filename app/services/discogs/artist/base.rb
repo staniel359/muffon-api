@@ -1,8 +1,7 @@
 module Discogs
   module Artist
     class Base < Discogs::Base
-      BASE_LINK =
-        'https://api.discogs.com/artists'.freeze
+      BASE_LINK = 'https://api.discogs.com/artists'.freeze
 
       def call
         check_args
@@ -39,11 +38,7 @@ module Discogs
           )[:artist]
       end
 
-      def link
-        self.class::BASE_LINK
-      end
-
-      alias artist response_data
+      alias raw_artist_data response_data
     end
   end
 end

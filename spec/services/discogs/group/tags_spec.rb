@@ -13,7 +13,7 @@ RSpec.describe Discogs::Group::Tags do
         end
       end
 
-      it { expect(output).to eq(discogs_group_tags_data) }
+      it { expect(output).to match_hash(discogs_group_tags_data) }
     end
   end
 

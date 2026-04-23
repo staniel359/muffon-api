@@ -2,7 +2,7 @@ module Discogs
   module Search
     class Albums
       class Album < Discogs::Search::Albums
-        include Discogs::Utils::Album
+        include Discogs::Mixins::Album
 
         def call
           check_args
@@ -14,52 +14,50 @@ module Discogs
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
+          raw_album_data['artists'] = [
+            {
+              'name' => raw_artist_name
+            }
+          ]
 
-        def album
-          @args[:album]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: discogs_id,
+            source_model: discogs_model,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
+            image_data:,
             release_date:,
-            listeners_count:
-          }.compact
+            **self_args
+          )
+        end
+
+        def raw_album_data
+          @args[:raw_album_data]
+        end
+
+        def raw_artist_name
+          full_title[1]
+        end
+
+        def full_title
+          raw_album_data['title'].match(
+            /(.+) - (.+)/
+          )
         end
 
         def title
           full_title[2]
         end
 
-        def full_title
-          @full_title ||=
-            album['title'].match(
-              /(.+) - (.+)/
-            )
-        end
-
-        def artists
-          [artist_data]
-        end
-
-        def artist_data
-          { name: full_title[1] }
-        end
-
-        def image
-          album['cover_image']
+        def image_url
+          raw_album_data['cover_image']
         end
       end
     end

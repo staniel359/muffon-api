@@ -4,7 +4,9 @@ module Discogs
       private
 
       def label_data
-        { description: }
+        Muffon::Formatter::Label::Description.call(
+          description:
+        )
       end
     end
   end

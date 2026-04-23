@@ -1,6 +1,6 @@
 module Discogs
   module Group
-    class Albums < Discogs::Group::Base
+    class Albums < Discogs::Group::Info
       private
 
       def group_data
@@ -14,7 +14,7 @@ module Discogs
       end
 
       def raw_collection
-        album['versions']
+        raw_album_group_data['versions']
       end
 
       def link
@@ -30,18 +30,31 @@ module Discogs
       end
 
       def pages_count
-        album.dig(
+        raw_album_group_data.dig(
           'pagination',
           'pages'
         )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Discogs::Group::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          artists:,
+          **self_args
         )
+      end
+
+      def artists
+        group_info_data[:artists]
+      end
+
+      def group_info_data
+        @group_info_data ||=
+          Discogs::Group::Info.call(
+            group_id: @args[:group_id]
+          )[:group]
       end
     end
   end

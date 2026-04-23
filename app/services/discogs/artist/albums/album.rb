@@ -1,8 +1,8 @@
 module Discogs
   module Artist
     class Albums
-      class Album < Discogs::Artist::Albums
-        include Discogs::Utils::Album
+      class Album < Discogs::Artist::Base
+        include Discogs::Mixins::AlbumGroup
 
         def call
           check_args
@@ -14,67 +14,40 @@ module Discogs
 
         def required_args
           %i[
-            album
+            raw_album_group_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_base_data)
-            .merge(album_extra_data)
-        end
+          raw_album_group_data['artists'] = [
+            {
+              'name' => raw_artist_name
+            }
+          ]
 
-        def title
-          album['title']
-        end
-
-        def album
-          @args[:album]
-        end
-
-        def album_base_data
-          {
-            source: source_data,
+          Muffon::Formatter::Artist::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: discogs_id,
+            source_model: discogs_model,
             title:,
-            artist: artists_minimal_data,
-            artists:
-          }.compact
-        end
-
-        def discogs_id
-          album['id']
-        end
-
-        def discogs_model
-          group? ? 'group' : 'album'
-        end
-
-        def group?
-          group_id.present?
-        end
-
-        def group_id
-          album['main_release']
-        end
-
-        def raw_artists
-          [{ 'name' => album['artist'] }]
-        end
-
-        def album_extra_data
-          {
-            image: image_data,
+            artists:,
+            image_data:,
             release_date:,
-            listeners_count:
-          }.compact
+            **self_args
+          )
         end
 
-        def image
-          album['thumb']
+        def raw_album_group_data
+          @args[:raw_album_group_data]
         end
 
-        def release_date
-          album['year']
+        def raw_artist_name
+          raw_album_group_data['artist']
+        end
+
+        def image_url
+          raw_album_group_data['thumb']
         end
       end
     end

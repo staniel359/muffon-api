@@ -2,7 +2,7 @@ module Discogs
   module Label
     class Albums
       class Album < Discogs::Label::Albums
-        include Discogs::Utils::Album
+        include Discogs::Mixins::Album
 
         def call
           check_args
@@ -14,46 +14,38 @@ module Discogs
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
+          raw_album_data['artists'] = [
+            { 'name' => raw_artist_name }
+          ]
 
-        def album
-          @args[:album]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Label::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: discogs_id,
+            source_model: discogs_model,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
-            release_date:
-          }.compact
-        end
-
-        def artists
-          [artist_data]
-        end
-
-        def artist_data
-          { name: artist_name }
-        end
-
-        def artist_name
-          artist_name_formatted(
-            album['artist']
+            image_data:,
+            release_date:,
+            **self_args
           )
         end
 
-        def image
-          album['thumb']
+        def raw_album_data
+          @args[:raw_album_data]
+        end
+
+        def raw_artist_name
+          raw_album_data['artist']
+        end
+
+        def image_url
+          raw_album_data['thumb']
         end
       end
     end

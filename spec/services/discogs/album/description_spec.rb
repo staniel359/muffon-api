@@ -13,7 +13,7 @@ RSpec.describe Discogs::Album::Description do
         end
       end
 
-      it { expect(output).to eq(discogs_album_description_data) }
+      it { expect(output).to match_hash(discogs_album_description_data) }
     end
   end
 

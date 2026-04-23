@@ -4,11 +4,11 @@ module Discogs
       private
 
       def name
-        artist['name']
+        raw_artist_data['name']
       end
 
       def link
-        "#{super}/#{@args[:artist_id]}"
+        "#{BASE_LINK}/#{@args[:artist_id]}"
       end
     end
   end

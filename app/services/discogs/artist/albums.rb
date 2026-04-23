@@ -21,11 +21,11 @@ module Discogs
       end
 
       def raw_collection
-        artist['releases']
+        raw_artist_data['releases']
       end
 
       def link
-        "#{super}/#{@args[:artist_id]}/releases"
+        "#{BASE_LINK}/#{@args[:artist_id]}/releases"
       end
 
       def params
@@ -39,17 +39,18 @@ module Discogs
       end
 
       def items_count
-        artist.dig(
+        raw_artist_data.dig(
           'pagination',
           'items'
         )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_group_data
+      )
         Discogs::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_group_data:,
+          **self_args
         )
       end
     end

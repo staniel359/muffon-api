@@ -1,8 +1,8 @@
 module Discogs
   module Group
     class Albums
-      class Album < Discogs::Group::Albums
-        include Discogs::Utils::Album
+      class Album < Discogs::Group::Base
+        include Discogs::Mixins::Album
 
         def call
           check_args
@@ -14,29 +14,38 @@ module Discogs
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          {
-            source: source_data,
+          Muffon::Formatter::AlbumGroup::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: discogs_id,
+            source_model: discogs_model,
             title:,
-            image: image_data,
-            release_date:
-          }.compact
+            artists:,
+            image_data:,
+            release_date:,
+            **self_args
+          )
         end
 
-        def album
-          @args[:album]
+        def raw_album_data
+          @args[:raw_album_data]
         end
 
-        def image
-          album['thumb']
+        def artists
+          @args[:artists]
+        end
+
+        def image_url
+          raw_album_data['thumb']
         end
 
         def raw_release_date
-          album['released']
+          raw_album_data['released']
         end
       end
     end

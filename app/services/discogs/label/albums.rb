@@ -14,7 +14,7 @@ module Discogs
       end
 
       def raw_collection
-        artist['releases']
+        raw_label_data['releases']
       end
 
       def link
@@ -32,15 +32,18 @@ module Discogs
       end
 
       def pages_count
-        artist.dig(
+        raw_label_data.dig(
           'pagination',
           'pages'
         )
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Discogs::Label::Albums::Album.call(
-          album:
+          raw_album_data:,
+          **self_args
         )
       end
     end

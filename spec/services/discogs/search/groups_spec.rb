@@ -16,7 +16,7 @@ RSpec.describe Discogs::Search::Groups do
         end
       end
 
-      it { expect(output).to eq(discogs_search_groups_data) }
+      it { expect(output).to match_hash(discogs_search_groups_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Discogs::Search::Groups do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_groups_data) }
+      it { expect(output).to match_hash(search_paginated_missing_groups_data) }
     end
   end
 end

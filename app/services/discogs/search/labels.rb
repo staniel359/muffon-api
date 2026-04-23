@@ -17,13 +17,15 @@ module Discogs
       def params
         {
           **super,
-          type: 'label'
+          type: SCOPES_PARAMS_DATA['labels']
         }
       end
 
-      def collection_item_data_formatted(label)
+      def collection_item_data_formatted(
+        raw_label_data
+      )
         Discogs::Search::Labels::Label.call(
-          label:
+          raw_label_data:
         )
       end
     end

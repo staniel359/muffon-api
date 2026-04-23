@@ -7,45 +7,56 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*"
       User-Agent:
-      - rest-client/2.1.0 (linux x86_64) ruby/3.0.1p64
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Host:
-      - api.discogs.com
+      Accept:
+      - "*/*"
   response:
     status:
       code: 404
-      message: NOT FOUND
+      message: Not Found
     headers:
       Date:
-      - Tue, 25 May 2021 09:22:31 GMT
+      - Sat, 18 Apr 2026 14:21:43 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
+      Strict-Transport-Security:
+      - max-age=15552000
       Vary:
       - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
       X-Discogs-Ratelimit:
       - '60'
       X-Discogs-Ratelimit-Remaining:
-      - '53'
+      - '58'
       X-Discogs-Ratelimit-Used:
-      - '7'
+      - '2'
       X-Frame-Options:
       - SAMEORIGIN
       X-Xss-Protection:
       - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=15724800
+      Set-Cookie:
+      - __cf_bm=oH0.xtHqf5leWZVM2yAzS1IyF536ERN9Bk5dax9HLn0-1776522103.670299-1.0.1.1-QE1xz8Hd4n4udpBX8v12O41QVIkvto7Lpls7l4qpJgcg8VJ3IdoL7ug.aOHlWsRRKDXcwvjIuv1LIit_SDZdo3LozyHPYAVC8R7QkQ2HEFYjIjWqQBK3WqgSeqhBXeny;
+        HttpOnly; Secure; Path=/; Domain=discogs.com; Expires=Sat, 18 Apr 2026 14:51:43
+        GMT
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9ee4514be8f057ec-WAW
+      Alt-Svc:
+      - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"message": "The requested resource was not found."}'
-  recorded_at: Tue, 25 May 2021 09:22:32 GMT
-recorded_with: VCR 6.0.0
+      string: '{"message":"The requested resource was not found."}'
+  recorded_at: Sat, 18 Apr 2026 14:21:43 GMT
+recorded_with: VCR 6.4.0

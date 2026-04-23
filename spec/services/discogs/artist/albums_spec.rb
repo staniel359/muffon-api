@@ -16,7 +16,7 @@ RSpec.describe Discogs::Artist::Albums do
         end
       end
 
-      it { expect(output).to eq(discogs_artist_albums_data) }
+      it { expect(output).to match_hash(discogs_artist_albums_data) }
     end
   end
 

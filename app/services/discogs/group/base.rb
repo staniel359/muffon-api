@@ -1,8 +1,6 @@
 module Discogs
   module Group
     class Base < Discogs::Base
-      include Discogs::Utils::Album
-
       def call
         check_args
 
@@ -27,17 +25,7 @@ module Discogs
         { group: group_data }
       end
 
-      def track_data_formatted(track)
-        Discogs::Album::Info::Track.call(
-          track:,
-          artists: raw_artists,
-          album_data: album_base_data,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
-        )
-      end
-
-      alias album response_data
+      alias raw_album_group_data response_data
     end
   end
 end

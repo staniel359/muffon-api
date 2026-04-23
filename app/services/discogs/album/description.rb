@@ -4,7 +4,9 @@ module Discogs
       private
 
       def album_data
-        { description: }
+        Muffon::Formatter::Album::Description.call(
+          description:
+        )
       end
     end
   end

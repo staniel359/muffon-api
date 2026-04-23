@@ -1,6 +1,13 @@
 module Discogs
   module Search
     class Base < Discogs::Base
+      SCOPES_PARAMS_DATA = {
+        'artists' => 'artist',
+        'albums' => 'release',
+        'groups' => 'master',
+        'labels' => 'label'
+      }.freeze
+
       def call
         check_args
 

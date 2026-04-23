@@ -1,52 +1,52 @@
 module Discogs
   module Group
     class Info < Discogs::Group::Base
+      include Discogs::Mixins::AlbumGroup
+
       private
 
       def group_data
-        self_data
-          .merge(group_base_data)
-          .merge(group_extra_data)
-          .merge(with_more_data)
-      end
-
-      def group_base_data
-        {
-          source: source_data,
+        Muffon::Formatter::AlbumGroup::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_group_id: discogs_id,
+          source_model: discogs_model,
           title:,
-          artist: artists_minimal_data,
           artists:,
-          image: image_data
-        }.compact
-      end
-
-      def group_extra_data
-        {
-          profiles_count:,
+          image_data:,
           release_date:,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          tracks:
-        }.compact
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          tracks:,
+          **self_args
         )
       end
 
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
+      def track_data_formatted(
+        raw_track_data
+      )
+        Discogs::Group::Tracks::Track.call(
+          raw_track_data:,
+          artists:,
+          album_data: album_base_data,
+          **self_args
         )
       end
 
       def album_base_data
-        @album_base_data ||= group_base_data
+        @album_base_data ||=
+          Muffon::Formatter::Track::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: discogs_id,
+            source_model: discogs_model,
+            title:,
+            artists:,
+            image_data:,
+            release_date: nil
+          )
       end
     end
   end

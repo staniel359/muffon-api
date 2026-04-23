@@ -1,7 +1,7 @@
 module Discogs
-  module Utils
+  module Formatter
     class Description < Discogs::Base
-      DESCRIPTION_RULES = [
+      RULES = [
         [
           /\[a=(.*?)\]/,
           '\1'
@@ -21,21 +21,20 @@ module Discogs
       ].freeze
 
       def call
+        return if description.blank?
+
         data
       end
 
       private
 
+      def description
+        @args[:description]
+      end
+
       def data
-        description = @args[:description]
-
-        return if description.blank?
-
-        DESCRIPTION_RULES.each do |regexp, rule|
-          description.gsub!(
-            regexp,
-            rule
-          )
+        RULES.each do |regexp, rule|
+          description.gsub!(regexp, rule)
         end
 
         description

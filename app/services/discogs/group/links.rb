@@ -4,11 +4,11 @@ module Discogs
       private
 
       def group_data
-        { links: source_links_data }
-      end
-
-      def discogs_model
-        'group'
+        Muffon::Formatter::AlbumGroup::Links.call(
+          source_original_link:,
+          source_name:,
+          source_album_group_id: discogs_id
+        )
       end
     end
   end

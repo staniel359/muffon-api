@@ -15,7 +15,7 @@ RSpec.describe Discogs::Search::Labels do
         end
       end
 
-      it { expect(output).to eq(discogs_search_labels_data) }
+      it { expect(output).to match_hash(discogs_search_labels_data) }
     end
   end
 
@@ -37,7 +37,7 @@ RSpec.describe Discogs::Search::Labels do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_labels_data) }
+      it { expect(output).to match_hash(search_paginated_missing_labels_data) }
     end
   end
 end

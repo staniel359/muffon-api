@@ -2,7 +2,7 @@ module Discogs
   module Search
     class Groups
       class Group < Discogs::Search::Groups
-        include Discogs::Utils::Album
+        include Discogs::Mixins::AlbumGroup
 
         def call
           check_args
@@ -14,66 +14,54 @@ module Discogs
 
         def required_args
           %i[
-            group
+            raw_album_group_data
           ]
         end
 
         def data
-          self_data
-            .merge(group_base_data)
-            .merge(group_extra_data)
-        end
+          raw_album_group_data['artists'] = [
+            {
+              'name' => raw_artist_name
+            }
+          ]
 
-        def album
-          @args[:group]
-        end
-
-        def group_base_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::AlbumGroups::AlbumGroup.call(
+            source_original_link:,
+            source_name:,
+            source_album_group_id: discogs_id,
+            source_model: discogs_model,
             title:,
-            artist: artists_minimal_data,
-            artists:
-          }
+            artists:,
+            image_data:,
+            release_date:,
+            **self_args
+          )
         end
 
-        def discogs_id
-          album['master_id']
+        def raw_album_group_data
+          @args[:raw_album_group_data]
         end
 
-        def discogs_model
-          'group'
+        def raw_artist_name
+          full_title[1]
+        end
+
+        def full_title
+          raw_album_group_data['title'].match(
+            /(.+) - (.+)/
+          )
         end
 
         def title
           full_title[2]
         end
 
-        def full_title
-          @full_title ||=
-            album['title'].match(
-              /(.+) - (.+)/
-            )
+        def discogs_id
+          raw_album_group_data['master_id']
         end
 
-        def artists
-          [artist_data]
-        end
-
-        def artist_data
-          { name: full_title[1] }
-        end
-
-        def group_extra_data
-          {
-            image: image_data,
-            release_date:,
-            listeners_count:
-          }.compact
-        end
-
-        def image
-          album['cover_image']
+        def image_url
+          raw_album_group_data['cover_image']
         end
       end
     end

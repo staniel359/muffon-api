@@ -1,8 +1,6 @@
 module Discogs
   module Label
     class Base < Discogs::Base
-      include Discogs::Utils::Artist
-
       def call
         check_args
 
@@ -27,7 +25,7 @@ module Discogs
         "#{BASE_LINK}/labels/#{@args[:label_id]}"
       end
 
-      alias artist response_data
+      alias raw_label_data response_data
     end
   end
 end
