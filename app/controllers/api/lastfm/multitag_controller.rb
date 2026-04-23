@@ -5,6 +5,8 @@ module API
 
       def albums; end
 
+      def tracks; end
+
       private
 
       def artists_data
@@ -24,6 +26,21 @@ module API
 
       def albums_data
         ::LastFM::Multitag::Albums.call(
+          params.slice(
+            *%i[
+              tags
+              profile_id
+              token
+              page
+              limit
+              order
+            ]
+          )
+        )
+      end
+
+      def tracks_data
+        ::LastFM::Multitag::Tracks.call(
           params.slice(
             *%i[
               tags

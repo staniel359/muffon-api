@@ -584,6 +584,7 @@ Rails
         namespace :multitag do
           get 'artists'
           get 'albums'
+          get 'tracks'
         end
 
         namespace :releases do
