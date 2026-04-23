@@ -23,11 +23,9 @@ module Genius
         def lyrics
           format_children(
             lyrics_nodes
-          ).compact.flatten
-        end
-
-        def track_slug
-          @args[:track_slug]
+          )
+            .compact
+            .flatten
         end
 
         def lyrics_nodes
@@ -41,14 +39,16 @@ module Genius
         end
 
         def link
-          "https://genius.com#{track_slug}"
+          "https://genius.com#{@args[:track_slug]}"
         end
 
         def format_children(node)
           node
             .children
-            .map do |n|
-              format_node(n)
+            .map do |child_node|
+              format_node(
+                child_node
+              )
             end
         end
 
@@ -93,8 +93,7 @@ module Genius
 
         def annotation_data(node)
           {
-            annotation_id:
-              annotation_id(node),
+            annotation_id: annotation_id(node),
             text: format_children(
               node.children[0]
             ).flatten
@@ -112,9 +111,12 @@ module Genius
         def ad_section?(node)
           node
             .classes
-            .find do |c|
-              ad_section_class?(c)
-            end.present?
+            .find do |class_name|
+              ad_section_class?(
+                class_name
+              )
+            end
+            .present?
         end
 
         def ad_section_class?(class_name)

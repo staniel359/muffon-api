@@ -18,11 +18,12 @@ module Genius
         "#{BASE_LINK}/search/artist"
       end
 
-      def collection_item_data_formatted(artist)
+      def collection_item_data_formatted(
+        raw_artist_data
+      )
         Genius::Search::Artists::Artist.call(
-          artist: artist['result'],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_artist_data:,
+          **self_args
         )
       end
     end

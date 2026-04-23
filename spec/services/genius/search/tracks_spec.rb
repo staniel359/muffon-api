@@ -16,7 +16,7 @@ RSpec.describe Genius::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(genius_search_tracks_data) }
+      it { expect(output).to match_hash(genius_search_tracks_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Genius::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(search_missing_tracks_data) }
+      it { expect(output).to match_hash(search_missing_tracks_data) }
     end
   end
 end

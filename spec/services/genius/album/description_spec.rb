@@ -13,7 +13,7 @@ RSpec.describe Genius::Album::Description do
         end
       end
 
-      it { expect(output).to eq(genius_album_description_data) }
+      it { expect(output).to match_hash(genius_album_description_data) }
     end
   end
 

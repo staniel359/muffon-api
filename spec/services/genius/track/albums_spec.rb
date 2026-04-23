@@ -14,7 +14,7 @@ RSpec.describe Genius::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(genius_track_albums_data) }
+      it { expect(output).to match_hash(genius_track_albums_data) }
     end
   end
 

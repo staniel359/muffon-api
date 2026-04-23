@@ -4,68 +4,44 @@ module Genius
       private
 
       def track_data
-        self_data
-          .merge(track_base_data)
-          .merge(track_extra_data)
-          .merge(with_more_data)
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: genius_id,
           title:,
-          artist: artists_base_data,
-          artists:
-        }
-      end
-
-      def track_extra_data
-        {
-          album: album_data,
-          image: image_data,
-          profiles_count:,
+          artists:,
+          album_title:,
+          source_album_id: album_genius_id,
+          image_data:,
           release_date:,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          lyrics: lyrics_truncated
-        }.compact
-      end
-
-      def release_date
-        raw_release_date_formatted(
-          track
+          duration: nil,
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          lyrics: lyrics_string,
+          lyrics_size: 'small',
+          plays_count: nil,
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
         )
       end
 
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
-        )
-      end
-
-      def description
-        track['description_preview'].presence
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
-        )
-      end
-
-      def raw_tags
-        track['tags']
-      end
-
-      def lyrics_truncated
-        text_truncated(
-          lyrics_string,
-          size: 'small'
-        )
+      def raw_artists
+        raw_track_data
+          .values_at(
+            'primary_artist',
+            'featured_artists'
+          )
+          .flatten
+          .compact
+          .map do |raw_artist_data|
+            {
+              name: raw_artist_data['name'],
+              source_id: raw_artist_data['id']
+            }
+          end
       end
 
       def lyrics_string
@@ -83,12 +59,8 @@ module Genius
       def lyrics
         @lyrics ||=
           Genius::Track::Info::Lyrics.call(
-            track_slug:
+            track_slug: genius_slug
           )[:lyrics]
-      end
-
-      def track_slug
-        track['path']
       end
 
       def lyric_data_formatted(

@@ -2,7 +2,7 @@ module Genius
   module Search
     class Tracks
       class Track < Genius::Search::Tracks
-        include Genius::Utils::Track
+        include Genius::Mixins::Track
 
         def call
           check_args
@@ -14,28 +14,28 @@ module Genius
 
         def required_args
           %i[
-            track
+            raw_track_data
           ]
         end
 
         def data
-          self_data
-            .merge(track_data)
-        end
-
-        def track
-          @args[:track]
-        end
-
-        def track_data
-          {
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Search::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: genius_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data
-          }.compact
+            album_title:,
+            source_album_id: album_genius_id,
+            image_data:,
+            duration: nil,
+            is_audio_present: audio_present?,
+            **self_args
+          )
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]['result']
         end
       end
     end

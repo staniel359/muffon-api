@@ -4,21 +4,14 @@ module Genius
       private
 
       def track_data
-        track_base_data
-          .merge(lyrics_data)
-      end
-
-      def track_base_data
-        {
-          source: source_data,
+        Muffon::Formatter::Track::Lyrics.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: genius_id,
           title:,
-          artist: artists_minimal_data,
-          artists:
-        }
-      end
-
-      def lyrics_data
-        { lyrics: }
+          artists:,
+          lyrics:
+        )
       end
     end
   end

@@ -13,7 +13,7 @@ RSpec.describe Genius::Track::Lyrics do
         end
       end
 
-      it { expect(output).to eq(genius_track_lyrics_data) }
+      it { expect(output).to match_hash(genius_track_lyrics_data) }
     end
   end
 

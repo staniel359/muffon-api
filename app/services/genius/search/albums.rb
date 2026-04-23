@@ -18,11 +18,12 @@ module Genius
         "#{BASE_LINK}/search/album"
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Genius::Search::Albums::Album.call(
-          album: album['result'],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

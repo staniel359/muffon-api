@@ -1,7 +1,7 @@
 module Genius
   module Track
     class Base < Genius::Base
-      include Genius::Utils::Track
+      include Genius::Mixins::Track
 
       def call
         check_args
@@ -23,7 +23,7 @@ module Genius
         { track: track_data }
       end
 
-      def track
+      def raw_track_data
         response_data.dig(
           'response',
           'song'
@@ -32,16 +32,6 @@ module Genius
 
       def link
         "#{BASE_LINK}/songs/#{@args[:track_id]}"
-      end
-
-      def raw_artists
-        track
-          .values_at(
-            'primary_artist',
-            'featured_artists'
-          )
-          .flatten
-          .compact
       end
     end
   end

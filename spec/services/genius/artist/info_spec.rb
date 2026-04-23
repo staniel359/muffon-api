@@ -13,7 +13,7 @@ RSpec.describe Genius::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(genius_artist_info_data) }
+      it { expect(output).to match_hash(genius_artist_info_data) }
     end
   end
 

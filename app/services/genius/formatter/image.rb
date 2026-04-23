@@ -1,23 +1,23 @@
 module Genius
-  module Utils
+  module Formatter
     class Image < Genius::Base
       def call
+        check_args
+
         data
       end
 
       private
 
+      def required_args
+        %i[
+          image_url
+        ]
+      end
+
       def data
-        return if image.blank?
+        return if @args[:image_url].blank?
 
-        image_data
-      end
-
-      def image
-        @args[:image]
-      end
-
-      def image_data
         {
           original: image_resized('1000'),
           large: image_resized('600'),
@@ -28,8 +28,7 @@ module Genius
       end
 
       def image_resized(size)
-        'https://t2.genius.com/unsafe' \
-          "/#{size}x0/#{@args[:image]}"
+        "https://t2.genius.com/unsafe/#{size}x0/#{@args[:image_url]}"
       end
     end
   end

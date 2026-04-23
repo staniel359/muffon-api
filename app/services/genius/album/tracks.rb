@@ -1,9 +1,11 @@
 module Genius
   module Album
     class Tracks < Genius::Album::Base
+      include Muffon::Mixins::Formatting::Collection
+
       private
 
-      def data
+      def album_data
         { tracks: }
       end
 
@@ -18,12 +20,13 @@ module Genius
         "#{super}/tracks"
       end
 
-      def track_data_formatted(track)
+      def track_data_formatted(
+        raw_track_data
+      )
         Genius::Album::Tracks::Track.call(
-          track: track['song'],
+          raw_track_data:,
           album_data: @args[:album_data],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end

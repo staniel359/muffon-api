@@ -14,7 +14,7 @@ RSpec.describe Genius::Track::Info do
         end
       end
 
-      it { expect(output).to eq(genius_track_info_data) }
+      it { expect(output).to match_hash(genius_track_info_data) }
     end
   end
 

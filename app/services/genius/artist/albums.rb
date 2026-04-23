@@ -22,7 +22,7 @@ module Genius
       end
 
       def raw_collection
-        artist.dig(
+        raw_artist_data.dig(
           'response',
           'albums'
         )
@@ -40,11 +40,12 @@ module Genius
         }
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Genius::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

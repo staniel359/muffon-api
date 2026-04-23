@@ -16,7 +16,7 @@ RSpec.describe Genius::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(genius_search_artists_data) }
+      it { expect(output).to match_hash(genius_search_artists_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Genius::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(search_missing_artists_data) }
+      it { expect(output).to match_hash(search_missing_artists_data) }
     end
   end
 end

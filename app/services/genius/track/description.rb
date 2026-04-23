@@ -4,7 +4,9 @@ module Genius
       private
 
       def track_data
-        { description: }
+        Muffon::Formatter::Track::Description.call(
+          description:
+        )
       end
     end
   end

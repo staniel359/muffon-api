@@ -13,7 +13,7 @@ RSpec.describe Genius::Track::Links do
         end
       end
 
-      it { expect(output).to eq(genius_track_links_data) }
+      it { expect(output).to match_hash(genius_track_links_data) }
     end
   end
 

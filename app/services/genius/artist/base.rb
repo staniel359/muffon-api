@@ -40,7 +40,7 @@ module Genius
           )[:artist]
       end
 
-      alias artist response_data
+      alias raw_artist_data response_data
     end
   end
 end

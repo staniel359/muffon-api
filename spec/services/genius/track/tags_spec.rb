@@ -13,7 +13,7 @@ RSpec.describe Genius::Track::Tags do
         end
       end
 
-      it { expect(output).to eq(genius_track_tags_data) }
+      it { expect(output).to match_hash(genius_track_tags_data) }
     end
   end
 

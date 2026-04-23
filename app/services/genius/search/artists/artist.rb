@@ -2,7 +2,7 @@ module Genius
   module Search
     class Artists
       class Artist < Genius::Search::Artists
-        include Genius::Utils::Artist
+        include Genius::Mixins::Artist
 
         def call
           check_args
@@ -14,36 +14,23 @@ module Genius
 
         def required_args
           %i[
-            artist
+            raw_artist_data
           ]
         end
 
         def data
-          self_data
-            .merge(artist_data)
-        end
-
-        def artist
-          @args[:artist]
-        end
-
-        def artist_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Artists::Artist.call(
+            source_original_link:,
+            source_name:,
+            source_artist_id: genius_id,
             name:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            **self_args
+          )
         end
 
-        def image_data
-          image_data_formatted(
-            image
-          ) || super
-        end
-
-        def image
-          artist['image_url']
+        def raw_artist_data
+          @args[:raw_artist_data]['result']
         end
       end
     end

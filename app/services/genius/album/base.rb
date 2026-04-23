@@ -1,8 +1,6 @@
 module Genius
   module Album
     class Base < Genius::Base
-      include Genius::Utils::Album
-
       def call
         check_args
 
@@ -19,7 +17,7 @@ module Genius
         ]
       end
 
-      def album
+      def raw_album_data
         response_data.dig(
           'response',
           'album'

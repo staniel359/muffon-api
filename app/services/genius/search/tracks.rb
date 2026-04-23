@@ -18,11 +18,12 @@ module Genius
         "#{BASE_LINK}/search/song"
       end
 
-      def collection_item_data_formatted(track)
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         Genius::Search::Tracks::Track.call(
-          track: track['result'],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_track_data:,
+          **self_args
         )
       end
     end
