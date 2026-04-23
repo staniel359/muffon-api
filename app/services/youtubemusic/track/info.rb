@@ -1,29 +1,31 @@
 module YouTubeMusic
   module Track
     class Info < YouTubeMusic::Track::Base
+      include YouTubeMusic::Mixins::Track
+
       private
 
       def track_data
-        {
-          **self_data,
-          **track_base_data,
-          album: album_data,
-          image: image_data,
-          plays_count:,
-          profiles_count:,
-          duration:,
-          audio: audio_base_data
-        }.compact
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: youtube_id,
           title:,
-          artist: artists_base_data,
-          artists:
-        }
+          artists:,
+          album_title:,
+          source_album_id: album_youtube_id,
+          image_data:,
+          release_date: nil,
+          duration:,
+          description: nil,
+          description_size: nil,
+          tags: nil,
+          tags_size: nil,
+          plays_count: nil,
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
+        )
       end
     end
   end

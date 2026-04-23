@@ -2,7 +2,7 @@ module YouTubeMusic
   module Search
     class Playlists
       class Playlist < YouTubeMusic::Search::Playlists
-        include YouTubeMusic::Utils::Playlist
+        include YouTubeMusic::Mixins::VideoPlaylist
 
         def call
           check_args
@@ -14,40 +14,28 @@ module YouTubeMusic
 
         def required_args
           %i[
-            playlist
+            raw_playlist_data
           ]
         end
 
         def data
-          self_data
-            .merge(playlist_data)
-        end
-
-        def playlist_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::VideoPlaylists::VideoPlaylist.call(
+            source_original_link:,
+            source_name:,
+            source_video_playlist_id: youtube_id,
             title:,
-            channel: channel_data,
-            image: image_data,
+            channel_title:,
+            source_video_channel_id: channel_youtube_id,
+            image_data:,
             views_count:,
-            videos_count:
-          }.compact
-        end
-
-        def playlist
-          @args[:playlist]
-        end
-
-        def views_count
-          human_number_to_number(
-            raw_views_count
+            videos_count:,
+            creation_date: nil,
+            **self_args
           )
         end
 
-        def videos_count
-          human_number_to_number(
-            raw_videos_count
-          )
+        def raw_playlist_data
+          @args[:raw_playlist_data]
         end
       end
     end

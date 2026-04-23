@@ -14,7 +14,7 @@ RSpec.describe YouTubeMusic::Search::Playlists do
         end
       end
 
-      it { expect(output).to eq(youtube_music_search_playlists_data) }
+      it { expect(output).to match_hash(youtube_music_search_playlists_data) }
     end
 
     context 'when query present with next page' do
@@ -29,7 +29,7 @@ RSpec.describe YouTubeMusic::Search::Playlists do
         end
       end
 
-      it { expect(output).to eq(youtube_music_search_playlists_next_page_data) }
+      it { expect(output).to match_hash(youtube_music_search_playlists_next_page_data) }
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.describe YouTubeMusic::Search::Playlists do
         end
       end
 
-      it { expect(output).to eq(search_missing_playlists_data) }
+      it { expect(output).to match_hash(search_missing_playlists_data) }
     end
   end
 end

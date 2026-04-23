@@ -14,7 +14,7 @@ RSpec.describe YouTubeMusic::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(youtube_music_track_albums_data) }
+      it { expect(output).to match_hash(youtube_music_track_albums_data) }
     end
   end
 

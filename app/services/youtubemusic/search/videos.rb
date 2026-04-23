@@ -15,17 +15,18 @@ module YouTubeMusic
       end
 
       def scope_params
-        YouTubeMusic::Search::ScopeParams.call(
+        YouTubeMusic::Utils::Search::ScopeParams.call(
           query: @args[:query],
           scope: 'videos'
         )
       end
 
-      def collection_item_data_formatted(video)
+      def collection_item_data_formatted(
+        raw_video_data
+      )
         YouTubeMusic::Search::Videos::Video.call(
-          video:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_video_data:,
+          **self_args
         )
       end
     end

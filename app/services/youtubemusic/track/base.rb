@@ -4,8 +4,6 @@ module YouTubeMusic
       BASE_LINK =
         'https://music.youtube.com/youtubei/v1/next'.freeze
 
-      include YouTubeMusic::Utils::Track
-
       def call
         check_args
 
@@ -58,7 +56,7 @@ module YouTubeMusic
       def payload
         {
           'videoId' => @args[:track_id],
-          'context' => context_data
+          'context' => payload_context_data
         }.to_json
       end
 

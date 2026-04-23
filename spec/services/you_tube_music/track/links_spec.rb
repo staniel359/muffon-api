@@ -13,7 +13,7 @@ RSpec.describe YouTubeMusic::Track::Links do
         end
       end
 
-      it { expect(output).to eq(youtube_music_track_links_data) }
+      it { expect(output).to match_hash(youtube_music_track_links_data) }
     end
   end
 

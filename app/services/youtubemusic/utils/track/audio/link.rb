@@ -1,0 +1,47 @@
+module YouTubeMusic
+  module Utils
+    module Track
+      module Audio
+        class Link < YouTubeMusic::Base
+          FILE_EXTENSION = 'opus'.freeze
+
+          include Muffon::Mixins::Processing::Audio
+
+          def call
+            check_args
+
+            data
+          end
+
+          private
+
+          def required_args
+            %i[
+              track_id
+            ]
+          end
+
+          def data
+            create_audio_folder
+
+            (retrieve_audio && audio_link).presence
+          end
+
+          def retrieve_audio
+            return true if test?
+
+            system(
+              "yt-dlp \
+                #{@args[:track_id]} \
+                --cookies-from-browser firefox \
+                --js-runtimes deno:/root/.deno/bin/deno \
+                --extract-audio \
+                --concurrent-fragments 5 \
+                --output public/#{audio_folder}/#{audio_file_name}"
+            )
+          end
+        end
+      end
+    end
+  end
+end

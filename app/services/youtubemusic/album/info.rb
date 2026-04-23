@@ -1,47 +1,71 @@
 module YouTubeMusic
   module Album
     class Info < YouTubeMusic::Album::Base
+      include YouTubeMusic::Mixins::Album
+
       private
 
       def album_data
-        {
-          **self_data,
-          **album_base_data,
-          release_date:,
-          profiles_count:,
-          description:
-            description_truncated,
-          tracks:,
-          **with_more_data
-        }.compact
+        if @args[:is_list]
+          album_list_data
+        else
+          album_full_data
+        end
       end
 
-      def album_base_data
-        {
-          source: source_data,
+      def album_list_data
+        Muffon::Formatter::Track::Albums::Album.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: youtube_id,
           title:,
-          artist: artists_minimal_data,
           artists:,
-          image: image_data
-        }
+          image_data:,
+          release_date:
+        )
       end
 
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
+      def album_full_data
+        Muffon::Formatter::Album::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: youtube_id,
+          title:,
+          artists:,
+          image_data:,
+          release_date:,
+          plays_count: nil,
+          description:,
+          description_size: 'medium',
+          tags: nil,
+          tags_size: nil,
+          labels: nil,
+          tracks:,
+          **self_args
         )
       end
 
       def track_data_formatted(
         raw_track_data
       )
-        YouTubeMusic::Album::Info::Track.call(
+        YouTubeMusic::Album::Tracks::Track.call(
           raw_track_data:,
           album_data: album_base_data,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
+      end
+
+      def album_base_data
+        @album_base_data ||=
+          Muffon::Formatter::Track::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: youtube_id,
+            title:,
+            artists:,
+            image_data:,
+            release_date: nil
+          )
       end
     end
   end

@@ -15,7 +15,7 @@ RSpec.describe YouTubeMusic::Track::Info do
         end
       end
 
-      it { expect(output).to eq(youtube_music_track_info_data) }
+      it { expect(output).to match_hash(youtube_music_track_info_data) }
     end
   end
 

@@ -15,7 +15,7 @@ module YouTubeMusic
       end
 
       def scope_params
-        YouTubeMusic::Search::ScopeParams.call(
+        YouTubeMusic::Utils::Search::ScopeParams.call(
           query: @args[:query],
           scope: 'albums'
         )
@@ -26,8 +26,7 @@ module YouTubeMusic
       )
         YouTubeMusic::Search::Albums::Album.call(
           raw_album_data:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end

@@ -1,7 +1,7 @@
 module YouTubeMusic
-  module Search
-    class Tracks
-      class Track < YouTubeMusic::Search::Tracks
+  module Album
+    module Tracks
+      class Track < YouTubeMusic::Album::Base
         include YouTubeMusic::Mixins::Track
 
         def call
@@ -19,18 +19,16 @@ module YouTubeMusic
         end
 
         def data
-          Muffon::Formatter::Search::Tracks::Track.call(
+          Muffon::Formatter::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: youtube_id,
             title:,
             artists:,
-            album_title:,
-            source_album_id: album_youtube_id,
             image_data:,
+            album_data:,
             duration:,
             is_audio_present: audio_present?,
-            **query_match_args,
             **self_args
           )
         end
@@ -50,10 +48,6 @@ module YouTubeMusic
           )
         end
 
-        def raw_track_data
-          @args[:raw_track_data]
-        end
-
         def title
           raw_track_data.dig(
             'musicResponsiveListItemRenderer',
@@ -65,6 +59,10 @@ module YouTubeMusic
             0,
             'text'
           )
+        end
+
+        def raw_track_data
+          @args[:raw_track_data]
         end
 
         def raw_raw_artists
@@ -80,38 +78,21 @@ module YouTubeMusic
           )
         end
 
-        def image_url
-          raw_track_data.dig(
-            'musicResponsiveListItemRenderer',
-            'thumbnail',
-            'musicThumbnailRenderer',
-            'thumbnail',
-            'thumbnails',
-            -1,
-            'url'
-          )
+        def album_data
+          @args[:album_data]
         end
 
-        def raw_album_data
-          find_raw_album_data(
-            raw_track_data.dig(
-              'musicResponsiveListItemRenderer',
-              'flexColumns',
-              1,
-              'musicResponsiveListItemFlexColumnRenderer',
-              'text',
-              'runs'
-            )
-          )
+        def image_data
+          album_data[:image]
         end
 
         def raw_duration
           find_raw_duration(
             raw_track_data.dig(
               'musicResponsiveListItemRenderer',
-              'flexColumns',
-              1,
-              'musicResponsiveListItemFlexColumnRenderer',
+              'fixedColumns',
+              0,
+              'musicResponsiveListItemFixedColumnRenderer',
               'text',
               'runs'
             )

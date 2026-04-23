@@ -1,13 +1,19 @@
 module YouTubeMusic
   module Track
-    class Albums < YouTubeMusic::Track::Info
+    class Albums < YouTubeMusic::Track::Base
+      include YouTubeMusic::Mixins::Track
+
       private
 
       def track_data
-        {
-          **track_base_data,
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: youtube_id,
+          title:,
+          artists:,
           albums:
-        }
+        )
       end
 
       def albums
@@ -15,15 +21,11 @@ module YouTubeMusic
       end
 
       def album_data
-        {
-          **self_data,
-          source: album_source_data,
-          title: album_title,
-          artist: artists_base_data,
-          artists:,
-          image: image_data,
-          release_date: album_release_date
-        }
+        YouTubeMusic::Album::Info.call(
+          album_id: album_youtube_id,
+          is_list: true,
+          **self_args
+        )[:album]
       end
     end
   end

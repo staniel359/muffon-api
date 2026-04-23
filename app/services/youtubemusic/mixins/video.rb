@@ -1,37 +1,10 @@
 module YouTubeMusic
-  module Utils
-    module Playlist
-      include Muffon::Utils::VideoPlaylist
-
+  module Mixins
+    module Video
       private
 
-      def source_data
-        {
-          name: source_name,
-          id: youtube_id,
-          links: source_links_data
-        }
-      end
-
-      def youtube_id
-        playlist.dig(
-          'musicResponsiveListItemRenderer',
-          'overlay',
-          'musicItemThumbnailOverlayRenderer',
-          'content',
-          'musicPlayButtonRenderer',
-          'playNavigationEndpoint',
-          'watchPlaylistEndpoint',
-          'playlistId'
-        )
-      end
-
-      def original_link
-        "https://music.youtube.com/playlist?list=#{youtube_id}"
-      end
-
       def title
-        playlist.dig(
+        raw_video_data.dig(
           'musicResponsiveListItemRenderer',
           'flexColumns',
           0,
@@ -43,56 +16,57 @@ module YouTubeMusic
         )
       end
 
-      def channel_data
-        {
-          source: channel_source_data,
-          title: channel_title
-        }
+      def youtube_id
+        raw_video_data.dig(
+          'musicResponsiveListItemRenderer',
+          'flexColumns',
+          0,
+          'musicResponsiveListItemFlexColumnRenderer',
+          'text',
+          'runs',
+          0,
+          'navigationEndpoint',
+          'watchEndpoint',
+          'videoId'
+        )
       end
 
-      def channel_source_data
-        {
-          name: source_name,
-          id: channel_youtube_id
-        }.compact
+      def source_original_link
+        "https://music.youtube.com/watch?v=#{youtube_id}"
       end
 
-      def channel_youtube_id
-        playlist.dig(
+      def channel_title
+        raw_channel_data['text']
+      end
+
+      def raw_channel_data
+        raw_video_data.dig(
           'musicResponsiveListItemRenderer',
           'flexColumns',
           1,
           'musicResponsiveListItemFlexColumnRenderer',
           'text',
           'runs',
-          0,
+          0
+        )
+      end
+
+      def channel_youtube_id
+        raw_channel_data.dig(
           'navigationEndpoint',
           'browseEndpoint',
           'browseId'
         )
       end
 
-      def channel_title
-        playlist.dig(
-          'musicResponsiveListItemRenderer',
-          'flexColumns',
-          1,
-          'musicResponsiveListItemFlexColumnRenderer',
-          'text',
-          'runs',
-          0,
-          'text'
-        )
-      end
-
       def image_data
-        image_data_formatted(
-          image
+        YouTubeMusic::Formatter::Image.call(
+          image_url:
         )
       end
 
-      def image
-        playlist.dig(
+      def image_url
+        raw_video_data.dig(
           'musicResponsiveListItemRenderer',
           'thumbnail',
           'musicThumbnailRenderer',
@@ -103,9 +77,15 @@ module YouTubeMusic
         )
       end
 
-      def raw_views_count
-        find_raw_views_count(
-          playlist.dig(
+      def duration
+        duration_string_to_seconds(
+          raw_duration
+        )
+      end
+
+      def raw_duration
+        find_raw_duration(
+          raw_video_data.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns',
             1,
@@ -116,9 +96,15 @@ module YouTubeMusic
         )
       end
 
-      def raw_videos_count
-        find_raw_videos_count(
-          playlist.dig(
+      def views_count
+        human_number_to_number(
+          raw_views_count
+        )
+      end
+
+      def raw_views_count
+        find_raw_views_count(
+          raw_video_data.dig(
             'musicResponsiveListItemRenderer',
             'flexColumns',
             1,

@@ -50,7 +50,7 @@ module YouTubeMusic
 
       def payload
         {
-          context: context_data,
+          context: payload_context_data,
           query: @args[:query],
           params: scope_params
         }.to_json

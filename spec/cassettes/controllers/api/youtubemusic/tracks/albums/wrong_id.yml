@@ -21,6 +21,8 @@ http_interactions:
       - 1.20260311.03.00
       Referer:
       - https://music.youtube.com
+      Dnt:
+      - '1'
       Cookie:
       - __Secure-ROLLOUT_TOKEN=CNGmmZiBwa2IkwEQsPS9-aGfkwMYhYDS_aGfkwM=; __Secure-YNID=16.YT=W3P7dRt2_-T1FRjJFkYP3lXqi77dPYPo0KNpuacliJWxY3Iv-fN9wLYXHkNsT3Wx_vOA5h_GsL-nczN5RfFUages7VV8l36oXmHAETJPob5vtuoLKhmavneoE8c195kDozCOihc6zYNEklhyMi9RQilc9FC0Y3OGfSqL7VRNpZY3EBHb1poruRSHNIdCT6WwdiN0QmyX59Rstu5M-KUK2AOMDNdpHtnhUVbb4CUGJIavGwbT9WrmXmt4jcPDnfSMwryiFun5yNM8eYeqs1icrBZhw16UmKTYEJd_hO7lKbbVnh22Wu70bm5ItSeVYmpEUQyQw4onWovDwFaNn8HNnQ;
         _gcl_au=1.1.1024733403.1773486950; SOCS=CAISNQgREitib3FfaWRlbnRpdHlmcm9udGVuZHVpc2VydmVyXzIwMjYwMzExLjA2X3AwGgJlbiACGgYIgMrSzQY;
@@ -44,7 +46,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Wed, 18 Mar 2026 21:52:22 GMT
+      - Thu, 23 Apr 2026 15:28:55 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -80,7 +82,7 @@ http_interactions:
                   },
                   {
                     "key": "GetWatchNext_rid",
-                    "value": "0x826c462a7fc85854"
+                    "value": "0xb1e6b55d591d79bd"
                   }
                 ]
               },
@@ -106,7 +108,8 @@ http_interactions:
                   }
                 ]
               }
-            ]
+            ],
+            "responseId": "IhMI4P_N86SElAMVaB9XAR0BqTpT"
           },
           "contents": {
             "singleColumnMusicWatchNextResultsRenderer": {
@@ -150,7 +153,7 @@ http_interactions:
                                         ]
                                       },
                                       "navigationEndpoint": {
-                                        "clickTrackingParams": "CAUQ0-cHGAAiEwjyuYe8t6qTAxU8AXMJHbaMMcfKAQTcu7LG",
+                                        "clickTrackingParams": "CAUQ0-cHGAAiEwjg_83zpISUAxVoH1cBHQGpOlPKAQT4AmEg",
                                         "modalEndpoint": {
                                           "modal": {
                                             "modalWithTitleAndButtonRenderer": {
@@ -180,12 +183,12 @@ http_interactions:
                                                     ]
                                                   },
                                                   "navigationEndpoint": {
-                                                    "clickTrackingParams": "CAYQ8FsiEwjyuYe8t6qTAxU8AXMJHbaMMcfKAQTcu7LG",
+                                                    "clickTrackingParams": "CAYQ8FsiEwjg_83zpISUAxVoH1cBHQGpOlPKAQT4AmEg",
                                                     "signInEndpoint": {
                                                       "hack": true
                                                     }
                                                   },
-                                                  "trackingParams": "CAYQ8FsiEwjyuYe8t6qTAxU8AXMJHbaMMcc="
+                                                  "trackingParams": "CAYQ8FsiEwjg_83zpISUAxVoH1cBHQGpOlM="
                                                 }
                                               }
                                             }
@@ -193,7 +196,7 @@ http_interactions:
                                         },
                                         "saveQueueToPlaylistCommand": {}
                                       },
-                                      "trackingParams": "CAUQ0-cHGAAiEwjyuYe8t6qTAxU8AXMJHbaMMcc=",
+                                      "trackingParams": "CAUQ0-cHGAAiEwjg_83zpISUAxVoH1cBHQGpOlM=",
                                       "icon": {
                                         "iconType": "ADD_TO_PLAYLIST"
                                       },
@@ -207,25 +210,25 @@ http_interactions:
                                     }
                                   }
                                 ],
-                                "trackingParams": "CAQQ0ecHIhMI8rmHvLeqkwMVPAFzCR22jDHH"
+                                "trackingParams": "CAQQ0ecHIhMI4P_N86SElAMVaB9XAR0BqTpT"
                               }
                             }
                           }
                         },
-                        "trackingParams": "CAMQn7QFGAAiEwjyuYe8t6qTAxU8AXMJHbaMMcc="
+                        "trackingParams": "CAMQn7QFGAAiEwjg_83zpISUAxVoH1cBHQGpOlM="
                       }
                     },
                     {
                       "tabRenderer": {
                         "title": "Lyrics",
-                        "trackingParams": "CAIQk80FGAEiEwjyuYe8t6qTAxU8AXMJHbaMMcc=",
+                        "trackingParams": "CAIQk80FGAEiEwjg_83zpISUAxVoH1cBHQGpOlM=",
                         "unselectable": true
                       }
                     },
                     {
                       "tabRenderer": {
                         "title": "Related",
-                        "trackingParams": "CAEQlc0FGAIiEwjyuYe8t6qTAxU8AXMJHbaMMcc=",
+                        "trackingParams": "CAEQlc0FGAIiEwjg_83zpISUAxVoH1cBHQGpOlM=",
                         "unselectable": true
                       }
                     }
@@ -234,8 +237,8 @@ http_interactions:
               }
             }
           },
-          "trackingParams": "CAAQg2ciEwjyuYe8t6qTAxU8AXMJHbaMMcc=",
-          "queueContextParams": "CAEaACCU1oe8t6qTA0IAUABaBAgAEAF4AQ=="
+          "trackingParams": "CAAQg2ciEwjg_83zpISUAxVoH1cBHQGpOlPKAQT4AmEg",
+          "queueContextParams": "CAEaACDRm87zpISUA0IAUABaBAgAEAF4AQ=="
         }
-  recorded_at: Wed, 18 Mar 2026 21:52:22 GMT
+  recorded_at: Thu, 23 Apr 2026 15:28:55 GMT
 recorded_with: VCR 6.4.0

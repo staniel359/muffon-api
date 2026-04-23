@@ -1,8 +1,8 @@
 module YouTubeMusic
-  module Utils
+  module Formatter
     class Image < Muffon::Base
       def call
-        return if args_missing?
+        check_args
 
         data
       end
@@ -11,11 +11,13 @@ module YouTubeMusic
 
       def required_args
         %i[
-          image
+          image_url
         ]
       end
 
       def data
+        return if @args[:image_url].blank?
+
         {
           original: image_resized(1200, 'maxres'),
           large: image_resized(600, 'sd'),
@@ -29,7 +31,7 @@ module YouTubeMusic
         size,
         prefix
       )
-        @args[:image]
+        @args[:image_url]
           .sub(
             /w(\d+)-h(\d+)/,
             "w#{size}-h#{size}"

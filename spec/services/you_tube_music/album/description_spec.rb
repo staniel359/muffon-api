@@ -13,7 +13,7 @@ RSpec.describe YouTubeMusic::Album::Description do
         end
       end
 
-      it { expect(output).to eq(youtube_music_album_description_data) }
+      it { expect(output).to match_hash(youtube_music_album_description_data) }
     end
   end
 

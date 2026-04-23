@@ -15,7 +15,7 @@ module YouTubeMusic
       end
 
       def scope_params
-        YouTubeMusic::Search::ScopeParams.call(
+        YouTubeMusic::Utils::Search::ScopeParams.call(
           query: @args[:query],
           scope: 'tracks'
         )
@@ -29,8 +29,7 @@ module YouTubeMusic
           is_with_query_match: @args[:with_automatch],
           query_title: @args[:track_title],
           query_artist_name: @args[:artist_name],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end

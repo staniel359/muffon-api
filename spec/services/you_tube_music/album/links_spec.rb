@@ -13,7 +13,7 @@ RSpec.describe YouTubeMusic::Album::Links do
         end
       end
 
-      it { expect(output).to eq(youtube_music_album_links_data) }
+      it { expect(output).to match_hash(youtube_music_album_links_data) }
     end
   end
 
