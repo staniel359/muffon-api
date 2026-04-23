@@ -1,8 +1,6 @@
 module YouTube
   module Channel
     class Base < YouTube::Base
-      include YouTube::Utils::Channel
-
       def call
         check_args
 
@@ -20,10 +18,10 @@ module YouTube
       end
 
       def not_found?
-        channel.blank?
+        raw_video_channel_data.blank?
       end
 
-      def channel
+      def raw_video_channel_data
         raw_collection[0]
       end
 
@@ -35,20 +33,8 @@ module YouTube
         "#{BASE_LINK}/channels"
       end
 
-      def params
-        {
-          **super,
-          id: @args[:channel_id],
-          part: 'snippet,contentDetails,statistics'
-        }
-      end
-
       def data
         { channel: channel_data }
-      end
-
-      def channel_data
-        { title: }
       end
     end
   end

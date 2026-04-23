@@ -1,8 +1,8 @@
 module YouTube
   module Video
     class Similar
-      class Video < YouTube::Video::Similar
-        include YouTube::Utils::Video
+      class Video < YouTube::Video::Base
+        include YouTube::Mixins::Video
 
         def call
           check_args
@@ -14,26 +14,31 @@ module YouTube
 
         def required_args
           %i[
-            video
+            raw_video_data
           ]
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
+          update_record_data!
+
+          Muffon::Formatter::Video::SimilarVideos::Video.call(
+            source_original_link:,
+            source_name:,
+            source_video_id: youtube_id,
             title:,
-            channel: channel_data,
-            image: image_data
-          }
+            channel_title:,
+            source_video_channel_id: channel_youtube_id,
+            image_data:,
+            **self_args
+          )
         end
 
-        def video
-          @args[:video]
+        def raw_video_data
+          @args[:raw_video_data]
         end
 
         def title
-          video.dig(
+          raw_video_data.dig(
             'playlistPanelVideoRenderer',
             'title',
             'runs',
@@ -43,7 +48,7 @@ module YouTube
         end
 
         def youtube_id
-          video.dig(
+          raw_video_data.dig(
             'playlistPanelVideoRenderer',
             'navigationEndpoint',
             'watchEndpoint',
@@ -51,8 +56,18 @@ module YouTube
           )
         end
 
+        def channel_title
+          raw_video_data.dig(
+            'playlistPanelVideoRenderer',
+            'longBylineText',
+            'runs',
+            0,
+            'text'
+          )
+        end
+
         def channel_youtube_id
-          video.dig(
+          raw_video_data.dig(
             'playlistPanelVideoRenderer',
             'longBylineText',
             'runs',
@@ -63,35 +78,21 @@ module YouTube
           )
         end
 
-        def channel_title
-          video.dig(
-            'playlistPanelVideoRenderer',
-            'longBylineText',
-            'runs',
-            0,
-            'text'
-          )
-        end
-
         def image_data
-          image_data_formatted(
-            image:,
+          YouTube::Formatter::Image.call(
+            image_url:,
             model: 'similar_video'
           )
         end
 
-        def image
-          video.dig(
+        def image_url
+          raw_video_data.dig(
             'playlistPanelVideoRenderer',
             'thumbnail',
             'thumbnails',
             -1,
             'url'
           )
-        end
-
-        def publish_date
-          nil
         end
       end
     end

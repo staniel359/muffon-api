@@ -14,7 +14,7 @@ RSpec.describe YouTube::Channel::Info do
         end
       end
 
-      it { expect(output).to eq(youtube_channel_info_data) }
+      it { expect(output).to match_hash(youtube_channel_info_data) }
     end
   end
 

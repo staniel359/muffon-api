@@ -1,8 +1,6 @@
 module YouTube
   module Video
     class Base < YouTube::Base
-      include YouTube::Utils::Video
-
       def call
         check_args
 
@@ -20,10 +18,10 @@ module YouTube
       end
 
       def not_found?
-        video.blank?
+        raw_video_data.blank?
       end
 
-      def video
+      def raw_video_data
         raw_collection[0]
       end
 
@@ -35,29 +33,8 @@ module YouTube
         "#{BASE_LINK}/videos"
       end
 
-      def params
-        super.merge(
-          video_params
-        )
-      end
-
-      def video_params
-        {
-          id: @args[:video_id],
-          part: 'snippet,statistics'
-        }
-      end
-
       def data
         { video: video_data }
-      end
-
-      def video_data
-        {
-          source: source_data,
-          title:,
-          channel: channel_data
-        }
       end
     end
   end

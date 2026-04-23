@@ -41,10 +41,9 @@ module YouTube
       end
 
       def video_info_data
-        @video_info_data ||=
-          YouTube::Video::Info.call(
-            video_id: @args[:video_id]
-          )[:video]
+        YouTube::Video::Info.call(
+          video_id: @args[:video_id]
+        )[:video]
       end
 
       def raw_collection
@@ -76,10 +75,18 @@ module YouTube
         BASE_LINK
       end
 
+      def params
+        {
+          **super,
+          id: @args[:video_id],
+          part: 'snippet,statistics'
+        }
+      end
+
       def payload
         {
           'playlistId' => scope_param,
-          'context' => context_data
+          'context' => payload_context_data
         }.to_json
       end
 
@@ -103,11 +110,12 @@ module YouTube
         next_page_computed
       end
 
-      def collection_item_data_formatted(video)
+      def collection_item_data_formatted(
+        raw_video_data
+      )
         YouTube::Video::Similar::Video.call(
-          video:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_video_data:,
+          **self_args
         )
       end
 

@@ -1,7 +1,7 @@
 module YouTube
   class Playlists
     class Playlist < YouTube::Playlists
-      include YouTube::Utils::Playlist
+      include YouTube::Mixins::VideoPlaylist
 
       def call
         check_args
@@ -13,42 +13,36 @@ module YouTube
 
       def required_args
         %i[
-          playlist
+          raw_video_playlist_data
         ]
       end
 
       def data
-        self_data
-          .merge(playlist_data)
-      end
+        update_record_data!
 
-      def playlist_data
-        {
-          source: source_data,
+        Muffon::Formatter::User::VideoPlaylists::VideoPlaylist.call(
+          source_original_link:,
+          source_name:,
+          source_video_playlist_id: youtube_id,
           title:,
-          channel: channel_data,
-          image: image_data,
-          description:
-            description_truncated,
+          channel_title:,
+          source_video_channel_id: channel_youtube_id,
+          image_data:,
+          description:,
+          description_size: 'extrasmall',
           videos_count:,
-          publish_date:
-        }.compact
-      end
-
-      def playlist
-        @args[:playlist]
-      end
-
-      def description_truncated
-        text_truncated(
-          description_formatted,
-          size: 'extrasmall'
+          creation_date:,
+          **self_args
         )
       end
 
-      def description_formatted
+      def raw_video_playlist_data
+        @args[:raw_video_playlist_data]
+      end
+
+      def description
         string_with_newlines_replaced_by_space(
-          description
+          super
         )
       end
     end

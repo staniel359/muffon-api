@@ -3,7 +3,7 @@ module Muffon
     module Favorites
       class Videos
         class Video < YouTube::Base
-          include YouTube::Utils::Video
+          include YouTube::Mixins::Video
 
           def call
             check_args

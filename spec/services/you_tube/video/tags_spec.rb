@@ -13,7 +13,7 @@ RSpec.describe YouTube::Video::Tags do
         end
       end
 
-      it { expect(output).to eq(youtube_video_tags_data) }
+      it { expect(output).to match_hash(youtube_video_tags_data) }
     end
   end
 

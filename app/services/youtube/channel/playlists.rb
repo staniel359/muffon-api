@@ -1,15 +1,28 @@
 module YouTube
   module Channel
     class Playlists < YouTube::Channel::Base
+      include YouTube::Mixins::VideoChannel
+
       private
 
-      def channel_data
+      def params
         {
           **super,
+          id: @args[:channel_id],
+          part: 'snippet,contentDetails,statistics'
+        }
+      end
+
+      def channel_data
+        Muffon::Formatter::VideoChannel::Playlists.call(
+          source_original_link:,
+          source_name:,
+          source_video_channel_id: youtube_id,
+          title:,
           prev_page:,
           next_page:,
           playlists:
-        }.compact
+        )
       end
 
       def prev_page
@@ -20,10 +33,9 @@ module YouTube
         @playlists_data ||=
           YouTube::Playlists.call(
             channel_id: @args[:channel_id],
-            profile_id: @args[:profile_id],
-            token: @args[:token],
-            limit: @args[:limit],
-            page: @args[:page]
+            limit:,
+            page: @args[:page],
+            **self_args
           )
       end
 

@@ -4,7 +4,9 @@ module YouTube
       private
 
       def channel_data
-        { description: }
+        Muffon::Formatter::VideoChannel::Description.call(
+          description:
+        )
       end
     end
   end

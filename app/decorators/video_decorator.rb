@@ -4,7 +4,8 @@ module VideoDecorator
   class_methods do
     def with_youtube_id(
       youtube_id:,
-      update_attributes:
+      title:,
+      channel_title:
     )
       with_cache_clearance_and_retry_on_error do
         where(
@@ -12,9 +13,10 @@ module VideoDecorator
         )
           .first_or_initialize
           .tap do |video|
-            video.update!(
-              update_attributes
-            )
+            video.title = title
+            video.channel_title = channel_title
+
+            video.save!
           end
       end
     end

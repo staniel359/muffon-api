@@ -16,7 +16,7 @@ RSpec.describe YouTube::Search::Videos do
         end
       end
 
-      it { expect(output).to eq(youtube_search_videos_data) }
+      it { expect(output).to match_hash(youtube_search_videos_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe YouTube::Search::Videos do
         end
       end
 
-      it { expect(output).to eq(search_missing_videos_data) }
+      it { expect(output).to match_hash(search_missing_videos_data) }
     end
   end
 end

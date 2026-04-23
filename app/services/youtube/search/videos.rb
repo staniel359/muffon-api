@@ -3,6 +3,13 @@ module YouTube
     class Videos < YouTube::Search::Base
       private
 
+      def params
+        {
+          **super,
+          type: SCOPES_TYPES_DATA['videos']
+        }
+      end
+
       def search_data
         paginated_data(
           collection_name: 'videos',
@@ -15,13 +22,6 @@ module YouTube
         )
       end
 
-      def params
-        {
-          **super,
-          type: 'video'
-        }
-      end
-
       def raw_collection
         super.reject do |collection_item|
           channel_item?(
@@ -30,11 +30,12 @@ module YouTube
         end
       end
 
-      def collection_item_data_formatted(video)
+      def collection_item_data_formatted(
+        raw_video_data
+      )
         YouTube::Search::Videos::Video.call(
-          video:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_video_data:,
+          **self_args
         )
       end
     end

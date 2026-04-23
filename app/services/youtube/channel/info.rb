@@ -1,39 +1,35 @@
 module YouTube
   module Channel
     class Info < YouTube::Channel::Base
+      include YouTube::Mixins::VideoChannel
+
       private
 
+      def params
+        {
+          **super,
+          id: @args[:channel_id],
+          part: 'snippet,contentDetails,statistics'
+        }
+      end
+
       def channel_data
-        self_data
-          .merge(channel_base_data)
-          .merge(channel_statistics_data)
-          .merge(with_more_data)
-      end
+        update_record_data!
 
-      def channel_base_data
-        {
-          source: source_data,
+        Muffon::Formatter::VideoChannel::Info.call(
+          source_original_link:,
+          source_name:,
+          source_video_channel_id: youtube_id,
           title:,
-          description:
-            description_truncated,
-          image: image_data,
-          publish_date:
-        }.compact
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
-        )
-      end
-
-      def channel_statistics_data
-        {
+          image_data:,
+          description:,
+          description_size: 'medium',
+          creation_date:,
+          videos_count:,
           views_count:,
           subscribers_count:,
-          videos_count:
-        }
+          **self_args
+        )
       end
     end
   end

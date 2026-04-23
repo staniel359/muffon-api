@@ -4,7 +4,9 @@ module YouTube
       private
 
       def playlist_data
-        { description: }
+        Muffon::Formatter::VideoPlaylist::Description.call(
+          description:
+        )
       end
     end
   end

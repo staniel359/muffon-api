@@ -13,7 +13,7 @@ RSpec.describe YouTube::Playlist::Description do
         end
       end
 
-      it { expect(output).to eq(youtube_playlist_description_data) }
+      it { expect(output).to match_hash(youtube_playlist_description_data) }
     end
   end
 

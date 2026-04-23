@@ -1,29 +1,34 @@
 module YouTube
   module Playlist
     class Info < YouTube::Playlist::Base
+      include YouTube::Mixins::VideoPlaylist
+
       private
 
-      def playlist_data
-        self_data
-          .merge(super)
-          .merge(playlist_extra_data)
-          .merge(with_more_data)
-      end
-
-      def playlist_extra_data
+      def params
         {
-          image: image_data,
-          description:
-            description_truncated,
-          videos_count:,
-          publish_date:
-        }.compact
+          **super,
+          id: @args[:playlist_id],
+          part: 'snippet,contentDetails'
+        }
       end
 
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
+      def playlist_data
+        update_record_data!
+
+        Muffon::Formatter::User::VideoPlaylist::Info.call(
+          source_original_link:,
+          source_name:,
+          source_video_playlist_id: youtube_id,
+          title:,
+          channel_title:,
+          source_video_channel_id: channel_youtube_id,
+          image_data:,
+          description:,
+          description_size: 'medium',
+          videos_count:,
+          creation_date:,
+          **self_args
         )
       end
     end

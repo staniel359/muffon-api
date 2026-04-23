@@ -3,7 +3,7 @@ module Muffon
     module Bookmarks
       class VideoChannels
         class VideoChannel < YouTube::Base
-          include YouTube::Utils::Channel
+          include YouTube::Mixins::VideoChannel
 
           def call
             check_args

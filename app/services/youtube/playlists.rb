@@ -1,7 +1,5 @@
 module YouTube
   class Playlists < YouTube::Base
-    include YouTube::Utils::Pagination
-
     def call
       check_args
 
@@ -48,11 +46,20 @@ module YouTube
       }
     end
 
-    def collection_item_data_formatted(playlist)
+    def previous_page
+      response_data['prevPageToken']
+    end
+
+    def next_page
+      response_data['nextPageToken']
+    end
+
+    def collection_item_data_formatted(
+      raw_video_playlist_data
+    )
       YouTube::Playlists::Playlist.call(
-        playlist:,
-        profile_id: @args[:profile_id],
-        token: @args[:token]
+        raw_video_playlist_data:,
+        **self_args
       )
     end
   end

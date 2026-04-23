@@ -1,9 +1,7 @@
 module YouTube
-  module Utils
+  module Formatter
     class Image < Muffon::Base
       def call
-        check_args
-
         return if no_data?
 
         data
@@ -12,8 +10,7 @@ module YouTube
       private
 
       def no_data?
-        @args[:images].blank? &&
-          @args[:image].blank?
+        @args[:images].blank? && @args[:image_url].blank?
       end
 
       def data
@@ -97,7 +94,7 @@ module YouTube
       def similar_image_resized(
         prefix
       )
-        @args[:image].sub(
+        @args[:image_url].sub(
           /(sd|hq)default/,
           "#{prefix}default"
         )
@@ -105,11 +102,11 @@ module YouTube
 
       def plain_image_data
         {
-          original: @args[:image],
-          large: @args[:image],
-          medium: @args[:image],
-          small: @args[:image],
-          extrasmall: @args[:image]
+          original: @args[:image_url],
+          large: @args[:image_url],
+          medium: @args[:image_url],
+          small: @args[:image_url],
+          extrasmall: @args[:image_url]
         }
       end
 

@@ -1,8 +1,8 @@
 module YouTube
   module Search
     class Channels
-      class Channel < YouTube::Search::Channels
-        include YouTube::Utils::Channel
+      class Channel < YouTube::Search::Base
+        include YouTube::Mixins::VideoChannel
 
         def call
           check_args
@@ -14,47 +14,33 @@ module YouTube
 
         def required_args
           %i[
-            channel
+            raw_video_channel_data
           ]
         end
 
         def data
-          return if snippet.blank?
+          update_record_data!
 
-          self_data
-            .merge(channel_data)
-        end
-
-        def channel_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::VideoChannels::VideoChannel.call(
+            source_original_link:,
+            source_name:,
+            source_video_channel_id: youtube_id,
             title:,
-            image: image_data,
-            publish_date:
-          }
-        end
-
-        def channel
-          @args[:channel]
-        end
-
-        def youtube_id
-          channel.dig(
-            'id',
-            'channelId'
+            image_data:,
+            creation_date:,
+            **self_args
           )
         end
 
-        def views_count
-          nil
+        def raw_video_channel_data
+          @args[:raw_video_channel_data]
         end
 
-        def videos_count
-          nil
-        end
-
-        def subscribers_count
-          nil
+        def youtube_id
+          raw_video_channel_data.dig(
+            'id',
+            'channelId'
+          )
         end
       end
     end

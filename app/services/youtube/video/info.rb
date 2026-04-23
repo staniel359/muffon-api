@@ -1,61 +1,46 @@
 module YouTube
   module Video
     class Info < YouTube::Video::Base
+      include YouTube::Mixins::Video
+
       private
 
-      def video_data
+      def params
         {
-          **self_data,
           **super,
-          artist: artist_info_data,
+          id: @args[:video_id],
+          part: 'snippet,statistics'
+        }
+      end
+
+      def video_data
+        update_record_data!
+
+        Muffon::Formatter::Video::Info.call(
+          source_original_link:,
+          source_name:,
+          source_video_id: youtube_id,
+          title:,
+          channel_title:,
+          source_video_channel_id: channel_youtube_id,
+          image_data:,
+          artist_data: artist_info_data,
           views_count:,
           likes_count:,
           dislikes_count:,
-          image: image_data,
-          publish_date:,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          **with_more_data
-        }.compact
-      end
-
-      def artist_info_data
-        @artist_info_data ||=
-          YouTube::Video::Info::Artist.call(
-            channel_title:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
-          )
-      end
-
-      def views_count
-        statistics['viewCount'].to_i
-      end
-
-      def statistics
-        video['statistics']
-      end
-
-      def likes_count
-        statistics['likeCount'].to_i
-      end
-
-      def dislikes_count
-        statistics['dislikeCount'].to_i
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
+          creation_date:,
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          **self_args
         )
       end
 
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
+      def artist_info_data
+        Muffon::Formatter::Video::Artist.call(
+          channel_title:,
+          **self_args
         )
       end
     end

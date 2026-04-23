@@ -3,7 +3,7 @@ module Muffon
     module Bookmarks
       class VideoPlaylists
         class VideoPlaylist < YouTube::Base
-          include YouTube::Utils::Playlist
+          include YouTube::Mixins::VideoPlaylist
 
           def call
             check_args

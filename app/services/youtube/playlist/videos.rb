@@ -45,8 +45,9 @@ module YouTube
         "#{BASE_LINK}/playlistItems"
       end
 
-      def playlist_params
+      def params
         {
+          **super,
           playlistId: @args[:playlist_id],
           part: 'snippet',
           maxResults: limit,
@@ -54,11 +55,20 @@ module YouTube
         }
       end
 
-      def collection_item_data_formatted(video)
+      def previous_page
+        response_data['prevPageToken']
+      end
+
+      def next_page
+        response_data['nextPageToken']
+      end
+
+      def collection_item_data_formatted(
+        raw_video_data
+      )
         YouTube::Playlist::Videos::Video.call(
-          video:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_video_data:,
+          **self_args
         )
       end
     end

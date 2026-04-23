@@ -13,7 +13,7 @@ RSpec.describe YouTube::Channel::Links do
         end
       end
 
-      it { expect(output).to eq(youtube_channel_links_data) }
+      it { expect(output).to match_hash(youtube_channel_links_data) }
     end
   end
 

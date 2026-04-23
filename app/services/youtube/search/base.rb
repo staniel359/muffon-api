@@ -1,7 +1,11 @@
 module YouTube
   module Search
     class Base < YouTube::Base
-      include YouTube::Utils::Pagination
+      SCOPES_TYPES_DATA = {
+        'channels' => 'channel',
+        'playlists' => 'playlist',
+        'videos' => 'video'
+      }.freeze
 
       def call
         check_args
@@ -48,6 +52,14 @@ module YouTube
           maxResults: limit,
           pageToken: @args[:page]
         }.compact
+      end
+
+      def previous_page
+        response_data['prevPageToken']
+      end
+
+      def next_page
+        response_data['nextPageToken']
       end
 
       def channel_item?(

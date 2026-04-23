@@ -14,7 +14,7 @@ RSpec.describe YouTube::Video::Similar do
         end
       end
 
-      it { expect(output).to eq(youtube_video_similar_data) }
+      it { expect(output).to match_hash(youtube_video_similar_data) }
     end
 
     context 'when video present with next page' do
@@ -30,7 +30,7 @@ RSpec.describe YouTube::Video::Similar do
         end
       end
 
-      it { expect(output).to eq(youtube_video_similar_next_page_data) }
+      it { expect(output).to match_hash(youtube_video_similar_next_page_data) }
     end
   end
 

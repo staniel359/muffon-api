@@ -4,7 +4,11 @@ module YouTube
       private
 
       def playlist_data
-        { links: source_links_data }
+        Muffon::Formatter::VideoPlaylist::Links.call(
+          source_original_link:,
+          source_name:,
+          source_video_playlist_id: youtube_id
+        )
       end
     end
   end

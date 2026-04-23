@@ -16,7 +16,7 @@ RSpec.describe YouTube::Channel::Playlists do
         end
       end
 
-      it { expect(output).to eq(youtube_channel_playlists_data) }
+      it { expect(output).to match_hash(youtube_channel_playlists_data) }
     end
   end
 

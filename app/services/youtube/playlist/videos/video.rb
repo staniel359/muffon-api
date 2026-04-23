@@ -1,8 +1,8 @@
 module YouTube
   module Playlist
     class Videos
-      class Video < YouTube::Playlist::Videos
-        include YouTube::Utils::Video
+      class Video < YouTube::Playlist::Base
+        include YouTube::Mixins::Video
 
         def call
           check_args
@@ -14,52 +14,57 @@ module YouTube
 
         def required_args
           %i[
-            video
+            raw_video_data
           ]
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
-            channel: channel_data,
+          update_record_data!
+
+          Muffon::Formatter::User::VideoPlaylist::Videos::Video.call(
+            source_original_link:,
+            source_name:,
+            source_video_id: youtube_id,
             title:,
-            image: image_data,
-            publish_date:,
-            description:
-              description_truncated
-          }.compact
+            channel_title:,
+            source_video_channel_id: channel_youtube_id,
+            image_data:,
+            creation_date:,
+            description:,
+            description_size: 'extrasmall',
+            **self_args
+          )
         end
 
-        def video
-          @args[:video]
+        def raw_video_data
+          @args[:raw_video_data]
         end
 
         def youtube_id
-          snippet.dig(
+          raw_video_data.dig(
+            'snippet',
             'resourceId',
             'videoId'
           )
         end
 
         def channel_youtube_id
-          snippet['videoOwnerChannelId']
-        end
-
-        def channel_title
-          snippet['videoOwnerChannelTitle']
-        end
-
-        def description_truncated
-          text_truncated(
-            description_formatted,
-            size: 'extrasmall'
+          raw_video_data.dig(
+            'snippet',
+            'videoOwnerChannelId'
           )
         end
 
-        def description_formatted
+        def channel_title
+          raw_video_data.dig(
+            'snippet',
+            'videoOwnerChannelTitle'
+          )
+        end
+
+        def description
           string_with_newlines_replaced_by_space(
-            description
+            super
           )
         end
       end

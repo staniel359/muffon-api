@@ -16,7 +16,7 @@ RSpec.describe YouTube::Search::Channels do
         end
       end
 
-      it { expect(output).to eq(youtube_search_channels_data) }
+      it { expect(output).to match_hash(youtube_search_channels_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe YouTube::Search::Channels do
         end
       end
 
-      it { expect(output).to eq(search_missing_channels_data) }
+      it { expect(output).to match_hash(search_missing_channels_data) }
     end
   end
 end
