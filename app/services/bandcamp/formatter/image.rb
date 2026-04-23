@@ -1,23 +1,23 @@
 module Bandcamp
-  module Utils
+  module Formatter
     class Image < Bandcamp::Base
       def call
+        check_args
+
         data
       end
 
       private
 
+      def required_args
+        %i[
+          image_url
+        ]
+      end
+
       def data
-        return if image.blank?
+        return if @args[:image_url].blank?
 
-        image_data
-      end
-
-      def image
-        @args[:image]
-      end
-
-      def image_data
         {
           original: image_resized('_10'),
           large: image_resized('_5'),
@@ -27,9 +27,12 @@ module Bandcamp
         }
       end
 
-      def image_resized(size)
-        image.sub(
-          /_23|_2|_5|_10/, size
+      def image_resized(
+        size
+      )
+        @args[:image_url].sub(
+          /_23|_2|_5|_10/,
+          size
         )
       end
     end

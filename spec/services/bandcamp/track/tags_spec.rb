@@ -14,7 +14,7 @@ RSpec.describe Bandcamp::Track::Tags do
         end
       end
 
-      it { expect(output).to eq(bandcamp_track_tags_data) }
+      it { expect(output).to match_hash(bandcamp_track_tags_data) }
     end
   end
 

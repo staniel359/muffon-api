@@ -1,116 +1,106 @@
 module Bandcamp
   module Album
     class Info < Bandcamp::Album::Base
-      ALBUM_TYPES = {
-        a: 'album',
-        t: 'track'
+      TYPES_MODELS_DATA = {
+        'a' => 'album',
+        't' => 'track'
       }.freeze
+
+      include Bandcamp::Mixins::Album
 
       private
 
       def album_data
-        return album_list_data if @args[:list]
-
-        album_full_data
+        if @args[:is_list]
+          album_list_data
+        else
+          album_full_data
+        end
       end
 
       def album_list_data
-        self_data
-          .merge(album_base_data)
-          .merge(album_list_extra_data)
+        Muffon::Formatter::Track::Albums::Album.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: bandcamp_id,
+          source_album_artist_id: artist_bandcamp_id,
+          source_model: bandcamp_model,
+          title:,
+          artists:,
+          image_data:,
+          release_date:
+        )
       end
 
       def album_full_data
-        self_data
-          .merge(album_base_data)
-          .merge(album_extra_data)
-          .merge(with_more_data)
-      end
-
-      def album_base_data
-        @album_base_data ||= {
-          source: source_data,
+        Muffon::Formatter::Album::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: bandcamp_id,
+          source_album_artist_id: artist_bandcamp_id,
+          source_model: bandcamp_model,
           title:,
-          artist: artists_minimal_data,
           artists:,
-          image: image_data
-        }.compact
+          image_data:,
+          release_date:,
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          labels: nil,
+          plays_count: nil,
+          tracks:,
+          **self_args
+        )
       end
 
       def bandcamp_id
-        album['id']
+        raw_album_data['id']
       end
 
       def artist_bandcamp_id
-        album.dig(
-          'band', 'band_id'
+        raw_album_data.dig(
+          'band',
+          'band_id'
         )
       end
 
       def artist_name
-        album['tralbum_artist']
+        raw_album_data['tralbum_artist']
       end
 
       def bandcamp_model
-        ALBUM_TYPES[
-          album['type'].to_sym
-        ]
+        TYPES_MODELS_DATA[album_type]
       end
 
-      def album_list_extra_data
-        {
-          release_date:,
-          listeners_count:
-        }.compact
+      def album_type
+        raw_album_data['type']
       end
 
-      def album_extra_data
-        {
-          profiles_count:,
-          release_date:,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          tracks:
-        }.compact
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
-        )
-      end
-
-      def description
-        album['about'].presence
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
-        )
-      end
-
-      def raw_tags
-        album['tags']
-      end
-
-      def raw_tracks
-        album['tracks']
-      end
-
-      def track_data_formatted(track)
-        Bandcamp::Album::Info::Track.call(
-          track:,
+      def track_data_formatted(
+        raw_track_data
+      )
+        Bandcamp::Album::Tracks::Track.call(
+          raw_track_data:,
           album_data: album_base_data,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
 
-      alias album response_data
+      def album_base_data
+        @album_base_data ||=
+          Muffon::Formatter::Track::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: bandcamp_id,
+            source_album_artist_id: artist_bandcamp_id,
+            source_model: bandcamp_model,
+            title:,
+            artists:,
+            image_data:,
+            release_date: nil
+          )
+      end
     end
   end
 end

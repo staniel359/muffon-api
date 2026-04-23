@@ -4,16 +4,16 @@ module Bandcamp
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
-      end
-
-      def albums
-        [album_data].compact
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: bandcamp_id,
+          source_track_artist_id: artist_bandcamp_id,
+          source_model: bandcamp_model,
+          title:,
+          artists:,
+          albums: [album_data].compact
+        )
       end
 
       def album_data
@@ -22,9 +22,8 @@ module Bandcamp
         Bandcamp::Album::Info.call(
           artist_id: artist_bandcamp_id,
           album_id: album_bandcamp_id,
-          list: true,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          is_list: true,
+          **self_args
         )[:album]
       end
     end

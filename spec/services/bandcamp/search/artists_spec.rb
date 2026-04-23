@@ -16,7 +16,7 @@ RSpec.describe Bandcamp::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(bandcamp_search_artists_data) }
+      it { expect(output).to match_hash(bandcamp_search_artists_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Bandcamp::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_artists_data) }
+      it { expect(output).to match_hash(search_paginated_missing_artists_data) }
     end
   end
 end

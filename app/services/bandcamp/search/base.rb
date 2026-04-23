@@ -2,10 +2,13 @@ module Bandcamp
   module Search
     class Base < Bandcamp::Base
       BASE_LINK =
-        'https://bandcamp.com/api/bcsearch_public_api/1' \
-        '/autocomplete_elastic'.freeze
-
-      include Bandcamp::Utils::Search
+        'https://bandcamp.com/api' \
+        '/bcsearch_public_api/1/autocomplete_elastic'.freeze
+      SCOPES_TYPES_DATA = {
+        'artists' => 'b',
+        'albums' => 'a',
+        'tracks' => 't'
+      }.freeze
 
       def call
         check_args
@@ -41,10 +44,6 @@ module Bandcamp
           search_text: @args[:query],
           full_page: false
         }
-      end
-
-      def model_name
-        self.class::MODEL_NAME
       end
 
       alias response post_response

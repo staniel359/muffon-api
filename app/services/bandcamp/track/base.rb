@@ -1,7 +1,7 @@
 module Bandcamp
   module Track
     class Base < Bandcamp::Base
-      include Bandcamp::Utils::Track
+      include Bandcamp::Mixins::Track
 
       def call
         check_args
@@ -21,29 +21,35 @@ module Bandcamp
       end
 
       def not_found?
-        track.blank? ||
-          track_info_data.blank?
+        raw_track_data.blank?
       end
 
-      def track
+      def raw_track_data
         response_data.dig(
-          'tracks', 0
+          'tracks',
+          0
         )
+      end
+
+      def link
+        "#{BASE_LINK}/tralbum_details"
       end
 
       def params
         {
           band_id: @args[:artist_id],
           tralbum_id: @args[:track_id],
-          tralbum_type: 't'
+          tralbum_type: bandcamp_album_type
         }
+      end
+
+      def bandcamp_album_type
+        MODELS_TYPES_DATA['track']
       end
 
       def data
         { track: track_data }
       end
-
-      alias link album_track_link
     end
   end
 end

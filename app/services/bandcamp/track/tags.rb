@@ -4,7 +4,9 @@ module Bandcamp
       private
 
       def track_data
-        { tags: }
+        Muffon::Formatter::Track::Tags.call(
+          tags:
+        )
       end
     end
   end

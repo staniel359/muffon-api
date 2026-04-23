@@ -1,10 +1,8 @@
 module Bandcamp
   module Search
     class Albums
-      class Album < Bandcamp::Search::Albums
-        MODEL_NAME = 'album'.freeze
-
-        include Muffon::Utils::Album
+      class Album < Bandcamp::Search::Base
+        include Bandcamp::Mixins::Album
 
         def call
           check_args
@@ -16,32 +14,44 @@ module Bandcamp
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
-
-        def album
-          @args[:album]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: bandcamp_id,
+            source_album_artist_id: artist_bandcamp_id,
+            source_model: bandcamp_model,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            release_date: nil,
+            **self_args
+          )
         end
 
-        alias model album
-        alias title name
+        def raw_album_data
+          @args[:raw_album_data]
+        end
+
+        def title
+          raw_album_data['name']
+        end
+
+        def bandcamp_id
+          raw_album_data['id']
+        end
+
+        def source_original_link
+          raw_album_data['item_url_path']
+        end
+
+        def bandcamp_model
+          'album'
+        end
       end
     end
   end

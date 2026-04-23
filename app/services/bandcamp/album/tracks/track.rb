@@ -1,7 +1,7 @@
 module Bandcamp
-  module Search
-    class Tracks
-      class Track < Bandcamp::Search::Base
+  module Album
+    module Tracks
+      class Track < Bandcamp::Album::Base
         include Bandcamp::Mixins::Track
 
         def call
@@ -15,11 +15,12 @@ module Bandcamp
         def required_args
           %i[
             raw_track_data
+            album_data
           ]
         end
 
         def data
-          Muffon::Formatter::Search::Tracks::Track.call(
+          Muffon::Formatter::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: bandcamp_id,
@@ -27,31 +28,28 @@ module Bandcamp
             source_model: bandcamp_model,
             title:,
             artists:,
+            album_data:,
             image_data:,
-            album_title:,
-            source_album_id: album_bandcamp_id,
-            source_album_artist_id: artist_bandcamp_id,
             duration:,
-            is_audio_present: true,
-            **self_args,
-            **query_match_args
+            is_audio_present: audio_present?,
+            **self_args
           )
-        end
-
-        def title
-          raw_track_data['name']
         end
 
         def raw_track_data
           @args[:raw_track_data]
         end
 
-        def source_original_link
-          raw_track_data['item_url_path']
+        def album_data
+          @args[:album_data]
         end
 
-        def bandcamp_id
-          raw_track_data['id']
+        def image_data
+          album_data[:image]
+        end
+
+        def source_original_link
+          nil
         end
       end
     end

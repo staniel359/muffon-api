@@ -1,8 +1,6 @@
 module Bandcamp
   module Album
     class Base < Bandcamp::Base
-      include Bandcamp::Utils::Album
-
       def call
         check_args
 
@@ -20,6 +18,14 @@ module Bandcamp
         ]
       end
 
+      def not_found?
+        response_data['error'].present?
+      end
+
+      def link
+        "#{BASE_LINK}/tralbum_details"
+      end
+
       def params
         {
           band_id: @args[:artist_id],
@@ -29,16 +35,16 @@ module Bandcamp
       end
 
       def bandcamp_album_type
-        @args[:album_type].try(
-          :[], 0
-        ) || 'a'
+        MODELS_TYPES_DATA[
+          @args[:album_type] || 'album'
+        ]
       end
 
       def data
         { album: album_data }
       end
 
-      alias link album_track_link
+      alias raw_album_data response_data
     end
   end
 end

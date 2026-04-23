@@ -17,6 +17,14 @@ module Bandcamp
         ]
       end
 
+      def not_found?
+        response_data['error'].present?
+      end
+
+      def link
+        "#{BASE_LINK}/band_details"
+      end
+
       def params
         { band_id: @args[:label_id] }
       end
@@ -24,8 +32,6 @@ module Bandcamp
       def data
         { label: label_data }
       end
-
-      alias link artist_label_link
     end
   end
 end

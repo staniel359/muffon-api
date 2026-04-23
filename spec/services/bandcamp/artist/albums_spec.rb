@@ -16,7 +16,7 @@ RSpec.describe Bandcamp::Artist::Albums do
         end
       end
 
-      it { expect(output).to eq(bandcamp_artist_albums_data) }
+      it { expect(output).to match_hash(bandcamp_artist_albums_data) }
     end
   end
 

@@ -3,30 +3,13 @@ module Bandcamp
     class Info < Bandcamp::Track::Base
       private
 
-      def track_data
-        self_data
-          .merge(track_base_data)
-          .merge(track_extra_data)
-          .merge(with_more_data)
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
-          title:,
-          artist: artists_base_data,
-          artists:
-        }
-      end
-
-      def artist_name
-        track_info_data['artist']
+      def not_found?
+        super || track_info_data.blank?
       end
 
       def track_info_data
         @track_info_data ||=
-          Bandcamp::Web::Info.call(
+          Bandcamp::Utils::Web::Info.call(
             link: bandcamp_link
           )
       end
@@ -35,37 +18,34 @@ module Bandcamp
         response_data['bandcamp_url']
       end
 
-      def track_extra_data
-        {
-          album: album_data,
-          image: image_data,
-          profiles_count:,
+      def track_data
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: bandcamp_id,
+          source_track_artist_id: artist_bandcamp_id,
+          source_model: bandcamp_model,
+          title:,
+          artists:,
+          image_data:,
+          album_title:,
+          source_album_id: album_bandcamp_id,
+          source_album_artist_id: artist_bandcamp_id,
+          release_date: nil,
+          plays_count: nil,
           duration:,
-          description:
-            description_truncated,
-          tags: tags_truncated,
-          audio: audio_base_data
-        }.compact
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
+        )
       end
 
-      def album_data
-        return if album_title.blank?
-
-        {
-          source: album_source_data,
-          title: album_title,
-          artist: artists_minimal_data,
-          artists:
-        }
-      end
-
-      def album_source_data
-        {
-          name: source_name,
-          id: album_bandcamp_id,
-          artist_id:
-            artist_bandcamp_id
-        }
+      def artist_name
+        track_info_data['artist']
       end
 
       def album_title
@@ -76,34 +56,16 @@ module Bandcamp
         response_data['album_id']
       end
 
-      def image_data
-        image_data_formatted(
-          image(
-            response_data
-          )
-        )
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
-        )
-      end
-
       def description
         response_data['about'].presence
       end
 
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
-        )
-      end
-
       def raw_tags
         response_data['tags']
+      end
+
+      def image_id
+        response_data['art_id']
       end
     end
   end

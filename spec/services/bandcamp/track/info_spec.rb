@@ -16,7 +16,7 @@ RSpec.describe Bandcamp::Track::Info do
         end
       end
 
-      it { expect(output).to eq(bandcamp_track_info_album_data) }
+      it { expect(output).to match_hash(bandcamp_track_info_album_data) }
     end
 
     context 'when track present with description' do
@@ -33,7 +33,7 @@ RSpec.describe Bandcamp::Track::Info do
         end
       end
 
-      it { expect(output).to eq(bandcamp_track_info_description_data) }
+      it { expect(output).to match_hash(bandcamp_track_info_description_data) }
     end
   end
 

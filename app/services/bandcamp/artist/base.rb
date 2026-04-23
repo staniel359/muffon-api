@@ -22,7 +22,11 @@ module Bandcamp
       end
 
       def name
-        artist['name']
+        response_data['name']
+      end
+
+      def link
+        "#{BASE_LINK}/band_details"
       end
 
       def params
@@ -36,9 +40,6 @@ module Bandcamp
       def artist_data
         { name: }
       end
-
-      alias link artist_label_link
-      alias artist response_data
     end
   end
 end

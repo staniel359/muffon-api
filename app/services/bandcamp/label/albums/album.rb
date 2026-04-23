@@ -1,8 +1,8 @@
 module Bandcamp
   module Label
     class Albums
-      class Album < Bandcamp::Label::Albums
-        include Bandcamp::Utils::Album
+      class Album < Bandcamp::Label::Base
+        include Bandcamp::Mixins::Album
 
         def call
           check_args
@@ -14,34 +14,27 @@ module Bandcamp
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_base_data)
-            .merge(album_extra_data)
-        end
-
-        def album
-          @args[:album]
-        end
-
-        def album_base_data
-          {
-            source: source_data,
+          Muffon::Formatter::Label::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: bandcamp_id,
+            source_album_artist_id: artist_bandcamp_id,
+            source_model: bandcamp_model,
             title:,
-            artist: artists_minimal_data,
-            artists:
-          }
+            artists:,
+            image_data:,
+            release_date:,
+            **self_args
+          )
         end
 
-        def album_extra_data
-          {
-            image: image_data,
-            release_date:
-          }.compact
+        def raw_album_data
+          @args[:raw_album_data]
         end
       end
     end

@@ -15,7 +15,7 @@ RSpec.describe Bandcamp::Label::Albums do
         end
       end
 
-      it { expect(output).to eq(bandcamp_label_albums_data) }
+      it { expect(output).to match_hash(bandcamp_label_albums_data) }
     end
   end
 
