@@ -2,7 +2,7 @@ module Spotify
   module Playlist
     class Tracks
       class Track < Spotify::Playlist::Tracks
-        include Spotify::Utils::Track
+        include Spotify::Mixins::Track
 
         def call
           check_args
@@ -19,18 +19,20 @@ module Spotify
         end
 
         def data
-          {
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::User::Playlist::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: spotify_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            album: album_data,
-            image: image_data,
+            album_title:,
+            source_album_id: album_spotify_id,
+            image_data:,
             duration:,
-            created: created_formatted,
-            audio: audio_minimal_data
-          }.compact_blank
+            creation_date:,
+            is_audio_present: audio_present?,
+            is_local: local_track?
+          )
         end
 
         def raw_track_data
@@ -40,17 +42,19 @@ module Spotify
           )
         end
 
-        def created_formatted
+        def creation_date
           datetime_formatted(
-            raw_created
+            raw_creation_date
           )
         end
 
-        def raw_created
-          @args[:raw_track_data].dig(
-            'addedAt',
-            'isoString'
-          ).to_datetime
+        def raw_creation_date
+          @args[:raw_track_data]
+            .dig(
+              'addedAt',
+              'isoString'
+            )
+            .to_datetime
         end
 
         def raw_duration
@@ -69,11 +73,7 @@ module Spotify
         end
 
         def raw_artist_data
-          {
-            'profile' => {
-              'name' => raw_artist_name
-            }
-          }
+          { name: raw_artist_name }
         end
 
         def raw_artist_name

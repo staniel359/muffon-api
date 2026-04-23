@@ -1,14 +1,12 @@
 module Spotify
-  module Utils
+  module Mixins
     module Playlist
+      include Muffon::Mixins::Formatting::Collection
+
       private
 
-      def source_data
-        {
-          name: source_name,
-          id: spotify_id,
-          links: source_links_data
-        }
+      def title
+        raw_playlist_data['name']
       end
 
       def spotify_id
@@ -18,12 +16,8 @@ module Spotify
         )
       end
 
-      def original_link
+      def source_original_link
         "https://open.spotify.com/playlist/#{spotify_id}"
-      end
-
-      def title
-        raw_playlist_data['name']
       end
 
       def description
@@ -36,16 +30,16 @@ module Spotify
       end
 
       def raw_description
-        raw_playlist_data['description'].presence
+        raw_playlist_data['description']
       end
 
       def image_data
-        image_data_formatted(
-          raw_images
+        Spotify::Formatter::Image.call(
+          images:
         )
       end
 
-      def raw_images
+      def images
         raw_playlist_data.dig(
           'images',
           'items',

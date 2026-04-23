@@ -64,8 +64,7 @@ module Spotify
 
       def headers
         {
-          'Authorization' =>
-            "Bearer #{access_token}",
+          'Authorization' => "Bearer #{access_token}",
           'Content-Type' =>
             'application/x-www-form-urlencoded'
         }
@@ -76,7 +75,7 @@ module Spotify
           spotify_connection&.access_token
       end
 
-      alias user response_data
+      alias raw_user_data response_data
     end
   end
 end

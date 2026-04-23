@@ -14,7 +14,7 @@ RSpec.describe Spotify::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(spotify_track_albums_data) }
+      it { expect(output).to match_hash(spotify_track_albums_data) }
     end
   end
 

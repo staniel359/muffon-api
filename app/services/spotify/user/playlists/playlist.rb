@@ -2,7 +2,7 @@ module Spotify
   module User
     class Playlists
       class Playlist < Spotify::User::Playlists
-        include Spotify::Utils::Playlist
+        include Spotify::Mixins::Playlist
 
         def call
           check_args
@@ -19,14 +19,17 @@ module Spotify
         end
 
         def data
-          {
-            source: source_data,
+          Muffon::Formatter::User::Playlists::Playlist.call(
+            source_original_link:,
+            source_name:,
+            source_playlist_id: spotify_id,
             title:,
             description:,
-            image: image_data,
+            description_size: 'medium',
+            image_data:,
             tracks_count:,
             tracks:
-          }.compact
+          )
         end
 
         def raw_playlist_data
@@ -58,11 +61,12 @@ module Spotify
               playlist_id: spotify_id,
               profile_id: @args[:profile_id]
             ).try(
-              :[], :playlist
+              :[],
+              :playlist
             ) || {}
         end
 
-        def raw_images
+        def images
           raw_playlist_data['images']
         end
       end

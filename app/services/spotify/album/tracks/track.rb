@@ -1,8 +1,8 @@
 module Spotify
   module Album
-    class Info
-      class Track < Spotify::Album::Info
-        include Spotify::Utils::Track
+    module Tracks
+      class Track < Spotify::Album::Base
+        include Spotify::Mixins::Track
 
         def call
           check_args
@@ -20,18 +20,18 @@ module Spotify
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Album::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: spotify_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            album: album_data,
-            image: image_data,
+            image_data:,
+            album_data:,
             duration:,
-            audio: audio_minimal_data
-          }.compact
+            is_audio_present: audio_present?,
+            **self_args
+          )
         end
 
         def raw_track_data

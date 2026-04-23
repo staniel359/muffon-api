@@ -1,6 +1,8 @@
 module Spotify
   module Artist
     class Info < Spotify::Artist::Base
+      include Spotify::Mixins::Artist
+
       private
 
       def payload

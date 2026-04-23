@@ -13,7 +13,7 @@ RSpec.describe Spotify::Track::Links do
         end
       end
 
-      it { expect(output).to eq(spotify_track_links_data) }
+      it { expect(output).to match_hash(spotify_track_links_data) }
     end
   end
 

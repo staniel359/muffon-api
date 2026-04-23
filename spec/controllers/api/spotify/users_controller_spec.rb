@@ -22,7 +22,6 @@ RSpec.describe API::Spotify::UsersController do
         :info,
         params: {
           **required_params,
-          access_token: '',
           profile_id: 1
         }
       )
@@ -73,7 +72,6 @@ RSpec.describe API::Spotify::UsersController do
         :tracks,
         params: {
           **required_params,
-          access_token: '',
           profile_id: 1
         }
       )
@@ -124,7 +122,6 @@ RSpec.describe API::Spotify::UsersController do
         :playlists,
         params: {
           **required_params,
-          access_token: '',
           profile_id: '1'
         }
       )

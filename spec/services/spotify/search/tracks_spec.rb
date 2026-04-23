@@ -16,7 +16,7 @@ RSpec.describe Spotify::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(spotify_search_tracks_data) }
+      it { expect(output).to match_hash(spotify_search_tracks_data) }
     end
   end
 

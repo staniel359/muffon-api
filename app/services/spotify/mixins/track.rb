@@ -1,7 +1,7 @@
 module Spotify
-  module Utils
+  module Mixins
     module Track
-      include Muffon::Utils::Track
+      include Muffon::Mixins::Formatting::Collection
 
       private
 
@@ -10,23 +10,36 @@ module Spotify
       end
 
       def raw_artists
+        raw_raw_artists.map do |raw_artist_data|
+          name =
+            raw_artist_data.dig(
+              'profile',
+              'name'
+            )
+
+          spotify_uri = raw_artist_data['uri']
+
+          spotify_id =
+            spotify_uri&.sub(
+              'spotify:artist:',
+              ''
+            )
+
+          {
+            name:,
+            source_id: spotify_id
+          }
+        end
+      end
+
+      def raw_raw_artists
         raw_track_data.dig(
           'artists',
           'items'
         )
       end
 
-      def source_data
-        return if local?
-
-        {
-          name: source_name,
-          id: spotify_id,
-          links: source_links_data
-        }
-      end
-
-      def local?
+      def local_track?
         raw_track_data['__typename'] == 'LocalTrack'
       end
 
@@ -37,39 +50,16 @@ module Spotify
         )
       end
 
-      def original_link
+      def source_original_link
         "https://open.spotify.com/track/#{spotify_id}"
       end
 
-      def streaming_link
-        return if spotify_id.blank?
-
-        streaming_link_formatted(
-          model: 'track',
-          model_id: spotify_id
-        )
-      end
-
-      def album_data
-        return if raw_album_data.blank?
-
-        {
-          source: album_source_data,
-          title: album_title
-        }.compact
+      def album_title
+        raw_album_data['name']
       end
 
       def raw_album_data
         raw_track_data['albumOfTrack']
-      end
-
-      def album_source_data
-        return if local?
-
-        {
-          name: source_name,
-          id: album_spotify_id
-        }
       end
 
       def album_spotify_id
@@ -79,17 +69,13 @@ module Spotify
         )
       end
 
-      def album_title
-        raw_album_data['name']
-      end
-
       def image_data
-        image_data_formatted(
-          raw_images
+        Spotify::Formatter::Image.call(
+          images:
         )
       end
 
-      def raw_images
+      def images
         raw_album_data.dig(
           'coverArt',
           'sources'
@@ -110,11 +96,25 @@ module Spotify
       end
 
       def audio_present?
-        return false if local?
+        return false if local_track?
 
         raw_track_data.dig(
           'playability',
           'playable'
+        )
+      end
+
+      def audio_link
+        return if @args[:with_audio].blank?
+
+        Spotify::Utils::Track::Audio::Link.call(
+          track_id: @args[:track_id]
+        )
+      end
+
+      def creation_date
+        datetime_formatted(
+          raw_creation_date
         )
       end
     end

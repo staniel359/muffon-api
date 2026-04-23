@@ -4,8 +4,7 @@ module Spotify
       private
 
       def forbidden?
-        super ||
-          access_token_data.blank?
+        super || access_token_data.blank?
       end
 
       def access_token_data

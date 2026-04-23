@@ -15,7 +15,7 @@ module Spotify
       end
 
       def raw_collection
-        user['items']
+        raw_user_data['items']
       end
 
       def link
@@ -31,7 +31,7 @@ module Spotify
       end
 
       def items_count
-        user['total']
+        raw_user_data['total']
       end
 
       def collection_item_data_formatted(

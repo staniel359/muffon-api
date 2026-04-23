@@ -4,29 +4,36 @@ module Spotify
       private
 
       def track_data
-        {
-          **track_base_data,
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: spotify_id,
+          title:,
+          artists:,
           albums:
-        }.compact
+        )
       end
 
-      def raw_albums
-        [raw_album_data].compact
+      def albums
+        [album_data].compact
+      end
+
+      def album_data
+        return if raw_album_data.blank?
+
+        Spotify::Album::Info.call(
+          album_id: album_spotify_id,
+          is_list: true,
+          **self_args
+        )[:album]
+      end
+
+      def album_spotify_id
+        raw_album_data['id']
       end
 
       def raw_album_data
         raw_track_data['albumOfTrack']
-      end
-
-      def album_data_formatted(
-        raw_album_data
-      )
-        Spotify::Track::Albums::Album.call(
-          raw_album_data:,
-          raw_artists: raw_primary_artists,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
-        )
       end
     end
   end

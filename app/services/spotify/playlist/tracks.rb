@@ -46,13 +46,9 @@ module Spotify
       end
 
       def pages_count
-        items_count
+        @args[:items_count]
           .fdiv(PAGE_LIMIT)
           .ceil
-      end
-
-      def items_count
-        @args[:items_count]
       end
 
       def page_tracks(

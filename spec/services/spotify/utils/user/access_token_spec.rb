@@ -15,7 +15,7 @@ RSpec.describe Spotify::Utils::User::AccessToken do
         end
       end
 
-      it { expect(output).to eq(spotify_utils_user_access_token_data) }
+      it { expect(output).to match_hash(spotify_utils_user_access_token_data) }
     end
   end
 

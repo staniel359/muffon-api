@@ -93,17 +93,14 @@ module Spotify
         raw_album_data
       )
         raw_artist_data = {
-          'profile' => {
-            'name' => name
-          },
-          'uri' => spotify_uri
+          name:,
+          source_id: @args[:artist_id]
         }
 
         Spotify::Artist::Albums::Album.call(
           raw_album_data:,
-          raw_artists: [raw_artist_data],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_artist_data:,
+          **self_args
         )
       end
     end

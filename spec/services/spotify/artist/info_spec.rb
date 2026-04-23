@@ -13,7 +13,7 @@ RSpec.describe Spotify::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(spotify_artist_info_data) }
+      it { expect(output).to match_hash(spotify_artist_info_data) }
     end
   end
 

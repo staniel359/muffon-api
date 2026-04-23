@@ -1,8 +1,10 @@
 module Spotify
-  module Utils
+  module Formatter
     class Image < Spotify::Base
       def call
-        return if args_missing?
+        check_args
+
+        return if @args[:images].blank?
 
         data
       end

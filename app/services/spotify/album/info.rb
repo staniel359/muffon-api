@@ -1,10 +1,12 @@
 module Spotify
   module Album
     class Info < Spotify::Album::Base
+      include Spotify::Mixins::Album
+
       private
 
       def album_data
-        if @args[:list]
+        if @args[:is_list]
           album_list_data
         else
           album_full_data
@@ -12,63 +14,67 @@ module Spotify
       end
 
       def album_list_data
-        {
-          **self_data,
-          **album_base_data,
-          release_date:,
-          listeners_count:
-        }.compact
+        Muffon::Formatter::Track::Albums::Album.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: spotify_id,
+          title:,
+          artists:,
+          image_data:,
+          release_date:
+        )
       end
 
       def album_full_data
-        {
-          **self_data,
-          **album_base_data,
-          profiles_count:,
+        Muffon::Formatter::Album::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: spotify_id,
+          title:,
+          artists:,
+          image_data:,
           release_date:,
+          plays_count: nil,
+          description: nil,
+          description_size: nil,
+          tags: nil,
+          tags_size: nil,
           labels:,
           tracks:,
-          **with_more_data
-        }.compact
-      end
-
-      def album_base_data
-        {
-          source: source_data,
-          title:,
-          artist: artists_minimal_data,
-          artists:,
-          image: image_data
-        }
-      end
-
-      def labels
-        [raw_album_data['label']]
-      end
-
-      def raw_tracks
-        raw_album_data.dig(
-          'tracksV2',
-          'items'
+          **self_args
         )
       end
 
-      def tracks_count
-        raw_album_data.dig(
-          'tracksV2',
-          'totalCount'
-        )
+      def raw_release_date
+        raw_album_data
+          .dig(
+            'date',
+            'isoString'
+          )
+          .to_date
       end
 
       def track_data_formatted(
         raw_track_data
       )
-        Spotify::Album::Info::Track.call(
+        Spotify::Album::Tracks::Track.call(
           raw_track_data:,
           album_data: album_base_data,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
+      end
+
+      def album_base_data
+        @album_base_data ||=
+          Muffon::Formatter::Track::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: spotify_id,
+            title:,
+            artists:,
+            image_data:,
+            release_date: nil
+          )
       end
     end
   end

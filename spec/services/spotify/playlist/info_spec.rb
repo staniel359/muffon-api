@@ -14,7 +14,7 @@ RSpec.describe Spotify::Playlist::Info do
         end
       end
 
-      it { expect(output).to eq(spotify_playlist_info_data) }
+      it { expect(output).to match_hash(spotify_playlist_info_data) }
     end
   end
 

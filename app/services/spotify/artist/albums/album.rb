@@ -2,7 +2,7 @@ module Spotify
   module Artist
     class Albums
       class Album < Spotify::Artist::Albums
-        include Spotify::Utils::Album
+        include Spotify::Mixins::Album
 
         def call
           check_args
@@ -15,7 +15,7 @@ module Spotify
         def required_args
           %i[
             raw_album_data
-            raw_artists
+            raw_artist_data
           ]
         end
 
@@ -24,16 +24,16 @@ module Spotify
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
+          Muffon::Formatter::Artist::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: spotify_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
+            image_data:,
             release_date:,
-            listeners_count:
-          }.compact
+            **self_args
+          )
         end
 
         def raw_album_data
@@ -45,7 +45,7 @@ module Spotify
         end
 
         def raw_artists
-          @args[:raw_artists]
+          [@args[:raw_artist_data]]
         end
       end
     end

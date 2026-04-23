@@ -13,7 +13,7 @@ RSpec.describe Spotify::Album::Links do
         end
       end
 
-      it { expect(output).to eq(spotify_album_links_data) }
+      it { expect(output).to match_hash(spotify_album_links_data) }
     end
   end
 

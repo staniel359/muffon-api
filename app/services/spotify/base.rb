@@ -98,53 +98,6 @@ module Spotify
       )
     end
 
-    def artist_data_formatted(
-      raw_artist_data
-    )
-      {
-        source: artist_source_data(
-          raw_artist_data
-        ),
-        name: raw_artist_data.dig(
-          'data',
-          'profile',
-          'name'
-        ) ||
-          raw_artist_data.dig(
-            'profile',
-            'name'
-          ) ||
-          raw_artist_data['name']
-      }.compact
-    end
-
-    def artist_source_data(
-      raw_artist_data
-    )
-      spotify_uri =
-        raw_artist_data.dig('data', 'uri') ||
-        raw_artist_data['uri']
-
-      return if spotify_uri.blank?
-
-      spotify_id =
-        spotify_uri.sub(
-          'spotify:artist:',
-          ''
-        )
-
-      {
-        name: source_name,
-        id: spotify_id
-      }
-    end
-
-    def image_data_formatted(images)
-      Spotify::Utils::Image.call(
-        images:
-      )
-    end
-
     def retry_with_new_session
       if update_session[:success]
         spotify_connection&.reload
@@ -163,13 +116,11 @@ module Spotify
     end
 
     def spotify_connection
-      return @spotify_connection if defined?(@spotify_connection)
-
-      @spotify_connection = profile&.spotify_connection
-    end
-
-    def artist_name
-      artists_names.presence || 'Unknown Artist'
+      if defined?(@spotify_connection)
+        @spotify_connection
+      else
+        @spotify_connection = profile&.spotify_connection
+      end
     end
   end
 end

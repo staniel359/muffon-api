@@ -1,32 +1,34 @@
 module Spotify
   module Track
     class Info < Spotify::Track::Base
+      include Spotify::Mixins::Track
+
       private
 
       def track_data
-        {
-          **self_data,
-          **track_base_data,
-          album: album_data,
-          image: image_data,
-          profiles_count:,
-          duration:,
-          audio: audio_base_data,
-          **with_more_data
-        }.compact
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: spotify_id,
           title:,
-          artist: artists_base_data,
-          artists:
-        }
+          artists:,
+          album_title:,
+          source_album_id: album_spotify_id,
+          image_data:,
+          release_date: nil,
+          plays_count: nil,
+          duration:,
+          description: nil,
+          description_size: nil,
+          tags: nil,
+          tags_size: nil,
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
+        )
       end
 
-      def raw_artists
+      def raw_raw_artists
         [
           *raw_primary_artists,
           *raw_other_artists
@@ -60,12 +62,6 @@ module Spotify
             }
           }
         }.to_json
-      end
-
-      def audio_link
-        Spotify::Utils::Audio::Link.call(
-          track_id: @args[:track_id]
-        )
       end
     end
   end

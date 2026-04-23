@@ -2,7 +2,7 @@ module Spotify
   module User
     class Tracks
       class Track < Spotify::User::Tracks
-        include Spotify::Utils::Track
+        include Spotify::Mixins::Track
 
         def call
           check_args
@@ -19,27 +19,35 @@ module Spotify
         end
 
         def data
-          {
-            source: source_data,
+          Muffon::Formatter::User::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: spotify_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            album: album_data,
-            image: image_data,
-            created: created_formatted,
-            audio: audio_minimal_data
-          }.compact
+            album_title:,
+            source_album_id: album_spotify_id,
+            image_data:,
+            creation_date:,
+            is_audio_present: audio_present?,
+            is_local: local_track?
+          )
         end
 
         def raw_artists
-          raw_track_data['artists']
+          raw_track_data['artists'].map do |raw_artist_data|
+            {
+              name: raw_artist_data['name'],
+              source_id: raw_artist_data['id']
+            }
+          end
         end
 
         def raw_track_data
           @args[:raw_track_data]['track']
         end
 
-        def raw_images
+        def images
           raw_album_data['images']
         end
 
@@ -47,13 +55,7 @@ module Spotify
           raw_track_data['album']
         end
 
-        def created_formatted
-          datetime_formatted(
-            raw_created
-          )
-        end
-
-        def raw_created
+        def raw_creation_date
           @args[:raw_track_data]['added_at'].to_datetime
         end
 

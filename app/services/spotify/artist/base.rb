@@ -1,8 +1,6 @@
 module Spotify
   module Artist
     class Base < Spotify::Base
-      include Spotify::Utils::Artist
-
       def call
         check_args
 

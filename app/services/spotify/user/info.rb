@@ -15,15 +15,15 @@ module Spotify
       end
 
       def spotify_id
-        user['id']
+        raw_user_data['id']
       end
 
       def nickname
-        user['display_name']
+        raw_user_data['display_name']
       end
 
       def premium?
-        user['product'] == 'premium'
+        raw_user_data['product'] == 'premium'
       end
 
       def image_url
@@ -34,13 +34,13 @@ module Spotify
       end
 
       def image_data
-        image_data_formatted(
-          images
+        Spotify::Formatter::Image.call(
+          images:
         )
       end
 
       def images
-        user['images']
+        raw_user_data['images']
       end
 
       def tracks_count
@@ -62,7 +62,8 @@ module Spotify
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
         ).try(
-          :[], :user
+          :[],
+          :user
         ) || {}
       end
 
@@ -79,7 +80,8 @@ module Spotify
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
         ).try(
-          :[], :user
+          :[],
+          :user
         ) || {}
       end
     end

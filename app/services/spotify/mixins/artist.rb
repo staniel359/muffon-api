@@ -1,8 +1,6 @@
 module Spotify
-  module Utils
+  module Mixins
     module Artist
-      include Muffon::Utils::Artist
-
       private
 
       def name
@@ -12,14 +10,6 @@ module Spotify
         )
       end
 
-      def source_data
-        {
-          name: source_name,
-          id: spotify_id,
-          links: source_links_data
-        }
-      end
-
       def spotify_id
         raw_artist_data['uri'].sub(
           'spotify:artist:',
@@ -27,17 +17,17 @@ module Spotify
         )
       end
 
-      def original_link
+      def source_original_link
         "https://open.spotify.com/artist/#{spotify_id}"
       end
 
       def image_data
-        image_data_formatted(
-          raw_images
-        ) || super
+        Spotify::Formatter::Image.call(
+          images:
+        )
       end
 
-      def raw_images
+      def images
         raw_artist_data.dig(
           'visuals',
           'avatarImage',

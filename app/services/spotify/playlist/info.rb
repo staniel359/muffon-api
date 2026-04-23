@@ -1,19 +1,21 @@
 module Spotify
   module Playlist
     class Info < Spotify::Playlist::Base
-      include Spotify::Utils::Playlist
+      include Spotify::Mixins::Playlist
 
       private
 
       def playlist_data
-        {
-          source: source_data,
+        Muffon::Formatter::User::Playlist::Info.call(
+          source_original_link:,
+          source_name:,
+          source_playlist_id: spotify_id,
           title:,
           description:,
-          image: image_data,
+          image_data:,
           tracks_count: raw_tracks.size,
           tracks:
-        }.compact
+        )
       end
 
       def raw_tracks

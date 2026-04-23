@@ -10,6 +10,6 @@ RSpec.describe Spotify::Utils::ClientToken do
       end
     end
 
-    it { expect(output).to eq(spotify_utils_client_token) }
+    it { expect(output).to match_hash(spotify_utils_client_token) }
   end
 end

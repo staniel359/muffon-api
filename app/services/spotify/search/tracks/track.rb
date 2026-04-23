@@ -2,19 +2,12 @@ module Spotify
   module Search
     class Tracks
       class Track < Spotify::Search::Tracks
-        include Spotify::Utils::Track
+        include Spotify::Mixins::Track
 
         def call
           check_args
 
-          with_query_match(
-            title:,
-            query_title: @args[:query_title],
-            artist_name:,
-            query_artist_name: @args[:query_artist_name]
-          ) do
-            data
-          end
+          data
         end
 
         private
@@ -26,18 +19,20 @@ module Spotify
         end
 
         def data
-          {
-            **self_data,
-            source: source_data,
-            player_id: player_source_id,
+          Muffon::Formatter::Search::Tracks::Track.call(
+            source_original_link:,
+            source_name:,
+            source_track_id: spotify_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            album: album_data,
-            image: image_data,
+            image_data:,
+            album_title:,
+            source_album_id: album_spotify_id,
             duration:,
-            audio: audio_minimal_data
-          }.compact
+            is_audio_present: audio_present?,
+            **query_match_args,
+            **self_args
+          )
         end
 
         def raw_track_data

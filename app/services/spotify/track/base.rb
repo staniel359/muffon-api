@@ -1,8 +1,6 @@
 module Spotify
   module Track
     class Base < Spotify::Base
-      include Spotify::Utils::Track
-
       def call
         check_args
 

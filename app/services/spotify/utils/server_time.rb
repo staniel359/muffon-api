@@ -1,7 +1,8 @@
 module Spotify
   module Utils
     class ServerTime < Spotify::Base
-      BASE_LINK = 'https://open.spotify.com/api/server-time'.freeze
+      BASE_LINK =
+        'https://open.spotify.com/api/server-time'.freeze
 
       def call
         data
@@ -15,6 +16,10 @@ module Spotify
 
       def link
         BASE_LINK
+      end
+
+      def headers
+        nil
       end
     end
   end

@@ -15,7 +15,7 @@ RSpec.describe Spotify::User::Playlists do
         end
       end
 
-      it { expect(output).to eq(spotify_user_playlists_data) }
+      it { expect(output).to match_hash(spotify_user_playlists_data) }
     end
   end
 

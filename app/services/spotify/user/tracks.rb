@@ -15,7 +15,7 @@ module Spotify
       end
 
       def raw_collection
-        user['items']
+        raw_user_data['items']
       end
 
       def link
@@ -31,7 +31,7 @@ module Spotify
       end
 
       def items_count
-        user['total']
+        raw_user_data['total']
       end
 
       def collection_item_data_formatted(
@@ -39,8 +39,7 @@ module Spotify
       )
         Spotify::User::Tracks::Track.call(
           raw_track_data:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end
