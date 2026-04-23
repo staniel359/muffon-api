@@ -14,7 +14,7 @@ RSpec.describe MusicBrainz::Track::Info do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_track_info_data) }
+      it { expect(output).to match_hash(musicbrainz_track_info_data) }
     end
   end
 

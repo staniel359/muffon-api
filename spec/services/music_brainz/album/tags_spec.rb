@@ -13,7 +13,7 @@ RSpec.describe MusicBrainz::Album::Tags do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_album_tags_data) }
+      it { expect(output).to match_hash(musicbrainz_album_tags_data) }
     end
   end
 

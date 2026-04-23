@@ -1,7 +1,7 @@
 module MusicBrainz
-  module Search
-    class Tracks
-      class Track < MusicBrainz::Search::Tracks
+  module Album
+    module Tracks
+      class Track < MusicBrainz::Album::Base
         include MusicBrainz::Mixins::Track
 
         def call
@@ -15,20 +15,19 @@ module MusicBrainz
         def required_args
           %i[
             raw_track_data
+            album_data
           ]
         end
 
         def data
-          Muffon::Formatter::Search::Tracks::Track.call(
+          Muffon::Formatter::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: musicbrainz_id,
             title:,
             artists:,
-            album_title:,
-            source_album_id: album_musicbrainz_id,
-            album_model: 'album',
             image_data:,
+            album_data:,
             duration:,
             is_audio_present: audio_present?,
             **self_args
@@ -37,6 +36,14 @@ module MusicBrainz
 
         def raw_track_data
           @args[:raw_track_data]
+        end
+
+        def image_data
+          album_data[:image]
+        end
+
+        def album_data
+          @args[:album_data]
         end
       end
     end

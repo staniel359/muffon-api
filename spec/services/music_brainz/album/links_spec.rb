@@ -13,7 +13,7 @@ RSpec.describe MusicBrainz::Album::Links do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_album_links_data) }
+      it { expect(output).to match_hash(musicbrainz_album_links_data) }
     end
   end
 

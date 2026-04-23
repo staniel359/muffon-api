@@ -1,11 +1,7 @@
 module MusicBrainz
   module Artist
     class Info < MusicBrainz::Artist::Base
-      private
-
-      def name
-        artist['name']
-      end
+      include MusicBrainz::Mixins::Artist
     end
   end
 end

@@ -24,11 +24,12 @@ module MusicBrainz
         "#{BASE_LINK}/release-group"
       end
 
-      def collection_item_data_formatted(group)
+      def collection_item_data_formatted(
+        raw_album_group_data
+      )
         MusicBrainz::Search::Groups::Group.call(
-          group:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_group_data:,
+          **self_args
         )
       end
     end

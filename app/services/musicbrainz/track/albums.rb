@@ -1,39 +1,38 @@
 module MusicBrainz
   module Track
-    class Albums < MusicBrainz::Track::Info
+    class Albums < MusicBrainz::Track::Base
+      include MusicBrainz::Mixins::Track
+
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: musicbrainz_id,
+          title:,
+          artists:,
+          albums:
+        )
       end
 
       def albums
-        album_ids.map do |album_id|
-          album_info(album_id)
-        end.compact
+        raw_albums_distinct
+          .map do |raw_album_data|
+            album_info(
+              raw_album_data['id']
+            )
+          end
+          .compact
       end
 
-      def album_ids
-        unique_albums.pluck('id')
-      end
-
-      def unique_albums
-        track['releases'].uniq do |album_data|
-          album_data['title']
-        end
-      end
-
-      def album_info(album_id)
+      def album_info(
+        album_id
+      )
         MusicBrainz::Album::Info.call(
           album_id:,
-          list: true,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          is_list: true,
+          **self_args
         )[:album]
       end
     end

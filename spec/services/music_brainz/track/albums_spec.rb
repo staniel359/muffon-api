@@ -14,7 +14,7 @@ RSpec.describe MusicBrainz::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_track_albums_data) }
+      it { expect(output).to match_hash(musicbrainz_track_albums_data) }
     end
   end
 

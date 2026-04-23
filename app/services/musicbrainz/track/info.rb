@@ -1,53 +1,33 @@
 module MusicBrainz
   module Track
     class Info < MusicBrainz::Track::Base
+      include Muffon::Utils::Track
+      include MusicBrainz::Mixins::Track
+
       private
 
       def track_data
-        track_base_data
-          .merge(track_extra_data)
-          .merge(with_more_data)
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: musicbrainz_id,
           title:,
-          artist: artists_base_data,
-          artists:
-        }
-      end
-
-      def track_extra_data
-        {
-          album: album_data,
-          image: image_data,
-          profiles_count:,
+          artists:,
+          album_title:,
+          source_album_id: album_musicbrainz_id,
+          album_model: 'album',
+          image_data:,
           release_date:,
-          tags: tags_truncated
-        }.compact_blank
-      end
-
-      def release_date
-        date_formatted(
-          raw_release_date
+          duration:,
+          description: nil,
+          description_size: nil,
+          plays_count: nil,
+          tags:,
+          tags_size: 'extrasmall',
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
         )
-      end
-
-      def raw_release_date
-        track['first-release-date']
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
-        )
-      end
-
-      def raw_tags
-        track['tags']
       end
     end
   end

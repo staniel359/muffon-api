@@ -16,7 +16,7 @@ RSpec.describe MusicBrainz::Search::Labels do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_search_labels_data) }
+      it { expect(output).to match_hash(musicbrainz_search_labels_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe MusicBrainz::Search::Labels do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_labels_data) }
+      it { expect(output).to match_hash(search_paginated_missing_labels_data) }
     end
   end
 end

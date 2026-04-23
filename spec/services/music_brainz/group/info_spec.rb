@@ -14,7 +14,7 @@ RSpec.describe MusicBrainz::Group::Info do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_group_info_data) }
+      it { expect(output).to match_hash(musicbrainz_group_info_data) }
     end
   end
 

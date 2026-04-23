@@ -1,9 +1,7 @@
 module MusicBrainz
   module Group
     class Info < MusicBrainz::Group::Base
-      MODEL_NAME = 'release-group'.freeze
-
-      include MusicBrainz::Utils::Album
+      include MusicBrainz::Mixins::AlbumGroup
 
       private
 
@@ -15,56 +13,32 @@ module MusicBrainz
       end
 
       def group_data
-        group_base_data
-          .merge(group_extra_data)
-          .merge(with_more_data)
-      end
-
-      def group_base_data
-        {
-          source: source_data,
+        Muffon::Formatter::AlbumGroup::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_group_id: musicbrainz_id,
+          source_model: musicbrainz_model,
           title:,
-          artist: artists_minimal_data,
-          artists:
-        }
-      end
-
-      def group_extra_data
-        {
-          image: image_data,
+          artists:,
+          image_data:,
           release_date:,
-          listeners_count:,
-          tags: tags_truncated,
-          description:
-            description_truncated
-        }.compact_blank
-      end
-
-      def description_truncated
-        text_truncated(
-          description,
-          size: 'medium'
+          description:,
+          description_size: 'medium',
+          tags:,
+          tags_size: 'extrasmall',
+          tracks: nil,
+          **self_args
         )
       end
 
       def description
-        @description ||=
-          MusicBrainz::Group::Description.call(
-            group_id: @args[:group_id]
-          ).dig(
-            :group,
-            :description
-          )
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
+        MusicBrainz::Group::Description.call(
+          group_id: @args[:group_id]
+        ).dig(
+          :group,
+          :description
         )
       end
-
-      alias album group
     end
   end
 end

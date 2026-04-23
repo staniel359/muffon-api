@@ -29,7 +29,7 @@ module MusicBrainz
         { group: group_data }
       end
 
-      alias group response_data
+      alias raw_album_group_data response_data
     end
   end
 end

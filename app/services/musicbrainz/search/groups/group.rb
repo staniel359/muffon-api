@@ -2,7 +2,7 @@ module MusicBrainz
   module Search
     class Groups
       class Group < MusicBrainz::Search::Groups
-        include MusicBrainz::Utils::Album
+        include MusicBrainz::Mixins::AlbumGroup
 
         def call
           check_args
@@ -14,29 +14,26 @@ module MusicBrainz
 
         def required_args
           %i[
-            group
+            raw_album_group_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
-
-        def album
-          @args[:group]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::AlbumGroups::AlbumGroup.call(
+            source_original_link:,
+            source_name:,
+            source_album_group_id: musicbrainz_id,
+            source_model: musicbrainz_model,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
+            image_data:,
             release_date:,
-            listeners_count:
-          }.compact_blank
+            **self_args
+          )
+        end
+
+        def raw_album_group_data
+          @args[:raw_album_group_data]
         end
       end
     end

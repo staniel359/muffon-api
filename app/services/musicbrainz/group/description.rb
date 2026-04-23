@@ -1,13 +1,14 @@
 module MusicBrainz
   module Group
     class Description < MusicBrainz::Group::Base
-      BASE_LINK =
-        'https://musicbrainz.org'.freeze
+      BASE_LINK = 'https://musicbrainz.org'.freeze
 
       private
 
       def group_data
-        { description: }
+        Muffon::Formatter::AlbumGroup::Description.call(
+          description:
+        )
       end
 
       def description

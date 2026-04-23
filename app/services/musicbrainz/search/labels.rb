@@ -24,11 +24,11 @@ module MusicBrainz
         "#{BASE_LINK}/label"
       end
 
-      def collection_item_data_formatted(label)
+      def collection_item_data_formatted(
+        raw_label_data
+      )
         MusicBrainz::Search::Labels::Label.call(
-          label:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_label_data:
         )
       end
     end

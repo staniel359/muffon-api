@@ -1,8 +1,8 @@
 module MusicBrainz
-  module Utils
+  module Formatter
     class Image < MusicBrainz::Base
       def call
-        return if args_missing?
+        check_args
 
         data
       end
@@ -11,7 +11,7 @@ module MusicBrainz
 
       def required_args
         %i[
-          album_id
+          image_id
           album_type
         ]
       end
@@ -29,7 +29,7 @@ module MusicBrainz
       def image_resized(size)
         'https://coverartarchive.org' \
           "/#{@args[:album_type]}" \
-          "/#{@args[:album_id]}/front-#{size}"
+          "/#{@args[:image_id]}/front-#{size}"
       end
     end
   end

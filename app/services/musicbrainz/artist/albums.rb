@@ -1,7 +1,7 @@
 module MusicBrainz
   module Artist
     class Albums < MusicBrainz::Artist::Base
-      ALBUMS_TYPES = {
+      ALBUMS_TYPES_DATA = {
         'album' => 'album',
         'single' => 'single',
         'ep' => 'ep',
@@ -36,7 +36,7 @@ module MusicBrainz
       end
 
       def raw_collection
-        artist['release-groups']
+        raw_artist_data['release-groups']
       end
 
       def link
@@ -55,18 +55,19 @@ module MusicBrainz
       end
 
       def album_type
-        ALBUMS_TYPES[@args[:album_type]]
+        ALBUMS_TYPES_DATA[@args[:album_type]]
       end
 
       def items_count
-        artist['release-group-count']
+        raw_artist_data['release-group-count']
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         MusicBrainz::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

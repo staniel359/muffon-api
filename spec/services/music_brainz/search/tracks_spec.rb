@@ -16,7 +16,7 @@ RSpec.describe MusicBrainz::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_search_tracks_data) }
+      it { expect(output).to match_hash(musicbrainz_search_tracks_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe MusicBrainz::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(search_paginated_missing_tracks_data) }
+      it { expect(output).to match_hash(search_paginated_missing_tracks_data) }
     end
   end
 end

@@ -24,11 +24,12 @@ module MusicBrainz
         "#{BASE_LINK}/recording"
       end
 
-      def collection_item_data_formatted(track)
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         MusicBrainz::Search::Tracks::Track.call(
-          track:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_track_data:,
+          **self_args
         )
       end
     end

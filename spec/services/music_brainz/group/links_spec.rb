@@ -13,7 +13,7 @@ RSpec.describe MusicBrainz::Group::Links do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_group_links_data) }
+      it { expect(output).to match_hash(musicbrainz_group_links_data) }
     end
   end
 

@@ -13,7 +13,7 @@ RSpec.describe MusicBrainz::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(musicbrainz_artist_info_data) }
+      it { expect(output).to match_hash(musicbrainz_artist_info_data) }
     end
   end
 

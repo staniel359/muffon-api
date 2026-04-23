@@ -1,8 +1,6 @@
 module MusicBrainz
   module Group
     class Albums < MusicBrainz::Group::Base
-      MODEL_NAME = 'release'.freeze
-
       private
 
       def group_data
@@ -16,7 +14,7 @@ module MusicBrainz
       end
 
       def raw_collection
-        group['releases']
+        raw_album_group_data['releases']
       end
 
       def link
@@ -35,14 +33,15 @@ module MusicBrainz
       end
 
       def items_count
-        group['release-count']
+        raw_album_group_data['release-count']
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         MusicBrainz::Group::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

@@ -1,8 +1,6 @@
 module MusicBrainz
   module Track
     class Base < MusicBrainz::Base
-      include MusicBrainz::Utils::Track
-
       def call
         check_args
 
@@ -34,13 +32,7 @@ module MusicBrainz
         { track: track_data }
       end
 
-      def tag_name_formatted(
-        tag_data
-      )
-        tag_data['name']
-      end
-
-      alias track response_data
+      alias raw_track_data response_data
     end
   end
 end

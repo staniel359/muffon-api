@@ -2,9 +2,7 @@ module MusicBrainz
   module Search
     class Labels
       class Label < MusicBrainz::Search::Labels
-        MODEL_NAME = 'label'.freeze
-
-        include MusicBrainz::Utils::Artist
+        include MusicBrainz::Mixins::Label
 
         def call
           check_args
@@ -16,19 +14,22 @@ module MusicBrainz
 
         def required_args
           %i[
-            label
+            raw_label_data
           ]
         end
 
         def data
-          {
-            source: source_data,
-            name:
-          }
+          Muffon::Formatter::Search::Labels::Label.call(
+            source_original_link:,
+            source_name:,
+            source_label_id: musicbrainz_id,
+            name:,
+            image_data: nil
+          )
         end
 
-        def artist
-          @args[:label]
+        def raw_label_data
+          @args[:raw_label_data]
         end
       end
     end

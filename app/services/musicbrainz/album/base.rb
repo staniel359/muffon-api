@@ -1,10 +1,6 @@
 module MusicBrainz
   module Album
     class Base < MusicBrainz::Base
-      MODEL_NAME = 'release'.freeze
-
-      include MusicBrainz::Utils::Album
-
       def call
         check_args
 
@@ -36,7 +32,7 @@ module MusicBrainz
         { album: album_data }
       end
 
-      alias album response_data
+      alias raw_album_data response_data
     end
   end
 end
