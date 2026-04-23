@@ -3,8 +3,6 @@ module Odnoklassniki
     class Base < Odnoklassniki::Base
       ENDPOINT_NAME = 'album'.freeze
 
-      include Odnoklassniki::Utils::Album
-
       def call
         check_args
 
@@ -26,10 +24,10 @@ module Odnoklassniki
       end
 
       def not_found?
-        album.blank?
+        raw_album_data.blank?
       end
 
-      def album
+      def raw_album_data
         response_data['album']
       end
 

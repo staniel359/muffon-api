@@ -27,19 +27,20 @@ module Odnoklassniki
         )
       end
 
-      def collection_item_data_formatted(track)
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         Odnoklassniki::Search::Tracks::Track.call(
-          track:,
-          albums:,
+          raw_track_data:,
+          raw_albums:,
           is_with_query_match: @args[:with_automatch],
           query_title: @args[:track_title],
           query_artist_name: @args[:artist_name],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
 
-      def albums
+      def raw_albums
         response_data['albums']
       end
     end

@@ -13,7 +13,7 @@ RSpec.describe Odnoklassniki::Track::Links do
         end
       end
 
-      it { expect(output).to eq(odnoklassniki_track_links_data) }
+      it { expect(output).to match_hash(odnoklassniki_track_links_data) }
     end
   end
 

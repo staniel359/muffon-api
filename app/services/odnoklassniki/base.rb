@@ -5,10 +5,10 @@ module Odnoklassniki
     private
 
     def retry_with_new_session_id?
-      auth_failed?
+      authentication_failed?
     end
 
-    def auth_failed?
+    def authentication_failed?
       response_data['error'] == 'error.notloggedin'
     end
 
@@ -57,39 +57,5 @@ module Odnoklassniki
         is_refresh_session_id: true
       )
     end
-
-    def artist_data_formatted(
-      raw_artist_data
-    )
-      {
-        source: artist_source_data(
-          raw_artist_data
-        ),
-        name: raw_artist_data['name']
-      }
-    end
-
-    def artist_source_data(
-      raw_artist_data
-    )
-      {
-        name: source_name,
-        id: raw_artist_data['id']
-      }
-    end
-
-    def image_data_formatted(image)
-      Odnoklassniki::Utils::Image.call(
-        image:
-      )
-    end
-
-    def tag_name_formatted(
-      tag_data
-    )
-      tag_data['label']
-    end
-
-    alias artist_name artists_names
   end
 end

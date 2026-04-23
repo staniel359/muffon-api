@@ -13,7 +13,7 @@ RSpec.describe Odnoklassniki::Album::Links do
         end
       end
 
-      it { expect(output).to eq(odnoklassniki_album_links_data) }
+      it { expect(output).to match_hash(odnoklassniki_album_links_data) }
     end
   end
 

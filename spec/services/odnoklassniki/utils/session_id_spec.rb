@@ -10,6 +10,6 @@ RSpec.describe Odnoklassniki::Utils::SessionId do
       end
     end
 
-    it { expect(output).to eq(odnoklassniki_utils_session_id) }
+    it { expect(output).to match_hash(odnoklassniki_utils_session_id) }
   end
 end

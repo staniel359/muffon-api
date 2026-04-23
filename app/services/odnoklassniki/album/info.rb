@@ -1,10 +1,12 @@
 module Odnoklassniki
   module Album
     class Info < Odnoklassniki::Album::Base
+      include Odnoklassniki::Mixins::Album
+
       private
 
       def album_data
-        if @args[:list]
+        if @args[:is_list]
           album_list_data
         else
           album_full_data
@@ -12,66 +14,62 @@ module Odnoklassniki
       end
 
       def album_list_data
-        self_data
-          .merge(album_base_data)
-          .merge(album_list_extra_data)
-      end
-
-      def album_full_data
-        self_data
-          .merge(album_base_data)
-          .merge(album_extra_data)
-          .merge(with_more_data)
-      end
-
-      def album_base_data
-        @album_base_data ||= {
-          source: source_data,
+        Muffon::Formatter::Track::Albums::Album.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: odnoklassniki_id,
           title:,
-          artist: artists_minimal_data,
           artists:,
-          image: image_data
-        }.compact
-      end
-
-      def album_list_extra_data
-        {
-          release_date:,
-          listeners_count:
-        }.compact
-      end
-
-      def album_extra_data
-        {
-          profiles_count:,
-          release_date:,
-          tags: tags_truncated,
-          tracks:
-        }.compact
-      end
-
-      def tags_truncated
-        collection_truncated(
-          tags,
-          size: 'extrasmall'
+          image_data:,
+          release_date:
         )
       end
 
-      def raw_tags
-        album['genres']
+      def album_full_data
+        Muffon::Formatter::Album::Info.call(
+          source_original_link:,
+          source_name:,
+          source_album_id: odnoklassniki_id,
+          title:,
+          artists:,
+          image_data:,
+          release_date:,
+          plays_count: nil,
+          description: nil,
+          description_size: nil,
+          tags:,
+          tags_size: 'extrasmall',
+          labels: nil,
+          tracks:,
+          **self_args
+        )
       end
 
       def raw_tracks
         response_data['tracks']
       end
 
-      def track_data_formatted(track)
-        Odnoklassniki::Album::Info::Track.call(
-          track:,
+      def track_data_formatted(
+        raw_track_data
+      )
+        Odnoklassniki::Album::Tracks::Track.call(
+          raw_track_data:,
           album_data: album_base_data,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
+      end
+
+      def album_base_data
+        @album_base_data ||=
+          Muffon::Formatter::Track::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: odnoklassniki_id,
+            title:,
+            artists:,
+            image_data:,
+            release_date: nil
+          )
       end
     end
   end

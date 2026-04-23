@@ -3,14 +3,12 @@ module Odnoklassniki
     class Base < Odnoklassniki::Base
       ENDPOINT_NAME = 'play'.freeze
 
-      include Odnoklassniki::Utils::Track
-
       def call
         check_args
 
         return retry_with_new_session_id if retry_with_new_session_id?
 
-        raise forbidden_error if forbidden?
+        check_if_forbidden
 
         data
       rescue Faraday::BadRequestError
@@ -32,16 +30,16 @@ module Odnoklassniki
         }
       end
 
+      def forbidden?
+        response_data['error'] == 'error.copyright.restriction'
+      end
+
       def data
         { track: track_data }
       end
 
-      def track
+      def raw_track_data
         response_data['track']
-      end
-
-      def forbidden?
-        response_data['error'] == 'error.copyright.restriction'
       end
     end
   end

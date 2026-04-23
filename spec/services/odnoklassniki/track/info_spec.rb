@@ -15,7 +15,7 @@ RSpec.describe Odnoklassniki::Track::Info do
         end
       end
 
-      it { expect(output).to eq(odnoklassniki_track_info_data) }
+      it { expect(output).to match_hash(odnoklassniki_track_info_data) }
     end
   end
 

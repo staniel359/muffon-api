@@ -1,38 +1,42 @@
 module Odnoklassniki
   module Track
-    class Albums < Odnoklassniki::Track::Info
+    class Albums < Odnoklassniki::Track::Base
+      include Odnoklassniki::Mixins::Track
+
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: odnoklassniki_id,
+          title:,
+          artists:,
+          albums:
+        )
       end
 
       def albums
-        album_ids
-          .map do |album_id|
+        raw_albums
+          .map do |raw_album_data|
             album_info(
-              album_id
+              raw_album_data['id']
             )
           end
           .compact
       end
 
-      def album_ids
+      def raw_albums
         response_data['albums']
-          .pluck('id')
       end
 
-      def album_info(album_id)
+      def album_info(
+        album_id
+      )
         Odnoklassniki::Album::Info.call(
           album_id:,
-          list: true,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          is_list: true,
+          **self_args
         )[:album]
       end
     end

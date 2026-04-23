@@ -1,7 +1,7 @@
 module Odnoklassniki
-  module Search
-    class Tracks
-      class Track < Odnoklassniki::Search::Tracks
+  module Album
+    module Tracks
+      class Track < Odnoklassniki::Album::Base
         include Odnoklassniki::Mixins::Track
 
         def call
@@ -15,23 +15,21 @@ module Odnoklassniki
         def required_args
           %i[
             raw_track_data
-            raw_albums
+            album_data
           ]
         end
 
         def data
-          Muffon::Formatter::Search::Tracks::Track.call(
+          Muffon::Formatter::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: odnoklassniki_id,
             title:,
             artists:,
-            album_title:,
-            source_album_id: album_odnoklassniki_id,
             image_data:,
+            album_data:,
             duration:,
             is_audio_present: audio_present?,
-            **query_match_args,
             **self_args
           )
         end
@@ -40,18 +38,12 @@ module Odnoklassniki
           @args[:raw_track_data]
         end
 
-        def album_id
-          raw_track_data['albumId']
+        def image_data
+          album_data[:image]
         end
 
-        def raw_album_data
-          @args[:raw_albums].find do |raw_album_data|
-            raw_album_data['id'] == album_id
-          end
-        end
-
-        def image_url
-          raw_track_data['imageUrl']
+        def album_data
+          @args[:album_data]
         end
       end
     end

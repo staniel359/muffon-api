@@ -14,7 +14,7 @@ RSpec.describe Odnoklassniki::Album::Info do
         end
       end
 
-      it { expect(output).to eq(odnoklassniki_album_info_data) }
+      it { expect(output).to match_hash(odnoklassniki_album_info_data) }
     end
   end
 

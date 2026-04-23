@@ -14,7 +14,7 @@ RSpec.describe Odnoklassniki::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(odnoklassniki_track_albums_data) }
+      it { expect(output).to match_hash(odnoklassniki_track_albums_data) }
     end
   end
 
