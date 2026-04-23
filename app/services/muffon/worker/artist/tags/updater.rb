@@ -13,7 +13,7 @@ module Muffon
 
           def required_args
             %i[
-              name
+              artist_name
             ]
           end
 
@@ -24,7 +24,7 @@ module Muffon
           end
 
           def worker_args
-            { name: @args[:name] }
+            { artist_name: @args[:artist_name] }
           end
         end
       end

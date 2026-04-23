@@ -18,11 +18,17 @@ class Artist < ApplicationRecord
            through: :library_artists,
            dependent: nil
 
-  def update_tags
-    return if tag_ids.present?
+  after_create_commit :handle_after_create_commit
 
+  private
+
+  def handle_after_create_commit
+    update_tags unless test?
+  end
+
+  def update_tags
     Muffon::Worker::Artist::Tags::Updater.call(
-      name:
+      artist_name: name
     )
   end
 end

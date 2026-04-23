@@ -38,8 +38,6 @@ class LibraryArtist < ApplicationRecord
   private
 
   def handle_after_create_commit
-    update_artist_tags
-
     create_recommendations
   end
 

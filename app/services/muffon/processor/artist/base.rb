@@ -16,12 +16,12 @@ module Muffon
 
         def required_args
           %i[
-            name
+            artist_name
           ]
         end
 
         def name
-          @args[:name]
+          @args[:artist_name]
         end
       end
     end

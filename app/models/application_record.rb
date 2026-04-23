@@ -41,10 +41,6 @@ class ApplicationRecord < ActiveRecord::Base
 
   private
 
-  def update_artist_tags
-    artist.update_tags
-  end
-
   def test?
     Rails.env.test?
   end
