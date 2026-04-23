@@ -1,7 +1,7 @@
 module VK
   class Base < Muffon::Base
-    BASE_LINK = 'https://api.vk.ru'.freeze
     SOURCE_NAME = 'vk'.freeze
+    BASE_LINK = 'https://api.vk.ru'.freeze
 
     private
 
@@ -84,40 +84,5 @@ module VK
 
       raise "[Error (VK)]: #{error_text}"
     end
-
-    def artist_data_formatted(
-      raw_artist_data
-    )
-      {
-        source: artist_source_data(
-          raw_artist_data
-        ),
-        name: raw_artist_data['name']
-      }
-    end
-
-    def artist_source_data(
-      raw_artist_data
-    )
-      {
-        name: source_name,
-        id: raw_artist_data['id']
-      }
-        .compact
-    end
-
-    def image_data_formatted(image, model)
-      VK::Utils::Image.call(
-        image:, model:
-      )
-    end
-
-    def tag_name_formatted(
-      tag_data
-    )
-      tag_data
-    end
-
-    alias artist_name artists_names
   end
 end

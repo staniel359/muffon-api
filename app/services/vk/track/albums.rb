@@ -4,12 +4,14 @@ module VK
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
+        Muffon::Formatter::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: vk_id,
+          title:,
+          artists:,
+          albums:
+        )
       end
 
       def albums
@@ -17,28 +19,15 @@ module VK
       end
 
       def album_data
-        return if album.blank?
+        return if raw_album_data.blank?
 
         VK::Album::Info.call(
-          album_id:,
-          owner_id:,
-          access_key:,
-          list: true,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          album_id: album_vk_id,
+          owner_id: album_vk_owner_id,
+          access_key: album_vk_access_key,
+          is_list: true,
+          **self_args
         )[:album]
-      end
-
-      def album_id
-        album['id']
-      end
-
-      def owner_id
-        album['owner_id']
-      end
-
-      def access_key
-        album['access_key']
       end
     end
   end

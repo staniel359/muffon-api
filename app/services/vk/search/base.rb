@@ -2,6 +2,7 @@ module VK
   module Search
     class Base < VK::Base
       def call
+        # TODO: to remove later
         raise not_found_error unless test?
 
         check_args
@@ -28,7 +29,7 @@ module VK
       def params
         {
           **super,
-          q: query,
+          q: @args[:query],
           count: limit,
           offset:
         }
@@ -38,14 +39,10 @@ module VK
         "/method/#{api_method}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \
-          "&q=#{query}" \
+          "&q=#{@args[:query]}" \
           "&count=#{limit}" \
           "&offset=#{offset}" \
           "#{api_secret}"
-      end
-
-      def query
-        @args[:query]
       end
 
       def next_page

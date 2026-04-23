@@ -23,36 +23,38 @@ module VK
       end
 
       def raw_collection
-        artist['items']
+        raw_artist_data['items']
+      end
+
+      def params
+        {
+          **super,
+          artist_id: @args[:artist_id],
+          count: limit,
+          offset:
+        }
       end
 
       def signature
         "/method/#{api_method}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \
-          "&artist_id=#{vk_artist_id}" \
+          "&artist_id=#{@args[:artist_id]}" \
           "&count=#{limit}" \
           "&offset=#{offset}" \
           "#{api_secret}"
       end
 
-      def artist_params
-        {
-          artist_id: vk_artist_id,
-          count: limit,
-          offset:
-        }
-      end
-
       def items_count
-        artist['count']
+        raw_artist_data['count']
       end
 
-      def collection_item_data_formatted(album)
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         VK::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

@@ -16,7 +16,7 @@ RSpec.describe VK::Search::Tracks do
         end
       end
 
-      it { expect(output).to eq(vk_search_tracks_data) }
+      it { expect(output).to match_hash(vk_search_tracks_data) }
     end
   end
 

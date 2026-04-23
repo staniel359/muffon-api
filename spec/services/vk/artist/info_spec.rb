@@ -13,7 +13,7 @@ RSpec.describe VK::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(vk_artist_info_data) }
+      it { expect(output).to match_hash(vk_artist_info_data) }
     end
   end
 

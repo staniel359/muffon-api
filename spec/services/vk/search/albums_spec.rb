@@ -16,7 +16,7 @@ RSpec.describe VK::Search::Albums do
         end
       end
 
-      it { expect(output).to eq(vk_search_albums_data) }
+      it { expect(output).to match_hash(vk_search_albums_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe VK::Search::Albums do
         end
       end
 
-      it { expect(output).to eq(search_missing_albums_data) }
+      it { expect(output).to match_hash(search_missing_albums_data) }
     end
   end
 end

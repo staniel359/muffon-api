@@ -14,7 +14,7 @@ RSpec.describe VK::Track::Albums do
         end
       end
 
-      it { expect(output).to eq(vk_track_albums_data) }
+      it { expect(output).to match_hash(vk_track_albums_data) }
     end
   end
 

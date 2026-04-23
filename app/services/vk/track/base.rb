@@ -3,8 +3,6 @@ module VK
     class Base < VK::Base
       API_METHOD = 'audio.getById'.freeze
 
-      include VK::Utils::Track
-
       def call
         raise not_found_error unless test?
 
@@ -24,32 +22,11 @@ module VK
       end
 
       def not_found?
-        track.blank?
+        raw_track_data.blank?
       end
 
-      def track
-        response_data.try(
-          :[], 0
-        )
-      end
-
-      def params
-        {
-          **super,
-          audios: vk_track_id
-        }
-      end
-
-      def vk_track_id
-        @args[:track_id]
-      end
-
-      def signature
-        "/method/#{API_METHOD}" \
-          "?access_token=#{access_token}" \
-          '&v=5.131' \
-          "&audios=#{vk_track_id}" \
-          "#{api_secret}"
+      def raw_track_data
+        response_data.try(:[], 0)
       end
 
       def data

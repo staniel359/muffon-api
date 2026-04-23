@@ -2,6 +2,7 @@ module VK
   module Artist
     class Base < VK::Base
       def call
+        # TODO: to remove later
         raise not_found_error unless test?
 
         check_args
@@ -30,12 +31,8 @@ module VK
       def artist_info_data
         @artist_info_data ||=
           VK::Artist::Info.call(
-            artist_id: vk_artist_id
+            artist_id: @args[:artist_id]
           )[:artist]
-      end
-
-      def vk_artist_id
-        @args[:artist_id]
       end
 
       def data
@@ -46,14 +43,7 @@ module VK
         { name: }
       end
 
-      def params
-        {
-          **super,
-          **artist_params
-        }
-      end
-
-      alias artist response_data
+      alias raw_artist_data response_data
     end
   end
 end

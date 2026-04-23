@@ -2,7 +2,7 @@ module VK
   module Search
     class Artists
       class Artist < VK::Search::Artists
-        include VK::Utils::Artist
+        include VK::Mixins::Artist
 
         def call
           check_args
@@ -14,26 +14,23 @@ module VK
 
         def required_args
           %i[
-            artist
+            raw_artist_data
           ]
         end
 
         def data
-          self_data
-            .merge(artist_data)
-        end
-
-        def artist
-          @args[:artist]
-        end
-
-        def artist_data
-          {
-            source: source_data,
+          Muffon::Formatter::Search::Artists::Artist.call(
+            source_original_link:,
+            source_name:,
+            source_artist_id: vk_id,
             name:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            **self_args
+          )
+        end
+
+        def raw_artist_data
+          @args[:raw_artist_data]
         end
       end
     end

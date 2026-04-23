@@ -3,17 +3,16 @@ module VK
     class Tracks < VK::Album::Base
       API_METHOD = 'audio.get'.freeze
 
+      include VK::Mixins::Album
+
       private
 
-      def raw_tracks
-        album['items']
-      end
-
-      def album_params
+      def params
         {
-          album_id: vk_album_id,
-          owner_id: vk_owner_id,
-          access_key: vk_access_key
+          **super,
+          album_id: @args[:album_id],
+          owner_id: @args[:owner_id],
+          access_key: @args[:access_key]
         }
       end
 
@@ -21,9 +20,9 @@ module VK
         "/method/#{API_METHOD}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \
-          "&album_id=#{vk_album_id}" \
-          "&owner_id=#{vk_owner_id}" \
-          "&access_key=#{vk_access_key}" \
+          "&album_id=#{@args[:album_id]}" \
+          "&owner_id=#{@args[:owner_id]}" \
+          "&access_key=#{@args[:access_key]}" \
           "#{api_secret}"
       end
 
@@ -31,12 +30,17 @@ module VK
         { tracks: }
       end
 
-      def track_data_formatted(track)
+      def raw_tracks
+        raw_album_data['items']
+      end
+
+      def track_data_formatted(
+        raw_track_data
+      )
         VK::Album::Tracks::Track.call(
-          track:,
+          raw_track_data:,
           album_data: @args[:album_data],
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          **self_args
         )
       end
     end

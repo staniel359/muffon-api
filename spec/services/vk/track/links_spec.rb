@@ -13,7 +13,7 @@ RSpec.describe VK::Track::Links do
         end
       end
 
-      it { expect(output).to eq(vk_track_links_data) }
+      it { expect(output).to match_hash(vk_track_links_data) }
     end
   end
 

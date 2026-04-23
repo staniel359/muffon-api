@@ -3,9 +3,8 @@ module VK
     class Base < VK::Base
       API_METHOD = 'audio.getPlaylistById'.freeze
 
-      include VK::Utils::Album
-
       def call
+        # TODO: to remove later
         raise not_found_error unless test?
 
         check_args
@@ -26,53 +25,14 @@ module VK
       end
 
       def not_found?
-        album.blank?
-      end
-
-      def params
-        {
-          **super,
-          **album_params
-        }
-      end
-
-      def album_params
-        {
-          playlist_id: vk_album_id,
-          owner_id: vk_owner_id,
-          access_key: vk_access_key,
-          lang: language
-        }
-      end
-
-      def vk_album_id
-        @args[:album_id]
-      end
-
-      def vk_owner_id
-        @args[:owner_id]
-      end
-
-      def vk_access_key
-        @args[:access_key]
-      end
-
-      def signature
-        "/method/#{API_METHOD}" \
-          "?access_token=#{access_token}" \
-          '&v=5.131' \
-          "&playlist_id=#{vk_album_id}" \
-          "&owner_id=#{vk_owner_id}" \
-          "&access_key=#{vk_access_key}" \
-          "&lang=#{language}" \
-          "#{api_secret}"
+        raw_album_data.blank?
       end
 
       def data
         { album: album_data }
       end
 
-      alias album response_data
+      alias raw_album_data response_data
     end
   end
 end

@@ -3,22 +3,23 @@ module VK
     class Info < VK::Artist::Base
       API_METHOD = 'audio.getArtistById'.freeze
 
+      include VK::Mixins::Artist
+
       private
 
-      def name
-        artist['name']
+      def params
+        {
+          **super,
+          artist_id: @args[:artist_id]
+        }
       end
 
       def signature
         "/method/#{api_method}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \
-          "&artist_id=#{vk_artist_id}" \
+          "&artist_id=#{@args[:artist_id]}" \
           "#{api_secret}"
-      end
-
-      def artist_params
-        { artist_id: vk_artist_id }
       end
     end
   end

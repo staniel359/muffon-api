@@ -15,7 +15,7 @@ RSpec.describe VK::Track::Info do
         end
       end
 
-      it { expect(output).to eq(vk_track_info_data) }
+      it { expect(output).to match_hash(vk_track_info_data) }
     end
 
     context 'when track with no album' do
@@ -31,7 +31,7 @@ RSpec.describe VK::Track::Info do
         end
       end
 
-      it { expect(output).to eq(vk_track_info_no_album_data) }
+      it { expect(output).to match_hash(vk_track_info_no_album_data) }
     end
   end
 
