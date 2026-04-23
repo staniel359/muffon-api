@@ -5,30 +5,29 @@ import argparse, requests, sys, os
 
 import json
 
-widevine_file_path = os.getcwd() + '/lib/widevine.json'
-
-with open(widevine_file_path) as file:
-  widevine_data = json.load(file)
-
 parser = argparse.ArgumentParser()
 
-parser.add_argument(
-  '--pssh'
-)
-
-parser.add_argument(
-  '--token'
-)
-
-parser.add_argument(
-  '--client-token'
-)
+parser.add_argument('--pssh')
+parser.add_argument('--token')
+parser.add_argument('--client_token')
+parser.add_argument('--user_agent')
 
 args = parser.parse_args()
 
 key = ''
 
 license_url = 'https://gew1-spclient.spotify.com/widevine-license/v1/audio/license'
+
+license_headers = {
+  'Authorization': f'Bearer {args.token}',
+  'Client-Token': f'{args.client_token}',
+  'User-Agent': f'{args.user_agent}'
+}
+
+widevine_file_path = os.getcwd() + '/lib/widevine.json'
+
+with open(widevine_file_path) as file:
+  widevine_data = json.load(file)
 
 cdm = RemoteCdm(
   device_type = widevine_data['device_type'],
@@ -41,19 +40,12 @@ cdm = RemoteCdm(
 
 session_id = cdm.open()
 
-pssh = PSSH(
-  args.pssh
-)
+pssh = PSSH(args.pssh)
 
 challenge = cdm.get_license_challenge(
   session_id = session_id,
   pssh = pssh
 )
-
-license_headers = {
-  'Authorization': f'Bearer {args.token}',
-  'Client-Token': f'{args.client_token}'
-}
 
 license = requests.post(
   license_url,
@@ -75,10 +67,6 @@ if license:
     if key_data.type == 'CONTENT':
       key = key_data.key.hex()
 
-cdm.close(
-  session_id
-)
+cdm.close(session_id)
 
-sys.stdout.write(
-  key
-)
+sys.stdout.write(key)
