@@ -2,7 +2,7 @@ module LastFM
   module Multitag
     class Albums
       class Album < LastFM::Multitag::Albums
-        include LastFM::Utils::Album
+        include LastFM::Mixins::Album
 
         def call
           check_args
@@ -14,32 +14,33 @@ module LastFM
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
-
-        def album
-          @args[:album]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Multitag::Albums::Album.call(
+            album_record:,
+            source_original_link:,
+            source_name:,
+            source_album_id: nil,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
-            listeners_count:
-          }.compact
+            image_data:,
+            **self_args
+          )
         end
 
-        def image
-          album['image']
+        def album_record
+          @args[:raw_album_data]
+        end
+
+        def title
+          album_record.title
+        end
+
+        def artist_name
+          album_record.artist.name
         end
       end
     end

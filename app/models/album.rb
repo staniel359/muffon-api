@@ -1,4 +1,9 @@
 class Album < ApplicationRecord
+  ORDERS = %w[
+    listeners_count_desc
+    listeners_count_asc
+  ].freeze
+
   include AlbumDecorator
 
   validates :title,

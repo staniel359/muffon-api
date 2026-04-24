@@ -56,7 +56,6 @@ RSpec.configure do |config|
 
   config.include Spec::Helpers::LastFM::Album
   config.include Spec::Helpers::LastFM::Artist
-  config.include Spec::Helpers::LastFM::Multitag
   config.include Spec::Helpers::LastFM::Releases
   config.include Spec::Helpers::LastFM::Search
   config.include Spec::Helpers::LastFM::Tag

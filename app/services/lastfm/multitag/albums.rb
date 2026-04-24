@@ -1,22 +1,45 @@
 module LastFM
   module Multitag
     class Albums < LastFM::Multitag::Base
+      DEFAULT_ORDER = 'listeners_count_desc'.freeze
+
       private
 
       def multitag_data
         paginated_data(
           collection_name: 'albums',
-          raw_collection: [],
+          raw_collection:,
           page:,
-          limit:
+          limit:,
+          items_count:
         )
       end
 
-      def collection_item_data_formatted(album)
+      def raw_collection
+        albums
+          .ordered(order, DEFAULT_ORDER)
+          .limit(limit)
+          .offset(offset)
+          .associated
+      end
+
+      def albums
+        @albums ||=
+          ::Album.with_tags(
+            @args[:tags]
+          )
+      end
+
+      def items_count
+        albums.count
+      end
+
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         LastFM::Multitag::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end
