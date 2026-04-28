@@ -21,8 +21,7 @@ class Post < ApplicationRecord
     by_community
   ].freeze
 
-  include PostDecorator
-  include SendableDecorator
+  include Imageable
   include Eventable
 
   enum :post_type, {
@@ -32,8 +31,7 @@ class Post < ApplicationRecord
 
   has_many_attached :images
 
-  has_many :post_comments,
-           dependent: :destroy
+  has_many :post_comments, dependent: :destroy
 
   belongs_to :profile
 
@@ -41,6 +39,60 @@ class Post < ApplicationRecord
              class_name: 'Profile',
              optional: true
 
-  belongs_to :community,
-             optional: true
+  belongs_to :community, optional: true
+
+  class << self
+    def with_profile_type
+      where(
+        post_type: 'profile'
+      )
+    end
+
+    def with_community_type
+      where(
+        post_type: 'community'
+      )
+    end
+
+    def by_profile
+      where(
+        'profile_id = other_profile_id'
+      )
+    end
+
+    def by_community
+      where(
+        by_community: true
+      )
+    end
+
+    def global
+      by_profile
+        .or(by_community)
+    end
+
+    def global_public
+      by_profile
+        .by_public_profile
+        .or(by_community)
+    end
+
+    def associated
+      includes(
+        [{ profile: image_association }],
+        [{ community: image_association }],
+        :post_comments,
+        images_association
+      )
+    end
+  end
+
+  private
+
+  def eventable_data
+    {
+      id:,
+      text:
+    }
+  end
 end

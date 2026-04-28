@@ -26,7 +26,7 @@ module LastFM
       def albums
         @albums ||=
           ::Album.with_tags(
-            @args[:tags]
+            tags_names: @args[:tags]
           )
       end
 

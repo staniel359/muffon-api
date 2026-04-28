@@ -10,7 +10,7 @@ class PlaylistTrack < ApplicationRecord
     deleted
   ].freeze
 
-  include PlaylistTrackDecorator
+  include Imageable
   include EventableTrack
 
   validates :track_id,
@@ -20,22 +20,34 @@ class PlaylistTrack < ApplicationRecord
 
   has_one_attached :image
 
-  belongs_to :playlist,
-             counter_cache: 'tracks_count'
+  belongs_to :playlist, counter_cache: 'tracks_count'
 
   belongs_to :track
 
   belongs_to :artist
 
-  belongs_to :album,
-             optional: true
+  belongs_to :album, optional: true
+
+  delegate :profile_id, to: :playlist
+
+  class << self
+    def associated
+      includes(
+        :track,
+        :artist,
+        :album,
+        image_association
+      )
+    end
+  end
 
   private
 
   def eventable_data
-    super.merge(
-      { playlist: playlist_data }
-    )
+    {
+      **super,
+      playlist: playlist_data
+    }
   end
 
   def playlist_data

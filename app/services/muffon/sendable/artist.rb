@@ -13,7 +13,7 @@ module Muffon
 
       def required_args
         %i[
-          artist
+          raw_artist_data
         ]
       end
 
@@ -26,17 +26,19 @@ module Muffon
       end
 
       def name
-        artist[:name]
+        artist_data[:name]
       end
 
-      def artist
-        @args[:artist].deep_symbolize_keys
+      def artist_data
+        @args[:raw_artist_data].deep_symbolize_keys
       end
 
       def image_data
-        super.slice(
-          :small
-        )
+        artist_record
+          .image_data
+          &.slice(
+            :small
+          )
       end
     end
   end

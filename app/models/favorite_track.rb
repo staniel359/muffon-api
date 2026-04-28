@@ -8,7 +8,7 @@ class FavoriteTrack < ApplicationRecord
     deleted
   ].freeze
 
-  include FavoriteTrackDecorator
+  include Imageable
   include EventableTrack
 
   validates :track_id,
@@ -22,6 +22,15 @@ class FavoriteTrack < ApplicationRecord
 
   belongs_to :track
 
-  belongs_to :album,
-             optional: true
+  belongs_to :album, optional: true
+
+  class << self
+    def associated
+      includes(
+        :album,
+        [{ track: :artist }],
+        image_association
+      )
+    end
+  end
 end

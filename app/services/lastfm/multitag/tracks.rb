@@ -26,7 +26,7 @@ module LastFM
       def tracks
         @tracks ||=
           ::Track.with_tags(
-            @args[:tags]
+            tags_names: @args[:tags]
           )
       end
 

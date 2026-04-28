@@ -11,25 +11,25 @@ module Muffon
 
       def required_args
         %i[
-          track
+          raw_track_data
         ]
       end
 
       def data
         {
-          source: track[:source],
-          title: track[:title],
-          player_id: track[:player_id],
-          artist: track[:artist],
-          artists: track[:artists],
-          album: track[:album],
-          image: track[:image],
-          audio: track[:audio]
+          source: track_data[:source],
+          title: track_data[:title],
+          player_id: track_data[:player_id],
+          artist: track_data[:artist],
+          artists: track_data[:artists],
+          album: track_data[:album],
+          image: track_data[:image],
+          audio: track_data[:audio]
         }.compact
       end
 
-      def track
-        @args[:track].deep_symbolize_keys
+      def track_data
+        @args[:raw_track_data].deep_symbolize_keys
       end
     end
   end

@@ -1,8 +1,6 @@
 module Muffon
   module Sendable
-    class VideoChannel < YouTube::Base
-      include YouTube::Mixins::VideoChannel
-
+    class VideoChannel < Muffon::Base
       def call
         check_args
 
@@ -13,7 +11,7 @@ module Muffon
 
       def required_args
         %i[
-          channel
+          raw_video_channel_data
         ]
       end
 
@@ -24,14 +22,16 @@ module Muffon
           image: image_data,
           videos_count:,
           subscribers_count:,
-          publish_date:
+          publish_date: creation_date
         }.compact
       end
 
+      def source_data
+        video_channel_record.source_data
+      end
+
       def video_channel_record
-        if instance_variable_defined?(
-          :@video_channel_record
-        )
+        if defined?(@video_channel_record)
           @video_channel_record
         else
           @video_channel_record =
@@ -42,11 +42,11 @@ module Muffon
       end
 
       def youtube_id
-        channel['youtube_id']
+        video_channel_data[:youtube_id]
       end
 
-      def channel
-        @args[:channel]
+      def video_channel_data
+        @args[:raw_video_channel_data].deep_symbolize_keys
       end
 
       def title
@@ -54,13 +54,7 @@ module Muffon
       end
 
       def image_data
-        image_data_formatted(
-          image:
-        )
-      end
-
-      def image
-        video_channel_record.image_url
+        video_channel_record.image_data
       end
 
       def videos_count
@@ -71,10 +65,14 @@ module Muffon
         video_channel_record.subscribers_count
       end
 
-      def raw_publish_date
-        video_channel_record
-          .created_at
-          .to_s
+      def creation_date
+        datetime_formatted(
+          raw_creation_date
+        )
+      end
+
+      def raw_creation_date
+        video_channel_record.created_at
       end
     end
   end

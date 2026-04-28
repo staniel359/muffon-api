@@ -4,7 +4,6 @@ class Membership < ApplicationRecord
     deleted
   ].freeze
 
-  include MembershipDecorator
   include Eventable
 
   validates :community_id,
@@ -14,6 +13,18 @@ class Membership < ApplicationRecord
 
   belongs_to :profile
 
-  belongs_to :community,
-             counter_cache: 'members_count'
+  belongs_to :community, counter_cache: 'members_count'
+
+  private
+
+  def eventable_data
+    { community: community_data }
+  end
+
+  def community_data
+    {
+      id: community_id,
+      title: community.title
+    }
+  end
 end

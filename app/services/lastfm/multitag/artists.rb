@@ -25,7 +25,7 @@ module LastFM
       def artists
         @artists ||=
           ::Artist.with_tags(
-            @args[:tags]
+            tags_names: @args[:tags]
           )
       end
 

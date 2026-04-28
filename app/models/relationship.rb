@@ -4,7 +4,6 @@ class Relationship < ApplicationRecord
     deleted
   ].freeze
 
-  include RelationshipDecorator
   include Eventable
 
   validates :other_profile_id,
@@ -18,4 +17,17 @@ class Relationship < ApplicationRecord
   belongs_to :other_profile,
              class_name: 'Profile',
              counter_cache: 'followers_count'
+
+  private
+
+  def eventable_data
+    { other_profile: other_profile_data }
+  end
+
+  def other_profile_data
+    {
+      id: other_profile_id,
+      nickname: other_profile.nickname
+    }
+  end
 end

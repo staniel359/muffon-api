@@ -13,32 +13,32 @@ module Muffon
 
       def required_args
         %i[
-          album
+          raw_album_data
         ]
       end
 
       def data
         {
-          source: album[:source],
+          source: album_data[:source],
           title:,
-          artist: album[:artist],
-          artists: album[:artists],
-          image: album[:image],
+          artist: album_data[:artist],
+          artists: album_data[:artists],
+          image: album_data[:image],
           listeners_count: album_record.listeners_count,
-          release_date: album[:release_date]
+          release_date: album_data[:release_date]
         }.compact
       end
 
       def title
-        album[:title]
+        album_data[:title]
       end
 
-      def album
-        @args[:album].deep_symbolize_keys
+      def album_data
+        @args[:raw_album_data].deep_symbolize_keys
       end
 
       def artist_name
-        album.dig(
+        album_data.dig(
           :artist,
           :name
         )

@@ -11,8 +11,7 @@ module EventableVideo
 
   def video_data
     {
-      youtube_id:
-        video.youtube_id,
+      youtube_id: video.youtube_id,
       title: video.title
     }
   end

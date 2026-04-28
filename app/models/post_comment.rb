@@ -21,8 +21,7 @@ class PostComment < ApplicationRecord
     by_community
   ].freeze
 
-  include PostCommentDecorator
-  include SendableDecorator
+  include Imageable
   include Eventable
 
   has_many_attached :images
@@ -31,6 +30,30 @@ class PostComment < ApplicationRecord
 
   belongs_to :profile
 
-  belongs_to :community,
-             optional: true
+  belongs_to :community, optional: true
+
+  class << self
+    def associated
+      includes(
+        [{ profile: image_association }],
+        [{ community: image_association }],
+        images_association
+      )
+    end
+  end
+
+  def creator?(
+    profile_id:
+  )
+    self.profile_id == profile_id.to_i
+  end
+
+  private
+
+  def eventable_data
+    {
+      id:,
+      text:
+    }
+  end
 end

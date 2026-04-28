@@ -8,7 +8,7 @@ class FavoriteAlbum < ApplicationRecord
     deleted
   ].freeze
 
-  include FavoriteAlbumDecorator
+  include Imageable
   include EventableAlbum
 
   validates :album_id,
@@ -21,4 +21,13 @@ class FavoriteAlbum < ApplicationRecord
   belongs_to :profile
 
   belongs_to :album
+
+  class << self
+    def associated
+      includes(
+        [{ album: :artist }],
+        image_association
+      )
+    end
+  end
 end

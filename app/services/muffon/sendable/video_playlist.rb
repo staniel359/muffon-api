@@ -1,8 +1,6 @@
 module Muffon
   module Sendable
-    class VideoPlaylist < YouTube::Base
-      include YouTube::Mixins::VideoPlaylist
-
+    class VideoPlaylist < Muffon::Base
       def call
         check_args
 
@@ -13,7 +11,7 @@ module Muffon
 
       def required_args
         %i[
-          playlist
+          raw_video_playlist_data
         ]
       end
 
@@ -21,22 +19,20 @@ module Muffon
         {
           source: source_data,
           title:,
-          channel: channel_data,
+          channel: video_channel_data,
           description:,
           image: image_data,
           videos_count:,
-          publish_date:
+          publish_date: creation_date
         }.compact
       end
 
-      def title
-        video_playlist_record.title
+      def source_data
+        video_playlist_record.source_data
       end
 
       def video_playlist_record
-        if instance_variable_defined?(
-          :@video_playlist_record
-        )
+        if defined?(@video_playlist_record)
           @video_playlist_record
         else
           @video_playlist_record =
@@ -47,19 +43,19 @@ module Muffon
       end
 
       def youtube_id
-        playlist['youtube_id']
+        video_playlist_data[:youtube_id]
       end
 
-      def playlist
-        @args[:playlist]
+      def video_playlist_data
+        @args[:raw_video_playlist_data].deep_symbolize_keys
       end
 
-      def channel_youtube_id
-        video_playlist_record.channel_youtube_id
+      def title
+        video_playlist_record.title
       end
 
-      def channel_title
-        video_playlist_record.channel_title
+      def video_channel_data
+        video_playlist_record.video_channel_data
       end
 
       def description
@@ -69,23 +65,21 @@ module Muffon
       end
 
       def image_data
-        image_data_formatted(
-          image:
-        )
-      end
-
-      def image
-        video_playlist_record.image_url
+        video_playlist_record.image_data
       end
 
       def videos_count
         video_playlist_record.videos_count
       end
 
-      def raw_publish_date
-        video_playlist_record
-          .created_at
-          .to_s
+      def creation_date
+        datetime_formatted(
+          raw_creation_date
+        )
+      end
+
+      def raw_creation_date
+        video_playlist_record.created_at
       end
     end
   end

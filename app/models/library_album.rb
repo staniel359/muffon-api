@@ -10,7 +10,7 @@ class LibraryAlbum < ApplicationRecord
     deleted
   ].freeze
 
-  include LibraryAlbumDecorator
+  include Imageable
   include EventableAlbum
 
   validates :album_id,
@@ -20,14 +20,35 @@ class LibraryAlbum < ApplicationRecord
 
   has_one_attached :image
 
-  has_many :library_tracks,
-           dependent: :destroy
+  has_many :library_tracks, dependent: :destroy
 
-  belongs_to :profile,
-             counter_cache: true
+  belongs_to :profile, counter_cache: true
 
-  belongs_to :library_artist,
-             counter_cache: true
+  belongs_to :library_artist, counter_cache: true
 
   belongs_to :album
+
+  class << self
+    def associated
+      includes(
+        :album,
+        [{ library_artist: :artist }],
+        image_association
+      )
+    end
+  end
+
+  private
+
+  def playlists_ids
+    profile
+      .playlist_tracks
+      .where(
+        album_id:
+      )
+      .pluck(
+        :playlist_id
+      )
+      .uniq
+  end
 end

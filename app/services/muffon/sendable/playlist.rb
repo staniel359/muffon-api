@@ -11,57 +11,49 @@ module Muffon
 
       def required_args
         %i[
-          playlist
+          raw_playlist_data
         ]
       end
 
       def data
-        if find_playlist.present?
-          playlist_data
+        if playlist_record.present?
+          {
+            id: playlist_record.id,
+            title: playlist_record.title,
+            profile: profile_data,
+            description: description_truncated_formatted,
+            image: image_data,
+            tracks_count: playlist_record.tracks_count
+          }.compact
         else
           { deleted: true }
         end
       end
 
-      def playlist_data
-        {
-          id: find_playlist.id,
-          title: find_playlist.title,
-          profile: profile_data,
-          description:
-            description_truncated_formatted,
-          image: image_data,
-          tracks_count:
-            find_playlist.tracks_count
-        }.compact
-      end
-
-      def find_playlist
-        if instance_variable_defined?(
-          :@find_playlist
-        )
-          @find_playlist
+      def playlist_record
+        if defined?(@playlist_record)
+          @playlist_record
         else
-          @find_playlist =
+          @playlist_record =
             ::Playlist.find_by(
-              id: playlist[:id]
+              id: playlist_data[:id]
             )
         end
       end
 
-      def playlist
-        @args[:playlist].deep_symbolize_keys
+      def playlist_data
+        @args[:raw_playlist_data].deep_symbolize_keys
       end
 
       def profile_data
         {
-          id: playlist_profile.id,
-          nickname: playlist_profile.nickname
+          id: playlist_profile_record.id,
+          nickname: playlist_profile_record.nickname
         }
       end
 
-      def playlist_profile
-        @playlist_profile ||= find_playlist.profile
+      def playlist_profile_record
+        @playlist_profile_record ||= playlist_record.profile
       end
 
       def description_truncated_formatted
@@ -78,7 +70,7 @@ module Muffon
       end
 
       def description
-        find_playlist.description
+        playlist_record.description
       end
 
       def image_data
@@ -88,7 +80,7 @@ module Muffon
       end
 
       def playlist_image_data
-        find_playlist.image_data
+        playlist_record.image_data
       end
     end
   end

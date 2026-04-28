@@ -11,45 +11,39 @@ module Muffon
 
       def required_args
         %i[
-          community
+          raw_community_data
         ]
       end
 
       def data
-        if find_community.present?
-          community_data
+        if community_record.present?
+          {
+            id: community_record.id,
+            title: community_record.title,
+            image: image_data,
+            description:
+              description_truncated_formatted,
+            members_count:
+              community_record.members_count
+          }.compact
         else
           { deleted: true }
         end
       end
 
-      def community_data
-        {
-          id: find_community.id,
-          title: find_community.title,
-          image: image_data,
-          description:
-            description_truncated_formatted,
-          members_count:
-            find_community.members_count
-        }.compact
-      end
-
-      def find_community
-        if instance_variable_defined?(
-          :@find_community
-        )
-          @find_community
+      def community_record
+        if defined?(@community_record)
+          @community_record
         else
-          @find_community =
+          @community_record =
             ::Community.find_by(
-              id: community[:id]
+              id: community_data[:id]
             )
         end
       end
 
-      def community
-        @args[:community].deep_symbolize_keys
+      def community_data
+        @args[:raw_community_data].deep_symbolize_keys
       end
 
       def description_truncated_formatted
@@ -66,7 +60,9 @@ module Muffon
       end
 
       def description
-        find_community.description
+        community_record
+          .description
+          .presence
       end
 
       def image_data
@@ -76,7 +72,7 @@ module Muffon
       end
 
       def community_image_data
-        find_community.image_data
+        community_record.image_data
       end
     end
   end

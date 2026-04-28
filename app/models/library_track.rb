@@ -8,24 +8,53 @@ class LibraryTrack < ApplicationRecord
     deleted
   ].freeze
 
-  include LibraryTrackDecorator
+  include Imageable
   include EventableTrack
 
   after_create_commit :handle_after_create_commit
 
   after_destroy_commit :handle_after_destroy_commit
 
-  belongs_to :profile,
-             counter_cache: true
+  belongs_to :profile, counter_cache: true
 
   belongs_to :track
 
-  belongs_to :library_artist,
-             counter_cache: true
+  belongs_to :library_artist, counter_cache: true
 
   belongs_to :library_album,
              optional: true,
              counter_cache: true
+
+  class << self
+    def associated
+      includes(
+        :track,
+        library_artist: :artist,
+        library_album: [
+          :album,
+          image_association
+        ]
+      )
+    end
+
+    def album_associated
+      includes(
+        track: :artist,
+        library_album: [
+          :album,
+          image_association
+        ]
+      )
+    end
+  end
+
+  def library_albums
+    profile
+      .library_albums
+      .where(
+        id: library_albums_ids
+      )
+  end
 
   private
 
@@ -49,5 +78,28 @@ class LibraryTrack < ApplicationRecord
       profile_id:,
       library_track_id: id
     )
+  end
+
+  def library_albums_ids
+    profile
+      .library_tracks
+      .where(
+        track_id:
+      )
+      .pluck(
+        :library_album_id
+      )
+  end
+
+  def playlists_ids
+    profile
+      .playlist_tracks
+      .where(
+        track_id:
+      )
+      .pluck(
+        :playlist_id
+      )
+      .uniq
   end
 end

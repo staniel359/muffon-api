@@ -49,8 +49,7 @@ module Eventable
   end
 
   def save_event?
-    model_profile
-      .save_activity_history?
+    model_profile.save_activity_history?
   end
 
   def model_profile
