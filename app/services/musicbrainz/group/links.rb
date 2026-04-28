@@ -4,7 +4,7 @@ module MusicBrainz
       private
 
       def group_data
-        Muffon::Formatter::AlbumGroup::Links.call(
+        Muffon::Formatter::Source::AlbumGroup::Links.call(
           source_original_link:,
           source_name:,
           source_album_group_id: musicbrainz_id

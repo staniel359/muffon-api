@@ -4,7 +4,7 @@ module YouTube
       private
 
       def video_data
-        Muffon::Formatter::Video::Tags.call(
+        Muffon::Formatter::Source::Video::Tags.call(
           tags:
         )
       end

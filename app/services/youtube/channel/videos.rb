@@ -14,7 +14,7 @@ module YouTube
       end
 
       def channel_data
-        Muffon::Formatter::VideoChannel::Videos.call(
+        Muffon::Formatter::Source::VideoChannel::Videos.call(
           source_original_link:,
           source_name:,
           source_video_channel_id: youtube_id,

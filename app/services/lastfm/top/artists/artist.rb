@@ -19,7 +19,7 @@ module LastFM
         end
 
         def data
-          Muffon::Formatter::Top::Artists::Artist.call(
+          Muffon::Formatter::Source::Top::Artists::Artist.call(
             source_original_link:,
             source_name:,
             source_artist_id: nil,

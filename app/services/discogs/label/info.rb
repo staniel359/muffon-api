@@ -6,7 +6,7 @@ module Discogs
       private
 
       def label_data
-        Muffon::Formatter::Label::Info.call(
+        Muffon::Formatter::Source::Label::Info.call(
           source_original_link:,
           source_name:,
           source_label_id: discogs_id,

@@ -20,7 +20,7 @@ module YouTube
       def data
         update_record_data!
 
-        Muffon::Formatter::User::VideoPlaylists::VideoPlaylist.call(
+        Muffon::Formatter::Source::VideoPlaylists::VideoPlaylist.call(
           source_original_link:,
           source_name:,
           source_video_playlist_id: youtube_id,

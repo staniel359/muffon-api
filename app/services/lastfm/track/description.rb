@@ -4,7 +4,7 @@ module LastFM
       private
 
       def track_data
-        Muffon::Formatter::Track::Description.call(
+        Muffon::Formatter::Source::Track::Description.call(
           description:
         )
       end

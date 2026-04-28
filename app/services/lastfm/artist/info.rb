@@ -17,7 +17,7 @@ module LastFM
       def artist_data
         update_record_data!
 
-        Muffon::Formatter::Artist::Info.call(
+        Muffon::Formatter::Source::Artist::Info.call(
           source_original_link:,
           source_name:,
           source_artist_id: nil,

@@ -19,7 +19,7 @@ module MusicBrainz
         end
 
         def data
-          Muffon::Formatter::Search::Labels::Label.call(
+          Muffon::Formatter::Source::Search::Labels::Label.call(
             source_original_link:,
             source_name:,
             source_label_id: musicbrainz_id,

@@ -19,7 +19,7 @@ module Bandcamp
       end
 
       def track_data
-        Muffon::Formatter::Track::Info.call(
+        Muffon::Formatter::Source::Track::Info.call(
           source_original_link:,
           source_name:,
           source_track_id: bandcamp_id,

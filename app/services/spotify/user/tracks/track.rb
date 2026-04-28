@@ -19,7 +19,7 @@ module Spotify
         end
 
         def data
-          Muffon::Formatter::User::Tracks::Track.call(
+          Muffon::Formatter::Source::User::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: spotify_id,

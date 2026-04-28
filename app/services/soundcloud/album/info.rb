@@ -6,7 +6,7 @@ module SoundCloud
       private
 
       def album_data
-        Muffon::Formatter::Album::Info.call(
+        Muffon::Formatter::Source::Album::Info.call(
           source_original_link:,
           source_name:,
           source_album_id: soundcloud_id,
@@ -38,7 +38,7 @@ module SoundCloud
 
       def album_base_data
         @album_base_data ||=
-          Muffon::Formatter::Track::Albums::Album.call(
+          Muffon::Formatter::Source::Track::Albums::Album.call(
             source_original_link:,
             source_name:,
             source_album_id: soundcloud_id,

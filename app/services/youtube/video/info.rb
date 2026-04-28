@@ -16,7 +16,7 @@ module YouTube
       def video_data
         update_record_data!
 
-        Muffon::Formatter::Video::Info.call(
+        Muffon::Formatter::Source::Video::Info.call(
           source_original_link:,
           source_name:,
           source_video_id: youtube_id,
@@ -38,7 +38,7 @@ module YouTube
       end
 
       def artist_info_data
-        Muffon::Formatter::Video::Artist.call(
+        Muffon::Formatter::Source::Video::Artist.call(
           channel_title:,
           **self_args
         )

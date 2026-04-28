@@ -19,7 +19,7 @@ module Spotify
         end
 
         def data
-          Muffon::Formatter::Search::Albums::Album.call(
+          Muffon::Formatter::Source::Search::Albums::Album.call(
             source_original_link:,
             source_name:,
             source_album_id: spotify_id,

@@ -23,7 +23,7 @@ module Discogs
             { 'name' => raw_artist_name }
           ]
 
-          Muffon::Formatter::Label::Albums::Album.call(
+          Muffon::Formatter::Source::Label::Albums::Album.call(
             source_original_link:,
             source_name:,
             source_album_id: discogs_id,

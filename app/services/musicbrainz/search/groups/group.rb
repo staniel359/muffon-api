@@ -19,7 +19,7 @@ module MusicBrainz
         end
 
         def data
-          Muffon::Formatter::Search::AlbumGroups::AlbumGroup.call(
+          Muffon::Formatter::Source::Search::AlbumGroups::AlbumGroup.call(
             source_original_link:,
             source_name:,
             source_album_group_id: musicbrainz_id,

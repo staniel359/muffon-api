@@ -17,7 +17,7 @@ module LastFM
         end
 
         def data
-          Muffon::Formatter::User::Playlists::Playlist.call(
+          Muffon::Formatter::Source::Playlists::Playlist.call(
             source_original_link:,
             source_name:,
             source_playlist_id: lastfm_id,

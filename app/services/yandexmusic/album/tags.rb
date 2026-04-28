@@ -4,7 +4,7 @@ module YandexMusic
       private
 
       def album_data
-        Muffon::Formatter::Album::Tags.call(
+        Muffon::Formatter::Source::Album::Tags.call(
           tags:
         )
       end

@@ -19,7 +19,7 @@ module YouTubeMusic
         end
 
         def data
-          Muffon::Formatter::Search::VideoPlaylists::VideoPlaylist.call(
+          Muffon::Formatter::Source::Search::VideoPlaylists::VideoPlaylist.call(
             source_original_link:,
             source_name:,
             source_video_playlist_id: youtube_id,

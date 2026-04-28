@@ -12,7 +12,7 @@ module LastFM
       end
 
       def track_data
-        Muffon::Formatter::Track::Tags.call(
+        Muffon::Formatter::Source::Track::Tags.call(
           tags:
         )
       end

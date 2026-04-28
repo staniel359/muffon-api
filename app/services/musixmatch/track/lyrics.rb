@@ -4,7 +4,7 @@ module MusixMatch
       private
 
       def track_data
-        Muffon::Formatter::Track::Lyrics.call(
+        Muffon::Formatter::Source::Track::Lyrics.call(
           source_original_link:,
           source_name:,
           source_track_id: nil,

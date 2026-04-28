@@ -4,7 +4,7 @@ module VK
       private
 
       def track_data
-        Muffon::Formatter::Track::Albums.call(
+        Muffon::Formatter::Source::Track::Albums.call(
           source_original_link:,
           source_name:,
           source_track_id: vk_id,

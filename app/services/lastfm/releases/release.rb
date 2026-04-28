@@ -20,7 +20,7 @@ module LastFM
       def data
         update_record_data!
 
-        Muffon::Formatter::Releases::Albums::Album.call(
+        Muffon::Formatter::Source::Releases::Albums::Album.call(
           source_original_link:,
           source_name:,
           source_album_id: nil,

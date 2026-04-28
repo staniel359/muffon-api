@@ -19,7 +19,7 @@ module LastFM
         end
 
         def data
-          Muffon::Formatter::Tag::Tracks::Track.call(
+          Muffon::Formatter::Source::Tag::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: nil,

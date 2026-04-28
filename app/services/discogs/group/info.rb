@@ -6,7 +6,7 @@ module Discogs
       private
 
       def group_data
-        Muffon::Formatter::AlbumGroup::Info.call(
+        Muffon::Formatter::Source::AlbumGroup::Info.call(
           source_original_link:,
           source_name:,
           source_album_group_id: discogs_id,
@@ -37,7 +37,7 @@ module Discogs
 
       def album_base_data
         @album_base_data ||=
-          Muffon::Formatter::Track::Albums::Album.call(
+          Muffon::Formatter::Source::Track::Albums::Album.call(
             source_original_link:,
             source_name:,
             source_album_id: discogs_id,

@@ -19,7 +19,7 @@ module Bandcamp
         end
 
         def data
-          Muffon::Formatter::Label::Artists::Artist.call(
+          Muffon::Formatter::Source::Label::Artists::Artist.call(
             source_original_link:,
             source_name:,
             source_artist_id: bandcamp_id,

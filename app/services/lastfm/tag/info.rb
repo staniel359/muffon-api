@@ -23,7 +23,7 @@ module LastFM
       end
 
       def tag_data
-        Muffon::Formatter::Tag::Info.call(
+        Muffon::Formatter::Source::Tag::Info.call(
           name:,
           taggings_count:,
           taggers_count:,

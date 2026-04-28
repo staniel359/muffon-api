@@ -19,7 +19,7 @@ module MusicBrainz
         end
 
         def data
-          Muffon::Formatter::Artist::Albums::Album.call(
+          Muffon::Formatter::Source::Artist::Albums::Album.call(
             source_original_link:,
             source_name:,
             source_album_id: musicbrainz_id,

@@ -12,7 +12,7 @@ module LastFM
       end
 
       def artist_data
-        Muffon::Formatter::Artist::Tags.call(
+        Muffon::Formatter::Source::Artist::Tags.call(
           tags:
         )
       end

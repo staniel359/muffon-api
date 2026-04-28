@@ -4,7 +4,7 @@ module Discogs
       private
 
       def group_data
-        Muffon::Formatter::AlbumGroup::Description.call(
+        Muffon::Formatter::Source::AlbumGroup::Description.call(
           description:
         )
       end

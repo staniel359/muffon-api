@@ -19,7 +19,7 @@ module AmazonMusic
         end
 
         def data
-          Muffon::Formatter::Search::Artists::Artist.call(
+          Muffon::Formatter::Source::Search::Artists::Artist.call(
             source_original_link:,
             source_name:,
             source_artist_id: amazonmusic_id,

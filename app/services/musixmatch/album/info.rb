@@ -14,7 +14,7 @@ module MusixMatch
       end
 
       def album_list_data
-        Muffon::Formatter::Track::Albums::Album.call(
+        Muffon::Formatter::Source::Track::Albums::Album.call(
           source_original_link:,
           source_name:,
           source_album_id: nil,
@@ -27,7 +27,7 @@ module MusixMatch
       end
 
       def album_full_data
-        Muffon::Formatter::Album::Info.call(
+        Muffon::Formatter::Source::Album::Info.call(
           source_original_link:,
           source_name:,
           source_album_id: nil,
@@ -59,7 +59,7 @@ module MusixMatch
 
       def album_base_data
         @album_base_data ||=
-          Muffon::Formatter::Track::Albums::Album.call(
+          Muffon::Formatter::Source::Track::Albums::Album.call(
             source_original_link:,
             source_name:,
             source_album_id: nil,

@@ -21,7 +21,7 @@ module Discogs
         end
 
         def data
-          Muffon::Formatter::AlbumGroup::Tracks::Track.call(
+          Muffon::Formatter::Source::AlbumGroup::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: discogs_id,

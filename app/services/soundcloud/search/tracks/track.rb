@@ -19,7 +19,7 @@ module SoundCloud
         end
 
         def data
-          Muffon::Formatter::Search::Tracks::Track.call(
+          Muffon::Formatter::Source::Search::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: soundcloud_id,

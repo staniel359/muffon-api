@@ -19,7 +19,7 @@ module YouTubeMusic
         end
 
         def data
-          Muffon::Formatter::Search::Videos::Video.call(
+          Muffon::Formatter::Source::Search::Videos::Video.call(
             source_original_link:,
             source_name:,
             source_video_id: youtube_id,

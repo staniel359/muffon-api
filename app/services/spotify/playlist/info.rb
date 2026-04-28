@@ -6,7 +6,7 @@ module Spotify
       private
 
       def playlist_data
-        Muffon::Formatter::User::Playlist::Info.call(
+        Muffon::Formatter::Source::Playlist::Info.call(
           source_original_link:,
           source_name:,
           source_playlist_id: spotify_id,
