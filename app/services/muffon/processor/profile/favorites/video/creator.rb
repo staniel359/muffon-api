@@ -3,29 +3,25 @@ module Muffon
     module Profile
       module Favorites
         module Video
-          class Creator < Muffon::Processor::Profile::Favorites::Base
-            include Muffon::Mixins::Video
-
+          class Creator < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                youtube_id
+              [
+                *super,
+                :youtube_id
               ]
             end
 
-            def process_favorite
-              favorite_video
+            def data
+              favorite_video_record
 
-              {
-                favorite_video:
-                  favorite_video_data
-              }
+              { favorite_video: favorite_video_data }
             end
 
-            def favorite_video
-              @favorite_video ||=
-                profile
+            def favorite_video_record
+              @favorite_video_record ||=
+                profile_record
                 .favorite_videos
                 .where(
                   video_id: video_record.id
@@ -33,8 +29,14 @@ module Muffon
                 .first_or_create!
             end
 
+            def video_record
+              ::Video.find_by(
+                youtube_id: @args[:youtube_id]
+              )
+            end
+
             def favorite_video_data
-              { id: favorite_video.id }
+              { id: favorite_video_record.id }
             end
           end
         end

@@ -18,37 +18,29 @@ module Muffon
         end
 
         def data
-          profile
+          profile_record
 
-          if profile.errors?
-            profile.errors_data
+          if profile_record.errors?
+            profile_record.errors_data
           else
-            process_image
-
-            set_online
+            profile_record.process_image(
+              @args[:image]
+            )
 
             authenticate
           end
         end
 
-        def profile
-          @profile ||=
+        def profile_record
+          @profile_record ||=
             ::Profile.create(
-              create_params
+              record_attributes
             )
         end
 
-        def create_params
+        def record_attributes
           @args.slice(
             *profile_params
-          )
-        end
-
-        def set_online
-          ::Muffon::Processor::Profile::Online::Updater.call(
-            profile_id: profile.id,
-            token: profile.token,
-            online: 1
           )
         end
 
@@ -59,7 +51,7 @@ module Muffon
         end
 
         def authenticate_params
-          profile.slice(
+          profile_record.slice(
             *Muffon::Profile::Authenticator::PARAMS
           )
         end

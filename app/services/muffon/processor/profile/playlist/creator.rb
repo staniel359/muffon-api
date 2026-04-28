@@ -6,42 +6,39 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              title
+            [
+              *super,
+              :title
             ]
           end
 
-          def process_playlist
-            playlist
+          def data
+            playlist_record
 
-            if playlist.errors?
-              playlist.errors_data
+            if playlist_record.errors?
+              playlist_record.errors_data
             else
-              process_image
+              playlist_record.process_image(
+                @args[:image]
+              )
 
               { playlist: playlist_data }
             end
           end
 
-          def playlist
-            @playlist ||=
-              profile
+          def playlist_record
+            @playlist_record ||=
+              profile_record
               .playlists
               .create(
-                create_args
+                title: @args[:title],
+                description: @args[:description],
+                private: @args[:private]
               )
           end
 
-          def create_args
-            {
-              title: @args[:title],
-              description: @args[:description],
-              private: @args[:private]
-            }
-          end
-
           def playlist_data
-            { id: playlist.id }
+            { id: playlist_record.id }
           end
         end
       end

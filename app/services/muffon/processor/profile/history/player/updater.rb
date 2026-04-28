@@ -3,21 +3,20 @@ module Muffon
     module Profile
       module History
         module Player
-          class Updater < Muffon::Processor::Profile::History::Base
+          class Updater < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                playing
+              [
+                *super,
+                :playing
               ]
             end
 
-            def process_profile_history
-              profile
-                .playing_events
-                .create(
-                  data: @args[:playing]
-                )
+            def data
+              profile_record.add_player_history_event!(
+                event_data: @args[:playing]
+              )
 
               { success: true }
             end

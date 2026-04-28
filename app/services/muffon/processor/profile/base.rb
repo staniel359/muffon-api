@@ -5,19 +5,14 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            token
+          [
+            *super,
+            :token
           ]
         end
 
         def forbidden?
           !valid_profile?
-        end
-
-        def process_image
-          profile.process_image(
-            @args[:image]
-          )
         end
       end
     end

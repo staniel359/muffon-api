@@ -3,34 +3,36 @@ module Muffon
     module Profile
       module Bookmarks
         module Album
-          class Creator < Muffon::Processor::Profile::Bookmarks::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Album
 
             private
 
             def required_args
-              super + %i[
-                album_title
-                artist_name
+              [
+                *super,
+                :album_title,
+                :artist_name
               ]
             end
 
-            def process_bookmark
-              bookmark_album.update!(
-                update_attributes
+            def data
+              bookmark_album_record
+
+              bookmark_album_record.update!(
+                source_data: @args[:source]
               )
 
-              process_image
+              bookmark_album_record.process_image_later(
+                @args[:image]
+              )
 
-              {
-                bookmark_album:
-                  bookmark_album_data
-              }
+              { bookmark_album: bookmark_album_data }
             end
 
-            def bookmark_album
-              @bookmark_album ||=
-                profile
+            def bookmark_album_record
+              @bookmark_album_record ||=
+                profile_record
                 .bookmark_albums
                 .where(
                   album_id: album_record.id
@@ -46,18 +48,8 @@ module Muffon
               @args[:album_title]
             end
 
-            def update_attributes
-              { source_data: @args[:source] }
-            end
-
-            def process_image
-              bookmark_album.process_image_later(
-                @args[:image]
-              )
-            end
-
             def bookmark_album_data
-              { id: bookmark_album.id }
+              { id: bookmark_album_record.id }
             end
           end
         end

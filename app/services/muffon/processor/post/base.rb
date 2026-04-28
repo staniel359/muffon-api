@@ -4,57 +4,47 @@ module Muffon
       class Base < Muffon::Processor::Profile::Base
         include Muffon::Mixins::Sendable
 
-        def community
-          if instance_variable_defined?(
-            :@community
-          )
-            @community
-          else
-            @community =
-              ::Community.find_by(
-                id: @args[:community_id]
-              )
-          end
-        end
-
-        def data
-          process_post
-        end
-
         def post_creator?
-          post.profile_id == profile.id
+          post_record.creator?(
+            profile_id: @args[:profile_id]
+          )
         end
 
-        def post
-          if instance_variable_defined?(
-            :@post
-          )
-            @post
+        def post_record
+          if defined?(@post_record)
+            @post_record
           else
-            @post =
+            @post_record =
               ::Post.find_by(
                 id: @args[:post_id]
               )
           end
         end
 
-        def page_owner?
-          post.other_profile_id == profile.id
+        def page_creator?
+          post_record.other_profile_id == @args[:profile_id].to_i
         end
 
-        def community_owner?
-          community.profile_id == profile.id
+        def community_creator?
+          community_record.creator?(
+            profile_id: @args[:profile_id]
+          )
+        end
+
+        def community_record
+          if defined?(@community_record)
+            @community_record
+          else
+            @community_record =
+              ::Community.find_by(
+                id: @args[:community_id]
+              )
+          end
         end
 
         def by_community?
           @args[:by_community].present? &&
-            community_owner?
-        end
-
-        def process_images
-          post.process_images(
-            @args[:images]
-          )
+            community_creator?
         end
 
         alias post_params sendable_params

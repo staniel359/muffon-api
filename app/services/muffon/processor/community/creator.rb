@@ -5,28 +5,31 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            title
+          [
+            *super,
+            :title
           ]
         end
 
-        def process_community
-          community
+        def data
+          community_record
 
-          if community.errors?
-            community.errors_data
+          if community_record.errors?
+            community_record.errors_data
           else
-            process_image
+            community_record.process_image(
+              @args[:image]
+            )
 
-            join_community
+            create_membership!
 
             { community: community_data }
           end
         end
 
-        def community
-          @community ||=
-            profile
+        def community_record
+          @community_record ||=
+            profile_record
             .own_communities
             .where(
               title: @args[:title]
@@ -37,23 +40,17 @@ module Muffon
         end
 
         def community_params
-          {
-            description:
-              @args[:description]
-          }
+          { description: @args[:description] }
         end
 
-        def join_community
-          community
-            .memberships
-            .create(
-              profile_id:
-                @args[:profile_id]
-            )
+        def create_membership!
+          community_record.add_member!(
+            profile_id: @args[:profile_id]
+          )
         end
 
         def community_data
-          { id: community.id }
+          { id: community_record.id }
         end
       end
     end

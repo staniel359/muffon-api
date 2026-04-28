@@ -3,34 +3,28 @@ module Muffon
     module Profile
       module Library
         module Track
-          class Destroyer < Muffon::Processor::Profile::Library::Track::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                library_id
+              [
+                *super,
+                :library_id
               ]
             end
 
-            def process_library_track
-              library_track&.destroy
+            def data
+              library_track_record.destroy!
 
               { success: true }
             end
 
-            def library_track
-              if instance_variable_defined?(
-                :@library_track
-              )
-                @library_track
-              else
-                @library_track =
-                  profile
-                  .library_tracks
-                  .find_by(
-                    id: @args[:library_id]
-                  )
-              end
+            def library_track_record
+              profile_record
+                .library_tracks
+                .find_by(
+                  id: @args[:library_id]
+                )
             end
           end
         end

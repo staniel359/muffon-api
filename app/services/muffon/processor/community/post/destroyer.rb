@@ -6,15 +6,16 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              community_id
+            [
+              *super,
+              :community_id
             ]
           end
 
           def forbidden?
-            super || (
-              !post_creator? &&
-                !community_owner?
+            super || !(
+              post_creator? ||
+                community_creator?
             )
           end
         end

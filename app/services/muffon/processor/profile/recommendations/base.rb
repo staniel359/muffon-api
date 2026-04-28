@@ -14,10 +14,6 @@ module Muffon
           def forbidden?
             false
           end
-
-          def data
-            process_recommendations
-          end
         end
       end
     end

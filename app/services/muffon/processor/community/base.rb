@@ -4,34 +4,20 @@ module Muffon
       class Base < Muffon::Processor::Profile::Base
         private
 
-        def community
-          if instance_variable_defined?(
-            :@community
-          )
-            @community
+        def community_record
+          if defined?(@community_record)
+            @community_record
           else
-            @community =
+            @community_record =
               ::Community.find_by(
-                id: community_id
+                id: @args[:community_id]
               )
           end
         end
 
-        def community_id
-          @args[:community_id]
-        end
-
         def community_creator?
-          community.profile_id == profile.id
-        end
-
-        def data
-          process_community
-        end
-
-        def process_image
-          community.process_image(
-            @args[:image]
+          community_record.creator?(
+            profile_id: @args[:profile_id]
           )
         end
       end

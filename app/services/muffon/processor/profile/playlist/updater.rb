@@ -6,44 +6,35 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              playlist_id
-              title
+            [
+              *super,
+              :playlist_id,
+              :title
             ]
           end
 
-          def not_found?
-            super ||
-              playlist.blank?
-          end
-
-          def process_playlist
-            playlist.update(
-              update_args
+          def data
+            playlist_record.update(
+              title: @args[:title],
+              description: @args[:description],
+              private: @args[:private]
             )
 
-            if playlist.errors?
-              playlist.errors_data
+            if playlist_record.errors?
+              playlist_record.errors_data
             else
-              process_image
+              playlist_record.process_image(
+                @args[:image]
+              )
 
               { playlist: playlist_data }
             end
           end
 
-          def update_args
-            {
-              title: @args[:title],
-              description: @args[:description],
-              private: @args[:private]
-            }
-          end
-
           def playlist_data
             Muffon::Profile::Playlist::Info.call(
-              playlist_id: @args[:playlist_id],
-              profile_id: @args[:profile_id],
-              token: @args[:token]
+              playlist_id: playlist_record.id,
+              **self_args
             ).dig(
               :profile,
               :playlist

@@ -3,13 +3,11 @@ module Muffon
     module Profile
       module History
         module Browser
-          class Destroyer < Muffon::Processor::Profile::History::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
-            def process_profile_history
-              profile
-                .browser_events
-                .delete_all
+            def data
+              profile_record.delete_browser_history!
 
               { success: true }
             end

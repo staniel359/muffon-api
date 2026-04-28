@@ -3,34 +3,28 @@ module Muffon
     module Profile
       module Watched
         module Video
-          class Destroyer < Muffon::Processor::Profile::Watched::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                watched_id
+              [
+                *super,
+                :watched_id
               ]
             end
 
-            def process_watched
-              watched_video&.destroy
+            def data
+              watched_video_record.destroy!
 
               { success: true }
             end
 
-            def watched_video
-              if instance_variable_defined?(
-                :@watched_video
-              )
-                @watched_video
-              else
-                @watched_video =
-                  profile
-                  .watched_videos
-                  .find_by(
-                    id: @args[:watched_id]
-                  )
-              end
+            def watched_video_record
+              profile_record
+                .watched_videos
+                .find_by(
+                  id: @args[:watched_id]
+                )
             end
           end
         end

@@ -1,6 +1,8 @@
 module LastFM
   module Track
     class Profiles < LastFM::Track::Info
+      include Muffon::Mixins::Profile
+
       private
 
       def track_data

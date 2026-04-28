@@ -2,6 +2,8 @@ module Muffon
   class Playlists < Muffon::Base
     DEFAULT_ORDER = 'created_desc'.freeze
 
+    include Muffon::Mixins::Profile
+
     def call
       data
     end

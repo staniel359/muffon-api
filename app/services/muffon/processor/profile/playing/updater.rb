@@ -2,19 +2,15 @@ module Muffon
   module Processor
     module Profile
       module Playing
-        class Updater < Muffon::Processor::Profile::Playing::Base
+        class Updater < Muffon::Processor::Profile::Base
           private
 
-          def process_profile
-            profile.update!(
-              playing:
+          def data
+            profile_record.update!(
+              playing: @args[:playing]
             )
 
             { success: true }
-          end
-
-          def playing
-            @args[:playing]
           end
         end
       end

@@ -9,19 +9,29 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                playlist_id
-                track_title
-                artist_name
+              [
+                *super,
+                :playlist_id,
+                :track_title,
+                :artist_name
               ]
             end
 
-            def process_playlist_track
-              playlist_track.update!(
-                update_params
+            def data
+              playlist_track_record
+
+              playlist_track_record.update!(
+                artist_id: artist_record.id,
+                album_id: album_record&.id,
+                source_data: @args[:source],
+                audio_data: @args[:audio],
+                album_source_data: @args[:album_source],
+                created_at: @args[:created]
               )
 
-              process_image
+              playlist_track_record.process_image_later(
+                @args[:image]
+              )
 
               {
                 playlist: playlist_data,
@@ -29,9 +39,9 @@ module Muffon
               }
             end
 
-            def playlist_track
-              @playlist_track ||=
-                playlist
+            def playlist_track_record
+              @playlist_track_record ||=
+                playlist_record
                 .playlist_tracks
                 .where(
                   track_id: track_record.id
@@ -47,30 +57,12 @@ module Muffon
               @args[:artist_name]
             end
 
-            def update_params
-              {
-                artist_id: artist_record.id,
-                album_id: album_record&.id,
-                source_data: @args[:source],
-                audio_data: @args[:audio],
-                album_source_data:
-                  @args[:album_source],
-                created_at: @args[:created]
-              }.compact
-            end
-
             def album_title
               @args[:album_title]
             end
 
-            def process_image
-              playlist_track.process_image_later(
-                @args[:image]
-              )
-            end
-
             def playlist_track_data
-              { id: playlist_track.id }
+              { id: playlist_track_record.id }
             end
           end
         end

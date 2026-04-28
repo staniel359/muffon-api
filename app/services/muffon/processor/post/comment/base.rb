@@ -13,23 +13,18 @@ module Muffon
             ]
           end
 
-          def not_found?
-            super ||
-              post.blank?
-          end
-
           def post_comment_creator?
-            post_comment.profile_id == profile.id
+            post_comment_record.creator?(
+              profile_id: @args[:other_profile_id]
+            )
           end
 
-          def post_comment
-            if instance_variable_defined?(
-              :@post_comment
-            )
-              @post_comment
+          def post_comment_record
+            if defined?(@post_comment_record)
+              @post_comment_record
             else
-              @post_comment =
-                post
+              @post_comment_record =
+                post_record
                 .post_comments
                 .find_by(
                   id: @args[:comment_id]
@@ -37,17 +32,7 @@ module Muffon
             end
           end
 
-          def data
-            process_post_comment
-          end
-
-          def process_images
-            post_comment.process_images(
-              @args[:images]
-            )
-          end
-
-          alias profile other_profile
+          alias profile_record other_profile_record
           alias post_comment_params sendable_params
         end
       end

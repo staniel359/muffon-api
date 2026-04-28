@@ -3,29 +3,27 @@ module Muffon
     module Profile
       module Bookmarks
         module Artist
-          class Creator < Muffon::Processor::Profile::Bookmarks::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Artist
 
             private
 
             def required_args
-              super + %i[
-                artist_name
+              [
+                *super,
+                :artist_name
               ]
             end
 
-            def process_bookmark
-              bookmark_artist
+            def data
+              bookmark_artist_record
 
-              {
-                bookmark_artist:
-                  bookmark_artist_data
-              }
+              { bookmark_artist: bookmark_artist_data }
             end
 
-            def bookmark_artist
-              @bookmark_artist ||=
-                profile
+            def bookmark_artist_record
+              @bookmark_artist_record ||=
+                profile_record
                 .bookmark_artists
                 .where(
                   artist_id: artist_record.id
@@ -38,7 +36,7 @@ module Muffon
             end
 
             def bookmark_artist_data
-              { id: bookmark_artist.id }
+              { id: bookmark_artist_record.id }
             end
           end
         end

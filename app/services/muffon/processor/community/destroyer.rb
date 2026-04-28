@@ -5,23 +5,18 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            community_id
+          [
+            *super,
+            :community_id
           ]
         end
 
-        def not_found?
-          super ||
-            community.blank?
-        end
-
         def forbidden?
-          super ||
-            !community_creator?
+          super || !community_creator?
         end
 
-        def process_community
-          community&.destroy
+        def data
+          community_record.destroy!
 
           { success: true }
         end

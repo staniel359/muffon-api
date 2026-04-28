@@ -6,18 +6,14 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              playlist_id
+            [
+              *super,
+              :playlist_id
             ]
           end
 
-          def not_found?
-            super ||
-              playlist.blank?
-          end
-
-          def process_playlist
-            playlist&.destroy
+          def data
+            playlist_record.destroy!
 
             { success: true }
           end

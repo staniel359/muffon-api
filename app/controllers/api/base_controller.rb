@@ -98,8 +98,8 @@ module API
       )
     end
 
-    def sendable_attachment_types
-      ::Muffon::Mixins::Sendable::ATTACHMENT_TYPES
+    def sendable_attachments_types
+      ::Muffon::Mixins::Sendable::ATTACHMENTS_TYPES
     end
   end
 end

@@ -3,19 +3,18 @@ module Muffon
     module Profile
       module Bookmarks
         module VideoChannel
-          class Creator < Muffon::Processor::Profile::Bookmarks::Base
-            include Muffon::Mixins::VideoChannel
-
+          class Creator < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                youtube_id
+              [
+                *super,
+                :youtube_id
               ]
             end
 
-            def process_bookmark
-              bookmark_video_channel
+            def data
+              bookmark_video_channel_record
 
               {
                 bookmark_video_channel:
@@ -23,9 +22,9 @@ module Muffon
               }
             end
 
-            def bookmark_video_channel
-              @bookmark_video_channel ||=
-                profile
+            def bookmark_video_channel_record
+              @bookmark_video_channel_record ||=
+                profile_record
                 .bookmark_video_channels
                 .where(
                   video_channel_id:
@@ -34,8 +33,14 @@ module Muffon
                 .first_or_create!
             end
 
+            def video_channel_record
+              ::VideoChannel.find_by(
+                youtube_id: @args[:youtube_id]
+              )
+            end
+
             def bookmark_video_channel_data
-              { id: bookmark_video_channel.id }
+              { id: bookmark_video_channel_record.id }
             end
           end
         end

@@ -3,34 +3,28 @@ module Muffon
     module Profile
       module Bookmarks
         module VideoPlaylist
-          class Destroyer < Muffon::Processor::Profile::Bookmarks::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                bookmark_id
+              [
+                *super,
+                :bookmark_id
               ]
             end
 
-            def process_bookmark
-              bookmark_video_playlist&.destroy
+            def data
+              bookmark_video_playlist_record.destroy!
 
               { success: true }
             end
 
-            def bookmark_video_playlist
-              if instance_variable_defined?(
-                :@bookmark_video_playlist
-              )
-                @bookmark_video_playlist
-              else
-                @bookmark_video_playlist =
-                  profile
-                  .bookmark_video_playlists
-                  .find_by(
-                    id: @args[:bookmark_id]
-                  )
-              end
+            def bookmark_video_playlist_record
+              profile_record
+                .bookmark_video_playlists
+                .find_by(
+                  id: @args[:bookmark_id]
+                )
             end
           end
         end

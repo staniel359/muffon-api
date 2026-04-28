@@ -1,6 +1,8 @@
 module LastFM
   module User
     class Base < LastFM::Base
+      include Muffon::Mixins::Profile
+
       def call
         check_args
 
@@ -38,7 +40,7 @@ module LastFM
         if skip_profile?
           false
         else
-          profile.blank?
+          profile_record.blank?
         end
       end
 
@@ -63,9 +65,16 @@ module LastFM
 
       def lastfm_nickname
         @args[:nickname] ||
-          profile
-            .lastfm_connection
-            &.nickname
+          lastfm_connection_record&.nickname
+      end
+
+      def lastfm_connection_record
+        if defined?(@lastfm_connection_record)
+          @lastfm_connection_record
+        else
+          @lastfm_connection_record =
+            profile_record.lastfm_connection
+        end
       end
 
       def data

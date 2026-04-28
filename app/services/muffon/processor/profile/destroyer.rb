@@ -5,18 +5,19 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            password
+          [
+            *super,
+            :password
           ]
         end
 
         def data
           check_password
 
-          if profile.errors?
-            profile.errors_data
+          if profile_record.errors?
+            profile_record.errors_data
           else
-            profile.run_callbacks(
+            profile_record.run_callbacks(
               :destroy
             )
 

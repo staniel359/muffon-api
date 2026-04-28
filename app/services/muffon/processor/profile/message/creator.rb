@@ -2,88 +2,64 @@ module Muffon
   module Processor
     module Profile
       module Message
-        class Creator < Muffon::Processor::Profile::Message::Base
+        class Creator < Muffon::Processor::Profile::Base
           include Muffon::Mixins::Sendable
 
           private
 
           def required_args
-            super +
-              %i[
-                other_profile_id
-              ] +
-              content_args
+            [
+              *super,
+              :other_profile_id,
+              *content_args
+            ]
           end
 
-          def process_message
-            message
+          def data
+            message_record
 
-            if message.errors?
-              message.errors_data
+            if message_record.errors?
+              message_record.errors_data
             else
-              conversation.touch
+              conversation_record.touch
 
-              process_images
+              message_record.process_images(
+                @args[:images]
+              )
 
-              {
-                conversation:
-                  conversation_data
-              }
+              { conversation: conversation_data }
             end
           end
 
-          def message
-            @message ||=
-              conversation
+          def message_record
+            @message_record ||=
+              conversation_record
               .messages
-              .create(
-                message_params
+              .create!(
+                profile_id: @args[:profile_id],
+                **sendable_params
               )
           end
 
-          def conversation
-            @conversation ||=
+          def conversation_record
+            @conversation_record ||=
               conversations_with_other_profile
-              .first_or_create(
-                conversation_params
+              .first_or_create!(
+                profile_id: @args[:profile_id],
+                other_profile_id: @args[:other_profile_id]
               )
           end
 
           def conversations_with_other_profile
-            profile
+            profile_record
               .conversations
               .with_or_of_profile(
                 @args[:other_profile_id]
               )
           end
 
-          def conversation_params
-            {
-              profile_id: @args[:profile_id],
-              other_profile_id:
-                @args[:other_profile_id]
-            }
-          end
-
-          def message_params
-            {
-              **message_profile_params,
-              **sendable_params
-            }
-          end
-
-          def message_profile_params
-            { profile_id: profile.id }
-          end
-
-          def process_images
-            message.process_images(
-              @args[:images]
-            )
-          end
-
           def conversation_data
-            { id: conversation.id }
+            { id: conversation_record.id }
           end
         end
       end

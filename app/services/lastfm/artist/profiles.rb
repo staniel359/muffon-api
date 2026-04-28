@@ -1,6 +1,8 @@
 module LastFM
   module Artist
     class Profiles < LastFM::Artist::Info
+      include Muffon::Mixins::Profile
+
       private
 
       def artist_data

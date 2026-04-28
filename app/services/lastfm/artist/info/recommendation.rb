@@ -2,6 +2,8 @@ module LastFM
   module Artist
     class Info
       class Recommendation < LastFM::Artist::Info
+        include Muffon::Mixins::Profile
+
         def call
           return if return?
 
@@ -10,14 +12,6 @@ module LastFM
 
         private
 
-        def return?
-          return true if test?
-
-          args_missing? ||
-            no_data? ||
-            !valid_profile?
-        end
-
         def required_args
           %i[
             profile_id
@@ -25,26 +19,24 @@ module LastFM
           ]
         end
 
-        def no_data?
-          find_recommendation.blank? ||
-            find_recommendation.deleted
+        def return?
+          args_missing? ||
+            profile_record.blank? ||
+            recommendation_record.blank? ||
+            recommendation_record.deleted? ||
+            forbidden?
         end
 
-        def data
-          {
-            id: find_recommendation.id,
-            artists_count:
-          }
+        def deleted?
+          recommendation_record.deleted
         end
 
-        def find_recommendation
-          if instance_variable_defined?(
-            :@find_recommendation
-          )
-            @find_recommendation
+        def recommendation_record
+          if defined?(@recommendation_record)
+            @recommendation_record
           else
-            @find_recommendation =
-              profile
+            @recommendation_record =
+              profile_record
               .recommendation_artists
               .find_by(
                 artist_id: artist_record.id
@@ -56,10 +48,15 @@ module LastFM
           @args[:artist_name]
         end
 
-        def artists_count
-          find_recommendation
-            .library_artist_ids
-            .size
+        def forbidden?
+          !valid_profile?
+        end
+
+        def data
+          {
+            id: recommendation_record.id,
+            artists_count: recommendation_record.artists_count
+          }
         end
       end
     end

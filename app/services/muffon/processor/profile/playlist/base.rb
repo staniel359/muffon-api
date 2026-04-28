@@ -5,24 +5,12 @@ module Muffon
         class Base < Muffon::Processor::Profile::Base
           private
 
-          def data
-            process_playlist
-          end
-
-          def process_image
-            playlist.process_image(
-              @args[:image]
-            )
-          end
-
-          def playlist
-            if instance_variable_defined?(
-              :@playlist
-            )
+          def playlist_record
+            if defined?(@playlist)
               @playlist
             else
               @playlist =
-                profile
+                profile_record
                 .playlists
                 .find_by(
                   id: @args[:playlist_id]

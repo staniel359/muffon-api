@@ -3,34 +3,28 @@ module Muffon
     module Profile
       module Listened
         module Track
-          class Destroyer < Muffon::Processor::Profile::Listened::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                listened_id
+              [
+                *super,
+                :listened_id
               ]
             end
 
-            def process_listened
-              listened_track&.destroy
+            def data
+              listened_track_record.destroy!
 
               { success: true }
             end
 
-            def listened_track
-              if instance_variable_defined?(
-                :@listened_track
-              )
-                @listened_track
-              else
-                @listened_track =
-                  profile
-                  .listened_tracks
-                  .find_by(
-                    id: @args[:listened_id]
-                  )
-              end
+            def listened_track_record
+              profile_record
+                .listened_tracks
+                .find_by(
+                  id: @args[:listened_id]
+                )
             end
           end
         end

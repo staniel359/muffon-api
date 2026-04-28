@@ -10,8 +10,7 @@ module Spotify
       def access_token_data
         @access_token_data ||=
           Spotify::Utils::User::AccessToken::Refresh.call(
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+            **self_args
           )
       end
 

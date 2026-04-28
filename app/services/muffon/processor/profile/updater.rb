@@ -5,29 +5,26 @@ module Muffon
         private
 
         def data
-          profile.update(
-            update_params
+          profile_record.update(
+            @args.slice(
+              *profile_params
+            )
           )
 
-          if profile.errors?
-            profile.errors_data
+          if profile_record.errors?
+            profile_record.errors_data
           else
-            process_image
+            profile_record.process_image(
+              @args[:image]
+            )
 
             profile_info_data
           end
         end
 
-        def update_params
-          @args.slice(
-            *profile_params
-          )
-        end
-
         def profile_info_data
           Muffon::Profile::Info.call(
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+            **self_args
           )
         end
       end

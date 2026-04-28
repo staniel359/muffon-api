@@ -3,44 +3,42 @@ module Muffon
     module Profile
       module Library
         module Track
-          class Creator < Muffon::Processor::Profile::Library::Track::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Track
 
             private
 
             def required_args
-              super + %i[
-                track_title
-                artist_name
+              [
+                *super,
+                :track_title,
+                :artist_name
               ]
             end
 
-            def process_library_track
-              update_library_artist!
+            def data
+              library_artist_record
 
-              update_library_album!
+              update_library_artist_record!
 
-              update_library_track!
+              library_album_record
 
-              process_image
+              update_library_album_record!
 
-              {
-                library_track:
-                  library_track_data
-              }
-            end
-
-            def update_library_artist!
-              update_created_at(
-                library_artist
+              library_album_record&.process_image_later(
+                @args[:image]
               )
 
-              library_artist.save!
+              library_track_record
+
+              update_library_track_record!
+
+              { library_track: library_track_data }
             end
 
-            def library_artist
-              @library_artist ||=
-                profile
+            def library_artist_record
+              @library_artist_record ||=
+                profile_record
                 .library_artists
                 .where(
                   artist_id: artist_record.id
@@ -52,43 +50,40 @@ module Muffon
               @args[:artist_name]
             end
 
-            def update_created_at(model)
-              return if created_at.blank?
-
-              if model.created_at.present?
-                model.created_at = created_at if
-                  created_at >= model.created_at
-              else
-                model.created_at = created_at
-              end
-            end
-
-            def created_at
-              @args[:created]
-            end
-
-            def update_library_album!
-              return if library_album.blank?
-
-              update_created_at(
-                library_album
+            def update_library_artist_record!
+              update_model_creation_date(
+                model: library_artist_record
               )
 
-              library_album.source_data =
-                @args[:album_source]
-
-              library_album.save!
+              library_artist_record.save!
             end
 
-            def library_album
+            def update_model_creation_date(
+              model:
+            )
+              return unless update_model_creation_date?(model:)
+
+              model.created_at = @args[:created]
+            end
+
+            def update_model_creation_date?(
+              model:
+            )
+              @args[:created].present? && (
+                model.created_at.blank? ||
+                  @args[:created] < model.created_at
+              )
+            end
+
+            def library_album_record
               return if album_title.blank?
 
-              @library_album ||=
-                profile
+              @library_album_record ||=
+                profile_record
                 .library_albums
                 .where(
                   album_id: album_record.id,
-                  library_artist_id: library_artist.id
+                  library_artist_id: library_artist_record.id
                 )
                 .first_or_initialize
             end
@@ -97,26 +92,26 @@ module Muffon
               @args[:album_title]
             end
 
-            def update_library_track!
-              update_created_at(
-                library_track
+            def update_library_album_record!
+              return if library_album_record.blank?
+
+              update_model_creation_date(
+                model: library_album_record
               )
 
-              library_track.source_data = @args[:source]
+              library_album_record.source_data = @args[:album_source]
 
-              library_track.audio_data = @args[:audio]
-
-              library_track.save!
+              library_album_record.save!
             end
 
-            def library_track
-              @library_track ||=
-                profile
+            def library_track_record
+              @library_track_record ||=
+                profile_record
                 .library_tracks
                 .where(
                   track_id: track_record.id,
-                  library_artist_id: library_artist.id,
-                  library_album_id: library_album&.id
+                  library_artist_id: library_artist_record.id,
+                  library_album_id: library_album_record&.id
                 )
                 .first_or_initialize
             end
@@ -125,14 +120,20 @@ module Muffon
               @args[:track_title]
             end
 
-            def process_image
-              library_album&.process_image_later(
-                @args[:image]
+            def update_library_track_record!
+              update_model_creation_date(
+                model: library_track_record
               )
+
+              library_track_record.source_data = @args[:source]
+
+              library_track_record.audio_data = @args[:audio]
+
+              library_track_record.save!
             end
 
             def library_track_data
-              { id: library_track.id }
+              { id: library_track_record.id }
             end
           end
         end

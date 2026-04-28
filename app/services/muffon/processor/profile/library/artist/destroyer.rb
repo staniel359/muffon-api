@@ -3,34 +3,28 @@ module Muffon
     module Profile
       module Library
         module Artist
-          class Destroyer < Muffon::Processor::Profile::Library::Artist::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                library_id
+              [
+                *super,
+                :library_id
               ]
             end
 
-            def process_library_artist
-              library_artist&.destroy
+            def data
+              library_artist_record.destroy!
 
               { success: true }
             end
 
-            def library_artist
-              if instance_variable_defined?(
-                :@library_artist
-              )
-                @library_artist
-              else
-                @library_artist =
-                  profile
-                  .library_artists
-                  .find_by(
-                    id: @args[:library_id]
-                  )
-              end
+            def library_artist_record
+              profile_record
+                .library_artists
+                .find_by(
+                  id: @args[:library_id]
+                )
             end
           end
         end

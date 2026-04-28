@@ -6,18 +6,10 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              other_profile_id
+            [
+              *super,
+              :other_profile_id
             ]
-          end
-
-          def not_found?
-            super ||
-              other_profile.blank?
-          end
-
-          def data
-            process_relationship
           end
 
           def other_profile_data
@@ -25,7 +17,7 @@ module Muffon
           end
 
           def followers_count
-            other_profile
+            other_profile_record
               .reload
               .followers_count
           end

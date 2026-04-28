@@ -3,42 +3,44 @@ module Muffon
     module Profile
       module Recommendations
         module Tracks
-          class Clearer <
-              Muffon::Processor::Profile::Recommendations::Tracks::Base
+          class Clearer < Muffon::Processor::Profile::Recommendations::Base
             private
 
-            def process_recommendations
-              update_recommendations
-
-              delete_empty_recommendations
+            def required_args
+              [
+                *super,
+                :library_track_id
+              ]
             end
 
-            def update_recommendations
-              recommendations.find_each do |recommendation|
-                recommendation.library_track_ids -= [
-                  @args[:library_track_id]
-                ]
+            def data
+              recommendations.find_each do |recommendation_record|
+                process_recommendation_record!(
+                  recommendation_record
+                )
+              end
+            end
 
-                recommendation.save
+            def process_recommendation_record!(
+              recommendation_record
+            )
+              recommendation_record.library_track_ids -=
+                [@args[:library_track_id]]
+
+              if recommendation_record.library_track_ids.any?
+                recommendation_record.save!
+              else
+                recommendation_record.destroy!
               end
             end
 
             def recommendations
-              profile
+              profile_record
                 .recommendation_tracks
                 .where(
                   '? = ANY(ARRAY[library_track_ids])',
                   @args[:library_track_id]
                 )
-            end
-
-            def delete_empty_recommendations
-              profile
-                .recommendation_tracks
-                .where(
-                  library_track_ids: []
-                )
-                .delete_all
             end
           end
         end

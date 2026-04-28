@@ -5,21 +5,12 @@ module Muffon
         class Creator < Muffon::Processor::Profile::Follower::Base
           private
 
-          def process_relationship
-            relationship
+          def data
+            profile_record.follow!(
+              other_profile_id: @args[:other_profile_id]
+            )
 
             { other_profile: other_profile_data }
-          end
-
-          def relationship
-            @relationship ||=
-              profile
-              .active_relationships
-              .where(
-                other_profile_id:
-                  @args[:other_profile_id]
-              )
-              .first_or_create!
           end
         end
       end

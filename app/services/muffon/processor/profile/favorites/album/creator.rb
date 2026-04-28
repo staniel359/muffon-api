@@ -3,34 +3,36 @@ module Muffon
     module Profile
       module Favorites
         module Album
-          class Creator < Muffon::Processor::Profile::Favorites::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Album
 
             private
 
             def required_args
-              super + %i[
-                album_title
-                artist_name
+              [
+                *super,
+                :album_title,
+                :artist_name
               ]
             end
 
-            def process_favorite
-              favorite_album.update!(
-                update_attributes
+            def data
+              favorite_album_record
+
+              favorite_album_record.update!(
+                source_data: @args[:source]
               )
 
-              process_image
+              favorite_album_record.process_image_later(
+                @args[:image]
+              )
 
-              {
-                favorite_album:
-                  favorite_album_data
-              }
+              { favorite_album: favorite_album_data }
             end
 
-            def favorite_album
-              @favorite_album ||=
-                profile
+            def favorite_album_record
+              @favorite_album_record ||=
+                profile_record
                 .favorite_albums
                 .where(
                   album_id: album_record.id
@@ -46,18 +48,8 @@ module Muffon
               @args[:artist_name]
             end
 
-            def update_attributes
-              { source_data: @args[:source] }
-            end
-
-            def process_image
-              favorite_album.process_image_later(
-                @args[:image]
-              )
-            end
-
             def favorite_album_data
-              { id: favorite_album.id }
+              { id: favorite_album_record.id }
             end
           end
         end

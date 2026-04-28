@@ -57,8 +57,7 @@ module Spotify
 
       def tracks_data
         Spotify::User::Tracks.call(
-          profile_id: @args[:profile_id],
-          token: @args[:token],
+          **self_args,
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
         ).try(
@@ -75,8 +74,7 @@ module Spotify
 
       def playlists_data
         Spotify::User::Playlists.call(
-          profile_id: @args[:profile_id],
-          token: @args[:token],
+          **self_args,
           access_token: @args[:access_token],
           skip_profile: @args[:skip_profile]
         ).try(

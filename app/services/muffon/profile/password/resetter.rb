@@ -14,15 +14,15 @@ module Muffon
           false
         end
 
-        def profile
-          @profile ||=
+        def profile_record
+          @profile_record ||=
             ::Profile.with_email(
               @args[:email]
             )
         end
 
         def data
-          profile.update!(
+          profile_record.update!(
             password_reset_code:
           )
 
@@ -45,8 +45,8 @@ module Muffon
 
         def mailer
           ProfileMailer.with(
-            email: profile.email,
-            code: profile.password_reset_code,
+            email: profile_record.email,
+            code: profile_record.password_reset_code,
             language:
           )
         end

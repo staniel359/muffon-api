@@ -7,21 +7,20 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                playlist_track_id
+              [
+                *super,
+                :playlist_track_id
               ]
             end
 
-            def process_playlist_track
-              playlist_track&.destroy
+            def data
+              playlist_track_record.destroy!
 
               { playlist: playlist_data }
             end
 
-            def playlist_track
-              return if playlist.blank?
-
-              playlist
+            def playlist_track_record
+              playlist_record
                 .playlist_tracks
                 .find_by(
                   id: @args[:playlist_track_id]

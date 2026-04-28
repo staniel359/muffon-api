@@ -3,29 +3,27 @@ module Muffon
     module Profile
       module Favorites
         module Artist
-          class Creator < Muffon::Processor::Profile::Favorites::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Artist
 
             private
 
             def required_args
-              super + %i[
-                artist_name
+              [
+                *super,
+                :artist_name
               ]
             end
 
-            def process_favorite
-              favorite_artist
+            def data
+              favorite_artist_record
 
-              {
-                favorite_artist:
-                  favorite_artist_data
-              }
+              { favorite_artist: favorite_artist_data }
             end
 
-            def favorite_artist
-              @favorite_artist ||=
-                profile
+            def favorite_artist_record
+              @favorite_artist_record ||=
+                profile_record
                 .favorite_artists
                 .where(
                   artist_id: artist_record.id
@@ -38,7 +36,7 @@ module Muffon
             end
 
             def favorite_artist_data
-              { id: favorite_artist.id }
+              { id: favorite_artist_record.id }
             end
           end
         end

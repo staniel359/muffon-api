@@ -5,51 +5,38 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            community_id
-            title
+          [
+            *super,
+            :community_id,
+            :title
           ]
         end
 
-        def not_found?
-          super ||
-            community.blank?
-        end
-
         def forbidden?
-          super ||
-            !community_creator?
+          super || !community_creator?
         end
 
-        def process_community
-          community.update(
-            community_params
-          )
-
-          if community.errors?
-            community.errors_data
-          else
-            process_image
-
-            {
-              community:
-                community_info_data
-            }
-          end
-        end
-
-        def community_params
-          {
+        def data
+          community_record.update(
             title: @args[:title],
             description: @args[:description]
-          }
+          )
+
+          if community_record.errors?
+            community_record.errors_data
+          else
+            community_record.process_image(
+              @args[:image]
+            )
+
+            { community: community_info_data }
+          end
         end
 
         def community_info_data
           Muffon::Community::Info.call(
-            community_id:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+            community_id: @args[:community_id],
+            **self_args
           )[:community]
         end
       end

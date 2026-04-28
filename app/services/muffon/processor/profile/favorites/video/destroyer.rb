@@ -3,34 +3,28 @@ module Muffon
     module Profile
       module Favorites
         module Video
-          class Destroyer < Muffon::Processor::Profile::Favorites::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                favorite_id
+              [
+                *super,
+                :favorite_id
               ]
             end
 
-            def process_favorite
-              favorite_video&.destroy
+            def data
+              favorite_video_record.destroy!
 
               { success: true }
             end
 
-            def favorite_video
-              if instance_variable_defined?(
-                :@favorite_video
-              )
-                @favorite_video
-              else
-                @favorite_video =
-                  profile
-                  .favorite_videos
-                  .find_by(
-                    id: @args[:favorite_id]
-                  )
-              end
+            def favorite_video_record
+              profile_record
+                .favorite_videos
+                .find_by(
+                  id: @args[:favorite_id]
+                )
             end
           end
         end

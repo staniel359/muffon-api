@@ -30,17 +30,13 @@ module Muffon
           end
 
           def data
-            album_record.update!(
-              tags_ids: tags_ids.sort
+            album_record.set_tags!(
+              tags_names:
             )
           end
 
-          def tags_ids
-            tags.map do |tag_data|
-              tag_name = tag_data[:name]
-
-              Tag.with_name(tag_name).id
-            end
+          def tags_names
+            tags.pluck(:name)
           end
         end
       end

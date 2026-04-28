@@ -6,18 +6,19 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              password
+            [
+              *super,
+              :password
             ]
           end
 
           def data
             check_password
 
-            if profile.errors?
-              profile.errors_data
+            if profile_record.errors?
+              profile_record.errors_data
             else
-              profile.delete_library!
+              profile_record.delete_library!
 
               { success: true }
             end

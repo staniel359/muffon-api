@@ -16,6 +16,8 @@ module Muffon
         save_activity_history
       ].freeze
 
+      include Muffon::Mixins::Profile
+
       def call
         check_args
 
@@ -35,11 +37,11 @@ module Muffon
       end
 
       def not_found?
-        profile.blank?
+        profile_record.blank?
       end
 
       def forbidden?
-        if profile.private
+        if profile_record.private
           if creator?
             false
           else
@@ -65,7 +67,7 @@ module Muffon
       end
 
       def nickname
-        profile.nickname
+        profile_record.nickname
       end
 
       def check_password
@@ -75,13 +77,13 @@ module Muffon
       end
 
       def authenticated?
-        !!profile.authenticate(
+        !!profile_record.authenticate(
           @args[:password]
         )
       end
 
       def add_wrong_password_error
-        profile
+        profile_record
           .errors
           .add(
             :password,

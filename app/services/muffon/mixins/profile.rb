@@ -10,23 +10,21 @@ module Muffon
 
       def profile_valid_creator?
         valid_profile? &&
-          profile.creator?
+          profile_record.creator?
       end
 
       def valid_profile?
-        profile.present? &&
+        profile_record.present? &&
           valid_profile_token?
       end
 
-      def profile
+      def profile_record
         return if @args[:profile_id].blank?
 
-        if instance_variable_defined?(
-          :@profile
-        )
-          @profile
+        if defined?(@profile_record)
+          @profile_record
         else
-          @profile =
+          @profile_record =
             ::Profile.find_by(
               id: @args[:profile_id]
             )
@@ -34,28 +32,26 @@ module Muffon
       end
 
       def valid_profile_token?
-        profile.token == @args[:token]
+        profile_record.token == @args[:token]
       end
 
       def other_profile_valid_creator?
         valid_other_profile? &&
-          other_profile.creator?
+          other_profile_record.creator?
       end
 
       def valid_other_profile?
-        other_profile.present? &&
+        other_profile_record.present? &&
           valid_other_profile_token?
       end
 
-      def other_profile
+      def other_profile_record
         return if @args[:other_profile_id].blank?
 
-        if instance_variable_defined?(
-          :@other_profile
-        )
-          @other_profile
+        if defined?(@other_profile_record)
+          @other_profile_record
         else
-          @other_profile =
+          @other_profile_record =
             ::Profile.find_by(
               id: @args[:other_profile_id]
             )
@@ -63,7 +59,7 @@ module Muffon
       end
 
       def valid_other_profile_token?
-        other_profile.token == @args[:token]
+        other_profile_record.token == @args[:token]
       end
     end
   end

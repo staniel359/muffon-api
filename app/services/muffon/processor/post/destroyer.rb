@@ -5,18 +5,14 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            post_id
+          [
+            *super,
+            :post_id
           ]
         end
 
-        def not_found?
-          super ||
-            post.blank?
-        end
-
-        def process_post
-          post&.destroy
+        def data
+          post_record.destroy!
 
           { success: true }
         end

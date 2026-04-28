@@ -5,35 +5,33 @@ module Muffon
         private
 
         def required_args
-          super +
-            content_args +
-            %i[
-              post_id
-            ]
+          [
+            *super,
+            *content_args,
+            :post_id
+          ]
         end
 
-        def not_found?
-          super ||
-            post.blank?
-        end
-
-        def process_post
-          post.update(
+        def data
+          post_record.update(
             post_params
           )
 
-          if post.errors?
-            post.errors_data
+          if post_record.errors?
+            post_record.errors_data
           else
-            process_images
+            post_record.process_images(
+              @args[:images]
+            )
 
             { post: post_data }
           end
         end
 
         def post_data
-          Muffon::Posts::Post.call(
-            post:
+          Muffon::Formatter::Posts::Post.call(
+            post_record:,
+            **self_args
           )
         end
       end

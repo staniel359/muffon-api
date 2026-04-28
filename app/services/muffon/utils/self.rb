@@ -36,6 +36,8 @@ module Muffon
       def call
         check_args
 
+        return if @args[:profile_id].blank?
+
         check_if_not_found unless test?
 
         check_if_forbidden unless test?
@@ -46,11 +48,16 @@ module Muffon
       private
 
       def required_args
-        super + %i[
-          token
-          model
-          model_id
+        [
+          *super,
+          :token,
+          :model,
+          :model_id
         ]
+      end
+
+      def forbidden?
+        !valid_profile?
       end
 
       def data
@@ -109,7 +116,7 @@ module Muffon
         if test?
           1
         else
-          profile.id
+          profile_record.id
         end
       end
     end

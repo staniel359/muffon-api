@@ -7,36 +7,24 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                recommendation_id
+              [
+                *super,
+                :recommendation_id
               ]
             end
 
-            def process_recommendation
-              if recommendation.present?
-                recommendation.update!(
-                  deleted: true
-                )
-
-                recommendation.send(
-                  :add_deleted_event
-                )
-              end
+            def data
+              recommendation_record.soft_delete
 
               { success: true }
             end
 
-            def recommendation
-              if defined?(@recommendation)
-                @recommendation
-              else
-                @recommendation =
-                  profile
-                  .recommendation_tracks
-                  .find_by(
-                    id: @args[:recommendation_id]
-                  )
-              end
+            def recommendation_record
+              profile_record
+                .recommendation_tracks
+                .find_by(
+                  id: @args[:recommendation_id]
+                )
             end
           end
         end

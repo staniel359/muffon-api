@@ -10,7 +10,7 @@ module API
           private
 
           def play_data
-            ::Muffon::Profile::LastFM::Scrobbler::Player.call(
+            ::LastFM::User::Scrobbler::Player.call(
               params.slice(
                 *%i[
                   profile_id
@@ -25,7 +25,7 @@ module API
           end
 
           def save_data
-            ::Muffon::Profile::LastFM::Scrobbler::Saver.call(
+            ::LastFM::User::Scrobbler::Saver.call(
               params.slice(
                 *%i[
                   profile_id

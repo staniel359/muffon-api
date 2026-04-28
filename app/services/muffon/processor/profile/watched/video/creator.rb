@@ -3,29 +3,25 @@ module Muffon
     module Profile
       module Watched
         module Video
-          class Creator < Muffon::Processor::Profile::Watched::Base
-            include Muffon::Mixins::Video
-
+          class Creator < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                youtube_id
+              [
+                *super,
+                :youtube_id
               ]
             end
 
-            def process_watched
-              watched_video
+            def data
+              watched_video_record
 
-              {
-                watched_video:
-                  watched_video_data
-              }
+              { watched_video: watched_video_data }
             end
 
-            def watched_video
-              @watched_video ||=
-                profile
+            def watched_video_record
+              @watched_video_record ||=
+                profile_record
                 .watched_videos
                 .where(
                   video_id: video_record.id
@@ -33,8 +29,14 @@ module Muffon
                 .first_or_create!
             end
 
+            def video_record
+              ::Video.find_by(
+                youtube_id: @args[:youtube_id]
+              )
+            end
+
             def watched_video_data
-              { id: watched_video.id }
+              { id: watched_video_record.id }
             end
           end
         end

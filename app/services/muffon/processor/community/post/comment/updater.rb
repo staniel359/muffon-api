@@ -7,19 +7,14 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                community_id
+              [
+                *super,
+                :community_id
               ]
             end
 
-            def not_found?
-              super ||
-                community.blank?
-            end
-
             def forbidden?
-              super ||
-                !post_comment_creator?
+              super || !post_comment_creator?
             end
 
             def post_comment_params

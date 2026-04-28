@@ -2,7 +2,7 @@ module Muffon
   module Processor
     module Profile
       module Password
-        class Updater < Muffon::Processor::Profile::Password::Base
+        class Updater < Muffon::Processor::Profile::Base
           private
 
           def required_args
@@ -18,47 +18,43 @@ module Muffon
             false
           end
 
-          def process_profile
-            profile.update(
+          def data
+            profile_record.update(
               password: @args[:password],
-              password_confirmation:
-                @args[:password_confirmation]
+              password_confirmation: @args[:password_confirmation]
             )
 
-            check_password_reset_code
+            add_wrong_password_reset_code_error unless correct_reset_code?
 
-            if profile.errors?
-              profile.errors_data
+            if profile_record.errors?
+              profile_record.errors_data
             else
-              reset_profile_password_reset_code!
+              profile_record.update!(
+                password_reset_code: nil
+              )
 
               { success: true }
             end
           end
 
-          def check_password_reset_code
-            return if codes_match?
-
-            add_wrong_password_reset_code_error
-          end
-
-          def codes_match?
-            profile.password_reset_code ==
-              @args[:code].to_i
-          end
-
-          def add_wrong_password_reset_code_error
-            profile
-              .errors
-              .add(
-                :password_reset_code, 'wrong'
+          def profile_record
+            @profile_record ||=
+              ::Profile.with_email(
+                @args[:email]
               )
           end
 
-          def reset_profile_password_reset_code!
-            profile.update!(
-              password_reset_code: nil
-            )
+          def correct_reset_code?
+            profile_record.password_reset_code == @args[:code].to_i
+          end
+
+          def add_wrong_password_reset_code_error
+            profile_record
+              .errors
+              .add(
+                :password_reset_code,
+                'wrong'
+              )
           end
         end
       end

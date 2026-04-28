@@ -15,7 +15,7 @@ module API
                 other_profile_id
                 text
               ],
-              *sendable_attachment_types
+              *sendable_attachments_types
             )
           )
         end

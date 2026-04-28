@@ -3,27 +3,28 @@ module Muffon
     module Profile
       module Listened
         module Album
-          class Creator < Muffon::Processor::Profile::Listened::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Album
 
             private
 
             def required_args
-              super + %i[
-                album_title
-                artist_name
+              [
+                *super,
+                :album_title,
+                :artist_name
               ]
             end
 
-            def process_listened
-              listened_album
+            def data
+              listened_album_record
 
               { listened_album: listened_album_data }
             end
 
-            def listened_album
-              @listened_album ||=
-                profile
+            def listened_album_record
+              @listened_album_record ||=
+                profile_record
                 .listened_albums
                 .where(
                   album_id: album_record.id
@@ -40,7 +41,7 @@ module Muffon
             end
 
             def listened_album_data
-              { id: listened_album.id }
+              { id: listened_album_record.id }
             end
           end
         end

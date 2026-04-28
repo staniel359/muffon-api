@@ -5,25 +5,29 @@ module Muffon
         private
 
         def required_args
-          super +
-            content_args
+          [
+            *super,
+            *content_args
+          ]
         end
 
-        def process_post
-          post
+        def data
+          post_record
 
-          if post.errors?
-            post.errors_data
+          if post_record.errors?
+            post_record.errors_data
           else
-            process_images
+            post_record.process_images(
+              @args[:images]
+            )
 
             { post: post_data }
           end
         end
 
-        def post
-          @post ||=
-            profile
+        def post_record
+          @post_record ||=
+            profile_record
             .own_posts
             .create(
               post_params
@@ -31,8 +35,9 @@ module Muffon
         end
 
         def post_data
-          Muffon::Posts::Post.call(
-            post:
+          Muffon::Formatter::Posts::Post.call(
+            post_record:,
+            **self_args
           )
         end
       end

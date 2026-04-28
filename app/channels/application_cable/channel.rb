@@ -3,11 +3,11 @@ module ApplicationCable
     private
 
     def profile_id
-      profile.id
+      profile_record.id
     end
 
     def token
-      profile.token
+      profile_record.token
     end
   end
 end

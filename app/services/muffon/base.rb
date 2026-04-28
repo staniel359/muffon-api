@@ -3,7 +3,6 @@ module Muffon
     include Muffon::Mixins::Base
     include Muffon::Mixins::Errors
     include Muffon::Mixins::Request
-    include Muffon::Mixins::Profile
     include Muffon::Mixins::Formatters
     include Muffon::Mixins::Pagination
 

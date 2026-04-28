@@ -5,26 +5,12 @@ module Muffon
         class Destroyer < Muffon::Processor::Profile::Follower::Base
           private
 
-          def process_relationship
-            relationship&.destroy
+          def data
+            profile_record.unfollow!(
+              other_profile_id: @args[:other_profile_id]
+            )
 
             { other_profile: other_profile_data }
-          end
-
-          def relationship
-            if instance_variable_defined?(
-              :@relationship
-            )
-              @relationship
-            else
-              @relationship =
-                profile
-                .active_relationships
-                .find_by(
-                  other_profile_id:
-                    @args[:other_profile_id]
-                )
-            end
           end
         end
       end

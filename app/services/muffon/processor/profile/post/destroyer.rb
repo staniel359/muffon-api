@@ -6,9 +6,9 @@ module Muffon
           private
 
           def forbidden?
-            super || (
-              !post_creator? &&
-                !page_owner?
+            super || !(
+              post_creator? ||
+                page_creator?
             )
           end
         end

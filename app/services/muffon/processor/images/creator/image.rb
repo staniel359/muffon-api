@@ -6,8 +6,9 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              image_file
+            [
+              *super,
+              :image_file
             ]
           end
 
@@ -18,13 +19,11 @@ module Muffon
           end
 
           def attach_image
-            model_images.attach(
-              image_file_data
-            )
-          end
-
-          def model_images
-            model.images
+            model
+              .images
+              .attach(
+                image_file_data
+              )
           end
         end
       end

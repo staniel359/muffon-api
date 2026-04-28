@@ -3,27 +3,28 @@ module Muffon
     module Profile
       module Listened
         module Track
-          class Creator < Muffon::Processor::Profile::Listened::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Track
 
             private
 
             def required_args
-              super + %i[
-                track_title
-                artist_name
+              [
+                *super,
+                :track_title,
+                :artist_name
               ]
             end
 
-            def process_listened
-              listened_track
+            def data
+              listened_track_record
 
               { listened_track: listened_track_data }
             end
 
-            def listened_track
-              @listened_track ||=
-                profile
+            def listened_track_record
+              @listened_track_record ||=
+                profile_record
                 .listened_tracks
                 .where(
                   track_id: track_record.id
@@ -40,7 +41,7 @@ module Muffon
             end
 
             def listened_track_data
-              { id: listened_track.id }
+              { id: listened_track_record.id }
             end
           end
         end

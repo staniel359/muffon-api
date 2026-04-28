@@ -14,18 +14,12 @@ class OnlineChannel < ApplicationCable::Channel
   private
 
   def update_profile_online(
-    boolean
+    value
   )
-    return if profile.blank?
-
-    online = (
-      boolean ? 1 : 0
-    )
-
     Muffon::Processor::Profile::Online::Updater.call(
       profile_id:,
       token:,
-      online:
+      is_online: value
     )
   end
 end

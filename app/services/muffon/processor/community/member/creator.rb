@@ -5,21 +5,10 @@ module Muffon
         class Creator < Muffon::Processor::Community::Member::Base
           private
 
-          def process_membership
-            membership
-
-            { community: community_data }
-          end
-
-          def membership
-            @membership ||=
-              community
-              .memberships
-              .where(
-                profile_id:
-                  @args[:profile_id]
-              )
-              .first_or_create!
+          def process_membership!
+            community_record.add_member!(
+              profile_id: @args[:profile_id]
+            )
           end
         end
       end

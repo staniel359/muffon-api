@@ -21,7 +21,7 @@ module Spotify
       end
 
       def not_found?
-        profile.blank?
+        profile_record.blank?
       end
 
       def forbidden?

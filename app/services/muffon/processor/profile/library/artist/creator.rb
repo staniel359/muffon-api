@@ -3,29 +3,27 @@ module Muffon
     module Profile
       module Library
         module Artist
-          class Creator < Muffon::Processor::Profile::Library::Artist::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Artist
 
             private
 
             def required_args
-              super + %i[
-                artist_name
+              [
+                *super,
+                :artist_name
               ]
             end
 
-            def process_library_artist
-              library_artist
+            def data
+              library_artist_record
 
-              {
-                library_artist:
-                  library_artist_data
-              }
+              { library_artist: library_artist_data }
             end
 
-            def library_artist
-              @library_artist ||=
-                profile
+            def library_artist_record
+              @library_artist_record ||=
+                profile_record
                 .library_artists
                 .where(
                   artist_id: artist_record.id
@@ -38,7 +36,7 @@ module Muffon
             end
 
             def library_artist_data
-              { id: library_artist.id }
+              { id: library_artist_record.id }
             end
           end
         end

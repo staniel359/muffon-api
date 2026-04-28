@@ -3,21 +3,20 @@ module Muffon
     module Profile
       module History
         module Browser
-          class Updater < Muffon::Processor::Profile::History::Base
+          class Updater < Muffon::Processor::Profile::Base
             private
 
             def required_args
-              super + %i[
-                route
+              [
+                *super,
+                :route
               ]
             end
 
-            def process_profile_history
-              profile
-                .browser_events
-                .create(
-                  data: @args[:route]
-                )
+            def data
+              profile_record.add_browser_history_event!(
+                event_data: @args[:route]
+              )
 
               { success: true }
             end

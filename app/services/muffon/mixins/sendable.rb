@@ -2,7 +2,7 @@ module Muffon
   module Mixins
     module Sendable
       LINK_REGEXP = %r{\[link\](.*?)\[/link\]}
-      ATTACHMENT_TYPES = %i[
+      ATTACHMENTS_TYPES = %i[
         images
         artists
         albums
@@ -17,26 +17,23 @@ module Muffon
       private
 
       def content_args
-        if text.present?
+        if @args[:text].present?
           %i[
             text
           ]
-        elsif attachment_args.any?
-          attachment_args
+        elsif attachments_args.any?
+          attachments_args
         else
-          %i[
-            text
-          ] + ATTACHMENT_TYPES
+          [
+            :text,
+            *ATTACHMENTS_TYPES
+          ]
         end
       end
 
-      def text
-        @args[:text]
-      end
-
-      def attachment_args
-        @attachment_args ||=
-          ATTACHMENT_TYPES.select do |attachment_type|
+      def attachments_args
+        @attachments_args ||=
+          ATTACHMENTS_TYPES.select do |attachment_type|
             @args[attachment_type].present?
           end
       end
@@ -49,27 +46,24 @@ module Muffon
       end
 
       def text_formatted
-        return if text.blank?
+        return if @args[:text].blank?
 
-        text
-          .gsub(
-            LINK_REGEXP,
-            ''
-          )
+        @args[:text]
+          .gsub(LINK_REGEXP, '')
           .strip
       end
 
       def sendable_attachments_params
-        collection_attachment_types.index_with do |attachment_type|
+        collection_attachments_types.index_with do |attachment_type|
           format_attachments(
             attachment_type
           )
         end
       end
 
-      def collection_attachment_types
-        ATTACHMENT_TYPES.reject do |attachment_type|
-          attachment_type == :images
+      def collection_attachments_types
+        ATTACHMENTS_TYPES.reject do |attachment_type|
+          %i[images].include?(attachment_type)
         end
       end
 
@@ -102,12 +96,10 @@ module Muffon
       end
 
       def links
-        return [] if text.blank?
+        return [] if @args[:text].blank?
 
-        text
-          .scan(
-            LINK_REGEXP
-          )
+        @args[:text]
+          .scan(LINK_REGEXP)
           .flatten
       end
     end

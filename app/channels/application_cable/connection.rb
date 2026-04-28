@@ -1,6 +1,6 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
-    identified_by :profile
+    identified_by :profile_record
 
     def connect
       return unless reject_unauthorized_connection?
@@ -12,7 +12,7 @@ module ApplicationCable
 
     private
 
-    def profile
+    def profile_record
       Profile.find_by(
         token: access_token
       )

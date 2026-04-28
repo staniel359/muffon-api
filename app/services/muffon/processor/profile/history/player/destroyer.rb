@@ -3,13 +3,11 @@ module Muffon
     module Profile
       module History
         module Player
-          class Destroyer < Muffon::Processor::Profile::History::Base
+          class Destroyer < Muffon::Processor::Profile::Base
             private
 
-            def process_profile_history
-              profile
-                .playing_events
-                .delete_all
+            def data
+              profile_record.delete_player_history!
 
               { success: true }
             end

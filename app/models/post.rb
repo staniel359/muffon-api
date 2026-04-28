@@ -87,6 +87,12 @@ class Post < ApplicationRecord
     end
   end
 
+  def creator?(
+    profile_id:
+  )
+    self.profile_id == profile_id.to_i
+  end
+
   private
 
   def eventable_data

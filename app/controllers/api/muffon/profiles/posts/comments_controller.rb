@@ -36,7 +36,7 @@ module API
                   post_id
                   text
                 ],
-                *sendable_attachment_types
+                *sendable_attachments_types
               )
             )
           end
@@ -51,7 +51,7 @@ module API
                   comment_id
                   text
                 ],
-                *sendable_attachment_types
+                *sendable_attachments_types
               )
             )
           end

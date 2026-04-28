@@ -6,35 +6,33 @@ module Muffon
           private
 
           def required_args
-            super +
-              content_args +
-              %i[
-                comment_id
-              ]
+            [
+              *super,
+              *content_args,
+              :comment_id
+            ]
           end
 
-          def not_found?
-            super ||
-              post_comment.blank?
-          end
-
-          def process_post_comment
-            post_comment.update(
+          def data
+            post_comment_record.update(
               post_comment_params
             )
 
-            if post_comment.errors?
-              post_comment.errors_data
+            if post_comment_record.errors?
+              post_comment_record.errors_data
             else
-              process_images
+              post_comment_record.process_images(
+                @args[:images]
+              )
 
               { comment: post_comment_data }
             end
           end
 
           def post_comment_data
-            Muffon::Post::Comments::Comment.call(
-              comment: post_comment
+            Muffon::Formatter::Post::Comments::Comment.call(
+              comment_record: post_comment_record,
+              **self_args
             )
           end
         end

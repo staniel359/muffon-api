@@ -19,28 +19,29 @@ module Muffon
         false
       end
 
-      def profile
-        @profile ||=
+      def profile_record
+        @profile_record ||=
           ::Profile.with_email(
             @args[:email]
           )
       end
 
       def data
-        profile
+        profile_record
 
         check_password
 
-        if profile.errors?
-          profile.errors_data
+        if profile_record.errors?
+          profile_record.errors_data
         else
           { profile: profile_data }
         end
       end
 
       def profile_data
-        profile.slice(
-          *%i[id token]
+        profile_record.slice(
+          :id,
+          :token
         )
       end
     end

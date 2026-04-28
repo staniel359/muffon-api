@@ -35,7 +35,7 @@ module API
                 by_community
                 text
               ],
-              *sendable_attachment_types
+              *sendable_attachments_types
             )
           )
         end
@@ -51,7 +51,7 @@ module API
                 by_community
                 text
               ],
-              *sendable_attachment_types
+              *sendable_attachments_types
             )
           )
         end

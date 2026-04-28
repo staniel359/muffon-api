@@ -9,23 +9,25 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                artist_name
-                track_title
+              [
+                *super,
+                :artist_name,
+                :track_title
               ]
             end
 
-            def process_recommendation
-              recommendation
+            def data
+              recommendation_record
 
-              add_library_track
+              recommendation_record.library_track_ids |=
+                [@args[:library_track_id]]
 
-              recommendation.save
+              recommendation_record.save
             end
 
-            def recommendation
-              @recommendation ||=
-                profile
+            def recommendation_record
+              @recommendation_record ||=
+                profile_record
                 .recommendation_tracks
                 .where(
                   track_id: track_record.id
@@ -39,19 +41,6 @@ module Muffon
 
             def title
               @args[:track_title]
-            end
-
-            def add_library_track
-              return if library_track_present?
-
-              recommendation.library_track_ids <<
-                @args[:library_track_id]
-            end
-
-            def library_track_present?
-              @args[:library_track_id].in?(
-                recommendation.library_track_ids
-              )
             end
           end
         end

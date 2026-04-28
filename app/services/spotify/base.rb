@@ -5,6 +5,7 @@ module Spotify
     SOURCE_NAME = 'spotify'.freeze
 
     include Muffon::Mixins::GlobalStorage
+    include Muffon::Mixins::Profile
 
     private
 
@@ -112,8 +113,7 @@ module Spotify
 
     def update_session
       Spotify::Connection::Updater.call(
-        profile_id: @args[:profile_id],
-        token: @args[:token]
+        **self_args
       )
     end
 
@@ -121,7 +121,7 @@ module Spotify
       if defined?(@spotify_connection)
         @spotify_connection
       else
-        @spotify_connection = profile&.spotify_connection
+        @spotify_connection = profile_record&.spotify_connection
       end
     end
   end

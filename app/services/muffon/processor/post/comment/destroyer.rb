@@ -6,13 +6,14 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              comment_id
+            [
+              *super,
+              :comment_id
             ]
           end
 
-          def process_post_comment
-            post_comment&.destroy
+          def data
+            post_comment_record.destroy!
 
             { success: true }
           end

@@ -6,15 +6,12 @@ module Muffon
           class Base < Muffon::Processor::Profile::Playlist::Base
             private
 
-            def data
-              process_playlist_track
+            def playlist_data
+              { tracks_count: }
             end
 
-            def playlist_data
-              {
-                tracks_count:
-                  playlist.tracks_count
-              }
+            def tracks_count
+              playlist_record.tracks_count
             end
           end
         end

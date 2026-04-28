@@ -24,9 +24,7 @@ module Muffon
         end
 
         def model
-          if instance_variable_defined?(
-            :@model
-          )
+          if defined?(@model)
             @model
           else
             @model =

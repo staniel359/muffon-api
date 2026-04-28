@@ -10,7 +10,7 @@ class ImagesController < ApplicationController
   private
 
   def blob
-    if instance_variable_defined?(:@blob)
+    if defined?(@blob)
       @blob
     else
       @blob = ActiveStorage::Blob.find_by(

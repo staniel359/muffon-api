@@ -3,35 +3,40 @@ module Muffon
     module Profile
       module Library
         module Album
-          class Creator < Muffon::Processor::Profile::Library::Album::Base
+          class Creator < Muffon::Processor::Profile::Base
             include Muffon::Mixins::Album
 
             private
 
             def required_args
-              super + %i[
-                album_title
-                artist_name
+              [
+                *super,
+                :album_title,
+                :artist_name
               ]
             end
 
-            def process_library_album
-              library_album.update!(
-                update_attributes
+            def data
+              library_album_record
+
+              library_album_record.update!(
+                source_data: @args[:source]
               )
 
-              process_image
+              library_album_record.process_image_later(
+                @args[:image]
+              )
 
               { library_album: library_album_data }
             end
 
-            def library_album
-              @library_album ||=
-                profile
+            def library_album_record
+              @library_album_record ||=
+                profile_record
                 .library_albums
                 .where(
                   album_id: album_record.id,
-                  library_artist_id: library_artist.id
+                  library_artist_id: library_artist_record.id
                 )
                 .first_or_initialize
             end
@@ -44,8 +49,8 @@ module Muffon
               @args[:artist_name]
             end
 
-            def library_artist
-              profile
+            def library_artist_record
+              profile_record
                 .library_artists
                 .where(
                   artist_id: album_record.artist_id
@@ -53,18 +58,8 @@ module Muffon
                 .first_or_create!
             end
 
-            def update_attributes
-              { source_data: @args[:source] }
-            end
-
-            def process_image
-              library_album.process_image_later(
-                @args[:image]
-              )
-            end
-
             def library_album_data
-              { id: library_album.id }
+              { id: library_album_record.id }
             end
           end
         end
