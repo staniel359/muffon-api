@@ -72,7 +72,7 @@ module AmazonMusic
 
       def album_amazonmusic_id
         amazonmusic_slug.match(
-          %r{albums/(.+)\?}
+          %r{(?:albums|playlists)/(.+)\?}
         )[1]
       end
 
