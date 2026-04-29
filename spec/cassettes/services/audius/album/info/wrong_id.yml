@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.audius.co/v1/full/playlists/wejlhg239gh23?api_key=<AUDIUS_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 23 Feb 2026 19:55:58 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - da82a3e4e4b2aaa622e953f4457d4a80
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - __cf_bm=VifCEHMWA4KVnIrYDnERcowR5oEO0FMVoyQ7.aTBHcI-1771876558.3688445-1.0.1.1-XTfA3hG4SjhyFEu__i4DDDbh3f9eJM31LeC_QCZ3OMrCTOpfOS854Ijh3U0JBHRLgE743UcB0tH4haZwvUJNt7Jr0r8uoxA87jkRIOIIT0EOKCGmIMqW9V63H6TH7VeV;
+        HttpOnly; Secure; Path=/; Domain=audius.co; Expires=Mon, 23 Feb 2026 20:25:58
+        GMT
+      Access-Control-Allow-Methods:
+      - "*"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9d2948a9c9f9465d-WAW
+    body:
+      encoding: UTF-8
+      string: '{"code":400,"error":"invalid playlistId"}'
+  recorded_at: Mon, 23 Feb 2026 19:55:58 GMT
+recorded_with: VCR 6.4.0

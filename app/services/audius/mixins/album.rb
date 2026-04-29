@@ -55,6 +55,14 @@ module Audius
       def raw_release_date
         raw_album_data['release_date']
       end
+
+      def description
+        raw_album_data['description']
+      end
+
+      def raw_tracks
+        raw_album_data['tracks']
+      end
     end
   end
 end

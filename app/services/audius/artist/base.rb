@@ -5,7 +5,7 @@ module Audius
         check_args
 
         data
-      rescue Faraday::BadRequestError
+      rescue Faraday::BadRequestError, Faraday::ResourceNotFound
         raise not_found_error
       end
 

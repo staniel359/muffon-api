@@ -397,6 +397,14 @@ Rails
             get 'albums'
           end
         end
+
+        namespace :albums, as: :album do
+          scope ':album_id' do
+            get '', action: :info
+            get 'description'
+            get 'links'
+          end
+        end
       end
 
       # Bandcamp
