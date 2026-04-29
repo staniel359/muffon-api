@@ -25,8 +25,8 @@ class BookmarkAlbum < ApplicationRecord
   class << self
     def associated
       includes(
-        [{ album: :artist }],
-        image_association
+        album: :artist,
+        **image_association
       )
     end
   end

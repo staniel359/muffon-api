@@ -35,9 +35,9 @@ class PostComment < ApplicationRecord
   class << self
     def associated
       includes(
-        [{ profile: image_association }],
-        [{ community: image_association }],
-        images_association
+        profile: image_association,
+        community: image_association,
+        **images_association
       )
     end
   end

@@ -77,8 +77,8 @@ class Community < ApplicationRecord
 
     def associated
       includes(
-        image_association,
-        [{ creator: image_association }]
+        creator: image_association,
+        **image_association
       )
     end
   end

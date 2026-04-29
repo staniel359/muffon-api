@@ -56,7 +56,7 @@ class Post < ApplicationRecord
 
     def by_profile
       where(
-        'profile_id = other_profile_id'
+        '"posts"."profile_id" = "posts"."other_profile_id"'
       )
     end
 
@@ -79,10 +79,18 @@ class Post < ApplicationRecord
 
     def associated
       includes(
-        [{ profile: image_association }],
-        [{ community: image_association }],
-        :post_comments,
-        images_association
+        {
+          profile: image_association,
+          community: image_association,
+          **images_association
+        },
+        :other_profile
+      )
+    end
+
+    def joined
+      joins(
+        :post_comments
       )
     end
   end

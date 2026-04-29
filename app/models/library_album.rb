@@ -32,8 +32,10 @@ class LibraryAlbum < ApplicationRecord
     def associated
       includes(
         :album,
-        [{ library_artist: :artist }],
-        image_association
+        {
+          library_artist: :artist,
+          **image_association
+        }
       )
     end
   end

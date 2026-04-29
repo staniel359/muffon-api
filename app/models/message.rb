@@ -10,8 +10,8 @@ class Message < ApplicationRecord
   class << self
     def associated
       includes(
-        [{ profile: image_association }],
-        images_association
+        profile: image_association,
+        **images_association
       )
     end
   end

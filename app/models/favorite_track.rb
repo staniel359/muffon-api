@@ -28,8 +28,10 @@ class FavoriteTrack < ApplicationRecord
     def associated
       includes(
         :album,
-        [{ track: :artist }],
-        image_association
+        {
+          track: :artist,
+          **image_association
+        }
       )
     end
   end
