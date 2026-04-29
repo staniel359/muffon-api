@@ -389,6 +389,7 @@ Rails
         namespace :search do
           get 'artists'
           get 'albums'
+          get 'tracks'
         end
       end
 

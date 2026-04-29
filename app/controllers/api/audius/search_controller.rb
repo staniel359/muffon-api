@@ -5,6 +5,8 @@ module API
 
       def albums; end
 
+      def tracks; end
+
       private
 
       def artists_data
@@ -30,6 +32,23 @@ module API
               token
               page
               limit
+            ]
+          )
+        )
+      end
+
+      def tracks_data
+        ::Audius::Search::Tracks.call(
+          params.slice(
+            *%i[
+              query
+              profile_id
+              token
+              page
+              limit
+              with_automatch
+              artist_name
+              track_title
             ]
           )
         )
