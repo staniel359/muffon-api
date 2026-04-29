@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.audius.co/v1/full/users/Y5AmdW?api_key=<AUDIUS_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 14 Feb 2026 23:14:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - e30ad2211d3a5761a4a28dcfcf87be58
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Set-Cookie:
+      - __cf_bm=OO3IEDUK5oE8.fgubsb4PIMAbPm4sLPSutFFxNaNMxU-1771110854.4041123-1.0.1.1-IRdN.G987uf3JZTZKgXLnZgVC2Ro_n0Q4tgXQ3AE1Bn_6BAiX_u57_Jx8fZ0tNwpOiuwP5YjyxMnB2ePRQLdi3rF6xuwie3h2N2SSNVxQKlPdH24KQPKSZU0pDWj4aZf;
+        HttpOnly; Secure; Path=/; Domain=audius.co; Expires=Sat, 14 Feb 2026 23:44:14
+        GMT
+      Cf-Cache-Status:
+      - EXPIRED
+      Last-Modified:
+      - Sat, 14 Feb 2026 23:14:14 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9ce042b80cb9dd13-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"album_count":3,"allow_ai_attribution":false,"artist_coin_badge":null,"artist_pick_track_id":"g4XXVl","associated_sol_wallets_balance":"0","associated_wallets_balance":"0","balance":"0","bio":"Human
+        Swiss Army Knife / A\u0026R\nDCM / Crossfire Distro / TMO Records","blocknumber":103286673,"coin_flair_mint":null,"cover_photo":{"2000x":"https://audius-02.staked.cloud/content/01K2JGGN8SBN30043F1G6HG6Q0/2000x.jpg","640x":"https://audius-02.staked.cloud/content/01K2JGGN8SBN30043F1G6HG6Q0/640x.jpg","mirrors":["https://audius-content-4.cultur3stake.com","https://audius-discovery-1.altego.net","https://creatornode2.audius.co"]},"cover_photo_cids":null,"cover_photo_legacy":null,"cover_photo_sizes":"01K2JGGN8SBN30043F1G6HG6Q0","created_at":"2025-08-13T20:04:16Z","creator_node_endpoint":null,"current_user_followee_follow_count":0,"does_current_user_follow":false,"does_current_user_subscribe":false,"does_follow_current_user":false,"donation":"https://cash.app/$TreMark631","erc_wallet":"0x3a19590cc2c9995a1dfb4cf5dc75ac30556469b5","followee_count":21,"follower_count":31,"handle":"TreMarkStar","handle_lc":"tremarkstar","has_collectibles":false,"id":"Y5AmdW","instagram_handle":"Tre.Mark.631","is_available":true,"is_deactivated":false,"is_storage_v2":true,"is_verified":false,"location":"Houston,
+        TX","name":"TreMarkStar","payout_wallet":"6UK4Y9btudof9K4riy3x1554n7UEEkCyFCc9XoBuFCJ6","playlist_count":1,"profile_picture":{"1000x1000":"https://audius-content-5.cultur3stake.com/content/01K2YTMMGJSENWB6FY1QPX14PW/1000x1000.jpg","150x150":"https://audius-content-5.cultur3stake.com/content/01K2YTMMGJSENWB6FY1QPX14PW/150x150.jpg","480x480":"https://audius-content-5.cultur3stake.com/content/01K2YTMMGJSENWB6FY1QPX14PW/480x480.jpg","mirrors":["https://cn3.mainnet.audiusindex.org","https://audius-discovery-3.altego.net","https://creatornode2.audius.co"]},"profile_picture_cids":null,"profile_picture_legacy":null,"profile_picture_sizes":"01K2YTMMGJSENWB6FY1QPX14PW","profile_type":null,"repost_count":22,"spl_usdc_payout_wallet":null,"spl_usdc_wallet":"6UK4Y9btudof9K4riy3x1554n7UEEkCyFCc9XoBuFCJ6","spl_wallet":"FBiZvsDZNVqCV2mUeDm2U6tGRq7mgQ42QoBUz7qUq5it","supporter_count":0,"supporting_count":0,"tiktok_handle":null,"total_audio_balance":502,"total_balance":"502695560730000000000","track_count":31,"twitter_handle":"TreMarkStar","updated_at":"2025-08-21T17:01:30Z","user_id":28560744,"verified_with_instagram":false,"verified_with_tiktok":false,"verified_with_twitter":false,"wallet":"0x3a19590cc2c9995a1dfb4cf5dc75ac30556469b5","waudio_balance":"50269556073","website":"https://www.wearedcm.com"}]}'
+  recorded_at: Sat, 14 Feb 2026 23:14:14 GMT
+recorded_with: VCR 6.4.0

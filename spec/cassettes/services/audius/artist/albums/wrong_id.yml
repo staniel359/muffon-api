@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.audius.co/v1/full/users/wejlhg239gh23?api_key=<AUDIUS_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sat, 14 Feb 2026 23:13:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Id:
+      - c75ac9a12dddef7417110934cc7559b3
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - MISS
+      Set-Cookie:
+      - __cf_bm=RRexnzz4e0tP8kgTVd4oYU5_jVhWBUwsYf8dXAYDEuA-1771110791.3878477-1.0.1.1-hYEObyKTBra5Wl2nObkigEYSakzUMzaMoQax6A.sEjtYUgtHngpG_lXiXUp6JEqugfgyaOCsx4ATUa.bjwMej9kN8cmwMhFdmhYLaIUcu6D9S778JQAbRkCkjLEP9xjK;
+        HttpOnly; Secure; Path=/; Domain=audius.co; Expires=Sat, 14 Feb 2026 23:43:11
+        GMT
+      Access-Control-Allow-Methods:
+      - "*"
+      Cf-Ray:
+      - 9ce0412e2e82f17e-WAW
+    body:
+      encoding: UTF-8
+      string: '{"code":400,"error":"invalid userId"}'
+  recorded_at: Sat, 14 Feb 2026 23:13:11 GMT
+recorded_with: VCR 6.4.0
