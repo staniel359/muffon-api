@@ -47,9 +47,11 @@ module Muffon
       playlists.count
     end
 
-    def collection_item_data_formatted(playlist)
-      Muffon::Profile::Playlists::Playlist.call(
-        playlist:
+    def collection_item_data_formatted(
+      playlist_record
+    )
+      Muffon::Formatter::Playlists::Playlist.call(
+        playlist_record:
       )
     end
   end

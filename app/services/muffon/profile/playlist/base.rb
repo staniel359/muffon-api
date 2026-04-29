@@ -5,37 +5,32 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            playlist_id
+          [
+            *super,
+            :token,
+            :playlist_id
           ]
         end
 
         def not_found?
-          super ||
-            playlist.blank?
+          super || playlist_record.blank?
         end
 
-        def playlist
-          if instance_variable_defined?(
-            :@playlist
-          )
-            @playlist
+        def playlist_record
+          if defined?(@playlist_record)
+            @playlist_record
           else
-            @playlist =
-              profile
+            @playlist_record =
+              profile_record
               .playlists
               .find_by(
-                id: playlist_id
+                id: @args[:playlist_id]
               )
           end
         end
 
-        def playlist_id
-          @args[:playlist_id]
-        end
-
         def forbidden?
-          if profile.private || playlist.private
+          if profile_record.private || playlist_record.private
             if creator?
               false
             else

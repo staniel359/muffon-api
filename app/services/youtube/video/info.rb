@@ -30,7 +30,6 @@ module YouTube
           dislikes_count:,
           creation_date:,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           **self_args

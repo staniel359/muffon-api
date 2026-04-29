@@ -5,9 +5,10 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            token
-            recommendation_id
+          [
+            *super,
+            :token,
+            :recommendation_id
           ]
         end
 
@@ -15,15 +16,8 @@ module Muffon
           !valid_profile?
         end
 
-        def not_found?
-          recommendation.blank?
-        end
-
         def profile_data
-          {
-            recommendation:
-              recommendation_data
-          }
+          { recommendation: recommendation_data }
         end
       end
     end

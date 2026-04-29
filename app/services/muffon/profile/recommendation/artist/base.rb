@@ -5,14 +5,12 @@ module Muffon
         class Base < Muffon::Profile::Recommendation::Base
           private
 
-          def recommendation
-            if instance_variable_defined?(
-              :@recommendation
-            )
-              @recommendation
+          def recommendation_record
+            if defined?(@recommendation_record)
+              @recommendation_record
             else
-              @recommendation =
-                profile
+              @recommendation_record =
+                profile_record
                 .recommendation_artists
                 .find_by(
                   id: @args[:recommendation_id]

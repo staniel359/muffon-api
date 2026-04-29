@@ -3,6 +3,8 @@ module Muffon
     module Source
       module Video
         class Info < Muffon::Formatter::Source::Video::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -23,7 +25,6 @@ module Muffon
               artist_data
               creation_date
               description
-              description_size
               tags
               tags_size
               views_count

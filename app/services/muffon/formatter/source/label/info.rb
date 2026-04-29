@@ -3,6 +3,8 @@ module Muffon
     module Source
       module Label
         class Info < Muffon::Formatter::Source::Label::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -19,7 +21,6 @@ module Muffon
               name
               image_data
               description
-              description_size
             ]
           end
 

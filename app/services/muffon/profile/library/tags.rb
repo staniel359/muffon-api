@@ -30,16 +30,18 @@ module Muffon
         end
 
         def tags
-          @tags ||= profile.library_tags
+          @tags ||= profile_record.library_tags
         end
 
         def items_count
           tags.size
         end
 
-        def collection_item_data_formatted(tag)
-          Muffon::Profile::Library::Tags::Tag.call(
-            tag:
+        def collection_item_data_formatted(
+          tag_record
+        )
+          Muffon::Formatter::Library::Tags::Tag.call(
+            tag_record:
           )
         end
       end

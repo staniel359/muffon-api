@@ -19,7 +19,6 @@ module Spotify
           plays_count: nil,
           duration:,
           description: nil,
-          description_size: nil,
           tags: nil,
           tags_size: nil,
           is_audio_present: audio_present?,

@@ -20,7 +20,6 @@ module AmazonMusic
           duration:,
           release_date: nil,
           description: nil,
-          description_size: nil,
           tags: nil,
           tags_size: nil,
           is_audio_present: audio_present?,

@@ -46,7 +46,6 @@ module LastFM
           image_data:,
           release_date: nil,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           plays_count:,

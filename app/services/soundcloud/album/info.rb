@@ -15,7 +15,6 @@ module SoundCloud
           image_data:,
           release_date:,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           plays_count: nil,

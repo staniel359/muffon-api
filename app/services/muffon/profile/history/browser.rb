@@ -22,18 +22,18 @@ module Muffon
         end
 
         def routes
-          @routes ||= profile.browser_events
+          @routes ||= profile_record.browser_events
         end
 
         def items_count
           routes.count
         end
 
-        def collection_item_data_formatted(event)
-          Muffon::Profile::History::Browser::Route.call(
-            event:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          event_record
+        )
+          Muffon::Formatter::History::Browser::Event.call(
+            event_record:
           )
         end
       end

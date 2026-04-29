@@ -26,9 +26,11 @@ module Muffon
           tracks.count
         end
 
-        def collection_item_data_formatted(favorite_track)
-          Muffon::Profile::Favorites::Tracks::Track.call(
-            favorite_track:,
+        def collection_item_data_formatted(
+          favorite_track_record
+        )
+          Muffon::Formatter::Favorites::Tracks::Track.call(
+            favorite_track_record:,
             profile_id: @args[:other_profile_id],
             token: @args[:token]
           )

@@ -3,6 +3,8 @@ module Muffon
     module Source
       module Track
         class Info < Muffon::Formatter::Source::Track::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -24,7 +26,6 @@ module Muffon
               release_date
               duration
               description
-              description_size
               tags
               tags_size
               plays_count

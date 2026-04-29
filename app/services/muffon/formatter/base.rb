@@ -54,7 +54,7 @@ module Muffon
       end
 
       def description_size
-        @args[:description_size]
+        self.class::DESCRIPTION_SIZE
       end
 
       def description_truncated

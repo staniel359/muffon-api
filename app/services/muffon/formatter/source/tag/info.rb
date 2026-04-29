@@ -3,6 +3,8 @@ module Muffon
     module Source
       module Tag
         class Info < Muffon::Formatter::Source::Tag::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -15,7 +17,6 @@ module Muffon
             %i[
               name
               description
-              description_size
               taggings_count
               taggers_count
             ]

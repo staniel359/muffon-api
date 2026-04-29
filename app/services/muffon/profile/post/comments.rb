@@ -31,16 +31,19 @@ module Muffon
         end
 
         def comments
-          @comments ||= post.post_comments
+          @comments ||= post_record.post_comments
         end
 
         def items_count
           comments.count
         end
 
-        def collection_item_data_formatted(comment)
-          Muffon::Post::Comments::Comment.call(
-            comment:
+        def collection_item_data_formatted(
+          comment_record
+        )
+          Muffon::Formatter::Post::Comments::Comment.call(
+            comment_record:,
+            **self_args
           )
         end
       end

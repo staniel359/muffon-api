@@ -3,6 +3,8 @@ module Muffon
     module Source
       module Playlists
         class Playlist < Muffon::Formatter::Source::Playlist::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -19,7 +21,6 @@ module Muffon
               title
               image_data
               description
-              description_size
               tracks_count
               tracks
             ]

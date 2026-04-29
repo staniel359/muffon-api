@@ -23,10 +23,8 @@ module Muffon
 
           def compatibility_percent_data
             Muffon::Profile::Library::Compatibility::Percent.call(
-              profile_id: @args[:profile_id],
-              token: @args[:token],
-              other_profile_id:
-                @args[:other_profile_id]
+              **self_args,
+              other_profile_id: @args[:other_profile_id]
             )
           end
         end

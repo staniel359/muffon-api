@@ -36,7 +36,6 @@ module YandexMusic
           release_date:,
           plays_count: nil,
           description: nil,
-          description_size: nil,
           tags:,
           tags_size: 'extrasmall',
           labels:,

@@ -23,27 +23,28 @@ module Muffon
 
           def raw_collection
             tracks
-              .associated
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
+              .associated
           end
 
           def tracks
-            recommendation.library_tracks
+            recommendation_record.library_tracks
           end
 
           def items_count
-            recommendation
+            recommendation_record
               .library_track_ids
               .size
           end
 
-          def collection_item_data_formatted(library_track)
-            Muffon::Profile::Library::Tracks::Track.call(
-              library_track:,
-              profile_id: @args[:profile_id],
-              token: @args[:token]
+          def collection_item_data_formatted(
+            library_track_record
+          )
+            Muffon::Formatter::Library::Tracks::Track.call(
+              library_track_record:,
+              **self_args
             )
           end
         end

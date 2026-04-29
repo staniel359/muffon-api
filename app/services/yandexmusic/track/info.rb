@@ -18,7 +18,6 @@ module YandexMusic
           release_date: nil,
           duration:,
           description: nil,
-          description_size: nil,
           tags: nil,
           tags_size: nil,
           plays_count: nil,

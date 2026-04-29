@@ -22,16 +22,18 @@ module Muffon
         end
 
         def events
-          @events ||= profile.related_events
+          @events ||= profile_record.related_events
         end
 
         def items_count
           events.count
         end
 
-        def collection_item_data_formatted(event)
-          Muffon::Profile::History::Activity::Event.call(
-            event:
+        def collection_item_data_formatted(
+          event_record
+        )
+          Muffon::Formatter::History::Activity::Event.call(
+            event_record:
           )
         end
       end

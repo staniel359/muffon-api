@@ -23,16 +23,18 @@ module Muffon
         end
 
         def messages
-          @messages ||= conversation.messages
+          @messages ||= conversation_record.messages
         end
 
         def items_count
           messages.count
         end
 
-        def collection_item_data_formatted(message)
-          Muffon::Profile::Conversation::Messages::Message.call(
-            message:
+        def collection_item_data_formatted(
+          message_record
+        )
+          Muffon::Formatter::Conversation::Messages::Message.call(
+            message_record:
           )
         end
       end

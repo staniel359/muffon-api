@@ -31,16 +31,18 @@ module Muffon
         end
 
         def tracks
-          @tracks ||= playlist.playlist_tracks
+          @tracks ||= playlist_record.playlist_tracks
         end
 
         def items_count
-          playlist.tracks_count
+          playlist_record.tracks_count
         end
 
-        def collection_item_data_formatted(playlist_track)
-          Muffon::Profile::Playlist::Tracks::Track.call(
-            playlist_track:,
+        def collection_item_data_formatted(
+          playlist_track_record
+        )
+          Muffon::Formatter::Playlist::Tracks::Track.call(
+            playlist_track_record:,
             profile_id: @args[:other_profile_id],
             token: @args[:token]
           )

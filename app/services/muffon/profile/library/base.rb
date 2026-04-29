@@ -13,17 +13,17 @@ module Muffon
 
         def library_artists
           @library_artists ||=
-            profile.library_artists
+            profile_record.library_artists
         end
 
         def library_albums
           @library_albums ||=
-            profile.library_albums
+            profile_record.library_albums
         end
 
         def library_tracks
           @library_tracks ||=
-            profile.library_tracks
+            profile_record.library_tracks
         end
       end
     end

@@ -25,9 +25,11 @@ module Muffon
           videos.count
         end
 
-        def collection_item_data_formatted(favorite_video)
-          Muffon::Profile::Favorites::Videos::Video.call(
-            favorite_video:,
+        def collection_item_data_formatted(
+          favorite_video_record
+        )
+          Muffon::Formatter::Favorites::Videos::Video.call(
+            favorite_video_record:,
             profile_id: @args[:other_profile_id],
             token: @args[:token]
           )

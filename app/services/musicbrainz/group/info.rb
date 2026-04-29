@@ -23,7 +23,6 @@ module MusicBrainz
           image_data:,
           release_date:,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           tracks: nil,

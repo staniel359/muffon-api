@@ -3,29 +3,24 @@ module Muffon
     module Library
       module Artist
         class Base < Muffon::Profile::Library::Base
-          include Muffon::Mixins::Library::Artist
-          include Muffon::Mixins::Source::Artist
-
           private
 
           def required_args
-            super + %i[
-              library_id
+            [
+              *super,
+              :library_id
             ]
           end
 
           def not_found?
-            super ||
-              library_artist.blank?
+            super || library_artist_record.blank?
           end
 
-          def library_artist
-            if instance_variable_defined?(
-              :@library_artist
-            )
-              @library_artist
+          def library_artist_record
+            if defined?(@library_artist_record)
+              @library_artist_record
             else
-              @library_artist =
+              @library_artist_record =
                 library_artists.find_by(
                   id: @args[:library_id]
                 )
@@ -34,14 +29,6 @@ module Muffon
 
           def library_data
             { artist: artist_data }
-          end
-
-          def artist_data
-            {
-              source: source_data,
-              library: library_artist_data,
-              name:
-            }.compact
           end
         end
       end

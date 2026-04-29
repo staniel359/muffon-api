@@ -4,10 +4,9 @@ module Muffon
       private
 
       def community_data
-        {
-          description:
-            community.description
-        }
+        Muffon::Formatter::Community::Description.call(
+          community_record:
+        )
       end
     end
   end

@@ -46,11 +46,12 @@ module Muffon
               .associated
           end
 
-          def collection_item_data_formatted(library_album)
-            Muffon::Profile::Library::Compatibility::Albums::Album.call(
-              library_album:,
-              profile_id: @args[:profile_id],
-              token: @args[:token]
+          def collection_item_data_formatted(
+            library_album_record
+          )
+            Muffon::Formatter::Library::Compatibility::Albums::Album.call(
+              library_album_record:,
+              **self_args
             )
           end
 

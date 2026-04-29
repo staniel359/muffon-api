@@ -31,16 +31,19 @@ module Muffon
       end
 
       def posts
-        @posts ||= community.posts
+        @posts ||= community_record.posts
       end
 
       def items_count
         posts.count
       end
 
-      def collection_item_data_formatted(post)
-        Muffon::Posts::Post.call(
-          post:
+      def collection_item_data_formatted(
+        post_record
+      )
+        Muffon::Formatter::Posts::Post.call(
+          post_record:,
+          **self_args
         )
       end
     end

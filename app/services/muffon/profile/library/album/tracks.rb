@@ -8,10 +8,10 @@ module Muffon
           private
 
           def album_data
-            {
-              **super,
-              **tracks_data
-            }
+            Muffon::Formatter::Library::Album::Tracks.call(
+              library_album_record:,
+              tracks_data:
+            )
           end
 
           def tracks_data
@@ -33,16 +33,18 @@ module Muffon
           end
 
           def tracks
-            library_album.library_tracks
+            library_album_record.library_tracks
           end
 
           def items_count
-            library_album.library_tracks_count
+            library_album_record.library_tracks_count
           end
 
-          def collection_item_data_formatted(library_track)
-            Muffon::Profile::Library::Album::Tracks::Track.call(
-              library_track:,
+          def collection_item_data_formatted(
+            library_track_record
+          )
+            Muffon::Formatter::Library::Album::Tracks::Track.call(
+              library_track_record:,
               profile_id: @args[:other_profile_id],
               token: @args[:token]
             )

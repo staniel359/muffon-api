@@ -19,7 +19,6 @@ module MusicBrainz
           release_date:,
           duration:,
           description: nil,
-          description_size: nil,
           plays_count: nil,
           tags:,
           tags_size: 'extrasmall',

@@ -16,7 +16,6 @@ module Genius
           release_date:,
           duration: nil,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           lyrics: lyrics_string,

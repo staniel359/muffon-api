@@ -57,11 +57,12 @@ module Muffon
             albums.count
           end
 
-          def collection_item_data_formatted(library_album)
-            Muffon::Profile::Library::Albums::Album.call(
-              library_album:,
-              profile_id: @args[:profile_id],
-              token: @args[:token]
+          def collection_item_data_formatted(
+            library_album_record
+          )
+            Muffon::Formatter::Library::Albums::Album.call(
+              library_album_record:,
+              **self_args
             )
           end
         end

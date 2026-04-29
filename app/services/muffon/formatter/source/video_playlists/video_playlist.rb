@@ -3,6 +3,8 @@ module Muffon
     module Source
       module VideoPlaylists
         class VideoPlaylist < Muffon::Formatter::Source::VideoPlaylist::Base
+          DESCRIPTION_SIZE = 'extrasmall'.freeze
+
           def call
             check_args
 
@@ -22,7 +24,6 @@ module Muffon
               image_data
               creation_date
               description
-              description_size
               videos_count
             ]
           end

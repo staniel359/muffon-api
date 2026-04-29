@@ -26,9 +26,11 @@ module Muffon
           albums.count
         end
 
-        def collection_item_data_formatted(favorite_album)
-          Muffon::Profile::Favorites::Albums::Album.call(
-            favorite_album:,
+        def collection_item_data_formatted(
+          favorite_album_record
+        )
+          Muffon::Formatter::Favorites::Albums::Album.call(
+            favorite_album_record:,
             profile_id: @args[:other_profile_id],
             token: @args[:token]
           )

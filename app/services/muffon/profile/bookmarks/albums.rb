@@ -23,18 +23,19 @@ module Muffon
         end
 
         def albums
-          @albums ||= profile.bookmark_albums
+          @albums ||= profile_record.bookmark_albums
         end
 
         def items_count
           albums.count
         end
 
-        def collection_item_data_formatted(bookmark_album)
-          Muffon::Profile::Bookmarks::Albums::Album.call(
-            bookmark_album:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          bookmark_album_record
+        )
+          Muffon::Formatter::Bookmarks::Albums::Album.call(
+            bookmark_album_record:,
+            **self_args
           )
         end
       end

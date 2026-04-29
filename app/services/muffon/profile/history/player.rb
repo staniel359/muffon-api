@@ -22,18 +22,19 @@ module Muffon
         end
 
         def tracks
-          @tracks ||= profile.playing_events
+          @tracks ||= profile_record.playing_events
         end
 
         def items_count
           tracks.count
         end
 
-        def collection_item_data_formatted(event)
-          Muffon::Profile::History::Player::Track.call(
-            event:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          event_record
+        )
+          Muffon::Formatter::History::Player::Event.call(
+            event_record:,
+            **self_args
           )
         end
       end

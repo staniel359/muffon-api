@@ -6,28 +6,11 @@ module Muffon
           private
 
           def album_data
-            {
-              **self_data,
-              **super,
-              image: image_data,
-              tracks_count:,
-              playlists_count:,
-              created: created_formatted
-            }.compact
-          end
-
-          def profile_id
-            @args[:other_profile_id]
-          end
-
-          def image_data
-            library_album.image_data
-          end
-
-          def playlists_count
-            library_album
-              .profile_playlists
-              .count
+            Muffon::Formatter::Library::Album::Info.call(
+              library_album_record:,
+              profile_id: @args[:other_profile_id],
+              token: @args[:token]
+            )
           end
         end
       end

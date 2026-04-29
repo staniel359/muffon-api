@@ -32,7 +32,7 @@ module Muffon
 
           def tags
             @tags ||=
-              profile
+              profile_record
               .library_tags
               .where(
                 'name_downcase LIKE ?',
@@ -44,9 +44,11 @@ module Muffon
             tags.size
           end
 
-          def collection_item_data_formatted(tag)
-            Muffon::Profile::Library::Tags::Tag.call(
-              tag:
+          def collection_item_data_formatted(
+            tag_record
+          )
+            Muffon::Formatter::Library::Tags::Tag.call(
+              tag_record:
             )
           end
         end

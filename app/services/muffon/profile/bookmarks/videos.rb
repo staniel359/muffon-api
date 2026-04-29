@@ -22,18 +22,19 @@ module Muffon
         end
 
         def videos
-          @videos ||= profile.bookmark_videos
+          @videos ||= profile_record.bookmark_videos
         end
 
         def items_count
           videos.count
         end
 
-        def collection_item_data_formatted(bookmark_video)
-          Muffon::Profile::Bookmarks::Videos::Video.call(
-            bookmark_video:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          bookmark_video_record
+        )
+          Muffon::Formatter::Bookmarks::Videos::Video.call(
+            bookmark_video_record:,
+            **self_args
           )
         end
       end

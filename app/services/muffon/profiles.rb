@@ -2,6 +2,8 @@ module Muffon
   class Profiles < Muffon::Base
     DEFAULT_ORDER = 'created_desc'.freeze
 
+    include Muffon::Mixins::Profile
+
     def call
       data
     end
@@ -51,11 +53,12 @@ module Muffon
       profiles.count
     end
 
-    def collection_item_data_formatted(profile)
-      Muffon::Profiles::Profile.call(
-        profile:,
-        other_profile_id:
-          @args[:other_profile_id],
+    def collection_item_data_formatted(
+      profile_record
+    )
+      Muffon::Formatter::Profiles::Profile.call(
+        profile_record:,
+        other_profile_id: @args[:other_profile_id],
         token: @args[:token]
       )
     end

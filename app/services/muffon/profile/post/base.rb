@@ -5,24 +5,22 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            post_id
+          [
+            *super,
+            :post_id
           ]
         end
 
         def not_found?
-          super ||
-            post.blank?
+          super || post_record.blank?
         end
 
-        def post
-          if instance_variable_defined?(
-            :@post
-          )
-            @post
+        def post_record
+          if defined?(@post_record)
+            @post_record
           else
-            @post =
-              profile
+            @post_record =
+              profile_record
               .own_posts
               .find_by(
                 id: @args[:post_id]

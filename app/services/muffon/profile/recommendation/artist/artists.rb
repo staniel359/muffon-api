@@ -21,7 +21,7 @@ module Muffon
           end
 
           def artists
-            @artists ||= recommendation.library_artists
+            @artists ||= recommendation_record.library_artists
           end
 
           def top_albums_count
@@ -44,22 +44,23 @@ module Muffon
           def raw_collection
             artists
               .library_tracks_count_desc_ordered
-              .associated
               .limit(limit)
               .offset(offset)
+              .associated
           end
 
           def items_count
-            recommendation
+            recommendation_record
               .library_artist_ids
               .size
           end
 
-          def collection_item_data_formatted(library_artist)
-            Muffon::Profile::Library::Artists::Artist.call(
-              library_artist:,
-              profile_id: @args[:profile_id],
-              token: @args[:token]
+          def collection_item_data_formatted(
+            library_artist_record
+          )
+            Muffon::Formatter::Library::Artists::Artist.call(
+              library_artist_record:,
+              **self_args
             )
           end
         end

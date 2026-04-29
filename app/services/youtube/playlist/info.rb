@@ -25,7 +25,6 @@ module YouTube
           source_video_channel_id: channel_youtube_id,
           image_data:,
           description:,
-          description_size: 'medium',
           videos_count:,
           creation_date:,
           **self_args

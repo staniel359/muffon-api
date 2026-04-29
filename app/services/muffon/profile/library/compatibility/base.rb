@@ -6,19 +6,17 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              other_profile_id
+            [
+              *super,
+              :other_profile_id
             ]
           end
 
-          def not_found?
-            super ||
-              other_profile.blank?
-          end
-
           def forbidden?
-            !valid_profile? &&
-              !valid_other_profile?
+            !(
+              valid_profile? ||
+                valid_other_profile?
+            )
           end
 
           def data

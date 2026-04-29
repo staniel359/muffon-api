@@ -35,7 +35,6 @@ module Bandcamp
           plays_count: nil,
           duration:,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           is_audio_present: audio_present?,

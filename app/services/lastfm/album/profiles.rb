@@ -41,9 +41,11 @@ module LastFM
         profiles.count
       end
 
-      def collection_item_data_formatted(profile)
-        Muffon::Profiles::Profile.call(
-          profile:,
+      def collection_item_data_formatted(
+        profile_record
+      )
+        Muffon::Formatter::Profiles::Profile.call(
+          profile_record:,
           other_profile_id: @args[:profile_id],
           token: @args[:token]
         )

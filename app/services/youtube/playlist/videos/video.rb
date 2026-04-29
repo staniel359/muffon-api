@@ -31,7 +31,6 @@ module YouTube
             image_data:,
             creation_date:,
             description:,
-            description_size: 'extrasmall',
             **self_args
           )
         end

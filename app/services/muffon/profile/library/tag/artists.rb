@@ -3,18 +3,17 @@ module Muffon
     module Library
       module Tag
         class Artists < Muffon::Profile::Library::Tag::Base
-          DEFAULT_ORDER =
-            'library_tracks_count_desc'.freeze
+          DEFAULT_ORDER = 'library_tracks_count_desc'.freeze
 
           private
 
           def tag_data
-            {
-              **super,
+            Muffon::Formatter::Library::Tag::Artists.call(
+              tag_record:,
               top_tracks_count:,
               top_albums_count:,
-              **artists_data
-            }
+              artists_data:
+            )
           end
 
           def top_tracks_count
@@ -46,15 +45,18 @@ module Muffon
               .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
+              .associated
           end
 
           def items_count
             tag_library_artists.count
           end
 
-          def collection_item_data_formatted(library_artist)
-            Muffon::Profile::Library::Artists::Artist.call(
-              library_artist:,
+          def collection_item_data_formatted(
+            library_artist_record
+          )
+            Muffon::Formatter::Library::Artists::Artist.call(
+              library_artist_record:,
               profile_id: @args[:other_profile_id],
               token: @args[:token]
             )

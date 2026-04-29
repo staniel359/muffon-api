@@ -23,18 +23,19 @@ module Muffon
 
         def video_channels
           @video_channels ||=
-            profile.bookmark_video_channels
+            profile_record.bookmark_video_channels
         end
 
         def items_count
           video_channels.count
         end
 
-        def collection_item_data_formatted(bookmark_video_channel)
-          Muffon::Profile::Bookmarks::VideoChannels::VideoChannel.call(
-            bookmark_video_channel:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          bookmark_video_channel_record
+        )
+          Muffon::Formatter::Bookmarks::VideoChannels::VideoChannel.call(
+            bookmark_video_channel_record:,
+            **self_args
           )
         end
       end

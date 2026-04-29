@@ -36,7 +36,6 @@ module Spotify
           release_date:,
           plays_count: nil,
           description: nil,
-          description_size: nil,
           tags: nil,
           tags_size: nil,
           labels:,

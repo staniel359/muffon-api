@@ -22,14 +22,14 @@ module Muffon
           end
 
           def albums
-            @albums ||= library_track.library_albums
+            @albums ||= library_track_record.library_albums
           end
 
           def track_data
-            {
-              **super,
-              **albums_data
-            }
+            Muffon::Formatter::Library::Track::Albums.call(
+              library_track_record:,
+              albums_data:
+            )
           end
 
           def albums_data
@@ -54,9 +54,11 @@ module Muffon
             albums.count
           end
 
-          def collection_item_data_formatted(library_album)
-            Muffon::Profile::Library::Albums::Album.call(
-              library_album:,
+          def collection_item_data_formatted(
+            library_album_record
+          )
+            Muffon::Formatter::Library::Albums::Album.call(
+              library_album_record:,
               profile_id: @args[:other_profile_id],
               token: @args[:token]
             )

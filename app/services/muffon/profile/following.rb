@@ -32,11 +32,11 @@ module Muffon
       def following
         @following ||=
           if creator?
-            profile
+            profile_record
               .following_profiles
               .not_deleted
           else
-            profile
+            profile_record
               .following_profiles
               .public
               .not_deleted
@@ -47,11 +47,12 @@ module Muffon
         following.count
       end
 
-      def collection_item_data_formatted(profile)
-        Muffon::Profiles::Profile.call(
-          profile:,
-          other_profile_id:
-            @args[:other_profile_id],
+      def collection_item_data_formatted(
+        profile_record
+      )
+        Muffon::Formatter::Profiles::Profile.call(
+          profile_record:,
+          other_profile_id: @args[:other_profile_id],
           token: @args[:token]
         )
       end

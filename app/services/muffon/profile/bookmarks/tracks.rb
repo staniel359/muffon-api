@@ -23,18 +23,19 @@ module Muffon
         end
 
         def tracks
-          @tracks ||= profile.bookmark_tracks
+          @tracks ||= profile_record.bookmark_tracks
         end
 
         def items_count
           tracks.count
         end
 
-        def collection_item_data_formatted(bookmark_track)
-          Muffon::Profile::Bookmarks::Tracks::Track.call(
-            bookmark_track:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          bookmark_track_record
+        )
+          Muffon::Formatter::Bookmarks::Tracks::Track.call(
+            bookmark_track_record:,
+            **self_args
           )
         end
       end

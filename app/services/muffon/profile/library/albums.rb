@@ -40,12 +40,14 @@ module Muffon
         end
 
         def items_count
-          profile.library_albums_count
+          profile_record.library_albums_count
         end
 
-        def collection_item_data_formatted(library_album)
-          Muffon::Profile::Library::Albums::Album.call(
-            library_album:,
+        def collection_item_data_formatted(
+          library_album_record
+        )
+          Muffon::Formatter::Library::Albums::Album.call(
+            library_album_record:,
             profile_id: @args[:other_profile_id],
             token: @args[:token]
           )

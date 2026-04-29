@@ -34,7 +34,6 @@ module AmazonMusic
           image_data:,
           release_date:,
           description: nil,
-          description_size: nil,
           tags: nil,
           tags_size: nil,
           plays_count: nil,

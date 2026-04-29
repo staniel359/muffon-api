@@ -12,8 +12,7 @@ module Discogs
           source_label_id: discogs_id,
           name:,
           image_data:,
-          description:,
-          description_size: 'medium'
+          description:
         )
       end
     end

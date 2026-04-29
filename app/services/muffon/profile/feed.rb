@@ -36,7 +36,7 @@ module Muffon
               ::Post.global_public
             end
           else
-            profile.feed_posts
+            profile_record.feed_posts
           end
       end
 
@@ -48,9 +48,12 @@ module Muffon
         posts.count
       end
 
-      def collection_item_data_formatted(post)
-        Muffon::Posts::Post.call(
-          post:
+      def collection_item_data_formatted(
+        post_record
+      )
+        Muffon::Formatter::Posts::Post.call(
+          post_record:,
+          **self_args
         )
       end
     end

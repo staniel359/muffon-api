@@ -36,7 +36,6 @@ module YouTubeMusic
           release_date:,
           plays_count: nil,
           description:,
-          description_size: 'medium',
           tags: nil,
           tags_size: nil,
           labels: nil,

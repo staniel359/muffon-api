@@ -5,24 +5,23 @@ module Muffon
         private
 
         def required_args
-          super + %i[
-            token
-            conversation_id
+          [
+            *super,
+            :token,
+            :conversation_id
           ]
         end
 
         def not_found?
-          conversation.blank?
+          conversation_record.blank?
         end
 
-        def conversation
-          if instance_variable_defined?(
-            :@conversation
-          )
-            @conversation
+        def conversation_record
+          if defined?(@conversation_record)
+            @conversation_record
           else
-            @conversation =
-              profile
+            @conversation_record =
+              profile_record
               .conversations
               .find_by(
                 id: @args[:conversation_id]

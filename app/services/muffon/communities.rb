@@ -38,11 +38,12 @@ module Muffon
       communities.count
     end
 
-    def collection_item_data_formatted(community)
-      Muffon::Communities::Community.call(
-        community:,
-        profile_id: @args[:profile_id],
-        token: @args[:token]
+    def collection_item_data_formatted(
+      community_record
+    )
+      Muffon::Formatter::Communities::Community.call(
+        community_record:,
+        **self_args
       )
     end
   end

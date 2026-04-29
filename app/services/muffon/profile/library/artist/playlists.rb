@@ -8,10 +8,10 @@ module Muffon
           private
 
           def artist_data
-            {
-              **super,
-              **playlists_data
-            }
+            Muffon::Formatter::Library::Artist::Playlists.call(
+              library_artist_record:,
+              playlists_data:
+            )
           end
 
           def playlists_data
@@ -33,16 +33,18 @@ module Muffon
 
           def playlists
             @playlists ||=
-              library_artist.profile_playlists
+              library_artist_record.profile_playlists
           end
 
           def items_count
             playlists.count
           end
 
-          def collection_item_data_formatted(playlist)
-            Muffon::Profile::Playlists::Playlist.call(
-              playlist:
+          def collection_item_data_formatted(
+            playlist_record
+          )
+            Muffon::Formatter::Playlists::Playlist.call(
+              playlist_record:
             )
           end
         end

@@ -6,6 +6,13 @@ module Muffon
 
         private
 
+        def required_args
+          [
+            *super,
+            :token
+          ]
+        end
+
         def forbidden?
           !valid_profile?
         end

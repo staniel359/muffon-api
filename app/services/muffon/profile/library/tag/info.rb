@@ -6,10 +6,10 @@ module Muffon
           private
 
           def tag_data
-            {
-              **super,
+            Muffon::Formatter::Library::Tag::Info.call(
+              tag_record:,
               artists_count:
-            }
+            )
           end
 
           def artists_count

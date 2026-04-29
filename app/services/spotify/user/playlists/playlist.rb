@@ -25,7 +25,6 @@ module Spotify
             source_playlist_id: spotify_id,
             title:,
             description:,
-            description_size: 'medium',
             image_data:,
             tracks_count:,
             tracks:

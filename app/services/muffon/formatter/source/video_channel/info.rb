@@ -3,6 +3,8 @@ module Muffon
     module Source
       module VideoChannel
         class Info < Muffon::Formatter::Source::VideoChannel::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -20,7 +22,6 @@ module Muffon
               image_data
               creation_date
               description
-              description_size
               views_count
               subscribers_count
               videos_count

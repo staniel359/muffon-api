@@ -36,9 +36,9 @@ module Muffon
       def playlists
         @playlists ||=
           if valid_profile? || creator?
-            profile.playlists
+            profile_record.playlists
           else
-            profile
+            profile_record
               .playlists
               .public
           end
@@ -48,9 +48,11 @@ module Muffon
         playlists.count
       end
 
-      def collection_item_data_formatted(playlist)
-        Muffon::Profile::Playlists::Playlist.call(
-          playlist:,
+      def collection_item_data_formatted(
+        playlist_record
+      )
+        Muffon::Formatter::Playlists::Playlist.call(
+          playlist_record:,
           track_id:,
           album_id:
         )

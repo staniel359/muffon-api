@@ -22,18 +22,19 @@ module Muffon
         end
 
         def artists
-          @artists ||= profile.bookmark_artists
+          @artists ||= profile_record.bookmark_artists
         end
 
         def items_count
           artists.count
         end
 
-        def collection_item_data_formatted(bookmark_artist)
-          Muffon::Profile::Bookmarks::Artists::Artist.call(
-            bookmark_artist:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          bookmark_artist_record
+        )
+          Muffon::Formatter::Bookmarks::Artists::Artist.call(
+            bookmark_artist_record:,
+            **self_args
           )
         end
       end

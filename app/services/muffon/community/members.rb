@@ -3,6 +3,8 @@ module Muffon
     class Members < Muffon::Community::Base
       DEFAULT_ORDER = 'joined_desc'.freeze
 
+      include Muffon::Mixins::Profile
+
       private
 
       def community_data
@@ -34,11 +36,11 @@ module Muffon
       def members
         @members ||=
           if creator?
-            community
+            community_record
               .members
               .not_deleted
           else
-            community
+            community_record
               .members
               .public
               .not_deleted
@@ -49,11 +51,12 @@ module Muffon
         members.count
       end
 
-      def collection_item_data_formatted(profile)
-        Muffon::Profiles::Profile.call(
-          profile:,
-          other_profile_id: @args[:profile_id],
-          token: @args[:token]
+      def collection_item_data_formatted(
+        profile_record
+      )
+        Muffon::Formatter::Profiles::Profile.call(
+          profile_record:,
+          **self_args
         )
       end
     end

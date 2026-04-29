@@ -27,8 +27,7 @@ module LastFM
           name:,
           taggings_count:,
           taggers_count:,
-          description:,
-          description_size: 'medium'
+          description:
         )
       end
     end

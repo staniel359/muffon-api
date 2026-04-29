@@ -20,7 +20,6 @@ module MusixMatch
           release_date: nil,
           duration: nil,
           description: nil,
-          description_size: nil,
           tags: nil,
           tags_size: nil,
           lyrics:,

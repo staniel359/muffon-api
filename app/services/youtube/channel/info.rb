@@ -23,7 +23,6 @@ module YouTube
           title:,
           image_data:,
           description:,
-          description_size: 'medium',
           creation_date:,
           videos_count:,
           views_count:,

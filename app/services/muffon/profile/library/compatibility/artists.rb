@@ -53,11 +53,12 @@ module Muffon
               .offset(offset)
           end
 
-          def collection_item_data_formatted(library_artist)
-            Muffon::Profile::Library::Compatibility::Artists::Artist.call(
-              library_artist:,
-              profile_id: @args[:profile_id],
-              token: @args[:token]
+          def collection_item_data_formatted(
+            library_artist_record
+          )
+            Muffon::Formatter::Library::Compatibility::Artists::Artist.call(
+              library_artist_record:,
+              **self_args
             )
           end
 

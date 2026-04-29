@@ -3,8 +3,7 @@ module Muffon
     module Library
       module Artist
         class Albums < Muffon::Profile::Library::Artist::Base
-          DEFAULT_ORDER =
-            'library_tracks_count_desc'.freeze
+          DEFAULT_ORDER = 'library_tracks_count_desc'.freeze
 
           private
 
@@ -23,14 +22,14 @@ module Muffon
           end
 
           def albums
-            @albums ||= library_artist.library_albums
+            @albums ||= library_artist_record.library_albums
           end
 
           def artist_data
-            {
-              **super,
-              **albums_data
-            }
+            Muffon::Formatter::Library::Artist::Albums.call(
+              library_artist_record:,
+              albums_data:
+            )
           end
 
           def albums_data
@@ -52,12 +51,14 @@ module Muffon
           end
 
           def items_count
-            library_artist.library_albums_count
+            library_artist_record.library_albums_count
           end
 
-          def collection_item_data_formatted(library_album)
-            Muffon::Profile::Library::Artist::Albums::Album.call(
-              library_album:,
+          def collection_item_data_formatted(
+            library_album_record
+          )
+            Muffon::Formatter::Library::Artist::Albums::Album.call(
+              library_album_record:,
               profile_id: @args[:other_profile_id],
               token: @args[:token]
             )

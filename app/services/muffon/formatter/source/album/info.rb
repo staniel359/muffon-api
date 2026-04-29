@@ -3,6 +3,8 @@ module Muffon
     module Source
       module Album
         class Info < Muffon::Formatter::Source::Album::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -22,7 +24,6 @@ module Muffon
               plays_count
               release_date
               description
-              description_size
               tags
               tags_size
               labels

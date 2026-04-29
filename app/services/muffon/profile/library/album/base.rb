@@ -3,28 +3,24 @@ module Muffon
     module Library
       module Album
         class Base < Muffon::Profile::Library::Base
-          include Muffon::Mixins::Library::Album
-
           private
 
           def required_args
-            super + %i[
-              library_id
+            [
+              *super,
+              :library_id
             ]
           end
 
           def not_found?
-            super ||
-              library_album.blank?
+            super || library_album_record.blank?
           end
 
-          def library_album
-            if instance_variable_defined?(
-              :@library_album
-            )
-              @library_album
+          def library_album_record
+            if defined?(@library_album_record)
+              @library_album_record
             else
-              @library_album =
+              @library_album_record =
                 library_albums.find_by(
                   id: @args[:library_id]
                 )
@@ -33,16 +29,6 @@ module Muffon
 
           def library_data
             { album: album_data }
-          end
-
-          def album_data
-            {
-              source: source_data,
-              library: library_album_data,
-              title:,
-              artist: artists_minimal_data,
-              artists:
-            }.compact
           end
         end
       end

@@ -3,6 +3,8 @@ module Muffon
     module Source
       module AlbumGroup
         class Info < Muffon::Formatter::Source::AlbumGroup::Base
+          DESCRIPTION_SIZE = 'medium'.freeze
+
           def call
             check_args
 
@@ -21,7 +23,6 @@ module Muffon
               image_data
               release_date
               description
-              description_size
               tags
               tags_size
               tracks

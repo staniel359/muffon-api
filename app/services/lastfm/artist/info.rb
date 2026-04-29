@@ -25,7 +25,6 @@ module LastFM
           image_data:,
           plays_count:,
           description:,
-          description_size: 'medium',
           tags:,
           tags_size: 'extrasmall',
           recommendation_data:,

@@ -18,24 +18,18 @@ module Muffon
       end
 
       def not_found?
-        community.blank?
+        community_record.blank?
       end
 
-      def community
-        if instance_variable_defined?(
-          :@community
-        )
-          @community
+      def community_record
+        if defined?(@community_record)
+          @community_record
         else
-          @community =
+          @community_record =
             ::Community.find_by(
-              id: community_id
+              id: @args[:community_id]
             )
         end
-      end
-
-      def community_id
-        @args[:community_id]
       end
 
       def data
@@ -44,8 +38,8 @@ module Muffon
 
       def community_data
         {
-          id: community.id,
-          title: community.title
+          id: community_record.id,
+          title: community_record.title
         }
       end
     end

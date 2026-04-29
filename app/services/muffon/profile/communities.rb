@@ -32,18 +32,19 @@ module Muffon
       end
 
       def communities
-        @communities ||= profile.communities
+        @communities ||= profile_record.communities
       end
 
       def items_count
         communities.count
       end
 
-      def collection_item_data_formatted(community)
-        Muffon::Communities::Community.call(
-          community:,
-          profile_id: @args[:other_profile_id],
-          token: @args[:token]
+      def collection_item_data_formatted(
+        community_record
+      )
+        Muffon::Formatter::Communities::Community.call(
+          community_record:,
+          **self_args
         )
       end
     end

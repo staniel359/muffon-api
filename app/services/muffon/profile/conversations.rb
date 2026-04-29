@@ -5,6 +5,13 @@ module Muffon
 
       private
 
+      def required_args
+        [
+          *super,
+          :token
+        ]
+      end
+
       def forbidden?
         !valid_profile?
       end
@@ -35,16 +42,18 @@ module Muffon
       end
 
       def conversations
-        @conversations ||= profile.conversations
+        @conversations ||= profile_record.conversations
       end
 
       def items_count
         conversations.count
       end
 
-      def collection_item_data_formatted(conversation)
-        Muffon::Profile::Conversations::Conversation.call(
-          conversation:,
+      def collection_item_data_formatted(
+        conversation_record
+      )
+        Muffon::Formatter::Conversations::Conversation.call(
+          conversation_record:,
           profile_id: @args[:profile_id]
         )
       end

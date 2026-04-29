@@ -2,8 +2,7 @@ module Muffon
   module Profile
     module Recommendations
       class Tracks < Muffon::Profile::Recommendations::Base
-        DEFAULT_ORDER =
-          'library_tracks_count_desc'.freeze
+        DEFAULT_ORDER = 'library_tracks_count_desc'.freeze
 
         private
 
@@ -25,41 +24,39 @@ module Muffon
 
         def raw_collection
           tracks
-            .associated
             .ordered(order, DEFAULT_ORDER)
             .limit(limit)
             .offset(offset)
+            .associated
         end
 
         def tracks
           @tracks ||=
             Muffon::Profile::Recommendations::Tracks::Filter.call(
-              filter_args
+              profile_id: @args[:profile_id],
+              hide_library_tracks:
+                @args[:hide_library_tracks].present?,
+              hide_library_artists:
+                @args[:hide_library_artists].present?,
+              hide_library_artists_tracks_count:
+                @args[:hide_library_artists_tracks_count],
+              hide_listened_tracks:
+                @args[:hide_listened_tracks].present?,
+              hide_listened_artists:
+                @args[:hide_listened_artists].present?
             )
-        end
-
-        def filter_args
-          @args.slice(
-            *%i[
-              profile_id
-              hide_library_tracks
-              hide_library_artists
-              hide_library_artists_tracks_count
-              hide_listened_tracks
-              hide_listened_artists
-            ]
-          )
         end
 
         def items_count
           tracks.count
         end
 
-        def collection_item_data_formatted(recommendation)
-          Muffon::Profile::Recommendations::Tracks::Track.call(
-            recommendation:,
-            profile_id: @args[:profile_id],
-            token: @args[:token]
+        def collection_item_data_formatted(
+          recommendation_track_record
+        )
+          Muffon::Formatter::Recommendations::Tracks::Track.call(
+            recommendation_track_record:,
+            **self_args
           )
         end
       end
