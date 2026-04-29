@@ -12,6 +12,10 @@ SECRET_KEYS = [
     refresh_token
   ],
   %i[
+    audius
+    api_key
+  ],
+  %i[
     discogs
     api_key
   ],

@@ -36,6 +36,8 @@ RSpec.configure do |config|
   config.include Spec::Helpers::AmazonMusic::Track
   config.include Spec::Helpers::AmazonMusic::Utils
 
+  config.include Spec::Helpers::Audius::Search
+
   config.include Spec::Helpers::Bandcamp::Album
   config.include Spec::Helpers::Bandcamp::Artist
   config.include Spec::Helpers::Bandcamp::Label

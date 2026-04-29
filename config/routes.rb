@@ -385,6 +385,12 @@ Rails
         end
       end
 
+      namespace :audius do
+        namespace :search do
+          get 'artists'
+        end
+      end
+
       # Bandcamp
 
       namespace :bandcamp do
