@@ -5,15 +5,21 @@ module Muffon
     class Image
       class FileData < Muffon::Base
         def call
-          return if no_data?
-
           data
         end
 
         private
 
-        def no_data?
-          image.blank? || image == 'DELETED'
+        def data
+          if link_image?
+            link_image_data
+          else
+            file_image_data
+          end
+        end
+
+        def link_image?
+          image.match?(%r{https?://})
         end
 
         def image
@@ -44,18 +50,6 @@ module Muffon
 
         def temp_image_file_path
           @args[:temp_image_file_path]
-        end
-
-        def data
-          if link_image?
-            link_image_data
-          else
-            file_image_data
-          end
-        end
-
-        def link_image?
-          image.match?(%r{https?://})
         end
 
         def link_image_data

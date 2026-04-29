@@ -5,7 +5,7 @@ module Muffon
         def call
           check_args
 
-          return if no_data?
+          return if not_found?
 
           data
         end
@@ -19,34 +19,25 @@ module Muffon
           ]
         end
 
-        def no_data?
-          model.blank?
+        def not_found?
+          model_record.blank?
         end
 
-        def model
-          if defined?(@model)
-            @model
+        def model_record
+          if defined?(@model_record)
+            @model_record
           else
-            @model =
-              model_class.find_by(
+            @model_record =
+              model_record_class.find_by(
                 id: @args[:model_id]
               )
           end
         end
 
-        def model_class
+        def model_record_class
           @args[:model]
             .camelize
             .constantize
-        end
-
-        def image_file_data
-          @image_file_data ||=
-            Muffon::Formatter::Image::FileData.call(
-              image: @args[:image_file],
-              temp_image_file_path:
-                @args[:temp_image_file_path]
-            )
         end
       end
     end

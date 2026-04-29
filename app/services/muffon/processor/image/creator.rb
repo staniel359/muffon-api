@@ -5,27 +5,40 @@ module Muffon
         private
 
         def data
-          model_image.purge_later if model_image.attached?
+          return if return?
 
-          attach_image if image_file_data.present?
+          if delete_image?
+            model_record.delete_image_later!
+          else
+            model_record.add_image!(
+              image_file_data:
+            )
+          end
 
           image_data
 
           { success: true }
         end
 
-        def model_image
-          @model_image ||= model.image
+        def return?
+          @args[:image_file].blank? &&
+            @args[:temp_image_file_path].blank?
         end
 
-        def attach_image
-          model_image.attach(
-            image_file_data
+        def delete_image?
+          @args[:image_file] == 'DELETED'
+        end
+
+        def image_file_data
+          Muffon::Formatter::Image::FileData.call(
+            image: @args[:image_file],
+            temp_image_file_path:
+              @args[:temp_image_file_path]
           )
         end
 
         def image_data
-          model
+          model_record
             .reload
             .image_data
         end
