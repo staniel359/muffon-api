@@ -28,15 +28,16 @@ module YouTube
 
       def image_data
         YouTube::Formatter::Image.call(
-          images:,
-          model: 'channel'
+          image_url:
         )
       end
 
-      def images
+      def image_url
         raw_video_channel_data.dig(
           'snippet',
-          'thumbnails'
+          'thumbnails',
+          'default',
+          'url'
         )
       end
 
@@ -122,10 +123,6 @@ module YouTube
           subscribers_count:,
           created_at: creation_date
         }.compact
-      end
-
-      def image_url
-        image_data.try(:[], :original)
       end
     end
   end

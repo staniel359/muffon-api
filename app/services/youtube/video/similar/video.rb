@@ -78,13 +78,6 @@ module YouTube
           )
         end
 
-        def image_data
-          YouTube::Formatter::Image.call(
-            image_url:,
-            model: 'similar_video'
-          )
-        end
-
         def image_url
           raw_video_data.dig(
             'playlistPanelVideoRenderer',

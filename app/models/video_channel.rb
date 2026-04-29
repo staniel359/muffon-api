@@ -32,8 +32,7 @@ class VideoChannel < ApplicationRecord
 
   def image_data
     YouTube::Formatter::Image.call(
-      image_url:,
-      model: 'channel'
+      image_url:
     )
   end
 

@@ -56,15 +56,16 @@ module YouTube
 
       def image_data
         YouTube::Formatter::Image.call(
-          images:,
-          model: 'playlist'
+          image_url:
         )
       end
 
-      def images
+      def image_url
         raw_video_playlist_data.dig(
           'snippet',
-          'thumbnails'
+          'thumbnails',
+          'default',
+          'url'
         )
       end
 
@@ -125,10 +126,6 @@ module YouTube
           description:,
           created_at: creation_date
         }.compact
-      end
-
-      def image_url
-        image_data.try(:[], :original)
       end
     end
   end

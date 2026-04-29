@@ -46,13 +46,6 @@ module YouTube
             'videoId'
           )
         end
-
-        def image_data
-          YouTube::Formatter::Image.call(
-            images:,
-            model: 'search_video'
-          )
-        end
       end
     end
   end

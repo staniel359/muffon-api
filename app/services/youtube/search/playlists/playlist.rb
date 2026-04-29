@@ -46,13 +46,6 @@ module YouTube
             'playlistId'
           )
         end
-
-        def image_data
-          YouTube::Formatter::Image.call(
-            images:,
-            model: 'search_playlist'
-          )
-        end
       end
     end
   end
