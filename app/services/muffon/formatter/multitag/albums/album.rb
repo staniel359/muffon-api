@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Multitag
       module Albums
-        class Album < Muffon::Formatter::Album::Base
-          include Muffon::Mixins::Album
-
+        class Album < Muffon::Formatter::Multitag::Album::Base
           def call
             check_args
 
@@ -16,13 +14,6 @@ module Muffon
           def required_args
             %i[
               album_record
-              source_original_link
-              source_name
-              source_album_id
-              title
-              artists
-              image_data
-              release_date
             ]
           end
 
@@ -34,13 +25,8 @@ module Muffon
               artist: artist_data,
               artists:,
               image: image_data,
-              release_date:,
               listeners_count:
             }.compact
-          end
-
-          def album_record
-            @args[:album_record]
           end
         end
       end

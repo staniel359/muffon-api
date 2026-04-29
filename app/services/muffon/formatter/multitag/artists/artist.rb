@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module Multitag
       module Artists
-        class Artist < Muffon::Formatter::Artist::Base
+        class Artist < Muffon::Formatter::Multitag::Artist::Base
           def call
             check_args
 
@@ -14,11 +14,6 @@ module Muffon
           def required_args
             %i[
               artist_record
-              source_original_link
-              source_name
-              source_artist_id
-              name
-              image_data
             ]
           end
 
@@ -30,10 +25,6 @@ module Muffon
               image: image_data,
               listeners_count:
             }.compact
-          end
-
-          def artist_record
-            @args[:artist_record]
           end
         end
       end

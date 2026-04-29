@@ -67,6 +67,13 @@ class Album < ApplicationRecord
     end
   end
 
+  def source_data
+    {
+      name: 'lastfm',
+      links: source_links_data
+    }
+  end
+
   def image_data
     LastFM::Formatter::Image.call(
       image_url:
@@ -84,5 +91,13 @@ class Album < ApplicationRecord
       artist_name: artist.name,
       album_title: title
     )
+  end
+
+  def source_links_data
+    { original: source_original_link }
+  end
+
+  def source_original_link
+    "https://www.last.fm/music/#{CGI.escape(artist.name)}/#{CGI.escape(title)}"
   end
 end

@@ -2,7 +2,7 @@ module Muffon
   module Formatter
     module Multitag
       module Tracks
-        class Track < Muffon::Formatter::Track::Base
+        class Track < Muffon::Formatter::Multitag::Track::Base
           def call
             check_args
 
@@ -14,11 +14,6 @@ module Muffon
           def required_args
             %i[
               track_record
-              source_original_link
-              source_name
-              source_track_id
-              title
-              artists
             ]
           end
 
@@ -32,10 +27,6 @@ module Muffon
               artists:,
               listeners_count:
             }.compact
-          end
-
-          def track_record
-            @args[:track_record]
           end
         end
       end

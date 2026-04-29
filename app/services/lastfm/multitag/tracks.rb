@@ -35,10 +35,10 @@ module LastFM
       end
 
       def collection_item_data_formatted(
-        raw_track_data
+        track_record
       )
-        LastFM::Multitag::Tracks::Track.call(
-          raw_track_data:,
+        Muffon::Formatter::Multitag::Tracks::Track.call(
+          track_record:,
           **self_args
         )
       end
