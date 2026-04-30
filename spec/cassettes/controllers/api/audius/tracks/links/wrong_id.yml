@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.audius.co/v1/full/tracks/wejlhg239gh23?api_key=<AUDIUS_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 23 Feb 2026 20:48:11 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '38'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - d2f6ca72b7e4330f6f88a7819b18a4c5
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - MISS
+      Access-Control-Allow-Origin:
+      - "*"
+      Set-Cookie:
+      - __cf_bm=qdH390X6cqxDFaBwnzdBILjS5ERX3viOr5YuuI3B_to-1771879691.8461573-1.0.1.1-VXk0Yvamy20LWw5orTXsklEckPpHVHz0xM3KwylwLLI_eKdYbPraz6KAgoNvIJTCiTbyr01H7oo72e9oQ9OopEicJ43k8vKQChpY80ymvudtfuKBPYMXcHd0Gigafi.O;
+        HttpOnly; Secure; Path=/; Domain=audius.co; Expires=Mon, 23 Feb 2026 21:18:11
+        GMT
+      Access-Control-Allow-Methods:
+      - "*"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9d29952a0bf3cd83-WAW
+    body:
+      encoding: UTF-8
+      string: '{"code":400,"error":"invalid trackId"}'
+  recorded_at: Mon, 23 Feb 2026 20:48:11 GMT
+recorded_with: VCR 6.4.0

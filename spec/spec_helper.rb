@@ -39,6 +39,7 @@ RSpec.configure do |config|
   config.include Spec::Helpers::Audius::Album
   config.include Spec::Helpers::Audius::Artist
   config.include Spec::Helpers::Audius::Search
+  config.include Spec::Helpers::Audius::Track
 
   config.include Spec::Helpers::Bandcamp::Album
   config.include Spec::Helpers::Bandcamp::Artist

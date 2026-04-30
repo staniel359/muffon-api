@@ -51,14 +51,21 @@ module Audius
       end
 
       def audio_present?
+        audio_link.present?
+      end
+
+      def audio_link
         raw_track_data.dig(
-          'access',
-          'stream'
+          'stream',
+          'url'
         )
       end
 
       def album_title
-        raw_album_data.try(:[], 'playlist_name')
+        raw_album_data.try(
+          :[],
+          'playlist_name'
+        )
       end
 
       def raw_album_data
@@ -66,7 +73,18 @@ module Audius
       end
 
       def album_audius_id
-        raw_album_data.try(:[], 'playlist_id')
+        raw_album_data.try(
+          :[],
+          'playlist_id'
+        )
+      end
+
+      def description
+        raw_track_data['description']
+      end
+
+      def tags
+        raw_track_data['genre'].split('/')
       end
     end
   end

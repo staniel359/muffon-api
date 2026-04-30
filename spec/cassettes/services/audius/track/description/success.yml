@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.audius.co/v1/full/tracks/861539?api_key=<AUDIUS_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 23 Feb 2026 20:52:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - fc2088a676a68ee94097bf8447a5ab2b
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Set-Cookie:
+      - __cf_bm=OHWkBz.f__5o8.QyEctiXd75ohLsVaZVgZovo9Ha3WM-1771879962.9992707-1.0.1.1-URlTm.ZJ_HHowE_EY1RINi17cBnHc6zVD8aCxNGOGqXgt2mpQwQdZ.uRMfLJdNZBiKH_1SsGWNnQTxZ.0SDffgENCpBwKczCKTr2u25RRDNGObRu4TIZeviHDK1C0PC0;
+        HttpOnly; Secure; Path=/; Domain=audius.co; Expires=Mon, 23 Feb 2026 21:22:43
+        GMT
+      Cf-Cache-Status:
+      - EXPIRED
+      Last-Modified:
+      - Mon, 23 Feb 2026 20:52:43 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9d299bc8bd1ee77f-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"track_id":861539,"description":"https://open.spotify.com/album/3cWKXXmGpUeKwJKRDZaBEy","genre":"Soundtrack","id":"ozWN7","track_cid":"QmYuVX8CqioSVuGPKrCtBzTL1a7GXjEeMYJ578bb1x7hzw","preview_cid":null,"orig_file_cid":"QmYuVX8CqioSVuGPKrCtBzTL1a7GXjEeMYJ578bb1x7hzw","orig_filename":"Keep
+        it One Step A Day (125bpm) - [Mo Vibez].mp3","is_original_available":false,"mood":"Empowering","release_date":"2022-02-25T21:05:00Z","repost_count":2205,"favorite_count":2281,"comment_count":2,"tags":null,"title":"Keep
+        it One Step A Day (125bpm)","slug":"keep-it-one-step-a-day-125bpm","duration":149,"is_downloadable":false,"play_count":18757,"ddex_app":null,"pinned_comment_id":null,"playlists_containing_track":[758100188,112516,112547,112175,112164,112164,112202,112208,112238,112273,97801,112391,112518,112902,96623,114497,114496,114496,1498518505,60152,116355617],"playlists_previously_containing_track":{},"album_backlink":null,"blocknumber":26066084,"create_date":null,"created_at":"2022-02-26T06:19:55Z","cover_art_sizes":"QmW6YqXE1DBtyifx13eV66GozqkMLBcULMJmhLCcBCsB8z","credits_splits":null,"isrc":null,"license":"All
+        rights reserved","iswc":null,"field_visibility":{"mood":true,"tags":true,"genre":true,"share":true,"remixes":true,"play_count":true},"has_current_user_reposted":false,"has_current_user_saved":false,"is_scheduled_release":false,"is_unlisted":false,"stem_of":null,"track_segments":[],"updated_at":"2025-10-05T06:56:36Z","is_delete":false,"cover_art":null,"is_available":true,"ai_attribution_user_id":null,"allowed_api_keys":null,"audio_upload_id":null,"preview_start_seconds":null,"bpm":125.3,"is_custom_bpm":false,"musical_key":"E
+        minor","is_custom_musical_key":false,"audio_analysis_error_count":0,"comments_disabled":false,"ddex_release_ids":null,"artists":null,"resource_contributors":null,"indirect_resource_contributors":null,"rights_controller":null,"copyright_line":null,"producer_copyright_line":null,"parental_warning_type":null,"is_stream_gated":false,"is_download_gated":false,"cover_original_song_title":null,"cover_original_artist":null,"is_owned_by_user":false,"permalink":"/mogotvibez/keep-it-one-step-a-day-125bpm","is_streamable":true,"artwork":{"150x150":"https://audius-content-4.figment.io/content/QmW6YqXE1DBtyifx13eV66GozqkMLBcULMJmhLCcBCsB8z/150x150.jpg","480x480":"https://audius-content-4.figment.io/content/QmW6YqXE1DBtyifx13eV66GozqkMLBcULMJmhLCcBCsB8z/480x480.jpg","1000x1000":"https://audius-content-4.figment.io/content/QmW6YqXE1DBtyifx13eV66GozqkMLBcULMJmhLCcBCsB8z/1000x1000.jpg","mirrors":["https://audius-content-10.cultur3stake.com","https://audius-content-3.figment.io","https://creatornode2.audius.co"]},"stream":{"url":"https://cn2.mainnet.audiusindex.org/tracks/cidstream/QmYuVX8CqioSVuGPKrCtBzTL1a7GXjEeMYJ578bb1x7hzw?id3=true\u0026id3_artist=Mo+Vibez\u0026id3_title=Keep+it+One+Step+A+Day+%28125bpm%29\u0026signature=%7B%22data%22%3A%22%7B%5C%22cid%5C%22%3A%5C%22QmYuVX8CqioSVuGPKrCtBzTL1a7GXjEeMYJ578bb1x7hzw%5C%22%2C%5C%22timestamp%5C%22%3A1771879963000%2C%5C%22trackId%5C%22%3A861539%2C%5C%22userId%5C%22%3A0%7D%22%2C%22signature%22%3A%220x9f56ca305482172ac32a6d193372f48df067dbe7db552504296b6f980c9e58c64d4bc6e75c82097a5d5ef1ec5ba781fdeece591ca30ca5c6e7bacdcb5f6505dc00%22%7D","mirrors":["https://creatornode2.audius.co","https://audius-content-7.figment.io","https://audius-creator-10.theblueprint.xyz"]},"download":null,"preview":null,"user_id":"Lx8aX","user":{"album_count":3,"allow_ai_attribution":false,"artist_coin_badge":null,"artist_pick_track_id":"kP6oj","associated_sol_wallets_balance":"0","associated_wallets_balance":"0","balance":"0","bio":"yes
+        yes yaw","blocknumber":114190904,"coin_flair_mint":null,"cover_photo":{"2000x":"https://audius-creator-5.theblueprint.xyz/content/QmWLTS2R8zshWaihVN4XGv9pca3gETa1CjtttHZXii7Nqb/2000x.jpg","640x":"https://audius-creator-5.theblueprint.xyz/content/QmWLTS2R8zshWaihVN4XGv9pca3gETa1CjtttHZXii7Nqb/640x.jpg","mirrors":["https://cn0.mainnet.audiusindex.org","https://audius-content-6.figment.io","https://creatornode2.audius.co"]},"cover_photo_cids":null,"cover_photo_legacy":null,"cover_photo_sizes":"QmWLTS2R8zshWaihVN4XGv9pca3gETa1CjtttHZXii7Nqb","created_at":"2020-03-01T20:48:50Z","creator_node_endpoint":"https://creatornode3.audius.co,https://blockdaemon-audius-content-04.bdnodes.net,https://cn0.mainnet.audiusindex.org","current_user_followee_follow_count":0,"does_current_user_follow":false,"does_current_user_subscribe":false,"does_follow_current_user":false,"donation":null,"erc_wallet":"0x9e00e0aadf61ffb12405deb6d03cbc6b2778ec55","followee_count":12,"follower_count":698,"handle":"mogotvibez","handle_lc":"mogotvibez","has_collectibles":false,"id":"Lx8aX","instagram_handle":"mogotvibez","is_available":true,"is_deactivated":false,"is_storage_v2":false,"is_verified":false,"location":"Austria","name":"Mo
+        Vibez","payout_wallet":"3BaYysMxLjmrNec5UtT3gnDwC7qWycbohMSfdNZ5CbQR","playlist_count":0,"profile_picture":{"1000x1000":"https://v.monophonic.digital/content/QmX8w5y3RN5RH6homzS4Yhz3poPmoDSkswgyggw4ndphM6/1000x1000.jpg","150x150":"https://v.monophonic.digital/content/QmX8w5y3RN5RH6homzS4Yhz3poPmoDSkswgyggw4ndphM6/150x150.jpg","480x480":"https://v.monophonic.digital/content/QmX8w5y3RN5RH6homzS4Yhz3poPmoDSkswgyggw4ndphM6/480x480.jpg","mirrors":["https://audius-creator-7.theblueprint.xyz","https://audius-discovery-1.altego.net","https://creatornode2.audius.co"]},"profile_picture_cids":null,"profile_picture_legacy":null,"profile_picture_sizes":"QmX8w5y3RN5RH6homzS4Yhz3poPmoDSkswgyggw4ndphM6","profile_type":null,"repost_count":2,"spl_usdc_payout_wallet":null,"spl_usdc_wallet":"3BaYysMxLjmrNec5UtT3gnDwC7qWycbohMSfdNZ5CbQR","spl_wallet":"A9JRZF9Ba7tR8h6GSZHEQ8ZDt379NiDYoKAGxj19o7AG","supporter_count":8,"supporting_count":0,"tiktok_handle":null,"total_audio_balance":2,"total_balance":"2000000000000000000","track_count":47,"twitter_handle":"mogotvibez","updated_at":"2026-02-19T09:19:04Z","user_id":27831,"verified_with_instagram":false,"verified_with_tiktok":false,"verified_with_twitter":false,"wallet":"0x9e00e0aadf61ffb12405deb6d03cbc6b2778ec55","waudio_balance":"200000000","website":null},"access":{"stream":true,"download":true},"followee_reposts":[],"followee_favorites":[],"remix_of":{"tracks":[]},"stream_conditions":null,"download_conditions":null}}'
+  recorded_at: Mon, 23 Feb 2026 20:52:43 GMT
+recorded_with: VCR 6.4.0

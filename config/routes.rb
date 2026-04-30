@@ -405,6 +405,16 @@ Rails
             get 'links'
           end
         end
+
+        namespace :tracks, as: :track do
+          scope ':track_id' do
+            get '', action: :info
+            get 'description'
+            get 'tags'
+            get 'links'
+            get 'albums'
+          end
+        end
       end
 
       # Bandcamp

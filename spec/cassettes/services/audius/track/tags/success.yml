@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.audius.co/v1/full/tracks/1864470750?api_key=<AUDIUS_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 23 Feb 2026 20:54:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=99fJcUpUH1OvbCAPxTcnwTuEaziJXtuv6JOoqv0gH_U-1771880097.4013376-1.0.1.1-rorrg6YxIMRVbeSBTNtcyzXZ7l2HCZfjoticEGMQDmRG7qsW9jigTl4y.JHTzE17XFeA3haj1aFtaKItVEBtOlGFzjuNmFt2OFGdz0zycxd7zQ48EUdlrcL7HddAVpSw;
+        HttpOnly; Secure; Path=/; Domain=audius.co; Expires=Mon, 23 Feb 2026 21:24:57
+        GMT
+      X-Request-Id:
+      - d2d7582743afe13e09cf0e812554c9f6
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - EXPIRED
+      Last-Modified:
+      - Mon, 23 Feb 2026 20:54:57 GMT
+      Cf-Ray:
+      - 9d299f10cad72540-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"track_id":1864470750,"description":"Even my Momma know,\nF***
+        around I let the tommy go..\nYou know how my body goes,\nSince a little man
+        - I had a snotty nose..\n\nProduced by Steez","genre":"Hip-Hop/Rap","id":"l5V3maw","track_cid":"baeaaaiqsea5pqrg2jkjs4o5ftectydxqcajudywo6qn2oli2wdvrhjjfz5csg","preview_cid":"baeaaaiqsebrl7p2ibpkrhnbvlokansh5oy3o47htfxikx454s5gx3egu5xdzi","orig_file_cid":"baeaaaiqsecs26cvftsnigeqvwfa6a3h6jxqmusqvmrwsnommgvafitljrj44u","orig_filename":"1.%2520Geronimo.mp3","is_original_available":true,"mood":"Energizing","release_date":"2025-08-15T18:57:35Z","repost_count":0,"favorite_count":1,"comment_count":0,"tags":"TreMarkStar,Tms,HSAK,CrossfireDistro,Geronimo","title":"1.
+        Geronimo","slug":"1-geronimo","duration":108,"is_downloadable":true,"play_count":64,"ddex_app":"","pinned_comment_id":null,"playlists_containing_track":[156107796,1477774773],"playlists_previously_containing_track":{},"album_backlink":{"permalink":"/TreMarkStar/album/human-swiss-army-knife","playlist_id":156107796,"playlist_name":"Human
+        Swiss Army Knife"},"blocknumber":102983739,"create_date":null,"created_at":"2025-08-15T18:57:35Z","cover_art_sizes":"01K2QHFSN56FSYK8FS3ESKV1AQ","credits_splits":null,"isrc":null,"license":"All
+        rights reserved","iswc":null,"field_visibility":{"mood":true,"tags":true,"genre":true,"share":true,"remixes":false,"play_count":true},"has_current_user_reposted":false,"has_current_user_saved":false,"is_scheduled_release":false,"is_unlisted":false,"stem_of":null,"track_segments":[],"updated_at":"2025-08-16T04:33:34Z","is_delete":false,"cover_art":null,"is_available":true,"ai_attribution_user_id":null,"allowed_api_keys":null,"audio_upload_id":"01K2QHFT0V1B2RJKF7BBTNCRJ7","preview_start_seconds":13,"bpm":143,"is_custom_bpm":false,"musical_key":"F
+        minor","is_custom_musical_key":false,"audio_analysis_error_count":0,"comments_disabled":false,"ddex_release_ids":null,"artists":null,"resource_contributors":null,"indirect_resource_contributors":null,"rights_controller":null,"copyright_line":null,"producer_copyright_line":null,"parental_warning_type":null,"is_stream_gated":true,"is_download_gated":true,"cover_original_song_title":null,"cover_original_artist":null,"is_owned_by_user":false,"permalink":"/TreMarkStar/1-geronimo","is_streamable":true,"artwork":{"150x150":"https://audius-discovery-2.cultur3stake.com/content/01K2QHFSN56FSYK8FS3ESKV1AQ/150x150.jpg","480x480":"https://audius-discovery-2.cultur3stake.com/content/01K2QHFSN56FSYK8FS3ESKV1AQ/480x480.jpg","1000x1000":"https://audius-discovery-2.cultur3stake.com/content/01K2QHFSN56FSYK8FS3ESKV1AQ/1000x1000.jpg","mirrors":["https://audius-discovery-1.altego.net","https://audius-content-6.figment.io","https://creatornode2.audius.co"]},"stream":null,"download":null,"preview":{"url":"https://audius-content-2.cultur3stake.com/tracks/cidstream/baeaaaiqsebrl7p2ibpkrhnbvlokansh5oy3o47htfxikx454s5gx3egu5xdzi?id3=true\u0026id3_artist=TreMarkStar\u0026id3_title=1.+Geronimo\u0026signature=%7B%22data%22%3A%22%7B%5C%22cid%5C%22%3A%5C%22baeaaaiqsebrl7p2ibpkrhnbvlokansh5oy3o47htfxikx454s5gx3egu5xdzi%5C%22%2C%5C%22timestamp%5C%22%3A1771880097000%2C%5C%22trackId%5C%22%3A1864470750%2C%5C%22userId%5C%22%3A0%7D%22%2C%22signature%22%3A%220x2ab7b2ef248974ef81d3e3aadf045ae0404b0c97e622f5640b7fdb77ff7f5c183b42e5d53284bd59982dda16ff696eb18f9dc27351882d861b75746dd360954d01%22%7D","mirrors":["https://creatornode2.audius.co","https://audius-content-5.figment.io","https://audius.rickyrombo.com"]},"user_id":"Y5AmdW","user":{"album_count":3,"allow_ai_attribution":false,"artist_coin_badge":null,"artist_pick_track_id":"g4XXVl","associated_sol_wallets_balance":"0","associated_wallets_balance":"0","balance":"0","bio":"Human
+        Swiss Army Knife / A\u0026R\nDCM / Crossfire Distro / TMO Records","blocknumber":103286673,"coin_flair_mint":null,"cover_photo":{"2000x":"https://audius-discovery-1.altego.net/content/01K2JGGN8SBN30043F1G6HG6Q0/2000x.jpg","640x":"https://audius-discovery-1.altego.net/content/01K2JGGN8SBN30043F1G6HG6Q0/640x.jpg","mirrors":["https://audius-content-4.cultur3stake.com","https://audius-02.staked.cloud","https://creatornode2.audius.co"]},"cover_photo_cids":null,"cover_photo_legacy":null,"cover_photo_sizes":"01K2JGGN8SBN30043F1G6HG6Q0","created_at":"2025-08-13T20:04:16Z","creator_node_endpoint":null,"current_user_followee_follow_count":0,"does_current_user_follow":false,"does_current_user_subscribe":false,"does_follow_current_user":false,"donation":"https://cash.app/$TreMark631","erc_wallet":"0x3a19590cc2c9995a1dfb4cf5dc75ac30556469b5","followee_count":21,"follower_count":31,"handle":"TreMarkStar","handle_lc":"tremarkstar","has_collectibles":false,"id":"Y5AmdW","instagram_handle":"Tre.Mark.631","is_available":true,"is_deactivated":false,"is_storage_v2":true,"is_verified":false,"location":"Houston,
+        TX","name":"TreMarkStar","payout_wallet":"6UK4Y9btudof9K4riy3x1554n7UEEkCyFCc9XoBuFCJ6","playlist_count":1,"profile_picture":{"1000x1000":"https://audius-discovery-3.altego.net/content/01K2YTMMGJSENWB6FY1QPX14PW/1000x1000.jpg","150x150":"https://audius-discovery-3.altego.net/content/01K2YTMMGJSENWB6FY1QPX14PW/150x150.jpg","480x480":"https://audius-discovery-3.altego.net/content/01K2YTMMGJSENWB6FY1QPX14PW/480x480.jpg","mirrors":["https://audius-content-5.cultur3stake.com","https://cn3.mainnet.audiusindex.org","https://creatornode2.audius.co"]},"profile_picture_cids":null,"profile_picture_legacy":null,"profile_picture_sizes":"01K2YTMMGJSENWB6FY1QPX14PW","profile_type":null,"repost_count":22,"spl_usdc_payout_wallet":null,"spl_usdc_wallet":"6UK4Y9btudof9K4riy3x1554n7UEEkCyFCc9XoBuFCJ6","spl_wallet":"FBiZvsDZNVqCV2mUeDm2U6tGRq7mgQ42QoBUz7qUq5it","supporter_count":0,"supporting_count":0,"tiktok_handle":null,"total_audio_balance":502,"total_balance":"502695560730000000000","track_count":31,"twitter_handle":"TreMarkStar","updated_at":"2025-08-21T17:01:30Z","user_id":28560744,"verified_with_instagram":false,"verified_with_tiktok":false,"verified_with_twitter":false,"wallet":"0x3a19590cc2c9995a1dfb4cf5dc75ac30556469b5","waudio_balance":"50269556073","website":"https://www.wearedcm.com"},"access":{"stream":false,"download":false},"followee_reposts":[],"followee_favorites":[],"remix_of":{"tracks":[]},"stream_conditions":{"usdc_purchase":{"price":100,"splits":[{"user_id":28560744,"percentage":100}]}},"download_conditions":{"usdc_purchase":{"price":100,"splits":[{"user_id":28560744,"percentage":100}]}}}}'
+  recorded_at: Mon, 23 Feb 2026 20:54:57 GMT
+recorded_with: VCR 6.4.0
