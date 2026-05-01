@@ -37,7 +37,7 @@ module MusicBrainz
       end
 
       def album_title
-        raw_album_data['title']
+        raw_album_data.try(:[], 'title')
       end
 
       def raw_album_data
@@ -45,11 +45,11 @@ module MusicBrainz
       end
 
       def raw_albums
-        raw_track_data['releases']
+        raw_track_data['releases'] || []
       end
 
       def album_musicbrainz_id
-        raw_album_data['id']
+        raw_album_data.try(:[], 'id')
       end
 
       def raw_albums_distinct
@@ -59,8 +59,6 @@ module MusicBrainz
       end
 
       def image_data
-        return if raw_album_data.blank?
-
         MusicBrainz::Formatter::Image.call(
           image_id: album_musicbrainz_id,
           album_type: 'release'

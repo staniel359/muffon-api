@@ -3,8 +3,9 @@ module YouTubeMusic
     module Search
       class ScopeParams < YouTubeMusic::Base
         SCOPES_TITLES_DATA = {
-          'tracks' => 'Songs',
+          'artists' => 'Artists',
           'albums' => 'Albums',
+          'tracks' => 'Songs',
           'videos' => 'Videos',
           'mixes' => 'Featured playlists',
           'playlists' => 'Community playlists'

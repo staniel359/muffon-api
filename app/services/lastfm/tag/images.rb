@@ -28,7 +28,10 @@ module LastFM
 
         LastFM::Formatter::Image.call(
           image_url:
-        )[:small]
+        ).try(
+          :[],
+          :small
+        )
       end
     end
   end

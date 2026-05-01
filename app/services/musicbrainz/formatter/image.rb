@@ -17,6 +17,8 @@ module MusicBrainz
       end
 
       def data
+        return if @args[:image_id].blank?
+
         {
           original: image_resized('1200'),
           large: image_resized('500'),

@@ -3,6 +3,7 @@ module LastFM
     class Info
       class Recommendation < LastFM::Base
         include Muffon::Mixins::Profile
+        include Muffon::Mixins::Artist
 
         def call
           return if return?
