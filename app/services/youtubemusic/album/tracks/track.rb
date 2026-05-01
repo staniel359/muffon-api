@@ -15,6 +15,8 @@ module YouTubeMusic
         def required_args
           %i[
             raw_track_data
+            album_data
+            artists
           ]
         end
 
@@ -63,6 +65,14 @@ module YouTubeMusic
 
         def raw_track_data
           @args[:raw_track_data]
+        end
+
+        def artists
+          if raw_raw_artists.present?
+            super
+          else
+            @args[:artists]
+          end
         end
 
         def raw_raw_artists

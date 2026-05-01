@@ -88,6 +88,8 @@ module YouTubeMusic
     def find_raw_artists_data(
       raw_collection
     )
+      return if raw_collection.blank?
+
       raw_collection.select do |raw_item_data|
         raw_item_data.dig(
           'navigationEndpoint',
@@ -96,7 +98,8 @@ module YouTubeMusic
           'browseEndpointContextMusicConfig',
           'pageType'
         ) == 'MUSIC_PAGE_TYPE_ARTIST'
-      end
+      end.presence ||
+        [raw_collection[2]]
     end
 
     def find_raw_album_data(

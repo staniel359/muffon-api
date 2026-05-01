@@ -50,6 +50,7 @@ module YouTubeMusic
         YouTubeMusic::Album::Tracks::Track.call(
           raw_track_data:,
           album_data: album_base_data,
+          artists:,
           **self_args
         )
       end
