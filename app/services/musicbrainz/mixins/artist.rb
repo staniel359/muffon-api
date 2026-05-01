@@ -1,6 +1,8 @@
 module MusicBrainz
   module Mixins
     module Artist
+      include Muffon::Mixins::Artist
+
       private
 
       def name
@@ -13,6 +15,10 @@ module MusicBrainz
 
       def source_original_link
         "https://musicbrainz.org/artist/#{musicbrainz_id}"
+      end
+
+      def image_data
+        artist_record.image_data
       end
     end
   end

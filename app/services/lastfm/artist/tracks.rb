@@ -61,6 +61,8 @@ module LastFM
       )
         LastFM::Artist::Tracks::Track.call(
           raw_track_data:,
+          is_with_artist_image:
+            @args[:is_with_artist_image],
           **self_args
         )
       end

@@ -24,7 +24,7 @@ module MusicBrainz
             source_name:,
             source_artist_id: musicbrainz_id,
             name:,
-            image_data: nil,
+            image_data:,
             **self_args
           )
         end

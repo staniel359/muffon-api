@@ -27,12 +27,17 @@ module LastFM
             source_track_id: nil,
             title:,
             artists:,
+            is_with_artist_image: with_artist_image?,
             **self_args
           )
         end
 
         def raw_track_data
           @args[:raw_track_data]
+        end
+
+        def with_artist_image?
+          !!@args[:is_with_artist_image]
         end
       end
     end

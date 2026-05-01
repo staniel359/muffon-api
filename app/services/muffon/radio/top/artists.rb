@@ -30,7 +30,8 @@ module Muffon
             LastFM::Artist::Tracks.call(
               artist_name: top_artist_name,
               limit: 1,
-              page: random_track_number
+              page: random_track_number,
+              is_with_artist_image: true
             ).try(
               :[],
               :artist

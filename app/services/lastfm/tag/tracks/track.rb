@@ -25,6 +25,7 @@ module LastFM
             source_track_id: nil,
             title:,
             artists:,
+            is_with_artist_image: true,
             **self_args
           )
         end
