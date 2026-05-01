@@ -1,7 +1,7 @@
 module Spotify
   module Utils
     class ClientToken < Spotify::Base
-      BASE_LINK =
+      REQUEST_BASE_URL =
         'https://clienttoken.spotify.com/v1/clienttoken'.freeze
 
       def call
@@ -17,11 +17,11 @@ module Spotify
         )
       end
 
-      def link
-        BASE_LINK
+      def request_url
+        REQUEST_BASE_URL
       end
 
-      def payload
+      def request_payload
         {
           'client_data' => {
             'client_id' => 'd8a5ed958d274c2e8ee717e6a4b0971d',
@@ -38,14 +38,12 @@ module Spotify
         }.to_json
       end
 
-      def headers
+      def request_headers
         {
-          'User-Agent' => USER_AGENT,
+          'User-Agent' => REQUEST_USER_AGENT,
           'Accept' => 'application/json'
         }
       end
-
-      alias response post_response
     end
   end
 end

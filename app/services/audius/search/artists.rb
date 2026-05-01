@@ -20,7 +20,7 @@ module Audius
         )
       end
 
-      def params
+      def request_params
         {
           **super,
           kind: 'users'

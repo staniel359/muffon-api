@@ -45,8 +45,8 @@ module LastFM
         )
       end
 
-      def link
-        "#{base_link}/+images"
+      def request_url
+        "#{super}/+images"
       end
 
       def collection_item_data_formatted(

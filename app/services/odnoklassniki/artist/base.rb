@@ -21,7 +21,7 @@ module Odnoklassniki
         ]
       end
 
-      def params
+      def request_params
         {
           **super,
           'artistId' => @args[:artist_id]

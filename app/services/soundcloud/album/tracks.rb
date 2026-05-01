@@ -34,11 +34,11 @@ module SoundCloud
         @args[:raw_album_data]
       end
 
-      def link
-        "#{BASE_LINK}/tracks"
+      def request_url
+        "#{REQUEST_BASE_URL}/tracks"
       end
 
-      def params
+      def request_params
         {
           **super,
           ids: tracks_ids_string

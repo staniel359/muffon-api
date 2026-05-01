@@ -5,7 +5,7 @@ module YouTube
 
       private
 
-      def params
+      def request_params
         {
           **super,
           id: @args[:playlist_id],

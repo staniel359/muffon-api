@@ -3,9 +3,7 @@ module LastFM
     class Token < LastFM::Base
       API_METHOD = 'auth.getToken'.freeze
       LASTFM_LANGUAGES = %w[
-        de es fr it ja
-        pl pt ru sv tr
-        zh
+        de es fr it ja pl pt ru sv tr zh
       ].freeze
 
       def call
@@ -33,20 +31,16 @@ module LastFM
       def connect_base_link
         [
           'https://www.last.fm',
-          language,
+          (language if language_available?),
           'api/auth'
         ]
           .compact
           .join('/')
       end
 
-      def language
-        @args[:language] if language_present?
-      end
-
-      def language_present?
-        @args[:language].in?(
-          LASTFM_LANGUAGES
+      def language_available?
+        LASTFM_LANGUAGES.include?(
+          @args[:language]
         )
       end
     end

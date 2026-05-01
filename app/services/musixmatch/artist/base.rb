@@ -26,10 +26,6 @@ module MusixMatch
         )
       end
 
-      def link
-        "#{base_link}/artist/#{@args[:artist_slug]}.json"
-      end
-
       def data
         { artist: artist_data }
       end

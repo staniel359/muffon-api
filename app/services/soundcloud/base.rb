@@ -1,20 +1,24 @@
 module SoundCloud
   class Base < Muffon::Base
     SOURCE_NAME = 'soundcloud'.freeze
-    BASE_LINK = 'https://api-v2.soundcloud.com'.freeze
+    REQUEST_BASE_URL = 'https://api-v2.soundcloud.com'.freeze
 
     include Muffon::Mixins::GlobalStorage
 
     private
 
-    def params
-      { client_id: }
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          proxy: request_proxy
+        )
     end
 
-    def proxy
-      proxy_data
-        .dig(:uk, :ipv4)
-        .sample
+    def request_params
+      { client_id: }
     end
 
     def client_id
@@ -38,6 +42,12 @@ module SoundCloud
 
     def refresh_client_id?
       !!@args[:is_refresh_client_id]
+    end
+
+    def request_proxy
+      proxy_data
+        .dig(:uk, :ipv4)
+        .sample
     end
 
     def retry_with_new_client_id

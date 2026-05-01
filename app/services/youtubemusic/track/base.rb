@@ -46,11 +46,11 @@ module YouTubeMusic
           )
       end
 
-      def link
-        "#{BASE_LINK}/next"
+      def request_url
+        "#{REQUEST_BASE_URL}/next"
       end
 
-      def payload
+      def request_payload
         {
           'videoId' => @args[:track_id],
           'context' => payload_context_data
@@ -60,8 +60,6 @@ module YouTubeMusic
       def data
         { track: track_data }
       end
-
-      alias response post_response
     end
   end
 end

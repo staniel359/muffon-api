@@ -61,11 +61,11 @@ module YouTubeMusic
           )
         end
 
-        def link
-          "#{BASE_LINK}/search"
+        def request_url
+          "#{REQUEST_BASE_URL}/search"
         end
 
-        def payload
+        def request_payload
           {
             context: payload_context_data,
             query: @args[:query]
@@ -79,8 +79,6 @@ module YouTubeMusic
         def scope_title
           SCOPES_TITLES_DATA[@args[:scope]]
         end
-
-        alias response post_response
       end
     end
   end

@@ -24,11 +24,11 @@ module Audius
         response_data['data']
       end
 
-      def link
+      def request_url
         "#{super}/albums"
       end
 
-      def params
+      def request_params
         {
           **super,
           offset:,

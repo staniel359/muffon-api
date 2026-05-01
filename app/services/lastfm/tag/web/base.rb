@@ -7,8 +7,8 @@ module LastFM
 
         private
 
-        def link
-          "https://www.last.fm/tag/#{tag_name}"
+        def request_url
+          "#{super}/tag/#{tag_name}"
         end
 
         def tag_name
@@ -17,7 +17,7 @@ module LastFM
           )
         end
 
-        def params
+        def request_params
           {
             **super,
             page:

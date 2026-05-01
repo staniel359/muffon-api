@@ -21,7 +21,7 @@ module Odnoklassniki
         { search: search_data }
       end
 
-      def params
+      def request_params
         {
           **super,
           q: @args[:query],

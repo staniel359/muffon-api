@@ -16,7 +16,7 @@ module Genius
         )
       end
 
-      def link
+      def request_url
         "#{super}/tracks"
       end
 

@@ -24,7 +24,7 @@ module LastFM
         )
       end
 
-      def params
+      def request_params
         {
           **super,
           album: @args[:query]

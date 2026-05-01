@@ -23,7 +23,7 @@ module Spotify
         )
       end
 
-      def payload
+      def request_payload
         {
           'variables' => {
             'includePreReleases' => false,

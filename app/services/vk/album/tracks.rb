@@ -7,7 +7,7 @@ module VK
 
       private
 
-      def params
+      def request_params
         {
           **super,
           album_id: @args[:album_id],
@@ -16,7 +16,7 @@ module VK
         }
       end
 
-      def signature
+      def request_raw_signature
         "/method/#{API_METHOD}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \

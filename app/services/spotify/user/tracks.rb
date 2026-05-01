@@ -18,11 +18,11 @@ module Spotify
         raw_user_data['items']
       end
 
-      def link
+      def request_url
         "#{super}/tracks"
       end
 
-      def params
+      def request_params
         {
           **super,
           limit:,

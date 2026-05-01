@@ -14,8 +14,8 @@ module AmazonMusic
         )
       end
 
-      def link
-        "#{BASE_LINK}/searchCatalogArtists"
+      def request_url
+        "#{REQUEST_BASE_URL}/searchCatalogArtists"
       end
 
       def collection_item_data_formatted(

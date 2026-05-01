@@ -17,12 +17,8 @@ module MusicBrainz
         ]
       end
 
-      def link
-        "#{base_link}/release-group/#{@args[:group_id]}"
-      end
-
-      def base_link
-        self.class::BASE_LINK
+      def request_url
+        "#{REQUEST_BASE_URL}/release-group/#{@args[:group_id]}"
       end
 
       def data

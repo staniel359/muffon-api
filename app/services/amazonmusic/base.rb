@@ -1,13 +1,22 @@
 module AmazonMusic
   class Base < Muffon::Base
     SOURCE_NAME = 'amazonmusic'.freeze
-    BASE_LINK = 'https://eu.mesk.skill.music.a2z.com/api'.freeze
+    REQUEST_BASE_URL = 'https://eu.mesk.skill.music.a2z.com/api'.freeze
     DEVICE_ID = '25814726589747619'.freeze
     DEVICE_TYPE_ID = 'A16ZV8BU3SN1N3'.freeze
 
     include Muffon::Mixins::GlobalStorage
 
     private
+
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'POST',
+          payload: request_payload
+        )
+    end
 
     def amazonmusic_token
       return test_token if test?

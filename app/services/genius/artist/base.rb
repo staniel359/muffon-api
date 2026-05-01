@@ -17,8 +17,8 @@ module Genius
         ]
       end
 
-      def link
-        "#{BASE_LINK}/artists/#{@args[:artist_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/artists/#{@args[:artist_id]}"
       end
 
       def data

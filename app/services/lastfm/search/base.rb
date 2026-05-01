@@ -19,7 +19,7 @@ module LastFM
         { search: search_data }
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

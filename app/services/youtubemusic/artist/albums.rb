@@ -67,7 +67,7 @@ module YouTubeMusic
         )
       end
 
-      def payload
+      def request_payload
         {
           'browseId' => page_data[:id],
           'params' => page_data[:param],

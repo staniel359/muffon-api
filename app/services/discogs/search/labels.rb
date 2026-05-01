@@ -14,7 +14,7 @@ module Discogs
         )
       end
 
-      def params
+      def request_params
         {
           **super,
           type: SCOPES_PARAMS_DATA['labels']

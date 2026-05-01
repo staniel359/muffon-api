@@ -4,7 +4,7 @@ module AmazonMusic
       module Audio
         class Link
           class Track < AmazonMusic::Base
-            BASE_LINK =
+            REQUEST_BASE_URL =
               'https://music.amazon.co.uk/EU/api/dmls/'.freeze
 
             def call
@@ -28,18 +28,25 @@ module AmazonMusic
             end
 
             def manifest_xml
-              response_data.dig(
-                'contentResponseList',
-                0,
-                'manifest'
+              @manifest_xml ||=
+                response_data.dig(
+                  'contentResponseList',
+                  0,
+                  'manifest'
+                )
+            end
+
+            def response_data
+              Muffon::Request.call(
+                url: REQUEST_BASE_URL,
+                method: 'POST',
+                payload: request_payload,
+                headers: request_headers,
+                cookies: request_cookies
               )
             end
 
-            def link
-              BASE_LINK
-            end
-
-            def payload
+            def request_payload
               {
                 'deviceToken' => {
                   'deviceId' => DEVICE_ID,
@@ -69,9 +76,8 @@ module AmazonMusic
               }.to_json
             end
 
-            def headers
+            def request_headers
               {
-                **super,
                 'Content-Encoding' => 'amz-1.0',
                 'X-Amz-Target' =>
                   'com.amazon.digitalmusiclocator' \
@@ -84,7 +90,7 @@ module AmazonMusic
               }
             end
 
-            def cookies
+            def request_cookies
               return test_amazon_music_cookies if test?
 
               {
@@ -149,8 +155,6 @@ module AmazonMusic
                 manifest_xml
               )
             end
-
-            alias response post_response
           end
         end
       end

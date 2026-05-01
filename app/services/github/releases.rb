@@ -1,7 +1,5 @@
 module GitHub
-  class Releases < Muffon::Base
-    BASE_LINK =
-      'https://api.github.com/repos/staniel359/muffon/releases'.freeze
+  class Releases < GitHub::Base
     PAGE_LIMIT = 100
 
     def call
@@ -26,22 +24,7 @@ module GitHub
       end
     end
 
-    def link
-      BASE_LINK
-    end
-
-    def headers
-      { 'Authorization' => "Bearer #{token}" }
-    end
-
-    def token
-      credentials.dig(
-        :github,
-        :token
-      )
-    end
-
-    def params
+    def request_params
       { per_page: PAGE_LIMIT }
     end
 

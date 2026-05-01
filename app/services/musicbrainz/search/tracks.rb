@@ -20,8 +20,8 @@ module MusicBrainz
         response_data['recordings']
       end
 
-      def link
-        "#{BASE_LINK}/recording"
+      def request_url
+        "#{REQUEST_BASE_URL}/recording"
       end
 
       def collection_item_data_formatted(

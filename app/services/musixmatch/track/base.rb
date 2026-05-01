@@ -31,8 +31,8 @@ module MusixMatch
         )
       end
 
-      def link
-        "#{base_link}/lyrics/#{track_slug_formatted}.json"
+      def request_url
+        "#{super}/lyrics/#{track_slug_formatted}.json"
       end
 
       def track_slug_formatted

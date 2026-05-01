@@ -48,8 +48,6 @@ module Spotify
             artist_id: @args[:artist_id]
           )[:artist]
       end
-
-      alias response post_response
     end
   end
 end

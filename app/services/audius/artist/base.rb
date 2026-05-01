@@ -39,8 +39,8 @@ module Audius
           )
       end
 
-      def link
-        "#{BASE_LINK}/users/#{@args[:artist_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/users/#{@args[:artist_id]}"
       end
     end
   end

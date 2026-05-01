@@ -15,7 +15,7 @@ module LastFM
         response_data['tag']
       end
 
-      def params
+      def request_params
         {
           **super,
           lang: language

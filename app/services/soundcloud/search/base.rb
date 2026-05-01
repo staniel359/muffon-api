@@ -25,7 +25,7 @@ module SoundCloud
         response_data['collection']
       end
 
-      def params
+      def request_params
         {
           **super,
           q: @args[:query],

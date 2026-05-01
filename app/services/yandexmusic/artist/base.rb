@@ -32,11 +32,11 @@ module YandexMusic
         )
       end
 
-      def link
-        "#{BASE_LINK}/artist.jsx"
+      def request_url
+        "#{REQUEST_BASE_URL}/artist.jsx"
       end
 
-      def params
+      def request_params
         { artist: @args[:artist_id] }
       end
 

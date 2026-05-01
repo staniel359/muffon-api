@@ -28,11 +28,11 @@ module Genius
         )
       end
 
-      def link
-        "#{BASE_LINK}/referents/#{@args[:annotation_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/referents/#{@args[:annotation_id]}"
       end
 
-      def params
+      def request_params
         { text_format: 'html' }
       end
 

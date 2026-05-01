@@ -28,7 +28,7 @@ module LastFM
         'chart.getTopTags'
       end
 
-      def params
+      def request_params
         {
           **super,
           limit: PAGE_LIMIT

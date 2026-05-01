@@ -3,7 +3,7 @@ module Spotify
     module Track
       module Audio
         class Link < Spotify::Base
-          BASE_LINK = 'https://spclient.wg.spotify.com'.freeze
+          REQUEST_BASE_URL = 'https://spclient.wg.spotify.com'.freeze
           FILE_EXTENSION = 'm4a'.freeze
 
           include Muffon::Mixins::Processing::Audio
@@ -48,7 +48,7 @@ module Spotify
               )
           end
 
-          def params
+          def request_params
             {
               version: 10_000_000,
               product: 9,

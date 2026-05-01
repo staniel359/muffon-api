@@ -1,6 +1,11 @@
 module Muffon
   module Mixins
     module Base
+      REQUEST_USER_AGENT =
+        'Mozilla/5.0 (X11; Linux x86_64) ' \
+        'AppleWebKit/537.36 (KHTML, like Gecko) ' \
+        'Chrome/147.0.0.0 Safari/537.36'.freeze
+
       private
 
       def credentials
@@ -69,6 +74,26 @@ module Muffon
           old_host,
           new_host
         )
+      end
+
+      def get_response_cookie(
+        raw_response:,
+        cookie_name:
+      )
+        raw_response
+          .headers['set-cookie']
+          &.match(
+            /#{cookie_name}=(\S+);/
+          )
+          .try(:[], 1)
+      end
+
+      def language
+        @args[:language] || 'en'
+      end
+
+      def proxy_data
+        credentials[:proxy]
       end
     end
   end

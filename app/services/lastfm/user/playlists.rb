@@ -28,11 +28,11 @@ module LastFM
         )
       end
 
-      def link
-        "#{base_link}/playlists"
+      def request_url
+        "#{super}/playlists"
       end
 
-      def params
+      def request_params
         {
           **super,
           page:

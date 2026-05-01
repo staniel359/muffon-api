@@ -21,15 +21,15 @@ module MusixMatch
         { search: search_data }
       end
 
-      def params
+      def request_url
+        "#{super}/search.json"
+      end
+
+      def request_params
         {
           **super,
           query: @args[:query]
         }
-      end
-
-      def link
-        "#{base_link}/search.json"
       end
     end
   end

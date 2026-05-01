@@ -60,7 +60,7 @@ module Spotify
         ALBUMS_COLLECTIONS_DATA[@args[:albums_type]]
       end
 
-      def payload
+      def request_payload
         {
           'variables' => {
             'uri' => spotify_uri,

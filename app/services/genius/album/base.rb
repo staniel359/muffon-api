@@ -24,8 +24,8 @@ module Genius
         )
       end
 
-      def link
-        "#{BASE_LINK}/albums/#{@args[:album_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/albums/#{@args[:album_id]}"
       end
 
       def data

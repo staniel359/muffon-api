@@ -1,7 +1,7 @@
 module Spotify
   module Utils
     class Token < Spotify::Base
-      BASE_LINK = 'https://open.spotify.com/api/token'.freeze
+      REQUEST_BASE_URL = 'https://open.spotify.com/api/token'.freeze
 
       def call
         data
@@ -13,11 +13,21 @@ module Spotify
         response_data['accessToken']
       end
 
-      def link
-        BASE_LINK
+      def response_data
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          headers: request_headers,
+          cookies: request_cookies
+        )
       end
 
-      def params
+      def request_url
+        REQUEST_BASE_URL
+      end
+
+      def request_params
         {
           'reason' => 'init',
           'productType' => 'web-player',
@@ -59,11 +69,11 @@ module Spotify
         Spotify::Utils::ServerTime.call
       end
 
-      def headers
-        { 'User-Agent' => USER_AGENT }
+      def request_headers
+        { 'User-Agent' => REQUEST_USER_AGENT }
       end
 
-      def cookies
+      def request_cookies
         credentials.dig(
           :spotify,
           :cookies

@@ -30,11 +30,11 @@ module Discogs
         response_data['results']
       end
 
-      def link
-        "#{BASE_LINK}/database/search"
+      def request_url
+        "#{REQUEST_BASE_URL}/database/search"
       end
 
-      def params
+      def request_params
         {
           **super,
           query: @args[:query],

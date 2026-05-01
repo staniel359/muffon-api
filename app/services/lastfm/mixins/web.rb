@@ -1,23 +1,40 @@
 module LastFM
   module Mixins
     module Web
-      include Muffon::Mixins::Request
+      REQUEST_BASE_URL = 'https://www.last.fm'.freeze
 
       private
 
-      def params
+      def response_data
+        @response_data ||=
+          Muffon::Request.call(
+            url: request_url,
+            method: 'GET',
+            response_type: 'html',
+            params: request_params,
+            headers: request_headers,
+            cookies: request_cookies,
+            proxy: request_proxy
+          )
+      end
+
+      def request_url
+        REQUEST_BASE_URL
+      end
+
+      def request_params
         {}
       end
 
-      def headers
-        {
-          'Cookie' => 'lfmanon=0',
-          'User-Agent' => USER_AGENT,
-          'Accept-Language' => 'en-US,en;q=0.5'
-        }
+      def request_headers
+        { 'Accept-Language' => 'en-US,en;q=0.5' }
       end
 
-      def proxy
+      def request_cookies
+        { lfmanon: '0' }
+      end
+
+      def request_proxy
         proxy_data
           .dig(:uk, :ipv6)
           .sample
@@ -32,8 +49,6 @@ module LastFM
           )
         )
       end
-
-      alias response_data html_response_data
     end
   end
 end

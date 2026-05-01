@@ -34,8 +34,8 @@ module MusicBrainz
           )[:artist]
       end
 
-      def link
-        "#{BASE_LINK}/artist/#{@args[:artist_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/artist/#{@args[:artist_id]}"
       end
 
       def data

@@ -21,11 +21,11 @@ module YandexMusic
         { album: album_data }
       end
 
-      def link
-        "#{BASE_LINK}/album.jsx"
+      def request_url
+        "#{REQUEST_BASE_URL}/album.jsx"
       end
 
-      def params
+      def request_params
         { album: @args[:album_id] }
       end
 

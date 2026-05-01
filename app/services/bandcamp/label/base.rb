@@ -21,11 +21,11 @@ module Bandcamp
         response_data['error'].present?
       end
 
-      def link
-        "#{BASE_LINK}/band_details"
+      def request_url
+        "#{REQUEST_BASE_URL}/band_details"
       end
 
-      def params
+      def request_params
         { band_id: @args[:label_id] }
       end
 

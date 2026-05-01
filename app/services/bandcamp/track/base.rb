@@ -31,11 +31,11 @@ module Bandcamp
         )
       end
 
-      def link
-        "#{BASE_LINK}/tralbum_details"
+      def request_url
+        "#{REQUEST_BASE_URL}/tralbum_details"
       end
 
-      def params
+      def request_params
         {
           band_id: @args[:artist_id],
           tralbum_id: @args[:track_id],

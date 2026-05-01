@@ -37,13 +37,13 @@ module AmazonMusic
           )
       end
 
-      def link
-        "#{BASE_LINK}/showCatalogMusicItems/" \
+      def request_url
+        "#{REQUEST_BASE_URL}/showCatalogMusicItems/" \
           'uri%3A_SLASH__SLASH_artist_SLASH_' \
           "#{@args[:artist_id]}_SLASH_chronological-albums"
       end
 
-      def payload
+      def request_payload
         AmazonMusic::Formatter::Request::Payload.call(
           page: @args[:page]
         )

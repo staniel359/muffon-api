@@ -28,11 +28,11 @@ module YouTubeMusic
           .blank?
       end
 
-      def link
-        "#{BASE_LINK}/browse"
+      def request_url
+        "#{REQUEST_BASE_URL}/browse"
       end
 
-      def payload
+      def request_payload
         {
           'browseId' => @args[:album_id],
           'context' => payload_context_data
@@ -43,7 +43,6 @@ module YouTubeMusic
         { album: album_data }
       end
 
-      alias response post_response
       alias raw_album_data response_data
     end
   end

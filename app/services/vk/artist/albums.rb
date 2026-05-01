@@ -26,7 +26,7 @@ module VK
         raw_artist_data['items']
       end
 
-      def params
+      def request_params
         {
           **super,
           artist_id: @args[:artist_id],
@@ -35,7 +35,7 @@ module VK
         }
       end
 
-      def signature
+      def request_raw_signature
         "/method/#{api_method}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \

@@ -15,7 +15,7 @@ module MusicBrainz
         ]
       end
 
-      def params
+      def request_params
         {
           **super,
           query: @args[:query],

@@ -29,8 +29,8 @@ module YouTube
         response_data['items'] || []
       end
 
-      def link
-        "#{BASE_LINK}/channels"
+      def request_url
+        "#{REQUEST_BASE_URL}/channels"
       end
 
       def data

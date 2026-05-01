@@ -11,7 +11,7 @@ module LastFM
           ]
         end
 
-        def payload
+        def request_payload
           {
             **super,
             method: 'track.updateNowPlaying',

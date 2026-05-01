@@ -25,8 +25,8 @@ module YouTube
         response_data.dig('items', 0)
       end
 
-      def link
-        "#{BASE_LINK}/playlists"
+      def request_url
+        "#{REQUEST_BASE_URL}/playlists"
       end
 
       def data

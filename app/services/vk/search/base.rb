@@ -26,7 +26,7 @@ module VK
         response_data['items']
       end
 
-      def params
+      def request_params
         {
           **super,
           q: @args[:query],
@@ -35,7 +35,7 @@ module VK
         }
       end
 
-      def signature
+      def request_raw_signature
         "/method/#{api_method}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \

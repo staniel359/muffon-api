@@ -23,23 +23,23 @@ module Odnoklassniki
         ]
       end
 
-      def params
+      def forbidden?
+        response_data['error'] == 'error.copyright.restriction'
+      end
+
+      def request_params
         {
           **super,
           tid: @args[:track_id]
         }
       end
 
-      def forbidden?
-        response_data['error'] == 'error.copyright.restriction'
+      def raw_track_data
+        response_data['track']
       end
 
       def data
         { track: track_data }
-      end
-
-      def raw_track_data
-        response_data['track']
       end
     end
   end

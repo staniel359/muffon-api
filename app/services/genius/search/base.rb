@@ -28,7 +28,7 @@ module Genius
         )
       end
 
-      def params
+      def request_params
         {
           q: @args[:query],
           page:,

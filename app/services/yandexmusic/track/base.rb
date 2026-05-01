@@ -25,11 +25,11 @@ module YandexMusic
         response_data['track']
       end
 
-      def link
-        "#{BASE_LINK}/track.jsx"
+      def request_url
+        "#{REQUEST_BASE_URL}/track.jsx"
       end
 
-      def params
+      def request_params
         { track: @args[:track_id] }
       end
     end

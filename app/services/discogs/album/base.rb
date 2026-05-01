@@ -21,8 +21,8 @@ module Discogs
         { album: album_data }
       end
 
-      def link
-        "#{BASE_LINK}/releases/#{@args[:album_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/releases/#{@args[:album_id]}"
       end
 
       alias raw_album_data response_data

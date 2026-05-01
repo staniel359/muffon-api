@@ -32,7 +32,7 @@ module LastFM
             .size
         end
 
-        def params
+        def request_params
           { page: pages_count }
         end
       end

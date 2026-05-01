@@ -5,7 +5,7 @@ module MusicBrainz
 
       private
 
-      def params
+      def request_params
         {
           **super,
           inc: 'artist-credits+tags'

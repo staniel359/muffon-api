@@ -1,7 +1,7 @@
 module Bandcamp
   module Search
     class Base < Bandcamp::Base
-      BASE_LINK =
+      REQUEST_BASE_URL =
         'https://bandcamp.com/api' \
         '/bcsearch_public_api/1/autocomplete_elastic'.freeze
       SCOPES_TYPES_DATA = {
@@ -35,18 +35,25 @@ module Bandcamp
         )
       end
 
-      def link
-        BASE_LINK
+      def response_data
+        @response_data ||=
+          Muffon::Request.call(
+            url: request_url,
+            method: 'POST',
+            payload: request_payload
+          )
       end
 
-      def payload
+      def request_url
+        REQUEST_BASE_URL
+      end
+
+      def request_payload
         {
           search_text: @args[:query],
           full_page: false
         }
       end
-
-      alias response post_response
     end
   end
 end

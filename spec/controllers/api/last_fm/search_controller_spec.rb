@@ -136,17 +136,13 @@ RSpec.describe API::LastFM::SearchController do
 
   describe 'GET :tags' do
     it 'returns 200 if query present' do
-      VCR.use_cassette(
-        'controllers/api/lastfm/search/tags/success'
-      ) do
-        get(
-          :tags,
-          params: {
-            **required_params,
-            query: 'pop'
-          }
-        )
-      end
+      get(
+        :tags,
+        params: {
+          **required_params,
+          query: 'pop'
+        }
+      )
 
       expect(response).to have_http_status(:ok)
     end
@@ -163,17 +159,13 @@ RSpec.describe API::LastFM::SearchController do
     end
 
     it 'returns 404 if wrong query' do
-      VCR.use_cassette(
-        'controllers/api/lastfm/search/tags/wrong_query'
-      ) do
-        get(
-          :tags,
-          params: {
-            **required_params,
-            query: random_string
-          }
-        )
-      end
+      get(
+        :tags,
+        params: {
+          **required_params,
+          query: random_string
+        }
+      )
 
       expect(response).to have_http_status(:ok)
     end

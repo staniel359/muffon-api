@@ -17,7 +17,7 @@ module LastFM
           .first(LIMIT)
       end
 
-      def link
+      def request_url
         "#{super}/artists"
       end
 

@@ -1,7 +1,7 @@
 module Discogs
   module Artist
     class Base < Discogs::Base
-      BASE_LINK = 'https://api.discogs.com/artists'.freeze
+      REQUEST_BASE_URL = 'https://api.discogs.com/artists'.freeze
 
       def call
         check_args

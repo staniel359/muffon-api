@@ -28,8 +28,8 @@ module LastFM
         )
       end
 
-      def link
-        "#{base_link}/+events"
+      def request_url
+        "#{super}/+events"
       end
 
       def collection_item_data_formatted(

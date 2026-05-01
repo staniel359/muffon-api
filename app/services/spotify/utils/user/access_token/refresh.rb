@@ -2,7 +2,7 @@ module Spotify
   module Utils
     module User
       class AccessToken
-        class Refresh < Spotify::Base
+        class Refresh < Spotify::Utils::User::AccessToken
           def call
             check_args
 
@@ -22,7 +22,7 @@ module Spotify
             { access_token: }
           end
 
-          def payload
+          def request_payload
             {
               grant_type: 'refresh_token',
               refresh_token:

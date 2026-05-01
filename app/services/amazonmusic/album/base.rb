@@ -31,11 +31,11 @@ module AmazonMusic
         )
       end
 
-      def link
-        "#{BASE_LINK}/showCatalogAlbum"
+      def request_url
+        "#{REQUEST_BASE_URL}/showCatalogAlbum"
       end
 
-      def payload
+      def request_payload
         AmazonMusic::Formatter::Request::Payload.call(
           model_id: @args[:album_id]
         )
@@ -44,8 +44,6 @@ module AmazonMusic
       def data
         { album: album_data }
       end
-
-      alias response post_response
     end
   end
 end

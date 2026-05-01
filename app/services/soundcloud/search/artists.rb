@@ -14,8 +14,8 @@ module SoundCloud
         )
       end
 
-      def link
-        "#{BASE_LINK}/search/users"
+      def request_url
+        "#{REQUEST_BASE_URL}/search/users"
       end
 
       def collection_item_data_formatted(

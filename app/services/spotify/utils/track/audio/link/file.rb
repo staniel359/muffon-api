@@ -18,8 +18,17 @@ module Spotify
               ]
             end
 
-            def link
-              "#{BASE_LINK}/storage-resolve/v2/files" \
+            def data
+              Muffon::Request.call(
+                url: request_url,
+                method: 'GET',
+                params: request_params,
+                headers: request_headers
+              )
+            end
+
+            def request_url
+              "#{REQUEST_BASE_URL}/storage-resolve/v2/files" \
                 "/audio/interactive/10/#{file_id}"
             end
 
@@ -37,8 +46,6 @@ module Spotify
                 'file_ids_mp4'
               )
             end
-
-            alias data response_data
           end
         end
       end

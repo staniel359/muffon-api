@@ -13,11 +13,11 @@ module AmazonMusic
         )
       end
 
-      def link
-        "#{BASE_LINK}/showCatalogArtist"
+      def request_url
+        "#{REQUEST_BASE_URL}/showCatalogArtist"
       end
 
-      def payload
+      def request_payload
         AmazonMusic::Formatter::Request::Payload.call(
           model_id: @args[:artist_id]
         )

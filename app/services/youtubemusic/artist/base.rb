@@ -28,15 +28,8 @@ module YouTubeMusic
           .blank?
       end
 
-      def link
-        "#{BASE_LINK}/browse"
-      end
-
-      def payload
-        {
-          'browseId' => @args[:artist_id],
-          'context' => payload_context_data
-        }.to_json
+      def request_url
+        "#{REQUEST_BASE_URL}/browse"
       end
 
       def data
@@ -47,7 +40,6 @@ module YouTubeMusic
         { name: }
       end
 
-      alias response post_response
       alias raw_artist_data response_data
     end
   end

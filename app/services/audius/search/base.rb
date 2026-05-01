@@ -21,11 +21,11 @@ module Audius
         { search: search_data }
       end
 
-      def link
-        "#{BASE_LINK}/search/full"
+      def request_url
+        "#{REQUEST_BASE_URL}/search/full"
       end
 
-      def params
+      def request_params
         {
           **super,
           query: @args[:query],

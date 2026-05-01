@@ -17,11 +17,11 @@ module MusicBrainz
         ]
       end
 
-      def link
-        "#{BASE_LINK}/release/#{@args[:album_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/release/#{@args[:album_id]}"
       end
 
-      def params
+      def request_params
         {
           **super,
           inc: 'artist-credits+tags+labels+recordings'

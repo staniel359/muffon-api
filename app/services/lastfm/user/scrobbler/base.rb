@@ -20,20 +20,21 @@ module LastFM
         def data
           return if lastfm_connection_record.blank?
 
-          post_response
+          Muffon::Request.call(
+            url: request_url,
+            method: 'POST',
+            payload: request_payload,
+            proxy: request_proxy
+          )
 
           { success: true }
         end
 
-        def link
-          BASE_LINK
+        def request_url
+          REQUEST_BASE_URL
         end
 
-        def params
-          nil
-        end
-
-        def payload
+        def request_payload
           {
             api_key:,
             api_sig: api_signature_hex,

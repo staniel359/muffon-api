@@ -1,16 +1,26 @@
 module YandexMusic
   class Base < Muffon::Base
     SOURCE_NAME = 'yandexmusic'.freeze
-    BASE_LINK = 'https://music.yandex.ru/handlers'.freeze
+    REQUEST_BASE_URL = 'https://music.yandex.ru/handlers'.freeze
 
     private
 
-    def proxy
-      proxy_data[:ru].sample
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          proxy: request_proxy
+        )
     end
 
-    def params
+    def request_params
       { language: }
+    end
+
+    def request_proxy
+      proxy_data[:ru].sample
     end
   end
 end

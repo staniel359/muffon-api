@@ -37,8 +37,6 @@ module Spotify
       def data
         { track: track_data }
       end
-
-      alias response post_response
     end
   end
 end

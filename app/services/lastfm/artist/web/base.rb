@@ -10,8 +10,16 @@ module LastFM
           name.blank?
         end
 
-        def base_link
-          "https://www.last.fm/music/#{artist_name_formatted}"
+        def name
+          response_data
+            .css(
+              '.header-new-title'
+            )[0]
+            &.text
+        end
+
+        def request_url
+          "#{super}/music/#{artist_name_formatted}"
         end
 
         def artist_name_formatted
@@ -22,14 +30,6 @@ module LastFM
 
         def artist_base_data
           { name: }
-        end
-
-        def name
-          response_data
-            .css(
-              '.header-new-title'
-            )[0]
-            &.text
         end
       end
     end

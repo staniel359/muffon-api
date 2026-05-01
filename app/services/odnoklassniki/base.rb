@@ -6,28 +6,22 @@ module Odnoklassniki
 
     private
 
-    def retry_with_new_session_id?
-      authentication_failed?
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          proxy: request_proxy
+        )
     end
 
-    def authentication_failed?
-      response_data['error'] == 'error.notloggedin'
-    end
-
-    def link
+    def request_url
       "https://wmf.ok.ru/#{endpoint_name};jsessionid=#{session_id}"
     end
 
     def endpoint_name
       self.class::ENDPOINT_NAME
-    end
-
-    def params
-      { imgfmt: 'base' }
-    end
-
-    def proxy
-      proxy_data[:ru].sample
     end
 
     def session_id
@@ -51,6 +45,22 @@ module Odnoklassniki
 
     def refresh_session_id?
       !!@args[:is_refresh_session_id]
+    end
+
+    def request_params
+      { imgfmt: 'base' }
+    end
+
+    def request_proxy
+      proxy_data[:ru].sample
+    end
+
+    def retry_with_new_session_id?
+      authentication_failed?
+    end
+
+    def authentication_failed?
+      response_data['error'] == 'error.notloggedin'
     end
 
     def retry_with_new_session_id

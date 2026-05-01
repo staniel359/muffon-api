@@ -19,11 +19,11 @@ module YandexMusic
         { search: search_data }
       end
 
-      def link
-        "#{BASE_LINK}/music-search.jsx"
+      def request_url
+        "#{REQUEST_BASE_URL}/music-search.jsx"
       end
 
-      def params
+      def request_params
         {
           **super,
           text: @args[:query],

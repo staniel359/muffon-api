@@ -1,15 +1,24 @@
 module LastFM
   class Base < Muffon::Base
     SOURCE_NAME = 'lastfm'.freeze
-    BASE_LINK = 'https://ws.audioscrobbler.com/2.0'.freeze
+    REQUEST_BASE_URL = 'https://ws.audioscrobbler.com/2.0'.freeze
 
     private
 
-    def link
-      BASE_LINK
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params
+        )
     end
 
-    def params
+    def request_url
+      REQUEST_BASE_URL
+    end
+
+    def request_params
       {
         method: api_method,
         api_key:,

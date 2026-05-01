@@ -26,7 +26,7 @@ module Spotify
                 --pssh '#{pssh}' \
                 --token '#{spotify_audio_token}' \
                 --client_token '#{spotify_client_token}' \
-                --user_agent '#{USER_AGENT}'`
+                --user_agent '#{REQUEST_USER_AGENT}'`
             end
 
             def test_key
@@ -37,7 +37,7 @@ module Spotify
               response_data['pssh']
             end
 
-            def link
+            def request_url
               "https://seektables.scdn.co/seektable/#{@args[:file_id]}.json"
             end
           end

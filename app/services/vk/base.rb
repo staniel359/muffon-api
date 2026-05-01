@@ -1,23 +1,42 @@
 module VK
   class Base < Muffon::Base
     SOURCE_NAME = 'vk'.freeze
-    BASE_LINK = 'https://api.vk.ru'.freeze
+    REQUEST_BASE_URL = 'https://api.vk.ru'.freeze
 
     private
 
-    def link
-      "#{BASE_LINK}/method/#{api_method}"
+    def response_data
+      error_data = raw_response_data['error']
+
+      raise_error(error_data) if error_data.present? && !test?
+
+      raw_response_data['response']
+    end
+
+    def raw_response_data
+      @raw_response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          headers: request_headers,
+          proxy: request_proxy
+        )
+    end
+
+    def request_url
+      "#{REQUEST_BASE_URL}/method/#{api_method}"
     end
 
     def api_method
       self.class::API_METHOD
     end
 
-    def params
+    def request_params
       {
         access_token:,
         v: '5.131',
-        sig: md5_signature
+        sig: request_signature
       }
     end
 
@@ -41,9 +60,9 @@ module VK
       )
     end
 
-    def md5_signature
+    def request_signature
       Digest::MD5.hexdigest(
-        signature
+        request_raw_signature
       )
     end
 
@@ -54,7 +73,7 @@ module VK
       )
     end
 
-    def headers
+    def request_headers
       { 'User-Agent' => user_agent }
     end
 
@@ -65,16 +84,8 @@ module VK
       )
     end
 
-    def proxy
+    def request_proxy
       proxy_data[:ru].sample
-    end
-
-    def response_data
-      error_data = super['error']
-
-      raise_error(error_data) if error_data.present? && !test?
-
-      super['response']
     end
 
     def raise_error(error_data)

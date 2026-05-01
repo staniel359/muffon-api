@@ -14,8 +14,8 @@ module Genius
         )
       end
 
-      def link
-        "#{BASE_LINK}/search/album"
+      def request_url
+        "#{REQUEST_BASE_URL}/search/album"
       end
 
       def collection_item_data_formatted(

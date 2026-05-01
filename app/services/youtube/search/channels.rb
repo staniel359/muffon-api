@@ -3,7 +3,7 @@ module YouTube
     class Channels < YouTube::Search::Base
       private
 
-      def params
+      def request_params
         {
           **super,
           type: SCOPES_TYPES_DATA['channels']

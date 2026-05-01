@@ -1,14 +1,24 @@
 module MusixMatch
   class Base < Muffon::Base
     SOURCE_NAME = 'musixmatch'.freeze
-    BASE_LINK = 'https://www.musixmatch.com'.freeze
+    REQUEST_BASE_URL = 'https://www.musixmatch.com'.freeze
 
     include Muffon::Mixins::GlobalStorage
 
     private
 
-    def base_link
-      "#{BASE_LINK}/_next/data/#{musixmatch_link_build_id}/en"
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          cookies: request_cookies
+        )
+    end
+
+    def request_url
+      "#{REQUEST_BASE_URL}/_next/data/#{musixmatch_link_build_id}/en"
     end
 
     def musixmatch_link_build_id
@@ -34,7 +44,11 @@ module MusixMatch
       !!@args[:is_refresh_link_build_id]
     end
 
-    def cookies
+    def request_params
+      {}
+    end
+
+    def request_cookies
       credentials.dig(
         :musixmatch,
         :cookies

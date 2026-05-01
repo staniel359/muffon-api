@@ -31,7 +31,7 @@ module LastFM
             .to_i
         end
 
-        def params
+        def request_params
           {
             **super,
             page:,

@@ -17,8 +17,8 @@ module Discogs
         ]
       end
 
-      def link
-        "#{BASE_LINK}/masters/#{@args[:group_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/masters/#{@args[:group_id]}"
       end
 
       def data

@@ -29,7 +29,7 @@ module Genius
         end
 
         def lyrics_nodes
-          html_response_data.xpath(
+          response_data.xpath(
             "//*[
               contains(
                 @class, 'Lyrics__Container'
@@ -38,7 +38,16 @@ module Genius
           )
         end
 
-        def link
+        def response_data
+          Muffon::Request.call(
+            url: request_url,
+            method: 'GET',
+            response_type: 'html',
+            proxy: request_proxy
+          )
+        end
+
+        def request_url
           "https://genius.com#{@args[:track_slug]}"
         end
 

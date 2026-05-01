@@ -1,11 +1,25 @@
 module Genius
   class Base < Muffon::Base
     SOURCE_NAME = 'genius'.freeze
-    BASE_LINK = 'https://genius.com/api'.freeze
+    REQUEST_BASE_URL = 'https://genius.com/api'.freeze
 
     private
 
-    def proxy
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          proxy: request_proxy
+        )
+    end
+
+    def request_params
+      {}
+    end
+
+    def request_proxy
       proxy_data
         .dig(:uk, :ipv6)
         .sample

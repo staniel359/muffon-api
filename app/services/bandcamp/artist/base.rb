@@ -21,11 +21,11 @@ module Bandcamp
         name.blank?
       end
 
-      def link
-        "#{BASE_LINK}/band_details"
+      def request_url
+        "#{REQUEST_BASE_URL}/band_details"
       end
 
-      def params
+      def request_params
         { band_id: @args[:artist_id] }
       end
 

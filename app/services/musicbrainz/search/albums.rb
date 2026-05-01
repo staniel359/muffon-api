@@ -18,8 +18,8 @@ module MusicBrainz
         response_data['releases']
       end
 
-      def link
-        "#{BASE_LINK}/release"
+      def request_url
+        "#{REQUEST_BASE_URL}/release"
       end
 
       def collection_item_data_formatted(

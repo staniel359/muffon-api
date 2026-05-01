@@ -41,11 +41,11 @@ module YouTube
         response_data['items']
       end
 
-      def link
-        "#{BASE_LINK}/playlistItems"
+      def request_url
+        "#{REQUEST_BASE_URL}/playlistItems"
       end
 
-      def params
+      def request_params
         {
           **super,
           playlistId: @args[:playlist_id],

@@ -1,7 +1,7 @@
 module Spotify
   module Utils
     class ServerTime < Spotify::Base
-      BASE_LINK =
+      REQUEST_BASE_URL =
         'https://open.spotify.com/api/server-time'.freeze
 
       def call
@@ -14,12 +14,15 @@ module Spotify
         response_data['serverTime']
       end
 
-      def link
-        BASE_LINK
+      def response_data
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET'
+        )
       end
 
-      def headers
-        nil
+      def request_url
+        REQUEST_BASE_URL
       end
     end
   end

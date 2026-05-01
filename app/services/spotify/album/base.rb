@@ -30,7 +30,7 @@ module Spotify
         )
       end
 
-      def payload
+      def request_payload
         {
           'variables' => {
             'uri' => spotify_uri,
@@ -54,8 +54,6 @@ module Spotify
       def data
         { album: album_data }
       end
-
-      alias response post_response
     end
   end
 end

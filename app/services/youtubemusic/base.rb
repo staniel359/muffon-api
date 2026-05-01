@@ -1,9 +1,26 @@
 module YouTubeMusic
   class Base < Muffon::Base
     SOURCE_NAME = 'youtubemusic'.freeze
-    BASE_LINK = 'https://music.youtube.com/youtubei/v1'.freeze
+    REQUEST_BASE_URL = 'https://music.youtube.com/youtubei/v1'.freeze
 
     private
+
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'POST',
+          params: request_params,
+          payload: request_payload,
+          headers: request_headers,
+          cookies: request_cookies,
+          proxy: request_proxy
+        )
+    end
+
+    def request_params
+      {}
+    end
 
     def payload_context_data
       credentials.dig(
@@ -13,9 +30,8 @@ module YouTubeMusic
     end
 
     # rubocop:disable Layout/LineLength
-    def headers
+    def request_headers
       {
-        **super,
         'X-Goog-Visitor-Id' =>
           'CgtoTGtFbEc5UEYtZyihh9XNBjIKCgJHQhIEGgAgaGLfAgrcAjE2LllUPU5QUFp4dU91N28tQWQxMk5Vdl9rTl9fLW5WVEZBS3BnSS0xb1p6YUpZSlpGaGlidnprY3RvUVptZUtZeFFGUE84a2pVX0dLUjAwaVZXemJab19tZlppeS11U2lpQUpzY3IyT1plSkNqOGpzbjcwOW94NDY3VlFzZ281VnFLcS1YOS12aERNR2syWF80cTlpREU5T3VEbWtqNlllemJ0X2paaktxbFgzRW1QTF9SekN3aFFuc2Y1OFZYVU5HQi1FMHYzeVZsdW9Wb1BiVTRTTUxWd1JLZXhRcENydnlUVlExaUl3WUZuOWJmVDljQ0R3cE1zdEFFdGliRUdFWTJKNFpMVVlqV2dyT1VrMWRRRS1oZ1RLdC1QMkM2VW5RZWtvY0kwSWZNMUNIMEZoSkRWbk10UmhibEowN3JJQnJQMWl5M1BIUGpkUmxmUTBOWHVFb2VUaW4ydw%3D%3D',
         'X-Youtube-Bootstrap-Logged-In' => 'false',
@@ -26,7 +42,7 @@ module YouTubeMusic
       }
     end
 
-    def cookies
+    def request_cookies
       {
         '__Secure-ROLLOUT_TOKEN' => 'CNGmmZiBwa2IkwEQsPS9-aGfkwMYhYDS_aGfkwM=',
         '__Secure-YNID' => '16.YT=W3P7dRt2_-T1FRjJFkYP3lXqi77dPYPo0KNpuacliJWxY3Iv-fN9wLYXHkNsT3Wx_vOA5h_GsL-nczN5RfFUages7VV8l36oXmHAETJPob5vtuoLKhmavneoE8c195kDozCOihc6zYNEklhyMi9RQilc9FC0Y3OGfSqL7VRNpZY3EBHb1poruRSHNIdCT6WwdiN0QmyX59Rstu5M-KUK2AOMDNdpHtnhUVbb4CUGJIavGwbT9WrmXmt4jcPDnfSMwryiFun5yNM8eYeqs1icrBZhw16UmKTYEJd_hO7lKbbVnh22Wu70bm5ItSeVYmpEUQyQw4onWovDwFaNn8HNnQ',
@@ -39,7 +55,7 @@ module YouTubeMusic
     end
     # rubocop:enable Layout/LineLength
 
-    def proxy
+    def request_proxy
       proxy_data
         .dig(:uk, :ipv6)
         .sample

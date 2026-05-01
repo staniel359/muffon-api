@@ -28,8 +28,8 @@ module Genius
         )
       end
 
-      def link
-        "#{BASE_LINK}/songs/#{@args[:track_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/songs/#{@args[:track_id]}"
       end
     end
   end

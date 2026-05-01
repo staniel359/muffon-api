@@ -1,7 +1,7 @@
 module LastFM
   module Formatter
     class Image < LastFM::Base
-      BASE_LINK = 'https://lastfm.freetls.fastly.net'.freeze
+      REQUEST_BASE_URL = 'https://lastfm.freetls.fastly.net'.freeze
       DEFAULT_IDS_DATA = {
         'artist' => '2a96cbd8b46e442fc41c2b86b821562f',
         'album' => 'c6f59c1e5e7240a4c0d427abd71f3dbb',
@@ -50,7 +50,7 @@ module LastFM
           .sub('/270x205', size)
           .sub('/300x300', size)
           .sub('/64s', size)
-          .sub(%r{(.+)(?=/i/u)}, BASE_LINK)
+          .sub(%r{(.+)(?=/i/u)}, REQUEST_BASE_URL)
       end
     end
   end

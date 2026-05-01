@@ -5,7 +5,7 @@ module LastFM
 
       private
 
-      def params
+      def request_params
         {
           **super,
           lang: language

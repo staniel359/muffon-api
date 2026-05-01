@@ -21,8 +21,8 @@ module Discogs
         { label: label_data }
       end
 
-      def link
-        "#{BASE_LINK}/labels/#{@args[:label_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/labels/#{@args[:label_id]}"
       end
 
       alias raw_label_data response_data

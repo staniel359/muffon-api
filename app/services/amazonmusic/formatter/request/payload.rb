@@ -37,7 +37,7 @@ module AmazonMusic
             'x-amzn-device-width' => '1920',
             'x-amzn-device-family' => 'WebPlayer',
             'x-amzn-device-id' => DEVICE_ID,
-            'x-amzn-user-agent' => USER_AGENT,
+            'x-amzn-user-agent' => REQUEST_USER_AGENT,
             'x-amzn-device-height' => '1080',
             'x-amzn-request-id' => uuid_string,
             'x-amzn-device-language' => 'en_GB',

@@ -7,14 +7,14 @@ module VK
 
       private
 
-      def params
+      def request_params
         {
           **super,
           artist_id: @args[:artist_id]
         }
       end
 
-      def signature
+      def request_raw_signature
         "/method/#{api_method}" \
           "?access_token=#{access_token}" \
           '&v=5.131' \

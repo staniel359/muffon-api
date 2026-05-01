@@ -24,7 +24,7 @@ module LastFM
         response_data['topalbums']
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

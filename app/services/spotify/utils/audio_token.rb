@@ -3,7 +3,7 @@ module Spotify
     class AudioToken < Spotify::Utils::Token
       private
 
-      def cookies
+      def request_cookies
         {
           **super,
           **audio_cookies

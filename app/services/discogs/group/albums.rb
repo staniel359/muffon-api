@@ -17,11 +17,11 @@ module Discogs
         raw_album_group_data['versions']
       end
 
-      def link
+      def request_url
         "#{super}/versions"
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

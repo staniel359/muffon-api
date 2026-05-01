@@ -39,8 +39,6 @@ module AmazonMusic
       def artist_data
         { name: }
       end
-
-      alias response post_response
     end
   end
 end

@@ -1,7 +1,7 @@
 module AmazonMusic
   module Utils
     class Token < AmazonMusic::Base
-      BASE_LINK = 'https://api.amazon.com/auth/o2/token'.freeze
+      REQUEST_BASE_URL = 'https://api.amazon.com/auth/o2/token'.freeze
 
       def call
         data
@@ -13,11 +13,11 @@ module AmazonMusic
         response_data['access_token']
       end
 
-      def link
-        BASE_LINK
+      def request_url
+        REQUEST_BASE_URL
       end
 
-      def payload
+      def request_payload
         {
           grant_type: 'refresh_token',
           client_id:,
@@ -46,8 +46,6 @@ module AmazonMusic
           :refresh_token
         )
       end
-
-      alias response post_response
     end
   end
 end

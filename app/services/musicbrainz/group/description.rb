@@ -1,7 +1,7 @@
 module MusicBrainz
   module Group
     class Description < MusicBrainz::Group::Base
-      BASE_LINK = 'https://musicbrainz.org'.freeze
+      REQUEST_BASE_URL = 'https://musicbrainz.org'.freeze
 
       private
 
@@ -12,12 +12,25 @@ module MusicBrainz
       end
 
       def description
-        html_response_data
+        response_data
           .css('.wikipedia-extract-body p:not([class=mw-empty-elt])')
           .map(&:text)
           .join("\n")
           .strip
           .presence
+      end
+
+      def response_data
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          response_type: 'html',
+          params: request_params
+        )
+      end
+
+      def request_url
+        "#{REQUEST_BASE_URL}/release-group/#{@args[:group_id]}"
       end
     end
   end

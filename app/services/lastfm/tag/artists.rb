@@ -17,7 +17,7 @@ module LastFM
         response_data['topartists']
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

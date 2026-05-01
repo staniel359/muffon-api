@@ -52,15 +52,11 @@ module LastFM
         end
       end
 
-      def params
+      def request_params
         {
           **super,
-          **user_params
+          user: lastfm_nickname
         }
-      end
-
-      def user_params
-        { user: lastfm_nickname }
       end
 
       def lastfm_nickname

@@ -1,11 +1,20 @@
 module Discogs
   class Base < Muffon::Base
     SOURCE_NAME = 'discogs'.freeze
-    BASE_LINK = 'https://api.discogs.com'.freeze
+    REQUEST_BASE_URL = 'https://api.discogs.com'.freeze
 
     private
 
-    def params
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params
+        )
+    end
+
+    def request_params
       {
         key: api_key,
         secret: api_secret

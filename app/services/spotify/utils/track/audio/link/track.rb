@@ -24,15 +24,25 @@ module Spotify
               response_data['media'].blank?
             end
 
-            def link
-              "#{BASE_LINK}/track-playback/v1/media/#{spotify_track_uri}"
+            def response_data
+              @response_data ||=
+                Muffon::Request.call(
+                  url: request_url,
+                  method: 'GET',
+                  params: request_params,
+                  headers: request_headers
+                )
+            end
+
+            def request_url
+              "#{REQUEST_BASE_URL}/track-playback/v1/media/#{spotify_track_uri}"
             end
 
             def spotify_track_uri
               "spotify:track:#{@args[:track_id]}"
             end
 
-            def params
+            def request_params
               { 'manifestFileFormat' => 'file_ids_mp4' }
             end
 

@@ -2,7 +2,6 @@ module Muffon
   class Base < Service
     include Muffon::Mixins::Base
     include Muffon::Mixins::Errors
-    include Muffon::Mixins::Request
     include Muffon::Mixins::Formatters
     include Muffon::Mixins::Pagination
 

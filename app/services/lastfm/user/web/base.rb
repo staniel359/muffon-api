@@ -6,8 +6,8 @@ module LastFM
 
         private
 
-        def base_link
-          "https://www.last.fm/user/#{lastfm_nickname}"
+        def request_url
+          "#{super}/user/#{lastfm_nickname}"
         end
 
         def data

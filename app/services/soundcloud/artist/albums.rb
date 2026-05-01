@@ -26,11 +26,11 @@ module SoundCloud
         raw_artist_data['collection']
       end
 
-      def link
+      def request_url
         "#{super}/albums"
       end
 
-      def params
+      def request_params
         {
           **super,
           limit: PAGE_LIMIT

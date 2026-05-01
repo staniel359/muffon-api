@@ -19,13 +19,6 @@ module AmazonMusic
         { search: search_data }
       end
 
-      def payload
-        AmazonMusic::Formatter::Request::Payload.call(
-          query: @args[:query],
-          page: @args[:page]
-        )
-      end
-
       def raw_collection
         response_data.dig(
           'methods',
@@ -42,7 +35,12 @@ module AmazonMusic
           )
       end
 
-      alias response post_response
+      def request_payload
+        AmazonMusic::Formatter::Request::Payload.call(
+          query: @args[:query],
+          page: @args[:page]
+        )
+      end
     end
   end
 end

@@ -27,7 +27,7 @@ module AmazonMusic
                 --token '#{amazonmusic_token}' \
                 --device_id '#{DEVICE_ID}' \
                 --device_type_id '#{DEVICE_TYPE_ID}' \
-                --user_agent '#{USER_AGENT}'`
+                --user_agent '#{REQUEST_USER_AGENT}'`
             end
 
             def test_key

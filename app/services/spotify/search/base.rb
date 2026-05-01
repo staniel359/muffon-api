@@ -24,8 +24,6 @@ module Spotify
       def maximum_items_count
         pagination_maximum_items_count_data[:search]
       end
-
-      alias response post_response
     end
   end
 end

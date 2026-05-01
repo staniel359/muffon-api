@@ -1,7 +1,7 @@
 module Spotify
   class Base < Muffon::Base
     SOURCE_NAME = 'spotify'.freeze
-    BASE_LINK =
+    REQUEST_BASE_URL =
       'https://api-partner.spotify.com/pathfinder/v2/query'.freeze
 
     include Muffon::Mixins::GlobalStorage
@@ -9,13 +9,22 @@ module Spotify
 
     private
 
-    def link
-      BASE_LINK
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'POST',
+          payload: request_payload,
+          headers: request_headers
+        )
     end
 
-    def headers
+    def request_url
+      REQUEST_BASE_URL
+    end
+
+    def request_headers
       {
-        **super,
         'Authorization' => "Bearer #{spotify_token}",
         'Client-Token' => spotify_client_token
       }
@@ -121,7 +130,8 @@ module Spotify
       if defined?(@spotify_connection)
         @spotify_connection
       else
-        @spotify_connection = profile_record&.spotify_connection
+        @spotify_connection =
+          profile_record&.spotify_connection
       end
     end
   end

@@ -10,6 +10,13 @@ module YouTubeMusic
 
       private
 
+      def request_payload
+        {
+          'browseId' => @args[:artist_id],
+          'context' => payload_context_data
+        }.to_json
+      end
+
       def artist_data
         Muffon::Formatter::Source::Artist::Info.call(
           source_original_link:,

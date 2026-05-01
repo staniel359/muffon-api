@@ -25,7 +25,7 @@ module Spotify
           )
         end
 
-        def payload
+        def request_payload
           {
             'variables' => {
               'uri' => spotify_uri,

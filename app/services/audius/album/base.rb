@@ -28,8 +28,8 @@ module Audius
         )
       end
 
-      def link
-        "#{BASE_LINK}/playlists/#{@args[:album_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/playlists/#{@args[:album_id]}"
       end
     end
   end

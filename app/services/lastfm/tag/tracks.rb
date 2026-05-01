@@ -17,7 +17,7 @@ module LastFM
         raw_tag_data['track']
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

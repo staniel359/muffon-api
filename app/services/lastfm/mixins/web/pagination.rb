@@ -4,7 +4,7 @@ module LastFM
       module Pagination
         private
 
-        def params
+        def request_params
           {
             **super,
             page:

@@ -4,7 +4,7 @@ module LastFM
       class Saver < LastFM::User::Scrobbler::Base
         private
 
-        def payload
+        def request_payload
           {
             **super,
             method: 'track.scrobble',

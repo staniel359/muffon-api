@@ -13,7 +13,7 @@ module Bandcamp
         )
       end
 
-      def payload
+      def request_payload
         {
           **super,
           search_filter: SCOPES_TYPES_DATA['albums']

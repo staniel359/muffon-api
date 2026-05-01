@@ -14,7 +14,7 @@ module Bandcamp
 
         def required_args
           %i[
-            link
+            url
           ]
         end
 
@@ -40,11 +40,13 @@ module Bandcamp
           )
         end
 
-        def link
-          @args[:link]
+        def response_data
+          Muffon::Request.call(
+            url: @args[:url],
+            method: 'GET',
+            response_type: 'html'
+          )
         end
-
-        alias response_data html_response_data
       end
     end
   end

@@ -2,7 +2,7 @@ module Spotify
   module Utils
     module User
       class AccessToken < Spotify::Base
-        BASE_LINK =
+        REQUEST_BASE_URL =
           'https://accounts.spotify.com/api/token'.freeze
 
         def call
@@ -34,11 +34,11 @@ module Spotify
           response_data['access_token']
         end
 
-        def link
-          BASE_LINK
+        def request_url
+          REQUEST_BASE_URL
         end
 
-        def payload
+        def request_payload
           {
             grant_type: 'authorization_code',
             code: @args[:code],
@@ -50,7 +50,7 @@ module Spotify
           "#{credentials[:url]}/code"
         end
 
-        def headers
+        def request_headers
           {
             'Authorization' => "Basic #{client_id_secret_encoded}",
             'Content-Type' => 'application/x-www-form-urlencoded'
@@ -70,8 +70,6 @@ module Spotify
         def refresh_token
           response_data['refresh_token']
         end
-
-        alias response post_response
       end
     end
   end

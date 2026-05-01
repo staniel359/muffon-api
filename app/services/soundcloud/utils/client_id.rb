@@ -1,7 +1,7 @@
 module SoundCloud
   module Utils
     class ClientId < SoundCloud::Base
-      BASE_LINK = 'https://soundcloud.com'.freeze
+      REQUEST_BASE_URL = 'https://soundcloud.com'.freeze
 
       def call
         data
@@ -43,21 +43,19 @@ module SoundCloud
       end
 
       def scripts
-        html_response_data.css(
-          'script'
+        response_data.css('script')
+      end
+
+      def response_data
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          response_type: 'html'
         )
       end
 
-      def link
-        BASE_LINK
-      end
-
-      def params
-        nil
-      end
-
-      def proxy
-        nil
+      def request_url
+        REQUEST_BASE_URL
       end
 
       def matched_script?(script)

@@ -3,8 +3,8 @@ module LastFM
     class Upcoming < LastFM::Releases::Base
       private
 
-      def link
-        "#{BASE_LINK}/coming-soon/popular"
+      def request_url
+        "#{super}/coming-soon/popular"
       end
     end
   end

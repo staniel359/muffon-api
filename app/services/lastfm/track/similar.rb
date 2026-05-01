@@ -50,7 +50,7 @@ module LastFM
         response_data['similartracks']
       end
 
-      def params
+      def request_params
         {
           **super,
           limit: PAGE_LIMIT

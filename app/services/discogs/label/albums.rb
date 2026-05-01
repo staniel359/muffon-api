@@ -17,11 +17,11 @@ module Discogs
         raw_label_data['releases']
       end
 
-      def link
+      def request_url
         "#{super}/releases"
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

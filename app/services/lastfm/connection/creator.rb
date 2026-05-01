@@ -18,7 +18,7 @@ module LastFM
         ]
       end
 
-      def link
+      def request_link
         "#{super}?method=#{api_method}" \
           "&api_key=#{api_key}" \
           "&token=#{lastfm_token}" \
@@ -26,7 +26,7 @@ module LastFM
           '&format=json'
       end
 
-      def params
+      def request_params
         {}
       end
 

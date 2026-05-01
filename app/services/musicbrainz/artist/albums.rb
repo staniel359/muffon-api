@@ -48,11 +48,11 @@ module MusicBrainz
         raw_artist_data['release-groups']
       end
 
-      def link
-        "#{BASE_LINK}/release-group"
+      def request_url
+        "#{REQUEST_BASE_URL}/release-group"
       end
 
-      def params
+      def request_params
         {
           **super,
           artist: @args[:artist_id],

@@ -17,11 +17,11 @@ module MusicBrainz
         raw_album_group_data['releases']
       end
 
-      def link
-        "#{base_link}/release"
+      def request_url
+        "#{REQUEST_BASE_URL}/release"
       end
 
-      def params
+      def request_params
         {
           **super,
           'release-group' => @args[:group_id],

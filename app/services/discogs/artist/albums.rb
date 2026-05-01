@@ -24,11 +24,11 @@ module Discogs
         raw_artist_data['releases']
       end
 
-      def link
-        "#{BASE_LINK}/#{@args[:artist_id]}/releases"
+      def request_url
+        "#{REQUEST_BASE_URL}/#{@args[:artist_id]}/releases"
       end
 
-      def params
+      def request_params
         {
           **super,
           page:,

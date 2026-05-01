@@ -45,12 +45,8 @@ module SoundCloud
             response_data['url']
           end
 
-          def link
+          def request_url
             audio_link_data['url']
-          end
-
-          def params
-            { client_id: }
           end
         end
       end

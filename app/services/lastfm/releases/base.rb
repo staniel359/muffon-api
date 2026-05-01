@@ -1,8 +1,6 @@
 module LastFM
   module Releases
     class Base < LastFM::Base
-      BASE_LINK = 'https://www.last.fm/music/+releases'.freeze
-
       include LastFM::Mixins::Web
       include LastFM::Mixins::Web::Pagination
 
@@ -30,6 +28,10 @@ module LastFM
         response_data.css(
           '.resource-list--release-list-item'
         )
+      end
+
+      def request_url
+        "#{super}/music/+releases"
       end
 
       def collection_item_data_formatted(

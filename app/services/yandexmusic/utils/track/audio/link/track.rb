@@ -12,28 +12,38 @@ module YandexMusic
 
             private
 
-            def link
+            def required_args
+              %i[
+                track_id
+              ]
+            end
+
+            def data
+              Muffon::Request.call(
+                url: request_url,
+                method: 'GET',
+                headers: request_headers,
+                cookies: request_cookies,
+                proxy: request_proxy
+              )
+            end
+
+            def request_url
               'https://music.yandex.ru/api/v2.1' \
                 "/handlers/track/#{@args[:track_id]}" \
                 '/web-album_track-track-track-main' \
                 '/download/m'
             end
 
-            def params
-              nil
-            end
-
-            def headers
+            def request_headers
               {
-                **super,
                 'X-Retpath-Y' =>
-                  'https%3A%2F%2Fmusic.yandex.ru/',
-                'Cookie' => cookies_string
+                  'https%3A%2F%2Fmusic.yandex.ru/'
               }
             end
 
-            def cookies_string
-              "Session_id=#{session_id}"
+            def request_cookies
+              { 'Session_id' => session_id }
             end
 
             def session_id
@@ -44,8 +54,6 @@ module YandexMusic
                 :session_id
               )
             end
-
-            alias data response_data
           end
         end
       end

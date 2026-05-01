@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Utils
     class SessionId < Odnoklassniki::Base
-      BASE_LINK = 'https://ok.ru/dk'.freeze
+      REQUEST_BASE_URL = 'https://ok.ru/dk'.freeze
 
       def call
         data
@@ -10,32 +10,33 @@ module Odnoklassniki
       private
 
       def data
-        get_cookie(
-          response: post_response,
-          cookie: 'JSESSIONID'
+        get_response_cookie(
+          raw_response:,
+          cookie_name: 'JSESSIONID'
         )
       end
 
-      def post_response
-        format_post_request(
-          link:,
-          params:,
-          payload:,
-          headers:,
-          proxy:,
+      def raw_response
+        Muffon::Request.call(
+          url: request_url,
+          method: 'POST',
+          response_type: 'raw',
+          params: request_params,
+          payload: request_payload,
+          proxy: request_proxy,
           is_redirect: false
         )
       end
 
-      def link
-        BASE_LINK
+      def request_url
+        REQUEST_BASE_URL
       end
 
-      def params
+      def request_params
         { cmd: 'AnonymLogin' }
       end
 
-      def payload
+      def request_payload
         {
           'st.email' => email,
           'st.password' => password,

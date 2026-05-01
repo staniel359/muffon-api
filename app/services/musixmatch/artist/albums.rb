@@ -44,8 +44,8 @@ module MusixMatch
         )
       end
 
-      def link
-        "#{base_link}/artist/#{@args[:artist_slug]}/albums.json"
+      def request_url
+        "#{super}/artist/#{@args[:artist_slug]}/albums.json"
       end
 
       def albums_type_key

@@ -1,7 +1,7 @@
 module Spotify
   module User
     class Base < Spotify::Base
-      BASE_LINK = 'https://api.spotify.com/v1'.freeze
+      REQUEST_BASE_URL = 'https://api.spotify.com/v1'.freeze
 
       def call
         check_args
@@ -58,11 +58,25 @@ module Spotify
         { user: user_data }
       end
 
-      def link
-        "#{BASE_LINK}/me"
+      def response_data
+        @response_data ||=
+          Muffon::Request.call(
+            url: request_url,
+            method: 'GET',
+            params: request_params,
+            headers: request_headers
+          )
       end
 
-      def headers
+      def request_url
+        "#{REQUEST_BASE_URL}/me"
+      end
+
+      def request_params
+        {}
+      end
+
+      def request_headers
         {
           'Authorization' => "Bearer #{access_token}",
           'Content-Type' =>

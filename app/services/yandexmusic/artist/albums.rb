@@ -24,7 +24,7 @@ module YandexMusic
         raw_artist_data['albums']
       end
 
-      def params
+      def request_params
         {
           **super,
           sort: 'year',

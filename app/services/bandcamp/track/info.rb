@@ -10,11 +10,11 @@ module Bandcamp
       def track_info_data
         @track_info_data ||=
           Bandcamp::Utils::Web::Info.call(
-            link: bandcamp_link
+            url: bandcamp_url
           )
       end
 
-      def bandcamp_link
+      def bandcamp_url
         response_data['bandcamp_url']
       end
 

@@ -31,7 +31,7 @@ module Odnoklassniki
         response_data['album']
       end
 
-      def params
+      def request_params
         {
           **super,
           albumId: @args[:album_id]

@@ -17,8 +17,8 @@ module LastFM
           { playlist: playlist_data }
         end
 
-        def link
-          "#{base_link}/playlists/#{@args[:playlist_id]}"
+        def request_url
+          "#{super}/playlists/#{@args[:playlist_id]}"
         end
 
         def playlist_data
@@ -34,7 +34,7 @@ module LastFM
             .text
         end
 
-        def params
+        def request_params
           {
             **super,
             page:

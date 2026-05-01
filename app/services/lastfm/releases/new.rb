@@ -3,8 +3,8 @@ module LastFM
     class New < LastFM::Releases::Base
       private
 
-      def link
-        "#{BASE_LINK}/out-now/popular"
+      def request_url
+        "#{super}/out-now/popular"
       end
     end
   end

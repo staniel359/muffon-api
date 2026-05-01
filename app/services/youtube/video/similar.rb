@@ -1,7 +1,7 @@
 module YouTube
   module Video
     class Similar < YouTube::Video::Base
-      BASE_LINK =
+      REQUEST_BASE_URL =
         'https://music.youtube.com/youtubei/v1/next'.freeze
       SCOPES_PREFIXES = %w[
         RDAMVM
@@ -71,11 +71,20 @@ module YouTube
           )
       end
 
-      def link
-        BASE_LINK
+      def response_data
+        Muffon::Request.call(
+          url: request_url,
+          method: 'POST',
+          params: request_params,
+          payload: request_payload
+        )
       end
 
-      def params
+      def request_url
+        REQUEST_BASE_URL
+      end
+
+      def request_params
         {
           **super,
           id: @args[:video_id],
@@ -83,7 +92,7 @@ module YouTube
         }
       end
 
-      def payload
+      def request_payload
         {
           'playlistId' => scope_param,
           'context' => payload_context_data
@@ -118,8 +127,6 @@ module YouTube
           **self_args
         )
       end
-
-      alias response post_response
     end
   end
 end

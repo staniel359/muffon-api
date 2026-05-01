@@ -25,8 +25,8 @@ module Audius
         response_data['data']
       end
 
-      def link
-        "#{BASE_LINK}/tracks/#{@args[:track_id]}"
+      def request_url
+        "#{REQUEST_BASE_URL}/tracks/#{@args[:track_id]}"
       end
     end
   end

@@ -27,7 +27,7 @@ module LastFM
         response_data['artist']
       end
 
-      def params
+      def request_params
         {
           **super,
           artist: param_formatted(

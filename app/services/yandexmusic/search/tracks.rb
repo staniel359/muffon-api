@@ -21,7 +21,7 @@ module YandexMusic
         )
       end
 
-      def params
+      def request_params
         {
           **super,
           type: 'track'
