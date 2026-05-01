@@ -20,16 +20,8 @@ module SoundCloud
           end
 
           def no_data?
-            # track_data.blank? ||
             audio_link_data.blank?
           end
-
-          # def track_data
-          #   @track_data ||=
-          #     SoundCloud::Utils::Track::Audio::Link::TrackData.call(
-          #       link: @args[:link]
-          #     )
-          # end
 
           def audio_link_data
             audio_links.find do |data|
