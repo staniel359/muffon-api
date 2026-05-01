@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Search
     class Artists
-      class Artist < Odnoklassniki::Search::Artists
+      class Artist < Odnoklassniki::Base
         include Odnoklassniki::Mixins::Artist
 
         def call

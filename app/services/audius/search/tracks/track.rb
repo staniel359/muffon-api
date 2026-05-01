@@ -1,7 +1,7 @@
 module Audius
   module Search
     class Tracks
-      class Track < Audius::Search::Base
+      class Track < Audius::Base
         include Audius::Mixins::Track
 
         def call

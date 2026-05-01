@@ -1,7 +1,7 @@
 module YouTube
   module Search
     class Channels
-      class Channel < YouTube::Search::Base
+      class Channel < YouTube::Base
         include YouTube::Mixins::VideoChannel
 
         def call

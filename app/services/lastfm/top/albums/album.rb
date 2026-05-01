@@ -1,7 +1,7 @@
 module LastFM
   module Top
     class Albums
-      class Album < LastFM::Top::Albums
+      class Album < LastFM::Base
         include LastFM::Mixins::Album
 
         def call

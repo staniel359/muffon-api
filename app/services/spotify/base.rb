@@ -1,8 +1,8 @@
 module Spotify
   class Base < Muffon::Base
+    SOURCE_NAME = 'spotify'.freeze
     BASE_LINK =
       'https://api-partner.spotify.com/pathfinder/v2/query'.freeze
-    SOURCE_NAME = 'spotify'.freeze
 
     include Muffon::Mixins::GlobalStorage
     include Muffon::Mixins::Profile

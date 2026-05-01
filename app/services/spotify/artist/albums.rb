@@ -13,8 +13,9 @@ module Spotify
       private
 
       def required_args
-        super + %i[
-          albums_type
+        [
+          *super,
+          :albums_type
         ]
       end
 

@@ -1,7 +1,7 @@
 module Bandcamp
   module Search
     class Tracks
-      class Track < Bandcamp::Search::Base
+      class Track < Bandcamp::Base
         include Bandcamp::Mixins::Track
 
         def call

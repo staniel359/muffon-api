@@ -1,7 +1,7 @@
 module LastFM
   module Tag
     class Albums
-      class Album < LastFM::Tag::Albums
+      class Album < LastFM::Base
         include LastFM::Mixins::Album
 
         def call

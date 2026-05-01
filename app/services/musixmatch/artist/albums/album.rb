@@ -1,7 +1,7 @@
 module MusixMatch
   module Artist
     class Albums
-      class Album < MusixMatch::Artist::Albums
+      class Album < MusixMatch::Base
         include MusixMatch::Mixins::Album
 
         def call

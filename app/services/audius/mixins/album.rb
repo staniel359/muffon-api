@@ -37,7 +37,7 @@ module Audius
       end
 
       def image_data
-        Audius::Utils::Image.call(
+        Audius::Formatter::Image.call(
           images_data:
         )
       end

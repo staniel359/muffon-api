@@ -12,8 +12,9 @@ module LastFM
       private
 
       def required_args
-        super + %i[
-          lastfm_token
+        [
+          *super,
+          :lastfm_token
         ]
       end
 

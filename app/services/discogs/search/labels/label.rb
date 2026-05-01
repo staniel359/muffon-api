@@ -1,7 +1,7 @@
 module Discogs
   module Search
     class Labels
-      class Label < Discogs::Search::Labels
+      class Label < Discogs::Base
         include Discogs::Mixins::Label
 
         def call

@@ -1,8 +1,6 @@
 module Odnoklassniki
   module Track
-    class Albums < Odnoklassniki::Track::Base
-      include Odnoklassniki::Mixins::Track
-
+    class Albums < Odnoklassniki::Track::Info
       private
 
       def track_data

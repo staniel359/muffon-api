@@ -1,7 +1,7 @@
 module Genius
   module Search
     class Tracks
-      class Track < Genius::Search::Tracks
+      class Track < Genius::Base
         include Genius::Mixins::Track
 
         def call

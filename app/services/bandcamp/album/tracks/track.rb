@@ -1,7 +1,7 @@
 module Bandcamp
   module Album
     module Tracks
-      class Track < Bandcamp::Album::Base
+      class Track < Bandcamp::Base
         include Bandcamp::Mixins::Track
 
         def call

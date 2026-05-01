@@ -1,7 +1,7 @@
 module LastFM
   module Artist
     class Similar
-      class Artist < LastFM::Artist::Similar
+      class Artist < LastFM::Base
         include LastFM::Mixins::Artist
 
         def call

@@ -1,7 +1,7 @@
 module MusicBrainz
   module Search
     class Albums
-      class Album < MusicBrainz::Search::Albums
+      class Album < MusicBrainz::Base
         include MusicBrainz::Mixins::Album
 
         def call

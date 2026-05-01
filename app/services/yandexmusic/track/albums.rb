@@ -1,8 +1,6 @@
 module YandexMusic
   module Track
-    class Albums < YandexMusic::Track::Base
-      include YandexMusic::Mixins::Track
-
+    class Albums < YandexMusic::Track::Info
       private
 
       def track_data

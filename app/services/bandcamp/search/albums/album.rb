@@ -1,7 +1,7 @@
 module Bandcamp
   module Search
     class Albums
-      class Album < Bandcamp::Search::Base
+      class Album < Bandcamp::Base
         include Bandcamp::Mixins::Album
 
         def call

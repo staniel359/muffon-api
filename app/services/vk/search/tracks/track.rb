@@ -1,7 +1,7 @@
 module VK
   module Search
     class Tracks
-      class Track < VK::Search::Tracks
+      class Track < VK::Base
         include VK::Mixins::Track
 
         def call

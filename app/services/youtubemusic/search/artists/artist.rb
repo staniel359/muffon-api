@@ -1,7 +1,7 @@
 module YouTubeMusic
   module Search
     class Artists
-      class Artist < YouTubeMusic::Search::Artists
+      class Artist < YouTubeMusic::Base
         include YouTubeMusic::Mixins::Artist
 
         def call

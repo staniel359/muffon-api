@@ -1,6 +1,8 @@
 module Genius
   module Track
     class Info < Genius::Track::Base
+      include Genius::Mixins::Track
+
       private
 
       def track_data

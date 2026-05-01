@@ -1,7 +1,7 @@
 module Spotify
   module Artist
     class Albums
-      class Album < Spotify::Artist::Albums
+      class Album < Spotify::Base
         include Spotify::Mixins::Album
 
         def call

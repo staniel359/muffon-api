@@ -1,7 +1,7 @@
 module MusixMatch
   module Search
     class Tracks
-      class Track < MusixMatch::Search::Tracks
+      class Track < MusixMatch::Base
         include MusixMatch::Mixins::Track
 
         def call

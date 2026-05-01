@@ -1,7 +1,7 @@
 module Genius
   module Artist
     class Albums
-      class Album < Genius::Artist::Albums
+      class Album < Genius::Base
         include Genius::Mixins::Album
 
         def call

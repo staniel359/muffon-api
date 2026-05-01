@@ -6,8 +6,9 @@ module Spotify
       private
 
       def required_args
-        super + %i[
-          items_count
+        [
+          *super,
+          :items_count
         ]
       end
 

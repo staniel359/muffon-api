@@ -1,8 +1,6 @@
 module Audius
   module Track
     class Albums < Audius::Track::Info
-      include Audius::Mixins::Track
-
       private
 
       def track_data

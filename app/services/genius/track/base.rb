@@ -1,8 +1,6 @@
 module Genius
   module Track
     class Base < Genius::Base
-      include Genius::Mixins::Track
-
       def call
         check_args
 

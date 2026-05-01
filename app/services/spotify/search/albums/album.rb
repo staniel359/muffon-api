@@ -1,7 +1,7 @@
 module Spotify
   module Search
     class Albums
-      class Album < Spotify::Search::Albums
+      class Album < Spotify::Base
         include Spotify::Mixins::Album
 
         def call

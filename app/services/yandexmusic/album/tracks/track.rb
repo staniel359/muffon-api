@@ -1,7 +1,7 @@
 module YandexMusic
   module Album
     module Tracks
-      class Track < YandexMusic::Album::Base
+      class Track < YandexMusic::Base
         include YandexMusic::Mixins::Track
 
         def call

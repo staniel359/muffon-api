@@ -1,7 +1,7 @@
 module LastFM
   module Track
     class Similar
-      class Track < LastFM::Track::Similar
+      class Track < LastFM::Base
         include LastFM::Mixins::Track
 
         def call

@@ -1,6 +1,6 @@
 module Discogs
   module Group
-    class Albums < Discogs::Group::Info
+    class Albums < Discogs::Group::Base
       private
 
       def group_data

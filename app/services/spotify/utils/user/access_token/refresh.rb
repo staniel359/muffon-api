@@ -2,7 +2,7 @@ module Spotify
   module Utils
     module User
       class AccessToken
-        class Refresh < Spotify::Utils::User::AccessToken
+        class Refresh < Spotify::Base
           def call
             check_args
 

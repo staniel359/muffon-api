@@ -1,7 +1,7 @@
 module VK
   module Album
     class Tracks
-      class Track < VK::Album::Tracks
+      class Track < VK::Base
         include VK::Mixins::Track
 
         def call

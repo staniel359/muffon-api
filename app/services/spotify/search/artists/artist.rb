@@ -1,7 +1,7 @@
 module Spotify
   module Search
     class Artists
-      class Artist < Spotify::Search::Artists
+      class Artist < Spotify::Base
         include Spotify::Mixins::Artist
 
         def call

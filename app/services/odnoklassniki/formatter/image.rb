@@ -4,8 +4,6 @@ module Odnoklassniki
       def call
         check_args
 
-        return if @args[:image_url].blank? || placeholder?
-
         data
       end
 
@@ -17,13 +15,9 @@ module Odnoklassniki
         ]
       end
 
-      def placeholder?
-        @args[:image_url].end_with?(
-          'stub_album.png'
-        )
-      end
-
       def data
+        return if @args[:image_url].blank? || placeholder?
+
         {
           original: @args[:image_url],
           large: @args[:image_url],
@@ -31,6 +25,12 @@ module Odnoklassniki
           small: @args[:image_url],
           extrasmall: @args[:image_url]
         }
+      end
+
+      def placeholder?
+        @args[:image_url].end_with?(
+          'stub_album.png'
+        )
       end
     end
   end

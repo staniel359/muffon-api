@@ -1,7 +1,7 @@
 module Discogs
   module Search
     class Artists
-      class Artist < Discogs::Search::Artists
+      class Artist < Discogs::Base
         include Discogs::Mixins::Artist
 
         def call

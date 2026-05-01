@@ -21,10 +21,6 @@ module Bandcamp
         name.blank?
       end
 
-      def name
-        response_data['name']
-      end
-
       def link
         "#{BASE_LINK}/band_details"
       end
@@ -40,6 +36,8 @@ module Bandcamp
       def artist_data
         { name: }
       end
+
+      alias raw_artist_data response_data
     end
   end
 end

@@ -1,8 +1,6 @@
 module AmazonMusic
   module Track
-    class Links < AmazonMusic::Track::Base
-      include AmazonMusic::Mixins::Track
-
+    class Links < AmazonMusic::Track::Info
       private
 
       def track_data

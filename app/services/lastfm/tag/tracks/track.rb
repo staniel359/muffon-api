@@ -1,7 +1,7 @@
 module LastFM
   module Tag
     class Tracks
-      class Track < LastFM::Tag::Tracks
+      class Track < LastFM::Base
         include LastFM::Mixins::Track
 
         def call

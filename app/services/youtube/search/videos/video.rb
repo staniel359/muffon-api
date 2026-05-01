@@ -1,7 +1,7 @@
 module YouTube
   module Search
     class Videos
-      class Video < YouTube::Search::Base
+      class Video < YouTube::Base
         include YouTube::Mixins::Video
 
         def call

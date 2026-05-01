@@ -1,7 +1,7 @@
 module LastFM
   module Artist
     class Shows
-      class Show < LastFM::Artist::Shows
+      class Show < LastFM::Base
         def call
           check_args
 

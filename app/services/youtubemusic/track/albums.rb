@@ -1,8 +1,6 @@
 module YouTubeMusic
   module Track
-    class Albums < YouTubeMusic::Track::Base
-      include YouTubeMusic::Mixins::Track
-
+    class Albums < YouTubeMusic::Track::Info
       private
 
       def track_data

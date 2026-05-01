@@ -1,7 +1,7 @@
 module YandexMusic
   module Search
     class Tracks
-      class Track < YandexMusic::Search::Tracks
+      class Track < YandexMusic::Base
         include YandexMusic::Mixins::Track
 
         def call

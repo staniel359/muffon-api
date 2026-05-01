@@ -1,7 +1,7 @@
 module VK
   module Search
     class Albums
-      class Album < VK::Search::Albums
+      class Album < VK::Base
         include VK::Mixins::Album
 
         def call

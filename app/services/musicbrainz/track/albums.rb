@@ -1,8 +1,6 @@
 module MusicBrainz
   module Track
-    class Albums < MusicBrainz::Track::Base
-      include MusicBrainz::Mixins::Track
-
+    class Albums < MusicBrainz::Track::Info
       private
 
       def track_data

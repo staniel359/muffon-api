@@ -4,8 +4,6 @@ module SoundCloud
       def call
         check_args
 
-        return if @args[:image_url].blank?
-
         data
       end
 
@@ -18,6 +16,8 @@ module SoundCloud
       end
 
       def data
+        return if @args[:image_url].blank?
+
         {
           original: image_resized('t500x500'),
           large: image_resized('t500x500'),

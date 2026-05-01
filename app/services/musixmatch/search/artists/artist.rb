@@ -1,7 +1,7 @@
 module MusixMatch
   module Search
     class Artists
-      class Artist < MusixMatch::Search::Artists
+      class Artist < MusixMatch::Base
         include MusixMatch::Mixins::Artist
 
         def call

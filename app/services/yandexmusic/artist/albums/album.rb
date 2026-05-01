@@ -1,7 +1,7 @@
 module YandexMusic
   module Artist
     class Albums
-      class Album < YandexMusic::Artist::Base
+      class Album < YandexMusic::Base
         include YandexMusic::Mixins::Album
 
         def call

@@ -1,7 +1,7 @@
 module MusicBrainz
   module Group
     class Albums
-      class Album < MusicBrainz::Group::Base
+      class Album < MusicBrainz::Base
         include MusicBrainz::Mixins::Album
 
         def call

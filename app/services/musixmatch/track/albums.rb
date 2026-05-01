@@ -1,8 +1,6 @@
 module MusixMatch
   module Track
-    class Albums < MusixMatch::Track::Base
-      include MusixMatch::Mixins::Track
-
+    class Albums < MusixMatch::Track::Info
       private
 
       def track_data

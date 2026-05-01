@@ -1,7 +1,7 @@
 module SoundCloud
   module Search
     class Tracks
-      class Track < SoundCloud::Search::Tracks
+      class Track < SoundCloud::Base
         include SoundCloud::Mixins::Track
 
         def call

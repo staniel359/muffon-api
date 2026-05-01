@@ -1,7 +1,7 @@
 module LastFM
   module Artist
     class Albums
-      class Album < LastFM::Artist::Albums
+      class Album < LastFM::Base
         include LastFM::Mixins::Album
 
         def call

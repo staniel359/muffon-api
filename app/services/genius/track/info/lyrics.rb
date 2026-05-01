@@ -1,7 +1,7 @@
 module Genius
   module Track
     class Info
-      class Lyrics < Genius::Track::Info
+      class Lyrics < Genius::Base
         def call
           check_args
 

@@ -1,7 +1,7 @@
 module MusicBrainz
   module Search
     class Artists
-      class Artist < MusicBrainz::Search::Artists
+      class Artist < MusicBrainz::Base
         include MusicBrainz::Mixins::Artist
 
         def call

@@ -1,7 +1,7 @@
 module SoundCloud
   module Artist
     class Albums
-      class Album < SoundCloud::Artist::Albums
+      class Album < SoundCloud::Base
         include SoundCloud::Mixins::Album
 
         def call

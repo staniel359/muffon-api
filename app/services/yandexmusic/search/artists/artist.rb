@@ -1,7 +1,7 @@
 module YandexMusic
   module Search
     class Artists
-      class Artist < YandexMusic::Search::Artists
+      class Artist < YandexMusic::Base
         include YandexMusic::Mixins::Artist
 
         def call

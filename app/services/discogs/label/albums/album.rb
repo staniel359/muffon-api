@@ -1,7 +1,7 @@
 module Discogs
   module Label
     class Albums
-      class Album < Discogs::Label::Albums
+      class Album < Discogs::Base
         include Discogs::Mixins::Album
 
         def call

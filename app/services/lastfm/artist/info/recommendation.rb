@@ -1,7 +1,7 @@
 module LastFM
   module Artist
     class Info
-      class Recommendation < LastFM::Artist::Info
+      class Recommendation < LastFM::Base
         include Muffon::Mixins::Profile
 
         def call

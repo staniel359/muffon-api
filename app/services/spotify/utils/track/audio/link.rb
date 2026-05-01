@@ -3,8 +3,7 @@ module Spotify
     module Track
       module Audio
         class Link < Spotify::Base
-          BASE_LINK =
-            'https://spclient.wg.spotify.com'.freeze
+          BASE_LINK = 'https://spclient.wg.spotify.com'.freeze
           FILE_EXTENSION = 'm4a'.freeze
 
           include Muffon::Mixins::Processing::Audio
@@ -16,6 +15,7 @@ module Spotify
 
             data
           rescue Faraday::UnauthorizedError
+            # TODO: to change later
             # retry_with_new_spotify_audio_token
             raise forbidden_error
           end

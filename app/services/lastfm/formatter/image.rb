@@ -10,22 +10,22 @@ module LastFM
       }.freeze
 
       def call
-        return if @args[:image_url].blank? || default_image?
+        check_args
 
         data
       end
 
       private
 
-      def default_image?
-        DEFAULT_IDS_DATA.values.any? do |image_id|
-          @args[:image_url].include?(
-            image_id
-          )
-        end
+      def required_args
+        %i[
+          image_url
+        ]
       end
 
       def data
+        return if @args[:image_url].blank? || default_image?
+
         {
           original: image_resized(''),
           large: image_resized('/600x600'),
@@ -33,6 +33,14 @@ module LastFM
           small: image_resized('/174s'),
           extrasmall: image_resized('/60x60')
         }
+      end
+
+      def default_image?
+        DEFAULT_IDS_DATA.values.any? do |image_id|
+          @args[:image_url].include?(
+            image_id
+          )
+        end
       end
 
       def image_resized(size)

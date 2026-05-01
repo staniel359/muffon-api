@@ -1,7 +1,7 @@
 module Genius
   module Search
     class Albums
-      class Album < Genius::Search::Albums
+      class Album < Genius::Base
         include Genius::Mixins::Album
 
         def call

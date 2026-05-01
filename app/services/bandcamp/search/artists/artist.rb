@@ -1,7 +1,7 @@
 module Bandcamp
   module Search
     class Artists
-      class Artist < Bandcamp::Search::Base
+      class Artist < Bandcamp::Base
         include Bandcamp::Mixins::Artist
 
         def call

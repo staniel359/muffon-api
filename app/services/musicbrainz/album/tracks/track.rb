@@ -1,7 +1,7 @@
 module MusicBrainz
   module Album
     module Tracks
-      class Track < MusicBrainz::Album::Base
+      class Track < MusicBrainz::Base
         include MusicBrainz::Mixins::Track
 
         def call

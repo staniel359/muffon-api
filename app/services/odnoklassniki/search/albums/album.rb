@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Search
     class Albums
-      class Album < Odnoklassniki::Search::Albums
+      class Album < Odnoklassniki::Base
         include Odnoklassniki::Mixins::Album
 
         def call

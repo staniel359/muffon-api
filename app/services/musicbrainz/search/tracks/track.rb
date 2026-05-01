@@ -1,7 +1,7 @@
 module MusicBrainz
   module Search
     class Tracks
-      class Track < MusicBrainz::Search::Tracks
+      class Track < MusicBrainz::Base
         include MusicBrainz::Mixins::Track
 
         def call

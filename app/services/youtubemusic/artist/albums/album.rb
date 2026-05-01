@@ -1,7 +1,7 @@
 module YouTubeMusic
   module Artist
     class Albums
-      class Album < YouTubeMusic::Artist::Base
+      class Album < YouTubeMusic::Base
         include YouTubeMusic::Mixins::Album
 
         def call

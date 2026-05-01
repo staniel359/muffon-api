@@ -1,7 +1,7 @@
 module AmazonMusic
   module Search
     class Albums
-      class Album < AmazonMusic::Search::Base
+      class Album < AmazonMusic::Base
         include AmazonMusic::Mixins::Album
 
         def call

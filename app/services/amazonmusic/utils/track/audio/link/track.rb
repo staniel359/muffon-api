@@ -3,7 +3,7 @@ module AmazonMusic
     module Track
       module Audio
         class Link
-          class Track < AmazonMusic::Utils::Track::Audio::Link
+          class Track < AmazonMusic::Base
             BASE_LINK =
               'https://music.amazon.co.uk/EU/api/dmls/'.freeze
 
@@ -28,12 +28,11 @@ module AmazonMusic
             end
 
             def manifest_xml
-              @manifest_xml ||=
-                response_data.dig(
-                  'contentResponseList',
-                  0,
-                  'manifest'
-                )
+              response_data.dig(
+                'contentResponseList',
+                0,
+                'manifest'
+              )
             end
 
             def link
@@ -86,6 +85,8 @@ module AmazonMusic
             end
 
             def cookies
+              return test_amazon_music_cookies if test?
+
               {
                 'ubid-acbuk' => first_cookie,
                 'at-acbuk' => second_cookie
@@ -93,10 +94,8 @@ module AmazonMusic
             end
 
             def first_cookie
-              if test?
-                test_amazon_music_cookies[:ubid_acbuk]
-              else
-                BROWSER_COOKIES_DATABASE.execute(
+              BROWSER_COOKIES_DATABASE
+                .execute(
                   <<~SQL.squish
                     SELECT value
                     FROM moz_cookies
@@ -104,8 +103,9 @@ module AmazonMusic
                       host LIKE '%amazon%'
                       AND name = 'ubid-acbuk'
                   SQL
-                ).flatten.first
-              end
+                )
+                .flatten
+                .first
             end
 
             def test_amazon_music_cookies
@@ -116,10 +116,8 @@ module AmazonMusic
             end
 
             def second_cookie
-              if test?
-                test_amazon_music_cookies[:at_acbuk]
-              else
-                BROWSER_COOKIES_DATABASE.execute(
+              BROWSER_COOKIES_DATABASE
+                .execute(
                   <<~SQL.squish
                     SELECT value
                     FROM moz_cookies
@@ -127,8 +125,9 @@ module AmazonMusic
                       host LIKE '%amazon%'
                       AND name = 'at-acbuk'
                   SQL
-                ).flatten.first
-              end
+                )
+                .flatten
+                .first
             end
 
             def data

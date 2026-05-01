@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Album
     module Tracks
-      class Track < Odnoklassniki::Album::Base
+      class Track < Odnoklassniki::Base
         include Odnoklassniki::Mixins::Track
 
         def call

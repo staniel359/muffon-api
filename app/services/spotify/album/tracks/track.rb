@@ -1,7 +1,7 @@
 module Spotify
   module Album
     module Tracks
-      class Track < Spotify::Album::Base
+      class Track < Spotify::Base
         include Spotify::Mixins::Track
 
         def call

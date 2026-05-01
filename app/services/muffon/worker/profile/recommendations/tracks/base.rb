@@ -7,8 +7,9 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                library_track_id
+              [
+                *super,
+                :library_track_id
               ]
             end
 

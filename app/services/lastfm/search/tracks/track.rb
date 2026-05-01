@@ -1,7 +1,7 @@
 module LastFM
   module Search
     class Tracks
-      class Track < LastFM::Search::Tracks
+      class Track < LastFM::Base
         include LastFM::Mixins::Track
 
         def call

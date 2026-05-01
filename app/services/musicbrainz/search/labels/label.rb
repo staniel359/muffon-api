@@ -1,7 +1,7 @@
 module MusicBrainz
   module Search
     class Labels
-      class Label < MusicBrainz::Search::Labels
+      class Label < MusicBrainz::Base
         include MusicBrainz::Mixins::Label
 
         def call

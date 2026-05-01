@@ -1,7 +1,7 @@
 module YouTube
   module Playlist
     class Videos
-      class Video < YouTube::Playlist::Base
+      class Video < YouTube::Base
         include YouTube::Mixins::Video
 
         def call

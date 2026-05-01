@@ -1,7 +1,7 @@
 module Discogs
   module Search
     class Albums
-      class Album < Discogs::Search::Albums
+      class Album < Discogs::Base
         include Discogs::Mixins::Album
 
         def call

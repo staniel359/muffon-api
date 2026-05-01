@@ -1,7 +1,7 @@
 module YandexMusic
   module Search
     class Albums
-      class Album < YandexMusic::Search::Albums
+      class Album < YandexMusic::Base
         include YandexMusic::Mixins::Album
 
         def call

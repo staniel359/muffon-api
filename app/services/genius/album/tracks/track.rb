@@ -1,7 +1,7 @@
 module Genius
   module Album
     class Tracks
-      class Track < Genius::Album::Base
+      class Track < Genius::Base
         include Genius::Mixins::Track
 
         def call

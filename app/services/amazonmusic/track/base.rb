@@ -12,8 +12,9 @@ module AmazonMusic
       private
 
       def required_args
-        super + %i[
-          track_id
+        [
+          *super,
+          :track_id
         ]
       end
 

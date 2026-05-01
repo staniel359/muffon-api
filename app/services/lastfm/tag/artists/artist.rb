@@ -1,7 +1,7 @@
 module LastFM
   module Tag
     class Artists
-      class Artist < LastFM::Tag::Artists
+      class Artist < LastFM::Base
         include LastFM::Mixins::Artist
 
         def call

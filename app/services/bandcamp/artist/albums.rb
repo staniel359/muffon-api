@@ -1,6 +1,8 @@
 module Bandcamp
   module Artist
     class Albums < Bandcamp::Artist::Base
+      include Bandcamp::Mixins::Artist
+
       private
 
       def artist_data
@@ -21,7 +23,7 @@ module Bandcamp
       end
 
       def raw_collection
-        response_data['discography']
+        raw_artist_data['discography']
       end
 
       def collection_item_data_formatted(

@@ -1,7 +1,7 @@
 module AmazonMusic
   module Search
     class Artists
-      class Artist < AmazonMusic::Search::Base
+      class Artist < AmazonMusic::Base
         include AmazonMusic::Mixins::Artist
 
         def call

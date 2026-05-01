@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Artist
     class Albums
-      class Album < Odnoklassniki::Artist::Albums
+      class Album < Odnoklassniki::Base
         include Odnoklassniki::Mixins::Album
 
         def call

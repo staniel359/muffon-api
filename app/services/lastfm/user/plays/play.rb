@@ -1,7 +1,7 @@
 module LastFM
   module User
     class Plays
-      class Play < LastFM::User::Plays
+      class Play < LastFM::Base
         include LastFM::Mixins::Track
 
         def call

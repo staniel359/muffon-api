@@ -2,7 +2,7 @@ module LastFM
   module User
     module Favorites
       class Tracks
-        class Track < LastFM::User::Favorites::Tracks
+        class Track < LastFM::Base
           include LastFM::Mixins::Track
 
           def call

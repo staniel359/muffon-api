@@ -1,7 +1,7 @@
 module MusixMatch
   module Album
     module Tracks
-      class Track < MusixMatch::Album::Base
+      class Track < MusixMatch::Base
         include MusixMatch::Mixins::Track
 
         def call

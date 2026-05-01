@@ -1,7 +1,7 @@
 module AmazonMusic
   module Artist
     class Albums
-      class Album < AmazonMusic::Artist::Base
+      class Album < AmazonMusic::Base
         include AmazonMusic::Mixins::Album
 
         def call

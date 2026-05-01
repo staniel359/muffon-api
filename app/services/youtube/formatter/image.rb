@@ -1,6 +1,6 @@
 module YouTube
   module Formatter
-    class Image < Muffon::Base
+    class Image < YouTube::Base
       def call
         check_args
 

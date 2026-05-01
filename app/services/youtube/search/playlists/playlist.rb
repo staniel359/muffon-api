@@ -1,7 +1,7 @@
 module YouTube
   module Search
     class Playlists
-      class Playlist < YouTube::Search::Base
+      class Playlist < YouTube::Base
         include YouTube::Mixins::VideoPlaylist
 
         def call

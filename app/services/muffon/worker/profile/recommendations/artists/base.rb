@@ -7,8 +7,9 @@ module Muffon
             private
 
             def required_args
-              super + %i[
-                library_artist_id
+              [
+                *super,
+                :library_artist_id
               ]
             end
 

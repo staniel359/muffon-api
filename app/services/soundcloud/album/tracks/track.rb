@@ -1,7 +1,7 @@
 module SoundCloud
   module Album
     class Tracks
-      class Track < SoundCloud::Album::Tracks
+      class Track < SoundCloud::Base
         include SoundCloud::Mixins::Track
 
         def call

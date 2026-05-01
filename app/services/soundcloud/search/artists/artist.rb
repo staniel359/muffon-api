@@ -1,7 +1,7 @@
 module SoundCloud
   module Search
     class Artists
-      class Artist < SoundCloud::Search::Artists
+      class Artist < SoundCloud::Base
         include SoundCloud::Mixins::Artist
 
         def call

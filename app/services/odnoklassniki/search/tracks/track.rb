@@ -1,7 +1,7 @@
 module Odnoklassniki
   module Search
     class Tracks
-      class Track < Odnoklassniki::Search::Tracks
+      class Track < Odnoklassniki::Base
         include Odnoklassniki::Mixins::Track
 
         def call

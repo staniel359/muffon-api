@@ -1,7 +1,7 @@
 module Discogs
   module Search
     class Groups
-      class Group < Discogs::Search::Groups
+      class Group < Discogs::Base
         include Discogs::Mixins::AlbumGroup
 
         def call

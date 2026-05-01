@@ -4,8 +4,6 @@ module Spotify
       def call
         check_args
 
-        return if @args[:images].blank?
-
         data
       end
 
@@ -18,6 +16,8 @@ module Spotify
       end
 
       def data
+        return if @args[:images].blank?
+
         {
           original: image_by_index(0),
           large: large_image,

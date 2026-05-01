@@ -6,8 +6,9 @@ module Muffon
           private
 
           def required_args
-            super + %i[
-              query
+            [
+              *super,
+              :query
             ]
           end
 

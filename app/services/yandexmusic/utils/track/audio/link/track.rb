@@ -3,7 +3,7 @@ module YandexMusic
     module Track
       module Audio
         class Link
-          class Track < YandexMusic::Utils::Track::Audio::Link
+          class Track < YandexMusic::Base
             def call
               check_args
 

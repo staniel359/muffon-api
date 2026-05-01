@@ -1,7 +1,7 @@
 module VK
   module Artist
     class Albums
-      class Album < VK::Artist::Albums
+      class Album < VK::Base
         include VK::Mixins::Album
 
         def call

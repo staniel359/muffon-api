@@ -1,7 +1,7 @@
 module LastFM
   module Search
     class Artists
-      class Artist < LastFM::Search::Artists
+      class Artist < LastFM::Base
         include LastFM::Mixins::Artist
 
         def call

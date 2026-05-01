@@ -3,7 +3,7 @@ module AmazonMusic
     module Track
       module Audio
         class Link
-          class Key < AmazonMusic::Utils::Track::Audio::Link
+          class Key < AmazonMusic::Base
             def call
               check_args
 
@@ -39,13 +39,9 @@ module AmazonMusic
             end
 
             def pssh_data
-              track_data['ContentProtection'].find do |data|
+              @args[:track_data]['ContentProtection'].find do |data|
                 data['pssh'].present?
               end
-            end
-
-            def track_data
-              @args[:track_data]
             end
           end
         end

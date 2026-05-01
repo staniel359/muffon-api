@@ -1,7 +1,7 @@
 module Bandcamp
   module Label
     class Artists
-      class Artist < Bandcamp::Label::Base
+      class Artist < Bandcamp::Base
         include Bandcamp::Mixins::Artist
 
         def call

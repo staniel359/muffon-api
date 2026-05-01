@@ -1,7 +1,7 @@
 module YouTubeMusic
   module Search
     class Albums
-      class Album < YouTubeMusic::Search::Albums
+      class Album < YouTubeMusic::Base
         include YouTubeMusic::Mixins::Album
 
         def call

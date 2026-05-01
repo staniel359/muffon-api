@@ -1,7 +1,7 @@
 module MusicBrainz
   module Search
     class Groups
-      class Group < MusicBrainz::Search::Groups
+      class Group < MusicBrainz::Base
         include MusicBrainz::Mixins::AlbumGroup
 
         def call

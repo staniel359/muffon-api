@@ -1,7 +1,7 @@
 module SoundCloud
   module Search
     class Albums
-      class Album < SoundCloud::Search::Albums
+      class Album < SoundCloud::Base
         include SoundCloud::Mixins::Album
 
         def call

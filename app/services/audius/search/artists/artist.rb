@@ -1,7 +1,7 @@
 module Audius
   module Search
     class Artists
-      class Artist < Audius::Search::Base
+      class Artist < Audius::Base
         include Audius::Mixins::Artist
 
         def call

@@ -1,7 +1,7 @@
 module Discogs
   module Group
     class Albums
-      class Album < Discogs::Group::Base
+      class Album < Discogs::Base
         include Discogs::Mixins::Album
 
         def call

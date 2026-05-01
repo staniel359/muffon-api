@@ -1,7 +1,7 @@
 module LastFM
   module User
     class Playlists
-      class Playlist < LastFM::User::Playlists
+      class Playlist < LastFM::Base
         def call
           check_args
 

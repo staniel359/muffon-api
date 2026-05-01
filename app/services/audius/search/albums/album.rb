@@ -1,7 +1,7 @@
 module Audius
   module Search
     class Albums
-      class Album < Audius::Search::Base
+      class Album < Audius::Base
         include Audius::Mixins::Album
 
         def call

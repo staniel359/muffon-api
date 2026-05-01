@@ -3,7 +3,7 @@ module Spotify
     module Track
       module Audio
         class Link
-          class Key < Spotify::Utils::Track::Audio::Link
+          class Key < Spotify::Base
             def call
               check_args
 

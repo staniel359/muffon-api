@@ -1,7 +1,7 @@
 module Bandcamp
   module Artist
     class Albums
-      class Album < Bandcamp::Artist::Base
+      class Album < Bandcamp::Base
         include Bandcamp::Mixins::Album
 
         def call

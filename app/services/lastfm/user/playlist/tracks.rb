@@ -7,8 +7,9 @@ module LastFM
         private
 
         def required_args
-          super + %i[
-            playlist_id
+          [
+            *super,
+            :playlist_id
           ]
         end
 

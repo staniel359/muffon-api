@@ -1,7 +1,7 @@
 module Audius
   module Album
     module Tracks
-      class Track < Audius::Album::Base
+      class Track < Audius::Base
         include Audius::Mixins::Track
 
         def call

@@ -1,5 +1,5 @@
 module Audius
-  module Utils
+  module Formatter
     class Image < Audius::Base
       def call
         check_args

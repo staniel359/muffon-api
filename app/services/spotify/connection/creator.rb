@@ -4,8 +4,9 @@ module Spotify
       private
 
       def required_args
-        super + %i[
-          code
+        [
+          *super,
+          :code
         ]
       end
 

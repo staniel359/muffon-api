@@ -1,7 +1,7 @@
 module LastFM
   module Album
     module Tracks
-      class Track < LastFM::Album::Base
+      class Track < LastFM::Base
         include LastFM::Mixins::Track
 
         def call

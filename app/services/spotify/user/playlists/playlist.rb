@@ -1,7 +1,7 @@
 module Spotify
   module User
     class Playlists
-      class Playlist < Spotify::User::Playlists
+      class Playlist < Spotify::Base
         include Spotify::Mixins::Playlist
 
         def call

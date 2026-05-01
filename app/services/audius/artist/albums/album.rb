@@ -1,7 +1,7 @@
 module Audius
   module Artist
     class Albums
-      class Album < Audius::Artist::Base
+      class Album < Audius::Base
         include Audius::Mixins::Album
 
         def call

@@ -4,8 +4,6 @@ module YandexMusic
       def call
         check_args
 
-        return if @args[:image_url].blank?
-
         data
       end
 
@@ -18,6 +16,8 @@ module YandexMusic
       end
 
       def data
+        return if @args[:image_url].blank?
+
         {
           original: image_url_resized('1000'),
           large: image_url_resized('600'),

@@ -1,7 +1,7 @@
 module AmazonMusic
   module Search
     class Tracks
-      class Track < AmazonMusic::Search::Base
+      class Track < AmazonMusic::Base
         include AmazonMusic::Mixins::Track
 
         def call

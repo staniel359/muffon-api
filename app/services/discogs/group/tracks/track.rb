@@ -1,7 +1,7 @@
 module Discogs
   module Group
     module Tracks
-      class Track < Discogs::Group::Base
+      class Track < Discogs::Base
         include Discogs::Mixins::Track
 
         def call

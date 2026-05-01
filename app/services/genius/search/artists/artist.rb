@@ -1,7 +1,7 @@
 module Genius
   module Search
     class Artists
-      class Artist < Genius::Search::Artists
+      class Artist < Genius::Base
         include Genius::Mixins::Artist
 
         def call

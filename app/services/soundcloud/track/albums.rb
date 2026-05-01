@@ -1,8 +1,6 @@
 module SoundCloud
   module Track
-    class Albums < SoundCloud::Track::Base
-      include SoundCloud::Mixins::Track
-
+    class Albums < SoundCloud::Track::Info
       private
 
       def track_data

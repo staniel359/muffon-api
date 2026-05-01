@@ -1,7 +1,7 @@
 module YouTube
   module Video
     class Similar
-      class Video < YouTube::Video::Base
+      class Video < YouTube::Base
         include YouTube::Mixins::Video
 
         def call

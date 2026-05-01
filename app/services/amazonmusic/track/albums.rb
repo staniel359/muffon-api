@@ -1,8 +1,6 @@
 module AmazonMusic
   module Track
-    class Albums < AmazonMusic::Track::Base
-      include AmazonMusic::Mixins::Track
-
+    class Albums < AmazonMusic::Track::Info
       private
 
       def track_data
@@ -15,35 +13,6 @@ module AmazonMusic
           artists:,
           source_album_id: album_amazonmusic_id,
           albums: [album_data]
-        )
-      end
-
-      def title
-        raw_track_data['primaryText']
-      end
-
-      def artist_name
-        raw_track_data.dig(
-          'contextMenu',
-          'options',
-          0,
-          'onItemSelected',
-          1,
-          'template',
-          'headerPrimaryText'
-        )
-      end
-
-      def artist_amazonmusic_slug
-        raw_track_data.dig(
-          'contextMenu',
-          'options',
-          1,
-          'onItemSelected',
-          2,
-          'template',
-          'templateData',
-          'deeplink'
         )
       end
 

@@ -1,7 +1,7 @@
 module YouTubeMusic
   module Search
     class Tracks
-      class Track < YouTubeMusic::Search::Tracks
+      class Track < YouTubeMusic::Base
         include YouTubeMusic::Mixins::Track
 
         def call

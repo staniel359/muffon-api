@@ -1,7 +1,7 @@
 module VK
   module Search
     class Artists
-      class Artist < VK::Search::Artists
+      class Artist < VK::Base
         include VK::Mixins::Artist
 
         def call

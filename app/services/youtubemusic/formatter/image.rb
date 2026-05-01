@@ -1,6 +1,6 @@
 module YouTubeMusic
   module Formatter
-    class Image < Muffon::Base
+    class Image < YouTubeMusic::Base
       def call
         check_args
 

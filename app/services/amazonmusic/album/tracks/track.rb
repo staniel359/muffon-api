@@ -1,7 +1,7 @@
 module AmazonMusic
   module Album
     module Tracks
-      class Track < AmazonMusic::Album::Base
+      class Track < AmazonMusic::Base
         include AmazonMusic::Mixins::Track
 
         def call

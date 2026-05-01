@@ -1,7 +1,7 @@
 module Bandcamp
   module Label
     class Albums
-      class Album < Bandcamp::Label::Base
+      class Album < Bandcamp::Base
         include Bandcamp::Mixins::Album
 
         def call

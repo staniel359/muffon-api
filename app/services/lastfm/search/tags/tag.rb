@@ -1,7 +1,7 @@
 module LastFM
   module Search
     class Tags
-      class Tag < LastFM::Search::Tags
+      class Tag < LastFM::Base
         def call
           check_args
 

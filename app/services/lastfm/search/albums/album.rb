@@ -1,7 +1,7 @@
 module LastFM
   module Search
     class Albums
-      class Album < LastFM::Search::Albums
+      class Album < LastFM::Base
         include LastFM::Mixins::Album
 
         def call
