@@ -8,7 +8,8 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.10.0
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
+        Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,39 +19,41 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
       Date:
-      - Sat, 13 Jul 2024 14:08:32 GMT
-      Report-To:
-      - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
-      Set-Cookie:
-      - _yasc=r7/6bHaDJQG83R1XDO1bZhdfd9YPB16QlkhU0SYsSBqAgnP7iCQoywfVfEOiG1CS+A==;
-        domain=.yandex.ru; path=/; expires=Tue, 11 Jul 2034 14:08:32 GMT; secure
-      - i=OmUywHjBGmOEKi7V1jagKG1wMvKBu5q29LI50tEFp3jbacOJvYy8/rue/ANHpHLSZM8z1N5LLNJkYh3roFEK0tkVOmY=;
-        Expires=Mon, 13-Jul-2026 14:08:32 GMT; Domain=.yandex.ru; Path=/; Secure;
-        HttpOnly
-      - yandexuid=6163797741720879712; Expires=Mon, 13-Jul-2026 14:08:32 GMT; Domain=.yandex.ru;
-        Path=/; Secure
-      - yashr=5677675861720879712; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
-        2025 14:08:32 GMT; Secure; HttpOnly
-      Strict-Transport-Security:
-      - max-age=31536000
-      Transfer-Encoding:
-      - chunked
-      X-Compat:
-      - '5'
-      X-Content-Type-Options:
-      - nosniff
+      - Sat, 02 May 2026 12:47:18 GMT
+      Nel:
+      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
+        "failure_fraction": 0.1}'
       X-Powered-By:
       - Express
       X-Xss-Protection:
       - 1; mode=block
-      Nel:
-      - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
-        "failure_fraction": 0.1}'
+      Content-Type:
+      - application/json; charset=utf-8
+      Set-Cookie:
+      - _yasc=W88+Y7tdaLFtgedp3Ycm+LGTb8r/P4jKW0eFxmXua6HU0HVkNRoNG9rxtKrKBI4BSA==;
+        domain=.yandex.ru; path=/; expires=Tue, 29 Apr 2036 12:47:18 GMT; secure
+      - bh=YNbk188GahncyumIDvKst6UL+/rw5w3r//32D5uHz4cI; Path=/; Domain=.yandex.ru;
+        Expires=Sun, 06 Jun 2027 12:47:18 GMT; SameSite=None; Secure
+      - i=1RhcjFd0FNJRATyaF87vJNIi2BTCLeYAS3jFxH22ICqCGurG1ObV/jlLBTsUguYOx66P4qsWn9rCvyUZnvX5/0EMQ3s=;
+        Expires=Mon, 01-May-2028 12:47:18 GMT; Domain=.yandex.ru; Path=/; Secure;
+        HttpOnly; SameSite=None
+      - yandexuid=3852355571777726038; Expires=Mon, 01-May-2028 12:47:18 GMT; Domain=.yandex.ru;
+        Path=/; Secure; SameSite=None
+      - yashr=8821413581777726038; Path=/; Domain=.yandex.ru; Expires=Sun, 02 May
+        2027 12:47:18 GMT; SameSite=None; Secure; HttpOnly; Partitioned
+      Transfer-Encoding:
+      - chunked
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Compat:
+      - '5'
+      X-Content-Type-Options:
+      - nosniff
+      Report-To:
+      - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
     body:
       encoding: UTF-8
       string: '{"message":"Bad Request"}'
-  recorded_at: Sat, 13 Jul 2024 14:08:32 GMT
-recorded_with: VCR 6.2.0
+  recorded_at: Sat, 02 May 2026 12:47:18 GMT
+recorded_with: VCR 6.4.0

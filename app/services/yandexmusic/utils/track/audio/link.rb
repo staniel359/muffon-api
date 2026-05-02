@@ -3,14 +3,21 @@ module YandexMusic
     module Track
       module Audio
         class Link < YandexMusic::Base
-          SALT = 'XGRlBW9FXlekgbPrRHuSiA'.freeze
+          REQUEST_BASE_URL =
+            'https://api.music.yandex.net/get-file-info'.freeze
+          REQUEST_DATA = {
+            'quality' => 'nq',
+            'codecs' => 'aac-mp4',
+            'transports' => 'raw'
+          }.freeze
+          SIGNATURE_HMAC_SECRET = '7tvSmFbyf5hJnIHhCimDDD'.freeze
 
           def call
             check_args
 
-            return if no_data?
-
             data
+          rescue Faraday::BadRequestError
+            raise bad_request_error
           end
 
           private
@@ -21,69 +28,89 @@ module YandexMusic
             ]
           end
 
-          def no_data?
-            track_data.blank? ||
-              file_raw_url.blank?
-          end
-
-          def track_data
-            @track_data ||=
-              YandexMusic::Utils::Track::Audio::Link::Track.call(
-                track_id: @args[:track_id]
-              )
-          end
-
-          def file_raw_url
-            track_data['src']
-          end
-
           def data
-            "https://#{file_host}/get-mp3/#{file_path_hash}" \
-              "/#{file_ts_value}#{file_path}"
-          end
-
-          def file_host
-            response_data['host']
-          end
-
-          def response_data
-            @response_data ||=
-              Muffon::Request.call(
-                url: request_url,
-                method: 'GET',
-                params: request_params,
-                proxy: request_proxy
-              )
-          end
-
-          def request_url
-            "https:#{file_raw_url}"
-          end
-
-          def request_params
-            { format: 'json' }
-          end
-
-          def file_path_hash
-            Digest::MD5.hexdigest(
-              file_path_string
+            response_data.dig(
+              'downloadInfo',
+              'url'
             )
           end
 
-          def file_path_string
-            "#{SALT}#{file_path[1..]}#{file_s_value}"
+          def response_data
+            Muffon::Request.call(
+              url: request_url,
+              method: 'GET',
+              params: request_params,
+              headers: request_headers,
+              proxy: request_proxy
+            )
           end
 
-          def file_path
-            response_data['path']
+          def request_url
+            REQUEST_BASE_URL
           end
 
-          def file_s_value
-            response_data['s']
+          def request_params
+            {
+              'ts' => timestamp,
+              'trackId' => @args[:track_id],
+              'quality' => REQUEST_DATA['quality'],
+              'codecs' => REQUEST_DATA['codecs'],
+              'transports' => REQUEST_DATA['transports'],
+              'sign' => signature
+            }
           end
 
-          def file_ts_value
-            response_data['ts']
+          def timestamp
+            return '1777725157' if test?
+
+            @timestamp ||= current_time.to_i
+          end
+
+          def signature
+            Base64.strict_encode64(
+              hmac_signature
+            )[0...-1]
+          end
+
+          def hmac_signature
+            OpenSSL::HMAC.digest(
+              'sha256',
+              SIGNATURE_HMAC_SECRET,
+              raw_signature
+            )
+          end
+
+          def raw_signature
+            [
+              timestamp,
+              @args[:track_id],
+              REQUEST_DATA['quality'],
+              REQUEST_DATA['codecs'],
+              REQUEST_DATA['transports']
+            ].join
+          end
+
+          def request_headers
+            {
+              'Cookie' => request_cookie_header,
+              'x-request-id' => SecureRandom.uuid,
+              'X-Requested-With' => 'XMLHttpRequest',
+              'X-Retpath-Y' => 'https://music.yandex.ru',
+              'x-yandex-music-client' => 'YandexMusicWebNext/1.0.0',
+              'x-yandex-music-multi-auth-user-id' => '2273883602',
+              'x-yandex-music-without-invocation-info' => '1',
+              'Host' => 'api.music.yandex.ru',
+              'DNT' => '1',
+              'Referer' => 'https://music.yandex.ru/',
+              'Origin' => 'https://music.yandex.ru'
+            }
+          end
+
+          def request_cookie_header
+            credentials.dig(
+              :yandexmusic,
+              :cookie
+            )
           end
         end
       end

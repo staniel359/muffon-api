@@ -8,7 +8,7 @@ RSpec.describe YandexMusic::Track::Info do
           'services/yandexmusic/track/info/success'
         ) do
           subject.call(
-            track_id: '4780792',
+            track_id: '533871',
             with_audio: true,
             profile_id: '1'
           )
