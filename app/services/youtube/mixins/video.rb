@@ -154,6 +154,10 @@ module YouTube
           publish_date:
         }.compact
       end
+
+      def video_private?
+        title == 'Private video'
+      end
     end
   end
 end

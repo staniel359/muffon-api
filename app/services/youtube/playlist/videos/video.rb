@@ -19,13 +19,17 @@ module YouTube
         end
 
         def data
-          update_video_record!
+          if video_private?
+            { private: true }
+          else
+            update_video_record!
 
-          Muffon::Formatter::Source::VideoPlaylist::Videos::Video.call(
-            video_record:,
-            description:,
-            **self_args
-          )
+            Muffon::Formatter::Source::VideoPlaylist::Videos::Video.call(
+              video_record:,
+              description:,
+              **self_args
+            )
+          end
         end
 
         def raw_video_data
