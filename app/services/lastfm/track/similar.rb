@@ -63,6 +63,7 @@ module LastFM
         LastFM::Track::Similar::Track.call(
           raw_track_data:,
           is_minimal: @args[:is_minimal],
+          is_with_artist_image: true,
           **self_args
         )
       end

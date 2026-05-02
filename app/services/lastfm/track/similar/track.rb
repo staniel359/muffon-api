@@ -26,14 +26,19 @@ module LastFM
             title:,
             artists:,
             duration:,
-            is_minimal: @args[:is_minimal],
             is_audio_present: audio_present?,
+            is_minimal: @args[:is_minimal],
+            is_with_artist_image: with_artist_image?,
             **self_args
           )
         end
 
         def raw_track_data
           @args[:raw_track_data]
+        end
+
+        def with_artist_image?
+          !!@args[:is_with_artist_image]
         end
       end
     end
