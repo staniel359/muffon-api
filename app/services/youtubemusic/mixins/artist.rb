@@ -30,7 +30,7 @@ module YouTubeMusic
       end
 
       def image_data
-        YouTubeMusic::Formatter::Image.call(
+        YouTube::Formatter::Image.call(
           image_url:
         )
       end

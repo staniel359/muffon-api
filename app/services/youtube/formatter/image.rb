@@ -37,10 +37,15 @@ module YouTube
             "s#{size}"
           )
         else
-          @args[:image_url].sub(
-            'default',
-            "#{size_name}default"
-          )
+          @args[:image_url]
+            .sub(
+              /w(\d+)-h(\d+)/,
+              "w#{size}-h#{size}"
+            )
+            .sub(
+              /(?:sd|mq|hq|maxres)*default|hq720/,
+              "#{size_name}default"
+            )
         end
       end
     end
