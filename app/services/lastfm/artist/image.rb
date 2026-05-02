@@ -4,7 +4,7 @@ module LastFM
       private
 
       def artist_data
-        update_record_data!
+        update_artist_record!
 
         { image: image_data }
       end

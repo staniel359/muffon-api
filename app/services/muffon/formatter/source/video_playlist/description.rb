@@ -13,7 +13,7 @@ module Muffon
 
           def required_args
             %i[
-              description
+              video_playlist_record
             ]
           end
 

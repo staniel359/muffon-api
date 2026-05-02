@@ -35,17 +35,25 @@ class VideoPlaylist < ApplicationRecord
     end
   end
 
-  def source_data
+  def source_data(
+    source_name: 'youtube'
+  )
     {
-      name: 'youtube',
+      name: source_name,
       id: youtube_id,
-      links: source_links_data
+      links: source_links_data(
+        source_name:
+      )
     }
   end
 
-  def video_channel_data
+  def video_channel_data(
+    source_name: 'youtube'
+  )
     {
-      source: video_channel_source_data,
+      source: video_channel_source_data(
+        source_name:
+      ),
       title: channel_title
     }
   end
@@ -58,17 +66,31 @@ class VideoPlaylist < ApplicationRecord
 
   private
 
-  def source_links_data
-    { original: source_original_link }
-  end
-
-  def source_original_link
-    "https://www.youtube.com/playlist?list=#{youtube_id}"
-  end
-
-  def video_channel_source_data
+  def source_links_data(
+    source_name:
+  )
     {
-      name: 'youtube',
+      original: source_original_link(
+        source_name:
+      )
+    }
+  end
+
+  def source_original_link(
+    source_name:
+  )
+    if source_name == 'youtubemusic'
+      "https://music.youtube.com/playlist?list=#{youtube_id}"
+    else
+      "https://www.youtube.com/playlist?list=#{youtube_id}"
+    end
+  end
+
+  def video_channel_source_data(
+    source_name:
+  )
+    {
+      name: source_name,
       id: channel_youtube_id
     }.compact
   end

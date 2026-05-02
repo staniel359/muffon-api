@@ -7,32 +7,20 @@ module Muffon
 
           private
 
+          def video_channel_record
+            @args[:video_channel_record]
+          end
+
           def source_data
-            {
-              name: source_name,
-              id: source_video_channel_id,
-              links: source_links_data
-            }
-          end
-
-          def source_name
-            @args[:source_name]
-          end
-
-          def source_video_channel_id
-            @args[:source_video_channel_id]
-          end
-
-          def source_streaming_link
-            nil
+            video_channel_record.source_data
           end
 
           def title
-            @args[:title]
+            video_channel_record.title
           end
 
           def image_data
-            @args[:image_data]
+            video_channel_record.image_data
           end
 
           def publish_date
@@ -40,15 +28,15 @@ module Muffon
           end
 
           def views_count
-            @args[:views_count]
+            video_channel_record.views_count
           end
 
           def subscribers_count
-            @args[:subscribers_count]
+            video_channel_record.subscribers_count
           end
 
           def videos_count
-            @args[:videos_count]
+            video_channel_record.videos_count
           end
 
           def prev_page
@@ -65,10 +53,6 @@ module Muffon
 
           def videos
             @args[:videos]
-          end
-
-          def youtube_id
-            source_data[:id]
           end
         end
       end

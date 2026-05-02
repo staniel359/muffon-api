@@ -22,16 +22,6 @@ module YouTube
         raw_video_channel_data['id']
       end
 
-      def source_original_link
-        "https://www.youtube.com/channel/#{youtube_id}"
-      end
-
-      def image_data
-        YouTube::Formatter::Image.call(
-          image_url:
-        )
-      end
-
       def image_url
         raw_video_channel_data.dig(
           'snippet',
@@ -108,13 +98,13 @@ module YouTube
         )
       end
 
-      def update_record_data!
+      def update_video_channel_record!
         video_channel_record.update!(
-          record_attributes
+          video_channel_record_attributes
         )
       end
 
-      def record_attributes
+      def video_channel_record_attributes
         {
           title:,
           image_url:,

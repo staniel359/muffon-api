@@ -7,58 +7,36 @@ module Muffon
 
           private
 
+          def video_playlist_record
+            @args[:video_playlist_record]
+          end
+
           def source_data
-            {
-              name: source_name,
-              id: source_video_playlist_id,
-              links: source_links_data
-            }
+            video_playlist_record.source_data(
+              source_name:
+            )
           end
 
           def source_name
-            @args[:source_name]
-          end
-
-          def source_video_playlist_id
-            @args[:source_video_playlist_id]
-          end
-
-          def source_streaming_link
-            nil
+            @args[:source_name] || 'youtube'
           end
 
           def title
-            @args[:title]
+            video_playlist_record.title
           end
 
           def channel_data
-            {
-              source: channel_source_data,
-              title: channel_title
-            }
-          end
-
-          def channel_source_data
-            {
-              name: source_name,
-              id: source_video_channel_id
-            }.compact
-          end
-
-          def source_video_channel_id
-            @args[:source_video_channel_id]
-          end
-
-          def channel_title
-            @args[:channel_title]
+            video_playlist_record.video_channel_data(
+              source_name:
+            )
           end
 
           def image_data
-            @args[:image_data]
+            video_playlist_record.image_data
           end
 
           def videos_count
-            @args[:videos_count]
+            video_playlist_record.videos_count
           end
 
           def publish_date
@@ -69,8 +47,8 @@ module Muffon
             @args[:views_count]
           end
 
-          def youtube_id
-            source_data[:id]
+          def description
+            video_playlist_record.description
           end
         end
       end

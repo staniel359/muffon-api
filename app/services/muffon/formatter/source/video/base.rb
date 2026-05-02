@@ -7,58 +7,32 @@ module Muffon
 
           private
 
+          def video_record
+            @args[:video_record]
+          end
+
           def source_data
-            {
-              name: source_name,
-              id: source_video_id,
-              links: source_links_data
-            }
-          end
-
-          def source_name
-            @args[:source_name]
-          end
-
-          def source_video_id
-            @args[:source_video_id]
-          end
-
-          def source_streaming_link
-            Muffon::Formatter::Source::StreamingLink.call(
-              model: 'video',
-              source_name:,
-              source_model_id: source_video_id
+            video_record.source_data(
+              source_name:
             )
           end
 
+          def source_name
+            @args[:source_name] || 'youtube'
+          end
+
           def title
-            @args[:title]
+            video_record.title
           end
 
           def channel_data
-            {
-              source: channel_source_data,
-              title: channel_title
-            }
-          end
-
-          def channel_source_data
-            {
-              name: source_name,
-              id: source_video_channel_id
-            }.compact
-          end
-
-          def channel_title
-            @args[:channel_title]
-          end
-
-          def source_video_channel_id
-            @args[:source_video_channel_id]
+            video_record.video_channel_data(
+              source_name:
+            )
           end
 
           def image_data
-            @args[:image_data]
+            video_record.image_data
           end
 
           def publish_date
@@ -70,7 +44,7 @@ module Muffon
           end
 
           def views_count
-            @args[:views_count]
+            video_record.views_count
           end
 
           def likes_count
@@ -83,10 +57,6 @@ module Muffon
 
           def duration
             @args[:duration]
-          end
-
-          def youtube_id
-            source_data[:id]
           end
         end
       end

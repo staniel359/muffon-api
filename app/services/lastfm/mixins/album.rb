@@ -118,13 +118,13 @@ module LastFM
         )
       end
 
-      def update_record_data!
+      def update_album_record!
         album_record.update!(
-          record_attributes
+          album_record_attributes
         )
       end
 
-      def record_attributes
+      def album_record_attributes
         {
           image_url:,
           listeners_count:

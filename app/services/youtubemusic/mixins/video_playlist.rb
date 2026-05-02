@@ -1,6 +1,8 @@
 module YouTubeMusic
   module Mixins
     module VideoPlaylist
+      include Muffon::Mixins::VideoPlaylist
+
       private
 
       def title
@@ -29,10 +31,6 @@ module YouTubeMusic
         )
       end
 
-      def source_original_link
-        "https://music.youtube.com/playlist?list=#{youtube_id}"
-      end
-
       def channel_title
         raw_playlist_data.dig(
           'musicResponsiveListItemRenderer',
@@ -58,12 +56,6 @@ module YouTubeMusic
           'navigationEndpoint',
           'browseEndpoint',
           'browseId'
-        )
-      end
-
-      def image_data
-        YouTubeMusic::Formatter::Image.call(
-          image_url:
         )
       end
 
@@ -115,6 +107,22 @@ module YouTubeMusic
             'runs'
           )
         )
+      end
+
+      def update_video_playlist_record!
+        video_playlist_record.update!(
+          video_playlist_record_attributes
+        )
+      end
+
+      def video_playlist_record_attributes
+        {
+          title:,
+          channel_youtube_id:,
+          channel_title:,
+          image_url:,
+          videos_count:
+        }.compact
       end
     end
   end

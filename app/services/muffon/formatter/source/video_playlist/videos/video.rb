@@ -16,14 +16,7 @@ module Muffon
 
             def required_args
               %i[
-                source_original_link
-                source_name
-                source_video_id
-                title
-                channel_title
-                source_video_channel_id
-                image_data
-                creation_date
+                video_record
                 description
               ]
             end

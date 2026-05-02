@@ -35,17 +35,25 @@ class Video < ApplicationRecord
     end
   end
 
-  def source_data
+  def source_data(
+    source_name: 'youtube'
+  )
     {
-      name: 'youtube',
+      name: source_name,
       id: youtube_id,
-      links: source_links_data
+      links: source_links_data(
+        source_name:
+      )
     }
   end
 
-  def video_channel_data
+  def video_channel_data(
+    source_name: 'youtube'
+  )
     {
-      source: video_channel_source_data,
+      source: video_channel_source_data(
+        source_name:
+      ),
       title: channel_title
     }
   end
@@ -58,28 +66,44 @@ class Video < ApplicationRecord
 
   private
 
-  def source_links_data
+  def source_links_data(
+    source_name:
+  )
     {
-      original: source_original_link,
-      streaming: source_streaming_link
+      original: source_original_link(
+        source_name:
+      ),
+      streaming: source_streaming_link(
+        source_name:
+      )
     }
   end
 
-  def source_original_link
-    "https://www.youtube.com/watch?v=#{youtube_id}"
+  def source_original_link(
+    source_name:
+  )
+    if source_name == 'youtubemusic'
+      "https://music.youtube.com/watch?v=#{youtube_id}"
+    else
+      "https://www.youtube.com/watch?v=#{youtube_id}"
+    end
   end
 
-  def source_streaming_link
+  def source_streaming_link(
+    source_name:
+  )
     Muffon::Formatter::Source::StreamingLink.call(
       model: 'video',
-      source_name: 'youtube',
+      source_name:,
       source_model_id: youtube_id
     )
   end
 
-  def video_channel_source_data
+  def video_channel_source_data(
+    source_name:
+  )
     {
-      name: 'youtube',
+      name: source_name,
       id: channel_youtube_id
     }.compact
   end

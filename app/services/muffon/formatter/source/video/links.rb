@@ -13,14 +13,12 @@ module Muffon
 
           def required_args
             %i[
-              source_original_link
-              source_name
-              source_video_id
+              video_record
             ]
           end
 
           def data
-            { links: source_links_data }
+            { links: source_data[:links] }
           end
         end
       end

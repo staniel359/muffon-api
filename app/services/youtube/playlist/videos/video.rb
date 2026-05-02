@@ -19,17 +19,10 @@ module YouTube
         end
 
         def data
-          update_record_data!
+          update_video_record!
 
           Muffon::Formatter::Source::VideoPlaylist::Videos::Video.call(
-            source_original_link:,
-            source_name:,
-            source_video_id: youtube_id,
-            title:,
-            channel_title:,
-            source_video_channel_id: channel_youtube_id,
-            image_data:,
-            creation_date:,
+            video_record:,
             description:,
             **self_args
           )

@@ -19,17 +19,12 @@ module YouTubeMusic
         end
 
         def data
+          update_video_playlist_record!
+
           Muffon::Formatter::Source::Search::VideoPlaylists::VideoPlaylist.call(
-            source_original_link:,
             source_name:,
-            source_video_playlist_id: youtube_id,
-            title:,
-            channel_title:,
-            source_video_channel_id: channel_youtube_id,
-            image_data:,
+            video_playlist_record:,
             views_count:,
-            videos_count:,
-            creation_date: nil,
             **self_args
           )
         end

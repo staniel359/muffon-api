@@ -13,7 +13,7 @@ module LastFM
       end
 
       def track_data
-        update_record_data!
+        update_track_record!
 
         Muffon::Formatter::Source::Track::Info.call(
           source_original_link:,

@@ -1,6 +1,8 @@
 module YouTubeMusic
   module Mixins
     module Video
+      include Muffon::Mixins::Video
+
       private
 
       def title
@@ -41,10 +43,6 @@ module YouTubeMusic
           )
       end
 
-      def source_original_link
-        "https://music.youtube.com/watch?v=#{youtube_id}"
-      end
-
       def channel_title
         raw_channel_data['text']
       end
@@ -66,12 +64,6 @@ module YouTubeMusic
           'navigationEndpoint',
           'browseEndpoint',
           'browseId'
-        )
-      end
-
-      def image_data
-        YouTubeMusic::Formatter::Image.call(
-          image_url:
         )
       end
 
@@ -123,6 +115,22 @@ module YouTubeMusic
             'runs'
           )
         )
+      end
+
+      def update_video_record!
+        video_record.update!(
+          video_record_attributes
+        )
+      end
+
+      def video_record_attributes
+        {
+          title:,
+          channel_youtube_id:,
+          channel_title:,
+          image_url:,
+          views_count:
+        }.compact
       end
     end
   end

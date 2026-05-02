@@ -13,10 +13,7 @@ module Muffon
 
           def required_args
             %i[
-              source_original_link
-              source_name
-              source_video_channel_id
-              title
+              video_channel_record
               prev_page
               next_page
               playlists

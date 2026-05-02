@@ -132,13 +132,13 @@ module LastFM
           .to_datetime
       end
 
-      def update_record_data!
+      def update_track_record!
         track_record.update!(
-          record_attributes
+          track_record_attributes
         )
       end
 
-      def record_attributes
+      def track_record_attributes
         {
           listeners_count:
         }.compact

@@ -15,7 +15,7 @@ module LastFM
       end
 
       def album_data
-        update_record_data!
+        update_album_record!
 
         if @args[:is_list]
           album_list_data

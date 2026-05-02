@@ -19,15 +19,10 @@ module YouTube
         end
 
         def data
-          update_record_data!
+          update_video_channel_record!
 
           Muffon::Formatter::Source::Search::VideoChannels::VideoChannel.call(
-            source_original_link:,
-            source_name:,
-            source_video_channel_id: youtube_id,
-            title:,
-            image_data:,
-            creation_date:,
+            video_channel_record:,
             **self_args
           )
         end

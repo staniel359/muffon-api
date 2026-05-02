@@ -23,10 +23,6 @@ module YouTube
         raw_video_data['id']
       end
 
-      def source_original_link
-        "https://www.youtube.com/watch?v=#{youtube_id}"
-      end
-
       def channel_title
         if raw_channel_title.present?
           CGI.unescapeHTML(
@@ -48,12 +44,6 @@ module YouTube
         raw_video_data.dig(
           'snippet',
           'channelId'
-        )
-      end
-
-      def image_data
-        YouTube::Formatter::Image.call(
-          image_url:
         )
       end
 
@@ -148,13 +138,13 @@ module YouTube
         )
       end
 
-      def update_record_data!
+      def update_video_record!
         video_record.update!(
-          record_attributes
+          video_record_attributes
         )
       end
 
-      def record_attributes
+      def video_record_attributes
         {
           title:,
           channel_youtube_id:,

@@ -6,7 +6,7 @@ module LastFM
       private
 
       def artist_data
-        update_record_data! if update_image?
+        update_artist_record! if update_image?
 
         {
           **super,

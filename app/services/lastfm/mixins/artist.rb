@@ -70,13 +70,13 @@ module LastFM
         tag_data['name']
       end
 
-      def update_record_data!
+      def update_artist_record!
         artist_record.update!(
-          record_attributes
+          artist_record_attributes
         )
       end
 
-      def record_attributes
+      def artist_record_attributes
         {
           image_url:,
           listeners_count:

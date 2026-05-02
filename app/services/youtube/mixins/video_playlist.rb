@@ -26,10 +26,6 @@ module YouTube
         raw_video_playlist_data['id']
       end
 
-      def source_original_link
-        "https://www.youtube.com/playlist?list=#{youtube_id}"
-      end
-
       def channel_youtube_id
         raw_video_playlist_data.dig(
           'snippet',
@@ -51,12 +47,6 @@ module YouTube
         raw_video_playlist_data.dig(
           'snippet',
           'channelTitle'
-        )
-      end
-
-      def image_data
-        YouTube::Formatter::Image.call(
-          image_url:
         )
       end
 
@@ -110,13 +100,13 @@ module YouTube
         )
       end
 
-      def update_record_data!
+      def update_video_playlist_record!
         video_playlist_record.update!(
-          record_attributes
+          video_playlist_record_attributes
         )
       end
 
-      def record_attributes
+      def video_playlist_record_attributes
         {
           title:,
           channel_youtube_id:,
