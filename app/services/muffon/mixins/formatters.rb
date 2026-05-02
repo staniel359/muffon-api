@@ -70,9 +70,9 @@ module Muffon
       end
 
       def human_number_to_number(
-        number
+        value
       )
-        return if number.blank?
+        return if value.blank?
 
         miltipliers = {
           'K' => 3,
@@ -83,7 +83,7 @@ module Muffon
         _,
         count_string,
         multiplier_letter =
-          number
+          value
           .match(
             /(\d+(?:[.|,]\d+)*)(\w)*/
           )

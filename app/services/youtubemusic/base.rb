@@ -64,13 +64,18 @@ module YouTubeMusic
     def find_raw_views_count(
       raw_collection
     )
-      raw_collection
+      raw_text =
+        raw_collection
         .find do |raw_item_data|
           raw_item_data['text'].match?(
             /(.+) views/
           )
         end
         .try(:[], 'text')
+
+      return if raw_text == 'No views'
+
+      raw_text
         &.match(/(.+) views/)
         .try(:[], 1)
     end

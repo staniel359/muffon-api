@@ -63,7 +63,7 @@ module YandexMusic
       end
 
       def album_yandexmusic_id
-        raw_album_data['id']
+        raw_album_data.try(:[], 'id')
       end
 
       def image_data

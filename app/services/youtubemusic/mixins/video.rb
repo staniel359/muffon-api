@@ -28,7 +28,17 @@ module YouTubeMusic
           'navigationEndpoint',
           'watchEndpoint',
           'videoId'
-        )
+        ) ||
+          raw_video_data.dig(
+            'musicResponsiveListItemRenderer',
+            'overlay',
+            'musicItemThumbnailOverlayRenderer',
+            'content',
+            'musicPlayButtonRenderer',
+            'playNavigationEndpoint',
+            'watchEndpoint',
+            'videoId'
+          )
       end
 
       def source_original_link
