@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.7445.3
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
         Safari/537.36
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -26,7 +26,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 16 Oct 2025 21:03:17 GMT
+      - Sat, 02 May 2026 17:53:50 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -51,5 +51,5 @@ http_interactions:
             "resultsPerPage": 0
           }
         }
-  recorded_at: Thu, 16 Oct 2025 21:03:17 GMT
-recorded_with: VCR 6.3.1
+  recorded_at: Sat, 02 May 2026 17:53:50 GMT
+recorded_with: VCR 6.4.0

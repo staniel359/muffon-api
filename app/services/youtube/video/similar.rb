@@ -75,21 +75,12 @@ module YouTube
         Muffon::Request.call(
           url: request_url,
           method: 'POST',
-          params: request_params,
           payload: request_payload
         )
       end
 
       def request_url
         REQUEST_BASE_URL
-      end
-
-      def request_params
-        {
-          **super,
-          id: @args[:video_id],
-          part: 'snippet,statistics'
-        }
       end
 
       def request_payload
