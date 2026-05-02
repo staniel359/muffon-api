@@ -35,8 +35,8 @@ module Muffon
             @args[:image_data]
           end
 
-          def creation_date
-            @args[:creation_date]
+          def publish_date
+            video_channel_record.publish_date
           end
 
           def views_count

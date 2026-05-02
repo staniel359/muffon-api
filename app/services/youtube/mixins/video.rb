@@ -66,15 +66,15 @@ module YouTube
         )
       end
 
-      def creation_date
-        return if raw_creation_date.blank?
+      def publish_date
+        return if raw_publish_date.blank?
 
-        Muffon::Formatter::Date.call(
-          date: raw_creation_date
+        datetime_formatted(
+          raw_publish_date.to_datetime
         )
       end
 
-      def raw_creation_date
+      def raw_publish_date
         raw_video_data.dig(
           'snippet',
           'publishedAt'
@@ -161,7 +161,7 @@ module YouTube
           channel_title:,
           image_url:,
           views_count:,
-          created_at: creation_date
+          publish_date:
         }.compact
       end
     end

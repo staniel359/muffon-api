@@ -22,7 +22,7 @@ module Muffon
           image: image_data,
           videos_count:,
           subscribers_count:,
-          publish_date: creation_date
+          publish_date:
         }.compact
       end
 
@@ -65,14 +65,8 @@ module Muffon
         video_channel_record.subscribers_count
       end
 
-      def creation_date
-        datetime_formatted(
-          raw_creation_date
-        )
-      end
-
-      def raw_creation_date
-        video_channel_record.created_at
+      def publish_date
+        video_channel_record.publish_date
       end
     end
   end

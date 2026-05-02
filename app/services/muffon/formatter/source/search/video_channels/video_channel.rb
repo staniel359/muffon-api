@@ -29,7 +29,7 @@ module Muffon
                 source: source_data,
                 title:,
                 image: image_data,
-                publish_date: creation_date
+                publish_date:
               }.compact
             end
           end

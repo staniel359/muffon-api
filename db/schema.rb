@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_14_155138) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_02_160351) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -485,6 +485,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_14_155138) do
   create_table "video_channels", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "image_url"
+    t.string "publish_date"
     t.integer "subscribers_count", default: 0
     t.string "title"
     t.datetime "updated_at", null: false
@@ -499,6 +500,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_14_155138) do
     t.datetime "created_at", null: false
     t.text "description"
     t.string "image_url"
+    t.string "publish_date"
     t.string "title"
     t.datetime "updated_at", null: false
     t.integer "videos_count", default: 0
@@ -511,6 +513,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_14_155138) do
     t.string "channel_youtube_id"
     t.datetime "created_at", null: false
     t.string "image_url"
+    t.string "publish_date"
     t.string "title"
     t.datetime "updated_at", null: false
     t.bigint "views_count", default: 0

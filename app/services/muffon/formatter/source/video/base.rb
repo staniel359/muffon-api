@@ -61,8 +61,8 @@ module Muffon
             @args[:image_data]
           end
 
-          def creation_date
-            @args[:creation_date]
+          def publish_date
+            video_record.publish_date
           end
 
           def artist_data

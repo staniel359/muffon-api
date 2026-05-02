@@ -34,7 +34,7 @@ module Muffon
                 title:,
                 channel: channel_data,
                 image: image_data,
-                publish_date: creation_date,
+                publish_date:,
                 duration:,
                 views_count:
               }.compact

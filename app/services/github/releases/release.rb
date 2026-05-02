@@ -18,7 +18,7 @@ module GitHub
       def data
         {
           version:,
-          publish_date: creation_date,
+          publish_date:,
           link:,
           description:
         }
@@ -32,14 +32,14 @@ module GitHub
         @args[:raw_release_data]
       end
 
-      def creation_date
+      def publish_date
         datetime_formatted(
-          raw_creation_date
+          raw_publish_date.to_datetime
         )
       end
 
-      def raw_creation_date
-        raw_release_data['published_at'].to_datetime
+      def raw_publish_date
+        raw_release_data['published_at']
       end
 
       def link

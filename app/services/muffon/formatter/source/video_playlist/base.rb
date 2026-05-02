@@ -61,8 +61,8 @@ module Muffon
             @args[:videos_count]
           end
 
-          def creation_date
-            @args[:creation_date]
+          def publish_date
+            video_playlist_record.publish_date
           end
 
           def views_count

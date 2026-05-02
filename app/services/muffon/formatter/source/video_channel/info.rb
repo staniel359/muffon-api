@@ -34,7 +34,7 @@ module Muffon
               source: source_data,
               title:,
               image: image_data,
-              publish_date: creation_date,
+              publish_date:,
               description: description_computed,
               views_count:,
               subscribers_count:,

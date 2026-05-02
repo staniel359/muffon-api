@@ -41,7 +41,7 @@ module Muffon
               channel: channel_data,
               image: image_data,
               artist: artist_data,
-              publish_date: creation_date,
+              publish_date:,
               description: description_computed,
               tags: tags_computed,
               views_count:,
