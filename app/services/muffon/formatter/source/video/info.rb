@@ -34,6 +34,7 @@ module Muffon
               image: image_data,
               artist: artist_data,
               publish_date:,
+              duration:,
               description: description_computed,
               tags: tags_computed,
               views_count:,

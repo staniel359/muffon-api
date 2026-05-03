@@ -29,7 +29,9 @@ module Muffon
                 channel: channel_data,
                 image: image_data,
                 publish_date:,
-                description: description_computed
+                duration:,
+                description: description_computed,
+                views_count:
               }.compact
             end
           end
