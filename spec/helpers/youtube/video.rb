@@ -25,6 +25,10 @@ module Spec
         def youtube_video_tags_data
           {:video=>{:tags=>[{:name=>"Wild"}, {:name=>"Nothing"}, {:name=>"Gemini"}, {:name=>"Chinatown"}]}}
         end
+
+        def youtube_video_views_count_data
+          {video: { views_count: 1741623 }}
+        end
       end
     end
   end

@@ -926,6 +926,7 @@ Rails
             get 'tags'
             get 'similar'
             get 'links'
+            get 'views_count'
           end
         end
 

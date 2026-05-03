@@ -168,4 +168,38 @@ RSpec.describe API::YouTube::VideosController do
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  describe 'GET :views_count' do
+    it 'returns 200 if video_id present' do
+      VCR.use_cassette(
+        'controllers/api/youtube/videos/views_count/success'
+      ) do
+        get(
+          :views_count,
+          params: {
+            **required_params,
+            video_id: '1aTIkQf3eRY'
+          }
+        )
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 404 if wrong video_id' do
+      VCR.use_cassette(
+        'controllers/api/youtube/videos/views_count/wrong_id'
+      ) do
+        get(
+          :views_count,
+          params: {
+            **required_params,
+            video_id: random_string
+          }
+        )
+      end
+
+      expect(response).to have_http_status(:not_found)
+    end
+  end
 end

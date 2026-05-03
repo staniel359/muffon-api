@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=1aTIkQf3eRY&key=<GOOGLE_API_KEY>&part=snippet,statistics
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
+        Safari/537.36
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Sun, 03 May 2026 18:36:08 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICJraW5kIjogInlvdXR1YmUjdmlkZW9MaXN0UmVzcG9uc2UiLAogICJldGFnIjogIlNUbjlkVlJYN1NlSnYwVmhjN3lUd21pajlwNCIsCiAgIml0ZW1zIjogWwogICAgewogICAgICAia2luZCI6ICJ5b3V0dWJlI3ZpZGVvIiwKICAgICAgImV0YWciOiAiV0NuSFJZNnF0TDhyczhrMTZINnhJS0dsV3I0IiwKICAgICAgImlkIjogIjFhVElrUWYzZVJZIiwKICAgICAgInNuaXBwZXQiOiB7CiAgICAgICAgInB1Ymxpc2hlZEF0IjogIjIwMTQtMTItMDFUMTI6NDQ6NTBaIiwKICAgICAgICAiY2hhbm5lbElkIjogIlVDYmFKWlVWcWZFWlB0d2FVekdnZFo4QSIsCiAgICAgICAgInRpdGxlIjogIkNoaW5hdG93biIsCiAgICAgICAgImRlc2NyaXB0aW9uIjogIlByb3ZpZGVkIHRvIFlvdVR1YmUgYnkgQldTQ0QgSW5jXG5cbkNoaW5hdG93biDCtyBXaWxkIE5vdGhpbmdcblxuR2VtaW5pXG5cbuKElyAyMDEwIENhcHR1cmVkIFRyYWNrc1xuXG5SZWxlYXNlZCBvbjogMjAxMC0wNS0yNVxuXG5NYWluICBBcnRpc3Q6IFdpbGQgTm90aGluZ1xuXG5BdXRvLWdlbmVyYXRlZCBieSBZb3VUdWJlLiIsCiAgICAgICAgInRodW1ibmFpbHMiOiB7CiAgICAgICAgICAiZGVmYXVsdCI6IHsKICAgICAgICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpLzFhVElrUWYzZVJZL2RlZmF1bHQuanBnIiwKICAgICAgICAgICAgIndpZHRoIjogMTIwLAogICAgICAgICAgICAiaGVpZ2h0IjogOTAKICAgICAgICAgIH0sCiAgICAgICAgICAibWVkaXVtIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvMWFUSWtRZjNlUlkvbXFkZWZhdWx0LmpwZyIsCiAgICAgICAgICAgICJ3aWR0aCI6IDMyMCwKICAgICAgICAgICAgImhlaWdodCI6IDE4MAogICAgICAgICAgfSwKICAgICAgICAgICJoaWdoIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvMWFUSWtRZjNlUlkvaHFkZWZhdWx0LmpwZyIsCiAgICAgICAgICAgICJ3aWR0aCI6IDQ4MCwKICAgICAgICAgICAgImhlaWdodCI6IDM2MAogICAgICAgICAgfSwKICAgICAgICAgICJzdGFuZGFyZCI6IHsKICAgICAgICAgICAgInVybCI6ICJodHRwczovL2kueXRpbWcuY29tL3ZpLzFhVElrUWYzZVJZL3NkZGVmYXVsdC5qcGciLAogICAgICAgICAgICAid2lkdGgiOiA2NDAsCiAgICAgICAgICAgICJoZWlnaHQiOiA0ODAKICAgICAgICAgIH0sCiAgICAgICAgICAibWF4cmVzIjogewogICAgICAgICAgICAidXJsIjogImh0dHBzOi8vaS55dGltZy5jb20vdmkvMWFUSWtRZjNlUlkvbWF4cmVzZGVmYXVsdC5qcGciLAogICAgICAgICAgICAid2lkdGgiOiAxMjgwLAogICAgICAgICAgICAiaGVpZ2h0IjogNzIwCiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICAiY2hhbm5lbFRpdGxlIjogIldpbGQgTm90aGluZyAtIFRvcGljIiwKICAgICAgICAidGFncyI6IFsKICAgICAgICAgICJXaWxkIE5vdGhpbmciLAogICAgICAgICAgIkdlbWluaSIsCiAgICAgICAgICAiQ2hpbmF0b3duIgogICAgICAgIF0sCiAgICAgICAgImNhdGVnb3J5SWQiOiAiMTAiLAogICAgICAgICJsaXZlQnJvYWRjYXN0Q29udGVudCI6ICJub25lIiwKICAgICAgICAiZGVmYXVsdExhbmd1YWdlIjogImVuIiwKICAgICAgICAibG9jYWxpemVkIjogewogICAgICAgICAgInRpdGxlIjogIkNoaW5hdG93biIsCiAgICAgICAgICAiZGVzY3JpcHRpb24iOiAiUHJvdmlkZWQgdG8gWW91VHViZSBieSBCV1NDRCBJbmNcblxuQ2hpbmF0b3duIMK3IFdpbGQgTm90aGluZ1xuXG5HZW1pbmlcblxu4oSXIDIwMTAgQ2FwdHVyZWQgVHJhY2tzXG5cblJlbGVhc2VkIG9uOiAyMDEwLTA1LTI1XG5cbk1haW4gIEFydGlzdDogV2lsZCBOb3RoaW5nXG5cbkF1dG8tZ2VuZXJhdGVkIGJ5IFlvdVR1YmUuIgogICAgICAgIH0sCiAgICAgICAgImRlZmF1bHRBdWRpb0xhbmd1YWdlIjogImVuIgogICAgICB9LAogICAgICAic3RhdGlzdGljcyI6IHsKICAgICAgICAidmlld0NvdW50IjogIjE3NDE2MjMiLAogICAgICAgICJsaWtlQ291bnQiOiAiMjQ3MjUiLAogICAgICAgICJmYXZvcml0ZUNvdW50IjogIjAiLAogICAgICAgICJjb21tZW50Q291bnQiOiAiMzMyIgogICAgICB9CiAgICB9CiAgXSwKICAicGFnZUluZm8iOiB7CiAgICAidG90YWxSZXN1bHRzIjogMSwKICAgICJyZXN1bHRzUGVyUGFnZSI6IDEKICB9Cn0K
+  recorded_at: Sun, 03 May 2026 18:36:08 GMT
+recorded_with: VCR 6.4.0

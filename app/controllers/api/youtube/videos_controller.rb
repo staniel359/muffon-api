@@ -11,6 +11,8 @@ module API
 
       def links; end
 
+      def views_count; end
+
       private
 
       def info_data
@@ -60,6 +62,16 @@ module API
 
       def links_data
         ::YouTube::Video::Links.call(
+          params.slice(
+            *%i[
+              video_id
+            ]
+          )
+        )
+      end
+
+      def views_count_data
+        ::YouTube::Video::ViewsCount.call(
           params.slice(
             *%i[
               video_id
