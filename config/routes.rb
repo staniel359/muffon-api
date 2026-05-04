@@ -388,6 +388,7 @@ Rails
       namespace :audius do
         namespace :search do
           get 'artists'
+          get 'albums'
         end
       end
 

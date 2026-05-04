@@ -27,4 +27,33 @@ RSpec.describe API::Audius::SearchController do
       expect(response).to have_http_status(:bad_request)
     end
   end
+
+  describe 'GET :albums' do
+    it 'returns 200 if query present' do
+      VCR.use_cassette(
+        'controllers/api/audius/search/albums/success'
+      ) do
+        get(
+          :albums,
+          params: {
+            **required_params,
+            query: 'a'
+          }
+        )
+      end
+
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'returns 400 if no query' do
+      get(
+        :albums,
+        params: {
+          **required_params
+        }
+      )
+
+      expect(response).to have_http_status(:bad_request)
+    end
+  end
 end

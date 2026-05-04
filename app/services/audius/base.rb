@@ -15,11 +15,5 @@ module Audius
         :api_key
       )
     end
-
-    def image_data_formatted(images_data)
-      Audius::Utils::Image.call(
-        images_data:
-      )
-    end
   end
 end
