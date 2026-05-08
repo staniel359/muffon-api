@@ -37,6 +37,14 @@ module Spotify
               response_data['pssh']
             end
 
+            def response_data
+              Muffon::Request.call(
+                url: request_url,
+                method: 'GET',
+                headers: request_headers
+              )
+            end
+
             def request_url
               "https://seektables.scdn.co/seektable/#{@args[:file_id]}.json"
             end

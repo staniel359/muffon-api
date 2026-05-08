@@ -1,9 +1,8 @@
-from pywidevine.remotecdm import RemoteCdm
+from pywidevine.device import Device
+from pywidevine.cdm import Cdm
 from pywidevine.pssh import PSSH
 
 import argparse, requests, sys, os
-
-import json
 
 parser = argparse.ArgumentParser()
 
@@ -14,29 +13,22 @@ parser.add_argument('--user_agent')
 
 args = parser.parse_args()
 
-key = ''
-
 license_url = 'https://gew1-spclient.spotify.com/widevine-license/v1/audio/license'
 
 license_headers = {
   'Authorization': f'Bearer {args.token}',
   'Client-Token': f'{args.client_token}',
-  'User-Agent': f'{args.user_agent}'
+  'User-Agent': f'{args.user_agent}',
+  'Host': 'gew1-spclient.spotify.com',
+  'Origin': 'https://open.spotify.com',
+  'Referer': 'https://open.spotify.com/'
 }
 
-widevine_file_path = os.getcwd() + '/lib/widevine.json'
+widevine_file_path = os.getcwd() + '/lib/widevine.wvd'
 
-with open(widevine_file_path) as file:
-  widevine_data = json.load(file)
+device = Device.load(widevine_file_path)
 
-cdm = RemoteCdm(
-  device_type = widevine_data['device_type'],
-  system_id = widevine_data['system_id'],
-  security_level = widevine_data['security_level'],
-  host = widevine_data['host'],
-  secret = widevine_data['secret'],
-  device_name = widevine_data['device_name']
-)
+cdm = Cdm.from_device(device)
 
 session_id = cdm.open()
 
@@ -54,6 +46,8 @@ license = requests.post(
 )
 
 license.raise_for_status()
+
+key = ''
 
 if license:
   cdm.parse_license(
