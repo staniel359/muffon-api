@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/me/playlists?limit=5&offset=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
+        Safari/537.36
+      Authorization:
+      - Bearer BQD6w1sCdKd3EGArNa1EsLhcmuJTK166Os0dXmAh-1OJc9SWTzOM1vr57ZilXE20yBrlEGliRBFsimKlukFNldgkOTq8NeOr2y0QFiGI5UeAWOH_B3Y-EFyn5nHohhsess0a0rSRfrgzWwzFVALG27vS4_OJTC7cgH4D3K1jDyL5WD3Cz3PJOJjnoqYNCT97Z9OqW3AxQEcR2jF5ojZNFeTYo0FS97j_mASzjTD7E_OoRtJ-tOJSABOD-iTK_z6HARo5qNiBZFqNrZY4vkreN4L5tV-CvtQ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=0
+      Etag:
+      - '"MC-Ijc2YTRmOGIzYzZiNGRmNWNhY2UyYzBlMzZjMDlmZDBjIg=="'
+      Vary:
+      - Authorization
+      X-Robots-Tag:
+      - noindex, nofollow
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Accept, App-Platform, Authorization, Content-Type, Origin, Retry-After, Spotify-App-Version,
+        X-Cloud-Trace-Context, client-token, content-access-token
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE, PATCH
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Date:
+      - Fri, 08 May 2026 22:39:03 GMT
+      Server:
+      - envoy
+      Via:
+      - HTTP/2 edgeproxy, 1.1 google
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"href":"https://api.spotify.com/v1/me/playlists?offset=5&limit=5","limit":5,"next":null,"offset":5,"previous":"https://api.spotify.com/v1/me/playlists?offset=0&limit=5","total":4,"items":[]}'
+  recorded_at: Fri, 08 May 2026 22:39:03 GMT
+recorded_with: VCR 6.4.0

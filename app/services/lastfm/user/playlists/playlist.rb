@@ -24,8 +24,7 @@ module LastFM
             title:,
             image_data: nil,
             description: nil,
-            tracks_count:,
-            tracks: nil
+            tracks_count:
           )
         end
 

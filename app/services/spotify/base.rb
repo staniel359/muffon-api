@@ -110,28 +110,12 @@ module Spotify
       )
     end
 
-    def retry_with_new_session
-      if update_session[:success]
-        spotify_connection&.reload
-
-        call
-      else
-        not_found
-      end
-    end
-
-    def update_session
-      Spotify::Connection::Updater.call(
-        **self_args
-      )
-    end
-
     def spotify_connection
       if defined?(@spotify_connection)
         @spotify_connection
       else
         @spotify_connection =
-          profile_record&.spotify_connection
+          profile_record.spotify_connection
       end
     end
   end

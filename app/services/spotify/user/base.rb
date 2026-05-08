@@ -6,9 +6,9 @@ module Spotify
       def call
         check_args
 
-        check_if_not_found
+        check_if_not_found unless skip_profile?
 
-        check_if_forbidden
+        check_if_forbidden unless skip_profile?
 
         data
       rescue Faraday::UnauthorizedError
@@ -21,9 +21,13 @@ module Spotify
 
       def required_args
         if skip_profile?
-          %i[
-            access_token
-          ]
+          if test?
+            []
+          else
+            %i[
+              access_token
+            ]
+          end
         else
           %i[
             profile_id
@@ -39,19 +43,11 @@ module Spotify
       end
 
       def not_found?
-        if skip_profile?
-          false
-        else
-          profile.blank?
-        end
+        profile_record.blank?
       end
 
       def forbidden?
-        if skip_profile?
-          false
-        else
-          !valid_profile?
-        end
+        !valid_profile?
       end
 
       def data
@@ -85,8 +81,33 @@ module Spotify
       end
 
       def access_token
+        return test_access_token if test?
+
         @args[:access_token] ||
           spotify_connection&.access_token
+      end
+
+      def test_access_token
+        credentials.dig(
+          :spotify,
+          :test_user_token
+        )
+      end
+
+      def retry_with_new_session
+        session_update_result = update_session
+
+        raise not_found_error unless session_update_result[:success]
+
+        spotify_connection.reload
+
+        call
+      end
+
+      def update_session
+        Spotify::Connection::Updater.call(
+          **self_args
+        )
       end
 
       alias raw_user_data response_data

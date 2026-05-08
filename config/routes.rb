@@ -828,12 +828,11 @@ Rails
           scope ':profile_id' do
             get '', action: :info
             get 'tracks'
-            get 'playlists'
-          end
-        end
 
-        namespace :audio do
-          get 'secret'
+            resources :playlists, only: %i[index] do
+              get 'tracks'
+            end
+          end
         end
       end
 

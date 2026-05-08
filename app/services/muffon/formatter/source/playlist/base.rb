@@ -36,10 +36,6 @@ module Muffon
           def tracks_count
             @args[:tracks_count]
           end
-
-          def tracks
-            @args[:tracks]
-          end
         end
       end
     end

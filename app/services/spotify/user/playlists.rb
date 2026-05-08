@@ -39,8 +39,7 @@ module Spotify
       )
         Spotify::User::Playlists::Playlist.call(
           raw_playlist_data:,
-          with_tracks: @args[:with_tracks],
-          profile_id: @args[:profile_id]
+          **self_args
         )
       end
     end

@@ -22,7 +22,6 @@ module Muffon
               image_data
               description
               tracks_count
-              tracks
             ]
           end
 
@@ -32,8 +31,7 @@ module Muffon
               title:,
               image: image_data,
               description:,
-              tracks_count:,
-              tracks:
+              tracks_count:
             }.compact
           end
         end

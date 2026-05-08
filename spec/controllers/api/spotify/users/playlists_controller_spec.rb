@@ -1,13 +1,15 @@
-RSpec.describe API::Spotify::UsersController do
-  describe 'GET :info' do
+RSpec.describe API::Spotify::Users::PlaylistsController do
+  describe 'GET :index' do
     it 'returns 200 if user exists' do
       VCR.use_cassette(
-        'controllers/api/spotify/users/info/success'
+        'controllers/api/spotify/users/playlists/index/success'
       ) do
         get(
-          :info,
+          :index,
           params: {
             **required_params,
+            page: '2',
+            limit: '5',
             profile_id: '1'
           }
         )
@@ -20,15 +22,16 @@ RSpec.describe API::Spotify::UsersController do
   describe 'GET :tracks' do
     it 'returns 200 if user exists' do
       VCR.use_cassette(
-        'controllers/api/spotify/users/tracks/success'
+        'controllers/api/spotify/users/playlists/tracks/success'
       ) do
         get(
           :tracks,
           params: {
             **required_params,
-            profile_id: '1',
+            playlist_id: '5RDmNvuz0prl7bLqtZNkDe',
             page: '2',
-            limit: '5'
+            limit: '5',
+            profile_id: '1'
           }
         )
       end

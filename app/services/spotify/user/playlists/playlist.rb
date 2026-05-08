@@ -26,8 +26,7 @@ module Spotify
             title:,
             description:,
             image_data:,
-            tracks_count:,
-            tracks:
+            tracks_count:
           )
         end
 
@@ -36,33 +35,10 @@ module Spotify
         end
 
         def tracks_count
-          tracks&.size
-        end
-
-        def tracks
-          return if @args[:with_tracks].blank?
-
-          return [] if tracks_count_initial.zero?
-
-          playlist_info_data[:tracks] || []
-        end
-
-        def tracks_count_initial
           raw_playlist_data.dig(
-            'tracks',
+            'items',
             'total'
-          ) || 0
-        end
-
-        def playlist_info_data
-          @playlist_info_data ||=
-            Spotify::Playlist::Info.call(
-              playlist_id: spotify_id,
-              profile_id: @args[:profile_id]
-            ).try(
-              :[],
-              :playlist
-            ) || {}
+          )
         end
 
         def images

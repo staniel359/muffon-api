@@ -5,8 +5,6 @@ module API
 
       def tracks; end
 
-      def playlists; end
-
       private
 
       def info_data
@@ -15,7 +13,6 @@ module API
             *%i[
               profile_id
               token
-              access_token
               counters
             ]
           )
@@ -28,24 +25,8 @@ module API
             *%i[
               profile_id
               token
-              access_token
               page
               limit
-            ]
-          )
-        )
-      end
-
-      def playlists_data
-        ::Spotify::User::Playlists.call(
-          params.slice(
-            *%i[
-              profile_id
-              token
-              access_token
-              page
-              limit
-              with_tracks
             ]
           )
         )

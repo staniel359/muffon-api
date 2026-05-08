@@ -52,8 +52,10 @@ module Spotify
 
         def request_headers
           {
-            'Authorization' => "Basic #{client_id_secret_encoded}",
-            'Content-Type' => 'application/x-www-form-urlencoded'
+            'Authorization' =>
+              "Basic #{client_id_secret_encoded}",
+            'Content-Type' =>
+              'application/x-www-form-urlencoded'
           }
         end
 
@@ -64,7 +66,15 @@ module Spotify
         end
 
         def raw_client_id_secret
-          "#{@args[:client_id]}:#{@args[:client_secret]}"
+          "#{client_id}:#{client_secret}"
+        end
+
+        def client_id
+          @args[:client_id]
+        end
+
+        def client_secret
+          @args[:client_secret]
         end
 
         def refresh_token

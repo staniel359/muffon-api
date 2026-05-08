@@ -2,7 +2,7 @@ module Spec
   module Helpers
     module Base
       RANDOM_STRING = 'wejlhg239gh23'.freeze
-      CLIENT_VERSION = '2.3.0'.freeze
+      CLIENT_VERSION = '2.4.0'.freeze
 
       include Muffon::Mixins::Errors
 

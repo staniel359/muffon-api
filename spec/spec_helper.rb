@@ -100,10 +100,10 @@ RSpec.configure do |config|
 
   config.include Spec::Helpers::Spotify::Album
   config.include Spec::Helpers::Spotify::Artist
-  config.include Spec::Helpers::Spotify::Playlist
   config.include Spec::Helpers::Spotify::Search
   config.include Spec::Helpers::Spotify::Track
   config.include Spec::Helpers::Spotify::User
+  config.include Spec::Helpers::Spotify::User::Playlist
   config.include Spec::Helpers::Spotify::Utils
 
   config.include Spec::Helpers::VK::Album
