@@ -23,8 +23,7 @@ module LastFM
           Muffon::Request.call(
             url: request_url,
             method: 'POST',
-            payload: request_payload,
-            proxy: request_proxy
+            payload: request_payload
           )
 
           { success: true }
