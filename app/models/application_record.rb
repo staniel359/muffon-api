@@ -218,13 +218,13 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def attachments_data
-    Muffon::Utils::Attachments.call(
+    Muffon::Utils::Sendable::Attachments.call(
       model_record: self
     )
   end
 
   def attachments_minimal_data
-    Muffon::Utils::Attachments.call(
+    Muffon::Utils::Sendable::Attachments.call(
       model_record: self,
       is_minimal: true
     )

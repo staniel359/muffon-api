@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Playlist
       module Track
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Track
-
+        class Base < Muffon::Formatter::Track::Base
           private
 
           def track_record
@@ -23,31 +21,6 @@ module Muffon
 
           def id
             playlist_track_record.id
-          end
-
-          def title
-            track_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            playlist_track_record.artist
-          end
-
-          def album_data
-            return if album_record.blank?
-
-            {
-              source: album_source_data,
-              title: album_record.title
-            }
           end
 
           def album_record

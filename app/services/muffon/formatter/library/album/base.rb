@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Library
       module Album
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Album
-
+        class Base < Muffon::Formatter::Album::Base
           private
 
           def album_record
@@ -33,22 +31,6 @@ module Muffon
           def library_artist_record
             @library_artist_record ||=
               library_album_record.library_artist
-          end
-
-          def title
-            album_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            library_artist_record.artist
           end
 
           def image_data

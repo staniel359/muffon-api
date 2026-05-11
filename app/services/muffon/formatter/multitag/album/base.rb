@@ -15,28 +15,8 @@ module Muffon
             album_record.source_data
           end
 
-          def title
-            album_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            album_record.artist
-          end
-
           def image_data
             album_record.image_data
-          end
-
-          def listeners_count
-            album_record.listeners_count
           end
         end
       end

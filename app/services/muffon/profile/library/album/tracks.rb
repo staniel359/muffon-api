@@ -29,7 +29,7 @@ module Muffon
               .ordered(order, DEFAULT_ORDER)
               .limit(limit)
               .offset(offset)
-              .album_associated
+              .associated
           end
 
           def tracks

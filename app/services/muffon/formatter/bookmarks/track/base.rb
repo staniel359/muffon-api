@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Bookmarks
       module Track
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Track
-
+        class Base < Muffon::Formatter::Track::Base
           private
 
           def track_record
@@ -25,31 +23,6 @@ module Muffon
             bookmark_track_record.id
           end
 
-          def title
-            track_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            track_record.artist
-          end
-
-          def album_data
-            return if album_record.blank?
-
-            {
-              source: album_source_data,
-              title: album_title
-            }
-          end
-
           def album_record
             @album_record ||= bookmark_track_record.album
           end
@@ -58,10 +31,6 @@ module Muffon
             bookmark_track_record
               .album_source_data
               &.deep_symbolize_keys
-          end
-
-          def album_title
-            album_record.title
           end
 
           def image_data

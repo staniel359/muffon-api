@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Recommendations
       module Artist
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Artist
-
+        class Base < Muffon::Formatter::Artist::Base
           private
 
           def artist_record
@@ -22,14 +20,6 @@ module Muffon
 
           def id
             recommendation_artist_record.id
-          end
-
-          def name
-            artist_record.name
-          end
-
-          def image_data
-            artist_record.image_data
           end
 
           def artists_count
@@ -64,10 +54,6 @@ module Muffon
 
           def profiles_count
             artist_record.profiles_count
-          end
-
-          def listeners_count
-            artist_record.listeners_count
           end
         end
       end

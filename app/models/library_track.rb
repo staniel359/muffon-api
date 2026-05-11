@@ -28,22 +28,14 @@ class LibraryTrack < ApplicationRecord
   class << self
     def associated
       includes(
-        :track,
-        library_artist: :artist,
-        library_album: [
-          :album,
-          image_association
-        ]
-      )
-    end
-
-    def album_associated
-      includes(
-        track: :artist,
-        library_album: [
-          :album,
-          image_association
-        ]
+        :library_artist,
+        {
+          track: :artist,
+          library_album: [
+            :album,
+            image_association
+          ]
+        }
       )
     end
   end

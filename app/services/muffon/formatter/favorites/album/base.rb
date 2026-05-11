@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Favorites
       module Album
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Album
-
+        class Base < Muffon::Formatter::Album::Base
           private
 
           def album_record
@@ -21,22 +19,6 @@ module Muffon
 
           def id
             favorite_album_record.id
-          end
-
-          def title
-            album_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            album_record.artist
           end
 
           def image_data

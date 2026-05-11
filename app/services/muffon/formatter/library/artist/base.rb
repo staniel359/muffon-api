@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Library
       module Artist
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Artist
-
+        class Base < Muffon::Formatter::Artist::Base
           private
 
           def source_data
@@ -21,14 +19,6 @@ module Muffon
 
           def library_artist_data
             { id: library_artist_record.id }
-          end
-
-          def name
-            artist_record.name
-          end
-
-          def image_data
-            artist_record.image_data
           end
 
           def tracks_count

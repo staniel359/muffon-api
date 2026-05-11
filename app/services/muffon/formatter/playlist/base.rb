@@ -25,7 +25,7 @@ module Muffon
         end
 
         def profile_record
-          playlist_record.profile
+          @profile_record ||= playlist_record.profile
         end
 
         def private?
@@ -45,7 +45,9 @@ module Muffon
         end
 
         def raw_description
-          playlist_record.description
+          playlist_record
+            .description
+            .presence
         end
 
         def tracks_count

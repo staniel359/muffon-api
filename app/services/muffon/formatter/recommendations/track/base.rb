@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Recommendations
       module Track
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Track
-
+        class Base < Muffon::Formatter::Track::Base
           private
 
           def track_record
@@ -22,22 +20,6 @@ module Muffon
 
           def id
             recommendation_track_record.id
-          end
-
-          def title
-            track_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            track_record.artist
           end
 
           def tracks_count

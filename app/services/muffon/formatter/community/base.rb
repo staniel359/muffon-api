@@ -23,7 +23,9 @@ module Muffon
         end
 
         def description
-          community_record.description.presence
+          community_record
+            .description
+            .presence
         end
 
         def members_count

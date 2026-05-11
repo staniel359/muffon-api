@@ -59,7 +59,7 @@ module YouTube
         end
 
         def description
-          string_with_newlines_replaced_by_space(
+          string_with_newlines_replaced_by_spaces(
             super
           )
         end

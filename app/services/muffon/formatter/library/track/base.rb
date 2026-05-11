@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Library
       module Track
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Track
-
+        class Base < Muffon::Formatter::Track::Base
           private
 
           def track_record
@@ -48,32 +46,13 @@ module Muffon
               library_track_record.library_album
           end
 
-          def title
-            track_record.title
-          end
-
-          def artists
-            [artist_data]
-          end
-
-          def artist_data
-            { name: artist_record.name }
-          end
-
-          def artist_record
-            library_artist_record.artist
-          end
-
           def album_data
             return if library_album_record.blank?
 
-            {
-              source: library_album_source_data,
-              title: album_record.title
-            }.compact
+            super
           end
 
-          def library_album_source_data
+          def album_source_data
             library_album_record
               .source_data
               &.deep_symbolize_keys

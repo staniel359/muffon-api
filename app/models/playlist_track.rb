@@ -33,10 +33,11 @@ class PlaylistTrack < ApplicationRecord
   class << self
     def associated
       includes(
-        :track,
-        :artist,
         :album,
-        image_association
+        {
+          track: :artist,
+          **image_association
+        }
       )
     end
   end

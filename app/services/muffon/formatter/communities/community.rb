@@ -31,7 +31,7 @@ module Muffon
         end
 
         def description_truncated_formatted
-          string_with_newlines_replaced_by_space(
+          string_with_newlines_replaced_by_spaces(
             description_truncated
           )
         end

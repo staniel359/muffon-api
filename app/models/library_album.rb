@@ -31,9 +31,9 @@ class LibraryAlbum < ApplicationRecord
   class << self
     def associated
       includes(
-        :album,
+        :library_artist,
         {
-          library_artist: :artist,
+          album: :artist,
           **image_association
         }
       )

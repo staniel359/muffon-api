@@ -59,12 +59,12 @@ module Muffon
         end
       end
 
-      def string_with_newlines_replaced_by_space(
-        string
+      def string_with_newlines_replaced_by_spaces(
+        value
       )
-        return if string.blank?
+        return if value.blank?
 
-        string
+        value
           .gsub(/\n+/, ' ')
           .strip
       end
