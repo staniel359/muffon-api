@@ -2,6 +2,7 @@ module LastFM
   module Artist
     module Web
       class Base < LastFM::Artist::Base
+        include LastFM::Mixins::Artist
         include LastFM::Mixins::Web
 
         private

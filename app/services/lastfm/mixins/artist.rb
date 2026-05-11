@@ -25,7 +25,7 @@ module LastFM
       end
 
       def raw_listeners_count
-        raw_artist_data.dig(
+        raw_artist_data&.dig(
           'stats',
           'listeners'
         )
