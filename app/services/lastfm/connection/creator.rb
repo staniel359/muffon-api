@@ -18,7 +18,7 @@ module LastFM
         ]
       end
 
-      def request_link
+      def request_url
         "#{super}?method=#{api_method}" \
           "&api_key=#{api_key}" \
           "&token=#{lastfm_token}" \
