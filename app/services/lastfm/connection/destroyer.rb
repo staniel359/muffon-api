@@ -4,7 +4,7 @@ module LastFM
       private
 
       def process_profile
-        profile
+        profile_record
           .lastfm_connection
           &.destroy
 

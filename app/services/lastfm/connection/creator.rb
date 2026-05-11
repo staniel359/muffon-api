@@ -107,7 +107,7 @@ module LastFM
       end
 
       def lastfm_data
-        profile
+        profile_record
           .lastfm_connection
           .slice(
             *LastFMConnection::DATA_KEYS

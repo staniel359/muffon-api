@@ -1,6 +1,8 @@
 module LastFM
   module Connection
     class Base < LastFM::Base
+      include Muffon::Mixins::Profile
+
       def call
         check_args
 
@@ -17,7 +19,7 @@ module LastFM
       end
 
       def not_found?
-        profile.blank?
+        profile_record.blank?
       end
 
       def forbidden?
