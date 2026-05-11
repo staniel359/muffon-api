@@ -2,9 +2,7 @@ module Muffon
   module Formatter
     module Multitag
       module Album
-        class Base < Muffon::Formatter::Base
-          include Muffon::Mixins::Album
-
+        class Base < Muffon::Formatter::Album::Base
           private
 
           def album_record
