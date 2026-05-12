@@ -4,6 +4,8 @@ module Muffon
       def call
         check_args
 
+        check_if_forbidden
+
         check_if_not_found
 
         data
@@ -13,6 +15,10 @@ module Muffon
 
       def not_found?
         radio_track_data.blank?
+      end
+
+      def forbidden?
+        false
       end
 
       def random_track_number

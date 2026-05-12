@@ -26,7 +26,7 @@ module Muffon
             {
               **super,
               image: artist_record.image_data
-            }
+            }.compact
           end
 
           def tracks_count

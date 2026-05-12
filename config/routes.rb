@@ -322,6 +322,11 @@ Rails
             get 'artists'
             get 'tracks'
           end
+
+          namespace :recommendations do
+            get 'artists'
+            get 'tracks'
+          end
         end
 
         resources :playlists, only: :index
