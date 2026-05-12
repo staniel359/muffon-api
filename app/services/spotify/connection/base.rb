@@ -1,6 +1,8 @@
 module Spotify
   module Connection
     class Base < Spotify::Base
+      include Muffon::Mixins::Profile
+
       def call
         check_args
 

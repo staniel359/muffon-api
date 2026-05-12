@@ -95,7 +95,7 @@ module Spotify
       end
 
       def spotify_data
-        profile
+        profile_record
           .spotify_connection
           .slice(
             *SpotifyConnection::DATA_KEYS
