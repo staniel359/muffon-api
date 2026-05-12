@@ -17,7 +17,7 @@ module Muffon
             @playlist_record =
               profile_record
               .playlists
-              .associated
+              .with_relations
               .find_by(
                 id: @args[:playlist_id]
               )

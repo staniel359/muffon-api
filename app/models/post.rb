@@ -77,7 +77,7 @@ class Post < ApplicationRecord
         .or(by_community)
     end
 
-    def associated
+    def with_relations
       includes(
         :other_profile,
         :post_comments,

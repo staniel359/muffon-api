@@ -20,7 +20,7 @@ module LastFM
           .ordered(order, DEFAULT_ORDER)
           .limit(limit)
           .offset(offset)
-          .associated
+          .with_relations
       end
 
       def tracks

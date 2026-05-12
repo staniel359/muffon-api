@@ -31,7 +31,7 @@ class PlaylistTrack < ApplicationRecord
   delegate :profile_id, to: :playlist
 
   class << self
-    def associated
+    def with_relations
       includes(
         :album,
         {

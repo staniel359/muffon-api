@@ -8,7 +8,7 @@ class Message < ApplicationRecord
   belongs_to :profile
 
   class << self
-    def associated
+    def with_relations
       includes(
         profile: image_association,
         **images_association

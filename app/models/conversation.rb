@@ -23,7 +23,7 @@ class Conversation < ApplicationRecord
   belongs_to :other_profile, class_name: 'Profile'
 
   class << self
-    def associated
+    def with_relations
       includes(
         other_profile: image_association
       )

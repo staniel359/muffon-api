@@ -43,7 +43,7 @@ module Muffon
               .library_tracks_count_desc_ordered
               .limit(limit)
               .offset(offset)
-              .associated
+              .with_relations
           end
 
           def collection_item_data_formatted(

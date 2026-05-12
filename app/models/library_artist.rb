@@ -32,7 +32,7 @@ class LibraryArtist < ApplicationRecord
   belongs_to :artist
 
   class << self
-    def associated
+    def with_relations
       includes(
         :artist
       )

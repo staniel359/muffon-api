@@ -94,7 +94,7 @@ module Muffon
             .post_comments
             .created_asc_ordered
             .limit(comments_limit)
-            .associated
+            .with_relations
         end
 
         def comments_limit

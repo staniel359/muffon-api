@@ -16,7 +16,7 @@ module Muffon
         else
           @community_record =
             ::Community
-            .associated
+            .with_relations
             .find_by(
               id: @args[:community_id]
             )

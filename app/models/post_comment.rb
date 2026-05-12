@@ -33,7 +33,7 @@ class PostComment < ApplicationRecord
   belongs_to :community, optional: true
 
   class << self
-    def associated
+    def with_relations
       includes(
         profile: image_association,
         community: image_association,

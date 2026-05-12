@@ -26,7 +26,7 @@ class LibraryTrack < ApplicationRecord
              counter_cache: true
 
   class << self
-    def associated
+    def with_relations
       includes(
         :library_artist,
         {

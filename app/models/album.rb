@@ -48,7 +48,7 @@ class Album < ApplicationRecord
       end
     end
 
-    def associated
+    def with_relations
       includes(
         :artist
       )

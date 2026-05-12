@@ -75,7 +75,7 @@ class Community < ApplicationRecord
       )
     end
 
-    def associated
+    def with_relations
       includes(
         creator: image_association,
         **image_association

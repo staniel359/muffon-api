@@ -29,7 +29,7 @@ class LibraryAlbum < ApplicationRecord
   belongs_to :album
 
   class << self
-    def associated
+    def with_relations
       includes(
         :library_artist,
         {

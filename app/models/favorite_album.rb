@@ -23,7 +23,7 @@ class FavoriteAlbum < ApplicationRecord
   belongs_to :album
 
   class << self
-    def associated
+    def with_relations
       includes(
         album: :artist,
         **image_association

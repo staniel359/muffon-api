@@ -25,7 +25,7 @@ class BookmarkTrack < ApplicationRecord
   belongs_to :album, optional: true
 
   class << self
-    def associated
+    def with_relations
       includes(
         :album,
         {

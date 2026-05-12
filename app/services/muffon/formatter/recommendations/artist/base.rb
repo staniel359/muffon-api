@@ -39,7 +39,7 @@ module Muffon
               .library_artists
               .library_tracks_count_desc_ordered
               .limit(5)
-              .associated
+              .with_relations
           end
 
           def library_artist_formatted(

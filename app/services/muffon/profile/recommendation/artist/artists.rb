@@ -46,7 +46,7 @@ module Muffon
               .library_tracks_count_desc_ordered
               .limit(limit)
               .offset(offset)
-              .associated
+              .with_relations
           end
 
           def items_count

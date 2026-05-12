@@ -48,7 +48,7 @@ class Playlist < ApplicationRecord
       )
     end
 
-    def associated
+    def with_relations
       includes(
         image_association
       )

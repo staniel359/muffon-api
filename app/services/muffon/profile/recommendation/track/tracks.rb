@@ -26,7 +26,7 @@ module Muffon
               .created_desc_ordered
               .limit(limit)
               .offset(offset)
-              .associated
+              .with_relations
           end
 
           def tracks

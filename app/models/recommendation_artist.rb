@@ -25,7 +25,7 @@ class RecommendationArtist < ApplicationRecord
       )
     end
 
-    def associated
+    def with_relations
       includes(
         artist: {
           library_artists: :library_tracks
