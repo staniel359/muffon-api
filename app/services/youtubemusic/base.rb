@@ -120,7 +120,7 @@ module YouTubeMusic
           'pageType'
         ) == 'MUSIC_PAGE_TYPE_ARTIST'
       end.presence ||
-        [raw_collection[2]]
+        [raw_collection[2] || raw_collection[0]]
     end
 
     def find_raw_album_data(
