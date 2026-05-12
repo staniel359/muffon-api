@@ -55,7 +55,7 @@ module Spotify
       end
 
       def album_title
-        raw_album_data['name']
+        raw_album_data.try(:[], 'name')
       end
 
       def raw_album_data
@@ -63,6 +63,8 @@ module Spotify
       end
 
       def album_spotify_id
+        return if raw_album_data.blank?
+
         raw_album_data['uri'].sub(
           'spotify:album:',
           ''
@@ -76,7 +78,7 @@ module Spotify
       end
 
       def images
-        raw_album_data.dig(
+        raw_album_data&.dig(
           'coverArt',
           'sources'
         )
