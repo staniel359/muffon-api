@@ -80,17 +80,12 @@ class Post < ApplicationRecord
     def associated
       includes(
         :other_profile,
+        :post_comments,
         {
           profile: image_association,
           community: image_association,
           **images_association
         }
-      )
-    end
-
-    def joined
-      left_joins(
-        :post_comments
       )
     end
   end

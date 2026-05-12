@@ -25,7 +25,6 @@ module Muffon
           .limit(limit)
           .offset(offset)
           .associated
-          .joined
       end
 
       def posts
