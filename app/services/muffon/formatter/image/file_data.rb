@@ -11,15 +11,13 @@ module Muffon
         private
 
         def data
+          return if image.blank?
+
           if link_image?
             link_image_data
           else
             file_image_data
           end
-        end
-
-        def link_image?
-          image.match?(%r{https?://})
         end
 
         def image
@@ -50,6 +48,10 @@ module Muffon
 
         def temp_image_file_path
           @args[:temp_image_file_path]
+        end
+
+        def link_image?
+          image.match?(%r{https?://})
         end
 
         def link_image_data
