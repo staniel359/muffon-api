@@ -22,6 +22,13 @@ module Muffon
             recommendation_track_record.id
           end
 
+          def artist_data
+            {
+              **super,
+              image: artist_record.image_data
+            }
+          end
+
           def tracks_count
             recommendation_track_record.tracks_count
           end

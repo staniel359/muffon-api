@@ -20,7 +20,7 @@ module Muffon
         {
           name: artists_names_string,
           image: (
-            artist_image_data if with_artist_image?
+            artist_record.image_data if with_artist_image?
           )
         }.compact
       end
@@ -33,10 +33,6 @@ module Muffon
 
       def with_artist_image?
         !!@args[:is_with_artist_image]
-      end
-
-      def artist_image_data
-        artist_record.image_data
       end
 
       def description_computed
