@@ -20,7 +20,8 @@ module Spotify
       end
 
       def not_found?
-        raw_track_data['__typename'] == 'GenericError'
+        raw_track_data.blank? ||
+          raw_track_data['__typename'] == 'GenericError'
       end
 
       def raw_track_data
