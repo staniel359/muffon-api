@@ -19,6 +19,8 @@ module YouTubeMusic
         end
 
         def data
+          return if youtube_id.blank?
+
           update_video_record!
 
           Muffon::Formatter::Source::Search::Videos::Video.call(
