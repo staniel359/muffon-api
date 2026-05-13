@@ -33,6 +33,12 @@ class RecommendationArtist < ApplicationRecord
       )
     end
 
+    def joined
+      left_joins(
+        :artist
+      )
+    end
+
     def library_artists_count_desc_ordered
       with_library_artists_count
         .order(

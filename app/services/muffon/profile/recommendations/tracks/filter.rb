@@ -46,6 +46,7 @@ module Muffon
             profile_record
               .recommendation_tracks
               .not_deleted
+              .joined
           end
 
           def hide_library_tracks_filter(

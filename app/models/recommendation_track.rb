@@ -31,6 +31,12 @@ class RecommendationTrack < ApplicationRecord
       )
     end
 
+    def joined
+      left_joins(
+        track: :artist
+      )
+    end
+
     def library_tracks_count_desc_ordered
       with_library_tracks_count
         .order(

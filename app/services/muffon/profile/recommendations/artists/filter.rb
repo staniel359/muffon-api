@@ -59,6 +59,7 @@ module Muffon
             profile_record
               .recommendation_artists
               .not_deleted
+              .joined
           end
 
           def hide_library_artists_filter(
