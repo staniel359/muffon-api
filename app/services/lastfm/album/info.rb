@@ -32,7 +32,8 @@ module LastFM
           title:,
           artists:,
           image_data:,
-          release_date: nil
+          release_date: nil,
+          **self_args
         )
       end
 

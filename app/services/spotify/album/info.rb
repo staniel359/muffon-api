@@ -21,7 +21,8 @@ module Spotify
           title:,
           artists:,
           image_data:,
-          release_date:
+          release_date:,
+          **self_args
         )
       end
 
