@@ -6,7 +6,7 @@ module Spotify
       private
 
       def title
-        raw_track_data['name']
+        raw_track_data['name'].presence || 'Untitled'
       end
 
       def raw_artists
