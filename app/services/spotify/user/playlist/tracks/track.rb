@@ -43,7 +43,7 @@ module Spotify
           def raw_artists
             raw_track_data['artists'].map do |raw_artist_data|
               {
-                name: raw_artist_data['name'].presence || 'Unknown artist',
+                name: raw_artist_data['name'].presence || 'Unknown Artist',
                 source_id: raw_artist_data['id']
               }
             end

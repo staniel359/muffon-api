@@ -47,7 +47,7 @@ module Muffon
             end
 
             def artist_name
-              @args[:artist_name]
+              @args[:artist_name].presence || 'Unknown Artist'
             end
 
             def update_library_artist_record!
