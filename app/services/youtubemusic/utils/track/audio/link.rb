@@ -37,7 +37,8 @@ module YouTubeMusic
                 --js-runtimes deno:/root/.deno/bin/deno \
                 --extract-audio \
                 --concurrent-fragments 5 \
-                --output public/#{audio_folder}/#{audio_file_name}"
+                --output public/#{audio_folder}/#{audio_file_name} \
+                --proxy #{request_proxy}"
             )
           end
         end
