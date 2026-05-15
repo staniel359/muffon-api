@@ -30,7 +30,7 @@ module YandexMusic
         end
 
         def raw_artist_data
-          @args[:raw_artist_data]
+          @args[:raw_artist_data]['artist']
         end
       end
     end

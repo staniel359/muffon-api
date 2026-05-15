@@ -25,22 +25,15 @@ module YandexMusic
         { name: }
       end
 
-      def name
-        raw_artist_data.dig(
-          'artist',
-          'name'
+      def artist_info_data
+        YandexMusic::Artist::Info.call(
+          artist_id: @args[:artist_id]
         )
       end
 
       def request_url
-        "#{REQUEST_BASE_URL}/artist.jsx"
+        "#{REQUEST_BASE_URL}/artists/#{@args[:artist_id]}"
       end
-
-      def request_params
-        { artist: @args[:artist_id] }
-      end
-
-      alias raw_artist_data response_data
     end
   end
 end

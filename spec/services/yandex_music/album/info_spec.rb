@@ -8,7 +8,7 @@ RSpec.describe YandexMusic::Album::Info do
           'services/yandexmusic/album/info/success'
         ) do
           subject.call(
-            album_id: '7375624',
+            album_id: '24338',
             profile_id: '1'
           )
         end

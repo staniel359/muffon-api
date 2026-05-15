@@ -9,37 +9,17 @@ module YandexMusic
           raw_collection:,
           page:,
           limit:,
-          items_count:,
-          maximum_items_count:
-        )
-      end
-
-      def raw_collection
-        response_data.dig(
-          'tracks',
-          'items'
+          is_infinite: true,
+          next_page:
         )
       end
 
       def request_params
         {
           **super,
-          type: 'track'
+          type: 'track',
+          filter: 'track'
         }
-      end
-
-      def items_count
-        response_data.dig(
-          'tracks',
-          'total'
-        )
-      end
-
-      def limit
-        response_data.dig(
-          'tracks',
-          'perPage'
-        )
       end
 
       def collection_item_data_formatted(

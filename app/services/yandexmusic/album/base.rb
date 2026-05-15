@@ -22,11 +22,7 @@ module YandexMusic
       end
 
       def request_url
-        "#{REQUEST_BASE_URL}/album.jsx"
-      end
-
-      def request_params
-        { album: @args[:album_id] }
+        "#{REQUEST_BASE_URL}/albums/#{@args[:album_id]}/with-tracks"
       end
 
       alias raw_album_data response_data

@@ -37,7 +37,7 @@ RSpec.describe YandexMusic::Search::Artists do
         end
       end
 
-      it { expect(output).to match_hash(search_paginated_missing_artists_data) }
+      it { expect(output).to match_hash(search_missing_artists_data) }
     end
   end
 end

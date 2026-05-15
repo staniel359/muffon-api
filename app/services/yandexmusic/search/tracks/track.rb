@@ -36,7 +36,7 @@ module YandexMusic
         end
 
         def raw_track_data
-          @args[:raw_track_data]
+          @args[:raw_track_data]['track']
         end
       end
     end

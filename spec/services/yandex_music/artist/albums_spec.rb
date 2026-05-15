@@ -8,7 +8,7 @@ RSpec.describe YandexMusic::Artist::Albums do
           'services/yandexmusic/artist/albums/success'
         ) do
           subject.call(
-            artist_id: '777542',
+            artist_id: '1438',
             page: '2',
             limit: '5',
             profile_id: '1'

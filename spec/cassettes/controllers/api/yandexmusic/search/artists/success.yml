@@ -2,13 +2,50 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/music-search.jsx?language=en&page=0&text=kate%20bush&type=artist
+    uri: https://api.music.yandex.ru/search/instant/mixed?filter=artist&page=0&pageSize=20&text=kate%20bush&type=artist
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.10.0
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
+        Safari/537.36
+      Cookie:
+      - _yasc=ABTRZL9w7/ZeEZjA++QJCes4y8jkPqMNz+nVHl1l6ZQnrCHygv0xEx8uoA+R3f6vRYk6CCLj8lg=.MTc3ODg4MjkwNDAzNQ==;
+        i=wW637YIvigEDDYqJS80OGMPlTrLvWCcRz63ZAYf85JceanpQ/MyMXXwbcssdaFkj09u7Rr3UgbKapQaotWJEj3KpI3I=;
+        yandexuid=4207250631777716659; yashr=9745351181777716659; bh=YPqyntAGahTcyumIDobsybMNyIuB+Qzc47yMDA==;
+        is_gdpr=0; is_gdpr_b=CPCPORDFggM=; pi=FeN2iDYBnx5DAT7jm8/WZ+lW34UsGH6ZmuoOUZxJhbkU9KaGpMHHIpAyUGx2fqVkR4WCIA9Ir+MblOhdXUkszEmItxo=;
+        Session_id=3:1778836569.5.0.1777717135472:PRnWJQ:cb57.1.2:1|2273883602.-1.0.…153.38f7a620306d561636348fa3c3db181c;
+        yandex_login=dark.pizza.42@gmail.com; spravka=dD0xNzc4ODgxOTM5O2k9MzcuMjE0LjI2Ljk3O0Q9MzVGMjRBRjNDOEM0NDRGQTVFRkYyRTJBRjQ0Q0U2NTQwMzY0MDI3NjFFQzUwOTkxNDA0RkI3RENCM0UwMjg0QUZCM0U0MkE1QUY1OTE5NkRCNTE3OURCMkVENkNGMDAwN0M3NEQyQjQyN0M2M0VDQzE5RjdDNzYwMDJBNzlDNjFCODkwRTBGQTgyNTAzMURDMEIxRjQ5QUU3OUM4NDExM0FDNDgxNzFGNUVCMTM0MENEMjdBODQ7dT0xNzc4ODgxOTM5NTIyNzY4NTQ2O2g9Mjg3YzU0NzYxNzlmNTFmYjAxY2MyMjJhNTJlMWUxOTA=;
+        ys=udn.cDpkYXJrLnBpenphLjQyQGdtYWlsLmNvbQ%3D%3D#c_chck.2728994078
+      Dnt:
+      - '1'
+      Host:
+      - api.music.yandex.ru
+      Origin:
+      - https://music.yandex.ru
+      Referer:
+      - https://music.yandex.ru/
+      Sec-Fetch-Dest:
+      - empty
+      Sec-Fetch-Mode:
+      - cors
+      Sec-Fetch-Site:
+      - same-site
+      Te:
+      - trailers
+      X-Request-Id:
+      - fa968bdf-0dcd-4418-91a1-97de30c3b0b7
+      X-Requested-With:
+      - XMLHttpRequest
+      X-Retpath-Y:
+      - https://music.yandex.ru/search?text=kate+bush
+      X-Yandex-Music-Client:
+      - YandexMusicWebNext/1.0.0
+      X-Yandex-Music-Multi-Auth-User-Id:
+      - '2273883602'
+      X-Yandex-Music-Without-Invocation-Info:
+      - '1'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,44 +55,55 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sat, 13 Jul 2024 14:08:18 GMT
-      Referrer-Policy:
-      - no-referrer-when-downgrade
       Report-To:
       - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
-      Set-Cookie:
-      - _yasc=E2CwKTs7Y8fm9/Mf4m9Zp8ZgrvXPQJPYszC15eLrHAYK/dQDxLFOjw/GV9EoybhU; domain=.yandex.ru;
-        path=/; expires=Tue, 11 Jul 2034 14:08:17 GMT; secure
-      - i=Z3qxbNisdWDk5jxvSE44NkiAL4tNk5EOoAWyrJb3R3JIYRaGjlGAFFAMtAoXTuiF6euw6mDtYOuqqMx1NRXF4HRRGUQ=;
-        Expires=Mon, 13-Jul-2026 14:08:17 GMT; Domain=.yandex.ru; Path=/; Secure;
-        HttpOnly
-      - yandexuid=2601311671720879697; Expires=Mon, 13-Jul-2026 14:08:17 GMT; Domain=.yandex.ru;
-        Path=/; Secure
-      - yashr=3570878091720879697; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
-        2025 14:08:17 GMT; Secure; HttpOnly
       Strict-Transport-Security:
       - max-age=31536000
+      X-Yandex-Music-Hostname:
+      - music-search-production-music-search-48.klg.yp-c.yandex.net
       Transfer-Encoding:
       - chunked
-      X-Compat:
-      - '5'
+      X-Envoy-Upstream-Service-Time:
+      - '90'
+      X-Yandex-Music-Execution-Duration:
+      - '88'
+      X-Envoy-Attempt-Count:
+      - '1'
+      X-Request-Id:
+      - fa968bdf-0dcd-4418-91a1-97de30c3b0b7
       X-Content-Type-Options:
       - nosniff
-      X-Powered-By:
-      - Express
-      X-Xss-Protection:
-      - 1; mode=block
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - Accept-Encoding, User-Agent
+      Traceid:
+      - 436f39f63a84cd86107fd48d218098c9
+      Access-Control-Allow-Origin:
+      - https://music.yandex.ru
+      Date:
+      - Fri, 15 May 2026 22:20:28 GMT
+      Access-Control-Allow-Credentials:
+      - 'true'
       Nel:
       - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
         "failure_fraction": 0.1}'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Type:
+      - application/json
+      X-Yandex-Music-Application:
+      - music-search
     body:
       encoding: ASCII-8BIT
-      string: '{"text":"kate bush","albums":{"items":[]},"tracks":{"items":[]},"podcasts":{"items":[]},"podcast_episodes":{"items":[]},"artists":{"items":[{"name":"Kate
-        Bush","various":false,"composer":false,"cover":{"type":"from-album-cover","uri":"avatars.yandex.net/get-music-content/42108/67876e03.a.24376-1/%%","prefix":"67876e03.a.24376-1"},"ogImage":"avatars.yandex.net/get-music-content/42108/67876e03.a.24376-1/%%","genres":["pop"],"counts":{"tracks":57,"directAlbums":4,"alsoAlbums":48,"alsoTracks":26},"available":true,"disclaimers":[],"ratings":{"week":2271,"month":2516,"day":2074},"links":[{"title":"katebush.com","href":"http://www.katebush.com/","type":"official"},{"title":"katebushmusic","href":"https://twitter.com/katebushmusic","type":"social","socialNetwork":"twitter"},{"title":"user/KateBushMusic","href":"https://www.youtube.com/user/KateBushMusic","type":"social","socialNetwork":"youtube"}],"ticketsAvailable":false,"id":15446,"regions":["RUSSIA","RUSSIA_PREMIUM"]},{"name":"Kate
-        Bush / EMI''s Team","various":false,"composer":false,"ogImage":"","genres":[],"counts":{"tracks":1,"directAlbums":0,"alsoAlbums":1,"alsoTracks":1},"available":true,"disclaimers":[],"links":[],"ticketsAvailable":false,"id":7585341,"regions":["RUSSIA","RUSSIA_PREMIUM"]},{"name":"Karaoke
-        - Kate Bush","various":false,"composer":false,"ogImage":"","genres":[],"counts":{"tracks":1,"directAlbums":0,"alsoAlbums":1,"alsoTracks":1},"available":true,"disclaimers":[],"links":[],"ticketsAvailable":false,"id":3314525,"regions":["RUSSIA","RUSSIA_PREMIUM"]}],"total":3,"perPage":10,"order":0},"videos":{"items":[]},"playlists":{"items":[]},"users":{"items":[]},"request_id":"1720879697829271-5258569911854213758.2","searchRequestId":"music-stable-back-sas-79.sas.yp-c.yandex.net-1720879697829271-5258569911854213758.2-1720879697849","nullifyPage":false,"extendedParams":{},"misspell":{},"pager":{"total":3,"perPage":10,"page":0},"counts":{"artists":3,"albums":52,"tracks":840,"podcasts":0,"podcast_episodes":11,"videos":0,"playlists":31,"users":0}}'
-  recorded_at: Sat, 13 Jul 2024 14:08:18 GMT
-recorded_with: VCR 6.2.0
+      string: '{"searchRequestId":"fa968bdf-0dcd-4418-91a1-97de30c3b0b7","text":"kate
+        bush","misspellCorrected":false,"lastPage":true,"perPage":20,"results":[{"type":"artist","artist":{"id":"15446","name":"Kate
+        Bush","various":false,"composer":false,"cover":{"prefix":"67876e03.a.24376-2","uri":"avatars.yandex.net/get-music-content/16508792/67876e03.a.24376-2/%%","type":"from-album-cover"},"ogImage":"avatars.yandex.net/get-music-content/16508792/67876e03.a.24376-2/%%","genres":["pop","rock"],"counts":{"tracks":63,"directAlbums":7,"alsoAlbums":38,"alsoTracks":21},"available":true,"disclaimers":[],"ratings":{"week":1559,"month":1465,"day":1511},"links":[{"title":"katebush.com","href":"http://www.katebush.com/","type":"official"},{"title":"katebushmusic","href":"https://twitter.com/katebushmusic","type":"social","socialNetwork":"twitter"},{"title":"user/KateBushMusic","href":"https://www.youtube.com/user/KateBushMusic","type":"social","socialNetwork":"youtube"}],"likesCount":0,"dbAliases":[],"extraActions":[],"derivedColors":{"average":"#64523d","waveText":"#ffe2c1","miniPlayer":"#c8b8a6","accent":"#b19a80"}}},{"type":"artist","artist":{"id":"7585341","name":"Kate
+        Bush / EMI''s Team","various":false,"composer":false,"genres":[],"counts":{"tracks":1,"directAlbums":0,"alsoAlbums":1,"alsoTracks":1},"available":true,"disclaimers":[],"ratings":{"week":188860,"month":198895},"links":[],"likesCount":0,"dbAliases":[],"extraActions":[]}},{"type":"artist","artist":{"id":"3314525","name":"Karaoke
+        - Kate Bush","various":false,"composer":false,"genres":[],"counts":{"tracks":1,"directAlbums":0,"alsoAlbums":1,"alsoTracks":1},"available":true,"disclaimers":[],"ratings":{},"links":[],"likesCount":0,"dbAliases":[],"extraActions":[]}},{"type":"artist","artist":{"id":"297314","name":"The
+        London Promenade Orchestra","various":false,"composer":false,"cover":{"prefix":"94d0ac17.a.9252914-1","uri":"avatars.yandex.net/get-music-content/2358262/94d0ac17.a.9252914-1/%%","type":"from-album-cover"},"ogImage":"avatars.yandex.net/get-music-content/2358262/94d0ac17.a.9252914-1/%%","genres":["pop"],"counts":{"tracks":132,"directAlbums":1,"alsoAlbums":66,"alsoTracks":111},"available":true,"disclaimers":[],"ratings":{"week":71538,"month":74010,"day":65085},"links":[],"likesCount":0,"dbAliases":[],"extraActions":[],"derivedColors":{"average":"#8e6b3d","waveText":"#ffe4c1","miniPlayer":"#d3bb9b","accent":"#c19e70"}}},{"type":"artist","artist":{"id":"231816","name":"The
+        National Philharmonic Orchestra","various":false,"composer":false,"cover":{"prefix":"cd38f1f2.a.1716687-1","uri":"avatars.yandex.net/get-music-content/49876/cd38f1f2.a.1716687-1/%%","type":"from-album-cover"},"ogImage":"avatars.yandex.net/get-music-content/49876/cd38f1f2.a.1716687-1/%%","genres":["classical","films","modern"],"counts":{"tracks":565,"directAlbums":28,"alsoAlbums":288,"alsoTracks":393},"available":true,"disclaimers":[],"ratings":{"week":23859,"month":20277,"day":25068},"links":[],"likesCount":0,"dbAliases":[],"extraActions":[],"derivedColors":{"average":"#262c2e","waveText":"#e0e0e0","miniPlayer":"#b0bbbe","accent":"#8f9da2"}}},{"type":"artist","artist":{"id":"5987","name":"London
+        Philharmonic Orchestra","various":false,"composer":false,"cover":{"prefix":"d2a58e14.a.1111105-1","uri":"avatars.yandex.net/get-music-content/28589/d2a58e14.a.1111105-1/%%","type":"from-album-cover"},"ogImage":"avatars.yandex.net/get-music-content/28589/d2a58e14.a.1111105-1/%%","genres":["classical","classicalmasterpieces","pop"],"counts":{"tracks":9385,"directAlbums":799,"alsoAlbums":2348,"alsoTracks":5927},"available":true,"disclaimers":[],"ratings":{"week":9217,"month":7782,"day":10051},"links":[],"likesCount":0,"dbAliases":[],"extraActions":[],"derivedColors":{"average":"#656764","waveText":"#e0e0e0","miniPlayer":"#b7b8b6","accent":"#989a97"}}},{"type":"artist","artist":{"id":"300731","name":"RCA
+        Victor Symphony Orchestra","various":false,"composer":false,"cover":{"prefix":"28282af0.a.26823098-1","uri":"avatars.yandex.net/get-music-content/10103188/28282af0.a.26823098-1/%%","type":"from-album-cover"},"ogImage":"avatars.yandex.net/get-music-content/10103188/28282af0.a.26823098-1/%%","genres":["classical","vocal","modern"],"counts":{"tracks":854,"directAlbums":50,"alsoAlbums":162,"alsoTracks":383},"available":true,"disclaimers":[],"ratings":{"week":96762,"month":96740,"day":100118},"links":[],"likesCount":0,"dbAliases":[],"extraActions":[],"derivedColors":{"average":"#1e1e1e","waveText":"#e0e0e0","miniPlayer":"#b7b7b7","accent":"#999999"}}}],"responseType":"mixed"}'
+  recorded_at: Fri, 15 May 2026 22:20:29 GMT
+recorded_with: VCR 6.4.0

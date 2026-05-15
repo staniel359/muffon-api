@@ -2,13 +2,50 @@
 http_interactions:
 - request:
     method: get
-    uri: https://music.yandex.ru/handlers/artist.jsx?artist=wejlhg239gh23&sort=year&what=albums
+    uri: https://api.music.yandex.ru/artists/wejlhg239gh23/info
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.10.0
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
+        Safari/537.36
+      Cookie:
+      - _yasc=ABTRZL9w7/ZeEZjA++QJCes4y8jkPqMNz+nVHl1l6ZQnrCHygv0xEx8uoA+R3f6vRYk6CCLj8lg=.MTc3ODg4MjkwNDAzNQ==;
+        i=wW637YIvigEDDYqJS80OGMPlTrLvWCcRz63ZAYf85JceanpQ/MyMXXwbcssdaFkj09u7Rr3UgbKapQaotWJEj3KpI3I=;
+        yandexuid=4207250631777716659; yashr=9745351181777716659; bh=YPqyntAGahTcyumIDobsybMNyIuB+Qzc47yMDA==;
+        is_gdpr=0; is_gdpr_b=CPCPORDFggM=; pi=FeN2iDYBnx5DAT7jm8/WZ+lW34UsGH6ZmuoOUZxJhbkU9KaGpMHHIpAyUGx2fqVkR4WCIA9Ir+MblOhdXUkszEmItxo=;
+        Session_id=3:1778836569.5.0.1777717135472:PRnWJQ:cb57.1.2:1|2273883602.-1.0.…153.38f7a620306d561636348fa3c3db181c;
+        yandex_login=dark.pizza.42@gmail.com; spravka=dD0xNzc4ODgxOTM5O2k9MzcuMjE0LjI2Ljk3O0Q9MzVGMjRBRjNDOEM0NDRGQTVFRkYyRTJBRjQ0Q0U2NTQwMzY0MDI3NjFFQzUwOTkxNDA0RkI3RENCM0UwMjg0QUZCM0U0MkE1QUY1OTE5NkRCNTE3OURCMkVENkNGMDAwN0M3NEQyQjQyN0M2M0VDQzE5RjdDNzYwMDJBNzlDNjFCODkwRTBGQTgyNTAzMURDMEIxRjQ5QUU3OUM4NDExM0FDNDgxNzFGNUVCMTM0MENEMjdBODQ7dT0xNzc4ODgxOTM5NTIyNzY4NTQ2O2g9Mjg3YzU0NzYxNzlmNTFmYjAxY2MyMjJhNTJlMWUxOTA=;
+        ys=udn.cDpkYXJrLnBpenphLjQyQGdtYWlsLmNvbQ%3D%3D#c_chck.2728994078
+      Dnt:
+      - '1'
+      Host:
+      - api.music.yandex.ru
+      Origin:
+      - https://music.yandex.ru
+      Referer:
+      - https://music.yandex.ru/
+      Sec-Fetch-Dest:
+      - empty
+      Sec-Fetch-Mode:
+      - cors
+      Sec-Fetch-Site:
+      - same-site
+      Te:
+      - trailers
+      X-Request-Id:
+      - 8c6a0d06-276f-479e-83b2-b40bb0bedc22
+      X-Requested-With:
+      - XMLHttpRequest
+      X-Retpath-Y:
+      - https://music.yandex.ru/search?text=kate+bush
+      X-Yandex-Music-Client:
+      - YandexMusicWebNext/1.0.0
+      X-Yandex-Music-Multi-Auth-User-Id:
+      - '2273883602'
+      X-Yandex-Music-Without-Invocation-Info:
+      - '1'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,39 +55,59 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sat, 13 Jul 2024 14:53:45 GMT
       Report-To:
       - '{"group": "network-errors", "max_age": 86400, "endpoints": [{"url": "https://dr.yandex.net/muz_nel"}]}'
-      Set-Cookie:
-      - _yasc=kckU4bxKatxB/LZpPE0r9Uc4xViabgiwPHNSe71mUx+HIqq8B9yoTXQIcK0sGXqe; domain=.yandex.ru;
-        path=/; expires=Tue, 11 Jul 2034 14:53:45 GMT; secure
-      - i=XeBdbWPcec7BNAfKSOznF+2snVhbjRnL/7KthXq8hoRoJBSrSE6MsFaqDJgxeg5W/1AfbZm5OpHQ5+Ma9ei+EQ7RwXg=;
-        Expires=Mon, 13-Jul-2026 14:53:45 GMT; Domain=.yandex.ru; Path=/; Secure;
-        HttpOnly
-      - yandexuid=9288373901720882425; Expires=Mon, 13-Jul-2026 14:53:45 GMT; Domain=.yandex.ru;
-        Path=/; Secure
-      - yashr=4141864321720882425; Path=/; Domain=.yandex.ru; Expires=Sun, 13 Jul
-        2025 14:53:45 GMT; Secure; HttpOnly
-      Strict-Transport-Security:
-      - max-age=31536000
+      Content-Type:
+      - application/json;charset=utf-8
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Yandex-Music-Hostname:
+      - music-web-front-production-music-web-55.sas.yp-c.yandex.net
+      X-Envoy-Attempt-Count:
+      - '1'
+      X-Envoy-Upstream-Service-Time:
+      - '3'
+      X-Yandex-Music-Application:
+      - music-web
       Transfer-Encoding:
       - chunked
-      X-Compat:
-      - '5'
+      Access-Control-Allow-Origin:
+      - https://music.yandex.ru
       X-Content-Type-Options:
       - nosniff
-      X-Powered-By:
-      - Express
+      X-Yandex-Music-Execution-Duration:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Frame-Options:
+      - DENY
+      Access-Control-Allow-Headers:
+      - ''
+      Date:
+      - Fri, 15 May 2026 22:20:28 GMT
       X-Xss-Protection:
       - 1; mode=block
+      Cache-Control:
+      - no-cache
+      Access-Control-Max-Age:
+      - '86400'
+      Traceid:
+      - 3bde7e20ff1a4181ecab73560d19ff27
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       Nel:
       - '{"report_to": "network-errors", "max_age": 86400, "success_fraction": 0.001,
         "failure_fraction": 0.1}'
+      X-Request-Id:
+      - 8c6a0d06-276f-479e-83b2-b40bb0bedc22
+      X-Envoy-Decorator-Operation:
+      - ingress
     body:
       encoding: UTF-8
-      string: '{"message":"Bad Request"}'
-  recorded_at: Sat, 13 Jul 2024 14:53:45 GMT
-recorded_with: VCR 6.2.0
+      string: '{"name":"bad-request","message":"Failed to convert value of type ''java.lang.String''
+        to required type ''java.lang.Integer''; nested exception is java.lang.NumberFormatException:
+        For input string: \"wejlhg239gh23\"","requestId":"8c6a0d06-276f-479e-83b2-b40bb0bedc22"}'
+  recorded_at: Fri, 15 May 2026 22:20:28 GMT
+recorded_with: VCR 6.4.0

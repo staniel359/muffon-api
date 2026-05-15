@@ -8,7 +8,7 @@ RSpec.describe API::YandexMusic::AlbumsController do
           :info,
           params: {
             **required_params,
-            album_id: '6999409'
+            album_id: '24338'
           }
         )
       end
@@ -42,7 +42,7 @@ RSpec.describe API::YandexMusic::AlbumsController do
           :tags,
           params: {
             **required_params,
-            album_id: '6999409'
+            album_id: '24338'
           }
         )
       end
@@ -76,7 +76,7 @@ RSpec.describe API::YandexMusic::AlbumsController do
           :links,
           params: {
             **required_params,
-            album_id: '6999409'
+            album_id: '24338'
           }
         )
       end

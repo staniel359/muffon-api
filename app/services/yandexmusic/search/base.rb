@@ -20,23 +20,30 @@ module YandexMusic
       end
 
       def request_url
-        "#{REQUEST_BASE_URL}/music-search.jsx"
+        "#{REQUEST_BASE_URL}/search/instant/mixed"
       end
 
       def request_params
         {
           **super,
-          text: @args[:query],
-          page: page - 1
+          'text' => @args[:query],
+          'page' => page - 1,
+          'pageSize' => limit
         }
       end
 
-      def page
-        super.to_i
+      def raw_collection
+        response_data['results']
       end
 
-      def maximum_items_count
-        pagination_maximum_items_count_data[:search]
+      def next_page
+        return if last_page?
+
+        page + 1
+      end
+
+      def last_page?
+        response_data['lastPage']
       end
     end
   end

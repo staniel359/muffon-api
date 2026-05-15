@@ -89,29 +89,6 @@ module YandexMusic
               REQUEST_DATA['transports']
             ].join
           end
-
-          def request_headers
-            {
-              'Cookie' => request_cookie_header,
-              'x-request-id' => SecureRandom.uuid,
-              'X-Requested-With' => 'XMLHttpRequest',
-              'X-Retpath-Y' => 'https://music.yandex.ru',
-              'x-yandex-music-client' => 'YandexMusicWebNext/1.0.0',
-              'x-yandex-music-multi-auth-user-id' => '2273883602',
-              'x-yandex-music-without-invocation-info' => '1',
-              'Host' => 'api.music.yandex.ru',
-              'DNT' => '1',
-              'Referer' => 'https://music.yandex.ru/',
-              'Origin' => 'https://music.yandex.ru'
-            }
-          end
-
-          def request_cookie_header
-            credentials.dig(
-              :yandexmusic,
-              :cookie
-            )
-          end
         end
       end
     end
