@@ -24,7 +24,7 @@ module Muffon
                 source_data: @args[:source],
                 audio_data: @args[:audio],
                 album_source_data: @args[:album_source],
-                created_at: @args[:created]
+                created_at: creation_date
               )
 
               favorite_track_record.process_image_later(
@@ -54,6 +54,10 @@ module Muffon
 
             def album_title
               @args[:album_title]
+            end
+
+            def creation_date
+              @args[:created] || current_time
             end
 
             def favorite_track_data
