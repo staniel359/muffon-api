@@ -6,9 +6,9 @@ module Odnoklassniki
       def call
         check_args
 
-        check_if_not_found
-
         return retry_with_new_session_id if retry_with_new_session_id?
+
+        check_if_not_found
 
         data
       rescue Faraday::BadRequestError

@@ -42,11 +42,13 @@ module Muffon
         end
 
         def tracks
-          raw_tracks.map do |raw_track_data|
-            track_data_formatted(
-              raw_track_data
-            )
-          end
+          raw_tracks
+            .map do |raw_track_data|
+              track_data_formatted(
+                raw_track_data
+              )
+            end
+            .compact
         end
 
         def tags

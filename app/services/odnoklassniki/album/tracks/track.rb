@@ -20,6 +20,8 @@ module Odnoklassniki
         end
 
         def data
+          return if unavailable?
+
           Muffon::Formatter::Source::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
@@ -32,6 +34,10 @@ module Odnoklassniki
             is_audio_present: audio_present?,
             **self_args
           )
+        end
+
+        def unavailable?
+          raw_track_data['playRestricted']
         end
 
         def raw_track_data
