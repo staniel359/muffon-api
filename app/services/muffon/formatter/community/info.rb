@@ -27,6 +27,7 @@ module Muffon
             description_truncated:,
             creator: creator_data,
             members_count:,
+            posts_count:,
             profile: profile_data,
             created: creation_date,
             **with_more_data

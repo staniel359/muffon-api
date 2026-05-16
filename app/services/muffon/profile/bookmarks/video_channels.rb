@@ -21,11 +21,6 @@ module Muffon
             .offset(offset)
         end
 
-        def video_channels
-          @video_channels ||=
-            profile_record.bookmark_video_channels
-        end
-
         def items_count
           video_channels.count
         end

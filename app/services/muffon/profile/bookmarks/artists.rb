@@ -21,10 +21,6 @@ module Muffon
             .offset(offset)
         end
 
-        def artists
-          @artists ||= profile_record.bookmark_artists
-        end
-
         def items_count
           artists.count
         end

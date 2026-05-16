@@ -32,6 +32,12 @@ module Muffon
           community_record.members_count
         end
 
+        def posts_count
+          community_record
+            .posts
+            .count
+        end
+
         def profile_data
           return unless valid_profile?
 

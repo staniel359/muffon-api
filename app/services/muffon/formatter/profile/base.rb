@@ -177,6 +177,34 @@ module Muffon
           @spotify_connection_record ||=
             profile_record.spotify_connection
         end
+
+        def posts_count
+          profile_record
+            .posts
+            .count
+        end
+
+        def playlists_count
+          profile_record
+            .playlists
+            .count
+        end
+
+        def communities_count
+          profile_record
+            .communities
+            .count
+        end
+
+        def favorites_data
+          Muffon::Profile::Favorites::Info.call(
+            profile_id:,
+            token: @args[:token]
+          ).dig(
+            :profile,
+            :favorites
+          )
+        end
       end
     end
   end

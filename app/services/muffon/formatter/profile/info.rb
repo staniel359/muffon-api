@@ -19,7 +19,8 @@ module Muffon
         def data
           {
             **base_data,
-            **extra_data
+            **extra_data,
+            **counters_data
           }.compact
         end
 
@@ -42,8 +43,6 @@ module Muffon
             city:,
             status:,
             other_profile: other_profile_data,
-            followers_count:,
-            following_count:,
             created: creation_date,
             playing:,
             online: online?,
@@ -51,6 +50,17 @@ module Muffon
             library: library_data,
             save_activity_history: save_activity_history?,
             connections: connections_data
+          }
+        end
+
+        def counters_data
+          {
+            followers_count:,
+            following_count:,
+            posts_count:,
+            playlists_count:,
+            communities_count:,
+            favorites: favorites_data
           }
         end
       end

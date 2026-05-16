@@ -21,10 +21,6 @@ module Muffon
             .offset(offset)
         end
 
-        def videos
-          @videos ||= profile_record.bookmark_videos
-        end
-
         def items_count
           videos.count
         end

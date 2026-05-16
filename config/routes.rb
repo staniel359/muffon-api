@@ -190,6 +190,8 @@ Rails
             end
 
             namespace :bookmarks do
+              get '', action: :info
+
               resources :artists,
                 only: %i[index create destroy],
                 param: :bookmark_id

@@ -22,10 +22,6 @@ module Muffon
             .with_relations
         end
 
-        def albums
-          @albums ||= profile_record.bookmark_albums
-        end
-
         def items_count
           albums.count
         end
