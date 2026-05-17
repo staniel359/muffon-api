@@ -39,11 +39,6 @@ module LastFM
         def raw_artist_data
           @args[:raw_artist_data]
         end
-
-        def image_url
-          raw_artist_data.dig('image', 0, '#text') ||
-            raw_artist_data['image']
-        end
       end
     end
   end
