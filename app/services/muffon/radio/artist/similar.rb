@@ -9,6 +9,7 @@ module Muffon
 
         def not_found?
           artist_info_data.blank? ||
+            similar_artists.blank? ||
             similar_artist_info_data.blank? ||
             super
         end
@@ -26,6 +27,10 @@ module Muffon
             )
         end
 
+        def similar_artists
+          artist_info_data[:similar]
+        end
+
         def similar_artist_info_data
           @similar_artist_info_data ||=
             LastFM::Artist::Tracks.call(
@@ -40,8 +45,7 @@ module Muffon
         end
 
         def similar_artist_name
-          artist_info_data.dig(
-            :similar,
+          similar_artists.dig(
             0,
             :name
           )
