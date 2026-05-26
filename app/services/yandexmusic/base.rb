@@ -14,6 +14,8 @@ module YandexMusic
           headers: request_headers,
           proxy: request_proxy
         )
+
+      raise not_found_error unless test?
     end
 
     def request_params
