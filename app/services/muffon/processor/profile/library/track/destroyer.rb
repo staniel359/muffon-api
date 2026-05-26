@@ -13,18 +13,27 @@ module Muffon
               ]
             end
 
+            def not_found?
+              super || library_track_record.blank?
+            end
+
+            def library_track_record
+              if defined?(@library_track_record)
+                @library_track_record
+              else
+                @library_track_record =
+                  profile_record
+                  .library_tracks
+                  .find_by(
+                    id: @args[:library_id]
+                  )
+              end
+            end
+
             def data
               library_track_record.destroy!
 
               { success: true }
-            end
-
-            def library_track_record
-              profile_record
-                .library_tracks
-                .find_by(
-                  id: @args[:library_id]
-                )
             end
           end
         end

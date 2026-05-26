@@ -13,18 +13,27 @@ module Muffon
               ]
             end
 
+            def not_found?
+              super || bookmark_video_channel_record.blank?
+            end
+
+            def bookmark_video_channel_record
+              if defined?(@bookmark_video_channel_record)
+                @bookmark_video_channel_record
+              else
+                @bookmark_video_channel_record =
+                  profile_record
+                  .bookmark_video_channels
+                  .find_by(
+                    id: @args[:bookmark_id]
+                  )
+              end
+            end
+
             def data
               bookmark_video_channel_record.destroy!
 
               { success: true }
-            end
-
-            def bookmark_video_channel_record
-              profile_record
-                .bookmark_video_channels
-                .find_by(
-                  id: @args[:bookmark_id]
-                )
             end
           end
         end

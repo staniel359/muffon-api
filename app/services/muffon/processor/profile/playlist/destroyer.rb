@@ -12,6 +12,10 @@ module Muffon
             ]
           end
 
+          def not_found?
+            super || playlist_record.blank?
+          end
+
           def data
             playlist_record.destroy!
 

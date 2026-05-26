@@ -6,10 +6,10 @@ module Muffon
           private
 
           def playlist_record
-            if defined?(@playlist)
-              @playlist
+            if defined?(@playlist_record)
+              @playlist_record
             else
-              @playlist =
+              @playlist_record =
                 profile_record
                 .playlists
                 .find_by(

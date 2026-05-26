@@ -11,6 +11,10 @@ module Muffon
           ]
         end
 
+        def not_found?
+          super || community_record.blank?
+        end
+
         def forbidden?
           super || !community_creator?
         end

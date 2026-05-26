@@ -11,6 +11,10 @@ module Muffon
           ]
         end
 
+        def not_found?
+          super || post_record.blank?
+        end
+
         def data
           post_record.destroy!
 

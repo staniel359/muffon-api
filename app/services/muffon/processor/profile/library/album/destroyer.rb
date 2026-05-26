@@ -13,18 +13,27 @@ module Muffon
               ]
             end
 
+            def not_found?
+              super || library_album_record.blank?
+            end
+
+            def library_album_record
+              if defined?(@library_album_record)
+                @library_album_record
+              else
+                @library_album_record =
+                  profile_record
+                  .library_albums
+                  .find_by(
+                    id: @args[:library_id]
+                  )
+              end
+            end
+
             def data
               library_album_record.destroy!
 
               { success: true }
-            end
-
-            def library_album_record
-              profile_record
-                .library_albums
-                .find_by(
-                  id: @args[:library_id]
-                )
             end
           end
         end
