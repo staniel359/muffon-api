@@ -65,7 +65,7 @@ module Spotify
       def album_spotify_id
         return if raw_album_data.blank?
 
-        raw_album_data['uri'].sub(
+        raw_album_data['uri']&.sub(
           'spotify:album:',
           ''
         )
