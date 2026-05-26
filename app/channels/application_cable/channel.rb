@@ -3,7 +3,11 @@ module ApplicationCable
     private
 
     def profile_id
-      profile_record.id
+      if profile_record.present?
+        profile_record.id
+      else
+        raise "Issue with profile; token: #{access_token}"
+      end
     end
 
     def token

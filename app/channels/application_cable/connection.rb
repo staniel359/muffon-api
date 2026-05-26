@@ -13,9 +13,14 @@ module ApplicationCable
     private
 
     def profile_record
-      Profile.find_by(
-        token: access_token
-      )
+      if defined?(@profile_record)
+        @profile_record
+      else
+        @profile_record =
+          Profile.find_by(
+            token: access_token
+          )
+      end
     end
 
     def access_token
