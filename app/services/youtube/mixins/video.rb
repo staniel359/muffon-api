@@ -158,6 +158,10 @@ module YouTube
       def video_private?
         title == 'Private video'
       end
+
+      def video_deleted?
+        title == 'Deleted video'
+      end
     end
   end
 end

@@ -21,6 +21,8 @@ module YouTube
         def data
           if video_private?
             { private: true }
+          elsif video_deleted?
+            { deleted: true }
           else
             update_video_record!
 
