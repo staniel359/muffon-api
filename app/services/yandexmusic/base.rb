@@ -6,6 +6,8 @@ module YandexMusic
     private
 
     def response_data
+      raise not_found_error unless test?
+
       @response_data ||=
         Muffon::Request.call(
           url: request_url,
@@ -14,8 +16,6 @@ module YandexMusic
           headers: request_headers,
           proxy: request_proxy
         )
-
-      raise not_found_error unless test?
     end
 
     def request_params
