@@ -39,12 +39,6 @@ jobs:
       - name: Lint
         run: bundle exec rubocop
 
-      - name: Enable OpenSSL legacy provider
-        run: |-
-          sudo sed -i '/default = default_sect/a legacy = legacy_sect' /etc/ssl/openssl.cnf
-          sudo sed -i 's/# activate = 1/activate = 1/' /etc/ssl/openssl.cnf
-          sudo sed -i '/activate = 1/a [legacy_sect]\nactivate = 1' /etc/ssl/openssl.cnf
-
       - name: Test
         env:
           RAILS_ENV: test
