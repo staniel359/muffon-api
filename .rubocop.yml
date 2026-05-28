@@ -10,8 +10,12 @@ inherit_mode:
 AllCops:
   NewCops: enable
   Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'other/**/*'
     - 'spec/helpers/**/*'
     - 'spec/spec_helper.rb'
+    - 'test/**/*'
 
 Layout/LineLength:
   Max: 80

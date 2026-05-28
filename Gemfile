@@ -8,10 +8,10 @@ ruby File.read(
   '.ruby-version'
 ).strip
 
-gem 'aws-sdk-s3', '1.170', require: false
 gem 'aws-sdk-core', '3.211'
-gem 'bootsnap', require: false
+gem 'aws-sdk-s3', '1.170', require: false
 gem 'bcrypt'
+gem 'bootsnap', require: false
 gem 'countries'
 gem 'csv'
 gem 'faraday'
@@ -35,10 +35,10 @@ gem 'whenever', require: false
 
 group :development do
   gem 'capistrano', require: false
+  gem 'capistrano3-puma', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rbenv', require: false
   gem 'capistrano-sidekiq', require: false
-  gem 'capistrano3-puma', require: false
   gem 'listen'
   gem 'pry'
   gem 'rubocop', require: false
@@ -55,4 +55,3 @@ group :test do
   gem 'vcr'
   gem 'webmock'
 end
-
