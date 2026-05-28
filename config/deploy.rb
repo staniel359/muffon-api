@@ -60,11 +60,15 @@ before 'deploy:check:linked_files', 'config:copy'
 namespace :config do
   desc 'Copy config'
   task :copy do
-    on roles(:all) do |host|
-      upload!(
-        'config/credentials/production.json',
-        "/root/#{fetch(:application)}/shared/config/credentials/production.json"
-      )
+    on roles(:all) do |_|
+      credentials_file_path = 'config/credentials/production.json'
+
+      if File.exist?(credentials_file_path)
+        upload!(
+          credentials_file_path,
+          "/root/#{fetch(:application)}/shared/#{credentials_file_path}"
+        )
+      end
     end
   end
 end
