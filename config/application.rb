@@ -22,11 +22,19 @@ module MuffonAPI
   class Application < Rails::Application
     def credentials
       @credentials ||=
-        JSON
-          .load_file(
-            credentials_file_path
-          )
-          .deep_symbolize_keys
+        if File.exist?(credentials_file_path)
+          JSON
+            .load_file(
+              credentials_file_path
+            )
+            .deep_symbolize_keys
+        else
+          JSON
+            .parse(
+              ENV['RAILS_CREDENTIALS']
+            )
+            .deep_symbolize_keys
+        end
     end
 
     def credentials_file_path
