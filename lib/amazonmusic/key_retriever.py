@@ -26,7 +26,7 @@ license_headers = {
   'User-Agent': args.user_agent
 }
 
-widevine_file_path = os.getcwd() + '/lib/widevine.wvd'
+widevine_file_path = os.getcwd() + '/lib/amazonmusic/widevine.wvd'
 
 device = Device.load(widevine_file_path)
 

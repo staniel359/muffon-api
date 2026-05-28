@@ -12,8 +12,7 @@ set :deploy_to, "/root/#{fetch(:application)}"
 append :linked_files,
   'config/credentials/production.json',
   'invalid_requests.csv',
-  'lib/widevine.wvd',
-  'lib/widevine.json'
+  'lib/amazonmusic/widevine.wvd'
 
 append :linked_dirs,
   'log',
