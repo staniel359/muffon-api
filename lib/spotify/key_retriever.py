@@ -39,20 +39,20 @@ challenge = cdm.get_license_challenge(
   pssh = pssh
 )
 
-license = requests.post(
+license_response = requests.post(
   license_url,
   headers = license_headers,
   data = challenge
 )
 
-license.raise_for_status()
+license_response.raise_for_status()
 
 key = ''
 
-if license:
+if license_response:
   cdm.parse_license(
     session_id = session_id,
-    license_message = license.content
+    license_message = license_response.content
   )
 
   for key_data in cdm.get_keys(

@@ -34,7 +34,10 @@ module Spotify
             end
 
             def pssh
-              response_data['pssh']
+              response_data.dig(
+                'pssh',
+                'widevine'
+              )
             end
 
             def response_data
@@ -46,7 +49,7 @@ module Spotify
             end
 
             def request_url
-              "https://seektables.scdn.co/seektable/#{@args[:file_id]}.json"
+              "https://seektables.spotifycdn.com/v1/seektable/#{@args[:file_id]}"
             end
           end
         end
