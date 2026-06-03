@@ -32,7 +32,7 @@ module YouTubeMusic
 
             system(
               "yt-dlp \
-                #{@args[:track_id]} \
+                '#{@args[:track_id]}' \
                 --cookies-from-browser firefox \
                 --js-runtimes deno:/root/.deno/bin/deno \
                 --extract-audio \
