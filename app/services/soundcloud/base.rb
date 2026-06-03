@@ -45,7 +45,8 @@ module SoundCloud
     end
 
     def request_proxy
-      proxy_data
+      @request_proxy ||=
+        proxy_data
         .dig(:uk, :ipv4)
         .sample
     end

@@ -85,7 +85,7 @@ module VK
     end
 
     def request_proxy
-      proxy_data[:ru].sample
+      @request_proxy ||= proxy_data[:ru].sample
     end
 
     def raise_error(error_data)

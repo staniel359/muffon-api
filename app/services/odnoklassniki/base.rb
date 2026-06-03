@@ -52,7 +52,7 @@ module Odnoklassniki
     end
 
     def request_proxy
-      proxy_data[:ru].sample
+      @request_proxy ||= proxy_data[:ru].sample
     end
 
     def retry_with_new_session_id?
