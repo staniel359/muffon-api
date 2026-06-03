@@ -16,6 +16,12 @@ module LastFM
             cookies: request_cookies,
             proxy: request_proxy
           )
+      rescue Faraday::ClientError => error
+        if error.response_status == 406
+          raise not_found_error
+        else
+          raise error
+        end
       end
 
       def request_url
