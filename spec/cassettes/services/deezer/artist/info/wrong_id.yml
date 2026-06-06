@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.deezer.com/ajax/gw-light.php?api_token=&api_version=1.0&method=deezer.getUserData
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Cookie:
+      - sid=<DEEZER_SESSION_ID>
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Deezer-Client-Ip:
+      - 178.172.193.8
+      X-Host:
+      - blm-web-156
+      X-Ua-Compatible:
+      - IE=edge,chrome=1,requiresActiveX=true
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Headers:
+      - x-deezer-widget, X-Requested-With, Content-Type, Authorization, Origin, Accept,
+        Accept-Encoding
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 08 Sep 2025 21:42:52 GMT
+      Content-Length:
+      - '12848'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - _abck=6ED4E6AADC763D86D0F880485ECA6D5A~-1~YAAQSUllX6e83/KYAQAACSdIKw6jh41WAP80YrRlNFBaJ4q+lyAZZZUlahsK1udqVLxN8UIR25rrsgAsq2NwuUs5kyGYcOkWoM+7HfYG9O0o0TXws8gb92ADsBXPwe2wyKT/B9Eexk8fuMY+k+BVGBbEXCj1ae57LhBmkNGEM1oupHfOZpcCmz6EEHWnQa+7kpbNQnnHtgZGCq/MTtp6S83wE6eUpWO+FETglWs1rJ4b26ETAE2zrv4ku9dcQVPROaBW6sGeMaiyTc1x8uB0yl7MJ2wHqQF5avlWrp41b6k3uWWIfOBljn++yPNKf9b46f5WyjuRfneGEQfGD0nil/vJbW2Aij+Ghdjbyr9Jur0E0JJRJgMUd8MMch7vlmPO6jnu8MxNShybMGWgnCrSLzCNOve4IoivTwBKdCy85eOPAJHNu3qu2tz/WPhakflGSJuL3DA=~-1~-1~-1~-1~-1;
+        Domain=.deezer.com; Path=/; Expires=Tue, 08 Sep 2026 21:42:52 GMT; Max-Age=31536000;
+        SameSite=None; Secure
+      - bm_sz=475BB02320F41CF72A98A3576D52D759~YAAQSUllX6i83/KYAQAACSdIKx0jXgCgYE1JtXPyZgWo5IX1Z2/XdxfmqTOB44XpWVbzaqLA2mBqCq/haEArS2EL8ga7qRF+ocyuZ4c/SFtF8k+gEOJovPiIVR1bBsjeWiswENYKpDz5OBuWd5g8SVlIOYsMYuVPXAEtBp/VnoCGXU03+fas9Kq6Vpy4PxHzkMqtfJOS73inkitulorf7ojZxRgLrIFSnqcIibrXFqD3mrWgpxE00EDeleAKIrxP+CGDZIffZRjk+UIDuTIS656MYba18ThXwdVt1So6Pf2uC82VJANWez+B3dYOP1Cf7Z6SWxwHEp1ocgcEvzgmw94FYN63BvRozESxTmn1~4273730~3684421;
+        Domain=.deezer.com; Path=/; Expires=Tue, 09 Sep 2025 01:42:52 GMT; Max-Age=14400;
+        SameSite=None; Secure
+      - dzr_uniq_id=dzr_uniq_id_fr8fedf358734bbb6b3718b11815cf74635eb58d; expires=Sat,
+        07 Mar 2026 21:42:52 GMT; Max-Age=15552000; path=/; domain=.deezer.com; secure;
+        SameSite=None
+      - sid=<DEEZER_SESSION_ID>; path=/; domain=.deezer.com; secure; HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"error":[],"results":{"USER":{"USER_ID":0,"USER_PICTURE":"","INSCRIPTION_DATE":"","TRY_AND_BUY":{"AVAILABLE":true,"ACTIVE":"0","DATE_START":"0000-00-00
+        00:00:00","DATE_END":"0000-00-00 00:00:00","PLATEFORM":"none","DAYS_LEFT_MOB":0},"PARTNERS":"0","TOOLBAR":[],"OPTIONS":{"mobile_preview":true,"mobile_radio":true,"mobile_streaming":false,"mobile_streaming_duration":0,"mobile_offline":false,"mobile_sound_quality":{"low":true,"standard":true,"high":false,"lossless":false,"reality":false},"default_download_on_mobile_network":false,"mobile_hq":false,"mobile_lossless":false,"tablet_sound_quality":{"low":true,"standard":true,"high":false,"lossless":false,"reality":false},"audio_quality_default_preset":"fast","web_preview":true,"web_radio":true,"web_streaming":false,"web_streaming_duration":0,"web_offline":false,"web_hq":false,"web_lossless":false,"web_sound_quality":{"low":true,"standard":true,"high":false,"lossless":false,"reality":false},"license_token":"AAAAAmi_Tdxo0xRcsVUstsEelup57eFvF9iNrHP0k5TmCFjjqmfuSeKTX6N0Jx5uhCSkXo8lex1EHUlwxjoQDKcPu2vefHH2BkEp","expiration_timestamp":1758663772,"license_country":"GB","ads_display":true,"ads_audio":true,"dj":false,"nb_devices":0,"multi_account":false,"multi_account_max_allowed":1,"radio_skips":6,"too_many_devices":false,"business":false,"business_mod":false,"business_box_owner":false,"business_box_manager":false,"business_box":false,"business_no_right":false,"allow_subscription":false,"allow_trial_mobile":true,"timestamp":1757367772,"can_subscribe":false,"can_subscribe_family":false,"show_subscription_section":false,"streaming_group":"ads","queuelist_edition":false,"mobile_streaming_used":0,"web_streaming_used":0,"streaming_used":0,"ads":true,"multiaccount_max_children":0,"audio_qualities":{"mobile_download":["standard","standard","high"],"mobile_streaming":["standard","standard","high"],"wifi_download":["standard","high","high"],"wifi_streaming":["standard","high","high"]},"hq":false,"lossless":false,"offline":false,"preview":false,"radio":false,"streaming":false,"streaming_duration":0,"sound_quality":{"standard":true,"high":false,"lossless":false,"reality":false}},"AUDIO_SETTINGS":{"default_preset":"balanced","default_download_on_mobile_network":false,"presets":[{"mobile_download":"standard","mobile_streaming":"standard","wifi_download":"high","wifi_streaming":"high","id":"balanced","title":"Balanced","description":"Improve
+        audio quality when connected to WiFi."}],"connected_device_streaming_preset":"standard"},"SETTING":{"global":{"language":"","social":true,"popup_unload":false,"filter_explicit_lyrics":false,"is_kid":false,"has_up_next":true,"dark_mode":"off","accent_palette_identifier":"","onboarding":false,"onboarding_progress":0,"onboarding_musictogether":true,"onboarding_musictogether_progress":0,"cookie_consent_string":"","has_root_consent":0,"happy_hour":"","recommendation_country":"GB","has_joined_family":false,"has_already_tried_premium":false,"explicit_level_forced":false},"site":{"livebar_state":"close","livebar_tab":"ticker","push_mobile":0,"howto_step":0,"edito_tag":0,"display_confirm_discovery":0,"cast_audio_quality":"standard"},"twitter":{"share_comment":true,"share_favourite":true,"share_loved":true,"share_share":true},"facebook":{"share_comment":true,"share_favourite":true,"share_loved":true,"share_listen":true,"share_share":true},"google":{"share_comment":false,"share_favourite":false,"share_loved":false,"share_listen":false,"share_share":false,"country_store":false},"notification_mail":{"share":false,"friend_follow":false,"playlist_comment":false,"playlist_follow":false,"artist_new_release":false,"artist_status":false,"new_message":false},"notification_mobile":{"share":false,"friend_follow":false,"playlist_comment":false,"playlist_follow":false,"artist_new_release":false,"artist_status":false,"new_message":false},"newsletter":{"editor":false,"talk":false,"event":false,"game":false,"special_offer":false,"panel":false},"optin_mail":[],"optin_push":[],"optin_inapp":[],"optin_sms":[],"tips":{"player":false,"flow":true,"add_to_library":true,"lyrics":2,"up_next":true},"audio_quality_settings":{"preset":"fast","download_on_mobile_network":false,"connected_device_streaming_preset":false},"customer_message":[],"mobile_message":[],"adjust":[],"abtest":[],"ads":{"test_format":false,"force_adsource":"auto","force_mediation":"auto"},"webviews":{"domain":false},"tracking":[],"partner":{"partner_ids":"[]"}},"LASTFM":{},"TWITTER":{},"FACEBOOK":{},"GOOGLEPLUS":{},"APPLE":{},"FAVORITE_TAG":0,"ABTEST":{"share_android_image_preview":{"id":"share_android_image_preview","option":"default","behaviour":"default
+        sharing","percent":50},"stl_daily_mix_captioning":{"id":"stl_daily_mix_captioning","option":"default","behaviour":"Default
+        text \"daily\"","percent":95},"module_library_abtest_qa":{"id":"module_library_abtest_qa","option":"B","behaviour":"switch
+        module","percent":100}},"MULTI_ACCOUNT":[],"ONBOARDING_MODAL":false,"ADS_OFFER":"0","ENTRYPOINTS":{},"ADS_TEST_FORMAT":"","NEW_USER":false,"CONSENT_STRING":[],"RECOMMENDATION_COUNTRY":"GB","CAN_BE_CONVERTED_TO_INDEPENDENT":false,"IS_FREEMIUM_COUNTRY":1,"HARDBOUNCED_EMAIL":false,"EXPLICIT_CONTENT_LEVEL":"explicit_display","EXPLICIT_CONTENT_LEVELS_AVAILABLE":["explicit_display","explicit_no_recommendation","explicit_hide"],"CAN_EDIT_EXPLICIT_CONTENT_LEVEL":true,"DEVICES_COUNT":0,"HAS_UPNEXT":true,"LOVEDTRACKS_ID":"0","OPTINS":{"channel":[],"optin":[],"group":[]}},"SETTING_LANG":"en","SETTING_LOCALE":"en-GB","DIRECTION":"ltr","SESSION_ID":"<DEEZER_SESSION_ID>","USER_TOKEN":"36edb3b1d0e9d19561d67191076e05577ac4e50378994699551cf5b0d950647387e7f146488f5f725359606912da912ab3effba556d187ff1ad543b8","PLAYLIST_WELCOME_ID":"63141574","OFFER_ID":0,"OFFER_NAME":"Deezer
+        Free","OFFER_ELIGIBILITIES":[],"COUNTRY":"GB","COUNTRY_CATEGORY":"default","MIN_LEGAL_AGE":16,"FAMILY_KIDS_AGE":12,"SERVER_TIMESTAMP":1757367772,"PLAYER_TOKEN":"efe9c1fc6ce01008fc3d72318dbe312df61b6c069be7103be2e28347bc39fb457adb2e9a12ce020b234e7cebaece774be421248df18a11c2389c58cb6615d33a2149ec9bfbe97241fa01945ed5b6bde2b4d28d39a4cc40a0ade4b8895709c979365dddc9c2a0dd9a75255551416c587e469ca0801ab5c39f4f7f0c678cc6cdb0597f657042f4f37003883e954679e8fd492cace4d573d05a8faf5a253f9a51058359be42ba30bb85868d1c71fb791b2482e783d0c9e113e8652af9cd305fa3a4fa933fbe82981a2f2ab402315736120b16b9e99ec3b017638d840d94ed882b3e9fd1faaf3fa3aa4fb1c3ed65cfb4d1b0cc629c419969741e1928c77b8d97b1e2c165e68c82a1bde1e0eaa30fb69dc5b9cc629c419969741e1928c77b8d97b1e261beb2d4ef88f0a9be7b67a355a0ab5bbac1b4f1be999e6f8f25450f9e162c7e35836f6c86833b16f2fbf3b343e5b2b1be6a07612ca11ac34171a1c8f9a58e8a9ddf42e4c234b313b30b035f914fdc02186bff214fac9af33279b7ad39f90e36f5ebf7c13b03037e5e314b633a93d673c207baaca7624de69b7239674a215218b997ca996288aacdc60923efc376c4a99c4b246a545f61dccfbb2092813011758f836bcc4eb427dad076e4fc8672bae1d7ba93a6226fce7257cd9926604d0d6f5ace249302f9cf84294e1c40cd06d5130dc79dd9a13eb068b987ef64fadd8b90598ce97cc0e3d0b958d9afd4267790615213adfe29706df0bd3b654c98a48d3cf75cce3ecb8c53a5a9e102754afbc67ec17c8d9e901960dbde8b973e799fd3f57f1fe0439cb906939d3d011b2731b9ed84816011b32d40e187e64c5fef58ded8a6d3627f673619ad84952164abdf32d91c54c635120943f86a25a9b8ab0b5c987e31697d33cc48a615c3254ea381462ef3a8f94cd58b08af54c97a99b2cee4f3ae25b239740191c1325391685e4adc08c9a3ff0444ed8808f427c200b4f46993c31ff531407cc45672e08ba9bdc92f5a","checkForm":"58pPQmJvvnr607EEosyL7UsxTPaT3vOx","FROM_ONBOARDING":"false","CUSTO":"","SETTING_REFERER_UPLOAD":"FR","REG_FLOW":["email"],"LOGIN_FLOW":["email"],"__DZR_GATEKEEPS__":{"audiobook_favorites_sync_write":true,"audiobook_author_favorites_sync_write":true,"audiobook_on_deck_sync_write":true,"audiobook_data_sync_read":true,"secured_change_password":true,"secured_change_email":true,"register_no_emoji":true,"gender_nonbinary":true,"new_social_connect_errors":true,"ad_check_flag_show_is_advertising_allowed":true,"adblock_bait_file":true,"ad_display_hubvisor":true,"ad_audio_break_hubvisor":true,"ad_audio_break_vast_audio":true,"auth_ui_integration":true,"appcusto_subscription_renewal":true,"like_track_braze_event":true,"appcusto_homepod_settings":true,"recaptcha_signup":true,"recaptcha_login":true,"is_recaptcha_blocker":true,"cdp_item_added_to_collection":true,"cdp_authentication_started":true,"cdp_search_trendings":true,"cdp_play_clicked":true,"activate_segment":true,"cdp_player_item_clicked":true,"contests_from_graphql":true,"disable_conversion_boxes_family":true,"family_b2c":true,"haas_project":true,"block_braze_in_app_search":true,"fetch_on_background_queue":true,"inbox_v0":true,"metric.merged_uniq_id":true,"metric.mparticle.tracking_migration":true,"metric.auth_vitals":true,"metric.timetocaptcha":true,"metric.account_vitals":true,"metric.payment.in_app_purchase":true,"metric.ads.monitoring":true,"activate_mparticle_unauthenticated_event":true,"restricted_shuffle":true,"tcfv2_consent_screen_webview":true,"feature_2025_ai_label":true,"linear_track_preview_album_page":true,"public_api_album":true,"api_mob_ssl":true,"artist_video":true,"artist_highlight":true,"linear_track_preview_artist_page":true,"public_api_visible_test":true,"artist_page_albums_sorted_by_rank":true,"concerts_hub":true,"public_api_concert":true,"dark_mode":true,"datagrid_refacto":true,"dynamic_page_v21":true,"dynamic_calculated_smartcache":true,"christmas_easter_egg_player":true,"open_explicit_display":true,"family_profile_migration":true,"family_picker_with_sub_accounts":true,"family_account_invitation":true,"mymusic_recently_played":true,"mymusic_display_dislikes":true,"mymusic_masthead":true,"mymusic_nodatas":true,"mymusic_tests_2016aug":true,"artist_page_favorite_content":true,"flow_in_homepage":true,"tuner_flow_config":true,"close_block_feature":true,"remove_lasttab":true,"library_importer_tmm":true,"display_competitor_logos_tmm":true,"lyrics_refacto":true,"lyrics_report_problem":true,"batch_requests":true,"use_media_service":true,"metric.dynamic_page_loading":true,"metric.dynamic_content.screen_view":true,"metric.dynamic_content.item_clicked":true,"metric.dynamic_content.view_all_clicked":true,"metric.dynamic_content.play_clicked":true,"metric.playlist_page_loading":true,"metric.favorite_tracks_page_loading":true,"metric.deezer_story.loading":true,"metric.media_request_errors":true,"metric.podcastdownload":true,"metric.playback_errors":true,"music_together":true,"music_together_join":true,"music_together_create":true,"music_together_relive":true,"navbar_partnerlogo":true,"android_pipe_selected_artist_onboarding":true,"onboarding_artists":true,"launch_onboarding":true,"onboarding_channels":true,"change_chunk_size":true,"gapless_playback":true,"volume_normalization":true,"linear_track_preview_playlist_page":true,"feature_2025_playlist_cover":true,"talk":true,"tab_podcast":true,"talk_latest_playlist":true,"podcast_notifications_disabled":true,"latest_episodes":true,"recommendation_country":true,"feature_2025_algo_settings":true,"network_status_bar":true,"revamp2023":true,"search_autocorrect":true,"search_query_suggestions":true,"trending_queries":true,"search_remove_duplicates_track":true,"search_instant_search":true,"search_refacto_2024":true,"explicit_user_settings":true,"share_facebook_story":true,"universal_link_sharing":true,"single_instance_playback_relive":true,"public_api_track":true,"unlimited_favorite_tracks":true,"unlimited_favorite_tracks_parallel_fetch":true,"android_auto":true,"conversion_entrypoints_ng":true,"electron_html5_playback":true,"filter_content_for_verified_artists":true,"fnac_migration":true,"GDPR":true,"multi_account":true,"multi_account_subscribe":true,"native_reg_wp":true,"notification_center":true,"onboarding_handle_genre":true,"player_ng":true,"up_next":true,"sso_partner_banner":true,"siri_platform_service":true},"thirdParty":{"facebook":{"appData":{"id":241284008322,"namespace":"deezer-app","scope":"email,user_birthday","version":"17.0","channel":"https:\/\/www.deezer.com\/fbgateway.html"},"lang":"en_GB"},"googleplus":{"appData":{"client_id":"630457285321-d5nmkpnjktjoeh426nvdu40rch1b1qe0.apps.googleusercontent.com","client_key":"AIzaSyC27tg4VNAkkQ-9P4fY45vUEfeYGSbDz_o","name":"Deezer","scope":"https:\/\/www.googleapis.com\/auth\/userinfo.profile
+        https:\/\/www.googleapis.com\/auth\/userinfo.email https:\/\/www.googleapis.com\/auth\/user.emails.read
+        https:\/\/www.googleapis.com\/auth\/user.birthday.read","redirect_uri":"postmessage","access_type":"offline","cookie_policy":"single_host_origin","request_visible_actions":"http:\/\/schemas.google.com\/AddActivity
+        http:\/\/schemas.google.com\/ListenActivity http:\/\/schemas.google.com\/CommentActivity","version":"v1"}},"braze":{"apiKey":"5ba97124-1b79-4acc-86b7-9547bc58cb18","isAvailable":true}},"URL_MEDIA":"https:\/\/media.deezer.com","GAIN":{"TARGET":"-15","ADS":"-13"},"checkFormLogin":"lw.MpoTlR89NZmM1x.37RPD9jMg3OGHZ"}}'
+  recorded_at: Mon, 08 Sep 2025 21:42:52 GMT
+- request:
+    method: post
+    uri: https://www.deezer.com/ajax/gw-light.php?api_token=58pPQmJvvnr607EEosyL7UsxTPaT3vOx&api_version=1.0&method=deezer.pageArtist
+    body:
+      encoding: UTF-8
+      string: '{"art_id":"wejlhg239gh23","lang":"en"}'
+    headers:
+      User-Agent:
+      - Faraday v2.13.4
+      Cookie:
+      - sid=<DEEZER_SESSION_ID>
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      P3p:
+      - policyref="/w3c/p3p.xml" CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Deezer-Client-Ip:
+      - 178.172.193.8
+      X-Host:
+      - blm-web-175
+      X-Ua-Compatible:
+      - IE=edge,chrome=1,requiresActiveX=true
+      X-Content-Type-Options:
+      - nosniff
+      Access-Control-Allow-Headers:
+      - x-deezer-widget, X-Requested-With, Content-Type, Authorization, Origin, Accept,
+        Accept-Encoding
+      Content-Type:
+      - application/json; charset=utf-8
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Mon, 08 Sep 2025 21:42:53 GMT
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - _abck=CA7DBBFCC62C47E9707EBC12E6DBC8E8~-1~YAAQRkllX8a1Nu6YAQAA5SdIKw62eUbQXRBOH3mmyUqUXoh9G2kJ+oJpwoWdBYOlW/xueGCgnyPBPQ/D1sBGBEIesMQxOFD4L8osL64fkOmz9K272a6qGuaOLJIdR1srBwrly8xrVcBCK4wLKfCfiOqUvnvzKzA84wdTGeFQ5DBhTIbTNQTd2uidgzkFM8ZfMkZnpX+wBZxQhfNpCEEsHmtDaAcNYlwmzjAkFFdObobgv8MXmOfBl1Ur+GOJMYZiP4XUWjcXIo9RuQdd8a7C/C/aGDQ0+Zug4jODM+ghVyrGeq7ge1YfSWajC0UWLI7U7ZdKIt+ozdGgW956dVqZoKrFkoM6EcGgpVfTPjme3DY3R26AZ2POStV8TknVi1qq/rr3CXTEMqNqTLlj1WSNm1UJ+1U61nHrc2B5socENWfHW1Il5TjmvEm0h2ZiiDpfq1moNYc=~-1~-1~-1~-1~-1;
+        Domain=.deezer.com; Path=/; Expires=Tue, 08 Sep 2026 21:42:53 GMT; Max-Age=31536000;
+        SameSite=None; Secure
+      - bm_sz=9B3EB9099704D56C697DE67B7243DF34~YAAQRkllX8e1Nu6YAQAA5SdIKx2efMkj2xYCx4sffzbK+74yHQpOFUxWxDfRnnj9zOAfMpjrxXNVXtmqKbhNVz8apC8t7LEzl2CtoL/TZlsLDq2bbWIhglXwJtI+rOjU9AOdaOHoBpaPLU5UVDhvR8FVqAup10/IAwVePmJb9wPmUi/zf1QFdkYTGpg0hwDOkewsJ0ydFkuTIlUKDSf8f9yegDcznxc4zKNCTJBKtr2B9ylNgyv3Wxs2K+feiHv9shmHggyOrAvynrB6myRSoduHQGrTvF2nuZlEsuZ50C/x1u28IVSe/m5xNIBbv1CeQw4MZCGL048iOIpN+LKmpny/DS0evMUmYOd2DjMG~4274241~4339256;
+        Domain=.deezer.com; Path=/; Expires=Tue, 09 Sep 2025 01:42:53 GMT; Max-Age=14400;
+        SameSite=None; Secure
+      - sid=<DEEZER_SESSION_ID>; path=/; domain=.deezer.com; secure; HttpOnly; SameSite=None
+      X-Org:
+      - FR
+    body:
+      encoding: UTF-8
+      string: '{"error":{"REQUEST_ERROR":"Wrong parameters"},"results":{},"payload":null}'
+  recorded_at: Mon, 08 Sep 2025 21:42:53 GMT
+recorded_with: VCR 6.3.1
