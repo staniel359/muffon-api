@@ -6,6 +6,7 @@ module AmazonMusic
     DEVICE_TYPE_ID = 'A16ZV8BU3SN1N3'.freeze
 
     include Muffon::Mixins::GlobalStorage
+    include AmazonMusic::Mixins::Base
 
     private
 

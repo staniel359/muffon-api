@@ -1,6 +1,8 @@
 module AmazonMusic
   module Mixins
     module Artist
+      include AmazonMusic::Mixins::Base
+
       private
 
       def name
@@ -24,7 +26,7 @@ module AmazonMusic
       end
 
       def source_original_link
-        "https://music.amazon.com#{amazonmusic_slug}"
+        "#{WEB_BASE_URL}#{amazonmusic_slug}"
       end
 
       def image_data

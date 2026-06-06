@@ -44,7 +44,7 @@ module AmazonMusic
             'x-amzn-os-version' => '1.0',
             'x-amzn-application-version' => '1.0.15759.0',
             'x-amzn-timestamp' => current_time_formatted,
-            'x-amzn-page-url' => 'https://music.amazon.com',
+            'x-amzn-page-url' => WEB_BASE_URL,
             'x-amzn-video-player-token' => {}.to_json
           }
         end

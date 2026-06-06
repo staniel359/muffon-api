@@ -2,6 +2,7 @@ module AmazonMusic
   module Mixins
     module Track
       include Muffon::Mixins::Formatting::Collection
+      include AmazonMusic::Mixins::Base
 
       private
 
@@ -54,7 +55,7 @@ module AmazonMusic
       end
 
       def source_original_link
-        "https://music.amazon.com#{amazonmusic_slug}"
+        "#{WEB_BASE_URL}#{amazonmusic_slug}"
       end
 
       def album_title
