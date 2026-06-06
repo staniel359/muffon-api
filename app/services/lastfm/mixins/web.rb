@@ -6,7 +6,7 @@ module LastFM
       private
 
       def response_data
-        @response_data ||=
+        @response_data ||= begin
           Muffon::Request.call(
             url: request_url,
             method: 'GET',
@@ -16,11 +16,10 @@ module LastFM
             cookies: request_cookies,
             proxy: request_proxy
           )
-      rescue Faraday::ClientError => error
-        if error.response_status == 406
-          raise not_found_error
-        else
-          raise error
+        rescue Faraday::ClientError => e
+          raise not_found_error if e.response_status == 406
+
+          raise e
         end
       end
 
@@ -45,6 +44,7 @@ module LastFM
         }
       end
 
+      # rubocop:disable Layout/LineLength
       def request_cookies
         {
           '_BB.bs' => 'c|4',
@@ -62,6 +62,7 @@ module LastFM
           'X-UA-Device-Type' => 'desktop'
         }
       end
+      # rubocop:enable Layout/LineLength
 
       def request_proxy
         @request_proxy ||=

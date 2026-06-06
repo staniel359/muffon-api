@@ -8,7 +8,7 @@ RSpec.describe LastFM::Artist::Shows do
           'services/lastfm/artist/shows/success'
         ) do
           subject.call(
-            artist_name: 'lady gaga',
+            artist_name: 'olivia rodrigo',
             page: '2',
             profile_id: '1'
           )
