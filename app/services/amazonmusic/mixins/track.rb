@@ -43,7 +43,7 @@ module AmazonMusic
 
       def amazonmusic_id
         amazonmusic_slug.match(
-          /trackAsin=(.+)/
+          /trackAsin=(\w+)/
         )[1]
       end
 
