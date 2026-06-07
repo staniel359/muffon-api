@@ -1,0 +1,5 @@
+id:
+  mailer:
+    passwordReset:
+      subject: 'muffon | Reset sandi'
+      text: "Kode reset sandimu adalah %{code}."
