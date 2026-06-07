@@ -24,19 +24,21 @@ module Deezer
 
         def track_token
           response_data.dig(
-            'results', 'data',
-            0, 'TRACK_TOKEN'
+            'results',
+            'data',
+            0,
+            'TRACK_TOKEN'
           )
         end
 
-        def payload
+        def request_payload
           {
             sng_ids: [@args[:track_id]]
           }.to_json
         end
 
         def api_token
-          user_tokens[:api_token]
+          user_tokens_data[:api_token]
         end
       end
     end

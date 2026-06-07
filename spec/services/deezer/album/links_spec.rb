@@ -13,7 +13,7 @@ RSpec.describe Deezer::Album::Links do
         end
       end
 
-      it { expect(output).to eq(deezer_album_links_data) }
+      it { expect(output).to match_hash(deezer_album_links_data) }
     end
   end
 

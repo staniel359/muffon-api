@@ -1,16 +1,32 @@
 module Deezer
   module Search
     class Albums < Deezer::Search::Base
-      COLLECTION_NAME = 'albums'.freeze
-      MODEL_NAME = 'album'.freeze
-
       private
 
-      def collection_item_data_formatted(album)
+      def search_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count:
+        )
+      end
+
+      def request_payload
+        {
+          **super,
+          output: 'ALBUM'
+        }.to_json
+      end
+
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Deezer::Search::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

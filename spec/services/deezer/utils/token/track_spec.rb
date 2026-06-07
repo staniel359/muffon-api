@@ -13,7 +13,7 @@ RSpec.describe Deezer::Utils::Token::Track do
         end
       end
 
-      it { expect(output).to eq(deezer_utils_track_token_data) }
+      it { expect(output).to match_hash(deezer_utils_track_token_data) }
     end
   end
 
@@ -35,7 +35,7 @@ RSpec.describe Deezer::Utils::Token::Track do
         end
       end
 
-      it { expect(output).to eq(deezer_utils_track_token_no_data) }
+      it { expect(output).to match_hash(deezer_utils_track_token_no_data) }
     end
   end
 end

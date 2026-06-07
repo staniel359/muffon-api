@@ -9,12 +9,12 @@ RSpec.describe Deezer::Track::Albums do
         ) do
           subject.call(
             track_id: '11616579',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
 
-      it { expect(output).to eq(deezer_track_albums_data) }
+      it { expect(output).to match_hash(deezer_track_albums_data) }
     end
   end
 

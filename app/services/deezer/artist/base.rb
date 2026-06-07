@@ -17,10 +17,6 @@ module Deezer
         ]
       end
 
-      def not_found?
-        name.blank?
-      end
-
       def name
         artist_info_data[:name]
       end
@@ -40,7 +36,7 @@ module Deezer
         { name: }
       end
 
-      alias artist response_data
+      alias raw_artist_data response_data
     end
   end
 end

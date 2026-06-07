@@ -1,20 +1,28 @@
 module Deezer
   class Base < Muffon::Base
-    BASE_LINK =
-      'https://www.deezer.com/ajax/gw-light.php'.freeze
     SOURCE_NAME = 'deezer'.freeze
+    REQUEST_BASE_URL =
+      'https://www.deezer.com/ajax/gw-light.php'.freeze
 
     private
 
-    def link
-      BASE_LINK
+    def response_data
+      @response_data ||=
+        Muffon::Request.call(
+          url: request_url,
+          method: 'POST',
+          params: request_params,
+          payload: request_payload,
+          cookies: request_cookies,
+          proxy: request_proxy
+        )
     end
 
-    def payload
-      {}
+    def request_url
+      REQUEST_BASE_URL
     end
 
-    def params
+    def request_params
       {
         method: api_method,
         api_version: '1.0',
@@ -27,15 +35,18 @@ module Deezer
     end
 
     def api_token
-      user_tokens[:api_token]
+      user_tokens_data[:api_token]
     end
 
-    def user_tokens
-      @user_tokens ||=
-        Deezer::Utils::Token::User.call
+    def user_tokens_data
+      @user_tokens_data ||= Deezer::Utils::Token::User.call
     end
 
-    def cookies
+    def request_payload
+      {}
+    end
+
+    def request_cookies
       { sid: session_id }
     end
 
@@ -46,33 +57,11 @@ module Deezer
       )
     end
 
-    def image_data_formatted(image_id, model)
-      Deezer::Utils::Image.call(
-        image_id:, model:
-      )
+    def request_proxy
+      @request_proxy ||=
+        proxy_data
+        .dig(:uk, :ipv4)
+        .sample
     end
-
-    def artist_data_formatted(
-      raw_artist_data
-    )
-      {
-        source: artist_source_data(
-          raw_artist_data
-        ),
-        name: raw_artist_data['ART_NAME']
-      }
-    end
-
-    def artist_source_data(
-      raw_artist_data
-    )
-      {
-        name: source_name,
-        id: raw_artist_data['ART_ID'].to_i
-      }
-    end
-
-    alias response post_response
-    alias artist_name artists_names
   end
 end

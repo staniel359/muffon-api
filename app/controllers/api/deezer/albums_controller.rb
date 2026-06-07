@@ -10,7 +10,12 @@ module API
       def info_data
         ::Deezer::Album::Info.call(
           params.slice(
-            *%i[album_id profile_id token language]
+            *%i[
+              album_id
+              profile_id
+              token
+              language
+            ]
           )
         )
       end
@@ -18,7 +23,9 @@ module API
       def links_data
         ::Deezer::Album::Links.call(
           params.slice(
-            *%i[album_id]
+            *%i[
+              album_id
+            ]
           )
         )
       end

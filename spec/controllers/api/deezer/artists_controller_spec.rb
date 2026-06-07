@@ -9,7 +9,7 @@ RSpec.describe API::Deezer::ArtistsController do
           params: {
             **required_params,
             artist_id: '1049',
-            album_type: 'album'
+            albums_type: 'album'
           }
         )
       end
@@ -42,7 +42,7 @@ RSpec.describe API::Deezer::ArtistsController do
           params: {
             **required_params,
             artist_id: random_string,
-            album_type: 'album'
+            albums_type: 'album'
           }
         )
       end

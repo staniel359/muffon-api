@@ -10,6 +10,6 @@ RSpec.describe Deezer::Utils::Token::User do
       end
     end
 
-    it { expect(output).to eq(deezer_utils_user_token_data) }
+    it { expect(output).to match_hash(deezer_utils_user_token_data) }
   end
 end

@@ -95,6 +95,26 @@ module Muffon
       def proxy_data
         credentials[:proxy]
       end
+
+      def decrypt_string(
+        value:,
+        algorithm:,
+        key:,
+        initial_value:
+      )
+        cipher =
+          OpenSSL::Cipher.new(
+            algorithm
+          )
+
+        cipher.decrypt
+
+        cipher.key = key
+        cipher.iv = initial_value
+        cipher.padding = 0
+
+        cipher.update(value) << cipher.final
+      end
     end
   end
 end

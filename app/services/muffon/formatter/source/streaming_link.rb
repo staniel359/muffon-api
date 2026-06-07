@@ -5,6 +5,7 @@ module Muffon
         SOURCES_PREFIXES_DATA = {
           'amazonmusic' => 'a',
           'bandcamp' => 'b',
+          'deezer' => 'd',
           'soundcloud' => 'sc',
           'spotify' => 's',
           'yandexmusic' => 'ya',

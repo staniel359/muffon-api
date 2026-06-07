@@ -3,8 +3,6 @@ module Deezer
     class Base < Deezer::Base
       API_METHOD = 'deezer.pageAlbum'.freeze
 
-      include Deezer::Utils::Album
-
       def call
         check_args
 
@@ -29,33 +27,31 @@ module Deezer
 
       def fallback_album_id
         response_data.dig(
-          'payload', 'FALLBACK', 'ALB_ID'
+          'payload',
+          'FALLBACK',
+          'ALB_ID'
         )
       end
 
       def retry_with_fallback_album_id
         self.class.call(
-          fallback_album_args
-        )
-      end
-
-      def fallback_album_args
-        @args.merge(
-          { album_id: fallback_album_id }
+          **@args,
+          album_id: fallback_album_id
         )
       end
 
       def not_found?
-        album.blank?
+        raw_album_data.blank?
       end
 
-      def album
+      def raw_album_data
         response_data.dig(
-          'results', 'DATA'
+          'results',
+          'DATA'
         )
       end
 
-      def payload
+      def request_payload
         {
           alb_id: @args[:album_id],
           lang: language

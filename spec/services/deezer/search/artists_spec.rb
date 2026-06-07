@@ -16,7 +16,7 @@ RSpec.describe Deezer::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(deezer_search_artists_data) }
+      it { expect(output).to match_hash(deezer_search_artists_data) }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe Deezer::Search::Artists do
         end
       end
 
-      it { expect(output).to eq(no_artists_data) }
+      it { expect(output).to match_hash(search_paginated_missing_artists_data) }
     end
   end
 end

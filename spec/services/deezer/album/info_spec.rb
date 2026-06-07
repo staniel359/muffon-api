@@ -9,12 +9,12 @@ RSpec.describe Deezer::Album::Info do
         ) do
           subject.call(
             album_id: '8548989',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
 
-      it { expect(output).to eq(deezer_album_info_data) }
+      it { expect(output).to match_hash(deezer_album_info_data) }
     end
 
     context 'when fallback album_id present' do
@@ -24,12 +24,12 @@ RSpec.describe Deezer::Album::Info do
         ) do
           subject.call(
             album_id: '1063611',
-            profile_id: 1
+            profile_id: '1'
           )
         end
       end
 
-      it { expect(output).to eq(deezer_album_fallback_info_data) }
+      it { expect(output).to match_hash(deezer_album_fallback_info_data) }
     end
   end
 

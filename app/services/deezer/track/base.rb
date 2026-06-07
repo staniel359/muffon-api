@@ -3,8 +3,6 @@ module Deezer
     class Base < Deezer::Base
       API_METHOD = 'song.getListData'.freeze
 
-      include Deezer::Utils::Track
-
       def call
         check_args
 
@@ -22,20 +20,20 @@ module Deezer
       end
 
       def not_found?
-        track.blank?
+        raw_track_data.blank?
       end
 
-      def track
+      def raw_track_data
         response_data.dig(
-          'results', 'data'
-        ).try(:[], 0)
+          'results',
+          'data',
+          0
+        )
       end
 
-      def payload
+      def request_payload
         {
-          sng_ids: [
-            @args[:track_id]
-          ]
+          sng_ids: [@args[:track_id]]
         }.to_json
       end
 

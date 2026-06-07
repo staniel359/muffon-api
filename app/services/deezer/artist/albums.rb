@@ -2,53 +2,48 @@ module Deezer
   module Artist
     class Albums < Deezer::Artist::Base
       API_METHOD = 'album.getDiscography'.freeze
-      ALBUM_TYPES = {
+      ALBUMS_TYPES_DATA = {
         'album' => '1',
         'single' => '0'
       }.freeze
-      COLLECTION_NAME = 'albums'.freeze
-
-      include Muffon::Utils::Pagination
+      PAGE_LIMIT = 200
 
       private
 
       def required_args
-        super + %i[
-          album_type
+        [
+          *super,
+          :albums_type
         ]
+      end
+
+      def wrong_args?
+        albums_type_id.blank?
+      end
+
+      def albums_type_id
+        ALBUMS_TYPES_DATA[@args[:albums_type]]
       end
 
       def artist_data
         {
           **super,
-          **paginated_data
+          **albums_data
         }
       end
 
-      def raw_albums
-        artist.dig(
-          'results',
-          'data'
+      def albums_data
+        paginated_data(
+          collection_name: 'albums',
+          raw_collection:,
+          page:,
+          limit:,
+          is_fractioned: true
         )
       end
 
-      def payload
-        {
-          art_id: @args[:artist_id],
-          discography_mode: 'all',
-          filter_role_id: ['0'],
-          lang: language,
-          nb: '200'
-        }.to_json
-      end
-
-      def total_items_count
-        raw_albums_filtered_sorted.size
-      end
-
-      def raw_albums_filtered_sorted
-        @raw_albums_filtered_sorted ||=
-          raw_albums_filtered
+      def raw_collection
+        raw_albums_filtered
           .sort_by do |raw_album_data|
             raw_album_data['ORIGINAL_RELEASE_DATE']
           end
@@ -57,27 +52,33 @@ module Deezer
 
       def raw_albums_filtered
         raw_albums.select do |raw_album_data|
-          raw_album_data['TYPE'] == album_type_id
+          raw_album_data['TYPE'] == albums_type_id
         end
       end
 
-      def album_type_id
-        ALBUM_TYPES[
-          @args[:album_type]
-        ]
-      end
-
-      def collection_list
-        collection_paginated(
-          raw_albums_filtered_sorted
+      def raw_albums
+        raw_artist_data.dig(
+          'results',
+          'data'
         )
       end
 
-      def collection_item_data_formatted(album)
+      def request_payload
+        {
+          art_id: @args[:artist_id],
+          discography_mode: 'all',
+          filter_role_id: ['0'],
+          lang: language,
+          nb: PAGE_LIMIT.to_s
+        }.to_json
+      end
+
+      def collection_item_data_formatted(
+        raw_album_data
+      )
         Deezer::Artist::Albums::Album.call(
-          album:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_album_data:,
+          **self_args
         )
       end
     end

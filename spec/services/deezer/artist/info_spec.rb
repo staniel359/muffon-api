@@ -13,7 +13,7 @@ RSpec.describe Deezer::Artist::Info do
         end
       end
 
-      it { expect(output).to eq(deezer_artist_info_data) }
+      it { expect(output).to match_hash(deezer_artist_info_data) }
     end
   end
 

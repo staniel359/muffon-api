@@ -1,8 +1,8 @@
 module Deezer
   module Search
     class Albums
-      class Album < Deezer::Search::Albums
-        include Deezer::Utils::Album
+      class Album < Deezer::Base
+        include Deezer::Mixins::Album
 
         def call
           check_args
@@ -14,29 +14,25 @@ module Deezer
 
         def required_args
           %i[
-            album
+            raw_album_data
           ]
         end
 
         def data
-          self_data
-            .merge(album_data)
-        end
-
-        def album
-          @args[:album]
-        end
-
-        def album_data
-          {
-            source: source_data,
+          Muffon::Formatter::Source::Search::Albums::Album.call(
+            source_original_link:,
+            source_name:,
+            source_album_id: deezer_id,
             title:,
-            artist: artists_minimal_data,
             artists:,
-            image: image_data,
+            image_data:,
             release_date:,
-            listeners_count:
-          }.compact
+            **self_args
+          )
+        end
+
+        def raw_album_data
+          @args[:raw_album_data]
         end
       end
     end

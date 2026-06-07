@@ -19,8 +19,10 @@ module Deezer
 
         def license_token
           response_data.dig(
-            'results', 'USER',
-            'OPTIONS', 'license_token'
+            'results',
+            'USER',
+            'OPTIONS',
+            'license_token'
           )
         end
 
@@ -30,7 +32,8 @@ module Deezer
 
         def response_api_token
           response_data.dig(
-            'results', 'checkForm'
+            'results',
+            'checkForm'
           )
         end
       end

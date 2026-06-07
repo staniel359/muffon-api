@@ -1,62 +1,30 @@
 module Deezer
   module Track
     class Info < Deezer::Track::Base
+      include Deezer::Mixins::Track
+
       private
 
       def track_data
-        self_data
-          .merge(track_base_data)
-          .merge(track_extra_data)
-      end
-
-      def track_base_data
-        {
-          source: source_data,
-          player_id: player_source_id,
+        Muffon::Formatter::Source::Track::Info.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: deezer_id,
           title:,
-          artist: artists_base_data,
-          artists:
-        }.compact
-      end
-
-      def track_extra_data
-        {
-          album: album_data,
-          image: image_data,
-          profiles_count:,
-          duration:,
+          artists:,
+          album_title:,
+          source_album_id: album_deezer_id,
+          image_data:,
           release_date:,
-          audio: audio_base_data
-        }.compact
-      end
-
-      def release_date
-        date_formatted(
-          track['DIGITAL_RELEASE_DATE']
+          plays_count: nil,
+          duration:,
+          description: nil,
+          tags: nil,
+          tags_size: nil,
+          is_audio_present: audio_present?,
+          audio_link:,
+          **self_args
         )
-      end
-
-      def audio_link
-        audio_full_link ||
-          audio_preview_link
-      end
-
-      def audio_full_link
-        Deezer::Utils::Audio::Link.call(
-          track_id: @args[:track_id]
-        )
-      end
-
-      def audio_preview_link
-        audio_preview_data.try(
-          :[], 'HREF'
-        )
-      end
-
-      def audio_preview_data
-        track['MEDIA'].find do |m|
-          m['TYPE'] == 'preview'
-        end
       end
     end
   end

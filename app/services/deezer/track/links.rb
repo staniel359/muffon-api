@@ -4,7 +4,11 @@ module Deezer
       private
 
       def track_data
-        { links: source_links_data }
+        Muffon::Formatter::Source::Track::Links.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: deezer_id
+        )
       end
     end
   end

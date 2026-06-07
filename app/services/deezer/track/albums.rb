@@ -4,43 +4,43 @@ module Deezer
       private
 
       def track_data
-        track_base_data
-          .merge(track_albums_data)
-      end
-
-      def track_albums_data
-        { albums: }
-      end
-
-      def albums
-        album_ids.map do |id|
-          album_info(id)
-        end.compact
-      end
-
-      def album_ids
-        [
-          album_id,
-          fallback_album_id
-        ].compact
-      end
-
-      def album_id
-        track['ALB_ID']
-      end
-
-      def fallback_album_id
-        track.dig(
-          'FALLBACK', 'ALB_ID'
+        Muffon::Formatter::Source::Track::Albums.call(
+          source_original_link:,
+          source_name:,
+          source_track_id: deezer_id,
+          title:,
+          artists:,
+          albums:
         )
       end
 
-      def album_info(album_id)
+      def albums
+        albums_ids.map do |album_id|
+          album_info(album_id)
+        end.compact
+      end
+
+      def albums_ids
+        [
+          album_deezer_id,
+          fallback_album_deezer_id
+        ].compact
+      end
+
+      def fallback_album_deezer_id
+        raw_track_data.dig(
+          'FALLBACK',
+          'ALB_ID'
+        )
+      end
+
+      def album_info(
+        album_id
+      )
         Deezer::Album::Info.call(
           album_id:,
-          list: true,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          is_list: true,
+          **self_args
         )[:album]
       end
     end

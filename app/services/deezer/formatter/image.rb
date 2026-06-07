@@ -1,29 +1,29 @@
 module Deezer
-  module Utils
+  module Formatter
     class Image < Deezer::Base
-      IMAGE_MODELS = {
-        artist: 'artist',
-        album: 'cover',
-        track: 'cover'
+      MODELS_DATA = {
+        'artist' => 'artist',
+        'album' => 'cover',
+        'track' => 'cover'
       }.freeze
 
       def call
+        check_args
+
         data
       end
 
       private
 
+      def required_args
+        %i[
+          image_id
+        ]
+      end
+
       def data
-        return if image_id.blank?
+        return if @args[:image_id].blank?
 
-        image_data
-      end
-
-      def image_id
-        @args[:image_id]
-      end
-
-      def image_data
         {
           original: image_resized('1000x1000'),
           large: image_resized('600x600'),
@@ -34,22 +34,18 @@ module Deezer
       end
 
       def image_resized(size)
-        image.sub(
-          '1000x1000', size
-        )
+        image.sub('1000x1000', size)
       end
 
       def image
         @image ||=
           'https://cdns-images.dzcdn.net' \
-          "/images/#{image_model}/#{image_id}" \
+          "/images/#{image_model}/#{@args[:image_id]}" \
           '/1000x1000-000000-80-0-0.jpg'
       end
 
       def image_model
-        IMAGE_MODELS[
-          @args[:model].to_sym
-        ]
+        MODELS_DATA[@args[:model]]
       end
     end
   end

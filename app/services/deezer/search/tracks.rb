@@ -1,16 +1,32 @@
 module Deezer
   module Search
     class Tracks < Deezer::Search::Base
-      COLLECTION_NAME = 'tracks'.freeze
-      MODEL_NAME = 'track'.freeze
-
       private
 
-      def collection_item_data_formatted(track)
+      def search_data
+        paginated_data(
+          collection_name: 'tracks',
+          raw_collection:,
+          page:,
+          limit:,
+          items_count:,
+          maximum_items_count:
+        )
+      end
+
+      def request_payload
+        {
+          **super,
+          output: 'TRACK'
+        }.to_json
+      end
+
+      def collection_item_data_formatted(
+        raw_track_data
+      )
         Deezer::Search::Tracks::Track.call(
-          track:,
-          profile_id: @args[:profile_id],
-          token: @args[:token]
+          raw_track_data:,
+          **self_args
         )
       end
     end

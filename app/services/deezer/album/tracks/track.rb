@@ -1,6 +1,6 @@
 module Deezer
-  module Search
-    class Tracks
+  module Album
+    module Tracks
       class Track < Deezer::Base
         include Deezer::Mixins::Track
 
@@ -15,28 +15,36 @@ module Deezer
         def required_args
           %i[
             raw_track_data
+            album_data
           ]
         end
 
         def data
-          Muffon::Formatter::Source::Search::Tracks::Track.call(
+          Muffon::Formatter::Source::Album::Tracks::Track.call(
             source_original_link:,
             source_name:,
             source_track_id: deezer_id,
             title:,
             artists:,
             image_data:,
-            album_title:,
-            source_album_id: album_deezer_id,
+            album_data:,
             duration:,
             is_audio_present: audio_present?,
-            **query_match_args,
             **self_args
           )
         end
 
         def raw_track_data
-          @args[:raw_track_data]
+          @args[:raw_track_data]['FALLBACK'] ||
+            @args[:raw_track_data]
+        end
+
+        def album_data
+          @args[:album_data]
+        end
+
+        def image_data
+          album_data[:image]
         end
       end
     end

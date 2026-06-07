@@ -9,15 +9,15 @@ RSpec.describe Deezer::Artist::Albums do
         ) do
           subject.call(
             artist_id: '1049',
-            album_type: 'album',
-            limit: 5,
-            page: 2,
-            profile_id: 1
+            albums_type: 'album',
+            limit: '5',
+            page: '2',
+            profile_id: '1'
           )
         end
       end
 
-      it { expect(output).to eq(deezer_artist_albums_data) }
+      it { expect(output).to match_hash(deezer_artist_albums_data) }
     end
   end
 
@@ -25,14 +25,14 @@ RSpec.describe Deezer::Artist::Albums do
     context 'when no artist_id' do
       let(:output) do
         subject.call(
-          album_type: 'album'
+          albums_type: 'album'
         )
       end
 
       it { expect { output }.to raise_error(bad_request_error) }
     end
 
-    context 'when no album_type' do
+    context 'when no albums_type' do
       let(:output) do
         subject.call(
           artist_id: '1049'
@@ -49,7 +49,7 @@ RSpec.describe Deezer::Artist::Albums do
         ) do
           subject.call(
             artist_id: random_string,
-            album_type: 'album'
+            albums_type: 'album'
           )
         end
       end

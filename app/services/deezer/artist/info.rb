@@ -3,17 +3,22 @@ module Deezer
     class Info < Deezer::Artist::Base
       API_METHOD = 'deezer.pageArtist'.freeze
 
+      include Deezer::Mixins::Artist
+
       private
 
-      def name
+      def not_found?
+        raw_artist_data.blank?
+      end
+
+      def raw_artist_data
         response_data.dig(
           'results',
-          'DATA',
-          'ART_NAME'
+          'DATA'
         )
       end
 
-      def payload
+      def request_payload
         {
           art_id: @args[:artist_id],
           lang: language
