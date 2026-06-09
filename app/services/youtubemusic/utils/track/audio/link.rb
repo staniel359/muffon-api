@@ -3,7 +3,7 @@ module YouTubeMusic
     module Track
       module Audio
         class Link < YouTubeMusic::Base
-          FILE_EXTENSION = 'mp3'.freeze
+          FILE_EXTENSION = 'opus'.freeze
 
           include Muffon::Mixins::Processing::Audio
 
@@ -36,8 +36,6 @@ module YouTubeMusic
                 --cookies-from-browser firefox \
                 --js-runtimes deno:/root/.deno/bin/deno \
                 --extract-audio \
-                --audio-format mp3 \
-                --audio-quality 128K \
                 --concurrent-fragments 5 \
                 --output public/#{audio_folder}/#{audio_file_name} \
                 --proxy '#{request_proxy}'"
