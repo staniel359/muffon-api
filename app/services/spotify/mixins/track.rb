@@ -44,7 +44,7 @@ module Spotify
       end
 
       def spotify_id
-        raw_track_data['uri'].sub(
+        raw_track_data['uri']&.sub(
           'spotify:track:',
           ''
         )
