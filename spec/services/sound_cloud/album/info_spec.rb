@@ -8,7 +8,7 @@ RSpec.describe SoundCloud::Album::Info do
           'services/soundcloud/album/info/success'
         ) do
           subject.call(
-            album_id: '249480404',
+            album_id: '928041112',
             profile_id: '1'
           )
         end
