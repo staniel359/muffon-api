@@ -206,7 +206,8 @@ module Muffon
         def favorites_data
           Muffon::Profile::Favorites::Info.call(
             profile_id:,
-            token: @args[:token]
+            token: @args[:token],
+            other_profile_id: @args[:other_profile_id]
           ).dig(
             :profile,
             :favorites
