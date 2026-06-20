@@ -65,7 +65,13 @@ module Muffon
           background: 'none',
           gravity: 'center',
           extent: '1:1',
-          resize: "#{size}x#{size}>"
+          resize: "#{size}x#{size}>",
+          loader: {
+            page: nil
+          },
+          saver: {
+            allow_splitting: true
+          }
         }
       end
     end

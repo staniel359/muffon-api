@@ -156,6 +156,13 @@ module MuffonAPI
       .variant_processor = :mini_magick
 
     config
+      .active_storage
+      .supported_image_processing_methods = %w[
+        loader
+        saver
+      ]
+
+    config
       .action_controller
       .wrap_parameters_by_default = false
 
