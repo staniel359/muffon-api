@@ -185,9 +185,16 @@ module Muffon
         end
 
         def playlists_count
-          profile_record
-            .playlists
-            .count
+          if valid_profile? || creator?
+            profile_record
+              .playlists
+              .count
+          else
+            profile_record
+              .playlists
+              .public
+              .count
+          end
         end
 
         def communities_count
