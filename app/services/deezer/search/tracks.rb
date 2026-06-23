@@ -26,6 +26,9 @@ module Deezer
       )
         Deezer::Search::Tracks::Track.call(
           raw_track_data:,
+          is_with_query_match: @args[:with_automatch],
+          query_title: @args[:track_title],
+          query_artist_name: @args[:artist_name],
           **self_args
         )
       end
