@@ -38,7 +38,6 @@ module Muffon
             Faraday::ConnectionFailed,
             Faraday::ServerError,
             Faraday::SSLError,
-            JSON::ParserError,
             Net::HTTPFatalError,
             OpenSSL::SSL::SSLError,
             SocketError
