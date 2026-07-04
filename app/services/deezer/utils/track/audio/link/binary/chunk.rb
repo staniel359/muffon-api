@@ -19,7 +19,7 @@ module Deezer
 
               def required_args
                 %i[
-                  binary
+                  chunk
                   index
                   key
                 ]
@@ -27,58 +27,35 @@ module Deezer
 
               def data
                 if decrypt_chunk?
-                  decrypted_chunk_binary
+                  chunk_decrypted
                 else
-                  chunk_binary
+                  @args[:chunk]
                 end
               end
 
               def decrypt_chunk?
-                encrypted_chunk? && full_size_chunk?
-              end
-
-              def encrypted_chunk?
-                (@args[:index] % ENCRYPTED_CHUNK_INTERVAL).zero?
+                (@args[:index] % ENCRYPTED_CHUNK_INTERVAL).zero? &&
+                  full_size_chunk?
               end
 
               def full_size_chunk?
-                chunk_binary.size == CHUNK_SIZE
+                @args[:chunk].size == CHUNK_SIZE
               end
 
-              def chunk_binary
-                @chunk_binary ||= chunk_binary_computed
-              end
-
-              def chunk_binary_computed
-                passed_chunks_size = CHUNK_SIZE * @args[:index]
-
-                remaining_chunks_size =
-                  @args[:binary].size - passed_chunks_size
-
-                current_chunk_size = [
-                  CHUNK_SIZE,
-                  remaining_chunks_size
-                ].min
-
-                @args[:binary][
-                  passed_chunks_size,
-                  current_chunk_size
-                ]
-              end
-
-              def decrypted_chunk_binary
-                initial_value =
-                  [decryption_initial_value].pack('H*')
-
+              def chunk_decrypted
                 decrypt_string(
-                  value: chunk_binary,
+                  value: @args[:chunk],
                   algorithm: ENCRYPTION_ALGORITHM,
                   key: @args[:key],
-                  initial_value:
+                  initial_value: decryption_initial_value
                 )
               end
 
               def decryption_initial_value
+                [raw_decryption_initial_value].pack('H*')
+              end
+
+              def raw_decryption_initial_value
                 credentials.dig(
                   :deezer,
                   :decryption,

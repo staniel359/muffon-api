@@ -45,24 +45,21 @@ module Deezer
             end
 
             def data
-              chunks_count
-                .times
-                .each_with_object('') do |index, memo|
-                  memo << process_chunk(index:)
+              response_body
+                .chars
+                .each_slice(CHUNK_SIZE)
+                .with_index
+                .with_object('') do |(chunk_chars, index), memo|
+                  memo << process_chunk(
+                    chunk: chunk_chars.join,
+                    index:
+                  )
                 end
             end
 
-            def chunks_count
-              response_body
-                .size
-                .fdiv(
-                  CHUNK_SIZE
-                ).ceil
-            end
-
-            def process_chunk(index:)
+            def process_chunk(chunk:, index:)
               Deezer::Utils::Track::Audio::Link::Binary::Chunk.call(
-                binary: response_body,
+                chunk:,
                 index:,
                 key:
               )
