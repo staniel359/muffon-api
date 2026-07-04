@@ -31,6 +31,16 @@ module Deezer
                 0,
                 'url'
               )
+            rescue Faraday::ForbiddenError
+              system(
+                "#{BROWSER_PROCESS_NAME} #{WEB_BASE_URL} &"
+              )
+
+              sleep(5)
+
+              self.class.call(
+                @args
+              )
             end
 
             def request_url

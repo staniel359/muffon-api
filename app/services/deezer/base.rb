@@ -3,6 +3,7 @@ module Deezer
     SOURCE_NAME = 'deezer'.freeze
     REQUEST_BASE_URL =
       'https://www.deezer.com/ajax/gw-light.php'.freeze
+    WEB_BASE_URL = 'https://www.deezer.com'.freeze
 
     private
 
@@ -47,14 +48,20 @@ module Deezer
     end
 
     def request_cookies
-      { sid: session_id }
+      return test_deezer_cookies if test?
+
+      { 'sid' => session_id }
+    end
+
+    def test_deezer_cookies
+      credentials.dig(
+        :deezer,
+        :cookies
+      )
     end
 
     def session_id
-      credentials.dig(
-        :deezer,
-        :session_id
-      )
+      Deezer::Utils::SessionId.call
     end
 
     def request_proxy
