@@ -44,7 +44,8 @@ module Bandcamp
           Muffon::Request.call(
             url: @args[:url],
             method: 'GET',
-            response_type: 'html'
+            response_type: 'html',
+            proxy: request_proxy
           )
         end
       end

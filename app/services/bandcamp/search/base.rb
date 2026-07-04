@@ -40,7 +40,8 @@ module Bandcamp
           Muffon::Request.call(
             url: request_url,
             method: 'POST',
-            payload: request_payload
+            payload: request_payload,
+            proxy: request_proxy
           )
       end
 
