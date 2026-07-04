@@ -8,7 +8,7 @@ module LastFM
       private
 
       def not_found?
-        taggings_count.zero?
+        raw_tag_data.blank? || taggings_count.zero?
       end
 
       def raw_tag_data
