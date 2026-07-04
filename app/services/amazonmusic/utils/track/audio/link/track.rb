@@ -6,7 +6,6 @@ module AmazonMusic
           class Track < AmazonMusic::Base
             REQUEST_BASE_URL =
               'https://music.amazon.co.uk/EU/api/dmls/'.freeze
-            BROWSER_PROCESS_NAME = 'firefox'.freeze
 
             def call
               check_args
@@ -46,15 +45,7 @@ module AmazonMusic
                 cookies: request_cookies
               )
             rescue Faraday::BadRequestError
-              system(
-                "#{BROWSER_PROCESS_NAME} #{WEB_BASE_URL} &"
-              )
-
-              sleep(5)
-
-              self.class.call(
-                @args
-              )
+              open_url_in_browser_wait_and_retry
             end
 
             def request_payload
@@ -164,6 +155,17 @@ module AmazonMusic
             def manifest_data
               Hash.from_xml(
                 manifest_xml
+              )
+            end
+
+            def open_url_in_browser_wait_and_retry
+              open_url_in_browser_and_wait(
+                url: WEB_BASE_URL,
+                wait_time: 7
+              )
+
+              self.class.call(
+                @args
               )
             end
           end
