@@ -13,7 +13,9 @@ module MusixMatch
           url: request_url,
           method: 'GET',
           params: request_params,
-          cookies: request_cookies
+          cookies: request_cookies,
+          proxy: request_proxy,
+          is_redirect: false
         )
     end
 
@@ -53,6 +55,13 @@ module MusixMatch
         :musixmatch,
         :cookies
       )
+    end
+
+    def request_proxy
+      @request_proxy ||=
+        proxy_data
+        .dig(:uk, :ipv4)
+        .sample
     end
 
     def handle_not_found_error(

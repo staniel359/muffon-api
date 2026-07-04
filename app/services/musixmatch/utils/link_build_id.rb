@@ -22,7 +22,9 @@ module MusixMatch
           url: request_url,
           method: 'GET',
           response_type: 'html',
-          cookies: request_cookies
+          cookies: request_cookies,
+          proxy: request_proxy,
+          is_redirect: false
         )
       end
 
