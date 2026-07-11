@@ -37,7 +37,7 @@ module LastFM
 
       def default_image?
         DEFAULT_IDS_DATA.values.any? do |image_id|
-          @args[:image_url].include?(
+          @args[:image_url].match?(
             image_id
           )
         end
