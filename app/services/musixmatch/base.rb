@@ -60,7 +60,7 @@ module MusixMatch
     def request_proxy
       @request_proxy ||=
         proxy_data
-        .dig(:uk, :ipv4)[2..3]
+        .dig(:uk, :ipv4)
         .sample
     end
 
