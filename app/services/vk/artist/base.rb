@@ -2,9 +2,6 @@ module VK
   module Artist
     class Base < VK::Base
       def call
-        # TODO: to remove later
-        raise not_found_error unless test?
-
         check_args
 
         check_if_not_found

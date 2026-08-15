@@ -2,9 +2,6 @@ module VK
   module Search
     class Base < VK::Base
       def call
-        # TODO: to remove later
-        raise not_found_error unless test?
-
         check_args
 
         data

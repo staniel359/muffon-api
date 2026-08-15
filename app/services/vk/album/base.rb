@@ -4,9 +4,6 @@ module VK
       API_METHOD = 'audio.getPlaylistById'.freeze
 
       def call
-        # TODO: to remove later
-        raise not_found_error unless test?
-
         check_args
 
         check_if_not_found
