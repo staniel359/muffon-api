@@ -38,6 +38,7 @@ module YouTubeMusic
                 --extract-audio \
                 --concurrent-fragments 5 \
                 --output public/#{audio_folder}/#{audio_file_name} \
+                --force-overwrites \
                 --proxy '#{request_proxy}'"
             )
           end
