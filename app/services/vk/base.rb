@@ -6,9 +6,6 @@ module VK
     private
 
     def response_data
-      # TODO: to remove later
-      raise not_found_error unless test?
-
       error_data = raw_response_data['error']
 
       raise_error(error_data) if error_data.present? && !test?
