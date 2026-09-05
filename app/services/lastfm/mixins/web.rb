@@ -44,7 +44,7 @@ module LastFM
         }
       end
 
-      # rubocop:disable Layout/LineLength
+      # rubocop:disable-next Layout/LineLength
       def request_cookies
         {
           '_BB.bs' => 'c|4',
@@ -62,7 +62,6 @@ module LastFM
           'X-UA-Device-Type' => 'desktop'
         }
       end
-      # rubocop:enable Layout/LineLength
 
       def request_proxy
         @request_proxy ||=
