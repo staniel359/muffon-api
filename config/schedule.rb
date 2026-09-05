@@ -7,7 +7,7 @@ every 3.hours do
 end
 
 every 1.day, at: '0:00 am' do
-  command 'yt-dlp -U'
+  command 'python3.12 -m pip install -U "yt-dlp[default]"'
 end
 
 every 3.days, at: '1:00 am' do
