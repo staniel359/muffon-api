@@ -32,7 +32,7 @@ module Deezer
                 'url'
               )
             rescue Faraday::ForbiddenError
-              open_url_in_browser_wait_and_retry
+              retry_with_new_session_id
             end
 
             def request_url
@@ -65,17 +65,6 @@ module Deezer
               Deezer::Utils::Token::Track.call(
                 track_id: @args[:track_id]
               )[:track_token]
-            end
-
-            def open_url_in_browser_wait_and_retry
-              open_url_in_browser_and_wait(
-                url: WEB_BASE_URL,
-                wait_time: 5
-              )
-
-              self.class.call(
-                @args
-              )
             end
           end
         end

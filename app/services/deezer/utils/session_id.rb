@@ -1,7 +1,7 @@
 module Deezer
   module Utils
     class SessionId < Deezer::Base
-      SESSION_COOKIE_NAME = 'sid'.freeze
+      API_METHOD = 'deezer.ping'.freeze
 
       def call
         data
@@ -10,30 +10,36 @@ module Deezer
       private
 
       def data
-        matched_cookie_data['value']
+        response_data.dig(
+          'results',
+          'SESSION'
+        )
       end
 
-      def matched_cookie_data
-        browser_session_cookies.find do |cookie_data|
-          matched_cookie?(
-            cookie_data
-          )
-        end
+      def response_data
+        Muffon::Request.call(
+          url: request_url,
+          method: 'GET',
+          params: request_params,
+          cookies: request_cookies,
+          proxy: request_proxy
+        )
       end
 
-      def browser_session_cookies
-        browser_session_data['cookies']
+      def api_token
+        ''
       end
 
-      def browser_session_data
-        Muffon::Utils::Browser::SessionData.call
+      def request_cookies
+        { 'arl' => arl_cookie }
       end
 
-      def matched_cookie?(
-        cookie_data
-      )
-        cookie_data['host'] == '.deezer.com' &&
-          cookie_data['name'] == SESSION_COOKIE_NAME
+      def arl_cookie
+        credentials.dig(
+          :deezer,
+          :cookies,
+          :arl
+        )
       end
     end
   end

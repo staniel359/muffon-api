@@ -3,7 +3,8 @@ module Deezer
     SOURCE_NAME = 'deezer'.freeze
     REQUEST_BASE_URL =
       'https://www.deezer.com/ajax/gw-light.php'.freeze
-    WEB_BASE_URL = 'https://www.deezer.com'.freeze
+
+    include Muffon::Mixins::GlobalStorage
 
     private
 
@@ -48,20 +49,26 @@ module Deezer
     end
 
     def request_cookies
-      return test_deezer_cookies if test?
-
       { 'sid' => session_id }
     end
 
-    def test_deezer_cookies
-      credentials.dig(
-        :deezer,
-        :cookies
-      )
+    def session_id
+      return test_session_id if test?
+
+      @session_id ||=
+        get_global_value(
+          'deezer:session_id',
+          refresh_class_name: 'Deezer::Utils::SessionId',
+          is_refresh: refresh_session_id?
+        )
     end
 
-    def session_id
-      Deezer::Utils::SessionId.call
+    def test_session_id
+      credentials.dig(
+        :deezer,
+        :cookies,
+        :sid
+      )
     end
 
     def request_proxy
@@ -69,6 +76,17 @@ module Deezer
         proxy_data
         .dig(:uk, :ipv4)
         .sample
+    end
+
+    def retry_with_new_session_id
+      self.class.call(
+        **@args,
+        is_refresh_session_id: true
+      )
+    end
+
+    def refresh_session_id?
+      !!@args[:is_refresh_session_id]
     end
   end
 end
