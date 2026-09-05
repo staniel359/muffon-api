@@ -1,12 +1,12 @@
-every 30.minutes do
+every 1.hour do
   command "sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches'"
 end
 
-every 3.hours do
+every 6.hours do
   command 'rm -rf /root/muffon-api/shared/public/media/audio'
 end
 
-every 1.day, at: '0:00 am' do
+every 3.days, at: '0:00 am' do
   command 'python3.12 -m pip install -U "yt-dlp[default]"'
 end
 
