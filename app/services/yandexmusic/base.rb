@@ -23,7 +23,7 @@ module YandexMusic
     end
 
     def request_proxy
-      proxy_data[:ru][0]
+      proxy_data[:ru].sample
     end
 
     def request_headers
