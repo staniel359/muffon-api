@@ -5,7 +5,6 @@ module Muffon
         'Mozilla/5.0 (X11; Linux x86_64) ' \
         'AppleWebKit/537.36 (KHTML, like Gecko) ' \
         'Chrome/147.0.0.0 Safari/537.36'.freeze
-      BROWSER_PROCESS_NAME = 'firefox'.freeze
 
       private
 
@@ -115,19 +114,6 @@ module Muffon
         cipher.padding = 0
 
         cipher.update(value) << cipher.final
-      end
-
-      def open_url_in_browser_and_wait(
-        url:,
-        wait_time:
-      )
-        system(
-          "#{BROWSER_PROCESS_NAME} #{url} &"
-        )
-
-        sleep(
-          wait_time
-        )
       end
     end
   end

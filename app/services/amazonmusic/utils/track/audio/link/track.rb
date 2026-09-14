@@ -13,6 +13,8 @@ module AmazonMusic
               return if no_data?
 
               data
+            rescue Faraday::BadRequestError
+              retry_with_new_audio_cookies
             end
 
             private
@@ -44,8 +46,6 @@ module AmazonMusic
                 headers: request_headers,
                 cookies: request_cookies
               )
-            rescue Faraday::BadRequestError
-              open_url_in_browser_wait_and_retry
             end
 
             def request_payload
@@ -93,49 +93,35 @@ module AmazonMusic
             end
 
             def request_cookies
-              return test_amazon_music_cookies if test?
+              return test_request_cookies if test?
 
-              {
-                'ubid-acbuk' => first_cookie,
-                'at-acbuk' => second_cookie
-              }
-            end
-
-            def first_cookie
-              BROWSER_COOKIES_DATABASE
-                .execute(
-                  <<~SQL.squish
-                    SELECT value
-                    FROM moz_cookies
-                    WHERE
-                      host LIKE '%amazon%'
-                      AND name = 'ubid-acbuk'
-                  SQL
+              JSON.parse(
+                get_global_value(
+                  'amazonmusic:audio_cookies',
+                  refresh_class_name:
+                    'AmazonMusic::Utils::Track::Audio::Cookies',
+                  is_refresh: refresh_cookies?,
+                  type: 'hash'
                 )
-                .flatten
-                .first
+              )
             end
 
-            def test_amazon_music_cookies
+            def test_request_cookies
               credentials.dig(
                 :amazon_music,
                 :cookies
               )
             end
 
-            def second_cookie
-              BROWSER_COOKIES_DATABASE
-                .execute(
-                  <<~SQL.squish
-                    SELECT value
-                    FROM moz_cookies
-                    WHERE
-                      host LIKE '%amazon%'
-                      AND name = 'at-acbuk'
-                  SQL
-                )
-                .flatten
-                .first
+            def refresh_cookies?
+              !!@args[:is_refresh_cookies]
+            end
+
+            def retry_with_new_audio_cookies
+              self.class.call(
+                **@args,
+                is_refresh_cookies: true
+              )
             end
 
             def data
@@ -155,17 +141,6 @@ module AmazonMusic
             def manifest_data
               Hash.from_xml(
                 manifest_xml
-              )
-            end
-
-            def open_url_in_browser_wait_and_retry
-              open_url_in_browser_and_wait(
-                url: WEB_BASE_URL,
-                wait_time: 7
-              )
-
-              self.class.call(
-                @args
               )
             end
           end

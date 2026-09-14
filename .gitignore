@@ -4,3 +4,4 @@ log
 tmp
 storage
 lib/amazonmusic/widevine.wvd
+node_modules

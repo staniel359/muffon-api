@@ -19,7 +19,8 @@ append :linked_dirs,
   'tmp/pids',
   'tmp/sockets',
   'tmp/sidekiq/images',
-  'public/media'
+  'public/media',
+  'node_modules'
 
 set :keep_releases, 1
 
@@ -63,12 +64,10 @@ namespace :config do
     on roles(:all) do |_|
       credentials_file_path = 'config/credentials/production.json'
 
-      if File.exist?(credentials_file_path)
-        upload!(
-          credentials_file_path,
-          "/root/#{fetch(:application)}/shared/#{credentials_file_path}"
-        )
-      end
+      upload!(
+        credentials_file_path,
+        "/root/#{fetch(:application)}/shared/#{credentials_file_path}"
+      )
     end
   end
 end

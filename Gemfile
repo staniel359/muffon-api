@@ -20,6 +20,7 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'nokogiri'
 gem 'pg'
+gem 'playwright-ruby-client'
 gem 'puma'
 gem 'rack-cors'
 gem 'rails'
@@ -30,7 +31,6 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sidekiq'
 gem 'sidekiq-limit_fetch'
-gem 'sqlite3', require: false
 gem 'whenever', require: false
 
 group :development do

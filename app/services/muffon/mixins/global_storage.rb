@@ -7,7 +7,8 @@ module Muffon
         key,
         refresh_class_name:,
         is_refresh: false,
-        expires_in_seconds: nil
+        expires_in_seconds: nil,
+        type: 'string'
       )
         value = REDIS.get(key)
 
@@ -16,6 +17,8 @@ module Muffon
             refresh_class_name
             .constantize
             .call
+
+          new_value = new_value.to_json if type == 'hash'
 
           if expires_in_seconds.present?
             REDIS.setex(

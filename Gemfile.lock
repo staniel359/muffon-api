@@ -181,6 +181,10 @@ GEM
       net-smtp
     marcel (1.2.1)
     method_source (1.1.0)
+    mime-types (3.7.0)
+      logger
+      mime-types-data (~> 3.2025, >= 3.2025.0507)
+    mime-types-data (3.2026.0701)
     mini_magick (5.4.0)
       logger
     mini_mime (1.1.5)
@@ -213,6 +217,10 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.6.3-x86_64-linux)
+    playwright-ruby-client (1.63.0)
+      base64
+      concurrent-ruby (>= 1.1.6)
+      mime-types (>= 3.0)
     pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
@@ -355,7 +363,6 @@ GEM
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
-    sqlite3 (2.9.6-x86_64-linux-gnu)
     sshkit (1.25.1)
       base64
       logger
@@ -413,6 +420,7 @@ DEPENDENCIES
   mini_magick
   nokogiri
   pg
+  playwright-ruby-client
   pry
   puma
   rack-cors
@@ -431,7 +439,6 @@ DEPENDENCIES
   sidekiq-limit_fetch
   spring
   spring-watcher-listen
-  sqlite3
   vcr
   web-console
   webmock
