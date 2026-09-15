@@ -5,6 +5,7 @@ module Deezer
         class Link
           class Binary < Deezer::Base
             CHUNK_SIZE = 2048
+            RETRIES_MAXIMUM_COUNT = 3
 
             def call
               check_args
@@ -12,6 +13,12 @@ module Deezer
               return if no_data?
 
               data
+            rescue Faraday::ForbiddenError => e
+              if retries_count < RETRIES_MAXIMUM_COUNT
+                call_again
+              else
+                raise e
+              end
             end
 
             private
@@ -70,6 +77,17 @@ module Deezer
                 Deezer::Utils::Track::Audio::Link::Key.call(
                   track_id: @args[:track_id]
                 )
+            end
+
+            def retries_count
+              @args[:retries_count].to_i
+            end
+
+            def call_again
+              self.class.call(
+                **@args,
+                retries_count: retries_count + 1
+              )
             end
           end
         end

@@ -11,6 +11,8 @@ module Deezer
               check_args
 
               data
+            rescue Faraday::ForbiddenError
+              retry_with_new_session_id
             end
 
             private
@@ -31,8 +33,6 @@ module Deezer
                 0,
                 'url'
               )
-            rescue Faraday::ForbiddenError
-              retry_with_new_session_id
             end
 
             def request_url
