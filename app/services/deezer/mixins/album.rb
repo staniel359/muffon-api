@@ -44,7 +44,9 @@ module Deezer
       end
 
       def raw_release_date
-        raw_album_data['ORIGINAL_RELEASE_DATE']
+        raw_album_data['ORIGINAL_RELEASE_DATE'] ||
+          raw_album_data['PHYSICAL_RELEASE_DATE'] ||
+          raw_album_data['DIGITAL_RELEASE_DATE']
       end
 
       def labels
