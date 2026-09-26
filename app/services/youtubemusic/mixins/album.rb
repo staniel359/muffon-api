@@ -118,7 +118,7 @@ module YouTubeMusic
           'musicResponsiveHeaderRenderer',
           'subtitle',
           'runs',
-          -1,
+          2,
           'text'
         )
       end
