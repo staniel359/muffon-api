@@ -64,10 +64,10 @@ module LastFM
       end
 
       def request_proxy
-        @request_proxy ||=
-          proxy_data
-          .dig(:uk, :ipv6)
-          .sample
+        @request_proxy ||= [
+          *proxy_data.dig(:uk, :ipv4),
+          *proxy_data.dig(:uk, :ipv6)
+        ].sample
       end
 
       def param_formatted(
