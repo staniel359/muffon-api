@@ -167,6 +167,15 @@ module MuffonAPI
       .variable_content_types << 'image/svg+xml'
 
     config
+      .active_storage
+      .content_types_to_serve_as_binary
+      .delete('image/svg+xml')
+
+    config
+      .active_storage
+      .content_types_allowed_inline << 'image/svg+xml'
+
+    config
       .action_controller
       .wrap_parameters_by_default = false
 
