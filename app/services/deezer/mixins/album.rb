@@ -15,7 +15,7 @@ module Deezer
             name: raw_artist_data['ART_NAME'],
             source_id: raw_artist_data['ART_ID'].to_i
           }
-        end
+        end.uniq
       end
 
       def deezer_id
