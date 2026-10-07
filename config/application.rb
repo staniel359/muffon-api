@@ -163,6 +163,10 @@ module MuffonAPI
       ]
 
     config
+      .active_storage
+      .variable_content_types << 'image/svg+xml'
+
+    config
       .action_controller
       .wrap_parameters_by_default = false
 
