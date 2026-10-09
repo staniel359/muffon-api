@@ -21,7 +21,7 @@ module VK
       end
 
       def raw_artists
-        raw_album_data['main_artists'].map do |raw_artist_data|
+        raw_album_data['main_artists']&.map do |raw_artist_data|
           {
             name: raw_artist_data['name'],
             source_id: raw_artist_data['id']
