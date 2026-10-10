@@ -1,6 +1,8 @@
 module AmazonMusic
   module Formatter
     class Image < AmazonMusic::Base
+      IMAGES_HOST = 'https://m.media-amazon.com'.freeze
+
       def call
         check_args
 
@@ -11,12 +13,12 @@ module AmazonMusic
 
       def required_args
         %i[
-          image_url
+          image_id
         ]
       end
 
       def data
-        return if @args[:image_url].blank?
+        return if @args[:image_id].blank?
 
         {
           original: image_resized('1000'),
@@ -30,15 +32,8 @@ module AmazonMusic
       def image_resized(
         size
       )
-        'https://m.media-amazon.com/images/I' \
-          "/#{image_id}._SX#{size}_SY#{size}_.jpg"
-      end
-
-      def image_id
-        @image_id ||=
-          @args[:image_url].match(
-            %r{/images/I/([^.]+)}
-          )[1]
+        "#{IMAGES_HOST}/images/I" \
+          "/#{@args[:image_id]}._UR#{size},#{size}_.jpg"
       end
     end
   end

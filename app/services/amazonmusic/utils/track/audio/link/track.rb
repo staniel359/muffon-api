@@ -5,7 +5,7 @@ module AmazonMusic
         class Link
           class Track < AmazonMusic::Base
             REQUEST_BASE_URL =
-              'https://music.amazon.co.uk/EU/api/dmls/'.freeze
+              'https://music.amazon.co.uk/ZAZ/api/dmls/'.freeze
 
             def call
               check_args
@@ -14,7 +14,7 @@ module AmazonMusic
 
               data
             rescue Faraday::BadRequestError
-              retry_with_new_audio_cookies
+              retry_with_new_cookies
             end
 
             private
@@ -51,10 +51,10 @@ module AmazonMusic
             def request_payload
               {
                 'deviceToken' => {
-                  'deviceId' => DEVICE_ID,
-                  'deviceTypeId' => DEVICE_TYPE_ID
+                  'deviceId' => device_id,
+                  'deviceTypeId' => device_type_id
                 },
-                'customerId' => 'A2ZUU2NB43P99O',
+                'customerId' => customer_id,
                 'contentIdList' => [
                   {
                     'identifier' => @args[:track_id],
@@ -68,60 +68,41 @@ module AmazonMusic
                   'TRACK_PSSH'
                 ],
                 'customerInfo' => {
-                  'marketplaceId' => 'A1F83G8C2ARO7P',
+                  'marketplaceId' => marketplace_id,
                   'territoryId' => 'GB'
                 },
                 'appInfo' => {
                   'musicAgent' =>
-                    'Maestro/1.0 WebCP/1.0.15759.0 (2304-bacb-WebC-8fee-37964)'
+                    'Vinyl/2.0 GreenHornet_Web/1.0.1321 ' \
+                    '(b65c-9945-Gree-3bcf-beb5a)'
                 }
               }.to_json
+            end
+
+            def customer_id
+              credentials.dig(
+                :amazon_music,
+                :customer_id
+              )
+            end
+
+            def marketplace_id
+              credentials.dig(
+                :amazon_music,
+                :marketplace_id
+              )
             end
 
             def request_headers
               {
                 'Content-Encoding' => 'amz-1.0',
                 'X-Amz-Target' =>
-                  'com.amazon.digitalmusiclocator' \
-                  '.DigitalMusicLocatorServiceExternal' \
-                  '.getDashManifestsV2',
-                'csrf-rnd' => '1533618916',
-                'csrf-token' =>
-                  'co4KZ+YisVWVE/UZXJkqXZ6CeIwO1F38N7Yvsnv1c2I=',
-                'csrf-ts' => '1725608500761'
+                  'com.amazon.digitalmusiclocator.' \
+                  'DigitalMusicLocatorServiceExternal.getDashManifestsV2',
+                'csrf-token' => csrf_token,
+                'csrf-rnd' => csrf_rnd,
+                'csrf-ts' => csrf_ts
               }
-            end
-
-            def request_cookies
-              return test_request_cookies if test?
-
-              JSON.parse(
-                get_global_value(
-                  'amazonmusic:audio_cookies',
-                  refresh_class_name:
-                    'AmazonMusic::Utils::Track::Audio::Cookies',
-                  is_refresh: refresh_cookies?,
-                  type: 'hash'
-                )
-              )
-            end
-
-            def test_request_cookies
-              credentials.dig(
-                :amazon_music,
-                :cookies
-              )
-            end
-
-            def refresh_cookies?
-              !!@args[:is_refresh_cookies]
-            end
-
-            def retry_with_new_audio_cookies
-              self.class.call(
-                **@args,
-                is_refresh_cookies: true
-              )
             end
 
             def data

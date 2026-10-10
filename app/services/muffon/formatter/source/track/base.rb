@@ -19,7 +19,6 @@ module Muffon
               id: source_track_id,
               slug: source_track_slug,
               artist_id: source_track_artist_id,
-              album_id: source_track_album_id,
               model: source_model,
               links: source_links_data
             }.compact
@@ -43,10 +42,6 @@ module Muffon
 
           def source_track_artist_id
             @args[:source_track_artist_id]
-          end
-
-          def source_track_album_id
-            @args[:source_track_album_id]
           end
 
           def source_model

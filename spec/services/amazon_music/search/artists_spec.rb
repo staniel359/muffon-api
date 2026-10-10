@@ -9,7 +9,8 @@ RSpec.describe AmazonMusic::Search::Artists do
         ) do
           subject.call(
             query: 'john',
-            page: amazonmusic_search_artists_page,
+            page: amazonmusic_search_artists_next_page,
+            limit: 5,
             profile_id: '1'
           )
         end

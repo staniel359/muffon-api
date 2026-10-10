@@ -9,7 +9,8 @@ RSpec.describe AmazonMusic::Search::Albums do
         ) do
           subject.call(
             query: 'wild nothing',
-            page: amazonmusic_search_albums_page,
+            page: amazonmusic_search_albums_next_page,
+            limit: 5,
             profile_id: '1'
           )
         end

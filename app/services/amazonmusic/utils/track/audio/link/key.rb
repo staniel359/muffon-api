@@ -25,13 +25,13 @@ module AmazonMusic
                 lib/amazonmusic/key_retriever.py \
                 --pssh '#{pssh}' \
                 --token '#{amazonmusic_token}' \
-                --device_id '#{DEVICE_ID}' \
-                --device_type_id '#{DEVICE_TYPE_ID}' \
+                --device_id '#{device_id}' \
+                --device_type_id '#{device_type_id}' \
                 --user_agent '#{REQUEST_USER_AGENT}'`
             end
 
             def test_key
-              'eb4b5acce38bf49067154a452c93804f'
+              'ff977dc8ff011ef4dbcc9d06d2ea7134'
             end
 
             def pssh
@@ -42,6 +42,14 @@ module AmazonMusic
               @args[:track_data]['ContentProtection'].find do |data|
                 data['pssh'].present?
               end
+            end
+
+            def amazonmusic_token
+              get_global_value(
+                'amazonmusic:token',
+                expires_in_seconds: 3600,
+                refresh_class_name: 'AmazonMusic::Utils::Token'
+              )
             end
           end
         end

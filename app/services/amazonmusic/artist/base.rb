@@ -18,7 +18,22 @@ module AmazonMusic
       end
 
       def not_found?
-        name.blank?
+        raw_artist_data.blank?
+      end
+
+      def raw_artist_data
+        response_data.dig(
+          'data',
+          'artist'
+        )
+      end
+
+      def data
+        { artist: artist_data }
+      end
+
+      def artist_data
+        { name: }
       end
 
       def name
@@ -30,14 +45,6 @@ module AmazonMusic
           AmazonMusic::Artist::Info.call(
             artist_id: @args[:artist_id]
           )[:artist]
-      end
-
-      def data
-        { artist: artist_data }
-      end
-
-      def artist_data
-        { name: }
       end
     end
   end

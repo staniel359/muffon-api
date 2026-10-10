@@ -22,30 +22,41 @@ module AmazonMusic
       end
 
       def raw_collection
-        response_data.dig(
-          'methods',
-          0,
-          'template',
-          'widgets',
-          0,
-          'items'
-        ) ||
-          response_data.dig(
-            'methods',
-            0,
-            'items'
-          )
-      end
-
-      def request_url
-        "#{REQUEST_BASE_URL}/showCatalogMusicItems/" \
-          'uri%3A_SLASH__SLASH_artist_SLASH_' \
-          "#{@args[:artist_id]}_SLASH_chronological-albums"
+        raw_artist_data.dig(
+          'releases',
+          'edges'
+        ) || []
       end
 
       def request_payload
-        AmazonMusic::Formatter::Request::Payload.call(
-          page: @args[:page]
+        {
+          'operationName' => 'ChronologicalAlbumsPage',
+          'variables' => {
+            'id' => @args[:artist_id],
+            'firstLimit' => limit,
+            'isAuthenticated' => true,
+            'afterCursor' => @args[:page]
+          },
+          'extensions' => {
+            'clientLibrary' => {
+              'name' => '@apollo/client',
+              'version' => '4.1.6'
+            },
+            'persistedQuery' => {
+              'version' => 1,
+              'sha256Hash' =>
+                'e9cf1f3f0b3d57e40a8591e3787f0d82' \
+                '0d58ce6968a5cf800aa3dc3f9bdb2bb4'
+            }
+          }
+        }.to_json
+      end
+
+      def next_page
+        raw_artist_data.dig(
+          'releases',
+          'pageInfo',
+          'token'
         )
       end
 

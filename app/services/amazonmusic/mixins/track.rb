@@ -7,84 +7,64 @@ module AmazonMusic
       private
 
       def title
-        raw_track_data.dig(
-          'primaryText',
-          'text'
-        )
+        raw_track_data['shortTitle']
       end
 
       def raw_artists
-        [raw_artist_data]
+        raw_raw_artists.map do |raw_artist_data|
+          {
+            name: raw_artist_data.dig('node', 'name'),
+            source_id: raw_artist_data.dig('node', 'id')
+          }
+        end
       end
 
-      def raw_artist_data
-        {
-          name: artist_name,
-          source_id: artist_amazonmusic_id
-        }
-      end
-
-      def artist_name
-        raw_track_data['secondaryText']
-      end
-
-      def artist_amazonmusic_id
-        artist_amazonmusic_slug.match(
-          %r{artists/(.+)/}
-        )[1]
-      end
-
-      def artist_amazonmusic_slug
+      def raw_raw_artists
         raw_track_data.dig(
-          'secondaryLink',
-          'deeplink'
+          'contributingArtists',
+          'edges'
         )
       end
 
       def amazonmusic_id
-        amazonmusic_slug.match(
-          /trackAsin=(\w+)/
-        )[1]
-      end
-
-      def amazonmusic_slug
-        raw_track_data.dig(
-          'primaryLink',
-          'deeplink'
-        )
+        raw_track_data['id']
       end
 
       def source_original_link
-        "#{WEB_BASE_URL}#{amazonmusic_slug}"
+        "#{WEB_BASE_URL}/tracks/#{amazonmusic_id}"
       end
 
       def album_title
         raw_track_data.dig(
-          'contextMenu',
-          'options',
-          0,
-          'onItemSelected',
-          1,
-          'template',
-          'headerText',
-          'text'
+          'album',
+          'shortTitle'
+        ) || raw_track_data.dig(
+          'album',
+          'title'
         )
       end
 
       def album_amazonmusic_id
-        amazonmusic_slug.match(
-          %r{(?:albums|playlists)/(.+)\?}
-        )[1]
+        raw_track_data.dig(
+          'album',
+          'id'
+        )
       end
 
       def image_data
         AmazonMusic::Formatter::Image.call(
-          image_url:
+          image_id:
         )
       end
 
-      def image_url
-        raw_track_data['image']
+      def image_id
+        raw_track_data.dig(
+          'images',
+          0,
+          'url'
+        ).match(
+          %r{/images/I/([^.]+)}
+        )[1]
       end
 
       def audio_present?
@@ -100,13 +80,7 @@ module AmazonMusic
       end
 
       def duration
-        duration_string_to_seconds(
-          raw_duration
-        )
-      end
-
-      def raw_duration
-        raw_track_data['secondaryText3']
+        raw_track_data['duration']
       end
     end
   end

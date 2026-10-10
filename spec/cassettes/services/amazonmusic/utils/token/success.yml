@@ -5,17 +5,60 @@ http_interactions:
     uri: https://api.amazon.com/auth/o2/token
     body:
       encoding: UTF-8
-      string: client_id=<AMAZON_MUSIC_CLIENT_ID>&client_secret&grant_type=refresh_token&refresh_token=<AMAZON_MUSIC_REFRESH_TOKEN>
+      string: '{"grant_type":"refresh_token","client_id":"<AMAZON_MUSIC_CLIENT_ID>","client_secret":null,"refresh_token":"<AMAZON_MUSIC_REFRESH_TOKEN>"}'
     headers:
       User-Agent:
-      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
         Safari/537.36
+      Cookie:
+      - am-loader-experiment=302JVN13T46884JFFQTJ; am-token=eyJkZXZpY2VJZCI6IjUyMDcwNzM2NzUzNzI2MDMyIiwiaGFzQXV0aGVudGljYXRlZCI6dHJ1ZSwiZ3Vlc3RUb2tlbiI6bnVsbCwiZ3Vlc3RVYmlkIjpudWxsLCJndWVzdENvbnRleHQiOm51bGwsImhhc0NvbXBsZXRlZERhdGFUcmFuc2ZlciI6ZmFsc2V9;
+        at-acbuk=Atza|gQAxAH5eAQEBBGzCt4W2zBREi4dzUCHAO397aJMd-YsgFv83WlsEjwYOjjASA8pr4vcwUrODi6qBRtYGlheM_Ut9l7XiUpgChUtrsOdT7nWH-rATTqaqFmQbvd4a5sPo4DdmI30_e0M4nmWKx2NP-Y7EDckUtBNdJ2gjDOjA7TzjAgseFS0Pq_pfLqc4jlUo7p4xw6-yCszy9CuLFT61XHtEXLfrWoRILUbWGUxA0X7cBw3l-NekdCGc2maJ5-ai_67dMyjv0Zk21SgWjjM2IvUPIehQec6dTW86CRPFof3anYg-3pTKuhqyH3KY-MkLy-0fBcCRXCujfgrBzenyY0CqXxI665zw58s5a440RzFrfnY4L5nb8e5bpVuUkG9pn6tapy44NtppWSjIWNV1iXk57gruWyjUf0g8RkJAgwKG;
+        at-acbuk-music=Atza|gQBeWBV1AwEBAlAeVBDWEgFZLAkR0CGYXgODMRrAZ5dayhub5WDyH5SrNJCfybM66yfsY0xOi7eCGbKLHcuw0SZmNAmgSekQDP3qiHiWjlwD41wkopJK2LFaT0tC2prCImlLpVEXsxXQr3Kna7j-ephLsreJyuA-jodyJClo8SvVb3CJsSW8tfZfDUgjBEBxQALHgo8xALeEBR6JTT2by9DA0foHT9euJnvA1OulUjBsbJsCW5xumpVI4Q_cy2ZG3csnp_7xmDDilAhAgRV-lH9R75CU_HOBQ4VlG0cs6VT3w8E-dWPMK_qdwkUEnGzaeQea9Yll5SoiQZXgYWyrRxdReVCkupJnot2BycB37cXHVYQUY8OC2dCn_nnvrrcHlG-rtj1DmTDempKEAVMCbrBHhIm2Ni-c9-53JnbBOTKnZu0z9C27cwIIGAvFBFYM9SdIQJUGz6gnjXzLCILEBLt1gKbLXgk4hBoRvLzm8hYSPXBbiLq_gjmf6gU4AUSjywzId7uoC9dmYV4jXy-7QeojoT8;
+        csrf=458831737; i18n-prefs=GBP; lc-acbuk=en_GB; sess-at-acbuk=1JflTR2BB93/pwT+k+/cxtZp2neItDs5l2l5yDQzWn8=;
+        session-id=520-7073675-3726032; session-id-time=2082787201l; session-token=SJp6PBWXRPtceTGMfaJxj2VOaQqWJmCe5U2alnGcDZ+HgrErVnOsTLt1kGAsRMYbLCAPr9fuxE9slCLpwyMu/oRL1cL7uA8HuDtigZyBhhdD3+ucRg5W8pe9EZFd7eNEwr7Ne/tX8JGvmIdbOsSR4+tibE3tIjbDRLKpbxYX6vk2ei22Rdekbet1PXjUIqjdJktsYWjNNuf6JsD5/47+H4XIhWtzTVYPcKHGpJwTjho=;
+        sso-state-acbuk=Xdsso|ZQEIpaNbbCOgyZIbEZE2sqv6ukf2d0WLPYEhtpkUsIxBVhrerRGa5lFUGppHJWkDpx7NXFqfO_KwldS5LYTx4x4whLsjTr4V5j-PJcaG2W2k6IPZ;
+        sst-acbuk=Sst1|PQIdDucqrH7c4-nJ_ecI3sE4DdYxhgB1SlBT-PT79hKIWlmnAta91-uRFmtcUEKXmgnfd1SrytNWKk0k1Dzw4jyE_gK1URwMj_iYA1j3Ik6aMM4SV9vB43uWGSkPkGoU1OTsjQRnArUYddoN-D1toCGbLLX4UbmKZIacKmXAHrhecsBZgbB4aB5HeePniMW36JqYmww0WO8J2Zsw3KAVPMHvaJ15mzD5SUj6b7n6zf-8b3vxzK1VqPkT3eG0Yu6dAdFSlXvEZhc3lPhm5IFpyDty9Tx_Z12oLKgA2Jv_JPlb1oE13polFrafQ4edym_1f-Ufe9A7kIwjL2p51Kz8n7vrY4G-1Mkavgh5LRUWx4lGN3O1CT1P4jA210VO5Kl-JQdt;
+        ubid-acbuk=521-9402434-5496647; x-acbuk=yCYlzpQqHqbIB?wXdfv9Fa4D?S?otDC4n1hMjpxX3t@?AyxusdtJp0ZMrq8zGK8E
+      Accept:
+      - application/graphql-response+json, application/json
+      Accept-Language:
+      - en-GB
+      Content-Language:
+      - en-GB
       Content-Type:
-      - application/x-www-form-urlencoded
+      - application/json
+      Csrf-Rnd:
+      - '1059232176'
+      Csrf-Token:
+      - SGLLHatnSPrFfa0q29BcgrTQtbdkc4f1yjq2ypSC5NU=
+      Csrf-Ts:
+      - '1791577333'
+      Dnt:
+      - '1'
+      Host:
+      - gql.music.amazon.co.uk
+      Music-Territory:
+      - GB
+      Origin:
+      - https://music.amazon.co.uk
+      Referer:
+      - https://music.amazon.co.uk/
+      X-Amzn-Client-Subscription-Tier:
+      - AMF
+      X-Amzn-Device-Id:
+      - '52070736753726032'
+      X-Amzn-Device-Type:
+      - A16ZV8BU3SN1N3
+      X-Amzn-Feature-Flags:
+      - api-cache,use-ups
+      X-Amzn-Session-Id:
+      - 520-7073675-3726032
+      X-Amzn-Trace-Start:
+      - '1791577336001'
+      X-Api-Key:
+      - amzn1.application.4ff5579ca2e3407aba989a1f5dbdaf69
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -24,29 +67,33 @@ http_interactions:
       Server:
       - Server
       Date:
-      - Tue, 30 Sep 2025 20:50:44 GMT
+      - Fri, 09 Oct 2026 22:33:44 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '912'
+      - '1107'
       Connection:
       - keep-alive
       X-Amz-Rid:
-      - 4MEFD4ZBJX7XTGPSQCP1
+      - KG28QR3EGR7QCH6NX6CW
       X-Amzn-Requestid:
-      - d498fed5-0b7c-4ca1-9369-b8736028bcc5
+      - 9277f174-2de0-4ff8-abc1-027309281e01
       X-Amz-Date:
-      - Tue, 30 Sep 2025 20:50:44 GMT
+      - Fri, 09 Oct 2026 22:33:44 GMT
+      Access-Control-Allow-Origin:
+      - https://music.amazon.co.uk
       Cache-Control:
       - no-cache, no-store, must-revalidate
+      Vary:
+      - Origin,User-Agent,Accept-Encoding
+      Access-Control-Expose-Headers:
+      - x-amzn-RequestId,x-amzn-ErrorType,x-amzn-ErrorMessage,Date,smithy-protocol
       Pragma:
       - no-cache
-      Vary:
-      - Content-Type,Accept-Encoding,User-Agent
       Strict-Transport-Security:
       - max-age=47474747; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"access_token":"Atza|IwEBIOfUjhhw4tytLskZV3MJh2Anc6nXRYJPMWA8I4k_ixHJx0WcGNH8s6EEsTc4M7T4RqWXvxRmT584VKPV7yGUmixy9QtihShb19R6Ss5hQPG5HaW0eKjfxylyfvh2BYLL9GLCQ1g3DTwP2k-MZ8ZrbOwVPbm5bkDKGmC85H8vCq_wIWW3Ndh86cNjzmv77QONkzNUBYwvw632598MFtrNI9aoXKHC07mjAZI5IeD54JOm_zd0ZIoiBDGE1kwZmzTFw4UADotQQ1hGJjD_XRjZwXSOU5p1f73mgyI6qxDpZSssTA-R16_6cO75mo2h_CTQRIna6LwPqO1AaR79HpfiSf28HrGIwANB73Yz5b6o1GYjfoI3bQ_WFjGUXyoI_jlciusy8kQ-OTb6jHgZ60kEMRft","refresh_token":"<AMAZON_MUSIC_REFRESH_TOKEN>","token_type":"bearer","expires_in":3600}'
-  recorded_at: Tue, 30 Sep 2025 20:50:44 GMT
-recorded_with: VCR 6.3.1
+      string: '{"access_token":"Atza|gQDMJuD7AwEBAPdoZI_Mfo4ifF5TO2Jh8U5LiWom_OtzSFFMyWbjv-XMzF3LUHS6HUy4WwoKHRzniWiTpDBNHTcBZhvajgxEy_GFHKNEVSS7QaaG1kMqcAu_elj3Vi7P6B4iAczXRxYyeJw9YZD1uJa50dXnHmV2-YILss5VevI5WCJhKvx4qG3vQ8uRqnbm7LModdvLn1dYPxYq4XabE4zXHsx7yxFUgchrOaKjOFKyb2IXHhOXMneiXtrJ2Y8-H9g1ZEfjx3AJk6s3rvF-6yGSqhkMFKqmKh3HkhyZPDmjythdONYmQl3CPRm_Q7INyFSlo4_l0KqfTKfF2uqwuqZ_X-vh-WVl9LdjoE4HsUrO_VLo8r6yNtp-OB8F3TxNNDTRz4sAMqMU4rJpvv9JZKVrfvQwRs4Dyd1Nk4W24q_F5oH-3VDl1pFBDHlcw6wcc57f9A9AmUomCc5s9-JKBtIKN8Li87hm5JE5jDENsgZ3WRtZyP4xdW_pZZUYwbjJ6_K-O0M1QKVk08EwXyUlb3qPbhmoArmXyZpcv4vyWVK92IeBn4A-ASXJhwe_ZLrXc9OU_yv1dRPPwUnjN-4mQwIkwncsk8Q","refresh_token":"<AMAZON_MUSIC_REFRESH_TOKEN>","token_type":"bearer","expires_in":3600}'
+  recorded_at: Fri, 09 Oct 2026 22:33:44 GMT
+recorded_with: VCR 6.4.0

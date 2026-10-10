@@ -30,7 +30,7 @@ module AmazonMusic
         end
 
         def raw_artist_data
-          @args[:raw_artist_data]
+          @args[:raw_artist_data]['node']
         end
       end
     end

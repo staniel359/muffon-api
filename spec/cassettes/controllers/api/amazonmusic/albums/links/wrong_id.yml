@@ -2,16 +2,28 @@
 http_interactions:
 - request:
     method: post
-    uri: https://eu.mesk.skill.music.a2z.com/api/showCatalogAlbum
+    uri: https://gql.music.amazon.co.uk/
     body:
       encoding: UTF-8
-      string: '{"id":"wejlhg239gh23","headers":"{\"x-amzn-authentication\":\"{\\\"interface\\\":\\\"ClientAuthenticationInterface.v1_0.ClientTokenElement\\\",\\\"accessToken\\\":\\\"Atza|IwEBIIQd1ug2SOj_RQotgALoBSDScJuKIBKiCCEKJRv-OZJVTIc0AddPd7U7H7MM55xARpmkFBWyE91VPL9YXxNSXR0FeaeSqEu10ulIb3PuP9pIb3jJNGjYo437NY6nGaePiRftL55IyP014lrm3NcxsDPfasAtM31kzTpQ8Z-HN8enuJChGt3BCIbpYe_XJnK_hRHMwXXRCtY-Z606C2vLQQNniP-w5WEwutmtAhg14D02I3KHOryR5Sn0ajdJav3H41Pj0yL9xgw6ZXdh4yB-1XN8cy85zJjXmPtB-QJZtuK4cVS-qhnBlKL9nCaaXao4YW7lUFZOzTFpVM3zd4pbDJl1ON6eTHaLE3NbNlK1EK5GslLLNDs8DTRk10Oukp5GOaaR8xhpP8-fES7nEa4sIlRn\\\"}\",\"x-amzn-device-model\":\"WEBPLAYER\",\"x-amzn-device-width\":\"1920\",\"x-amzn-device-family\":\"WebPlayer\",\"x-amzn-device-id\":\"25814726589747619\",\"x-amzn-user-agent\":\"Mozilla/5.0
-        (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
-        Safari/537.36\",\"x-amzn-device-height\":\"1080\",\"x-amzn-request-id\":\"24b0ac27-3f18-4c45-8403-a6deb0f19535\",\"x-amzn-device-language\":\"en_GB\",\"x-amzn-os-version\":\"1.0\",\"x-amzn-application-version\":\"1.0.15759.0\",\"x-amzn-timestamp\":\"1739135567000\",\"x-amzn-page-url\":\"https://music.amazon.co.uk\",\"x-amzn-video-player-token\":\"{}\"}"}'
+      string: '{"operationName":"AlbumDetailPage","variables":{"id":"wejlhg239gh23","isAuthenticated":true,"includeMerch":false,"includeAlbumAbout":false},"extensions":{"clientLibrary":{"name":"@apollo/client","version":"4.1.6"},"persistedQuery":{"version":1,"sha256Hash":"b199df0b29a6679f8400a7d7663de253d4241603b7ba86368bf862e5ddf9ec4e"}}}'
     headers:
       User-Agent:
-      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
         Safari/537.36
+      Cookie:
+      - ubid-acbuk=257-5997740-3821928; at-acbuk=Atza|gQBVhojNAwEBAn4pROTIZmhoJmiq1iH788zzAFXxxXOxjorwblzSspdr2Q8CEOKfhRB6VtUDB-OBRS0UB3SKVnAxorYcy6X0sRiPWd3muL1dS3FQJB3tJneevSuGsig0QXmoRR3oSJgcTY-x8wNpt_g03XxJCgaHppy4nBK9alT1c7bF83d3nd41fXKJsrIA2_O9XXaE_b4td2WA8MoDjhKui_jjx8B2IeK4FVJ7TUAmxbbvIwn21Wa0ntgZ69hDY_6mY57dLTdZrZvTf2XMCX7cKBQayM-9lGOz2MFNfzQlhn0dRh0EcaRmPPPZaJm5QPRwaQbmEqVJW7itSHYjQL53V43lu_Gjcp7CXepuZfNtDz9ynsj0E1LXJ74qoSUlc5hjflyyUhjyjReFqFCfPNfZEifvCHH4U9JXfZ_EJOU
+      Csrf-Rnd:
+      - '135065070'
+      Csrf-Token:
+      - vvFjATQLAJqRlWvIaPMeKeK1UfUe9uX9SEdnbfemwF4=
+      Csrf-Ts:
+      - '1791631451'
+      X-Amzn-Device-Id:
+      - '52070736753726032'
+      X-Amzn-Device-Type:
+      - A16ZV8BU3SN1N3
+      X-Api-Key:
+      - amzn1.application.4ff5579ca2e3407aba989a1f5dbdaf69
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -23,42 +35,38 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Date:
+      - Sat, 10 Oct 2026 11:58:45 GMT
       Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
+      - application/json; charset=utf-8
+      Content-Length:
+      - '39'
       Connection:
       - keep-alive
-      Date:
-      - Sun, 09 Feb 2025 21:12:48 GMT
-      Cache-Control:
-      - max-age=0
-      Apigw-Requestid:
-      - FvEMlip7joEEP8g=
-      Server:
-      - nginx/1.22.1
-      Set-Cookie:
-      - AWSALB=swMzbP/OQNBkzKwMxcjtzZF087EEsvuEvuFEyFKOG5FSOqfwNuS2iXh/e9CeCRC0MDwp+gxJkYw3dYIlhPSlPuQ20gbqn62JNFYAc/JlaLEjyqlcca1pvqRZEKCQ;
-        Expires=Sun, 16 Feb 2025 21:12:48 GMT; Path=/
-      - AWSALBCORS=swMzbP/OQNBkzKwMxcjtzZF087EEsvuEvuFEyFKOG5FSOqfwNuS2iXh/e9CeCRC0MDwp+gxJkYw3dYIlhPSlPuQ20gbqn62JNFYAc/JlaLEjyqlcca1pvqRZEKCQ;
-        Expires=Sun, 16 Feb 2025 21:12:48 GMT; Path=/; SameSite=None; Secure
+      Access-Control-Allow-Origin:
+      - "*"
       X-Amzn-Trace-Id:
-      - Root=1-67a91a50-3e40d07553436c4344733f31;
+      - 1-6aca2875-529b79bdec33ad673c979704
+      X-Trace-Id:
+      - 6aca2875529b79bdec33ad673c979704
+      X-Amzn-Requestid:
+      - e5ecaab1-fa3f-4254-b6c7-69810a8b3904
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,POST
+      Cache-Control:
+      - no-store
+      X-Cache-Status:
+      - DISABLED
+      Server-Timing:
+      - total;dur=26
+      Etag:
+      - W/"27-yicDVUqAK9O/YKdDYTXq1BW69nc"
       Vary:
-      - accept-encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 b6be6ee8d445cfa291adcacd75a3fb12.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - FRA56-P5
-      X-Amz-Cf-Id:
-      - u-LaHjZG8XfLb5RxLF-qZA8kusKgz70aGnrLa_lK8yCmT8D5NWLuqQ==
+      - Accept-Encoding
     body:
-      encoding: ASCII-8BIT
-      string: '{"methods":[{"interface":"TemplateListInterface.v1_0.CreateAndBindTemplateMethod","template":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogTemplate","header":"Service
-        error","closeButton":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogCloseButtonElement","altText":"Dismiss","icon":"cancel","primaryLink":{"interface":"Web.PageInterface.v1_0.LinkElement","onItemSelected":[{"interface":"TemplateListInterface.v1_0.RemoveTemplateMethod","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}},"body":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogBodyElement","text":"Sorry
-        something went wrong. Please try one more time or contact customer service
-        if the problem persists.","onItemSelected":[]},"onCreated":[],"onBound":[],"onViewed":[],"onInteraction":[],"onLeave":[],"launchMode":"standard","cacheSeconds":9223372036854775807},"screenMode":"standard","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}'
-  recorded_at: Sun, 09 Feb 2025 21:12:48 GMT
-recorded_with: VCR 6.3.1
+      encoding: UTF-8
+      string: '{"data":{"album":null},"extensions":{}}'
+  recorded_at: Sat, 10 Oct 2026 11:58:46 GMT
+recorded_with: VCR 6.4.0

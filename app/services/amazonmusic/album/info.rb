@@ -43,40 +43,28 @@ module AmazonMusic
         )
       end
 
-      def title
-        raw_album_data.dig(
-          'headerText',
-          'text'
-        )
-      end
-
-      def artist_name
-        raw_album_data['headerPrimaryText']
-      end
-
-      def amazonmusic_slug
-        raw_album_data.dig(
-          'templateData',
-          'deeplink'
-        )
-      end
-
-      def artist_amazonmusic_slug
-        raw_album_data.dig(
-          'headerPrimaryTextLink',
-          'deeplink'
-        )
-      end
-
-      def image_url
-        raw_album_data['headerImage']
-      end
-
-      def raw_release_date
-        raw_album_data['headerTertiaryText']
-          .split('•')
-          .last
-          .strip
+      def request_payload
+        {
+          'operationName' => 'AlbumDetailPage',
+          'variables' => {
+            'id' => @args[:album_id],
+            'isAuthenticated' => true,
+            'includeMerch' => false,
+            'includeAlbumAbout' => false
+          },
+          'extensions' => {
+            'clientLibrary' => {
+              'name' => '@apollo/client',
+              'version' => '4.1.6'
+            },
+            'persistedQuery' => {
+              'version' => 1,
+              'sha256Hash' =>
+                'b199df0b29a6679f8400a7d7663de253' \
+                'd4241603b7ba86368bf862e5ddf9ec4e'
+            }
+          }
+        }.to_json
       end
 
       def track_data_formatted(

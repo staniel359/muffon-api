@@ -20,24 +20,13 @@ module AmazonMusic
       end
 
       def not_found?
-        raw_album_data['header'] == 'Service error'
+        raw_album_data.blank?
       end
 
       def raw_album_data
         response_data.dig(
-          'methods',
-          0,
-          'template'
-        )
-      end
-
-      def request_url
-        "#{REQUEST_BASE_URL}/showCatalogAlbum"
-      end
-
-      def request_payload
-        AmazonMusic::Formatter::Request::Payload.call(
-          model_id: @args[:album_id]
+          'data',
+          'album'
         )
       end
 

@@ -21,24 +21,22 @@ module AmazonMusic
 
       def raw_collection
         response_data.dig(
-          'methods',
+          'data',
+          'specificationSearch',
+          'result',
           0,
-          'template',
-          'widgets',
-          0,
-          'items'
-        ) ||
-          response_data.dig(
-            'methods',
-            0,
-            'items'
-          )
+          'edges'
+        )
       end
 
-      def request_payload
-        AmazonMusic::Formatter::Request::Payload.call(
-          query: @args[:query],
-          page: @args[:page]
+      def next_page
+        response_data.dig(
+          'data',
+          'specificationSearch',
+          'result',
+          0,
+          'pageInfo',
+          'token'
         )
       end
     end

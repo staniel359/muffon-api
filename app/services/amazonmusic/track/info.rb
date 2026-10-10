@@ -10,7 +10,6 @@ module AmazonMusic
           source_original_link:,
           source_name:,
           source_track_id: amazonmusic_id,
-          source_track_album_id: album_amazonmusic_id,
           title:,
           artists:,
           image_data:,
@@ -28,37 +27,26 @@ module AmazonMusic
         )
       end
 
-      def title
-        raw_track_data['primaryText']
-      end
-
-      def artist_name
-        raw_track_data.dig(
-          'contextMenu',
-          'options',
-          0,
-          'onItemSelected',
-          1,
-          'template',
-          'headerPrimaryText'
-        )
-      end
-
-      def artist_amazonmusic_slug
-        raw_track_data.dig(
-          'contextMenu',
-          'options',
-          1,
-          'onItemSelected',
-          2,
-          'template',
-          'templateData',
-          'deeplink'
-        )
-      end
-
-      def image_url
-        raw_album_data['headerImage']
+      def request_payload
+        {
+          'operationName' => 'TrackDetailPage',
+          'variables' => {
+            'id' => @args[:track_id],
+            'isAuthenticated' => true
+          },
+          'extensions' => {
+            'clientLibrary' => {
+              'name' => '@apollo/client',
+              'version' => '4.1.6'
+            },
+            'persistedQuery' => {
+              'version' => 1,
+              'sha256Hash' =>
+                '8472e4564effd84e1d4558b7ade98ff6' \
+                '612e1ea3ba5c2b6f18c1848f8cff9c28'
+            }
+          }
+        }.to_json
       end
     end
   end

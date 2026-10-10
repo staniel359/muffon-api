@@ -7,65 +7,45 @@ module AmazonMusic
       private
 
       def title
-        raw_album_data.dig(
-          'primaryText',
-          'text'
-        )
+        raw_album_data['shortTitle']
       end
 
       def raw_artists
-        [raw_artist_data]
+        raw_raw_artists.map do |raw_artist_data|
+          {
+            name: raw_artist_data.dig('node', 'name'),
+            source_id: raw_artist_data.dig('node', 'id')
+          }
+        end
       end
 
-      def raw_artist_data
-        {
-          name: artist_name,
-          source_id: artist_amazonmusic_id
-        }
-      end
-
-      def artist_name
-        raw_album_data['secondaryText']
-      end
-
-      def artist_amazonmusic_id
-        artist_amazonmusic_slug.match(
-          %r{artists/(.+)/}
-        )[1]
-      end
-
-      def artist_amazonmusic_slug
+      def raw_raw_artists
         raw_album_data.dig(
-          'secondaryLink',
-          'deeplink'
+          'contributingArtists',
+          'edges'
         )
       end
 
       def amazonmusic_id
-        amazonmusic_slug.match(
-          %r{albums/(.+)}
-        )[1]
-      end
-
-      def amazonmusic_slug
-        raw_album_data.dig(
-          'primaryLink',
-          'deeplink'
-        )
+        raw_album_data['id']
       end
 
       def source_original_link
-        "#{WEB_BASE_URL}#{amazonmusic_slug}"
+        "#{WEB_BASE_URL}/albums/#{amazonmusic_id}"
       end
 
       def image_data
         AmazonMusic::Formatter::Image.call(
-          image_url:
+          image_id:
         )
       end
 
-      def image_url
-        raw_album_data['image']
+      def image_id
+        raw_album_data.dig(
+          'images',
+          0,
+          'id'
+        )
       end
 
       def release_date
@@ -75,20 +55,13 @@ module AmazonMusic
       end
 
       def raw_release_date
-        raw_album_data.dig(
-          'primaryLink',
-          'onItemSelected',
-          1,
-          'template',
-          'headerTertiaryText'
-        )
+        raw_album_data['releaseDate']
       end
 
       def raw_tracks
         raw_album_data.dig(
-          'widgets',
-          0,
-          'items'
+          'tracksConnection',
+          'edges'
         )
       end
     end

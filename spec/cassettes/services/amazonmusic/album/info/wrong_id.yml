@@ -2,63 +2,102 @@
 http_interactions:
 - request:
     method: post
-    uri: https://eu.mesk.skill.music.a2z.com/api/showCatalogAlbum
+    uri: https://gql.music.amazon.co.uk/
     body:
       encoding: UTF-8
-      string: '{"id":"wejlhg239gh23","headers":"{\"x-amzn-authentication\":\"{\\\"interface\\\":\\\"ClientAuthenticationInterface.v1_0.ClientTokenElement\\\",\\\"accessToken\\\":\\\"Atza|IwEBIIQd1ug2SOj_RQotgALoBSDScJuKIBKiCCEKJRv-OZJVTIc0AddPd7U7H7MM55xARpmkFBWyE91VPL9YXxNSXR0FeaeSqEu10ulIb3PuP9pIb3jJNGjYo437NY6nGaePiRftL55IyP014lrm3NcxsDPfasAtM31kzTpQ8Z-HN8enuJChGt3BCIbpYe_XJnK_hRHMwXXRCtY-Z606C2vLQQNniP-w5WEwutmtAhg14D02I3KHOryR5Sn0ajdJav3H41Pj0yL9xgw6ZXdh4yB-1XN8cy85zJjXmPtB-QJZtuK4cVS-qhnBlKL9nCaaXao4YW7lUFZOzTFpVM3zd4pbDJl1ON6eTHaLE3NbNlK1EK5GslLLNDs8DTRk10Oukp5GOaaR8xhpP8-fES7nEa4sIlRn\\\"}\",\"x-amzn-device-model\":\"WEBPLAYER\",\"x-amzn-device-width\":\"1920\",\"x-amzn-device-family\":\"WebPlayer\",\"x-amzn-device-id\":\"25814726589747619\",\"x-amzn-user-agent\":\"Mozilla/5.0
-        (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
-        Safari/537.36\",\"x-amzn-device-height\":\"1080\",\"x-amzn-request-id\":\"2a031b04-26e7-41ea-b844-a8997f2409a8\",\"x-amzn-device-language\":\"en_GB\",\"x-amzn-os-version\":\"1.0\",\"x-amzn-application-version\":\"1.0.15759.0\",\"x-amzn-timestamp\":\"1739135587000\",\"x-amzn-page-url\":\"https://music.amazon.co.uk\",\"x-amzn-video-player-token\":\"{}\"}"}'
+      string: '{"operationName":"AlbumDetailPage","variables":{"id":"wejlhg239gh23","isAuthenticated":true,"includeMerch":false,"includeAlbumAbout":false},"extensions":{"clientLibrary":{"name":"@apollo/client","version":"4.1.6"},"persistedQuery":{"version":1,"sha256Hash":"b199df0b29a6679f8400a7d7663de253d4241603b7ba86368bf862e5ddf9ec4e"}}}'
     headers:
       User-Agent:
-      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41
+      - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0
         Safari/537.36
+      Cookie:
+      - am-loader-experiment=302JVN13T46884JFFQTJ; am-token=eyJkZXZpY2VJZCI6IjUyMDcwNzM2NzUzNzI2MDMyIiwiaGFzQXV0aGVudGljYXRlZCI6dHJ1ZSwiZ3Vlc3RUb2tlbiI6bnVsbCwiZ3Vlc3RVYmlkIjpudWxsLCJndWVzdENvbnRleHQiOm51bGwsImhhc0NvbXBsZXRlZERhdGFUcmFuc2ZlciI6ZmFsc2V9;
+        at-acbuk=Atza|gQAxAH5eAQEBBGzCt4W2zBREi4dzUCHAO397aJMd-YsgFv83WlsEjwYOjjASA8pr4vcwUrODi6qBRtYGlheM_Ut9l7XiUpgChUtrsOdT7nWH-rATTqaqFmQbvd4a5sPo4DdmI30_e0M4nmWKx2NP-Y7EDckUtBNdJ2gjDOjA7TzjAgseFS0Pq_pfLqc4jlUo7p4xw6-yCszy9CuLFT61XHtEXLfrWoRILUbWGUxA0X7cBw3l-NekdCGc2maJ5-ai_67dMyjv0Zk21SgWjjM2IvUPIehQec6dTW86CRPFof3anYg-3pTKuhqyH3KY-MkLy-0fBcCRXCujfgrBzenyY0CqXxI665zw58s5a440RzFrfnY4L5nb8e5bpVuUkG9pn6tapy44NtppWSjIWNV1iXk57gruWyjUf0g8RkJAgwKG;
+        at-acbuk-music=Atza|gQBeWBV1AwEBAlAeVBDWEgFZLAkR0CGYXgODMRrAZ5dayhub5WDyH5SrNJCfybM66yfsY0xOi7eCGbKLHcuw0SZmNAmgSekQDP3qiHiWjlwD41wkopJK2LFaT0tC2prCImlLpVEXsxXQr3Kna7j-ephLsreJyuA-jodyJClo8SvVb3CJsSW8tfZfDUgjBEBxQALHgo8xALeEBR6JTT2by9DA0foHT9euJnvA1OulUjBsbJsCW5xumpVI4Q_cy2ZG3csnp_7xmDDilAhAgRV-lH9R75CU_HOBQ4VlG0cs6VT3w8E-dWPMK_qdwkUEnGzaeQea9Yll5SoiQZXgYWyrRxdReVCkupJnot2BycB37cXHVYQUY8OC2dCn_nnvrrcHlG-rtj1DmTDempKEAVMCbrBHhIm2Ni-c9-53JnbBOTKnZu0z9C27cwIIGAvFBFYM9SdIQJUGz6gnjXzLCILEBLt1gKbLXgk4hBoRvLzm8hYSPXBbiLq_gjmf6gU4AUSjywzId7uoC9dmYV4jXy-7QeojoT8;
+        csrf=458831737; i18n-prefs=GBP; lc-acbuk=en_GB; sess-at-acbuk=1JflTR2BB93/pwT+k+/cxtZp2neItDs5l2l5yDQzWn8=;
+        session-id=520-7073675-3726032; session-id-time=2082787201l; session-token=SJp6PBWXRPtceTGMfaJxj2VOaQqWJmCe5U2alnGcDZ+HgrErVnOsTLt1kGAsRMYbLCAPr9fuxE9slCLpwyMu/oRL1cL7uA8HuDtigZyBhhdD3+ucRg5W8pe9EZFd7eNEwr7Ne/tX8JGvmIdbOsSR4+tibE3tIjbDRLKpbxYX6vk2ei22Rdekbet1PXjUIqjdJktsYWjNNuf6JsD5/47+H4XIhWtzTVYPcKHGpJwTjho=;
+        sso-state-acbuk=Xdsso|ZQEIpaNbbCOgyZIbEZE2sqv6ukf2d0WLPYEhtpkUsIxBVhrerRGa5lFUGppHJWkDpx7NXFqfO_KwldS5LYTx4x4whLsjTr4V5j-PJcaG2W2k6IPZ;
+        sst-acbuk=Sst1|PQIdDucqrH7c4-nJ_ecI3sE4DdYxhgB1SlBT-PT79hKIWlmnAta91-uRFmtcUEKXmgnfd1SrytNWKk0k1Dzw4jyE_gK1URwMj_iYA1j3Ik6aMM4SV9vB43uWGSkPkGoU1OTsjQRnArUYddoN-D1toCGbLLX4UbmKZIacKmXAHrhecsBZgbB4aB5HeePniMW36JqYmww0WO8J2Zsw3KAVPMHvaJ15mzD5SUj6b7n6zf-8b3vxzK1VqPkT3eG0Yu6dAdFSlXvEZhc3lPhm5IFpyDty9Tx_Z12oLKgA2Jv_JPlb1oE13polFrafQ4edym_1f-Ufe9A7kIwjL2p51Kz8n7vrY4G-1Mkavgh5LRUWx4lGN3O1CT1P4jA210VO5Kl-JQdt;
+        ubid-acbuk=521-9402434-5496647; x-acbuk=yCYlzpQqHqbIB?wXdfv9Fa4D?S?otDC4n1hMjpxX3t@?AyxusdtJp0ZMrq8zGK8E
+      Accept:
+      - application/graphql-response+json, application/json
+      Accept-Language:
+      - en-GB
+      Content-Language:
+      - en-GB
       Content-Type:
       - application/json
+      Csrf-Rnd:
+      - '1059232176'
+      Csrf-Token:
+      - SGLLHatnSPrFfa0q29BcgrTQtbdkc4f1yjq2ypSC5NU=
+      Csrf-Ts:
+      - '1791577333'
+      Dnt:
+      - '1'
+      Host:
+      - gql.music.amazon.co.uk
+      Music-Territory:
+      - GB
+      Origin:
+      - https://music.amazon.co.uk
+      Referer:
+      - https://music.amazon.co.uk/
+      X-Amzn-Client-Subscription-Tier:
+      - AMF
+      X-Amzn-Device-Id:
+      - '52070736753726032'
+      X-Amzn-Device-Type:
+      - A16ZV8BU3SN1N3
+      X-Amzn-Feature-Flags:
+      - api-cache,use-ups
+      X-Amzn-Session-Id:
+      - 520-7073675-3726032
+      X-Amzn-Trace-Start:
+      - '1791577336001'
+      X-Api-Key:
+      - amzn1.application.4ff5579ca2e3407aba989a1f5dbdaf69
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
+      Date:
+      - Fri, 09 Oct 2026 22:33:28 GMT
       Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
+      - application/json; charset=utf-8
+      Content-Length:
+      - '153'
       Connection:
       - keep-alive
-      Date:
-      - Sun, 09 Feb 2025 21:13:07 GMT
-      Cache-Control:
-      - max-age=0
-      Apigw-Requestid:
-      - FvEPkirrjoEEMPw=
-      Server:
-      - nginx/1.22.1
-      Set-Cookie:
-      - AWSALB=pajwngLi+avxAsEAvLjHqXPyi7mYgElfHEsACx/+pt/URIAFboyQxiwrMXF+uR8glKpbVIneIgV2FxpGPaQjeQ+wKnzVO//H/N6qNhJnwAhhwL1WY/CKbT/N/w6k;
-        Expires=Sun, 16 Feb 2025 21:13:07 GMT; Path=/
-      - AWSALBCORS=pajwngLi+avxAsEAvLjHqXPyi7mYgElfHEsACx/+pt/URIAFboyQxiwrMXF+uR8glKpbVIneIgV2FxpGPaQjeQ+wKnzVO//H/N6qNhJnwAhhwL1WY/CKbT/N/w6k;
-        Expires=Sun, 16 Feb 2025 21:13:07 GMT; Path=/; SameSite=None; Secure
-      X-Amzn-Trace-Id:
-      - Root=1-67a91a63-4ab21fd163cfe5362be65971;
+      Access-Control-Allow-Origin:
+      - https://music.amazon.co.uk
       Vary:
-      - accept-encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 3517ce13630d84c5b14e88de469985cc.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - FRA56-P5
-      X-Amz-Cf-Id:
-      - Y6QOIeYCbzE9L9uAoveDdIwfss7mY-MlidecKbMUqpkjyrLnAMUZzw==
+      - Origin, Accept-Encoding
+      Access-Control-Allow-Credentials:
+      - 'true'
+      X-Amzn-Trace-Id:
+      - 1-6ac96bb8-bddebe09dd919b1cf31e3326
+      X-Trace-Id:
+      - 6ac96bb8bddebe09dd919b1cf31e3326
+      X-Amzn-Requestid:
+      - 31f1d47d-ddfa-4496-bbeb-c89043f616a5
+      Access-Control-Allow-Headers:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,POST
+      Cache-Control:
+      - no-store
+      X-Cache-Status:
+      - MISS
+      Server-Timing:
+      - total;dur=27
+      Etag:
+      - W/"99-NqYDdxXDYT9YEz7o4YDtZhQ5h1Y"
     body:
-      encoding: ASCII-8BIT
-      string: '{"methods":[{"interface":"TemplateListInterface.v1_0.CreateAndBindTemplateMethod","template":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogTemplate","header":"Service
-        error","closeButton":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogCloseButtonElement","altText":"Dismiss","icon":"cancel","primaryLink":{"interface":"Web.PageInterface.v1_0.LinkElement","onItemSelected":[{"interface":"TemplateListInterface.v1_0.RemoveTemplateMethod","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}},"body":{"interface":"Web.TemplatesInterface.v1_0.Touch.DialogTemplateInterface.DialogBodyElement","text":"Sorry
-        something went wrong. Please try one more time or contact customer service
-        if the problem persists.","onItemSelected":[]},"onCreated":[],"onBound":[],"onViewed":[],"onInteraction":[],"onLeave":[],"launchMode":"standard","cacheSeconds":9223372036854775807},"screenMode":"standard","queue":{"interface":"QueuesInterface.v1_0.SingleThreadedQueue","id":"TEMPLATE"},"forced":false}]}'
-  recorded_at: Sun, 09 Feb 2025 21:13:07 GMT
-recorded_with: VCR 6.3.1
+      encoding: UTF-8
+      string: '{"data":{"album":null},"extensions":{"appConfig":{},"context":{},"headers":{},"trace":{"requestTrace":{"extensionDurationMs":0},"requestDurationMs":27}}}'
+  recorded_at: Fri, 09 Oct 2026 22:33:28 GMT
+recorded_with: VCR 6.4.0
