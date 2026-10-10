@@ -55,7 +55,19 @@ module SoundCloud
       end
 
       def audio_present?
-        raw_track_data['streamable']
+        raw_track_data['streamable'] &&
+          audio_link_available?
+      end
+
+      def audio_link_available?
+        raw_track_data.dig(
+          'media',
+          'transcodings'
+        ).any? do |data|
+          data['preset'].include?(
+            'mp3_0_'
+          )
+        end
       end
 
       def description

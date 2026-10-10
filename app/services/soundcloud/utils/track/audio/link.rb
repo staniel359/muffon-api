@@ -37,7 +37,7 @@ module SoundCloud
           end
 
           def mp3_link?(data)
-            data['preset'].start_with?('mp3') &&
+            data['preset'].start_with?('mp3_0_') &&
               data.dig('format', 'protocol') == 'progressive'
           end
 
