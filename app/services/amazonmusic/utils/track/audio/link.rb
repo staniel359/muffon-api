@@ -64,7 +64,7 @@ module AmazonMusic
                 -decryption_key #{key} \
                 -i \"#{file_link}\" \
                 -y \
-                -movflags +faststart \
+                -movflags faststart \
                 -c copy \
                 -loglevel error \
                 public/#{audio_path}"
