@@ -12,5 +12,10 @@ Sentry.init do |config|
       :url
     )
 
-  config.send_default_pii = true
+  config.data_collection.user_info = false
+
+  config
+    .rails
+    .structured_logging
+    .enabled = true
 end
