@@ -43,6 +43,8 @@ module Deezer
           end
 
           def write_audio_data_to_file
+            return if test?
+
             File.open(
               "public/#{audio_path}",
               'wb'

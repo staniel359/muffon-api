@@ -101,7 +101,7 @@ http_interactions:
   recorded_at: Fri, 09 Oct 2026 23:55:03 GMT
 - request:
     method: post
-    uri: https://music.amazon.co.uk/EU/api/dmls/
+    uri: https://music.amazon.co.uk/ZAZ/api/dmls/
     body:
       encoding: UTF-8
       string: '{"deviceToken":{"deviceId":"52070736753726032","deviceTypeId":"A16ZV8BU3SN1N3"},"customerId":"A2A8W7ZBQ2EOOE","contentIdList":[{"identifier":"B0H8FG4WV2","identifierType":"ASIN"}],"musicDashVersionList":["SIREN_KATANA_NO_CLEAR_LEAD"],"contentProtectionList":["TRACK_PSSH"],"customerInfo":{"marketplaceId":"A1F83G8C2ARO7P","territoryId":"GB"},"appInfo":{"musicAgent":"Vinyl/2.0
