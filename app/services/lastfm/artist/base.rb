@@ -25,6 +25,8 @@ module LastFM
 
       def raw_artist_data
         response_data['artist']
+      rescue JSON::ParserError
+        nil
       end
 
       def request_params
