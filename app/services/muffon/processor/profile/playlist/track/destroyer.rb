@@ -14,7 +14,9 @@ module Muffon
             end
 
             def not_found?
-              super || playlist_track_record.blank?
+              super ||
+                playlist_record.blank? ||
+                playlist_track_record.blank?
             end
 
             def playlist_track_record
