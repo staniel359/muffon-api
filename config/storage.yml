@@ -10,6 +10,8 @@ cloudflare:
   secret_access_key: <%= Rails.application.credentials.dig(:storage, :secret_access_key) %>
   region: auto
   bucket: <%= Rails.application.credentials.dig(:storage, :bucket) %>
+  request_checksum_calculation: "when_required"
+  response_checksum_validation: "when_required"
 
 test:
   service: Disk
