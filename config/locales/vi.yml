@@ -1,0 +1,5 @@
+vi:
+  mailer:
+    passwordReset:
+      subject: 'muffon | Khôi phục mật khẩu'
+      text: "Mã khôi phục mật khẩu của bạn là %{code}."
