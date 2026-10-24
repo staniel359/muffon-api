@@ -7,6 +7,8 @@ module AmazonMusic
         check_if_not_found
 
         data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_cookies
       end
 
       private

@@ -5,6 +5,8 @@ module AmazonMusic
         check_args
 
         data
+      rescue Faraday::UnauthorizedError
+        retry_with_new_cookies
       end
 
       private

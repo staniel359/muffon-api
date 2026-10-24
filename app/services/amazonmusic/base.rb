@@ -2,6 +2,7 @@ module AmazonMusic
   class Base < Muffon::Base
     SOURCE_NAME = 'amazonmusic'.freeze
     REQUEST_URL = 'https://gql.music.amazon.co.uk'.freeze
+    MAXIMUM_RETRIES_COUNT = 2
 
     include Muffon::Mixins::GlobalStorage
     include AmazonMusic::Mixins::Base
@@ -102,10 +103,17 @@ module AmazonMusic
     end
 
     def retry_with_new_cookies
+      return if retries_count >= MAXIMUM_RETRIES_COUNT
+
       self.class.call(
         **@args,
-        is_refresh_cookies: true
+        is_refresh_cookies: true,
+        retries_count: retries_count + 1
       )
+    end
+
+    def retries_count
+      @args[:retries_count].to_i
     end
 
     def request_proxy
