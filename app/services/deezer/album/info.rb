@@ -35,7 +35,6 @@ module Deezer
           artists:,
           image_data:,
           release_date:,
-          plays_count: nil,
           description: nil,
           tags: nil,
           tags_size: nil,

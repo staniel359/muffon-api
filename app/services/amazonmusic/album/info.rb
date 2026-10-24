@@ -36,7 +36,6 @@ module AmazonMusic
           description: nil,
           tags: nil,
           tags_size: nil,
-          plays_count: nil,
           labels: nil,
           tracks:,
           **self_args

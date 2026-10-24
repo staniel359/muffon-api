@@ -127,7 +127,8 @@ module LastFM
       def album_record_attributes
         {
           image_url:,
-          listeners_count:
+          listeners_count:,
+          plays_count:
         }.compact
       end
     end

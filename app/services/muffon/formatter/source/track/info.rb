@@ -28,7 +28,6 @@ module Muffon
               description
               tags
               tags_size
-              plays_count
               is_audio_present
               audio_link
             ]

@@ -37,7 +37,6 @@ module MusicBrainz
           artists:,
           image_data:,
           release_date:,
-          plays_count: nil,
           description: nil,
           tags:,
           tags_size: 'extrasmall',

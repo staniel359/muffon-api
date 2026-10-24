@@ -32,7 +32,6 @@ module Bandcamp
           source_album_id: album_bandcamp_id,
           source_album_artist_id: artist_bandcamp_id,
           release_date: nil,
-          plays_count: nil,
           duration:,
           description:,
           tags:,

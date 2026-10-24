@@ -140,7 +140,8 @@ module LastFM
 
       def track_record_attributes
         {
-          listeners_count:
+          listeners_count:,
+          plays_count:
         }.compact
       end
 

@@ -22,7 +22,6 @@ module Genius
           tags_size: 'extrasmall',
           lyrics: lyrics_string,
           lyrics_size: 'small',
-          plays_count: nil,
           is_audio_present: audio_present?,
           audio_link:,
           **self_args

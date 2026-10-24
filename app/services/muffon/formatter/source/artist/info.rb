@@ -24,7 +24,6 @@ module Muffon
               tags
               tags_size
               recommendation_data
-              plays_count
             ]
           end
 

@@ -34,7 +34,6 @@ module Audius
           title:,
           artists:,
           image_data:,
-          plays_count: nil,
           release_date:,
           description:,
           tags: nil,

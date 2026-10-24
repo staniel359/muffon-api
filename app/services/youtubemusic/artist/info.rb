@@ -28,7 +28,6 @@ module YouTubeMusic
           tags: nil,
           tags_size: nil,
           recommendation_data: nil,
-          plays_count: nil,
           pages_data:
         )
       end

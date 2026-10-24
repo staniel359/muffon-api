@@ -50,7 +50,7 @@ module Muffon
           end
 
           def plays_count
-            @args[:plays_count]
+            artist_record.plays_count
           end
 
           def profiles_count

@@ -20,7 +20,6 @@ module Audius
           description:,
           tags:,
           tags_size: 'extrasmall',
-          plays_count: nil,
           is_audio_present: audio_present?,
           audio_link:,
           **self_args

@@ -16,7 +16,6 @@ module Spotify
           source_album_id: album_spotify_id,
           image_data:,
           release_date: nil,
-          plays_count: nil,
           duration:,
           description: nil,
           tags: nil,

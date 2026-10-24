@@ -24,7 +24,6 @@ module MusixMatch
           tags_size: nil,
           lyrics:,
           lyrics_size: 'small',
-          plays_count: nil,
           is_audio_present: audio_present?,
           audio_link:,
           **self_args

@@ -79,7 +79,8 @@ module LastFM
       def artist_record_attributes
         {
           image_url:,
-          listeners_count:
+          listeners_count:,
+          plays_count:
         }.compact
       end
 

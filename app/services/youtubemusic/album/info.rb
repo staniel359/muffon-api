@@ -35,7 +35,6 @@ module YouTubeMusic
           artists:,
           image_data:,
           release_date:,
-          plays_count: nil,
           description:,
           tags: nil,
           tags_size: nil,

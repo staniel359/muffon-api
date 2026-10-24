@@ -48,7 +48,6 @@ module Bandcamp
           tags:,
           tags_size: 'extrasmall',
           labels: nil,
-          plays_count: nil,
           tracks:,
           **self_args
         )

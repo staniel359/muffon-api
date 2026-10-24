@@ -21,7 +21,6 @@ module Muffon
               title
               artists
               image_data
-              plays_count
               release_date
               description
               tags

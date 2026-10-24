@@ -17,7 +17,6 @@ module SoundCloud
           description:,
           tags:,
           tags_size: 'extrasmall',
-          plays_count: nil,
           labels: nil,
           tracks:,
           **self_args

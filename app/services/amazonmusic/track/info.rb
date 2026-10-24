@@ -15,7 +15,6 @@ module AmazonMusic
           image_data:,
           album_title:,
           source_album_id: album_amazonmusic_id,
-          plays_count: nil,
           duration:,
           release_date: nil,
           description: nil,

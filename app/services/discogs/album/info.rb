@@ -19,7 +19,6 @@ module Discogs
           tags:,
           tags_size: 'extrasmall',
           labels:,
-          plays_count: nil,
           tracks:,
           **self_args
         )

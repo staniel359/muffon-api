@@ -37,7 +37,6 @@ module VK
           description: nil,
           tags: nil,
           tags_size: nil,
-          plays_count: nil,
           is_audio_present: audio_present?,
           audio_link:,
           **self_args
