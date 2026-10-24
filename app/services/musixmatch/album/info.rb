@@ -23,6 +23,8 @@ module MusixMatch
           artists:,
           image_data:,
           release_date:,
+          is_with_listeners_count:
+            @args[:is_with_listeners_count],
           **self_args
         )
       end

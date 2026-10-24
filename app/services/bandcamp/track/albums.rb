@@ -23,6 +23,7 @@ module Bandcamp
           artist_id: artist_bandcamp_id,
           album_id: album_bandcamp_id,
           is_list: true,
+          is_with_listeners_count: true,
           **self_args
         )[:album]
       end

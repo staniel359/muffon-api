@@ -26,6 +26,7 @@ module VK
           owner_id: album_vk_owner_id,
           access_key: album_vk_access_key,
           is_list: true,
+          is_with_listeners_count: true,
           **self_args
         )[:album]
       end

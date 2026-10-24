@@ -23,6 +23,7 @@ module LastFM
           artist_name: album_artist_name,
           album_title:,
           is_list: true,
+          is_with_listeners_count: true,
           **self_args
         )[:album]
       end

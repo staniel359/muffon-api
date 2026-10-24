@@ -30,6 +30,7 @@ module Genius
         Genius::Album::Info.call(
           album_id: raw_album_id,
           is_list: true,
+          is_with_listeners_count: true,
           **self_args
         )[:album]
       end

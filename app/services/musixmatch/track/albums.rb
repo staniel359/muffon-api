@@ -23,6 +23,7 @@ module MusixMatch
         MusixMatch::Album::Info.call(
           album_slug: album_musixmatch_slug,
           is_list: true,
+          is_with_listeners_count: true,
           **self_args
         )[:album]
       end

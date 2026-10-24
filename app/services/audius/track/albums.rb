@@ -24,6 +24,7 @@ module Audius
         Audius::Album::Info.call(
           album_id: album_audius_id,
           is_list: true,
+          is_with_listeners_count: true,
           **self_args
         )[:album]
       end
