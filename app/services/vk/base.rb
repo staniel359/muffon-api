@@ -92,6 +92,7 @@ module VK
       error_text = error_data['error_msg']
 
       raise not_found_error if error_text.include?('audios is invalid')
+      raise not_found_error if error_text.include?('no access to this album')
 
       raise "[Error (VK)]: #{error_text}"
     end
