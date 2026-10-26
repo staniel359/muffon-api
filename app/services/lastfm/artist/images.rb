@@ -21,6 +21,10 @@ module LastFM
         @args[:update].present? && image_url.present?
       end
 
+      def artist_record_attributes
+        { image_url: }
+      end
+
       def image_url
         images_data.dig(
           :images,
