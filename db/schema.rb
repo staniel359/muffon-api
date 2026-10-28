@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_24_182044) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_28_084841) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -63,7 +63,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_24_182044) do
     t.integer "tags_ids", default: [], array: true
     t.string "name_downcase"
     t.string "image_url"
-    t.integer "plays_count"
+    t.bigint "plays_count"
     t.index ["name_downcase"], name: "index_artists_on_name_downcase", unique: true
   end
 
