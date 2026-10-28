@@ -62,6 +62,8 @@ module Audius
       end
 
       def audio_link
+        return if raw_audio_link.blank?
+
         replace_url_host(
           url: raw_audio_link,
           new_host: audio_link_mirrors[0]
