@@ -45,8 +45,8 @@ module AmazonMusic
             'persistedQuery' => {
               'version' => 1,
               'sha256Hash' =>
-                'e9cf1f3f0b3d57e40a8591e3787f0d82' \
-                '0d58ce6968a5cf800aa3dc3f9bdb2bb4'
+                '21accd6e4c2fa6ad0a0323ee60eba50a' \
+                'fa8a22ff8f581e9e4602e87508e3214a'
             }
           }
         }.to_json
