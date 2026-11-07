@@ -85,6 +85,8 @@ module MusixMatch
         **@args,
         is_refresh_link_build_id: true
       )
+    rescue JSON::ParserError
+      raise not_found_error
     end
   end
 end
